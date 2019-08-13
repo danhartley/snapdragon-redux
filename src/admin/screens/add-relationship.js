@@ -1,4 +1,5 @@
 import * as R from 'ramda';
+import { utils } from 'utils/utils';
 
 import { helpers } from 'admin/helpers';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -10,7 +11,7 @@ import relationshipTemplate from 'admin/screens/add-relationship-template.html';
 
 export const addRelationship = () => {
 
-    let snapdragonSpecies, EOLSpecies, autocompleteRef, item;
+    let snapdragonSpecies, snapdragonSpeciesB, eolSpecies, autocompleteRef, item;
     
     snapdragonSpecies = window.snapdragon.species ? window.snapdragon.species.name : '';
     
@@ -52,11 +53,19 @@ export const addRelationship = () => {
             snapdragonSpecies = inputSnapdragon.value;            
         });
 
+        const inputSnapdragonB = document.querySelector('#input-species-snapdragon-b');
+              inputSnapdragonB.focus();
+
+        speciesPicker(inputSnapdragonB, species => {
+            item = species;
+            snapdragonSpeciesB = inputSnapdragonB.value;
+        });
+
         const asyncProgress = document.querySelector('.async-progress');
         const inputEOL = document.querySelector('#input-species-eol');
 
         const searchEOLCallback = (species, ref) => {
-            EOLSpecies = species;
+            eolSpecies = species;
             autocompleteRef = ref;
         };
     
@@ -84,21 +93,21 @@ export const addRelationship = () => {
 
         btnAddRelationship.addEventListener('click', async e => {
 
-            if(snapdragonSpecies && EOLSpecies) {
+            if(snapdragonSpecies && (snapdragonSpeciesB || eolSpecies)) {
 
                 const traits = [];
 
+                const speciesBName = snapdragonSpeciesB || helpers.getBinomial(eolSpecies);                
+                
                 // Species A
-
-                const EOLSpeciesName = helpers.getBinomial(EOLSpecies);
 
                 const traitA = { name: snapdragonSpecies };
                 traitA.update = {
                     type: inputRoleSpeciesA.value,
-                    value: [inputRelationship.value],
+                    value: [utils.capitaliseFirst(inputRelationship.value)],
                     symbiont: {
-                        name: EOLSpeciesName,
-                        role: inputRoleSpeciesB.value
+                        name: speciesBName,
+                        role: utils.capitaliseFirst(inputRoleSpeciesB.value)
                     },
                     description: description.value
                 };
@@ -109,17 +118,17 @@ export const addRelationship = () => {
 
                 const speciesNames = await firestore.getSpeciesNames();
 
-                const isSpeciesBInSnapdragon = R.contains(EOLSpeciesName, speciesNames[0].value);
+                const isSpeciesBInSnapdragon = R.contains(speciesBName, speciesNames[0].value);
 
                 if(isSpeciesBInSnapdragon) {
 
-                    const traitB = { name: EOLSpeciesName };
+                    const traitB = { name: speciesBName };
                     traitB.update = {
                         type: inputRoleSpeciesB.value,
-                        value: [inputRelationship.value],
+                        value: [utils.capitaliseFirst(inputRelationship.value)],
                         symbiont: {
                             name: snapdragonSpecies,
-                            role: inputRoleSpeciesA.value
+                            role: utils.capitaliseFirst(inputRoleSpeciesA.value)
                         },
                         description: description.value
                     };

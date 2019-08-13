@@ -376,4 +376,78 @@ export const plantae = [
         definition: 'Of a plant, which lies on the ground with tips turned upwards.',
         wiki: 'https://en.wikipedia.org/wiki/decumbent'
     },
+    {
+        term: 'Nyctinasty',
+        definition: 'Change or (nastic) movement of higher plants in response to the onset of darkness.',
+        wiki: 'https://en.wikipedia.org/wiki/Nyctinasty'
+    },
+    {
+        term: 'Turgor pressure',
+        definition: 'Turgor pressure is the force within the cell that pushes the plasma (cell) membrane against the cell wall.',
+        wiki: 'https://en.wikipedia.org/wiki/Turgor_pressure'
+    },
+    {
+        term: 'Nastic movement',
+        definition: 'Nastic movements are directional responses to stimuli (e.g. temperature, humidity, light irradiance), and are usually associated with plants.',
+        wiki: 'https://en.wikipedia.org/wiki/Nastic_movements'
+    },
+    {
+        term: 'Tropism',
+        definition: 'A tropism (from Greek τρόπος, tropos, "a turning") is a biological phenomenon, indicating growth or turning movement of a biological organism, usually a plant, in response to an environmental stimulus.',
+        wiki: 'https://en.wikipedia.org/wiki/Tropism'
+    },
+    {
+        term: 'Cauliflory',
+        definition: 'Plants that flower and fruit from their main stems or woody trunks rather than from new growth and shoots.',
+        wiki: 'https://en.wikipedia.org/wiki/Cauliflory'
+    },
+    {
+        term: 'Ramiflory',
+        definition: 'Production of fruit and flowers on the woody branches of a plant, formed in a previous season.',
+        wiki: 'https://en.wikipedia.org/wiki/Ramiflory'
+    },
+    {
+        term: 'Glaucous',
+        definition: 'Covered with a greyish, bluish, or whitish waxy coating or bloom that is easily rubbed off.',
+        wiki: 'https://en.wikipedia.org/wiki/Glaucous'
+    },
+    {
+        term: 'Farinose',
+        definition: 'Covered with a whitish powder or waxy coating.',
+    },
+    {
+        term: 'Scurfy',
+        definition: 'Covered with small scalelike particles.',
+    },
+    {
+        term: 'Viscous',
+        definition: 'Covered with sticky or resinous secretion.',
+    },
+    {
+        term: 'Punctate',
+        definition: 'Dotted with minute pits or translucent dots.',
+    },
+    {
+        term: 'Papillate',
+        definition: 'Having minute, pimplelike protuberances.',
+    },
+    {
+        term: 'Tuberculate',
+        definition: 'Having tubercles or warty protuberances.',
+    },
+    {
+        term: 'Rugose',
+        definition: 'Wrinkled.',
+        wiki: 'https://en.wikipedia.org/wiki/Rugose'
+    },
+    {
+        term: 'Glabrous',
+        definition: 'Smooth, hairless, bald.',
+        wiki: 'https://en.wikipedia.org/wiki/Glabrous'
+    },
+    {
+        term: 'Pubescent',
+        definition: 'Hairy or downy.',
+        wiki: 'https://en.wikipedia.org/wiki/Pubescent'
+    },
 ];

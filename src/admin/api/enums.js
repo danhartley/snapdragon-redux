@@ -1,5 +1,7 @@
 export const enums = {
   name: {
+  CIRCUMFERENCE: 'circumference',
+  EXPOSURE: 'exposure',
   CAP_SHAPE: 'cap shape',
   CAP_COLOUR: 'cap colour',
   CAP_SIZE: 'cap size',
@@ -35,7 +37,7 @@ export const enums = {
   FRUIT_TYPE: 'Fruit type',
   SEED_COUNT: 'Seed count',
   SEED_DISPERSAL: 'Seed dispersal',
-  PH_TOLERANCE: 'pH tolerance',
+  // PH_TOLERANCE: 'pH tolerance',
   VITAMINS: 'vitamins',
   GROUPING: 'grouping',
   POLLUTION_TOLERANCE: 'pollution tolerance',
@@ -54,7 +56,6 @@ export const enums = {
   VOICE: 'Voice',
   HEIGHT: 'Height',
   WEIGHT: 'Weight',
-  LEAF_DIVISION: 'Leaf division',
   REPRODUCTION: 'Reproduction',
   ASEXUAL_REPRODUCTION: 'Asexual reproduction',
   DISPLAY: 'Display',
@@ -67,11 +68,17 @@ export const enums = {
   FOOD: 'Food',
   SEXUAL_DIMORPHISM: 'Sexual dimorphism',
   WING_SPAN: 'Wing span',
+  LEAF_DIVISION: 'Leaf division',
   LEAF_BLADE: 'Leaf blade',
   LEAF_VARIATION: 'Leaf variation',
   LEAF_SHAPE: 'Leaf shape',
-  LEAF_EDGE: 'Leaf edge',
+  LEAF_MARGIN: 'Leaf margin',
   LEAF_ARRANGEMENT: 'Leaf arrangement',
+  LEAF_LENGTH: 'Leaf length',
+  LEAF_COLOUR: 'Leaf colour',
+  LEAF_SURFACE: 'Leaf surface',
+  LEAF_BELOW: 'Leaf below',
+  LEAF_ABOVE: 'Leaf above',
   INFLORESCENCE: 'Inflorescence',
   FEMALE_CONE_LENGTH: 'Female cone length',
   MALE_CONE_LENGTH: 'Male cone length',
@@ -112,6 +119,8 @@ export const enums = {
   PROPAGATION: 'Propagation',
   CLIMATE: 'Climate',
   SONG: 'Song',
+  DIAMETER: 'diameter',
+  NUT_TYPE: 'nut type',
   type: 'name',
   name: 'name'
   },
@@ -521,7 +530,7 @@ export const enums = {
   type: 'leafArrangement',
   name: 'leaf arrangement'
   },
-  leafEdge: {
+  leafMargin: {
   ENTIRE: 'Entire',
   CILIATE: 'Ciliate',
   CRENATE: 'Crenate',
@@ -535,8 +544,8 @@ export const enums = {
   UNDULATE: 'Undulate',  
   SPINY: 'Spiny',  
   SMOOTH: 'Smooth',
-  type: 'leafEdge',
-  name: 'leaf edge'
+  type: 'leafMargin',
+  name: 'leaf margin'
   },
   food: {
   GRASS: 'Grass',
@@ -576,6 +585,7 @@ export const enums = {
   COMPETITION: 'Competition',
   MYCORRHIZAL: 'Mycorrhizal',
   COMPANION: 'Companion planting',
+  POLLINATION: 'Pollination',
   type: 'symbiosis',
   name: 'symbiosis'
   },
@@ -705,6 +715,8 @@ export const enums = {
   SILICEOUS: 'Siliceous',
   CALCAREOUS: 'Calcareous',
   NUTRIENT_POOR: 'Nutrient poor',
+  WELL_DRAINED: 'Well-drained',
+  WELL_WATERED: 'Well-watered',
   type: 'soilType',
   name: 'soil type'
   },
@@ -746,6 +758,8 @@ export const enums = {
   EARLY_SUCCESSION: 'early-succession',
   SEED_DISPERSAL: 'Seed dispersal',
   FERTILISATION: 'Fertilisation',
+  PROPAGATION: 'propagation',
+  REPRODUCTION: 'reproduction',
   type: 'role',
   name: 'role'
   },
@@ -777,6 +791,7 @@ export const enums = {
   SPADEX: 'Spadex',
   SINGLE: 'Single',
   PANICLE: 'Panicle',
+  CYMOSE: 'Cymose',
   type: 'inflorescence',
   name: 'inflorescence'
   },
@@ -889,7 +904,12 @@ export const enums = {
   EVERGREEN: 'Evergreen',
   DECIDUOUS: 'Deciduous',
   CONIFEROUS: 'Coniferous',
-  ADVENTITIOUS:'adventitious',
+  ADVENTITIOUS:'Adventitious',
+  NYCTINASTY:'Nyctinasty',
+  XEROMORPHIC: 'Xeromorphic',
+  DROUGHT_RESISTANT: 'Drought resistant',
+  POLLUTION_RESISTANT: 'Pollution resistant',
+  ADAPTIVE_COMPACT_SOIL: 'Adaptive compact soil',
   type: 'physiology',
   name: 'physiology'
   },
@@ -917,8 +937,12 @@ export const enums = {
   BIENNIAL: 'Biennial',
   HERBACEOUS: 'Herbaceous',
   DIOECIOUS: 'Dioecious',
+  MONOECIOUS: 'Monoecious',
+  PERFECT: 'Perfect',
   DICOTYLEDON: 'Dicot',
   MONOCOTYLEDON: 'Monocot',
+  CAULIFLORY: 'Cauliflory',
+  RAMIFLORY: 'Ramiflory',
   PUBESCENT: 'Pubescent',
   CHAMAEPHYTE: 'Chamaephyte',
   FIBROUS_ROOT_SYSTEM: 'Fibrous root system',
@@ -993,6 +1017,7 @@ export const enums = {
   propagation: {
   RHIZOMES: 'rhizomes',
   SEEDS: 'seeds',
+  ROOT_SUCKERS: 'Root suckers',
   type: 'propagation',
   name: 'propagation'
   },
@@ -1003,10 +1028,45 @@ export const enums = {
     ZOOCHORY: 'Zoochory',
     ANTHROPOCHORY: 'Anthropochory',
   },
+  exposure: {
+    FULL_SUN: 'Full sun',
+    PARTIAL_SUN: 'Partial Sun',
+    PARTIAL_SHADE: 'Partial Shade',
+    SHADE: 'shade'
+  },
+  nutType: {
+    ACORN: 'acorn',
+    HAZELNUT: 'hazelnut',
+    CHESTNUT: 'chestnut',
+  },
+  leafSurface: {
+    GLAUCOUS: 'Glaucous',
+    FARINOSE: 'Farinose',
+    SCURFY: 'Scurfy',
+    VISCOUS: 'Viscous',
+    PUNCTATE: 'Punctate',
+    PAPILLATE: 'Papillate',
+    TUBERCULATE: 'Tuberculate',
+    RUGOSE: 'Rugose',
+    GLABROUS: 'Glabrous',
+    PUBESCENT: 'Pubescent',
+  },
   units: [
     { lifeSpan: [ 'DD', 'MM', 'YY'] },
     { gestation: [ 'DD', 'MM', 'YY'] },
     { weaning: [ 'DD', 'MM', 'YY'] },
     { height: [ 'm', 'cm', 'mm'] },
-  ]
+    { diameter: [ 'm', 'cm', 'mm'] },
+    { circumference: [ 'm', 'cm', 'mm'] },
+    { leafLength: [ 'cm', 'mm'] },
+    { colour: [
+      'leafColour',
+      'capColour',
+      'sporePrintColour',
+      'stipeColour',
+      'gillColour',
+      'caterpillarColour',
+      'licenCupColour'
+    ]}
+  ],
 }

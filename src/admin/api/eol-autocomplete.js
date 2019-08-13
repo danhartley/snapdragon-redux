@@ -5,7 +5,7 @@ import { eol } from 'admin/api/eol';
 
 export const eolAutocomplete = (input, type, className, feedbackCallback, onSelectCalback) => {
 
-    const MIN_LENGTH = 7;
+    const MIN_LENGTH = 4;
 
     const autocompleteRef = autocomplete({
         input: input,

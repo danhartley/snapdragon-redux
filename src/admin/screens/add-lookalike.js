@@ -10,7 +10,7 @@ import lookalikeTemplate from 'admin/screens/add-lookalike-template.html';
 
 export const addLookalike = () => {
 
-    let snapdragonSpecies, eolSpecies, autocompleteRef, item, eolDescription, snapdragonDescription;
+    let snapdragonSpecies, snapdragonSpeciesB, eolSpecies, autocompleteRef, item, eolDescription, snapdragonDescription;
 
     snapdragonSpecies = window.snapdragon.species ? window.snapdragon.species.name : '';
 
@@ -32,6 +32,14 @@ export const addLookalike = () => {
             snapdragonSpecies = inputSnapdragon.value;
         });
 
+        const inputSnapdragonB = document.querySelector('#input-species-snapdragon-b');
+              inputSnapdragonB.focus();
+
+        speciesPicker(inputSnapdragonB, species => {
+            item = species;
+            snapdragonSpeciesB = inputSnapdragonB.value;
+        });
+
         const asyncProgress = document.querySelector('.async-progress');
         const inputEOL = document.querySelector('#input-species-eol');
 
@@ -49,18 +57,18 @@ export const addLookalike = () => {
             const snapdragonDescription = document.querySelector('#input-description-a');
             const eolDescription = document.querySelector('#input-description-b');
 
-            if(snapdragonSpecies && eolSpecies) {
+            if(snapdragonSpecies && (snapdragonSpeciesB || eolSpecies)) {
 
                 const traits = [];
 
+                const speciesBName = snapdragonSpeciesB || helpers.getBinomial(eolSpecies);
+                
                 // Species A
-
-                const EOLSpeciesName = helpers.getBinomial(eolSpecies);
 
                 const traitA = { name: snapdragonSpecies };
                 traitA.update = {
                     lookalike: {
-                        name: EOLSpeciesName,
+                        name: speciesBName,
                         description: eolDescription.value
                     },
                     description: snapdragonDescription.value
@@ -72,11 +80,11 @@ export const addLookalike = () => {
 
                 const speciesNames = await firestore.getSpeciesNames();
 
-                const isSpeciesBInSnapdragon = R.contains(EOLSpeciesName, speciesNames[0].value);
+                const isSpeciesBInSnapdragon = R.contains(speciesBName, speciesNames[0].value);
 
                 if(isSpeciesBInSnapdragon) {
 
-                    const traitB = { name: EOLSpeciesName };
+                    const traitB = { name: speciesBName };
                         traitB.update = {
                             lookalike: {
                                 name: snapdragonSpecies,
