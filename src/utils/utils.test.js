@@ -183,3 +183,10 @@ const layouts = [
     string  = 'behaviour';
     expect(utils.toCamelCase(string)).toEqual('behaviour');
   });
+
+  test('should capitalise only first word of any string', () => {
+    let string = 'Leaf blade';
+    expect(utils.capitaliseFirst(string)).toEqual('Leaf blade');
+    string  = 'behaviour';
+    expect(utils.capitaliseFirst(string)).toEqual('Behaviour');
+  });

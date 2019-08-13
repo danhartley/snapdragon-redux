@@ -36,12 +36,8 @@ export const renderAddTrait = (parent, callback) => {
             initAutocomplete(inputUnit, units);
 
             const saveTrait = async () => {
-                const savedText = document.querySelector('.js-saved');
-                      savedText.classList.remove('hide');
-                      savedText.innerHTML = `Trait, key: ${traitKey}, value: ${inputValue.value} ${inputUnit.value}, saved.`;
                 const trait = { key: traitKey, value: inputValue.value, unit: inputUnit.value };
                 callback(trait);
-                inputKey.focus();
             };
         
             inputUnit.addEventListener('keypress', event => {
@@ -92,12 +88,8 @@ export const renderAddTrait = (parent, callback) => {
         initAutocomplete(inputValue, values);
 
         const saveTrait = async () => {
-            const savedText = document.querySelector('.js-saved');
-                  savedText.classList.remove('hide');
-                  savedText.innerHTML = `Trait, key: ${traitKey}, value: ${inputValue.value}, saved.`;
             const trait = { key: traitKey, value: inputValue.value };
             callback(trait);
-            inputKey.focus();
         };
     
         inputValue.addEventListener('keypress', event => {

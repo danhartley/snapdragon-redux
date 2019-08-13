@@ -47,7 +47,7 @@ const getBinomial = item => {
     if(!item.name) return;
     if(!item.name.length > 0) return;
     const taxa = item.name.split(' ');
-    const binomial = `${taxa[0]} ${taxa [1]}`;
+    const binomial = `${taxa[0]} ${taxa [1] || ''}`;
     return binomial;
 };
 
@@ -139,7 +139,7 @@ const parseSpeciesData = async (item) => {
     const json = await response.json();
     const taxonConcept = json.taxonConcept;
     if(!json.taxonConcept) return;
-    const taxon = taxonConcept.dataObjects ? taxonConcept : taxonConcept.taxonConcepts[1];
+    const taxon = taxonConcept.dataObjects ? taxonConcept : taxonConcept.taxonConcepts[0];
     const imagesCollection = taxon.dataObjects ? taxon.dataObjects.filter(item => item.mediaURL || item.eolMediaURL).map(media => {
         return {
             title: media.title, // as original title

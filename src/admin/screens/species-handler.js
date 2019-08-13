@@ -63,6 +63,17 @@ const addSpecies = () => {
 
     eol.searchEOL(inputSearch, asyncProgress, searchEOLCallback, selectedLicence, imageIds);
 
+    const btnGetSpeciesById = document.querySelector('#btnGetSpeciesById');
+    const input = document.querySelector('#input-species');
+
+    btnGetSpeciesById.addEventListener('click', async e => {
+        item = await eol.getSpecies(input.value, selectedLicence);
+        if(imageIds) helpers.getImagesLayout(item, '', imageIds);
+        document.querySelectorAll('.btnAddSpecies').forEach(btn => {
+            btn.classList.remove('hide');
+        });
+    });
+
     const activateGetTraitsBtn = async item => {
         
         const response = await firestore.addSpecies(item);
@@ -162,7 +173,7 @@ const updateSpecies = () => {
 
         btnGetPhotos.click();
     }
-}
+};
 
 export const speciesHandler = {
     addSpecies,

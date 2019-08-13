@@ -1,6 +1,7 @@
 import * as R from 'ramda';
 import autocomplete from 'autocompleter';
 
+import { utils } from 'utils/utils';
 import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
 import { speciesPicker } from 'admin/screens/species-picker';
@@ -67,6 +68,8 @@ const addTraits = () => {
 
         M.updateTextFields();
 
+        document.getElementById('input-trait-key').focus();
+
         const deleteIcons = document.querySelectorAll('i');
         deleteIcons.forEach(icon => {
             icon.addEventListener('click', async e => {
@@ -119,9 +122,9 @@ const addTraits = () => {
         let trait = {};
               
         if(item.traits && item.traits[pair.key]) {
-            trait[pair.key] = { value: [ ...item.traits[pair.key].value, pair.value ] };
+            trait[pair.key] = { value: [ ...item.traits[pair.key].value, utils.capitaliseFirst(pair.value) ] };
         } else {
-            trait[pair.key] = { value: [ pair.value ] };
+            trait[pair.key] = { value: [ utils.capitaliseFirst(pair.value) ] };
         }
 
         if(pair.unit) trait[pair.key].unit = pair.unit;
@@ -132,6 +135,16 @@ const addTraits = () => {
 
         renderTraits(item);
         renderAddTrait(addTraitParent, callback);
+
+        const savedText = document.querySelector('.js-saved');
+        savedText.classList.remove('hide');
+        savedText.innerHTML = pair.unit 
+            ? `Trait, key: ${pair.key}, value: ${pair.value} ${pair.value}, saved.`
+            : `Trait, key: ${pair.key}, value: ${pair.value}, saved.`
+
+        setInterval(() => {
+            savedText.classList.add('hide');
+        }, 5000);
     };
 
     renderAddTrait(addTraitParent, callback);
