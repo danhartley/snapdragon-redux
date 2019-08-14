@@ -1,3 +1,4 @@
+import { utils } from 'utils/utils';
 import { enums } from 'admin/api/enums';
 import { store } from 'redux/store';
 import { firebaseConfig } from 'api/firebase/credentials';
@@ -353,6 +354,29 @@ const deleteSpeciesTraitField = async (name, field) => {
     }    
   };
 
+const getRandomSpecies = async number => {
+
+    let querySnapshot, docs = [];
+
+    var species = db.collection("species");
+
+    var key = species.doc().id;
+
+    const random = utils.getRandomInt(2);
+
+    const operator = random === 0 ? '>=' : '<=';
+
+    querySnapshot = await species.where(firebase.firestore.FieldPath.documentId(), operator, key).limit(number).get();
+
+    querySnapshot.forEach(doc => {
+        docs.push(doc.data());
+    });
+
+    return docs;
+
+};
+  
+
 export const firestore = {
     getSpecies,
     getSpeciesNames,
@@ -363,6 +387,7 @@ export const firestore = {
     getTraitsBySpeciesName,
     getBirdsong,
     getTraitValues,
+    getRandomSpecies,
     
     addSpecies,
     addTraits,
