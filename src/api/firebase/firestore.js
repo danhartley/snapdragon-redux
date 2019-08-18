@@ -67,13 +67,18 @@ const getSpeciesNames = async () => {
     }
 };
 
-const getSpeciesByIconicTaxon = async (taxon, isLichen, limit = 6) => {
+const getSpeciesByIconicTaxon = async (iconicTaxon, isLichen, limit = 6) => {
 
-    let matches = await getSpeciesWhere({ key:'iconicTaxon', operator:'==', value: taxon.value.toLowerCase(), limit });
+    console.log(iconicTaxon);
 
-    if(taxon.value.toLowerCase() === 'fungi') {
-        matches = isLichen ? matches.filter(match => match.lichen) : matches.filter(match => !match.lichen);
-    } 
+    let matches;
+
+    if(isLichen) {
+        matches = await getSpeciesWhere({ key:'lichen', operator:'==', value: true, limit });
+    } else {
+        matches = await getSpeciesWhere({ key:'iconicTaxon', operator:'==', value: iconicTaxon.toLowerCase(), limit });
+    }
+
     return matches;
 };
 

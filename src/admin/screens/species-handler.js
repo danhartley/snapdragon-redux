@@ -7,6 +7,7 @@ import { speciesPicker } from 'admin/screens/species-picker';
 
 import addSpeciesTemplate from 'admin/screens/add-species-template.html';
 import updateSpeciesTemplate from 'admin/screens/update-species-template.html';
+import updateNamesTemplate from 'admin/screens/update-species-names-template.html';
 
 const addSpecies = () => {
 
@@ -136,6 +137,11 @@ const updateSpecies = () => {
         btnRemoveSpecies.classList.remove('hide');
         btnGetPhotos.classList.remove('hide');
         chkSafety.classList.remove('hide');
+
+        const vernacularNames = document.getElementById('vernacularNames');
+        template.innerHTML = updateNamesTemplate;
+        renderTemplate({names: item.names}, template.content, vernacularNames);
+        M.updateTextFields();
     };
 
     speciesPicker(input, listenForSpeciesSelection);

@@ -45,7 +45,7 @@ export const renderBirdsong = collection => {
                         : document.querySelector('.media-video-players');
 
 
-            let birds = await firestore.getSpeciesByIconicTaxon({rank, value: item.iconicTaxon}, false);
+            let birds = await firestore.getSpeciesByIconicTaxon(item.iconicTaxon, false);
 
             let traits;
 

@@ -6,7 +6,7 @@ export const renderHistory = history => {
             
     const { collection, config } = store.getState();
 
-    collection.items = stats.getItemScoreStats(collection, history, config);
+    // collection.items = stats.getItemScoreStats(collection, history, config);
 
     renderSpeciesCollectionList(collection, true);
 }    

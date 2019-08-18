@@ -28,11 +28,7 @@ export const renderSpeciesGrid = () => {
         const speciesImages = randomSpecies.map(sp => {
             return { images: sp.images, itemName: sp.name };
         });
-
-        // const speciesImages = R.take(imageCount, utils.shuffleArray(species).map(sp => {
-        //     return { images: sp.images, itemName: sp.name };
-        // }));
-
+        
         const images = [];
         let counter = 0;
 

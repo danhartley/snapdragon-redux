@@ -68,24 +68,36 @@ export const renderAddTrait = (parent, callback) => {
 
         let values = [];
     
-        const exclude = [ 'help', 'name', 'type', 'units' ];
-    
-        for (let [key, obj] of Object.entries(traitValues[utils.toCamelCase(traitKey)])) {
-            if(!R.contains(key, exclude)) {
-                values.push({label: obj.toLowerCase(), value: obj.toLowerCase()});
-            }
+        const exclude = [ 'help', 'name', 'type', 'units' ];;
+
+        let traitValueKey = traitValues[utils.toCamelCase(traitKey)];
+
+        if(R.contains(utils.toCamelCase(traitKey), traitValues.colours)) {
+            traitValueKey = traitValues.colour;
+        } 
+
+        if(R.contains(utils.toCamelCase(traitKey), traitValues.leafSurfaces)) {
+            traitValueKey = traitValues.leafSurface;
         }
 
-        values = utils.sortAlphabeticallyBy(values, 'label');
-    
+        if(traitValueKey) {
         
-        inputValue.value = '';
-        
-        setTimeout(() => {
-            inputValue.focus();
-        }, 250);
-        
-        initAutocomplete(inputValue, values);
+            for (let [key, obj] of Object.entries(traitValueKey)) {
+                if(!R.contains(key, exclude)) {
+                    values.push({label: obj.toLowerCase(), value: obj.toLowerCase()});
+                }
+            }
+
+            values = utils.sortAlphabeticallyBy(values, 'label');
+            
+            inputValue.value = '';
+            
+            setTimeout(() => {
+                inputValue.focus();
+            }, 250);
+            
+            initAutocomplete(inputValue, values);
+        }
 
         const saveTrait = async () => {
             const trait = { key: traitKey, value: inputValue.value };

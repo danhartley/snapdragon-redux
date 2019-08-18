@@ -37,6 +37,7 @@
 }
 
 .test-card {
+    height: 6rem;
     color: var(--snap-text-medium-dark);
     padding: 0;
     font-size: 1.2rem;

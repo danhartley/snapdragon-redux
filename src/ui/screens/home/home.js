@@ -24,14 +24,6 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     let { config, collection, lesson } = store.getState();
 
-    let skip = counter.index !== null && counter.index >= 0 && !counter.isLessonPaused;
-
-    if(skip) {
-        const sub = subscription.getByName('renderHome');
-        if(sub) subscription.remove(sub);
-        return;
-    }
-    
     const sub = subscription.getByName('renderHome');
     if(sub) subscription.remove(sub);
 
