@@ -1,3 +1,4 @@
+import { utils } from 'utils/utils';
 import { enums } from 'admin/api/enums';
 import { store } from 'redux/store';
 import { firebaseConfig } from 'api/firebase/credentials';
@@ -66,13 +67,18 @@ const getSpeciesNames = async () => {
     }
 };
 
-const getSpeciesByIconicTaxon = async (taxon, isLichen, limit = 6) => {
+const getSpeciesByIconicTaxon = async (iconicTaxon, isLichen, limit = 6) => {
 
-    let matches = await getSpeciesWhere({ key:'iconicTaxon', operator:'==', value: taxon.value.toLowerCase(), limit });
+    console.log(iconicTaxon);
 
-    if(taxon.value.toLowerCase() === 'fungi') {
-        matches = isLichen ? matches.filter(match => match.lichen) : matches.filter(match => !match.lichen);
-    } 
+    let matches;
+
+    if(isLichen) {
+        matches = await getSpeciesWhere({ key:'lichen', operator:'==', value: true, limit });
+    } else {
+        matches = await getSpeciesWhere({ key:'iconicTaxon', operator:'==', value: iconicTaxon.toLowerCase(), limit });
+    }
+
     return matches;
 };
 
@@ -353,6 +359,29 @@ const deleteSpeciesTraitField = async (name, field) => {
     }    
   };
 
+const getRandomSpecies = async number => {
+
+    let querySnapshot, docs = [];
+
+    var species = db.collection("species");
+
+    var key = species.doc().id;
+
+    const random = utils.getRandomInt(2);
+
+    const operator = random === 0 ? '>=' : '<=';
+
+    querySnapshot = await species.where(firebase.firestore.FieldPath.documentId(), operator, key).limit(number).get();
+
+    querySnapshot.forEach(doc => {
+        docs.push(doc.data());
+    });
+
+    return docs;
+
+};
+  
+
 export const firestore = {
     getSpecies,
     getSpeciesNames,
@@ -363,6 +392,7 @@ export const firestore = {
     getTraitsBySpeciesName,
     getBirdsong,
     getTraitValues,
+    getRandomSpecies,
     
     addSpecies,
     addTraits,

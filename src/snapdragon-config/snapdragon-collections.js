@@ -322,47 +322,17 @@ const rhsWeeds = {
     glossary: ['plantae', 'common'],
     items: [],
     itemNames: [
-
-      'Acer negundo',
-      'Acer pseudoplatanus',
-      'Celtis australis',
-      'Cercis siliquastrum',
-      'Cupressus sempervirens',
-      'Eucalyptus globulus',
-      'Fraxinus angustifolia',
-      // 'Fraxinus excelsior',
-      'Ginkgo biloba',
-      'Jacaranda mimosifolia',
-      'Olea europaea',
-      'Phoenix canariensis',
-      'Pinus pinea',
-      'Platanus acerifolia',
-      'Populus alba',
-      'Populus nigra',
-      'Quercus faginea',
-      'Quercus rotundifolia',
-      'Quercus robur',
-      'Robinia pseudoacacia',
-      'Styphnolobium japonicum',
-      'Tilia tomentosa',
-      'Tipuana tipu',
-      'Gleditsia triacanthos',
-      'Ulmus minor',
-      'Quercus suber',
-      // 'Sciurus vulgaris',
-      // 'Vulpes vulpes',
-      // 'Martes martes'
-        // "Elymus repens",
-        // "Equisetum arvense",
-        // "Dactylis glomerata",
-        // "Convolvulus arvensis",
-        // "Cerastium fontanum",
-        // "Cirsium arvense",
-        // "Calystegia sepium",
-        // "Cardamine hirsuta",
-        // "Aegopodium podagraria",
-        // "Capsella bursa-pastoris",
-        // "Bellis perennis"
+        "Elymus repens",
+        "Equisetum arvense",
+        "Dactylis glomerata",
+        "Convolvulus arvensis",
+        "Cerastium fontanum",
+        "Cirsium arvense",
+        "Calystegia sepium",
+        "Cardamine hirsuta",
+        "Aegopodium podagraria",
+        "Capsella bursa-pastoris",
+        "Bellis perennis"
     ],
     iconicTaxa: [ {
         id: 'plantae',
@@ -507,6 +477,180 @@ const selectedItemsCollection = {
 }
 };
 
+const treesOfLisbon = { 
+  behaviour: 'static',
+  id: 10, 
+  name: '25 Trees of Lisbon',
+  type: 'custom',
+  descriptions: [
+      'Os 25 espécies de árvores mais frequentes.'
+  ],
+  moduleSize: 4,
+  lessonPlanLandscape: 1,
+  lessonPlanPortrait: 101,
+  glossary: ['plantae', 'common'],
+  items: [
+    
+  ],
+  itemNames: [
+    'Acer negundo',
+    'Acer pseudoplatanus',
+    'Celtis australis',
+    'Cercis siliquastrum',
+    'Cupressus sempervirens',
+    'Eucalyptus globulus',
+    'Fraxinus angustifolia',
+    'Ginkgo biloba',
+    'Jacaranda mimosifolia',
+    'Olea europaea',
+    'Phoenix canariensis',
+    'Pinus pinea',
+    'Platanus acerifolia',
+    'Populus alba',
+    'Populus nigra',
+    'Quercus faginea',
+    'Quercus ilex',
+    'Quercus robur',
+    'Robinia pseudoacacia',
+    'Saphora japonica',
+    'Tilia tomentosa',
+    'Tipuana tipu',
+    'Gleditsia triacanthos',
+    'Ulmus minor',
+    'Quercus suber',
+    ],
+  iconicTaxa: [ {
+      id: 'plantae',
+      common: 'Plants'
+  } ],
+  guide: {
+    locationPlace: '25 Trees of Lisbon',
+    locationType: 'taxon',
+    place: {
+        name: '25 Trees of Lisbon',
+        id: 'any',
+        type: 'places'
+    },
+    season: {
+        type: 'all_year'
+    },
+    speciesRange: 0,
+    ready: true
+  }
+};
+
+const walkOne = { 
+  behaviour: 'static',
+  id: 11, 
+  name: 'Guided tour of Jardim da Estrela',
+  type: 'custom',
+  descriptions: [
+      'Jardim da Estrela.'
+  ],
+  moduleSize: 4,
+  lessonPlanLandscape: 1,
+  lessonPlanPortrait: 101,
+  glossary: ['plantae', 'aves', 'fungi', 'common', 'insecta', 'lichen', 'animalia'],
+  items: [
+    
+  ],
+  itemNames: [
+    'Celtis australis',
+    'Magnolia grandiflora',
+
+    'Bauhinia forficata', // syn. candicans
+    'Bauhinia variegata', // less likely
+
+    'Tilia platyphyllos', 
+    'Tilia tomentosa',
+
+    'Xanthoria parietina',
+
+    'Plumbago auriculata',
+
+    'Lavandula dentata',
+    'Lavandula stoechas',
+
+    'Platanus acerifolia',
+    'Phoenix canariensis',
+    'Phoenix reclinata', // tall?
+    'Roystonea regia', // tall, wrong garden x
+    'Chamaerops humilis',
+
+    'Cupressus sempervirens',
+    'Cupressus lusitanica',
+
+    'Taxus baccata',
+
+    'Passer domesticus',
+    'Turdus merula',
+
+    'Aesculus hippocastanum',
+    'Cedrus deodara',
+
+    'Cercis siliquastrum',
+    
+    'Agapanthus africanus',
+    'Lantana',
+    'Nerium oleander',
+
+    'Quercus robur',
+    'Ginkgo biloba',
+    'Jacaranda mimosifolia',
+    'Olea europaea',
+    
+    'Pinus pinea',
+    'Saphora japonica',
+    'Phytolacca dioica',
+    'Ficus macrophylla',
+    'Ailanthus altissima', // possible, not recorded though...
+    'Araucaria columnaris', // tallest
+    
+    // avenue
+
+    'Ceiba speciosa',
+    'Ceratonia siliqua',
+    'Dombeya x cayeuxii', // the big flower balls
+    'Apollonias barbujana',
+
+    'Dendrocalamus giganteus',
+    'Cedrus libani',
+    'Dracaena draco',
+
+    'Sequoia sempervirens',
+
+    'Pittosporum undulatum',
+    
+    'hibiscus syriacus',
+    'Brugmansia arborea',
+
+
+    'Pittosporum tobira',
+
+    // top gate
+
+    'Schinus molle'
+    ],
+  iconicTaxa: [ {
+      id: 'plantae',
+      common: 'Plants'
+  } ],
+  guide: {
+    locationPlace: 'Jardim da Estrela',
+    locationType: 'taxon',
+    place: {
+        name: 'Jardim da Estrela',
+        id: 'any',
+        type: 'places'
+    },
+    season: {
+        type: 'all_year'
+    },
+    speciesRange: 0,
+    ready: true
+  }
+};
+
 export const snapdragonCollections = [
     
     location,
@@ -522,6 +666,7 @@ export const snapdragonCollections = [
     
     rhsTrees,
     rhsWeeds,
+    treesOfLisbon,
 
     selectedItemsCollection
 ];

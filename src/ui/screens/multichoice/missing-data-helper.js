@@ -117,7 +117,7 @@ export const getPoolItems = async collection => {
 
   const rank = findRankByIconicTaxon(item.taxonomy, item.iconicTaxon);
 
-  let taxonicMatches = await firestore.getSpeciesByIconicTaxon({rank, value: item.iconicTaxon}, false); // islichen
+  let taxonicMatches = await firestore.getSpeciesByIconicTaxon(item.iconicTaxon, item.lichen);
 
   if(item.iconicTaxon.toLowerCase() === 'fungi') {
       const isLichen = item.lichen;

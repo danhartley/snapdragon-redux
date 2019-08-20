@@ -150,6 +150,9 @@ export const getLookalikeTraitProperties = item => {
                 traits.push({key,obj})
             }
         };
+        if(key === 'lookalikes') {
+            return item.traits.lookalikes;
+        };
     }
     let properties = null;
     if(traits.length > 0) {

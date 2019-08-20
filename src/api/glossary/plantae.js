@@ -450,4 +450,24 @@ export const plantae = [
         definition: 'Hairy or downy.',
         wiki: 'https://en.wikipedia.org/wiki/Pubescent'
     },
+    {
+        term : "Phyllotaxis",
+        definition : "Arrangement of leaveson a plant stem.",
+        wiki: 'https://en.wikipedia.org/wiki/Phyllotaxis'
+    },
+    {
+        term : "Aril",
+        definition : "Specialized outgrowth from a seed that partly or completely covers the seed.",
+        wiki: 'https://en.wikipedia.org/wiki/Aril'
+    },
+    {
+        term : "Epicormic shoot",
+        definition : "A shoot growing from an epicormic bud, which lies underneath the bark of a trunk, stem, or branch of a plant.",
+        wiki: 'https://en.wikipedia.org/wiki/Epicormic_shoot'
+    },
+    {
+        term : "Basal shoot",
+        definition : "Shoots that grow from adventitious buds on the base of a tree or shrub, or from adventitious buds on its roots.",
+        wiki: 'https://en.wikipedia.org/wiki/Basal_shoot'
+    },
 ];

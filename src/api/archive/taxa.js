@@ -4471,6 +4471,132 @@ export const taxa = [
     },
     {
         taxon: 'family',
+        name: 'Ulmaceae',
+        genera: '7',
+        species: '45',
+        names: [ { language: "en", names: ['Elm family']},
+            { language: "fr", names:[ 'Ulmacées' ]},
+            { language: "de", names:[ 'Ulmengewächse' ]},
+            { language: "es", names:[ 'Olmo' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Ulmaceae",
+        thumb: '57/3b/ef/509.19816438.260x190.jpg',
+        eol: "https://eol.org/pages/4451",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of evergreen or deciduous trees and shrubs with mucilaginous substances in leaf and bark tissue.',
+                identification: 'Leaves are usually alternate on the stems, blades are simple, with entire or toothed margins, often with an asymmetrical base. The flowers are small and either bisexual or unisexual. The fruit is an indehiscent samara, nut, or drupe.', 
+            },
+        ],
+        traits: [
+            
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Cannabaceae',
+        genera: '11',
+        species: '170',
+        names: [ { language: "en", names: ['Hemp family']},
+            { language: "fr", names:[ 'Cannabinacée' ]},
+            { language: "de", names:[ 'Hanfgewächse' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ 'Canabiáceas' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Cannabaceae",
+        thumb: '60/a5/d7/509.4140528.260x190.jpg',
+        eol: "https://eol.org/pages/4448",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Small family of flowering plants. Genera include Cannabis (hemp, marijuana), Humulus (hops) and Celtis (hackberries).',
+                identification: 'Leaves are more or less palmately lobed or palmately compound and always bear stipules. The fruit can be an achene or a drupe.', 
+            },
+        ],
+        traits: [            
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Cupressaceae',
+        genera: '27-30',
+        species: '130-140',
+        names: [ { language: "en", names: ['Cypress family']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Zypressengewächse' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Cupressaceae",
+        thumb: '00/49/8f/8.9803149986.260x190.jpg',
+        eol: "https://eol.org/pages/4065",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Conifer family with worldwide distribution. Most are evergreen.',
+                identification: 'Seed cones are either woody, leathery, or (in Juniperus) berry-like and fleshy. Leaves are needle-like, becoming small and scale-like on mature plants of many genera.', 
+            },
+        ],
+        traits: [            
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Ginkgoaceae',
+        genera: '1',
+        species: '1',
+        names: [ { language: "en", names: ['Cypress family']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Zypressengewächse' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Ginkgoaceae",
+        thumb: '55/92/95/509.11669424.260x190.jpg',
+        eol: "https://eol.org/pages/4089",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Contains one living member, Ginkgo biloba.',
+                identification: 'The leaves are unique among seed plants, being fan-shaped with veins radiating out into the leaf blade.', 
+            },
+        ],
+        traits: [            
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Arecaceae',
+        genera: '181',
+        species: '2600',
+        names: [ { language: "en", names: ['Palms']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Palmengewächse' ]},
+            { language: "es", names:[ 'Palmera' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ 'Palma' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Arecaceae",
+        thumb: '59/83/15/509.3121266.260x190.jpg',
+        eol: "https://eol.org/pages/8193",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Perennial family of climbers, shrubs, trees and stemless plants.',
+                identification: 'most distinguished by large, compound, evergreen leaves, known as fronds, arranged at the top of an unbranched stem.', 
+            },
+        ],
+        traits: [            
+        ],
+    },
+    {
+        taxon: 'family',
         name: 'Cistaceae',
         genera: '9',
         species: '170-200',

@@ -32,7 +32,9 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
 
             const readyLookalikesForRendering = async () => {
                 
-                for (const lookalike of lookalikes) {
+                for (let lookalike of lookalikes) {
+
+                    lookalike = lookalike.lookalike ? lookalike.lookalike.name : lookalike;
 
                     const lookalikeItem = await firestore.getSpeciesByName(lookalike);
 

@@ -725,4 +725,14 @@ export const epithets = [
         "en" : ["dew of the sea"],
         species: [ 'Rosmarinus officinalis' ]      
     },
+    {
+        "latin" : ["auriculata"],
+        "en" : ["with ears"],
+        species: [ 'Plumbago auriculata' ]      
+    },
+    {
+        "latin" : ["baccata"],
+        "en" : ["bearing red berries"],
+        species: [ 'Taxus baccata' ]      
+    },
 ];
