@@ -142,6 +142,30 @@ td:empty:after{
     text-transform: initial;
 }
 
+.info-details {
+  margin: .5rem;
+  height: calc(90vh - 30rem);
+}
+
+.info-details .info_detail {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: space-evenly;
+  height: inherit;
+}
+
+.info-details .info_detail div:nth-child(1) { 
+  font-style: italic;
+  font-size: 1.1rem;
+  margin: 1rem 0 0 0;
+}
+
+.info-details .info_detail img {   
+  height: 60%;
+  margin: .5rem 0;
+}
+
 .relationship-card {
   border: 1px solid lightgray;
   margin: .25rem;

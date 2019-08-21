@@ -9,7 +9,7 @@ import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
-import { rebindLayoutState } from 'ui/screens/multichoice/missing-data-helper';
+// import { rebindLayoutState } from 'ui/screens/multichoice/missing-data-helper';
 import { firestore } from 'api/firebase/firestore';
 
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';

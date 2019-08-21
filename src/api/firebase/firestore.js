@@ -1,6 +1,7 @@
 import { utils } from 'utils/utils';
 import { enums } from 'admin/api/enums';
 import { store } from 'redux/store';
+import { getGlossary } from 'api/glossary/glossary';
 import { firebaseConfig } from 'api/firebase/credentials';
 
 firebase.initializeApp(firebaseConfig);
@@ -378,9 +379,13 @@ const getRandomSpecies = async number => {
     });
 
     return docs;
-
 };
-  
+
+const getDefinition = term => {
+    const dictionary = getGlossary();
+    const definition = dictionary.find(definition => definition.term.toLowerCase() === term.trim().toLowerCase()); 
+    return definition;
+};
 
 export const firestore = {
     getSpecies,
@@ -393,6 +398,7 @@ export const firestore = {
     getBirdsong,
     getTraitValues,
     getRandomSpecies,
+    getDefinition,
     
     addSpecies,
     addTraits,

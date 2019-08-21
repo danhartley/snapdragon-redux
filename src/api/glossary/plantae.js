@@ -130,12 +130,16 @@ export const plantae = [
     {
         term: 'Stamen',
         definition: 'Pollen-producing organ of a flower. Consists of a filament and pollen-carrying anther.',
-        wiki: 'https://en.wikipedia.org/wiki/Stamen'
+        wiki: 'https://en.wikipedia.org/wiki/Stamen',
+        parent: 'Flower'
     },
     {
         term: 'Flower',
         definition: 'The reproductive structure found in flowering plants (angiosperms).',
-        wiki: 'https://en.wikipedia.org/wiki/Flower'
+        wiki: 'https://en.wikipedia.org/wiki/Flower',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Mature_flower_diagram.svg/1280px-Mature_flower_diagram.svg.png'
+        }
     },
     {
         term: 'Fruit',
@@ -155,7 +159,8 @@ export const plantae = [
     {
         term: 'Corolla',
         definition: 'All the petals of a flower.',
-        wiki: 'https://en.wikipedia.org/wiki/Petal#Corolla'
+        wiki: 'https://en.wikipedia.org/wiki/Petal#Corolla',
+        parent: 'Flower'
     },
     {
         term: 'Perennial',
@@ -215,7 +220,10 @@ export const plantae = [
     {
         term: 'Drupe',
         definition: 'Indehiscent fruit in which an outer fleshy part surrounds a single shell of hardened endocarp with a seed inside.',
-        wiki: 'https://en.wikipedia.org/wiki/Drupe'
+        wiki: 'https://en.wikipedia.org/wiki/Drupe',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Drupe_fruit_diagram-en.svg/1024px-Drupe_fruit_diagram-en.svg.png'
+        }
     },
     {
         term: 'Berry',
@@ -348,7 +356,7 @@ export const plantae = [
     },
     {
         term: 'Monandrous (plants)',
-        definition: 'Having  a single stamen.',
+        definition: 'Having a single stamen.',
         wiki: 'https://en.wikipedia.org/wiki/Monandrous'
     },
     {
@@ -466,8 +474,159 @@ export const plantae = [
         wiki: 'https://en.wikipedia.org/wiki/Epicormic_shoot'
     },
     {
-        term : "Basal shoot",
-        definition : "Shoots that grow from adventitious buds on the base of a tree or shrub, or from adventitious buds on its roots.",
-        wiki: 'https://en.wikipedia.org/wiki/Basal_shoot'
+        term : "Deciduous",
+        definition : "The term means 'falling off at maturity' or 'tending to fall off', in reference to trees and shrubs that seasonally shed leaves; to the shedding of petals, after flowering; and to the shedding of ripe fruit.",
+        wiki: 'https://en.wikipedia.org/wiki/Deciduous'
+    },
+    {
+        term : "Achene",
+        definition : "Contains a single seed that nearly fills the pericarp, but does not adhere to it. In many species, the 'seed' is an achene, a fruit containing the seed. The seed-like appearance is owed to the hardening of the fruit wall (pericarp), which encloses the solitary seed so closely as to seem like a seed coat.",
+        wiki: 'https://en.wikipedia.org/wiki/Achene'
+    },
+    {
+        term : "Raceme",
+        definition : "An unbranched, indeterminate inflorescence with pedicellate (having short floral stalks) flowers along the axis.",
+        wiki: 'https://en.wikipedia.org/wiki/Raceme',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Traube_(inflorescence).svg/320px-Traube_(inflorescence).svg.png'
+        }
+    },
+    {
+        term : "Entire",
+        definition : "(Of leaf) even; with a smooth margin; without toothing.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Leaf_morphology_entire.png'
+        }
+    },
+    {
+        term : "Ovate",
+        definition : "(Of leaf) oval, egg-shaped, with a tapering point and the widest portion near the petiole.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/6/67/Leaf_morphology_ovale.png'
+        }
+    },
+    {
+        term : "Serrate",
+        definition : "(Of leaf) saw-toothed; with asymmetrical teeth pointing forward.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_serrate.png'
+        }
+    },
+    {
+        term: 'bipinnate',
+        definition: 'The leaflets are themselves pinnately-compound; twice pinnate.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/d/dc/Leaf_morphology_bipinnate.png',
+            thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Leaf_morphology_bipinnate.png/64px-Leaf_morphology_bipinnate.png',
+            author: 'By Maksim CC BY-SA 3.0',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6559049',        
+        }
+    },
+    {
+        term: 'bifoliolate',
+        definition: 'Having two leaflets',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Leaf_morphology_Bifoliolate.png',
+            thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Leaf_morphology_Bifoliolate.png/64px-Leaf_morphology_Bifoliolate.png',
+            author: 'Wasp32 CC BY-SA 4.0',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=49634194',
+        }
+    },
+    {
+        term: 'bigeminate',
+        definition: 'Having two leaflets, each leaflet being bifoliolate',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Leaf_morphology_Bigeminate.png',
+            thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Leaf_morphology_Bigeminate.png/64px-Leaf_morphology_Bigeminate.png',
+            author: 'Wasp32 CC BY-SA 4.0',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=49634191',
+        }
+    },
+    {
+        term: 'acicular',
+        definition: 'Slender and pointed, needle-like.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Leaf_morphology_acicular.png',
+            thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Leaf_morphology_acicular.png/64px-Leaf_morphology_acicular.png',
+            author: 'Maksim CC BY-SA 3.0',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6545745',
+            refers: 'entire leaf'
+        }
+    },
+    {
+        term: 'acuminate',
+        definition: 'Tapering to a long point in a concave manner.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/7/72/Leaf_morphology_acuminate.png',
+            thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Leaf_morphology_acuminate.png/64px-Leaf_morphology_acuminate.png',
+            author: 'Maksim CC BY-SA 3.0',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6531351',
+            refers: 'leaf tip',
+        }
+    },
+    {
+        term: 'acute',
+        definition: 'Pointed, having a short sharp apex angled less than 90°.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Leaf_morphology_Acute.png',
+            thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Leaf_morphology_Acute.png/64px-Leaf_morphology_Acute.png',
+            author: 'Wasp32 CC BY-SA 4.0',                
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=49633346',
+            refers: 'leaf tip or base'
+        }
+    },
+    {
+        term: 'apiculate',
+        definition: 'Tapering and ending in a short, slender point.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Leaf_morphology_Apiculate.png',
+            thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Leaf_morphology_Apiculate.png/64px-Leaf_morphology_Apiculate.png',
+            author: 'Wasp32 CC BY-SA 4.0',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=49633342',
+            refers: 'leaf tip'
+        }
+    },
+    {
+        term: 'Compound Palmate',
+        definition: 'Consisting of leaflets all radiating from one point.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Leaf_morphology_Palmately_compound.png'
+        },
+        wiki: 'https://en.wiktionary.org/wiki/palmate'
+    },
+    {
+        term: 'Trifoliate',
+        definition: 'With three leaflets.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Leaf_morphology_trifoliolate.png'
+        },
+        wiki: 'https://en.wiktionary.org/wiki/trifoliate'
+    },
+    {
+        term: 'Odd pinnate',
+        definition: '(Imparipinnate) with an odd number of leaflets, pinnate with a terminal leaflet (the opposite of paripinnate).',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_odd_pinnate.png'
+        },
+        wiki: 'https://en.wiktionary.org/wiki/imparipinnate'
+    },
+    {
+        term: 'Even pinnate',
+        definition: '(Paripinnate) pinnate with an even number of leaflets, lacking a terminal leaflet (the opposite of imparipinnate).',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Leaf_morphology_even_pinnate.png'
+        },
+        wiki: 'https://en.wiktionary.org/wiki/paripinnate'
+    },
+    {
+        term: 'Panicle',
+        definition: 'A much-branched inflorescence, often racemes. A panicle may have determinate or indeterminate growth. Typical of grasses such as oat.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Inflorescences_Panicle_Kwiatostan_Wiecha.svg/800px-Inflorescences_Panicle_Kwiatostan_Wiecha.svg.png'
+        },
+        wiki: 'https://en.wikipedia.org/wiki/Panicle'
     },
 ];

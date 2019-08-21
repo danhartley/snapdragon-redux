@@ -1,5 +1,6 @@
-<div class="feature-symbiont-list scrollable">
-    <div data-repeat-relationship="{{ relationships }}">
+<div class="info-details hide-important js-info-details"></div>
+<div class="feature-symbiont-list scrollable">    
+    <div class="js-relationship-card-list" data-repeat-relationship="{{ relationships }}">
         <div class="relationship-card">
             <div class="cols">
                 <div>Relationship</div><div>{{ relationship.type }}</div>
@@ -16,7 +17,7 @@
             <div>{{ relationship.description }}</div>
         </div>   
     </div>
-    <div data-repeat-lookalike="{{ lookalikes }}">
+    <div class="js-relationship-card-list" data-repeat-lookalike="{{ lookalikes }}">
         <div class="relationship-card">
             <div class="cols">
                 <div>{{ lookalike.species }}</div>            
@@ -31,5 +32,5 @@
                 <div>{{ lookalike.lookalikeDescription }}</div>
             </div>
         </div>
-    </div>
+    </div>    
 </div>

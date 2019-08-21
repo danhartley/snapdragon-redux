@@ -135,3 +135,15 @@ test('answersFrom should return a new list matching the number requesting and in
   const answers = ["Fistulina hepatica","Boletus edulis","Pleurotus ostreatus",];
   expect(itemProperties.answersFromList(list, 'Boletus edulis', 3).sort()).toEqual(answers.sort());
 });
+
+test('should extract file name from url', () => {
+  const url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Inflorescences_Panicle_Kwiatostan_Wiecha.svg/800px-Inflorescences_Panicle_Kwiatostan_Wiecha.svg.png';
+  const expectedFilename = 'Inflorescences_Panicle_Kwiatostan_Wiecha.svg';
+  expect(itemProperties.getFileNameFromImageUrl(url)).toEqual(expectedFilename);
+});
+
+test('should return rights url from image url', () => {
+  const url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Inflorescences_Panicle_Kwiatostan_Wiecha.svg/800px-Inflorescences_Panicle_Kwiatostan_Wiecha.svg.png';
+  const expectedUrl = 'https://en.wikipedia.org/w/api.php?action=query&prop=imageinfo&iiprop=extmetadata&titles=File:Inflorescences_Panicle_Kwiatostan_Wiecha.svg&format=json';
+  expect(itemProperties.getImageRightsUrl(url)).toEqual(expectedUrl);
+});

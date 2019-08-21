@@ -162,6 +162,24 @@ const statsReducer = function(obj,elem){
 
 const getFamilyStats = items => {
     return items.map(item => item.taxonomy.family).reduce(statsReducer,{});
+};
+
+const getFileNameFromImageUrl = url => {
+
+    const pattern = /[\w:]+\.(jpe?g|png|gif|svg)/i;
+
+    var filename = pattern.exec(url)[0];
+
+    return filename;    
+};
+
+const getImageRightsUrl = url => {
+
+    const filename = getFileNameFromImageUrl(url);
+
+    const template = `https://en.wikipedia.org/w/api.php?action=query&prop=imageinfo&iiprop=extmetadata&titles=File:${filename}&format=json`;
+
+    return template;
 }
 
 export const itemProperties = {
@@ -178,5 +196,7 @@ export const itemProperties = {
     vernacularNamesForItems,
     getVernacularNames,
     answersFromList,
-    getFamilyStats
+    getFamilyStats,
+    getFileNameFromImageUrl,
+    getImageRightsUrl
 };

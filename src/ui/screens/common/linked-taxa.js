@@ -2,7 +2,7 @@ import * as R from 'ramda';
 
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
-import { getLinkedTaxaTraits } from 'ui/helpers/traits-handler';
+// import { getLinkedTaxaTraits } from 'ui/helpers/traits-handler';
 import { renderCard } from 'ui/screens/cards/card';
 import { firestore } from 'api/firebase/firestore';
 
