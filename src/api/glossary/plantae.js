@@ -164,13 +164,18 @@ export const plantae = [
     },
     {
         term: 'Perennial',
-        definition: 'A plant that lives more than two years , not a tree or shrub.',
+        definition: 'A plant that lives more than two years. Not a tree or shrub.',
         wiki: 'https://en.wikipedia.org/wiki/Perennial_plant'
     },
     {
         term: 'Annual',
         definition: 'A plant that completes its life cycle within one year, and then dies.',
         wiki: 'https://en.wikipedia.org/wiki/Annual_plant'
+    },
+    {
+        term: 'Pioneer',
+        definition: 'Hardy species which are the first to colonise barren environments or previously biodiverse steady-state ecosystems that have been disrupted, such as by fire.',
+        wiki: 'https://en.wikipedia.org/wiki/Pioneer_species'
     },
     {
         term: 'Biennial',
@@ -313,6 +318,16 @@ export const plantae = [
         wiki: 'https://en.wikipedia.org/wiki/Inflorescence'
     },
     {
+        term: 'Cymose',
+        definition: 'Category of inflorescence (determinate) where the oldest (and largest) flowers are located at the top or centre. Opposite of racemose. e.g Daucus, Allium.',
+        wiki: 'https://en.wikipedia.org/wiki/Inflorescence#Determinate_or_cymose'
+    },
+    {
+        term: 'Racemose',
+        definition: 'Category of inflorescence (indeterminate) where the youngest (and smallest) flowers are located at the top or centre. Opposite of cymose.',
+        wiki: 'https://en.wikipedia.org/wiki/Inflorescence#Indeterminate_or_racemose'
+    },
+    {
         term: 'Spadix',
         definition: 'Type of spike inflorescence having small flowers borne on a fleshy stem.',
         wiki: 'https://en.wikipedia.org/wiki/Spadix_(botany)'
@@ -335,7 +350,7 @@ export const plantae = [
     },
     {
         term: "Ruderal species",
-        definition: "Plant species that is first to colonize disturbed lands.",
+        definition: "Plant species that is first to colonise disturbed lands.",
         wiki: "https://en.wikipedia.org/wiki/Ruderal_species",
         examples: ['Cirsium arvense']
     },
@@ -459,13 +474,58 @@ export const plantae = [
         wiki: 'https://en.wikipedia.org/wiki/Pubescent'
     },
     {
+        term: 'Aerial roots',
+        definition: 'Roots above the ground. They are almost always adventitious.',
+        wiki: 'https://en.wikipedia.org/wiki/Aerial_root'
+    },
+    {
+        term: 'Perfect',
+        definition: 'A flower that has both stamens and a pistil.',
+    },
+    {
+        term: 'Complete',
+        definition: 'A flower having sepals, petals, stamens, and pistils.',
+    },
+    {
+        term: 'Adventitious',
+        definition: 'Plant structures, including, roots, buds, and shoots, that develop in unusual locations.',
+    },
+    {
+        term: 'Alternate',
+        definition: '(Of leaves) occurring individually at nodes and on opposite sides of the stem. Also, a spiral arrangement of leaves on a stem, with one leaf at a node (whorl).',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/en/4/4f/Alternate.png'
+        }
+    },
+    {
+        term: 'Opposite',
+        definition: '(Of leaves) when two leaves emerge from the opposite sides of the stem at the same node.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/en/c/c4/Opposite.png'
+        }
+    },
+    {
+        term: 'Basal',
+        definition: '(Of leaves) arising from the base of the stem.',
+    },
+    {
         term : "Phyllotaxis",
         definition : "Arrangement of leaveson a plant stem.",
         wiki: 'https://en.wikipedia.org/wiki/Phyllotaxis'
     },
     {
+        term : "Siliceous",
+        definition : "Soils formed from rocks that have silica (SiO2) as a principal constituent. Generally relatively acidic.",
+        wiki: 'https://en.wikipedia.org/wiki/Siliceous_soil'
+    },
+    {
+        term : "Calcareous",
+        definition : "'Mmostly or partly composed of calcium carbonate', in other words, containing lime or being chalky. Generally relatively alkaline or base.",
+        wiki: 'https://en.wikipedia.org/wiki/Calcareous'
+    },
+    {
         term : "Aril",
-        definition : "Specialized outgrowth from a seed that partly or completely covers the seed.",
+        definition : "Specialised outgrowth from a seed that partly or completely covers the seed.",
         wiki: 'https://en.wikipedia.org/wiki/Aril'
     },
     {
@@ -492,12 +552,40 @@ export const plantae = [
         }
     },
     {
+        term : "Corymb",
+        definition : "An inflorescence with the flowers growing in such a fashion that the outermost are borne on longer pedicels than the inner, bringing all flowers up to a common level.",
+        wiki: 'https://en.wikipedia.org/wiki/Corymb',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/3/3f/Schirmtraube_%28inflorescence%29.svg'
+        }
+    },
+    {
         term : "Entire",
         definition : "(Of leaf) even; with a smooth margin; without toothing.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Leaf_morphology_entire.png'
         }
+    },
+    {
+        term : "Dentate",
+        definition : "(Of leaf) toothed.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Leaf_morphology_dentate.png'
+        }
+    },
+    {
+        term : "Lanceolate",
+        definition : "(Of leaf) long, wider in the middle, shaped like a lance tip.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Leaf_morphology_lanceolate.png'
+        }
+    },
+    {
+        term : "Simple",
+        definition : "Leaf blade in one continuous section, without leaflets (not compound).",
     },
     {
         term : "Ovate",
@@ -514,6 +602,10 @@ export const plantae = [
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_serrate.png'
         }
+    },
+    {
+        term: 'Pinnate',
+        definition: 'Arrangement of discrete structures (such as leaflets, veins, lobes, branches, or appendages) arising at multiple points along a common axis e.g. once-divided leaf blades having leaflets arranged on both sides of a rachis are pinnately compound leaves.',
     },
     {
         term: 'bipinnate',

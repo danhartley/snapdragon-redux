@@ -143,8 +143,8 @@ td:empty:after{
 }
 
 .info-details {
+  height: calc(90vh - 20rem);
   margin: .5rem;
-  height: calc(90vh - 30rem);
 }
 
 .info-details .info_detail {
@@ -162,7 +162,7 @@ td:empty:after{
 }
 
 .info-details .info_detail img {   
-  height: 60%;
+  height: 30%;
   margin: .5rem 0;
 }
 
@@ -186,7 +186,21 @@ td:empty:after{
   content: ":";
 }
 
+@media (min-width: 414px) {
+  .info-details {
+    height: calc(90vh - 25rem);
+  }
+}
+
 @media (min-width: 768px) {
+
+  .info-details {
+    height: calc(90vh - 30rem);
+  }
+
+  .info-details .info_detail img {   
+    height: 60%;
+  }
 
     /* TRAITS CAROUSEL */
 

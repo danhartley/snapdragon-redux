@@ -1,3 +1,4 @@
+import { utils } from 'utils/utils';
 import { hasTraitPropeties, getTraitsToExclude, convertTraitsToNameValuePairsArray } from 'ui/helpers/traits-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { firestore } from 'api/firebase/firestore';
@@ -13,6 +14,7 @@ const renderInfoSlider = (traits, parent, id) => {
     parent.innerHTML = '';
 
     traits.forEach(trait => {
+        trait.name = trait.name === 'ph' ? 'pH' : utils.capitaliseFirst(trait.name);
         trait.unit = trait.unit || '';
         trait.value = trait.value.join(', ');
     });
@@ -37,7 +39,7 @@ const renderInfoSlider = (traits, parent, id) => {
         setTimeout(() => {
             activeTrait = parent.querySelector(`#traitSlider${id} .carousel-item.active`);
             activeTraitKey = activeTrait.querySelector('div:nth-child(1)').innerHTML;
-            activeTraitValue = activeTrait.querySelector('div:nth-child(2)').innerHTML;
+            activeTraitValue = activeTrait.querySelector('div:nth-child(2) > span:nth-child(1)').innerHTML;
             console.log(activeTraitKey);
             console.log(activeTraitValue);
             const detail = firestore.getDefinition(activeTraitValue);

@@ -383,7 +383,16 @@ const getRandomSpecies = async number => {
 
 const getDefinition = term => {
     const dictionary = getGlossary();
-    const definition = dictionary.find(definition => definition.term.toLowerCase() === term.trim().toLowerCase()); 
+
+    const terms = term.split(',');
+
+    let definition;
+
+    for(let term of terms) {        
+        const temp = dictionary.find(definition => definition.term.toLowerCase() === term.trim().toLowerCase());
+        definition = temp || definition;
+    };
+    
     return definition;
 };
 

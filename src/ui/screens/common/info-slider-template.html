@@ -1,8 +1,8 @@
 <div id="traitSlider{{ id }}" class="info carousel slide" data-ride="false" data-interval="false">
     <div class="carousel-inner" data-repeat-trait="{{ traits }}">
       <div class="carousel-item">
-          <div class="capitalise">{{ trait.name }}</div>
-          <div class="capitalise">{{ trait.value }} {{ trait.unit }}</div>
+          <div>{{ trait.name }}</div>
+          <div class="capitalise"><span>{{ trait.value }}</span><span>{{ trait.unit }}</span></div>
       </div>
     </div>
     <a class="carousel-control carousel-control-prev" href="#traitSlider{{ id }}" role="button" data-slide="prev">
