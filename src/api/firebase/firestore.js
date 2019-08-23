@@ -1,6 +1,7 @@
 import { utils } from 'utils/utils';
 import { enums } from 'admin/api/enums';
 import { store } from 'redux/store';
+import { getGlossary } from 'api/glossary/glossary';
 import { firebaseConfig } from 'api/firebase/credentials';
 
 firebase.initializeApp(firebaseConfig);
@@ -235,6 +236,22 @@ const updateSpecies = async species => {
 
 };
 
+const updateSpeciesNames = async (species, names) => {
+
+    let speciesDocRef;
+
+    const querySnapshot = await db.collection("species").where("name", "==", species.name).get();
+    
+    querySnapshot.forEach(function(doc) {
+        speciesDocRef = doc.ref;
+    });
+
+    console.log(speciesDocRef);
+
+    return await speciesDocRef.update({names}); 
+
+};
+
 const getTraitValues = async () => {
 
     const traits = enums;
@@ -378,9 +395,22 @@ const getRandomSpecies = async number => {
     });
 
     return docs;
-
 };
-  
+
+const getDefinition = term => {
+    const dictionary = getGlossary();
+
+    const terms = term.split(',');
+
+    let definition;
+
+    for(let term of terms) {        
+        const temp = dictionary.find(definition => definition.term.toLowerCase() === term.trim().toLowerCase());
+        definition = temp || definition;
+    };
+    
+    return definition;
+};
 
 export const firestore = {
     getSpecies,
@@ -393,6 +423,7 @@ export const firestore = {
     getBirdsong,
     getTraitValues,
     getRandomSpecies,
+    getDefinition,
     
     addSpecies,
     addTraits,
@@ -400,6 +431,7 @@ export const firestore = {
     addSpeciesRelationship,
     
     updateSpecies,
+    updateSpeciesNames,
 
     deleteSpeciesByName,
     deleteSpeciesTraitField

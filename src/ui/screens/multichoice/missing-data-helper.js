@@ -7,109 +7,109 @@ import { utils } from 'utils/utils';
 import { matchTaxon, iconicTaxa, findRankByIconicTaxon } from 'api/snapdragon/iconic-taxa';
 import { firestore } from 'api/firebase/firestore';
 
-export const rebindLayoutState = (layout, item) => {
+// export const rebindLayoutState = (layout, item) => {
       
-    const random = utils.getRandomInt(4);
+//     const random = utils.getRandomInt(4);
 
-    let nextLayout;
+//     let nextLayout;
 
-    switch(random) {
+//     switch(random) {
       
-      case 0:
+//       case 0:
 
-      const epithet = utils.shuffleArray(epithets)[0];
+//       const epithet = utils.shuffleArray(epithets)[0];
 
-      nextLayout = {
-        name: "screen-epithets",
-        type: "test",
-        score: 1,
-        screens: [
-          {
-            "name": "specimen-images",
-            "domain": "collection"
-          },
-          {
-            "name": "epithet",
-            "domain": "collection"
-          }
-        ]
-      };
+//       nextLayout = {
+//         name: "screen-epithets",
+//         type: "test",
+//         score: 1,
+//         screens: [
+//           {
+//             "name": "specimen-images",
+//             "domain": "collection"
+//           },
+//           {
+//             "name": "epithet",
+//             "domain": "collection"
+//           }
+//         ]
+//       };
 
-      nextLayout.epithet = epithet;
+//       nextLayout.epithet = epithet;
 
-      break;
+//       break;
 
-      case 1: 
+//       case 1: 
 
-        const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa).value, 'common' ]));
+//         const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa).value, 'common' ]));
 
-        const definition = definitions[0];
+//         const definition = definitions[0];
     
-        nextLayout = {
-            name: "screen-definitions",
-            type: "test",
-            score: 1,
-            screens: [
-              {
-                "name": "specimen-images",
-                "domain": "collection"
-              },
-              {
-                "name": "definition",
-                "domain": "collection"
-              }
-            ]
-        };
+//         nextLayout = {
+//             name: "screen-definitions",
+//             type: "test",
+//             score: 1,
+//             screens: [
+//               {
+//                 "name": "specimen-images",
+//                 "domain": "collection"
+//               },
+//               {
+//                 "name": "definition",
+//                 "domain": "collection"
+//               }
+//             ]
+//         };
 
-        nextLayout.definition = definition;
+//         nextLayout.definition = definition;
 
-        break;
+//         break;
 
-        case 2:
+//         case 2:
 
-        nextLayout = {
-          name: "familyMatch",
-          type: "test",
-          score: 1,
-          screens: [
-            {
-              name: "specimen-images",
-              domain: "collection"
-            },
-            {
-              name: "family",
-              domain: "collection"
-            }
-          ]
-      };
+//         nextLayout = {
+//           name: "familyMatch",
+//           type: "test",
+//           score: 1,
+//           screens: [
+//             {
+//               name: "specimen-images",
+//               domain: "collection"
+//             },
+//             {
+//               name: "family",
+//               domain: "collection"
+//             }
+//           ]
+//       };
 
-      break;
+//       break;
 
-        case 3:
+//         case 3:
 
-        nextLayout = {
-          name: "family",
-          type: "test",
-          score: 1,
-          screens: [
-            {
-              name: "specimen-images",
-              domain: "collection"
-            },
-            {
-              name: "family-strips",
-              domain: "collection"
-            }
-          ]
-      };
+//         nextLayout = {
+//           name: "family",
+//           type: "test",
+//           score: 1,
+//           screens: [
+//             {
+//               name: "specimen-images",
+//               domain: "collection"
+//             },
+//             {
+//               name: "family-strips",
+//               domain: "collection"
+//             }
+//           ]
+//       };
 
-      break;
-    }
+//       break;
+//     }
 
-    nextLayout = { ...R.clone(layout), ...nextLayout };
+//     nextLayout = { ...R.clone(layout), ...nextLayout };
 
-    actions.boundNextLayout(nextLayout);
-};
+//     actions.boundNextLayout(nextLayout);
+// };
 
 export const getPoolItems = async collection => {
 

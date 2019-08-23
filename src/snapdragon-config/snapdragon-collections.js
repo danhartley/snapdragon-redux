@@ -667,6 +667,7 @@ export const snapdragonCollections = [
     rhsTrees,
     rhsWeeds,
     treesOfLisbon,
+    walkOne,
 
     selectedItemsCollection
 ];

@@ -22,6 +22,8 @@ import introTemple from 'ui/screens/home/home-intro-template.html';
 
 export const renderHome = (counter, loadSpeciesList = true, noRecords = false) => {
 
+    subscription.remove(subscription.getByName('renderSpeciesGrid'));
+
     let { config, collection, lesson } = store.getState();
 
     const sub = subscription.getByName('renderHome');
@@ -121,7 +123,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     const resumeLessonHandler = () => {
         lessonHandler.getLessonItems(enums.lessonState.RESUME_LESSON, collection, config, history);        
-        subscription.remove(subscription.getByName('renderSpeciesGrid'));
+        // subscription.remove(subscription.getByName('renderSpeciesGrid'));
     };
 
     const checkState = state => {

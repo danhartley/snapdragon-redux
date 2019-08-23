@@ -85,6 +85,7 @@ export const enums = {
   LEAF_SHAPE: 'Leaf shape',
   LEAF_COLOUR_BELOW: 'Leaf colour below',
   LEAF_COLOUR_ABOVE: 'Leaf colour above',
+  STALK_HEIGHT: 'Stalk height',
   TRUNK_DIAMETER: 'Trunk diameter',
   BRACT_COLOUR: 'Bract colour',
   BRACT_LENGTH: 'Bract length',
@@ -452,6 +453,7 @@ export const enums = {
   leafDivision: {
   PALMATE: 'Palmate',
   COMPOUND_PALMATE: 'Compound Palmate',
+  PALMATELY_LOBED: 'Palmately lobed',
   PINNATE: 'Pinnate',
   COMPOUND_PINNATE: 'Compound Pinnate',
   ODD_PINNATE: 'Odd pinnate',
@@ -813,6 +815,8 @@ export const enums = {
   BIOINDICATOR: 'Bioindicator',
   STRANGLER: 'Strangler',
   FOOD_SOURCE: 'Food source',
+  EPIPHYTIC: 'Epiphytic',
+  EPIPHYTIC_STRANGLER: 'Epiphytic strangler',
   type: 'role',
   name: 'role'
   },
@@ -831,6 +835,7 @@ export const enums = {
   ACHENE: 'Achene',
   POD: 'Pod',
   ARIL: 'Aril',
+  SYCONIUM: 'syconium',
   type: 'fruitType',
   name: 'fruit type'
   },
@@ -994,7 +999,7 @@ export const enums = {
   name: 'ecology'
   },
   characteristic: {
-  help: 'Which characteritics does this species display?',
+  help: 'Which characteristic does this species display?',
   PERENNIAL: 'Perennial',
   ANNUAL: 'Annual',
   BIENNIAL: 'Biennial',
@@ -1019,6 +1024,7 @@ export const enums = {
   BASAL_ROOTS: 'Basal shoots',
   RUNNER: 'Runner',
   CLIMBER: 'Climber',
+  BUTTRESS_ROOT: 'Buttress root',
   type: 'characteristic',
   name: 'characteristic'
   },
@@ -1127,6 +1133,7 @@ export const enums = {
     SCALY: 'Scaly',
   },
   treeShape: {
+    help: "Which descrption is the best match for this tree?",
     COLUMNAR: 'Columnar',
     OPEN_HEAD_IRREGULAR: 'Open head irregular',
     WEEPING: 'Weeping',
@@ -1184,29 +1191,6 @@ export const enums = {
     { coneWidth: [ 'cm', 'mm'] },
     { maleConeWidth: [ 'cm', 'mm'] },
     { femaleConeWidth: [ 'cm', 'mm'] },
+    { stalkHeight: [ 'm', 'cm', 'mm'] },
   ],
-  colours: [
-    'leafColour',
-    'leafColourAbove',
-    'leafColourBelow',
-    'leafSurface',
-    'capColour',
-    'sporePrintColour',
-    'stipeColour',
-    'gillColour',
-    'caterpillarColour',
-    'licenCupColour',
-    'flowerColour',
-    'barkColour',
-    'petalColour',
-    'bractColour',
-    'fruitColour',
-    'coneColour',
-    'maleConeColour',
-    'femaleConeColour',
-  ],
-  leafSurfaces: [
-    'leafSurfaceAbove',
-    'leafSurfaceBelow'
-  ]
 }

@@ -15,7 +15,10 @@ export const lichen = [
         term: "Foliose",
         definition: "Having flat, 2D leaf-like structures.",
         wiki: "https://en.wikipedia.org/wiki/Foliose_lichen",
-        level: 2
+        level: 2,
+        image: {
+            url: 'https://content.eol.org/data/media/58/87/e8/509.25630291.260x190.jpg'
+        }
     },
     {
         term: "Crustose",

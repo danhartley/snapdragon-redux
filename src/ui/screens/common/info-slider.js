@@ -1,6 +1,9 @@
+import { utils } from 'utils/utils';
 import { hasTraitPropeties, getTraitsToExclude, convertTraitsToNameValuePairsArray } from 'ui/helpers/traits-handler';
-
 import { renderTemplate } from 'ui/helpers/templating';
+import { firestore } from 'api/firebase/firestore';
+import { renderInfoDetails } from 'ui/screens/common/info-detail-slider';
+
 import infoSliderTemplate from 'ui/screens/common/info-slider-template.html';
 
 const renderInfoSlider = (traits, parent, id) => {
@@ -11,12 +14,17 @@ const renderInfoSlider = (traits, parent, id) => {
     parent.innerHTML = '';
 
     traits.forEach(trait => {
+        trait.name = trait.name === 'ph' ? 'pH' : utils.capitaliseFirst(trait.name);
         trait.unit = trait.unit || '';
+        trait.value = trait.value.join(', ');
     });
     
     renderTemplate({ id, traits }, slider.content, parent);
+
+    let activeTrait, activeTraitKey, activeTraitValue;
     
-    parent.querySelector(`#traitSlider${id} .carousel-item:nth-child(1)`).classList.add('active');
+    activeTrait = parent.querySelector(`#traitSlider${id} .carousel-item:nth-child(1)`);
+    activeTrait.classList.add('active');
 
     const traitCount = traits.length;
 
@@ -26,6 +34,24 @@ const renderInfoSlider = (traits, parent, id) => {
             control.classList.add('inactive-icon');
         });
     }
+
+    const changeTraitHandler = event => {
+        setTimeout(() => {
+            activeTrait = parent.querySelector(`#traitSlider${id} .carousel-item.active`);
+            activeTraitKey = activeTrait.querySelector('div:nth-child(1)').innerHTML;
+            activeTraitValue = activeTrait.querySelector('div:nth-child(2) > span:nth-child(1)').innerHTML;
+            console.log(activeTraitKey);
+            console.log(activeTraitValue);
+            const detail = firestore.getDefinition(activeTraitValue);
+            console.log(detail);
+            renderInfoDetails(detail);
+        }, 1000);
+    };
+
+    changeTraitHandler();
+
+    parent.querySelector(`#traitSlider${id} .carousel-control-prev`).addEventListener('click', changeTraitHandler);
+    parent.querySelector(`#traitSlider${id} .carousel-control-next`).addEventListener('click', changeTraitHandler);
 }
 
 export const taxonInfoSlider = (traits, parent, mode) => {
@@ -76,5 +102,4 @@ export const infoSlider = (item, family, parent, mode) => {
     const id = mode === 'MODAL' ? 1 : 0;
 
     renderInfoSlider(traits, parent, id);
-    // renderInfoSlider(species.traits, parent, id);
 }

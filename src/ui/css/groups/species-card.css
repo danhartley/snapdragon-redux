@@ -142,6 +142,31 @@ td:empty:after{
     text-transform: initial;
 }
 
+.info-details {
+  height: calc(90vh - 22rem);  
+  padding: 0 1em;
+  overflow-y: scroll;
+}
+
+.info-details .info_detail {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  height: inherit;
+}
+
+.info-details .info_detail div:nth-child(1) { 
+  font-style: italic;
+  font-size: 1.1rem;
+  margin: 1rem 0 0 0;
+}
+
+.info-details img {   
+  max-width: 100%;
+  height: 10vh;
+  margin: .5rem 0;
+}
+
 .relationship-card {
   border: 1px solid lightgray;
   margin: .25rem;
@@ -162,7 +187,22 @@ td:empty:after{
   content: ":";
 }
 
+/* @media (min-width: 414px) {
+  .info-details {
+    height: calc(90vh - 25rem);
+  }
+} */
+
 @media (min-width: 768px) {
+
+  /* .info-details {
+    height: calc(90vh - 26rem);
+    margin: 1.5rem;
+  } */
+
+  .info-details .info_detail img {   
+    height: 10rem;
+  }
 
     /* TRAITS CAROUSEL */
 

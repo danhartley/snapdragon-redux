@@ -35,6 +35,8 @@ export const getTraitsForTests = (enums, item, alreadyTestedTraits = []) => {
 
     const answers = getSetOfTraitAnswers(variables, traitsPool, trait);
 
+    help = help || trait.key;
+
     const overrides = { question: 'Match the trait', help, trait };
 
     return { question, answers, overrides, typedItemTraits: item.traits };

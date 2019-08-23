@@ -4623,4 +4623,58 @@ export const taxa = [
             { name: SD.role.SYMBIOSIS, value: 'Tuber', type: SD.symbiosis.MYCORRHIZAL },
         ],
     },
+    {
+        taxon: 'family',
+        name: 'Plumbaginaceae',
+        genera: '~30',
+        species: '725',
+        names: [ { language: "en", names: ['Leadwort family']},
+            { language: "fr", names:[ 'Plumbaginacées' ]},
+            { language: "de", names:[ 'Bleiwurzgewächse' ]},
+            { language: "es", names:[ 'Plumbagináceas' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Plumbaginaceae",
+        thumb: '5d/d6/86/509.27288626.260x190.jpg',
+        eol: "https://eol.org/pages/4356",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Most species in this family are perennial herbaceous plants, but a few grow as lianas or shrubs. Particularly associated with salt-rich steppes, marshes, and sea coasts.',
+                identification: 'The plants have perfect flowers and are pollinated by insects.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.CHARACTERISTIC, value: SD.characteristic.PERENNIAL },
+            { name: SD.name.CHARACTERISTIC, value: SD.characteristic.HERBACEOUS },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Taxaceae',
+        genera: '7',
+        species: '~30',
+        names: [ { language: "en", names: ['Yew family']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ 'Taxácea' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Taxaceae",
+        thumb: '56/00/57/509.1383475.260x190.jpg',
+        eol: "https://eol.org/pages/6750",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Coniferous family of many-branched, small trees and shrubs.',
+                identification: 'Leaves are evergreen, spirally arranged, often twisted at the base to appear 2-ranked, linear to lanceolate, with pale green or white stomatal bands on the undersides.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.PHYSIOLOGY, value: SD.characteristic.EVERGREEN },
+            { name: SD.name.CHARACTERISTIC, value: SD.characteristic.DIOECIOUS },
+        ],
+    },
 ];

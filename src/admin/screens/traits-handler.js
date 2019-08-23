@@ -75,7 +75,7 @@ const addTraits = () => {
             icon.addEventListener('click', async e => {
                 e.target.classList.add('alert');
                 const field = e.target.id;
-                const response = await firestore.deleteSpeciesTraitField(item.name, field);                
+                const response = await firestore.deleteSpeciesTraitField(item.name, field);         
                 renderTraits(item);
             });
         });

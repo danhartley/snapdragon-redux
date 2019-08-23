@@ -1,5 +1,3 @@
-import * as SD from 'api/traits/trait-types';
-
 import { actions } from 'redux/actions/action-creators';
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
@@ -112,20 +110,20 @@ export const buildTable = (collection, config, enums) => {
         const keyTrait = vn.dataset.keyTrait;
         const span = document.createElement('span');
         switch(keyTrait) {                
-            case SD.enums.howEdible.CHOICE:
+            case enums.howEdible.CHOICE:
                 span.innerHTML = '<span class="icon choice"></span>';
                 vn.append(span);
                 break;
-            case SD.enums.howEdible.EDIBLE:
+            case enums.howEdible.EDIBLE:
                 span.innerHTML = '<span class="icon edible"></span>';
                 vn.append(span);
                 break;
-            case SD.enums.howEdible.INEDIBLE:
+            case enums.howEdible.INEDIBLE:
                 span.innerHTML = '<span class="icon inedible"></span>';
                 vn.append(span);
                 break;
-            case SD.enums.howEdible.POISONOUS:
-            case SD.enums.howEdible.DEADLY:
+            case enums.howEdible.POISONOUS:
+            case enums.howEdible.DEADLY:
                 span.innerHTML = '<span class="icon toxic"></span>';
                 vn.append(span);
                 break;

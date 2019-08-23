@@ -625,6 +625,7 @@ a.dropdown-item {
   align-items: center;
   justify-content: center;
   padding: .75rem;
+  text-transform: lowercase;  
 }
 
   /* prevent child elements of listener triggering an event */  
@@ -659,6 +660,7 @@ a.dropdown-item {
   text-overflow: ellipsis;
   overflow: hidden;
   display: inline-block;
+  text-transform: lowercase;
 }
 
 .align-left {

@@ -1,3 +1,6 @@
+import autocomplete from 'autocompleter';
+
+import { utils } from 'utils/utils';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { renderTemplate } from 'ui/helpers/templating';
 import { helpers } from 'admin/helpers';
@@ -7,7 +10,8 @@ import { speciesPicker } from 'admin/screens/species-picker';
 
 import addSpeciesTemplate from 'admin/screens/add-species-template.html';
 import updateSpeciesTemplate from 'admin/screens/update-species-template.html';
-import updateNamesTemplate from 'admin/screens/update-species-names-template.html';
+import updateSpeciesNamesTemplate from 'admin/screens/update-species-names-template.html';
+import updateSpeciesNamesListTemplate from 'admin/screens/update-species-names-list-template.html';
 
 const addSpecies = () => {
 
@@ -137,11 +141,6 @@ const updateSpecies = () => {
         btnRemoveSpecies.classList.remove('hide');
         btnGetPhotos.classList.remove('hide');
         chkSafety.classList.remove('hide');
-
-        const vernacularNames = document.getElementById('vernacularNames');
-        template.innerHTML = updateNamesTemplate;
-        renderTemplate({names: item.names}, template.content, vernacularNames);
-        M.updateTextFields();
     };
 
     speciesPicker(input, listenForSpeciesSelection);
@@ -181,9 +180,109 @@ const updateSpecies = () => {
     }
 };
 
+const updateSpeciesNames = () => {
+
+    let item = window.snapdragon.species;
+
+    const template = document.createElement('template');
+    template.innerHTML = updateSpeciesNamesTemplate;
+
+    const parent = document.querySelector('#content-container');
+          parent.innerHTML = '';
+
+    renderTemplate({}, template.content, parent);
+
+    const inputLanguage = document.querySelector('#input-language-value');
+    const inputVernacularName = document.querySelector('#input-vernacular-value');
+
+    const options = [
+        {label:'de', value:'de'},
+        {label:'en', value:'en'},
+        {label:'fr', value:'fr'},
+        {label:'es', value:'es'},
+        {label:'pt', value:'pt'}
+    ];
+
+    autocomplete({
+        input: inputLanguage,
+        fetch: function(text, update) {
+            text = text.toLowerCase();
+            const suggestions = options.filter(n => n.value.toLowerCase().startsWith(text))
+            update(suggestions);
+        },
+        onSelect: function(item) {
+            inputLanguage.value = item.label;
+        },
+        minLength: 0,
+        debounceWaitMs: 200,
+        className: 'autocomplete-options-container'
+    });
+
+    const input = document.querySelector('#input-species-to-update');
+          input.focus();
+
+    const vernacularNames = document.getElementById('vernacularNames');
+
+    const renderNameslist = () => {
+        vernacularNames.innerHTML = '';
+        template.innerHTML = updateSpeciesNamesListTemplate;
+        item.names = utils.sortAlphabeticallyBy(item.names, 'language');
+        renderTemplate({names: item.names}, template.content, vernacularNames);
+        M.updateTextFields();
+
+        const deleteIcons = document.querySelectorAll('i');
+        deleteIcons.forEach(icon => {
+            icon.addEventListener('click', async e => {
+                e.target.classList.add('alert');
+                const name = e.target.id;                
+                item.names = item.names.filter(n => n.vernacularName !== name);
+                firestore.updateSpeciesNames(item, item.names);
+            });
+        });
+    }
+
+    const listenForSpeciesSelection = async species => {        
+
+        item = species;
+                
+        renderNameslist();
+    };
+
+    speciesPicker(input, listenForSpeciesSelection);
+
+    const updateSpeciesNames = name => {
+
+        item.names = [ name, ...item.names ];
+
+        firestore.updateSpeciesNames(item, item.names);
+
+        renderNameslist();
+    };
+
+    inputVernacularName.addEventListener('keypress', event => {
+        if(event.keyCode == 13) {
+            const name = { language: inputLanguage.value, vernacularName: event.target.value };
+            updateSpeciesNames(name);
+        }
+    });
+
+    inputVernacularName.addEventListener('keydown', event => {
+        if(event.keyCode == 9) {
+            const highlightedText = document.querySelector('.selected');
+            if(highlightedText) {
+                inputKey.value = highlightedText.innerText;
+                document.querySelector('.autocomplete-options-container').innerHTML = '';
+                const name = { language: inputLanguage.value, vernacularName: highlightedText.innerText };
+                updateSpeciesNames(name);
+            }
+        }
+    });
+};
+
 export const speciesHandler = {
     addSpecies,
-    updateSpecies
+    updateSpecies,
+    updateSpeciesNames
 };
 
 const addOrUpdateSpeciesToFirestore = (item, imageIds, callback) => {

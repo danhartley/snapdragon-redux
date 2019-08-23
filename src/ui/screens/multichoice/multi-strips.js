@@ -9,7 +9,7 @@ import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
-import { rebindLayoutState } from 'ui/screens/multichoice/missing-data-helper';
+// import { rebindLayoutState } from 'ui/screens/multichoice/missing-data-helper';
 import { firestore } from 'api/firebase/firestore';
 
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
@@ -124,7 +124,7 @@ export const renderMultiStrips = (collection, bonus) => {
                     const buildQuestion = async () => {
 
                         question = item.name;
-                        answers = await firestore.getSpeciesByIconicTaxon(taxon.iconicTaxon, item.lichen, 8);
+                        answers = await firestore.getSpeciesByIconicTaxon(item.iconicTaxon, item.lichen, 8);
                         answers = R.take(8, answers).filter(s => s.name.toLowerCase() !== item.name.toLowerCase()).map(s => s.name);
                         answers = R.take(5, answers);
                         answers.push(item.name);
@@ -150,7 +150,7 @@ export const renderMultiStrips = (collection, bonus) => {
                     const buildQuestion = async () => {
 
                         question = item.vernacularName;   
-                        answers = await firestore.getSpeciesByIconicTaxon(taxon.iconicTaxon, item.lichen, defaultQueryLimit)
+                        answers = await firestore.getSpeciesByIconicTaxon(item.iconicTaxon, item.lichen, defaultQueryLimit)
                                     
                         answers = answers.filter(i => i.name.toLowerCase() !== item.name.toLowerCase()).map(i => itemProperties.getVernacularName(i, defaultLanguage));
                         answers = R.take(defaultQueryLimit - 1, answers);
