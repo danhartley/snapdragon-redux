@@ -26,7 +26,7 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
 
     const init = async () => {
 
-        const getItemWithProps = async item => {
+            const getItemWithProps = async item => {
 
             if(item.eolId) return new Promise(resolve => resolve(item));
             

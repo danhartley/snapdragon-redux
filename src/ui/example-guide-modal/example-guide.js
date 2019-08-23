@@ -56,7 +56,9 @@ export const renderExampleGuideHandler = () => {
       template = document.createElement('template');
       template.innerHTML = exampleLessonsTemplate;
 
-      const typeLessons = lessons.filter(lesson => lesson.type === type);
+      let typeLessons = lessons.filter(lesson => lesson.type === type);
+
+      if(type === 'custom') typeLessons = typeLessons.filter(lesson => lesson.itemNames.length > 0); // hack
 
       renderTemplate({ lessons: typeLessons }, template.content, parent);
 

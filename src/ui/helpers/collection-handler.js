@@ -17,6 +17,8 @@ async function getItems(collection, config) {
             collection.speciesRange === config.guide.speciesRange &&
             collection.iconicTaxa === config.guide.iconicTaxa;
 
+            console.log('collectionIsUnchanged ', collectionIsUnchanged);
+
         if(collectionIsUnchanged) {
             return new Promise(resolve => {
                 resolve(collection.items);
@@ -82,6 +84,8 @@ export const collectionHandler = async (collection, config, counter, callback, c
            
         const items = await getItems(collection, config);
         collection.items = items.filter(item => item.name);
+
+        if(collection.nextItem) return; // after refreshing or returning to the page (using rehydrated collection)
 
         if(R.contains('lepidoptera', config.guide.iconicTaxa.map(taxon => taxon.id)) && !R.contains('insecta', config.guide.iconicTaxa.map(taxon => taxon.id))) {
             const insecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() === 'insecta');

@@ -1620,6 +1620,11 @@ th .custom-control-label::before, .custom-control-label::before {
   align-items: center;
 }
 
+.question-container .icon {
+  color: rgb(90, 147, 252);
+  font-size: 1.8rem;
+}
+
 .species-pending .underline-link {
   font-size: 1.2rem;
 }
@@ -2035,7 +2040,7 @@ a.collection-disabled {
 }
 
 .snapdragon-intro > div {
-  line-height: 2.25rem;
+  line-height: 1.75rem;
 }
 
 .snapdragon-intro > div:nth-child(1),
