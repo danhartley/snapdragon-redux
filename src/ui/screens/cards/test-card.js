@@ -87,7 +87,7 @@ export const renderTestCardTemplate = (collection, context) => {
                     });
                 });
 
-            }, 1000); // temporary!!!
+            }, 500);
         };
 
         await renderSpeciesCard();
