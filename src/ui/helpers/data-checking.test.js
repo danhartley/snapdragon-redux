@@ -147,3 +147,13 @@ test('should return rights url from image url', () => {
   const expectedUrl = 'https://en.wikipedia.org/w/api.php?action=query&prop=imageinfo&iiprop=extmetadata&titles=File:Inflorescences_Panicle_Kwiatostan_Wiecha.svg&format=json';
   expect(itemProperties.getImageRightsUrl(url)).toEqual(expectedUrl);
 });
+
+test('should return common, root trait value for child value', () => {
+  let child = 'leafSurfaceAbove';
+  let parent = 'leafSurface';
+  expect(itemProperties.getRootTraitValue(child)).toEqual(parent);
+  child = 'leafColour';
+  parent = 'colour';
+  expect(itemProperties.getRootTraitValue(child, 'start')).toEqual(parent);
+  expect(itemProperties.getRootTraitValue(child)).toEqual(parent);
+});

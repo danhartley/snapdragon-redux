@@ -6,7 +6,8 @@ export const nonTaxaGroup = [
 ];
 
 export const getNonTaxa = (enums) => {
-    const SD = Object.keys(enums).length ? enums : traitEnums.enums;
+    // const SD = Object.keys(enums).length ? enums : traitEnums.enums;
+    const SD = enums;
     return [
         {
             group: nonTaxaGroup[0].LICHEN_FORM,

@@ -9,7 +9,7 @@ export const getTraitTests = itemsInThisRound => {
 
         const { enums } = store.getState();
 
-        const { question, answers, overrides } = getTraitTest(enums, item);
+        const { question, answers, overrides } = getTraitsForTests(enums, item);
 
         if(!question) return {};
 
@@ -22,8 +22,4 @@ export const getTraitTests = itemsInThisRound => {
     });
 
     return tests;
-}
-
-const getTraitTest = (enums, item) => {
-    return getTraitsForTests(enums, item);
 };

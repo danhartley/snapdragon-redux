@@ -1,11 +1,11 @@
-// import * as R from 'ramda';
+import * as R from 'ramda';
 
-// import { getGlossary } from 'api/glossary/glossary';
-// import { epithets } from 'api/botanical-latin';
-// import { actions } from 'redux/actions/action-creators';
-// import { utils } from 'utils/utils';
-// import { matchTaxon, iconicTaxa, findRankByIconicTaxon } from 'api/snapdragon/iconic-taxa';
-// import { firestore } from 'api/firebase/firestore';
+import { getGlossary } from 'api/glossary/glossary';
+import { epithets } from 'api/botanical-latin';
+import { actions } from 'redux/actions/action-creators';
+import { utils } from 'utils/utils';
+import { matchTaxon, iconicTaxa, findRankByIconicTaxon } from 'api/snapdragon/iconic-taxa';
+import { firestore } from 'api/firebase/firestore';
 
 // export const rebindLayoutState = (layout, item) => {
       
@@ -111,44 +111,44 @@
 //     actions.boundNextLayout(nextLayout);
 // };
 
-// export const getPoolItems = async collection => {
+export const getPoolItems = async collection => {
 
-//   const item = collection.items.find(i => i.name === collection.nextItem.name);
+  const item = collection.items.find(i => i.name === collection.nextItem.name);
 
-//   const rank = findRankByIconicTaxon(item.taxonomy, item.iconicTaxon);
+  const rank = findRankByIconicTaxon(item.taxonomy, item.iconicTaxon);
 
-//   let taxonicMatches = await firestore.getSpeciesByIconicTaxon(item.iconicTaxon, item.lichen);
+  let taxonicMatches = await firestore.getSpeciesByIconicTaxon(item.iconicTaxon, item.lichen);
 
-//   if(item.iconicTaxon.toLowerCase() === 'fungi') {
-//       const isLichen = item.lichen;
-//       taxonicMatches = isLichen ? taxonicMatches.filter(item => item.lichen) : taxonicMatches.filter(item => !item.lichen);
-//   }
+  if(item.iconicTaxon.toLowerCase() === 'fungi') {
+      const isLichen = item.lichen;
+      taxonicMatches = isLichen ? taxonicMatches.filter(item => item.lichen) : taxonicMatches.filter(item => !item.lichen);
+  }
 
-//   const speciesInSameTaxon = utils.shuffleArray(taxonicMatches.filter(ci => ci.name !== item.name));
+  const speciesInSameTaxon = utils.shuffleArray(taxonicMatches.filter(ci => ci.name !== item.name));
   
-//   let speciesPool;
+  let speciesPool;
 
-//   // To do: Handle case where e.g. taxon group has only 2 items (should top up with kingdom items).
-//   // Can be solved by simply adding more data…
+  // To do: Handle case where e.g. taxon group has only 2 items (should top up with kingdom items).
+  // Can be solved by simply adding more data…
 
-//   if(speciesInSameTaxon) {
-//     speciesPool = speciesInSameTaxon;  
-//   }
-//   // else {
-//   //   const kingdomItems = firestore.getSpeciesByRank('kingdom', item.taxonomy.kingdom);
-//   //   const speciesInSameKingdom = utils.shuffleArray(kingdomItems.filter(ci => ci.name !== item.name));
-//   //   if(speciesInSameKingdom) {
-//   //     speciesPool = speciesInSameKingdom;
-//   //   } else {
-//   //     const species = firestore.getAllSpecies();
-//   //     speciesPool = utils.shuffleArray(species.filter(ci => ci.name !== item));
-//   //   }
-//   // }
+  if(speciesInSameTaxon) {
+    speciesPool = speciesInSameTaxon;  
+  }
+  // else {
+  //   const kingdomItems = firestore.getSpeciesByRank('kingdom', item.taxonomy.kingdom);
+  //   const speciesInSameKingdom = utils.shuffleArray(kingdomItems.filter(ci => ci.name !== item.name));
+  //   if(speciesInSameKingdom) {
+  //     speciesPool = speciesInSameKingdom;
+  //   } else {
+  //     const species = firestore.getAllSpecies();
+  //     speciesPool = utils.shuffleArray(species.filter(ci => ci.name !== item));
+  //   }
+  // }
 
-//   const items = R.take(5, speciesPool);
+  const items = R.take(5, speciesPool);
   
-//   // Add the item being tested
-//   items.push(item);
+  // Add the item being tested
+  items.push(item);
 
-//   return items;
-// };
+  return items;
+};

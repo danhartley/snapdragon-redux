@@ -12,14 +12,14 @@ export const renderInfoDetails = detail => {
     const cardList = document.querySelector('.js-relationship-card-list');
     
     if(detail) {
-        cardList.classList.add('hide-important');
+        cardList.parentElement.classList.add('hide-important');
         parent.classList.remove('hide-important');
 
         details.innerHTML = detailsTemplate;
         detail.imgClassName = detail.img ? detail.img.url === '' ? 'hide-important' : '' : 'hide-important';
         detail.img = detail.img || { url: '' }; 
     } else {        
-        cardList.classList.remove('hide-important');
+        cardList.parentElement.classList.remove('hide-important');
         parent.classList.add('hide-important');
         
         details.innerHTML = '';

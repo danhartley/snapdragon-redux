@@ -40,12 +40,19 @@ const updateSpeciesClickHandler = e => {
     speciesHandler.updateSpecies();
 };
 
+const updateSpeciesNamesClickHandler = e => {
+  speciesHandler.updateSpeciesNames();
+};
+
 const addTraitsClickHandler = e => {
   traitsHandler.addTraits();
 };
       
 const updateSpecies = document.querySelector('#update-species');
       updateSpecies.addEventListener('click', updateSpeciesClickHandler);
+      
+const updateNames = document.querySelector('#update-names');
+      updateNames.addEventListener('click', updateSpeciesNamesClickHandler);
   
 const addTraits = document.querySelector('#add-traits');
       addTraits.addEventListener('click', addTraitsClickHandler);

@@ -282,6 +282,10 @@
 
 @media (min-width: 768px) {
 
+  /* #cardModal .info-details {
+    height: calc(90vh - 30rem);
+  } */
+
   #cardModal .modal-content .snapdragon-container {  
     height: 70vh;
   }

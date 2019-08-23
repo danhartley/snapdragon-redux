@@ -173,6 +173,38 @@ const getFileNameFromImageUrl = url => {
     return filename;    
 };
 
+const getRootTraitValue = (traitValue, drop = 'end') => {
+
+    const pattern = /[A-Z]+[^A-Z]*|[^A-Z]+/g;
+
+    const parts = traitValue.match(pattern);
+
+    console.log('trait parts', parts);
+
+    if(traitValue.toLowerCase().indexOf('colour') > -1) {
+        drop = 'start';
+    }
+
+    let rootTraitValue = '';
+
+    if(drop === 'start') {
+        parts.forEach((part,index) => {
+            if(index !== 0) {
+                rootTraitValue += part;
+            }
+        });
+        rootTraitValue = rootTraitValue.charAt(0).toLowerCase() + rootTraitValue.slice(1);
+    } else {
+        parts.forEach((part,index) => {
+            if(index < parts.length - 1) {
+                rootTraitValue += part;
+            }
+        });
+    }
+    
+    return rootTraitValue;
+};
+
 const getImageRightsUrl = url => {
 
     const filename = getFileNameFromImageUrl(url);
@@ -198,5 +230,6 @@ export const itemProperties = {
     answersFromList,
     getFamilyStats,
     getFileNameFromImageUrl,
-    getImageRightsUrl
+    getImageRightsUrl,
+    getRootTraitValue
 };

@@ -1,4 +1,6 @@
 import * as R from 'ramda';
+
+import { itemProperties } from 'ui/helpers/data-checking';
 import { utils } from 'utils/utils';
 
 export const getRandomTrait = (traits, traitsToIgnore) => {    
@@ -11,7 +13,7 @@ export const getRandomTrait = (traits, traitsToIgnore) => {
         }
     }
 
-    const trait = utils.getRandomObjectProperty(allowedTraits);
+    let trait = utils.getRandomObjectProperty(allowedTraits);
     return trait;
 };
 
@@ -57,7 +59,11 @@ export const getTraitsPool = (trait, traits) => {
 
     let traitsPool = [];
 
-    const traitValues = getTraitValues(trait, traits);
+    let traitValues = getTraitValues(trait, traits);
+
+    if(!traitValues) {
+        traitValues = traits[itemProperties.getRootTraitValue(utils.toCamelCase(trait.key))];
+    }
 
     if(traitValues) {
         for (let [key, obj] of Object.entries(traitValues)) {
@@ -71,7 +77,7 @@ export const getTraitsPool = (trait, traits) => {
 
     let help = traitValues 
             ? traitValues.help || traitValues.name
-            : '(no help)';
+            : trait.key;
 
     return { traitsPool, help };
 };
@@ -163,7 +169,11 @@ export const getLookalikeTraitProperties = item => {
 };
 
 export const getTraitsToExclude = () => {
-    return [ 'look-alikes', 'symbionts', 'voice', 'pollination', 'name', 'relationships', 'units', 'lookalikes' ];
+    return [ 
+        'look-alikes', 'symbionts', 'voice', 'pollination', 'name', 
+        'relationships', 'units', 'lookalikes', 'song', 'uk rank',
+        'colour', 'bark colour', 'height'
+    ];
 };
 
 export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude) => {

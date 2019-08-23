@@ -1,18 +1,20 @@
 import { itemProperties } from 'ui/helpers/data-checking';
 import { infraspecifics } from 'api/snapdragon/infraspecifics';
-import * as traitTypes from 'api/traits/trait-types';
+import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import taxaBoxTemplate from 'ui/screens/common/taxa-box-template.html';
 
 export const renderTaxaBox = async (parent, taxaBoxArgs) => {
+
+    const enums = store.getState().enums;
 
     parent.innerHTML = '';
 
     const { item, familyName, familyVernacularName } = taxaBoxArgs;
 
     const options = [
-        { name: traitTypes.enums.name.RANK, formatter: trait => `UK # ${trait[0]}` },
-        { name: traitTypes.enums.name.HOW_EDIBLE, formatter: trait => trait[0] }
+        { name: enums.name.RANK, formatter: trait => `UK # ${trait[0]}` },
+        { name: enums.name.HOW_EDIBLE, formatter: trait => trait[0] }
     ];
 
     let trait = itemProperties.getActiveTrait(item, options);

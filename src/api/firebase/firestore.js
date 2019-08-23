@@ -236,6 +236,22 @@ const updateSpecies = async species => {
 
 };
 
+const updateSpeciesNames = async (species, names) => {
+
+    let speciesDocRef;
+
+    const querySnapshot = await db.collection("species").where("name", "==", species.name).get();
+    
+    querySnapshot.forEach(function(doc) {
+        speciesDocRef = doc.ref;
+    });
+
+    console.log(speciesDocRef);
+
+    return await speciesDocRef.update({names}); 
+
+};
+
 const getTraitValues = async () => {
 
     const traits = enums;
@@ -415,6 +431,7 @@ export const firestore = {
     addSpeciesRelationship,
     
     updateSpecies,
+    updateSpeciesNames,
 
     deleteSpeciesByName,
     deleteSpeciesTraitField

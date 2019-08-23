@@ -520,7 +520,7 @@ export const plantae = [
     },
     {
         term : "Calcareous",
-        definition : "'Mmostly or partly composed of calcium carbonate', in other words, containing lime or being chalky. Generally relatively alkaline or base.",
+        definition : "'Mostly or partly composed of calcium carbonate', in other words, containing lime or being chalky. Generally relatively alkaline or base.",
         wiki: 'https://en.wikipedia.org/wiki/Calcareous'
     },
     {
@@ -537,6 +537,34 @@ export const plantae = [
         term : "Deciduous",
         definition : "The term means 'falling off at maturity' or 'tending to fall off', in reference to trees and shrubs that seasonally shed leaves; to the shedding of petals, after flowering; and to the shedding of ripe fruit.",
         wiki: 'https://en.wikipedia.org/wiki/Deciduous'
+    },
+    {
+        term : "Buttress root",
+        definition : "Large, wide roots on all sides of a shallowly rooted tree. Typically found in nutrient-poor tropical forest soils that may not be deep.",
+        wiki: 'https://en.wikipedia.org/wiki/Buttress_root'
+    },
+    {
+        term : "Syconium",
+        definition : "Type of inflorescence borne by figs (genus Ficus), formed by an enlarged, fleshy, hollow receptacle with multiple ovaries on the inside surface.",
+        wiki: 'https://en.wikipedia.org/wiki/syconium'
+    },
+    {
+        term : "Xeromorphic",
+        definition : "Of, relating to, or characteristic of the xerophytes, especially having the ability to store water in leaves and stems.",
+        wiki: 'https://en.wikipedia.org/wiki/xeromorphic'
+    },
+    {
+        term : "Chamaephyte",
+        definition : "Any low perennial plant whose buds overwinter just above soil level.",
+        wiki: 'https://en.wiktionary.org/wiki/chamaephyte'
+    },
+    {
+        term : "Spike",
+        definition : "(Infloresence) a type of raceme with flowers that do not have a pedicel.",
+        wiki: 'https://en.wikipedia.org/wiki/Inflorescence',
+        image: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Inflorescences_Spike_Kwiatostan_K%C5%82os.svg'
+        }
     },
     {
         term : "Achene",
@@ -568,6 +596,14 @@ export const plantae = [
         }
     },
     {
+        term : "Oblong",
+        definition : "(Of leaf) having an elongated form with slightly parallel sides, roughly rectangular.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Leaf_morphology_oblong.png'
+        }
+    },
+    {
         term : "Dentate",
         definition : "(Of leaf) toothed.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
@@ -586,6 +622,53 @@ export const plantae = [
     {
         term : "Simple",
         definition : "Leaf blade in one continuous section, without leaflets (not compound).",
+    },
+    {
+        term : "Pyramidal",
+        definition : "(Tree shape) wide and cone-shaped canopies, branches expand at the base and narrow towards the top e.g. magnolia, oak.",
+    },
+    {
+        term : "Open head irregular",
+        definition : "(Tree shape) non-uniform branches forming an irregular canopy e.g. ash, catalpa, sycamore.",
+    },
+    {
+        term : "Weeping",
+        definition : "(Tree shape) with branches hanging down e.g. cherry, birch, willow, larch, hemlock.",
+    },
+    {
+        term : "Dioecious",
+        definition : "(Botany) species with 'male' and 'female' reproductive structures on separate plants. Opposite monoicous.",
+        wiki: 'https://en.wikipedia.org/wiki/Dioecy'
+    },
+    {
+        term : "Monoicous",
+        definition : "(Botany) species with 'male' and 'female' reproductive structures on the same plant. Opposite dioecious.",
+        wiki: 'https://en.wikipedia.org/wiki/Monoicous'
+    },
+    {
+        term : "Synoecious",
+        definition : "(Botany) species with 'male' and 'female' reproductive organs in the same structure.",
+        wiki: 'https://en.wiktionary.org/wiki/synoecious'
+    },
+    {
+        term : "Globe",
+        definition : "(Tree shape) uniform round shape e.g. hackberry, floering dogwood, American hornbeam.",
+    },
+    {
+        term : "Fastigiate",
+        definition : "(Tree shape) having the branches more or less parallel to the main stem.",
+    },
+    {
+        term : "Vase",
+        definition : "(Tree shape) branches develop upward from the trunk e.g. hawthorn, elm, boxelder.",
+    },
+    {
+        term : "Columnar",
+        definition : "(Tree shape) branches of consistent length througout e.g. Lombardy poplars, cherry.",
+    },
+    {
+        term : "Horizontal spreading",
+        definition : "(Tree shape) branches spread horizontally throughout e.g. beech, fir, hornbeam, honeylocust.",
     },
     {
         term : "Ovate",
@@ -608,7 +691,7 @@ export const plantae = [
         definition: 'Arrangement of discrete structures (such as leaflets, veins, lobes, branches, or appendages) arising at multiple points along a common axis e.g. once-divided leaf blades having leaflets arranged on both sides of a rachis are pinnately compound leaves.',
     },
     {
-        term: 'bipinnate',
+        term: 'Bipinnate',
         definition: 'The leaflets are themselves pinnately-compound; twice pinnate.',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/d/dc/Leaf_morphology_bipinnate.png',
@@ -616,6 +699,10 @@ export const plantae = [
             author: 'By Maksim CC BY-SA 3.0',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=6559049',        
         }
+    },
+    {
+        term: 'Compound Bipinnate',
+        definition: 'Leaves are twice divided: the leaflets are arranged along a secondary vein that is one of several branching off the rachis. Each leaflet is called a pinnule.'
     },
     {
         term: 'bifoliolate',
@@ -688,6 +775,14 @@ export const plantae = [
             url: 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Leaf_morphology_Palmately_compound.png'
         },
         wiki: 'https://en.wiktionary.org/wiki/palmate'
+    },
+    {
+        term: 'Palmately lobed',
+        definition: 'Lobes spread radially from a point.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/5/50/Palmatilobé.svg'
+        },
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes'
     },
     {
         term: 'Trifoliate',

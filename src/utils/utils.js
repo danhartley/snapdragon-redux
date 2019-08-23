@@ -284,7 +284,8 @@ function debounce(func, wait, immediate) {
 const getRandomObjectProperty = obj => {
   if(Object.keys(obj).length === 0 && obj.constructor === Object) return {};
   const keys = Object.keys(obj);
-  const key = keys[Math.floor(Math.random() * keys.length)];
+  const index = Math.floor(Math.random() * keys.length);
+  const key = keys[index];
 	return { key, value: obj[key] };
 };
 

@@ -1,7 +1,6 @@
 import * as R from 'ramda';
 
 import { store } from 'redux/store';
-import * as SD from 'api/traits/trait-types';
 
 export const getSymbioticTest = collection => {
 

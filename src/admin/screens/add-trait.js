@@ -2,6 +2,7 @@ import * as R from 'ramda';
 
 import autocomplete from 'autocompleter';
 
+import { itemProperties } from 'ui/helpers/data-checking';
 import { utils } from 'utils/utils';
 import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -70,19 +71,15 @@ export const renderAddTrait = (parent, callback) => {
     
         const exclude = [ 'help', 'name', 'type', 'units' ];;
 
-        let traitValueKey = traitValues[utils.toCamelCase(traitKey)];
+        let traitKeyValues = traitValues[utils.toCamelCase(traitKey)];
 
-        if(R.contains(utils.toCamelCase(traitKey), traitValues.colours)) {
-            traitValueKey = traitValues.colour;
-        } 
-
-        if(R.contains(utils.toCamelCase(traitKey), traitValues.leafSurfaces)) {
-            traitValueKey = traitValues.leafSurface;
+        if(!traitKeyValues) {
+            traitKeyValues = traitValues[itemProperties.getRootTraitValue(utils.toCamelCase(traitKey))];
         }
 
-        if(traitValueKey) {
+        if(traitKeyValues) {
         
-            for (let [key, obj] of Object.entries(traitValueKey)) {
+            for (let [key, obj] of Object.entries(traitKeyValues)) {
                 if(!R.contains(key, exclude)) {
                     values.push({label: obj.toLowerCase(), value: obj.toLowerCase()});
                 }
