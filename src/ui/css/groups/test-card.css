@@ -82,7 +82,7 @@
     font-size: .8rem;
     vertical-align: super;
     text-transform: initial;
-    margin: -.25rem 0 0 0;
+    margin: 0 .5rem;
     color: var(--snap-text-medium-light);
 }
 
@@ -252,14 +252,14 @@ div.text-entry {
     object-fit: scale-down;
 }
 
-#test-card-header .vernacular-name {
+/* #test-card-header .vernacular-name {
     font-size: 1.2rem;
-}
-
-/* .feature-symbiont-list {
-    height: 12rem;
-    padding: .5rem;
 } */
+
+.feature-symbiont-list {
+    height: calc(90vh - 22rem);
+    padding: .5rem;
+}
 
 .iconic-icon {
     font-size: 1.5rem;

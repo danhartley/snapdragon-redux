@@ -108,12 +108,12 @@ export const renderTestCardTemplate = (collection, context) => {
         document.querySelector('.js-iconic-icon').classList.add('hide-important');
     }
 
-    const bonus = getBonusQuestion(item || {}, []);
+    // const bonus = getBonusQuestion(item || {}, []);
 
-    if(!bonus) {
-        traitCardLink.classList.add('hide-important');
-        document.querySelector('.js-iconic-icon').classList.remove('hide-important');
-    }
+    // if(!bonus) {
+        // traitCardLink.classList.add('hide-important');
+        // document.querySelector('.js-iconic-icon').classList.remove('hide-important');
+    // }
 
     traitCardLink.addEventListener('click', () => {
         if(isTraitCard) {            

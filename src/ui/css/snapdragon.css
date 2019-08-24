@@ -1486,6 +1486,7 @@ label.btn.btn-secondary .lesson-icon {
 
 .info.carousel.slide .carousel-item div:nth-child(2) {
   background-color: rgba(128, 128, 128, 0.1);
+  text-transform: lowercase;
 }
 
 .info.carousel-control .carousel-control-next-icon {
@@ -1879,7 +1880,8 @@ a.collection-disabled {
 }
 
 .trait-card-summary-container .summary-scores {
-  height: 10rem;  
+  height: 10rem;
+  padding: 0 1rem;
 }
 
 .home-guide .taxa {

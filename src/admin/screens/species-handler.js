@@ -200,7 +200,8 @@ const updateSpeciesNames = () => {
         {label:'en', value:'en'},
         {label:'fr', value:'fr'},
         {label:'es', value:'es'},
-        {label:'pt', value:'pt'}
+        {label:'pt', value:'pt'},
+        {label:'it', value:'it'},
     ];
 
     autocomplete({
@@ -223,10 +224,11 @@ const updateSpeciesNames = () => {
 
     const vernacularNames = document.getElementById('vernacularNames');
 
-    const renderNameslist = () => {
+    const renderNameslist = async (item, force = false) => {
         vernacularNames.innerHTML = '';
         template.innerHTML = updateSpeciesNamesListTemplate;
-        item.names = utils.sortAlphabeticallyBy(item.names, 'language');
+        const updatedItem = await firestore.getSpeciesByName(item.name, force);
+        item.names = utils.sortAlphabeticallyBy(updatedItem.names, 'language');
         renderTemplate({names: item.names}, template.content, vernacularNames);
         M.updateTextFields();
 
@@ -236,27 +238,34 @@ const updateSpeciesNames = () => {
                 e.target.classList.add('alert');
                 const name = e.target.id;                
                 item.names = item.names.filter(n => n.vernacularName !== name);
-                firestore.updateSpeciesNames(item, item.names);
+                await firestore.updateSpeciesNames(item, item.names);
+                renderNameslist(item, true);
             });
         });
+
+        inputLanguage.value = '';
+        inputLanguage.focus();
+        inputVernacularName.value = '';
     }
 
-    const listenForSpeciesSelection = async species => {        
-
-        item = species;
-                
-        renderNameslist();
+    const listenForSpeciesSelection = async species => {
+        item = species;                
+        renderNameslist(item, true);
     };
+
+    if(item) {
+        renderNameslist(item, false);
+    }
 
     speciesPicker(input, listenForSpeciesSelection);
 
-    const updateSpeciesNames = name => {
+    const updateSpeciesNames = async name => {
 
         item.names = [ name, ...item.names ];
 
-        firestore.updateSpeciesNames(item, item.names);
+        await firestore.updateSpeciesNames(item, item.names);
 
-        renderNameslist();
+        renderNameslist(item, true);
     };
 
     inputVernacularName.addEventListener('keypress', event => {

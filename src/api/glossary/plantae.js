@@ -651,6 +651,11 @@ export const plantae = [
         wiki: 'https://en.wiktionary.org/wiki/synoecious'
     },
     {
+        term : "Follicle",
+        definition : "(Botany) a dry unilocular fruit formed from one carpel, containing two or more seeds. Dehisces by a suture in order to release seeds e.g peony.",
+        wiki: 'https://en.wikipedia.org/wiki/Follicle_(fruit)'
+    },
+    {
         term : "Globe",
         definition : "(Tree shape) uniform round shape e.g. hackberry, floering dogwood, American hornbeam.",
     },
@@ -815,5 +820,61 @@ export const plantae = [
             url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Inflorescences_Panicle_Kwiatostan_Wiecha.svg/800px-Inflorescences_Panicle_Kwiatostan_Wiecha.svg.png'
         },
         wiki: 'https://en.wikipedia.org/wiki/Panicle'
+    },
+    {
+        term: 'Arcuate',
+        definition: 'Secondary arching toward the apex.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/1/18/Leaf_morphology_arcuate.png'
+        },
+        wiki: 'https://en.wikipedia.org/wiki/Leaf#Venation'
+    },
+    {
+        term: 'Dichotomous',
+        definition: 'Veins splitting in two.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Leaf_morphology_dichotomous.png'
+        },
+        wiki: 'https://en.wikipedia.org/wiki/Leaf#Venation'
+    },
+    {
+        term: 'Longitudinal',
+        definition: 'All veins aligned mostly with the midvein.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/4/49/Leaf_morphology_longitudinal.png'
+        },
+        wiki: 'https://en.wikipedia.org/wiki/Leaf#Venation'
+    },
+    {
+        term: 'Parallel',
+        definition: 'All veins parallel and not intersecting.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Leaf_morphology_parallel.png'
+        },
+        wiki: 'https://en.wikipedia.org/wiki/Leaf#Venation'
+    },
+    {
+        term: 'Reticulate',
+        definition: 'All veins branching repeatedly, net veined.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/f/fd/Leaf_morphology_reticulate.png'
+        },
+        wiki: 'https://en.wikipedia.org/wiki/Leaf#Venation'
+    },
+    {
+        term: 'Rotate',
+        definition: 'Veins coming from the center of the leaf and radiating toward the edges.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e8/Leaf_morphology_rotate.png'
+        },
+        wiki: 'https://en.wikipedia.org/wiki/Leaf#Venation'
+    },
+    {
+        term: 'Transverse',
+        definition: 'Veins coming from the center of the leaf and radiating toward the edges.',
+        img: {
+            url: 'Tertiary veins running perpendicular to axis of main vein, connecting secondary veins.'
+        },
+        wiki: 'https://en.wikipedia.org/wiki/Leaf#Venation'
     },
 ];

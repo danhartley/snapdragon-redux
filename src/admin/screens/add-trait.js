@@ -81,7 +81,7 @@ export const renderAddTrait = (parent, callback) => {
         
             for (let [key, obj] of Object.entries(traitKeyValues)) {
                 if(!R.contains(key, exclude)) {
-                    values.push({label: obj.toLowerCase(), value: obj.toLowerCase()});
+                    values.push({label: obj.trim().toLowerCase(), value: obj.trim().toLowerCase()});
                 }
             }
 
