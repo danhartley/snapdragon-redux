@@ -247,7 +247,9 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     const handleDeleteLinkTxt = event => {
         if(deleteEnabled) {
             actions.boundPauseLesson();
-            renderSpeciesGrid();
+            if(config.isLandscapeMode) {
+                renderSpeciesGrid();
+            }
             state = enums.lessonState.CREATE_LESSON;
             checkState(state);
         }

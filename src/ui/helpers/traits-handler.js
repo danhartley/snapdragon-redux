@@ -9,7 +9,7 @@ export const getRandomTrait = (traits, traitsToIgnore) => {
 
     for (let [key, obj] of Object.entries(traits)) {
         if(!R.contains(key.toLowerCase(), traitsToIgnore)) {
-            allowedTraits[key] = obj.value;
+            allowedTraits[key] = obj.unit ? [`${obj.value}${obj.unit}`] : obj.value;
         }
     }
 
@@ -63,9 +63,10 @@ export const getTraitsPool = (trait, traits) => {
 
     if(!traitValues) {
         traitValues = traits[itemProperties.getRootTraitValue(utils.toCamelCase(trait.key))];
+        if(traitValues) traitValues.help = trait.key;
     }
 
-    if(traitValues) {
+    if(traitValues) {        
         for (let [key, obj] of Object.entries(traitValues)) {
             if(!R.contains(key, [ 'type', 'name', 'help'])) {
                 if(key !== trait.key) {
@@ -108,7 +109,7 @@ export const getSetOfTraitAnswers = (variables, pool, trait) => {
         answers.push(trait.value);
     }
     
-    answers = utils.shuffleArray(answers);
+    answers = R.flatten(utils.shuffleArray(answers));
   
     return answers;
 };

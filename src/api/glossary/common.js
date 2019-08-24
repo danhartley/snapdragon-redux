@@ -126,4 +126,9 @@ export const commmon = [
         definition: "Period in an organism's life cycle when growth, development, and (in animals) physical activity are temporarily stopped.",
         wiki: "https://en.wikipedia.org/wiki/Dormancy",
     },
+    {
+        term : "Allelopathy",
+        definition : "A biological phenomenon by which an organism produces one or more biochemicals that influence the germination, growth, survival, and reproduction of other organisms.",
+        wiki: 'https://en.wikipedia.org/wiki/Allelopathy'
+    },
 ];

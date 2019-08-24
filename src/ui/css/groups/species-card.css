@@ -153,6 +153,7 @@ td:empty:after{
   flex-direction: column; 
   align-items: center;
   height: inherit;
+  font-size: .8rem;
 }
 
 .info-details .info_detail div:nth-child(1) { 
@@ -179,8 +180,12 @@ td:empty:after{
 }
 
 .relationship-card .cols > div:nth-child(1) {
-  margin: 0 1rem 0 0;
+  margin: 0 .25rem 0 0;
   font-style: italic;
+}
+
+.relationship-card .cols > div:nth-child(12) {
+  text-transform: lowercase;
 }
 
 .relationship-card .cols > div:nth-child(1)::after {

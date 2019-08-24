@@ -85,6 +85,7 @@ export const enums = {
   LEAF_SHAPE: 'Leaf shape',
   LEAF_COLOUR_BELOW: 'Leaf colour below',
   LEAF_COLOUR_ABOVE: 'Leaf colour above',
+  LEAF_VENATION: 'Leaf venation',
   STALK_HEIGHT: 'Stalk height',
   TRUNK_DIAMETER: 'Trunk diameter',
   BRACT_COLOUR: 'Bract colour',
@@ -367,7 +368,7 @@ export const enums = {
   name: 'ph level'
   },
   colour: {
-  help: 'Which colour best describes this species?',
+  // help: 'Which colour best describes this species?',
   WHITE: 'White',
   YELLOW: 'Yellow',
   DARK_GREEN: 'Dark green',
@@ -405,7 +406,8 @@ export const enums = {
   PINK: 'Pink',
   PALE_PINK: 'Pale pink',
   PURPLE: 'Purple',
-  PAEL_PURPLE: 'Pale purple',
+  PALE_PURPLE: 'Pale purple',
+  DARK_PURPLE: 'Dark purple',
   type: 'colour',
   name: 'colour'
   },
@@ -790,6 +792,7 @@ export const enums = {
   GENERALIST: 'Generalist',
   PIONEER: 'Pioneer',
   INVASIVE: 'Invasive',
+  DOMINANT: 'Dominant',
   POLLINATOR: 'Pollinator',
   PREDATOR: 'Predator',
   HERBIVORE: 'Herbivore',
@@ -836,6 +839,7 @@ export const enums = {
   POD: 'Pod',
   ARIL: 'Aril',
   SYCONIUM: 'syconium',
+  FOLLICLE: 'Follicle',
   type: 'fruitType',
   name: 'fruit type'
   },
@@ -956,6 +960,8 @@ export const enums = {
   name: 'mating system'
   },
   physiology: {
+  NEGATIVE_ALLELOPATHY: 'Negative allelopathy',
+  POSITIVE_ALLELOPATHY: 'Positive allelopathy',
   C3_CARBON_FIXATION: 'C3 carbon fixation',
   NITROGEN_FIXING: 'Nitrogen fixing',
   MYCORRHIZAL: 'Mycorrhizal',
@@ -967,6 +973,7 @@ export const enums = {
   NYCTINASTY:'Nyctinasty',
   XEROMORPHIC: 'Xeromorphic',
   DROUGHT_TOLERANT: 'Drought tolerant',
+  FIRE_TOLERANT: 'Fire tolerant',
   POLLUTION_TOLERANT: 'Pollution tolerant',
   PH_TOLERANT: 'pH tolerant',
   SALT_TOLERANT: 'Salt tolerant',
@@ -1165,6 +1172,16 @@ export const enums = {
   coneShape: {
     BARREL_SHAPED: 'Barrel-shaped',
     GLOBULAR: 'Globular'
+  },
+  leafVenation: {
+    ARCUATE: 'Arcuate',
+    DICHOTOMOUS: 'Dichotomous',
+    LONGITUDINAL: 'Longitudinal',
+    PARALLEL: 'Parallel',
+    PINNATE: 'Pinnate',
+    RETICULATE: 'Reticulate',
+    ROTATE: 'Rotate',
+    TRANSVERSE: 'Transverse',
   },
   units: [
     { lifeSpan: [ 'DD', 'MM', 'YY'] },

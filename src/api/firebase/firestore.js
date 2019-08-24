@@ -68,31 +68,45 @@ const getSpeciesNames = async () => {
     }
 };
 
-const getSpeciesByIconicTaxon = async (iconicTaxon, isLichen, limit = 6) => {
+const getSpeciesByIconicTaxon = async (item, number = 6) => {
+
+    const { iconicTaxon, isLichen, eolId } = item;
 
     console.log(iconicTaxon);
 
-    let matches;
+    let querySnapshot, docs = [];
 
+    var species = db.collection("species");
+
+    const random = utils.getRandomInt(2);
+
+    const operator = random === 0 ? '>=' : '<=';
+    
     if(isLichen) {
-        matches = await getSpeciesWhere({ key:'lichen', operator:'==', value: true, limit });
+        querySnapshot = await species.where('lichen', '==', true).where(firebase.firestore.FieldPath.documentId(), operator, getRandomId()).limit(number).get();
     } else {
-        matches = await getSpeciesWhere({ key:'iconicTaxon', operator:'==', value: iconicTaxon.toLowerCase(), limit });
+        querySnapshot = await species.where('iconicTaxon', '==', iconicTaxon.toLowerCase()).where(firebase.firestore.FieldPath.documentId(), operator, getRandomId()).limit(number).get();
     }
 
-    return matches;
+    querySnapshot.forEach(doc => {
+        docs.push(doc.data());
+    });
+
+    return docs;
 };
 
-const getSpeciesByName = async itemName => {
+const getSpeciesByName = async (itemName, force = false) => {
 
     if(!itemName) return '';
 
-    const item = getSpeciesFromCollection(itemName);
-    
-    if(item) return new Promise(resolve => resolve(item));
+    // let item = force ? null : getSpeciesFromCollection(itemName);
+
+    // if(item) return new Promise(resolve => resolve(item));
     
     const items = await getSpecies({ key:'name', operator:'==', value:itemName });
     
+    console.log(items);
+
     return items[0];
 };
 
@@ -382,13 +396,11 @@ const getRandomSpecies = async number => {
 
     var species = db.collection("species");
 
-    var key = species.doc().id;
-
     const random = utils.getRandomInt(2);
 
     const operator = random === 0 ? '>=' : '<=';
 
-    querySnapshot = await species.where(firebase.firestore.FieldPath.documentId(), operator, key).limit(number).get();
+    querySnapshot = await species.where(firebase.firestore.FieldPath.documentId(), operator, getRandomId()).limit(number).get();
 
     querySnapshot.forEach(doc => {
         docs.push(doc.data());
@@ -435,4 +447,13 @@ export const firestore = {
 
     deleteSpeciesByName,
     deleteSpeciesTraitField
+};
+
+const getRandomId = () => {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let autoId = '';
+    for (let i = 0; i < 20; i++) {
+        autoId += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return autoId;
 };
