@@ -18,7 +18,7 @@ export const renderSeason = (modal, createGuide) => {
     if(config.guide.season.observableMonths) {
         
         const months = config.guide.season.observableMonths.map(month => month.name);
-        const observableMonths = `${months[0]}-${months[months.length - 1]}`;
+        const observableMonths = `${months[0].substring(0,4)}-${months[months.length - 1].substring(0,4)}`;
         
         renderTemplate({ observableMonths,languages }, template.content, parent);
 

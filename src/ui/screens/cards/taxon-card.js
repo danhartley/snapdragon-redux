@@ -125,7 +125,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
 
         membersCount.addEventListener('click', event => {
             document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = `Members of the ${taxon.name} family`;
-            const members = collection.items.filter(i => i.family === taxon.name);
+            const members = collection.items.filter(i => i.taxonomy.family.toLowerCase() === taxon.name.toLowerCase());
             const list = document.querySelector('#badgeListModal .js-modal-text');
             list.innerHTML = '';
             members.forEach(member => {

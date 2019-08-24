@@ -26,9 +26,6 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     let { config, collection, lesson } = store.getState();
 
-    const sub = subscription.getByName('renderHome');
-    if(sub) subscription.remove(sub);
-
     const template = document.createElement('template');
     template.innerHTML = homeTemplate;
 
@@ -122,8 +119,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     };
 
     const resumeLessonHandler = () => {
-        lessonHandler.getLessonItems(enums.lessonState.RESUME_LESSON, collection, config, history);        
-        // subscription.remove(subscription.getByName('renderSpeciesGrid'));
+        lessonHandler.getLessonItems(enums.lessonState.RESUME_LESSON, collection, config, history);
     };
 
     const checkState = state => {
@@ -282,6 +278,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     const handleBeginLessonState = (counter, speciesCount) => {
         
         subscription.remove(subscription.getByName('renderSpeciesGrid'));
+        subscription.remove(subscription.getByName('renderHome'));
 
         if(config.isPortraitMode && !!speciesCount) return;
         
