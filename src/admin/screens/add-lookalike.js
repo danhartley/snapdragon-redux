@@ -102,6 +102,9 @@ export const addLookalike = () => {
 
                 message.innerHTML = log;
 
+                setTimeout(() => {
+                    message.innerHTML = '';                    
+                }, 5000);
             }
         });
     };

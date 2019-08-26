@@ -1,0 +1,19 @@
+
+<div class="js-relationship-card-list" data-repeat-relationship="{{ relationships }}">
+    <div class="relationship-card">
+        <div class="cols">
+            <div>Relationship</div><div>{{ relationship.type }}</div>
+        </div>
+        <div class="cols">
+            <div class="js-test-card-container-link">
+                <span data-toggle="{{ relationship.modal }}" data-target="#cardModal" class="{{ relationship.className }}" id="{{ relationship.speciesA }}">{{ relationship.speciesA }}</span>
+            </div>                
+            <div class="capitalise">{{ relationship.speciesARole }}</div>
+        </div>
+        <div class="cols">
+            <div>{{ relationship.speciesB }}</div><div class="capitalise">{{ relationship.speciesBRole }}</div>
+        </div>
+        <div>{{ relationship.description }}</div>
+    </div>  
+
+</div>

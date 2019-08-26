@@ -36,7 +36,7 @@ const getLookalikeTest = item => {
 
         if(!item.traits || Object.keys(item.traits).length === 0) return {};
 
-        const lookaliketraits = item.traits['look-alikes'];
+        const lookaliketraits = item.traits['lookalikes'];
 
         if(!lookaliketraits) return {};
 
@@ -60,7 +60,7 @@ const getLookalikeTest = item => {
         // const question = item.vernacularName;
         // const answers = [ question, ...lookalikes.map(item => itemProperties.getVernacularName(item, config)) ];
 
-        return { question, answers, overrides : { question: 'Avoid look-alikes', help: '(Pick one correct image)', binomial: 'Latin name', vernacularName: 'Common name', trait: { name: 'look-alikes', lookalikes } } };
+        return { question, answers, overrides : { question: 'Avoid look-alikes', help: '(Pick one correct image)', binomial: 'Latin name', vernacularName: 'Common name', trait: { name: 'lookalikes', lookalikes } } };
     };
 
     return init();

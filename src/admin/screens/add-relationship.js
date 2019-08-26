@@ -141,6 +141,10 @@ export const addRelationship = () => {
                 const message = document.querySelector('.js-message');
 
                 message.innerHTML = log;
+
+                setTimeout(() => {
+                    message.innerHTML = '';                    
+                }, 5000);
             }
         });
     };

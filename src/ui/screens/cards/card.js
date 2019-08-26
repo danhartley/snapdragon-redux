@@ -5,7 +5,6 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { getBirdSong } from 'xeno-canto/birdsong';
 import { lookalikeSpecies } from 'ui/screens/common/look-alikes';
-import { linkedTaxa } from 'ui/screens/common/linked-taxa';
 import { infoSlider } from 'ui/screens/common/info-slider';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
@@ -153,11 +152,9 @@ const renderCommonParts = (template, config, item, collection, mode, parent, roo
     
     renderTaxaBox(rootNode.querySelector('.js-taxa-box'), { item, familyName: item.taxonomy.family, familyVernacularName });
 
-    infoSlider(item, item.family, rootNode.querySelector('.js-info-box'), mode);
+    infoSlider(item, rootNode.querySelector('.js-info-box'), mode);
 
     renderBadge(rootNode.querySelector('.js-names-badge'), item, config);
-    
-    linkedTaxa(item, config, rootNode.querySelector('.js-feature-types'), mode, isInCarousel, collection);
     
     renderCalendar(rootNode.querySelector('.js-calendar-box'), item, config);
 

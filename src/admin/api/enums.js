@@ -28,7 +28,7 @@ export const enums = {
   SYMBIOSIS: 'Symbiosis',
   ASSOCIATE: 'associate',
   SYMBIONTS: 'symbionts',
-  LOOK_ALIKES: 'look-alikes',
+  LOOKALIKES: 'look alikes',
   ECOLOGY: 'ecology',
   HABITAT: 'habitat',
   TROPHIC_LEVEL: 'Trophic level',

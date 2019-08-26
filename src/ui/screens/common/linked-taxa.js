@@ -1,14 +1,15 @@
-import * as R from 'ramda';
-
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
-// import { getLinkedTaxaTraits } from 'ui/helpers/traits-handler';
 import { renderCard } from 'ui/screens/cards/card';
 import { firestore } from 'api/firebase/firestore';
 
-import linkedTaxaTemplate from 'ui/screens/common/linked-taxa-template.html';
+import linkedTaxaLookalikeTemplate from 'ui/screens/common/linked-taxa-lookalike-template.html';
+import linkedTaxaRelationshipTemplate from 'ui/screens/common/linked-taxa-relationship-template.html';
 
-export const linkedTaxa = (item, config, parent, mode, isInCarousel, collection) => {
+export const linkedTaxa = (item, config, parent, mode, isInCarousel, collection, activeTraitValue) => {
+
+    parent.innerHTML = '';
+    const template = document.createElement('template');
 
     const addLinksToSpeciesCards = async mode => {        
         
@@ -37,9 +38,9 @@ export const linkedTaxa = (item, config, parent, mode, isInCarousel, collection)
             return vernacularName ? { name: taxonName, display: taxonName, isSpecies: true } : { name: taxonName, display: taxonName, isSpecies: true };
         };
     
-        const relationshipTraits = item.traits ? item.traits.relationships : null;
+        let relationshipTraits = item.traits ? item.traits.relationships : null;
 
-        let relationships = [], lookalikes = [];
+        let relationships = [];
 
         if(relationshipTraits) {
 
@@ -59,9 +60,13 @@ export const linkedTaxa = (item, config, parent, mode, isInCarousel, collection)
             relationships = await convertTraitsForDisplay();
         }
 
-        const lookalikeTraits = item.traits ? item.traits.lookalikes : null;
+        let lookalikeTraits = item.traits ? item.traits.lookalikes : null;
+
+        let lookalikes = [];
 
         if(lookalikeTraits) {
+
+            lookalikeTraits = lookalikeTraits.filter(species => species.lookalike.name === activeTraitValue);
 
             const convertLookalikesForDisplay = async () => {
                 return Promise.all(lookalikeTraits.map(trait => {
@@ -91,12 +96,17 @@ export const linkedTaxa = (item, config, parent, mode, isInCarousel, collection)
             return relationships;
         };
 
-        relationships = addDisplayRules(relationships);
-        lookalikes = addDisplayRules(lookalikes);
+        if(relationships) {
+            relationships = addDisplayRules(relationships);
+            template.innerHTML = linkedTaxaRelationshipTemplate;
+            renderTemplate({ relationships }, template.content, parent);
+        }
 
-        const template = document.createElement('template');
-        template.innerHTML = linkedTaxaTemplate;
-        renderTemplate({ relationships, lookalikes }, template.content, parent);
+        if(lookalikes) {
+            lookalikes = addDisplayRules(lookalikes);        
+            template.innerHTML = linkedTaxaLookalikeTemplate;
+            renderTemplate({ lookalikes }, template.content, parent);
+        }
         addLinksToSpeciesCards(mode);
     }; 
 

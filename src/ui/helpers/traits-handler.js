@@ -138,7 +138,7 @@ export const getLinkedTaxaTraits = traits => {
     for (let [key, obj] of Object.entries(traits)) {
         if(obj.type) {
             taxaTraits.push({ name: key, value: obj.value, type: obj.type });
-        } else if(key === 'look-alikes') {
+        } else if(key === 'lookalikes') {
             taxaTraits.push({ name: key, value: obj.value, type: 'lookalike' });
         } else if(key === 'symbionts') {
             taxaTraits.push({ name: key, value: obj.value, type: 'symbionts' });
@@ -148,38 +148,17 @@ export const getLinkedTaxaTraits = traits => {
     return taxaTraits;
 };
 
-export const getLookalikeTraitProperties = item => {
-    const traits = [];
-    for (let [key, obj] of Object.entries(item.traits)) {
-        if(key === 'look-alikes') {
-            const lookalikes = obj.value.filter(value => value !== '');
-            if(lookalikes.length > 0) {
-                traits.push({key,obj})
-            }
-        };
-        if(key === 'lookalikes') {
-            return item.traits.lookalikes;
-        };
-    }
-    let properties = null;
-    if(traits.length > 0) {
-        properties = R.clone(traits[0].obj.value);
-        properties.push(item.name);
-    }
-    return properties ? properties.filter(property => property !== '') : null;
-};
-
 export const getTraitsToExclude = () => {
     return [ 
         'symbionts', 'voice', 'pollination', 'name', 
-        'relationships', 'units', 'song', 'uk rank',
+        , 'units', 'song', 'uk rank',
         'colour', 'bark colour', 'height',
         'physiology', 'characteristic',
-        'lookalikes', 'look-alikes',
+        // 'lookalikes', 'relationships'
     ];
 };
 
-export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude) => {
+export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude, item) => {
 
     if(!hasTraitPropeties(traits)) return {};
     
@@ -187,7 +166,28 @@ export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude) => {
 
     for (let [key, obj] of Object.entries(traits)) {
         if(!R.contains(key, traitsToExclude)) {
-            includedTraits.push({ name: key, value: obj.value, unit: obj.unit });
+            if(key === 'lookalikes') {
+                obj.forEach(species => {
+                    includedTraits.push({
+                        name: key, value: [species.lookalike.name], 
+                        description: species.description, lookalike: { name: species.lookalike.name, description: species.lookalike.description } 
+                    }); 
+                });
+            } else if(key === 'relationships') {
+                obj.forEach(species => {
+                    includedTraits.push({ 
+                        name: key, value: [species.symbiont.name], 
+                        // type: species.value[0], 
+                        // speciesA: species.symbiont.name,
+                        // speciesARole: species.symbiont.role,
+                        // speciesB: item.name,
+                        // speciesBRole: species.type,
+                        // description: species.description
+                    }); 
+                });
+            } else {
+                includedTraits.push({ name: key, value: obj.value, unit: obj.unit });
+            }
         }
     }
     

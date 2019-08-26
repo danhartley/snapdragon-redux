@@ -54,7 +54,7 @@ export const getBonusTests = async (collection, itemIndices, bonusLayouts, lesso
                         return getTraitTypeTests(itemsInThisRound);
                     case 'song':
                         return getTraitTypeBirdsongTests(itemsInThisRound);
-                    case 'look-alikes':
+                    case 'lookalikes':
                         return getTraitTypeLookalikeTests(itemsInThisRound);
                     case 'definition':                        
                         return getDefinitionTypeTests(item);

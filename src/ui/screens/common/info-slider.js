@@ -1,12 +1,12 @@
 import { utils } from 'utils/utils';
 import { hasTraitPropeties, getTraitsToExclude, convertTraitsToNameValuePairsArray } from 'ui/helpers/traits-handler';
 import { renderTemplate } from 'ui/helpers/templating';
-import { firestore } from 'api/firebase/firestore';
+// import { firestore } from 'api/firebase/firestore';
 import { renderInfoDetails } from 'ui/screens/common/info-detail-slider';
 
 import infoSliderTemplate from 'ui/screens/common/info-slider-template.html';
 
-const renderInfoSlider = (traits, parent, id) => {
+const renderInfoSlider = (item, traits, parent, id) => {
 
     const slider = document.createElement('template');
           slider.innerHTML = infoSliderTemplate;
@@ -42,9 +42,9 @@ const renderInfoSlider = (traits, parent, id) => {
             activeTraitValue = activeTrait.querySelector('div:nth-child(2) > span:nth-child(1)').innerHTML;
             console.log(activeTraitKey);
             console.log(activeTraitValue);
-            const detail = firestore.getDefinition(activeTraitValue);
-            console.log(detail);
-            renderInfoDetails(detail);
+            // const detail = firestore.getDefinition(activeTraitValue);
+            // console.log(detail);
+            renderInfoDetails(item, activeTraitKey, activeTraitValue);
         }, 1000);
     };
 
@@ -65,41 +65,15 @@ export const taxonInfoSlider = (traits, parent, mode) => {
     }    
 };
 
-export const infoSlider = (item, family, parent, mode) => {
+export const infoSlider = (item, parent, mode) => {
     
     if(!hasTraitPropeties(item.traits)) return;
 
-    const traits = convertTraitsToNameValuePairsArray(item.traits, getTraitsToExclude());
+    const traits = convertTraitsToNameValuePairsArray(item.traits, getTraitsToExclude(), item);
     
     if(traits.length === 0) return;
-    // const speciesTraits = item.traits;
-
-    // const speciesTraits = item.traits.filter(trait => !R.contains(trait.name, traitsToExclude));getTraitsToExclude();
-
-    // if(speciesTraits.length === 0) return;
-
-    const familyTraits = (family && family.traits) ? family.traits : [];
-    // const species = { traits: speciesTraits.concat(familyTraits) };
-
-    // if(!species.traits) return;
-
-    // species.traits.forEach(trait => {
-    //     if(!trait.value && trait.value) {
-    //         trait.value = trait.value.join(', ');
-    //     }
-    // });
-
-    // const traits = [];
-
-    // for (let [key, obj] of Object.entries(item.traits)) {
-    //     if(key !== 'name') {
-    //         obj.value
-    //             ? traits.push({ name: key, value: obj.value })
-    //             : traits.push({ name: key, value: obj.value })
-    //     }
-    // }
     
     const id = mode === 'MODAL' ? 1 : 0;
 
-    renderInfoSlider(traits, parent, id);
+    renderInfoSlider(item, traits, parent, id);
 }

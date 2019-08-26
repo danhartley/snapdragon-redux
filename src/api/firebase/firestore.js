@@ -406,6 +406,7 @@ const getRandomSpecies = async number => {
 };
 
 const getDefinition = term => {
+    
     const dictionary = getGlossary();
 
     const terms = term.split(',');

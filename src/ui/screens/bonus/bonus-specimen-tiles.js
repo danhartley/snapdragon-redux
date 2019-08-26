@@ -10,7 +10,7 @@ export const renderBonusSpecimenTiles = bonusLayout => {
 
     collection.nextItem = bonusLayout.item;
 
-    if(bonusLayout.overrides && bonusLayout.overrides.trait && bonusLayout.overrides.trait.name === 'look-alikes') {
+    if(bonusLayout.overrides && bonusLayout.overrides.trait && bonusLayout.overrides.trait.name === 'lookalikes') {
         let noOfImagesPerItem = 6 / collection.items.length;
         renderMixedSpecimenImages(collection, noOfImagesPerItem, [ collection.nextItem, ...bonusLayout.overrides.trait.lookalikes]);
     } else {

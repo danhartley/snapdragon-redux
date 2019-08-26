@@ -163,6 +163,19 @@ td:empty:after{
   margin: .5rem 0;
 }
 
+.lookalike-card {
+  font-size: .9rem;
+}
+
+.lookalike-card div:nth-child(1), .lookalike-card div:nth-child(3) {
+  font-style: italic;
+  width: 100%;
+}
+
+.lookalike-card div:nth-child(3) {
+  margin: .5rem 0 0 0;
+}
+
 .relationship-card {
   border: 1px solid lightgray;
   margin: .25rem;
@@ -179,7 +192,7 @@ td:empty:after{
   font-style: italic;
 }
 
-.relationship-card .cols > div:nth-child(12) {
+.relationship-card .cols > div:nth-child(2) {
   text-transform: lowercase;
 }
 
