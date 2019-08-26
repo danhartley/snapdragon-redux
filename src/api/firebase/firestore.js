@@ -99,10 +99,6 @@ const getSpeciesByName = async (itemName, force = false) => {
 
     if(!itemName) return '';
 
-    // let item = force ? null : getSpeciesFromCollection(itemName);
-
-    // if(item) return new Promise(resolve => resolve(item));
-    
     const items = await getSpecies({ key:'name', operator:'==', value:itemName });
     
     console.log(items);

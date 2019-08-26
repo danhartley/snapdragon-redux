@@ -542,7 +542,7 @@ const treesOfLisbon = {
 const walkOne = { 
   behaviour: 'static',
   id: 11, 
-  name: 'Guided tour of Jardim da Estrela',
+  name: 'Jardim da Estrela',
   type: 'custom',
   descriptions: [
       'Jardim da Estrela.'
@@ -576,6 +576,7 @@ const walkOne = {
     'Phoenix reclinata', // tall?
     'Roystonea regia', // tall, wrong garden x
     'Chamaerops humilis',
+    'Fatsia japonica',
 
     'Cupressus sempervirens',
     'Cupressus lusitanica',
@@ -631,10 +632,20 @@ const walkOne = {
 
     'Schinus molle'
     ],
-  iconicTaxa: [ {
+  iconicTaxa: [ 
+    {
+      id: 'fungi',
+      common: 'Fungi & Lichens'
+    },
+    {
       id: 'plantae',
       common: 'Plants'
-  } ],
+    },
+    {
+      id: 'aves',
+      common: 'Birds'
+    }
+  ],
   guide: {
     locationPlace: 'Jardim da Estrela',
     locationType: 'taxon',
@@ -660,14 +671,14 @@ export const snapdragonCollections = [
     placeArrabida,
     
     snapdragonLichens,
-    snapdragonKitchenGarden,
     snapdragonMushroomsEasternUSA,
     commonBritishBirds,
     
+    walkOne,
+    treesOfLisbon,
     rhsTrees,
     rhsWeeds,
-    treesOfLisbon,
-    walkOne,
+    snapdragonKitchenGarden,
 
     selectedItemsCollection
 ];

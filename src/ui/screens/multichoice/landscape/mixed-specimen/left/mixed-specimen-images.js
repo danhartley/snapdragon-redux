@@ -9,7 +9,7 @@ import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import { DOM } from 'ui/dom';
 import { iconicTaxa, matchIcon } from 'api/snapdragon/iconic-taxa';
 import { renderTemplate } from 'ui/helpers/templating';
-import { getPoolItems } from 'ui/screens/multichoice/missing-data-helper';
+import { getPoolItems } from 'snapdragon-engine/pool-handler';
 
 import specimensTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images-template.html';
 

@@ -343,6 +343,11 @@ export const plantae = [
         wiki: "https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#aristate"
     },
     {
+        term: "leaf sheath",
+        definition: "A structure at the base of a leaf's petiole that partly surrounds or protect the stem or another organ that it subtends.",
+        wiki: "https://en.wiktionary.org/wiki/leaf_sheath"
+    },
+    {
         term: "C3 carbon fixation",
         definition: "C3 plants tend to thrive in areas where sunlight intensity and temperatures are moderate.",
         wiki: "https://en.wikipedia.org/wiki/C3_carbon_fixation",
@@ -562,7 +567,7 @@ export const plantae = [
         term : "Spike",
         definition : "(Infloresence) a type of raceme with flowers that do not have a pedicel.",
         wiki: 'https://en.wikipedia.org/wiki/Inflorescence',
-        image: {
+        img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Inflorescences_Spike_Kwiatostan_K%C5%82os.svg'
         }
     },
@@ -666,6 +671,16 @@ export const plantae = [
     {
         term : "Vase",
         definition : "(Tree shape) branches develop upward from the trunk e.g. hawthorn, elm, boxelder.",
+    },
+    {
+        term : "Stem",
+        definition : "The plant axis that bears buds and shoots with leaves and, at its basal end, roots. It conducts water, minerals, and food to other parts of the plant.",
+        wiki: 'https://en.wikipedia.org/wiki/Plant_stem'
+    },
+    {
+        term : "Stalk",
+        definition : "Attaches the leaf blade to the stem (petiole).",
+        wiki: 'https://en.wikipedia.org/wiki/Stalk'
     },
     {
         term : "Columnar",
@@ -873,8 +888,31 @@ export const plantae = [
         term: 'Transverse',
         definition: 'Veins coming from the center of the leaf and radiating toward the edges.',
         img: {
-            url: 'Tertiary veins running perpendicular to axis of main vein, connecting secondary veins.'
+            url: 'https://upload.wikimedia.org/wikipedia/commons/d/dd/Leaf_morphology_cross_venulate.png'
         },
         wiki: 'https://en.wikipedia.org/wiki/Leaf#Venation'
+    },
+    {
+        term: 'Sagittate',
+        definition: 'Arrowhead-shaped with the lower lobes folded, or curled downward.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/9/9f/Leaf_morphology_spear-shaped.png'
+        },
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology'
+    },
+    {
+        term: 'Succulent',
+        definition: '(Plants) that have some parts that are more than normally thickened and fleshy, usually to retain water in arid climates or soil conditions.',
+        wiki: 'https://en.wikipedia.org/wiki/Succulent_plant'
+    },
+    {
+        term: 'Monocarpic',
+        definition: '(Plants) whose flowers, set seed then die.',
+        wiki: 'https://en.wikipedia.org/wiki/Monocarpic'
+    },
+    {
+        term: 'Polycarpic',
+        definition: '(Plants) are those that flower and set seeds many times before dying.',
+        wiki: 'https://en.wikipedia.org/wiki/Polycarpic'
     },
 ];

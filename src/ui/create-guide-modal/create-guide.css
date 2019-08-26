@@ -717,6 +717,10 @@
     width: 100%;
   }
 
+  #createGuide .modal-dialog, #exampleGuide .modal-dialog, #menuModal .modal-dialog, #badgeListModal .modal-dialog {
+    height: initial;
+  }
+
   #exampleGuide .btn-group label:nth-of-type(2n) {
     background-color: var(--snap-lesson-row-green);
   }

@@ -171,9 +171,11 @@ export const getLookalikeTraitProperties = item => {
 
 export const getTraitsToExclude = () => {
     return [ 
-        'look-alikes', 'symbionts', 'voice', 'pollination', 'name', 
-        'relationships', 'units', 'lookalikes', 'song', 'uk rank',
-        'colour', 'bark colour', 'height'
+        'symbionts', 'voice', 'pollination', 'name', 
+        'relationships', 'units', 'song', 'uk rank',
+        'colour', 'bark colour', 'height',
+        'physiology', 'characteristic',
+        'lookalikes', 'look-alikes',
     ];
 };
 

@@ -8,6 +8,7 @@
   border-radius: 0;
   border-top-left-radius: .3rem;
   border-top-right-radius: .3rem;
+  height: 100%;
 }
   
 .modal-body {
@@ -282,20 +283,14 @@
 
 @media (min-width: 768px) {
 
-  /* #cardModal .info-details {
-    height: calc(90vh - 30rem);
-  } */
-
-  #cardModal .modal-content .snapdragon-container {  
-    height: 70vh;
-  }
-
   .modal-title {
     font-size: 1rem;
   }
 
   .modal-dialog {
-    margin: 2rem auto;
+    margin: 0rem auto;
+    height: 100%;
+    padding: 1rem;
   }
 
   .modal-body {
@@ -384,7 +379,6 @@
 @media (min-height: 640px) {
     
   .imageSlider .carousel-item {
-    /* height: 13.875rem; */
     height: 30vh;
     padding: 1rem 10%;
   }

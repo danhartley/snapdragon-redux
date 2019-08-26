@@ -491,6 +491,10 @@ a.dropdown-item {
   flex: auto;
 }
 
+.footer-score {
+  font-size: .9rem;
+}
+
 .footer-round,
 .footer-score span {
   color: var(--snap-text-medium-dark);
@@ -1482,6 +1486,7 @@ label.btn.btn-secondary .lesson-icon {
 
 .info.carousel.slide .carousel-item div:nth-child(1) {
   background-color: rgba(128, 128, 128, 0.3);
+  text-transform: lowercase;
 }
 
 .info.carousel.slide .carousel-item div:nth-child(2) {
