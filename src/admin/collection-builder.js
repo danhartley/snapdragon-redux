@@ -8,6 +8,7 @@ import { speciesHandler } from 'admin/screens/species-handler';
 import { traitsHandler } from 'admin/screens/traits-handler';
 import { addRelationship } from 'admin/screens/add-relationship';
 import { addLookalike } from 'admin/screens/add-lookalike';
+import { addPhotos } from 'admin/screens/add-photos';
 
 const auth = firebase.auth();
 
@@ -63,11 +64,14 @@ const addRelationshipParent = document.querySelector('#add-relationship');
 const addLookalikeParent = document.querySelector('#add-lookalike');
       addLookalikeParent.addEventListener('click', addLookalike);
 
+const addPhotosTab = document.querySelector('#add-photos');
+      addPhotosTab.addEventListener('click', addPhotos);
+
 const setupUI = (user) => {
   if (user) {
     loggedInLinks.forEach(item => item.classList.remove('hide'));
     loggedOutLinks.forEach(item => item.classList.add('hide'));
-    addTraits.click();
+    addPhotosTab.click();
 } else {    
     loggedInLinks.forEach(item => item.classList.add('hide'));
     loggedOutLinks.forEach(item => item.classList.remove('hide'));

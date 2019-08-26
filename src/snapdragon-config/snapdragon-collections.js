@@ -611,7 +611,8 @@ const walkOne = {
 
     'Ceiba speciosa',
     'Ceratonia siliqua',
-    'Dombeya x cayeuxii', // the big flower balls
+    // 'Dombeya x cayeuxii', // the big flower balls
+    'Dombeya wallichii', // parent of the above
     'Apollonias barbujana',
 
     'Dendrocalamus giganteus',
