@@ -46,7 +46,7 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
         const mixedItems = preselectedItems || await getPoolItems(collection);
 
         mixedItems.map(item => item.images.map(image => {
-            return image.url = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config);
+            return image = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config).medium;
         }));
 
         const images = utils.shuffleArray(mixedItems).map((item, index) => {

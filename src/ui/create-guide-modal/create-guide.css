@@ -717,7 +717,9 @@
     width: 100%;
   }
 
-  #createGuide .modal-dialog, #exampleGuide .modal-dialog, #menuModal .modal-dialog, #badgeListModal .modal-dialog {
+  #createGuide .modal-dialog, #exampleGuide .modal-dialog, 
+  #menuModal .modal-dialog, #badgeListModal .modal-dialog,
+  #imageModal .modal-dialog {
     height: initial;
   }
 

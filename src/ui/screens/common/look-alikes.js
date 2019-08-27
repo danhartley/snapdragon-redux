@@ -48,7 +48,7 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
                     const images = lookalikeItem.images.map((img, index) => { 
                         return { 
                                 index: index + 1, 
-                                src: { ...img, url: scaleImage({ url: img.url }, imageUseCases.CAROUSEL, config) },
+                                src: { ...img, url: scaleImage({ url: img.url }, imageUseCases.CAROUSEL, config).medium },
                                 itemName: lookalikeItem.name, 
                                 itemCommon: lookalikeItem.vernacularName };
                     });

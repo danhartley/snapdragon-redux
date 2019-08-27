@@ -10,12 +10,12 @@
                         <td id="{{ item.name }}" data-snap-index="{{ item.snapIndex }}">
                             <img 
                                 id="{{ item.name }}" 
-                                src="https://content.eol.org/data/media/{{ item.url }}" 
+                                src="{{ item.small }}" 
                                 alt="{{ item.name }}" 
                                 data-toggle="modal" 
                                 data-target="#imageModal" 
-                                data-id="{{ item.name }}" 
-                                data-src="https://content.eol.org/data/media/{{ item.url }}" 
+                                data-id="{{ item.name }}"                                 
+                                data-url="{{ item.url }}" 
                                 data-rights-holder="{{ item.rightsHolder }}" 
                                 data-title="{{ item.name }}"
                                 data-license="{{ item.license }}"                                

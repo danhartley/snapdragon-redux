@@ -1,3 +1,4 @@
+import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
 import { speciesPicker } from 'admin/screens/species-picker';
 import { inat } from 'admin/api/inat';
@@ -24,8 +25,8 @@ export const addPhotos = () => {
 
         const renderPhotos = photos => {
 
-            const smallPhotos = photos.map(photo => {
-                return { ...photo, url: photo.url.replace('medium', 'small') };                
+            const smallPhotos = photos.map((photo, index) => {
+                return { ...photo, url: photo.url.replace('medium', 'small'), index };       
             });
 
             const parent = document.getElementById('photosGallery');
@@ -36,10 +37,50 @@ export const addPhotos = () => {
 
             renderTemplate(context, template.content, parent);
 
+            const photoIds = [];
+
+            const btnAddAllPhotos = document.querySelector('.btnAddAllPhotos');
+            const btnAddSelectedPhotos = document.querySelector('.btnAddSelectedPhotos');
+
             document.querySelectorAll('img').forEach(img => {
                 img.addEventListener('click', e => {
-                    console.log(e.target);
+
+                    const image = event.target;
+                    const imageId = parseInt(event.target.id);
+                    const index = photoIds.indexOf(imageId);
+                    if (index > -1) {
+                        image.style.filter = 'saturate(100%)';
+                        image.style.opacity = 1;
+                        photoIds.splice(index, 1);
+                    } else {
+                        image.style.filter = 'saturate(10%)';
+                        image.style.opacity = .3;
+                        photoIds.push(imageId);
+                    }
+
+                    photoIds.length > 0
+                        ? btnAddSelectedPhotos.classList.remove('hide')
+                        : btnAddSelectedPhotos.classList.add('hide')
+
                 });
+            });
+
+            btnAddAllPhotos.addEventListener('click', e => {
+                const name = input.value;
+                addPhotosToSpecies(name, photos);
+            });
+
+            btnAddSelectedPhotos.addEventListener('click', e => {
+                const selectedPhotos = [];
+                photos.forEach((photo,index) => {
+                    photoIds.forEach(id => {
+                        if(index === id) {
+                            selectedPhotos.push(photo);
+                        }
+                    });
+                });
+                const name = input.value;
+                addPhotosToSpecies(name, selectedPhotos);
             });
         };
 
@@ -48,6 +89,11 @@ export const addPhotos = () => {
             const photos = await inat.getTaxonDataIncPhotos(name);
             renderPhotos(photos);
         });
+
+        const addPhotosToSpecies = async (name, photos) => {
+            const response = await firestore.addPhotos(name, photos);
+            console.log(response);
+        };
 
     };
 

@@ -3,10 +3,10 @@
 </div>
 
 <ul data-repeat-photo="{{ photos }}">
-    <img src="{{ photo.url }}" alt="">
+    <img id="{{ photo.index }}" src="{{ photo.url }}" alt="">
 </ul>
 
-<div class="col s4 hide">
-    <button class="btnAddSelectedPhotos btn">Add selected photos only</button>
+<div class="col s4">
+    <button class="btnAddSelectedPhotos btn hide">Add selected photos only</button>
 </div>
     

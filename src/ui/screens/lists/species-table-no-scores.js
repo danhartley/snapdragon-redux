@@ -63,7 +63,9 @@ export const buildTable = (collection, config, enums) => {
 
     const itemImages = collection.items.map(item => { 
 
-        const image = utils.shuffleArray(item.images)[0];
+        let image = utils.shuffleArray(item.images)[0];
+            image = scaleImage(image, imageUseCases.SPECIES_LIST, config);
+
         const { traitName, keyTratLinkClass } = getTraitName(item, enums);
         const { iconicTaxonIcon, hideFungiIcon } = getIconicTaxonIcon(item);
 
@@ -76,7 +78,8 @@ export const buildTable = (collection, config, enums) => {
             vernacularName: item.vernacularName,
             snapIndex: item.snapIndex,
             license: image.license,
-            url: scaleImage(image, imageUseCases.SPECIES_LIST, config),
+            url: image.url,
+            small: image.small,
             rightsHolder: image.rightsHolder || 'Public domain',
             source: image.source,
             shortName: itemProperties.trimLatinName(item.name),

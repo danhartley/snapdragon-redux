@@ -1,11 +1,10 @@
 <div class="species-grid-container">
     <div class="species-grid" data-repeat-image="{{ images }}">
         <img    
-            src="https://content.eol.org/data/media/{{ image.small }}"
+            src="{{ image.medium }}"
             data-toggle="modal" data-target="#cardModal"
             data-item-name="{{ image.itemName }}" 
-            data-unique-url="{{ image.url }}"
-            data-src="https://content.eol.org/data/media/{{ image.small }}"        
-        alt="">
+            data-url="{{ image.url }}"
+            alt="">
     </div>
 </div>

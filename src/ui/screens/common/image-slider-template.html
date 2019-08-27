@@ -14,13 +14,13 @@
       <div data-repeat-image="{{ images }}">
         <div class="carousel-item">
             <div class="d-block w-100" 
-                style="background-image: url('https://content.eol.org/data/media/{{ image.url }}');" 
+                style="background-image: url('{{ image.medium }}');" 
                 data-title="{{ image.itemName }}"
                 data-source="{{ image.source }}"
                 data-license="{{ image.license }}"
                 data-rights-holder="{{ image.rightsHolder }}"
                 data-photographers-name="{{ image.photographersName }}"
-                data-src="https://content.eol.org/data/media/{{ image.url }}">    
+                data-url="{{ image.url }}">    
                 <div data-item-name="{{ image.itemName }}" class="layer"></div>        
         </div>
         </div>

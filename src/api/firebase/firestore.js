@@ -359,6 +359,28 @@ const addSpeciesRelationship = async (type, traits) => {
 
 };
 
+const addPhotos = async (name, photos) => {
+
+    let speciesDocRef;
+
+    const querySnapshot = await db.collection("species").where("name", "==", name).get();
+    
+    querySnapshot.forEach(function(doc) {
+        speciesDocRef = doc.ref;
+    });
+
+    console.log(speciesDocRef);
+
+    try {
+        return speciesDocRef.update({
+            images: firebase.firestore.FieldValue.arrayUnion(...photos)
+        });
+    } catch (e) {
+        return e.message;
+    }
+
+};
+
 const deleteSpeciesTraitField = async (name, field) => {
 
     let querySnapshot, speciesTraitsRef;
@@ -438,6 +460,7 @@ export const firestore = {
     addTraits,
     addSpeciesTraits,
     addSpeciesRelationship,
+    addPhotos,
     
     updateSpecies,
     updateSpeciesNames,

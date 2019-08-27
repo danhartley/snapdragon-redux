@@ -142,13 +142,13 @@ const renderCommonParts = (template, config, item, collection, mode, parent, roo
 
     const familyVernacularName = item.family && item.family.names ? item.family.names[0] : '';
         
-    const headerImage = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
+    const image = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
     
     const clone = document.importNode(template.content, true);
     
     parent.innerHTML = '';
     
-    renderTemplate({ name: item.name, vernacularName: item.vernacularName, headerImage, iconicTaxon: item.iconicTaxon }, template.content, parent, clone);
+    renderTemplate({ name: item.name, vernacularName: item.vernacularName, image, iconicTaxon: item.iconicTaxon }, template.content, parent, clone);
     
     renderTaxaBox(rootNode.querySelector('.js-taxa-box'), { item, familyName: item.taxonomy.family, familyVernacularName });
 
