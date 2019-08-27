@@ -35,6 +35,8 @@ export const renderSpeciesGrid = () => {
 
         speciesImages.forEach(si => {
             
+            if(!si.images) return;
+
             if(si.images.length > 0 && si.images[0].url) {
                 const image = scaleImage(si.images[0], imageUseCases.SPECIES_GRID);
                 if(counter < imageCount) {

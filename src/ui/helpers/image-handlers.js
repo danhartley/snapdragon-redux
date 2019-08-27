@@ -5,7 +5,7 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { imageSlider } from 'ui/screens/common/image-slider';
 
 const stripImageUrlOfScale = url => {
-    if(!url) return '';
+    if(!url || typeof url === 'object') return '';
     url = url.replace('.260x190.jpg', '');
     url = url.replace('.98x68.jpg', '');
     url = url.replace('.jpg', '');
@@ -46,7 +46,8 @@ export const prepImageForCarousel = (image, index, item, config, useCase) => {
     let img = { 
         index: index + 1, 
         ...image,
-        ...{ url : scaleImage(image, useCase, config) },
+        url: scaleImage(image, useCase, config).medium,
+        // ...{ url : scaleImage(image, useCase, config) },
         itemName: item.name,
         itemCommon: item.itemCommon,
         rightsHolder: image.rightsHolder || '',
