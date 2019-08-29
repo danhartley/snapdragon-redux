@@ -1,7 +1,6 @@
 import { utils } from 'utils/utils';
 import { hasTraitPropeties, getTraitsToExclude, convertTraitsToNameValuePairsArray } from 'ui/helpers/traits-handler';
 import { renderTemplate } from 'ui/helpers/templating';
-// import { firestore } from 'api/firebase/firestore';
 import { renderInfoDetails } from 'ui/screens/common/info-detail-slider';
 
 import infoSliderTemplate from 'ui/screens/common/info-slider-template.html';
@@ -42,8 +41,6 @@ const renderInfoSlider = (item, traits, parent, id) => {
             activeTraitValue = activeTrait.querySelector('div:nth-child(2) > span:nth-child(1)').innerHTML;
             console.log(activeTraitKey);
             console.log(activeTraitValue);
-            // const detail = firestore.getDefinition(activeTraitValue);
-            // console.log(detail);
             renderInfoDetails(item, activeTraitKey, activeTraitValue);
         }, 1000);
     };
@@ -54,14 +51,14 @@ const renderInfoSlider = (item, traits, parent, id) => {
     parent.querySelector(`#traitSlider${id} .carousel-control-next`).addEventListener('click', changeTraitHandler);
 }
 
-export const taxonInfoSlider = (traits, parent, mode) => {
+export const taxonInfoSlider = (item, traits, parent, mode) => {
 
     const id = mode === 'MODAL' ? 'taxon_1' : 'taxon_0';
 
     const convertedTraits = convertTraitsToNameValuePairsArray(traits, getTraitsToExclude());
 
     if(convertedTraits.length > 0) {
-        renderInfoSlider(convertedTraits, parent, id);
+        renderInfoSlider(item, convertedTraits, parent, id);
     }    
 };
 
@@ -76,4 +73,4 @@ export const infoSlider = (item, parent, mode) => {
     const id = mode === 'MODAL' ? 1 : 0;
 
     renderInfoSlider(item, traits, parent, id);
-}
+};

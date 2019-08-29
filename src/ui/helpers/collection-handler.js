@@ -110,10 +110,13 @@ export const collectionHandler = async (collection, config, counter, callback, c
 
             const familyTaxa = [], orderTaxa = [];
 
+            let taxa = await firestore.getTaxaNames();
+                taxa = taxa[0].value;
+
             const getFamilyTaxa = async families => {
                 return Promise.all(
                     families.map(async(family) => {
-                        const familyTaxon = await firestore.getItemTaxonByName(config, family);
+                        const familyTaxon = await firestore.getTaxonByName(config, family);
                         familyTaxa.push(familyTaxon);
                         return familyTaxon;
                     })
@@ -125,7 +128,7 @@ export const collectionHandler = async (collection, config, counter, callback, c
             const getOrderTaxa = async orders => {
                 return Promise.all(
                     orders.map(async(order) => {
-                        const orderTaxon = await firestore.getItemTaxonByName(config, order);
+                        const orderTaxon = await firestore.getTaxonByName(config, order);
                         orderTaxa.push(orderTaxon);
                         return orderTaxon;
                     })
@@ -136,21 +139,28 @@ export const collectionHandler = async (collection, config, counter, callback, c
 
             collection.items.forEach( async (item,index) => {
 
+                const names = item.name.split(' ');
+
+                item.taxonomy.genus = names[0];                
+                item.taxonomy.species = names[1];
+
                 item.family = familyTaxa.find(family => family.name === item.taxonomy[enums.taxon.FAMILY.name.toLowerCase()]);
                 item.order = orderTaxa.find(order => order.name === item.taxonomy[enums.taxon.ORDER.name.toLowerCase()]);
 
                 item.snapIndex = index + 1;
                 item.id = item.eolId;
-                
-                item.vernacularNames = itemProperties.getVernacularNames(item, config);
-                item.vernacularName = itemProperties.getVernacularName(item, config);
-                                
-                const names = item.name.split(' ');
 
-                item.taxonomy.genus = names[0];                
-                item.taxonomy.species = names[1];
+                item.vernacularNames = itemProperties.getVernacularNames(item, config);
+                item.vernacularName = itemProperties.getVernacularName(item, config);                                
                 
                 item.name = names.slice(0,2).join(' ');
+
+                if(R.contains(item.taxonomy.genus, taxa)) {
+                    item.genus = await firestore.getTaxonByName({language: 'en'}, item.taxonomy.genus);
+                    if(item.genus) {
+                        item.genus.traits = await firestore.getTraitsBySpeciesName(item.taxonomy.genus);
+                    }
+                }
 
             });
 

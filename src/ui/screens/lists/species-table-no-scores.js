@@ -72,6 +72,11 @@ export const buildTable = (collection, config, enums) => {
         const itemImage = {
             id: item.id,
             name: item.name,
+            genus: item.taxonomy.genus,
+            species: item.taxonomy.species,
+            genusLinkClass: item.genus
+                ? 'underline-link js-taxon-card-link' 
+                : 'js-taxon-card-link no-pointer-events',
             shortName: itemProperties.trimLatinName(item.name),
             taxonomy: item.taxonomy,
             iconicTaxon: item.iconicTaxon,
@@ -85,9 +90,6 @@ export const buildTable = (collection, config, enums) => {
             shortName: itemProperties.trimLatinName(item.name),
             keyTrait: itemProperties.getActiveTrait(item, [{ name: traitName, formatter: trait => trait[0] }]) || '',
             keyTratLinkClass: keyTratLinkClass,
-            familyLinkClass: item.family
-                                ? 'capitalise underline-link js-taxon-card-link' 
-                                : 'js-taxon-card-link no-pointer-events',
             familyLinkClass: item.family
                                 ? 'capitalise underline-link js-taxon-card-link' 
                                 : 'js-taxon-card-link no-pointer-events',

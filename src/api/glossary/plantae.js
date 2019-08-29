@@ -915,4 +915,19 @@ export const plantae = [
         definition: '(Plants) are those that flower and set seeds many times before dying.',
         wiki: 'https://en.wikipedia.org/wiki/Polycarpic'
     },
+    {
+        term: 'Apical dominance',
+        definition: 'Phenomenon whereby the main, central stem of the plant is dominant over other side stems; on a branch the main stem of the branch is further dominant over its own side branchlets.',
+        wiki: 'https://en.wikipedia.org/wiki/Apical_dominance'
+    },
+    {
+        term: 'Monopodial',
+        definition: '(Vascular plants) that grow upward from a single point, adding leaves to the apex each year with the stem growing longer accordingly.',
+        wiki: 'https://en.wikipedia.org/wiki/Monopodial'
+    },
+    {
+        term: 'Fascicle',
+        definition: 'A bundle of leaves or flowers growing crowded together.',
+        wiki: 'https://en.wikipedia.org/wiki/Fascicle_(botany)'
+    },
 ];

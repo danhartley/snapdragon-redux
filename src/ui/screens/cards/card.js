@@ -37,8 +37,8 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
 
             const itemWithProps = await getItem(item);
             
-            itemWithProps.family = await firestore.getItemTaxonByName(config, itemWithProps.taxonomy[enums.taxon.FAMILY.name.toLowerCase()]) || { names: [ itemWithProps.taxonomy.family ]};
-            itemWithProps.order = await firestore.getItemTaxonByName(config, itemWithProps.taxonomy[enums.taxon.ORDER.name.toLowerCase()]);
+            itemWithProps.family = await firestore.getTaxonByName(config, itemWithProps.taxonomy[enums.taxon.FAMILY.name.toLowerCase()]) || { names: [ itemWithProps.taxonomy.family ]};
+            itemWithProps.order = await firestore.getTaxonByName(config, itemWithProps.taxonomy[enums.taxon.ORDER.name.toLowerCase()]);
             itemWithProps.traits = await firestore.getTraitsBySpeciesName(item.name);
             itemWithProps.vernacularName = itemWithProps.vernacularName || itemProperties.getVernacularName(item, config);
 

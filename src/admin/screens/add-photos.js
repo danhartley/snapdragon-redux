@@ -1,6 +1,6 @@
 import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
-import { speciesPicker } from 'admin/screens/species-picker';
+import { speciesPicker } from 'admin/screens/taxa-pickers';
 import { inat } from 'admin/api/inat';
 
 import addPhotosTemplate from 'admin/screens/add-photos.html';

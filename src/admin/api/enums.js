@@ -1,5 +1,6 @@
 export const enums = {
   name: {
+  DESCRIPTION: 'description',
   CIRCUMFERENCE: 'circumference',
   EXPOSURE: 'exposure',
   CAP_SHAPE: 'cap shape',
@@ -25,6 +26,7 @@ export const enums = {
   LOBE_DIAMETER: 'Lobe diameter',
   ROLE: 'Role',
   NATIVE: 'Native',
+  NATIVE_TO: 'Native to',
   SYMBIOSIS: 'Symbiosis',
   ASSOCIATE: 'associate',
   SYMBIONTS: 'symbionts',
@@ -89,6 +91,7 @@ export const enums = {
   LEAF_COLOUR_BELOW: 'Leaf colour below',
   LEAF_COLOUR_ABOVE: 'Leaf colour above',
   LEAF_VENATION: 'Leaf venation',
+  BRANCH_ARRANGEMENT: 'Branch arrangement',
   STALK_HEIGHT: 'Stalk height',
   STEM_HEIGHT: 'Stem height',
   STEM_DIAMETER: 'Stem diameter',
@@ -119,6 +122,7 @@ export const enums = {
   FEMALE_CONE_COLOUR: 'Female cone colour',
   CONE_SCALE_COUNT: 'Cone scale count',
   BARK_TYPE: 'Bark type',
+  BARK_TEXTURE: 'Bark texture',
   BARK_COLOUR: 'Bark colour',
   ALLOCHORY: 'Allochory',
   REPRODUCTIVE_CONTAINER: 'Reproductive container',
@@ -546,6 +550,7 @@ export const enums = {
   RETUSE: 'retuse',
   RHOMBOID: 'rhomboid',
   ROUNDED: 'rounded',
+  TRIANGULAR: 'Triangular',
   SEMITERETE: 'semiterete',
   SINUATE: 'sinuate',
   SAGITTATE: 'sagittate',
@@ -558,7 +563,6 @@ export const enums = {
   TRUNCATE: 'truncate',
   UNDULATE: 'undulate',
   UNIFOLIATE: 'unifoliate',
-  ROUNDED: 'Rounded',
   FLAT: 'Flat',
   NEEDLE: 'Needle',
   type: 'leafShape',
@@ -587,6 +591,8 @@ export const enums = {
   WHORLED: 'Whorled',
   ROWS: 'Rows',
   SPIRAL: 'Spiral',
+  OVERLAPPING: 'Overlapping',
+  INCURVED: 'Incurved',
   type: 'leafArrangement',
   name: 'leaf arrangement'
   },
@@ -1043,6 +1049,8 @@ export const enums = {
   RUNNER: 'Runner',
   CLIMBER: 'Climber',
   BUTTRESS_ROOT: 'Buttress root',
+  MONOPODIAL: 'Monopodial',
+  APICAL_DOMINANCE: 'Apical dominance',
   type: 'characteristic',
   name: 'characteristic'
   },
@@ -1143,13 +1151,14 @@ export const enums = {
     GLABROUS: 'Glabrous',
     PUBESCENT: 'Pubescent',
   },
-  leafTexture: {
+  texture: {
     LEATHERY: 'Leathery',
     FLESHY: 'Fleshy',
     GLOSSY: 'Glossy',
     WOOLY: 'Wooly',
     TOMENTOSE: 'tomentose',
     SCALY: 'Scaly',
+    ROUGH: 'Rough'
   },
   treeShape: {
     help: "Which descrption is the best match for this tree?",
@@ -1167,11 +1176,12 @@ export const enums = {
     OVOID_CONIC: 'Ovoid-conic',
     CONIC: 'Conic',
     DOMED: 'Domed',
+    SPIRE_LIKE: 'Spire-like',
+    SLENDER: 'Slender'
   },
   barkType: {
     SMOOTH: 'Smooth',
     LENTICELS: 'Lenticels',
-    PEELING_STRIPS: 'Peeling strips',
     PEELING_STRIPS: 'Peeling strips',
     VERTICAL_CRACK: 'Vertical cracks',
     VERTICAL_STRIPS: 'Vertical strips',
@@ -1180,6 +1190,8 @@ export const enums = {
     INTERSECTING_RIDGES: 'Intersecting ridges',
     UNINTERRUPTED_RIDGES: 'Uninterrupted ridges',
     RIDGES_BROKEN_HORIZONTALLY: 'Ridges broken horizontally',
+    PAPER_LIKE: 'Paper-like',
+    RESINOUS: 'Resinous',
   },
   coneShape: {
     BARREL_SHAPED: 'Barrel-shaped',
@@ -1197,6 +1209,10 @@ export const enums = {
   },
   flowerShape: {
     TRUMPET_SHAPED: 'Trumpet-shaped'
+  },
+  BranchArrangement: {
+    HORIZONTAL: 'Horizontal',
+    WHORLS: 'Whorls'
   },
   units: [
     { lifeSpan: [ 'DD', 'MM', 'YY'] },

@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { helpers } from 'admin/helpers';
 import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
-import { speciesPicker } from 'admin/screens/species-picker';
+import { speciesPicker } from 'admin/screens/taxa-pickers';
 import { eol } from 'admin/api/eol';
 
 import lookalikeTemplate from 'admin/screens/add-lookalike-template.html';

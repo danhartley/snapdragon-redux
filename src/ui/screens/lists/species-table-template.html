@@ -25,8 +25,10 @@
                             <span class="js-test-card-container-link">
                                 <span data-toggle="modal" data-name="{{ item.name }}" data-target="#cardModal" class="capitalise underline-link">{{ item.vernacularName }}</span>
                             </span>
-                            <span class="latin-name wide-screen">{{ item.name }}</span>
-                            <span class="latin-name narrow-screen">{{ item.shortName }}</span>
+                            <span class="latin-name wide-screen">
+                                <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="genus" data-genus="{{ item.genus }}" data-target="#cardModal" class="{{ item.genusLinkClass }}">{{ item.genus }}</span> <span>{{ item.species }}</span>
+                            </span>
+                            <span class="latin-name narrow-screen"><span>{{ item.genus }}</span> <span>{{ item.species }}</span></span>
                         </td>
                         <td class="wide-screen">
                             <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="family" data-family="{{ item.taxonomy.family }}" data-target="#cardModal" class="{{ item.familyLinkClass }}">{{ item.taxonomy.family }}</span>

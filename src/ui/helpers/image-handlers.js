@@ -47,7 +47,6 @@ export const prepImageForCarousel = (image, index, item, config, useCase) => {
         index: index + 1, 
         ...image,
         url: scaleImage(image, useCase, config).medium,
-        // ...{ url : scaleImage(image, useCase, config) },
         itemName: item.name,
         itemCommon: item.itemCommon,
         rightsHolder: image.rightsHolder || '',

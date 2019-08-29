@@ -59,12 +59,31 @@ const getSpeciesNames = async () => {
         const docs = [];
     
         querySnapshot.forEach(doc => {
-        docs.push(doc.data());
+            docs.push(doc.data());
         });
     
         return await docs;
     } catch(error) {
         console.error('error for species names', ', error: ', error);
+    }
+};
+
+const getTaxaNames = async () => {
+
+    try {
+        const taxaPropertiesRef = db.collection(`taxa`).where("collection_property", "==", 'names');
+
+        const querySnapshot = await taxaPropertiesRef.get();
+        
+        const docs = [];
+    
+        querySnapshot.forEach(doc => {
+            docs.push(doc.data());
+        });
+    
+        return await docs;
+    } catch(error) {
+        console.error('error for taxa names', ', error: ', error);
     }
 };
 
@@ -129,7 +148,7 @@ const getFamiliesByIconicTaxon = async (iconicTaxonRank, iconicTaxonValue, isLic
     return await getTaxaWhere({ language: config.language, key: 'iconicTaxon', operator: '==', value: iconicTaxonValue, limit: 7 });
 };
 
-const getItemTaxonByName = async (config, name) => {
+const getTaxonByName = async (config, name) => {
 
     try {
                 
@@ -141,14 +160,15 @@ const getItemTaxonByName = async (config, name) => {
         
         if(querySnapshot.docs.length > 0) {
             querySnapshot.forEach(doc => {
-                taxon = doc.data();
-          });
+                taxon = doc.data();                                
+          });          
         }
 
         return taxon;
 
     } catch (error) {
         console.error('error for: ', name, error);
+        return error;
     }
 };
 
@@ -443,13 +463,30 @@ const getDefinition = term => {
     return definition;
 };
 
+const addTaxon = async props => {
+
+    const { language, taxon } = props;
+  
+    let docRef;
+  
+    try {
+        docRef = await db.collection(`taxa_en`).add(taxon);
+        return docRef;
+    } catch(error) {
+        console.error("Error writing document: ", error);
+    }
+  
+    return docRef;
+};
+
 export const firestore = {
     getSpecies,
     getSpeciesNames,
+    getTaxaNames,
     getSpeciesByName,
     getSpeciesByIconicTaxon,
     getFamiliesByIconicTaxon,
-    getItemTaxonByName,
+    getTaxonByName,
     getTraitsBySpeciesName,
     getBirdsong,
     getTraitValues,
@@ -461,6 +498,7 @@ export const firestore = {
     addSpeciesTraits,
     addSpeciesRelationship,
     addPhotos,
+    addTaxon,
     
     updateSpecies,
     updateSpeciesNames,

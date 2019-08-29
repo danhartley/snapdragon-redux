@@ -663,6 +663,58 @@ const walkOne = {
   }
 };
 
+const walkTwo = { 
+  behaviour: 'static',
+  id: 12, 
+  name: 'Conifers of Jardim da Estrela',
+  type: 'custom',
+  descriptions: [
+      'Conifers of Jardim da Estrela.'
+  ],
+  moduleSize: 4,
+  lessonPlanLandscape: 1,
+  lessonPlanPortrait: 101,
+  glossary: ['plantae'],
+  items: [
+    
+  ],
+  itemNames: [
+    'Araucaria columnaris',
+    'Buxus sempervirens',
+    'Cedrus atlantica',
+    'Cedrus deodara',
+    'Cedrus libani',
+    'Cupressus lusitanica',
+    'Cupressus sempervirens',
+    'Juniperus chinensis',
+    'Picea abies',
+    'Pinus canariensis',
+    'Pinus halepensis',
+    'Pinus pinea',
+    'Sequoia sempervirens'
+    ],
+  iconicTaxa: [ 
+    {
+      id: 'plantae',
+      common: 'Plants'
+    }
+  ],
+  guide: {
+    locationPlace: 'Jardim da Estrela',
+    locationType: 'taxon',
+    place: {
+        name: 'Conifers of Jardim da Estrela',
+        id: 'any',
+        type: 'places'
+    },
+    season: {
+        type: 'all_year'
+    },
+    speciesRange: 0,
+    ready: true
+  }
+};
+
 export const snapdragonCollections = [
     
     location,
@@ -676,6 +728,7 @@ export const snapdragonCollections = [
     commonBritishBirds,
     
     walkOne,
+    walkTwo,
     treesOfLisbon,
     rhsTrees,
     rhsWeeds,

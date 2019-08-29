@@ -18,7 +18,10 @@ export const renderInfoDetails = (item, activeTraitKey, activeTraitValue) => {
         const detail = firestore.getDefinition(activeTraitValue);
 
         const parent = document.querySelector('.js-info-box-details');
-              parent.innerHTML = '';
+
+        if(!parent) return; // taxon info sliders
+
+        parent.innerHTML = '';
 
         const details = document.createElement('template');
 

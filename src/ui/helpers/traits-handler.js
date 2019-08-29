@@ -153,9 +153,23 @@ export const getTraitsToExclude = () => {
         'symbionts', 'voice', 'pollination', 'name', 
         , 'units', 'song', 'uk rank',
         'colour', 'bark colour', 'height',
-        'physiology', 'characteristic',
-        // 'lookalikes', 'relationships'
+        'physiology', 'characteristic', 'description'
     ];
+};
+export const handleUnit = unit => {
+
+    unit = unit || '';
+
+    switch(unit.toLowerCase()) {
+        case 'dd':
+            return ' days';
+        case 'mm':
+            return '';
+        case 'yy':
+            return ' years';
+     default:
+        return unit;   
+    }    
 };
 
 export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude, item) => {
@@ -176,17 +190,11 @@ export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude, item
             } else if(key === 'relationships') {
                 obj.forEach(species => {
                     includedTraits.push({ 
-                        name: key, value: [species.symbiont.name], 
-                        // type: species.value[0], 
-                        // speciesA: species.symbiont.name,
-                        // speciesARole: species.symbiont.role,
-                        // speciesB: item.name,
-                        // speciesBRole: species.type,
-                        // description: species.description
+                        name: key, value: [species.symbiont.name],
                     }); 
                 });
             } else {
-                includedTraits.push({ name: key, value: obj.value, unit: obj.unit });
+                includedTraits.push({ name: key, value: obj.value, unit: handleUnit(obj.unit) });
             }
         }
     }

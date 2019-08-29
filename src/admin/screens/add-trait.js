@@ -74,7 +74,11 @@ export const renderAddTrait = (parent, callback) => {
         let traitKeyValues = traitValues[utils.toCamelCase(traitKey)];
 
         if(!traitKeyValues) {
-            traitKeyValues = traitValues[itemProperties.getRootTraitValue(utils.toCamelCase(traitKey))];
+            traitKeyValues = traitValues[itemProperties.getRootTraitValue(utils.toCamelCase(traitKey), 'start')];
+        }
+
+        if(!traitKeyValues) {
+            traitKeyValues = traitValues[itemProperties.getRootTraitValue(utils.toCamelCase(traitKey), 'end')];
         }
 
         if(traitKeyValues) {
