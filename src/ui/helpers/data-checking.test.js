@@ -156,4 +156,8 @@ test('should return common, root trait value for child value', () => {
   parent = 'colour';
   expect(itemProperties.getRootTraitValue(child, 'start')).toEqual(parent);
   expect(itemProperties.getRootTraitValue(child)).toEqual(parent);
+  child = 'youngLeafShape';
+  parent = 'shape';
+  expect(itemProperties.getRootTraitValue(child, 'start')).toEqual(parent);
+  expect(itemProperties.getRootTraitValue(child)).toEqual(parent);
 });

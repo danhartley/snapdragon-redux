@@ -78,9 +78,11 @@ export const enums = {
   LEAF_BLADE: 'Leaf blade',
   LEAF_VARIATION: 'Leaf variation',
   LEAF_SHAPE: 'Leaf shape',
+  YOUNG_LEAF_SHAPE: 'Young leaf shape',
   LEAF_MARGIN: 'Leaf margin',
   LEAF_ARRANGEMENT: 'Leaf arrangement',
   LEAF_LENGTH: 'Leaf length',
+  YOUNG_LEAF_LENGTH: 'Young leaf length',
   LEAF_WIDTH: 'Leaf width',
   LEAF_COLOUR: 'Leaf colour',
   LEAF_SURFACE: 'Leaf surface',
@@ -91,6 +93,7 @@ export const enums = {
   LEAF_COLOUR_BELOW: 'Leaf colour below',
   LEAF_COLOUR_ABOVE: 'Leaf colour above',
   LEAF_VENATION: 'Leaf venation',
+  LEAF_BUNDLE_COUNT: 'Leaf bundle count',
   BRANCH_ARRANGEMENT: 'Branch arrangement',
   STALK_HEIGHT: 'Stalk height',
   STEM_HEIGHT: 'Stem height',
@@ -486,7 +489,7 @@ export const enums = {
   type: 'leafVariation',
   name: 'leaf variation'
   },
-  leafShape: {
+  shape: {
   LINEAR: 'Linear',
   OVATE: 'Ovate',
   OBLANCEOLATE: 'Oblanceolate',
@@ -593,6 +596,7 @@ export const enums = {
   SPIRAL: 'Spiral',
   OVERLAPPING: 'Overlapping',
   INCURVED: 'Incurved',
+  DECUSSATE: 'Decussate',
   type: 'leafArrangement',
   name: 'leaf arrangement'
   },
@@ -1002,6 +1006,7 @@ export const enums = {
   AROMATIC: 'Aromatic',
   MONOCARPIC: 'Monocarpic',
   POLYCARPIC: 'Polycarpic',
+  PYROPHYTIC: 'Pyrophytic',
   type: 'physiology',
   name: 'physiology'
   },
@@ -1191,6 +1196,7 @@ export const enums = {
     UNINTERRUPTED_RIDGES: 'Uninterrupted ridges',
     RIDGES_BROKEN_HORIZONTALLY: 'Ridges broken horizontally',
     PAPER_LIKE: 'Paper-like',
+    SQUARE_CRACKED: 'Square-cracked',
     RESINOUS: 'Resinous',
   },
   coneShape: {
@@ -1224,6 +1230,7 @@ export const enums = {
     { trunkDiameter: [ 'm', 'cm', 'mm'] },
     { length: [ 'm', 'cm', 'mm'] },
     { leafLength: [ 'm', 'cm', 'mm'] },
+    { youngLeafLength: [ 'm', 'cm', 'mm'] },
     { leafWidth: [ 'm', 'cm', 'mm'] },
     { petalLength: [ 'cm', 'mm'] },
     { petalWidth: [ 'cm', 'mm'] },

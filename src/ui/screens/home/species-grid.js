@@ -24,7 +24,9 @@ export const renderSpeciesGrid = () => {
 
         const imageCount = 40;
 
-        const randomSpecies = await firestore.getRandomSpecies(25);
+        const speciesNames = await firestore.getSpeciesNames();
+
+        const randomSpecies = speciesNames[0].random_species;
 
         const speciesImages = randomSpecies.map(sp => {
             return { images: sp.images, itemName: sp.name };

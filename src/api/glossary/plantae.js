@@ -930,4 +930,14 @@ export const plantae = [
         definition: 'A bundle of leaves or flowers growing crowded together.',
         wiki: 'https://en.wikipedia.org/wiki/Fascicle_(botany)'
     },
+    {
+        term: 'Decussate',
+        definition: '(Of opposite leaves) where successive leaf pairs are at right angles.',
+        wiki: 'https://en.wikipedia.org/wiki/Decussation'
+    },
+    {
+        term: 'Pyrophytic',
+        definition: 'Species benefiting from the effects of fire e.g pine cone bursting (Aleppo Pine, Lodgepole Pine, European Black Pine).',
+        wiki: 'https://en.wikipedia.org/wiki/Pyrophyte'
+    },
 ];

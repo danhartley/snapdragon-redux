@@ -181,15 +181,19 @@ const getRootTraitValue = (traitValue, drop = 'end') => {
 
     console.log('trait parts', parts);
 
-    if(traitValue.toLowerCase().indexOf('colour') > -1) {
-        drop = 'start';
-    }
+    const dropStarters = ['colour', 'shape'];
+
+    dropStarters.forEach(starter => {
+        if(traitValue.toLowerCase().indexOf(starter) > -1) {
+            drop = 'start';
+        }
+    });
 
     let rootTraitValue = '';
 
     if(drop === 'start') {
         parts.forEach((part,index) => {
-            if(index !== 0) {
+            if(index === parts.length - 1) {
                 rootTraitValue += part;
             }
         });

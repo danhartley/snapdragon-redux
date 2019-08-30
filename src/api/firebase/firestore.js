@@ -63,6 +63,7 @@ const getSpeciesNames = async () => {
         });
     
         return await docs;
+
     } catch(error) {
         console.error('error for species names', ', error: ', error);
     }
@@ -471,7 +472,7 @@ const addTaxon = async props => {
   
     try {
         docRef = await db.collection(`taxa_en`).add(taxon);
-        return docRef;
+        return 'Taxon saved.';
     } catch(error) {
         console.error("Error writing document: ", error);
     }
@@ -502,7 +503,7 @@ export const firestore = {
     
     updateSpecies,
     updateSpeciesNames,
-
+  
     deleteSpeciesByName,
     deleteSpeciesTraitField
 };

@@ -89,7 +89,12 @@ export const addTaxon = () => {
             if(genera) taxon.genera = genera;
             if(species) taxon.species = species;
 
+            const savedText = document.querySelector('.js-saved');
+
             const response = firestore.addTaxon({ taxon });
+
+            savedText.innerHTML = response;
+            savedText.classList.remove('hide');
 
             console.log(response);
 
