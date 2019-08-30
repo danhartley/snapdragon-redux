@@ -127,7 +127,11 @@
   .rptr-lessons {
     height: calc(100vh - 17rem);
   }
-  
+
+  .rptr-lessons .btn.btn-secondary {
+    min-height: 4rem;
+  }
+
   .modal-body .modal-guide-progress > div div {
     line-height: 2rem;
     flex: auto;
