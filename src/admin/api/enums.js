@@ -78,22 +78,24 @@ export const enums = {
   LEAF_BLADE: 'Leaf blade',
   LEAF_VARIATION: 'Leaf variation',
   LEAF_SHAPE: 'Leaf shape',
-  YOUNG_LEAF_SHAPE: 'Young leaf shape',
+  JUVENILE_LEAF_SHAPE: 'Juvenile leaf shape',
   LEAF_MARGIN: 'Leaf margin',
   LEAF_ARRANGEMENT: 'Leaf arrangement',
   LEAF_LENGTH: 'Leaf length',
-  YOUNG_LEAF_LENGTH: 'Young leaf length',
+  JUVENILE_LEAF_LENGTH: 'Juvenile leaf length',
   LEAF_WIDTH: 'Leaf width',
   LEAF_COLOUR: 'Leaf colour',
   LEAF_SURFACE: 'Leaf surface',
   LEAF_SURFACE_ABOVE: 'Leaf surface above',
   LEAF_SURFACE_BELOW: 'Leaf surface below',
   LEAF_TEXTURE: 'Leaf texture',
+  JUVENILE_TEXTURE: 'Juvenile leaf texture',
   LEAF_SHAPE: 'Leaf shape',
   LEAF_COLOUR_BELOW: 'Leaf colour below',
   LEAF_COLOUR_ABOVE: 'Leaf colour above',
   LEAF_VENATION: 'Leaf venation',
   LEAF_BUNDLE_COUNT: 'Leaf bundle count',
+  LEAF_FEATURES: 'Leaf features',
   BRANCH_ARRANGEMENT: 'Branch arrangement',
   STALK_HEIGHT: 'Stalk height',
   STEM_HEIGHT: 'Stem height',
@@ -138,7 +140,7 @@ export const enums = {
   MATING_SYSTEM: 'mating system',
   PREGNANCY: 'Pregnancy',
   LITTER_SIZE: 'Litter size',
-  YOUNG: 'Young',
+  JUVENILE: 'Juvenile',
   GESTATION: 'Gestation',
   WEANING: 'Weaning',
   LACTATION: 'Lactation',
@@ -398,16 +400,18 @@ export const enums = {
   ORANGE: 'Orange',
   RED: 'Red',
   RED_BROWN: 'Red-brown',
-  ORANGE_RED: 'Orange red',
+  ORANGE_RED: 'Orange-red',
   GREY: 'Grey',
   PALE_GREY: 'Pale grey',
   PALE_BROWN: 'Pale brown',
   GREY_GREEN: 'Grey-green',
   BROWN: 'Brown',
+  CHESTNUT_BROWN: 'Chestnut brown',
   PAPER_BROWN: 'Paper brown',
   BLACK: 'Black',
   BLUE: 'Blue',
   PALE_BLUE: 'Pale blue',
+  BLUE_BLACK: 'Blue-black',
   VIOLET: 'Violet',
   PALE_VIOLET: 'Pale violet',
   PALE_GREEN: 'Pale green',
@@ -554,6 +558,7 @@ export const enums = {
   RHOMBOID: 'rhomboid',
   ROUNDED: 'rounded',
   TRIANGULAR: 'Triangular',
+  QUADRANGULAR: 'Quadrangular',
   SEMITERETE: 'semiterete',
   SINUATE: 'sinuate',
   SAGITTATE: 'sagittate',
@@ -697,8 +702,8 @@ export const enums = {
   type: 'active',
   name: 'active'
   },
-  young: {
-  help: 'What is the name for the young of this species?',
+  juvenile: {
+  help: 'What is the name for the juvenile of this species?',
   KIT: 'Kit',
   SQUEAKER: 'Squeaker',
   CUB: 'Cub',
@@ -716,8 +721,8 @@ export const enums = {
   CATERPILLAR: 'Caterpillar',
   LARVA: 'Larva',
   SALAMANQUESA: 'Salamanquesa',
-  type: 'young',
-  name: 'young'
+  type: 'juvenile',
+  name: 'juvenile'
   },
   month: {
   JANUARY: 'January',
@@ -993,6 +998,7 @@ export const enums = {
   SUCCULENT: 'Succulent',
   DROUGHT_TOLERANT: 'Drought tolerant',
   FIRE_TOLERANT: 'Fire tolerant',
+  FIRE_RESISTANT: 'Fire resistant',
   POLLUTION_TOLERANT: 'Pollution tolerant',
   PH_TOLERANT: 'pH tolerant',
   SALT_TOLERANT: 'Salt tolerant',
@@ -1007,6 +1013,7 @@ export const enums = {
   MONOCARPIC: 'Monocarpic',
   POLYCARPIC: 'Polycarpic',
   PYROPHYTIC: 'Pyrophytic',
+  SEROTINOUS: 'Serotinous',
   type: 'physiology',
   name: 'physiology'
   },
@@ -1198,6 +1205,7 @@ export const enums = {
     PAPER_LIKE: 'Paper-like',
     SQUARE_CRACKED: 'Square-cracked',
     RESINOUS: 'Resinous',
+    THICK: 'Thick'
   },
   coneShape: {
     BARREL_SHAPED: 'Barrel-shaped',
@@ -1216,9 +1224,14 @@ export const enums = {
   flowerShape: {
     TRUMPET_SHAPED: 'Trumpet-shaped'
   },
-  BranchArrangement: {
+  branchArrangement: {
     HORIZONTAL: 'Horizontal',
     WHORLS: 'Whorls'
+  },
+  leafFeatures: {
+    BLUNT_TIPS: 'Blunt tips',
+    STOMATAL_LINES: 'Stomatal lines',
+    DROOPING: 'Drooping'
   },
   units: [
     { lifeSpan: [ 'DD', 'MM', 'YY'] },
@@ -1230,7 +1243,7 @@ export const enums = {
     { trunkDiameter: [ 'm', 'cm', 'mm'] },
     { length: [ 'm', 'cm', 'mm'] },
     { leafLength: [ 'm', 'cm', 'mm'] },
-    { youngLeafLength: [ 'm', 'cm', 'mm'] },
+    { juvenileLeafLength: [ 'm', 'cm', 'mm'] },
     { leafWidth: [ 'm', 'cm', 'mm'] },
     { petalLength: [ 'cm', 'mm'] },
     { petalWidth: [ 'cm', 'mm'] },

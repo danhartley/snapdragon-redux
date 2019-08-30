@@ -75,7 +75,7 @@ const setupUI = (user) => {
   if (user) {
     loggedInLinks.forEach(item => item.classList.remove('hide'));
     loggedOutLinks.forEach(item => item.classList.add('hide'));
-    addTaxonTab.click();
+    addTraits.click();
 } else {    
     loggedInLinks.forEach(item => item.classList.add('hide'));
     loggedOutLinks.forEach(item => item.classList.remove('hide'));

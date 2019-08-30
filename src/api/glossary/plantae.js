@@ -940,4 +940,9 @@ export const plantae = [
         definition: 'Species benefiting from the effects of fire e.g pine cone bursting (Aleppo Pine, Lodgepole Pine, European Black Pine).',
         wiki: 'https://en.wikipedia.org/wiki/Pyrophyte'
     },
+    {
+        term: 'Serotinous',
+        definition: 'Releasing seeds in response to an environmental trigger.',
+        wiki: 'https://en.wikipedia.org/wiki/Serotiny'
+    },
 ];
