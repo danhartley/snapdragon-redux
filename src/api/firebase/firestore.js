@@ -92,8 +92,6 @@ const getSpeciesByIconicTaxon = async (item, number = 6) => {
 
     const { iconicTaxon, isLichen, eolId } = item;
 
-    console.log(iconicTaxon);
-
     let querySnapshot, docs = [];
 
     var species = db.collection("species");
@@ -101,11 +99,16 @@ const getSpeciesByIconicTaxon = async (item, number = 6) => {
     const random = utils.getRandomInt(2);
 
     const operator = random === 0 ? '>=' : '<=';
+
+    const randomId = getRandomId();
+
+    console.log('randomId: ', randomId);
+    console.log('firebase.firestore.FieldPath.documentId(): ', firebase.firestore.FieldPath.documentId());
     
     if(isLichen) {
-        querySnapshot = await species.where('lichen', '==', true).where(firebase.firestore.FieldPath.documentId(), operator, getRandomId()).limit(number).get();
+        querySnapshot = await species.where('lichen', '==', true).where(firebase.firestore.FieldPath.documentId(), operator, randomId).limit(number).get();
     } else {
-        querySnapshot = await species.where('iconicTaxon', '==', iconicTaxon.toLowerCase()).where(firebase.firestore.FieldPath.documentId(), operator, getRandomId()).limit(number).get();
+        querySnapshot = await species.where('iconicTaxon', '==', iconicTaxon.toLowerCase()).where(firebase.firestore.FieldPath.documentId(), operator, randomId).limit(number).get();
     }
 
     querySnapshot.forEach(doc => {

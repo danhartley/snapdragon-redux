@@ -37,9 +37,9 @@ export const renderMixedSpecimenQuestions = collection => {
             return { index: index + 1, srcs: item.images, itemName: item.name };
         });
 
-        images.forEach(image => {
-            image = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config).medium;
-        });
+        // images.forEach(image => {
+        //     image = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config).medium;
+        // });
 
         images = getPortraitImages(images);
 

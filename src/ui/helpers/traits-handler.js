@@ -160,12 +160,12 @@ export const handleUnit = unit => {
 
     unit = unit || '';
 
-    switch(unit.toLowerCase()) {
-        case 'dd':
+    switch(unit) {
+        case 'DD':
             return ' days';
-        case 'mm':
+        case 'MM':
             return '';
-        case 'yy':
+        case 'YY':
             return ' years';
      default:
         return unit;   

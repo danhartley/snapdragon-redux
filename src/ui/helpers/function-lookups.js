@@ -25,7 +25,7 @@ const functions = [
     { name: 'non-taxon-specimen-tiles', func: renderNonTaxonCardSpecimenTiles },
     { name: 'text-entry', func: renderTextEntry },
     { name: 'specimen-images', func: renderSpecimenTiles },
-    { name: 'collection', func: renderSpeciesCollectionList },
+    // { name: 'collection', func: renderSpeciesCollectionList },
     { name: 'species-card', func: renderCard },
     { name: 'species-scientifics', func: renderMultiStrips },
     { name: 'species-vernaculars', func: renderMultiStrips },

@@ -175,7 +175,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
                     actions.boundNewPage({ name: ''});
 
-                    subscription.remove(subscription.getByName('renderHistory'));
+                    subscription.remove(subscription.getByName('renderHistory'));                    
                 }            
             });
         }
