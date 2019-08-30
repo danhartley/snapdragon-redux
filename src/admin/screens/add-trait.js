@@ -74,7 +74,11 @@ export const renderAddTrait = (parent, callback) => {
         let traitKeyValues = traitValues[utils.toCamelCase(traitKey)];
 
         if(!traitKeyValues) {
-            traitKeyValues = traitValues[itemProperties.getRootTraitValue(utils.toCamelCase(traitKey))];
+            traitKeyValues = traitValues[itemProperties.getRootTraitValue(utils.toCamelCase(traitKey), 'start')];
+        }
+
+        if(!traitKeyValues) {
+            traitKeyValues = traitValues[itemProperties.getRootTraitValue(utils.toCamelCase(traitKey), 'end')];
         }
 
         if(traitKeyValues) {
@@ -168,7 +172,9 @@ const initAutocomplete = (input, options)  => {
         input: input,
         fetch: function(text, update) {
             text = text.toLowerCase();
-            const suggestions = options.filter(n => n.value.toLowerCase().startsWith(text))
+            console.log(input);
+            const suggestions = options.filter(n => n.value.toLowerCase().startsWith(text));
+            console.log(suggestions);
             update(suggestions);
         },
         onSelect: function(item) {

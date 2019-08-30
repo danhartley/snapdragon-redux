@@ -63,28 +63,33 @@ export const buildTable = (collection, config, enums) => {
 
     const itemImages = collection.items.map(item => { 
 
-        const image = utils.shuffleArray(item.images)[0];
+        let image = utils.shuffleArray(item.images)[0];
+            image = scaleImage(image, imageUseCases.SPECIES_LIST, config);
+
         const { traitName, keyTratLinkClass } = getTraitName(item, enums);
         const { iconicTaxonIcon, hideFungiIcon } = getIconicTaxonIcon(item);
 
         const itemImage = {
             id: item.id,
             name: item.name,
+            genus: item.taxonomy.genus,
+            species: item.taxonomy.species,
+            genusLinkClass: item.genus
+                ? 'underline-link js-taxon-card-link' 
+                : 'js-taxon-card-link no-pointer-events',
             shortName: itemProperties.trimLatinName(item.name),
             taxonomy: item.taxonomy,
             iconicTaxon: item.iconicTaxon,
             vernacularName: item.vernacularName,
             snapIndex: item.snapIndex,
             license: image.license,
-            url: scaleImage(image, imageUseCases.SPECIES_LIST, config),
+            url: image.url,
+            small: image.small,
             rightsHolder: image.rightsHolder || 'Public domain',
             source: image.source,
             shortName: itemProperties.trimLatinName(item.name),
             keyTrait: itemProperties.getActiveTrait(item, [{ name: traitName, formatter: trait => trait[0] }]) || '',
             keyTratLinkClass: keyTratLinkClass,
-            familyLinkClass: item.family
-                                ? 'capitalise underline-link js-taxon-card-link' 
-                                : 'js-taxon-card-link no-pointer-events',
             familyLinkClass: item.family
                                 ? 'capitalise underline-link js-taxon-card-link' 
                                 : 'js-taxon-card-link no-pointer-events',

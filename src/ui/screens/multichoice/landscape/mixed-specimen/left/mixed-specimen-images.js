@@ -9,7 +9,7 @@ import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import { DOM } from 'ui/dom';
 import { iconicTaxa, matchIcon } from 'api/snapdragon/iconic-taxa';
 import { renderTemplate } from 'ui/helpers/templating';
-import { getPoolItems } from 'ui/screens/multichoice/missing-data-helper';
+import { getPoolItems } from 'snapdragon-engine/pool-handler';
 
 import specimensTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images-template.html';
 
@@ -46,7 +46,7 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
         const mixedItems = preselectedItems || await getPoolItems(collection);
 
         mixedItems.map(item => item.images.map(image => {
-            return image.url = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config);
+            return image = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config).medium;
         }));
 
         const images = utils.shuffleArray(mixedItems).map((item, index) => {

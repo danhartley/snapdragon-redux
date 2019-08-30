@@ -59,20 +59,38 @@ const getSpeciesNames = async () => {
         const docs = [];
     
         querySnapshot.forEach(doc => {
-        docs.push(doc.data());
+            docs.push(doc.data());
+        });
+    
+        return await docs;
+
+    } catch(error) {
+        console.error('error for species names', ', error: ', error);
+    }
+};
+
+const getTaxaNames = async () => {
+
+    try {
+        const taxaPropertiesRef = db.collection(`taxa`).where("collection_property", "==", 'names');
+
+        const querySnapshot = await taxaPropertiesRef.get();
+        
+        const docs = [];
+    
+        querySnapshot.forEach(doc => {
+            docs.push(doc.data());
         });
     
         return await docs;
     } catch(error) {
-        console.error('error for species names', ', error: ', error);
+        console.error('error for taxa names', ', error: ', error);
     }
 };
 
 const getSpeciesByIconicTaxon = async (item, number = 6) => {
 
     const { iconicTaxon, isLichen, eolId } = item;
-
-    console.log(iconicTaxon);
 
     let querySnapshot, docs = [];
 
@@ -81,11 +99,16 @@ const getSpeciesByIconicTaxon = async (item, number = 6) => {
     const random = utils.getRandomInt(2);
 
     const operator = random === 0 ? '>=' : '<=';
+
+    const randomId = getRandomId();
+
+    console.log('randomId: ', randomId);
+    console.log('firebase.firestore.FieldPath.documentId(): ', firebase.firestore.FieldPath.documentId());
     
     if(isLichen) {
-        querySnapshot = await species.where('lichen', '==', true).where(firebase.firestore.FieldPath.documentId(), operator, getRandomId()).limit(number).get();
+        querySnapshot = await species.where('lichen', '==', true).where(firebase.firestore.FieldPath.documentId(), operator, randomId).limit(number).get();
     } else {
-        querySnapshot = await species.where('iconicTaxon', '==', iconicTaxon.toLowerCase()).where(firebase.firestore.FieldPath.documentId(), operator, getRandomId()).limit(number).get();
+        querySnapshot = await species.where('iconicTaxon', '==', iconicTaxon.toLowerCase()).where(firebase.firestore.FieldPath.documentId(), operator, randomId).limit(number).get();
     }
 
     querySnapshot.forEach(doc => {
@@ -99,10 +122,6 @@ const getSpeciesByName = async (itemName, force = false) => {
 
     if(!itemName) return '';
 
-    // let item = force ? null : getSpeciesFromCollection(itemName);
-
-    // if(item) return new Promise(resolve => resolve(item));
-    
     const items = await getSpecies({ key:'name', operator:'==', value:itemName });
     
     console.log(items);
@@ -133,7 +152,7 @@ const getFamiliesByIconicTaxon = async (iconicTaxonRank, iconicTaxonValue, isLic
     return await getTaxaWhere({ language: config.language, key: 'iconicTaxon', operator: '==', value: iconicTaxonValue, limit: 7 });
 };
 
-const getItemTaxonByName = async (config, name) => {
+const getTaxonByName = async (config, name) => {
 
     try {
                 
@@ -145,14 +164,15 @@ const getItemTaxonByName = async (config, name) => {
         
         if(querySnapshot.docs.length > 0) {
             querySnapshot.forEach(doc => {
-                taxon = doc.data();
-          });
+                taxon = doc.data();                                
+          });          
         }
 
         return taxon;
 
     } catch (error) {
         console.error('error for: ', name, error);
+        return error;
     }
 };
 
@@ -363,6 +383,28 @@ const addSpeciesRelationship = async (type, traits) => {
 
 };
 
+const addPhotos = async (name, photos) => {
+
+    let speciesDocRef;
+
+    const querySnapshot = await db.collection("species").where("name", "==", name).get();
+    
+    querySnapshot.forEach(function(doc) {
+        speciesDocRef = doc.ref;
+    });
+
+    console.log(speciesDocRef);
+
+    try {
+        return speciesDocRef.update({
+            images: firebase.firestore.FieldValue.arrayUnion(...photos)
+        });
+    } catch (e) {
+        return e.message;
+    }
+
+};
+
 const deleteSpeciesTraitField = async (name, field) => {
 
     let querySnapshot, speciesTraitsRef;
@@ -410,6 +452,7 @@ const getRandomSpecies = async number => {
 };
 
 const getDefinition = term => {
+    
     const dictionary = getGlossary();
 
     const terms = term.split(',');
@@ -424,13 +467,30 @@ const getDefinition = term => {
     return definition;
 };
 
+const addTaxon = async props => {
+
+    const { language, taxon } = props;
+  
+    let docRef;
+  
+    try {
+        docRef = await db.collection(`taxa_en`).add(taxon);
+        return 'Taxon saved.';
+    } catch(error) {
+        console.error("Error writing document: ", error);
+    }
+  
+    return docRef;
+};
+
 export const firestore = {
     getSpecies,
     getSpeciesNames,
+    getTaxaNames,
     getSpeciesByName,
     getSpeciesByIconicTaxon,
     getFamiliesByIconicTaxon,
-    getItemTaxonByName,
+    getTaxonByName,
     getTraitsBySpeciesName,
     getBirdsong,
     getTraitValues,
@@ -441,10 +501,12 @@ export const firestore = {
     addTraits,
     addSpeciesTraits,
     addSpeciesRelationship,
+    addPhotos,
+    addTaxon,
     
     updateSpecies,
     updateSpeciesNames,
-
+  
     deleteSpeciesByName,
     deleteSpeciesTraitField
 };

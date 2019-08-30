@@ -10,7 +10,7 @@ export const renderBonusTest = bonusLayout => {
 
     collection.nextItem = bonusLayout.item;
 
-    if(bonusLayout.overrides && bonusLayout.overrides.trait && bonusLayout.overrides.trait.name === 'look-alikes') {
+    if(bonusLayout.overrides && bonusLayout.overrides.trait && bonusLayout.overrides.trait.name === 'lookalikes') {
         collection.items = bonusLayout.overrides.trait.lookalikes;
         renderMixedSpecimenQuestion(collection, bonusLayout);
     } else {        

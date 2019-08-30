@@ -5,7 +5,6 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { getBirdSong } from 'xeno-canto/birdsong';
 import { lookalikeSpecies } from 'ui/screens/common/look-alikes';
-import { linkedTaxa } from 'ui/screens/common/linked-taxa';
 import { infoSlider } from 'ui/screens/common/info-slider';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
@@ -38,8 +37,8 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
 
             const itemWithProps = await getItem(item);
             
-            itemWithProps.family = await firestore.getItemTaxonByName(config, itemWithProps.taxonomy[enums.taxon.FAMILY.name.toLowerCase()]) || { names: [ itemWithProps.taxonomy.family ]};
-            itemWithProps.order = await firestore.getItemTaxonByName(config, itemWithProps.taxonomy[enums.taxon.ORDER.name.toLowerCase()]);
+            itemWithProps.family = await firestore.getTaxonByName(config, itemWithProps.taxonomy[enums.taxon.FAMILY.name.toLowerCase()]) || { names: [ itemWithProps.taxonomy.family ]};
+            itemWithProps.order = await firestore.getTaxonByName(config, itemWithProps.taxonomy[enums.taxon.ORDER.name.toLowerCase()]);
             itemWithProps.traits = await firestore.getTraitsBySpeciesName(item.name);
             itemWithProps.vernacularName = itemWithProps.vernacularName || itemProperties.getVernacularName(item, config);
 
@@ -143,21 +142,19 @@ const renderCommonParts = (template, config, item, collection, mode, parent, roo
 
     const familyVernacularName = item.family && item.family.names ? item.family.names[0] : '';
         
-    const headerImage = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
+    const image = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
     
     const clone = document.importNode(template.content, true);
     
     parent.innerHTML = '';
     
-    renderTemplate({ name: item.name, vernacularName: item.vernacularName, headerImage, iconicTaxon: item.iconicTaxon }, template.content, parent, clone);
+    renderTemplate({ name: item.name, vernacularName: item.vernacularName, image, iconicTaxon: item.iconicTaxon }, template.content, parent, clone);
     
     renderTaxaBox(rootNode.querySelector('.js-taxa-box'), { item, familyName: item.taxonomy.family, familyVernacularName });
 
-    infoSlider(item, item.family, rootNode.querySelector('.js-info-box'), mode);
+    infoSlider(item, rootNode.querySelector('.js-info-box'), mode);
 
     renderBadge(rootNode.querySelector('.js-names-badge'), item, config);
-    
-    linkedTaxa(item, config, rootNode.querySelector('.js-feature-types'), mode, isInCarousel, collection);
     
     renderCalendar(rootNode.querySelector('.js-calendar-box'), item, config);
 

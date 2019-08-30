@@ -6,7 +6,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { helpers } from 'admin/helpers';
 import { eol } from 'admin/api/eol';
 import { firestore } from 'api/firebase/firestore';
-import { speciesPicker } from 'admin/screens/species-picker';
+import { speciesPicker } from 'admin/screens/taxa-pickers';
 
 import addSpeciesTemplate from 'admin/screens/add-species-template.html';
 import updateSpeciesTemplate from 'admin/screens/update-species-template.html';

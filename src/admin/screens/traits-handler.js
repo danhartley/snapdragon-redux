@@ -4,7 +4,7 @@ import autocomplete from 'autocompleter';
 import { utils } from 'utils/utils';
 import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
-import { speciesPicker } from 'admin/screens/species-picker';
+import { speciesPicker, taxonPicker } from 'admin/screens/taxa-pickers';
 import { renderAddTrait } from 'admin/screens/add-trait';
 
 import addTraitsTemplate from 'admin/screens/add-traits-template.html';
@@ -25,10 +25,14 @@ const addTraits = () => {
     const renderTraits = async item => {
         
         const itemTraits = await firestore.getTraitsBySpeciesName(item.name);
-        const itemFamily = await firestore.getItemTaxonByName({language: 'en'}, item.taxonomy.family);
-              
-        item.traits = itemTraits
-        item.family = itemFamily;                
+        item.traits = itemTraits;
+                
+        const isSpecies = item.eolId;
+                
+        if(isSpecies) {
+            const itemFamily = await firestore.getTaxonByName({language: 'en'}, item.taxonomy.family);                
+            item.family = itemFamily;
+        }
         
         const fields = [], relationships = [];
 
@@ -151,6 +155,7 @@ const addTraits = () => {
 
     const inputSpecies = document.querySelector('#input-species-for-traits');
           inputSpecies.focus();
+    const inputTaxon = document.querySelector('#input-taxon-for-traits');
 
     const init = async () => {
 
@@ -159,7 +164,13 @@ const addTraits = () => {
             renderTraits(item);
         };
 
+        const listenForTaxonSelection = async taxon => {
+            item = taxon;
+            renderTraits(taxon);
+        };
+
         speciesPicker(inputSpecies, listenForSpeciesSelection);
+        taxonPicker(inputTaxon, listenForTaxonSelection);
 
         let traitValues = await firestore.getTraitValues();
 

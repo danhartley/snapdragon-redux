@@ -11,7 +11,9 @@ export const renderScore = (score) => {
 
     const template = document.createElement('template');
 
-    const scoreText = score.correct === 1 ? 'correct answer' : 'correct answers';
+    const scoreText = config.isLandscape 
+                        ? score.correct === 1 ? 'correct answer' : 'correct answers'
+                        : score.correct === 'correct';
 
     const currentRound = lesson.currentRound;
 

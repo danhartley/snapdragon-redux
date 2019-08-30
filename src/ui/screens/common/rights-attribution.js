@@ -61,19 +61,25 @@ export const handleRightsAttribution = (image, activeNode) => {
     const rightsLink = activeNode.querySelector('.rights-link');
     const indicators = document.querySelector('.carousel-indicators');
 
-    rightsAttribution.addEventListener('click', event => {
+    const showAttribution = event => {
         rightsAttribution.classList.add('hide-important');
         rightsLink.classList.remove('hide-important');
         indicators.classList.remove('hide-important');
         rightsLink.style.display = 'inline-block';
         event.stopPropagation();
-    });
+    };
 
-    rightsLink.addEventListener('click', event => {
+    rightsAttribution.removeEventListener('click', showAttribution, true);
+    rightsAttribution.addEventListener('click', showAttribution, true);
+
+    const showLink = event => {
         rightsLink.classList.add('hide-important');
         rightsAttribution.classList.remove('hide-important');
         indicators.classList.add('hide-important');
         event.stopPropagation();
-    });
+    };
+
+    rightsLink.removeEventListener('click', showLink), true;
+    rightsLink.addEventListener('click', showLink, true);
 
 };

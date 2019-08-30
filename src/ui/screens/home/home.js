@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 
-import { actions } from 'redux/actions/action-creators';
+import { persistor } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { subscription } from 'redux/subscriptions';
@@ -13,7 +13,6 @@ import { renderGuideSummary } from 'ui/screens/home/home-guide-summary';
 import { listenToCloseCreateGuideModal } from 'ui/create-guide-modal/create-guide';
 import { listenToCloseExampleGuideModal } from 'ui/example-guide-modal/example-guide';
 import { renderSaveLesson, listenToCloseSaveLessonModal } from 'ui/custom-lesson-modal/custom-lesson';
-import { renderSpeciesGrid } from 'ui/screens/home/species-grid';
 import { enums } from 'ui/helpers/enum-helper';
 import { deactivateHomeIcon } from 'ui/fixtures/navigation';
 
@@ -139,6 +138,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
             case enums.lessonState.CREATE_LESSON:
 
+                actionLink.classList.remove('disabled');
                 actionLink.innerHTML = 'Create';
                 actionLink.setAttribute('data-toggle', 'modal');
                 actionLink.addEventListener('click', modalHandler);
@@ -242,12 +242,8 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     const handleDeleteLinkTxt = event => {
         if(deleteEnabled) {
-            actions.boundPauseLesson();
-            if(config.isLandscapeMode) {
-                renderSpeciesGrid();
-            }
-            state = enums.lessonState.CREATE_LESSON;
-            checkState(state);
+            persistor.purge();
+            window.location.reload(true);
         }
     };
 
@@ -266,12 +262,10 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     listenToCloseSaveLessonModal(()=>{        
         
         checkState(enums.lessonState.CREATE_LESSON);
-        // renderSpeciesGrid();
-
         const template = document.createElement('template');
-        template.innerHTML = introTemple;
+              template.innerHTML = introTemple;
         const parent = document.querySelector('.js-snapdragon-tag');
-        parent.innerHTML = '';
+              parent.innerHTML = '';
         renderTemplate({}, template.content, parent);
     });
 

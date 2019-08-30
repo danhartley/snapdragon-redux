@@ -56,7 +56,6 @@
     bottom: .5rem;
     left: .5rem;
     right: .5rem;
-    /* width: 100%; */
   }
 
   .taxa-container {
@@ -74,10 +73,6 @@
     text-overflow: ellipsis;
     overflow: hidden;
   }
-
-  /* .small-text {
-    font-size: .8rem;
-  } */
 
   .extra-small-text {
     font-size: .8rem;
@@ -159,13 +154,26 @@ td:empty:after{
 .info-details .info_detail div:nth-child(1) { 
   font-style: italic;
   font-size: 1.1rem;
-  margin: 1rem 0 0 0;
+  margin: 1rem 0 .5rem 0;
 }
 
 .info-details img {   
   max-width: 100%;
   height: 10vh;
   margin: .5rem 0;
+}
+
+.lookalike-card {
+  font-size: .9rem;
+}
+
+.lookalike-card div:nth-child(1), .lookalike-card div:nth-child(3) {
+  font-style: italic;
+  width: 100%;
+}
+
+.lookalike-card div:nth-child(3) {
+  margin: .5rem 0 0 0;
 }
 
 .relationship-card {
@@ -184,7 +192,7 @@ td:empty:after{
   font-style: italic;
 }
 
-.relationship-card .cols > div:nth-child(12) {
+.relationship-card .cols > div:nth-child(2) {
   text-transform: lowercase;
 }
 
@@ -192,21 +200,10 @@ td:empty:after{
   content: ":";
 }
 
-/* @media (min-width: 414px) {
-  .info-details {
-    height: calc(90vh - 25rem);
-  }
-} */
-
 @media (min-width: 768px) {
 
-  /* .info-details {
-    height: calc(90vh - 26rem);
-    margin: 1.5rem;
-  } */
-
   .info-details .info_detail img {   
-    height: 10rem;
+    max-height: 10rem;
   }
 
     /* TRAITS CAROUSEL */

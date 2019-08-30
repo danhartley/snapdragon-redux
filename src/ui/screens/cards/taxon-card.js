@@ -52,11 +52,22 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
 
         rank = rank ? rank.toUpperCase() : '';
 
-        const taxon = rank 
-                        ? rank === 'FAMILY' 
-                            ? item.family 
-                            : item.order
-                        : item.family || item.order;
+        let taxon;
+
+        switch(rank) {
+            case 'ORDER':
+                taxon = item.order;
+                break;
+            case 'FAMILY':
+                taxon = item.family;
+                break;
+            case 'GENUS':
+                taxon  = item.genus;
+                break;
+            default:
+                taxon = item.family;
+                break;
+        };
 
         const familyStats = itemProperties.getFamilyStats(collection.items);
         const occurrences = familyStats ? familyStats[taxon.name] : 0;
@@ -64,14 +75,14 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
         const context = {
             rank: rank,
             name: taxon.name,
-            headerImage: scaleImage({ url: item.images[0].url }, imageUseCases.TAXON_CARD, config),
+            image: scaleImage({ url: item.images[0].url }, imageUseCases.TAXON_CARD, config),
             alt: taxon ? taxon.alt : '',
             vernacularName: taxon.vernacularName || itemProperties.getNestedTaxonProp(taxon, config.language, 'names', 'names', '0').split(',')[0],
             species: taxon.species || '--',
             genera: taxon.genera || '--',
             families: taxon.families || '--',
-            identification: taxon.identification,
-            summary: taxon.summary,
+            identification: taxon.identification || taxon.descriptions[0].identification,
+            summary: taxon.summary || taxon.descriptions[0].summary,
             eol: taxon.eol ? taxon.eol.replace('en', config.language) : '',
             wiki: taxon.wiki ? taxon.wiki.replace('en', config.language) : '',
             occurrences: occurrences,
@@ -81,7 +92,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
 
         renderTemplate(context, template.content, parent, clone);
 
-        taxonInfoSlider(taxon.traits, rootNode.querySelector('.js-taxon-info-box'), mode);
+        taxonInfoSlider(item, taxon.traits, rootNode.querySelector('.js-taxon-info-box'), mode);
 
         switch(rank) {
             case 'FAMILY': 

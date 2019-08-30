@@ -2,12 +2,14 @@ import "babel-polyfill";
 
 import 'admin/css/admin.css';
 
-import { listenForActiveSpecies } from 'admin/screens/species-picker';
+import { listenForActiveSpecies } from 'admin/screens/taxa-pickers';
 import { initMaterialize } from 'admin/scripts/materialize';
 import { speciesHandler } from 'admin/screens/species-handler';
 import { traitsHandler } from 'admin/screens/traits-handler';
 import { addRelationship } from 'admin/screens/add-relationship';
 import { addLookalike } from 'admin/screens/add-lookalike';
+import { addPhotos } from 'admin/screens/add-photos';
+import { addTaxon } from 'admin/screens/add-taxon';
 
 const auth = firebase.auth();
 
@@ -62,6 +64,12 @@ const addRelationshipParent = document.querySelector('#add-relationship');
 
 const addLookalikeParent = document.querySelector('#add-lookalike');
       addLookalikeParent.addEventListener('click', addLookalike);
+
+const addPhotosTab = document.querySelector('#add-photos');
+      addPhotosTab.addEventListener('click', addPhotos);
+
+const addTaxonTab = document.querySelector('#add-taxon');
+      addTaxonTab.addEventListener('click', addTaxon);
 
 const setupUI = (user) => {
   if (user) {

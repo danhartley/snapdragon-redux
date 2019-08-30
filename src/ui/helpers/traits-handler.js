@@ -138,7 +138,7 @@ export const getLinkedTaxaTraits = traits => {
     for (let [key, obj] of Object.entries(traits)) {
         if(obj.type) {
             taxaTraits.push({ name: key, value: obj.value, type: obj.type });
-        } else if(key === 'look-alikes') {
+        } else if(key === 'lookalikes') {
             taxaTraits.push({ name: key, value: obj.value, type: 'lookalike' });
         } else if(key === 'symbionts') {
             taxaTraits.push({ name: key, value: obj.value, type: 'symbionts' });
@@ -148,36 +148,31 @@ export const getLinkedTaxaTraits = traits => {
     return taxaTraits;
 };
 
-export const getLookalikeTraitProperties = item => {
-    const traits = [];
-    for (let [key, obj] of Object.entries(item.traits)) {
-        if(key === 'look-alikes') {
-            const lookalikes = obj.value.filter(value => value !== '');
-            if(lookalikes.length > 0) {
-                traits.push({key,obj})
-            }
-        };
-        if(key === 'lookalikes') {
-            return item.traits.lookalikes;
-        };
-    }
-    let properties = null;
-    if(traits.length > 0) {
-        properties = R.clone(traits[0].obj.value);
-        properties.push(item.name);
-    }
-    return properties ? properties.filter(property => property !== '') : null;
-};
-
 export const getTraitsToExclude = () => {
     return [ 
-        'look-alikes', 'symbionts', 'voice', 'pollination', 'name', 
-        'relationships', 'units', 'lookalikes', 'song', 'uk rank',
-        'colour', 'bark colour', 'height'
+        'symbionts', 'voice', 'pollination', 'name', 
+        , 'units', 'song', 'uk rank',
+        'colour', 'bark colour', 'height',
+        'physiology', 'characteristic', 'description'
     ];
 };
+export const handleUnit = unit => {
 
-export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude) => {
+    unit = unit || '';
+
+    switch(unit) {
+        case 'DD':
+            return ' days';
+        case 'MM':
+            return '';
+        case 'YY':
+            return ' years';
+     default:
+        return unit;   
+    }    
+};
+
+export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude, item) => {
 
     if(!hasTraitPropeties(traits)) return {};
     
@@ -185,7 +180,22 @@ export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude) => {
 
     for (let [key, obj] of Object.entries(traits)) {
         if(!R.contains(key, traitsToExclude)) {
-            includedTraits.push({ name: key, value: obj.value, unit: obj.unit });
+            if(key === 'lookalikes') {
+                obj.forEach(species => {
+                    includedTraits.push({
+                        name: key, value: [species.lookalike.name], 
+                        description: species.description, lookalike: { name: species.lookalike.name, description: species.lookalike.description } 
+                    }); 
+                });
+            } else if(key === 'relationships') {
+                obj.forEach(species => {
+                    includedTraits.push({ 
+                        name: key, value: [species.symbiont.name],
+                    }); 
+                });
+            } else {
+                includedTraits.push({ name: key, value: obj.value, unit: handleUnit(obj.unit) });
+            }
         }
     }
     

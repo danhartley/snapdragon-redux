@@ -9,7 +9,7 @@ import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
-import { getPoolItems } from 'ui/screens/multichoice/missing-data-helper';
+import { getPoolItems } from 'snapdragon-engine/pool-handler';
 
 import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-questions-template.html';
 
@@ -37,9 +37,9 @@ export const renderMixedSpecimenQuestions = collection => {
             return { index: index + 1, srcs: item.images, itemName: item.name };
         });
 
-        images.forEach(image => {
-            image.url = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config);
-        });
+        // images.forEach(image => {
+        //     image = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config).medium;
+        // });
 
         images = getPortraitImages(images);
 

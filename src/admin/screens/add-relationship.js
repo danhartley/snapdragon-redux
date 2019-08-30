@@ -4,7 +4,7 @@ import { utils } from 'utils/utils';
 import { helpers } from 'admin/helpers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { firestore } from 'api/firebase/firestore';
-import { speciesPicker } from 'admin/screens/species-picker';
+import { speciesPicker } from 'admin/screens/taxa-pickers';
 import { eol } from 'admin/api/eol';
 
 import relationshipTemplate from 'admin/screens/add-relationship-template.html';
@@ -141,6 +141,10 @@ export const addRelationship = () => {
                 const message = document.querySelector('.js-message');
 
                 message.innerHTML = log;
+
+                setTimeout(() => {
+                    message.innerHTML = '';                    
+                }, 5000);
             }
         });
     };

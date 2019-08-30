@@ -23,7 +23,7 @@
         species: [
             {
                 id: 'Morchella esculenta',
-                description: 'Ridges and pit of the true morel ressemble honeycomb. Hollow stem.',
+                description: 'Ridges and pit of the true morel resemble honeycomb. Hollow stem.',
             },
             {
                 id: 'Gyromitra esculenta',

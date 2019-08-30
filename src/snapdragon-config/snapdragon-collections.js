@@ -542,7 +542,7 @@ const treesOfLisbon = {
 const walkOne = { 
   behaviour: 'static',
   id: 11, 
-  name: 'Guided tour of Jardim da Estrela',
+  name: 'Jardim da Estrela',
   type: 'custom',
   descriptions: [
       'Jardim da Estrela.'
@@ -576,6 +576,7 @@ const walkOne = {
     'Phoenix reclinata', // tall?
     'Roystonea regia', // tall, wrong garden x
     'Chamaerops humilis',
+    'Fatsia japonica',
 
     'Cupressus sempervirens',
     'Cupressus lusitanica',
@@ -610,7 +611,8 @@ const walkOne = {
 
     'Ceiba speciosa',
     'Ceratonia siliqua',
-    'Dombeya x cayeuxii', // the big flower balls
+    // 'Dombeya x cayeuxii', // the big flower balls
+    'Dombeya wallichii', // parent of the above
     'Apollonias barbujana',
 
     'Dendrocalamus giganteus',
@@ -631,15 +633,77 @@ const walkOne = {
 
     'Schinus molle'
     ],
-  iconicTaxa: [ {
+  iconicTaxa: [ 
+    {
+      id: 'fungi',
+      common: 'Fungi & Lichens'
+    },
+    {
       id: 'plantae',
       common: 'Plants'
-  } ],
+    },
+    {
+      id: 'aves',
+      common: 'Birds'
+    }
+  ],
   guide: {
     locationPlace: 'Jardim da Estrela',
     locationType: 'taxon',
     place: {
         name: 'Jardim da Estrela',
+        id: 'any',
+        type: 'places'
+    },
+    season: {
+        type: 'all_year'
+    },
+    speciesRange: 0,
+    ready: true
+  }
+};
+
+const walkTwo = { 
+  behaviour: 'static',
+  id: 12, 
+  name: 'Conifers of Jardim da Estrela',
+  type: 'custom',
+  descriptions: [
+      'Conifers of Jardim da Estrela.'
+  ],
+  moduleSize: 4,
+  lessonPlanLandscape: 1,
+  lessonPlanPortrait: 101,
+  glossary: ['plantae'],
+  items: [
+    
+  ],
+  itemNames: [
+    'Araucaria columnaris',
+    'Buxus sempervirens',
+    'Cedrus atlantica',
+    'Cedrus deodara',
+    'Cedrus libani',
+    'Cupressus lusitanica',
+    'Cupressus sempervirens',
+    'Juniperus chinensis',
+    'Picea abies',
+    'Pinus canariensis',
+    'Pinus halepensis',
+    'Pinus pinea',
+    'Sequoia sempervirens'
+    ],
+  iconicTaxa: [ 
+    {
+      id: 'plantae',
+      common: 'Plants'
+    }
+  ],
+  guide: {
+    locationPlace: 'Jardim da Estrela',
+    locationType: 'taxon',
+    place: {
+        name: 'Conifers of Jardim da Estrela',
         id: 'any',
         type: 'places'
     },
@@ -660,14 +724,15 @@ export const snapdragonCollections = [
     placeArrabida,
     
     snapdragonLichens,
-    snapdragonKitchenGarden,
     snapdragonMushroomsEasternUSA,
     commonBritishBirds,
     
+    walkOne,
+    walkTwo,
+    treesOfLisbon,
     rhsTrees,
     rhsWeeds,
-    treesOfLisbon,
-    walkOne,
+    snapdragonKitchenGarden,
 
     selectedItemsCollection
 ];

@@ -6,14 +6,15 @@ import { imageSideBySlider } from 'ui/screens/common/image-slider';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import { lookalikeDescriptions } from 'api/snapdragon/look-alike-descriptions';
 import { firestore } from 'api/firebase/firestore';
-import { getLookalikeTraitProperties } from 'ui/helpers/traits-handler';
+// import { getLookalikeTraitProperties } from 'ui/helpers/traits-handler';
 
 import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
 import visualComparisonTemplate from 'ui/screens/common/look-alikes-link-template.html';
 
 export const lookalikeSpecies = (item, config, rootNode = document) => {
     
-    const lookalikes = getLookalikeTraitProperties(item);
+    // const lookalikes = getLookalikeTraitProperties(item);
+    const lookalikes = item.traits.lookalikes;
 
     if(lookalikes) {
 
@@ -47,7 +48,7 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
                     const images = lookalikeItem.images.map((img, index) => { 
                         return { 
                                 index: index + 1, 
-                                src: { ...img, url: scaleImage({ url: img.url }, imageUseCases.CAROUSEL, config) },
+                                src: { ...img, url: scaleImage({ url: img.url }, imageUseCases.CAROUSEL, config).medium },
                                 itemName: lookalikeItem.name, 
                                 itemCommon: lookalikeItem.vernacularName };
                     });

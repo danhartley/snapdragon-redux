@@ -5,8 +5,7 @@ import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { renderTemplate } from 'ui/helpers/templating';
 import { modalImagesHandler } from 'ui/helpers/image-handlers';
-import { imageUseCases, prepImagesForCarousel, prepImageForCarousel } from 'ui/helpers/image-handlers';
-import { renderSpeciesGrid } from 'ui/screens/home/species-grid';
+import { imageUseCases, prepImagesForCarousel, prepImageForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 
 import specimensTemplate from 'ui/screens/landscape/specimen-tiles-template.html';
 
@@ -77,6 +76,10 @@ const renderItemSpecimenTiles = item => {
         images = prepImagesForCarousel({ name: item.name, itemCommon: item.itemCommon, images }, config, imageUseCases.SPECIES_CARD);
         items = [item];
     }
+
+    images = images.map(image => {
+        return scaleImage(image, imageUseCases.VISUAL_MATCH, config);
+    });
 
     renderSpecimenImageTiles({ items: items }, images);
 };
