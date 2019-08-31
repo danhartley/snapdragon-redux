@@ -140,8 +140,6 @@ const renderPortrait = (item, config, mode, rootNode) => {
 
 const renderCommonParts = (template, config, item, collection, mode, parent, rootNode, isInCarousel) => {
 
-    const familyVernacularName = item.family && item.family.names ? item.family.names[0] : '';
-        
     const image = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
     
     const clone = document.importNode(template.content, true);
@@ -150,7 +148,7 @@ const renderCommonParts = (template, config, item, collection, mode, parent, roo
     
     renderTemplate({ name: item.name, vernacularName: item.vernacularName, image, iconicTaxon: item.iconicTaxon }, template.content, parent, clone);
     
-    renderTaxaBox(rootNode.querySelector('.js-taxa-box'), { item, familyName: item.taxonomy.family, familyVernacularName });
+    renderTaxaBox(rootNode.querySelector('.js-taxa-box'), { item, familyName: item.taxonomy.family, familyVernacularName: item.family.vernacularName });
 
     infoSlider(item, rootNode.querySelector('.js-info-box'), mode);
 

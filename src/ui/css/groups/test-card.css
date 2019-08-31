@@ -219,6 +219,10 @@ div.text-entry {
     fill: var(--snap-iconic-icon-header);
   }
 
+  .images-names-txt {
+      min-height: 10rem;
+  }
+
   .images-names-txt .mushroom-icon-header svg {
     width: .8rem;
     height: .8rem;

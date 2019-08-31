@@ -9,7 +9,6 @@ import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
-// import { rebindLayoutState } from 'ui/screens/multichoice/missing-data-helper';
 import { firestore } from 'api/firebase/firestore';
 
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
@@ -220,16 +219,15 @@ export const renderMultiStrips = (collection, bonus) => {
                 const otherFamilies = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(family => family.name.toLowerCase() !== item.taxonomy.family.toLowerCase()));
                 const otherFamiliesLatinNames = otherFamilies.map(family => family.name);
                 const otherFamiliesCommonNames = otherFamilies.map(of => of.names[0]);
-                const commonFamilyName = item.family.names[0];
-
+                
                 let question, answers;
 
                 const random = utils.getRandomInt(2);
 
                 switch(random) {            
                     case 0:
-                        question = commonFamilyName;
-                        answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
+                        question = item.family.vernacularName;
+                        answers = utils.shuffleArray([question, ...otherFamiliesCommonNames]);
                         if(question === undefined) console.log('Missing question - case 0 - in multi-strips for: ', item.name);
                         render(question, answers, { question: 'Match family name' });
                     break;
@@ -272,12 +270,6 @@ export const renderMultiStrips = (collection, bonus) => {
         init();
 
     } catch(e) {
-
-        console.error('Crashed out somwhere on multi-strips with this error: ', e);
-        
-        // rebindLayoutState(layout, item);
-
-        // renderMultiStrips(collection);
-        
+        console.error('Crashed out somwhere on multi-strips with this error: ', e);        
     }
 };

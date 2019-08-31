@@ -13,8 +13,8 @@ import { getPoolItems } from 'snapdragon-engine/pool-handler';
 
 import specimensTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images-template.html';
 
-const listenersToImageSelection = [];
-const listenersToUserAnswer = [];
+let listenersToImageSelection = [];
+let listenersToUserAnswer = [];
 
 export const listenToUserAnswer = listener => { 
     listenersToUserAnswer.push(listener);

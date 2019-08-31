@@ -901,6 +901,22 @@ export const plantae = [
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology'
     },
     {
+        term: 'Cuneate',
+        definition: 'Triangular, wedge-shaped, stem attaches to point.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/9/9f/Leaf_morphology_spear-shaped.png'
+        },
+        wiki: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Leaf_morphology_cuneate.png'
+    },
+    {
+        term: 'Acicular',
+        definition: 'Slender and pointed, needle-like.',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Leaf_morphology_acicular.png'
+        },
+        wiki: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Leaf_morphology_cuneate.png'
+    },
+    {
         term: 'Succulent',
         definition: '(Plants) that have some parts that are more than normally thickened and fleshy, usually to retain water in arid climates or soil conditions.',
         wiki: 'https://en.wikipedia.org/wiki/Succulent_plant'

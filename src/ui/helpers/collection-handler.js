@@ -145,6 +145,8 @@ export const collectionHandler = async (collection, config, counter, callback, c
                 item.taxonomy.species = names[1];
 
                 item.family = familyTaxa.find(family => family.name === item.taxonomy[enums.taxon.FAMILY.name.toLowerCase()]);
+                item.family.names = item.family.names[0].names ? item.family.names[0].names[0] : item.family.names[0];
+                item.family.vernacularName = item.family.names[0];
                 item.order = orderTaxa.find(order => order.name === item.taxonomy[enums.taxon.ORDER.name.toLowerCase()]);
 
                 item.snapIndex = index + 1;
