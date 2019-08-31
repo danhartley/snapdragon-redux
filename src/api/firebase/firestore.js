@@ -90,7 +90,7 @@ const getTaxaNames = async () => {
 
 const getSpeciesByIconicTaxon = async (item, number = 6) => {
 
-    const { iconicTaxon, isLichen, eolId } = item;
+    const { iconicTaxon, lichen: isLichen, eolId } = item;
 
     let querySnapshot, docs = [];
 
@@ -101,9 +101,6 @@ const getSpeciesByIconicTaxon = async (item, number = 6) => {
     const operator = random === 0 ? '>=' : '<=';
 
     const randomId = getRandomId();
-
-    console.log('randomId: ', randomId);
-    console.log('firebase.firestore.FieldPath.documentId(): ', firebase.firestore.FieldPath.documentId());
     
     if(isLichen) {
         querySnapshot = await species.where('lichen', '==', true).where(firebase.firestore.FieldPath.documentId(), operator, randomId).limit(number).get();

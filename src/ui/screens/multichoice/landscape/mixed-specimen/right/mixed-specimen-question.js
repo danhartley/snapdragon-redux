@@ -37,8 +37,6 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
     renderTemplate({ instructions, binomial }, template.content, parent);
 
-    let uniqueImages = [];
-
     const listenToImageChangeHandler = async images => {        
 
         let speciesList, unorderedImages;
@@ -49,25 +47,18 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
         if(!speciesList) return;
 
-        unorderedImages.forEach(async (image, index) => {
+        speciesList.innerHTML = "";
 
-            if(index === 0) {
-                speciesList.innerHTML = "";
-                uniqueImages = [];          
-            }
+        const speciesItems = await Promise.all(unorderedImages.map(async image => {
 
             const imageItem = await firestore.getSpeciesByName(image.itemName);
             const vernacularName = itemProperties.getVernacularName(imageItem, config);
             const taxonIcon = returnIcon(imageItem);
-            
-            if(!R.contains(image.itemName, uniqueImages)) {
-                speciesList.innerHTML += 
-                    imageItem.iconicTaxon === 'fungi'
-                        ? `<li id="${image.itemName}"><span>${vernacularName}</span></li>`
-                        : `<li id="${image.itemName}">${taxonIcon}<span>${vernacularName}</span></li>`;
-                uniqueImages.push(image.itemName);
-            }
-        });
+
+            return `<li id="${image.itemName}">${taxonIcon}<span>${vernacularName}</span></li>`;
+        }));
+
+        speciesList.innerHTML = speciesItems.join('');
     };
 
     listenToImageSelection(listenToImageChangeHandler);
