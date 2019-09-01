@@ -21,7 +21,7 @@ import introTemple from 'ui/screens/home/home-intro-template.html';
 
 export const renderHome = (counter, loadSpeciesList = true, noRecords = false) => {
 
-    subscription.remove(subscription.getByName('renderSpeciesGrid'));
+    console.log('home');
 
     let { config, collection, lesson } = store.getState();
 
@@ -98,6 +98,8 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
         const { collection, config, history } = store.getState();
         lessonHandler.getLessonItems(enums.lessonState.BEGIN_LESSON, collection, config, history);        
         actionLink.disabled = false;
+        subscription.remove(subscription.getByName('renderSpeciesGrid'));
+        subscription.remove(subscription.getByName('renderHome'));
     };
 
     const guideSummary = speciesCount => {
@@ -118,7 +120,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     };
 
     const resumeLessonHandler = () => {
-        lessonHandler.getLessonItems(enums.lessonState.RESUME_LESSON, collection, config, history);
+        lessonHandler.getLessonItems(enums.lessonState.RESUME_LESSON, collection, config, history);        
     };
 
     const checkState = state => {
@@ -174,6 +176,11 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
                 }
                                      
                 guideSummary(speciesCount);
+
+                subscription.remove(subscription.getByName('renderHome'));
+                const subscriptions = subscription.remove(subscription.getByName('renderSpeciesGrid'));
+
+                console.log('subscriptions: ', subscriptions); 
                 
                 break;
                 
@@ -269,10 +276,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
         renderTemplate({}, template.content, parent);
     });
 
-    const handleBeginLessonState = (counter, speciesCount) => {
-        
-        subscription.remove(subscription.getByName('renderSpeciesGrid'));
-        subscription.remove(subscription.getByName('renderHome'));
+    const handleBeginLessonState = (counter, speciesCount) => {        
 
         if(config.isPortraitMode && !!speciesCount) return;
         

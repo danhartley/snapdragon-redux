@@ -6,18 +6,27 @@ let subscriptions = [];
 const add = (subscription, domain, role, layout) => {
     
     const select = store => store[domain];
-    const onChange = subscription;
+    const onChange = subscription;    
+
+    console.log('name: ', subscription.name);
 
     const sub = observeStore(store, select, onChange, domain, layout);
 
     subscriptions.push({ ...sub, role});
-    // console.log(`%cmy subs: ${subscriptions.map(s=>s.name).join(', ')}`, "color: blue;");
+    console.log(`%cmy subs: ${subscriptions.map(s=>s.name).join(', ')}`, "color: blue;");
     return sub;
 };
 
 const remove = subscription => {
-    
+
+    // console.log('subscription:', subscription);
+
+    // if(subscriptions) {
+    //     subscriptions.forEach(s => console.log('sub: ', s));
+    // }
+
     if(subscription) {
+
         subscription.unsubscribe();
         // console.log(`*** Calling unsubscribe on name: ${subscription.name}, role: ${subscription.role}`);
         subscriptions = subscriptions.filter(sub => sub.name !== subscription.name);

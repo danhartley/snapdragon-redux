@@ -121,7 +121,7 @@ const getSpeciesByName = async (itemName, force = false) => {
 
     const items = await getSpecies({ key:'name', operator:'==', value:itemName });
     
-    console.log(items);
+    // console.log(items);
 
     return items[0];
 };
@@ -229,7 +229,7 @@ const addSpecies = async species => {
         });
     }
 
-    console.log(species.images);
+    // console.log(species.images);
 
     try {
         docRef = await db.collection('species').add(species);
@@ -412,7 +412,7 @@ const deleteSpeciesTraitField = async (name, field) => {
       
           querySnapshot.forEach(function(doc) {
               speciesTraitsRef = doc.ref;
-              console.log(doc.data())
+            //   console.log(doc.data())
           });
         } catch(err) {
             console.error("Error writing document: ", err);
