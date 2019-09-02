@@ -92,6 +92,7 @@ export const renderNavigation = page => {
                         lessonHandler.getLessonItems(enums.lessonState.PAUSE_LESSON, collection, config, history); 
                         const { counter } = store.getState();
                         const loadSpeciesList = false;
+                        console.log('navigation');
                         config.isPortraitMode ? renderHome(counter, loadSpeciesList) : renderHome(counter);
                         break;
                     case enums.navigation.SETTINGS:
