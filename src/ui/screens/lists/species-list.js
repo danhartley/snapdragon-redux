@@ -18,7 +18,7 @@ import { enums } from 'ui/helpers/enum-helper';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
-    console.log('species list');
+    // console.log('species list');
 
     const { config: configState, history, counter, enums: traitEnums, lesson  } = store.getState();
 

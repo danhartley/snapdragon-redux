@@ -5,7 +5,7 @@ import { listenToInatRequests } from 'api/inat/inat';
 
 export const speciesPendingSpinner = (config) => {
 
-    console.log('spinner');
+    // console.log('spinner');
 
     const template = document.createElement('template');
     template.innerHTML = spinnerTemplate;

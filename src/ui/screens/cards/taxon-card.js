@@ -50,7 +50,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
 
         parent.innerHTML = '';
 
-        rank = rank ? rank.toUpperCase() : '';
+        rank = rank ? rank.toUpperCase() : 'FAMILY';
 
         let taxon;
 

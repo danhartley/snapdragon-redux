@@ -25,7 +25,7 @@ export const renderMixedSpecimenQuestions = collection => {
 
         const getPortraitImages = images => {
             const multiImages = utils.flatten(images.map(image => { 
-                const item = { name: image.itemName, images: R.take(1, image.srcs) };
+                const item = { name: image.itemName, images: R.take(1, utils.shuffleArray(image.srcs)) };
                 return prepImagesForCarousel(item, config, imageUseCases.MIXED_SPECIMENS);
             }));
             return multiImages;
@@ -36,10 +36,6 @@ export const renderMixedSpecimenQuestions = collection => {
         let images = items.map((item, index) => { 
             return { index: index + 1, srcs: item.images, itemName: item.name };
         });
-
-        // images.forEach(image => {
-        //     image = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config).medium;
-        // });
 
         images = getPortraitImages(images);
 
