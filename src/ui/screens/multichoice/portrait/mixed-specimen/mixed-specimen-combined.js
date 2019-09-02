@@ -11,7 +11,7 @@ import { imageSlider } from 'ui/screens/common/image-slider';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 import { getPoolItems } from 'snapdragon-engine/pool-handler';
 
-import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-questions-template.html';
+import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-combined-template.html';
 
 export const renderMixedSpecimenQuestions = collection => {
 
