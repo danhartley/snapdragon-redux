@@ -1,6 +1,7 @@
 import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
+import { subscription } from 'redux/subscriptions';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { renderCard } from 'ui/screens/cards/card';
@@ -11,6 +12,8 @@ import { scaleImage, imageUseCases } from 'ui/helpers/image-handlers';
 import speciesGridTemplate from 'ui/screens/home/species-grid-template.html';
 
 export const renderSpeciesGrid = () => {
+
+    // subscription.remove(subscription.getByName('renderSpeciesGrid'));
 
     const init = async () => {
 

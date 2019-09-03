@@ -625,6 +625,7 @@ const walkOne = {
     
     'hibiscus syriacus',
     'Brugmansia arborea',
+    'Corynocarpus laevigatus',
 
 
     'Pittosporum tobira',

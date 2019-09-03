@@ -4,11 +4,13 @@ import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { imageSlider } from 'ui/screens/common/image-slider';
 
-const stripImageUrlOfScale = url => {
+const stripImageUrlOfScaleAndPrefix = url => {
+    const prefix = 'https://content.eol.org/data/media/';
     if(!url || typeof url === 'object') return '';
     url = url.replace('.260x190.jpg', '');
     url = url.replace('.98x68.jpg', '');
     url = url.replace('.jpg', '');
+    url = url.replace(prefix, '');
     return url;
 };
 
@@ -36,8 +38,8 @@ export const denormaliseImages = images => {
 
 export const imageMatch = (src1, src2) => {
     if(!src2) return false;
-    src1 = stripImageUrlOfScale(src1);
-    src2 = stripImageUrlOfScale(src2);
+    src1 = stripImageUrlOfScaleAndPrefix(src1);
+    src2 = stripImageUrlOfScaleAndPrefix(src2);
     const isActiveImage = src1 === src2;
     return isActiveImage;
 };
@@ -75,7 +77,7 @@ export const scaleImage = (image, useCase, config) => {
         image.small = `https://static.inaturalist.org/photos/${image.small}`;
         return image;
     } else {
-        image.url = stripImageUrlOfScale(image.url);
+        image.url = stripImageUrlOfScaleAndPrefix(image.url);
         image.large = `https://content.eol.org/data/media/${image.url}.jpg`;
         image.medium = `https://content.eol.org/data/media/${image.url}.260x190.jpg`;
         image.small = `https://content.eol.org/data/media/${image.url}.98x68.jpg`;

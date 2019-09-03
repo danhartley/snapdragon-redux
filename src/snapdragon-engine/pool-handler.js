@@ -4,10 +4,8 @@ import { utils } from 'utils/utils';
 import { findRankByIconicTaxon } from 'api/snapdragon/iconic-taxa';
 import { firestore } from 'api/firebase/firestore';
 
-export const getPoolItems = async collection => {
+export const getPoolItems = async (item, poolSize = 5) => {
 
-    const item = collection.items.find(i => i.name === collection.nextItem.name);
-  
     const rank = findRankByIconicTaxon(item.taxonomy, item.iconicTaxon);
   
     let taxonicMatches = await firestore.getSpeciesByIconicTaxon(item);
@@ -17,7 +15,7 @@ export const getPoolItems = async collection => {
         taxonicMatches = isLichen ? taxonicMatches.filter(item => item.lichen) : taxonicMatches.filter(item => !item.lichen);
     }
   
-    const speciesInSameTaxon = utils.shuffleArray(taxonicMatches.filter(ci => ci.name !== item.name));
+    const speciesInSameTaxon = utils.shuffleArray(taxonicMatches.filter(ci => ci.name.toLowerCase() !== item.name.toLowerCase()));
     
     let speciesPool;
   
@@ -25,13 +23,20 @@ export const getPoolItems = async collection => {
       speciesPool = speciesInSameTaxon;  
     }
 
-    if(speciesPool.length < 5) {
-      getPoolItems(collection);
-    }
+    console.log('speciesPool:', speciesPool)
 
-    const items = R.take(5, speciesPool);
+    if(!speciesPool) {
+      getPoolItems(item);
+    }
+    // else if(speciesPool.length < poolSize) {
+    //   getPoolItems(item);
+    // } 
+    else {
+
+      const items = R.take(5, speciesPool);
     
-    items.push(item);
-  
-    return items;
+      items.push(item);
+    
+      return items;
+    }
   };

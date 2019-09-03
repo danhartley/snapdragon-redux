@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { renderSpeciesGrid } from 'ui/screens/home/species-grid';
 import { persistor } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
@@ -21,9 +22,13 @@ import introTemple from 'ui/screens/home/home-intro-template.html';
 
 export const renderHome = (counter, loadSpeciesList = true, noRecords = false) => {
 
-    console.log('home');
-
     let { config, collection, lesson } = store.getState();
+
+    console.log('home');
+    
+    if(collection.id === 0) {
+        subscription.add(renderSpeciesGrid, 'counter', 'flow');
+    }
 
     const template = document.createElement('template');
     template.innerHTML = homeTemplate;
@@ -178,9 +183,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
                 guideSummary(speciesCount);
 
                 subscription.remove(subscription.getByName('renderHome'));
-                const subscriptions = subscription.remove(subscription.getByName('renderSpeciesGrid'));
-
-                console.log('subscriptions: ', subscriptions); 
+                subscription.remove(subscription.getByName('renderSpeciesGrid'));
                 
                 break;
                 

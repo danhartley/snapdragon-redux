@@ -4,6 +4,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { store } from 'redux/store';
 import { getTraitsForTests } from 'api/traits/traits-for-tests';
 import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
+import { renderTraitCardTest } from 'ui/screens/cards/trait-card-test';
 
 import summaryTemplate from 'ui/screens/cards/trait-card-summary-template.html';
 
@@ -55,7 +56,7 @@ export const renderTraitCard = item => {
     
                     document.querySelector('.js-try-again').addEventListener('click', () => {
                         renderTraitCard(item);
-                    });
+                    }); 
     
                     document.querySelector('.js-test-card-content').classList.add('trait-line');            
                     document.querySelector('.js-question-question').innerHTML = 'Section complete';
@@ -67,12 +68,8 @@ export const renderTraitCard = item => {
                 } else {
 
                     let numberOfQuestions = Object.keys(bonus.typedItemTraits).length;
-                    numberOfQuestions = (numberOfQuestions - alreadyTestedTraits.length);
-                    numberOfQuestions = numberOfQuestions === 0 ? '' : numberOfQuestions;
-
-                    setTimeout(() => {
-                        document.querySelector('.js-traits-count-badge').innerHTML = numberOfQuestions;
-                    });
+                        numberOfQuestions = (numberOfQuestions - alreadyTestedTraits.length);
+                        numberOfQuestions = numberOfQuestions === 0 ? '' : numberOfQuestions;
                                     
                     bonus.screen = { name: 'trait-property'};
                     bonus.overrides.binomial = 'TRAITS & ECOLOGY';
@@ -83,19 +80,28 @@ export const renderTraitCard = item => {
                     };
         
                     alreadyTestedTraits.push(bonus.overrides.trait.key);
-        
-                    renderMultiStrips(collection, bonus);
-        
+
+                    setTimeout(() => {
+                        document.querySelector('.js-traits-count-badge').innerHTML = numberOfQuestions;
+                    });
+
+                    renderMultiStrips(collection, bonus);                                 
+
                     const returnLink = document.querySelector('.js-traits-link');
                     const returnTxt = returnLink.querySelector('span:nth-child(1)');
-                        returnTxt.innerHTML = 'Main';
+                          returnTxt.innerHTML = 'Main';
                 
                     const returnTxt2 = returnLink.querySelector('span:nth-child(2)');
-                        returnTxt2.innerHTML = 'lesson';
+                          returnTxt2.innerHTML = 'lesson';
                 }
+            },
+
+            getTraitTestCard: function () {
+                renderTraitCardTest(item);
             }
         }
     })();
 
-   traitIterator.getNextTrait();
+   traitIterator.getTraitTestCard(item);
+//    traitIterator.getNextTrait();
 };

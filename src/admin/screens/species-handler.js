@@ -150,7 +150,8 @@ const updateSpecies = () => {
 
     btnGetPhotos.addEventListener('click', async e => {
 
-        const prefix = item.images ? 'https://content.eol.org/data/media/' : '';
+        // const prefix = item.images ? 'https://content.eol.org/data/media/' : '';
+        const prefix = '';
 
         if(item.images.length === 0) {
             item.images = await eol.getSpeciesPhotos(item.eolId, 'pd|cc-by|cc-by-sa|cc-by-nd');                                    
@@ -305,7 +306,7 @@ const addOrUpdateSpeciesToFirestore = (item, imageIds, callback) => {
             }
         });
     });
-    images.forEach(image => image.url = image.url.replace('https://content.eol.org/data/media/', ''));
+    // images.forEach(image => image.url = image.url.replace('https://content.eol.org/data/media/', ''));
     item.images = images;
 
     if(callback) callback(item);

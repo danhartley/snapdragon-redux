@@ -39,11 +39,11 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
     template.innerHTML = specimensTemplate;
 
     const parent = DOM.leftBody;
-    parent.innerHTML = '';
+          parent.innerHTML = '';
 
     const renderSpecimenImages = async () => {
  
-        const mixedItems = preselectedItems || await getPoolItems(collection);
+        const mixedItems = preselectedItems || await getPoolItems(item);
 
         mixedItems.map(item => item.images.map(image => {
             return image = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config).medium;

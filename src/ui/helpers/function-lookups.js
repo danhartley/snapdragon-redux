@@ -5,11 +5,11 @@ import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
 import { renderSummary } from 'ui/screens/progress/summary';
-import { runTask } from 'ui/screens/command';
+// import { runTask } from 'ui/screens/command';
 import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
 import { renderCompleteText } from 'ui/screens/text-entry/text-complete';
 import { renderCultivarCard } from 'ui/screens/cards/cultivar-card';
-import { renderMixedSpecimenQuestions } from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-questions';
+import { renderMixedSpecimenQuestions } from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-combined';
 import { renderNonTaxonCardSpecimenTiles } from 'ui/screens/cards/non-taxon-card-specimen-tiles';
 import { renderMixedSpecimenQuestion } from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question';
 import { renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
@@ -27,7 +27,7 @@ const functions = [
     { name: 'species-vernaculars', func: renderMultiStrips },
     { name: 'summary', func: renderSummary },
     { name: 'history', func: renderHistory },
-    { name: 'command', func: [renderSpecimenTiles, runTask] },
+    // { name: 'command', func: [renderSpecimenTiles, runTask] },
     { name: 'epithet', func: renderMultiStrips },
     { name: 'definition', func: renderBonusTest },
     { name: 'family', func: renderMultiStrips },
