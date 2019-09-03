@@ -21,7 +21,7 @@ export const renderTestCardTemplate = (collection, context) => {
     template.innerHTML = testCardTemplate;
 
     const parent = DOM.rightBody;
-    parent.innerHTML = '';
+          parent.innerHTML = '';
 
     context.className = context.className || '';
     context.headerClassName = context.headerClassName || '';

@@ -282,6 +282,34 @@ div.text-entry {
     height: 1.5rem;
 }
 
+.test-card-container {
+    padding: .5rem;
+}
+
+.trait-test-card-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr 2fr 3fr;
+    grid-row-gap: 1rem;
+    font-size: 1rem;
+}
+
+.trait-test-card-container p {
+    margin: 0;
+}
+
+.input-trait-field {    
+    font-size: 1rem;
+}
+
+.input-trait-field label {
+    min-width: 4rem;
+}
+
+.input-trait-field input {
+    width: 12.5rem;
+    margin: 0 .5rem;
+}
+
 @media (min-width: 768px) {
 
     .iconic-icon {

@@ -31,7 +31,7 @@ export const renderMixedSpecimenQuestions = collection => {
             return multiImages;
         }
 
-        const items = await getPoolItems(collection);
+        const items = await getPoolItems(item);
 
         let images = items.map((item, index) => { 
             return { index: index + 1, srcs: item.images, itemName: item.name };

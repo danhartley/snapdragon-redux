@@ -1,24 +1,24 @@
-import * as R from 'ramda';
+// import * as R from 'ramda';
 
-import { store } from 'redux/store';
-import { cutter } from 'ui/helpers/wordplay';
-import { renderLetters } from 'ui/screens/common/letters';
-import { renderSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
+// import { store } from 'redux/store';
+// import { cutter } from 'ui/helpers/wordplay';
+// import { renderLetters } from 'ui/screens/common/letters';
+// import { renderSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
 
-export const runTask = (collection) => {
+// export const runTask = (collection) => {
 
-    const item = collection.nextItem;
+//     const item = collection.nextItem;
 
-    const { config, counter, lesson } = store.getState();
+//     const { config, counter, lesson } = store.getState();
 
-    if(counter.index >= lesson.moduleSize) return;
+//     if(counter.index >= lesson.moduleSize) return;
 
-    renderSpecimenTiles(collection);
-    const letters = [];
+//     renderSpecimenTiles(collection);
+//     const letters = [];
 
-    R.take(6, item.multipleNames.map(answer => {
-        letters.push(cutter(answer.name, 5));
-    }));
+//     R.take(6, item.multipleNames.map(answer => {
+//         letters.push(cutter(answer.name, 5));
+//     }));
 
-    renderLetters(letters, item, config.callbackTime); 
-};
+//     renderLetters(letters, item, config.callbackTime); 
+// };

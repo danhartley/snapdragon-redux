@@ -5,6 +5,7 @@ import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { epithets } from 'api/botanical-latin';
 import { itemProperties } from 'ui/helpers/data-checking';
+import { getPoolItems } from 'snapdragon-engine/pool-handler';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
@@ -17,6 +18,8 @@ import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
 export const renderMultiStrips = (collection, bonus) => {
 
     try {
+
+        console.log('collection.nextItem:', collection.nextItem);
 
         const { config, lesson, layout } = store.getState();
 
@@ -149,11 +152,9 @@ export const renderMultiStrips = (collection, bonus) => {
                     const buildQuestion = async () => {
 
                         question = item.vernacularName;   
-                        answers = await firestore.getSpeciesByIconicTaxon(item, defaultQueryLimit)
-                                    
-                        answers = answers.filter(i => i.name.toLowerCase() !== item.name.toLowerCase()).map(i => itemProperties.getVernacularName(i, defaultLanguage));
-                        answers = R.take(defaultQueryLimit - 1, answers);
-
+                        answers = await getPoolItems(item, 6);
+                        answers = answers.map(a => itemProperties.getVernacularName(a, defaultLanguage));
+                        answers = answers.filter(a => a !== item.vernacularName);
                         answers = utils.shuffleArray([item.vernacularName, ...answers]);
                 
                         help = config.isLandscapeMode ? '(Click on the answer.)' : '(Tap on the answer.)';

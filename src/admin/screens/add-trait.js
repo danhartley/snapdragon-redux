@@ -46,6 +46,7 @@ export const renderAddTrait = (parent, callback) => {
                     saveTrait();
                 }
             });
+            
             inputUnit.addEventListener('keydown', event => {
                 if(event.keyCode == 9) {
                     const highlightedText = document.querySelector('.selected');
@@ -110,6 +111,7 @@ export const renderAddTrait = (parent, callback) => {
                 saveTrait();
             }
         });
+        
         inputValue.addEventListener('keydown', event => {
             if(event.keyCode == 9) {
                 const highlightedText = document.querySelector('.selected');
@@ -126,7 +128,7 @@ export const renderAddTrait = (parent, callback) => {
         let traitValues;
 
         const template = document.createElement('template');
-        template.innerHTML = addTraitTemplate;
+              template.innerHTML = addTraitTemplate;
 
         parent.innerHTML = '';
 

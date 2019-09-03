@@ -21,7 +21,7 @@ import { renderHome } from 'ui/screens/home/home';
 import { renderNavigation } from 'ui/fixtures/navigation';
 import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
-import { renderSpeciesGrid } from 'ui/screens/home/species-grid';
+// import { renderSpeciesGrid } from 'ui/screens/home/species-grid';
 import { updateLanguage } from 'api/traits/trait-types';
 import { initialiseConfig } from 'ui/helpers/location-helper';
 
@@ -46,7 +46,7 @@ setTimeout( () => {
         subscription.add(renderHeaders, 'page', 'flow');
         subscription.add(renderNavigation, 'page', 'flow');
         subscription.add(renderHome, 'counter', 'flow');
-        subscription.add(renderSpeciesGrid, 'counter', 'flow');
+        // subscription.add(renderSpeciesGrid, 'counter', 'flow');
         subscription.add(nextLesson, 'counter', 'flow');
         subscription.add(nextLayout, 'counter', 'flow');
         subscription.add(nextItem, 'layout', 'flow');
