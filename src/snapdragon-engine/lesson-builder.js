@@ -31,9 +31,14 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, l
 
     const itemIndices = [ ...new Set(lessonPlan.layouts.map(layout => layout.itemIndex)) ];
 
-    const bonusTests = await getBonusTests(collection, itemIndices, layouts.filter(layout => layout.bonus), lessonName, levelName);
-    
-    lessonPlan.layouts = [ ...lessonLayouts, ...bonusTests ];
+    const bonusLayouts = layouts.filter(layout => layout.bonus);
+
+    if(bonusLayouts) {
+        const bonusTests = await getBonusTests(collection, itemIndices, bonusLayouts, lessonName, levelName);
+        lessonPlan.layouts = [ ...lessonLayouts, ...bonusTests ];
+    } else {
+        lessonPlan.layouts = lessonLayouts;
+    }
 
     lessonLayouts = lessonPlan.layouts.map((layout, i) => {
         layout.roundProgressIndex = i + 1;

@@ -12,7 +12,7 @@ export const getNextActiveLayerLayouts = (lessonPlan, config, lesson) => {
         switch(mode) {
             case 'learn':
                 currentLevel.bonusLayouts = currentLevel.bonusLayouts || [];
-                return [ ...currentLevel.layouts, ...currentLevel.bonusLayouts ];
+                return [ ...currentLevel.layouts.filter(l => l), ...currentLevel.bonusLayouts ];
             case 'review':
                 return currentLevel.reviewLayouts || [];
             default:

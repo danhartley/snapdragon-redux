@@ -216,7 +216,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
                 guideSummary(speciesCount);
                                 
                 if(loadSpeciesList) {
-                    renderSpeciesCollectionList(collection);                
+                    renderSpeciesCollectionList(collection, true);                
                 }                
                 break;
         }

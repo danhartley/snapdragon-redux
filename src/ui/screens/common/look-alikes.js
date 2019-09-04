@@ -6,19 +6,16 @@ import { imageSideBySlider } from 'ui/screens/common/image-slider';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import { lookalikeDescriptions } from 'api/snapdragon/look-alike-descriptions';
 import { firestore } from 'api/firebase/firestore';
-// import { getLookalikeTraitProperties } from 'ui/helpers/traits-handler';
 
 import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
 import visualComparisonTemplate from 'ui/screens/common/look-alikes-link-template.html';
 
 export const lookalikeSpecies = (item, config, rootNode = document) => {
     
-    // const lookalikes = getLookalikeTraitProperties(item);
     const lookalikes = item.traits.lookalikes;
 
     if(lookalikes) {
-
-        const speciesComparisonLink = rootNode.querySelector('.js-compare-species-link');
+        
         const matchTemplate = document.createElement('template');
               matchTemplate.innerHTML = visualComparisonTemplate;
         const lookalikeParent = rootNode.querySelector('.js-lookalikes');
@@ -27,17 +24,19 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
         const names = [];
         const scientificNames = [];
 
-        if(!speciesComparisonLink) return;
+        let species;
 
         async function renderLookalikes() {
 
             const readyLookalikesForRendering = async () => {
                 
-                for (let lookalike of lookalikes) {
+                console.log(lookalikes);
 
-                    lookalike = lookalike.lookalike ? lookalike.lookalike.name : lookalike;
+                species = [ ...lookalikes.map(lookalike => lookalike.lookalike), { name: item.name, description: lookalikes[0].description } ];
 
-                    const lookalikeItem = await firestore.getSpeciesByName(lookalike);
+                for (let lookalike of species) {
+
+                    const lookalikeItem = await firestore.getSpeciesByName(lookalike.name);
 
                     if(!lookalikeItem) return;
                     
@@ -46,9 +45,13 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
                     scientificNames.push(lookalikeItem.name);
     
                     const images = lookalikeItem.images.map((img, index) => { 
+
+                        const url = scaleImage({ url: img.url }, imageUseCases.CAROUSEL, config);
+
                         return { 
                                 index: index + 1, 
-                                src: { ...img, url: scaleImage({ url: img.url }, imageUseCases.CAROUSEL, config).medium },
+                                src: { ...img, url: url.medium },
+                                url: url.medium,
                                 itemName: lookalikeItem.name, 
                                 itemCommon: lookalikeItem.vernacularName };
                     });
@@ -62,6 +65,8 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
             if(slides.length === 0) return;
 
             renderTemplate({slides, names: names.join(', ')}, matchTemplate.content, lookalikeParent);
+
+            const speciesComparisonLink = rootNode.querySelector('.js-compare-species-link');
 
             speciesComparisonLink.classList.remove('hide');
 
@@ -88,19 +93,15 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
     
             speciesComparisonLink.addEventListener('click', () => {
     
-                const parent = document.querySelector('#imageComparisonModal .js-modal-image');            
-                
-                const lookalikes = lookalikeDescriptions.find(lookalikes => R.contains(item.name, lookalikes.ids));
-
-                if(!lookalikes) return;
-
+                const parent = document.querySelector('#imageComparisonModal .js-modal-image');
+                            
                 imageSideBySlider(slides, parent, true, config);
                     
-                lookalikes.species.forEach(sp => {
-                    const identifier = `.description_${sp.id.replace(' ', '_')}`;
+                species.forEach(lookalike => {
+                    const identifier = `.description_${lookalike.name.replace(' ', '_')}`;
                     const description = document.querySelector(identifier);
-                          description.innerHTML = sp.description;
-                    getTrait(sp.id, document.querySelector(`${identifier} + div`));
+                          description.innerHTML = lookalike.description;
+                    getTrait(lookalike.name, document.querySelector(`${identifier} + div`));
                 });
                 
             });

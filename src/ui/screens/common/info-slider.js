@@ -14,7 +14,7 @@ const renderInfoSlider = (item, traits, parent, id) => {
 
     traits.forEach(trait => {
         trait.name = trait.name === 'ph' ? 'pH' : utils.capitaliseFirst(trait.name);
-        trait.unit = trait.unit || '';
+        trait.unit = trait.unit ? trait.unit.toLowerCase() === 'colour' ? '' : trait.unit : '';
         trait.value = trait.value.join(', ');
     });
     
