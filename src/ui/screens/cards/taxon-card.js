@@ -71,18 +71,23 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
 
         const familyStats = itemProperties.getFamilyStats(collection.items);
         const occurrences = familyStats ? familyStats[taxon.name] : 0;
+        const url = item.images ? item.images[0].url : '';
+        const image = scaleImage({ url }, imageUseCases.TAXON_CARD, config);
+        const vernacularName = taxon.vernacularName || itemProperties.getNestedTaxonProp(taxon, config.language, 'names', 'names', '0').split(',')[0];
+        const identification = taxon.identification || '';
+        const summary = taxon.summary || '';
                 
         const context = {
             rank: rank,
             name: taxon.name,
-            image: scaleImage({ url: item.images[0].url }, imageUseCases.TAXON_CARD, config),
+            image,
             alt: taxon ? taxon.alt : '',
-            vernacularName: taxon.vernacularName || itemProperties.getNestedTaxonProp(taxon, config.language, 'names', 'names', '0').split(',')[0],
+            vernacularName,
             species: taxon.species || '--',
             genera: taxon.genera || '--',
             families: taxon.families || '--',
-            identification: taxon.identification || taxon.descriptions[0].identification,
-            summary: taxon.summary || taxon.descriptions[0].summary,
+            identification,
+            summary,
             eol: taxon.eol ? taxon.eol.replace('en', config.language) : '',
             wiki: taxon.wiki ? taxon.wiki.replace('en', config.language) : '',
             occurrences: occurrences,
@@ -145,6 +150,8 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
         });
 
     } catch(e) {
+
+        console.error(e);
 
         setTimeout(() => {        
             switch(transition) {

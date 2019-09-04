@@ -40,7 +40,7 @@ const getLookalikeTest = item => {
 
         if(!lookaliketraits) return {};
 
-        let lookalikes = lookaliketraits.value;
+        let lookalikes = lookaliketraits.map(trait => trait.lookalike.name);
 
         if(lookalikes.length === 0) return {};
 
