@@ -20,9 +20,9 @@ export const landscapeFungi = {
             layouts: [ 
                 L.speciesRevision,                        
                 L.multiSpecimenCommonMatch,
-                L.mixedSpeciesMatch
+                L.mixedSpecimensRight
             ],
-            reviewLayouts: [ L.multiSpecimenCommonMatch, L.mixedSpeciesMatch ]
+            reviewLayouts: [ L.multiSpecimenCommonMatch, L.mixedSpecimensRight ]
         },
         {   id: 2,
             name:'Level 2',
@@ -87,7 +87,7 @@ landscapeLichens.levels[0] = {
     layouts: [ 
         L.speciesRevision,
         L.multiSpecimenCommonMatch,
-        L.mixedSpeciesMatch
+        L.mixedSpecimensRight
     ],
-    reviewLayouts: [ L.multiSpecimenCommonMatch, L.mixedSpeciesMatch ]
+    reviewLayouts: [ L.multiSpecimenCommonMatch, L.mixedSpecimensRight ]
 };
