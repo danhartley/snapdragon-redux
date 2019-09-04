@@ -88,7 +88,7 @@
     font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
     display: flex;
     align-items: center;
-    padding-top: 1rem;
+    margin-top: 1.25rem;
     margin-left: .25rem;
   }
 
@@ -223,10 +223,14 @@
   }
 
   .guide-header-container {
-    height: 2.5rem;
+    height: 2.75rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  
+  .filter-actions .guide-header-container {
+    height: 0;
   }
 
   .species-picker-container {
