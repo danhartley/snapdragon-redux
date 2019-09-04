@@ -137,6 +137,14 @@ export const collectionHandler = async (collection, config, counter, callback, c
 
             await getOrderTaxa(orders);
 
+            const getFamilyNames = item => {
+                if(item.family && item.family.names) {
+                    return item.family.names[0].names ? item.family.names[0].names : item.family.names;
+                } else {
+                    return '';
+                }
+            }
+
             collection.items.forEach( async (item,index) => {
 
                 const names = item.name.split(' ');
@@ -145,8 +153,11 @@ export const collectionHandler = async (collection, config, counter, callback, c
                 item.taxonomy.species = names[1];
 
                 item.family = familyTaxa.find(family => family.name === item.taxonomy[enums.taxon.FAMILY.name.toLowerCase()]);
-                item.family.names = item.family.names[0].names ? item.family.names[0].names : item.family.names;
-                item.family.vernacularName = item.family.names[0];
+                if(item.family) {
+                    item.family.names = getFamilyNames(item);
+                    item.family.vernacularName = item.family.names[0];
+                }
+                
                 item.order = orderTaxa.find(order => order.name === item.taxonomy[enums.taxon.ORDER.name.toLowerCase()]);
 
                 item.snapIndex = index + 1;

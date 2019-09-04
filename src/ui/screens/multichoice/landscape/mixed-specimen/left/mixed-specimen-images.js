@@ -10,6 +10,7 @@ import { DOM } from 'ui/dom';
 import { iconicTaxa, matchIcon } from 'api/snapdragon/iconic-taxa';
 import { renderTemplate } from 'ui/helpers/templating';
 import { getPoolItems } from 'snapdragon-engine/pool-handler';
+import { renderMixedSpecimenCombined } from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-combined';
 
 import specimensTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images-template.html';
 
@@ -29,6 +30,10 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
     const imagesPerItem = noOfImagesPerItem || 1;
 
     const { config, score, lesson } = store.getState();
+
+    if(config.isPortraitMode) {
+        renderMixedSpecimenCombined(collection);
+    }
 
     const item = R.clone(collection.nextItem);
 

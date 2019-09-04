@@ -759,7 +759,7 @@
   .guide-bottom-actions {
     display: flex;
     position: absolute;
-    bottom: 5rem;
+    bottom: 5.5rem;
     right: 1rem;
   }
 
@@ -825,12 +825,29 @@
     margin-top: -.1rem;
   }
 
-  .actions {
+  /* .actions {
     display: flex;    
     flex-direction: column;
     justify-content: space-evenly;
-    height: calc(100vh - 16rem);
     margin: 0 .5rem;
+  } */
+
+  .actions {
+    height: calc(100vh - 16rem);
+    margin: .5rem;
+    display: grid;
+  }
+
+  .location-actions .actions {
+    grid-template-rows: 1fr 2fr 2fr;
+  }
+
+  .species-actions .actions {
+    grid-template-rows: 1fr;
+  }
+
+  .filter-actions .actions {
+    grid-template-rows: auto;
   }
 
   .actions ul {

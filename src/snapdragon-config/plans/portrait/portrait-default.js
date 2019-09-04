@@ -5,7 +5,6 @@ let portraitLayouts = [
     L.genusEntry,
     L.textCompleteGenus,                
     L.latinToCommonMatch,
-    L.mixedSpeciesMatch,
     L.speciesEntry,
     L.speciesGenusEntry,    
     L.commonToLatinMatch,
@@ -21,8 +20,8 @@ export const portraitDefault = {
     levels: [
         {   id: 1,
             name:'Level 1',            
-            layouts: [ L.mixedSpeciesMatch, L.latinToCommonMatch ],
-            reviewLayouts: [ L.mixedSpeciesMatch, L.latinToCommonMatch ],
+            layouts: [ L.mixedSpecimensRight, L.latinToCommonMatch ],
+            reviewLayouts: [ L.mixedSpecimensRight, L.latinToCommonMatch ],
             bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'traits', 'song', 'definition' ] } ]
         },
         {   id: 2,
