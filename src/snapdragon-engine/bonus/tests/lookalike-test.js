@@ -1,5 +1,3 @@
-import { store } from 'redux/store';
-import { itemProperties } from 'ui/helpers/data-checking';
 import { firestore } from 'api/firebase/firestore';
 
 export const getLookalikeTests = async itemsInThisRound => {
@@ -32,8 +30,6 @@ const getLookalikeTest = item => {
 
     const init = async () => {
 
-        const { config } = store.getState();
-
         if(!item.traits || Object.keys(item.traits).length === 0) return {};
 
         const lookaliketraits = item.traits['lookalikes'];
@@ -53,12 +49,12 @@ const getLookalikeTest = item => {
         lookalikes = await getLookalikes();
         lookalikes = lookalikes.filter(lookalike => lookalike);
 
-        if(lookalikes.length < 2) return {}; 
+        console.log('lookalikes for test: ', lookalikes);
 
         const question = item.name;
         const answers = [ question, ...lookalikes.map(item => item.name) ];
-        // const question = item.vernacularName;
-        // const answers = [ question, ...lookalikes.map(item => itemProperties.getVernacularName(item, config)) ];
+
+        console.log('lookalikes answers for test: ', lookalikes);
 
         return { question, answers, overrides : { question: 'Avoid look-alikes', help: '(Pick one correct image)', binomial: 'Latin name', vernacularName: 'Common name', trait: { name: 'lookalikes', lookalikes } } };
     };

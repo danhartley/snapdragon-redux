@@ -662,7 +662,7 @@ export const plantae = [
     },
     {
         term : "Globe",
-        definition : "(Tree shape) uniform round shape e.g. hackberry, floering dogwood, American hornbeam.",
+        definition : "(Tree shape) uniform round shape e.g. hackberry, flowering dogwood, American hornbeam.",
     },
     {
         term : "Fastigiate",

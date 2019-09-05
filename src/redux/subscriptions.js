@@ -19,12 +19,6 @@ const add = (subscription, domain, role, layout) => {
 
 const remove = subscription => {
 
-    // console.log('subscription:', subscription);
-
-    // if(subscriptions) {
-    //     subscriptions.forEach(s => console.log('sub: ', s));
-    // }
-
     if(subscription) {
 
         subscription.unsubscribe();

@@ -7,11 +7,12 @@ import { renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixe
 export const renderBonusSpecimenTiles = bonusLayout => {
 
     const collection = R.clone(store.getState().collection);
+          collection.nextItem = bonusLayout.item;
+    
+    const lookalikesCount = bonusLayout.item ? bonusLayout.item.traits.lookalikes.length + 1 : 0; // lookalikes + item itself
 
-    collection.nextItem = bonusLayout.item;
-
-    if(bonusLayout.overrides && bonusLayout.overrides.trait && bonusLayout.overrides.trait.name === 'lookalikes') {
-        let noOfImagesPerItem = 6 / collection.items.length;
+    if(lookalikesCount > 0) {
+        let noOfImagesPerItem = 6 / lookalikesCount;
         renderMixedSpecimenImages(collection, noOfImagesPerItem, [ collection.nextItem, ...bonusLayout.overrides.trait.lookalikes]);
     } else {
         renderSpecimenTiles(collection);

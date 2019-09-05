@@ -28,6 +28,9 @@ export const getPoolItems = async (item, poolSize = 5) => {
     if(!speciesPool) {
       getPoolItems(item);
     }
+
+    // if not enough, only get the additional necessary number (but duplicates???)
+
     // else if(speciesPool.length < poolSize) {
     //   getPoolItems(item);
     // } 

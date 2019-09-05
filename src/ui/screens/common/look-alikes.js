@@ -12,7 +12,7 @@ import visualComparisonTemplate from 'ui/screens/common/look-alikes-link-templat
 
 export const lookalikeSpecies = (item, config, rootNode = document) => {
     
-    const lookalikes = item.traits.lookalikes;
+    const lookalikes = item.traits.lookalikes || item.traits['look-alikes'];
 
     if(lookalikes) {
         
@@ -63,6 +63,8 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
             await readyLookalikesForRendering();
 
             if(slides.length === 0) return;
+
+            lookalikeParent.innerHTML = '';
 
             renderTemplate({slides, names: names.join(', ')}, matchTemplate.content, lookalikeParent);
 

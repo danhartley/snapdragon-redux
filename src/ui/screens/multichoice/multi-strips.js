@@ -151,6 +151,8 @@ export const renderMultiStrips = (collection, bonus) => {
 
                     const buildQuestion = async () => {
 
+                        console.log('calling getPoolItems from renderVernacularQuestions');
+
                         question = item.vernacularName;   
                         answers = await getPoolItems(item, 6);
                         answers = answers.map(a => itemProperties.getVernacularName(a, defaultLanguage));

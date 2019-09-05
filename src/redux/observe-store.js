@@ -12,6 +12,8 @@ export const observeStore = (store, select, onChange, domain, layout) => {
           case 'screen-species-card':
           case 'screen-taxon-card':
           case 'screen-non-taxon-card':
+          case 'species-vernaculars':
+          case 'mixed-specimen-images':
             hasStateSignificantlyChanged = currentState.itemIndex !== nextState.itemIndex;
             break;
           case 'screen-latin-to-common':

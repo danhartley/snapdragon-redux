@@ -39,23 +39,21 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
     const listenToImageChangeHandler = async images => {        
 
-        let speciesList, unorderedImages;
+        const uniqueSpecies = [ ...new Set(utils.shuffleArray(images).map(i => i.itemName)) ];
 
-        unorderedImages = utils.shuffleArray(images);
-
-        speciesList = document.querySelector('.js-images-names-txt');
+        const speciesList = document.querySelector('.js-images-names-txt');
 
         if(!speciesList) return;
 
         speciesList.innerHTML = "";
 
-        const speciesItems = await Promise.all(unorderedImages.map(async image => {
+        const speciesItems = await Promise.all(uniqueSpecies.map(async species => {
 
-            const imageItem = await firestore.getSpeciesByName(image.itemName);
+            const imageItem = await firestore.getSpeciesByName(species);
             const vernacularName = itemProperties.getVernacularName(imageItem, config);
             const taxonIcon = returnIcon(imageItem);
 
-            return `<li id="${image.itemName}">${taxonIcon}<span>${vernacularName}</span></li>`;
+            return `<li id="${species}">${taxonIcon}<span>${vernacularName}</span></li>`;
         }));
 
         speciesList.innerHTML = speciesItems.join('');

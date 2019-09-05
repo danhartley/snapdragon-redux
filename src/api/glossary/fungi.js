@@ -6,8 +6,8 @@ export const fungi = [
         level: 2
     },
     {
-        term: "Saprotroph",
-        definition: "Fungus that lives off decayed organic matter.",
+        term: "Saprotrophic",
+        definition: "Fungus living off decayed organic matter.",
         wiki: "https://en.wikipedia.org/wiki/Saprotrophic_nutrition",
         level: 1,
         group: 1
@@ -21,7 +21,7 @@ export const fungi = [
     },
     {
         term: "Parasitic",
-        definition: "Fungus that lives off a living host.",
+        definition: "Fungus living off a living host.",
         wiki: "https://en.wikipedia.org/wiki/Parasitism",
         level: 1,
         group: 1

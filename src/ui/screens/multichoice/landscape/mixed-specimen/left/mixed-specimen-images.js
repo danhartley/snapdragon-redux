@@ -47,6 +47,8 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
           parent.innerHTML = '';
 
     const renderSpecimenImages = async () => {
+
+        console.log('calling getPoolItems from renderSpecimenImages');
  
         const mixedItems = preselectedItems || await getPoolItems(item);
 

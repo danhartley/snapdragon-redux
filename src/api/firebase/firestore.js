@@ -454,14 +454,14 @@ const getDefinition = term => {
 
     const terms = term.split(',');
 
-    let definition;
+    let definitions = [];
 
     for(let term of terms) {        
-        const temp = dictionary.find(definition => definition.term.toLowerCase() === term.trim().toLowerCase());
-        definition = temp || definition;
+        const definition = dictionary.find(definition => definition.term.toLowerCase() === term.trim().toLowerCase());
+        definitions.push(definition);
     };
     
-    return definition;
+    return definitions.filter(definition => definition);
 };
 
 const addTaxon = async props => {

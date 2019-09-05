@@ -9,9 +9,9 @@
     position: relative;
 }
 
-.names-container {
+/* .names-container {
   font-size: 0.8rem;
-}
+} */
 
 .names-container-large > div:nth-child(1) > span:nth-child(1)  {
   font-size: 1.5rem;
