@@ -1,6 +1,6 @@
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
-import { screensSubscriptionHandler } from 'ui/helpers/subscription-handler';
+import { subsHandler } from 'ui/helpers/subscription-handler';
 
 export const nextLayout = (counter) => {
 
@@ -16,5 +16,5 @@ export const nextLayout = (counter) => {
 
     actions.boundNextLayout(layout);
 
-    screensSubscriptionHandler(layout, config);
+    subsHandler.addSubs(layout, config);
 };

@@ -5,6 +5,7 @@ import { scoreHandler } from 'ui/helpers/handlers';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
+import { subscription } from 'redux/subscriptions';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import { DOM } from 'ui/dom';
 import { iconicTaxa, matchIcon } from 'api/snapdragon/iconic-taxa';

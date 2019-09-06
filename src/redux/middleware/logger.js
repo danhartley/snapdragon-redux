@@ -8,7 +8,7 @@ export const logger = store => next => action => {
     // console.groupEnd(action.type)
 
     // console.clear();
-    console.log(`^^^ ${action.type}`);
+    // console.log(`^^^ ${action.type}`);
   
     return result;
 };

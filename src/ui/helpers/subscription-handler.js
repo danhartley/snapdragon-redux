@@ -1,26 +1,33 @@
 import { funcByName } from 'ui/helpers/function-lookups';
 import { subscription } from 'redux/subscriptions';
 
-export const screensSubscriptionHandler = (layout, config) => {
+const removeSubs = () => {
 
-    subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
+    const screens = subscription.getByRole('screen');
+
+    screens.forEach(s => console.error(s.name));
+
+    screens.forEach(sub => subscription.remove(sub));
+
+};
+
+const addSubs = (layout, config) => {
 
     layout.screens.forEach( (screen, index) => {
 
-        if(screen.name === 'command') {
-            const funcs = funcByName(screen.name);
-            funcs.forEach(func => {
-                subscription.add(func, screen.domain, 'screen');
-            });
-        } else {
-            const func = funcByName(screen.name);
-            if(func) {
-                if(config.isPortraitMode) {
-                    if(index === 1 || screen.name === 'summary') subscription.add(func, screen.domain, 'screen', layout.name);
-                } else {
-                    subscription.add(func, screen.domain, 'screen', layout.name);
-                }                           
-            }
+        const func = funcByName(screen.name);
+
+        if(func) {
+            if(config.isPortraitMode) {
+                if(index === 1 || screen.name === 'summary') subscription.add(func, screen.domain, 'screen', layout.name);
+            } else {
+                subscription.add(func, screen.domain, 'screen', layout.name);
+            }                           
         }
     });
 };
+
+export const subsHandler = {
+    addSubs,
+    removeSubs,
+}

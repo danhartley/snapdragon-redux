@@ -14,26 +14,26 @@ export const observeStore = (store, select, onChange, domain, layout) => {
           case 'screen-non-taxon-card':
           case 'species-vernaculars':
           case 'mixed-specimen-images':
-            hasStateSignificantlyChanged = currentState.itemIndex !== nextState.itemIndex;
-            break;
-          case 'screen-latin-to-common':
-            hasStateSignificantlyChanged = currentState.speciesVernacularNames !== nextState.speciesVernacularNames;
-            break;
           case 'screen-common-to-latin':
-            hasStateSignificantlyChanged = currentState.speciesNames !== nextState.speciesNames;
-            break;
           case 'screen-genus-completion':
-            hasStateSignificantlyChanged = currentState.itemIndex !== nextState.itemIndex;
-            break;
+          case 'screen-latin-to-common':
           case 'media-match':
-            hasStateSignificantlyChanged = currentState.speciesNames !== nextState.speciesNames;
+            hasStateSignificantlyChanged = currentState.nextItem.name !== nextState.nextItem.name;
             break;
+            // hasStateSignificantlyChanged = currentState.speciesVernacularNames !== nextState.speciesVernacularNames;
+            // break;
+            // hasStateSignificantlyChanged = currentState.speciesNames !== nextState.speciesNames;
+            // break;
+            // hasStateSignificantlyChanged = currentState.itemIndex !== nextState.itemIndex;
+            // break;
+            // hasStateSignificantlyChanged = currentState.speciesNames !== nextState.speciesNames;
+            // break;
         }
       }
 
       if (hasStateSignificantlyChanged) {
         currentState = nextState;
-        // console.log(`*** ${onChange.name} called `);  
+        // console.log(`*** ${onChange.name} called `);
         onChange(currentState);
       }
     }

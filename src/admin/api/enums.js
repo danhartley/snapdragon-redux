@@ -806,8 +806,8 @@ export const enums = {
   name: 'organisation'
   },
   role: {
-  NATIVE: 'Native',
-  NONNATIVE: 'Nonnative',
+  // NATIVE: 'Native',
+  // : 'Nonnative',
   INDICATOR: 'Indicator',
   KEYSTONE: 'Keystone',
   FOUNDATION: 'Foundation',

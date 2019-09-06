@@ -179,8 +179,6 @@ const getRootTraitValue = (traitValue, drop = 'end') => {
 
     const parts = traitValue.match(pattern);
 
-    console.log('trait parts', parts);
-
     const dropStarters = ['colour', 'shape'];
 
     dropStarters.forEach(starter => {
