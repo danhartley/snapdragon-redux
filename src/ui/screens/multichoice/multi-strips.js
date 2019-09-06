@@ -11,6 +11,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { firestore } from 'api/firebase/firestore';
+import { subsHandler } from 'ui/helpers/subscription-handler';
 
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
@@ -19,7 +20,7 @@ export const renderMultiStrips = (collection, bonus) => {
 
     try {
 
-        console.log('collection.nextItem:', collection.nextItem);
+        // console.log('renderMultiStrips collection.nextItem:', collection.nextItem);
 
         const { config, lesson, layout } = store.getState();
 
@@ -89,6 +90,7 @@ export const renderMultiStrips = (collection, bonus) => {
                             actions.boundUpdateTraitScore(score);
                             bonus.callback(score);
                         } else {
+                            subsHandler.removeSubs();
                             actions.boundUpdateScore(score);
                         }
                     };
@@ -150,6 +152,8 @@ export const renderMultiStrips = (collection, bonus) => {
                     let question, answers, help;
 
                     const buildQuestion = async () => {
+
+                        console.log('calling getPoolItems from renderVernacularQuestions');
 
                         question = item.vernacularName;   
                         answers = await getPoolItems(item, 6);

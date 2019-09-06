@@ -20,8 +20,8 @@ export const portraitDefault = {
     levels: [
         {   id: 1,
             name:'Level 1',            
-            layouts: [ L.mixedSpecimensRight, L.latinToCommonMatch ],
-            reviewLayouts: [ L.mixedSpecimensRight, L.latinToCommonMatch ],
+            layouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
+            reviewLayouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
             bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'traits', 'song', 'definition' ] } ]
         },
         {   id: 2,

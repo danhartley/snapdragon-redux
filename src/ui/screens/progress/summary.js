@@ -9,6 +9,8 @@ import summaryTemplate from 'ui/screens/progress/summary-template.html';
 
 export const renderSummary = history => {
 
+    console.error('renderSummary');
+
     const { score, collection, config, lesson } = store.getState();
 
     const template = document.createElement('template');

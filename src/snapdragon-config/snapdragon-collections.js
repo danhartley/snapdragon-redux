@@ -716,6 +716,66 @@ const walkTwo = {
   }
 };
 
+const lookalikes = { 
+  behaviour: 'static',
+  id: 13, 
+  name: 'Lookalikes',
+  type: 'custom',
+  descriptions: [
+      'Lookalikes'
+  ],
+  moduleSize: 4,
+  lessonPlanLandscape: 1,
+  lessonPlanPortrait: 101,
+  glossary: ['plantae', 'common', 'fungi', 'amphibia', 'insecta', 'lichen', 'animalia'],
+  items: [
+    
+  ],
+  itemNames: [
+    "Lavandula angustifolia",
+    'Lavandula stoechas',
+    "Taraxacum officinale",
+    'Tussilago farfara',
+    "Lycoperdon pyriforme",
+    'Scleroderma citrinum',
+    "Hirundo rustica",
+    'Apus apus',
+    'Delichon urbicum',
+    'Accipiter nisus',
+    "Falco tinnunculus",
+    "Phoenicurus ochruros",
+    'Phoenicurus phoenicurus',
+    'Hericium coralloides',
+    "Hericium americanum",
+    'Hydnum umbilicatum',
+    "Hydnum repandum",
+    "Delphinus delphis",
+    'Phocoena phocoena',
+    "Laetiporus sulphureus",
+    'Laetiporus cincinnatus',
+    'Polyporus squamosus',
+    "Morchella esculenta",
+    'Gyromitra esculenta',
+    "Cantharellus cibarius",
+    'Hygrophoropsis aurantiaca'
+  ],
+  iconicTaxa: allIconicTaxa,
+  guide: {
+    locationPlace: 'Lookalikes',
+    locationType: 'taxon',
+    place: {
+        name: 'Lookalikes',
+        id: 'any',
+        type: 'places'
+    },
+    season: {
+        type: 'all_year'
+    },
+    speciesRange: 0,
+    ready: true
+  }
+};
+
 export const snapdragonCollections = [
     
     location,
@@ -730,6 +790,7 @@ export const snapdragonCollections = [
     
     walkOne,
     walkTwo,
+    lookalikes,
     treesOfLisbon,
     rhsTrees,
     rhsWeeds,

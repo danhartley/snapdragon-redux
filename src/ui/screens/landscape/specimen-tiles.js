@@ -11,14 +11,11 @@ import specimensTemplate from 'ui/screens/landscape/specimen-tiles-template.html
 
 export const renderSpecimenTiles = collection => {
 
-    const { layout } = store.getState();
-
     const item = collection.nextItem;
 
     if(!item) return;
 
     renderItemSpecimenTiles(item);
-    // layout.screens[1] && layout.screens[1].name === 'birdsong' ? renderSpeciesGrid() : renderItemSpecimenTiles(item);
 };
 
 const renderItemSpecimenTiles = item => {
@@ -92,7 +89,7 @@ const renderSpecimenImageTiles = (collection, images) => {
 
     let screen = layout.screens.find(screen => R.contains(screen.name, acceptableScreens));
 
-    if(layout.screens[0].name === 'command') screen = layout.screens[0].left;
+    // if(layout.screens[0].name === 'command') screen = layout.screens[0].left;
 
     if(!screen) return;
 
@@ -101,7 +98,7 @@ const renderSpecimenImageTiles = (collection, images) => {
     template.innerHTML = specimensTemplate;    
 
     const parent = DOM.leftBody;
-    parent.innerHTML = '';
+          parent.innerHTML = '';
 
     renderTemplate({ images }, template.content, parent);
 

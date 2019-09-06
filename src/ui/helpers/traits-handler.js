@@ -83,35 +83,59 @@ export const getTraitsPool = (trait, traits) => {
     return { traitsPool, help };
 };
 
-export const getSetOfTraitAnswers = (variables, pool, trait) => {
+export const getSetOfTraitAnswers = (pool, trait) => {
+
+    let traitSet = trait.value;
+        traitSet = traitSet.map(t => t.trim());
+        traitSet = utils.shuffleArray(traitSet);
+
+    // take maximum of 2 values from the trait values array
+
+    let traitValues = R.take(2, traitSet);
+
+    let sets = [];
   
-    let answers;
-  
-    if(variables === 1) {
-        answers = pool;
+    if(traitValues.length === 1) {
+        
+        sets = [ ...R.take(5, pool.filter(value => value !== trait.value[0])), trait.value[0] ];
+
     } else {
-        answers = [];
-        const sets = [];
-        const combinations = Math.round(pool.length/variables);
-        while(pool.length) {
-            const set = pool.splice(0,combinations);
-            sets.push(set);
-        }
-        while(sets[0].length) {
-            const answer = sets.map(item => {
-              const lastItem = item.pop();
-              return lastItem;
-            }).join(', ');
-            if(answer !== trait.value) {
-              answers.push(answer);
+
+        // create a 'set' of all possible unique 2-value combinations
+        
+        pool.forEach(a => {
+            pool.forEach( b => {
+                if(a !== b) {
+                    const exists = sets.filter(s => s === [a,b] || s === [b,a]).length > 0;
+                    console.log(exists);
+                    if(!exists) { 
+                        sets.push([a,b]);
+                    }
+                }
+            })
+        });
+
+        sets = R.take(6, utils.shuffleArray(sets));
+
+        // remove any combination that matches the trait value set (in either order) 
+
+        sets = sets.map(set => {
+            if(set[0] !== traitSet[0] && set[1] !== traitSet[1] || set[0] !== traitSet[1] && set[1] !== traitSet[0]) {
+                return set;
             }
+        }).filter(s => s);
+
+        sets = R.take(5, sets);
+        sets = [ ...sets, traitSet ];
+
+        if(sets.length === 0) {
+            sets = ['a', 'b', trait.value];
         }
-        answers.push(trait.value);
+
+        console.log(sets);
     }
-    
-    answers = R.flatten(utils.shuffleArray(answers));
   
-    return answers;
+    return utils.shuffleArray(sets);
 };
 
 export const getTraitByKey = (traits, traitKey) => {
@@ -151,9 +175,10 @@ export const getLinkedTaxaTraits = traits => {
 export const getTraitsToExclude = () => {
     return [ 
         'symbionts', 'voice', 'pollination', 'name', 
-        , 'units', 'song', 'uk rank',
+        'units', 'song', 'uk rank',
         'colour', 'bark colour', 'height',
-        'physiology', 'characteristic', 'description'
+        'physiology', 'characteristic', 'description',
+        'usage', 'habitat'
     ];
 };
 export const handleUnit = unit => {
@@ -183,7 +208,8 @@ export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude, item
             if(key === 'lookalikes') {
                 obj.forEach(species => {
                     includedTraits.push({
-                        name: key, value: [species.lookalike.name], 
+                        name: key, 
+                        value: [species.lookalike.name],
                         description: species.description, lookalike: { name: species.lookalike.name, description: species.lookalike.description } 
                     }); 
                 });
@@ -194,7 +220,7 @@ export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude, item
                     }); 
                 });
             } else {
-                includedTraits.push({ name: key, value: obj.value, unit: handleUnit(obj.unit) });
+                includedTraits.push({ name: key, value: obj.value, unit: handleUnit(obj.unit), type: obj.type || '' });
             }
         }
     }

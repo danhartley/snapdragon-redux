@@ -88,7 +88,8 @@ export const collection = (state = { id: 0 }, action) => {
 
         case types.NEXT_LAYOUT: {
             const layout = action.data;
-            return layout.bonus ? state : { ...state, layoutName: layout.name };
+            return layout.bonus ? state : state;
+            // return layout.bonus ? state : { ...state, layoutName: layout.name };
         }            
 
         case types.NEXT_ITEM: {

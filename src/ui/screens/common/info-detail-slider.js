@@ -15,7 +15,7 @@ export const renderInfoDetails = (item, activeTraitKey, activeTraitValue) => {
         linkedTaxa(item, config, document.querySelector('.js-info-box-details'), mode, isInCarousel, collection, activeTraitValue);
     } else {
 
-        const detail = firestore.getDefinition(activeTraitValue);
+        const details = firestore.getDefinition(activeTraitValue);
 
         const parent = document.querySelector('.js-info-box-details');
 
@@ -23,16 +23,18 @@ export const renderInfoDetails = (item, activeTraitKey, activeTraitValue) => {
 
         parent.innerHTML = '';
 
-        const details = document.createElement('template');
+        const detailsContainer = document.createElement('template');
 
-        if(detail) {
-            details.innerHTML = detailsTemplate;
-            detail.imgClassName = detail.img ? detail.img.url === '' ? 'hide-important' : '' : 'hide-important';
-            detail.img = detail.img || { url: '' }; 
+        if(details) {
+            details.forEach(detail => {
+                detailsContainer.innerHTML = detailsTemplate;
+                detail.imgClassName = detail.img ? detail.img.url === '' ? 'hide-important' : '' : 'hide-important';
+                detail.img = detail.img || { url: '' }; 
+            })
         } else {
-            details.innerHTML = '';
+            detailsContainer.innerHTML = '';
         }
 
-        renderTemplate({ detail }, details.content, parent);
+        renderTemplate({ details }, detailsContainer.content, parent);
     }
 };

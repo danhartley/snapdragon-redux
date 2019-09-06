@@ -23,7 +23,7 @@
 }
 
 .names-container {
-    font-size: 1rem;
+    font-size: 0.8rem;
     display: flex;
     flex-direction: column;
     /* text-align: left; */
@@ -354,14 +354,17 @@ div.text-entry {
 
     .test-card-container .question-header > div {
         flex-direction: column;
-        /* justify-content: center; */
         width: initial;
     }
 
-    .names-container {      
-        font-size: 1.2rem;  
-        /* align-items: center; */
+    /* .names-container {      
+        font-size: 1.2rem;
+        margin: 1.25rem 0 0 0;
     }
+
+    .names-container .vernacular-name {
+        text-transform: uppercase;
+    } */
     
     .question-container {
         display: grid;

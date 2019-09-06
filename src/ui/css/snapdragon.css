@@ -596,6 +596,7 @@ a.dropdown-item {
 .squares img,
 .tiles img {
   cursor: pointer;
+  max-height: 190px;
 }
 
 .square,
@@ -615,7 +616,8 @@ a.dropdown-item {
 }
 
 .sub-header-tall ~ div > div.strips {
-  height: calc(100vh - 24.5rem);
+  height: calc(100vh - 27.5rem);
+  /* height: calc(100vh - 24.5rem); */
 }
 
 .strip {
@@ -664,7 +666,7 @@ a.dropdown-item {
   text-overflow: ellipsis;
   overflow: hidden;
   display: inline-block;
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
 }
 
 .align-left {
@@ -1486,12 +1488,12 @@ label.btn.btn-secondary .lesson-icon {
 
 .info.carousel.slide .carousel-item div:nth-child(1) {
   background-color: rgba(128, 128, 128, 0.3);
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
 }
 
 .info.carousel.slide .carousel-item div:nth-child(2) {
   background-color: rgba(128, 128, 128, 0.1);
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
 }
 
 .info.carousel-control .carousel-control-next-icon {

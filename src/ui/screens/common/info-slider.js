@@ -12,9 +12,13 @@ const renderInfoSlider = (item, traits, parent, id) => {
 
     parent.innerHTML = '';
 
+    traits = traits.filter(t => t.value);
+
     traits.forEach(trait => {
-        trait.name = trait.name === 'ph' ? 'pH' : utils.capitaliseFirst(trait.name);
-        trait.unit = trait.unit || '';
+        
+        trait.name = trait.name ? trait.name === 'ph' ? 'pH' : utils.capitaliseFirst(trait.name) : '';
+        if(trait.name.toLowerCase() === 'role') trait.name = trait.type || 'role';
+        trait.unit = trait.unit ? trait.unit.toLowerCase() === 'colour' ? '' : trait.unit : '';
         trait.value = trait.value.join(', ');
     });
     

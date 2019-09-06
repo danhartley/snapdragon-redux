@@ -278,11 +278,11 @@ test('should create set of questions with equal number of elements', () => {
 
   const trait = {
     "name": "shelter",
-    "value": "Burrow, Sett",
+    "value": ["Burrow, Sett"],
     "type": "shelter"
   };
 
-  const answers = getSetOfTraitAnswers(variables, pool, trait);
+  const sets = getSetOfTraitAnswers(pool, trait);
 
 });
 

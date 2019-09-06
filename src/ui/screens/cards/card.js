@@ -102,6 +102,8 @@ const renderLandscape = (item, config, mode, rootNode) => {
     const inatNode = rootNode.querySelector('.js-inat-box');
 
     renderInatDataBox(inatNode, item, config, mode);
+    
+    renderCalendar(rootNode.querySelector('.js-calendar-box'), item, config);
 
     lookalikeSpecies(item, config, rootNode);
 };
@@ -152,9 +154,7 @@ const renderCommonParts = (template, config, item, collection, mode, parent, roo
 
     infoSlider(item, rootNode.querySelector('.js-info-box'), mode);
 
-    renderBadge(rootNode.querySelector('.js-names-badge'), item, config);
-    
-    renderCalendar(rootNode.querySelector('.js-calendar-box'), item, config);
+    renderBadge(rootNode.querySelector('.js-names-badge'), item, config);    
 
     renderIcon(item.taxonomy, rootNode);
 

@@ -32,6 +32,8 @@ const getBirdsongTest = (item, itemsInThisRound) => {
     const name = 'song';
     const birdsong = { name, ...item.traits[name] };
     
+    // require other birds, which may not be in this collection…
+
     let birds = R.take(3, itemsInThisRound.filter(bird => bird.name.toLowerCase() !== item.name.toLowerCase()));
         birds.push(item);
 

@@ -15,25 +15,22 @@ export const getPoolItems = async (item, poolSize = 5) => {
         taxonicMatches = isLichen ? taxonicMatches.filter(item => item.lichen) : taxonicMatches.filter(item => !item.lichen);
     }
   
-    const speciesInSameTaxon = utils.shuffleArray(taxonicMatches.filter(ci => ci.name.toLowerCase() !== item.name.toLowerCase()));
+    const speciesPool = utils.shuffleArray(taxonicMatches.filter(ci => ci.name.toLowerCase() !== item.name.toLowerCase()));
     
-    let speciesPool;
-  
-    if(speciesInSameTaxon) {
-      speciesPool = speciesInSameTaxon;  
-    }
-
-    console.log('speciesPool:', speciesPool)
-
     if(!speciesPool) {
       getPoolItems(item);
     }
+
+    // if not enough, only get the additional necessary number (but duplicates???)
+
     // else if(speciesPool.length < poolSize) {
     //   getPoolItems(item);
     // } 
     else {
 
       const items = R.take(5, speciesPool);
+
+      console.log('items: ', items);
     
       items.push(item);
     

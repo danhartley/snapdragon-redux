@@ -1,6 +1,7 @@
 import { actions } from 'redux/actions/action-creators';
 import { elem } from 'ui/helpers/class-behaviour';
 import { markTest } from 'ui/helpers/score-handler';
+import { subsHandler } from 'ui/helpers/subscription-handler';
 
 export const scoreHandler = (type, test, callback, config) => {
     
@@ -43,6 +44,7 @@ const clickContinueLessonButtonHandler = (score, scoreUpdateTimer) => {
 
     continueLessonBtn.addEventListener('click', event => {
         window.clearTimeout(scoreUpdateTimer);
+        subsHandler.removeSubs();
         actions.boundUpdateScore(score);
     });
 };
@@ -53,8 +55,10 @@ const simpleScoreHandler = (test, callback, config) => {
 
     const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
+    subsHandler.removeSubs();
+
     const scoreUpdateTimer = setTimeout(()=>{
-        actions.boundUpdateScore(score);
+        actions.boundUpdateScore(score);        
     }, delay);
 
     if(callback) {
@@ -109,8 +113,10 @@ const genericScoreHandler = (_score, callback, config) => {
 
     const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
+    subsHandler.removeSubs(); 
+
     const scoreUpdateTimer = setTimeout(()=>{
-        actions.boundUpdateScore(score);        
+        actions.boundUpdateScore(score);               
     }, delay);
 
     if(callback) callback(score, scoreUpdateTimer);
@@ -124,8 +130,10 @@ const blockScoreHander = (test, callback, config) => {
 
     const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
+    subsHandler.removeSubs();
+
     const scoreUpdateTimer = setTimeout(()=>{
-        actions.boundUpdateScore(score);
+        actions.boundUpdateScore(score);        
     }, delay);
 
     callback(score, scoreUpdateTimer, config);
@@ -208,6 +216,8 @@ const imageScoreHandler = (test, callback, config) => {
             });
 
             const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
+
+            subsHandler.removeSubs();
 
             const scoreUpdateTimer = setTimeout(() => {
                 actions.boundUpdateScore(score);

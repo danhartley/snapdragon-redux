@@ -4,9 +4,9 @@ const isAnswerCorrect = score => {
 
     let isCorrect;
 
-    score.answer = score.answer ? score.answer.trim().toLowerCase() : score.answer;
-    score.question = score.question ? score.question.trim().toLowerCase() : score.question;    
-    score.clue = score.clue ? score.clue.trim().toLowerCase() : null;
+    score.answer = score.answer ? score.answer.toLowerCase().replace(/ /g,'') : score.answer;
+    score.question = score.question ? score.question.toLowerCase().replace(/ /g,'') : score.question;
+    score.clue = score.clue ? score.clue.toLowerCase().replace(/ /g,'') : null;
 
     isCorrect = score.answer === score.question;
     isCorrect = score.clue ? score.answer.indexOf(score.clue) > -1 : isCorrect;

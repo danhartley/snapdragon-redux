@@ -24,7 +24,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     let { config, collection, lesson } = store.getState();
 
-    console.log('home');
+    console.log('renderHome');
     
     if(collection.id === 0) {
         subscription.add(renderSpeciesGrid, 'counter', 'flow');
@@ -97,14 +97,18 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
         }
         actionLink.disabled = true;
         actionLink.classList.add('disabled');        
+        const home = subscription.getByName('renderHome');
+        if(home) subscription.remove(home);
     };
 
     const beginLessonHandler = () => {
         const { collection, config, history } = store.getState();
         lessonHandler.getLessonItems(enums.lessonState.BEGIN_LESSON, collection, config, history);        
         actionLink.disabled = false;
-        subscription.remove(subscription.getByName('renderSpeciesGrid'));
-        subscription.remove(subscription.getByName('renderHome'));
+        const grid = subscription.getByName('renderSpeciesGrid');
+        if(grid) subscription.remove(grid);
+        // const home = subscription.getByName('renderHome');
+        // if(home) subscription.remove(home);
     };
 
     const guideSummary = speciesCount => {
@@ -216,7 +220,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
                 guideSummary(speciesCount);
                                 
                 if(loadSpeciesList) {
-                    renderSpeciesCollectionList(collection);                
+                    renderSpeciesCollectionList(collection, true);                
                 }                
                 break;
         }
