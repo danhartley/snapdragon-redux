@@ -247,7 +247,11 @@ export const renderMultiStrips = (collection, bonus) => {
 
             if(screen.name === 'trait-property') {
 
-                bonus.overrides.headerClassName = 'definition';
+                if(bonus.overrides.question.toLowerCase().indexOf('definition') > -1) {
+                    bonus.overrides.headerClassName = 'definition';
+                } else {
+                    bonus.overrides.headerClassName = '';
+                }
 
                 render(bonus.question, bonus.answers, bonus.overrides);
 
