@@ -5,7 +5,9 @@ const removeSubs = () => {
 
     const screens = subscription.getByRole('screen');
 
-    screens.forEach(s => console.error(s.name));
+    screens.forEach(s => console.log(`%c${s.name}`, "color:green"));
+
+    // console.log(`%cmy subs: ${subscriptions.map(s=>s.name).join(', ')}`, "color: blue;");
 
     screens.forEach(sub => subscription.remove(sub));
 

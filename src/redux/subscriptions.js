@@ -13,7 +13,7 @@ const add = (subscription, domain, role, layout) => {
     const sub = observeStore(store, select, onChange, domain, layout);
 
     subscriptions.push({ ...sub, role});
-    console.log(`%cmy subs: ${subscriptions.map(s=>s.name).join(', ')}`, "color: blue;");
+    // console.log(`%cmy subs: ${subscriptions.map(s=>s.name).join(', ')}`, "color: blue;");
     return sub;
 };
 

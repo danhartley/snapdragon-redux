@@ -191,7 +191,7 @@ export const collectionHandler = async (collection, config, counter, callback, c
 
             collection.itemIndex = 0;
 
-            collection.glossary = [ ...collection.iconicTaxa, 'common'];
+            collection.glossary = [ ...collection.glossary, 'common'];
             collection.default = false;
 
             actions.boundNewCollection({ config, collection });

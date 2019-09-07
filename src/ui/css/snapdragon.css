@@ -631,7 +631,10 @@ a.dropdown-item {
   align-items: center;
   justify-content: center;
   padding: .75rem;
-  text-transform: lowercase;  
+}
+
+.strip > div::first-letter {
+  text-transform: capitalize;
 }
 
   /* prevent child elements of listener triggering an event */  
@@ -667,6 +670,11 @@ a.dropdown-item {
   overflow: hidden;
   display: inline-block;
   /* text-transform: lowercase; */
+}
+
+.names-container.definition .vernacular-name {
+  font-size: 1.5rem;
+  margin-top: 1.25rem;
 }
 
 .align-left {

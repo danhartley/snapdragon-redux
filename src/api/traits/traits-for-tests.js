@@ -5,7 +5,7 @@ export const getTraitsForTests = (enums, item, alreadyTestedTraits = []) => {
 
     if(item.traits === undefined || (Object.keys(item.traits).length === 0 && item.traits.constructor === Object)) return {};
 
-    const excludedTraits = [ ...getTraitsToExclude(), ...alreadyTestedTraits, 'lookalikes' ].filter(et => et);
+    const excludedTraits = [ ...getTraitsToExclude(), ...alreadyTestedTraits, 'lookalikes', 'relationships' ].filter(et => et);
 
     const trait = getRandomTrait(item.traits, excludedTraits);
 

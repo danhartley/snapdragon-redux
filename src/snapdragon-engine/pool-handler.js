@@ -30,7 +30,8 @@ export const getPoolItems = async (item, poolSize = 5) => {
 
       const items = R.take(5, speciesPool);
 
-      console.log('items: ', items);
+      console.log('pool items from getPoolItems: ', items);
+      console.log('\x1b[32m', '------------------------------------------');
     
       items.push(item);
     

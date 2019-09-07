@@ -28,6 +28,8 @@ export const listenToImageSelection = listener => {
 
 export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, preselectedItems) => {
 
+    console.log('RENDERMIXEDSPECIMENIMAGES');
+
     const imagesPerItem = noOfImagesPerItem || 1;
 
     const { config, score, lesson } = store.getState();
@@ -49,7 +51,7 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
 
     const renderSpecimenImages = async () => {
 
-        console.log('calling getPoolItems from renderSpecimenImages');
+        console.log('calling getPoolItems from renderMixedSpecimenImages');
  
         const mixedItems = preselectedItems || await getPoolItems(item);
 
