@@ -24,7 +24,10 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     let { config, collection, lesson } = store.getState();
 
-    console.log('renderHome');
+    const home = subscription.getByName('renderHome');
+    if(home) subscription.remove(home);
+    
+    console.log('RENDERHOME');
     
     if(collection.id === 0) {
         subscription.add(renderSpeciesGrid, 'counter', 'flow');
@@ -97,8 +100,8 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
         }
         actionLink.disabled = true;
         actionLink.classList.add('disabled');        
-        const home = subscription.getByName('renderHome');
-        if(home) subscription.remove(home);
+        // const home = subscription.getByName('renderHome');
+        // if(home) subscription.remove(home);
     };
 
     const beginLessonHandler = () => {

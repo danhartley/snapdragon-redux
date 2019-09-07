@@ -256,10 +256,6 @@ div.text-entry {
     object-fit: scale-down;
 }
 
-/* #test-card-header .vernacular-name {
-    font-size: 1.2rem;
-} */
-
 .feature-symbiont-list {
     height: calc(90vh - 22rem);
     padding: .5rem;
@@ -357,15 +353,6 @@ div.text-entry {
         width: initial;
     }
 
-    /* .names-container {      
-        font-size: 1.2rem;
-        margin: 1.25rem 0 0 0;
-    }
-
-    .names-container .vernacular-name {
-        text-transform: uppercase;
-    } */
-    
     .question-container {
         display: grid;
         grid-template-columns: 1fr 4fr 1fr;

@@ -67,16 +67,16 @@ const traitImages = {
     domain: 'collection'
   };
   
-  const command = {
-    name: 'command', 
-    domain: 'collection',
-    left: specimenImages,
-    right: {
-      cutLength: 5,
-      domain: 'collection',
-      question: 'Name puzzle'
-    }
-  };
+  // const command = {
+  //   name: 'command', 
+  //   domain: 'collection',
+  //   left: specimenImages,
+  //   right: {
+  //     cutLength: 5,
+  //     domain: 'collection',
+  //     question: 'Name puzzle'
+  //   }
+  // };
   
   const leaf = {
     name: 'leaf-image',
@@ -193,7 +193,7 @@ const traitImages = {
     text,
     summary,
   
-    command,
+    // command,
   
     leaf,
     leafName,

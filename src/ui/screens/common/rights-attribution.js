@@ -46,14 +46,14 @@ export const handleRightsAttribution = (image, activeNode) => {
             text = 'CC BY SA 4.0';
             break;
         default: 
-            text = image.license;
+            text = image.license || '';
             break;
     };
 
-    const licence = { text, url: image.license };
+    const licence = { text, url: image.medium };
     const title = image.title;
     const author = image.rightsholder || image.rightsHolder || 'Public domain';
-    const source = image.source;
+    const source = image.source || '';
 
     renderTemplate({title,author,source,licence}, template.content, activeNode);
 

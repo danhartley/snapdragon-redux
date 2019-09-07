@@ -24,7 +24,7 @@ const renderItemSpecimenTiles = item => {
 
     let images, items; 
     
-    const familes = [ 'family-strips', 'family', 'taxon-card' ];
+    const familes = [ 'family-strips', 'family', 'taxon-card', 'trait-property' ];
 
     const number = 6;
 
@@ -78,10 +78,10 @@ const renderItemSpecimenTiles = item => {
         return scaleImage(image, imageUseCases.VISUAL_MATCH, config);
     });
 
-    renderSpecimenImageTiles({ items: items }, images);
+    renderSpecimenImageTiles({ items: items }, images, item);
 };
 
-const renderSpecimenImageTiles = (collection, images) => {
+const renderSpecimenImageTiles = (collection, images, item) => {
 
     const { layout, config } = store.getState();
 
@@ -102,5 +102,5 @@ const renderSpecimenImageTiles = (collection, images) => {
 
     renderTemplate({ images }, template.content, parent);
 
-    modalImagesHandler(document.querySelectorAll('.js-tiles .square'), null, collection, config);
+    modalImagesHandler(document.querySelectorAll('.js-tiles .square'), item, collection, config);
 };

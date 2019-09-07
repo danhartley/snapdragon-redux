@@ -8,6 +8,7 @@ export const renderBonusSpecimenTiles = bonusLayout => {
 
     const collection = R.clone(store.getState().collection);
           collection.nextItem = bonusLayout.item;
+          collection.nextItem = collection.nextItem || collection.items[collection.itemIndex];
     
     const lookalikesCount = bonusLayout.item 
             ? bonusLayout.overrides.trait.lookalikes ? bonusLayout.overrides.trait.lookalikes.length + 1 : 0 // lookalikes + item itself

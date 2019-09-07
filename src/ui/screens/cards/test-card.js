@@ -6,7 +6,7 @@ import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
-import { renderTraitCard, getBonusQuestion } from 'ui/screens/cards/trait-card';
+import { renderTraitCard } from 'ui/screens/cards/trait-card';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
 
@@ -107,13 +107,6 @@ export const renderTestCardTemplate = (collection, context) => {
         traitCardLink.classList.remove('hide-important');
         document.querySelector('.js-iconic-icon').classList.add('hide-important');
     }
-
-    // const bonus = getBonusQuestion(item || {}, []);
-
-    // if(!bonus) {
-        // traitCardLink.classList.add('hide-important');
-        // document.querySelector('.js-iconic-icon').classList.remove('hide-important');
-    // }
 
     traitCardLink.addEventListener('click', () => {
         if(isTraitCard) {            
