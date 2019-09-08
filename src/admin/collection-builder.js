@@ -10,6 +10,7 @@ import { addRelationship } from 'admin/screens/add-relationship';
 import { addLookalike } from 'admin/screens/add-lookalike';
 import { addPhotos } from 'admin/screens/add-photos';
 import { addTaxon } from 'admin/screens/add-taxon';
+import { addId } from 'admin/screens/add-id';
 
 const auth = firebase.auth();
 
@@ -71,11 +72,14 @@ const addPhotosTab = document.querySelector('#add-photos');
 const addTaxonTab = document.querySelector('#add-taxon');
       addTaxonTab.addEventListener('click', addTaxon);
 
+const addIdTab = document.querySelector('#add-id');
+      addIdTab.addEventListener('click', addId);
+
 const setupUI = (user) => {
   if (user) {
     loggedInLinks.forEach(item => item.classList.remove('hide'));
     loggedOutLinks.forEach(item => item.classList.add('hide'));
-    addTraits.click();
+    addIdTab.click();
 } else {    
     loggedInLinks.forEach(item => item.classList.add('hide'));
     loggedOutLinks.forEach(item => item.classList.remove('hide'));

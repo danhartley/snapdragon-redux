@@ -19,7 +19,8 @@ const renderInfoSlider = (item, traits, parent, id) => {
         trait.name = trait.name ? trait.name === 'ph' ? 'pH' : utils.capitaliseFirst(trait.name) : '';
         if(trait.name.toLowerCase() === 'role') trait.name = trait.type || 'role';
         trait.unit = trait.unit ? trait.unit.toLowerCase() === 'colour' ? '' : trait.unit : '';
-        trait.value = trait.value.join(', ');
+        trait.description = trait.value;
+        trait.value = trait.name.toLowerCase() === 'description' ? 'Navigate < or > for traits' : trait.value.join(', ');
     });
     
     renderTemplate({ id, traits }, slider.content, parent);
@@ -42,7 +43,8 @@ const renderInfoSlider = (item, traits, parent, id) => {
         setTimeout(() => {
             activeTrait = parent.querySelector(`#traitSlider${id} .carousel-item.active`);
             activeTraitKey = activeTrait.querySelector('div:nth-child(1)').innerHTML;
-            activeTraitValue = activeTrait.querySelector('div:nth-child(2) > span:nth-child(1)').innerHTML;
+            activeTraitValue = activeTrait.querySelector('div:nth-child(3)').innerHTML;
+            // activeTraitValue = activeTrait.querySelector('div:nth-child(2) > span:nth-child(1)').innerHTML;
             console.log(activeTraitKey);
             console.log(activeTraitValue);
             renderInfoDetails(item, activeTraitKey, activeTraitValue);
@@ -70,7 +72,15 @@ export const infoSlider = (item, parent, mode) => {
     
     if(!hasTraitPropeties(item.traits)) return;
 
-    const traits = convertTraitsToNameValuePairsArray(item.traits, getTraitsToExclude(), item);
+    let traits = convertTraitsToNameValuePairsArray(item.traits, getTraitsToExclude(), item);
+
+    if(item.traits.description) {
+        const description = {
+            name: 'description',
+            value: item.traits.description.value
+        }
+        traits = [ description, ...traits ];
+    }
     
     if(traits.length === 0) return;
     

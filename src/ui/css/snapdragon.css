@@ -609,7 +609,7 @@ a.dropdown-item {
 /* STRIPS */
 
 .strips {
-  height: calc(100vh - 23.75rem);
+  height: calc(100vh - 24.5rem);
   display: grid;
   grid-template-columns: 1fr 1fr;
   cursor: pointer;

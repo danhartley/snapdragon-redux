@@ -603,6 +603,7 @@ const walkOne = {
     'Pinus pinea',
     'Saphora japonica',
     'Phytolacca dioica',
+    'Gleditsia triacanthos',
     'Ficus macrophylla',
     'Ailanthus altissima', // possible, not recorded though...
     'Araucaria columnaris', // tallest
@@ -629,6 +630,8 @@ const walkOne = {
 
 
     'Pittosporum tobira',
+
+    'Robinia pseudoacacia', //needs checking
 
     // top gate
 
