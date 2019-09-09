@@ -72,14 +72,17 @@ export const renderSpeciesPicker = (modal, createGuide) => {
                 const suggestions = speciesNames.filter(n => n.value.toLowerCase().startsWith(text))
                 update(suggestions);
 
-                    const options = document.querySelectorAll('.autocomplete-options-container > div');
+                    const divs = document.querySelectorAll('.autocomplete-options-container > div');
                 
-                    options.forEach(div => {
+                    divs.forEach(div => {
                         console.log('div: ', div.innerText);
-                        div.addEventListener("click", e => {
-                            console.log(e.target);
-                            input.value = e.target.innerText;
-                            addSpeciesToList(input.value);
+                        div.addEventListener("touchstart", e => {
+                            console.log('touchstart: ', e.target);
+                            console.log('touchstart input value: ', input.value);
+                            divs.forEach(o => o.classList.remove('selected'));
+                            div.classList.add('selected');
+                            // input.value = e.target.innerText;
+                            // addSpeciesToList(input.value);     
                         });
                     });
             },
@@ -93,6 +96,7 @@ export const renderSpeciesPicker = (modal, createGuide) => {
 
         input.addEventListener('keypress', event => {
             if(event.keyCode == 13) {
+                console.log('keypress input value: ', input.value);
                 addSpeciesToList(input.value);
             }
         });
@@ -101,7 +105,8 @@ export const renderSpeciesPicker = (modal, createGuide) => {
             const highlightedText = document.querySelector('.selected');
             if(highlightedText) {
                 input.value = highlightedText.innerText;
-                // addSpeciesToList(input.value);
+                console.log('change input value: ', input.value);
+                addSpeciesToList(input.value);
             }
         });
     };
