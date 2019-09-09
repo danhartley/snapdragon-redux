@@ -223,8 +223,7 @@
   }
 
   .guide-header-container {
-    height: 6rem;
-    /* height: 2.75rem; */
+    height: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -896,6 +895,10 @@
   }
 
   @media (min-width: 768px) {
+
+    .guide-header-container {
+      height: 2.75rem;
+    }
 
     .guide-header-container > div:nth-child(2) {
       flex-direction: row;

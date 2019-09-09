@@ -21,7 +21,7 @@ export const renderSpeciesPicker = (modal, createGuide) => {
           guideTxt.innerHTML = 'Specify the species that interest you.';
 
     const pickerContainer = modal.querySelector('.js-guide-header-container');
-          pickerContainer.style.height = '4rem';
+          pickerContainer.style.height = '6rem';
     const picker = pickerContainer.querySelector('.js-guide-header-container > div:nth-child(2)');
           picker.classList.remove('hide');
           picker.innerHTML = 
