@@ -77,12 +77,22 @@ export const renderSpeciesPicker = (modal, createGuide) => {
                     divs.forEach(div => {
                         console.log('div: ', div.innerText);
                         div.addEventListener("touchstart", e => {
-                            console.log('touchstart: ', e.target);
-                            console.log('touchstart input value: ', input.value);
-                            divs.forEach(o => o.classList.remove('selected'));
-                            div.classList.add('selected');
-                            // input.value = e.target.innerText;
-                            // addSpeciesToList(input.value);     
+                            const start = new Date();
+                            div.addEventListener('touchend', e => {
+                                const end = new Date();
+
+                                var seconds = (end.getTime() - start.getTime()) / 1000;
+
+                                if(seconds > .5) {
+                                    divs.forEach(o => {
+                                        o.classList.remove('selected')
+                                    });
+                                    div.classList.add('selected');
+                                    input.value = e.target.innerText;
+                                    addSpeciesToList(input.value);
+                                }
+                            })
+                            
                         });
                     });
             },
@@ -102,12 +112,14 @@ export const renderSpeciesPicker = (modal, createGuide) => {
         });
 
         input.addEventListener('change', event => {
-            const highlightedText = document.querySelector('.selected');
-            if(highlightedText) {
-                input.value = highlightedText.innerText;
-                console.log('change input value: ', input.value);
-                addSpeciesToList(input.value);
-            }
+            setTimeout(() => {
+                const highlightedText = document.querySelector('.selected');
+                if(highlightedText) {
+                    input.value = highlightedText.innerText;
+                    console.log('change input value: ', input.value);
+                    // addSpeciesToList(input.value);
+                }
+            }, 500);
         });
     };
 
