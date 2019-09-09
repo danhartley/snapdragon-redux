@@ -85,6 +85,10 @@ export const renderSpeciesPicker = (modal, createGuide) => {
                 addSpeciesToList();
             }
         });
+
+        input.addEventListener('change', event => {
+            console.log(event.target);
+        });
     };
 
     init();
