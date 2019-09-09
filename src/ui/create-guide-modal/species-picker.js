@@ -75,7 +75,8 @@ export const renderSpeciesPicker = (modal, createGuide) => {
                     const options = document.querySelectorAll('.autocomplete-options-container > div');
                 
                     options.forEach(div => {
-                        div.addEventListener("touchend", e => {
+                        console.log('div: ', div.innerText);
+                        div.addEventListener("touchstart", e => {
                             console.log(e.target);
                             addSpeciesToList(e.target.innerText);
                         });
