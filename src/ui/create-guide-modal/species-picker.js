@@ -80,17 +80,26 @@ export const renderSpeciesPicker = (modal, createGuide) => {
             className: 'autocomplete-options-container'
         });
 
+        const listenersAdded = false;
+
         input.addEventListener('keypress', event => {
             if(event.keyCode == 13) {
                 // addSpeciesToList(input.value);
+
+                console.log('adding handlers on keypress')
+
+                if(!listenersAdded) {
+                    const options = document.querySelectorAll('.autocomplete-options-container > div');
+                
+                    options.forEach(div => {
+                        div.addEventListener("touchstart", touch2Mouse, true);
+                        div.addEventListener("touchmove", touch2Mouse, true);
+                        div.addEventListener("touchend", touch2Mouse, true);
+                    });
+    
+                    listenersAdded = true;
+                }
             }
-            const options = document.querySelectorAll('.autocomplete-options-container > div');
-            
-            options.forEach(div => {
-                div.addEventListener("touchstart", touch2Mouse, true);
-                div.addEventListener("touchmove", touch2Mouse, true);
-                div.addEventListener("touchend", touch2Mouse, true);
-            });
         });
 
         input.addEventListener('change', event => {
