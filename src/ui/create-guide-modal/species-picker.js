@@ -76,10 +76,10 @@ export const renderSpeciesPicker = (modal, createGuide) => {
                 
                     options.forEach(div => {
                         console.log('div: ', div.innerText);
-                        div.addEventListener("touchstart", e => {
+                        div.addEventListener("click", e => {
                             console.log(e.target);
                             input.value = e.target.innerText;
-                            // addSpeciesToList(input.value);
+                            addSpeciesToList(input.value);
                         });
                     });
             },
@@ -101,7 +101,7 @@ export const renderSpeciesPicker = (modal, createGuide) => {
             const highlightedText = document.querySelector('.selected');
             if(highlightedText) {
                 input.value = highlightedText.innerText;
-                addSpeciesToList(input.value);
+                // addSpeciesToList(input.value);
             }
         });
     };
