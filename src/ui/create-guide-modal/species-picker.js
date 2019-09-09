@@ -93,19 +93,16 @@ export const renderSpeciesPicker = (modal, createGuide) => {
 
         input.addEventListener('keypress', event => {
             if(event.keyCode == 13) {
-                // addSpeciesToList(input.value);
-                console.log('keypress')
+                addSpeciesToList(input.value);
             }
         });
 
         input.addEventListener('change', event => {
-            //console.log('change: ', event.target);
-
-            // const highlightedText = document.querySelector('.selected');
-            // if(highlightedText) {
-            //     input.value = highlightedText.innerText;
-            //     addSpeciesToList(input.value);
-            // }
+            const highlightedText = document.querySelector('.selected');
+            if(highlightedText) {
+                input.value = highlightedText.innerText;
+                addSpeciesToList(input.value);
+            }
         });
     };
 
