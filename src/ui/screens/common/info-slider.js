@@ -14,8 +14,7 @@ const renderInfoSlider = (item, traits, parent, id) => {
 
     traits = traits.filter(t => t.value);
 
-    traits.forEach(trait => {
-        
+    traits.forEach(trait => {        
         trait.name = trait.name ? trait.name === 'ph' ? 'pH' : utils.capitaliseFirst(trait.name) : '';
         if(trait.name.toLowerCase() === 'role') trait.name = trait.type || 'role';
         trait.unit = trait.unit ? trait.unit.toLowerCase() === 'colour' ? '' : trait.unit : '';
@@ -23,6 +22,9 @@ const renderInfoSlider = (item, traits, parent, id) => {
         trait.value = trait.name.toLowerCase() === 'description' ? 'Navigate < or > for traits' : trait.value.join(', ');
     });
     
+    let description = traits.find(trait => trait.name.toLowerCase() === 'description');
+        description = description ? description.description[0] : '';
+
     renderTemplate({ id, traits }, slider.content, parent);
 
     let activeTrait, activeTraitKey, activeTraitValue;
@@ -44,10 +46,7 @@ const renderInfoSlider = (item, traits, parent, id) => {
             activeTrait = parent.querySelector(`#traitSlider${id} .carousel-item.active`);
             activeTraitKey = activeTrait.querySelector('div:nth-child(1)').innerHTML;
             activeTraitValue = activeTrait.querySelector('div:nth-child(3)').innerHTML;
-            // activeTraitValue = activeTrait.querySelector('div:nth-child(2) > span:nth-child(1)').innerHTML;
-            console.log(activeTraitKey);
-            console.log(activeTraitValue);
-            renderInfoDetails(item, activeTraitKey, activeTraitValue);
+            renderInfoDetails(item, activeTraitKey, activeTraitValue, description);
         }, 1000);
     };
 

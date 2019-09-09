@@ -64,24 +64,6 @@
     }
 }
 
-/* @media (min-height:640px) {
-    .strips {
-        height: 18rem;
-    }
-} */
-
-/* @media (min-height:667px) {
-    .strips {
-        height: 21rem;
-    }
-}
-
-@media (min-height:736px) {
-    .strips {
-        height: 23rem;
-    }
-} */
-
 @media (min-height:812px) {
     .strip {
         margin: .5rem;
@@ -147,11 +129,6 @@
     .strip-single-line {
         padding: 1.5rem;
     }
-
-    /* .strips {
-        height: 20rem;
-        height: initial;
-    } */
 
     .portrait, .portrait-grid {
         display: none !important;

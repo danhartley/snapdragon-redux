@@ -609,7 +609,7 @@ a.dropdown-item {
 /* STRIPS */
 
 .strips {
-  height: calc(100vh - 24.5rem);
+  height: calc(100vh - 23rem);
   display: grid;
   grid-template-columns: 1fr 1fr;
   cursor: pointer;
@@ -617,7 +617,6 @@ a.dropdown-item {
 
 .sub-header-tall ~ div > div.strips {
   height: calc(100vh - 27.5rem);
-  /* height: calc(100vh - 24.5rem); */
 }
 
 .strip {
@@ -829,7 +828,8 @@ a.dropdown-item {
 
 .id-box {
   display: flex;
-  padding: 1rem 0.5rem 1rem 0;
+  padding: .5rem 0;
+  margin: 0 0 1rem 0;
   background-color: var(--snap-taxon-card-background);
 }
 
