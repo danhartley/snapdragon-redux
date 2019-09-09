@@ -84,6 +84,19 @@ export const renderSpeciesPicker = (modal, createGuide) => {
             if(event.keyCode == 13) {
                 addSpeciesToList(input.value);
             }
+            const options = document.querySelectorAll('.autocomplete-options-container > div');
+            
+            options.forEach(div => {
+                div.addEventListener('touchend', e => {
+                    console.log('touchend event: ', e.target);                
+                });
+                div.addEventListener('click', e => {
+                    console.log('click event: ', e.target);                
+                });
+                div.addEventListener('change', e => {
+                    console.log('change event: ', e.target);                
+                });
+            });
         });
 
         input.addEventListener('change', event => {
@@ -98,20 +111,6 @@ export const renderSpeciesPicker = (modal, createGuide) => {
 
         input.addEventListener('touchstart', event => {
             console.log(event.target);
-        });
-
-        const options = document.querySelectorAll('.autocomplete-options-container > div');
-
-        options.forEach(div => {
-            div.addEventListener('touchend', e => {
-                console.log('touchend event: ', e.target);                
-            });
-            div.addEventListener('click', e => {
-                console.log('click event: ', e.target);                
-            });
-            div.addEventListener('change', e => {
-                console.log('change event: ', e.target);                
-            });
         });
     };
 
