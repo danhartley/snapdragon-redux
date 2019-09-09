@@ -78,7 +78,8 @@ export const renderSpeciesPicker = (modal, createGuide) => {
                         console.log('div: ', div.innerText);
                         div.addEventListener("touchstart", e => {
                             console.log(e.target);
-                            addSpeciesToList(e.target.innerText);
+                            input.value = e.target.innerText;
+                            addSpeciesToList(input.value);
                         });
                     });
             },
