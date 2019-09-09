@@ -82,12 +82,18 @@ export const renderSpeciesPicker = (modal, createGuide) => {
 
         input.addEventListener('keypress', event => {
             if(event.keyCode == 13) {
-                addSpeciesToList();
+                addSpeciesToList(input.value);
             }
         });
 
         input.addEventListener('change', event => {
             console.log(event.target);
+
+            const highlightedText = document.querySelector('.selected');
+            if(highlightedText) {
+                inputKey.value = highlightedText.innerText;
+                addSpeciesToList(inputKey.value);
+            }
         });
     };
 
@@ -128,9 +134,9 @@ export const renderSpeciesPicker = (modal, createGuide) => {
     
     reDraw();
 
-    const addSpeciesToList = event => {
+    const addSpeciesToList = species => {
         
-        selectedSpecies.push(input.value);
+        selectedSpecies.push(species);
 
         const collection = snapdragonCollections.find(c => c.id === 9);
 
