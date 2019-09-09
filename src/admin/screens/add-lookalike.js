@@ -7,6 +7,7 @@ import { speciesPicker } from 'admin/screens/taxa-pickers';
 import { eol } from 'admin/api/eol';
 
 import lookalikeTemplate from 'admin/screens/add-lookalike-template.html';
+import lookalikesListTemplate from 'admin/screens/add-lookalikes-list-template.html';
 
 export const addLookalike = () => {
 
@@ -16,13 +17,37 @@ export const addLookalike = () => {
 
     const init = async () => {
 
-        const template = document.createElement('template');
-        template.innerHTML = lookalikeTemplate;
+        let template = document.createElement('template');
+            template.innerHTML = lookalikeTemplate;
 
-        const parent = document.querySelector('#content-container');
-        parent.innerHTML = '';
+        let parent = document.querySelector('#content-container');
+            parent.innerHTML = '';
 
         renderTemplate({}, template.content, parent);
+
+        const loadLookalikes = async item => {
+
+            const itemTraits = await firestore.getTraitsBySpeciesName(item.name);
+            const lookalikes = itemTraits['lookalikes'];
+
+            const species = lookalikes ? [ ...lookalikes.map(lookalike => lookalike.lookalike), { name: item.name, description: lookalikes[0].description } ] : [];
+
+            const parent = document.querySelector('.js-lookalikes');
+
+            template.innerHTML = lookalikesListTemplate;
+
+            renderTemplate({species}, template.content, parent);
+
+            M.updateTextFields();
+
+            const btnUpdateLookalikes = document.querySelectorAll('.btnUpdateLookalike').forEach(update => {
+                update.addEventListener('click', async e => {
+                    const name = e.target.id;
+                    const log = await firestore.addSpeciesTraits(name, trait);
+                    console.log('update lookalike feedback: ', log);
+                });
+            });
+        };
 
         const inputSnapdragon = document.querySelector('#input-species-snapdragon');
               inputSnapdragon.focus();
@@ -30,10 +55,11 @@ export const addLookalike = () => {
         speciesPicker(inputSnapdragon, species => {
             item = species;
             snapdragonSpecies = inputSnapdragon.value;
+            loadLookalikes(item);
         });
 
         const inputSnapdragonB = document.querySelector('#input-species-snapdragon-b');
-              inputSnapdragonB.focus();
+            //   inputSnapdragonB.focus();
 
         speciesPicker(inputSnapdragonB, species => {
             item = species;

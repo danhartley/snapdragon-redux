@@ -11,6 +11,10 @@
   height: 100%;
 }
   
+#cardModal {  
+  z-index: 1049; /* wiki is 1050 */
+}
+
 .modal-body {
     padding: .5rem;
 }
@@ -317,12 +321,16 @@
 
   /* WIKI */
 
+  #wikiModal {
+    top: 3rem;
+  }
+
   #wikiModal .modal-dialog {
       max-width: 60vw;
   } 
 
   #wikiModal .modal-content {
-      height: 70vh;
+      height: 80vh;
   }
 
   #wikiModal .modal-body {

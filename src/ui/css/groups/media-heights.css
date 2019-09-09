@@ -1,4 +1,4 @@
-.taxon-card-scrollable-container {
+.card-scrollable-container {
     overflow-y: scroll;
     height: calc(100vh - 20rem);
     display: flex;

@@ -385,6 +385,16 @@ export const plantae = [
         wiki: 'https://en.wikipedia.org/wiki/Companion_planting'
     },
     {
+        term: 'Marcescence',
+        definition: 'The retention of dead plant organs that normally are shed.',
+        wiki: 'https://en.wikipedia.org/wiki/Marcescence'
+    },
+    {
+        term: 'Photodegradation',
+        definition: 'The alteration of materials by light. Typically, the term refers to the combined action of sunlight and air. Photodegradation is usually oxidation and hydrolysis.',
+        wiki: 'https://en.wikipedia.org/wiki/Photodegradation'
+    },
+    {
         term: 'Allogamy (cross-fertilisation)',
         definition: 'The fertilization of an ovum from one individual with the spermatozoa of another.',
         wiki: 'https://en.wikipedia.org/wiki/Allogamy'

@@ -412,6 +412,7 @@ export const enums = {
   BLUE: 'Blue',
   PALE_BLUE: 'Pale blue',
   BLUE_BLACK: 'Blue-black',
+  BLUE_GREEN: 'Blue-green',
   VIOLET: 'Violet',
   PALE_VIOLET: 'Pale violet',
   PALE_GREEN: 'Pale green',
