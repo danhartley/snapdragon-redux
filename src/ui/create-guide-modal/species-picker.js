@@ -87,20 +87,14 @@ export const renderSpeciesPicker = (modal, createGuide) => {
             const options = document.querySelectorAll('.autocomplete-options-container > div');
             
             options.forEach(div => {
-                div.addEventListener('touchend', e => {
-                    console.log('touchend event: ', e.target);                
-                });
-                div.addEventListener('click', e => {
-                    console.log('click event: ', e.target);                
-                });
-                div.addEventListener('change', e => {
-                    console.log('change event: ', e.target);                
-                });
+                div.addEventListener("touchstart", touch2Mouse, true);
+                div.addEventListener("touchmove", touch2Mouse, true);
+                div.addEventListener("touchend", touch2Mouse, true);
             });
         });
 
         input.addEventListener('change', event => {
-            console.log('change: ', event.target);
+            // console.log('change: ', event.target);
 
             // const highlightedText = document.querySelector('.selected');
             // if(highlightedText) {
@@ -109,9 +103,9 @@ export const renderSpeciesPicker = (modal, createGuide) => {
             // }
         });
 
-        input.addEventListener('touchstart', event => {
-            console.log('touchstart', event.target);
-        });
+        // input.addEventListener('touchstart', event => {
+        //     console.log('touchstart', event.target);
+        // });
     };
 
     init();
@@ -164,4 +158,23 @@ export const renderSpeciesPicker = (modal, createGuide) => {
 
         reDraw();
     };
+
+    function touch2Mouse(e) {
+        var theTouch = e.changedTouches[0];
+        var mouseEv;
+
+        switch(e.type)
+        {
+            case "touchstart": mouseEv="mousedown"; break;  
+            case "touchend":   mouseEv="mouseup"; break;
+            case "touchmove":  mouseEv="mousemove"; break;
+            default: return;
+        }
+
+        var mouseEvent = document.createEvent("MouseEvent");
+        mouseEvent.initMouseEvent(mouseEv, true, true, window, 1, theTouch.screenX, theTouch.screenY, theTouch.clientX, theTouch.clientY, false, false, false, false, 0, null);
+        theTouch.target.dispatchEvent(mouseEvent);
+
+        e.preventDefault();
+    }
 };
