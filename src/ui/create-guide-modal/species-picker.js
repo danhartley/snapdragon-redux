@@ -72,14 +72,16 @@ export const renderSpeciesPicker = (modal, createGuide) => {
                 const suggestions = speciesNames.filter(n => n.value.toLowerCase().startsWith(text))
                 update(suggestions);
 
-                    const options = document.querySelectorAll('.autocomplete-options-container > div');
+                    const divs = document.querySelectorAll('.autocomplete-options-container > div');
                 
-                    options.forEach(div => {
+                    divs.forEach(div => {
                         console.log('div: ', div.innerText);
-                        div.addEventListener("click", e => {
+                        div.addEventListener("touchstart", e => {
                             console.log(e.target);
-                            input.value = e.target.innerText;
-                            addSpeciesToList(input.value);
+                            divs.forEach(o => o.classList.remove('selected'));
+                            div.classList.add('selected');
+                            // input.value = e.target.innerText;
+                            // addSpeciesToList(input.value);     
                         });
                     });
             },
@@ -101,7 +103,7 @@ export const renderSpeciesPicker = (modal, createGuide) => {
             const highlightedText = document.querySelector('.selected');
             if(highlightedText) {
                 input.value = highlightedText.innerText;
-                // addSpeciesToList(input.value);
+                addSpeciesToList(input.value);
             }
         });
     };
