@@ -223,7 +223,8 @@
   }
 
   .guide-header-container {
-    height: 2.75rem;
+    height: 6rem;
+    /* height: 2.75rem; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;

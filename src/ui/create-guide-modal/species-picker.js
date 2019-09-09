@@ -95,6 +95,14 @@ export const renderSpeciesPicker = (modal, createGuide) => {
                 addSpeciesToList(input.value);
             }
         });
+
+        input.addEventListener('touchstart', event => {
+            console.log(event.target);
+        });
+
+        input.addEventListener('touchend', event => {
+            console.log(event.target);
+        });
     };
 
     init();
