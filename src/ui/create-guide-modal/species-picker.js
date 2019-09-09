@@ -100,17 +100,17 @@ export const renderSpeciesPicker = (modal, createGuide) => {
         });
 
         input.addEventListener('change', event => {
-            console.log(event.target);
+            console.log('change: ', event.target);
 
-            const highlightedText = document.querySelector('.selected');
-            if(highlightedText) {
-                input.value = highlightedText.innerText;
-                addSpeciesToList(input.value);
-            }
+            // const highlightedText = document.querySelector('.selected');
+            // if(highlightedText) {
+            //     input.value = highlightedText.innerText;
+            //     addSpeciesToList(input.value);
+            // }
         });
 
         input.addEventListener('touchstart', event => {
-            console.log(event.target);
+            console.log('touchstart', event.target);
         });
     };
 
