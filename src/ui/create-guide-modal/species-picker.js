@@ -91,8 +91,8 @@ export const renderSpeciesPicker = (modal, createGuide) => {
 
             const highlightedText = document.querySelector('.selected');
             if(highlightedText) {
-                inputKey.value = highlightedText.innerText;
-                addSpeciesToList(inputKey.value);
+                input.value = highlightedText.innerText;
+                addSpeciesToList(input.value);
             }
         });
     };
