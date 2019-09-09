@@ -77,7 +77,8 @@ export const renderSpeciesPicker = (modal, createGuide) => {
                     divs.forEach(div => {
                         console.log('div: ', div.innerText);
                         div.addEventListener("touchstart", e => {
-                            console.log(e.target);
+                            console.log('touchstart: ', e.target);
+                            console.log('touchstart input value: ', input.value);
                             divs.forEach(o => o.classList.remove('selected'));
                             div.classList.add('selected');
                             // input.value = e.target.innerText;
@@ -95,6 +96,7 @@ export const renderSpeciesPicker = (modal, createGuide) => {
 
         input.addEventListener('keypress', event => {
             if(event.keyCode == 13) {
+                console.log('keypress input value: ', input.value);
                 addSpeciesToList(input.value);
             }
         });
@@ -103,6 +105,7 @@ export const renderSpeciesPicker = (modal, createGuide) => {
             const highlightedText = document.querySelector('.selected');
             if(highlightedText) {
                 input.value = highlightedText.innerText;
+                console.log('change input value: ', input.value);
                 addSpeciesToList(input.value);
             }
         });
