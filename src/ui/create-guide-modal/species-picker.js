@@ -80,7 +80,7 @@ export const renderSpeciesPicker = (modal, createGuide) => {
             className: 'autocomplete-options-container'
         });
 
-        const listenersAdded = false;
+        let listenersAdded = false;
 
         input.addEventListener('keypress', event => {
             if(event.keyCode == 13) {
