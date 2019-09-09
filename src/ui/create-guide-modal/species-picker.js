@@ -64,13 +64,22 @@ export const renderSpeciesPicker = (modal, createGuide) => {
                 value: name
             }
         });
-        
+
         autocomplete({
             input: input,
             fetch: function(text, update) {
                 text = text.toLowerCase();
                 const suggestions = speciesNames.filter(n => n.value.toLowerCase().startsWith(text))
                 update(suggestions);
+
+                    const options = document.querySelectorAll('.autocomplete-options-container > div');
+                
+                    options.forEach(div => {
+                        div.addEventListener("touchend", e => {
+                            console.log(e.target);
+                            addSpeciesToList(e.target.innerText);
+                        });
+                    });
             },
             onSelect: function(item) {
                 input.value = item.label;
@@ -80,30 +89,15 @@ export const renderSpeciesPicker = (modal, createGuide) => {
             className: 'autocomplete-options-container'
         });
 
-        let listenersAdded = false;
-
         input.addEventListener('keypress', event => {
             if(event.keyCode == 13) {
                 // addSpeciesToList(input.value);
-
-                console.log('adding handlers on keypress')
-
-                if(!listenersAdded) {
-                    const options = document.querySelectorAll('.autocomplete-options-container > div');
-                
-                    options.forEach(div => {
-                        div.addEventListener("touchstart", touch2Mouse, true);
-                        div.addEventListener("touchmove", touch2Mouse, true);
-                        div.addEventListener("touchend", touch2Mouse, true);
-                    });
-    
-                    listenersAdded = true;
-                }
+                console.log('keypress')
             }
         });
 
         input.addEventListener('change', event => {
-            // console.log('change: ', event.target);
+            //console.log('change: ', event.target);
 
             // const highlightedText = document.querySelector('.selected');
             // if(highlightedText) {
@@ -111,10 +105,6 @@ export const renderSpeciesPicker = (modal, createGuide) => {
             //     addSpeciesToList(input.value);
             // }
         });
-
-        // input.addEventListener('touchstart', event => {
-        //     console.log('touchstart', event.target);
-        // });
     };
 
     init();
@@ -167,23 +157,4 @@ export const renderSpeciesPicker = (modal, createGuide) => {
 
         reDraw();
     };
-
-    function touch2Mouse(e) {
-        var theTouch = e.changedTouches[0];
-        var mouseEv;
-
-        switch(e.type)
-        {
-            case "touchstart": mouseEv="mousedown"; break;  
-            case "touchend":   mouseEv="mouseup"; break;
-            case "touchmove":  mouseEv="mousemove"; break;
-            default: return;
-        }
-
-        var mouseEvent = document.createEvent("MouseEvent");
-        mouseEvent.initMouseEvent(mouseEv, true, true, window, 1, theTouch.screenX, theTouch.screenY, theTouch.clientX, theTouch.clientY, false, false, false, false, 0, null);
-        theTouch.target.dispatchEvent(mouseEvent);
-
-        e.preventDefault();
-    }
 };
