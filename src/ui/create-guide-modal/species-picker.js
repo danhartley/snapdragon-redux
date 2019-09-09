@@ -81,9 +81,9 @@ export const renderSpeciesPicker = (modal, createGuide) => {
         });
 
         input.addEventListener('keypress', event => {
-            // if(event.keyCode == 13) {
-            //     addSpeciesToList(input.value);
-            // }
+            if(event.keyCode == 13) {
+                // addSpeciesToList(input.value);
+            }
             const options = document.querySelectorAll('.autocomplete-options-container > div');
             
             options.forEach(div => {
