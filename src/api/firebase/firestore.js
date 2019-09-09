@@ -320,17 +320,25 @@ const addSpeciesTraits = async (name, trait) => {
 
     let speciesTraitsRef;
 
-    const querySnapshot = await db.collection("traits_en").where("name", "==", name).get();
-    
-    if(querySnapshot.empty) {
-        trait.name = name;
-        return await db.collection(`traits_en`).add(trait);
-    } else {
-        querySnapshot.forEach(function(doc) {
-            speciesTraitsRef = doc.ref;
-        });
+    try {
 
-        return await speciesTraitsRef.update(trait); 
+        const querySnapshot = await db.collection("traits_en").where("name", "==", name).get();
+        
+        if(querySnapshot.empty) {
+            trait.name = name;
+            return await db.collection(`traits_en`).add(trait);
+        } else {
+            querySnapshot.forEach(function(doc) {
+                speciesTraitsRef = doc.ref;
+            });
+
+            await speciesTraitsRef.update(trait); 
+
+            return 'Update successful';
+        }
+    } catch (e) {
+
+        return `Update failed. Error ${e.message}.`;
     }
 };
 
