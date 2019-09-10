@@ -133,6 +133,10 @@ export const getSetOfTraitAnswers = (pool, trait) => {
         }
 
         console.log(sets);
+
+        sets = sets.map(set => set.join(', '));
+
+        console.log(sets);
     }
   
     return utils.shuffleArray(sets);

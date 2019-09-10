@@ -7,8 +7,6 @@ const removeSubs = () => {
 
     screens.forEach(s => console.log(`%c${s.name}`, "color:green"));
 
-    // console.log(`%cmy subs: ${subscriptions.map(s=>s.name).join(', ')}`, "color: blue;");
-
     screens.forEach(sub => subscription.remove(sub));
 
 };
@@ -29,7 +27,7 @@ const addSubs = (layout, config) => {
     });
 };
 
-export const subsHandler = {
-    addSubs,
-    removeSubs,
-}
+// export const subsHandler = {
+//     addSubs,
+//     removeSubs,
+// }

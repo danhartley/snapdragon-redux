@@ -35,6 +35,8 @@ export async function renderInatDataBox(parent, item, config, mode) {
 
     const places = await getInatPlaceId(country);
 
+    if(places.results.length === 0) return;
+
     const placeId = places.results.find(place => place.display_name === country).id;
     
     getInatTaxonStats(item, config, placeId).then(stats => {

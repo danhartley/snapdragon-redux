@@ -11,7 +11,8 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { firestore } from 'api/firebase/firestore';
-import { subsHandler } from 'ui/helpers/subscription-handler';
+// import { subsHandler } from 'ui/helpers/subscription-handler';
+import { subscription } from 'redux/subscriptions';
 
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
@@ -90,7 +91,7 @@ export const renderMultiStrips = (collection, bonus) => {
                             actions.boundUpdateTraitScore(score);
                             bonus.callback(score);
                         } else {
-                            subsHandler.removeSubs();
+                            subscription.removeSubs();
                             actions.boundUpdateScore(score);
                         }
                     };
@@ -260,10 +261,10 @@ export const renderMultiStrips = (collection, bonus) => {
                         const renderBirdsong = async () => {
 
                             const parent = document.querySelector('.js-question-help');
-                            parent.innerHTML = '';
+                                  parent.innerHTML = '';
 
                             const template = document.createElement('template');
-                                    template.innerHTML = audioMediaTemplate;
+                                  template.innerHTML = audioMediaTemplate;
 
                             const xcID = bonus.overrides.trait.value[0];
 

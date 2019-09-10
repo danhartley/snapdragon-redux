@@ -1,5 +1,6 @@
 import { store } from 'redux/store';
 import { observeStore } from 'redux/observe-store';
+import { funcByName } from 'ui/helpers/function-lookups';
 
 let subscriptions = [];
 
@@ -41,11 +42,41 @@ const getAll = () => {
     return subscriptions;
 };
 
+const removeSubs = () => {
+
+    const screens = getByRole('screen');
+
+    screens.forEach(s => console.log(`%c${s.name}`, "color:green"));
+
+    // console.log(`%cmy subs: ${subscriptions.map(s=>s.name).join(', ')}`, "color: blue;");
+
+    screens.forEach(sub => subscription.remove(sub));
+
+};
+
+const addSubs = (layout, config) => {
+
+    layout.screens.forEach( (screen, index) => {
+
+        const func = funcByName(screen.name);
+
+        if(func) {
+            if(config.isPortraitMode) {
+                if(index === 1 || screen.name === 'summary') subscription.add(func, screen.domain, 'screen', layout.name);
+            } else {
+                subscription.add(func, screen.domain, 'screen', layout.name);
+            }                           
+        }
+    });
+};
+
 export const subscription = {
     add,
     remove,
     getByName,
     getByRole,
-    getAll
+    getAll,
+    removeSubs,
+    addSubs
 };
 

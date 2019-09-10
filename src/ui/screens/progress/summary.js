@@ -4,7 +4,6 @@ import { DOM } from 'ui/dom';
 import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { enums } from 'ui/helpers/enum-helper';
-import { subsHandler } from 'ui/helpers/subscription-handler';
 
 import summaryTemplate from 'ui/screens/progress/summary-template.html';
 
@@ -12,7 +11,9 @@ export const renderSummary = history => {
 
     console.log('\x1b[32m', 'renderSummary');
 
-    subsHandler.removeSubs();
+    subscription.removeSubs();
+
+    subscription.getByRole('screen').forEach(sub => console.log('renderSummary subscriptions:', sub.name));
 
     const { score, collection, config, lesson } = store.getState();
 

@@ -18,6 +18,8 @@ export async function renderCalendar(parent, item, config) {
 
     const places = await getInatPlaceId(country);
 
+    if(places.results.length === 0) return;
+
     const placeId = places.results.find(place => place.display_name === country).id;
 
     let months = [];

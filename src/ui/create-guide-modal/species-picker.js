@@ -17,6 +17,7 @@ export const renderSpeciesPicker = (modal, createGuide) => {
 
     const actionsContainer = modal.querySelector('.js-actions');
           actionsContainer.setAttribute('style', 'justify-content: start;');
+          actionsContainer.style.height = '12rem';
 
     const guideTxt = modal.querySelector('.js-guide-text');
           guideTxt.innerHTML = 'Specify the species that interest you.';
@@ -109,6 +110,7 @@ export const renderSpeciesPicker = (modal, createGuide) => {
         input.value = '';
 
         modal.querySelectorAll('li input').forEach(checkBox => {
+            
             checkBox.addEventListener('change', event => {
 
                 const removedSpecies = event.target.id;
@@ -128,7 +130,7 @@ export const renderSpeciesPicker = (modal, createGuide) => {
     let selectedSpecies = config.guide.itemNames || [];
     
     const selectedSpeciesDisplay = modal.querySelector('.js-selected-species');
-    selectedSpeciesDisplay.innerHTML = '';
+          selectedSpeciesDisplay.innerHTML = '';
     
     reDraw();
 

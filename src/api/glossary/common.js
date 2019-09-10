@@ -131,4 +131,9 @@ export const commmon = [
         definition : "A biological phenomenon by which an organism produces one or more biochemicals that influence the germination, growth, survival, and reproduction of other organisms.",
         wiki: 'https://en.wikipedia.org/wiki/Allelopathy'
     },
+    {
+        term : "Cline",
+        definition : "A measurable gradient in a single character (or biological trait) of a species across its geographical range.",
+        wiki: 'https://en.wikipedia.org/wiki/Cline_(biology)'
+    },
 ];
