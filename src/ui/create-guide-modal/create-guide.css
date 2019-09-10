@@ -521,10 +521,10 @@
     padding: .25rem;
   }
   
-  .autocomplete-options-container .selected {
+  /* .autocomplete-options-container .selected {
     color: var(--snap-dd-non-taxa-bg-hover);
     background-color: var(--snap-text-medium-dark);
-  }
+  } */
   
   #place span {
     margin: 0 .25rem 0 0;
@@ -895,6 +895,11 @@
   }
 
   @media (min-width: 768px) {
+
+    .autocomplete-options-container .selected {
+      color: var(--snap-dd-non-taxa-bg-hover);
+      background-color: var(--snap-text-medium-dark);
+    }
 
     .guide-header-container {
       height: 2.75rem;
