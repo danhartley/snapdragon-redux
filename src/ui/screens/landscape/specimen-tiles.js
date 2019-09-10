@@ -24,7 +24,8 @@ const renderItemSpecimenTiles = item => {
 
     let images, items; 
     
-    const familes = [ 'family-strips', 'family', 'taxon-card', 'trait-property' ];
+    const familes = [ 'family-strips', 'family', 'taxon-card' ];
+    // const familes = [ 'family-strips', 'family', 'taxon-card', 'trait-property' ];
 
     const number = 6;
 

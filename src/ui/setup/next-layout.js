@@ -1,20 +1,23 @@
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
-import { subsHandler } from 'ui/helpers/subscription-handler';
+import { subscription } from 'redux/subscriptions';
 
 export const nextLayout = (counter) => {
 
-    if(counter.isLessonPaused) return;
+    setTimeout(() => { // hack so that next-lesson runs first, and updates to the next level where appropriate
 
-    const { lessonPlan, config } = store.getState();
+        if(counter.isLessonPaused) return;
 
-    if(!lessonPlan || !lessonPlan.layouts) return;
-
-    const layout = lessonPlan.layouts[counter.index];
-
-    if(!layout) return;
-
-    actions.boundNextLayout(layout);
-
-    subsHandler.addSubs(layout, config);
+        const { lessonPlan, config } = store.getState();
+    
+        if(!lessonPlan || !lessonPlan.layouts) return;
+    
+        const layout = lessonPlan.layouts[counter.index];
+    
+        if(!layout) return;
+    
+        actions.boundNextLayout(layout);
+    
+        subscription.addSubs(layout, config);   
+    });
 };
