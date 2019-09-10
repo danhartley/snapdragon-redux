@@ -20,11 +20,11 @@ export const getTraitsForTests = (enums, item, alreadyTestedTraits = []) => {
 
     const question = trait.unit
                         ? trait.value.join('-')
-                        : trait.value.join(', ');
+                        : trait.value.join(',');
                            
     trait.value = trait.value.map(t => utils.capitaliseFirst(t));
 
-    const answers = getSetOfTraitAnswers(traitsPool, trait);
+    const answers = getSetOfTraitAnswers(traitsPool, trait);        
 
     help = help || trait.key;
 

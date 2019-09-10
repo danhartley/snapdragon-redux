@@ -844,7 +844,7 @@ a.dropdown-item {
 
 .id-box > div:nth-child(2) {
   flex: 3 !important;
-  padding: .5rem;
+  padding: 0 1rem;
   text-align: left;
   flex: auto;
   color: var(--snap-text-dark);

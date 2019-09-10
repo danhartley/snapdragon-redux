@@ -1,6 +1,6 @@
 import { actions } from 'redux/actions/action-creators';
 import { elem } from 'ui/helpers/class-behaviour';
-import { markTest } from 'ui/helpers/score-handler';
+import { markTest, isAnswerEqualToQuestion } from 'ui/helpers/score-handler';
 import { subsHandler } from 'ui/helpers/subscription-handler';
 
 export const scoreHandler = (type, test, callback, config) => {
@@ -163,11 +163,11 @@ const stripScoreHandler = (test, callback, config) => {
             target.classList.add(score.colour);
 
             items.forEach(strip => {   
-                const matchesScientificName = strip.innerText.trim().toLowerCase() === taxon.name.trim().toLowerCase();
+                const matchesScientificName = isAnswerEqualToQuestion(strip.innerText, taxon.name);
                 const matchesVernacularName = vernacular 
-                                                ? strip.innerText.toLowerCase() === vernacular.toLowerCase() 
+                                                ? isAnswerEqualToQuestion(strip.innerText, vernacular) 
                                                 : false;
-                const matchesQuestion = strip.innerText.trim().toLowerCase() === taxon.question.trim().toLowerCase();
+                const matchesQuestion = isAnswerEqualToQuestion(strip.innerText, taxon.question);
                 if(matchesScientificName || matchesVernacularName || matchesQuestion) {
                     strip.classList.add('snap-success');
                 }

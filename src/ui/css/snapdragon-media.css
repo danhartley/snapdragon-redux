@@ -83,6 +83,9 @@
 }
 
 @media (min-width: 1024px) {
+    .strips {
+        height: calc(100vh - 25rem);
+    }
     .narrow-screen {
         display: none !important;
     }

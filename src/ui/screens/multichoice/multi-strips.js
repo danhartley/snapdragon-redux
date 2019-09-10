@@ -260,10 +260,10 @@ export const renderMultiStrips = (collection, bonus) => {
                         const renderBirdsong = async () => {
 
                             const parent = document.querySelector('.js-question-help');
-                            parent.innerHTML = '';
+                                  parent.innerHTML = '';
 
                             const template = document.createElement('template');
-                                    template.innerHTML = audioMediaTemplate;
+                                  template.innerHTML = audioMediaTemplate;
 
                             const xcID = bonus.overrides.trait.value[0];
 
