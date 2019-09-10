@@ -4,6 +4,10 @@ const TerserPlugin = require('terser-webpack-plugin');
 // const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
+    devServer: {
+        host: '0.0.0.0',
+        disableHostCheck: true
+    },
     entry: {
       app: './src/index.js',
       utils: './src/utils/utils.js',      

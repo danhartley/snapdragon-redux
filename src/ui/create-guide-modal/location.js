@@ -58,27 +58,27 @@ export const renderLocation = (modal, createGuide) => {
 
     let counter = 0;
 
-    locationPlaceInput.addEventListener('focus', event => {
-        counter = 0;
-    });
+    // locationPlaceInput.addEventListener('focus', event => {
+    //     counter = 0;
+    // });
 
-    locationPlaceInput.addEventListener('keypress', event => {
-        if(event.keyCode == 13) {
-            counter = 0;
-        }
-    });
+    // locationPlaceInput.addEventListener('keypress', event => {
+    //     if(event.keyCode == 13) {
+    //         counter = 0;
+    //     }
+    // });
 
     locationPlaceInput.addEventListener('keypress', event => {
         counter++;
         console.log(counter);
         autocompleteRef = inatAutocomplete(locationPlaceInput, 'places', 'autocomplete-options-container', 'place');
-        setTimeout(() => {
-            const googleImageContainer = modal.querySelector('#inat-place-autocomplete #googleLogoContainer');
-            if(!googleImageContainer && counter >= 3) {
-                const options = modal.querySelector('#inat-place-autocomplete');
-                if(options) options.innerHTML += `<div id="googleLogoContainer"><img id="googleLogo" src="${googleLogoImg}" alt=""></div>`;
-            }            
-        },750);  
+        // setTimeout(() => {
+        //     const googleImageContainer = modal.querySelector('#inat-place-autocomplete #googleLogoContainer');
+        //     if(!googleImageContainer && counter >= 3) {
+        //         const options = modal.querySelector('#inat-place-autocomplete');
+        //         if(options) options.innerHTML += `<div id="googleLogoContainer"><img id="googleLogo" src="${googleLogoImg}" alt=""></div>`;
+        //     }            
+        // },750);  
     });
 
     let range = config.guide.speciesRange;
