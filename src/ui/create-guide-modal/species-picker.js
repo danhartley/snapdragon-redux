@@ -1,3 +1,4 @@
+import * as R from 'ramda';
 import autocomplete from 'autocompleter';
 
 import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
@@ -71,56 +72,27 @@ export const renderSpeciesPicker = (modal, createGuide) => {
                 text = text.toLowerCase();
                 const suggestions = speciesNames.filter(n => n.value.toLowerCase().startsWith(text))
                 update(suggestions);
-
-                    const divs = document.querySelectorAll('.autocomplete-options-container > div');
-                
-                    divs.forEach(div => {
-                        console.log('div: ', div.innerText);
-                        div.addEventListener("touchstart", e => {
-                            const start = new Date();
-                            div.addEventListener('touchend', e => {
-                                const end = new Date();
-
-                                var seconds = (end.getTime() - start.getTime()) / 1000;
-
-                                if(seconds > .5) {
-                                    divs.forEach(o => {
-                                        o.classList.remove('selected')
-                                    });
-                                    div.classList.add('selected');
-                                    input.value = e.target.innerText;
-                                    addSpeciesToList(input.value);
-                                }
-                            })
-                            
-                        });
-                    });
             },
             onSelect: function(item) {
                 input.value = item.label;
+                addSpeciesToList(input.value);
             },
             minLength: 3,
             debounceWaitMs: 200,
             className: 'autocomplete-options-container'
         });
 
-        input.addEventListener('keypress', event => {
-            if(event.keyCode == 13) {
-                console.log('keypress input value: ', input.value);
-                addSpeciesToList(input.value);
-            }
-        });
 
         input.addEventListener('change', event => {
             setTimeout(() => {
                 const highlightedText = document.querySelector('.selected');
                 if(highlightedText) {
                     input.value = highlightedText.innerText;
-                    console.log('change input value: ', input.value);
-                    // addSpeciesToList(input.value);
+                    addSpeciesToList(input.value);
                 }
-            }, 500);
+            }, 100);
         });
+
     };
 
     init();
@@ -162,6 +134,8 @@ export const renderSpeciesPicker = (modal, createGuide) => {
 
     const addSpeciesToList = species => {
         
+        if(R.contains(species, selectedSpecies)) return;
+
         selectedSpecies.push(species);
 
         const collection = snapdragonCollections.find(c => c.id === 9);
@@ -171,6 +145,8 @@ export const renderSpeciesPicker = (modal, createGuide) => {
 
         createGuide.setConfig(config);
 
-        reDraw();
+        setTimeout(() => {            
+            reDraw();
+        }, 200);
     };
 };
