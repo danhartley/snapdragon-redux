@@ -35,7 +35,7 @@ export const getNextActiveLayerLayouts = (lessonPlan, config, lesson) => {
 
             lesson.level = level;
             lessonName = lesson.name;
-            levelName = lesson.level.name;
+            levelName = lesson.level.name; // sometimes returns null (when at final level, looking for next?)
             layouts = getLayouts(getCurrentLevelFromLessonPlan(lessonPlan, levelId + increment), config.mode);
 
             increment++;

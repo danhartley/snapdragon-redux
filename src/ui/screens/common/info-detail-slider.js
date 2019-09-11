@@ -17,6 +17,8 @@ export const renderInfoDetails = (item, activeTraitKey, activeTraitValue, descri
     if(activeTraitKey.toLowerCase() === 'description') {        
         template.innerHTML = idBoxTemplate;
         renderTemplate({ id: activeTraitValue }, template.content, parent);
+        const text = document.querySelector('.id-box > div:nth-child(2) > div');
+              text.innerHTML = text.innerHTML.replace(/\r?\n/g, '<br />');        
     }
     else if(activeTraitKey.toLowerCase() === 'relationships' || activeTraitKey.toLowerCase() === 'lookalikes') {
         const mode = 'MODAL';
@@ -38,6 +40,8 @@ export const renderInfoDetails = (item, activeTraitKey, activeTraitValue, descri
         } else {            
             template.innerHTML = idBoxTemplate;
             renderTemplate({ id: description }, template.content, parent);
+            const text = document.querySelector('.id-box > div:nth-child(2) > div');
+                  text.innerHTML = text.innerHTML.replace(/\r?\n/g, '<br />');
         }        
     }
 };
