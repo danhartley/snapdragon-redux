@@ -58,6 +58,11 @@ export const addId = () => {
         const inputSpecies = document.querySelector('#input-species-for-traits');
               inputSpecies.focus();
 
+        if(item) {
+            inputSpecies.value = item.name;
+            listenForSpeciesSelection(item);
+        }
+
         speciesPicker(inputSpecies, listenForSpeciesSelection);
 
     };

@@ -98,7 +98,17 @@
 }
 
 @media (min-width: 768px) {
-
+    .id-box > div:nth-child(1) {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.1rem;
+        font-style: italic;
+    }
+    .id-box > div:nth-child(2) {
+        border-left: 0.25rem dotted var(--snap-progress-bar);
+    }
     .non-taxon.card img {
         height: 5.5rem;
         width: 5.5rem;

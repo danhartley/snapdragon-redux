@@ -834,12 +834,7 @@ a.dropdown-item {
 }
 
 .id-box > div:nth-child(1) {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.1rem;
-  font-style: italic;
+  display: none;
 }
 
 .id-box > div:nth-child(2) {
@@ -848,7 +843,6 @@ a.dropdown-item {
   text-align: left;
   flex: auto;
   color: var(--snap-text-dark);
-  border-left: 0.25rem dotted var(--snap-progress-bar);
   display: flex;
   align-items: center;
   justify-content: center;
