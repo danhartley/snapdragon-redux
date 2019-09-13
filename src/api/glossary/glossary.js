@@ -10,6 +10,8 @@ export const getGlossary = requiredGlossaries => {
     
     let glossary = [];
 
+    requiredGlossaries = [ ...new Set(requiredGlossaries)];
+
     if(requiredGlossaries) {
         requiredGlossaries.forEach(glossaryName => {
             switch(glossaryName) {

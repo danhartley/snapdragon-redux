@@ -149,6 +149,8 @@ export const page = (state = { name: enums.navigation.HOME, glossary: false }, a
     switch(action.type) {
         case types.CHANGE_PAGE:
             return { ...state, ...action.data };
+        case types.NEW_COLLECTION:
+            return { name: '', glossary: true };
         case types.NEXT_LESSON:
             return { name: '', glossary: true };
         case types.NEXT_LAYOUT:

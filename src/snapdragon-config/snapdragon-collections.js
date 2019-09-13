@@ -574,7 +574,8 @@ const walkOne = {
     'Platanus acerifolia',
     'Phoenix canariensis',
     'Phoenix reclinata', // tall?
-    'Roystonea regia', // tall, wrong garden x
+    'Chamaerops humilis',
+    'Roystonea regia', // tall, wrong garden ?
     'Chamaerops humilis',
     'Fatsia japonica',
 
@@ -607,6 +608,7 @@ const walkOne = {
     'Ficus macrophylla',
     'Ailanthus altissima', // possible, not recorded though...
     'Araucaria columnaris', // tallest
+    'Vanessa cardui',
     
     // avenue
 
@@ -649,7 +651,11 @@ const walkOne = {
     {
       id: 'aves',
       common: 'Birds'
-    }
+    },
+    {
+      id: 'lepidoptera',
+      common: 'Butterflies & Moths'
+    },
   ],
   guide: {
     locationPlace: 'Jardim da Estrela',
