@@ -10,6 +10,11 @@ export const plantae = [
         wiki: "https://en.wikipedia.org/wiki/Entomophily"
     },
     {
+        term: "Lignotuber",
+        definition: "A woody swelling of the root crown possessed by some plants as a protection against destruction of the plant stem, such as by fire.",
+        wiki: "https://en.wikipedia.org/wiki/Lignotuber"
+    },
+    {
         term: "Anemophily",
         definition: "Pollination whereby pollen is distributed by wind.",
         wiki: "https://en.wikipedia.org/wiki/Anemophily",
@@ -285,11 +290,6 @@ export const plantae = [
     {
         term: 'Allochory',
         definition: 'Seed dispersal by vector or secondary agent.',
-        wiki: 'https://en.wikipedia.org/wiki/Seed_dispersal#Allochory'
-    },
-    {
-        term: 'Anemochory',
-        definition: 'Seed dispersal by wind.',
         wiki: 'https://en.wikipedia.org/wiki/Seed_dispersal#Allochory'
     },
     {
