@@ -32,6 +32,8 @@ export const renderTestCardTemplate = (collection, context) => {
     const testCard = document.querySelector('.js-test-card-container');
     const testCardIcon = testCard.querySelector('.js-card-link');
 
+    const item = collection.nextItem || collection.items[context.bonus.itemIndex];
+
     const hideCurrentCard = (container, card) => {
 
         container.classList.remove('swap-in-card');
@@ -47,7 +49,7 @@ export const renderTestCardTemplate = (collection, context) => {
         container.classList.add('swap-in-card');
 
         const card = document.querySelector(selector);
-        const icon = card.querySelector('.js-card-link');
+        const icon = card.querySelector('.js-card-link');        
 
         return { card, icon };
     }
@@ -57,8 +59,6 @@ export const renderTestCardTemplate = (collection, context) => {
         const speciesContainer = document.querySelector('.js-species-container');
         const taxonContainer = document.querySelector('.js-taxon-container');
 
-        const item = collection.nextItem;
-        
         const renderSpeciesCard = async () => {
 
             renderCard(collection, 'SWAP_OUT', item, speciesContainer, false);
@@ -91,6 +91,13 @@ export const renderTestCardTemplate = (collection, context) => {
         };
 
         await renderSpeciesCard();
+
+        setTimeout(() => {
+            if(item.lichen) {
+                const cardName = document.querySelector('.js-species-card .js-card-link > span:nth-child(1)');
+                      cardName.innerHTML = 'Group';
+            }   
+        }, 500);
     });
 
     const traitCardLink = document.querySelector('.js-traits-link');
@@ -98,9 +105,7 @@ export const renderTestCardTemplate = (collection, context) => {
     const layout = store.getState().layout;
     
     const multichoices = [ 'species-scientifics', 'species-vernaculars', 'epithet', 'definition', 'family-strips' ];
-
-    const item = collection.nextItem || collection.items[context.bonus.itemIndex];
-
+    
     renderIcon(item.taxonomy, document);
 
     if(R.contains(layout.screens[1].name, multichoices)) {

@@ -88,7 +88,7 @@ export const buildTable = (collection, config, enums) => {
             rightsHolder: image.rightsHolder || 'Public domain',
             source: image.source,
             shortName: itemProperties.trimLatinName(item.name),
-            keyTrait: itemProperties.getActiveTrait(item, [{ name: traitName, formatter: trait => trait[0] }]) || '',
+            keyTrait: utils.capitaliseFirst(itemProperties.getActiveTrait(item, [{ name: traitName, formatter: trait => trait[0] }])) || '',
             keyTratLinkClass: keyTratLinkClass,
             familyLinkClass: item.family
                                 ? 'capitalise underline-link js-taxon-card-link' 

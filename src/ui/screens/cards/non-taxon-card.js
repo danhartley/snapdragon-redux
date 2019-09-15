@@ -10,7 +10,7 @@ import * as group from 'api/snapdragon/non-taxa';
 import { renderWiki } from 'wikipedia/wiki';
 import { renderWikiModal } from 'wikipedia/wiki-modal';
 import { renderTemplate } from 'ui/helpers/templating';
-import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
+import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 
 import cardTemplate from 'ui/screens/cards/non-taxon-card-template.html';
 
@@ -51,10 +51,12 @@ export const renderNonTaxonCard = (mode = 'STAND_ALONE', keyTrait, parent = DOM.
         return R.take(9, itemImages);
     };
 
-    const callback = id => {
+    const callback = async id => {
 
         const nonTaxon = nonTaxa.find(nt => nt.id === id)
-        const items = firestore.getSpeciesFromList(nonTaxon.examples);
+
+        let items = await firestore.getSpeciesByNameInParallel(nonTaxon.examples);
+            items = items.filter(item => item.images);
 
         const portraitImagesNode = document.querySelector('.js-non-taxon-card-images');
 
@@ -101,7 +103,7 @@ export const renderNonTaxonCard = (mode = 'STAND_ALONE', keyTrait, parent = DOM.
 
     parent.innerHTML = '';
 
-    renderTemplate({group: nonTaxa, imageUrl: url}, template.content, parent);
+    renderTemplate({group: nonTaxa, image: scaleImage({ url })}, template.content, parent);
 
     if(mode === 'MODAL') {
         rootNode.querySelector('#cardModal .js-modal-text-title').innerHTML = `Lichen Forms`;
