@@ -278,9 +278,9 @@ div.text-entry {
     height: 1.5rem;
 }
 
-.test-card-container {
+/* .test-card-container {
     padding: .5rem;
-}
+} */
 
 .trait-test-card-container {
     display: grid;

@@ -1,8 +1,8 @@
 import { utils } from 'utils/utils';
 
 const getHTML5Location = () => {
-  return new Promise(function (resolve, reject) {
 
+  return new Promise(function (resolve, reject) {
     function success(position) {
       resolve([position.coords.latitude, position.coords.longitude]);
     }
@@ -66,7 +66,7 @@ async function getMapBoxPlace(long, lat, config) {
   return await place;
 }
 
-export async function getPlace(config, force = false) {
+export const getPlace = async (config, force = false) => {
   if(!!config.place && !force) {
     const response = new Promise(resolve => {
       resolve(config.place);

@@ -828,7 +828,7 @@ a.dropdown-item {
 
 .id-box {
   display: flex;
-  padding: .5rem;
+  padding: 1rem;
   /* padding: .5rem 0;
   margin: 0 0 1rem 0;
   background-color: var(--snap-taxon-card-background); */
