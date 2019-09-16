@@ -9,15 +9,6 @@
     position: relative;
 }
 
-/* .names-container {
-  font-size: 0.8rem;
-} */
-
-/* .names-container-large > div:nth-child(1) > span:nth-child(1)  {
-  font-size: 1.5rem;
-  margin-top: 1.25rem;
-} */
-
 .names-badge {    
     vertical-align: top;
     cursor: pointer;
@@ -140,9 +131,16 @@ td:empty:after{
     text-transform: initial;
 }
 
+.card-scrollable-container {
+  overflow-y: scroll;
+  height: calc(100vh - 22rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .info-details {
-  height: calc(90vh - 18rem);  
-  /* padding: 0 1em; */
+  height: calc(90vh - 20rem);  
   margin: .5rem 0;
   overflow-y: scroll;
 }
@@ -203,18 +201,4 @@ td:empty:after{
 
 .relationship-card .cols > div:nth-child(1)::after {
   content: ":";
-}
-
-@media (min-width: 768px) {
-
-  .info-details .info_detail img {   
-    max-height: 10rem;
-  }
-
-    /* TRAITS CAROUSEL */
-
-    .info.carousel.slide .carousel-item div {
-        padding: .5rem;
-        font-size: 1rem;
-    }
 }

@@ -39,10 +39,24 @@ export const lichen = [
         level: 2
     },
     {
+        term: "Soredium",
+        definition: "Common reproductive structures of lichens.",
+        wiki: "https://en.wikipedia.org/wiki/Soredium",
+    },
+    {
         term: "Epiphyte",
         definition: "An organism that grows on the surface of a plant and derives its moisture and nutrients from the air, rain, water or surrounding debris.",
-        wiki: "https://en.wikipedia.org/wiki/Epiphyte",
-        level: 2
+        wiki: "https://en.wikipedia.org/wiki/Epiphyte"
+    },
+    {
+        term: "Gametophyte",
+        definition: "One of the two alternating phases in the life cycle of plants and algae. It is the sexual phase (see Sporophyte).",
+        wiki: "https://en.wikipedia.org/wiki/Gametophyte"
+    },
+    {
+        term: "Sporophyte",
+        definition: "One of the two alternating phases in the life cycle of plants and algae. In seed plants it is the roots, stem, leaves, cones and flowers (see Gametophyte).",
+        wiki: "https://en.wikipedia.org/wiki/Sporophyte"
     },
     {
         term: "Thallus",
@@ -61,13 +75,11 @@ export const lichen = [
     },
     {
         term: "Podetium",
-        definition: "The upright secondary thallus in Cladonia lichens. It is a hollow stalk extending from the primary thallus.", 
-        level: 2
+        definition: "The upright secondary thallus in Cladonia lichens. It is a hollow stalk extending from the primary thallus."
     },
     {
         term: "Apothecium",
-        definition: "Wide, open, saucer-shaped or cup-shaped fruit body. Sessile and fleshy.", 
-        level: 2
+        definition: "Wide, open, saucer-shaped or cup-shaped fruit body. Sessile and fleshy."
     },
     {
         term: 'Rhizine',
@@ -127,6 +139,11 @@ export const lichen = [
         wiki: 'https://en.wikipedia.org/wiki/Placodioid_lichen'
     },
     {
+        term: 'Pruinescence',
+        definition: 'A "frosted" or dusty looking coating on top of a surface.',
+        wiki: 'https://en.wikipedia.org/wiki/Pruinescence'
+    },
+    {
         term: 'Lecanorine',
         definition: 'Shaped like a plate with a surrounding ring similar tissue to main non-fruiting body (after genus Lecanora).',
         wiki: 'https://en.wikipedia.org/wiki/Lecanorine_lichen'
@@ -160,5 +177,10 @@ export const lichen = [
         term: 'Isidium',
         definition: 'Vegetative (asexual) reproductive structure. Outgrowths from the thallus.',
         wiki: 'https://en.wikipedia.org/wiki/Isidium'
+    },
+    {
+        term: 'Podetium',
+        definition: 'The upright secondary thallus in Cladonia lichens. It is a hollow stalk extending from the primary thallus.',
+        wiki: 'https://en.wikipedia.org/wiki/Podetium'
     },
 ];
