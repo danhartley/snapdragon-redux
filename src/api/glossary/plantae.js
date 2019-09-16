@@ -10,6 +10,11 @@ export const plantae = [
         wiki: "https://en.wikipedia.org/wiki/Entomophily"
     },
     {
+        term: "Lignotuber",
+        definition: "A woody swelling of the root crown possessed by some plants as a protection against destruction of the plant stem, such as by fire.",
+        wiki: "https://en.wikipedia.org/wiki/Lignotuber"
+    },
+    {
         term: "Anemophily",
         definition: "Pollination whereby pollen is distributed by wind.",
         wiki: "https://en.wikipedia.org/wiki/Anemophily",
@@ -293,11 +298,6 @@ export const plantae = [
         wiki: 'https://en.wikipedia.org/wiki/Seed_dispersal#Allochory'
     },
     {
-        term: 'Anemochory',
-        definition: 'Seed dispersal by wind.',
-        wiki: 'https://en.wikipedia.org/wiki/Seed_dispersal#Allochory'
-    },
-    {
         term: 'Hydrochory',
         definition: 'Seed dispersal by water.',
         wiki: 'https://en.wikipedia.org/wiki/Seed_dispersal#Allochory'
@@ -343,7 +343,17 @@ export const plantae = [
         wiki: "https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#aristate"
     },
     {
-        term: "leaf sheath",
+        term: "Stoma",
+        definition: "A pore, found in the epidermis of leaves, stems, and other organs, that facilitates gas exchange.",
+        wiki: "https://en.wikipedia.org/wiki/Stoma"
+    },
+    {
+        term: "Culm",
+        definition: "The aerial (above-ground) stem of a grass or sedge.",
+        wiki: "https://en.wikipedia.org/wiki/Culm_(botany)"
+    },
+    {
+        term: "Leaf sheath",
         definition: "A structure at the base of a leaf's petiole that partly surrounds or protect the stem or another organ that it subtends.",
         wiki: "https://en.wiktionary.org/wiki/leaf_sheath"
     },
@@ -352,6 +362,12 @@ export const plantae = [
         definition: "C3 plants tend to thrive in areas where sunlight intensity and temperatures are moderate.",
         wiki: "https://en.wikipedia.org/wiki/C3_carbon_fixation",
         examples: ['Cirsium arvense']
+    },
+    {
+        term: "Crownshaft",
+        definition: "An elongated circumferential leaf base formation present on some species of palm.",
+        wiki: "https://en.wikipedia.org/wiki/Crownshaft",
+        examples: ['Roystonea regia']
     },
     {
         term: "Ruderal species",
@@ -730,7 +746,7 @@ export const plantae = [
         definition: 'Leaves are twice divided: the leaflets are arranged along a secondary vein that is one of several branching off the rachis. Each leaflet is called a pinnule.'
     },
     {
-        term: 'bifoliolate',
+        term: 'Bifoliolate',
         definition: 'Having two leaflets',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Leaf_morphology_Bifoliolate.png',
@@ -740,7 +756,7 @@ export const plantae = [
         }
     },
     {
-        term: 'bigeminate',
+        term: 'Bigeminate',
         definition: 'Having two leaflets, each leaflet being bifoliolate',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Leaf_morphology_Bigeminate.png',
@@ -750,7 +766,7 @@ export const plantae = [
         }
     },
     {
-        term: 'acicular',
+        term: 'Acicular',
         definition: 'Slender and pointed, needle-like.',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Leaf_morphology_acicular.png',
@@ -761,7 +777,7 @@ export const plantae = [
         }
     },
     {
-        term: 'acuminate',
+        term: 'Acuminate',
         definition: 'Tapering to a long point in a concave manner.',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/7/72/Leaf_morphology_acuminate.png',
@@ -772,7 +788,7 @@ export const plantae = [
         }
     },
     {
-        term: 'acute',
+        term: 'Acute',
         definition: 'Pointed, having a short sharp apex angled less than 90°.',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Leaf_morphology_Acute.png',
@@ -783,7 +799,7 @@ export const plantae = [
         }
     },
     {
-        term: 'apiculate',
+        term: 'Apiculate',
         definition: 'Tapering and ending in a short, slender point.',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Leaf_morphology_Apiculate.png',
@@ -922,14 +938,6 @@ export const plantae = [
         wiki: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Leaf_morphology_cuneate.png'
     },
     {
-        term: 'Acicular',
-        definition: 'Slender and pointed, needle-like.',
-        img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Leaf_morphology_acicular.png'
-        },
-        wiki: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Leaf_morphology_cuneate.png'
-    },
-    {
         term: 'Succulent',
         definition: '(Plants) that have some parts that are more than normally thickened and fleshy, usually to retain water in arid climates or soil conditions.',
         wiki: 'https://en.wikipedia.org/wiki/Succulent_plant'
@@ -973,5 +981,15 @@ export const plantae = [
         term: 'Serotinous',
         definition: 'Releasing seeds in response to an environmental trigger.',
         wiki: 'https://en.wikipedia.org/wiki/Serotiny'
+    },
+    {
+        term: 'Sclerophyll',
+        definition: 'A type of vegetation that has hard leaves, short internodes (the distance between leaves along the stem) and leaf orientation parallel or oblique to direct sunlight.',
+        wiki: 'https://en.wikipedia.org/wiki/Sclerophyll'
+    },
+    {
+        term: 'Prophyll',
+        definition: 'The frequently specialised or reduced leaf produced at the first node of a new shoot.',
+        wiki: 'https://en.wiktionary.org/wiki/prophyll'
     },
 ];

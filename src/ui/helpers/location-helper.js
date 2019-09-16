@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { getIPLocation } from 'geo/geo';
 
-export async function initialiseConfig(originalConfig) {
+export const initialiseConfig = async originalConfig => {
 
     const config = R.clone(originalConfig);
 

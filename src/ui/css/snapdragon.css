@@ -828,16 +828,17 @@ a.dropdown-item {
 
 .id-box {
   display: flex;
-  padding: .5rem 0;
+  padding: 1rem;
+  /* padding: .5rem 0;
   margin: 0 0 1rem 0;
-  background-color: var(--snap-taxon-card-background);
+  background-color: var(--snap-taxon-card-background); */
 }
 
 .id-box > div:nth-child(1) {
   display: none;
 }
 
-.id-box > div:nth-child(2) {
+/* .id-box > div:nth-child(2) {
   flex: 3 !important;
   padding: 0 1rem;
   text-align: left;
@@ -846,7 +847,7 @@ a.dropdown-item {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .data-box-container {
   margin: 0;

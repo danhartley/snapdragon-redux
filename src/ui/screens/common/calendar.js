@@ -4,7 +4,7 @@ import { getHistogram, getInatPlaceId } from 'api/inat/inat';
 import { renderTemplate } from 'ui/helpers/templating';
 import calendarTemplate from 'ui/screens/common/calendar-template.html';
 
-export async function renderCalendar(parent, item, config) {
+export const renderCalendar = async (parent, item, config) => {
 
     const template = document.createElement('template');
 
@@ -13,6 +13,8 @@ export async function renderCalendar(parent, item, config) {
     parent.innerHTML = '';
 
     const place = await getPlace(config);
+
+    console.log(place)
 
     const country = place.country.place_name_en || place.country;
 
