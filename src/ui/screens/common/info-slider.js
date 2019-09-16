@@ -47,7 +47,7 @@ const renderInfoSlider = (item, traits, parent, id) => {
             activeTraitKey = activeTrait.querySelector('div:nth-child(1)').innerHTML;
             activeTraitValue = activeTrait.querySelector('div:nth-child(3)').innerHTML;
             renderInfoDetails(item, activeTraitKey, activeTraitValue, description);
-        }, 1000);
+        }, 500);
     };
 
     changeTraitHandler();

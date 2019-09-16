@@ -5,11 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import 'ui/css/snapdragon-colours.css';
 import 'ui/css/snapdragon.css';
-import 'ui/css/snapdragon-media.css';
 import 'ui/css/groups/test-card.css';
 import 'ui/css/groups/species-card.css';
 import 'ui/css/groups/modal.css';
-import 'ui/css/groups/media-heights.css';
+import 'ui/css/snapdragon-media.css';
 
 import { store } from 'redux/store';
 import { nextLesson } from 'ui/setup/next-lesson';
