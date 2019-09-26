@@ -35,7 +35,7 @@ async function getItems(collection, config) {
                     lat: place.query[1]
                 };
 
-                actions.boundUpdateConfig(config);
+                // actions.boundUpdateConfig(config);
 
                 return await getInatSpecies(config);
             }
@@ -194,7 +194,7 @@ export const collectionHandler = async (collection, config, counter, callback, c
             collection.glossary = [ ...collection.glossary, 'common'];
             collection.default = false;
 
-            actions.boundNewCollection({ config, collection });
+            // actions.boundNewCollection({ config, collection });
             
             callback(collection, config)();
 

@@ -16,17 +16,19 @@ import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
 import { renderHome } from 'ui/screens/home/home';
 import { enums } from 'ui/helpers/enum-helper';
 
-export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
+export const renderSpeciesCollectionList = (collection, args) => {
 
-    // console.log('species list');
+    const { readOnlyMode = false, parent, tableParent, loadSpeciesCallback } = args;
 
     const { config: configState, history, counter, enums: traitEnums, lesson  } = store.getState();
 
     let config = R.clone(configState);
     
-    speciesPendingSpinner(config);
+    if(!collection.itemNames) {
+        speciesPendingSpinner(config);
+    }
 
-    if(!config.guide.ready || !collection) return;
+    // if(!config.guide.ready || !collection) return; // hack, may be required!!
 
     config.collection = { id: collection.id };
 
@@ -184,15 +186,17 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
     };    
 
     if(readOnlyMode) {
-        buildTable(collection, config, traitEnums);
-        handleUserEvents();
+        buildTable(collection, { config, enums: traitEnums } );
+        handleUserEvents();        
     }
     else {
         function callback(collection, config) {
 
+            loadSpeciesCallback();
+
             if(collection.items && collection.items.length) {
                 return function () {
-                    buildTable(collection, config, traitEnums);
+                    buildTable(collection, { config, enums: traitEnums, overrideParent: tableParent });
                     handleUserEvents();
                     const { counter } = store.getState();
                     listeners.forEach(listener => listener(counter, collection.items.length));
@@ -247,7 +251,10 @@ const carouselControlHandler = event => {
     }
 
     let nextItem = collection.items.find((item,index) => index === currentIndex);
-    const parent = document.querySelector(`#${modal} .js-modal-body`);
+
+    // if(!overrideParent) {
+        parent = document.querySelector(`#${modal} .js-modal-body`);
+    // }
     
     switch(card) {
         case 'species-card':

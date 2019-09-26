@@ -163,6 +163,7 @@
 
 #cardModal .modal-content {
   height: calc(100vh - 3rem);
+  width: calc(50vw - 5rem);
 }
 
 #cardModal .imageSlider .carousel-item {

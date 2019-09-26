@@ -70,8 +70,8 @@ table {
   
   /* SORT INDICATORS */
   
-  .table-header th:nth-child(2):after,
-  .table-header th:nth-child(3):after {
+  .species-list .table-header th:nth-child(2):after,
+  .species-list .table-header th:nth-child(3):after {
     display: inline-block;
     width: 0;
     height: 0;
@@ -85,8 +85,6 @@ table {
     cursor: default;
   }
   
-  /* .table-header th:nth-child(1) > div,
-  .table-footer td:nth-child(1) > div { */
   .table-header th:nth-child(1) > span,
   .table-footer td:nth-child(1) > span {
     width: 5rem;
@@ -98,13 +96,15 @@ table {
   
   .table-header th:nth-child(2) {
     flex: 3;
+    align-items: flex-start;
   }
   
   .table-row td:nth-child(2) {
     flex: 3;
     display: flex;
+    align-items: flex-start;
     flex-direction: column;
-    align-items: initial;
+    /* align-items: initial; */
     justify-content: space-evenly;
   }
   
@@ -137,8 +137,10 @@ table {
  }
 
  .species-list .scrollable {    
-  top: 2.8rem;
-  bottom: 5.8rem; /* 2.5 + .3 + 2.5 + .5 */
+  top: 7.5%;
+  bottom: calc(7.5% + 3rem);
+  /* top: 2.8rem;
+  bottom: 5.8rem; 2.5 + .3 + 2.5 + .5 */
 }
   
   @media (min-width: 768px) {
@@ -164,7 +166,7 @@ table {
 
     .species-list .scrollable {
       bottom: 0;
-      top: 0;
+      top: 0;      
     }
   }
 
@@ -192,7 +194,7 @@ table {
         display: none;
     }
 
-    .table-header th:nth-child(3) span:after {
+    .species-list .table-header th:nth-child(3) span:after {
         display: inline-block;
         width: 0;
         height: 0;
@@ -206,7 +208,7 @@ table {
         cursor: default;
     }
 
-    .table-header th:nth-child(4):after, .table-header th:nth-child(5):after {
+    .species-list .table-header th:nth-child(4):after, .species-list .table-header th:nth-child(5):after {
         display: inline-block;
         width: 0;
         height: 0;
