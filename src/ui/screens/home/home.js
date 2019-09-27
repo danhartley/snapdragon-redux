@@ -47,8 +47,6 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     template.innerHTML = introTemple;
     renderTemplate({}, template.content, document.querySelector('.js-snapdragon-tag'));
 
-    // if(collection.id === 7) return;
-
     let state = (config.collection.id === 0 || !config.guide.ready)
             ? enums.lessonState.CREATE_LESSON : (lesson && lesson.layoutCounter > 0)
                 ? enums.lessonState.RESUME_LESSON

@@ -70,6 +70,10 @@ table {
   
   /* SORT INDICATORS */
   
+  th {
+    text-align: initial;
+  }
+
   .species-list .table-header th:nth-child(2):after,
   .species-list .table-header th:nth-child(3):after {
     display: inline-block;

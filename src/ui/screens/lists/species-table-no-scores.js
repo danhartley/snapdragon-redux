@@ -178,8 +178,7 @@ export const buildTable = (collection, args) => {
     traitNameHeader.innerHTML = '<span>Feature</span>';
     iconicTaxonHeader.innerHTML = overrideParent ? '' : '<span><i class="fas fa-sliders-h"></i></span>';
     filterHeader.appendChild(checkbox); 
-    imageHeader.innerHTML = '<span><i class="fas fa-undo"></i></span>';
-    // imageHeader.innerHTML = '<div></div>';
+    imageHeader.innerHTML = overrideParent ? '' : '<span><i class="fas fa-undo"></i></span>';
     if(wide) {        
         headerRow.appendChild(imageHeader);
         headerRow.appendChild(speciesHeader);    

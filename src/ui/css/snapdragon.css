@@ -2111,6 +2111,6 @@ a.collection-disabled {
 }
 
 .lesson-list .scrollable {
-  margin: .5rem 1rem;
+  margin: .5rem;
   pointer-events: initial;
 }

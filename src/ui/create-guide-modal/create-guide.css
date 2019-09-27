@@ -835,13 +835,6 @@
     margin-top: -.1rem;
   }
 
-  /* .actions {
-    display: flex;    
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin: 0 .5rem;
-  } */
-
   .actions {
     height: calc(100vh - 16rem);
     margin: .5rem;
@@ -1010,7 +1003,6 @@
     .btn-group.btn-group-toggle.scrollable {
       left: 0rem;
       right: 0rem;
-      /* margin: 3rem 0 0 0; */
     }
 
     .guide-example-lessons .btn-group.btn-group-toggle.scrollable {

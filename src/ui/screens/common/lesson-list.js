@@ -69,7 +69,7 @@ export const renderLessons = () => {
         const message = selectedTitle.parentElement.querySelector('span:nth-child(2)');
               message.classList.remove('hide');
         const loadSpeciesCallback = () => callback(message);
-        renderSpeciesCollectionList(selectedLesson, { readOnlyMode: false, parent: container, tableParent: container, loadSpeciesCallback });
+        renderSpeciesCollectionList(selectedLesson, { readOnlyMode: false, parent: container, tableParent: container, loadSpeciesCallback, isInCarousel: false });
       }
     }));
 };

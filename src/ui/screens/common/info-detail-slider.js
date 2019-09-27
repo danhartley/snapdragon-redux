@@ -12,6 +12,10 @@ export const renderInfoDetails = (item, activeTraitKey, activeTraitValue, descri
 
     const template = document.createElement('template');
     const parent = document.querySelector('.js-info-box-details');
+
+
+    if(!parent) return; // hack! currently the case with (non-species) taxon cards (see same below)
+
           parent.innerHTML = '';
 
     if(activeTraitKey.toLowerCase() === 'description') {        
@@ -28,7 +32,7 @@ export const renderInfoDetails = (item, activeTraitKey, activeTraitValue, descri
 
         const details = firestore.getDefinition(activeTraitValue, collection.glossary);
 
-        if(!parent) return; // taxon info sliders
+        if(!parent) return; // hack! taxon info sliders
 
         if(details && details.length > 0) {            
             details.forEach(detail => {
