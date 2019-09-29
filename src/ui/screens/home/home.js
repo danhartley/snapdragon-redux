@@ -17,6 +17,8 @@ import { renderSaveLesson, listenToCloseSaveLessonModal } from 'ui/custom-lesson
 import { enums } from 'ui/helpers/enum-helper';
 import { deactivateHomeIcon } from 'ui/fixtures/navigation';
 
+import { renderLessons } from 'ui/screens/common/lesson-list';
+
 import homeTemplate from 'ui/screens/home/home-template.html';
 import introTemple from 'ui/screens/home/home-intro-template.html';
 
@@ -28,11 +30,14 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     if(home) subscription.remove(home);
     
     console.log('RENDERHOME');
-    
+
     if(collection.id === 0) {
         subscription.add(renderSpeciesGrid, 'counter', 'flow');
+        renderSpeciesGrid();
+        // renderExampleGuideHandler();
+        // renderLessons();
     }
-
+    
     const template = document.createElement('template');
     template.innerHTML = homeTemplate;
 
@@ -93,15 +98,13 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
         const id = parseInt(config.collection.id);
         collection = collection.items ? collection : collections.find(c => c.id === id);
         if(collection && collection.default) {
-            renderSpeciesCollectionList(R.clone(collection));
+            renderSpeciesCollectionList(R.clone(collection), { readOnlyMode: false });
         }
         else {
-            renderSpeciesCollectionList(collection);
+            renderSpeciesCollectionList(collection, { readOnlyMode: false });
         }
         actionLink.disabled = true;
-        actionLink.classList.add('disabled');        
-        // const home = subscription.getByName('renderHome');
-        // if(home) subscription.remove(home);
+        actionLink.classList.add('disabled');
     };
 
     const beginLessonHandler = () => {
@@ -110,8 +113,6 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
         actionLink.disabled = false;
         const grid = subscription.getByName('renderSpeciesGrid');
         if(grid) subscription.remove(grid);
-        // const home = subscription.getByName('renderHome');
-        // if(home) subscription.remove(home);
     };
 
     const guideSummary = speciesCount => {
@@ -223,7 +224,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
                 guideSummary(speciesCount);
                                 
                 if(loadSpeciesList) {
-                    renderSpeciesCollectionList(collection, true);                
+                    renderSpeciesCollectionList(collection, { readOnlyMode: true });                
                 }                
                 break;
         }

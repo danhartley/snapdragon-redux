@@ -16,17 +16,19 @@ import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
 import { renderHome } from 'ui/screens/home/home';
 import { enums } from 'ui/helpers/enum-helper';
 
-export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
+export const renderSpeciesCollectionList = (collection, args) => {
 
-    // console.log('species list');
+    const { readOnlyMode = false, parent, tableParent, loadSpeciesCallback, isInCarousel = true } = args;
 
     const { config: configState, history, counter, enums: traitEnums, lesson  } = store.getState();
 
     let config = R.clone(configState);
     
-    speciesPendingSpinner(config);
+    if(!collection.itemNames) {
+        speciesPendingSpinner(config);
+    }
 
-    if(!config.guide.ready || !collection) return;
+    // if(!config.guide.ready || !collection) return; // hack!, may be required!!
 
     config.collection = { id: collection.id };
 
@@ -91,8 +93,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                 link.addEventListener('click', event => {                    
                     const name = event.target.dataset.name;
                     document.querySelector('#cardModal .prev > span').dataset.card = 'species-card';
-                    document.querySelector('#cardModal .next > span').dataset.card = 'species-card';
-                    renderCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal, true);
+                    renderCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal, isInCarousel);
                 });
             });
 
@@ -115,7 +116,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                     document.querySelector('#cardModal .prev > span').dataset.card = 'taxon-card';
                     document.querySelector('#cardModal .next > span').dataset.rank = rank;
                     document.querySelector('#cardModal .next > span').dataset.card = 'taxon-card';
-                    renderTaxonCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal, taxon, rank);
+                    renderTaxonCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal, taxon, rank, isInCarousel);
                 });
             });
 
@@ -184,15 +185,17 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
     };    
 
     if(readOnlyMode) {
-        buildTable(collection, config, traitEnums);
-        handleUserEvents();
+        buildTable(collection, { config, enums: traitEnums } );
+        handleUserEvents();        
     }
     else {
         function callback(collection, config) {
 
+            loadSpeciesCallback();
+
             if(collection.items && collection.items.length) {
                 return function () {
-                    buildTable(collection, config, traitEnums);
+                    buildTable(collection, { config, enums: traitEnums, overrideParent: tableParent });
                     handleUserEvents();
                     const { counter } = store.getState();
                     listeners.forEach(listener => listener(counter, collection.items.length));
@@ -247,14 +250,15 @@ const carouselControlHandler = event => {
     }
 
     let nextItem = collection.items.find((item,index) => index === currentIndex);
-    const parent = document.querySelector(`#${modal} .js-modal-body`);
+
+    parent = document.querySelector(`#${modal} .js-modal-body`);
     
     switch(card) {
         case 'species-card':
-            renderCard(collection, 'MODAL', nextItem, parent, true);
+            renderCard(collection, 'MODAL', nextItem, parent, isInCarousel);
             break;
         case 'taxon-card':
-            renderTaxonCard(collection, 'MODAL', nextItem, parent, null, rank);
+            renderTaxonCard(collection, 'MODAL', nextItem, parent, null, rank, isInCarousel);
             break;    
     }    
 };

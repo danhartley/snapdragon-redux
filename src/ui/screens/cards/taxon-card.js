@@ -16,7 +16,7 @@ document.querySelector('#cardModal .carousel').addEventListener('click', event =
     transition = event.target.dataset.transition;
 });
 
-export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.rightBody, speciesTaxon, rank) => {
+export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.rightBody, speciesTaxon, rank, isInCarousel = true) => {
   
     try {
 
@@ -125,6 +125,9 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
             next.dataset.id = item.id;
             next.dataset.transition = 'next';
             next.dataset.modal = 'cardModal';
+
+            if(prev) isInCarousel ? prev.classList.remove('hide-important') : prev.classList.add('hide-important');
+            if(next) isInCarousel ? next.classList.remove('hide-important') : next.classList.add('hide-important');
 
         }
         

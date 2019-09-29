@@ -7,5 +7,5 @@ export const renderHistory = history => {
 
     console.log('\x1b[32m', 'renderHistory');
 
-    renderSpeciesCollectionList(collection, true);
+    renderSpeciesCollectionList(collection, { readOnlyMode: true });
 }    

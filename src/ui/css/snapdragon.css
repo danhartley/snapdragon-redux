@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+html {
+  height: 100vh;
+}
+
 body {
   display: flex;
   align-items: center;
@@ -90,12 +94,14 @@ hr {
 
 .btn {
   color: var(--snap-text-light);
-  height: 2.5rem;
+  /* height: 2.5rem; */
+  min-height: 2.5rem;
+  height: 5%;
   letter-spacing: 0.03rem;
 }
 
 .snapdragon-options  .btn.btn-secondary {
-  height: 2rem;
+  /* height: 2rem; */
   letter-spacing: 0.03rem;
 }
 
@@ -234,6 +240,13 @@ a.dropdown-item {
   cursor: pointer;
   font-size: 0.8rem;
   text-transform: uppercase;
+}
+
+.active-title {
+  text-decoration: none;
+  border-bottom: solid .05rem !important;
+  cursor: pointer;
+  pointer-events: initial;
 }
 
 .toUpperCase {
@@ -426,13 +439,13 @@ a.dropdown-item {
 .right-grid {
   display: grid;
   grid-template-columns: 100%;
-  grid-column: 1;
+  /* grid-column: 1; */
   grid-auto-flow: column;
-  grid-template-areas:
+  /* grid-template-areas:
     "header"
     "progress"
     "squares"
-    "footer";
+    "footer"; */
 }
 
 .right-grid {
@@ -441,7 +454,8 @@ a.dropdown-item {
 
 .left-grid,
 .right-grid {
-  grid-template-rows: 3rem 0.25rem 12fr 3rem;
+  grid-template-rows: 7.5% 5px auto 7.5%;
+  /* grid-template-rows: 3rem 0.25rem 12fr 3rem; */
 }
 
 .left-body, .right-body {
@@ -464,9 +478,9 @@ a.dropdown-item {
   color: var(--snap-text-medium-dark);
 }
 
-.header-text {
+/* .header-text {
   font-size: 0.8rem;
-}
+} */
 
 .header > div:nth-child(2) {
   font-size: 0.6rem;
@@ -828,7 +842,8 @@ a.dropdown-item {
 
 .id-box {
   display: flex;
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
+  /* padding: 1rem; */
 }
 
 .id-box > div:nth-child(1) {
@@ -2071,4 +2086,32 @@ a.collection-disabled {
 .clearSpacing {
   margin: 0 !important;
   padding: 0 !important;
+}
+
+.lesson-list {
+  position: relative;
+}
+
+.lesson-list > div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.lesson-list .btn-group label:nth-of-type(2n) {
+  background-color: var(--snap-lesson-row-green);
+}
+
+.lesson-list .btn-group label:nth-of-type(2n+1) {
+  background-color: var(--snap-lesson-row-blue);
+}
+
+.lesson-list .btn.btn-secondary {
+  height: initial;
+  min-height: initial;
+}
+
+.lesson-list .scrollable {
+  margin: .5rem;
+  pointer-events: initial;
 }

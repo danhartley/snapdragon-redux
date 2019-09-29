@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-<div>
+<!-- <div> -->
     <div></div>
     <div class="scrollable">
         <div>
@@ -23,7 +23,7 @@
                         </td>
                         <td>
                             <span class="js-test-card-container-link">
-                                <span data-toggle="modal" data-name="{{ item.name }}" data-target="#cardModal" class="capitalise underline-link">{{ item.vernacularName }}</span>
+                                <span data-toggle="modal" data-name="{{ item.name }}" data-type="speciesCardLink" data-target="#cardModal" class="capitalise underline-link">{{ item.vernacularName }}</span>
                             </span>
                             <span class="latin-name wide-screen">
                                 <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="genus" data-genus="{{ item.genus }}" data-target="#cardModal" class="{{ item.genusLinkClass }}">{{ item.genus }}</span> <span>{{ item.species }}</span>
@@ -55,7 +55,7 @@
             </table>
         </div>    
     </div>
-</div>
+<!-- </div> -->
 <div>
     <div class="list-continue-btn action-update portrait js-list-footer">
         <button class="btn btn-light js-species-list-btn-action">Continue lesson</button>

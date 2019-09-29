@@ -7,8 +7,8 @@ import { actions } from 'redux/actions/action-creators';
 import { renderHome } from 'ui/screens/home/home';
 import { returnTaxonIcon } from 'ui/helpers/icon-handler';
 import { enums } from 'ui/helpers/enum-helper';
-
 import { renderTemplate } from 'ui/helpers/templating';
+
 import exampleGuideTemplate from 'ui/example-guide-modal/example-guide-template.html';
 import exampleLessonsTemplate from 'ui/example-guide-modal/example-guide.html';
 

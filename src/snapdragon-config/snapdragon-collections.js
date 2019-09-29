@@ -381,6 +381,26 @@ const snapdragonMushroomsEasternUSA = {
         , 'Polyporus squamosus',
         'Laetiporus cincinnatus'        
     ],
+    producer: 'Adam Haritan, Learn Your Land',
+    video: {
+      Id: '6PNq6paMBXU',
+      startAt: 0,
+      title: '16 Wild Edible Mushrooms You Can Forage This Autumn',
+      intro: 'I hope you enjoy this brief introduction to foraging edible mushrooms in Eastern North America. When you\'ve finished watching, review what we covered to see how much you remember, and to reinforce what you learnt.',
+      owner: 'Learn Your Land',
+      ownerURL: 'https://www.youtube.com/channel/UCcbf8wnyVJl631LAmAbo7nw',
+      presenter: 'Adam Haritan',
+      links: [
+        {
+          label: 'Subscribe to the Learn Your Land email newsletter here',
+          url: ''
+        },
+        {
+          label: 'Website',
+          url: 'http://learnyourland.com/'
+        }
+      ],
+    },
     guide: {
       locationPlace: 'Mushrooms Eastern USA',
       locationType: 'taxon',

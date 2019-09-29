@@ -8,7 +8,9 @@ import { iconicTaxa, matchTaxon, matchIcon } from 'api/snapdragon/iconic-taxa';
 
 import speciesTemplate from 'ui/screens/lists/species-table-template.html';
 
-export const buildTable = (collection, config, enums) => {
+export const buildTable = (collection, args) => {
+
+    const { config, enums, overrideParent } = args;
 
     const template = document.createElement('template');
 
@@ -103,11 +105,19 @@ export const buildTable = (collection, config, enums) => {
     });
 
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
-    parent.innerHTML = '<div class="snapdragon-container species-list js-species-list"></div>';
-    parent = parent.querySelector('.snapdragon-container.js-species-list');
+    if(!overrideParent) { // hacky!!
+        parent.innerHTML = '<div class="snapdragon-container species-list js-species-list"></div>';
+        parent = parent.querySelector('.snapdragon-container.js-species-list');
+    }
+    parent = overrideParent || parent;
     template.innerHTML = speciesTemplate;
 
     renderTemplate({ itemImages }, template.content, parent);
+
+    if(overrideParent) {
+        const species = overrideParent.querySelector('.scrollable');
+        overrideParent.style.minHeight = `${species.offsetHeight}px`;
+    }
 
     const keyTraits = document.querySelectorAll('.js-key-trait-link');
 
@@ -166,10 +176,9 @@ export const buildTable = (collection, config, enums) => {
     speciesHeader.innerHTML = '<span>Species</span';
     familyHeader.innerHTML = '<span>Family</span><span>Order</span>';
     traitNameHeader.innerHTML = '<span>Feature</span>';
-    iconicTaxonHeader.innerHTML = '<span><i class="fas fa-sliders-h"></i></span>';
+    iconicTaxonHeader.innerHTML = overrideParent ? '' : '<span><i class="fas fa-sliders-h"></i></span>';
     filterHeader.appendChild(checkbox); 
-    imageHeader.innerHTML = '<span><i class="fas fa-undo"></i></span>';
-    // imageHeader.innerHTML = '<div></div>';
+    imageHeader.innerHTML = overrideParent ? '' : '<span><i class="fas fa-undo"></i></span>';
     if(wide) {        
         headerRow.appendChild(imageHeader);
         headerRow.appendChild(speciesHeader);    
