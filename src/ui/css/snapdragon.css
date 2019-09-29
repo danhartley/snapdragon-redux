@@ -842,7 +842,8 @@ a.dropdown-item {
 
 .id-box {
   display: flex;
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
+  /* padding: 1rem; */
 }
 
 .id-box > div:nth-child(1) {

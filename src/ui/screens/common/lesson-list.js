@@ -18,7 +18,7 @@ export const renderLessons = () => {
     const template = document.createElement('template');
           template.innerHTML = exampleGuideTemplate;
 
-    const lessons = collections.filter(lesson => !lesson.default).filter(lesson => lesson.itemNames);
+    const lessons = collections.filter(lesson => !lesson.default).filter(lesson => lesson.behaviour === 'static');
 
     const loadLessons = () => {
 

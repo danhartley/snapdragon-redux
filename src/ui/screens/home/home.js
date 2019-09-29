@@ -32,9 +32,10 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     console.log('RENDERHOME');
 
     if(collection.id === 0) {
-        // subscription.add(renderSpeciesGrid, 'counter', 'flow');
+        subscription.add(renderSpeciesGrid, 'counter', 'flow');
+        renderSpeciesGrid();
         // renderExampleGuideHandler();
-        renderLessons();
+        // renderLessons();
     }
     
     const template = document.createElement('template');

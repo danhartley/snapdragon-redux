@@ -318,14 +318,14 @@
     .species-grid-container {
         display: flex;
         align-items: center;
-        display: none;
+        /* display: none; */
     }
 
     .species-grid {
-        /* width: 389px; */
+        width: 389px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        /* height: 600px; */
+        height: 600px;
         overflow: hidden;
     }
 
@@ -474,7 +474,9 @@
     }
 
     .data-box-container {
-        margin: 0 .5rem;
+        /* margin: 0 .5rem; */
+        margin: 0;
+        padding: 0 0 .25rem 0;
     }
 
     .data-box-container div.native {
@@ -517,9 +519,9 @@
         width: 600px;
     } */
 
-    /* .species-grid {
+    .species-grid {
       width: 600px;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    } */
+    }
 }

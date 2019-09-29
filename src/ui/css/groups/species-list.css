@@ -74,6 +74,11 @@ table {
     text-align: initial;
   }
 
+
+  .table-header th:nth-child(1) {
+    min-width: 80px;
+  }
+
   .species-list .table-header th:nth-child(2):after,
   .species-list .table-header th:nth-child(3):after {
     display: inline-block;

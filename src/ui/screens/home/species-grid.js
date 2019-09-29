@@ -23,7 +23,7 @@ export const renderSpeciesGrid = () => {
         //             ? firestore.getAllSpecies().filter(species => species.taxonomy).filter(species => species.taxonomy.class.toLowerCase() === 'aves')
         //             : firestore.getAllSpecies();
 
-        const species = collection.items;
+        // const species = collection.items;
 
         const imageCount = 40;
 
