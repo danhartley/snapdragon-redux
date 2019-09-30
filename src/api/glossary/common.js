@@ -136,4 +136,9 @@ export const commmon = [
         definition : "A measurable gradient in a single character (or biological trait) of a species across its geographical range.",
         wiki: 'https://en.wikipedia.org/wiki/Cline_(biology)'
     },
+    {
+        term : "Polymorphism",
+        definition : "The occurrence of two or more clearly different morphs or forms (alternative phenotypes), in the population of a species.",
+        wiki: 'https://en.wikipedia.org/wiki/Polymorphism_(biology)'
+    },
 ];

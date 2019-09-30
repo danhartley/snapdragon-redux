@@ -32,10 +32,11 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     console.log('RENDERHOME');
 
     if(collection.id === 0) {
-        subscription.add(renderSpeciesGrid, 'counter', 'flow');
-        renderSpeciesGrid();
-        // renderExampleGuideHandler();
-        // renderLessons();
+        // subscription.add(renderSpeciesGrid, 'counter', 'flow');
+        // renderSpeciesGrid();
+        if(config.isLandscapeMode) {
+            renderLessons();
+        }
     }
     
     const template = document.createElement('template');
@@ -47,6 +48,10 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     template.innerHTML = introTemple;
     renderTemplate({}, template.content, document.querySelector('.js-snapdragon-tag'));
+
+    const lessonLink = document.querySelector('.js-show-lessons');
+
+    lessonLink.addEventListener('click', () => renderLessons());
 
     let state = (config.collection.id === 0 || !config.guide.ready)
             ? enums.lessonState.CREATE_LESSON : (lesson && lesson.layoutCounter > 0)

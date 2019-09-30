@@ -24,7 +24,8 @@ export const renderSpeciesCollectionList = (collection, args) => {
 
     let config = R.clone(configState);
     
-    if(!collection.itemNames) {
+    // if(!collection.itemNames) {
+    if(!collection.species) {
         speciesPendingSpinner(config);
     }
 
@@ -92,6 +93,14 @@ export const renderSpeciesCollectionList = (collection, args) => {
             speciesCardLinks.forEach((link, index) => {                
                 link.addEventListener('click', event => {                    
                     const name = event.target.dataset.name;
+                    const description = collection.items.find(i => i.name === name).description;
+                    if(description) {
+                        const id = event.target.dataset.id;
+                        const tr = document.querySelector(`#id_${id}`);
+                        const insert = document.createElement('tr');
+                              insert.append(description);
+                        tr.parentElement.insertBefore(insert, tr.nextSibling);
+                    }
                     document.querySelector('#cardModal .prev > span').dataset.card = 'species-card';
                     renderCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal, isInCarousel);
                 });

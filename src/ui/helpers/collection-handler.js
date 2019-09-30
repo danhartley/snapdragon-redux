@@ -62,9 +62,11 @@ async function getItems(collection, config) {
         //     }
         // };
 
-        const itemNames = collection.itemNames.length > 0 ? collection.itemNames : config.guide.itemNames;
+        const itemNames = collection.species.length > 0 ? collection.species.map(s => s.name) : config.guide.itemNames;
+        // const itemNames = collection.itemNames.length > 0 ? collection.itemNames : config.guide.itemNames;
 
-        return firestore.getSpeciesByNameInParallel(itemNames);
+        return firestore.getSpeciesInParallel(collection.species);
+        // return firestore.getSpeciesByNameInParallel(itemNames);
     }
 };
 

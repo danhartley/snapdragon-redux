@@ -91,7 +91,7 @@ export const addPhotos = () => {
         });
 
         const addPhotosToSpecies = async (name, photos) => {
-            const response = await firestore.addPhotos(name, photos);
+            const response = await firestore.addPhotos(name, photos);// remove inat stem
             console.log(response);
         };
 

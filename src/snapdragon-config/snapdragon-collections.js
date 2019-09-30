@@ -369,26 +369,69 @@ const mushroomDefaults = {
     items: []
 };
 
-const snapdragonMushroomsEasternUSA = {
+const learnYourLand1 = {
     ...mushroomDefaults,
     id: 7,
     type: 'taxon',
-    name: 'Mushrooms Eastern USA',            
-    itemNames: [ 
-        'Grifola frondosa', 'Laetiporus sulphureus', 'Hericium erinaceus', 'Lycoperdon perlatum',
-        'Lycoperdon pyriforme', 'Hydnum repandum', 'Craterellus tubaeformis', 'Hydnum umbilicatum', 
-        'Hericium americanum', 'Hericium coralloides', 'Calvatia gigantea', 'Armillaria mellea', 'Armillaria tabescens', 'Entoloma abortivum'
-        , 'Polyporus squamosus',
-        'Laetiporus cincinnatus'        
+    name: 'Learn Your Land - Autumn foraging',            
+    species: [ 
+        {
+          name: 'Grifola frondosa'
+        },
+        {
+          name: 'Laetiporus sulphureus'
+        },
+        {
+          name: 'Hericium erinaceus'
+        },
+        {
+          name: 'Lycoperdon perlatum'
+        },
+        {
+          name: 'Lycoperdon pyriforme'
+        },
+        {
+          name: 'Hydnum repandum'
+        },
+        {
+          name: 'Craterellus tubaeformis'
+        },
+        {
+          name: 'Hydnum umbilicatum'
+        },
+        {
+          name: 'Hericium americanum'
+        },
+        {
+          name: 'Hericium coralloides'
+        },
+        {
+          name: 'Calvatia gigantea'
+        },
+        {
+          name: 'Armillaria mellea'
+        },
+        {
+          name: 'Armillaria tabescens'
+        },
+        {
+          name: 'Entoloma abortivum'
+        },
+        {
+          name: 'Polyporus squamosus'
+        },        
+        {
+          name: 'Laetiporus cincinnatus'
+        },        
     ],
     producer: 'Adam Haritan, Learn Your Land',
     video: {
-      Id: '6PNq6paMBXU',
+      id: '6PNq6paMBXU',
       startAt: 0,
       title: '16 Wild Edible Mushrooms You Can Forage This Autumn',
       intro: 'I hope you enjoy this brief introduction to foraging edible mushrooms in Eastern North America. When you\'ve finished watching, review what we covered to see how much you remember, and to reinforce what you learnt.',
       owner: 'Learn Your Land',
-      ownerURL: 'https://www.youtube.com/channel/UCcbf8wnyVJl631LAmAbo7nw',
+      ownerUrl: 'www.youtube.com/channel/UCcbf8wnyVJl631LAmAbo7nw',
       presenter: 'Adam Haritan',
       links: [
         {
@@ -397,15 +440,91 @@ const snapdragonMushroomsEasternUSA = {
         },
         {
           label: 'Website',
-          url: 'http://learnyourland.com/'
+          url: 'learnyourland.com'
         }
       ],
     },
     guide: {
-      locationPlace: 'Mushrooms Eastern USA',
+      locationPlace: 'Learn Your Land - Autumn foraging',
       locationType: 'taxon',
       place: {
-          name: 'Mushrooms Eastern USA',
+          name: 'Learn Your Land - Autumn foraging',
+          id: 'any',
+          type: 'places'
+      },
+      season: {
+          type: 'all_year'
+      },
+      speciesRange: 0,
+      ready: true
+  }
+}
+
+const learnYourLand2 = {
+    ...mushroomDefaults,
+    id: 14,
+    type: 'taxon',
+    name: 'Learn Your Land - Spring foraging',            
+    species: [ 
+      {
+        name: 'Morchella angusticeps',
+        description: `med. honey, honeycomb conical pitted cap, vert. oriented pits and ridges
+        unique - ridges darkened, eps. at maturity and pits somehwat lighter
+        another feat. x-section hollow top-bottom inc. stem
+        cap fully attached to stem but with small groove or 'sinis'?
+        habitat: under ash, black cherry, tulip poplar 
+        march-april`
+      },
+      {
+        name: 'Morchella punctipes',
+      },
+      {
+        name: 'Morchella americana',
+      },
+      {
+        name: 'Polyporus squamosus',
+      },
+      {
+        name: 'Stropharia rugosoannulata',
+      },
+      {
+        name: 'Pleurotus ostreatus',
+      },
+      {
+        name: 'Coprinellus micaceus',
+      },
+      {
+        name: 'Laetiporus sulphureus',
+      },
+      {
+        name: 'Laetiporus cincinnatus',
+      }
+    ],
+    producer: 'Adam Haritan, Learn Your Land',
+    video: {
+      id: 'OE54NpooUls',
+      startAt: 0,
+      title: '9 Wild Edible Mushrooms You Can Forage This Spring',
+      intro: 'I hope you enjoy this brief introduction to foraging edible mushrooms in Eastern North America. When you\'ve finished watching, review what we covered to see how much you remember, and to reinforce what you learnt.',
+      owner: 'Learn Your Land',
+      ownerUrl: 'www.youtube.com/channel/UCcbf8wnyVJl631LAmAbo7nw',
+      presenter: 'Adam Haritan',
+      links: [
+        {
+          label: 'Subscribe to the Learn Your Land email newsletter here',
+          url: ''
+        },
+        {
+          label: 'Website',
+          url: 'learnyourland.com'
+        }
+      ],
+    },
+    guide: {
+      locationPlace: 'Learn Your Land - Spring foraging',
+      locationType: 'taxon',
+      place: {
+          name: 'Learn Your Land - Spring foraging',
           id: 'any',
           type: 'places'
       },
@@ -814,7 +933,10 @@ export const snapdragonCollections = [
     placeArrabida,
     
     snapdragonLichens,
-    snapdragonMushroomsEasternUSA,
+    
+    learnYourLand1,
+    learnYourLand2,
+
     commonBritishBirds,
     
     walkOne,

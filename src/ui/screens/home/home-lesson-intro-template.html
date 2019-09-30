@@ -1,0 +1,35 @@
+
+<div class="lesson-list">
+    <div class="scrollable">
+            
+        <div class="title">{{ video.title }}</div>
+
+        <div class="intro margin-bottom">{{ video.intro }}</div>
+        
+        <div class="margin-bottom">
+            <div class="video">
+                <iframe
+                    width="100%"
+                    src="https://www.youtube.com/embed/{{ video.id }}"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media" allowfullscreen>
+                </iframe>
+            </div>
+
+            <div>
+                <span class="margin-right" >Presenter:</span><span>{{ video.presenter }}</span>
+            </div>
+
+            <div class="links">
+                <span class="margin-right">{{ video.webLabel }}:</span><a class="underline-external-link" href="{{ video.webUrl }}" target="_blank">{{ video.webUrl }}</a>
+            </div>
+        </div>
+
+        <div class="landscape">
+            <div class="list-continue-btn float-right js-list-footer">
+                <button class="btn btn-light js-species-list-btn-action">Don't be shy, take the tests</button>
+            </div>
+        </div>            
+
+    </div>
+</div>

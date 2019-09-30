@@ -13,7 +13,7 @@ export const initialiseConfig = async originalConfig => {
     config.guide.season.observableMonths = observableMonths;
     config.guide.season.type = config.guide.season.type || 'months';
 
-    config.collection.id = 1000; 
+    config.collection.id = 0; 
     config.guide.locationPlace = '';
     config.guide.place.type = '';
     config.guide.ready = false;

@@ -1,63 +1,58 @@
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-<!-- <div> -->
-    <div></div>
-    <div class="scrollable">
-        <div>
-            <table class="species-table list-group">
-                <tbody data-repeat-item="{{ itemImages }}">
-                    <tr class="table-row js-list-item">
-                        <td id="{{ item.name }}" data-snap-index="{{ item.snapIndex }}">
-                            <img 
-                                id="{{ item.name }}" 
-                                src="{{ item.small }}" 
-                                alt="{{ item.name }}" 
-                                data-toggle="modal" 
-                                data-target="#imageModal" 
-                                data-id="{{ item.name }}"                                 
-                                data-url="{{ item.url }}" 
-                                data-rights-holder="{{ item.rightsHolder }}" 
-                                data-title="{{ item.name }}"
-                                data-license="{{ item.license }}"                                
-                                data-source="{{ item.source }}">
-                        </td>
-                        <td>
-                            <span class="js-test-card-container-link">
-                                <span data-toggle="modal" data-name="{{ item.name }}" data-type="speciesCardLink" data-target="#cardModal" class="capitalise underline-link">{{ item.vernacularName }}</span>
-                            </span>
-                            <span class="latin-name wide-screen">
-                                <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="genus" data-genus="{{ item.genus }}" data-target="#cardModal" class="{{ item.genusLinkClass }}">{{ item.genus }}</span> <span>{{ item.species }}</span>
-                            </span>
-                            <span class="latin-name narrow-screen">
-                                <!-- <span>{{ item.genus }}</span> <span>{{ item.species }}</span> -->
-                                <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="genus" data-genus="{{ item.genus }}" data-target="#cardModal" class="{{ item.genusLinkClass }}">{{ item.genus }}</span> <span>{{ item.species }}</span>
-                            </span>
-                        </td>
-                        <td class="wide-screen">
-                            <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="family" data-family="{{ item.taxonomy.family }}" data-target="#cardModal" class="{{ item.familyLinkClass }}">{{ item.taxonomy.family }}</span>
-                            <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="order" data-order="{{ item.taxonomy.order }}" data-target="#cardModal" class="{{ item.orderLinkClass }}">{{ item.taxonomy.order }}</span>
-                        </td>
-                        <td class="wide-screen">
-                            <span data-toggle="modal" data-url="{{ item.url }}" data-key-trait="{{ item.keyTrait }}" data-target="#cardModal" class="{{ item.keyTratLinkClass }}">{{ item.keyTrait }}</span>
-                        </td>
-                        <td class="{{ item.iconicTaxon }}">
-                            <span id="{{ item.id }}" name="{{ item.name }}"><i class="{{ item.iconicTaxonIcon }}"></i></span>
-                            <span class="mushroom-icon {{ item.hideFungiIcon }}"></span>
-                        </td>
-                        <td>
-                            <div class="custom-control custom-checkbox">
-                                <input name="{{ item.name }}" type="checkbox" class="custom-control-input" id="inputCheck{{ item.snapIndex }}" checked>
-                                <label class="custom-control-label" for="inputCheck{{ item.snapIndex }}"></label>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>    
-    </div>
-<!-- </div> -->
+<table class="species-table list-group js-species-list">
+    <tbody data-repeat-item="{{ itemImages }}">
+        <tr class="table-row js-list-item" id="id_{{ item.id }}">
+            <td id="{{ item.name }}" data-snap-index="{{ item.snapIndex }}">
+                <img 
+                    id="{{ item.name }}" 
+                    src="{{ item.small }}" 
+                    alt="{{ item.name }}" 
+                    data-toggle="modal" 
+                    data-target="#imageModal" 
+                    data-id="{{ item.name }}"                                 
+                    data-url="{{ item.url }}" 
+                    data-rights-holder="{{ item.rightsHolder }}" 
+                    data-title="{{ item.name }}"
+                    data-license="{{ item.license }}"                                
+                    data-source="{{ item.source }}">
+            </td>
+            <td>
+                <span class="js-test-card-container-link">
+                    <span data-toggle="modal" data-name="{{ item.name }}" data-id="{{ item.id }}" data-type="speciesCardLink" data-target="#cardModal" class="capitalise underline-link">{{ item.vernacularName }}</span>
+                </span>
+                <span class="latin-name wide-screen">
+                    <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="genus" data-genus="{{ item.genus }}" data-target="#cardModal" class="{{ item.genusLinkClass }}">{{ item.genus }}</span> <span>{{ item.species }}</span>
+                </span>
+                <span class="latin-name narrow-screen">
+                    <!-- <span>{{ item.genus }}</span> <span>{{ item.species }}</span> -->
+                    <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="genus" data-genus="{{ item.genus }}" data-target="#cardModal" class="{{ item.genusLinkClass }}">{{ item.genus }}</span> <span>{{ item.species }}</span>
+                </span>
+            </td>
+            <td class="wide-screen">
+                <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="family" data-family="{{ item.taxonomy.family }}" data-target="#cardModal" class="{{ item.familyLinkClass }}">{{ item.taxonomy.family }}</span>
+                <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="order" data-order="{{ item.taxonomy.order }}" data-target="#cardModal" class="{{ item.orderLinkClass }}">{{ item.taxonomy.order }}</span>
+            </td>
+            <td class="wide-screen">
+                <span data-toggle="modal" data-url="{{ item.url }}" data-key-trait="{{ item.keyTrait }}" data-target="#cardModal" class="{{ item.keyTratLinkClass }}">{{ item.keyTrait }}</span>
+            </td>
+            <td class="{{ item.iconicTaxon }}">
+                <span id="{{ item.id }}" name="{{ item.name }}"><i class="{{ item.iconicTaxonIcon }}"></i></span>
+                <span class="mushroom-icon {{ item.hideFungiIcon }}"></span>
+            </td>
+            <td>
+                <div class="custom-control custom-checkbox">
+                    <input name="{{ item.name }}" type="checkbox" class="custom-control-input" id="inputCheck{{ item.snapIndex }}" checked>
+                    <label class="custom-control-label" for="inputCheck{{ item.snapIndex }}"></label>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 <div>
-    <div class="list-continue-btn action-update portrait js-list-footer">
-        <button class="btn btn-light js-species-list-btn-action">Continue lesson</button>
+    <div class="list-continue-btn portrait js-list-footer">
+        <button class="btn btn-light js-species-list-btn-action">Don't be shy, take the tests</button>
     </div>
 </div>

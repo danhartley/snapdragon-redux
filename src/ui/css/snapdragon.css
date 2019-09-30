@@ -242,6 +242,14 @@ a.dropdown-item {
   text-transform: uppercase;
 }
 
+.underline-external-link {
+  color: var(--snap-link) !important;
+  text-decoration: none;
+  border-bottom: solid .05rem !important;
+  color: inherit;
+  cursor: pointer;
+}
+
 .active-title {
   text-decoration: none;
   border-bottom: solid .05rem !important;
@@ -462,6 +470,7 @@ a.dropdown-item {
   display: grid;
   grid-auto-flow: row;
   margin: 0 .25rem;
+  height: calc(100vh - 15% - 5px - 18px);
 }
 
 .header,
@@ -1714,7 +1723,7 @@ a.collection-disabled {
   text-align: left;
 }
 
-.rights-attribution > div {
+.rights-attribution > div, .float-right {
   display: flex;
   align-items: flex-end;
 }
@@ -1992,7 +2001,7 @@ a.collection-disabled {
   font-style: italic;
 }
 
-.snapdragon-create-guide {
+.snapdragon-create-guide {  
   height: 5rem;
   position: absolute;
   bottom: 1rem;
@@ -2027,8 +2036,16 @@ a.collection-disabled {
   margin: .5rem .25rem 0 0;
 }
 
-.edit-guide-link, .save-guide-link {
+.edit-guide-link, .save-guide-link, .margin-right {
   margin: 0 .5rem 0 0;
+}
+
+.margin-all {
+  margin: .5rem;
+}
+
+.margin-bottom {
+  margin: 0 0 .5rem 0;
 }
 
 .swap-in-card {
@@ -2090,6 +2107,16 @@ a.collection-disabled {
 
 .lesson-list {
   position: relative;
+  background-color: var(--snap-block-light);
+}
+
+.lesson-list > div > label:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .lesson-list > div {
@@ -2113,5 +2140,32 @@ a.collection-disabled {
 
 .lesson-list .scrollable {
   margin: .5rem;
+}
+
+.right-body .lesson-list .scrollable {  
   pointer-events: initial;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lesson-list .scrollable .title {
+  font-size: 1.4rem;
+}
+
+.embedded-lesson-list-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin: .25rem;
+}
+
+.embedded-lesson-list-header > div:nth-child(1) {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
+  margin: 0 0 .5rem 0;
 }

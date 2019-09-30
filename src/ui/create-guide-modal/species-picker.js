@@ -118,7 +118,8 @@ export const renderSpeciesPicker = (modal, createGuide) => {
                 speciesNames.push({ label: removedSpecies, value: removedSpecies});
                 selectedSpecies = selectedSpecies.filter(species => species !== removedSpecies);
                 
-                config.guide.itemNames = selectedSpecies;
+                // config.guide.itemNames = selectedSpecies;
+                config.guide.species = selectedSpecies.map(ss => { name: ss });
 
                 createGuide.setConfig(config);
                 
@@ -127,7 +128,8 @@ export const renderSpeciesPicker = (modal, createGuide) => {
         })
     };
 
-    let selectedSpecies = config.guide.itemNames || [];
+    let selectedSpecies = config.guide.species(s => s.name) || [];
+    // let selectedSpecies = config.guide.itemNames || [];
     
     const selectedSpeciesDisplay = modal.querySelector('.js-selected-species');
           selectedSpeciesDisplay.innerHTML = '';

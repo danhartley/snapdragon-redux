@@ -5,7 +5,8 @@ export const enums = {
   EXPOSURE: 'exposure',
   CAP_SHAPE: 'cap shape',
   CAP_COLOUR: 'cap colour',
-  CAP_SIZE: 'cap size',
+  CAP_DIAMETER: 'cap diameter',
+  CAP_WIDTH: 'cap width',
   ECO_TYPE: 'ecological type',
   HOW_EDIBLE: 'how edible',
   HYMENIUM_TYPE: 'hymenium type',
@@ -169,6 +170,7 @@ export const enums = {
   SONG: 'Song',
   DIAMETER: 'diameter',
   NUT_TYPE: 'nut type',
+  TREE_ECOLOGY: 'Tree ecology',
   type: 'name',
   name: 'name'
   },
@@ -274,7 +276,7 @@ export const enums = {
   type: 'capShape',
   name: 'cap shape'
   },
-  treeType: {
+  treeEcology: {
   OAK: 'Quercus',
   BEECH: 'Fagus',
   BIRCH: 'Betula',
@@ -1066,6 +1068,7 @@ export const enums = {
   BUTTRESS_ROOT: 'Buttress root',
   MONOPODIAL: 'Monopodial',
   APICAL_DOMINANCE: 'Apical dominance',
+  POLYMORPHIC: 'Polymorphic',
   type: 'characteristic',
   name: 'characteristic'
   },
@@ -1244,6 +1247,8 @@ export const enums = {
     { diameter: [ 'm', 'cm', 'mm'] },
     { circumference: [ 'm', 'cm', 'mm'] },
     { trunkDiameter: [ 'm', 'cm', 'mm'] },
+    { capDiameter: [ 'm', 'cm', 'mm'] },
+    { capWidth: [ 'm', 'cm', 'mm'] },
     { length: [ 'm', 'cm', 'mm'] },
     { leafLength: [ 'm', 'cm', 'mm'] },
     { juvenileLeafLength: [ 'm', 'cm', 'mm'] },

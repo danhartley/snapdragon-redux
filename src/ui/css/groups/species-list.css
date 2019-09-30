@@ -41,7 +41,7 @@ table {
 .table-row {
     display: flex;
     flex-direction: row;
-    border-left: 0.1em solid var(--snap-border-dark);
+    border-left: 0.075rem solid var(--snap-list-background);
     border-right: 0.075rem solid var(--snap-border-dark);
   }
   
@@ -153,6 +153,15 @@ table {
 }
   
   @media (min-width: 768px) {
+
+    .embedded-lesson-list-header {
+      flex-direction: row;
+    }
+
+    .embedded-lesson-list-header > div:nth-child(1) {
+      margin: 0;
+      width: initial;
+    }
 
     .table-header,
     .table-footer {

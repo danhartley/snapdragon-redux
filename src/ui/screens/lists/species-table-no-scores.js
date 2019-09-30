@@ -114,10 +114,10 @@ export const buildTable = (collection, args) => {
 
     renderTemplate({ itemImages }, template.content, parent);
 
-    if(overrideParent) {
-        const species = overrideParent.querySelector('.scrollable');
-        overrideParent.style.minHeight = `${species.offsetHeight}px`;
-    }
+    // if(overrideParent) {
+    //     const species = overrideParent.querySelector('.scrollable');
+    //     overrideParent.style.minHeight = `${species.offsetHeight}px`;
+    // }
 
     const keyTraits = document.querySelectorAll('.js-key-trait-link');
 

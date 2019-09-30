@@ -488,6 +488,22 @@ const addTaxon = async props => {
     return docRef;
 };
 
+const getSpeciesInParallel = async species => {
+    try {
+        return Promise.all(species.map(sp => {                    
+            return firestore.getSpeciesByName(sp.name).then(async item => {
+                return await {                         
+                    ...item, description: sp.description
+                }
+            })                    
+        }));
+
+    } catch (error) {
+        console.log(`${item} problem!!! For ${name}`)
+        console.error(error);
+    }
+};
+
 const getSpeciesByNameInParallel = async itemNames => {
     try {
         return Promise.all(itemNames.map(name => {                    
@@ -517,6 +533,7 @@ export const firestore = {
     getTraitValues,
     getRandomSpecies,
     getDefinition,
+    getSpeciesInParallel,
     getSpeciesByNameInParallel,
     
     addSpecies,
