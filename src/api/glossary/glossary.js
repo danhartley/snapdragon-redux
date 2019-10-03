@@ -38,6 +38,9 @@ export const getGlossary = requiredGlossaries => {
                     break;
             }
         });
+        if(glossary.length === 0) {
+            glossary = [ ...commmon ];
+        }
     } else {
         glossary = [ ...glossary, ...commmon, ...plantae, ...animalia, ...amphibia, ...fungi, ...lichen, ...insecta ];
     }

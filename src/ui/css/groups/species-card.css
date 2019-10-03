@@ -151,6 +151,7 @@ td:empty:after{
   align-items: center;
   height: inherit;
   font-size: .8rem;
+  margin: 0 .5rem;
 }
 
 .info-details .info_detail div:nth-child(1) { 

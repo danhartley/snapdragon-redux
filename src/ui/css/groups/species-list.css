@@ -67,6 +67,13 @@ table {
   .table-row .lp-level {
     padding: 0 0 0 0.5rem;
   }
+
+  .inserted-td {
+    white-space: normal;
+    text-align: left;
+    column-span: all;
+    padding: .5rem;
+  }
   
   /* SORT INDICATORS */
   

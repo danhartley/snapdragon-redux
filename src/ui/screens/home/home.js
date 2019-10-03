@@ -26,6 +26,8 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     let { config, collection, lesson } = store.getState();
 
+    if(config.collection.id > 0) return;
+
     const home = subscription.getByName('renderHome');
     if(home) subscription.remove(home);
     

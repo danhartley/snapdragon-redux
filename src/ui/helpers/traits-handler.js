@@ -181,8 +181,9 @@ export const getTraitsToExclude = () => {
         'symbionts', 'voice', 'pollination', 'name', 
         'units', 'song', 'uk rank',
         'colour', 'bark colour', 'height',
-        'physiology', 'characteristic', 'description',
-        'usage', 'habitat'
+        'physiology', 'description',
+        'usage', 'habitat',
+        //'characteristic'
     ];
 };
 export const handleUnit = unit => {

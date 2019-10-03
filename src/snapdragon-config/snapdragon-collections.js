@@ -366,7 +366,8 @@ const mushroomDefaults = {
         id: 'fungi',
         common: 'Fungi & Lichens'
       } ],
-    items: []
+    items: [],
+    glossary: ['fungi', 'common'],
 };
 
 const learnYourLand1 = {
@@ -376,10 +377,29 @@ const learnYourLand1 = {
     name: 'Learn Your Land - Autumn foraging',            
     species: [ 
         {
-          name: 'Grifola frondosa'
+          name: 'Grifola frondosa',
+          time: [252],
+          description: `A large, grey brown polypore, with overlapping caps, that are fan-shaped and fleshy (unlike many polypores which are woody). Frondosa means leafy or abundant or full of leaves.
+          
+          The underside is white to grey with numerous tiny pores (and no gills).          
+          
+          The spore print is white.          
+          
+          This mushroom can be found in late summer to fall in the Northeast US especially on large, old oaks (and generally on living or dead oaks), beeches, maples and other hardwoods. It grows at the base, or close to the base, or on the trunks of trees.          
+          
+          D‐Fraction, an extract of Maitake my have properties beneficial in the treatment of cancer.`
         },
         {
-          name: 'Laetiporus sulphureus'
+          name: 'Laetiporus sulphureus',
+          time: [360],
+          description: `Chicken of the woods has a chicken like texture. It can be found late spring to mid-autumn.
+
+          This mushroom has overlapping clusters or rosette and is commonly found on deciduous trees. 
+          
+          The cap may be up 12". The top is smooth and faintly wrinkled.
+          When fresh it is bright orange to yellow-orange, and sometimes has a bright yellow margin.
+          
+          Best when young, it is indigestible for some.`
         },
         {
           name: 'Hericium erinaceus'
@@ -406,7 +426,17 @@ const learnYourLand1 = {
           name: 'Hericium coralloides'
         },
         {
-          name: 'Calvatia gigantea'
+          name: 'Calvatia gigantea',
+          time: [935],
+          description: `Puffballs are gasteroid mushrooms (stomach fungi) which produce spores internally.
+
+          The gleba should be pure white inside; with age it will turn olive-yellow, brown, to purple due to the spores.
+          
+          Before eating check that there are no mushrooms inside, as these may be poisonous (for example a member of the amanita genus).
+          
+          The giant puffball is bald, smooth and round, soft and white when young, becoming yellow with age. It is 7-12" across, 6-10" high but can grow much larger. Cut open to reveal the outer skin and the gleba. 
+          
+          It may be found in open woods lawns and pastures, through summer-fall.`
         },
         {
           name: 'Armillaria mellea'
@@ -468,42 +498,158 @@ const learnYourLand2 = {
     species: [ 
       {
         name: 'Morchella angusticeps',
-        description: `med. honey, honeycomb conical pitted cap, vert. oriented pits and ridges
-        unique - ridges darkened, eps. at maturity and pits somehwat lighter
-        another feat. x-section hollow top-bottom inc. stem
-        cap fully attached to stem but with small groove or 'sinis'?
-        habitat: under ash, black cherry, tulip poplar 
-        march-april`
+        time: [290],
+        description: `One of the first species to appear and easy to identify:
+
+        Medium sized mushroom with a conical, honeycomb-pitted cap, and vertically oriented pits and ridges.
+        
+        Key feature: ridges are dark especially at maturity and the pits are lighter in colour.
+        
+        It is hollow in cross-section from top to bottom including the stem.
+        
+        Key feature: the cap is fully attached to stem but with a small groove or sinus where the base of the cap meets the stem.
+        
+        Habitat: under ash, black cherry, tulip poplar.
+        
+        Season: March-April.`
       },
       {
         name: 'Morchella punctipes',
+        time: [370],
+        description: `Not valued as highly as other morels but it is edible and shares many features with other morels, especially other black morels.
+
+        A medium sized species to 6" or taller.
+        
+        Like other members of the black morel clade it has a conical cap with vertically oriented pits and ridges that darken at maturity.
+                
+        It is entirely hollow from top to bottom.
+        
+        Key feature:  the bottom of the cap hangs free from the stem, like a skirt i.e. not fully attached (hence its name).
+        
+        Habitat: ash, tulip poplar, American elm, and black cherry.
+        
+        Season: after the easter black morel, and before the yellow morel (March-May).`
       },
       {
         name: 'Morchella americana',
+        time: [453],
+        description: `Esculenta clade.
+
+        Medium sized mushroom but up to 10' or greater.
+        
+        The cap is less conical than is the case with the black morels, but like all true morels it is of a honeycomb appearance with pits and ridges.
+        
+        Key feature: the pits and ridges do not darken with age.
+        
+        It is hollow from top to bottom, and the cap is entirely connected.
+        
+        Habitat: grows in association with many trees; dying and dead elms, apple trees, tulip poplars, ash trees, sycamores, and pines.
+        
+        Season: later, after the black morels, although there may be some overlap.`
       },
       {
         name: 'Polyporus squamosus',
+        time: [600],
+        description: `A large mushroom to 12" or more, with distinctive large, dark brown scales (hence the name). 
+
+        The fertile underside is a honeycomb of small pores which release white spores.
+        
+        Habitat: similar to morels; grows directly on wood, esp. dead and decomposing elms; often seen as a consolation when morels are absent.
+        
+        Smell: cucumber or watermelon rind.
+        
+        Season: most prolific in spring, (but may be found in summer and fall).
+        
+        Culinary: not considered choice but it is edible. Best eaten when young (and small) before it becomes leathery; can be dehydrated for stews etc.`
       },
       {
         name: 'Stropharia rugosoannulata',
+        time: [731],
+        description: `It has a medium to large cap up to 12" across.
+
+        The cap is wine or burgundy coloured, and fades to straw or tan with age.
+        
+        The fertile surface has white gills fading to grey, purple or black, which release dark purple, brown or black spores.
+        
+        A partial veil may be visible on immature mushrooms, leaving a rugged ring when older.
+        
+        Habitat: often found in suburban or urban landscapes, and is widely cultivated.
+        
+        Culinary: check for insects and the quality of its habitat (avoid pesticides, etc.) before eating.
+        
+        Season: a spring favourite.`
       },
       {
         name: 'Pleurotus ostreatus',
-      },
-      {
-        name: 'Coprinellus micaceus',
+        time: [841],
+        description: `A widely cultivated species; there are 40-200 species in the genus pleurotus.
+
+        It is a medium-large species.
+        
+        The cap is white to tan to light brown usually in shelf-like clusters. The gills are white and decurrent (run down stem).
+        
+        The spores are pale lilac or white.
+        
+        Habitat: oyster mushrooms are decomposers of wood, and only appear on wood (though this may be hidden).
+        
+        Season: prefers cooler weather, appearing mostly spring or later if the season is mild. (If not, your are probably looking at a different species).
+        
+        Culinary: delicious and abundant.`
       },
       {
         name: 'Laetiporus sulphureus',
+        time: [958],
+        description: `Easy to identify, and to find.
+        
+        Medium to larege polypore. Takes the form of overlapping clusters or a rosette on deciduous trees.
+
+        The cap diameter is up to 12". Its top is smooth and faintly wrinkled.
+        
+        When fresh it is bright orange to yellow-orange, sometimes with a bright yellow margin. With age it becomes grey and crumbly. The underside is bright yellow with tiny pores.
+        
+        habitat: at the base or a few feet from deciduous trees, in overlapping cluster up and down the tree.
+
+        Season: appears spring to mid-autumn.
+        
+        Culinary: chicken like texture; indigestible to some (start with a small amount).`
       },
       {
         name: 'Laetiporus cincinnatus',
-      }
+        time: [987],
+        description: `Similar to chicken of the woods but growing at the base or a few feet from hardwoods, in a rosette pattern, and not typically overlapping up and down the tree.
+
+        The caps are duller and paler than L.sulphureus, pale orange to pink orange (rather than vibrant yellow or orange). The pores are a pale peach white.
+        
+        Habitat: rarely in overlapping clusters but in rosette or a cluster on or near the tree.
+
+        Season: spring and summer into autumn.
+
+        Culinary: best eaten when young; indigestible for some.`
+      },
+      {
+        name: 'Coprinellus micaceus',
+        time: [1115],
+        description: `One of the ink cap mushrooms which autodigest, or deliquesce. Also described as coprinoid (as not all exhibit deliquescence).
+
+        There are 4 similar species, all are edible (though a microscope may be needed to distinguish between them).
+                
+        The gills partially deliquesce with age leaving an inky goo.
+
+        Key feature: the cap contains fine granules when young and fresh, but with age and weathering they may be lost.
+                
+        The spore print is black.
+
+        Habitat: they form in large clusters on or around stumps and logs, and the buried wood of commonly broadleaf trees: cherry, ash, oak.
+        
+        Season: all year, but especially in spring.
+        
+        Culinary: this species does not contain coprine (which reacts with alcohol), but other ink caps do.`
+      },
     ],
     producer: 'Adam Haritan, Learn Your Land',
     video: {
       id: 'OE54NpooUls',
-      startAt: 0,
+      startAt: 240,
       title: '9 Wild Edible Mushrooms You Can Forage This Spring',
       intro: 'I hope you enjoy this brief introduction to foraging edible mushrooms in Eastern North America. When you\'ve finished watching, review what we covered to see how much you remember, and to reinforce what you learnt.',
       owner: 'Learn Your Land',
@@ -534,7 +680,197 @@ const learnYourLand2 = {
       speciesRange: 0,
       ready: true
   }
-}
+};
+
+const kitchen1 = {
+    id: 15,
+    behaviour: 'static',
+    type: 'custom',
+    moduleSize: 4,
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 101,
+    glossary: ['plantae', 'common'],
+    iconicTaxa: [ {
+      id: 'plantae',
+      common: 'Plants'
+    }, ],
+    items: [],
+    name: '10 Herbs Indoor Herbs',
+    species: [ 
+      {
+        name: 'Anethum graveolens',
+        time: [38],
+        description: `You can start dill from seed; in one to two weeks the first set of leaves will emerge and will soon take on its familiar form.`
+      },
+      {
+        name: 'Thymus vulgaris',
+        time: [65],
+        description: `Perennial; frost hardy and can be grown outdoors. 
+        
+        Best grown from a cutting.`
+      },
+      {
+        name: 'Origanum vulgare',
+        time: [80],
+        description: `Oregano can be grown from a cutting or seed, however, it is not frost resistant.`
+      },
+      {
+        name: 'Salvia officinalis',
+        time: [98],
+        description: `Sage can tolerant frosts to -10C.`
+      },
+      {
+        name: 'Petroselinum crispum',
+        time: [115],
+        description: `Best grown from seed, it can tolerate frosts to -12C.`
+      },
+      {
+        name: 'Coriandrum sativum',
+        time: [137],
+        description: `Also known as Corainder.
+        
+        Best grown from seed (which must be split first to esnure it germinates quickly). 
+        
+        Seed leaves will appear within a week. Best planted in fall, in spring it flowers quickly.`
+      },
+      {
+        name: 'Artemisia dracunculus',
+        time: [172],
+        description: `A winter hardy perennial and tolerates forst well (to -20C).`
+      },
+      {
+        name: 'Ocimum basilicum',
+        time: [194],
+        description: `Dies in winter; take cuttings and propogate in first week of spring. Also grows well from seed.`
+      },
+      {
+        name: 'Mentha spicata',
+        time: [224],
+        description: `Grows well from cuttings or roots. It dies back in winter and regrows in spring with plentiful watering. 
+        
+        Alternatively bring inside in winter.`
+      },
+      {
+        name: 'Rosmarinus officinalis',
+        time: [241],
+        description: `Place cuttings in water; it will easily root and can then be planted out (indoors or out). 
+        
+        Winter hardy but avoid excessive frosts.`
+      },
+    ],
+    producer: 'Jag Singh - Daisy Creek Farms',
+    video: {
+      id: 'DeLjnFTDjFc',
+      startAt: 0,
+      title: '10 Herbs You Can Grow Indoors on Kitchen Counter',
+      intro: '10 Herbs You Can Grow Indoors on Kitchen Counter.',
+      owner: 'Learn Your Land',
+      ownerUrl: '',
+      presenter: 'Jag Singh',
+      links: [
+        {
+          label: '',
+          url: ''
+        },
+        {
+          label: 'Patreon',
+          url: 'www.patreon.com/jagsingh'
+        }
+      ],
+    }   
+};
+
+const birds1 = {
+    id: 16,
+    behaviour: 'static',
+    type: 'custom',
+    moduleSize: 4,
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 101,
+    glossary: ['animalia', 'common'],
+    iconicTaxa: [ {
+      id: 'aves',
+      common: 'Birds'
+  } ],
+    species: [
+      {
+        name: "Erithacus rubecula",
+        time: [1,149,227,319,560,592],
+        description: 'European robin'
+      },
+      {
+        name: "Fringilla coelebs",
+        time: [10,133,235,288,347,418,428,495],
+        description: 'Female chaffinch'
+      },
+      {
+        name: "Pyrrhula pyrrhula",
+        time: [24,64,110,170,198,456],
+        description: 'Male bullfinch'
+      },
+      {
+        name: "Sylvia atricapilla",
+        time: [31,50,120,175,324,399,452,567],
+        description: 'Female blackcap'
+      },
+      {
+        name: "Carduelis carduelis",
+        time: [42,207,266,383],
+        description: 'European goldfinch'
+      },
+      {
+        name: "Prunella modularis",
+        time: [70,223,312,457,518],
+        description: 'Dunnock'
+      },
+      {
+        name: "Cyanistes caeruleus",
+        time: [80,162,360,455,479,532],
+        description: 'Blue tit'
+      },
+      {
+        name: "Passer domesticus",
+        time: [88,96,258337,548],
+        description: 'Male house sparrow'
+      },
+      {
+        name: "Parus major",
+        time: [103,512],
+        description: 'Great tit'
+      },
+      {
+        name: "Turdus merula",
+        time: [184,578],
+        description: 'Blackbird'
+      },
+      {
+        name: "Chloris chloris",
+        time: [247],
+        description: 'Female greenfinch'
+      }    
+    ],
+    name: 'Garden Bird Identification',
+    producer: 'Paul Dinning',
+    video: {
+      id: 'wCngPMlOFok',
+      startAt: 0,
+      title: 'Garden Bird Identification - Let Nature Sing',
+      intro: 'Garden Bird Identification - Let Nature Sing.',
+      owner: 'Paul Dinning',
+      ownerUrl: '',
+      presenter: 'Paul Dinning',
+      links: [
+        {
+          label: '',
+          url: ''
+        },
+        {
+          label: '',
+          url: ''
+        }
+      ],
+    }   
+};
 
 const commonBritishBirds = { 
     behaviour: 'static',
@@ -551,22 +887,58 @@ const commonBritishBirds = {
     lessonPlanPortrait: 105,
     glossary: ['animalia', 'common'],
     items: [],
-    itemNames: [
-        "Passer domesticus",
-        "Sturnus vulgaris",
-        "Cyanistes caeruleus",
-        "Turdus merula",
-        "Columba palumbus",
-        "Carduelis carduelis",
-        "Parus major",
-        "Erithacus rubecula",
-        "Aegithalos caudatus",
-        "Fringilla coelebs",
-
-        // 'Apus apus',
-        // 'Delichon urbicum',
-        // 'Hirundo rustica'
-      ],
+    species: [
+      {
+        name: "Passer domesticus",
+        time: 0,
+        description: ''
+      },
+      {
+        name: "Sturnus vulgaris",
+        time: 0,
+        description: ''
+      },
+      {
+        name: "Cyanistes caeruleus",
+        time: 0,
+        description: ''
+      },
+      {
+        name: "Turdus merula",
+        time: 0,
+        description: ''
+      },
+      {
+        name: "Columba palumbus",
+        time: 0,
+        description: ''
+      },
+      {
+        name: "Carduelis carduelis",
+        time: 0,
+        description: ''
+      },
+      {
+        name: "Parus major",
+        time: 0,
+        description: ''
+      },
+      {
+        name: "Erithacus rubecula",
+        time: 0,
+        description: ''
+      },
+      {
+        name: "Aegithalos caudatus",
+        time: 0,
+        description: ''
+      },
+      {
+        name: "Fringilla coelebs",
+        time: 0,
+        description: ''
+      }
+    ],
     iconicTaxa: [ {
         id: 'aves',
         common: 'Birds'
@@ -936,6 +1308,10 @@ export const snapdragonCollections = [
     
     learnYourLand1,
     learnYourLand2,
+
+    kitchen1,
+
+    birds1,
 
     commonBritishBirds,
     

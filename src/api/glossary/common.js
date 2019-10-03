@@ -138,6 +138,7 @@ export const commmon = [
     },
     {
         term : "Polymorphism",
+        alt: 'Polymorphic',
         definition : "The occurrence of two or more clearly different morphs or forms (alternative phenotypes), in the population of a species.",
         wiki: 'https://en.wikipedia.org/wiki/Polymorphism_(biology)'
     },

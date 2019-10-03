@@ -19,6 +19,8 @@ import cardTemplate from 'ui/screens/cards/card-template.html';
 
 export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.rightBody, isInCarousel = true) => {
 
+    if(!selectedItem) return;
+
     const { layout, config } = store.getState();
 
     let item;

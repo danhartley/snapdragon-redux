@@ -51,6 +51,9 @@ export const addId = () => {
                 if(log) {
                     const message = document.querySelector('.js-message');
                           message.innerHTML = 'Quick ID updated.';
+                    setTimeout(() => {
+                        message.innerHTML = '';
+                    }, 1000);
                 }
             });
         };

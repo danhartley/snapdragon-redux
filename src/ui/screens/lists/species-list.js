@@ -15,6 +15,7 @@ import { collectionHandler } from 'ui/helpers/collection-handler';
 import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
 import { renderHome } from 'ui/screens/home/home';
 import { enums } from 'ui/helpers/enum-helper';
+import { listenToVideoTimes } from 'ui/screens/home/home-lesson-intro';
 
 export const renderSpeciesCollectionList = (collection, args) => {
 
@@ -24,7 +25,6 @@ export const renderSpeciesCollectionList = (collection, args) => {
 
     let config = R.clone(configState);
     
-    // if(!collection.itemNames) {
     if(!collection.species) {
         speciesPendingSpinner(config);
     }
@@ -93,14 +93,6 @@ export const renderSpeciesCollectionList = (collection, args) => {
             speciesCardLinks.forEach((link, index) => {                
                 link.addEventListener('click', event => {                    
                     const name = event.target.dataset.name;
-                    const description = collection.items.find(i => i.name === name).description;
-                    if(description) {
-                        const id = event.target.dataset.id;
-                        const tr = document.querySelector(`#id_${id}`);
-                        const insert = document.createElement('tr');
-                              insert.append(description);
-                        tr.parentElement.insertBefore(insert, tr.nextSibling);
-                    }
                     document.querySelector('#cardModal .prev > span').dataset.card = 'species-card';
                     renderCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal, isInCarousel);
                 });
@@ -198,6 +190,7 @@ export const renderSpeciesCollectionList = (collection, args) => {
         handleUserEvents();        
     }
     else {
+
         function callback(collection, config) {
 
             loadSpeciesCallback();
@@ -206,8 +199,15 @@ export const renderSpeciesCollectionList = (collection, args) => {
                 return function () {
                     buildTable(collection, { config, enums: traitEnums, overrideParent: tableParent });
                     handleUserEvents();
-                    const { counter } = store.getState();
-                    listeners.forEach(listener => listener(counter, collection.items.length));
+                    // const { counter } = store.getState();
+                    // listeners.forEach(listener => listener(counter, collection.items.length));
+                    actions.boundUpdateCollection({ config, collection });
+
+                    const rows = document.querySelectorAll('.table-row');
+                    rows.forEach(row => row.addEventListener('click', event => {
+                        const species = collection.items.find(item => item.name == row.cells[0].id);
+                        callbackOnVideoTimeMatch(species);
+                    }));
                 }
             }
 
@@ -227,13 +227,47 @@ export const renderSpeciesCollectionList = (collection, args) => {
         if(config.collection.id === 0) return;
         collectionHandler(collection, config, counter, callback, callbackWhenNoResults);
     }
+
+    const callbackOnVideoTimeMatch = species => {
+        
+        if(!species) return;
+
+        console.log(species.name);
+
+        const parent = document.querySelector('.species-table tbody');
+        const currentDescriptions = document.querySelectorAll('.species-description');
+        currentDescriptions.forEach(tr => parent.removeChild(tr));
+
+        const description = collection.items.find(i => i.name === species.name).description;
+        if(description) {
+
+            const item = collection.items.find(item => item.name === species.name);
+
+            const id = item.id;
+            const tr = document.querySelector(`#id_${id}`);
+
+            const td = document.createElement('td');
+                  td.classList.add('inserted-td');
+                  td.innerHTML = description.replace(/\r?\n/g, '<br />');
+
+            const insert = document.createElement('tr');
+                  insert.classList.add('table-row');
+                  insert.classList.add('species-description');
+                  insert.appendChild(td);
+            tr.parentElement.insertBefore(insert, tr.nextSibling);
+
+            tr.previousElementSibling.scrollIntoView();
+        }
+    };
+
+    listenToVideoTimes(callbackOnVideoTimeMatch);
 };
 
 const listeners = [];
 
 export const listenToSpeciesCollectionListenReady = listener => { 
     listeners.push(listener);
-  };
+};
   
 
 let currentIndex = 0;

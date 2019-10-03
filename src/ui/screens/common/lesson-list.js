@@ -55,19 +55,21 @@ export const renderLessons = () => {
     config.guide.ready = true;
     actions.boundUpdateConfig(config);
 
-    const callback = message => {
-      message.classList.add('hide');
+    const callback = loadingSpeciesMessage => {
+      loadingSpeciesMessage.classList.add('hide');
     };
 
     titles.forEach(title => title.addEventListener('click', e => {
+
       const selectedTitle = e.target;
-      const lessonId = selectedTitle.id;
-      const selectedLesson = lessons.find(l => l.id === parseInt(lessonId));
+      const lessonId = parseInt(selectedTitle.id);
+      const selectedLesson = lessons.find(l => l.id === lessonId);
       const container = document.querySelector(`#container_${lessonId}`);
-      const speciesList = document.querySelector('.js-species-list');
-      // const speciesList = selectedTitle.parentElement.parentElement.querySelector('.scrollable');
+      const speciesList = document.querySelector(`#species_list_id_${lessonId}`);
+
       if(selectedTitle.dataset.selected) {
         if(elem.hasClass(speciesList, 'hide')) {
+          renderLesson(selectedLesson);
           speciesList.classList.remove('hide');
           container.style.minHeight = container.dataset.height;
         } else {
@@ -78,13 +80,12 @@ export const renderLessons = () => {
       } else {
         if(config.isLandscapeMode) {
           selectedTitle.dataset.selected = true;
-          const message = selectedTitle.parentElement.querySelector('span:nth-child(2)');
-                message.classList.remove('hide');
-          const loadSpeciesCallback = () => callback(message);
+          const loadingSpeciesMessage = selectedTitle.parentElement.querySelector('span:nth-child(2)');
+                loadingSpeciesMessage.classList.remove('hide');
+          const loadSpeciesCallback = () => callback(loadingSpeciesMessage);
           renderSpeciesCollectionList(selectedLesson, { readOnlyMode: false, parent: container, tableParent: container, loadSpeciesCallback, isInCarousel: false });
+          renderLesson(selectedLesson);
         }
-        //hack! should happen via redux store
-        renderLesson(selectedLesson);
-      }      
+      }
     }));
 };

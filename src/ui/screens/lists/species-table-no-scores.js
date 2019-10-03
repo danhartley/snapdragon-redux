@@ -112,7 +112,7 @@ export const buildTable = (collection, args) => {
     parent = overrideParent || parent;
     template.innerHTML = speciesTemplate;
 
-    renderTemplate({ itemImages }, template.content, parent);
+    renderTemplate({ id: collection.id,itemImages }, template.content, parent);
 
     // if(overrideParent) {
     //     const species = overrideParent.querySelector('.scrollable');

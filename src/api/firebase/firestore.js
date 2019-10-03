@@ -465,7 +465,7 @@ const getDefinition = (term, required) => {
     let definitions = [];
 
     for(let term of terms) {        
-        const definition = dictionary.find(definition => definition.term.toLowerCase() === term.trim().toLowerCase());
+        const definition = dictionary.find(definition => definition.term.toLowerCase() === term.trim().toLowerCase() || definition.alt && definition.alt.toLowerCase() === term.trim().toLowerCase());
         definitions.push(definition);
     };
     

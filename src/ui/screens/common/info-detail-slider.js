@@ -16,7 +16,7 @@ export const renderInfoDetails = (item, activeTraitKey, activeTraitValue, descri
 
     if(!parent) return; // hack! currently the case with (non-species) taxon cards (see same below)
 
-          parent.innerHTML = '';
+    parent.innerHTML = '';
 
     if(activeTraitKey.toLowerCase() === 'description') {        
         template.innerHTML = idBoxTemplate;

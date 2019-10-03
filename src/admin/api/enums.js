@@ -1118,6 +1118,7 @@ export const enums = {
   NONE: 'None',
   EMARGINATE: 'emarginate',
   SUBDECURRENT: 'subdecurrent',
+  ADNEXED: 'adnexed',
   type: 'gillAttachment',
   name: 'gill attachment'
   },

@@ -209,6 +209,10 @@
     border: none;
     color: var(--snap-progress-bg);
   }
+
+  #menuModal {
+    max-width: 500px;
+  }
   
   #menuModal .modal-content {
     color: var(--snap-text-dark);
@@ -231,6 +235,10 @@
   }
   
   /* BADGE MODAL (Common names & Members of) */
+
+  #badgeListModal {
+    max-width: 500px;
+  }
 
   #badgeListModal .modal-header {
     color: var(--snap-text-dark);

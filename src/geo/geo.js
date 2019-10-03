@@ -20,11 +20,13 @@ const getHTML5Location = () => {
 };
 
 export const getLocation = (config) => {
-  if(!!config.coordinates) {
+  if(!!config.coordinates && config.coordinates.lat && config.coordinates.long) {
+    console.log(config);
     return new Promise(resolve => {
         resolve(config.coordinates);
     });
   } else {
+    console.log(config);
     return getHTML5Location();
   }  
 };
@@ -74,6 +76,7 @@ export const getPlace = async (config, force = false) => {
     const json = await response;    
     return await json;
   } else {    
+    console.log(config);
     const coordinates = await getLocation(config);        
     const latitude = coordinates['0'] || coordinates.lat;
     const longitude = coordinates['1'] || coordinates.long;

@@ -1,7 +1,7 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-<table class="species-table list-group js-species-list">
+<table id="species_list_id_{{ id }}" class="species-table list-group js-species-list">
     <tbody data-repeat-item="{{ itemImages }}">
         <tr class="table-row js-list-item" id="id_{{ item.id }}">
             <td id="{{ item.name }}" data-snap-index="{{ item.snapIndex }}">
