@@ -201,12 +201,12 @@ export const renderSpeciesCollectionList = (collection, args) => {
                     handleUserEvents();
                     // const { counter } = store.getState();
                     // listeners.forEach(listener => listener(counter, collection.items.length));
-                    actions.boundUpdateCollection({ config, collection });
+                    // actions.boundUpdateCollection({ config, collection });
 
                     const rows = document.querySelectorAll('.table-row');
                     rows.forEach(row => row.addEventListener('click', event => {
                         const species = collection.items.find(item => item.name == row.cells[0].id);
-                        callbackOnVideoTimeMatch(species);
+                        callbackOnVideoTimeMatch(species);                        
                     }));
                 }
             }

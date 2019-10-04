@@ -128,9 +128,9 @@
     height: calc(100vh - 17rem);
   }
 
-  .rptr-lessons .btn.btn-secondary {
+  /* .rptr-lessons .btn.btn-secondary {
     min-height: 4rem;
-  }
+  } */
 
   .modal-body .modal-guide-progress > div div {
     line-height: 2rem;
@@ -644,7 +644,8 @@
   /* EXAMPLE LESSONS INC. RB LIST */
 
   .btn.btn-secondary {
-    height: 4rem;
+    /* height: 4rem; */
+    height: initial;
     margin: 1.25rem 0;
     padding: 0.25rem .5rem 0.25rem 1.5rem;
     flex-direction: row;
@@ -679,9 +680,9 @@
     overflow: hidden;
   }
 
-  .lesson-taxa {
+  /* .lesson-taxa {
     font-size: .8rem;
-  }
+  } */
   
   .lesson-taxa span:nth-child(1) {
     margin: 0 .15rem 0 0;
@@ -717,10 +718,10 @@
     flex-direction: column;
   }
   
-  .btn-group.btn-group-toggle.scrollable {
+  /* .btn-group.btn-group-toggle.scrollable {
     left: .5rem;
     right: .5rem;
-  }
+  } */
 
   /* PORTRAIT & LANDSCAPE EXAMPLE GUIDE */
 
@@ -845,7 +846,7 @@
     grid-template-rows: 1fr 2fr 2fr;
   }
 
-  .species-actions .actions {
+  .taxa-actions .actions {
     grid-template-rows: 1fr;
   }
 
@@ -853,12 +854,12 @@
     grid-template-rows: auto;
   }
 
-  .actions ul {
+  /* .actions ul {
     padding: 1.5rem 0 0 0;
     font-size: .8rem;
     column-count: 2;
     column-gap: 0;
-  }
+  } */
 
   .filter-actions .actions {
     /* height: 100%; */
@@ -891,6 +892,38 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-gap: 1rem;
+  }
+
+  .custom-lesson-species-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .custom-lesson-species-list li {
+    margin: .5rem 0;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--snap-lesson-row-blue);
+  }
+
+  .custom-lesson-species-list li span {
+    padding: .5rem;
+  }
+
+  .custom-lesson-species-list li span:nth-child(2) {
+    color: var(--snap-text-light);
+    background-color: var(--snap-collection-active);
+  }
+
+  .custom-lesson-species-list li:nth-of-type(2n+1) {
+    background-color: var(--snap-lesson-row-green);
+  }
+
+  .species-actions + div {
+    display: none !important;
   }
 
   @media (min-width: 768px) {

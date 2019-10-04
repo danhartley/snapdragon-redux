@@ -372,9 +372,9 @@ const mushroomDefaults = {
 
 const learnYourLand1 = {
     ...mushroomDefaults,
+    behaviour: 'static',
     id: 7,
-    type: 'taxon',
-    name: 'Learn Your Land - Autumn foraging',            
+    name: 'Learn Your Land - Autumn foraging',
     species: [ 
         {
           name: 'Grifola frondosa',
@@ -492,9 +492,9 @@ const learnYourLand1 = {
 
 const learnYourLand2 = {
     ...mushroomDefaults,
+    behaviour: 'static',
     id: 14,
-    type: 'taxon',
-    name: 'Learn Your Land - Spring foraging',            
+    name: 'Learn Your Land - Spring foraging',
     species: [ 
       {
         name: 'Morchella angusticeps',
@@ -685,7 +685,6 @@ const learnYourLand2 = {
 const kitchen1 = {
     id: 15,
     behaviour: 'static',
-    type: 'custom',
     moduleSize: 4,
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
@@ -695,7 +694,7 @@ const kitchen1 = {
       common: 'Plants'
     }, ],
     items: [],
-    name: '10 Herbs Indoor Herbs',
+    name: '10 Indoor Herbs',
     species: [ 
       {
         name: 'Anethum graveolens',
@@ -783,7 +782,6 @@ const kitchen1 = {
 const birds1 = {
     id: 16,
     behaviour: 'static',
-    type: 'custom',
     moduleSize: 4,
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
@@ -849,7 +847,7 @@ const birds1 = {
         description: 'Female greenfinch'
       }    
     ],
-    name: 'Garden Bird Identification',
+    name: 'UK Garden Bird Identification',
     producer: 'Paul Dinning',
     video: {
       id: 'wCngPMlOFok',

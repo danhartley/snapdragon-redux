@@ -1,18 +1,17 @@
 <div class="lesson-list">
-
     <div class="btn-group btn-group-toggle scrollable" data-toggle="buttons" data-repeat-lesson="{{ lessons }}">
         <label class="btn btn-secondary" id="id_{{ lesson.id }}">
             <div class="lesson-radio-button"></div>
             <div style="width: 100%; pointer-events: initial;">
                 <input type="radio" name="lessons" autocomplete="off">
                 <div class="lesson-name" data-lesson-id="{{ lesson.id }}">
-                    <span id="{{ lesson.id }}" class="active-title">{{ lesson.name }}</span> {{ lesson.savedState }}
-                    <span class="hide">(Loading species…)</span>
+                    <span id="{{ lesson.id }}" class="active-title">{{ lesson.name }}</span>
+                    <span>{{ lesson.savedState }}</span>                    
+                    <span class="hide js-loading-message">(Loading species…)</span>
                 </div>
                 <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>            
-                <div style="margin-top: 1rem;" id="container_{{ lesson.id }}"></div>
+                <div id="container_{{ lesson.id }}" class="js-species-container"></div>
             </div>            
         </label>        
     </div>
-
 </div>

@@ -7,6 +7,11 @@ export const saveButton = (config, step, update = true) => {
     const handleSaveEvent = () => {
 
         switch(step) {
+
+            case 'SPECIES':
+
+            break;
+
             case 'LOCATION':
 
                 if(config.guide.locationType) {
@@ -18,7 +23,7 @@ export const saveButton = (config, step, update = true) => {
                 }
                 break;
 
-            case 'SPECIES':
+            case 'TAXA':
 
                 chosen.innerHTML = '';
                 let iconicTaxa = config.guide.iconicTaxa;

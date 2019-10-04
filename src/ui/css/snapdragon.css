@@ -13,7 +13,8 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  font-family: "PT Sans", "Roboto", arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;;
+  /* font-family: "PT Sans", "Roboto", arial, sans-serif; */
   color: var(--snap-text-dark);
   background-color: rgba(129, 67, 101,.1);
 }
@@ -664,6 +665,13 @@ a.dropdown-item {
     pointer-events: none;
   }
 
+  .pointer-events-none {
+    pointer-events: none;
+  }
+  
+  .pointer-events-initial {
+    pointer-events: initial;
+  }
 
 .strip.snap-success {
   background-color: rgba(41, 108, 44,.4);
@@ -2139,6 +2147,7 @@ a.collection-disabled {
 }
 
 .lesson-list .btn.btn-secondary {
+  font-size: .7rem;
   height: initial;
   min-height: initial;
 }

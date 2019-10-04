@@ -132,8 +132,8 @@ td:empty:after{
 }
 
 .card-scrollable-container {
-  overflow-y: scroll;
   height: calc(100vh - 22rem);
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

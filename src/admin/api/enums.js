@@ -171,6 +171,7 @@ export const enums = {
   DIAMETER: 'diameter',
   NUT_TYPE: 'nut type',
   TREE_ECOLOGY: 'Tree ecology',
+  KEY_FEATURE: 'Key feature', 
   type: 'name',
   name: 'name'
   },

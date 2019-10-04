@@ -17,6 +17,7 @@ import { nextItem } from 'ui/setup/next-item';
 import { renderHeaders } from 'ui/fixtures/headers';
 import { renderScore } from 'ui/fixtures/score';
 import { renderHome } from 'ui/screens/home/home';
+import { renderLessons } from 'ui/screens/common/lesson-list';
 import { renderNavigation } from 'ui/fixtures/navigation';
 import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
@@ -47,6 +48,7 @@ setTimeout( () => {
         subscription.add(renderNavigation, 'page', 'flow');
 
         subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
+        subscription.add(renderLessons, 'counter', 'flow');
                 
         subscription.add(nextLesson, 'counter', 'flow');
         subscription.add(nextLayout, 'counter', 'flow');
