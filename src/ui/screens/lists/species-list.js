@@ -203,9 +203,9 @@ export const renderSpeciesCollectionList = (collection, args) => {
                     // listeners.forEach(listener => listener(counter, collection.items.length));
                     // actions.boundUpdateCollection({ config, collection });
 
-                    const rows = document.querySelectorAll('.table-row');
+                    const rows = document.querySelectorAll('.js-table-row-chevron');
                     rows.forEach(row => row.addEventListener('click', event => {
-                        const species = collection.items.find(item => item.name == row.cells[0].id);
+                        const species = collection.items.find(item => item.name == row.id);
                         callbackOnVideoTimeMatch(species);                        
                     }));
                 }

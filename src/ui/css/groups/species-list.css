@@ -45,14 +45,20 @@ table {
     border-right: 0.075rem solid var(--snap-border-dark);
   }
   
-  tr.table-row:nth-child(2n) {
+  .table-row-chevron {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  tr.table-row:nth-child(4n) {
     background-color: var(--snap-list-background);
   }
   
-  tr.table-row:nth-child(2n + 1) {
+  tr.table-row:nth-child(4n + 1) {
     background-color: var(--snap-list-alt-background);
   }
-  
+
   .table-row img, table input {
     cursor: pointer;
   }
@@ -157,6 +163,12 @@ table {
   bottom: calc(7.5% + 3rem);
   /* top: 2.8rem;
   bottom: 5.8rem; 2.5 + .3 + 2.5 + .5 */
+}
+
+.species-description {
+  background-color: var(--snap-species-highlight-background);
+  padding: 1rem;
+  color: rgba(0, 0, 0, .85);
 }
   
   @media (min-width: 768px) {

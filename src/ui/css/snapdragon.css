@@ -1328,7 +1328,8 @@ label.btn.btn-secondary {
 }
 
 label.btn.btn-secondary img {      
-    margin: 0 .25rem 0 -.25rem;
+    /* margin: 0 .25rem 0 -.25rem; */
+    margin: 0 .25rem 0 -.5rem; /* make image left margin */
 }
 
 label.btn.btn-secondary .lesson-icon {
@@ -2054,6 +2055,35 @@ a.collection-disabled {
 
 .margin-bottom {
   margin: 0 0 .5rem 0;
+}
+
+.margin-top {
+  margin: .5rem 0 0 0;
+}
+
+.margin-left {
+  margin: 0 0 0 .5rem;
+}
+
+.margin-right {
+  margin: 0 .5rem 0 0;
+}
+
+
+.padding-bottom {
+  padding: 0 0 .5rem 0;
+}
+
+.padding-top {
+  padding: .5rem 0 0 0;
+}
+
+.padding-left {
+  padding: 0 0 0 .5rem;
+}
+
+.padding-right {
+  padding: 0 .5rem 0 0;
 }
 
 .emphasis {
