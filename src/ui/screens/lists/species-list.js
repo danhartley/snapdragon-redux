@@ -10,7 +10,7 @@ import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
 import { modalImageHandler } from 'ui/helpers/image-handlers';
 import { lessonHandler } from 'ui/helpers/lesson-handler';
-import { buildTable } from 'ui/screens/lists/species-table-no-scores';
+import { buildTable } from 'ui/screens/lists/species-table';
 import { collectionHandler } from 'ui/helpers/collection-handler';
 import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
 import { renderHome } from 'ui/screens/home/home';
