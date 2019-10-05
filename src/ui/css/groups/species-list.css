@@ -51,13 +51,21 @@ table {
     width: 100%;
   }
 
-  tr.table-row:nth-child(4n) {
+  tr.table-row:nth-child(2n) {
+    background-color: var(--snap-list-background);
+  }
+  
+  tr.table-row:nth-child(2n + 1) {
+    background-color: var(--snap-list-alt-background);
+  }
+ 
+  /* tr.table-row:nth-child(4n) {
     background-color: var(--snap-list-background);
   }
   
   tr.table-row:nth-child(4n + 1) {
     background-color: var(--snap-list-alt-background);
-  }
+  } */
 
   .table-row img, table input {
     cursor: pointer;
@@ -77,8 +85,13 @@ table {
   .inserted-td {
     white-space: normal;
     text-align: left;
-    column-span: all;
+    /* column-span: all; */
     padding: .5rem;
+  }
+
+  .chevron {
+    display: flex;
+    justify-content: flex-end;
   }
   
   /* SORT INDICATORS */
@@ -169,6 +182,15 @@ table {
   background-color: var(--snap-species-highlight-background);
   padding: 1rem;
   color: rgba(0, 0, 0, .85);
+}
+
+.species-description > td {
+  width: 100%;
+}
+
+.youtube-icon {
+  font-size: 1.6rem;
+  margin-top: .25rem;
 }
   
   @media (min-width: 768px) {

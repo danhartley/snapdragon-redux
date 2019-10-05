@@ -42,15 +42,7 @@
                 <span class="mushroom-icon {{ item.hideFungiIcon }}"></span>
             </td>
             <td>
-                <div class="custom-control custom-checkbox">
-                    <input name="{{ item.name }}" type="checkbox" class="custom-control-input" id="inputCheck{{ item.snapIndex }}" checked>
-                    <label class="custom-control-label" for="inputCheck{{ item.snapIndex }}"></label>
-                </div>
-            </td>
-        </tr>
-        <tr class="table-row table-row-chevron js-table-row-chevron" id="{{ item.name }}">
-            <td colspan="all">
-                <i class="fas fa-chevron-down"></i>
+                <span data-name="{{ item.name }}" class="js-accordion"><i data-name="{{ item.name }}" class="fas fa-chevron-down"></i></span>
             </td>
         </tr>
     </tbody>

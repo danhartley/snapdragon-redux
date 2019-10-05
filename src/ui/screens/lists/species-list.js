@@ -33,55 +33,33 @@ export const renderSpeciesCollectionList = (collection, args) => {
 
     config.collection = { id: collection.id };
 
-    const handleUserEvents = () => {
-
-        const headerCheckbox = document.querySelector(".table-header #inputCheckAll");
-        const itemCheckboxes = document.querySelectorAll(".table-row .custom-control-input");
-
-        let hasCollectionChanged = false;
-
-        if(headerCheckbox) {
-            if(readOnlyMode) {
-                headerCheckbox.disabled = true;
-            } else {
-                headerCheckbox.addEventListener('click', event => {
-                    hasCollectionChanged = true;
-                    if(headerCheckbox.checked) {
-                        itemCheckboxes.forEach(checkbox => {
-                            checkbox.checked = true;
-                        });        
-                        collection.items.forEach(item => item.isDeselected = false);
-                    } else { 
-                        itemCheckboxes.forEach(checkbox => {
-                            checkbox.checked = false;
-                        });                
-                        collection.items.forEach(item => item.isDeselected = true);
-                    }                
-                    actions.boundUpdateCollectionItems(collection.items);
-                });
-            }
-        }
-
-        itemCheckboxes.forEach(checkbox => {
-            if(readOnlyMode) { 
-                checkbox.disabled = true;
-            } else {     
-                checkbox.addEventListener('click', event => {
-                    hasCollectionChanged = true;
-                    const name = checkbox.getAttribute('name');
-                    const item = collection.items.find(item => item.name === name);
-                    item.isDeselected = !checkbox.checked;
-                    actions.boundUpdateCollectionItems(collection.items);
-                });
-            }
+    const chevronClickHandler = (name, chevron) => {
+        // const name = event.target.dataset.name;
+        chevron.innerHTML = `<i class="fab fa-youtube youtube-icon" name="${name}"></i>`;
+        const species = collection.items.find(item => item.name == name);
+        showSpeciesDescription(species);
+        chevron.addEventListener('click', event => {                    
+            // play video
         });
+    };
+
+    const handleUserEvents = () => {
 
         const listItemImages = document.querySelectorAll('.table-row img');
 
         listItemImages.forEach(itemImage => { 
             const item = collection.items.find(item => item.name === itemImage.dataset.id)
             modalImageHandler(itemImage, item, collection, config); 
-        });    
+        });
+
+        const accordionIndicators = document.querySelectorAll('.js-accordion');
+
+        accordionIndicators.forEach(chevron => {
+            const accordionHandler = event => {
+                chevronClickHandler(event.target.dataset.name, chevron);
+            };
+            chevron.addEventListener('click', accordionHandler);
+        });
 
         const continueLearningActionBtn = document.querySelector('.js-species-list-btn-action');
 
@@ -92,7 +70,7 @@ export const renderSpeciesCollectionList = (collection, args) => {
             const speciesCardLinks = document.querySelectorAll('.js-test-card-container-link span');
             speciesCardLinks.forEach((link, index) => {                
                 link.addEventListener('click', event => {                    
-                    const name = event.target.dataset.name;
+                    const name = event.target.name;
                     document.querySelector('#cardModal .prev > span').dataset.card = 'species-card';
                     renderCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal, isInCarousel);
                 });
@@ -199,15 +177,6 @@ export const renderSpeciesCollectionList = (collection, args) => {
                 return function () {
                     buildTable(collection, { config, enums: traitEnums, overrideParent: tableParent });
                     handleUserEvents();
-                    // const { counter } = store.getState();
-                    // listeners.forEach(listener => listener(counter, collection.items.length));
-                    // actions.boundUpdateCollection({ config, collection });
-
-                    const rows = document.querySelectorAll('.js-table-row-chevron');
-                    rows.forEach(row => row.addEventListener('click', event => {
-                        const species = collection.items.find(item => item.name == row.id);
-                        callbackOnVideoTimeMatch(species);                        
-                    }));
                 }
             }
 
@@ -228,7 +197,7 @@ export const renderSpeciesCollectionList = (collection, args) => {
         collectionHandler(collection, config, counter, callback, callbackWhenNoResults);
     }
 
-    const callbackOnVideoTimeMatch = species => {
+    const showSpeciesDescription = species => {
         
         if(!species) return;
 
@@ -236,9 +205,10 @@ export const renderSpeciesCollectionList = (collection, args) => {
 
         const parent = document.querySelector('.species-table tbody');
         const currentDescriptions = document.querySelectorAll('.species-description');
-        currentDescriptions.forEach(tr => parent.removeChild(tr));
+              currentDescriptions.forEach(tr => parent.removeChild(tr));
 
         const description = collection.items.find(i => i.name === species.name).description;
+
         if(description) {
 
             const item = collection.items.find(item => item.name === species.name);
@@ -247,8 +217,28 @@ export const renderSpeciesCollectionList = (collection, args) => {
             const tr = document.querySelector(`#id_${id}`);
 
             const td = document.createElement('td');
-                  td.classList.add('inserted-td');
-                  td.innerHTML = description.replace(/\r?\n/g, '<br />');
+
+            const text = document.createElement('div');
+                  text.classList.add('inserted-td');
+                  text.innerHTML = description.replace(/\r?\n/g, '<br />');
+
+            const chevron = document.createElement('div');
+                  chevron.classList.add('chevron');
+                  chevron.innerHTML = `<i class="fas fa-chevron-up" name="${species.name}"></i>`;
+                  chevron.addEventListener('click', event => {
+                        const chevron = document.querySelectorAll(`i[name="${species.name}"]`)[0];
+                              chevron.parentElement.innerHTML = `<i data-name="${species.name}" class="fas fa-chevron-down"></i>`;
+                        const accordionHandler = event => {
+                            chevronClickHandler(event.target.dataset.name, chevron);
+                        };
+                        chevron.addEventListener('click', accordionHandler);
+
+                        const currentDescriptions = document.querySelectorAll('.species-description');
+                            currentDescriptions.forEach(tr => parent.removeChild(tr)); 
+                  });
+
+            td.appendChild(text);
+            td.appendChild(chevron);
 
             const insert = document.createElement('tr');
                   insert.classList.add('table-row');
@@ -260,7 +250,7 @@ export const renderSpeciesCollectionList = (collection, args) => {
         }
     };
 
-    listenToVideoTimes(callbackOnVideoTimeMatch);
+    listenToVideoTimes(showSpeciesDescription);
 };
 
 const listeners = [];
