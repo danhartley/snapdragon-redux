@@ -33,21 +33,30 @@ export const renderSpeciesCollectionList = (collection, args) => {
 
     config.collection = { id: collection.id };
 
-    const openAccordionClickHandler = (name, icon) => {
+    const openAccordionClickHandler = (name, accordion) => {
         
-        if(R.contains('youtube-icon', icon.firstElementChild.classList)) return;
+        accordion.innerHTML = `<i class="fas fa-chevron-up" data-name="${name}"></i>`;
+        
+        openSpeciesDescription(name, false);
 
-        icon.innerHTML = `<i class="fab fa-youtube youtube-icon" name="${name}"></i>`;
-        
-        const species = collection.items.find(item => item.name == name);
-        
-        showSpeciesDescription(species, false);
-
-        icon.addEventListener('click', event => {       
-            if(species && species.time) {
-                videoPlayer.playVideoFrom(species.time[0]);
+        const closeAccordionHandler = event => {
+            // remove current open accordion handler
+            accordion.removeEventListener('click', closeAccordionHandler);
+            // change direction of chevron       
+            accordion.innerHTML = `<i class="fas fa-chevron-down" data-name="${name}"></i>`;
+            // attach new open accordion listener
+            accordion.addEventListener('click', event => {
+                openAccordionClickHandler(name, accordion);
+            });
+            // remove the species description - handled in group action
+            const description = document.querySelector('.species-description');
+            if(description) {
+                description.parentNode.removeChild(description);
             }
-        });
+        };
+
+        // attach close accordion handler
+        accordion.addEventListener('click', closeAccordionHandler);
     };
 
     const userClickHandlers = () => {
@@ -59,13 +68,25 @@ export const renderSpeciesCollectionList = (collection, args) => {
                   modalImageHandler(itemImage, item, collection, config); 
               });
 
-        const accordionIndicators = document.querySelectorAll('.js-accordion');
+        const accordions = document.querySelectorAll('.js-accordion');
 
-              accordionIndicators.forEach(chevron => {
+              accordions.forEach(accordion => {
                   const accordionHandler = event => {
-                    openAccordionClickHandler(event.target.dataset.name, chevron);
+                    openAccordionClickHandler(event.target.dataset.name, accordion);
                   };
-                  chevron.addEventListener('click', accordionHandler);
+                  accordion.addEventListener('click', accordionHandler);
+              });
+
+        const youtubeIcons = document.querySelectorAll('.js-youtuube');
+
+              youtubeIcons.forEach(icon => {
+                  icon.addEventListener('click', event => {       
+                      const name = event.target.dataset.name;
+                      const species = collection.items.find(item => item.name == name);   
+                      if(species && species.time) {
+                          videoPlayer.playVideoFrom(species.time[0]);
+                      }
+                  });
               });
 
         const continueLearningActionBtn = document.querySelector('.js-species-list-btn-action');
@@ -203,25 +224,32 @@ export const renderSpeciesCollectionList = (collection, args) => {
         collectionHandler(collection, config, counter, callback, callbackWhenNoResults);
     }
 
-    const showSpeciesDescription = (species, enableScroll = true) => {
+    const openSpeciesDescription = (name, enableScroll = true) => {
         
-        if(!species) return;
-
-        const parent = document.querySelector('.species-table tbody');
+        let parent = document.querySelector('.species-table tbody');
         
-        const currentDescriptions = document.querySelectorAll('.species-description');
-              currentDescriptions.forEach(tr => parent.removeChild(tr));
+        let accordions = Array.from(document.querySelectorAll('.js-accordion'));
+            accordions = accordions.filter(accordion => accordion.dataset.name !== name);
 
-        const item = collection.items.find(i => i.name === species.name);
+            //trigger close event on any accordions that might be open
+            accordions.forEach(accordion => {                
+                if(accordion.innerHTML.indexOf('fa-chevron-up') > -1) {
+                    accordion.click();
+                }
+            });
 
-        let description = item.description;
-            description = description || item.traits.description.value[0];
+        // remove any descriptions that might be open
+        let currentDescriptions = document.querySelectorAll('.species-description');
+            currentDescriptions.forEach(tr => parent.removeChild(tr));
+
+        const species = collection.items.find(i => i.name === name);
+
+        let description = species.description;
+            description = description || species.traits.description.value[0];
 
         if(description) {
 
-            const item = collection.items.find(item => item.name === species.name);
-
-            const id = item.id;
+            const id = species.id;
             const tr = document.querySelector(`#id_${id}`);
 
             const td = document.createElement('td');
@@ -230,23 +258,7 @@ export const renderSpeciesCollectionList = (collection, args) => {
                   text.classList.add('inserted-td');
                   text.innerHTML = description.replace(/\r?\n/g, '<br />');
 
-            const chevron = document.createElement('div');
-                  chevron.classList.add('chevron');
-                  chevron.innerHTML = `<i class="fas fa-chevron-up" name="${species.name}"></i>`;
-                  chevron.addEventListener('click', event => {
-                        const chevron = document.querySelectorAll(`i[name="${species.name}"]`)[0];
-                              chevron.parentElement.innerHTML = `<i data-name="${species.name}" class="fas fa-chevron-down"></i>`;
-                        const accordionHandler = event => {
-                            openAccordionClickHandler(event.target.dataset.name, chevron);
-                        };
-                        chevron.addEventListener('click', accordionHandler);
-
-                        const currentDescriptions = document.querySelectorAll('.species-description');
-                            currentDescriptions.forEach(tr => parent.removeChild(tr)); 
-                  });
-
             td.appendChild(text);
-            td.appendChild(chevron);
 
             const insert = document.createElement('tr');
                   insert.classList.add('table-row');
@@ -260,7 +272,7 @@ export const renderSpeciesCollectionList = (collection, args) => {
         }
     };
 
-    videoPlayer.listenToVideoTimes(showSpeciesDescription);
+    videoPlayer.listenToVideoTimes(openSpeciesDescription);
 };
 
 const listeners = [];

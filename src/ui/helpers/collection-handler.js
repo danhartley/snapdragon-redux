@@ -46,27 +46,7 @@ async function getItems(collection, config) {
     }
     else if(collection.behaviour === 'static') {
 
-        // const loadSpeciesInParallel = async itemNames => {
-        //     try {
-        //         return Promise.all(itemNames.map(name => {                    
-        //             return firestore.getSpeciesByName(name).then(async item => {
-        //                 return await {                         
-        //                     ...item
-        //                 }
-        //             })                    
-        //         }));
-    
-        //     } catch (error) {
-        //         console.log(`${item} problem!!! For ${name}`)
-        //         console.error(error);
-        //     }
-        // };
-
-        const itemNames = collection.species.length > 0 ? collection.species.map(s => s.name) : config.guide.itemNames;
-        // const itemNames = collection.itemNames.length > 0 ? collection.itemNames : config.guide.itemNames;
-
         return firestore.getSpeciesInParallel(collection.species);
-        // return firestore.getSpeciesByNameInParallel(itemNames);
     }
 };
 

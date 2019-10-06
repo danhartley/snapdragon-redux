@@ -80,13 +80,15 @@ table {
     padding: .5rem;
   }
 
-  .chevron {
+  .accordion {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end;    
+    cursor: pointer;
   }
 
-  .chevron i {
-    cursor: pointer;
+  .accordion i {    
+    font-size: 1.2rem;
+    pointer-events: none;
   }
   
   /* SORT INDICATORS */
@@ -181,11 +183,11 @@ table {
   width: 100%;
 }
 
-.youtube-icon {
+/* .youtube-icon {
   font-size: 1.6rem;
   margin-top: .25rem;
 }
-  
+   */
   @media (min-width: 768px) {
 
     .embedded-lesson-list-header {

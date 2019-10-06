@@ -34,15 +34,20 @@
                 <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="family" data-family="{{ item.taxonomy.family }}" data-target="#cardModal" class="{{ item.familyLinkClass }}">{{ item.taxonomy.family }}</span>
                 <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="order" data-order="{{ item.taxonomy.order }}" data-target="#cardModal" class="{{ item.orderLinkClass }}">{{ item.taxonomy.order }}</span>
             </td>
-            <td class="wide-screen">
+            <!-- <td class="wide-screen">
                 <span data-toggle="modal" data-url="{{ item.url }}" data-key-trait="{{ item.keyTrait }}" data-target="#cardModal" class="{{ item.keyTratLinkClass }}">{{ item.keyTrait }}</span>
-            </td>
+            </td> -->
             <td class="{{ item.iconicTaxon }}">
                 <span id="{{ item.id }}" name="{{ item.name }}"><i class="{{ item.iconicTaxonIcon }}"></i></span>
                 <span class="mushroom-icon {{ item.hideFungiIcon }}"></span>
             </td>
+            <td class="wide-screen">
+                <span data-name="{{ item.name }}" class="chevron js-youtuube">
+                    <i class="fab fa-youtube youtube-icon" data-name="{{ item.name }}"></i>
+                </span>
+            </td>
             <td>
-                <span data-name="{{ item.name }}" class="chevron js-accordion"><i data-name="{{ item.name }}" class="fas fa-chevron-down"></i></span>
+                <span data-name="{{ item.name }}" class="accordion js-accordion"><i data-name="{{ item.name }}" class="fas fa-chevron-down"></i></span>
             </td>
         </tr>
     </tbody>

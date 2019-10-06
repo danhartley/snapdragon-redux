@@ -155,15 +155,15 @@ export const buildTable = (collection, args) => {
 
     speciesHeader.innerHTML = '<span>Species</span';
     familyHeader.innerHTML = '<span>Family</span><span>Order</span>';
-    traitNameHeader.innerHTML = '<span>Feature</span>';
+    traitNameHeader.innerHTML = '<span></span>';
     iconicTaxonHeader.innerHTML = '<span><i class="fas fa-sliders-h"></i></span>';
     imageHeader.innerHTML = overrideParent ? '' : '<span><i class="fas fa-undo"></i></span>';
     if(wide) {        
         headerRow.appendChild(imageHeader);
         headerRow.appendChild(speciesHeader);    
         headerRow.appendChild(familyHeader);
-        headerRow.appendChild(traitNameHeader);
         headerRow.appendChild(iconicTaxonHeader);
+        headerRow.appendChild(traitNameHeader);
     } else {
         headerRow.appendChild(imageHeader);    
         headerRow.appendChild(speciesHeader);     
