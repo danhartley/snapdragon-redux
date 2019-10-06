@@ -493,7 +493,7 @@ const getSpeciesInParallel = async species => {
         return Promise.all(species.map(sp => {                    
             return firestore.getSpeciesByName(sp.name).then(async item => {
                 return await {                         
-                    ...item, description: sp.description
+                    ...item, description: sp.description, time: sp.time
                 }
             })                    
         }));

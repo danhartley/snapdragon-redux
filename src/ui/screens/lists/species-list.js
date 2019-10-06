@@ -15,7 +15,7 @@ import { collectionHandler } from 'ui/helpers/collection-handler';
 import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
 import { renderHome } from 'ui/screens/home/home';
 import { enums } from 'ui/helpers/enum-helper';
-import { listenToVideoTimes } from 'ui/screens/home/home-lesson-intro';
+import { videoPlayer } from 'ui/screens/lists/video-handler';
 
 export const renderSpeciesCollectionList = (collection, args) => {
 
@@ -33,33 +33,40 @@ export const renderSpeciesCollectionList = (collection, args) => {
 
     config.collection = { id: collection.id };
 
-    const chevronClickHandler = (name, chevron) => {
-        // const name = event.target.dataset.name;
-        chevron.innerHTML = `<i class="fab fa-youtube youtube-icon" name="${name}"></i>`;
+    const openAccordionClickHandler = (name, icon) => {
+        
+        if(R.contains('youtube-icon', icon.firstElementChild.classList)) return;
+
+        icon.innerHTML = `<i class="fab fa-youtube youtube-icon" name="${name}"></i>`;
+        
         const species = collection.items.find(item => item.name == name);
-        showSpeciesDescription(species);
-        chevron.addEventListener('click', event => {                    
-            // play video
+        
+        showSpeciesDescription(species, false);
+
+        icon.addEventListener('click', event => {       
+            if(species && species.time) {
+                videoPlayer.playVideoFrom(species.time[0]);
+            }
         });
     };
 
-    const handleUserEvents = () => {
+    const userClickHandlers = () => {
 
         const listItemImages = document.querySelectorAll('.table-row img');
 
-        listItemImages.forEach(itemImage => { 
-            const item = collection.items.find(item => item.name === itemImage.dataset.id)
-            modalImageHandler(itemImage, item, collection, config); 
-        });
+              listItemImages.forEach(itemImage => { 
+                  const item = collection.items.find(item => item.name === itemImage.dataset.id)
+                  modalImageHandler(itemImage, item, collection, config); 
+              });
 
         const accordionIndicators = document.querySelectorAll('.js-accordion');
 
-        accordionIndicators.forEach(chevron => {
-            const accordionHandler = event => {
-                chevronClickHandler(event.target.dataset.name, chevron);
-            };
-            chevron.addEventListener('click', accordionHandler);
-        });
+              accordionIndicators.forEach(chevron => {
+                  const accordionHandler = event => {
+                    openAccordionClickHandler(event.target.dataset.name, chevron);
+                  };
+                  chevron.addEventListener('click', accordionHandler);
+              });
 
         const continueLearningActionBtn = document.querySelector('.js-species-list-btn-action');
 
@@ -68,36 +75,36 @@ export const renderSpeciesCollectionList = (collection, args) => {
         setTimeout(() => {
             
             const speciesCardLinks = document.querySelectorAll('.js-test-card-container-link span');
-            speciesCardLinks.forEach((link, index) => {                
-                link.addEventListener('click', event => {                    
-                    const name = event.target.name;
-                    document.querySelector('#cardModal .prev > span').dataset.card = 'species-card';
-                    renderCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal, isInCarousel);
-                });
-            });
+                  speciesCardLinks.forEach((link, index) => {                
+                      link.addEventListener('click', event => {                    
+                        const name = event.target.dataset.name;
+                        document.querySelector('#cardModal .prev > span').dataset.card = 'species-card';
+                        renderCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal, isInCarousel);
+                      });
+                  });
 
             const traitCardLinks = document.querySelectorAll('.js-key-trait-link');
-            traitCardLinks.forEach(link => {
-                link.addEventListener('click', event => {
-                    const keyTrait = event.target.dataset.keyTrait;
-                    const url = event.target.dataset.url;
-                    renderNonTaxonCard('MODAL', keyTrait, cardModal, url);
-                });
-            });
+                  traitCardLinks.forEach(link => {
+                    link.addEventListener('click', event => {
+                        const keyTrait = event.target.dataset.keyTrait;
+                        const url = event.target.dataset.url;
+                        renderNonTaxonCard('MODAL', keyTrait, cardModal, url);
+                    });
+                  });
 
             const taxonCardLinks = document.querySelectorAll('.js-taxon-card-link');
-            taxonCardLinks.forEach(link => {
-                link.addEventListener('click', event => {
-                    const taxon = event.target.dataset.family || event.target.dataset.order;
-                    const name = event.target.dataset.name;
-                    const rank = event.target.dataset.rank;
-                    document.querySelector('#cardModal .prev > span').dataset.rank = rank;
-                    document.querySelector('#cardModal .prev > span').dataset.card = 'taxon-card';
-                    document.querySelector('#cardModal .next > span').dataset.rank = rank;
-                    document.querySelector('#cardModal .next > span').dataset.card = 'taxon-card';
-                    renderTaxonCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal, taxon, rank, isInCarousel);
-                });
-            });
+                  taxonCardLinks.forEach(link => {
+                    link.addEventListener('click', event => {
+                        const taxon = event.target.dataset.family || event.target.dataset.order;
+                        const name = event.target.dataset.name;
+                        const rank = event.target.dataset.rank;
+                        document.querySelector('#cardModal .prev > span').dataset.rank = rank;
+                        document.querySelector('#cardModal .prev > span').dataset.card = 'taxon-card';
+                        document.querySelector('#cardModal .next > span').dataset.rank = rank;
+                        document.querySelector('#cardModal .next > span').dataset.card = 'taxon-card';
+                        renderTaxonCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal, taxon, rank, isInCarousel);
+                    });
+                  });
 
             document.querySelectorAll('.mushroom-icon').forEach(icon => {
                 icon.innerHTML = '<svg-icon class="si-glyph-mushrooms"><src href="./icons/si-glyph-mushrooms.svg"/></svg>';
@@ -165,7 +172,7 @@ export const renderSpeciesCollectionList = (collection, args) => {
 
     if(readOnlyMode) {
         buildTable(collection, { config, enums: traitEnums } );
-        handleUserEvents();        
+        userClickHandlers();        
     }
     else {
 
@@ -176,10 +183,9 @@ export const renderSpeciesCollectionList = (collection, args) => {
             if(collection.items && collection.items.length) {
                 return function () {
                     buildTable(collection, { config, enums: traitEnums, overrideParent: tableParent });
-                    handleUserEvents();
+                    userClickHandlers();
                 }
             }
-
             else {
                 console.log('No items');
             }
@@ -197,17 +203,19 @@ export const renderSpeciesCollectionList = (collection, args) => {
         collectionHandler(collection, config, counter, callback, callbackWhenNoResults);
     }
 
-    const showSpeciesDescription = species => {
+    const showSpeciesDescription = (species, enableScroll = true) => {
         
         if(!species) return;
 
-        console.log(species.name);
-
         const parent = document.querySelector('.species-table tbody');
+        
         const currentDescriptions = document.querySelectorAll('.species-description');
               currentDescriptions.forEach(tr => parent.removeChild(tr));
 
-        const description = collection.items.find(i => i.name === species.name).description;
+        const item = collection.items.find(i => i.name === species.name);
+
+        let description = item.description;
+            description = description || item.traits.description.value[0];
 
         if(description) {
 
@@ -229,7 +237,7 @@ export const renderSpeciesCollectionList = (collection, args) => {
                         const chevron = document.querySelectorAll(`i[name="${species.name}"]`)[0];
                               chevron.parentElement.innerHTML = `<i data-name="${species.name}" class="fas fa-chevron-down"></i>`;
                         const accordionHandler = event => {
-                            chevronClickHandler(event.target.dataset.name, chevron);
+                            openAccordionClickHandler(event.target.dataset.name, chevron);
                         };
                         chevron.addEventListener('click', accordionHandler);
 
@@ -246,11 +254,13 @@ export const renderSpeciesCollectionList = (collection, args) => {
                   insert.appendChild(td);
             tr.parentElement.insertBefore(insert, tr.nextSibling);
 
-            tr.previousElementSibling.scrollIntoView();
+            if(enableScroll) {
+                tr.previousElementSibling.scrollIntoView();
+            }
         }
     };
 
-    listenToVideoTimes(showSpeciesDescription);
+    videoPlayer.listenToVideoTimes(showSpeciesDescription);
 };
 
 const listeners = [];

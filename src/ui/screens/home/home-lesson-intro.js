@@ -4,14 +4,9 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
+import { videoPlayer } from 'ui/screens/lists/video-handler';
 
 import lessonTemplate from 'ui/screens/home/home-lesson-intro-template.html';
-
-const listenersToVideoTimes = [];
-
-export const listenToVideoTimes = callback => {
-    listenersToVideoTimes.push(callback);
-};
 
 export const renderLesson = lesson => {
 
@@ -33,46 +28,35 @@ export const renderLesson = lesson => {
 
     setTimeout(() => {
 
-        let player;
-
-        const onPlayerReady = event => {
-            player = event.target;
-        };
+        videoPlayer.readyPlayer();
 
         let checkInt;
 
-        const checkCurrentTime = () => {            
+        const checkCurrentTime = player => {            
             checkInt = setInterval(function() {
                const time = Math.floor(player.getCurrentTime());
                const times = lesson.species.filter(sp => sp.time);
                const match = times.find(sp => R.contains(time, sp.time));
                if(match) {
-                   listenersToVideoTimes.map(listener => listener(match));
+                   videoPlayer.listenersToVideoTimes.map(listener => listener(match));
                }
             }, 1000);
-         }
+        };
 
-         const onPlayerStateChange = event => {
-            player = event.target;
-            const states = [ { key: 1, value: 'playing' }, { key: 2, value: 'paused' } ];
-            
+        const onPlayerStateChangeCallback = player => {
+
             switch(player.getPlayerState()) {
-                case states[0].key:
-                    checkCurrentTime();
+                case videoPlayer.states[0].key:
+                    checkCurrentTime(player);
                     break;
-                    case states[1].key:
+                    case videoPlayer.states[1].key:
                         clearInterval(checkInt);
                         checkInt = null;
                         break;
             }
-         };
+        };
 
-        new YT.Player('embedded-video', {
-            events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-            }
-        });
+        videoPlayer.onPlayerStateChangeListeners.push(onPlayerStateChangeCallback);
         
     }, 1000);
         

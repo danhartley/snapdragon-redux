@@ -114,11 +114,6 @@ export const buildTable = (collection, args) => {
 
     renderTemplate({ id: collection.id,itemImages }, template.content, parent);
 
-    // if(overrideParent) {
-    //     const species = overrideParent.querySelector('.scrollable');
-    //     overrideParent.style.minHeight = `${species.offsetHeight}px`;
-    // }
-
     const keyTraits = document.querySelectorAll('.js-key-trait-link');
 
     keyTraits.forEach(vn => {        
@@ -154,26 +149,6 @@ export const buildTable = (collection, args) => {
     const familyHeader = document.createElement('th');
     const traitNameHeader = document.createElement('th');
     const iconicTaxonHeader = document.createElement('th');
-    
-    
-    // const filterHeader = document.createElement('th');
-    //       filterHeader.classList.add('not-sortable');
-
-    // const checkbox = document.createElement('span');
-    // const inputCheck = document.createElement('input');
-
-    // checkbox.classList.add('custom-control');
-    // checkbox.classList.add('form-control-lg');
-    // checkbox.classList.add('custom-checkbox');
-    // inputCheck.id = 'inputCheckAll'
-    // inputCheck.type = "checkbox";
-    // inputCheck.checked = true;
-    // inputCheck.classList.add('custom-control-input');
-    // const labelCheck = document.createElement('label');
-    //       labelCheck.classList.add('custom-control-label');
-    //       labelCheck.setAttribute('for', 'inputCheckAll');
-    // checkbox.appendChild(inputCheck);
-    // checkbox.appendChild(labelCheck);    
 
     const accordionHeader = document.createElement('th');
           accordionHeader.classList.add('not-sortable');
@@ -182,7 +157,6 @@ export const buildTable = (collection, args) => {
     familyHeader.innerHTML = '<span>Family</span><span>Order</span>';
     traitNameHeader.innerHTML = '<span>Feature</span>';
     iconicTaxonHeader.innerHTML = '<span><i class="fas fa-sliders-h"></i></span>';
-    // filterHeader.appendChild(checkbox); 
     imageHeader.innerHTML = overrideParent ? '' : '<span><i class="fas fa-undo"></i></span>';
     if(wide) {        
         headerRow.appendChild(imageHeader);
@@ -195,7 +169,6 @@ export const buildTable = (collection, args) => {
         headerRow.appendChild(speciesHeader);     
         headerRow.appendChild(iconicTaxonHeader);
     }
-    // headerRow.appendChild(filterHeader);      
     headerRow.appendChild(accordionHeader);
 
     tbody.insertBefore(headerRow, tbody.children[0]);

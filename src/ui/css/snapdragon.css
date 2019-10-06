@@ -1202,7 +1202,7 @@ span.correct {
   background-color: var(--snap-block-light);
 }
 
-.species-question.btn.btn:not(:disabled):not(.disabled) {
+.btn.btn:not(:disabled):not(.disabled) {
   cursor: initial;
 }
 
@@ -1514,7 +1514,6 @@ label.btn.btn-secondary .lesson-icon {
 
 .info.carousel.slide .carousel-item div:nth-child(2) {
   background-color: rgba(128, 128, 128, 0.1);
-  /* text-transform: lowercase; */
 }
 
 .info.carousel-control .carousel-control-next-icon {

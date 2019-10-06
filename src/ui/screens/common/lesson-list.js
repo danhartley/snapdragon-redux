@@ -96,7 +96,6 @@ export const renderLessons = () => {
           container.style.minHeight = 0;
         }
       } else {
-        // if(config.isLandscapeMode) {
           selectedTitle.dataset.selected = true;
           const loadingMessage = selectedTitle.parentElement.querySelector('.js-loading-message');
                 loadingMessage.classList.remove('hide');
@@ -104,7 +103,6 @@ export const renderLessons = () => {
           renderSpeciesCollectionList(selectedLesson, { readOnlyMode: false, parent: container, tableParent: container, loadSpeciesCallback, isInCarousel: false });
           renderLesson(selectedLesson);
           scrollToTitle(title);
-        // }
       }      
     }));
 };

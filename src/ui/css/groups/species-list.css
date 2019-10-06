@@ -59,14 +59,6 @@ table {
     background-color: var(--snap-list-alt-background);
   }
  
-  /* tr.table-row:nth-child(4n) {
-    background-color: var(--snap-list-background);
-  }
-  
-  tr.table-row:nth-child(4n + 1) {
-    background-color: var(--snap-list-alt-background);
-  } */
-
   .table-row img, table input {
     cursor: pointer;
   }
@@ -85,13 +77,16 @@ table {
   .inserted-td {
     white-space: normal;
     text-align: left;
-    /* column-span: all; */
     padding: .5rem;
   }
 
   .chevron {
     display: flex;
     justify-content: flex-end;
+  }
+
+  .chevron i {
+    cursor: pointer;
   }
   
   /* SORT INDICATORS */
@@ -174,8 +169,6 @@ table {
  .species-list .scrollable {    
   top: 7.5%;
   bottom: calc(7.5% + 3rem);
-  /* top: 2.8rem;
-  bottom: 5.8rem; 2.5 + .3 + 2.5 + .5 */
 }
 
 .species-description {

@@ -711,7 +711,7 @@ const kitchen1 = {
       {
         name: 'Origanum vulgare',
         time: [80],
-        description: `Oregano can be grown from a cutting or seed, however, it is not frost resistant.`
+        description: `Oregano can be grown from a cutting or seed. It is not frost resistant.`
       },
       {
         name: 'Salvia officinalis',
