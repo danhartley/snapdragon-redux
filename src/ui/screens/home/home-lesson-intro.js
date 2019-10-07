@@ -38,7 +38,7 @@ export const renderLesson = lesson => {
                const times = lesson.species.filter(sp => sp.time);
                const match = times.find(sp => R.contains(time, sp.time));
                if(match) {
-                   videoPlayer.listenersToVideoTimes.map(listener => listener(match));
+                   videoPlayer.listenersToVideoTimes.map(listener => listener(match.name));
                }
             }, 1000);
         };
@@ -46,13 +46,13 @@ export const renderLesson = lesson => {
         const onPlayerStateChangeCallback = player => {
 
             switch(player.getPlayerState()) {
-                case videoPlayer.states[0].key:
+                case videoPlayer.states[1].key:
                     checkCurrentTime(player);
                     break;
-                    case videoPlayer.states[1].key:
-                        clearInterval(checkInt);
-                        checkInt = null;
-                        break;
+                case videoPlayer.states[2].key:
+                    clearInterval(checkInt);
+                    checkInt = null;
+                    break;
             }
         };
 

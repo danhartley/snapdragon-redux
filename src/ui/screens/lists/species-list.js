@@ -37,7 +37,7 @@ export const renderSpeciesCollectionList = (collection, args) => {
         
         accordion.innerHTML = `<i class="fas fa-chevron-up" data-name="${name}"></i>`;
         
-        openSpeciesDescription(name, false);
+        openSpeciesDescription(name, true);
 
         const closeAccordionHandler = event => {
             // remove current open accordion handler
@@ -81,11 +81,13 @@ export const renderSpeciesCollectionList = (collection, args) => {
 
               youtubeIcons.forEach(icon => {
                   icon.addEventListener('click', event => {       
-                      const name = event.target.dataset.name;
-                      const species = collection.items.find(item => item.name == name);   
-                      if(species && species.time) {
-                          videoPlayer.playVideoFrom(species.time[0]);
-                      }
+                    event.stopPropagation();
+                    event.preventDefault();
+                    const name = event.target.dataset.name;
+                    const species = collection.items.find(item => item.name == name);   
+                    if(species && species.time) {
+                        videoPlayer.playVideoFrom(species.time[0]);
+                    }
                   });
               });
 

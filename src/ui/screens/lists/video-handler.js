@@ -1,6 +1,10 @@
 const listenersToVideoTimes = [];
 
 const listenToVideoTimes = callback => {
+    // first remove any existing listeners (there should only be one, from the previos lesson)
+    while(listenersToVideoTimes.length > 0) {
+        listenersToVideoTimes.pop();
+    }
     listenersToVideoTimes.push(callback);
 };
 
@@ -23,7 +27,7 @@ const readyPlayer = () => {
     
     const onPlayerStateChange = event => {
         player = event.target;
-        onPlayerStateChangeListeners.forEach(listener => listener(player));    
+        onPlayerStateChangeListeners.forEach(listener => listener(player));
      };
     
     new YT.Player('embedded-video', {

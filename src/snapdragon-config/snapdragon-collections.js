@@ -726,7 +726,7 @@ const kitchen1 = {
       {
         name: 'Coriandrum sativum',
         time: [137],
-        description: `Also known as Corainder.
+        description: `Also known as Coriander.
         
         Best grown from seed (which must be split first to esnure it germinates quickly). 
         

@@ -2,7 +2,7 @@
     <div class="btn-group btn-group-toggle scrollable" data-toggle="buttons" data-repeat-lesson="{{ lessons }}">
         <label class="btn btn-secondary" id="id_{{ lesson.id }}">
             <div class="lesson-radio-button"></div>
-            <div style="width: 100%; pointer-events: initial;">
+            <div style="pointer-events: initial;">
                 <input type="radio" name="lessons" autocomplete="off">
                 <div class="lesson-name" data-lesson-id="{{ lesson.id }}">
                     <span id="{{ lesson.id }}" class="active-title">{{ lesson.name }}</span>
