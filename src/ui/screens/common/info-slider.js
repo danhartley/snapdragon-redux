@@ -19,7 +19,7 @@ const renderInfoSlider = (item, traits, parent, id) => {
         if(trait.name.toLowerCase() === 'role') trait.name = trait.type || 'role';
         trait.unit = trait.unit ? trait.unit.toLowerCase() === 'colour' ? '' : trait.unit : '';
         trait.description = trait.value;
-        trait.value = trait.name.toLowerCase() === 'description' ? 'Navigate < or > for traits' : trait.value.join(', ');
+        trait.value = trait.name.toLowerCase() === 'description' ? '< traits >' : trait.value.join(', ');
     });
     
     let description = traits.find(trait => trait.name.toLowerCase() === 'description');

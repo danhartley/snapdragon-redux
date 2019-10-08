@@ -16,13 +16,25 @@
 
             // https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 
-            window.addEventListener('resize', () => {
+            const setWindowHeight = () => {
+
                 const verticalHeight = window.innerHeight * 0.01;
 
                 document.documentElement.style.setProperty('--vh', verticalHeight + 'px');
                 document.documentElement.style.setProperty('--vhRunningBlock', (verticalHeight * 7.5) + 'px');
+                document.documentElement.style.setProperty('--vhRunningBlocks', (verticalHeight * 15) + 'px');
+                document.documentElement.style.setProperty('--vhStandardBlock', (verticalHeight * 10) + 'px');
+                document.documentElement.style.setProperty('--vhHalfStandardBlock', (verticalHeight * 5) + 'px');
+                document.documentElement.style.setProperty('--vhDoubleStandardBlock', (verticalHeight * 20) + 'px');
+                document.documentElement.style.setProperty('--vhCarousel', (verticalHeight * 7.5 * 4) + 'px');
 
                 console.log(verticalHeight * 7.5);
+            };
+
+            setWindowHeight();
+
+            window.addEventListener('resize', () => {
+                setWindowHeight();
             });
 
             if(window.location.origin.indexOf('learn-the-planet') > -1) {

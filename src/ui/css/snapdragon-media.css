@@ -94,14 +94,18 @@
         display: none !important;
     }
     .portrait-grid {
-        display: grid;
+        display: grid;        
+    }
+    
+    .mixed-container .carousel {
+        height: var(--vhCarousel, 30vh);
     }
 }
 
 
 @media (min-height: 640px) {    
     .imageSlider .carousel-item {
-        height: 30vh;
+        height: var(--vhCarousel, 30vh);
         padding: 1rem 10%;
     }
 }

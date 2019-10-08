@@ -50,6 +50,7 @@
     bottom: .5rem;
     left: .5rem;
     right: .5rem;
+    height: var(--vhStandardBlock, 10vh);
   }
 
   .taxa-container {
@@ -140,7 +141,13 @@ td:empty:after{
 }
 
 .info-details {
-  height: calc(90vh - 20rem);  
+  height: calc(
+            var(--vh, 1vh) * 100 
+          - var(--vhRunningBlocks,15vh)
+          - var(--vhDoubleStandardBlock,20vh) 
+          - var(--vhCarousel,28vh)
+          - .5rem 
+          - 1rem);
   margin: .5rem 0;
   overflow-y: scroll;
 }

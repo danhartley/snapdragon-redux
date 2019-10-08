@@ -24,14 +24,17 @@ const addTraits = () => {
 
     const renderTraits = async item => {
         
-        const itemTraits = await firestore.getTraitsBySpeciesName(item.name);
-        item.traits = itemTraits;
+        let itemTraits = await firestore.getTraitsBySpeciesName(item.name);
+            item.traits = itemTraits;
                 
         const isSpecies = item.eolId;
                 
         if(isSpecies) {
             const itemFamily = await firestore.getTaxonByName({language: 'en'}, item.taxonomy.family);                
             item.family = itemFamily;
+        } else {
+            const _item = await firestore.getTraitsByTaxonName(item.name);
+            item.traits = _item.traits;
         }
         
         const fields = [], relationships = [];
@@ -133,9 +136,16 @@ const addTraits = () => {
 
         if(pair.unit) trait[pair.key].unit = pair.unit;
 
-        console.log(trait);
+        const collection = item.taxon === 'family' ? 'taxa_en' : 'traits_en';
 
-        const log = await firestore.addSpeciesTraits(item.name, trait);
+        if(item.taxon == 'family') {
+            const entries = Object.entries(trait);
+            item.traits[entries[0][0]] = entries[0][1];
+        }
+
+        const update = item.taxon ? { traits: item.traits } : trait;
+
+        const log = await firestore.addTraits(item.name, update, collection);
 
         renderTraits(item);
         renderAddTrait(addTraitParent, callback);

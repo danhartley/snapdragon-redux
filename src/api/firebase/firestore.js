@@ -173,11 +173,11 @@ const getTaxonByName = async (config, name) => {
     }
 };
 
-const getAsyncTraitsBySpeciesName = async (name, language) => {
+const getAsyncTraitsByNameAndCollection = async (name, collection = 'traits_en', language) => {
 
     try {
     
-    const languageTraits = db.collection(`traits_en`).where("name", "==", name);
+    const languageTraits = db.collection(collection).where("name", "==", name);
   
     const traits = await languageTraits.get();
   
@@ -192,7 +192,24 @@ const getTraitsBySpeciesName = async (name, language = 'en') => {
 
     let traits;
 
-    const querySnapshot = await getAsyncTraitsBySpeciesName(name, language);
+    const querySnapshot = await getAsyncTraitsByNameAndCollection(name, 'traits_en', language);
+
+    if(!querySnapshot || !querySnapshot.docs) return new Promise(resolve => resolve({}));
+
+    if(querySnapshot.docs.length > 0) {
+        querySnapshot.forEach(doc => {
+        traits = doc.data();
+      });
+    }
+
+    return await traits;
+};
+
+const getTraitsByTaxonName = async (name, language = 'en') => {
+
+    let traits;
+
+    const querySnapshot = await getAsyncTraitsByNameAndCollection(name, 'taxa_en', language);
 
     if(!querySnapshot || !querySnapshot.docs) return new Promise(resolve => resolve({}));
 
@@ -301,32 +318,32 @@ const deleteSpeciesByName = async name => {
     });
 };
 
-const addTraits = async props => {
+// const addTraits = async props => {
 
-    const { language, traits } = props;
+//     const { language, traits } = props;
 
-    let docRef;
+//     let docRef;
 
-    try {
-        docRef = await db.collection(`traits_en`).add(traits);
-    } catch(err) {
-        console.error("Error writing document: ", error);
-    }
+//     try {
+//         docRef = await db.collection(`traits_en`).add(traits);
+//     } catch(err) {
+//         console.error("Error writing document: ", error);
+//     }
 
-    return docRef;
-};
+//     return docRef;
+// };
 
-const addSpeciesTraits = async (name, trait) => {
+const addTraits = async (name, trait, collection = 'traits_en') => {
 
     let speciesTraitsRef;
 
     try {
 
-        const querySnapshot = await db.collection("traits_en").where("name", "==", name).get();
+        const querySnapshot = await db.collection(collection).where("name", "==", name).get();
         
         if(querySnapshot.empty) {
             trait.name = name;
-            return await db.collection(`traits_en`).add(trait);
+            return await db.collection(collection).add(trait);
         } else {
             querySnapshot.forEach(function(doc) {
                 speciesTraitsRef = doc.ref;
@@ -336,8 +353,7 @@ const addSpeciesTraits = async (name, trait) => {
 
             return 'Update successful';
         }
-    } catch (e) {
-
+    } catch(e) {
         return `Update failed. Error ${e.message}.`;
     }
 };
@@ -529,6 +545,7 @@ export const firestore = {
     getFamiliesByIconicTaxon,
     getTaxonByName,
     getTraitsBySpeciesName,
+    getTraitsByTaxonName,
     getBirdsong,
     getTraitValues,
     getRandomSpecies,
@@ -538,7 +555,6 @@ export const firestore = {
     
     addSpecies,
     addTraits,
-    addSpeciesTraits,
     addSpeciesRelationship,
     addPhotos,
     addTaxon,

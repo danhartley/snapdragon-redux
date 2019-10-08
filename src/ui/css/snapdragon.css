@@ -13,8 +13,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  font-family: 'Open Sans', sans-serif;;
-  /* font-family: "PT Sans", "Roboto", arial, sans-serif; */
+  font-family: 'Open Sans', sans-serif;
   color: var(--snap-text-dark);
   background-color: rgb(254, 253, 253);
 }
@@ -98,7 +97,6 @@ hr {
 }
 
 .snapdragon-options  .btn.btn-secondary {
-  /* height: 2rem; */
   letter-spacing: 0.03rem;
 }
 
@@ -438,13 +436,10 @@ a.dropdown-item {
   height: 100%;
 }
 
-.left-grid,
-.right-grid {
+.left-grid, .right-grid {
   display: grid;
   grid-template-columns: 100%;
   grid-auto-flow: column;
-  /* grid-template-rows: 7.5% 5px auto 7.5%; */
-  /* grid-template-rows: 7.5vh 5px auto 7.5vh; */
   grid-template-rows: var(--vhRunningBlock, 7.5vh) 5px auto var(--vhRunningBlock, 7.5vh);
 }
 
@@ -452,17 +447,14 @@ a.dropdown-item {
   display: grid;
   grid-auto-flow: row;
   margin: 0;
-  /* height: calc(100vh - 15% - 5px); */
   height: calc((var(--vh, 1vh) * 100) - (var(--vhRunningBlock, 7.5vh) * 2) - 5px);
-  /* height: calc(100vh - 15% - 5px - 18px); */
 }
 
-.right-body {
+/* .right-body {
   margin: 0 .5rem;
-}
+} */
 
-.header,
-.footer {
+.header, .footer {
   display: flex;
   align-items: center;
   padding: 0 0.55rem;
@@ -1494,6 +1486,10 @@ label.btn.btn-secondary .lesson-icon {
   text-align: center;
   margin: 0 15%;
   font-size: 0.9rem;
+  height: var(--vhHalfStandardBlock, 5vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .info.carousel.slide .carousel-item div:nth-child(1) {
