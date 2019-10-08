@@ -176,7 +176,7 @@ export const collectionHandler = async (collection, config, counter, callback, c
             collection.glossary = [ ...collection.glossary, 'common'];
             collection.default = false;
 
-            // actions.boundNewCollection({ config, collection });
+            actions.boundNewCollection({ config, collection });
             
             callback(collection, config)();
 

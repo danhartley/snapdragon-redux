@@ -5,6 +5,8 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import { videoPlayer } from 'ui/screens/lists/video-handler';
+import { lessonHandler } from 'ui/helpers/lesson-handler';
+import { enums } from 'ui/helpers/enum-helper';
 
 import lessonTemplate from 'ui/screens/home/home-lesson-intro-template.html';
 
@@ -71,4 +73,11 @@ export const renderLesson = lesson => {
     if(config.isPortraitMode) {
         renderSpeciesCollectionList(lesson, { readOnlyMode: false, parent: container, tableParent: container, loadSpeciesCallback, isInCarousel: false });
     }
+
+    const beginLearningActionBtn = document.querySelector('.js-species-list-btn-action');
+
+          beginLearningActionBtn.addEventListener('click', event => {
+            const { history } = store.getState();
+            lessonHandler.getLessonItems(enums.lessonState.BEGIN_LESSON, lesson, config, history);
+          });
 }
