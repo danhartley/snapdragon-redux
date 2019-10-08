@@ -83,7 +83,10 @@ export const renderSpeciesCollectionList = (collection, args) => {
                   icon.addEventListener('click', event => {       
                     event.stopPropagation();
                     event.preventDefault();
-                    const name = event.target.dataset.name;
+                    youtubeIcons.forEach(icon => icon.children[0].classList.remove('youtube-red-fg'));
+                    const icon = event.target;
+                          icon.classList.add('youtube-red-fg');
+                    const name = icon.dataset.name;
                     const species = collection.items.find(item => item.name == name);   
                     if(species && species.time) {
                         videoPlayer.playVideoFrom(species.time[0]);

@@ -167,7 +167,7 @@ export const buildTable = (collection, args) => {
     } else {
         headerRow.appendChild(imageHeader);    
         headerRow.appendChild(speciesHeader);     
-        headerRow.appendChild(iconicTaxonHeader);
+        // headerRow.appendChild(iconicTaxonHeader);
     }
     headerRow.appendChild(accordionHeader);
 

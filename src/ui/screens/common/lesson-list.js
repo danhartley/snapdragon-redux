@@ -21,7 +21,7 @@ export const renderLessons = () => {
     const template = document.createElement('template');
           template.innerHTML = lessonListTemplate;
 
-    const lessons = collections.filter(lesson => !lesson.default).filter(lesson => lesson.video);
+    const lessons = collections.filter(lesson => !lesson.default);//.filter(lesson => lesson.video);
 
     const loadLessons = () => {
 
@@ -68,8 +68,8 @@ export const renderLessons = () => {
     };
 
     const scrollToTitle = title => {
-      const elem = title.parentElement.parentElement.parentElement.previousElementSibling || title;
-      elem.scrollIntoView();
+      const elem = title.parentElement.parentElement.parentElement || title;
+      elem.scrollIntoView(true);
     };
 
     titles.forEach(title => title.addEventListener('click', e => {

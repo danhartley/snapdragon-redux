@@ -66,7 +66,7 @@ export const renderLesson = lesson => {
 
     const loadSpeciesCallback = () => console.log('getting species!');
 
-    const container = DOM.rightBody.querySelector('.lesson-list .scrollable');
+    const container = DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable');
 
     if(config.isPortraitMode) {
         renderSpeciesCollectionList(lesson, { readOnlyMode: false, parent: container, tableParent: container, loadSpeciesCallback, isInCarousel: false });

@@ -728,7 +728,7 @@ const kitchen1 = {
         time: [137],
         description: `Also known as Coriander.
         
-        Best grown from seed (which must be split first to esnure it germinates quickly). 
+        Best grown from seed (which must be split first to ensure it germinates quickly). 
         
         Seed leaves will appear within a week. Best planted in fall, in spring it flowers quickly.`
       },

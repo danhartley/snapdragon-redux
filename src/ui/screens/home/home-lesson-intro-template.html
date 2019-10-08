@@ -1,4 +1,4 @@
-<div class="lesson-list">
+<div class="home-scrolling-container js-home-scrolling-container">
     <div class="scrollable">
             
         <div class="title margin-bottom">{{ video.title }}</div>
@@ -19,11 +19,11 @@
             </div>
 
             <div>
-                <span class="margin-right" >Created by:</span><span class="emphasis">{{ video.presenter }}</span>
+                <span class="hide margin-right" >Created by:</span><span class="emphasis">{{ video.presenter }}</span>
             </div>
 
             <div class="links">
-                <span class="margin-right">{{ video.webLabel }}:</span><a class="underline-external-link" href="https://{{ video.webUrl }}" target="_blank">{{ video.webUrl }}</a>
+                <span class="hide margin-right">{{ video.webLabel }}:</span><a class="underline-external-link" href="https://{{ video.webUrl }}" target="_blank">{{ video.webUrl }}</a>
             </div>
         </div>
 
@@ -34,4 +34,9 @@
         </div>            
 
     </div>
+    <div class="hide portrait list-continue-btn-container">
+        <div class="list-continue-btn js-list-footer">
+            <button class="btn btn-light js-species-list-btn-action">Don't be shy, take the tests</button>
+        </div>
+    </div>    
 </div>

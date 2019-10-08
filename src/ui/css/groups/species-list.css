@@ -4,8 +4,7 @@ table {
     font-size: 0.9rem;
 }
 
-.table-header,
-.table-footer {
+.table-header, .table-footer {
   background-color: rgb(153, 172, 149);
   color: var(--snap-text-dark);
   line-height: 2.5;
@@ -17,7 +16,7 @@ table {
   position: sticky;
   position: -webkit-sticky;
   z-index: 10;
-  border-radius: 0.25rem 0.25rem 0 0;
+  /* border-radius: 0.25rem 0.25rem 0 0; */
   letter-spacing: 0.03rem;
   align-items: center;
   text-transform: uppercase;
@@ -80,17 +79,6 @@ table {
     padding: .5rem;
   }
 
-  .accordion {
-    display: flex;
-    justify-content: flex-end;    
-    cursor: pointer;
-  }
-
-  .accordion i {    
-    font-size: 1.2rem;
-    pointer-events: none;
-  }
-  
   /* SORT INDICATORS */
   
   th {
@@ -99,7 +87,7 @@ table {
 
 
   .table-header th:nth-child(1) {
-    min-width: 80px;
+    min-width: 100px;
   }
 
   .species-list .table-header th:nth-child(2):after,
@@ -183,15 +171,36 @@ table {
   width: 100%;
 }
 
-.youtube-icon {
+.youtube-icon, .accordion-icon {
   cursor: pointer;
-  /* font-size: 1.6rem;
-  margin-top: .25rem; */
+  font-size: 1.2rem;
 }
+
+.species-container {
+  position: relative;
+  width: 100%;
+}
+
+  @media (min-width:414px) {
+
+    .youtube-icon, .accordion-icon {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media (min-width: 600px) {
+
+    .youtube-icon, .accordion-icon {
+      font-size: 1.6rem;
+    }
+  }
+
   @media (min-width: 768px) {
 
     .embedded-lesson-list-header {
       flex-direction: row;
+      display: flex;
+      align-items: center;
     }
 
     .embedded-lesson-list-header > div:nth-child(1) {
@@ -214,9 +223,9 @@ table {
 
     /* SCROLLING */
 
-    .scrollable {
-        position: absolute;
-    }
+    /* .scrollable {
+        position: absolute;        
+    } */
 
     .species-list .scrollable {
       bottom: 0;
