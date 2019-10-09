@@ -13,8 +13,8 @@ table {
   flex-direction: row;
   border: 0;
   height: 2.5rem;
-  position: sticky;
-  position: -webkit-sticky;
+  /* position: sticky;
+  position: -webkit-sticky; */
   z-index: 10;
   /* border-radius: 0.25rem 0.25rem 0 0; */
   letter-spacing: 0.03rem;
@@ -27,9 +27,9 @@ table {
   top: 0;
 }
 
-.table-footer {
+/* .table-footer {
   top: 300px;
-}
+} */
 
 .table-header th,
 .table-footer td {
@@ -63,10 +63,10 @@ table {
   }
   
   .table-row img {
-    width: 5rem;
-    height: 5rem;
+    width: 98px;
+    height: 69px;
     object-fit: none;
-    padding: 0.5rem;
+    padding: 6px 0;
   }
   
   .table-row .lp-level {
@@ -119,12 +119,19 @@ table {
     align-items: flex-start;
   }
   
+  .table-row td:nth-child(1) {
+    width: 105px;
+  }
+
+  .species-description > td:nth-child(1) {
+    width: 100%;
+  }
+
   .table-row td:nth-child(2) {
     flex: 3;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    /* align-items: initial; */
     justify-content: space-evenly;
   }
   
@@ -222,10 +229,6 @@ table {
     }
 
     /* SCROLLING */
-
-    /* .scrollable {
-        position: absolute;        
-    } */
 
     .species-list .scrollable {
       bottom: 0;

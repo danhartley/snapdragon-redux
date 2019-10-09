@@ -183,6 +183,7 @@ export const getTraitsToExclude = () => {
         'colour', 'bark colour', 'height',
         'physiology', 'description',
         'usage', 'habitat',
+        'symbiont'
         //'characteristic'
     ];
 };

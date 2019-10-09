@@ -37,19 +37,18 @@
             </div>
 
         </div>
-        <div class="test-card">            
-            <div class="test-card-content js-test-card-content">
-                <!-- Specific test content goes here -->
-            </div>
+        <div class="test-card-question">            
             <div class="question question-txt sub-header {{ className }}">
-                <div>
-                    <span class="question-question js-question-question">{{ question }}</span>
-                    <span class="landscape hide-empty question-help js-question-help">{{ help }}</span>
+                    <div>
+                        <span class="question-question js-question-question">{{ question }}</span>
+                        <span class="landscape hide-empty question-help js-question-help">{{ help }}</span>
+                    </div>
                 </div>
-            </div>
+        </div>
+        <div class="test-card-content js-test-card-content scrollable">
+            <!-- Specific test content goes here -->
         </div>
         <div class="text-question js-txt-question"></div>
-        <!-- <div class="hide-empty wrong-answer-txt js-wrong-answer-txt"></div> -->
         <div class="action-update-container">
             <div class="action-update">
                 <button disabled class="btn btn-light js-continue-lesson-btn">Continue lesson</button>

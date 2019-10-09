@@ -10,7 +10,6 @@
     }
 }
 
-
 @media (min-width: 320px) {
     .tile span {
         padding: 0 .2rem;
@@ -31,10 +30,6 @@
 @media (max-width:375px) and (min-height:667px) {
     .strips {
         grid-template-columns: 1fr;
-        height: calc(100vh - 22rem);
-    }
-    .strip {
-        padding: .75rem;        
     }
 }
 
@@ -61,10 +56,6 @@
     .strips {
         grid-template-columns: 1fr;
     }
-    .strip {
-        font-size: 1.2rem;
-        padding: .65rem;
-    }
 }
 
 @media (min-width: 576px) {
@@ -81,9 +72,6 @@
 }
 
 @media (min-height:812px) {
-    .strip {
-        margin: .5rem;
-    }
     .extra-small-text {
         font-size: .9rem;
     }
@@ -112,9 +100,6 @@
 
 
 @media (min-width: 1024px) {
-    .strips {
-        height: calc(100vh - 25rem);
-    }
     .narrow-screen {
         display: none !important;
     }
@@ -265,7 +250,6 @@
         width: 5.5rem;
       }
 
-    .action-update,
     .response-update {
         left: 0;
         right: 0;
@@ -277,7 +261,6 @@
     }
 
     .strip {
-        font-size: 1rem;
         display: flex;
         flex-direction: column;
     }
@@ -400,10 +383,6 @@
         top: 13rem;
     }
 
-    .grid {
-        max-height: 840px;
-    }
-
     .lesson-option-headers {
         font-size: 1.4rem;
     }
@@ -450,15 +429,6 @@
     .home-guide {
         display: flex;
         flex-direction: column;
-    }
-
-    .strip {
-        margin: .5rem 1rem;
-        padding: .5rem;
-    }
-
-    .big-padding {
-        padding: 1.25rem !important;
     }
 
     .pool {

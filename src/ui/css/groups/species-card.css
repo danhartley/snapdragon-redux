@@ -142,12 +142,12 @@ td:empty:after{
 
 .info-details {
   height: calc(
-            var(--vh, 1vh) * 100 
-          - var(--vhRunningBlocks,15vh)
-          - var(--vhDoubleStandardBlock,20vh) 
-          - var(--vhCarousel,28vh)
-          - .5rem 
-          - 1rem);
+          var(--vh, 1vh) * 100 
+        - var(--vhRunningBlocks,15vh)
+        - var(--vhDoubleStandardBlock,20vh) 
+        - var(--vhCarousel,28vh)
+        - .5rem 
+        - 1rem);
   margin: .5rem 0;
   overflow-y: scroll;
 }

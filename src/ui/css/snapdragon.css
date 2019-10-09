@@ -16,6 +16,8 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: var(--snap-text-dark);
   background-color: rgb(254, 253, 253);
+  max-width: 1200px;
+  margin: auto;
 }
 
 button {
@@ -450,10 +452,6 @@ a.dropdown-item {
   height: calc((var(--vh, 1vh) * 100) - (var(--vhRunningBlock, 7.5vh) * 2) - 5px);
 }
 
-/* .right-body {
-  margin: 0 .5rem;
-} */
-
 .header, .footer {
   display: flex;
   align-items: center;
@@ -610,14 +608,9 @@ a.dropdown-item {
 /* STRIPS */
 
 .strips {
-  height: calc(100vh - 23rem);
   display: grid;
   grid-template-columns: 1fr 1fr;
   cursor: pointer;
-}
-
-.sub-header-tall ~ div > div.strips {
-  height: calc(100vh - 27.5rem);
 }
 
 .strip {
@@ -627,10 +620,10 @@ a.dropdown-item {
   box-shadow: 0 2px 8px rgba(0,0,0,.2);
   font-size: .9rem;
   margin: .25rem;
+  padding: .75rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: .75rem;
 }
 
 .strip > div::first-letter {
@@ -676,7 +669,6 @@ a.dropdown-item {
   text-overflow: ellipsis;
   overflow: hidden;
   display: inline-block;
-  /* text-transform: lowercase; */
 }
 
 .names-container.definition .vernacular-name {
@@ -837,7 +829,6 @@ a.dropdown-item {
 .id-box {
   display: flex;
   padding: 0 1rem 1rem 1rem;
-  /* padding: 1rem; */
 }
 
 .id-box > div:nth-child(1) {
@@ -1124,7 +1115,6 @@ span.correct {
   margin: 1rem 0;
 }
 
-.action-update,
 .response-update {
   flex: initial;
   display: flex;
@@ -1135,7 +1125,7 @@ span.correct {
   left: .5rem;
 }
 
-.action-update-container {
+.action-update {
   width: 100%;
 }
 
@@ -1308,8 +1298,7 @@ label.btn.btn-secondary {
   min-height: 4rem;
 }
 
-label.btn.btn-secondary img {      
-    /* margin: 0 .25rem 0 -.25rem; */
+label.btn.btn-secondary img {
     margin: 0 .25rem 0 -.5rem; /* make image left margin */
 }
 
@@ -1494,7 +1483,6 @@ label.btn.btn-secondary .lesson-icon {
 
 .info.carousel.slide .carousel-item div:nth-child(1) {
   background-color: rgba(128, 128, 128, 0.3);
-  /* text-transform: lowercase; */
 }
 
 .info.carousel.slide .carousel-item div:nth-child(2) {
@@ -1790,7 +1778,6 @@ a.collection-disabled {
   background-color: var(--snap-species-header-background);
   color: var(--snap-dark);
   justify-content: center;
-  padding: .5rem 0;
 }
 
 .card-link {
@@ -2119,9 +2106,9 @@ a.collection-disabled {
   opacity: 100;
 }
 
-.big-padding {
+/* .big-padding {
   padding: 1rem !important;
-}
+} */
 
 .images-names-refresh {
   margin: 1rem 0 0 0;

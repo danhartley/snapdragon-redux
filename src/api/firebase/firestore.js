@@ -505,6 +505,9 @@ const addTaxon = async props => {
 };
 
 const getSpeciesInParallel = async species => {
+
+    console.log(species);
+
     try {
         return Promise.all(species.map(sp => {                    
             return firestore.getSpeciesByName(sp.name).then(async item => {

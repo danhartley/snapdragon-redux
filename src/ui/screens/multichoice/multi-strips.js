@@ -73,11 +73,11 @@ export const renderMultiStrips = (collection, bonus) => {
                     strips.forEach(strip => strip.classList.add('extra-small-text'));
                 }
                 
-                if(config.isLandscapeMode) {
-                    if(R.contains(screen.name, ['epithet', 'trait-property', 'species-scientifics', 'species-vernaculars'])) {
-                        strips.forEach(strip => strip.classList.add('big-padding'));
-                    }
-                }
+                // if(config.isLandscapeMode) {
+                //     if(R.contains(screen.name, ['epithet', 'trait-property', 'species-scientifics', 'species-vernaculars'])) {
+                //         strips.forEach(strip => strip.classList.add('big-padding'));
+                //     }
+                // }
 
                 const taxon = { name: item.taxonomy.family, binomial: item.name, question: questionValue };
 

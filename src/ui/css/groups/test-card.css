@@ -26,7 +26,6 @@
     font-size: 0.8rem;
     display: flex;
     flex-direction: column;
-    /* text-align: left; */
     padding: 0;
 }
 
@@ -37,7 +36,6 @@
 }
 
 .test-card {
-    height: 6rem;
     color: var(--snap-text-medium-dark);
     padding: 0;
     font-size: 1.2rem;
@@ -45,21 +43,11 @@
 
 .test-card-container {
     position: relative;
-    justify-content: flex-start;
-    height: 100%;
   }
-  
+   
   /* CONTINUE BUTTON */
 
-  .test-card-container .action-update-container {
-    position: absolute;
-    width: 100%;
-    bottom: 0rem;
-    left: 0;
-    padding: 0 .5rem;
-  }
-  
-  .test-card .question {
+  .test-card-question .question {
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.07rem;
@@ -72,13 +60,13 @@
     padding: 1rem 0;
   }
 
-  .test-card .question > div {
+  .test-card-question .question > div {
       display: flex;
       flex-direction: column;
       align-items: center;
   }
   
-.test-card .question-help, .block-container .question > span:nth-child(2) {
+.test-card-question .question-help, .block-container .question > span:nth-child(2) {
     font-size: .8rem;
     vertical-align: super;
     text-transform: initial;
@@ -86,7 +74,7 @@
     color: var(--snap-text-medium-light);
 }
 
-.test-card .question-sub-header {
+.test-card-question .question-sub-header {
     text-transform: uppercase;
     font-size: .8rem;
     width: fit-content;
@@ -148,13 +136,23 @@
 
 /* SYSTEM RESPONSE */
 
+.action-update-container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    height: var(--vhRunningBlock, 7.5vh);
+    align-items: center;
+    right: .5rem;
+    left: .5rem;
+}
+
 .test-card-container .text-question {
     position: absolute;
-    bottom: 3.25rem;
+    bottom: var(--vhRunningBlock, 7.5vh);
     left: 0rem;
     font-size: 1rem;
     padding: 0 0 0 .75rem;
-    min-height: 2rem;
+    height: var(--vhButton, 5vh);
 }
 
 /* SCROLLING */
@@ -245,6 +243,10 @@ div.text-entry {
     color: var(--snap-text-medium-light);
     border-radius: 0.2rem;
 }
+
+.question.sub-header {
+    height: var(--vhStandardBlock, 10vh);
+}
   
   .question-container > span:nth-child(2) {
     margin: 0.5rem 0 0 0;
@@ -252,9 +254,23 @@ div.text-entry {
   }
 
 .question-container img {
-    height: 4rem;
+    height: 100%;
     width: 4rem;
     object-fit: scale-down;
+}
+
+/* Content */
+
+.test-card-content {
+    padding: 0 .5rem;
+    height: calc(
+        var(--vh, 1vh) * 100 
+      - var(--vhRunningBlocks,15vh)
+      - var(--vhStandardBlock,10vh) 
+      - var(--vhButton, 5vh)
+      - 1rem
+      - .5rem); 
+      top: calc(var(--vhRunningBlock,7.5vh) + var(--vhStandardBlock,10vh));
 }
 
 .feature-symbiont-list {
@@ -278,10 +294,6 @@ div.text-entry {
     width: 1.5rem;
     height: 1.5rem;
 }
-
-/* .test-card-container {
-    padding: .5rem;
-} */
 
 .trait-test-card-container {
     display: grid;
@@ -317,24 +329,23 @@ div.text-entry {
         font-size: 1rem;
     }
 
-    .feature-symbiont-list {
+    /* .feature-symbiont-list {
         height: calc(90vh - 20rem);
     }
 
     .modal-content .feature-symbiont-list {
         height: calc(70vh - 20rem);
-    }
+    } */
 
     /* CARD HEADER */
 
     .question-container {
         grid-template-columns: 1fr 4fr 1fr;
-        height: 5.5rem;
+        /* height: 5.5rem; */
         display: initial;
     }
 
-    .question-container img {
-        height: 5.5rem;
+    .question-container img {        
         width: 5.5rem;
     }
 
@@ -365,14 +376,14 @@ div.text-entry {
     }
 
     .test-card-container .question {
-        font-size: 2rem; 
+        font-size: 1.6rem; 
     }
 
-    .test-card .question-help {
+    .test-card-question .question-help {
         font-size: .9rem;
     }
 
-    .test-card .help-txt {
+    .test-card-question .help-txt {
         margin: 1rem .5rem;
         font-size: 1.3rem;
         font-family: serif;
@@ -381,7 +392,7 @@ div.text-entry {
     }
 
     .test-card-content {
-        padding: 0 .5rem;
+        top: calc(var(--vhRunningBlock,7.5vh) + var(--vhDoubleStandardBlock,20vh));
     }
 
     .test-card button {
@@ -404,10 +415,7 @@ div.text-entry {
     /* SYSTEM RESPONSE */
 
     .test-card-container .text-question {
-        position: absolute;
         left: 1rem;
-        bottom: 1.6rem;        
-        min-height: 2rem;
     }
 
     .answer-box-success > span:nth-child(2), 
@@ -416,15 +424,6 @@ div.text-entry {
     }
 
     /* CONTINUE BUTTON */
-
-    .test-card-container .action-update-container {
-        position: absolute;
-        width: fit-content;
-        width: 12rem;
-        bottom: 1rem;
-        left: unset;
-        right: 1rem;
-    }
 
     .test-card-container .layer {
         font-size: 5rem;

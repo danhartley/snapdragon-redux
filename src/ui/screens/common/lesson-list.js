@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { subscription } from 'redux/subscriptions';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -13,6 +14,9 @@ import lessonListTemplate from 'ui/screens/common/lesson-list-template.html';
 import lessonListHeaderTemplate from 'ui/screens/common/lesson-list-header-template.html';
 
 export const renderLessons = () => {
+
+    const thisScreen = subscription.getByName('renderLessons');
+    if(thisScreen) subscription.remove(thisScreen);
 
     let { config, collections, lessons: savedLessons } = store.getState();
 
@@ -75,7 +79,7 @@ export const renderLessons = () => {
     titles.forEach(title => title.addEventListener('click', e => {
 
       const selectedTitle = e.target;
-      const lessonId = parseInt(selectedTitle.id);
+      const lessonId = parseInt(selectedTitle.id.replace('lesson_', ''));
       const selectedLesson = lessons.find(l => l.id === lessonId);
       const container = document.querySelector(`#container_${lessonId}`);
       const speciesList = document.querySelector(`#species_list_id_${lessonId}`);
@@ -84,7 +88,7 @@ export const renderLessons = () => {
           otherSpecies = otherSpecies.filter(container => container.id !== `container_${lessonId}`);
           otherSpecies.forEach(container => container.innerHTML = '');
 
-      if(selectedTitle.dataset.selected) {
+      if(selectedTitle.dataset.selected && speciesList) {
         if(elem.hasClass(speciesList, 'hide')) {
           renderLesson(selectedLesson);
           speciesList.classList.remove('hide');
@@ -105,4 +109,10 @@ export const renderLessons = () => {
           scrollToTitle(title);
       }      
     }));
+
+    if(config.collection.id > 0) {
+      const lessonId = config.collection.id;
+      const lessonTitle = document.querySelector(`#lesson_${lessonId}`);
+            lessonTitle.click();
+    }
 };

@@ -442,7 +442,7 @@ export const plantae = [
     },
     {
         term: 'Tropism',
-        definition: 'A tropism (from Greek τρόπος, tropos, "a turning") is a biological phenomenon, indicating growth or turning movement of a biological organism, usually a plant, in response to an environmental stimulus.',
+        definition: 'A biological phenomenon, indicating growth or turning movement of a biological organism, usually a plant, in response to an environmental stimulus.',
         wiki: 'https://en.wikipedia.org/wiki/Tropism'
     },
     {
