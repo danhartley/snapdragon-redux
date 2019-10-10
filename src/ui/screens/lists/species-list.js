@@ -77,16 +77,19 @@ export const renderSpeciesCollectionList = (collection, args) => {
                   accordion.addEventListener('click', accordionHandler);
               });
 
-        const youtubeIcons = document.querySelectorAll('.js-youtuube');
+        const youtubeIcons = document.querySelectorAll('.js-youtuube i');
 
-              youtubeIcons.forEach(icon => {
+              youtubeIcons.forEach(icon => {                  
                   icon.addEventListener('click', event => {       
                     event.stopPropagation();
                     event.preventDefault();
-                    youtubeIcons.forEach(icon => icon.children[0].classList.remove('youtube-red-fg'));
-                    const icon = event.target;
-                          icon.classList.add('youtube-red-fg');
-                    const name = icon.dataset.name;
+                    youtubeIcons.forEach(icon => {
+                        console.log(icon.classList);
+                        icon.classList.remove('youtube-red-fg');
+                    });
+                    const activeIcon = event.target;
+                          activeIcon.classList.add('youtube-red-fg');
+                    const name = activeIcon.dataset.name;
                     const species = collection.items.find(item => item.name == name);   
                     if(species && species.time) {
                         videoPlayer.playVideoFrom(species.time[0]);
@@ -230,50 +233,84 @@ export const renderSpeciesCollectionList = (collection, args) => {
     }
 
     const openSpeciesDescription = (name, enableScroll = true) => {
-        
-        let parent = document.querySelector('.species-table tbody');
-        
-        let accordions = Array.from(document.querySelectorAll('.js-accordion'));
-            accordions = accordions.filter(accordion => accordion.dataset.name !== name);
 
-            //trigger close event on any accordions that might be open
-            accordions.forEach(accordion => {                
-                if(accordion.innerHTML.indexOf('fa-chevron-up') > -1) {
-                    accordion.click();
+        try {
+
+            let parent = document.querySelector('.species-table tbody');
+            
+            const accordions = Array.from(document.querySelectorAll('.js-accordion'));
+            const inactiveAccordions = accordions.filter(accordion => accordion.dataset.name !== name);
+
+                //trigger close event on any accordions that might be open
+                inactiveAccordions.forEach(inactiveAccordion => {                
+                    if(inactiveAccordion.innerHTML.indexOf('fa-chevron-up') > -1) {
+                        inactiveAccordion.click();
+                        inactiveAccordion.innerHTML = `<i class="fas fa-chevron-down" data-name="${name}"></i>`;
+                        const inActiveYouTubeIcon = inactiveAccordion.parentElement.parentElement.querySelector('.js-youtuube');
+                              inActiveYouTubeIcon.classList.remove('youtube-red-fg');
+                    }
+                });
+
+            const activeAccordion = accordions.find(accordion => accordion.dataset.name === name);
+                if(activeAccordion) {
+                    activeAccordion.innerHTML = `<i class="fas fa-chevron-up" data-name="${name}"></i>`;
                 }
-            });
 
-        // remove any descriptions that might be open
-        let currentDescriptions = document.querySelectorAll('.species-description');
-            currentDescriptions.forEach(tr => parent.removeChild(tr));
+            const activeYouTubeIcon = activeAccordion.parentElement.parentElement.querySelector('.js-youtuube');
+                  activeYouTubeIcon.classList.add('youtube-red-fg');
 
-        const species = collection.items.find(i => i.name === name);
+            // remove any descriptions that might be open
+            let currentDescriptions = document.querySelectorAll('.species-description');
+                currentDescriptions.forEach(tr => parent.removeChild(tr));
 
-        let description = species.description;
-            description = description || species.traits.description.value[0];
+            const species = collection.items.find(i => i.name === name);
 
-        if(description) {
+            let description = species.description;
+                description = description || species.traits.description.value[0];
 
-            const id = species.id;
-            const tr = document.querySelector(`#id_${id}`);
+            if(description) {
 
-            const td = document.createElement('td');
+                const id = species.id;
+                const tr = document.querySelector(`#id_${id}`);
 
-            const text = document.createElement('div');
-                  text.classList.add('inserted-td');
-                  text.innerHTML = description.replace(/\r?\n/g, '<br />');
+                const td = document.createElement('td');
 
-            td.appendChild(text);
+                const text = document.createElement('div');
+                    text.classList.add('inserted-td');
+                    text.innerHTML = description.replace(/\r?\n/g, '<br />');
 
-            const insert = document.createElement('tr');
-                  insert.classList.add('table-row');
-                  insert.classList.add('species-description');
-                  insert.appendChild(td);
-            tr.parentElement.insertBefore(insert, tr.nextSibling);
+                td.appendChild(text);
 
-            if(enableScroll) {
-                tr.previousElementSibling.scrollIntoView();
+                const insert = document.createElement('div');
+                    insert.classList.add('table-row');
+                    insert.classList.add('species-description');
+                    insert.appendChild(td);
+                tr.parentElement.insertBefore(insert, tr.nextSibling);
+
+                const scrollIntoView = (rowHeight, noOfRows) => {
+                    const video = document.querySelector('.video');                    
+                    const scroll = document.querySelector('.scrollable');
+                    
+                    scroll.scrollTop = 0;
+
+                    console.log('video.offsetHeight: ', video.offsetHeight); 
+
+                    const standardBlock = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhStandardBlock').replace('px', ''));
+                    const vh = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));
+                    const iframeBorder = 8;
+
+                    scroll.scrollTop = video.offsetHeight + (rowHeight * (noOfRows - 1)) - (vh * 5) +8; 
+                };
+
+                if(enableScroll) {
+                    config.isLandscapeMode 
+                        ? tr.previousElementSibling.scrollIntoView()
+                        : scrollIntoView(tr.offsetHeight, species.snapIndex);
+                }
             }
+        } catch(e) {
+            console.log(name);
+            console.error(e.message);
         }
     };
 

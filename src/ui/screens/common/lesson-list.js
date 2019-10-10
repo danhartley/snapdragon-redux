@@ -25,7 +25,7 @@ export const renderLessons = () => {
     const template = document.createElement('template');
           template.innerHTML = lessonListTemplate;
 
-    const lessons = collections.filter(lesson => !lesson.default);//.filter(lesson => lesson.video);
+    const lessons = collections.filter(lesson => !lesson.default).filter(lesson => lesson.video);
 
     const loadLessons = () => {
 
@@ -52,6 +52,8 @@ export const renderLessons = () => {
           header.classList.add('btn');
           header.classList.add('btn-secondary');
           header.classList.add('pointer-events-none');
+          header.style.backgroundColor = 'rgb(252, 251, 246)';
+          header.style.zIndex = 20;
 
     parent = document.querySelector('.btn-group.btn-group-toggle');
     parent.prepend(header);
@@ -67,13 +69,16 @@ export const renderLessons = () => {
     config.guide.ready = true;
     actions.boundUpdateConfig(config);
 
-    const callback = loadingMessage => {
+    const callback = (lessonId, loadingMessage) => {
       loadingMessage.classList.add('hide');
+      scrollToTitle(lessonId);
     };
 
-    const scrollToTitle = title => {
-      const elem = title.parentElement.parentElement.parentElement || title;
-      elem.scrollIntoView(true);
+    const scrollToTitle = lessonId => {
+      const next = lessonId - 1;
+      const href = `#lesson_${next}`;
+      console.log(href);
+      window.location.href = href;
     };
 
     titles.forEach(title => title.addEventListener('click', e => {
@@ -92,21 +97,20 @@ export const renderLessons = () => {
         if(elem.hasClass(speciesList, 'hide')) {
           renderLesson(selectedLesson);
           speciesList.classList.remove('hide');
-          container.style.minHeight = container.dataset.height;
-          scrollToTitle(title);
-        } else {
+          // container.style.minHeight = container.dataset.height;
+        } 
+        else {
           speciesList.classList.add('hide');
-          container.dataset.height = `${container.offsetHeight}px`;
-          container.style.minHeight = 0;
+          // container.dataset.height = `${container.offsetHeight}px`;
+          // container.style.minHeight = 0;
         }
       } else {
           selectedTitle.dataset.selected = true;
           const loadingMessage = selectedTitle.parentElement.querySelector('.js-loading-message');
                 loadingMessage.classList.remove('hide');
-          const loadSpeciesCallback = () => callback(loadingMessage);
+          const loadSpeciesCallback = () => callback(lessonId, loadingMessage);
           renderSpeciesCollectionList(selectedLesson, { readOnlyMode: false, parent: container, tableParent: container, loadSpeciesCallback, isInCarousel: false });
           renderLesson(selectedLesson);
-          scrollToTitle(title);
       }      
     }));
 

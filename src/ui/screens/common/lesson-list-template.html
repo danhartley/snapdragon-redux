@@ -5,7 +5,7 @@
             <div>
                 <input type="radio" name="lessons" autocomplete="off">
                 <div class="lesson-name" data-lesson-id="{{ lesson.id }}">
-                    <span id="lesson_{{ lesson.id }}" class="active-title">{{ lesson.name }}</span>
+                    <a id="lesson_{{ lesson.id }}" class="active-title">{{ lesson.name }}</a>
                     <span>{{ lesson.savedState }}</span>                    
                     <span class="hide js-loading-message">(Loading species…)</span>
                 </div>
