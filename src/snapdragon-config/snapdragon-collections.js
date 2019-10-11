@@ -450,7 +450,7 @@ const kitchen1 = {
     producer: 'Jag Singh - Daisy Creek Farms',
     video: {
       id: 'DeLjnFTDjFc',
-      startAt: 0,
+      startAt: 37,
       title: '10 Herbs You Can Grow Indoors on Kitchen Counter',
       intro: '10 Herbs You Can Grow Indoors on Kitchen Counter.',
       owner: 'Learn Your Land',
@@ -740,7 +740,7 @@ const woodlandsTV1 = {
   producer: 'WoodlandsTV',
   video: {
     id: 'XQ_ZY57MY64',
-    startAt: 0,
+    startAt: 48,
     title: 'An Introduction to Lichen',
     intro: 'I hope you enjoy this brief introduction to foraging edible mushrooms in Eastern North America. When you\'ve finished watching, review what we covered to see how much you remember, and to reinforce what you learnt.',
     owner: 'WoodlandsTV',

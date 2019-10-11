@@ -121,9 +121,9 @@
         padding: 0 .25rem
     }
     
-    .card-scrollable-container {
+    /* .card-scrollable-container {
         height: calc(100vh - 26rem);
-    }
+    } */
 
     .lesson-list .btn.btn-secondary {
         font-size: .9rem;

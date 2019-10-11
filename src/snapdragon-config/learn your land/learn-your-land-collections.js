@@ -99,7 +99,7 @@ const learnYourLand1 = {
     producer: 'Adam Haritan, Learn Your Land',
     video: {
       id: '6PNq6paMBXU',
-      startAt: 0,
+      startAt: 251,
       title: '16 Wild Edible Mushrooms You Can Forage This Autumn',
       intro: 'I hope you enjoy this brief introduction to foraging edible mushrooms in Eastern North America. When you\'ve finished watching, review what we covered to see how much you remember, and to reinforce what you learnt.',
       owner: 'Learn Your Land',
@@ -291,7 +291,7 @@ const learnYourLand2 = {
     producer: 'Adam Haritan, Learn Your Land',
     video: {
       id: 'OE54NpooUls',
-      startAt: 240,
+      startAt: 285,
       title: '9 Wild Edible Mushrooms You Can Forage This Spring',
       intro: 'I hope you enjoy this brief introduction to foraging edible mushrooms in Eastern North America. When you\'ve finished watching, review what we covered to see how much you remember, and to reinforce what you learnt.',
       owner: 'Learn Your Land',

@@ -3,6 +3,7 @@
     <head>
         <title>Species recognition and recall</title>
         <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
         <link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
         <link rel="canonical" href="https://danhartley.github.io/snapdragon-redux/dist/">
@@ -18,9 +19,19 @@
 
             const setWindowHeight = () => {
 
+                const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream; 
+                const iw = (iOS) ? screen.width : window.innerWidth; 
+                const ih = (iOS) ? screen.height : window.innerHeight;
+
+                console.log('window.innerHeight: ', window.innerHeight);
+                console.log('screen.height: ', screen.height);
+
+                console.log('is iOS? ', iOS);
+
                 const verticalHeight = window.innerHeight * 0.01;
 
                 document.documentElement.style.setProperty('--vh', verticalHeight + 'px');
+                document.documentElement.style.setProperty('--vhGrid', verticalHeight * 100  + 'px');
                 document.documentElement.style.setProperty('--vhRunningBlock', (verticalHeight * 7.5) + 'px');
                 document.documentElement.style.setProperty('--vhRunningBlocks', (verticalHeight * 15) + 'px');
                 document.documentElement.style.setProperty('--vhStandardBlock', (verticalHeight * 10) + 'px');
@@ -29,8 +40,9 @@
                 document.documentElement.style.setProperty('--vhCarousel', (verticalHeight * 30) + 'px');
                 document.documentElement.style.setProperty('--vhButton', (verticalHeight * 5) + 'px');
                 document.documentElement.style.setProperty('--vhRow', (verticalHeight * 12.5) + 'px');
+                document.documentElement.style.setProperty('--vhFixtures', (verticalHeight * 15) + 5 + 'px');
 
-                console.log(verticalHeight * 7.5);
+                console.log(verticalHeight * 100);
             };
 
             setWindowHeight();

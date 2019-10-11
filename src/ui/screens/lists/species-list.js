@@ -291,15 +291,29 @@ export const renderSpeciesCollectionList = (collection, args) => {
                     const video = document.querySelector('.video');                    
                     const scroll = document.querySelector('.scrollable');
                     
-                    scroll.scrollTop = 0;
+                    // scroll.scrollTop = 0;
 
-                    console.log('video.offsetHeight: ', video.offsetHeight); 
+                    console.clear();
 
+                    console.log('video.offsetHeight: ', video.clientHeight); 
+
+                    const runningBlock = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhRunningBlock').replace('px', ''));
                     const standardBlock = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhStandardBlock').replace('px', ''));
                     const vh = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));
                     const iframeBorder = 8;
 
-                    scroll.scrollTop = video.offsetHeight + (rowHeight * (noOfRows - 1)) - (vh * 5) +8; 
+                    //clientHeight
+                    //offsetHeight
+                    //scrollHeight
+
+                    console.log('number of rows: ', noOfRows);
+                    scroll.scrollTop = (rowHeight * (noOfRows - 1)) + (3*standardBlock) -8; 
+
+                    // 1. plain 197
+
+                    console.log('scroll.scrollTop: ', scroll.scrollTop);
+
+                    // scroll.scrollTop = video.offsetHeight + (rowHeight * (noOfRows - 1)) - (vh * 5) +8; 
                 };
 
                 if(enableScroll) {
