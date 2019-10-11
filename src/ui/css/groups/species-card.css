@@ -15,7 +15,7 @@
     min-width: 1rem;
     min-height: 1rem;
     display: inline-block;
-    font-size: .6rem;
+    /* font-size: .6rem; */
 }
 
 .traits-count-badge {
@@ -47,7 +47,7 @@
 
   .info-box {
     position: absolute;
-    bottom: .5rem;
+    /* bottom: .5rem; */
     left: .5rem;
     right: .5rem;
     height: var(--vhStandardBlock, 10vh);
@@ -55,7 +55,7 @@
 
   .taxa-container {
     text-align: left;
-    font-size: 1rem;
+    /* font-size: 1rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,16 +69,16 @@
     overflow: hidden;
   }
 
-  .extra-small-text {
+  /* .extra-small-text {
     font-size: .8rem;
-  }
+  } */
 
   /* TAXON CARD  */
 
   .taxon.card-card .data-box {
-    font-family: sentinel;
+    /* font-family: sentinel; */
     letter-spacing: .05rem;
-    font-size: .9rem;
+    /* font-size: .9rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,7 +120,7 @@ td:empty:after{
     border: 1px solid lightgray;
     padding: 0 0 0 0.5rem;
     text-transform: capitalize;
-    font-size: 0.8rem;
+    /* font-size: 0.8rem; */
     line-height: 1.5rem;
 }
 
@@ -157,13 +157,13 @@ td:empty:after{
   flex-direction: column; 
   align-items: center;
   height: inherit;
-  font-size: .8rem;
+  /* font-size: .8rem; */
   margin: 0 .5rem;
 }
 
 .info-details .info_detail div:nth-child(1) { 
   font-style: italic;
-  font-size: 1.1rem;
+  /* font-size: 1.1rem; */
   margin: 1rem 0 .5rem 0;
 }
 
@@ -173,9 +173,9 @@ td:empty:after{
   margin: .5rem 0;
 }
 
-.lookalike-card {
+/* .lookalike-card {
   font-size: .9rem;
-}
+} */
 
 .lookalike-card div:nth-child(1), .lookalike-card div:nth-child(3) {
   font-style: italic;
@@ -191,7 +191,7 @@ td:empty:after{
   border: 1px solid lightgray;
   margin: .25rem;
   padding: .5rem;
-  font-size: .8rem;
+  /* font-size: .8rem; */
 }
 
 .relationship-card .cols {

@@ -1,4 +1,4 @@
-@media (max-width: 320px) and (max-height: 568px) {
+/* @media (max-width: 320px) and (max-height: 568px) {
     .id-box > div:nth-child(1) {
         font-size: 1rem;
     }
@@ -8,9 +8,9 @@
     .taxon-summary {
         font-size: .9rem;
     }
-}
+} */
 
-@media (min-width: 320px) {
+/* @media (min-width: 320px) {
     .tile span {
         padding: 0 .2rem;
         font-size: 1.8rem;
@@ -23,7 +23,7 @@
     .taxon-highlight {
         font-size: 1rem;  
     }
-}
+} */
 
 /* iPHONE 6,7,8 */
 
@@ -39,13 +39,13 @@
     .names-container .vernacular-name {
         max-width: 13.5rem;
     }
-    .snapdragon-create-guide > div:nth-child(1) {
+    /* .snapdragon-create-guide > div:nth-child(1) {
         font-size: 1.6rem;
       }
       
-      .snapdragon-create-guide > div:nth-child(1) > span:nth-child(1) {
-        font-size: 1.6rem;
-      }
+    .snapdragon-create-guide > div:nth-child(1) > span:nth-child(1) {
+    font-size: 1.6rem;
+    } */
 }
 
 /* iPHONE 6,7,8 PLUS, iPHONE X, GALAXY S9/S9+ */
@@ -65,17 +65,17 @@
 }
 /* Nexus 7 */
 
-@media (max-width: 600px) and (max-height: 960px) {
-    html {
-        font-size: 20px;
+@media (width: 600px) and (max-height: 960px) {
+    body {
+        font-size: 1em;
     }
 }
 
-@media (min-height:812px) {
+/* @media (min-height:812px) {
     .extra-small-text {
         font-size: .9rem;
     }
-}
+} */
 
 @media (max-width: 768px) {        
     .landscape {
@@ -85,9 +85,9 @@
         display: grid;        
     }
     
-    .mixed-container .carousel {
+    /* .mixed-container .carousel {
         height: var(--vhCarousel, 30vh);
-    }
+    } */
 }
 
 
@@ -104,7 +104,7 @@
         display: none !important;
     }
     #cardModal .modal-content {
-        height: calc(100vh - 5rem);
+        /* height: calc(100vh - 5rem); */
         width: calc(50vw - 2.5rem);
     }
 }
@@ -117,17 +117,21 @@
 
 @media (min-width: 768px) {
 
-    .left-body, .right-body {
-        padding: 0 .25rem
+    body {
+        font-size: .9em;
     }
+
+    /* .left-body, .right-body {
+        padding: 0 .25rem
+    } */
     
     /* .card-scrollable-container {
         height: calc(100vh - 26rem);
     } */
 
-    .lesson-list .btn.btn-secondary {
+    /* .lesson-list .btn.btn-secondary {
         font-size: .9rem;
-    }
+    } */
 
     .taxon-summary {
         position: absolute;
@@ -139,9 +143,9 @@
         border-top-right-radius: .3rem;
       }
     
-      .modal-title {
+      /* .modal-title {
         font-size: 1rem;
-      }
+      } */
     
       .modal-dialog {
         margin: 0 0 auto;
@@ -211,7 +215,7 @@
       }
       
       #iNatWidgetModal .modal-header {
-          font-size: 1.2rem;
+          /* font-size: 1.2rem; */
           display: inline;
       }
     
@@ -230,14 +234,6 @@
         width: initial;
       }
 
-    #cardModal .mixed-container {
-        height: calc(90vh - 16rem);
-      }
-
-      .info-details {
-        height: calc(90vh - 23rem);  
-      }
-    
       .info-details .info_detail img {   
         max-height: 10rem;
       }
@@ -246,7 +242,7 @@
     
       .info.carousel.slide .carousel-item div {
           padding: .5rem;
-          font-size: 1rem;
+          /* font-size: 1rem; */
       }
 
     .non-taxon.card img {
@@ -303,7 +299,7 @@
     }    
 
     .header > div:nth-child(2) {
-        font-size: .8rem;
+        /* font-size: .8rem; */
         max-width: initial;
     }
 
@@ -328,7 +324,7 @@
         cursor: pointer;
     }
 
-    .home-container .snapdragon-tag, .home-container .summary-scores {
+    /* .home-container .snapdragon-tag, .home-container .summary-scores {
         font-size: 2rem;
     }
 
@@ -338,11 +334,11 @@
 
     .home-guide .taxa {
         font-size: 2rem;
-    }
+    } */
 
     .snapdragon-intro, .snapdragon-help {
         margin: 0 2rem;
-        font-size: 1.6rem;
+        /* font-size: 1.6rem; */
     }
 
     .card-card .test-card-container.scrollable {
@@ -350,7 +346,7 @@
     }
 
     .sub-header {
-        margin-bottom: 1rem;
+        /* margin-bottom: 1rem; */
         background-color: var(--snap-list-alt-background);
     }
 
@@ -387,16 +383,16 @@
         top: 13rem;
     }
 
-    .lesson-option-headers {
+    /* .lesson-option-headers {
         font-size: 1.4rem;
-    }
+    } */
 
     .snapdragon-options .btn.btn-secondary {
         height: 2.5rem;
     } 
 
     .home-container .snapdragon-header {
-        font-size: 3.6rem;
+        /* font-size: 3.6rem; */
         height: 120px;
     }
 
@@ -404,25 +400,25 @@
         height: 6rem;
     }
 
-    .snapdragon-create-guide > div:nth-child(1), .snapdragon-create-guide > div:nth-child(1) > span:nth-child(1) {
+    /* .snapdragon-create-guide > div:nth-child(1), .snapdragon-create-guide > div:nth-child(1) > span:nth-child(1) {
         font-size: 2.6rem;
-    }
+    } */
       
     .home-container .snapdragon-tag, .summary-scores {
         margin: -2rem auto 7rem; /* 6 + 1 */
     }
 
-    .species-pending > div:nth-child(1) {
+    /* .species-pending > div:nth-child(1) {
         font-size: 3.6rem;
-    }
+    } */
 
     .species-pending > div:nth-child(2) {
         height: 240px;
     }
 
-    .species-pending > div:nth-child(4) {
+    /* .species-pending > div:nth-child(4) {
         font-size: 1.6rem;
-      }
+      } */
 
     .species-grid {
         width: 512px;
@@ -447,14 +443,10 @@
         border-bottom: .03rem solid var(--snap-dd-non-taxa-bg-hover);
     }
 
-    .sub-header-tall {
-        height: 7.5rem;
-    }
-
-    .data-box-container {
+    /* .data-box-container {
         margin: 0;
         padding: 0 0 .25rem 0;
-    }
+    } */
 
     .data-box-container div.native {
         font-family: serif;

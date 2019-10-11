@@ -9,6 +9,7 @@ html {
 }
 
 body {
+  font-size: .6em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +19,6 @@ body {
   background-color: rgb(254, 253, 253);
   max-width: 1200px;
   margin: auto;
-  font-size: .6em;
 }
 
 button {
@@ -99,9 +99,9 @@ hr {
   background-color: var(--snap-no-progress-bar);
 }
 
-.snapdragon-options  .btn.btn-secondary {
+/* .snapdragon-options  .btn.btn-secondary {
   letter-spacing: 0.03rem;
-}
+} */
 
 .btn.btn-light,
 .btn.btn-light:focus {
@@ -830,9 +830,19 @@ a.dropdown-item {
 }
 
 .data-box-container {
-  margin: 0;
+  /* margin: 0; */
+  height: var(--vhCalender, 11vh);
   display: grid;
   grid-template-columns: 2fr 3fr 2fr;
+}
+
+.mixed-content-container {
+  height: calc(
+        var(--vh, 1vh) * 100
+      - var(--vhRunningBlocks,15vh)
+      - var(--vhStandardBlock,10vh) 
+      - var(--vhCalender,11vh) 
+  );
 }
 
 .taxon.card-card .data-box-container {
@@ -946,6 +956,10 @@ button.btn-light:focus,
 .btn-light:not(:disabled):not(.disabled):active:focus,
 .show > .btn-light.dropdown-toggle:focus {
   box-shadow: 0 0 0 0;
+}
+
+.btn {
+  font-size: inherit;
 }
 
 .btn.focus, .btn:focus {
@@ -1640,7 +1654,7 @@ th .custom-control-label::before, .custom-control-label::before {
   font-family: 'SharpGroteskWide', sans-serif;
   color: var(--snap-link);
   letter-spacing: .3rem;
-  font-family: sentinel;
+  /* font-family: sentinel; */
 }
 
 .species-pending > div:nth-child(2) {
@@ -1847,7 +1861,7 @@ a.collection-disabled {
   font-family: 'SharpGroteskWide', sans-serif;
   color: var(--snap-collection-active);
   letter-spacing: .3rem;
-  font-family: sentinel;
+  /* font-family: sentinel; */
   position: absolute;
   top: 1rem;
   height: 3rem;
@@ -1856,7 +1870,7 @@ a.collection-disabled {
 .home-container .snapdragon-tag, .home-container .summary-scores, .trait-card-summary-container .summary-scores {
   /* font-size: 1.6rem; */
   justify-content: center;
-  font-family: sentinel;
+  /* font-family: sentinel; */
   font-style: italic;
   display: flex;
   color: var(--snap-link);

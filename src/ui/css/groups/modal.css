@@ -29,11 +29,11 @@
 }
 
 .modal-title {
-  font-size: .7rem;
+  /* font-size: .7rem; */
   color: var(--snap-text-dark);
   text-transform: uppercase;
   letter-spacing: .07rem;
-  font-family: sentinel;
+  /* font-family: sentinel; */
 }
   
   .modal-title span {
@@ -162,7 +162,7 @@
 }
 
 #cardModal .modal-content {
-  height: calc(100vh - 5rem);
+  /* height: calc(100vh - 5rem); */
   width: 100%;
 }
 
@@ -200,9 +200,9 @@
     justify-content: center;
 }
 
-#cardModal .mixed-container {
-  height: calc(90vh - 6rem);
-}
+  #cardModal .mixed-content-container {
+    /* height: calc(90vh - 6rem); */
+  }
 
   #cardModal .compare-species-link {
     pointer-events: none;
@@ -248,7 +248,7 @@
   #badgeListModal .modal-body {
     background-color: rgb(226, 222, 180,.2);
     min-height: 5rem;
-    font-size: 1rem;
+    /* font-size: 1rem; */
   }
   
   #badgeListModal li {  
@@ -258,7 +258,7 @@
   #badgeListModal .modal-text {  
     color: var(--snap-text-medium-dark);
     margin: 0;
-    font-size: .9rem;
+    /* font-size: .9rem; */
   }
 
   #badgeListModal ul {
@@ -270,9 +270,9 @@
 #menuModal .definition.card {
     height: 60vh;
     border: 0;
-    font-size: 1rem;
+    /* font-size: 1rem; */
     padding: 0 .5rem;
-    font-family: sentinel;
+    /* font-family: sentinel; */
     border-radius: 0;
   }
   
@@ -286,6 +286,6 @@
     color: rgb(20, 20, 20);
     margin: 0 0.25rem 0 0;
     font-style: italic;
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
     letter-spacing: .03rem;
   }

@@ -1,6 +1,6 @@
 
 .test-card-container .question-header {
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
     border: none;
     height: inherit;
     letter-spacing: .03rem;
@@ -10,7 +10,7 @@
 
 .test-card-container .question-header > div {
     align-items: center;
-    line-height: 1.2;
+    /* line-height: 1.2; */
     display: flex;    
     flex-direction: row;
     justify-content: center;
@@ -18,19 +18,19 @@
     padding-left: .5rem;
 }
 
-.test-card-container .question-header span.binomial {
+/* .test-card-container .question-header span.binomial {
     font-size: .8rem;
-}
+} */
 
 .names-container {
-    font-size: 0.8rem;
+    /* font-size: 0.8rem; */
     display: flex;
     flex-direction: column;
     padding: 0;
 }
 
 .term-header {
-    font-size: 1.4rem;
+    /* font-size: 1.4rem; */
     font-style: italic;
     letter-spacing: .05rem;
 }
@@ -38,7 +38,7 @@
 .test-card {
     color: var(--snap-text-medium-dark);
     padding: 0;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
 }
 
 .test-card-container {
@@ -48,7 +48,7 @@
   /* CONTINUE BUTTON */
 
   .test-card-question .question {
-    font-size: 1rem;
+    /* font-size: 1rem; */
     text-transform: uppercase;
     letter-spacing: 0.07rem;
     color: var(--snap-text-dark);
@@ -67,7 +67,7 @@
   }
   
 .test-card-question .question-help, .block-container .question > span:nth-child(2) {
-    font-size: .8rem;
+    /* font-size: .8rem; */
     vertical-align: super;
     text-transform: initial;
     margin: 0 .5rem;
@@ -76,14 +76,14 @@
 
 .test-card-question .question-sub-header {
     text-transform: uppercase;
-    font-size: .8rem;
-    width: fit-content;
-    margin: 0;
+    /* font-size: .8rem; */
+    /* width: fit-content; */
+    /* margin: 0; */
 }
 
 .test-card .help-txt {
-    font-size: 1.1rem;
-    letter-spacing: .03rem;
+    /* font-size: 1.1rem; */
+    /* letter-spacing: .03rem; */
     margin: 1rem 0;
     margin: .25rem 0 0 .5rem;
 }
@@ -131,7 +131,7 @@
 
   .wrong-answer-txt {
       margin: .5rem .5rem 0 .75rem;
-      font-size: 1rem;
+      /* font-size: 1rem; */
   }
 
 /* SYSTEM RESPONSE */
@@ -150,7 +150,7 @@
     position: absolute;
     bottom: var(--vhRunningBlock, 7.5vh);
     left: 0rem;
-    font-size: 1rem;
+    /* font-size: 1rem; */
     padding: 0 0 0 .75rem;
     height: var(--vhButton, 5vh);
 }
@@ -160,8 +160,8 @@
 .test-card .portrait-answer {
     font-style: italic;
     text-transform: capitalize;
-    font-size: 1.2rem;
-    letter-spacing: .08rem;
+    /* font-size: 1.2rem; */
+    /* letter-spacing: .08rem; */
 }
 
 .answer-box-success > span:nth-child(2), 
@@ -191,7 +191,7 @@ div.text-entry {
 
 .text-entry input {
     width: 100%;    
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
     color: var(--snap-text-dark);
   }
   
@@ -253,18 +253,18 @@ div.text-entry {
     display: block;
   }
 
-.question-container img {
+/* .question-container img {
     height: 100%;
     width: 4rem;
     object-fit: scale-down;
-}
+} */
 
 /* Content */
 
 .test-card-content {
     padding: 0 .5rem;
     height: calc(
-        var(--vh, 1vh) * 100 
+        var(--vh, 1vh) * 100
       - var(--vhRunningBlocks,15vh)
       - var(--vhStandardBlock,10vh) 
       - var(--vhButton, 5vh)
@@ -296,16 +296,16 @@ div.text-entry {
     display: grid;
     grid-template-rows: 1fr 1fr 2fr 3fr;
     grid-row-gap: 1rem;
-    font-size: 1rem;
+    /* font-size: 1rem; */
 }
 
 .trait-test-card-container p {
     margin: 0;
 }
 
-.input-trait-field {    
+/* .input-trait-field {    
     font-size: 1rem;
-}
+} */
 
 .input-trait-field label {
     min-width: 4rem;
@@ -322,9 +322,9 @@ div.text-entry {
         font-size: 2rem;
     }
 
-    .test-card-container .question-header span.binomial {
+    /* .test-card-container .question-header span.binomial {
         font-size: 1rem;
-    }
+    } */
 
     /* .feature-symbiont-list {
         height: calc(90vh - 20rem);
@@ -342,14 +342,14 @@ div.text-entry {
         display: initial;
     }
 
-    .question-container img {        
+    /* .question-container img {        
         width: 5.5rem;
-    }
+    } */
 
-    .question-container > div:nth-child(1), .question-container > div:nth-child(3) {
+    /* .question-container > div:nth-child(1), .question-container > div:nth-child(3) {
         width: initial;
         height: initial;
-    }
+    } */
 
     .question-container .mushroom-icon-header svg {
         width: 1.8rem;
@@ -372,17 +372,17 @@ div.text-entry {
         text-align: right;
     }
 
-    .test-card-container .question {
+    /* .test-card-container .question {
         font-size: 1.6rem; 
     }
 
     .test-card-question .question-help {
         font-size: .9rem;
-    }
+    } */
 
     .test-card-question .help-txt {
         margin: 1rem .5rem;
-        font-size: 1.3rem;
+        /* font-size: 1.3rem; */
         font-family: serif;
         font-weight: bold;
         letter-spacing: .05rem;
@@ -422,26 +422,26 @@ div.text-entry {
 
     /* CONTINUE BUTTON */
 
-    .test-card-container .layer {
+    /* .test-card-container .layer {
         font-size: 5rem;
-    }      
+    }       */
 
-    .card-card {
+    /* .card-card {
         display: grid;
         grid-gap: .5rem;
         grid-template-columns: 1fr;
-    }
+    } */
 }
 
 /* iPHONE 6,7,8 PLUS, iPHONE X, GALAXY S9/S9+ */
 
-@media  (max-width:414px) and (min-height:736px),
+/* @media  (max-width:414px) and (min-height:736px),
         (max-width:375px) and (min-height:812px),
         (max-width:360px) and (min-height:740px) {
             .question-header {
                 font-size: 1.8rem;
             }
-        }
+        } */
 
 @media (max-height:568px) {
     .test-card .help-txt {
