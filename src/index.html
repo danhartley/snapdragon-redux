@@ -43,6 +43,12 @@
                 document.documentElement.style.setProperty('--vhFixtures', (verticalHeight * 15) + 5 + 'px');
                 document.documentElement.style.setProperty('--vhCalender', (verticalHeight * 11) + 'px');
 
+                const fixtures = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhFixtures').replace('px', ''));
+                const largeImage = ((verticalHeight * 100) - fixtures) / 3;
+
+                document.documentElement.style.setProperty('--vhLargeImage', largeImage + 'px');
+                document.documentElement.style.setProperty('--vhSmallImageCarousel', verticalHeight * 23 + 'px');
+
                 console.log(verticalHeight * 100);
             };
 
@@ -236,9 +242,9 @@
                 <div class="modal-content">
                     <div class="modal-header">                        
                     <h5 class="modal-title js-modal-text-title"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                    </button>
+                    </button> -->
                     </div>
                     <div class="carousel slide">
                         <div class="carousel-inner">
@@ -254,6 +260,11 @@
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
+                    </div>
+                    <div class="modal-footer double-centred-block">
+                        <button type="button" class="" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">Close</span>
+                        </button>
                     </div>
                 </div>
             </div>

@@ -17,7 +17,7 @@
 }
 
 .modal-body {
-    padding: .5rem;
+    padding: 0;
 }
 
 .modal-header {
@@ -26,13 +26,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: var(--vhRunningBlock,7.5vh);
+    margin-bottom: 5px;
+}
+
+.modal-footer {
+  height: var(--vhRunningBlock,7.5vh);
+  padding: 0;
 }
 
 .modal-title {
   /* font-size: .7rem; */
   color: var(--snap-text-dark);
   text-transform: uppercase;
-  letter-spacing: .07rem;
+  /* letter-spacing: .07rem; */
   /* font-family: sentinel; */
 }
   
@@ -47,6 +54,7 @@
     margin: 0;
     padding: 0;
     width: 1rem;
+    display: none;
   }
 
   .modal-body button {
@@ -143,9 +151,9 @@
     display: none;
 }
 
-#imageModal .modal-body .imageSlider .carousel-item {
+/* #imageModal .modal-body .imageSlider .carousel-item {
   height: 55vh;
-}
+} */
 
 /* CARD MODAL */
 
@@ -154,7 +162,7 @@
 }
 
 #cardModal .modal-body {
-    padding: 0;
+  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
 }
 
 #cardModal .card {
@@ -166,9 +174,9 @@
   width: 100%;
 }
 
-#cardModal .imageSlider .carousel-item {
+/* #cardModal .imageSlider .carousel-item {
     height: 25vh;
-  }
+  } */
 
 #cardModal .carousel-inner {
     display: flex;
@@ -199,10 +207,6 @@
     flex-direction: column;
     justify-content: center;
 }
-
-  #cardModal .mixed-content-container {
-    /* height: calc(90vh - 6rem); */
-  }
 
   #cardModal .compare-species-link {
     pointer-events: none;

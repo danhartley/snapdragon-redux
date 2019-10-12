@@ -132,20 +132,20 @@ td:empty:after{
     text-transform: initial;
 }
 
-.card-scrollable-container {
+/* .card-scrollable-container {
   height: calc(100vh - 22rem);
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
+} */
 
 .info-details {
   height: calc(
           var(--vh, 1vh) * 100 
         - var(--vhRunningBlocks,15vh)
         - var(--vhDoubleStandardBlock,20vh) 
-        - var(--vhCarousel,28vh)
+        - var(--vhCarousel,30vh)
         - .5rem 
         - 1rem);
   margin: .5rem 0;
