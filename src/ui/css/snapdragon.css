@@ -992,11 +992,11 @@ span.correct {
   color: rgb(2, 107, 26);
 }
 
-.btn-dark {
+/* .btn-dark {
   color: var(--snap-text-dark);
   background-color: var(--snap-block-light);
   border: none;
-}
+} */
 
 .snap-inactive {
   color: var(--snap-inactive);

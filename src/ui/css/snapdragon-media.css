@@ -40,9 +40,9 @@
 }
 
 @media (min-width: 576px) {
-    .modal-dialog {
+    /* .modal-dialog {
         max-width: initial;
-    }
+    } */
 }
 /* Nexus 7 */
 
@@ -104,12 +104,12 @@
             - 1rem);
       }
 
-      .modal-dialog {
+      /* .modal-dialog {
         height: 100%;
-      }
+      } */
     
       .modal-header {
-          padding: .5rem;
+          /* padding: .5rem; */
           display: flex;
           align-items: center;
           justify-content: space-between;

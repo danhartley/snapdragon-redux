@@ -15,28 +15,28 @@
   height: 100%;
 }
 
-.modal-guide-wrapper .modal-dialog {
+/* .modal-guide-wrapper .modal-dialog {
     width: 100%;
     margin: 0rem auto;
   }
-  
-  .modal-guide-wrapper .modal-header {
+   */
+  /* .modal-guide-wrapper .modal-header {
     display: none;
-  }
+  } */
   
-  .modal-guide-wrapper button.close {
+  /* .modal-guide-wrapper button.close {
     width: fit-content;
-  }
+  } */
   
-  .modal-guide-wrapper .modal-title {
+  /* .modal-guide-wrapper .modal-title {
     flex: auto;
     display: flex;
     align-items: center;
     color: rgb(250, 250, 250);
     text-transform: uppercase;
-  }
+  } */
   
-  .modal-guide-wrapper .modal-title div { 
+  /* .modal-guide-wrapper .modal-title div { 
     font-size: 1.3rem;
     letter-spacing: .05rem;
   }
@@ -60,16 +60,16 @@
     color: rgb(250, 250, 250);
     text-shadow: none;
     padding: .5rem;
-  }
+  } */
   
-  .modal-guide-wrapper .modal-content {
+  /* .modal-guide-wrapper .modal-content {
     height: 100%;
     background-color: initial;
   }
 
   .modal-body {
     background-color: var(--snap-list-alt-background);
-  }
+  } */
 
   .guide-text-container {
     display: flex;
@@ -727,14 +727,14 @@
     /* font-size: initial; */
     width: 100%;
   }
-
+/* 
   #createGuide .modal-dialog, #exampleGuide .modal-dialog, 
   #menuModal .modal-dialog, #badgeListModal .modal-dialog,
   #imageModal .modal-dialog {
     height: initial;
-  }
+  } */
 
-  #exampleGuide .btn-group label:nth-of-type(2n) {
+  /* #exampleGuide .btn-group label:nth-of-type(2n) {
     background-color: var(--snap-lesson-row-green);
   }
 
@@ -745,7 +745,7 @@
   #exampleGuide .btn-secondary:not(:disabled):not(.disabled).active {
     background-color: gray;
     color: white;
-  }
+  } */
 
   .start-lesson-wrapper.disabled {
     pointer-events: none;
@@ -832,11 +832,11 @@
     margin-top: -.1rem;
   }
 
-  .actions {
+  /* .actions {
     height: calc(100vh - 16rem);
     margin: .5rem;
     display: grid;
-  }
+  } */
 
   .location-actions .actions {
     grid-template-rows: 1fr 2fr 2fr;
@@ -1012,22 +1012,22 @@
       height: 324px;
     }
 
-    .actions {
+    /* .actions {
       height: 18rem;
       padding-bottom: 3rem;
-    }
+    } */
 
     #set-inat-identity-btn {  
       width: auto;
     }
 
-    .modal-guide-wrapper .modal-header {
+    /* .modal-guide-wrapper .modal-header {
       display: flex;
       flex-direction: row;
       align-items: center;
       padding: 0 1rem;
       background-color: var(--secondary);
-    }
+    } */
 
     .btn-group.btn-group-toggle.scrollable {
       left: 0rem;
@@ -1038,11 +1038,11 @@
       margin: initial;
     }
 
-    .modal-guide-wrapper .modal-dialog {
+    /* .modal-guide-wrapper .modal-dialog {
         width: 60%;
         max-width: 600px;
         margin: 2rem auto;
-    }
+    } */
 
     .guide-text {
       font-size: 1.2rem;
@@ -1077,12 +1077,12 @@
         font-size: 1.1rem;        
     }
 
-    .modal-guide-wrapper .modal-header .close {
+    /* .modal-guide-wrapper .modal-header .close {
         margin: 0 0 0 .5rem;
-    }
+    } */
 
     .modal-guide-progress, .modal-guide-navigation {
-        height: 4rem;
+        height: var(--vhStandardBlock, 10vh);
     }
 
     .modal-guide-progress > div {

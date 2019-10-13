@@ -25,7 +25,7 @@ export const renderLessons = () => {
     const template = document.createElement('template');
           template.innerHTML = lessonListTemplate;
 
-    const lessons = collections.filter(lesson => !lesson.default).filter(lesson => lesson.video);
+    const lessons = collections.filter(lesson => !lesson.default);//.filter(lesson => lesson.video);
 
     const loadLessons = () => {
 

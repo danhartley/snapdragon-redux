@@ -1,6 +1,5 @@
 import 'ui/create-guide-modal/create-guide.css';
 
-import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { renderHome } from 'ui/screens/home/home';
@@ -13,7 +12,6 @@ import { saveButton } from 'ui/create-guide-modal/common/save-button';
 import { enums } from 'ui/helpers/enum-helper';
 
 import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
-import createGuideTemplate from 'ui/create-guide-modal/create-guide-template.html';
 
 const closeModalListeners = [];
 
@@ -168,15 +166,6 @@ class CreateGuide {
 };
 
 export const createGuideHandler = (step) => {
-
-    const { config } = store.getState();
-    
-    if(config.isPortraitMode) {
-        const template = document.createElement('template');
-        template.innerHTML = createGuideTemplate;
-        DOM.rightBody.innerHTML = '';
-        renderTemplate({}, template.content, DOM.rightBody);
-    }
 
     const guide = new CreateGuide(step);
 
