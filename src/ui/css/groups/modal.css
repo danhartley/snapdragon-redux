@@ -1,12 +1,8 @@
-.modal-dialog {
+/* .modal-dialog {
   margin: 0;
-    /* width: auto;
-    margin: 2rem .5rem .5rem .5rem; */
-}
+} */
 
 .modal-content {
-  /* border-top-left-radius: .3rem;
-  border-top-right-radius: .3rem; */
   border: none;
   border-radius: 0;
   height: 100%;
@@ -36,11 +32,8 @@
 }
 
 .modal-title {
-  /* font-size: .7rem; */
   color: var(--snap-text-dark);
   text-transform: uppercase;
-  /* letter-spacing: .07rem; */
-  /* font-family: sentinel; */
 }
   
   .modal-title span {
@@ -151,10 +144,6 @@
     display: none;
 }
 
-/* #imageModal .modal-body .imageSlider .carousel-item {
-  height: 55vh;
-} */
-
 /* CARD MODAL */
 
 #cardModal .card-link {
@@ -170,13 +159,8 @@
 }
 
 #cardModal .modal-content {
-  /* height: calc(100vh - 5rem); */
   width: 100%;
 }
-
-/* #cardModal .imageSlider .carousel-item {
-    height: 25vh;
-  } */
 
 #cardModal .carousel-inner {
     display: flex;
@@ -251,8 +235,7 @@
 
   #badgeListModal .modal-body {
     background-color: rgb(226, 222, 180,.2);
-    min-height: 5rem;
-    /* font-size: 1rem; */
+    /* min-height: 5rem; */
   }
   
   #badgeListModal li {  
@@ -261,22 +244,19 @@
 
   #badgeListModal .modal-text {  
     color: var(--snap-text-medium-dark);
-    margin: 0;
-    /* font-size: .9rem; */
+    /* margin: 0; */
   }
 
-  #badgeListModal ul {
+  /* #badgeListModal ul {
     padding: 0;
-  }
+  } */
 
 /* GLOSSARY MODAL */
 
 #menuModal .definition.card {
-    height: 60vh;
-    border: 0;
-    /* font-size: 1rem; */
+    /* height: 60vh;
+    border: 0; */
     padding: 0 .5rem;
-    /* font-family: sentinel; */
     border-radius: 0;
   }
   
@@ -290,6 +270,5 @@
     color: rgb(20, 20, 20);
     margin: 0 0.25rem 0 0;
     font-style: italic;
-    /* font-size: 1.1rem; */
     letter-spacing: .03rem;
   }

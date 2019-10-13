@@ -1,13 +1,8 @@
 /* TABLE BASICS */
 
-/* table {
-    font-size: 0.9rem;
-} */
-
 .table-header {
   background-color: rgb(153, 172, 149);
   color: var(--snap-text-dark);
-  /* line-height: 2.5; */
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -16,11 +11,9 @@
   /* position: sticky;
   position: -webkit-sticky; */
   z-index: 10;
-  /* border-radius: 0.25rem 0.25rem 0 0; */
   letter-spacing: 0.03rem;
   align-items: center;
   text-transform: uppercase;
-  /* font-size: 0.85rem; */
 }
 
 .table-header {
@@ -179,10 +172,6 @@ div.species-description {
   width: 100%;
 }
 
-/* .accordion-icon {
-  margin-bottom: 5px;
-} */
-
 .youtube-icon, .accordion-icon {
   cursor: pointer;
   font-size: 1.2rem;
@@ -227,7 +216,6 @@ div.species-description {
     .table-row td:nth-child(3) {
         display: flex;
         flex-direction: column;
-        /* font-size: .8rem; */
         justify-content: space-evenly;
         align-items: flex-start;
     }
@@ -295,7 +283,6 @@ div.species-description {
     /* DOUBLE HEADER */
 
     .table-header th:nth-child(3) {
-        /* font-size: .7rem; */
         flex-direction: column;
         display: flex;
         align-items: start;
