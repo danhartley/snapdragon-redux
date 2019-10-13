@@ -4,7 +4,6 @@ import speciesTemplate from 'ui/create-guide-modal/species-template.html';
 
 export const renderSpecies = createGuide => {
 
-    // const header = createGuide.modal.querySelector('.js-modal-guide-progress');
     const header = createGuide.modal.querySelector('.js-modal-title');
           header.innerHTML = 'Choose species, location, etc.'
           header.style = 'margin: 0 1rem 0 1rem; height: initial; text-transform: uppercase;';
@@ -14,7 +13,7 @@ export const renderSpecies = createGuide => {
 
     const options = [
         {
-            text: 'Choose a location and the taxa that are of interest to you.',
+            text: 'Filter species by location, taxa and season.',
             link: ''
         },
         {
@@ -33,4 +32,15 @@ export const renderSpecies = createGuide => {
           parent.innerHTML = '';
 
     renderTemplate({ options }, template.content, parent);
+
+    const handleNextStepAction = event => {
+        createGuide.startLesson = createGuide.nextStepActionTxt.innerHTML.indexOf('Start Lesson') > -1; // hack
+        createGuide.createStep(createGuide.getCurrentStep() + 1, 'NEXT');
+        createGuide.listeners.push( { element: createGuide.nextStepAction, handler: handleNextStepAction });
+    };
+
+    const lessonOptions = document.querySelectorAll('.custom-lesson-species-list li');
+          lessonOptions.forEach((option, index) => {
+            option.addEventListener('click', handleNextStepAction, true);
+          });
 };

@@ -76,13 +76,13 @@ class CreateGuide {
 
     addStepActions(className) {
         
-        let template = '';
+        // let template = '';
         const parent = this.modal.querySelector('.js-landscape-inner-body');
-        parent.innerHTML = '';
-        template = document.createElement('template');
+              parent.innerHTML = '';
+        const template = document.createElement('template');
+              template.innerHTML = actionsTemplate;
         const description = this.steps.find(step => step.number === this.currentStep).description;
 
-        template.innerHTML = actionsTemplate;
         renderTemplate({ className }, template.content, parent);
 
         switch(description) {
@@ -112,7 +112,7 @@ class CreateGuide {
             closeModalListeners.forEach(listener => listener(enums.lessonState.GET_SPECIES));
             this.currentStep = 0;
             const config = this.getConfig();
-            config.guide.ready = true;
+                  config.guide.ready = true;
             this.setConfig(config);
             
             if(config.isLandscapeMode) {
@@ -129,6 +129,7 @@ class CreateGuide {
         };
 
         const currentStepProperties = this.steps.filter(s => s.number === this.currentStep);
+        
         this.modalTitle.innerText = currentStepProperties.map(s => s.title);
         this.modalTitleSteps.innerHTML = `Step ${currentStepProperties.map(s => s.number)} of ${this.steps.length}`;
         this.nextStepActionTxt.innerHTML = currentStepProperties.map(csp => csp.nextStep);

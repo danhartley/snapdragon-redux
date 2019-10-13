@@ -52,10 +52,12 @@ export const renderLessons = () => {
           header.classList.add('btn');
           header.classList.add('btn-secondary');
           header.classList.add('pointer-events-none');
+          header.classList.add('half-block');
           header.style.backgroundColor = 'rgb(252, 251, 246)';
           header.style.zIndex = 20;
 
-    parent = document.querySelector('.btn-group.btn-group-toggle');
+    // parent = document.querySelector('.btn-group.btn-group-toggle');
+    parent = document.querySelector('.lesson-list .scrollable');
     parent.prepend(header);
 
     const createCustomLessonBtn = parent.querySelector('.js-create-custom-lesson');

@@ -205,10 +205,10 @@ div.text-entry {
     margin: 0 .25rem 0 0;
   }
 
-  .test-card .scrollable {
+  /* .test-card .scrollable {
     left: .25rem;
     right: .25rem;
-  }
+  } */
 
 /* CARD HEADER */
 
@@ -244,10 +244,10 @@ div.text-entry {
       top: calc(var(--vhRunningBlock,7.5vh) + var(--vhStandardBlock,10vh));
 }
 
-.feature-symbiont-list {
+/* .feature-symbiont-list {
     height: calc(90vh - 22rem);
     padding: .5rem;
-}
+} */
 
 .iconic-icon {
     font-size: 1.5rem;

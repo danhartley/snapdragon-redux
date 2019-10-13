@@ -155,10 +155,10 @@
   height: 1rem;
  }
 
- .species-list .scrollable {    
+ /* .species-list .scrollable {    
   top: 7.5%;
   bottom: calc(7.5% + 3rem);
-}
+} */
 
 div.species-description {
   background-color: var(--snap-species-highlight-background);
@@ -198,7 +198,7 @@ div.species-description {
 
   @media (min-width: 768px) {
 
-    .embedded-lesson-list-header {
+    /* .embedded-lesson-list-header {
       flex-direction: row;
       display: flex;
       align-items: center;
@@ -207,7 +207,7 @@ div.species-description {
     .embedded-lesson-list-header > div:nth-child(1) {
       margin: 0;
       width: initial;
-    }
+    } */
 
     .table-header {
       background-color: var(--snap-landscape);

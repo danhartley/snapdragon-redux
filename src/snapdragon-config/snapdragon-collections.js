@@ -398,54 +398,54 @@ const kitchen1 = {
         
         Best grown from a cutting.`
       },
-      // {
-      //   name: 'Origanum vulgare',
-      //   time: [80],
-      //   description: `Oregano can be grown from a cutting or seed. It is not frost resistant.`
-      // },
-      // {
-      //   name: 'Salvia officinalis',
-      //   time: [98],
-      //   description: `Sage can tolerant frosts to -10C.`
-      // },
-      // {
-      //   name: 'Petroselinum crispum',
-      //   time: [115],
-      //   description: `Best grown from seed, it can tolerate frosts to -12C.`
-      // },
-      // {
-      //   name: 'Coriandrum sativum',
-      //   time: [137],
-      //   description: `Also known as Coriander.
+      {
+        name: 'Origanum vulgare',
+        time: [80],
+        description: `Oregano can be grown from a cutting or seed. It is not frost resistant.`
+      },
+      {
+        name: 'Salvia officinalis',
+        time: [98],
+        description: `Sage can tolerant frosts to -10C.`
+      },
+      {
+        name: 'Petroselinum crispum',
+        time: [115],
+        description: `Best grown from seed, it can tolerate frosts to -12C.`
+      },
+      {
+        name: 'Coriandrum sativum',
+        time: [137],
+        description: `Also known as Coriander.
         
-      //   Best grown from seed (which must be split first to ensure it germinates quickly). 
+        Best grown from seed (which must be split first to ensure it germinates quickly). 
         
-      //   Seed leaves will appear within a week. Best planted in fall, in spring it flowers quickly.`
-      // },
-      // {
-      //   name: 'Artemisia dracunculus',
-      //   time: [172],
-      //   description: `A winter hardy perennial and tolerates forst well (to -20C).`
-      // },
-      // {
-      //   name: 'Ocimum basilicum',
-      //   time: [194],
-      //   description: `Dies in winter; take cuttings and propogate in first week of spring. Also grows well from seed.`
-      // },
-      // {
-      //   name: 'Mentha spicata',
-      //   time: [224],
-      //   description: `Grows well from cuttings or roots. It dies back in winter and regrows in spring with plentiful watering. 
+        Seed leaves will appear within a week. Best planted in fall, in spring it flowers quickly.`
+      },
+      {
+        name: 'Artemisia dracunculus',
+        time: [172],
+        description: `A winter hardy perennial and tolerates forst well (to -20C).`
+      },
+      {
+        name: 'Ocimum basilicum',
+        time: [194],
+        description: `Dies in winter; take cuttings and propogate in first week of spring. Also grows well from seed.`
+      },
+      {
+        name: 'Mentha spicata',
+        time: [224],
+        description: `Grows well from cuttings or roots. It dies back in winter and regrows in spring with plentiful watering. 
         
-      //   Alternatively bring inside in winter.`
-      // },
-      // {
-      //   name: 'Rosmarinus officinalis',
-      //   time: [241],
-      //   description: `Place cuttings in water; it will easily root and can then be planted out (indoors or out). 
+        Alternatively bring inside in winter.`
+      },
+      {
+        name: 'Rosmarinus officinalis',
+        time: [241],
+        description: `Place cuttings in water; it will easily root and can then be planted out (indoors or out). 
         
-      //   Winter hardy but avoid excessive frosts.`
-      // },
+        Winter hardy but avoid excessive frosts.`
+      },
     ],
     producer: 'Jag Singh - Daisy Creek Farms',
     video: {

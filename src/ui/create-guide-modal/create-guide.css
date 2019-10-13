@@ -10,10 +10,10 @@
   padding: 0 .5rem;
 }
 
-.landscape-inner-body > div:nth-child(1),
+/* .landscape-inner-body > div:nth-child(1),
 .portait-inner-body > div:nth-child(1) {
   height: 100%;
-}
+} */
 
 /* .modal-guide-wrapper .modal-dialog {
     width: 100%;
@@ -129,10 +129,10 @@
   }
 
   .modal-body .modal-guide-progress > div div {
-    line-height: 2rem;
+    /* line-height: 2rem; */
     flex: auto;
     text-align: center;
-    letter-spacing: .08rem;
+    /* letter-spacing: .08rem; */
   }
   
   .modal-body .modal-guide-progress > div > div {
@@ -219,7 +219,7 @@
   }
 
   .guide-header-container {
-    height: 4rem;
+    /* height: 4rem; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -246,18 +246,18 @@
     margin: .5rem;
   }
 
-  .modal-body .chosen {
+  /* .modal-body .chosen {
     position: absolute;
     bottom: 2.8rem;
     left: .5rem;
     min-height: 2rem;
     display: flex;
     align-items: baseline;
-  }
+  } */
 
   .modal-body .chosen > div > span:nth-child(1) {
-    margin: 0 .25rem;
-    letter-spacing: .03rem;
+    /* margin: 0 .25rem; */
+    /* letter-spacing: .03rem; */
     font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
     color: var(--snap-text-medium-light);
     font-style: italic;
@@ -288,9 +288,9 @@
   
   .modal-body button {
     display: inline-block;
-    margin: 0;
+    /* margin: 0; */
     color: white;
-    letter-spacing: .05rem;
+    /* letter-spacing: .05rem; */
     background-color: var(--snap-collection);
   }
 
@@ -322,17 +322,17 @@
     background-color: rgb(127, 151, 122);
   }
   
-  .modal-guide-wrapper .guides .months {
+  /* .modal-guide-wrapper .guides .months {
     font-size: 1.4rem;
     margin: 1rem 0 0 0;
     letter-spacing: .05rem;
     font-family: serif;
     font-variant-caps: small-caps;
-  }
+  } */
   
-  .modal-guide-wrapper .guides .months span:nth-child(2) {
+  /* .modal-guide-wrapper .guides .months span:nth-child(2) {
     margin: 0 0 0 .5rem;        
-  }
+  } */
   
   #inat-place, #input-species {
     width: 100%;
@@ -466,7 +466,7 @@
     width: fit-content;
     border-radius: .2rem;
     background-color: rgb(110, 138, 49);
-    letter-spacing: .05rem;
+    /* letter-spacing: .05rem; */
     width: 100%;
     font-size: 1rem;
     height: 2.5rem;
@@ -504,7 +504,7 @@
     padding: 0 .25rem;
     color: var(--snap-text-dark-medium-dark);
     background-color: rgb(250, 250, 250);
-    letter-spacing: .04rem;
+    /* letter-spacing: .04rem; */
     border: .05rem solid lightgray;
     text-align: left;
   }
@@ -585,7 +585,7 @@
     max-width: 14rem;
     color: var(--snap-text-medium-light);
     font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
-    letter-spacing: .05rem;
+    /* letter-spacing: .05rem; */
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -642,8 +642,8 @@
   .btn.btn-secondary {
     /* height: 4rem; */
     height: initial;
-    margin: 1.25rem 0;
-    padding: 0.25rem .5rem 0.25rem 1.5rem;
+    /* margin: 1.25rem 0;
+    padding: 0.25rem .5rem 0.25rem 1.5rem; */
     flex-direction: row;
     align-items: center;
     /* font-size: .9rem; */
@@ -707,12 +707,12 @@
     margin: 0;
   }
  
-  .btn-group.btn-group-toggle {
+  /* .btn-group.btn-group-toggle {
     border: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-  }
+  } */
   
   /* .btn-group.btn-group-toggle.scrollable {
     left: .5rem;
@@ -722,8 +722,8 @@
   /* PORTRAIT & LANDSCAPE EXAMPLE GUIDE */
 
   .btn.btn-secondary {
-    margin: 0 0 .5rem 0;
-    padding: .25rem .5rem .25rem .5rem;
+    /* margin: 0 0 .5rem 0;
+    padding: .25rem .5rem .25rem .5rem; */
     /* font-size: initial; */
     width: 100%;
   }
@@ -766,8 +766,8 @@
   .guide-bottom-actions {
     display: flex;
     position: absolute;
-    bottom: 5.5rem;
-    right: 1rem;
+    /* bottom: 5.5rem; */
+    /* right: 1rem; */
   }
 
   .guide-bottom-actions span:nth-child(1) {
@@ -779,12 +779,12 @@
   }
 
   .location-option {
-    line-height: 1.8rem;
+    /* line-height: 1.8rem; */
     display: grid;
     grid-template-rows: 1fr;
     width: 100%;
     font-family: "Libre Baskerville", Libre, Georgia, Times, serif;
-    letter-spacing: .03rem;
+    /* letter-spacing: .03rem; */
   }
 
   .location-option.place {
@@ -813,24 +813,24 @@
     position: relative;
   }
 
-  .location-option.chosen-guide-filter, .location-option.range {
+  /* .location-option.chosen-guide-filter, .location-option.range {
     height: 2.5rem;
     font-size: .9rem;
-  }
+  } */
 
   #googleLogo {
     width:  auto;
     height: 1rem
   }
 
-  .form-check {
+  /* .form-check {
     display: flex;
     align-items: center;
-  }
+  } */
 
-  .form-check-input {
+  /* .form-check-input {
     margin-top: -.1rem;
-  }
+  } */
 
   /* .actions {
     height: calc(100vh - 16rem);
@@ -984,9 +984,9 @@
       width: 50%;
     }
 
-    .location-option.chosen-guide-filter, .location-option.range {
+    /* .location-option.chosen-guide-filter, .location-option.range {
       height: 3.25rem;
-    }
+    } */
 
     #inat-identity {
       width: 14rem;
@@ -998,10 +998,10 @@
       display: flex;
     }
 
-    .guide-bottom-actions {
+    /* .guide-bottom-actions {
       bottom: 2rem;
       right: .5rem;
-    }
+    } */
 
     .filter-options {
       grid-template-columns: 1fr;
@@ -1029,14 +1029,14 @@
       background-color: var(--secondary);
     } */
 
-    .btn-group.btn-group-toggle.scrollable {
+    /* .btn-group.btn-group-toggle.scrollable {
       left: 0rem;
       right: 0rem;
-    }
+    } */
 
-    .guide-example-lessons .btn-group.btn-group-toggle.scrollable {
+    /* .guide-example-lessons .btn-group.btn-group-toggle.scrollable {
       margin: initial;
-    }
+    } */
 
     /* .modal-guide-wrapper .modal-dialog {
         width: 60%;
@@ -1225,15 +1225,15 @@
   .modal-guide-wrapper .modal-body .modal-guide-navigation > div:nth-child(1) > div svg {
       font-size: 2rem;
   }
-  .location-option {
+  /* .location-option {
     line-height: 1.6rem;
-  }
+  } */
 }
 
 @media (min-width: 736px) {
-  .location-option {
+  /* .location-option {
     line-height: 2rem;
-  }
+  } */
 }
 
 @media (min-height: 667px) {

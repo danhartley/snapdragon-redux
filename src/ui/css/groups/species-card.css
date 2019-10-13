@@ -69,7 +69,7 @@
   /* TAXON CARD  */
 
   .taxon.card-card .data-box {
-    letter-spacing: .05rem;
+    /* letter-spacing: .05rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,25 +84,24 @@
 
   /* FEATURES */
 
-.feature-symbiont-list table {
+/* .feature-symbiont-list table {
     width: 100%;
     border-collapse: collapse;
-}
+} */
 
-.feature-symbiont-list thead > tr:nth-child(1) {  
+/* .feature-symbiont-list thead > tr:nth-child(1) {  
     line-height: 1.5rem;
     background-color: rgba(52, 58, 64,.7);
-    line-height: 1.5rem;
     color: var(--snap-text-light);
     letter-spacing: .05rem;
     position: sticky;
     position: -webkit-sticky;
-}
+} */
 
 td:empty:after{
   content: "\00a0";
 }
-
+/* 
 .feature-symbiont-list th,
 .feature-symbiont-list td {
     text-align: left;
@@ -112,15 +111,15 @@ td:empty:after{
     padding: 0 0 0 0.5rem;
     text-transform: capitalize;
     line-height: 1.5rem;
-}
+} */
 
-.feature-symbiont-list th {
+/* .feature-symbiont-list th {
     text-transform: uppercase;
 }
     
 .feature-symbiont-list .underline-link {
     text-transform: initial;
-}
+} */
 
 .info-details {
   height: calc(

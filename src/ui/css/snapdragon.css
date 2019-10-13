@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  font-size: .6em;
+  font-size: .8em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,9 +26,9 @@ button {
   font-family: "PT Sans", "Roboto", arial, sans-serif !important;
 }
 
-input {
+/* input {
   pointer-events: initial;
-}
+} */
 
 input[type="text"] {
   padding: 0 0 0 .25rem;  
@@ -434,30 +434,26 @@ a.dropdown-item {
   flex: auto;
 }
 
-.footer-round,
-.footer-score span {
+.footer-round, .footer-score span {
   color: var(--snap-text-medium-dark);
   padding: 0.75rem;
 }
 
-.left-grid .header,
-.left-grid .footer {
+.left-grid .header, .left-grid .footer {
   background-color: var(--snap-portrait);
 }
 
-.right-grid .header,
-.right-grid .footer {
+.right-grid .header, .right-grid .footer {
   background-color: var(--snap-landscape);
 }
 
-.right-grid .header,
-.right-grid .footer {
+.right-grid .header, .right-grid .footer {
   justify-content: space-between;
 }
 
 .scrollable {
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  /* -webkit-overflow-scrolling: touch; */
   position: absolute;
   left: 0;
   right: 0;
@@ -1204,7 +1200,7 @@ span.correct {
   border: 0;
   width: fit-content;
   border: none;
-  letter-spacing: 0.03rem;
+  /* letter-spacing: 0.03rem; */
 }
 
 .btn.btn-secondary:hover {
@@ -1215,15 +1211,15 @@ span.correct {
   border: none;  
 }
 
-label.btn.btn-secondary {
+/* label.btn.btn-secondary {
   display: flex;
   align-items: center;
   padding: 1rem 0;
-}
+} */
 
-label.btn.btn-secondary img {
-    margin: 0 .25rem 0 -.5rem; /* make image left margin */
-}
+/* label.btn.btn-secondary img {
+    margin: 0 .25rem 0 -.5rem;
+} */
 
 label.btn.btn-secondary .lesson-icon {
   font-size: .8rem;
@@ -1474,7 +1470,7 @@ span.hide-empty:empty {
   padding: 0.5rem;
 }
 
-.custom-control-label::before, .custom-control-label::after {
+/* .custom-control-label::before, .custom-control-label::after {
   width: 1.25rem;
   height: 1.25rem;
 }
@@ -1486,7 +1482,7 @@ span.hide-empty:empty {
 
 .custom-control-input {
   position: relative;
-}
+} */
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
   background-color: rgb(98, 127, 134);
@@ -1503,14 +1499,14 @@ span.hide-empty:empty {
   margin: 0 0.5rem 0 0;
 }
 
-.custom-control-label::before {
+/* .custom-control-label::before {
   background-color: var(--snap-grid-background);
   border: 0.1rem solid var(--snap-border-dark);
 }
 
 th .custom-control-label::before, .custom-control-label::before {
   border: 0.05rem solid var(--snap-border-light);
-}
+} */
 
 .comparison-description {
   display: flex;
@@ -1997,7 +1993,7 @@ a.collection-disabled {
 }
 
 .lesson-list > div > label:nth-child(1) {
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   position: sticky;
   position: -webkit-sticky;
@@ -2015,11 +2011,22 @@ a.collection-disabled {
 .lesson-list .scrollable {
   width: 100%;  
   height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
+  flex-direction: column;
 }
 
-.right-body .home-container .scrollable {  
-  pointer-events: initial;
+.lesson-list .scrollable .btn input[type=radio] {
+  position: absolute;
+  clip: rect(0,0,0,0);
+  /* pointer-events: none; */
 }
+
+.lesson-list input[type=checkbox] {
+  /* pointer-events: all; */
+}
+
+/* .right-body .home-container .scrollable {  
+  pointer-events: initial;
+} */
 
 .home-scrolling-container {
   position: relative;
@@ -2035,7 +2042,7 @@ a.collection-disabled {
   width: 100%;
 }
 
-.embedded-lesson-list-header {
+/* .embedded-lesson-list-header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -2049,7 +2056,7 @@ a.collection-disabled {
   width: 100%;
   align-items: center;
   margin: 0 0 .5rem 0;
-}
+} */
 
 .youtube-red-fg {
   color: var(--snap-youtube-red);
@@ -2074,10 +2081,35 @@ a.collection-disabled {
   justify-content: center;
 }
 
+.spaced-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 .video {
   position: sticky;
   position: -webkit-sticky; 
   top: 0; 
   margin: 0;
   padding: 0;
+}
+
+.form-check {
+  pointer-events: initial;
+  display: flex;
+  align-items: center;
+}
+
+.form-check-input {
+  margin-top: 0;
+}
+
+.lesson-list .btn-group label.form-check-label {
+  background-color: initial;
+}
+
+.half-block {
+  height: var(--vhHalfStandardBlock, 5vh);
 }

@@ -1,5 +1,6 @@
 .modal-dialog {
   margin: 0;
+  max-width: initial;
 }
 
 .modal-content {
@@ -29,6 +30,7 @@
 .modal-footer {
   height: var(--vhRunningBlock,7.5vh);
   padding: 0;
+  background-color: var(--snap-landscape);
 }
 
 .modal-title {
@@ -218,9 +220,9 @@
     background-color: var(--snap-text-light);
   }
   
-  #listModal .scrollable {
+  /* #listModal .scrollable {
     height: 50vh;
-  }
+  } */
 
   #menuModal .modal-body.settings-modal {
     padding: 0;
@@ -274,5 +276,5 @@
     color: rgb(20, 20, 20);
     margin: 0 0.25rem 0 0;
     font-style: italic;
-    letter-spacing: .03rem;
+    /* letter-spacing: .03rem; */
   }
