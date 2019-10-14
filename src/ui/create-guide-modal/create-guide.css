@@ -1,16 +1,26 @@
 /* CREATE GUIDE */
 
-.portrait.modal-body.modal-guide-body {
+#createGuide .modal-dialog {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.step-action-content {
+  padding: 0 .5rem;
+  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhDoubleStandardBlock,20vh));
+}
+
+/* .portrait.modal-body.modal-guide-body {
   padding: 0;
   display: grid;
   grid-template-rows: 3rem 1fr 3rem;
-}
+} */
 
-.portait-inner-body {
+/* .portait-inner-body {
   padding: 0 .5rem;
-}
+} */
 
-/* .landscape-inner-body > div:nth-child(1),
+/* .step-action-content > div:nth-child(1),
 .portait-inner-body > div:nth-child(1) {
   height: 100%;
 } */
@@ -107,21 +117,22 @@
     margin: 0 0 .5rem 0;
   }
 
-  .modal-guide-wrapper .modal-body.modal-guide-body > .landscape-inner-body {
+  /* .modal-guide-wrapper .modal-body.modal-guide-body > .step-action-content {
     flex-direction: column;
     align-items: initial;
     position: relative;    
-  }
+  } */
   
   .modal-guide-wrapper .modal-body .modal-guide-progress > div {
     display: flex;
     align-items: center;
     border-bottom: .05rem solid lightgray;
-    padding: .5rem 0;
+    padding: .5rem;
     text-transform: uppercase;
-    font-size: .9rem;
-    margin: 0 .5rem;
-    min-height: 4rem;
+    height: inherit;
+    /* font-size: .9rem; */
+    /* margin: 0 .5rem; */
+    /* min-height: 4rem; */
   }
 
   .rptr-lessons {
@@ -132,6 +143,7 @@
     /* line-height: 2rem; */
     flex: auto;
     text-align: center;
+    padding: .5rem 0;
     /* letter-spacing: .08rem; */
   }
   
@@ -161,7 +173,7 @@
     justify-content: space-between;
     align-items: center;
     color: var(--snap=--snap-text-dark);
-    background-color: var(--snap-filters-ctrl);
+    /* background-color: var(--snap-filters-ctrl); */
   }
   
   .modal-guide-wrapper .modal-body .modal-guide-navigation > div > div {
@@ -255,15 +267,15 @@
     align-items: baseline;
   } */
 
-  .modal-body .chosen > div > span:nth-child(1) {
+  /* .modal-body .chosen > div > span:nth-child(1) { */
     /* margin: 0 .25rem; */
     /* letter-spacing: .03rem; */
-    font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
+    /* font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
     color: var(--snap-text-medium-light);
     font-style: italic;
-    display: inline-block;
-    overflow: hidden;
-  }
+    display: inline-block; */
+    /* overflow: hidden; */
+  /* } */
 
   .modal-body .chosen-guide-filter {
     display: flex;
@@ -581,18 +593,39 @@
     fill: var(--snap-collection-active) !important;
   }
 
-  .selected-text {
-    max-width: 14rem;
-    color: var(--snap-text-medium-light);
-    font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
+  /* .selected-text { */
+    /* max-width: 14rem; */
+    /* color: var(--snap-text-medium-light); */
+    /* font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif'; */
     /* letter-spacing: .05rem; */
+    /* text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; */
+    /* text-align: left; */
+    /* font-weight: bold; */
+    /* size: 1.2rem; */
+    /* display: inline-block; */
+  /* } */
+
+  .prop-value-block {
+    display: flex;
+  }
+
+  .prop-value-block > span:nth-child(1) {
+    margin-right: .25rem;    
+  }
+
+  .prop-value-block > span:nth-child(1):after {
+    content: ":";
+  }
+
+  .prop-value-block > span:nth-child(2) {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    text-align: left;
-    font-weight: bold;
-    size: 1.2rem;
     display: inline-block;
+    width: inherit;
+    font-style: italic;
   }
 
   /* Mushroom icon sizes */
@@ -702,10 +735,10 @@
     margin-right: .5rem;
   }
 
-  .guide-example-lessons {
+  /* .guide-example-lessons {
     padding: 0;
     margin: 0;
-  }
+  } */
  
   /* .btn-group.btn-group-toggle {
     border: 0;
@@ -783,7 +816,7 @@
     display: grid;
     grid-template-rows: 1fr;
     width: 100%;
-    font-family: "Libre Baskerville", Libre, Georgia, Times, serif;
+    /* font-family: "Libre Baskerville", Libre, Georgia, Times, serif; */
     /* letter-spacing: .03rem; */
   }
 
@@ -896,10 +929,10 @@
   }
 
   .custom-lesson-species-list li {
-    margin: .5rem 0;
-    height: 3rem;
+    /* margin: .5rem 0; */
+    /* height: 3rem; */
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     align-items: center;
     justify-content: space-between;
     background-color: var(--snap-lesson-row-blue);
@@ -922,6 +955,10 @@
     display: none !important;
   }
 
+  .modal-guide-progress, .modal-guide-navigation {
+    height: var(--vhStandardBlock, 10vh);
+  }
+
   @media (min-width: 768px) {
 
     .autocomplete-options-container .selected {
@@ -937,9 +974,9 @@
       flex-direction: row;
     }
 
-    .modal-body .modal-guide-progress > div div {
+    /* .modal-body .modal-guide-progress > div div {
       line-height: 3.45rem;
-    }
+    } */
 
     .rptr-lessons {
       height: 14.25rem;
@@ -959,26 +996,26 @@
       margin-left: -.25rem;
     }
 
-    .selected-text {
+    /* .selected-text {
       max-width: 20rem;
-    }
+    } */
 
     .iconic-taxa-categories i {
       font-size: 1.5rem;
     }
 
-    .modal-guide-wrapper .modal-body .chosen > div > span:nth-child(1), 
+    /* .modal-guide-wrapper .modal-body .chosen > div > span:nth-child(1), 
     .modal-guide-wrapper .modal-body .chosen-guide-filter span:nth-child(1) {
-      margin: .15rem .25rem 0 0;
-    }
+      margin: 0 .25rem 0 0;
+    } */
 
-    #exampleGuide .landscape-inner-body {
+    /* #exampleGuide .step-action-content {
       height: 300px;
-    }
+    } */
 
-    .modal-guide-wrapper .modal-body.modal-guide-body > div {
+    /* .modal-guide-wrapper .modal-body.modal-guide-body > div {
       flex: auto;
-    }
+    } */
 
     #taxonLanguageBtn, .inat-switch {
       width: 50%;
@@ -1007,10 +1044,10 @@
       grid-template-columns: 1fr;
     }
 
-    .landscape-inner-body > div:nth-child(1),
+    /* .step-action-content > div:nth-child(1),
     .portait-inner-body > div:nth-child(1) {
       height: 324px;
-    }
+    } */
 
     /* .actions {
       height: 18rem;
@@ -1044,9 +1081,9 @@
         margin: 2rem auto;
     } */
 
-    .guide-text {
+    /* .guide-text {
       font-size: 1.2rem;
-    }
+    } */
 
     .location-option {
       display: flex;
@@ -1081,22 +1118,18 @@
         margin: 0 0 0 .5rem;
     } */
 
-    .modal-guide-progress, .modal-guide-navigation {
-        height: var(--vhStandardBlock, 10vh);
-    }
-
-    .modal-guide-progress > div {
+    /* .modal-guide-progress > div {
       padding: 0 0 .5rem 0;
       margin: 0;
-    }
+    } */
 
-    .modal-guide-progress > div div {
+    /* .modal-guide-progress > div div {
         line-height: 3.45rem;
-    }
+    } */
 
     .inat.inat-switch .inat-entry {
         display: flex;
-        font-size: 1.1rem; 
+        /* font-size: 1.1rem;  */
         align-items: center;
         margin: 0 0 0 1rem;
     }
@@ -1155,9 +1188,9 @@
         padding: 0 .25rem;
     }  
 
-    .modal-guide-wrapper .modal-body .chosen {
+    /* .modal-guide-wrapper .modal-body .chosen {
       bottom: .5rem;
-    }
+    } */
 
     /* SLIDER */
 

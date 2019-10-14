@@ -5,23 +5,23 @@ import speciesTemplate from 'ui/create-guide-modal/species-template.html';
 export const renderSpecies = createGuide => {
 
     const header = createGuide.modal.querySelector('.js-modal-title');
-          header.innerHTML = 'Choose species, location, etc.'
+          header.innerHTML = 'Lesson Wizard'
           header.style = 'margin: 0 1rem 0 1rem; height: initial; text-transform: uppercase;';
 
-    const icon = createGuide.modal.querySelector('.js-arrow-wrapper');
-          icon.innerHTML = '<i class="far fa-arrow-alt-circle-down"></i>';
+    // const icon = createGuide.modal.querySelector('.js-arrow-wrapper');
+    //       icon.innerHTML = '<i class="far fa-arrow-alt-circle-down"></i>';
 
     const options = [
         {
-            text: 'Filter species by location, taxa and season.',
+            text: 'A) Location-based',
             link: ''
         },
         {
-            text: 'Species observed by an iNaturalist user or users.',
+            text: 'B) iNaturalist observations',
             link: ''
         },
         {
-            text: 'Choose individual species by name.',
+            text: 'C) Species picker',
             link: ''
         }
     ];

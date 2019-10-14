@@ -28,9 +28,9 @@ class CreateGuide {
         this.currentStep = step;
         
         this.steps = [
-            { number: 1, title: 'Create Lesson', description: 'Species', nextStep: 'Leave wizard', disabled: true, className:'species-actions' },
-            { number: 2, title: 'Create Lesson', description: 'Location', nextStep: 'Filter species by category', disabled: true, className:'location-actions' },
-            { number: 3, title: 'Create Lesson', description: 'Taxa', nextStep: 'Choose taxa', disabled: true, className:'taxa-actions',
+            { number: 1, title: 'Create Lesson', description: 'Species', nextStep: '', disabled: true, className:'species-actions' },
+            { number: 2, title: 'Create Lesson', description: 'Location', nextStep: 'Taxa', disabled: true, className:'location-actions' },
+            { number: 3, title: 'Create Lesson', description: 'Taxa', nextStep: 'Language', disabled: true, className:'taxa-actions',
                 alternative: { nextStep: 'Start Lesson' } },
             { number: 4, title: 'Create Lesson', description: 'Season', nextStep: 'Start Lesson', disabled: true, className:'filter-actions' }
         ];
@@ -77,7 +77,7 @@ class CreateGuide {
     addStepActions(className) {
         
         // let template = '';
-        const parent = this.modal.querySelector('.js-landscape-inner-body');
+        const parent = this.modal.querySelector('.js-step-action-content');
               parent.innerHTML = '';
         const template = document.createElement('template');
               template.innerHTML = actionsTemplate;
@@ -129,6 +129,8 @@ class CreateGuide {
         };
 
         const currentStepProperties = this.steps.filter(s => s.number === this.currentStep);
+
+        if(!this.modalTitle) return;
         
         this.modalTitle.innerText = currentStepProperties.map(s => s.title);
         this.modalTitleSteps.innerHTML = `Step ${currentStepProperties.map(s => s.number)} of ${this.steps.length}`;

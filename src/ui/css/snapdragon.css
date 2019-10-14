@@ -44,11 +44,12 @@ a:hover {
 
 ul {
   margin: 0;
-  padding: .5rem;
+  padding: 0;
 }
 
 li {
   list-style-type: none;
+  margin: .5rem 0;
 }
 
 progress {
@@ -246,8 +247,9 @@ a.dropdown-item {
 
 .home, .settings, .list, .glossary, .email, .email > a {
   cursor: pointer;
-  margin: 0 0.25rem 0 0;
+  margin: 0 0.5rem 0 0;
   color: var(--snap-text-dark);
+  font-size: 1.2rem;
 }
 
 .glossary svg {
@@ -409,7 +411,7 @@ a.dropdown-item {
 .header, .footer {
   display: flex;
   align-items: center;
-  padding: 0 0.55rem;
+  padding: 0 0.5rem;
 }
 
 .header {
@@ -427,7 +429,7 @@ a.dropdown-item {
   bottom: 0;
   color: var(--snap-text-medium-dark);
   text-transform: uppercase;
-  letter-spacing: 0.07rem;
+  /* letter-spacing: 0.07rem; */
 }
 
 .left-grid .footer .nav-icons, .right-grid .footer .nav-icons {
@@ -1992,7 +1994,7 @@ a.collection-disabled {
   background-color: var(--snap-block-light);
 }
 
-.lesson-list > div > label:nth-child(1) {
+.lesson-list > div > div:nth-child(1) {
   /* display: flex; */
   justify-content: space-between;
   position: sticky;
@@ -2000,12 +2002,16 @@ a.collection-disabled {
   top: 0;
 }
 
-.lesson-list .btn-group label:nth-of-type(2n) {
+.lesson-list .btn-group > div:nth-of-type(4n) {
   background-color: var(--snap-lesson-row-green);
 }
 
-.lesson-list .btn-group label:nth-of-type(2n+1) {
+.lesson-list .btn-group > div:nth-of-type(4n+2) {
   background-color: var(--snap-lesson-row-blue);
+}
+
+.lesson-list .btn.btn-secondary {
+  margin-bottom: .5rem;
 }
 
 .lesson-list .scrollable {
@@ -2020,9 +2026,9 @@ a.collection-disabled {
   /* pointer-events: none; */
 }
 
-.lesson-list input[type=checkbox] {
-  /* pointer-events: all; */
-}
+/* .lesson-list input[type=checkbox] {
+  pointer-events: all;
+} */
 
 /* .right-body .home-container .scrollable {  
   pointer-events: initial;
@@ -2079,6 +2085,11 @@ a.collection-disabled {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.modal-footer.double-centred-block {
+  background-color: var(--snap-landscape);
+  text-transform: uppercase;
 }
 
 .spaced-block {

@@ -47,7 +47,7 @@ export const renderLessons = () => {
 
     renderTemplate({ lessons }, template.content, parent);
 
-    const header = document.createElement("label");
+    const header = document.createElement("div");
           header.innerHTML = lessonListHeaderTemplate;
           header.classList.add('btn');
           header.classList.add('btn-secondary');

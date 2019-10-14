@@ -224,7 +224,7 @@
 
     button {
         width: auto;
-        width: fit-content;
+        /* width: fit-content; */
     }
 
     .grid {

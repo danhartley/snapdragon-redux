@@ -1,6 +1,6 @@
 <div class="lesson-list">
     <div class="btn-group scrollable" data-toggle="buttons" data-repeat-lesson="{{ lessons }}">
-        <label class="btn btn-secondary" id="id_{{ lesson.id }}">
+        <div class="btn btn-secondary" id="id_{{ lesson.id }}">
             <div class="lesson-radio-button"></div>
             <div>
                 <input type="radio" name="lessons" autocomplete="off">
@@ -11,7 +11,7 @@
                 </div>
                 <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>            
             </div> 
-        </label>        
+        </div>        
         <div id="container_{{ lesson.id }}" class="species-container js-species-container"></div>
     </div>
 </div>

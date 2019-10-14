@@ -50,7 +50,7 @@ export const renderExampleGuideHandler = () => {
         lesson.isPaused = isPaused;    
       });
 
-      const parent = modal.querySelector('.js-landscape-inner-body div:nth-child(2)');
+      const parent = modal.querySelector('.js-step-action-content div:nth-child(2)');
             parent.innerHTML = '';
       
       template = document.createElement('template');
