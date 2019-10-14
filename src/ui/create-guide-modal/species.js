@@ -8,21 +8,18 @@ export const renderSpecies = createGuide => {
           header.innerHTML = 'Lesson Wizard'
           header.style = 'margin: 0 1rem 0 1rem; height: initial; text-transform: uppercase;';
 
-    // const icon = createGuide.modal.querySelector('.js-arrow-wrapper');
-    //       icon.innerHTML = '<i class="far fa-arrow-alt-circle-down"></i>';
-
     const options = [
         {
             text: 'A) Location-based',
-            link: ''
+            id: 'A'
         },
         {
             text: 'B) iNaturalist observations',
-            link: ''
+            id: 'B'
         },
         {
             text: 'C) Species picker',
-            link: ''
+            id: 'C'
         }
     ];
 
@@ -34,13 +31,13 @@ export const renderSpecies = createGuide => {
     renderTemplate({ options }, template.content, parent);
 
     const handleNextStepAction = event => {
-        createGuide.startLesson = createGuide.nextStepActionTxt.innerHTML.indexOf('Start Lesson') > -1; // hack
-        createGuide.createStep(createGuide.getCurrentStep() + 1, 'NEXT');
+        createGuide.startLesson = createGuide.nextStepActionTxt.innerHTML.indexOf('Start Lesson') > -1; // hack        
+        createGuide.goToNextStep(createGuide.getCurrentStep() + 1, 'NEXT', event.target.id);
         createGuide.listeners.push( { element: createGuide.nextStepAction, handler: handleNextStepAction });
     };
 
     const lessonOptions = document.querySelectorAll('.custom-lesson-species-list li');
           lessonOptions.forEach((option, index) => {
             option.addEventListener('click', handleNextStepAction, true);
-          });
+        });
 };

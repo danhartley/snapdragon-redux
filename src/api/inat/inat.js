@@ -165,3 +165,5 @@ export async function getAutocompleteBy(q, by) {
     const json = await response.json();
     return json;
 }
+
+// https://www.inaturalist.org/observations/danielhartley.json?m1=1&m2=11&iconic_taxa[]=Fungi

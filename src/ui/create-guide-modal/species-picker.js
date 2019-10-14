@@ -19,18 +19,18 @@ export const renderSpeciesPicker = (modal, createGuide) => {
           actionsContainer.setAttribute('style', 'justify-content: start;');
           actionsContainer.style.height = '12rem';
 
-    const guideTxt = modal.querySelector('.js-guide-text');
-          guideTxt.innerHTML = 'Specify the species that interest you.';
+    // const guideTxt = modal.querySelector('.js-guide-text');
+    //       guideTxt.innerHTML = 'Specify the species that interest you.';
 
     const pickerContainer = modal.querySelector('.js-guide-header-container');
           pickerContainer.style.height = '6rem';
     const picker = pickerContainer.querySelector('.js-guide-header-container > div:nth-child(2)');
           picker.classList.remove('hide');
           picker.innerHTML = 
-          `<div class="guide-text-container hide-empty">
-              <input id="input-species" type="text" placeholder="Start typing a latin species name" autofocus>            
-            </div>
-           <div class="autocomplete-options-container hide-important" id="snapdragon-species-autocomplete" style="width:unset;"></div>`;
+        //   <div class="guide-text-container hide-empty">
+        //       <input id="input-species" type="text" placeholder="Start typing a latin species name" autofocus>            
+        //     </div>
+           `<div class="autocomplete-options-container hide-important" id="snapdragon-species-autocomplete" style="width:unset;"></div>`;
 
     const chosenOnes = modal.querySelector('.js-chosen');
           chosenOnes.classList.add('hide-important');

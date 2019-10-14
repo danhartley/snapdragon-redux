@@ -2090,6 +2090,7 @@ a.collection-disabled {
 .modal-footer.double-centred-block {
   background-color: var(--snap-landscape);
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .spaced-block {

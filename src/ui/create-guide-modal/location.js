@@ -10,15 +10,15 @@ export const renderLocation = (modal, createGuide) => {
 
     const config = createGuide.getConfig();
 
-    if(config.guide.locationType === 'inat') {
-        renderInatUser(modal, createGuide);
-        return;
-    }
+    // if(config.guide.locationType === 'inat') {
+    //     renderInatUser(modal, createGuide);
+    //     return;
+    // }
 
     createGuide.saveStep('LOCATION');
  
-    const guideTxt = modal.querySelector('.js-guide-text');
-          guideTxt.innerHTML = 'Choose where you want to explore.';
+    // const guideTxt = modal.querySelector('.js-guide-text');
+    //       guideTxt.innerHTML = 'Choose where you want to explore.';
         
     let locationPlace = config.guide.locationPlace;
     let autocompleteRef;
@@ -132,12 +132,12 @@ export const renderLocation = (modal, createGuide) => {
         }
     });
 
-    const linktoInatOptions = modal.querySelector('.js-location-options2 span:nth-child(2)');    
+    // const linktoInatOptions = modal.querySelector('.js-location-options2 span:nth-child(2)');    
 
-    const renderInatUserLocation = () => {
-        renderInatUser(modal, createGuide);
-    };
+    // const renderInatUserLocation = () => {
+    //     renderInatUser(modal, createGuide);
+    // };
 
-    linktoInatOptions.removeEventListener('click', renderInatUserLocation, true);
-    linktoInatOptions.addEventListener('click', renderInatUserLocation, true);
+    // linktoInatOptions.removeEventListener('click', renderInatUserLocation, true);
+    // linktoInatOptions.addEventListener('click', renderInatUserLocation, true);
 }

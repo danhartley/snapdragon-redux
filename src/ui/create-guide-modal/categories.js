@@ -11,7 +11,7 @@ export const renderCategories = (modal, createGuide) => {
 
     const config = createGuide.getConfig();
 
-    const guideTxt = modal.querySelector('.js-guide-text');
+    // const guideTxt = modal.querySelector('.js-guide-text');
 
     const goToSpeciesPicker = () => {
         renderSpeciesPicker(modal, createGuide);
@@ -19,9 +19,9 @@ export const renderCategories = (modal, createGuide) => {
 
     const filterSelectedClass = 'iconic-taxa-selected';
 
-    guideTxt.innerHTML = config.isLandscapeMode
-                            ? 'Click on the taxa that interest you.'
-                            : 'Tap on the taxa that interest you.'
+    // guideTxt.innerHTML = config.isLandscapeMode
+    //                         ? 'Click on the taxa that interest you.'
+    //                         : 'Tap on the taxa that interest you.'
 
     let iconicTaxa = [ ...config.guide.iconicTaxa ] || [];
 
