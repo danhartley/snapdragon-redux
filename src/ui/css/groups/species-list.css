@@ -11,7 +11,7 @@
   /* position: sticky;
   position: -webkit-sticky; */
   z-index: 10;
-  letter-spacing: 0.03rem;
+  /* letter-spacing: 0.03rem; */
   align-items: center;
   text-transform: uppercase;
 }

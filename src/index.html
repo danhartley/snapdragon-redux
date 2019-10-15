@@ -3,8 +3,7 @@
     <head>
         <title>Species recognition and recall</title>
         <meta http-equiv="content-type" content="text/html;charset=utf-8">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
         <link rel="canonical" href="https://danhartley.github.io/snapdragon-redux/dist/">
         <meta name="description" content="Recognise species and learn their common and scientific names with lessons">
@@ -28,7 +27,7 @@
 
                 console.log('is iOS? ', iOS);
 
-                const verticalHeight = window.innerHeight * 0.01;
+                const verticalHeight = window.innerHeight * 0.01;                
 
                 document.documentElement.style.setProperty('--vh', verticalHeight + 'px');
                 document.documentElement.style.setProperty('--vhGrid', verticalHeight * 100  + 'px');
@@ -50,6 +49,10 @@
                 document.documentElement.style.setProperty('--vhSmallImageCarousel', verticalHeight * 23 + 'px');
 
                 console.log(verticalHeight * 100);
+
+                const horizontalWidth = window.innerWidth * 0.01;
+
+                document.documentElement.style.setProperty('--vwGrid', horizontalWidth * 100  + 'px');
             };
 
             setWindowHeight();
@@ -258,8 +261,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="modal-footer double-centred-block">
-                        <div data-dismiss="modal" aria-label="Close">
+                    <div class="modal-footer double-centred-block" data-dismiss="modal" aria-label="Close">
+                        <div>
                             <span aria-hidden="true">Close</span>
                         </div>
                     </div>
@@ -286,14 +289,16 @@
         <div class="modal fade modal-guide-wrapper" id="createGuide" tabindex="-1" role="dialog" aria-labelledby="createGuideModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <div class="modal-title js-modal-title">
-                        <div>Step title</div><div>Step 1 of 3</div>
+                <div>
+                    <div class="modal-header">
+                        <div class="modal-title js-modal-title">
+                            <div>Step title</div><div>Step 1 of 3</div>
+                        </div>
                     </div>
-                </div>        
+                </div>
                 <div class="modal-body modal-guide-body">
                     <div class="modal-guide-progress js-modal-guide-progress">
-                        <div class="js-options">OPTIONS</div>
+                        <div class="js-options">Choose one of the following:</div>
                         <div class="hide-important js-steps">
                             <div class="completed">Step 1</div>
                             <div>Step 2</div>
@@ -310,8 +315,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer double-centred-block">
-                    <div data-dismiss="modal" aria-label="Close">
+                <div class="modal-footer double-centred-block" data-dismiss="modal" aria-label="Close">
+                    <div>
                         <span aria-hidden="true">Close</span>
                     </div>
                 </div>

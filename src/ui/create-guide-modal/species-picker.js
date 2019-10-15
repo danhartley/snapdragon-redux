@@ -4,42 +4,25 @@ import autocomplete from 'autocompleter';
 import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 import { renderTemplate } from 'ui/helpers/templating';
 import { firestore } from 'api/firebase/firestore';
-import { renderCategories } from 'ui/create-guide-modal/categories';
 
 import speciesPickerTemplate from 'ui/create-guide-modal/species-picker-template.html';
 
-export const renderSpeciesPicker = (modal, createGuide) => {
+export const renderSpeciesPicker = createGuide => {
 
-    const { config } = createGuide;
+    const { config, modal } = createGuide;
+
+    const step = modal.querySelector('.js-steps > .active');
+          step.innerHTML = 'Picker';
 
     const nextStepActionTxt = modal.querySelector('.js-modal-guide-navigation > div:nth-child(2) > div > span');
           nextStepActionTxt.innerHTML = 'Start Lesson';
 
-    const actionsContainer = modal.querySelector('.js-actions');
-          actionsContainer.setAttribute('style', 'justify-content: start;');
-          actionsContainer.style.height = '12rem';
-
-    // const guideTxt = modal.querySelector('.js-guide-text');
-    //       guideTxt.innerHTML = 'Specify the species that interest you.';
-
-    const pickerContainer = modal.querySelector('.js-guide-header-container');
-          pickerContainer.style.height = '6rem';
-    const picker = pickerContainer.querySelector('.js-guide-header-container > div:nth-child(2)');
-          picker.classList.remove('hide');
-          picker.innerHTML = 
-        //   <div class="guide-text-container hide-empty">
-        //       <input id="input-species" type="text" placeholder="Start typing a latin species name" autofocus>            
-        //     </div>
-           `<div class="autocomplete-options-container hide-important" id="snapdragon-species-autocomplete" style="width:unset;"></div>`;
+    // const actionsContainer = modal.querySelector('.js-actions');
+    //       actionsContainer.setAttribute('style', 'justify-content: start;');
+    //       actionsContainer.style.height = '12rem';
 
     const chosenOnes = modal.querySelector('.js-chosen');
           chosenOnes.classList.add('hide-important');
-
-    const returnToCategories = () => {
-        picker.classList.add('hide');
-        nextStepActionTxt.innerHTML = 'Choose season';
-        renderCategories(modal, createGuide);
-    };
 
     const template = document.createElement('template');
           template.innerHTML = speciesPickerTemplate;
@@ -48,10 +31,6 @@ export const renderSpeciesPicker = (modal, createGuide) => {
           parent.innerHTML = '';
 
     renderTemplate({}, template.content, parent);
-
-    const categoriesLink = modal.querySelector('.js-species-picker-link');
-          categoriesLink.removeEventListener('click', returnToCategories);
-          categoriesLink.addEventListener('click', returnToCategories);
 
     const input = modal.querySelector("#input-species");
 
@@ -118,7 +97,6 @@ export const renderSpeciesPicker = (modal, createGuide) => {
                 speciesNames.push({ label: removedSpecies, value: removedSpecies});
                 selectedSpecies = selectedSpecies.filter(species => species !== removedSpecies);
                 
-                // config.guide.itemNames = selectedSpecies;
                 config.guide.species = selectedSpecies.map(ss => { name: ss });
 
                 createGuide.setConfig(config);
@@ -128,8 +106,7 @@ export const renderSpeciesPicker = (modal, createGuide) => {
         })
     };
 
-    let selectedSpecies = config.guide.species(s => s.name) || [];
-    // let selectedSpecies = config.guide.itemNames || [];
+    let selectedSpecies = config.guide.species ? config.guide.species(s => s.name) || [] : [];
     
     const selectedSpeciesDisplay = modal.querySelector('.js-selected-species');
           selectedSpeciesDisplay.innerHTML = '';

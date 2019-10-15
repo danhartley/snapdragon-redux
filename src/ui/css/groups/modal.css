@@ -24,7 +24,7 @@
     align-items: center;
     justify-content: space-between;
     height: var(--vhRunningBlock,7.5vh);
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     background-color: var(--snap-portrait);
     border: none;
 }
@@ -56,7 +56,7 @@
   }
 
   .modal-body button {
-    margin: 1rem 0;
+    /* margin: 1rem 0; */
     display: block;
   }
 

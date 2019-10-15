@@ -8,6 +8,7 @@ import { renderSpecies } from 'ui/create-guide-modal/species';
 import { renderLocation } from 'ui/create-guide-modal/location';
 import { renderInatUser } from 'ui/create-guide-modal/inat-user';
 import { renderCategories } from 'ui/create-guide-modal/categories';
+import { renderSpeciesPicker } from 'ui/create-guide-modal/species-picker';
 import { renderSeason } from 'ui/create-guide-modal/season';
 import { saveButton } from 'ui/create-guide-modal/common/save-button';
 import { enums } from 'ui/helpers/enum-helper';
@@ -73,6 +74,11 @@ class CreateGuide {
         this.setCurrentStep = step => {
             this.currentStep = step;
         }
+
+        // prevent user rescaling which is caused by autocomplete
+
+        // const viewport = document.querySelector("meta[name=viewport]");
+        //       viewport.setAttribute('content', 'width=device-width, initial-scale=1, user-scalable=no');
     }
 
     addStepActions(className) {
@@ -105,8 +111,8 @@ class CreateGuide {
                     case 'B':
                         renderInatUser(this.modal, this);
                         break;
-                    case 'C':
-                        // picker
+                    case 'C':                        
+                        renderSpeciesPicker(this);
                         break;
                 }
                 break;

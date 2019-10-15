@@ -2,7 +2,6 @@ import * as R from 'ramda';
 
 import { elem } from 'ui/helpers/class-behaviour';
 import { allIconicTaxa } from 'snapdragon-config/snapdragon-collections';
-import { renderSpeciesPicker } from 'ui/create-guide-modal/species-picker';
 import { renderTemplate } from 'ui/helpers/templating';
 
 import categoriesTemplate from 'ui/create-guide-modal/categories-template.html';
@@ -11,17 +10,7 @@ export const renderCategories = (modal, createGuide) => {
 
     const config = createGuide.getConfig();
 
-    // const guideTxt = modal.querySelector('.js-guide-text');
-
-    const goToSpeciesPicker = () => {
-        renderSpeciesPicker(modal, createGuide);
-    };
-
     const filterSelectedClass = 'iconic-taxa-selected';
-
-    // guideTxt.innerHTML = config.isLandscapeMode
-    //                         ? 'Click on the taxa that interest you.'
-    //                         : 'Tap on the taxa that interest you.'
 
     let iconicTaxa = [ ...config.guide.iconicTaxa ] || [];
 
@@ -32,11 +21,6 @@ export const renderCategories = (modal, createGuide) => {
           parent.innerHTML = '';
     
     renderTemplate({}, template.content, parent);
-
-    const linkTxt = modal.querySelector('.js-species-picker-link');
-
-    linkTxt.removeEventListener('click',  goToSpeciesPicker);
-    linkTxt.addEventListener('click',  goToSpeciesPicker);
 
     const icons = parent.querySelectorAll('.js-iconic-taxa-categories > div > div:nth-child(1)');
 

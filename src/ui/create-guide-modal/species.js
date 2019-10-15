@@ -32,7 +32,7 @@ export const renderSpecies = createGuide => {
 
     const handleNextStepAction = event => {
         createGuide.startLesson = createGuide.nextStepActionTxt.innerHTML.indexOf('Start Lesson') > -1; // hack        
-        createGuide.goToNextStep(createGuide.getCurrentStep() + 1, 'NEXT', event.target.id);
+        createGuide.goToNextStep(createGuide.getCurrentStep() + 1, 'NEXT', event.currentTarget.dataset.optionId);
         createGuide.listeners.push( { element: createGuide.nextStepAction, handler: handleNextStepAction });
     };
 

@@ -2,7 +2,7 @@
 .test-card-container .question-header {
     border: none;
     height: inherit;
-    letter-spacing: .03rem;
+    /* letter-spacing: .03rem; */
     text-transform: capitalize;
     align-items: center;
 }
@@ -24,7 +24,7 @@
 
 .term-header {
     font-style: italic;
-    letter-spacing: .05rem;
+    /* letter-spacing: .05rem; */
 }
 
 .test-card {
@@ -40,7 +40,7 @@
 
   .test-card-question .question {
     text-transform: uppercase;
-    letter-spacing: 0.07rem;
+    /* letter-spacing: 0.07rem; */
     color: var(--snap-text-dark);
     display: flex;
     flex-direction: row;
@@ -92,10 +92,10 @@
 .test-card li {
     display: flex;
     align-items: baseline;
-    letter-spacing: .01rem;
+    /* letter-spacing: .01rem; */
     text-transform: capitalize;
-    font-size: 1rem;
-    letter-spacing: .03rem;
+    /* font-size: 1rem; */
+    /* letter-spacing: .03rem; */
 }
 
   .text-question .icon {
@@ -146,8 +146,7 @@
 .answer-box-success > span:nth-child(2), 
 .answer-box-alert > span:nth-child(2) {
     color: var(--snap-success);
-    font-weight: bold;
-    letter-spacing: .05rem;
+    /* letter-spacing: .05rem; */
     font-family: serif;
     font-weight: bold;
 }
