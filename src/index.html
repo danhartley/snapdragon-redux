@@ -211,15 +211,19 @@
         <div class="modal fade" id="menuModal" tabindex="-1" role="dialog" aria-labelledby="menuModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title js-modal-text-title"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <div class="modal-header-container">
+                        <div class="modal-header">
+                            <h5 class="modal-title js-modal-text-title"></h5>
+                        </div>
                     </div>
                     <div class="modal-body">
                         <div class="modal-text js-modal-text"></div>
-                    </div>                    
+                    </div>       
+                    <div class="modal-footer double-centred-block" data-dismiss="modal" aria-label="Close">
+                        <div>
+                            <span aria-hidden="true">Close</span>
+                        </div>
+                    </div>             
                 </div>
             </div>
         </div>
@@ -289,7 +293,7 @@
         <div class="modal fade modal-guide-wrapper" id="createGuide" tabindex="-1" role="dialog" aria-labelledby="createGuideModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div>
+                <div class="modal-header-container">
                     <div class="modal-header">
                         <div class="modal-title js-modal-title">
                             <div>Step title</div><div>Step 1 of 3</div>

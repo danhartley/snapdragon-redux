@@ -17,6 +17,10 @@
     padding: 0;
 } */
 
+.modal-header-container {
+  padding-bottom: 4px;
+}
+
 .modal-header {
     padding: 0;
     border-radius: 0;
@@ -39,6 +43,8 @@
 .modal-title {
   color: var(--snap-text-dark);
   text-transform: uppercase;
+  margin: 0 0 0 1rem; 
+  height: initial;
 }
   
   .modal-title span {
@@ -207,8 +213,13 @@
     color: var(--snap-progress-bg);
   }
 
-  #menuModal {
+  /* #menuModal {
     max-width: 500px;
+  } */
+
+  #menuModal .modal-dialog {
+    max-width: 600px;
+    margin: auto;
   }
   
   #menuModal .modal-content {
@@ -267,6 +278,7 @@
     border: 0; */
     padding: 0 .5rem;
     border-radius: 0;
+    height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
   }
   
   #menuModal .definition.card div > div {
@@ -275,9 +287,6 @@
   }
 
   #menuModal .definition.card span:nth-child(1) {
-    text-underline-position: under;
-    color: rgb(20, 20, 20);
     margin: 0 0.25rem 0 0;
     font-style: italic;
-    /* letter-spacing: .03rem; */
   }

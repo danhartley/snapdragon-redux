@@ -5,8 +5,7 @@ import speciesTemplate from 'ui/create-guide-modal/species-template.html';
 export const renderSpecies = createGuide => {
 
     const header = createGuide.modal.querySelector('.js-modal-title');
-          header.innerHTML = 'Lesson Wizard'
-          header.style = 'margin: 0 1rem 0 1rem; height: initial; text-transform: uppercase;';
+          header.innerHTML = 'Lesson Wizard';
 
     const options = [
         {

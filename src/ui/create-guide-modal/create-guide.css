@@ -5,11 +5,11 @@
   margin: auto;
 }
 
-#createGuide .modal-content > div:nth-child(1) {
+/* #createGuide .modal-content > div:nth-child(1) {
   padding-bottom: 5px;
-  /* padding-bottom: 4px;
-  border-bottom: 1px solid lightgray; */
-}
+  padding-bottom: 4px;
+  border-bottom: 1px solid lightgray;
+} */
 
 .step-action-content {
   padding: 0 .5rem;

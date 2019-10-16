@@ -44,8 +44,8 @@ setTimeout( () => {
         actions.boundUpdateConfig(config);
         actions.boundToggleLesson(counter);
 
-        subscription.add(renderHeaders, 'page', 'flow');
-        subscription.add(renderNavigation, 'page', 'flow');
+        subscription.add(renderHeaders, 'collection', 'flow');
+        subscription.add(renderNavigation, 'collection', 'flow');
 
         subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
         // subscription.add(renderLessons, 'counter', 'flow');

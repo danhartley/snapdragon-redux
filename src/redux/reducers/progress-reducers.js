@@ -148,22 +148,23 @@ export const history = (state = null, action) => {
 };
 
 export const page = (state = { name: enums.navigation.HOME, glossary: false }, action) => {
-    switch(action.type) {
-        case types.CHANGE_PAGE:
-            return { ...state, ...action.data };
-        case types.NEW_COLLECTION:
-            return { name: '', glossary: true };
-        case types.NEXT_LESSON:
-            return { name: '', glossary: true };
-        case types.NEXT_LAYOUT:
-            return { name: '', type: action.data.type, glossary: true };
-        case types.PAUSE_LESSON: {
-            return { name: enums.navigation.HOME, glossary: false };
-        }
-        case types.RESTART_LESSON: {
-            return action.data.page;   
-        }
-        default:
-            return state;
-    }
+    return state;
+    // switch(action.type) {
+    //     case types.CHANGE_PAGE:
+    //         return { ...state, ...action.data };
+    //     case types.NEW_COLLECTION:
+    //         return { name: '', glossary: true };
+    //     case types.NEXT_LESSON:
+    //         return { name: '', glossary: true };
+    //     case types.NEXT_LAYOUT:
+    //         return { name: '', type: action.data.type, glossary: true };
+    //     case types.PAUSE_LESSON: {
+    //         return { name: enums.navigation.HOME, glossary: false };
+    //     }
+    //     case types.RESTART_LESSON: {
+    //         return action.data.page;   
+    //     }
+    //     default:
+    //         return state;
+    // }
 };

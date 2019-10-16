@@ -304,6 +304,11 @@
     .non-taxon-card-wiki {
         margin: 0 .5rem 0 0;
     }
+
+    .modal-header-container {
+        padding-bottom: 4px;
+        border-bottom: 1px solid lightgray;
+    }
 }
 
 @media (min-width: 1024px) {
