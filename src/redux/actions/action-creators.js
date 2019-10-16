@@ -22,6 +22,7 @@ const endRevision = makeActionCreator(types.END_REVISION);
 const updateHistory = makeActionCreator(types.UPDATE_HISTORY)
 const newCollection = makeActionCreator(types.NEW_COLLECTION);
 const updateCollection = makeActionCreator(types.UPDATE_COLLECTION);
+const resetCollection = makeActionCreator(types.RESET_COLLECTION);
 const updateCollections = makeActionCreator(types.UPDATE_COLLECTIONS);
 const changeCollectionItems = makeActionCreator(types.UPDATE_COLLECTION_ITEMS);
 const nextRound = makeActionCreator(types.NEXT_ROUND);
@@ -57,6 +58,7 @@ const boundEndRevision = data => store.dispatch(endRevision(data));
 const boundUpdateHistory = data => store.dispatch(updateHistory(data));
 const boundNewCollection = data => store.dispatch(newCollection(data));
 const boundUpdateCollection = data => store.dispatch(updateCollection(data));
+const boundResetCollection = data => store.dispatch(resetCollection(data));
 const boundUpdateCollections = data => store.dispatch(updateCollections(data));
 const boundUpdateCollectionItems = data => store.dispatch(changeCollectionItems(data));
 const boundNextRound = data => store.dispatch(nextRound(data));
@@ -84,6 +86,7 @@ export const actions = {
     boundUpdateHistory,
     boundNewCollection,
     boundUpdateCollection,
+    boundResetCollection,
     boundUpdateCollections,
     boundUpdateCollectionItems,
     boundNextRound,

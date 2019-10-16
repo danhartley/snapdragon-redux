@@ -1,0 +1,17 @@
+<div class="lesson-list">
+    <div class="btn-group scrollable" data-toggle="buttons" data-repeat-lesson="{{ lessons }}">
+        <div class="btn btn-secondary" id="id_{{ lesson.id }}">
+            <div class="lesson-radio-button"></div>
+            <div>
+                <input type="radio" name="lessons" autocomplete="off">
+                <div class="lesson-name" data-lesson-id="{{ lesson.id }}">
+                    <a id="lesson_{{ lesson.id }}" class="active-title">{{ lesson.name }}</a>
+                    <span>{{ lesson.savedState }}</span>                    
+                    <span class="hide js-loading-message">(Loading species…)</span>
+                </div>
+                <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>            
+            </div> 
+        </div>        
+        <div id="container_{{ lesson.id }}" class="species-container js-species-container"></div>
+    </div>
+</div>

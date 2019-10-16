@@ -162,41 +162,41 @@ export const renderSpeciesCollectionList = (collection, args) => {
 
         // Portrait mode only
 
-        if(continueLearningActionBtn) {
+        // if(continueLearningActionBtn) {
 
-            actions.boundNewPage({ name: 'LIST'});
+        //     actions.boundNewPage({ name: 'LIST'});
         
-            if(history || counter.isLessonPaused) {
-                continueLearningActionBtn.innerHTML = 'Continue lesson';
-            }
+        //     if(history || counter.isLessonPaused) {
+        //         continueLearningActionBtn.innerHTML = 'Continue lesson';
+        //     }
             
-            if(lesson.isLessonComplete) {
-                continueLearningActionBtn.innerHTML = 'End lesson (delete data) | Choose a new lesson';
-            }
+        //     if(lesson.isLessonComplete) {
+        //         continueLearningActionBtn.innerHTML = 'End lesson (delete data) | Choose a new lesson';
+        //     }
 
-            continueLearningActionBtn.addEventListener('click', event => {
+        //     continueLearningActionBtn.addEventListener('click', event => {
 
-                if(lesson.isLessonComplete) {
-                    lessonHandler.purgeLesson();
-                } else {
-                    if(readOnlyMode) {
-                        const lessonState = counter.isLessonPaused ? enums.lessonState.RESUME_LESSON : enums.lessonState.NEXT_ROUND;
-                        lessonHandler.getLessonItems(lessonState, collection, config, history);
-                    }
-                    else {
-                        if(counter.isLessonPaused) {
-                            lessonHandler.getLessonItems(enums.lessonState.RESUME_LESSON, collection, config, history);
-                        } else {
-                            lessonHandler.getLessonItems(enums.lessonState.BEGIN_LESSON, collection, config, history);
-                        }
-                    }
+        //         if(lesson.isLessonComplete) {
+        //             lessonHandler.purgeLesson();
+        //         } else {
+        //             if(readOnlyMode) {
+        //                 const lessonState = counter.isLessonPaused ? enums.lessonState.RESUME_LESSON : enums.lessonState.NEXT_ROUND;
+        //                 lessonHandler.getLessonItems(lessonState, collection, config, history);
+        //             }
+        //             else {
+        //                 if(counter.isLessonPaused) {
+        //                     lessonHandler.getLessonItems(enums.lessonState.RESUME_LESSON, collection, config, history);
+        //                 } else {
+        //                     lessonHandler.getLessonItems(enums.lessonState.BEGIN_LESSON, collection, config, history);
+        //                 }
+        //             }
 
-                    actions.boundNewPage({ name: ''});
+        //             actions.boundNewPage({ name: ''});
 
-                    subscription.remove(subscription.getByName('renderHistory'));                    
-                }            
-            });
-        }
+        //             subscription.remove(subscription.getByName('renderHistory'));                    
+        //         }            
+        //     });
+        // }
     };    
 
     if(readOnlyMode) {

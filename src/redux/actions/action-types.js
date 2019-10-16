@@ -12,6 +12,7 @@ const NEXT_ITEM = '[NEXT_ITEM] Get next item';
 const NEW_COLLECTION = '[NEW_COLLECTION] New collection';
 const UPDATE_COLLECTION = '[UPDATE_COLLECTION] Change collection';
 const UPDATE_COLLECTIONS = '[UPDATE_COLLECTIONS] Update collections list';
+const RESET_COLLECTION = '[RESET_COLLECTION] Reset collection to initial state';
 
 const UPDATE_SCORE = '[UPDATE_SCORE] Check user answer and update running score';
 const UPDATE_TRAIT_SCORE = '[UPDATE_TRAIT_SCORE] Check user answer and update running score';
@@ -42,6 +43,7 @@ export const types = {
     UPDATE_COLLECTION,
     UPDATE_COLLECTION_ITEMS,
     UPDATE_COLLECTIONS,
+    RESET_COLLECTION,
     NEXT_ROUND,
     NEXT_LEVEL,
     UPDATE_CONFIG,

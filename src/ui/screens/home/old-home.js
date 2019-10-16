@@ -17,7 +17,7 @@ import { renderSaveLesson, listenToCloseSaveLessonModal } from 'ui/custom-lesson
 import { enums } from 'ui/helpers/enum-helper';
 import { deactivateHomeIcon } from 'ui/fixtures/navigation';
 
-import { renderLessons } from 'ui/screens/common/lesson-list';
+import { renderLessons } from 'ui/screens/lists/lesson-list';
 
 import homeTemplate from 'ui/screens/home/home-template.html';
 import introTemple from 'ui/screens/home/home-intro-template.html';

@@ -89,11 +89,14 @@ export const renderNavigation = page => {
                     case enums.navigation.HOME:
                         target.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));        
-                        lessonHandler.getLessonItems(enums.lessonState.PAUSE_LESSON, collection, config, history); 
-                        const { counter } = store.getState();
-                        const loadSpeciesList = false;
+                        // lessonHandler.getLessonItems(enums.lessonState.PAUSE_LESSON, collection, config, history); 
+                        // const { counter } = store.getState();
+                        // const loadSpeciesList = false;
                         console.log('navigation');
-                        config.isPortraitMode ? renderHome(counter, loadSpeciesList) : renderHome(counter);
+                        
+                        actions.boundResetCollection({ config: { ...config, collection: { id: 0 }},  collection: { id: 0 } });
+                        //renderHome(counter);
+                        // config.isPortraitMode ? renderHome(counter, loadSpeciesList) : renderHome(counter);
                         break;
                     case enums.navigation.SETTINGS:
                         target.classList.add('active-icon');

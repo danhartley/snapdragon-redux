@@ -81,6 +81,10 @@ export const collection = (state = { id: 0 }, action) => {
             return { ...state, ...action.data.collection };
         }
 
+        case types.RESET_COLLECTION: {
+            return action.data.collection;
+        }
+
         case types.UPDATE_COLLECTION: {            
             const { collection, nextItem } = updateCollection(state, action);
             return { ...state, ...collection, nextItem };

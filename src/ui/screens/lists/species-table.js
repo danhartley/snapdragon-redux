@@ -141,6 +141,8 @@ export const buildTable = (collection, args) => {
     });
 
     const tbody = document.querySelector('.species-table tbody');
+
+    if(!tbody) return;
     
     const headerRow = document.createElement('tr');
           headerRow.classList.add('table-header');
