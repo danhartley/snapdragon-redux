@@ -8,10 +8,7 @@
   flex-direction: row;
   border: 0;
   height: var(--vhRunningBlock,7.5vh);
-  /* position: sticky;
-  position: -webkit-sticky; */
   z-index: 10;
-  /* letter-spacing: 0.03rem; */
   align-items: center;
   text-transform: uppercase;
 }
@@ -155,11 +152,6 @@
   height: 1rem;
  }
 
- /* .species-list .scrollable {    
-  top: 7.5%;
-  bottom: calc(7.5% + 3rem);
-} */
-
 div.species-description {
   background-color: var(--snap-species-highlight-background);
   border: .5px solid var(--snap-highlight-border);
@@ -197,17 +189,6 @@ div.species-description {
   }
 
   @media (min-width: 768px) {
-
-    /* .embedded-lesson-list-header {
-      flex-direction: row;
-      display: flex;
-      align-items: center;
-    }
-
-    .embedded-lesson-list-header > div:nth-child(1) {
-      margin: 0;
-      width: initial;
-    } */
 
     .table-header {
       background-color: var(--snap-landscape);

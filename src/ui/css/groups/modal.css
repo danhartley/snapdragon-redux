@@ -6,16 +6,11 @@
 .modal-content {
   border: none;
   border-radius: 0;
-  /* height: 100%; */
 }
   
 #cardModal {  
   z-index: 1049; /* wiki is 1050 */
 }
-
-/* .modal-body {
-    padding: 0;
-} */
 
 .modal-header-container {
   padding-bottom: 4px;
@@ -28,7 +23,6 @@
     align-items: center;
     justify-content: space-between;
     height: var(--vhRunningBlock,7.5vh);
-    /* margin-bottom: 5px; */
     background-color: var(--snap-portrait);
     border: none;
 }
@@ -62,7 +56,6 @@
   }
 
   .modal-body button {
-    /* margin: 1rem 0; */
     display: block;
   }
 
@@ -97,24 +90,23 @@
     padding: 1rem;
   }
 
-
 #imageModal .modal-body,
 #imageComparisonModal .modal-body {
     padding: 0;
 }
 
-#imageComparisonModal .modal-dialog {
+/* #imageComparisonModal .modal-dialog {
     min-width: 1024px;
     max-width: 1200px;
-}
+} */
 
-#imageModal .modal-body {
+/* #imageModal .modal-body {
     height: 60vh;  
-}
+} */
 
-#imageComparisonModal .modal-body {
+/* #imageComparisonModal .modal-body {
   height: initial;  
-}
+} */
 
 #imageComparisonModal .slideBySliderContainer {
     display: grid;
@@ -136,10 +128,10 @@
     margin: 0 .5rem;
 }
 
-#imageComparisonModal .imageSlider.carousel.slide > div:nth-child(2) {
+/* #imageComparisonModal .imageSlider.carousel.slide > div:nth-child(2) {
   padding: 1rem;
   min-height: 18rem;
-}
+} */
 
 #imageComparisonModal .imageSlider.carousel.slide > div:nth-child(2) > div:nth-child(2) {
   display: flex;
@@ -213,15 +205,12 @@
     color: var(--snap-progress-bg);
   }
 
-  /* #menuModal {
-    max-width: 500px;
-  } */
-
-  #menuModal .modal-dialog {
+  /* #menuModal .modal-dialog {
     max-width: 600px;
     margin: auto;
   }
-  
+   */
+
   #menuModal .modal-content {
     color: var(--snap-text-dark);
   }
@@ -234,19 +223,15 @@
     background-color: var(--snap-text-light);
   }
   
-  /* #listModal .scrollable {
-    height: 50vh;
-  } */
-
   #menuModal .modal-body.settings-modal {
     padding: 0;
   }
   
   /* BADGE MODAL (Common names & Members of) */
 
-  #badgeListModal {
+  /* #badgeListModal {
     max-width: 500px;
-  }
+  } */
 
   #badgeListModal .modal-header {
     color: var(--snap-text-dark);
@@ -255,7 +240,6 @@
 
   #badgeListModal .modal-body {
     background-color: rgb(226, 222, 180,.2);
-    /* min-height: 5rem; */
   }
   
   #badgeListModal li {  
@@ -264,18 +248,11 @@
 
   #badgeListModal .modal-text {  
     color: var(--snap-text-medium-dark);
-    /* margin: 0; */
   }
-
-  /* #badgeListModal ul {
-    padding: 0;
-  } */
 
 /* GLOSSARY MODAL */
 
 #menuModal .definition.card {
-    /* height: 60vh;
-    border: 0; */
     padding: 0 .5rem;
     border-radius: 0;
     height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
