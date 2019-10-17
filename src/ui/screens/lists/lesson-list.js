@@ -62,7 +62,7 @@ export const renderLessons = () => {
             createGuideHandler(1);
           });    
 
-    const titles = document.querySelectorAll('.active-title');
+    const titles = document.querySelectorAll('.btn.btn-secondary');
 
     config.guide.ready = true;
     actions.boundUpdateConfig(config);
@@ -83,8 +83,8 @@ export const renderLessons = () => {
 
       titles.forEach(title => title.addEventListener('click', e => {
 
-        const selectedTitle = e.target;
-        const lessonId = parseInt(selectedTitle.id.replace('lesson_', ''));
+        const selectedTitle = e.currentTarget;
+        const lessonId = parseInt(selectedTitle.id.replace('id_', ''));
         const selectedLesson = lessons.find(l => l.id === lessonId);
         const container = document.querySelector(`#container_${lessonId}`);
         const speciesList = document.querySelector(`#species_list_id_${lessonId}`);
@@ -122,8 +122,8 @@ export const renderLessons = () => {
       
       titles.forEach(title => title.addEventListener('click', e => {
 
-        const selectedTitle = e.target;
-        const lessonId = parseInt(selectedTitle.id.replace('lesson_', ''));
+        const selectedTitle = e.currentTarget;
+        const lessonId = parseInt(selectedTitle.id.replace('id_', ''));
         const selectedLesson = lessons.find(l => l.id === lessonId);
         renderLesson(selectedLesson);
         

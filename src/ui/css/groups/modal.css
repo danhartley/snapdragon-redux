@@ -205,11 +205,11 @@
     color: var(--snap-progress-bg);
   }
 
-  /* #menuModal .modal-dialog {
+  #menuModal .modal-dialog {
     max-width: 600px;
     margin: auto;
   }
-   */
+  
 
   #menuModal .modal-content {
     color: var(--snap-text-dark);

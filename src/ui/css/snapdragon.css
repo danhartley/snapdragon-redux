@@ -21,6 +21,10 @@ body {
   margin: auto;
 }
 
+h5 {
+  font-size: 1rem;
+}
+
 button {
   width: 100%;
   font-family: "PT Sans", "Roboto", arial, sans-serif !important;
@@ -419,7 +423,7 @@ a.dropdown-item {
 }
 
 .header {
-  top: 0;
+  font-size: ;
 }
 
 .header > div:nth-child(2) {
@@ -2110,13 +2114,3 @@ a.collection-disabled {
   height: var(--vhHalfStandardBlock, 5vh);
   margin: 0 !important;
 }
-
-/* .fly-left {
-  transform: translateX( calc( var(--vwGridNegative) ) );
-  transition: all 1s ease;
-}
-
-.fly-right {
-  transform: translateX(0px);
-  transition: all 1s ease;
-} */
