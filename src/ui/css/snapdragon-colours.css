@@ -85,4 +85,7 @@
     
     --snap-youtube-red: rgb(255,0,0);
     --snap-highlight-border: rgb(250, 152, 149);
+
+    --snap-toggle-header-on: rgb(240, 240, 240);
+    --snap-toggle-header-off: rgb(253, 224, 223);
   }

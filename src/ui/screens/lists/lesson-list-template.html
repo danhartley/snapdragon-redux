@@ -1,6 +1,6 @@
 <div class="lesson-list">
     <div class="btn-group scrollable" data-toggle="buttons" data-repeat-lesson="{{ lessons }}">
-        <div class="btn btn-secondary" id="id_{{ lesson.id }}">
+        <div class="btn btn-secondary" id="id_{{ lesson.id }}" data-has-video="{{ lesson.hasVideo }}">
             <div class="lesson-radio-button"></div>
             <div>
                 <input type="radio" name="lessons" autocomplete="off">

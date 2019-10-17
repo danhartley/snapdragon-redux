@@ -79,7 +79,10 @@ export const renderNavigation = collection => {
                         } 
                         break;
                     case enums.navigation.GLOSSARY:                        
-                        target.classList.add('active-icon');                        
+                        target.classList.add('active-icon');
+                        setTimeout(() => {
+                            target.classList.remove('active-icon');
+                        }, 2000);                 
                         DOM.modalText.innerHTML = '';
                         DOM.modalText.parentElement.classList.remove('settings-modal');
                         DOM.modalText.parentElement.classList.add('glossary-modal');

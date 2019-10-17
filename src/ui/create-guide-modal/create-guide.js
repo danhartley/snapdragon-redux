@@ -193,13 +193,13 @@ class CreateGuide {
     }
 };
 
-export const createGuideHandler = (step) => {
+export const createGuideHandler = step => {
 
     const guide = new CreateGuide(step);
 
     guide.goToNextStep(step);
 
-    const handleNextStepAction = event => {
+    const handleNextStepAction = event => {        
         guide.startLesson = guide.nextStepActionTxt.innerHTML.indexOf('Start Lesson') > -1; // hack
         guide.goToNextStep(guide.getCurrentStep() + 1, 'NEXT');
         guide.listeners.push( { element: guide.nextStepAction, handler: handleNextStepAction });
@@ -213,5 +213,4 @@ export const createGuideHandler = (step) => {
     };
 
     guide.previousStepAction.addEventListener('click', handlePreviousStepAction, true);
-
 }
