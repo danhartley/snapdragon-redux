@@ -59,6 +59,8 @@ export const keepItems = collection => {
 
 export const collectionHandler = async (collection, config, counter, callback, callbackWhenNoResults) => {
     
+    console.log(counter.isLessonPaused);
+
     if(counter.isLessonPaused) {
         console.log(counter);
         collection.items = await keepItems(collection);

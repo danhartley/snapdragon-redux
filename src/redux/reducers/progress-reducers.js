@@ -9,7 +9,7 @@ export const counter = (state = null, action) => {
         case 'persist/REHYDRATE':
             return action.payload ? { ...action.payload.counter, isLessonRehydrated: true } : state;
         case types.RESET_COLLECTION:
-            return { ...state, isLessonSelected: false };
+            return { ...state, isLessonSelected: false, isLessonPaused: false };
         case types.UPDATE_COLLECTION:    
             return { ...state, isLessonRehydrated: false };
         case types.NEXT_ROUND:

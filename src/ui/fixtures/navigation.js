@@ -28,61 +28,58 @@ export const renderNavigation = collection => {
 
     const navIcons =  document.querySelectorAll('.js-nav-icons .icon');
 
-    const activateIcon = id => {
-        const icon = document.querySelector(id);
-        if(icon) {
-            icon.classList.add('active-icon');
-        }
-    };
+    // const activateIcon = id => {
+    //     const icon = document.querySelector(id);
+    //     if(icon) {
+    //         icon.classList.add('active-icon');
+    //     }
+    // };
 
-    setTimeout(() => {
+    // setTimeout(() => {
         
-        const home = subscription.getByName('renderHome');
+    //     const home = subscription.getByName('renderHome');
 
-        if(home) {
-            if(config.isLandscapeMode) {
-                activateIcon('.js-home'); 
-            }
+    //     if(home) {
+    //         if(config.isLandscapeMode) {
+    //             activateIcon('.js-home'); 
+    //         }
 
-            if(config.isPortraitMode) {
-                collection.id > 0 ? activateIcon('.js-home') : activateIcon('.js-list');
-            }
-        }
-    });
+    //         if(config.isPortraitMode) {
+    //             collection.id > 0 ? activateIcon('.js-home') : activateIcon('.js-list');
+    //         }
+    //     }
+    // });
 
     navIcons.forEach(icon => {
         icon.addEventListener('click', event => {       
             
-                const target = event.target.parentElement;
-                const targetId = target.id === '' ? target.parentElement.id : target.id;
+                const clickedIcon = event.currentTarget;
+                
                 const { collection, config, history } = store.getState();
 
-                switch(enums.navigation.enumValueOf(targetId)) {                    
-                    case enums.navigation.HOME:
-                        target.classList.add('active-icon');
+                const activeIcon = document.querySelector('.active-icon');
+                if(activeIcon) activeIcon.classList.remove('active-icon');
+
+                clickedIcon.classList.add('active-icon');
+
+                switch(enums.navigation.enumValueOf(clickedIcon.id)) {                    
+                    case enums.navigation.HOME:                        
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));        
-                        actions.boundResetCollection({ config: { ...config, collection: { id: 0 }},  collection: { id: 0 } });
+                        // actions.boundResetCollection({ config: { ...config, collection: { id: 0 }},  collection: { id: 0 } });
                         break;
                     case enums.navigation.SETTINGS:
-                        target.classList.add('active-icon');
                         DOM.modalText.parentElement.classList.remove('glossary-modal');
                         DOM.modalText.parentElement.classList.add('settings-modal');
                         renderSettings();
                         break;
                     case enums.navigation.LIST:
-                        target.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));                                   
                         lessonHandler.getLessonItems(enums.lessonState.PAUSE_LESSON, collection, config, history);
                         if(config.isPortraitMode) {
-                            const { counter } = store.getState();
-                            renderHome(counter);
+                            actions.boundResetCollection({ config: { ...config, collection: { id: 0 }},  collection: { id: 0 } });
                         } 
                         break;
-                    case enums.navigation.GLOSSARY:                        
-                        target.classList.add('active-icon');
-                        setTimeout(() => {
-                            target.classList.remove('active-icon');
-                        }, 2000);                 
+                    case enums.navigation.GLOSSARY:   
                         DOM.modalText.innerHTML = '';
                         DOM.modalText.parentElement.classList.remove('settings-modal');
                         DOM.modalText.parentElement.classList.add('glossary-modal');
@@ -92,8 +89,7 @@ export const renderNavigation = collection => {
                         const glossary = utils.sortAlphabeticallyBy(getGlossary(collection.glossary || ['common']), 'term');
                         renderTemplate({ glossary }, template.content, DOM.modalText);                        
                         break;
-                    case enums.navigation.EMAIL:
-                        target.classList.add('active-icon');
+                    case enums.navigation.EMAIL:                        
                         break;
                     default:
                         return;

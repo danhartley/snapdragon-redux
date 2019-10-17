@@ -48,7 +48,6 @@ setTimeout( () => {
         subscription.add(renderNavigation, 'collection', 'flow');
 
         subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
-        // subscription.add(renderLessons, 'counter', 'flow');
                 
         subscription.add(nextLesson, 'counter', 'flow');
         subscription.add(nextLayout, 'counter', 'flow');

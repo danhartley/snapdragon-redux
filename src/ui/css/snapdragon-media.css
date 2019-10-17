@@ -87,8 +87,7 @@
             - var(--vhRunningBlocks,15vh)
             - var(--vhDoubleStandardBlock,20vh) 
             - var(--vhCalender,11vh) 
-            - .5rem 
-            - 1rem);
+            - .5rem);
       }
     
       .modal-header {

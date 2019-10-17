@@ -7,7 +7,6 @@ import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import { videoPlayer } from 'ui/screens/lists/video-handler';
 import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { enums } from 'ui/helpers/enum-helper';
-// import { activateHomeIcon } from 'ui/fixtures/navigation';
 
 import lessonTemplate from 'ui/screens/home/home-lesson-intro-template.html';
 
@@ -15,7 +14,7 @@ export const renderLesson = collection => {
 
     const { config } = store.getState();
 
-    if(!collection) return;
+    // if(!collection) return;
 
     const template = document.createElement('template');
           template.innerHTML = lessonTemplate;
@@ -72,7 +71,6 @@ export const renderLesson = collection => {
     const container = DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable');
 
     if(config.isPortraitMode) {
-        // activateHomeIcon();
         renderSpeciesCollectionList(collection, { readOnlyMode: false, parent: container, tableParent: container, loadSpeciesCallback, isInCarousel: false });
     }
 

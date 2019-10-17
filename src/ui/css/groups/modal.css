@@ -56,8 +56,19 @@
   }
 
   .modal-body button {
-    display: block;
+    /* display: inline-block; */
+    color: white;
+    background-color: var(--snap-collection);
+    width: 100%;
   }
+
+  .modal-body button.disabled {
+    color: rgb(150,150,150);
+  }
+
+  /* .modal-body button {
+    display: block;
+  } */
 
   .modal-body .language-options button {
     width: 100%;

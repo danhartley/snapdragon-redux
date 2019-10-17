@@ -138,18 +138,6 @@
     margin: 0 1rem 0 0;
   }
   
-  .modal-body button {
-    display: inline-block;
-    /* margin: 0; */
-    color: white;
-    /* letter-spacing: .05rem; */
-    background-color: var(--snap-collection);
-  }
-
-  .modal-body button.disabled {
-    color: rgb(150,150,150);
-  }
-  
   .modal-body .inat-location-location button {
     width: 100%;  
     background-color: var(--snap-text-medium-dark);

@@ -746,8 +746,7 @@ a.dropdown-item {
       - var(--vhRunningBlocks,15vh)
       - var(--vhDoubleStandardBlock,20vh) 
       
-      - .5rem 
-      - 1rem);
+      - .5rem);
 }
 
 .taxon.card-card .mixed-content-container {
@@ -1027,6 +1026,11 @@ span.correct {
 
 .delay-slider {
   margin: 1rem 0;
+}
+
+.delay-slider > div input {
+  flex: auto;
+  margin: 0 .5rem;
 }
 
 .response-update {
@@ -2045,6 +2049,10 @@ a.collection-disabled {
   color: var(--snap-youtube-red);
 }
 
+.double-standard-block {
+  height: var(--vhDoubleStandardBlock, 20vh);
+}
+
 .standard-block {
   height: var(--vhStandardBlock, 10vh);
 }
@@ -2056,6 +2064,7 @@ a.collection-disabled {
 .centred-block {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .double-centred-block {

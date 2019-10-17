@@ -32,6 +32,7 @@ export const renderSpeciesCollectionList = (collection, args) => {
     // if(!config.guide.ready || !collection) return; // hack!, may be required!!
 
     config.collection = { id: collection.id };
+    
 
     const openAccordionClickHandler = (name, accordion) => {
         
