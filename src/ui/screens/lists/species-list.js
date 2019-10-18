@@ -85,7 +85,6 @@ export const renderSpeciesCollectionList = (collection, args) => {
                     event.stopPropagation();
                     event.preventDefault();
                     youtubeIcons.forEach(icon => {
-                        console.log(icon.classList);
                         icon.classList.remove('youtube-red-fg');
                     });
                     const activeIcon = event.target;
@@ -291,30 +290,15 @@ export const renderSpeciesCollectionList = (collection, args) => {
                 const scrollIntoView = (rowHeight, noOfRows) => {
                     const video = document.querySelector('.video');                    
                     const scroll = document.querySelector('.scrollable');
-                    
-                    // scroll.scrollTop = 0;
-
-                    console.clear();
-
-                    console.log('video.offsetHeight: ', video.clientHeight); 
-
                     const runningBlock = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhRunningBlock').replace('px', ''));
                     const standardBlock = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhStandardBlock').replace('px', ''));
                     const vh = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));
                     const iframeBorder = 8;
 
-                    //clientHeight
-                    //offsetHeight
-                    //scrollHeight
+                    // console.log('number of rows: ', noOfRows);
+                    scroll.scrollTop = (rowHeight * (noOfRows - 1)) + (3*standardBlock) - iframeBorder; 
 
-                    console.log('number of rows: ', noOfRows);
-                    scroll.scrollTop = (rowHeight * (noOfRows - 1)) + (3*standardBlock) -8; 
-
-                    // 1. plain 197
-
-                    console.log('scroll.scrollTop: ', scroll.scrollTop);
-
-                    // scroll.scrollTop = video.offsetHeight + (rowHeight * (noOfRows - 1)) - (vh * 5) +8; 
+                    // console.log('scroll.scrollTop: ', scroll.scrollTop);
                 };
 
                 if(enableScroll) {

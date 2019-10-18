@@ -77,7 +77,6 @@ export const renderLessons = () => {
       const scrollToTitle = lessonId => {
         const next = lessonId - 1;
         const href = `#id_${next}`;
-        console.log(href);
         window.location.href = href;
       };
 
@@ -153,15 +152,15 @@ export const renderLessons = () => {
           });
 
     const videoFilter = document.querySelector('.js-filter-by-video');
-    videoFilter.addEventListener('click', e => {
-      const lessonsWithoutVideo = document.querySelectorAll('div[data-has-video="false"]');
-      const checked = e.currentTarget.children[0].checked;
-      checked 
-        ? lessonsWithoutVideo.forEach(lesson => lesson.classList.remove('hide-important'))
-        : lessonsWithoutVideo.forEach(lesson => lesson.classList.add('hide-important'));
-    });
+          videoFilter.addEventListener('click', e => {
+            const lessonsWithoutVideo = document.querySelectorAll('div[data-has-video="false"]');
+            const checked = e.currentTarget.children[0].checked;
+            checked 
+              ? lessonsWithoutVideo.forEach(lesson => lesson.classList.remove('hide-important'))
+              : lessonsWithoutVideo.forEach(lesson => lesson.classList.add('hide-important'));
+          });
 
-    videoFilter.click();
+          videoFilter.click();
 };
 
 const toggleVideoInputState = () => {

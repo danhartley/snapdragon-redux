@@ -82,6 +82,7 @@ export const collectionHandler = async (collection, config, counter, callback, c
         if(collection.items) {
 
             if(collection.behaviour === 'dynamic') {
+                
                 collection.name = config.guide.place.name;
                 collection.speciesRange = config.guide.speciesRange;
                 collection.iconicTaxa = config.guide.iconicTaxa;

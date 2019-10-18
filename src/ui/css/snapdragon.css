@@ -413,10 +413,6 @@ a.dropdown-item {
   height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
 }
 
-.right-body {
-  padding: 0 .5rem;
-}
-
 .header, .footer {
   display: flex;
   align-items: center;
@@ -2021,7 +2017,7 @@ a.collection-disabled {
 }
 
 .lesson-list .btn.btn-secondary {
-  margin-bottom: .5rem;
+  margin-top: .5rem;
 }
 
 .lesson-list .scrollable {
