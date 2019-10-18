@@ -19,7 +19,7 @@ export const renderHome = counter => {
         if(collection.id > 0) {
             counter.isLessonPaused 
                 ? renderLessons()
-                : renderLesson(collection);            
+                : renderLesson(collection);      
         } else {
             renderLessons();
         }
@@ -31,11 +31,15 @@ export const renderHome = counter => {
         renderLessons();
 
         // right
-        const template = document.createElement('template');
-        template.innerHTML = homeTemplate;
-    
-        DOM.rightBody.innerHTML = '';
-    
-        renderTemplate({}, template.content, DOM.rightBody);
+        if(collection.id > 0) {
+            renderLesson(collection);
+        } else {
+            const template = document.createElement('template');
+            template.innerHTML = homeTemplate;
+        
+            DOM.rightBody.innerHTML = '';
+        
+            renderTemplate({}, template.content, DOM.rightBody);
+        }
     }
 };

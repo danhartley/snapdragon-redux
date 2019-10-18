@@ -76,7 +76,7 @@ export const renderLessons = () => {
 
       const scrollToTitle = lessonId => {
         const next = lessonId - 1;
-        const href = `#lesson_${next}`;
+        const href = `#id_${next}`;
         console.log(href);
         window.location.href = href;
       };

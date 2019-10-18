@@ -413,6 +413,10 @@ a.dropdown-item {
   height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
 }
 
+.right-body {
+  padding: 0 .5rem;
+}
+
 .header, .footer {
   display: flex;
   align-items: center;
@@ -1690,7 +1694,7 @@ a.collection-disabled {
 .home-container .snapdragon-header {
   text-transform: uppercase;
   color: var(--snap-collection-active);
-  padding: .5rem;
+  /* padding: .5rem; */
 }
 
 .home-container .snapdragon-tag, .home-container .summary-scores, .trait-card-summary-container .summary-scores {
