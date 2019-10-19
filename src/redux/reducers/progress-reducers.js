@@ -2,7 +2,6 @@ import * as R from 'ramda';
 
 import { types } from 'redux/actions/action-types';
 import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
-import { enums } from 'ui/helpers/enum-helper';
 
 export const counter = (state = null, action) => {
     switch(action.type) {
@@ -147,10 +146,10 @@ export const history = (state = null, action) => {
     }
 };
 
-export const videoPlayer = (state = [], action) => {
+export const videoPlayer = (state = null, action) => {
     switch(action.type) {
         case types.UPDATE_VIDEO_PLAYER:
-            return [ ...state, ...action.data ];
+            return action.data;
         default:
             return state;
     }

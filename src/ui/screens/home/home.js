@@ -10,7 +10,7 @@ import homeTemplate from 'ui/screens/home/home-template.html';
 
 export const renderHome = counter => {
 
-    let { config, collection, lesson } = store.getState();
+    let { config, collection } = store.getState();
 
     const home = subscription.getByName('renderHome');
     if(home) subscription.remove(home);
@@ -28,18 +28,14 @@ export const renderHome = counter => {
 
     if(config.isLandscapeMode) {
 
-        // left
         renderLessons();
 
-        // right
         if(collection.id > 0) {
             renderLesson(collection);
         } else {
             const template = document.createElement('template');
             template.innerHTML = homeTemplate;
-        
             DOM.rightBody.innerHTML = '';
-        
             renderTemplate({}, template.content, DOM.rightBody);
         }
     }

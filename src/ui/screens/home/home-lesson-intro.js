@@ -18,7 +18,7 @@ export const renderLesson = collection => {
 
     }; 
 
-    collection.video ? videoSetup(collection, videoPlayer, DOM.rightBody) : textSetup();
+    collection.video ? videoSetup(collection, videoPlayer || [], DOM.rightBody) : textSetup();
 
     const loadSpeciesCallback = () => console.log('renderLesson: load species callback called.');
 

@@ -39,7 +39,7 @@ setTimeout( () => {
         config.isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
         config.isLandscapeMode = !config.isPortraitMode;
 
-        const counter = currentCounter ? { ...currentCounter } : { index: null };
+        const counter = currentCounter ? { ...currentCounter } : { index: null, isLessonPaused: false };
 
         actions.boundUpdateConfig(config);
         actions.boundStopStartLesson(counter);

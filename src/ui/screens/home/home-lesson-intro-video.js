@@ -1,25 +1,33 @@
 import * as R from 'ramda';
 
-import { videoHandler } from 'ui/screens/lists/video-handler';
+import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
+
+import { videoHandler } from 'ui/screens/lists/video-handler';
 
 import videoTemplate from 'ui/screens/home/home-lesson-intro-video-template.html';
 
 export const videoSetup = (collection, videoPlayer, parent) => {
-
-    const recordMatch = (collection, species) => {
-        const activeLesson = {
-            collectionId: collection.id,
-            speciesName: species.name,
-            pausedAt: species.time[0]
+   
+    const updateVideoPlayer = (collection, species) => {
+        
+        const player = store.getState().videoPlayer || [];
+        
+        let activeLesson = player.find(p => p.collectionId === collection.id); 
+        
+        if(!activeLesson) {
+            activeLesson = { collectionId: collection.id };
+            player.push(activeLesson);
         };
-        const player = R.clone(videoPlayer);
-        player.push(activeLesson);
+
+        activeLesson.speciesName = species.name;
+        activeLesson.pausedAt = species.time[0];
+    
         actions.boundUpdateVideoPlayer(player);
     };
-    
-    videoHandler.onSpeciesTimeMatch(recordMatch);
+
+    videoHandler.onSpeciesTimeMatch(updateVideoPlayer);
 
     const template = document.createElement('template');
           template.innerHTML = videoTemplate;

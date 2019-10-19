@@ -30,6 +30,13 @@ const remove = subscription => {
     return subscriptions;
 };
 
+const removeByName = name => {
+    const subscription = getByName(name);
+    if(subscription) {
+        return remove(subscription);
+    }
+};
+
 const getByName = name => {
     return subscriptions.find(sub => sub.name === name);
 };
@@ -73,6 +80,7 @@ const addSubs = (layout, config) => {
 export const subscription = {
     add,
     remove,
+    removeByName,
     getByName,
     getByRole,
     getAll,

@@ -1087,9 +1087,9 @@ span.correct {
   background-color: var(--snap-block-light);
 }
 
-.btn.btn:not(:disabled):not(.disabled) {
+/* .btn.btn:not(:disabled):not(.disabled) {
   cursor: initial;
-}
+} */
 
 .species-answer {
   text-align: center;
