@@ -125,11 +125,11 @@ export const renderSaveLesson = (parent) => {
 
     const saveLesson = async collection => {
 
-        const { counter, lessonPlan, lessonPlans, layout, page, lesson, score, history, bonusLayout, enums } = store.getState();
+        const { counter, lessonPlan, lessonPlans, layout, lesson, score, history, bonusLayout, enums } = store.getState();
 
         const savedLesson = { 
             name: collection.name,
-            config, collection, counter, lessonPlan, lessonPlans, layout, page, lesson, score, history, bonusLayout, enums
+            config, collection, counter, lessonPlan, lessonPlans, layout, lesson, score, history, bonusLayout, enums
         };
         
         actions.boundSaveLesson(savedLesson);

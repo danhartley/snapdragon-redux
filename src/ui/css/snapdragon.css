@@ -457,7 +457,7 @@ a.dropdown-item {
 
 .scrollable {
   overflow-y: auto;
-  /* -webkit-overflow-scrolling: touch; */
+  -webkit-overflow-scrolling: touch;
   position: absolute;
   left: 0;
   right: 0;
@@ -1609,12 +1609,7 @@ a.collection-disabled {
 .range-slider-control {
   display: flex;
   justify-content: space-between;
-  /* width: 38rem; */
 }
-
-/* .range-slider-control input {
-  width: 15rem;
-} */
 
 .carousel-indicators {
   margin-right: 25%;
@@ -1690,7 +1685,6 @@ a.collection-disabled {
 .home-container .snapdragon-header {
   text-transform: uppercase;
   color: var(--snap-collection-active);
-  /* padding: .5rem; */
 }
 
 .home-container .snapdragon-tag, .home-container .summary-scores, .trait-card-summary-container .summary-scores {
@@ -2018,6 +2012,7 @@ a.collection-disabled {
 
 .lesson-list .btn.btn-secondary {
   margin-top: .5rem;
+  text-align: left;
 }
 
 .lesson-list .scrollable {

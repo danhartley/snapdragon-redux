@@ -548,17 +548,11 @@
   /* EXAMPLE LESSONS INC. RB LIST */
 
   .btn.btn-secondary {
-    /* height: 4rem; */
-    /* height: initial; */
-    /* margin: 1.25rem 0;
-    padding: 0.25rem .5rem 0.25rem 1.5rem; */
     flex-direction: row;
     align-items: center;
-    /* font-size: .9rem; */
   }
 
   .lesson-taxa {
-    text-align: left;
     overflow-wrap: break-word;
     white-space: initial;    
   }
@@ -578,16 +572,11 @@
 
   .lesson-name {
     width: 100%;
-    text-align: left;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
   }
 
-  /* .lesson-taxa {
-    font-size: .8rem;
-  } */
-  
   .lesson-taxa span:nth-child(1) {
     margin: 0 .15rem 0 0;
   }
@@ -610,50 +599,11 @@
     margin-right: .5rem;
   }
 
-  /* .guide-example-lessons {
-    padding: 0;
-    margin: 0;
-  } */
- 
-  /* .btn-group.btn-group-toggle {
-    border: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-  } */
-  
-  /* .btn-group.btn-group-toggle.scrollable {
-    left: .5rem;
-    right: .5rem;
-  } */
-
   /* PORTRAIT & LANDSCAPE EXAMPLE GUIDE */
 
   .btn.btn-secondary {
-    /* margin: 0 0 .5rem 0;
-    padding: .25rem .5rem .25rem .5rem; */
-    /* font-size: initial; */
     width: 100%;
   }
-/* 
-  #createGuide .modal-dialog, #exampleGuide .modal-dialog, 
-  #menuModal .modal-dialog, #badgeListModal .modal-dialog,
-  #imageModal .modal-dialog {
-    height: initial;
-  } */
-
-  /* #exampleGuide .btn-group label:nth-of-type(2n) {
-    background-color: var(--snap-lesson-row-green);
-  }
-
-  #exampleGuide .btn-group label:nth-of-type(2n+1) {
-    background-color: var(--snap-lesson-row-blue);
-  }
-
-  #exampleGuide .btn-secondary:not(:disabled):not(.disabled).active {
-    background-color: gray;
-    color: white;
-  } */
 
   .start-lesson-wrapper.disabled {
     pointer-events: none;
@@ -674,8 +624,6 @@
   .guide-bottom-actions {
     display: flex;
     position: absolute;
-    /* bottom: 5.5rem; */
-    /* right: 1rem; */
   }
 
   .guide-bottom-actions span:nth-child(1) {
@@ -687,12 +635,8 @@
   }
 
   .location-option {
-    /* line-height: 1.8rem; */
     display: grid;
     grid-template-rows: 1fr;
-    /* width: 100%; */
-    /* font-family: "Libre Baskerville", Libre, Georgia, Times, serif; */
-    /* letter-spacing: .03rem; */
   }
 
   .location-option.place {
@@ -812,10 +756,6 @@
       flex-direction: row;
     }
 
-    /* .rptr-lessons {
-      height: 14.25rem;
-    } */
-
     .iconic-taxa-categories svg {
       width: 2rem;
       height: 2rem;
@@ -833,10 +773,6 @@
     .iconic-taxa-categories i {
       font-size: 1.5rem;
     }
-
-    /* #taxonLanguageBtn, .inat-switch {
-      width: 50%;
-    } */
 
     #inat-identity {      
       margin: 0 .5rem 0 0;
@@ -862,11 +798,6 @@
       flex-direction: row;
     }
 
-    /* .modal-guide-wrapper .modal-title div:nth-child(1) {
-        flex: auto;
-        font-size: 1.1rem;        
-    } */
-
     .inat.inat-switch .inat-entry {
         display: flex;
         align-items: center;
@@ -875,7 +806,6 @@
 
     .inat.inat-switch input[type="text"] {
         margin: 0 .5rem 0 0;
-        /* height: 1.75rem; */
         color: var(--snap-text-medium-dark);
         padding: 0 .1rem;
     }

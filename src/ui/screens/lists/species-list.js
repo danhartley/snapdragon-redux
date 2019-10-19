@@ -15,7 +15,7 @@ import { collectionHandler } from 'ui/helpers/collection-handler';
 import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
 import { renderHome } from 'ui/screens/home/home';
 import { enums } from 'ui/helpers/enum-helper';
-import { videoPlayer } from 'ui/screens/lists/video-handler';
+import { videoHandler } from 'ui/screens/lists/video-handler';
 
 export const renderSpeciesCollectionList = (collection, args) => {
 
@@ -34,20 +34,20 @@ export const renderSpeciesCollectionList = (collection, args) => {
     config.collection = { id: collection.id };
     
 
-    const openAccordionClickHandler = (name, accordion) => {
+    const openAccordionClickHandler = (species, accordion) => {
         
-        accordion.innerHTML = `<i class="fas fa-chevron-up" data-name="${name}"></i>`;
+        accordion.innerHTML = `<i class="fas fa-chevron-up" data-name="${species.name}"></i>`;
         
-        openSpeciesDescription(name, true);
+        openSpeciesDescription(collection, species, true);
 
         const closeAccordionHandler = event => {
             // remove current open accordion handler
             accordion.removeEventListener('click', closeAccordionHandler);
             // change direction of chevron       
-            accordion.innerHTML = `<i class="fas fa-chevron-down" data-name="${name}"></i>`;
+            accordion.innerHTML = `<i class="fas fa-chevron-down" data-name="${species.name}"></i>`;
             // attach new open accordion listener
             accordion.addEventListener('click', event => {
-                openAccordionClickHandler(name, accordion);
+                openAccordionClickHandler(species, accordion);
             });
             // remove the species description - handled in group action
             const description = document.querySelector('.species-description');
@@ -73,31 +73,29 @@ export const renderSpeciesCollectionList = (collection, args) => {
 
               accordions.forEach(accordion => {
                   const accordionHandler = event => {
-                    openAccordionClickHandler(event.target.dataset.name, accordion);
+                      const species = collection.items.find(item => item.name === event.currentTarget.dataset.name);
+                    openAccordionClickHandler(species, accordion);
                   };
                   accordion.addEventListener('click', accordionHandler);
               });
 
-        const youtubeIcons = document.querySelectorAll('.js-youtuube i');
+        const youtubeIcons = document.querySelectorAll('.js-youtube');
 
               youtubeIcons.forEach(icon => {                  
                   icon.addEventListener('click', event => {       
                     event.stopPropagation();
-                    event.preventDefault();
                     youtubeIcons.forEach(icon => {
                         icon.classList.remove('youtube-red-fg');
                     });
-                    const activeIcon = event.target;
+                    const activeIcon = event.currentTarget;
                           activeIcon.classList.add('youtube-red-fg');
                     const name = activeIcon.dataset.name;
                     const species = collection.items.find(item => item.name == name);   
                     if(species && species.time) {
-                        videoPlayer.playVideoFrom(species.time[0]);
+                        videoHandler.playVideoFrom(species.time[0]);
                     }
                   });
               });
-
-        const continueLearningActionBtn = document.querySelector('.js-species-list-btn-action');
 
         const cardModal = document.querySelector('#cardModal .js-modal-body');
 
@@ -159,44 +157,6 @@ export const renderSpeciesCollectionList = (collection, args) => {
                 }
             });
         });
-
-        // Portrait mode only
-
-        // if(continueLearningActionBtn) {
-
-        //     actions.boundNewPage({ name: 'LIST'});
-        
-        //     if(history || counter.isLessonPaused) {
-        //         continueLearningActionBtn.innerHTML = 'Continue lesson';
-        //     }
-            
-        //     if(lesson.isLessonComplete) {
-        //         continueLearningActionBtn.innerHTML = 'End lesson (delete data) | Choose a new lesson';
-        //     }
-
-        //     continueLearningActionBtn.addEventListener('click', event => {
-
-        //         if(lesson.isLessonComplete) {
-        //             lessonHandler.purgeLesson();
-        //         } else {
-        //             if(readOnlyMode) {
-        //                 const lessonState = counter.isLessonPaused ? enums.lessonState.RESUME_LESSON : enums.lessonState.NEXT_ROUND;
-        //                 lessonHandler.getLessonItems(lessonState, collection, config, history);
-        //             }
-        //             else {
-        //                 if(counter.isLessonPaused) {
-        //                     lessonHandler.getLessonItems(enums.lessonState.RESUME_LESSON, collection, config, history);
-        //                 } else {
-        //                     lessonHandler.getLessonItems(enums.lessonState.BEGIN_LESSON, collection, config, history);
-        //                 }
-        //             }
-
-        //             actions.boundNewPage({ name: ''});
-
-        //             subscription.remove(subscription.getByName('renderHistory'));                    
-        //         }            
-        //     });
-        // }
     };    
 
     if(readOnlyMode) {
@@ -228,42 +188,42 @@ export const renderSpeciesCollectionList = (collection, args) => {
 
             renderHome(counter, false, true);
         }
+        
         if(config.collection.id === 0) return;
+        
         collectionHandler(collection, config, counter, callback, callbackWhenNoResults);
     }
 
-    const openSpeciesDescription = (name, enableScroll = true) => {
+    const openSpeciesDescription = (collection, species, enableScroll = true) => {
 
         try {
 
             let parent = document.querySelector('.species-table tbody');
             
             const accordions = Array.from(document.querySelectorAll('.js-accordion'));
-            const inactiveAccordions = accordions.filter(accordion => accordion.dataset.name !== name);
+            const inactiveAccordions = accordions.filter(accordion => accordion.dataset.name !== species.name);
 
                 //trigger close event on any accordions that might be open
                 inactiveAccordions.forEach(inactiveAccordion => {                
                     if(inactiveAccordion.innerHTML.indexOf('fa-chevron-up') > -1) {
                         inactiveAccordion.click();
-                        inactiveAccordion.innerHTML = `<i class="fas fa-chevron-down" data-name="${name}"></i>`;
-                        const inActiveYouTubeIcon = inactiveAccordion.parentElement.parentElement.querySelector('.js-youtuube');
+                        inactiveAccordion.innerHTML = `<i class="fas fa-chevron-down" data-name="${species.name}"></i>`;
+                        const inActiveYouTubeIcon = inactiveAccordion.parentElement.parentElement.querySelector('.js-youtube');
                               inActiveYouTubeIcon.classList.remove('youtube-red-fg');
                     }
                 });
 
-            const activeAccordion = accordions.find(accordion => accordion.dataset.name === name);
+            const activeAccordion = accordions.find(accordion => accordion.dataset.name === species.name);
                 if(activeAccordion) {
-                    activeAccordion.innerHTML = `<i class="fas fa-chevron-up" data-name="${name}"></i>`;
+                    activeAccordion.innerHTML = `<i class="fas fa-chevron-up" data-name="${species.name}"></i>`;
                 }
 
-            const activeYouTubeIcon = activeAccordion.parentElement.parentElement.querySelector('.js-youtuube');
+            const activeYouTubeIcon = activeAccordion.parentElement.parentElement.querySelector('.js-youtube');
                   activeYouTubeIcon.classList.add('youtube-red-fg');
 
             // remove any descriptions that might be open
             let currentDescriptions = document.querySelectorAll('.species-description');
                 currentDescriptions.forEach(tr => parent.removeChild(tr));
-
-            const species = collection.items.find(i => i.name === name);
 
             let description = species.description;
                 description = description || species.traits.description.value[0];
@@ -295,10 +255,7 @@ export const renderSpeciesCollectionList = (collection, args) => {
                     const vh = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));
                     const iframeBorder = 8;
 
-                    // console.log('number of rows: ', noOfRows);
                     scroll.scrollTop = (rowHeight * (noOfRows - 1)) + (3*standardBlock) - iframeBorder; 
-
-                    // console.log('scroll.scrollTop: ', scroll.scrollTop);
                 };
 
                 if(enableScroll) {
@@ -308,12 +265,12 @@ export const renderSpeciesCollectionList = (collection, args) => {
                 }
             }
         } catch(e) {
-            console.log(name);
-            console.error(e.message);
+            console.log('error on species: ', name);
+            console.error('error message: ', e.message);
         }
     };
 
-    videoPlayer.listenToVideoTimes(openSpeciesDescription);
+    videoHandler.onSpeciesTimeMatch(openSpeciesDescription);
 };
 
 const listeners = [];

@@ -30,7 +30,7 @@ setTimeout( () => {
 
     try {
 
-        console.log('index page')
+        // console.log('index.js')
         
         const { config, counter: currentCounter, lessonPlan: statePlans } = store.getState();
 
@@ -42,10 +42,11 @@ setTimeout( () => {
         const counter = currentCounter ? { ...currentCounter } : { index: null };
 
         actions.boundUpdateConfig(config);
-        actions.boundToggleLesson(counter);
+        actions.boundStopStartLesson(counter);
 
         subscription.add(renderHeaders, 'collection', 'flow');
-        subscription.add(renderNavigation, 'collection', 'flow');
+        renderNavigation();
+        // subscription.add(renderNavigation, 'collection', 'flow');
 
         subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
                 

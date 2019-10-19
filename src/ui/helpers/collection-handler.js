@@ -17,7 +17,7 @@ async function getItems(collection, config) {
             collection.speciesRange === config.guide.speciesRange &&
             collection.iconicTaxa === config.guide.iconicTaxa;
 
-            console.log('collectionIsUnchanged ', collectionIsUnchanged);
+            console.log('collectionIsUnchanged state: ', collectionIsUnchanged);
 
         if(collectionIsUnchanged) {
             return new Promise(resolve => {
@@ -59,10 +59,13 @@ export const keepItems = collection => {
 
 export const collectionHandler = async (collection, config, counter, callback, callbackWhenNoResults) => {
     
-    console.log(counter.isLessonPaused);
+    console.log('collectionHandler; counter lesson is paused state: ', counter.isLessonPaused);
 
     if(counter.isLessonPaused) {
-        console.log(counter);
+        collection.items = await keepItems(collection);
+    }
+
+    if(counter.isLessonPaused && collection.items.length > 0) {
         collection.items = await keepItems(collection);
         callback(collection, config)();
     } else {
@@ -185,7 +188,7 @@ export const collectionHandler = async (collection, config, counter, callback, c
             callback(collection, config)();
 
         } else {
-            console.log('** Hitting callbackWhenNoResults() **');
+            console.log('Calling callbackWhenNoResults().');
             collection.items = [];
             callbackWhenNoResults();
         }

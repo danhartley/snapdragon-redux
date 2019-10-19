@@ -10,6 +10,7 @@ import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import { renderLesson } from 'ui/screens/home/home-lesson-intro';
 import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
 import { listenToCloseCreateGuideModal } from 'ui/create-guide-modal/create-guide';
+import { videoHandler } from './video-handler';
 
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
 import lessonListHeaderTemplate from 'ui/screens/lists/lesson-list-header-template.html';
@@ -20,7 +21,7 @@ export const renderLessons = () => {
     
     if(thisScreen) subscription.remove(thisScreen);
 
-    let { config, collections, lessons: savedLessons } = store.getState();
+    let { config, collections, lessons: savedLessons, videoPlayer } = store.getState();
 
     const savedLessonNames = savedLessons.map(lesson => lesson.name);
 
@@ -38,7 +39,8 @@ export const renderLessons = () => {
             ? '(lesson paused)'
             : '';
         lesson.isPaused = isPaused;
-        lesson.hasVideo = lesson.video ? true : false;
+        lesson.hasVideo = lesson.video ? true : false;        
+        lesson.state = videoHandler.getLessonState(videoPlayer, lesson);
       });
     };
 
@@ -134,7 +136,7 @@ export const renderLessons = () => {
 
           toggleCtrl.addEventListener('click', e => {
 
-            toggleVideoInputState();
+            toggleVideoFilterInputState();
 
             e.stopPropagation();
 
@@ -163,7 +165,7 @@ export const renderLessons = () => {
           videoFilter.click();
 };
 
-const toggleVideoInputState = () => {
+const toggleVideoFilterInputState = () => {
   const input = document.querySelector('#chkVideo');
   if(input.hasAttribute('disabled')) {
     input.removeAttribute('disabled');

@@ -8,7 +8,7 @@ import { timeoutScheduler } from 'redux/middleware/timeoutScheduler';
 
 import { config, enums } from 'redux/reducers/config-reducer';
 import { collections, collection, bonusLayout } from 'redux/reducers/species-reducers';
-import { counter, score, history, page } from 'redux/reducers/progress-reducers';
+import { counter, score, history, videoPlayer } from 'redux/reducers/progress-reducers';
 import { lessonPlans, lessonPlan, layout } from 'redux/reducers/layout-reducers';
 import { lesson, lessons } from 'redux/reducers/lesson-reducers';
 
@@ -22,7 +22,7 @@ const reducer = combineReducers({
     score,
     collections,
     history, 
-    page,
+    videoPlayer,
     enums,
     lesson,
     bonusLayout,

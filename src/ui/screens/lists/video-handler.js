@@ -1,17 +1,17 @@
-const listenersToVideoTimes = [];
+const onSpeciesTimeMatchListeners = [];
 
-const listenToVideoTimes = callback => {
-    // first remove any existing listeners (there should only be one, from the previos lesson)
-    while(listenersToVideoTimes.length > 0) {
-        listenersToVideoTimes.pop();
-    }
-    listenersToVideoTimes.push(callback);
+const onSpeciesTimeMatch = listener => {    
+    // while(onSpeciesTimeMatchListeners.length > 0) {
+    //     onSpeciesTimeMatchListeners.pop();
+    // }
+    console.log('onSpeciesTimeMatchListeners count: ', onSpeciesTimeMatchListeners.length);
+    onSpeciesTimeMatchListeners.push(listener);
 };
 
-const listenersToSpeciesPlayRequest = [];
+const onSpeciesPlayRequestListeners = [];
 
-const listenToSpeciesPlayRequest = callback => {
-    listenersToSpeciesPlayRequest.push(callback);
+const onSpeciesPlayRequest = listener => {
+    onSpeciesPlayRequestListeners.push(listener);
 };
 
 const onPlayerReadyListeners = [];
@@ -49,14 +49,33 @@ const playVideoFrom = time => {
 
 const states = [ { key: -1, value: 'unstarted' }, { key: 1, value: 'playing' }, { key: 2, value: 'paused' } ];
 
-export const videoPlayer = {
+const getLessonState = (videoPlayer, lesson) => {
+
+    let state = '';
+
+    const activeLesson = videoPlayer.find(record => record.collectionId === lesson.id);
+    
+    if(activeLesson) {
+        if(lesson.id === activeLesson.collectionId) {
+        state = activeLesson.pausedAt ? 'Video paused' : ''; 
+        }
+    } else {
+        state = '';
+    }
+
+    return state;
+
+};
+
+export const videoHandler = {
     readyPlayer,
-    listenersToVideoTimes,
-    listenToVideoTimes,
-    listenersToSpeciesPlayRequest,
-    listenToSpeciesPlayRequest,
+    onSpeciesTimeMatchListeners,
+    onSpeciesTimeMatch,
+    onSpeciesPlayRequestListeners,
+    onSpeciesPlayRequest,
     onPlayerReadyListeners,
     onPlayerStateChangeListeners,
     playVideoFrom,
-    states
+    states,
+    getLessonState
 };

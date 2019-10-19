@@ -19,9 +19,9 @@ export const counter = (state = null, action) => {
         case types.NEXT_LEVEL:
             return { ...state, index: action.data.index };
         case types.STOP_START_LESSON:
-            const _counter = action.data;
-            const isLessonPaused = (!!_counter && !!_counter.log);
-            return { ...action.data, isLessonPaused };
+            // const _counter = action.data;
+            // const isLessonPaused = (!!_counter && !!_counter.log);
+            return { ...action.data };
         case types.UPDATE_SCORE:
         case types.END_REVISION:
             let i = (state.index + 1) <= action.data.layoutCount ? (state.index + 1) : state.index;
@@ -147,24 +147,11 @@ export const history = (state = null, action) => {
     }
 };
 
-export const page = (state = { name: enums.navigation.HOME, glossary: false }, action) => {
-    return state;
-    // switch(action.type) {
-    //     case types.CHANGE_PAGE:
-    //         return { ...state, ...action.data };
-    //     case types.NEW_COLLECTION:
-    //         return { name: '', glossary: true };
-    //     case types.NEXT_LESSON:
-    //         return { name: '', glossary: true };
-    //     case types.NEXT_LAYOUT:
-    //         return { name: '', type: action.data.type, glossary: true };
-    //     case types.PAUSE_LESSON: {
-    //         return { name: enums.navigation.HOME, glossary: false };
-    //     }
-    //     case types.RESTART_LESSON: {
-    //         return action.data.page;   
-    //     }
-    //     default:
-    //         return state;
-    // }
+export const videoPlayer = (state = [], action) => {
+    switch(action.type) {
+        case types.UPDATE_VIDEO_PLAYER:
+            return [ ...state, ...action.data ];
+        default:
+            return state;
+    }
 };

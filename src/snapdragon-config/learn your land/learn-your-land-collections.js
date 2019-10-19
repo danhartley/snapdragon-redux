@@ -115,21 +115,7 @@ const learnYourLand1 = {
           url: 'learnyourland.com'
         }
       ],
-    },
-  //   guide: {
-  //     locationPlace: 'Learn Your Land - Autumn foraging',
-  //     locationType: 'taxon',
-  //     place: {
-  //         name: 'Learn Your Land - Autumn foraging',
-  //         id: 'any',
-  //         type: 'places'
-  //     },
-  //     season: {
-  //         type: 'all_year'
-  //     },
-  //     speciesRange: 0,
-  //     ready: true
-  // }
+    }
 };
 
 const learnYourLand2 = {
@@ -307,21 +293,7 @@ const learnYourLand2 = {
           url: 'learnyourland.com'
         }
       ],
-    },
-  //   guide: {
-  //     locationPlace: 'Learn Your Land - Spring foraging',
-  //     locationType: 'taxon',
-  //     place: {
-  //         name: 'Learn Your Land - Spring foraging',
-  //         id: 'any',
-  //         type: 'places'
-  //     },
-  //     season: {
-  //         type: 'all_year'
-  //     },
-  //     speciesRange: 0,
-  //     ready: true
-  // }
+    }
 };
 
 

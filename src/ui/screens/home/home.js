@@ -2,6 +2,7 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { subscription } from 'redux/subscriptions';
 import { renderTemplate } from 'ui/helpers/templating';
+
 import { renderLessons } from 'ui/screens/lists/lesson-list';
 import { renderLesson } from 'ui/screens/home/home-lesson-intro';
 
