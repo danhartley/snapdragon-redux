@@ -51,7 +51,7 @@ export const videoSetup = (collection, videoPlayer, parent) => {
             }
         };
 
-        videoHandler.onPlayerStateChangeListeners.push(onPlayerStateChangeCallback);
+        videoHandler.subscribeToPlayerStateChange(onPlayerStateChangeCallback);
         
     }, timeBeforeVideoPlayerReady);
         

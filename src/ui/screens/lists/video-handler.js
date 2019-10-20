@@ -16,6 +16,13 @@ const onSpeciesPlayRequest = listener => {
 const onPlayerReadyListeners = [];
 const onPlayerStateChangeListeners = [];
 
+const subscribeToPlayerStateChange = listener => {
+    while(onPlayerStateChangeListeners.length > 0) {
+        onPlayerStateChangeListeners.pop();
+    }
+    onPlayerStateChangeListeners.push(listener);
+};
+
 let player;
 
 const readyPlayer = () => {
@@ -26,8 +33,10 @@ const readyPlayer = () => {
     
     const onPlayerStateChange = event => {
         player = event.target;
-        // console.log('player onPlayerStateChange: ', player);
-        onPlayerStateChangeListeners.forEach(listener => listener(player));
+        if(player) {
+            console.log('player state onPlayerStateChange: ', player.getPlayerState());
+            onPlayerStateChangeListeners.forEach(listener => listener(player));
+        }
      };
     
     new YT.Player('embedded-video', {
@@ -46,6 +55,13 @@ const playVideoFrom = time => {
         player.playVideo();
     }
 };
+
+// -1 – unstarted
+// 0 – ended
+// 1 – playing
+// 2 – paused
+// 3 – buffering
+// 5 – video cued
 
 const states = [ { key: -1, value: 'unstarted' }, { key: 1, value: 'playing' }, { key: 2, value: 'paused' } ];
 
@@ -74,7 +90,7 @@ export const videoHandler = {
     onSpeciesPlayRequestListeners,
     onSpeciesPlayRequest,
     onPlayerReadyListeners,
-    onPlayerStateChangeListeners,
+    subscribeToPlayerStateChange,
     playVideoFrom,
     states,
     getLessonState
