@@ -57,7 +57,7 @@ const getLessonState = (videoPlayer, lesson) => {
     
     if(activeLesson) {
         if(lesson.id === activeLesson.collectionId) {
-        state = activeLesson.pausedAt ? 'Video paused' : ''; 
+        state = activeLesson.pausedAt ? `Video paused  at ${activeLesson.speciesName}` : ''; 
         }
     } else {
         state = '';

@@ -10,7 +10,7 @@
                     <span class="hide js-loading-message">(Loading species…)</span>
                 </div>
                 <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>
-                <div class="latin hide-empty">{{ lesson.state }}</div>         
+                <div class="latin hide-empty js-lesson-state" data-lesson-id="{{ lesson.id }}">{{ lesson.state }}</div>         
             </div> 
         </div>        
         <div id="container_{{ lesson.id }}" class="species-container js-species-container"></div>

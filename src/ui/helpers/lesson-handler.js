@@ -18,7 +18,7 @@ const getLatestCounter = () => {
     return { index };
 };
 
-const getLessonItems = (lessonState, collection, config, history) => {    
+const changeState = (lessonState, collection, config, history) => {    
 
     const { lesson } = store.getState();
 
@@ -88,6 +88,6 @@ const purgeLesson = () => {
 
 export const lessonHandler = {
     getMode,
-    getLessonItems,    
+    changeState,    
     purgeLesson
 }

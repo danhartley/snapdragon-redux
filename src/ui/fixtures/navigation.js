@@ -47,9 +47,9 @@ export const renderNavigation = () => {
                         DOM.modalText.parentElement.classList.add('settings-modal'); // and this one
                         renderSettings();
                         break;
-                    case enums.navigation.LIST: // portrait only
+                    case enums.navigation.PORTRAIT_LIST:
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub)); // lesson handler?                   
-                        lessonHandler.getLessonItems(enums.lessonState.PAUSE_LESSON, collection, config, history);
+                        lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
                         break;
                     case enums.navigation.GLOSSARY:   
                         DOM.modalText.innerHTML = '';

@@ -1,6 +1,5 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { subscription } from 'redux/subscriptions';
 import { renderTemplate } from 'ui/helpers/templating';
 
 import { renderLessons } from 'ui/screens/lists/lesson-list';
@@ -11,9 +10,6 @@ import homeTemplate from 'ui/screens/home/home-template.html';
 export const renderHome = counter => {
 
     let { config, collection } = store.getState();
-
-    const home = subscription.getByName('renderHome');
-    if(home) subscription.remove(home);
 
     if(config.isPortraitMode) {
         

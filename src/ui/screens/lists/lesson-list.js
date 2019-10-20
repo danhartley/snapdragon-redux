@@ -5,12 +5,14 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { elem } from 'ui/helpers/class-behaviour';
-import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
+import { renderSpeciesList } from 'ui/screens/lists/species-list';
 import { renderLesson } from 'ui/screens/home/home-lesson-intro';
 import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
 import { listenToCloseCreateGuideModal } from 'ui/create-guide-modal/create-guide';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
+import { lessonHandler } from 'ui/helpers/lesson-handler';
+import { enums } from 'ui/helpers/enum-helper';
 
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
 
@@ -73,7 +75,7 @@ export const renderLessons = () => {
 
       titles.forEach(title => title.addEventListener('click', e => {
 
-        const { title, lesson, state, speciesList, container } = extractLesson(e, lessons);
+        const { title, lesson, state, speciesList, container, titleState } = extractLesson(e, lessons);
 
         if(state.revealSpeciesList) {
           renderLesson(lesson);
@@ -82,6 +84,7 @@ export const renderLessons = () => {
 
         if(state.hideSpeciesList) {
           speciesList.classList.add('hide');
+          titleState.innerHTML = videoHandler.getLessonState(store.getState().videoPlayer || [], lesson);
         }
 
         if(state.requiresSpeciesList) {
@@ -89,7 +92,7 @@ export const renderLessons = () => {
             const loadingMessage = title.parentElement.querySelector('.js-loading-message');
                   loadingMessage.classList.remove('hide');
             const loadSpeciesCallback = () => callback(lesson.id, loadingMessage);
-            renderSpeciesCollectionList(lesson, { readOnlyMode: false, parent: container, tableParent: container, loadSpeciesCallback, isInCarousel: false });
+            renderSpeciesList(lesson, { readOnlyMode: false, parent: container, tableParent: container, loadSpeciesCallback, isInCarousel: false });
             renderLesson(lesson);
         }      
       }));
@@ -105,6 +108,8 @@ export const renderLessons = () => {
       
       titles.forEach(title => title.addEventListener('click', e => {
 
+        lessonHandler.changeState(enums.lessonState.RESUME_LESSON);
+        
         const title = e.currentTarget;
         const lessonId = parseInt(title.id.replace('id_', ''));
         const lesson = lessons.find(l => l.id === lessonId);
@@ -129,11 +134,13 @@ const extractLesson = (e, lessons) => {
   const isSpeciesListAvailable = !!title.dataset.selected && !!speciesList; 
   const isSpeciesListHidden = elem.hasClass(speciesList, 'hide');
 
+  const titleState = document.querySelector(`.js-lesson-state[data-lesson-id="${lessonId}"]`);
+
   const state = {
     requiresSpeciesList: !isSpeciesListAvailable,
     revealSpeciesList: isSpeciesListAvailable && isSpeciesListHidden,
     hideSpeciesList: isSpeciesListAvailable && !isSpeciesListHidden
   };
 
-  return { title, lesson, state, speciesList, container };
+  return { title, lesson, state, speciesList, container, titleState };
 };

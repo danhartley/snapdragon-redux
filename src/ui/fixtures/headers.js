@@ -36,7 +36,7 @@ export const renderHeaders = collection => {
             // LANDSCAPE_HOME = page.name === enums.navigation.HOME && LANDSCAPE;
             COLLECTION = !!collection;
             if(COLLECTION) collection.name ? leftHeaderText = collection.name : title;
-            // SPECIES_LIST = page.name === enums.navigation.LIST || page.name === enums.navigation.HOME && LANDSCAPE;
+            // SPECIES_LIST = page.name === enums.navigation.PORTRAIT_LIST || page.name === enums.navigation.HOME && LANDSCAPE;
             if(SPECIES_LIST && PORTRAIT) rightHeaderText = collection.name;
             if(LANDSCAPE_HOME) {
                 leftHeaderText = collection.name;

@@ -12,19 +12,19 @@ export const videoSetup = (collection, videoPlayer, parent) => {
    
     const updateVideoPlayer = (collection, species) => {
         
-        const player = store.getState().videoPlayer || [];
+        const playerRecords = store.getState().videoPlayer || [];
         
-        let activeLesson = player.find(p => p.collectionId === collection.id); 
+        let activeLesson = playerRecords.find(p => p.collectionId === collection.id); 
         
         if(!activeLesson) {
             activeLesson = { collectionId: collection.id };
-            player.push(activeLesson);
+            playerRecords.push(activeLesson);
         };
 
         activeLesson.speciesName = species.name;
         activeLesson.pausedAt = species.time[0];
     
-        actions.boundUpdateVideoPlayer(player);
+        actions.boundUpdateVideoPlayer(playerRecords);
     };
 
     videoHandler.onSpeciesTimeMatch(updateVideoPlayer);
@@ -39,6 +39,8 @@ export const videoSetup = (collection, videoPlayer, parent) => {
           activeLesson.playAt = activeLesson.pausedAt || activeLesson.startAt;
 
     renderTemplate({ video: { ...collection.video, playAt: activeLesson.playAt } }, template.content, parent);
+
+    const timeBeforeVideoPlayerReady = 1000;
 
     setTimeout(() => {
 
@@ -73,7 +75,7 @@ export const videoSetup = (collection, videoPlayer, parent) => {
 
         videoHandler.onPlayerStateChangeListeners.push(onPlayerStateChangeCallback);
         
-    });
+    }, timeBeforeVideoPlayerReady);
         
     const video = document.getElementsByTagName('iframe')[0];
     const videoWidth = video.offsetWidth;

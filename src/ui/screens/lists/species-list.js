@@ -3,21 +3,17 @@ import * as R from 'ramda';
 import 'ui/css/groups/species-list.css';
 
 import { store } from 'redux/store';
-import { actions } from 'redux/actions/action-creators';
-import { subscription } from 'redux/subscriptions';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
 import { modalImageHandler } from 'ui/helpers/image-handlers';
-import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { buildTable } from 'ui/screens/lists/species-table';
 import { collectionHandler } from 'ui/helpers/collection-handler';
 import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
 import { renderHome } from 'ui/screens/home/home';
-import { enums } from 'ui/helpers/enum-helper';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 
-export const renderSpeciesCollectionList = (collection, args) => {
+export const renderSpeciesList = (collection, args) => {
 
     const { readOnlyMode = false, parent, tableParent, loadSpeciesCallback, isInCarousel = true } = args;
 
@@ -77,7 +73,6 @@ export const renderSpeciesCollectionList = (collection, args) => {
               });
 
         const youtubeIcons = document.querySelectorAll('.js-youtube');
-
               youtubeIcons.forEach(icon => {                  
                   icon.addEventListener('click', event => {       
                     event.stopPropagation();

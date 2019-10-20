@@ -247,7 +247,7 @@ a.dropdown-item {
 
 .home, .settings, .list, .glossary, .email, .email > a {
   cursor: pointer;
-  margin: 0 0.5rem 0 0;
+  /* margin: 0 0.5rem 0 0; */
   color: var(--snap-text-dark);
   font-size: 1.2rem;
 }
@@ -436,6 +436,7 @@ a.dropdown-item {
 
 .left-grid .footer .nav-icons, .right-grid .footer .nav-icons {
   flex: auto;
+  justify-content: space-evenly;
 }
 
 .footer-round, .footer-score span {
@@ -2030,9 +2031,9 @@ a.collection-disabled {
   position: relative;
 }
 
-.home-scrolling-container .scrollable {
+/* .home-scrolling-container .scrollable {
   width: 100%;
-}
+} */
 
 .home-scrolling-container .portrait.list-continue-btn-container {
   position: absolute;

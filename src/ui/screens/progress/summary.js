@@ -40,7 +40,7 @@ export const renderSummary = history => {
         if(lesson.isLessonComplete) {
             lessonHandler.purgeLesson();
         }
-        else lessonHandler.getLessonItems(enums.lessonState.NEXT_ROUND, collection, config, history);
+        else lessonHandler.changeState(enums.lessonState.NEXT_ROUND, collection, config, history);
     };
 
     actionLink.removeEventListener('click', handleBtnClickEvent);

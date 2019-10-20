@@ -383,7 +383,7 @@ const kitchen1 = {
       {
         name: 'Anethum graveolens',
         time: [38],
-        description: `You can start dill from seed; in one to two weeks the first set of leaves will emerge and will soon take on its familiar form.`
+        description: `You can start dill from seed; in one to two weeks the first set of leaves will emerge and will soon take on their familiar form.`
       },
       {
         name: 'Thymus vulgaris',

@@ -14,7 +14,7 @@ class navigation extends Enum {};
 navigation.initEnum([
     'HOME', 
     'SETTINGS', 
-    'LIST',
+    'PORTRAIT_LIST',
     'GLOSSARY', 
     'EMAIL'
 ]);
