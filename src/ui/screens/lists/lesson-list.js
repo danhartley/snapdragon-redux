@@ -10,9 +10,9 @@ import { renderLesson } from 'ui/screens/home/home-lesson-intro';
 import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
 import { listenToCloseCreateGuideModal } from 'ui/create-guide-modal/create-guide';
 import { videoHandler } from 'ui/screens/lists/video-handler';
+import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
 
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
-import lessonListHeaderTemplate from 'ui/screens/lists/lesson-list-header-template.html';
 
 export const renderLessons = () => {
 
@@ -49,11 +49,7 @@ export const renderLessons = () => {
 
     renderTemplate({ lessons }, template.content, parent);
 
-    const header = document.createElement("div");
-          header.innerHTML = lessonListHeaderTemplate;
-
-    parent = document.querySelector('.lesson-list .scrollable');
-    parent.prepend(header);
+    renderLessonListHeader(parent);
 
     const createCustomLessonBtn = parent.querySelector('.js-create-custom-lesson');          
           createCustomLessonBtn.addEventListener('click', e => {
@@ -116,46 +112,6 @@ export const renderLessons = () => {
         
       }));      
     }
-
-    const toggleCtrl = document.querySelector('.js-toggle-control');
-    const toggleElem = document.querySelector('.js-toggle-element');
-          toggleCtrl.addEventListener('click', e => {
-
-            toggleVideoFilterInputState();
-
-            e.stopPropagation();
-
-            const state = e.currentTarget.dataset.toggleState;
-            switch(state) {
-              case 'on': 
-                toggleCtrl.dataset.toggleState = 'off';
-                toggleElem.dataset.toggleState = 'off';
-                break;
-              case 'off':
-                toggleCtrl.dataset.toggleState = 'on';
-                toggleElem.dataset.toggleState = 'on';
-                break;
-            }
-          });
-
-    const videoFilter = document.querySelector('.js-filter-by-video');
-          videoFilter.addEventListener('click', e => {
-            const lessonsWithoutVideo = document.querySelectorAll('div[data-has-video="false"]');
-            const checked = e.currentTarget.children[0].checked;
-            checked 
-              ? lessonsWithoutVideo.forEach(lesson => lesson.classList.remove('hide-important'))
-              : lessonsWithoutVideo.forEach(lesson => lesson.classList.add('hide-important'));
-          });
-          videoFilter.click();
-};
-
-const toggleVideoFilterInputState = () => {
-  const input = document.querySelector('#chkVideo');
-  if(input.hasAttribute('disabled')) {
-    input.removeAttribute('disabled');
-  } else {
-    input.setAttribute('disabled', 'disabled');
-  }
 };
 
 const extractLesson = (e, lessons) => {

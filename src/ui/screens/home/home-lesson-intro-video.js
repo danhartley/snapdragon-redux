@@ -73,7 +73,7 @@ export const videoSetup = (collection, videoPlayer, parent) => {
 
         videoHandler.onPlayerStateChangeListeners.push(onPlayerStateChangeCallback);
         
-    }, 1000);
+    });
         
     const video = document.getElementsByTagName('iframe')[0];
     const videoWidth = video.offsetWidth;

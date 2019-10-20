@@ -18,8 +18,6 @@ export const counter = (state = null, action) => {
         case types.NEXT_LEVEL:
             return { ...state, index: action.data.index };
         case types.STOP_START_LESSON:
-            // const _counter = action.data;
-            // const isLessonPaused = (!!_counter && !!_counter.log);
             return { ...action.data };
         case types.UPDATE_SCORE:
         case types.END_REVISION:
