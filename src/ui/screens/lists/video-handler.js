@@ -1,10 +1,9 @@
 const onSpeciesTimeMatchListeners = [];
 
 const onSpeciesTimeMatch = listener => {    
-    // while(onSpeciesTimeMatchListeners.length > 0) {
-    //     onSpeciesTimeMatchListeners.pop();
-    // }
-    console.log('onSpeciesTimeMatchListeners count: ', onSpeciesTimeMatchListeners.length);
+    while(onSpeciesTimeMatchListeners.length > 0) {
+        onSpeciesTimeMatchListeners.pop();
+    }
     onSpeciesTimeMatchListeners.push(listener);
 };
 
@@ -27,6 +26,7 @@ const readyPlayer = () => {
     
     const onPlayerStateChange = event => {
         player = event.target;
+        // console.log('player onPlayerStateChange: ', player);
         onPlayerStateChangeListeners.forEach(listener => listener(player));
      };
     

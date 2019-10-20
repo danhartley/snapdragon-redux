@@ -3,6 +3,7 @@ import * as R from 'ramda';
 import 'ui/css/groups/species-list.css';
 
 import { store } from 'redux/store';
+import { actions } from 'redux/actions/action-creators';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
@@ -190,6 +191,11 @@ export const renderSpeciesList = (collection, args) => {
 
         try {
 
+            const youtubeIcons = document.querySelectorAll('.js-youtube');
+                  youtubeIcons.forEach(icon => {
+                    icon.classList.remove('youtube-red-fg');
+                  });
+
             let parent = document.querySelector('.species-table tbody');
             
             const accordions = Array.from(document.querySelectorAll('.js-accordion'));
@@ -262,15 +268,11 @@ export const renderSpeciesList = (collection, args) => {
         }
     };
 
-    videoHandler.onSpeciesTimeMatch(openSpeciesDescription);
+    videoHandler.onSpeciesTimeMatch((collection, species) => {
+        openSpeciesDescription(collection, species);
+        updateVideoPlayer(collection, species);
+    });
 };
-
-const listeners = [];
-
-export const listenToSpeciesCollectionListenReady = listener => { 
-    listeners.push(listener);
-};
-  
 
 let currentIndex = 0;
 
@@ -319,3 +321,20 @@ const nextTaxon = document.querySelector('#cardModal .js-next');
 
 if(prevTaxon) prevTaxon.addEventListener('click', carouselControlHandler);
 if(nextTaxon) nextTaxon.addEventListener('click', carouselControlHandler);
+
+const updateVideoPlayer = (collection, species) => {
+        
+    const playerRecords = store.getState().videoPlayer || [];
+    
+    let activeLesson = playerRecords.find(p => p.collectionId === collection.id); 
+    
+    if(!activeLesson) {
+        activeLesson = { collectionId: collection.id };
+        playerRecords.push(activeLesson);
+    };
+
+    activeLesson.speciesName = species.name;
+    activeLesson.pausedAt = species.time[0];
+
+    actions.boundUpdateVideoPlayer(playerRecords);
+};
