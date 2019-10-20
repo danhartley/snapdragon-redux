@@ -62,9 +62,6 @@ export const renderLessons = () => {
 
     const titles = document.querySelectorAll('.btn.btn-secondary');
 
-    // config.guide.ready = true;
-    // actions.boundUpdateConfig(config);
-
     if(config.isLandscapeMode) {
 
       const callback = (lessonId, loadingMessage) => {

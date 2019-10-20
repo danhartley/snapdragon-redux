@@ -136,9 +136,6 @@ class CreateGuide {
         if(this.startLesson ) {
             closeModalListeners.forEach(listener => listener(enums.lessonState.GET_SPECIES));
             this.currentStep = 0;
-            const config = this.getConfig();
-                  config.guide.ready = true;
-            this.setConfig(config);
             
             if(config.isLandscapeMode) {
                 this.nextStepActionTxt.setAttribute('data-dismiss','modal');

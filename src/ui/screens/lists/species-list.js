@@ -29,10 +29,7 @@ export const renderSpeciesCollectionList = (collection, args) => {
         speciesPendingSpinner(config);
     }
 
-    // if(!config.guide.ready || !collection) return; // hack!, may be required!!
-
     config.collection = { id: collection.id };
-    
 
     const openAccordionClickHandler = (species, accordion) => {
         

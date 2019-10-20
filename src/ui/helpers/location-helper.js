@@ -16,7 +16,6 @@ export const initialiseConfig = async originalConfig => {
     config.collection.id = 0; 
     config.guide.locationPlace = '';
     config.guide.place.type = '';
-    config.guide.ready = false;
     
     try {
         

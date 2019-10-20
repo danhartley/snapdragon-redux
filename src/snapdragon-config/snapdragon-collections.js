@@ -76,8 +76,7 @@ const placeMonsanto = {
       },
       season: {
           type: 'all_year'
-      },
-      ready: true
+      }
   }
 }
 
@@ -97,8 +96,7 @@ const placeArrabida = {
       season: {
           type: 'all_year'
       },
-      speciesRange: 0,
-      ready: true
+      speciesRange: 0
   }
 };
 
@@ -151,8 +149,7 @@ const snapdragonLichens = {
     season: {
         type: 'all_year'
     },
-    speciesRange: 0,
-    ready: true
+    speciesRange: 0
   }
 };
 
@@ -238,8 +235,7 @@ const snapdragonKitchenGarden = {
       season: {
           type: 'all_year'
       },
-      speciesRange: 0,
-      ready: true
+      speciesRange: 0
   }
 };
 
@@ -322,8 +318,7 @@ const rhsTrees = {
       season: {
           type: 'all_year'
       },
-      speciesRange: 0,
-      ready: true
+      speciesRange: 0
   }
 };
 
@@ -367,8 +362,7 @@ const rhsWeeds = {
       season: {
           type: 'all_year'
       },
-      speciesRange: 0,
-      ready: true
+      speciesRange: 0
   }
 };
 
@@ -642,8 +636,7 @@ const commonBritishBirds = {
       season: {
           type: 'all_year'
       },
-      speciesRange: 0,
-      ready: true
+      speciesRange: 0
   }
 };
 
@@ -783,8 +776,7 @@ const selectedItemsCollection = {
     season: {
         type: 'all_year'
     },
-    speciesRange: 0,
-    ready: true
+    speciesRange: 0
 }
 };
 
@@ -845,8 +837,7 @@ const treesOfLisbon = {
     season: {
         type: 'all_year'
     },
-    speciesRange: 0,
-    ready: true
+    speciesRange: 0
   }
 };
 
@@ -1163,20 +1154,6 @@ const walkOne = {
   text: {
     intro: 'An introduction to the species of Estrela Gardens.'
   }
-  // guide: {
-  //   locationPlace: 'Jardim da Estrela',
-  //   locationType: 'taxon',
-  //   place: {
-  //       name: 'Jardim da Estrela',
-  //       id: 'any',
-  //       type: 'places'
-  //   },
-  //   season: {
-  //       type: 'all_year'
-  //   },
-  //   speciesRange: 0,
-  //   ready: true
-  // }
 };
 
 const walkTwo = { 
@@ -1226,8 +1203,7 @@ const walkTwo = {
     season: {
         type: 'all_year'
     },
-    speciesRange: 0,
-    ready: true
+    speciesRange: 0
   }
 };
 
@@ -1286,8 +1262,7 @@ const lookalikes = {
     season: {
         type: 'all_year'
     },
-    speciesRange: 0,
-    ready: true
+    speciesRange: 0
   }
 };
 

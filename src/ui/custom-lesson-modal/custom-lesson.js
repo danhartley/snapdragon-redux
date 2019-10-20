@@ -98,8 +98,7 @@ export const renderSaveLesson = (parent) => {
                 type: 'places'
             },
             season: config.guide.season,
-            iconicTaxa: collection.iconicTaxa,
-            ready: true
+            iconicTaxa: collection.iconicTaxa
         };
 
         const itemNames = collection.items.map(item => item.name);
