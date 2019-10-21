@@ -31,7 +31,7 @@ export const renderLessons = () => {
 
     const loadLessons = () => {
 
-      lessons.forEach(lesson => {
+      lessons.forEach((lesson, index) => {
         const isPaused = R.contains(lesson.name, savedLessonNames); 
         lesson.taxa = lesson.iconicTaxa.map(taxon => taxon.common).join(', ');
         lesson.savedState = isPaused
@@ -67,10 +67,38 @@ export const renderLessons = () => {
         scrollToTitle(lessonId);
       };
 
+      const siblingsBefore = lessonId => {
+        
+        let siblings = document.querySelectorAll('.btn.btn-secondary:not(.hide-important)');
+        let sibling = siblings[0];
+        let index = 0;
+
+        const before = [];
+        
+        while(sibling) {
+          index++;
+          if(sibling.id !== `id_${lessonId}`) {
+            before.push(sibling);
+            sibling = siblings[index];
+          } else {
+            sibling = null;
+          }
+        }
+
+        return before.length;
+      };
+
       const scrollToTitle = lessonId => {
-        const next = lessonId - 1;
-        const href = `#id_${next}`;
-        window.location.href = href;
+
+        setTimeout(() => {
+          const standardBlock = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhStandardBlock').replace('px', ''));
+          const unit = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));
+          const rows = siblingsBefore(lessonId);
+          const top = standardBlock * rows - unit;
+
+          const scroll = document.querySelector('.lesson-list .scrollable');
+          scroll.scrollTop = top;
+        });
       };
 
       titles.forEach(title => title.addEventListener('click', e => {

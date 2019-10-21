@@ -506,7 +506,7 @@ const addTaxon = async props => {
 
 const getSpeciesInParallel = async species => {
 
-    console.log('getSpeciesInParallel called, species returned: ', species);
+    // console.log('getSpeciesInParallel called, species returned: ', species);
 
     try {
         return Promise.all(species.map(sp => {                    

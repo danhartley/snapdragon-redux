@@ -246,14 +246,16 @@ export const renderSpeciesList = (collection, args) => {
                 tr.parentElement.insertBefore(insert, tr.nextSibling);
 
                 const scrollIntoView = (rowHeight, noOfRows) => {
-                    const video = document.querySelector('.video');                    
+                    
                     const scroll = document.querySelector('.scrollable');
-                    const runningBlock = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhRunningBlock').replace('px', ''));
                     const standardBlock = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhStandardBlock').replace('px', ''));
-                    const vh = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));
-                    const iframeBorder = 8;
+                    const unit = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));
+                    const top = (standardBlock * 2) + (rowHeight * (noOfRows - 1)) - ( 2 * unit);
 
-                    scroll.scrollTop = (rowHeight * (noOfRows - 1)) + (3*standardBlock) - iframeBorder; 
+                    console.log('unit: ', unit);
+                    console.log('top: ', top);
+
+                    scroll.scrollTop = top;
                 };
 
                 if(enableScroll) {

@@ -38,13 +38,13 @@
                 document.documentElement.style.setProperty('--vhButton', (verticalHeight * 5) + 'px');
                 document.documentElement.style.setProperty('--vhRow', (verticalHeight * 12.5) + 'px');
                 document.documentElement.style.setProperty('--vhFixtures', (verticalHeight * 15) + 5 + 'px');
-                document.documentElement.style.setProperty('--vhCalender', (verticalHeight * 11) + 'px');
+                document.documentElement.style.setProperty('--vhCalender', (verticalHeight * 11) + 'px');                
 
                 const fixtures = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhFixtures').replace('px', ''));
                 const largeImage = ((verticalHeight * 100) - fixtures) / 3;
 
                 document.documentElement.style.setProperty('--vhLargeImage', largeImage + 'px');
-                document.documentElement.style.setProperty('--vhSmallImageCarousel', verticalHeight * 23 + 'px');
+                document.documentElement.style.setProperty('--vhSmallImageCarousel', verticalHeight * 23 + 'px');                
 
                 // console.log(verticalHeight * 100);
 
@@ -52,6 +52,9 @@
 
                 document.documentElement.style.setProperty('--vwGrid', horizontalWidth * 100  + 'px');
                 document.documentElement.style.setProperty('--vwGridNegative', (horizontalWidth * -100) + 52  + 'px');
+
+                document.documentElement.style.setProperty('--vhVideo', (horizontalWidth * 56.25) + 'px');
+                document.documentElement.style.setProperty('--vhScrollingTop', (horizontalWidth * 56.25) + (verticalHeight * 10) + 'px');
             };
 
             setWindowHeight();
@@ -196,7 +199,7 @@
             <div class="modal-dialog" role="document">
             <div class="modal-content"> 
                 <div class="modal-header">
-                <h5 class="modal-title js-external-page-title"></h5>
+                <div class="modal-title js-external-page-title"></div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -212,7 +215,7 @@
                 <div class="modal-content">
                     <div class="modal-header-container">
                         <div class="modal-header">
-                            <h5 class="modal-title js-modal-text-title"></h5>
+                            <div class="modal-title js-modal-text-title"></div>
                         </div>
                     </div>
                     <div class="modal-body">
@@ -231,7 +234,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h5 class="modal-title js-modal-text-title"></h5>
+                    <div class="modal-title js-modal-text-title"></div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -247,7 +250,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">                        
-                    <h5 class="modal-title js-modal-text-title"></h5>
+                    <div class="modal-title js-modal-text-title"></div>
                     </div>
                     <div class="carousel slide">
                         <div class="carousel-inner">
@@ -277,7 +280,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h5 class="modal-title js-modal-text-title"></h5>
+                    <div class="modal-title js-modal-text-title"></div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

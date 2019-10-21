@@ -25,9 +25,9 @@
 .table-row {
     display: flex;
     flex-direction: row;
-    border-left: 0.075rem solid var(--snap-list-background);
+    /* border-left: 0.075rem solid var(--snap-list-background);
     border-left: 0.075rem solid var(--snap-border-dark);
-    border-right: 0.075rem solid var(--snap-border-dark);
+    border-right: 0.075rem solid var(--snap-border-dark); */
     height: var(--vhRow, 12.5vh);
   }
   

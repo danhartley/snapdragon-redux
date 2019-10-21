@@ -1,25 +1,23 @@
 <div class="home-scrolling-container js-home-scrolling-container">
-    <div class="scrollable">
-            
-        <div class="title standard-block double-centred-block">{{ video.title }}</div>
+    <div class="title standard-block double-centred-block">{{ video.title }}</div>
 
-            <div class="video">
-                <iframe
-                    type="text/html"
-                    id="embedded-video"
-                    width="100%"
-                    src="https://www.youtube.com/embed/{{ video.id }}?enablejsapi=1&playsinline=1&start={{ video.playAt }}"
-                    frameborder="0"
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-            <div class="half-standard-block">
-                <span class="hide margin-right" >Created by:</span><span class="emphasis">{{ video.presenter }}</span>
-            </div>
-
-            <div class="half-standard-block">
-                <span class="hide margin-right">{{ video.webLabel }}:</span><a class="underline-external-link" href="https://{{ video.webUrl }}" target="_blank">{{ video.webUrl }}</a>
-            </div>
+    <div class="video">
+        <div style="min-height: 1px;"></div>
+        <iframe
+            type="text/html"
+            id="embedded-video"
+            width="100%"
+            src="https://www.youtube.com/embed/{{ video.id }}?enablejsapi=1&playsinline=1&start={{ video.playAt }}"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>                
+    </div>
+    <div class="scrollable">                
+        <div class="half-standard-block">
+            <span class="hide margin-right" >Created by:</span><span class="emphasis">{{ video.presenter }}</span>
+        </div>
+        <div class="half-standard-block">
+            <span class="hide margin-right">{{ video.webLabel }}:</span><a class="underline-external-link" href="https://{{ video.webUrl }}" target="_blank">{{ video.webUrl }}</a>
+        </div>        
     </div>
 </div>

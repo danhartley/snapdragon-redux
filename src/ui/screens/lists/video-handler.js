@@ -34,7 +34,7 @@ const readyPlayer = () => {
     const onPlayerStateChange = event => {
         player = event.target;
         if(player) {
-            console.log('player state onPlayerStateChange: ', player.getPlayerState());
+            // console.log('player state onPlayerStateChange: ', player.getPlayerState());
             onPlayerStateChangeListeners.forEach(listener => listener(player));
         }
      };
