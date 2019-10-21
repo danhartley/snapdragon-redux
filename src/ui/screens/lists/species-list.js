@@ -28,20 +28,20 @@ export const renderSpeciesList = (collection, args) => {
 
     config.collection = { id: collection.id };
 
-    const openAccordionClickHandler = (species, accordion) => {
+    const openAccordionHandler = (species, accordion) => {
         
         accordion.innerHTML = `<i class="fas fa-chevron-up" data-name="${species.name}"></i>`;
         
-        openSpeciesDescription(collection, species, true);
+        openSpeciesDescriptionHandler(collection, species, true);
 
         const closeAccordionHandler = event => {
-            // remove current open accordion handler
+            // remove current close accordion handler
             accordion.removeEventListener('click', closeAccordionHandler);
             // change direction of chevron       
             accordion.innerHTML = `<i class="fas fa-chevron-down" data-name="${species.name}"></i>`;
             // attach new open accordion listener
             accordion.addEventListener('click', event => {
-                openAccordionClickHandler(species, accordion);
+                openAccordionHandler(species, accordion);
             });
             // remove the species description - handled in group action
             const description = document.querySelector('.species-description');
@@ -68,7 +68,7 @@ export const renderSpeciesList = (collection, args) => {
               accordions.forEach(accordion => {
                   const accordionHandler = event => {
                       const species = collection.items.find(item => item.name === event.currentTarget.dataset.name);
-                    openAccordionClickHandler(species, accordion);
+                    openAccordionHandler(species, accordion);
                   };
                   accordion.addEventListener('click', accordionHandler);
               });
@@ -76,17 +76,20 @@ export const renderSpeciesList = (collection, args) => {
         const youtubeIcons = document.querySelectorAll('.js-youtube');
               youtubeIcons.forEach(icon => {                  
                   icon.addEventListener('click', event => {       
-                    event.stopPropagation();
-                    youtubeIcons.forEach(icon => {
-                        icon.classList.remove('youtube-red-fg');
-                    });
+
                     const activeIcon = event.currentTarget;
                           activeIcon.classList.add('youtube-red-fg');
-                    const name = activeIcon.dataset.name;
-                    const species = collection.items.find(item => item.name == name);   
+                    const speciesName = activeIcon.dataset.name;
+
+                    const species = collection.items.find(item => item.name == speciesName);   
+
+                    openSpeciesDescriptionHandler(collection, species);
+
                     if(species && species.time) {
                         videoHandler.playVideoFrom(species.time[0]);
                     }
+
+                    updateVideoPlayer(collection, species);
                   });
               });
 
@@ -172,7 +175,7 @@ export const renderSpeciesList = (collection, args) => {
                 console.log('No items');
             }
         }
-        function callbackWhenNoResults() {
+        const callbackWhenNoResults = () => {
             const spinner = document.querySelector('.js-species-pending i');
                   spinner.classList.remove('slow-spin');
 
@@ -187,41 +190,20 @@ export const renderSpeciesList = (collection, args) => {
         collectionHandler(collection, config, counter, callback, callbackWhenNoResults);
     }
 
-    const openSpeciesDescription = (collection, species, enableScroll = true) => {
+    const openSpeciesDescriptionHandler = (collection, species, enableScroll = true) => {
 
         try {
 
-            const youtubeIcons = document.querySelectorAll('.js-youtube');
-                  youtubeIcons.forEach(icon => {
-                    icon.classList.remove('youtube-red-fg');
-                  });
-
-            let parent = document.querySelector('.species-table tbody');
-            
-            const accordions = Array.from(document.querySelectorAll('.js-accordion'));
-            const inactiveAccordions = accordions.filter(accordion => accordion.dataset.name !== species.name);
-
-                //trigger close event on any accordions that might be open
-                inactiveAccordions.forEach(inactiveAccordion => {                
-                    if(inactiveAccordion.innerHTML.indexOf('fa-chevron-up') > -1) {
-                        inactiveAccordion.click();
-                        inactiveAccordion.innerHTML = `<i class="fas fa-chevron-down" data-name="${species.name}"></i>`;
-                        const inActiveYouTubeIcon = inactiveAccordion.parentElement.parentElement.querySelector('.js-youtube');
-                              inActiveYouTubeIcon.classList.remove('youtube-red-fg');
-                    }
-                });
+            const { accordions } = closeOpenAccordions(species.name);
 
             const activeAccordion = accordions.find(accordion => accordion.dataset.name === species.name);
-                if(activeAccordion) {
-                    activeAccordion.innerHTML = `<i class="fas fa-chevron-up" data-name="${species.name}"></i>`;
-                }
+            
+            if(activeAccordion) {
+                activeAccordion.innerHTML = `<i class="fas fa-chevron-up" data-name="${species.name}"></i>`;
+            }
 
             const activeYouTubeIcon = activeAccordion.parentElement.parentElement.querySelector('.js-youtube');
                   activeYouTubeIcon.classList.add('youtube-red-fg');
-
-            // remove any descriptions that might be open
-            let currentDescriptions = document.querySelectorAll('.species-description');
-                currentDescriptions.forEach(tr => parent.removeChild(tr));
 
             let description = species.description;
                 description = description || species.traits.description.value[0];
@@ -271,7 +253,7 @@ export const renderSpeciesList = (collection, args) => {
     };
 
     videoHandler.onSpeciesTimeMatch((collection, species) => {
-        openSpeciesDescription(collection, species);
+        openSpeciesDescriptionHandler(collection, species);
         updateVideoPlayer(collection, species);
     });
 };
@@ -340,3 +322,27 @@ const updateVideoPlayer = (collection, species) => {
 
     actions.boundUpdateVideoPlayer(playerRecords);
 };
+
+const closeOpenAccordions = speciesName => {
+
+    const accordions = Array.from(document.querySelectorAll('.js-accordion'));
+    const openAccordions = accordions.filter(accordion => accordion.dataset.name !== speciesName);
+        
+    openAccordions.forEach(inactiveAccordion => {
+        
+        if (inactiveAccordion.innerHTML.indexOf('fa-chevron-up') > -1) {
+            
+            inactiveAccordion.click();
+            inactiveAccordion.innerHTML = `<i class="fas fa-chevron-down" data-name="${speciesName}"></i>`;
+            
+            const inActiveYouTubeIcon = inactiveAccordion.parentElement.parentElement.querySelector('.js-youtube');
+                  inActiveYouTubeIcon.classList.remove('youtube-red-fg');
+        }
+    });
+
+    const parent = document.querySelector('.species-table tbody');
+    const currentDescriptions = document.querySelectorAll('.species-description');
+            currentDescriptions.forEach(tr => parent.removeChild(tr));
+
+    return { accordions };
+}
