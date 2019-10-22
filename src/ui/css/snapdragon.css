@@ -763,6 +763,7 @@ a.dropdown-item {
 .taxon.card-card .mixed-content-container .centred-block {
   flex-direction: column;
   height: 100%;
+  align-items: flex-start;
   justify-content: space-evenly;
 }
 
@@ -2070,6 +2071,12 @@ a.collection-disabled {
 .double-centred-block {
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.veritcal-centred-block {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 

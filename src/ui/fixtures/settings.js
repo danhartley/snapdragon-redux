@@ -28,7 +28,7 @@ export const renderSettings = () => {
     const setDelayInput = document.querySelector('.js-set-delay-input');
     const delayTxt = document.querySelector('.js-delay-text');
 
-    document.querySelector('#menuModal .modal-body').classList.remove('bird-song-bg');
+    document.querySelector('#basicModal .modal-body').classList.remove('bird-song-bg');
 
     delayTxt.innerHTML = delay === 1
     ? `The current delay is ${delay} second.`

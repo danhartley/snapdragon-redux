@@ -132,9 +132,9 @@ const renderPortrait = (item, config, mode, rootNode) => {
         iframe.id = 'birdsong';
         iframe.style.border = 0;
         iframe.src = player.dataset.src;
-        document.querySelector('#menuModal .modal-body').classList.add('bird-song-bg');
-        document.querySelector('#menuModal .js-modal-text-title').innerHTML = `${item.name}`;
-        const elm = document.querySelector('#menuModal .js-modal-text');
+        document.querySelector('#basicModal .modal-body').classList.add('bird-song-bg');
+        document.querySelector('#basicModal .js-modal-text-title').innerHTML = `${item.name}`;
+        const elm = document.querySelector('#basicModal .js-modal-text');
         while (elm.firstChild) {
             elm.removeChild(elm.firstChild);
          }

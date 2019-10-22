@@ -70,10 +70,6 @@
     color: rgb(150,150,150);
   }
 
-  /* .modal-body button {
-    display: block;
-  } */
-
   .modal-body .language-options button {
     width: 100%;
     margin: 0;
@@ -83,10 +79,6 @@
 
   .language-options .dropdown-menu.show {
     width: 100%;
-  }
-  
-  .modal-text {
-    margin: 1rem;
   }
   
   .modal-text hr {
@@ -220,7 +212,7 @@
     color: var(--snap-progress-bg);
   }
 
-  #menuModal .modal-dialog {
+  #basicModal .modal-dialog {
     max-width: 600px;
     margin: auto;
   }
@@ -230,19 +222,16 @@
     margin: auto;
   }
 
-  #menuModal .modal-content {
+  #basicModal .modal-content {
     color: var(--snap-text-dark);
   }
-  
-  #listModal .modal-body {
-    padding: 0;
-  }
 
-  #listModal .modal-content {
-    background-color: var(--snap-text-light);
+  #basicModal .modal-body {
+    color: var(--snap-text-dark);
+    padding: 0 .5rem;
   }
   
-  #menuModal .modal-body.settings-modal {
+  #basicModal .modal-body.settings-modal {
     padding: 0;
   }
   
@@ -250,7 +239,6 @@
 
   #badgeListModal .modal-dialog {
     width: 100%;
-    /* height: calc ( var(--vhStandardBlock) * 3 ); */
     margin: calc(var(--vhRunningBlock) + 5px + var(--vhStandardBlock) + var(--vhSmallImageCarousel) + .5rem) auto auto auto;
     
   }
@@ -261,7 +249,8 @@
   }
 
   #badgeListModal .modal-body {
-    height: calc(var(--vhDoubleStandardBlock, 20vh));
+    height: calc(var(--vhDoubleStandardBlock, 20vh) * 2);
+    padding: .5rem;
   }
   
   #badgeListModal li {  
@@ -274,18 +263,18 @@
 
 /* GLOSSARY MODAL */
 
-#menuModal .definition.card {
+#basicModal .definition.card {
     padding: 0 .5rem;
     border-radius: 0;
     height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
   }
   
-  #menuModal .definition.card div > div {
+  #basicModal .definition.card div > div {
     margin: 0.15rem 0;
     padding: 0.25rem;
   }
 
-  #menuModal .definition.card span:nth-child(1) {
+  #basicModal .definition.card span:nth-child(1) {
     margin: 0 0.25rem 0 0;
     font-style: italic;
   }

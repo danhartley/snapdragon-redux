@@ -29,24 +29,26 @@ export const renderNavigation = () => {
 
     navIcons.forEach(icon => {
 
-        icon.addEventListener('click', event => {       
+        icon.addEventListener('click', event => {
             
                 const clickedIcon = event.currentTarget;
                 
                 const { collection, config, history } = store.getState();
 
-                const activeIcon = document.querySelector('.active-icon');
-                if(activeIcon) activeIcon.classList.remove('active-icon');
-
-                clickedIcon.classList.add('active-icon');
+                const toggleIconOnOff = clickedIcon => {
+                    clickedIcon.classList.add('active-icon');
+                    setTimeout(() => {
+                        clickedIcon.classList.remove('active-icon');
+                    }, 1000);
+                };
 
                 switch(enums.navigation.enumValueOf(clickedIcon.id)) {
-                    case enums.navigation.HOME:                        
+                    case enums.navigation.HOME:
+                        clickedIcon.classList.add('active-icon');        
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub)); // lesson handler?
                         break;
                     case enums.navigation.SETTINGS:
-                        DOM.modalText.parentElement.classList.remove('glossary-modal');// remove this hack
-                        DOM.modalText.parentElement.classList.add('settings-modal'); // and this one
+                        toggleIconOnOff(clickedIcon);
                         renderSettings();
                         break;
                     case enums.navigation.PORTRAIT_LIST:
@@ -55,21 +57,20 @@ export const renderNavigation = () => {
                         // videoHandler.destroyPlayer();
                         break;
                     case enums.navigation.GLOSSARY:   
+                        toggleIconOnOff(clickedIcon);
                         DOM.modalText.innerHTML = '';
-                        DOM.modalText.parentElement.classList.remove('settings-modal');
-                        DOM.modalText.parentElement.classList.add('glossary-modal');
                         const template = document.createElement('template');                    
-                        template.innerHTML = definitionCardTemplate;                    
+                              template.innerHTML = definitionCardTemplate;                 
                         DOM.modalTextTitle.innerHTML = 'Glossary';
                         const glossary = utils.sortAlphabeticallyBy(getGlossary(collection.glossary || ['common']), 'term');
                         renderTemplate({ glossary }, template.content, DOM.modalText);                        
                         break;
-                    case enums.navigation.EMAIL:                        
+                    case enums.navigation.EMAIL:
+                        toggleIconOnOff(clickedIcon);
                         break;
                     default:
                         return;
                 }
-            }
-        )}
-    );
+        });
+    });
 };
