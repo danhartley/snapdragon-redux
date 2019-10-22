@@ -734,9 +734,10 @@ a.dropdown-item {
 }
 
 .data-box-container {
-  /* height: var(--vhCalender, 11vh); */
+  height: var(--vhCalender, 11vh);
   display: grid;
-  grid-template-columns: 2fr 3fr 2fr;
+  grid-template-columns: 2fr 2fr 3fr;
+  grid-gap: .5rem;
 }
 
 .mixed-content-container {
@@ -756,6 +757,7 @@ a.dropdown-item {
       - var(--vhCalender)
       - .5rem 
       - 1rem);
+      padding: .5rem;
 }
 
 .taxon.card-card .mixed-content-container .centred-block {
@@ -765,7 +767,8 @@ a.dropdown-item {
 }
 
 .taxon.card-card .data-box-container {
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 2fr;
+  padding: 0 .5rem;
 }
 
 .inat-box .data-box {
@@ -775,6 +778,7 @@ a.dropdown-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-right: 1px solid lightgray;
 }
 
 .inat-box .data-box > div:nth-child(1), .inat-box .data-box > div:nth-child(2) {
@@ -792,18 +796,18 @@ a.dropdown-item {
 }
 
 .taxon-data > span:nth-child(1) {
-  width: 5rem;
-  color: rgb(35, 35, 35);  
+  min-width: 50%;
+  /* color: rgb(35, 35, 35);   */
 }
 
 .data-box .taxon-data:nth-child(1) > span {
   text-transform: uppercase;
 } 
 
-.taxon-data > span:nth-child(2) {
+/* .taxon-data > span:nth-child(2) {
   padding: 0 0.5rem;
   min-width: 7.5rem;  
-}
+} */
 
 .taxon-data {
   display: flex;
@@ -1357,6 +1361,8 @@ label.btn.btn-secondary .lesson-icon {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: var(--vhstandardblock);
+  z-index: 50;
 }
 
 .info-box .carousel.slide {
@@ -1641,6 +1647,7 @@ a.collection-disabled {
 .calender-container {
   display: flex;
   align-items: center;
+  border-right: 1px solid lightgray;
 }
 
 .calendar-box .row {

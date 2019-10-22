@@ -7,6 +7,7 @@ import { subscription } from 'redux/subscriptions';
 import { getGlossary } from 'api/glossary/glossary';
 import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { enums } from 'ui/helpers/enum-helper';
+import { videoHandler } from 'ui/screens/lists/video-handler';
 
 import navigationTemplate from 'ui/fixtures/navigation-template.html';
 import definitionCardTemplate from 'ui/screens/cards/definition-card-template.html';
@@ -27,6 +28,7 @@ export const renderNavigation = () => {
     const navIcons =  document.querySelectorAll('.js-nav-icons .icon');
 
     navIcons.forEach(icon => {
+
         icon.addEventListener('click', event => {       
             
                 const clickedIcon = event.currentTarget;
@@ -50,6 +52,7 @@ export const renderNavigation = () => {
                     case enums.navigation.PORTRAIT_LIST:
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub)); // lesson handler?                   
                         lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
+                        // videoHandler.destroyPlayer();
                         break;
                     case enums.navigation.GLOSSARY:   
                         DOM.modalText.innerHTML = '';

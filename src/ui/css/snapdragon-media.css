@@ -102,7 +102,7 @@
             - var(--vhRunningBlocks,15vh)
             - var(--vhDoubleStandardBlock,20vh) 
             - var(--vhCalender,11vh) 
-            - .5rem);
+            - 1.5rem);
       }
     
       .modal-header {
@@ -121,25 +121,19 @@
       #menuModal .modal-body.settings-modal {
           padding: rem;
       }
-    
+
+      #badgeListModal .modal-dialog {
+        width: 30vw;
+        margin: calc( var(--vhRunningBlock) + var(--vhStandardBlock) + 5px + .5rem ) auto auto auto;
+      }
+
       /* WIKI */
     
-      #wikiModal {
-        top: 3rem;
-      }
-    
       #wikiModal .modal-dialog {
-          max-width: 60vw;
-      } 
-    
-      #wikiModal .modal-content {
-          height: 80vh;
+        max-width: 900px;
+        margin: auto;
       }
-    
-      #wikiModal .modal-body {
-          height: 90%;
-      }
-    
+
       #wikiModal iframe {
           height: 100%;
       }
@@ -272,7 +266,8 @@
     } */
 
     .sub-header {
-        background-color: var(--snap-list-alt-background);
+        /* background-color: var(--snap-list-alt-background); */
+        border-bottom: .03rem solid var(--snap-dd-non-taxa-bg-hover);
     }
 
     /* .taxon.card-card .data-box-container {
@@ -316,9 +311,9 @@
         margin: 1rem 0;
     }
 
-    .sub-header {
+    /* .sub-header {
         border-bottom: .03rem solid var(--snap-dd-non-taxa-bg-hover);
-    }
+    } */
 
     .carousel-inner .image-load-original > div {
         cursor: pointer;

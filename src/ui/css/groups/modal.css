@@ -7,7 +7,11 @@
   border: none;
   border-radius: 0;
 }
-  
+
+/* .carousel.slide {
+  width: 100%;
+}
+   */
 #cardModal {  
   z-index: 1049; /* wiki is 1050 */
 }
@@ -106,13 +110,13 @@
     padding: 0;
 }
 
+#imageModal .imageSlider .carousel-item {
+  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
+}
+
 /* #imageComparisonModal .modal-dialog {
     min-width: 1024px;
     max-width: 1200px;
-} */
-
-/* #imageModal .modal-body {
-    height: 60vh;  
 } */
 
 /* #imageComparisonModal .modal-body {
@@ -188,7 +192,7 @@
 
 #cardModal .prev, #cardModal .next {
     display: flex;
-    padding: 0 .5rem;
+    /* padding: 0 .5rem; don't delete, something like this needed when carousel buttons return */
 }
 
 #cardModal .carousel-inner .prev > span,
@@ -220,7 +224,11 @@
     max-width: 600px;
     margin: auto;
   }
-  
+
+  #cardModal .modal-dialog {
+    max-width: 600px;
+    margin: auto;
+  }
 
   #menuModal .modal-content {
     color: var(--snap-text-dark);
@@ -240,9 +248,12 @@
   
   /* BADGE MODAL (Common names & Members of) */
 
-  /* #badgeListModal {
-    max-width: 500px;
-  } */
+  #badgeListModal .modal-dialog {
+    width: 100%;
+    /* height: calc ( var(--vhStandardBlock) * 3 ); */
+    margin: calc(var(--vhRunningBlock) + 5px + var(--vhStandardBlock) + var(--vhSmallImageCarousel) + .5rem) auto auto auto;
+    
+  }
 
   #badgeListModal .modal-header {
     color: var(--snap-text-dark);
@@ -250,7 +261,7 @@
   }
 
   #badgeListModal .modal-body {
-    background-color: rgb(226, 222, 180,.2);
+    height: calc(var(--vhDoubleStandardBlock, 20vh));
   }
   
   #badgeListModal li {  

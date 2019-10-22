@@ -24,8 +24,10 @@ export const renderNonTaxonCard = (mode = 'STAND_ALONE', keyTrait, parent = DOM.
 
     const prev = document.querySelector('#cardModal .js-prev');
     const next = document.querySelector('#cardModal .js-next');
-    if(prev) prev.style.display = 'none';
-    if(next) next.style.display = 'none';
+
+    if(prev) isInCarousel ? prev.classList.remove('hide-important') : prev.classList.add('hide-important');
+    if(next) isInCarousel ? next.classList.remove('hide-important') : next.classList.add('hide-important');
+    
 
     const { enums, config } = store.getState();
 

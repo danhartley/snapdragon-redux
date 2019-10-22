@@ -6,6 +6,8 @@ import { videoHandler } from 'ui/screens/lists/video-handler';
 import videoTemplate from 'ui/screens/home/home-lesson-intro-video-template.html';
 
 export const videoSetup = (collection, videoPlayer, parent) => {
+
+    parent.innerHTML = '';
    
     const template = document.createElement('template');
           template.innerHTML = videoTemplate;
@@ -39,6 +41,8 @@ export const videoSetup = (collection, videoPlayer, parent) => {
         };
 
         const onPlayerStateChangeCallback = player => {
+
+            if(!typeof player.getPlayerState === 'function' || player.getPlayerState === undefined) return;
 
             switch(player.getPlayerState()) {
                 case videoHandler.states[1].key:

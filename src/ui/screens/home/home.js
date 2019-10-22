@@ -13,13 +13,14 @@ export const renderHome = counter => {
 
     if(config.isPortraitMode) {
         
-        if(collection.id > 0) {
-            counter.isLessonPaused 
-                ? renderLessons()
-                : renderLesson(collection);      
-        } else {
-            renderLessons();
-        }
+        // if(collection.id > 0) {
+        //     counter.isLessonPaused 
+        //         ? renderLessons()
+        //         : renderLesson(collection);      
+        // } else {
+        //     renderLessons();
+        // }
+        renderLessons();
     }
 
     if(config.isLandscapeMode) {

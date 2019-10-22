@@ -160,18 +160,25 @@
         <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <div class="modal-title js-modal-image-title">
-                        <span></span><span></span>
-                    </div>                
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                <div class="modal-header-container">
+                    <div class="modal-header">
+                        <div class="modal-title js-modal-image-title">
+                            <span></span><span></span>
+                        </div>                
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
                 </div>
                 <div class="modal-rights-attribution js-modal-rights-attribution"></div>
                 <div class="modal-body">
                     <div class="modal-image js-modal-image"></div>
-                </div>                    
+                </div>
+                <div class="modal-footer double-centred-block" data-dismiss="modal" aria-label="Close">
+                    <div>
+                        <span aria-hidden="true">Close</span>
+                    </div>
+                </div>             
             </div>
             </div>
         </div>
@@ -179,10 +186,12 @@
         <div class="modal fade" id="imageComparisonModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <div class="modal-title js-modal-image-title">
-                    <div class="modal-rights-attribution js-modal-rights-attribution"></div>
-                    <span></span><span></span><span class="hide-empty"></span><span class="hide-empty"></span>
+                <div class="modal-header-container">
+                    <div class="modal-header">
+                        <div class="modal-title js-modal-image-title">
+                        <div class="modal-rights-attribution js-modal-rights-attribution"></div>
+                        <span></span><span></span><span class="hide-empty"></span><span class="hide-empty"></span>
+                    </div>
                 </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -198,13 +207,17 @@
         <div class="modal fade" id="wikiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content"> 
-                <div class="modal-header">
-                <div class="modal-title js-external-page-title"></div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <div class="modal-header-container">
+                    <div class="modal-header">
+                        <div class="modal-title js-external-page-title"></div>
+                    </div>                       
                 </div>
                 <div class="modal-body js-external-page-body">
+                </div>
+                <div class="modal-footer double-centred-block" data-dismiss="modal" aria-label="Close">
+                    <div>
+                        <span aria-hidden="true">Close</span>
+                    </div>
                 </div>
             </div>
             </div>
@@ -249,8 +262,10 @@
         <div class="modal fade" id="cardModal" tabindex="-1" role="dialog" aria-labelledby="speciesCardLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">                        
-                    <div class="modal-title js-modal-text-title"></div>
+                    <div class="modal-header-container">
+                        <div class="modal-header">
+                            <div class="modal-title js-modal-text-title"></div>
+                        </div>                       
                     </div>
                     <div class="carousel slide">
                         <div class="carousel-inner">
@@ -279,15 +294,19 @@
         <div class="modal fade" id="badgeListModal" tabindex="-1" role="dialog" aria-labelledby="badgeListModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                    <div class="modal-title js-modal-text-title"></div>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <div class="modal-header-container">
+                        <div class="modal-header">
+                            <div class="modal-title js-modal-text-title"></div>
+                        </div>                       
                     </div>
                     <div class="modal-body js-modal-body">
-                        <div class="modal-text js-modal-text"></div>
+                        <div class="modal-text js-modal-text"></div>                        
                     </div>                    
+                    <div class="modal-footer double-centred-block" data-dismiss="modal" aria-label="Close">
+                        <div>
+                            <span aria-hidden="true">Close</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

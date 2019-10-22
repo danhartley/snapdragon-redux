@@ -7,8 +7,6 @@ export const renderLesson = collection => {
 
     const { config, videoPlayer } = store.getState();
 
-    DOM.rightBody.innerHTML = '';
-
     const textSetup = () => {
 
     }; 

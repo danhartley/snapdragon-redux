@@ -34,7 +34,6 @@ const readyPlayer = () => {
     const onPlayerStateChange = event => {
         player = event.target;
         if(player) {
-            // console.log('player state onPlayerStateChange: ', player.getPlayerState());
             onPlayerStateChangeListeners.forEach(listener => listener(player));
         }
      };
@@ -49,6 +48,10 @@ const readyPlayer = () => {
 };
 
 const playVideoFrom = time => {
+
+    if(! typeof player.getPlayerState === 'function' || player.getPlayerState === undefined) return;
+    if(! typeof player.seekTo === 'function' || player.seekTo === undefined) return;
+
     player.seekTo(time + 1);
     const state = player.getPlayerState();
     if(state === states[0].key || state === states[2].key) {
@@ -83,6 +86,25 @@ const getLessonState = (videoPlayer, lesson) => {
 
 };
 
+const destroyPlayer = () => {
+
+    while(onPlayerStateChangeListeners.length > 0) {
+        onPlayerStateChangeListeners.pop();
+    }
+
+    while(onSpeciesTimeMatchListeners.length > 0) {
+        onSpeciesTimeMatchListeners.pop();
+    }
+
+    if (!player) {
+        console.log("Player could not be found.");
+      } else {
+        player.stopVideo();
+        player.destroy();
+        player = null;  // Clear out the reference to the destroyed player
+      }
+};
+
 export const videoHandler = {
     readyPlayer,
     onSpeciesTimeMatchListeners,
@@ -93,5 +115,6 @@ export const videoHandler = {
     subscribeToPlayerStateChange,
     playVideoFrom,
     states,
-    getLessonState
+    getLessonState,
+    destroyPlayer
 };

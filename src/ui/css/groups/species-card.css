@@ -15,6 +15,7 @@
     min-width: 1rem;
     min-height: 1rem;
     display: inline-block;
+    font-size: .9em;
 }
 
 .traits-count-badge {
@@ -60,7 +61,7 @@
   }
 
   .taxa-container > span {
-    max-width: 8.4rem;
+    /* max-width: 8.4rem; */
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -72,14 +73,23 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: inherit;
+    border-right: 1px solid lightgray;
   }
 
   .external-links {
-    margin: .5rem 0 0 .75rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
   }
+
+  .external-links .names-badge {
+    font-size: .7em;
+  }
+
+  /* .external-links span {
+    margin-left: .25rem;
+  } */
 
 /* FEATURES */
 
@@ -97,6 +107,7 @@ td:empty:after{
         - 1rem);
   margin: .5rem 0;
   overflow-y: scroll;
+  padding: 0 .5rem;
 }
 
 .info-details .info_detail {
