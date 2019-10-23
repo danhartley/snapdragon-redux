@@ -49,6 +49,7 @@
     position: absolute;
     left: .5rem;
     right: .5rem;
+    bottom: .5rem;
     height: var(--vhStandardBlock, 10vh);
   }
 
@@ -61,7 +62,6 @@
   }
 
   .taxa-container > span {
-    /* max-width: 8.4rem; */
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -87,27 +87,19 @@
     font-size: .7em;
   }
 
-  /* .external-links span {
-    margin-left: .25rem;
-  } */
-
 /* FEATURES */
 
 td:empty:after{
   content: "\00a0";
 }
 
+.card-card {
+  height: calc( var(--vh, 1vh) * 100 - var(--vhRunningBlocks,15vh) );
+  position: relative;
+}
+
 .info-details {
-  height: calc(
-          var(--vh, 1vh) * 100 
-        - var(--vhRunningBlocks,15vh)
-        - var(--vhDoubleStandardBlock,20vh) 
-        - var(--vhCarousel,30vh)
-        - .5rem 
-        - 1rem);
-  margin: .5rem 0;
-  overflow-y: scroll;
-  padding: 0 .5rem;
+  padding: .5rem;
 }
 
 .info-details .info_detail {

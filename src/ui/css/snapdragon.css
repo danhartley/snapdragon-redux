@@ -741,11 +741,14 @@ a.dropdown-item {
 }
 
 .mixed-content-container {
+  top: calc(
+      var(--vhStandardBlock, 10vh)
+    + var(--vhSmallImageCarousel,23vh));
   height: calc(
         var(--vh, 1vh) * 100
-      - var(--vhRunningBlocks,15vh)
-      - var(--vhDoubleStandardBlock,20vh) 
-      
+      - var(--vhFixtures,15vh)
+      - var(--vhSmallImageCarousel,23vh)
+      - var(--vhDoubleStandardBlock,20vh)      
       - .5rem);
 }
 
@@ -798,7 +801,6 @@ a.dropdown-item {
 
 .taxon-data > span:nth-child(1) {
   min-width: 50%;
-  /* color: rgb(35, 35, 35);   */
 }
 
 .data-box .taxon-data:nth-child(1) > span {

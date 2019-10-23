@@ -75,9 +75,6 @@
     .narrow-screen {
         display: none !important;
     }
-    /* #cardModal .modal-content {
-        width: calc(50vw);
-    } */
 }
 
 @media (max-width: 1024px) {    
@@ -97,6 +94,9 @@
     }
 
     .mixed-content-container {
+        top: calc(
+              var(--vhStandardBlock, 10vh)
+            + var(--vhCalender,11vh));
         height: calc(
               var(--vh, 1vh) * 100
             - var(--vhRunningBlocks,15vh)
@@ -104,7 +104,7 @@
             - var(--vhCalender,11vh) 
             - 1.5rem);
       }
-    
+
       .modal-header {
           display: flex;
           align-items: center;
