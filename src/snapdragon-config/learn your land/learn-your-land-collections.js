@@ -114,6 +114,7 @@ const learnYourLand1 = {
       owner: 'Learn Your Land',
       ownerUrl: 'www.youtube.com/channel/UCcbf8wnyVJl631LAmAbo7nw',
       presenter: 'Adam Haritan',
+      src: 'https://yt3.ggpht.com/a/AGF-l79-2yZvLlzlusiC9-3HZ8vrXsB-qsEHNf6PcA=s48-c-k-c0xffffffff-no-rj-mo',
       links: [
         {
           label: 'Subscribe to the Learn Your Land email newsletter here',
@@ -292,6 +293,7 @@ const learnYourLand2 = {
       owner: 'Learn Your Land',
       ownerUrl: 'www.youtube.com/channel/UCcbf8wnyVJl631LAmAbo7nw',
       presenter: 'Adam Haritan',
+      src: 'https://yt3.ggpht.com/a/AGF-l79-2yZvLlzlusiC9-3HZ8vrXsB-qsEHNf6PcA=s48-c-k-c0xffffffff-no-rj-mo',
       links: [
         {
           label: 'Subscribe to the Learn Your Land email newsletter here',

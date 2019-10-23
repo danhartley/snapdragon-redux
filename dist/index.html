@@ -50,11 +50,16 @@
 
                 const horizontalWidth = window.innerWidth * 0.01;
 
+                document.documentElement.style.setProperty('--vw', horizontalWidth + 'px');
+
                 document.documentElement.style.setProperty('--vwGrid', horizontalWidth * 100  + 'px');
                 document.documentElement.style.setProperty('--vwGridNegative', (horizontalWidth * -100) + 52  + 'px');
-
-                document.documentElement.style.setProperty('--vhVideo', (horizontalWidth * 56.25) + 'px');
                 document.documentElement.style.setProperty('--vhScrollingTop', (horizontalWidth * 56.25) + (verticalHeight * 10) + 'px');
+
+                // setTimeout(() => {
+                //     const videoWidth = document.querySelector('.video').offsetWidth;
+                //     document.documentElement.style.setProperty('--vhVideo', (videoWidth * .5625) + 'px');
+                // }, 1000);
             };
 
             setWindowHeight();

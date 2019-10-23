@@ -10,14 +10,23 @@
             src="https://www.youtube.com/embed/{{ video.id }}?enablejsapi=1&playsinline=1&start={{ video.playAt }}"
             frameborder="0"
             allowfullscreen>
-        </iframe>                
+        </iframe>   
     </div>
     <div class="scrollable">                
-        <div class="half-standard-block">
+        <div class="standard-block centred-block">
+            <div class="margin-right">
+                <img src="{{ video.src }}" alt="">
+            </div>
+            <div class="vertical-centred-block">
+                <div><span class="hide margin-right" >Created by:</span><span class="emphasis">{{ video.presenter }}</span></div>
+                <div><span class="hide margin-right">{{ video.webLabel }}:</span><a class="underline-external-link" href="https://{{ video.webUrl }}" target="_blank">{{ video.webUrl }}</a></div>
+            </div>
+        </div>
+        <!-- <div class="half-standard-block">
             <span class="hide margin-right" >Created by:</span><span class="emphasis">{{ video.presenter }}</span>
         </div>
         <div class="half-standard-block">
             <span class="hide margin-right">{{ video.webLabel }}:</span><a class="underline-external-link" href="https://{{ video.webUrl }}" target="_blank">{{ video.webUrl }}</a>
-        </div>        
+        </div> -->
     </div>
 </div>

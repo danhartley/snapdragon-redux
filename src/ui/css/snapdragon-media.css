@@ -93,6 +93,10 @@
         padding: 0 .5rem;
     }
 
+    .home-scrolling-container .scrollable {
+        top: .5rem; 
+    }
+
     .mixed-content-container {
         top: calc(
               var(--vhStandardBlock, 10vh)

@@ -2038,15 +2038,15 @@ a.collection-disabled {
   clip: rect(0,0,0,0);
 }
 
-.home-scrolling-container {
+/* .home-scrolling-container {
   position: relative;
-}
+} */
 
-.home-scrolling-container .portrait.list-continue-btn-container {
+/* .home-scrolling-container .portrait.list-continue-btn-container {
   position: absolute;
   bottom: 0.25rem;
   width: 100%;
-}
+} */
 
 .youtube-red-fg {
   color: var(--snap-youtube-red);
@@ -2076,7 +2076,7 @@ a.collection-disabled {
   justify-content: center;
 }
 
-.veritcal-centred-block {
+.vertical-centred-block {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2118,6 +2118,7 @@ a.collection-disabled {
 }
 
 .home-scrolling-container .scrollable {
+  position: relative;
   top: calc( var(--vhScrollingTop) + .5rem );
 }
 
