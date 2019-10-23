@@ -77,13 +77,15 @@ export const renderSpeciesList = (collection, args) => {
               youtubeIcons.forEach(icon => {                  
                   icon.addEventListener('click', event => {       
 
+                    event.stopPropagation();
+
                     const activeIcon = event.currentTarget;
                           activeIcon.classList.add('youtube-red-fg');
                     const speciesName = activeIcon.dataset.name;
 
                     const species = collection.items.find(item => item.name == speciesName);   
 
-                    openSpeciesDescriptionHandler(collection, species);
+                    openSpeciesDescriptionHandler(collection, species, true);
 
                     if(species && species.time) {
                         videoHandler.playVideoFrom(species.time[0]);
