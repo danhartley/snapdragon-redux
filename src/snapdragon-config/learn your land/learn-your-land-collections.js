@@ -44,7 +44,16 @@ const learnYourLand1 = {
           Best when young, it is indigestible for some.`
         },
         {
-          name: 'Hericium erinaceus'
+          name: 'Hydnum repandum',
+          time: [592],
+          description: `Hydnum mushrooms related to the chanterelles and back trumpets; they all belong to the Cantharellales order.
+
+          Toothed mycorrhizal fungi growing summer through fall, and they are a terrestrial mushroom so they do not grow on wood but from the ground under hardwood trees and conifer trees.
+        
+          This species may not be the species found in Europe.
+
+          Commonly known as the sweet tooth, wood hedgehog or hedgehog mushroom.
+          `
         },
         {
           name: 'Lycoperdon perlatum'
@@ -53,7 +62,7 @@ const learnYourLand1 = {
           name: 'Lycoperdon pyriforme'
         },
         {
-          name: 'Hydnum repandum'
+          name: 'Hydnum erinaceus'
         },
         {
           name: 'Craterellus tubaeformis'

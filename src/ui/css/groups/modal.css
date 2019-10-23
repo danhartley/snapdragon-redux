@@ -249,7 +249,7 @@
   }
 
   #badgeListModal .modal-body {
-    height: calc(var(--vhDoubleStandardBlock, 20vh) * 2);
+    height: calc(var(--vhDoubleStandardBlock, 20vh) * 2.6);
     padding: .5rem;
   }
   

@@ -294,7 +294,7 @@ a.dropdown-item {
 
 .snapdragon-container {
   justify-content: flex-start;
-  background-color: var(--snap-list-alt-background);
+  /* background-color: var(--snap-list-alt-background); */
   position: relative;
 }
 
