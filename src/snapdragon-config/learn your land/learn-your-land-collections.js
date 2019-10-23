@@ -56,25 +56,71 @@ const learnYourLand1 = {
           `
         },
         {
-          name: 'Lycoperdon perlatum'
+          name: 'Hydnum umbilicatum',
+          time: [688],
+          description: `
+          The species name umbilicatum means navel.
+          
+          Ressembles Hydnum repandum in many ways, though generally smaller, with a darker cap and a conspicuous central depression on the cap.
+          
+          Cap is 1-2 inches wide. Texture is smooth and dry and colour is reddish orange to brownish-orange.
+
+          The fertile surface is comprised of spines or teeth to 1/4 inch long, creamy white to pale orange.
+
+          The stalk is 1/2 to 2 1/2 inches long, creamy white or coloured like the cap.
+
+          Bruises a darker colour when handled. The spore colour is white.
+
+          Habitat: wet conifer wood especially eastern hemlock trees.
+          `
         },
         {
-          name: 'Lycoperdon pyriforme'
+          name: 'Hydnum erinaceus',
+          time: [798],
+          description: `
+          Choice edible mushroom that ressembles seafood when cooked properly.
+
+          Treats cognitive impairment and depression due to concentration of biosynthesisers hericenones and erinacines that promote nerve growth factor synthesis in vitro.
+
+          Cushiony, watery mass 3-10 inches wide and tall.
+
+          The only Hericium in eastern north america whose fruiting body is unbranched.
+
+          Fruiting body consists of numerous icicle-like spines or teeth that point downward and tape to a point.
+
+          Each spine is soft and typically 1/2 inch to 2 inches in length.
+          `
         },
         {
-          name: 'Hydnum erinaceus'
+          name: 'Hericium americanum',
+          time: [848],
+          description: `
+          Comprised of numerous down-pointing spines that are soft and white.
+
+          Key feature: each spine or tooth is similar in size to those found in Lion's mane.
+
+          Key feature: multiple branches or clusters, each one bearing spines or teeth. 
+          `
         },
         {
-          name: 'Craterellus tubaeformis'
+          name: 'Hericium coralloides',
+          time: [889],
+          description: ``
         },
         {
-          name: 'Hydnum umbilicatum'
+          name: 'Lycoperdon perlatum',
+          time: [],
+          description: ``
         },
         {
-          name: 'Hericium americanum'
+          name: 'Lycoperdon pyriforme',
+          time: [],
+          description: ``
         },
         {
-          name: 'Hericium coralloides'
+          name: 'Craterellus tubaeformis',
+          time: [],
+          description: ``
         },
         {
           name: 'Calvatia gigantea',
@@ -90,20 +136,36 @@ const learnYourLand1 = {
           It may be found in open woods lawns and pastures, through summer-fall.`
         },
         {
-          name: 'Armillaria mellea'
+          name: 'Armillaria mellea',
+          time: [],
+          description: ``
         },
         {
-          name: 'Armillaria tabescens'
+          name: 'Armillaria tabescens',
+          time: [],
+          description: ``
         },
         {
-          name: 'Entoloma abortivum'
+          name: 'Entoloma abortivum',
+          time: [],
+          description: ``
         },
         {
-          name: 'Polyporus squamosus'
+          name: 'Polyporus squamosus',
+          time: [],
+          description: ``
         },        
         {
-          name: 'Laetiporus cincinnatus'
+          name: 'Laetiporus cincinnatus',
+          time: [],
+          description: ``
         },        
+    ],
+    notes: [
+      {
+        tag: 'Hericium',
+        time: [758]
+      }
     ],
     producer: 'Adam Haritan, Learn Your Land',
     video: {
