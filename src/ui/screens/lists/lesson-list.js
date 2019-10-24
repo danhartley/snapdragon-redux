@@ -13,12 +13,13 @@ import { videoHandler } from 'ui/screens/lists/video-handler';
 import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
 import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { enums } from 'ui/helpers/enum-helper';
+import { onChangeLessonState } from 'ui/fixtures/lesson-test-state-change';
 
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
 
 export const renderLessons = () => {
 
-    subscription.removeByName('renderLessons');
+    // subscription.removeByName('renderLessons');
     
     let { config, collections, lessons: savedLessons, videoPlayer } = store.getState();
 
@@ -58,7 +59,7 @@ export const renderLessons = () => {
             createGuideHandler(1);
           });    
 
-    const titles = document.querySelectorAll('.btn.btn-secondary');
+    const titles = document.querySelectorAll('.btn.btn-secondary > .lesson-name');
 
     if(config.isLandscapeMode) {
 
@@ -91,7 +92,7 @@ export const renderLessons = () => {
       const scrollToTitle = lessonId => {
 
         setTimeout(() => {
-          const standardBlock = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhStandardBlock').replace('px', ''));
+          const standardBlock = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhRow').replace('px', ''));
           const unit = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));
           const rows = siblingsBefore(lessonId);
           const top = standardBlock * rows - unit;
@@ -145,6 +146,11 @@ export const renderLessons = () => {
         
       }));      
     }
+
+    const beginLessonLinks = document.querySelectorAll('.js-lesson-review');
+          beginLessonLinks.forEach(link => {
+              onChangeLessonState(link);
+          });
 };
 
 const extractLesson = (e, lessons) => {

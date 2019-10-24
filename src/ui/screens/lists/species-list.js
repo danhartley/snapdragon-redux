@@ -230,7 +230,7 @@ export const renderSpeciesList = (collection, args) => {
                 tr.parentElement.insertBefore(insert, tr.nextSibling);
 
                 const scrollIntoView = (rowHeight, noOfRows) => {
-                    
+
                     const scroll = document.querySelector('.scrollable');
                     const standardBlock = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhStandardBlock').replace('px', ''));
                     const unit = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));

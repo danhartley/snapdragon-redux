@@ -218,11 +218,14 @@ a.dropdown-item {
   cursor: pointer;
 }
 
-.active-title {
-  text-decoration: none;
+.lesson-title {
+  /* text-decoration: none; */
   border-bottom: solid .05rem !important;
   cursor: pointer;
   pointer-events: initial;
+  /* line-height: 2; */
+  text-transform: uppercase;
+  font-size: .8em;
 }
 
 .toUpperCase {
@@ -460,8 +463,7 @@ a.dropdown-item {
   left: 0;
   right: 0;
   top: 0;
-  bottom: 0;
-  padding: 0 .5rem;
+  bottom: 0;  
 }
 
 .txt-specimen-species {
@@ -2011,8 +2013,11 @@ a.collection-disabled {
   position: -webkit-sticky;
   top: 0;
   z-index: 30;
-  /* border-bottom: 1px solid var(--snap-border-dark); */
 }
+
+/* .lesson-list .btn-group > div.btn.btn-secondary {
+  height: var(--vhRow);
+} */
 
 .lesson-list .btn-group > div:nth-of-type(4n) {
   background-color: var(--snap-lesson-row-green);
@@ -2023,7 +2028,6 @@ a.collection-disabled {
 }
 
 .lesson-list .btn.btn-secondary {
-  margin-top: .5rem;
   text-align: left;
 }
 
@@ -2038,26 +2042,16 @@ a.collection-disabled {
   clip: rect(0,0,0,0);
 }
 
-/* .home-scrolling-container {
-  position: relative;
-} */
-
-/* .home-scrolling-container .portrait.list-continue-btn-container {
-  position: absolute;
-  bottom: 0.25rem;
-  width: 100%;
-} */
-
 .youtube-red-fg {
   color: var(--snap-youtube-red);
 }
 
-.double-standard-block {
-  height: var(--vhDoubleStandardBlock, 20vh);
-}
-
 .standard-block {
   height: var(--vhStandardBlock, 10vh);
+}
+
+.double-standard-block {
+  height: var(--vhDoubleStandardBlock, 20vh);
 }
 
 .half-standard-block {
@@ -2080,6 +2074,10 @@ a.collection-disabled {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.half-padding-left {
+  padding-left: .25rem;
 }
 
 .modal-footer.double-centred-block {
@@ -2117,9 +2115,12 @@ a.collection-disabled {
   height: 100%;
 }
 
-.home-scrolling-container .scrollable {
+.home-scrolling-container {
   position: relative;
-  top: calc( var(--vhScrollingTop) + .5rem );
+}
+
+.home-scrolling-container .scrollable {
+  top: calc( var(--vhScrollingTop));
 }
 
 .form-check {
@@ -2137,10 +2138,8 @@ a.collection-disabled {
   cursor: pointer;
 }
 
-.moving-ball {
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--snap-progress-bg);
+.lesson-review > div {
+  font-size: .7em;
 }
 
 .standard-block {

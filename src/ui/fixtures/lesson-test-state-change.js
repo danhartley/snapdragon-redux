@@ -1,12 +1,14 @@
-import { lessonHandler } from 'ui/helpers/lesson-handler';
+import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';
+import { lessonHandler } from 'ui/helpers/lesson-handler';
 
-export const onChangeLessonState = actionableButton  => {
+export const onChangeLessonState = actionableLink  => {
 
-        // const beginLearningActionBtn = document.querySelector('.js-species-list-btn-action');
-
-        actionableButton.addEventListener('click', event => {
-            const { history } = store.getState();
-            lessonHandler.changeState(enums.lessonState.BEGIN_LESSON, collection, config, history);
-          });
+  actionableLink.addEventListener('click', event => {
+      setTimeout(() => {
+        event.stopPropagation();
+        const { collection, config, history } = store.getState();
+        lessonHandler.changeState(enums.lessonState.BEGIN_LESSON, collection, config, history); 
+      });
+    });
 };

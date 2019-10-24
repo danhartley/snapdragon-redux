@@ -45,6 +45,7 @@ export const renderNavigation = () => {
                 switch(enums.navigation.enumValueOf(clickedIcon.id)) {
                     case enums.navigation.HOME:
                         clickedIcon.classList.add('active-icon');        
+                        lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub)); // lesson handler?
                         break;
                     case enums.navigation.SETTINGS:

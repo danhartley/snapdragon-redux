@@ -1,18 +1,23 @@
 <div class="lesson-list">
     <div class="btn-group scrollable" data-toggle="buttons" data-repeat-lesson="{{ lessons }}">
-        <div class="btn btn-secondary" id="id_{{ lesson.id }}" data-has-video="{{ lesson.hasVideo }}">
+        <div class="btn btn-secondary margin-top" data-has-video="{{ lesson.hasVideo }}">
             <div class="lesson-radio-button"></div>
-            <div>
+            <div id="id_{{ lesson.id }}">
                 <input type="radio" name="lessons" autocomplete="off">
                 <div class="lesson-name" data-lesson-id="{{ lesson.id }}">
-                    <a id="lesson_{{ lesson.id }}" class="active-title">{{ lesson.name }}</a>
+                    <span id="lesson_{{ lesson.id }}" class="lesson-title">{{ lesson.name }}</span>
                     <span>{{ lesson.savedState }}</span>                    
                     <span class="hide js-loading-message">(Loading species…)</span>
                 </div>
                 <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>
                 <div class="latin hide-empty js-lesson-state" data-lesson-id="{{ lesson.id }}">{{ lesson.state }}</div>         
             </div> 
-        </div>        
+            <div class="lesson-review js-lesson-review" style="cursor: pointer;">
+                <div>
+                    <span class="underline-link">Lesson Review</span>
+                </div>
+            </div>
+        </div>           
         <div id="container_{{ lesson.id }}" class="species-container js-species-container"></div>
     </div>
 </div>

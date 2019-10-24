@@ -558,10 +558,10 @@
   }
 
   /* prevent child elements of listener triggering an event */  
-  .btn.btn-secondary > * {
+  /* .btn.btn-secondary > * {
     pointer-events: none;
   }
-  
+   */
   .locations .btn.btn-secondary > * {
     pointer-events: all;
   }

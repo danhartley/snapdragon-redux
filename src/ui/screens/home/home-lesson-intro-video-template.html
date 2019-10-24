@@ -1,5 +1,5 @@
 <div class="home-scrolling-container js-home-scrolling-container">
-    <div class="title standard-block double-centred-block">{{ video.title }}</div>
+    <div class="title standard-block double-centred-block half-padding-left">{{ video.title }}</div>
 
     <div class="video">
         <div style="min-height: 1px;"></div>
@@ -13,13 +13,16 @@
         </iframe>   
     </div>
     <div class="scrollable">                
-        <div class="standard-block centred-block">
+        <div class="standard-block centred-block half-padding-left">
             <div class="margin-right">
                 <img src="{{ video.src }}" alt="">
             </div>
             <div class="vertical-centred-block">
                 <div><span class="hide margin-right" >Created by:</span><span class="emphasis">{{ video.presenter }}</span></div>
-                <div><span class="hide margin-right">{{ video.webLabel }}:</span><a class="underline-external-link" href="https://{{ video.webUrl }}" target="_blank">{{ video.webUrl }}</a></div>
+                <div><span class="hide margin-right">{{ video.webLabel }}:</span>
+                    <a class="underline-external-link" href="https://{{ video.webUrl }}" target="_blank">{{ video.webUrl }}</a>
+                    <span class="names-badge"> <i class="fas fa-external-link-alt"></i></span>
+                </div>
             </div>
         </div>
     </div>
