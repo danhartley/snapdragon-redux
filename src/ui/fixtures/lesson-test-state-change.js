@@ -4,11 +4,13 @@ import { lessonHandler } from 'ui/helpers/lesson-handler';
 
 export const onChangeLessonState = actionableLink  => {
 
-  actionableLink.addEventListener('click', event => {
-      setTimeout(() => {
-        event.stopPropagation();
-        const { collection, config, history } = store.getState();
-        lessonHandler.changeState(enums.lessonState.BEGIN_LESSON, collection, config, history); 
-      });
-    });
+  const beginLesson = event => {
+    event.stopPropagation();
+    const { collection, config, history } = store.getState();
+    lessonHandler.changeState(enums.lessonState.BEGIN_LESSON, collection, config, history); 
+  };
+
+  actionableLink.removeEventListener('click', beginLesson);
+
+  actionableLink.addEventListener('click', beginLesson);
 };

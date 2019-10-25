@@ -11,10 +11,8 @@
   z-index: 10;
   align-items: center;
   text-transform: uppercase;
-}
-
-.table-header {
   top: 0;
+  font-size: .9em;
 }
 
 .table-header th {
@@ -25,10 +23,8 @@
 .table-row {
     display: flex;
     flex-direction: row;
-    /* border-left: 0.075rem solid var(--snap-list-background);
-    border-left: 0.075rem solid var(--snap-border-dark);
-    border-right: 0.075rem solid var(--snap-border-dark); */
     height: var(--vhRow, 12.5vh);
+    font-size: .8em;
   }
   
   .table-row-chevron {

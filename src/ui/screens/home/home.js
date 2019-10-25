@@ -27,13 +27,20 @@ export const renderHome = counter => {
 
         renderLessons();
 
-        if(collection.id > 0) {
-            renderLesson(collection);
-        } else {
-            const template = document.createElement('template');
-            template.innerHTML = homeTemplate;
-            DOM.rightBody.innerHTML = '';
-            renderTemplate({}, template.content, DOM.rightBody);
-        }
+        const template = document.createElement('template');
+              template.innerHTML = homeTemplate;
+        
+        DOM.rightBody.innerHTML = '';
+
+        renderTemplate({}, template.content, DOM.rightBody);
+
+        // if(collection.id > 0) {
+        //     renderLesson(collection);
+        // } else {
+        //     const template = document.createElement('template');
+        //     template.innerHTML = homeTemplate;
+        //     DOM.rightBody.innerHTML = '';
+        //     renderTemplate({}, template.content, DOM.rightBody);
+        // }
     }
 };

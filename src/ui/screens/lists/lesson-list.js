@@ -19,8 +19,6 @@ import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
 
 export const renderLessons = () => {
 
-    // subscription.removeByName('renderLessons');
-    
     let { config, collections, lessons: savedLessons, videoPlayer } = store.getState();
 
     const savedLessonNames = savedLessons.map(lesson => lesson.name);
@@ -47,8 +45,7 @@ export const renderLessons = () => {
     loadLessons();
 
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
-
-    parent.innerHTML = '';
+        parent.innerHTML = '';
 
     renderTemplate({ lessons }, template.content, parent);
 
@@ -59,7 +56,7 @@ export const renderLessons = () => {
             createGuideHandler(1);
           });    
 
-    const titles = document.querySelectorAll('.btn.btn-secondary > .lesson-name');
+    const titles = document.querySelectorAll('.js-lesson-title');
 
     if(config.isLandscapeMode) {
 
@@ -70,7 +67,7 @@ export const renderLessons = () => {
 
       const siblingsBefore = lessonId => {
         
-        let siblings = document.querySelectorAll('.btn.btn-secondary:not(.hide-important)');
+        let siblings = document.querySelectorAll('.js-lesson-list-item:not(.hide-important)');
         let sibling = siblings[0];
         let index = 0;
 
@@ -78,7 +75,7 @@ export const renderLessons = () => {
         
         while(sibling) {
           index++;
-          if(sibling.id !== `id_${lessonId}`) {
+          if(parseInt(sibling.dataset.lessonId) !== lessonId) {
             before.push(sibling);
             sibling = siblings[index];
           } else {
@@ -90,12 +87,11 @@ export const renderLessons = () => {
       };
 
       const scrollToTitle = lessonId => {
-
         setTimeout(() => {
           const standardBlock = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhRow').replace('px', ''));
           const unit = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));
           const rows = siblingsBefore(lessonId);
-          const top = standardBlock * rows - unit;
+          const top = (standardBlock * rows) - unit;
 
           const scroll = document.querySelector('.lesson-list .scrollable');
           scroll.scrollTop = top;
@@ -104,7 +100,9 @@ export const renderLessons = () => {
 
       titles.forEach(title => title.addEventListener('click', e => {
 
-        const { title, lesson, state, speciesList, container, titleState } = extractLesson(e, lessons);
+        e.stopPropagation();
+
+        const { title, lesson, state, speciesList, container, titleState, reviewLink } = extractLesson(e, lessons);
 
         if(state.revealSpeciesList) {
           renderLesson(lesson);
@@ -123,14 +121,20 @@ export const renderLessons = () => {
             const loadSpeciesCallback = () => callback(lesson.id, loadingMessage);
             renderSpeciesList(lesson, { readOnlyMode: false, parent: container, tableParent: container, loadSpeciesCallback, isInCarousel: false });
             renderLesson(lesson);
-        }      
+        }
+
+        if(reviewLink) {
+          onChangeLessonState(reviewLink);
+        }
       }));
 
-      if(config.collection.id > 0) {
-        const lessonId = config.collection.id;
-        const lessonTitle = document.querySelector(`#lesson_${lessonId}`);
-              lessonTitle.click();
-      }
+      // setTimeout(() => {
+      //   if(config.collection.id > 0) {
+      //     const lessonId = config.collection.id;
+      //     const lessonTitle = document.querySelector(`.js-lesson-title[data-lesson-id="${lessonId}"]`);
+      //           lessonTitle.click();
+      //   } 
+      // },1000);
     }
 
     if(config.isPortraitMode) {
@@ -140,27 +144,23 @@ export const renderLessons = () => {
         lessonHandler.changeState(enums.lessonState.RESUME_LESSON);
         
         const title = e.currentTarget;
-        const lessonId = parseInt(title.id.replace('id_', ''));
+        const lessonId = parseInt(title.dataset.lessonId);
         const lesson = lessons.find(l => l.id === lessonId);
         renderLesson(lesson);
         
       }));      
     }
-
-    const beginLessonLinks = document.querySelectorAll('.js-lesson-review');
-          beginLessonLinks.forEach(link => {
-              onChangeLessonState(link);
-          });
 };
 
 const extractLesson = (e, lessons) => {
 
   const title = e.currentTarget;
-  const lessonId = parseInt(title.id.replace('id_', ''));
+  const lessonId = parseInt(title.dataset.lessonId);
   const lesson = lessons.find(l => l.id === lessonId);
-  const container = document.querySelector(`#container_${lessonId}`);
+  const container = document.querySelector(`.js-species-container[data-container-id="${lessonId}"]`);
   const speciesList = document.querySelector(`#species_list_id_${lessonId}`);
-  
+  const reviewLink = document.querySelector(`.js-lesson-review[data-review-link="${lessonId}"]`);
+
   let otherSpecies = Array.from(document.querySelectorAll('.js-species-container'));
       otherSpecies = otherSpecies.filter(container => container.id !== `container_${lessonId}`);
       otherSpecies.forEach(container => container.innerHTML = '');
@@ -176,5 +176,5 @@ const extractLesson = (e, lessons) => {
     hideSpeciesList: isSpeciesListAvailable && !isSpeciesListHidden
   };
 
-  return { title, lesson, state, speciesList, container, titleState };
+  return { title, lesson, state, speciesList, container, titleState, reviewLink };
 };

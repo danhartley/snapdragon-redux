@@ -9,6 +9,8 @@ export const renderScore = (score) => {
     
     const { history, collection, config, layout, lesson } = store.getState();
 
+    if(config.isPortraitMode) return; // remove references below
+
     const template = document.createElement('template');
 
     const scoreText = config.isLandscape 
@@ -31,8 +33,7 @@ export const renderScore = (score) => {
     runningTotal.total = runningTotal.total + score.total;
 
     const parent = config.isPortraitMode ? DOM.rightFooter.querySelector('.js-footer-score') : DOM.rightFooter;
-
-    parent.innerHTML = '';
+          parent.innerHTML = '';
 
     renderTemplate({ score, history: runningTotal, collection, config, layout, scoreText, currentRound }, template.content, parent);
 
