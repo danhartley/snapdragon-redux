@@ -1,6 +1,6 @@
 import { elem } from 'ui/helpers/class-behaviour';
 
-export const extractLesson = (e, lessons) => {
+const updates = (e, lessons) => {
 
     const title = e.currentTarget;
     const lessonId = parseInt(title.dataset.lessonId);
@@ -26,3 +26,7 @@ export const extractLesson = (e, lessons) => {
   
     return { title, lesson, state, speciesList, container, titleState, reviewLink };
 };
+
+export const lessonListHandler = {
+  updates
+}

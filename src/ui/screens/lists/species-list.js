@@ -16,7 +16,7 @@ import { videoHandler } from 'ui/screens/lists/video-handler';
 
 export const renderSpeciesList = (collection, args) => {
 
-    const { readOnlyMode = false, tableParent, loadSpeciesCallback, isInCarousel = true } = args;
+    const { readOnlyMode = false, callingParentContainer, loadSpeciesCallback, isInCarousel = true } = args;
 
     const { config: configState, history, counter, enums: traitEnums, lesson  } = store.getState();
 
@@ -169,7 +169,7 @@ export const renderSpeciesList = (collection, args) => {
 
             if(collection.items && collection.items.length) {
                 return function () {
-                    buildTable(collection, { config, enums: traitEnums, overrideParent: tableParent });
+                    buildTable(collection, { config, enums: traitEnums, overrideParent: callingParentContainer });
                     userClickHandlers();
                 }
             }

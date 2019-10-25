@@ -2010,12 +2010,16 @@ a.collection-disabled {
 
 .lesson-list .lesson-list-item {
   /* height: var(--vhRow); */
-  padding: .5rem;
+  padding: 1rem .5rem;
   pointer-events: none;
 }
 
 .lesson-list .lesson-list-item .lesson-review {
   pointer-events: initial;
+}
+
+.lesson-list .lesson-taxa {
+  line-height: 2;
 }
 
 .lesson-list > div > div:nth-child(1) {

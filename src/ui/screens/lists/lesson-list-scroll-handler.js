@@ -19,14 +19,18 @@ const siblingsBefore = lessonId => {
     return before.length;
   };
 
-  export const scrollToTitle = lessonId => {
-    setTimeout(() => {
-      const standardBlock = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhRow').replace('px', ''));
-      const unit = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));
-      const rows = siblingsBefore(lessonId);
-      const top = (standardBlock * rows) - unit;
+const scrollToTitle = lessonId => {
+  setTimeout(() => {
+    const standardBlock = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhRow').replace('px', ''));
+    const unit = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));
+    const rows = siblingsBefore(lessonId);
+    const top = (standardBlock * rows) - unit;
 
-      const scroll = document.querySelector('.lesson-list .scrollable');
-      scroll.scrollTop = top;
-    });
-  };
+    const scroll = document.querySelector('.lesson-list .scrollable');
+    scroll.scrollTop = top;
+  });
+};
+
+export const lessonListScrollHandler = {
+  scrollToTitle
+}

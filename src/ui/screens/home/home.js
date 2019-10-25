@@ -1,31 +1,19 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
-
 import { renderLessons } from 'ui/screens/lists/lesson-list';
-import { renderLesson } from 'ui/screens/home/home-lesson-intro';
 
 import homeTemplate from 'ui/screens/home/home-template.html';
 
 export const renderHome = counter => {
 
-    let { config, collection } = store.getState();
+    if(counter > 0 && !! counter.isLessonPaused) return;
 
-    if(config.isPortraitMode) {
-        
-        // if(collection.id > 0) {
-        //     counter.isLessonPaused 
-        //         ? renderLessons()
-        //         : renderLesson(collection);      
-        // } else {
-        //     renderLessons();
-        // }
-        renderLessons();
-    }
+    let { config } = store.getState();
+
+    renderLessons();
 
     if(config.isLandscapeMode) {
-
-        renderLessons();
 
         const template = document.createElement('template');
               template.innerHTML = homeTemplate;
@@ -33,14 +21,5 @@ export const renderHome = counter => {
         DOM.rightBody.innerHTML = '';
 
         renderTemplate({}, template.content, DOM.rightBody);
-
-        // if(collection.id > 0) {
-        //     renderLesson(collection);
-        // } else {
-        //     const template = document.createElement('template');
-        //     template.innerHTML = homeTemplate;
-        //     DOM.rightBody.innerHTML = '';
-        //     renderTemplate({}, template.content, DOM.rightBody);
-        // }
     }
 };

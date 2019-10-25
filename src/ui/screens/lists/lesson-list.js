@@ -1,17 +1,14 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
-import { renderSpeciesList } from 'ui/screens/lists/species-list';
-import { renderLesson } from 'ui/screens/home/home-lesson-intro';
 import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
 import { listenToCloseCreateGuideModal } from 'ui/create-guide-modal/create-guide';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
-import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { enums } from 'ui/helpers/enum-helper';
-import { lessonStateHandler, onChangeLessonState } from 'ui/screens/lists/lesson-state-handler';
-import { scrollToTitle } from 'ui/screens/lists/lesson-list-scroll-handler';
-import { extractLesson } from 'ui/screens/lists/lesson-list-parser';
+import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
+import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
+import { lessonListHandler } from 'ui/screens/lists/lesson-list-handler';
 
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
 
@@ -42,17 +39,17 @@ export const renderLessons = () => {
 
       const callback = (lessonId, loadingMessage) => {
         loadingMessage.classList.add('hide');
-        scrollToTitle(lessonId);
+        lessonListScrollHandler.scrollToTitle(lessonId);
       };
 
       titles.forEach(title => title.addEventListener('click', e => {
 
         e.stopPropagation();
 
-        const { title, lesson, state, speciesList, container, titleState, reviewLink } = extractLesson(e, lessons);
+        const { title, lesson, state, speciesList, container, titleState } = lessonListHandler.updates(e, lessons);
 
         if(state.revealSpeciesList) {
-          renderLesson(lesson);
+          lessonStateHandler.onClick({ state: enums.lessonState.BEGIN_INTRO, lesson });
           speciesList.classList.remove('hide');
         }
 
@@ -66,13 +63,8 @@ export const renderLessons = () => {
             const loadingMessage = title.parentElement.querySelector('.js-loading-message');
                   loadingMessage.classList.remove('hide');
             const loadSpeciesCallback = () => callback(lesson.id, loadingMessage);
-            renderSpeciesList(lesson, { tableParent: container, loadSpeciesCallback, isInCarousel: false });
-            renderLesson(lesson);
+            lessonStateHandler.onClick({ state: enums.lessonState.BEGIN_INTRO, lesson, container, loadSpeciesCallback, isInCarousel: false, requireSpecies: true });
         }
-
-        // if(reviewLink) {
-        //   onChangeLessonState(reviewLink);
-        // }
       }));
 
       // setTimeout(() => {
@@ -87,20 +79,15 @@ export const renderLessons = () => {
     if(config.isPortraitMode) {
       
       titles.forEach(title => title.addEventListener('click', e => {
-
-        lessonHandler.changeState(enums.lessonState.RESUME_LESSON);
-        
         const title = e.currentTarget;
         const lessonId = parseInt(title.dataset.lessonId);
         const lesson = lessons.find(l => l.id === lessonId);
-        renderLesson(lesson);
-        
+        lessonStateHandler.onClick({ state: enums.lessonState.BEGIN_INTRO, lesson });
       }));      
     }
 
     const reviews = document.querySelectorAll('.js-lesson-review');
-
-          reviews.forEach(review => {
-            lessonStateHandler.onClick()        
+          reviews.forEach(reviewLink => {
+            lessonStateHandler.onClick({ state: enums.lessonState.BEGIN_LESSON, target: reviewLink }) 
           });
 };

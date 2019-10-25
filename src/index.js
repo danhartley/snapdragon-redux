@@ -17,7 +17,6 @@ import { nextItem } from 'ui/setup/next-item';
 import { renderHeaders } from 'ui/fixtures/headers';
 import { renderScore } from 'ui/fixtures/score';
 import { renderHome } from 'ui/screens/home/home';
-import { renderLessons } from 'ui/screens/lists/lesson-list';
 import { renderNavigation } from 'ui/fixtures/navigation';
 import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';

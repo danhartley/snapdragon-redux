@@ -554,14 +554,9 @@
 
   .lesson-taxa {
     overflow-wrap: break-word;
-    white-space: initial;    
+    white-space: initial;
   }
 
-  /* prevent child elements of listener triggering an event */  
-  /* .btn.btn-secondary > * {
-    pointer-events: none;
-  }
-   */
   .locations .btn.btn-secondary > * {
     pointer-events: all;
   }

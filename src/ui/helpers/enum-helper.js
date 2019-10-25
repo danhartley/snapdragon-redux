@@ -7,7 +7,8 @@ lessonState.initEnum([
     'BEGIN_LESSON',
     'PAUSE_LESSON', 
     'RESUME_LESSON',
-    'NEXT_ROUND'
+    'NEXT_ROUND',
+    'BEGIN_INTRO'
 ]);
 
 class navigation extends Enum {};
