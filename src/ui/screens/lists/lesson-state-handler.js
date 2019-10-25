@@ -6,7 +6,7 @@ import { enums } from 'ui/helpers/enum-helper';
 import { initialiseConfig } from 'ui/helpers/location-helper';
 import { renderSpeciesList } from 'ui/screens/lists/species-list';
 import { renderLesson } from 'ui/screens/home/home-lesson-intro';
-import { lessonHandler } from 'ui/helpers/lesson-handler';
+import { lessonHandler } from 'ui/helpers/collection-handler';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 
 export const onChangeLessonState = actionableLink  => {
@@ -39,19 +39,20 @@ const saveLesson = async collection => {
   actions.boundUpdateConfig(initialisedConfig);
 };
 
-const loadLessons = (savedLessons, lessons, videoPlayer) => {
+const loadLessons = (savedLessons, collections, videoPlayer) => {
 
-  const savedLessonNames = savedLessons.map(lesson => lesson.name);
+  const savedLessonNames = savedLessons.map(collection => collection.name);
 
-  lessons.forEach((lesson, index) => {
-    const isPaused = R.contains(lesson.name, savedLessonNames); 
-    lesson.taxa = lesson.iconicTaxa.map(taxon => taxon.common).join(', ');
-    lesson.savedState = isPaused
+  return collections.filter(collection => !collection.default).map((collection, index) => {
+    const isPaused = R.contains(collection.name, savedLessonNames); 
+    collection.taxa = collection.iconicTaxa.map(taxon => taxon.common).join(', ');
+    collection.savedState = isPaused
         ? '(lesson paused)'
         : '';
-    lesson.isPaused = isPaused;
-    lesson.hasVideo = lesson.video ? true : false;        
-    lesson.state = videoHandler.getLessonState(videoPlayer || [], lesson);
+    collection.isPaused = isPaused;
+    collection.hasVideo = collection.video ? true : false;        
+    collection.state = videoHandler.getLessonState(videoPlayer || [], collection);
+    return collection;
   });
 };
 

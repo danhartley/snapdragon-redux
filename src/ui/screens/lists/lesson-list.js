@@ -22,9 +22,7 @@ export const renderLessons = () => {
     const template = document.createElement('template');
           template.innerHTML = lessonListTemplate;
 
-    const lessons = collections.filter(collection => !collection.default);
-
-    lessonStateHandler.loadLessons(savedLessons, lessons, videoPlayer);
+    const lessons = lessonStateHandler.loadLessons(savedLessons, collections, videoPlayer);
 
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
         parent.innerHTML = '';
