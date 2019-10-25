@@ -18,6 +18,6 @@ export const renderLesson = collection => {
     const container = DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable');
 
     if(config.isPortraitMode) {
-        renderSpeciesList(collection, { readOnlyMode: false, parent: container, tableParent: container, loadSpeciesCallback, isInCarousel: false });
+        renderSpeciesList(collection, { readOnlyMode: false, tableParent: container, loadSpeciesCallback, isInCarousel: false });
     }
 }

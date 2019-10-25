@@ -16,7 +16,7 @@ import { videoHandler } from 'ui/screens/lists/video-handler';
 
 export const renderSpeciesList = (collection, args) => {
 
-    const { readOnlyMode = false, parent, tableParent, loadSpeciesCallback, isInCarousel = true } = args;
+    const { readOnlyMode = false, tableParent, loadSpeciesCallback, isInCarousel = true } = args;
 
     const { config: configState, history, counter, enums: traitEnums, lesson  } = store.getState();
 
@@ -284,7 +284,7 @@ const carouselControlHandler = event => {
 
     let nextItem = collection.items.find((item,index) => index === currentIndex);
 
-    parent = document.querySelector(`#${modal} .js-modal-body`);
+    const parent = document.querySelector(`#${modal} .js-modal-body`);
     
     switch(card) {
         case 'species-card':
