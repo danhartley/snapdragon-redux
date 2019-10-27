@@ -13,14 +13,14 @@ export const renderSeason = (modal, createGuide) => {
 
     const languages = config.languages;
 
-    config.guide.season.observableMonths = config.guide.season.observableMonths || config.season.observableMonths;
+    // config.guide.season.observableMonths = config.guide.season.observableMonths || config.season.observableMonths;
 
-    if(config.guide.season.observableMonths) {
+    // if(config.guide.season.observableMonths) {
 
-        const months = config.guide.season.observableMonths.map(month => month.name);
-        const observableMonths = `${months[0]}-${months[months.length - 1]}`;
+        // const months = config.guide.season.observableMonths.map(month => month.name);
+        // const observableMonths = `${months[0]}-${months[months.length - 1]}`;
         
-        renderTemplate({ observableMonths,languages }, template.content, parent);
+        renderTemplate({ languages }, template.content, parent);
 
         const taxonLanguageBtn = document.querySelector('#taxonLanguageBtn');
               taxonLanguageBtn.innerHTML = `Taxon language [${languages.find(l => l.lang === config.language).name}] `;
@@ -37,32 +37,32 @@ export const renderSeason = (modal, createGuide) => {
                 taxonLanguageTxt.innerHTML = name;
             });
         });
-    }
+    // }
 
-    const idSwitch = parent.querySelector('.inat-switch-slider');
+    // const idSwitch = parent.querySelector('.inat-switch-slider');
 
-    const switchCallback = position => {
+    // const switchCallback = position => {
 
-        const config = createGuide.getConfig();
+    //     const config = createGuide.getConfig();
 
-        const currentType = config.guide.season.type;
+    //     const currentType = config.guide.season.type;
 
-        if(position === 'right') {
-            config.guide.season.type = 'all_year';
-        } else {
-            config.guide.season.type = 'months';
-        }
+    //     if(position === 'right') {
+    //         config.guide.season.type = 'all_year';
+    //     } else {
+    //         config.guide.season.type = 'months';
+    //     }
 
-        createGuide.setConfig(config);
+    //     createGuide.setConfig(config);
         
-        if(config.guide.season.type !== currentType) {
-            createGuide.saveStep('SEASON');
-        }        
-    };
+    //     if(config.guide.season.type !== currentType) {
+    //         createGuide.saveStep('SEASON');
+    //     }        
+    // };
 
-    const position = config.guide.season.type === 'months' ? 'left' : 'right';
+    // const position = config.guide.season.type === 'months' ? 'left' : 'right';
 
-    switchHandler(idSwitch, position, switchCallback);
+    // switchHandler(idSwitch, position, switchCallback);
 
     createGuide.saveStep('SEASON', false);
 }

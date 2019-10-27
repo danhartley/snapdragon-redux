@@ -1,6 +1,6 @@
 import { elem } from 'ui/helpers/class-behaviour';
 
-const updates = (e, lessons) => {
+const parseLessonElement = (e, lessons) => {
 
     const title = e.currentTarget;
     const lessonId = parseInt(title.dataset.lessonId);
@@ -16,7 +16,7 @@ const updates = (e, lessons) => {
     const isSpeciesListAvailable = !!title.dataset.selected && !!speciesList; 
     const isSpeciesListHidden = elem.hasClass(speciesList, 'hide');
   
-    const titleState = document.querySelector(`.js-lesson-state[data-lesson-id="${lessonId}"]`);
+    const lessonVideoState = document.querySelector(`.js-lesson-video-state[data-lesson-id="${lessonId}"]`);
   
     const state = {
       requiresSpeciesList: !isSpeciesListAvailable,
@@ -24,9 +24,9 @@ const updates = (e, lessons) => {
       hideSpeciesList: isSpeciesListAvailable && !isSpeciesListHidden
     };
   
-    return { title, lesson, state, speciesList, container, titleState, reviewLink };
+    return { title, lesson, state, speciesList, container, lessonVideoState, reviewLink };
 };
 
 export const lessonListHandler = {
-  updates
+  parseLessonElement
 }

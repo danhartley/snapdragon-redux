@@ -1,12 +1,11 @@
 import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
-import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
-import { scoreHandler } from 'ui/helpers/handlers';
+import { scoreHandler, bindScore } from 'ui/helpers/handlers';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 import { getPoolItems } from 'snapdragon-engine/pool-handler';
@@ -95,11 +94,11 @@ export const renderMixedSpecimenCombined = collection => {
             if(!score.success) {            
                 setTimeout(() => {
                     window.clearTimeout(boundScore.scoreUpdateTimer);
-                    actions.boundUpdateScore(boundScore.score);
+                    bindScore(boundScore.score);
                 });
             } else {
                 window.clearTimeout(boundScore.scoreUpdateTimer);
-                actions.boundUpdateScore(boundScore.score);
+                bindScore(boundScore.score);
             }
 
         });

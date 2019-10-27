@@ -235,7 +235,7 @@ const getObservableMonths = (date, span = 3) => {
 
   const getMonthName = month => {    
     const exampleDate = new Date(2000, month, 1);
-    const name = exampleDate.toLocaleString('en-uk', { month: 'short' });
+    const name = exampleDate.toLocaleString('en-uk', { month: 'long' });
     return name;
   }
 

@@ -11,7 +11,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { firestore } from 'api/firebase/firestore';
-// import { subsHandler } from 'ui/helpers/subscription-handler';
+import { bindScore } from 'ui/helpers/handlers';
 import { subscription } from 'redux/subscriptions';
 
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
@@ -92,7 +92,7 @@ export const renderMultiStrips = (collection, bonus) => {
                             bonus.callback(score);
                         } else {
                             subscription.removeSubs();
-                            actions.boundUpdateScore(score);
+                            bindScore(score);
                         }
                     };
 

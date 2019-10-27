@@ -75,6 +75,8 @@
     margin: 0;
     background-color: var(--snap-collection) !important;
     display: initial;
+    text-align: left;
+    padding-left: 1rem;
   }
 
   .language-options .dropdown-menu.show {

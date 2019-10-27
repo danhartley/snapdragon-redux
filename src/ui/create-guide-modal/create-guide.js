@@ -9,17 +9,19 @@ import { renderLocation } from 'ui/create-guide-modal/location';
 import { renderInatUser } from 'ui/create-guide-modal/inat-user';
 import { renderCategories } from 'ui/create-guide-modal/categories';
 import { renderSpeciesPicker } from 'ui/create-guide-modal/species-picker';
-import { renderSeason } from 'ui/create-guide-modal/season';
+// import { renderSeason } from 'ui/create-guide-modal/season';
 import { saveButton } from 'ui/create-guide-modal/common/save-button';
 import { enums } from 'ui/helpers/enum-helper';
 
+import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
+
 import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
 
-const closeModalListeners = [];
+// const closeModalListeners = [];
 
-export const listenToCloseCreateGuideModal = listener => { 
-    closeModalListeners.push(listener);
-};
+// export const onCloseCreateGuideModal = listener => { 
+//     closeModalListeners.push(listener);
+// };
 
 class CreateGuide {
 
@@ -32,9 +34,9 @@ class CreateGuide {
         this.steps = [
             { number: 1, title: 'Create Lesson', description: 'Options', nextStep: '', disabled: true, className:'species-actions' },
             { number: 2, title: 'Create Lesson', description: 'Location', nextStep: 'Taxa', disabled: true, className:'location-actions' },
-            { number: 3, title: 'Create Lesson', description: 'Taxa', nextStep: 'Language', disabled: true, className:'taxa-actions',
-                alternative: { nextStep: 'Start Lesson' } },
-            { number: 4, title: 'Create Lesson', description: 'Season', nextStep: 'Start Lesson', disabled: true, className:'filter-actions' }
+            { number: 3, title: 'Create Lesson', description: 'Taxa', nextStep: 'Fetch Species', disabled: true, className:'taxa-actions' },
+            { number: 4, title: 'Create Lesson', description: 'Spinner', nextStep: 'Open Lesson', disabled: true, className:'filter-actions' }
+            // { number: 4, title: 'Create Lesson', description: 'Season', nextStep: 'Start Lesson', disabled: true, className:'filter-actions' }
         ];
         
         this.modal = document.getElementById('createGuide');
@@ -119,9 +121,12 @@ class CreateGuide {
             case 'Taxa':
                 renderCategories(this.modal, this);
                 break;
-            case 'Season':
-                renderSeason(this.modal, this);
-                break;
+            case 'Spinner':
+                    speciesPendingSpinner(this.getConfig(), this.modal);
+                    break;
+            // case 'Season':
+            //     renderSeason(this.modal, this);
+            //     break;
         }
     }
 
@@ -134,11 +139,13 @@ class CreateGuide {
         this.nextStepActionTxt.removeAttribute('data-dismiss');
 
         if(this.startLesson ) {
-            closeModalListeners.forEach(listener => listener(enums.lessonState.GET_SPECIES));
+            // closeModalListeners.forEach(listener => listener(enums.lessonState.GET_SPECIES));
             this.currentStep = 0;
             
-            if(config.isLandscapeMode) {
-                this.nextStepActionTxt.setAttribute('data-dismiss','modal');
+            this.nextStepActionTxt.setAttribute('data-dismiss','modal');
+
+            if(this.getConfig().isLandscapeMode) {
+                // this.nextStepActionTxt.setAttribute('data-dismiss','modal');
                 this.listeners.forEach((listener, index) => {
                     listener.element.removeEventListener('click', listener.handler, 'true');
                 });
@@ -197,7 +204,7 @@ export const createGuideHandler = step => {
     guide.goToNextStep(step);
 
     const handleNextStepAction = event => {        
-        guide.startLesson = guide.nextStepActionTxt.innerHTML.indexOf('Start Lesson') > -1; // hack
+        guide.startLesson = guide.nextStepActionTxt.innerHTML.indexOf('Open Lesson') > -1; // hack
         guide.goToNextStep(guide.getCurrentStep() + 1, 'NEXT');
         guide.listeners.push( { element: guide.nextStepAction, handler: handleNextStepAction });
     };

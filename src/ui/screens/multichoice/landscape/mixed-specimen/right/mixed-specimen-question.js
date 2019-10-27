@@ -1,10 +1,10 @@
 import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
-import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { returnIcon } from 'ui/helpers/icon-handler';
 import { firestore } from 'api/firebase/firestore';
+import { bindScore } from 'ui/helpers/handlers';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { listenToImageSelection, listenToUserAnswer, renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
@@ -74,7 +74,8 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
     continueLessonBtn.addEventListener('click', () => {
         window.clearTimeout(pendingScore.scoreUpdateTimer);
-        actions.boundUpdateScore(pendingScore.score);
+        bindScore(pendingScore.score);
+        
     });
 
     document.querySelector('.js-help-txt').addEventListener('click', () => {

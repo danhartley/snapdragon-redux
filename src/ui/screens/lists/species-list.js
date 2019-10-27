@@ -10,7 +10,7 @@ import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
 import { modalImageHandler } from 'ui/helpers/image-handlers';
 import { buildTable } from 'ui/screens/lists/species-table';
 import { collectionHandler } from 'ui/helpers/collection-handler';
-import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
+// import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
 import { renderHome } from 'ui/screens/home/home';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 
@@ -22,9 +22,9 @@ export const renderSpeciesList = (collection, args) => {
 
     let config = R.clone(configState);
     
-    if(!collection.species) {
-        speciesPendingSpinner(config);
-    }
+    // if(!collection.species) {
+    //     speciesPendingSpinner(config);
+    // }
 
     config.collection = { id: collection.id };
 

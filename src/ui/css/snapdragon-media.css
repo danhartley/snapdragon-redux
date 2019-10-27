@@ -162,9 +162,9 @@
           margin: 0;
       }
     
-      .modal-body .language-options button {
+      /* .modal-body .language-options button {
         width: initial;
-      }
+      } */
 
       .info-details .info_detail img {   
         max-height: 10rem;

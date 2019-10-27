@@ -2,9 +2,8 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
-import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
-import { scoreHandler } from 'ui/helpers/handlers';
+import { scoreHandler, bindScore } from 'ui/helpers/handlers';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 
 import completeTemplate from 'ui/screens/text-entry/text-complete-template.html';
@@ -100,7 +99,7 @@ export const renderCompleteText = (collection) => {
         continueLessonBtn.disabled = false;
         continueLessonBtn.addEventListener('click', () => {
             window.clearTimeout(scoreUpdateTimer);
-            actions.boundUpdateScore(score);
+            bindScore(score);
         });
     };
 

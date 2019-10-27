@@ -185,7 +185,11 @@ export const collectionHandler = async (collection, config, counter, callback, c
 
             actions.boundNewCollection({ config, collection });
             
-            callback(collection, config)();
+            try {
+                callback(collection, config)();
+            } catch (e) {
+                console.log(e.message);
+            }
 
         } else {
             console.log('Calling callbackWhenNoResults().');

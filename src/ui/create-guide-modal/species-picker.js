@@ -15,7 +15,7 @@ export const renderSpeciesPicker = createGuide => {
           step.innerHTML = 'Picker';
 
     const nextStepActionTxt = modal.querySelector('.js-modal-guide-navigation > div:nth-child(2) > div > span');
-          nextStepActionTxt.innerHTML = 'Start Lesson';
+          nextStepActionTxt.innerHTML = 'Open Lesson';
 
     // const actionsContainer = modal.querySelector('.js-actions');
     //       actionsContainer.setAttribute('style', 'justify-content: start;');

@@ -68,7 +68,7 @@ const playVideoFrom = time => {
 
 const states = [ { key: -1, value: 'unstarted' }, { key: 1, value: 'playing' }, { key: 2, value: 'paused' } ];
 
-const getLessonState = (videoPlayer, lesson) => {
+const setVideoState = (videoPlayer, lesson) => {
 
     let state = '';
 
@@ -115,6 +115,6 @@ export const videoHandler = {
     subscribeToPlayerStateChange,
     playVideoFrom,
     states,
-    getLessonState,
+    setVideoState,
     destroyPlayer
 };

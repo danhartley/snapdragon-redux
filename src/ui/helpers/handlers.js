@@ -1,7 +1,7 @@
+import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { elem } from 'ui/helpers/class-behaviour';
 import { markTest, isAnswerEqualToQuestion } from 'ui/helpers/score-handler';
-// import { subsHandler } from 'ui/helpers/subscription-handler';
 import { subscription } from 'redux/subscriptions';
 
 export const scoreHandler = (type, test, callback, config) => {
@@ -46,7 +46,7 @@ const clickContinueLessonButtonHandler = (score, scoreUpdateTimer) => {
     continueLessonBtn.addEventListener('click', event => {
         window.clearTimeout(scoreUpdateTimer);
         subscription.removeSubs();
-        actions.boundUpdateScore(score);
+        bindScore(score);
     });
 };
 
@@ -59,7 +59,7 @@ const simpleScoreHandler = (test, callback, config) => {
     subscription.removeSubs();
 
     const scoreUpdateTimer = setTimeout(()=>{
-        actions.boundUpdateScore(score);        
+        bindScore(score);      
     }, delay);
 
     if(callback) {
@@ -117,7 +117,7 @@ const genericScoreHandler = (_score, callback, config) => {
     subscription.removeSubs(); 
 
     const scoreUpdateTimer = setTimeout(()=>{
-        actions.boundUpdateScore(score);               
+        bindScore(score);               
     }, delay);
 
     if(callback) callback(score, scoreUpdateTimer);
@@ -134,7 +134,7 @@ const blockScoreHander = (test, callback, config) => {
     subscription.removeSubs();
 
     const scoreUpdateTimer = setTimeout(()=>{
-        actions.boundUpdateScore(score);        
+        bindScore(score);        
     }, delay);
 
     callback(score, scoreUpdateTimer, config);
@@ -221,10 +221,19 @@ const imageScoreHandler = (test, callback, config) => {
             subscription.removeSubs();
 
             const scoreUpdateTimer = setTimeout(() => {
-                actions.boundUpdateScore(score);
+                bindScore(score);
             }, delay);
                 
             if(callback) callback(score, scoreUpdateTimer);
         });
     });
+};
+
+export const bindScore = score => {
+
+    const { collection } = store.getState();
+
+    score.collectionId = collection.id;
+
+    actions.boundUpdateScore(score);  
 };
