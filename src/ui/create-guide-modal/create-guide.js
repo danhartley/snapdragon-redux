@@ -9,19 +9,10 @@ import { renderLocation } from 'ui/create-guide-modal/location';
 import { renderInatUser } from 'ui/create-guide-modal/inat-user';
 import { renderCategories } from 'ui/create-guide-modal/categories';
 import { renderSpeciesPicker } from 'ui/create-guide-modal/species-picker';
-// import { renderSeason } from 'ui/create-guide-modal/season';
 import { saveButton } from 'ui/create-guide-modal/common/save-button';
-import { enums } from 'ui/helpers/enum-helper';
-
 import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
 
 import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
-
-// const closeModalListeners = [];
-
-// export const onCloseCreateGuideModal = listener => { 
-//     closeModalListeners.push(listener);
-// };
 
 class CreateGuide {
 
@@ -124,9 +115,6 @@ class CreateGuide {
             case 'Spinner':
                     speciesPendingSpinner(this.getConfig(), this.modal);
                     break;
-            // case 'Season':
-            //     renderSeason(this.modal, this);
-            //     break;
         }
     }
 
@@ -139,13 +127,11 @@ class CreateGuide {
         this.nextStepActionTxt.removeAttribute('data-dismiss');
 
         if(this.startLesson ) {
-            // closeModalListeners.forEach(listener => listener(enums.lessonState.GET_SPECIES));
             this.currentStep = 0;
             
             this.nextStepActionTxt.setAttribute('data-dismiss','modal');
 
             if(this.getConfig().isLandscapeMode) {
-                // this.nextStepActionTxt.setAttribute('data-dismiss','modal');
                 this.listeners.forEach((listener, index) => {
                     listener.element.removeEventListener('click', listener.handler, 'true');
                 });
