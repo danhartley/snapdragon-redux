@@ -1,4 +1,5 @@
 import { store } from 'redux/store';
+import { actions } from 'redux/actions/action-creators';
 import { collectionHandler } from 'ui/helpers/collection-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { listenToInatRequests } from 'api/inat/inat';
@@ -9,6 +10,7 @@ const onCloseModalListeners = [];
 
 export const onCloseCreateGuideModal = listener => { 
     onCloseModalListeners.push(listener);
+    console.log('onCloseModalListeners: ', onCloseModalListeners.length);
 };
 
 export const speciesPendingSpinner = (config, modal) => {
@@ -19,10 +21,14 @@ export const speciesPendingSpinner = (config, modal) => {
         id: collections.length + 100, 
         name: 'custom lesson',
         behaviour: 'dynamic',
-        glossary: config.guide.iconicTaxa.map(taxon => taxon.id)
+        glossary: config.guide.iconicTaxa.map(taxon => taxon.id),
+        lessonPlanLandscape: 1,
+        lessonPlanPortrait: 101,
     };
     const returnedSpecies = (collection, config) => {
         newCollection = { ...newCollection, ...collection };
+        feedback.innerHTML = collection.name;
+        actions.boundUpdateCollections(newCollection);
     };
     const callbackWhenNoResults = () => {
         console.log('no reults');
@@ -33,12 +39,11 @@ export const speciesPendingSpinner = (config, modal) => {
     const template = document.createElement('template');
           template.innerHTML = spinnerTemplate;
 
-    // const parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
-    // parent.innerHTML = '';
-
     const parent = modal.querySelector('.js-step-action-content');
     
     renderTemplate({ }, template.content, parent);
+
+    const feedback = document.querySelector('.js-request-feedback');
 
     const OrdinalSuffixOf = i => {
         var j = i % 10,
@@ -58,7 +63,6 @@ export const speciesPendingSpinner = (config, modal) => {
     let unsubscribe;
 
     const callback = request => {
-        const feedback = document.querySelector('.js-request-feedback');
         if(feedback) {
             feedback.innerHTML = `Making ${OrdinalSuffixOf(request.page)} request of ${request.numberOfRequests}`;
         } else {
@@ -70,7 +74,11 @@ export const speciesPendingSpinner = (config, modal) => {
 
     const close = modal.querySelector('.js-arrow-wrapper');
 
-    close.addEventListener('click', () => {
-        onCloseModalListeners.forEach(listener => listener(newCollection));
+    setTimeout(() => {
+        close.addEventListener('click', () => {
+            setTimeout(() => {
+                onCloseModalListeners.forEach(listener => listener(newCollection));   
+            });
+        });   
     });
 };

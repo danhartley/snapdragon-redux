@@ -1518,8 +1518,7 @@ span.hide-empty:empty {
 }
 
 .species-pending > div:nth-child(1) {
-  text-transform: uppercase;
-  font-family: 'SharpGroteskWide', sans-serif;
+  text-transform: uppercase;  
   color: var(--snap-link);
   letter-spacing: .3rem;
 }
@@ -1991,6 +1990,10 @@ a.collection-disabled {
   font-size: 1.6rem;
   color: var(--snap-text-medium-light);
   padding-left: 20%;
+}
+
+.lesson-list-custom-item {
+  background-color: var(--snap-toggle-header-off) !important;
 }
 
 .lesson-list .lesson-list-item {

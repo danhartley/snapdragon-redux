@@ -1,4 +1,9 @@
+import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';
+import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
+import { videoHandler } from 'ui/screens/lists/video-handler';
+import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
+import { enums } from 'ui/helpers/enum-helper';
 
 const parseLessonElement = (e, lessons) => {
 
@@ -27,6 +32,34 @@ const parseLessonElement = (e, lessons) => {
     return { title, lesson, state, speciesList, container, lessonVideoState, reviewLink };
 };
 
+const titleClickHandler = (title, lessons, onSpeciesListLoad) => {
+  return title.addEventListener('click', e => {
+    e.stopPropagation();
+    const { title, lesson, state, speciesList, container, lessonVideoState } = parseLessonElement(e, lessons);
+    if (state.revealSpeciesList) {
+      lessonStateHandler.bindAction({ state: enums.lessonState.BEGIN_INTRO, lesson });
+      speciesList.classList.remove('hide');
+    }
+    if (state.hideSpeciesList) {
+      speciesList.classList.add('hide');
+      lessonVideoState.innerHTML = videoHandler.setVideoState(store.getState().videoPlayer || [], lesson);
+    }
+    if (state.requiresSpeciesList) {
+      title.dataset.selected = true;
+      const loadingMessage = title.parentElement.querySelector('.js-loading-message');
+            loadingMessage.classList.remove('hide');
+      const loadSpeciesCallback = () => onSpeciesListLoad(lesson.id, loadingMessage);
+      lessonStateHandler.bindAction({ state: enums.lessonState.BEGIN_INTRO, lesson, container, loadSpeciesCallback, isInCarousel: false, requireSpecies: true });
+    }
+  });
+};
+
+const onSpeciesListLoad = (lessonId, loadingMessage) => {
+  loadingMessage.classList.add('hide');
+  lessonListScrollHandler.scrollToTitle(lessonId);
+};
+
 export const lessonListHandler = {
-  parseLessonElement
+  titleClickHandler,
+  onSpeciesListLoad
 }

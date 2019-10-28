@@ -8,6 +8,7 @@ import { renderSpeciesList } from 'ui/screens/lists/species-list';
 import { renderLesson } from 'ui/screens/home/home-lesson-intro';
 import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { videoHandler } from 'ui/screens/lists/video-handler';
+import { collectionHandler } from 'ui/helpers/collection-handler';
 
 const onBeginLesson = (target, state)  => {
 
@@ -48,15 +49,20 @@ const loadLessons = (savedLessons, collections, videoPlayer, score) => {
 
 const bindAction = args => {
   
-  const { state, target, lesson, container, loadSpeciesCallback, isInCarousel, requireSpecies } = args;
-
+  const { state, target, lesson, container, isInCarousel, requireSpecies, loadSpeciesCallback } = args;
   switch(state) {
     case enums.lessonState.BEGIN_LESSON:
       onBeginLesson(target, state);
       break;     
     case enums.lessonState.BEGIN_INTRO:
       if(requireSpecies) {
-        renderSpeciesList(lesson, { callingParentContainer: container, loadSpeciesCallback, isInCarousel });
+        const { config, counter } = store.getState();
+        config.collection = { id: lesson.id };
+        const callback = (collection, config) => {
+          renderSpeciesList(collection, { callingParentContainer: container, isInCarousel });
+          loadSpeciesCallback();
+        };
+        collectionHandler(lesson, config, counter, callback, ()=>{});        
       }
       renderLesson(lesson);
       break;
@@ -69,8 +75,9 @@ const loadLesson = (collection, savedLessonNames, videoPlayer, score) => {
 
   const isPaused = R.contains(collection.name, savedLessonNames);
   const savedState = isPaused ? '(lesson paused)' : '';
+  const taxa = collection.iconicTaxa ? collection.iconicTaxa.map(taxon => taxon.common).join(', ') : '';
 
-  collection.taxa = collection.iconicTaxa.map(taxon => taxon.common).join(', ');
+  collection.taxa = taxa;
   collection.savedState = savedState;
   collection.isPaused = isPaused;
   collection.hasVideo = collection.video ? true : false;

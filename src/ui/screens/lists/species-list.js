@@ -9,24 +9,13 @@ import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
 import { modalImageHandler } from 'ui/helpers/image-handlers';
 import { buildTable } from 'ui/screens/lists/species-table';
-import { collectionHandler } from 'ui/helpers/collection-handler';
-// import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
-import { renderHome } from 'ui/screens/home/home';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 
 export const renderSpeciesList = (collection, args) => {
 
-    const { readOnlyMode = false, callingParentContainer, loadSpeciesCallback, isInCarousel = true } = args;
+    const { readOnlyMode = false, callingParentContainer, isInCarousel = true } = args;
 
-    const { config: configState, history, counter, enums: traitEnums, lesson  } = store.getState();
-
-    let config = R.clone(configState);
-    
-    // if(!collection.species) {
-    //     speciesPendingSpinner(config);
-    // }
-
-    config.collection = { id: collection.id };
+    const { config, history, enums: traitEnums  } = store.getState();
 
     const openAccordionHandler = (species, accordion) => {
         
@@ -157,40 +146,8 @@ export const renderSpeciesList = (collection, args) => {
         });
     };    
 
-    if(readOnlyMode) {
-        buildTable(collection, { config, enums: traitEnums } );
-        userClickHandlers();        
-    }
-    else {
-
-        function callback(collection, config) {
-
-            loadSpeciesCallback();
-
-            if(collection.items && collection.items.length) {
-                return function () {
-                    buildTable(collection, { config, enums: traitEnums, overrideParent: callingParentContainer });
-                    userClickHandlers();
-                }
-            }
-            else {
-                console.log('No items');
-            }
-        }
-        const callbackWhenNoResults = () => {
-            const spinner = document.querySelector('.js-species-pending i');
-                  spinner.classList.remove('slow-spin');
-
-            const feedback = document.querySelector('.js-request-feedback');
-                  feedback.innerHTML = 'That search returned no matches.';
-
-            renderHome(counter, false, true);
-        }
-        
-        if(config.collection.id === 0) return;
-        
-        collectionHandler(collection, config, counter, callback, callbackWhenNoResults);
-    }
+    buildTable(collection, { config, enums: traitEnums, overrideParent: callingParentContainer });
+    userClickHandlers();
 
     const openSpeciesDescriptionHandler = (collection, species, enableScroll = true) => {
 
@@ -208,7 +165,7 @@ export const renderSpeciesList = (collection, args) => {
                   activeYouTubeIcon.classList.add('youtube-red-fg');
 
             let description = species.description;
-                description = description || species.traits.description.value[0];
+                description = description || species.traits.description.value ? species.traits.description.value[0] : '';
 
             if(description) {
 
@@ -249,7 +206,7 @@ export const renderSpeciesList = (collection, args) => {
                 }
             }
         } catch(e) {
-            console.log('error on species: ', name);
+            console.log('error on  in openSpeciesDescriptionHandler: ', name);
             console.error('error message: ', e.message);
         }
     };

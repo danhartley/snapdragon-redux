@@ -35,18 +35,18 @@ export const allIconicTaxa = [
     }
 ];
 
-const location = {
-  id:1000,
-  type: 'custom',
-  default: true,
-  behaviour: 'dynamic',
-  rangeSensitive: true,
-  glossary: ['plantae', 'common', 'fungi', 'amphibia', 'insecta', 'lichen', 'animalia'],
-  lessonPlanLandscape: 1,
-  lessonPlanPortrait: 101,
-  moduleSize: 4,
-  iconicTaxa: allIconicTaxa
-};
+// const location = {
+//   id:1000,
+//   type: 'custom',
+//   default: true,
+//   behaviour: 'dynamic',
+//   rangeSensitive: true,
+//   glossary: ['plantae', 'common', 'fungi', 'amphibia', 'insecta', 'lichen', 'animalia'],
+//   lessonPlanLandscape: 1,
+//   lessonPlanPortrait: 101,
+//   moduleSize: 4,
+//   iconicTaxa: allIconicTaxa
+// };
 
 const place = {    
   id: 2000,
@@ -62,9 +62,17 @@ const place = {
 };
 
 const placeMonsanto = {    
-    ...place,  
+    // ...place,  
     id: 1, 
-    default: false,  
+    // default: false,
+    behaviour: 'dynamic',
+    type: 'place',
+    rangeSensitive: true,
+    glossary: ['plantae', 'common', 'fungi'],
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 101,
+    moduleSize: 4,
+    iconicTaxa: allIconicTaxa,  
     name: 'Parque Florestal Monsanto',
     guide: {
       locationPlace: 'Monsanto Forest Park, LI, PT',
@@ -81,9 +89,17 @@ const placeMonsanto = {
 }
 
 const placeArrabida = {
-    ...place,
+    // ...place,
     id: 2, 
-    default: false,
+    // default: false,
+    behaviour: 'dynamic',
+    type: 'place',
+    rangeSensitive: true,
+    glossary: ['plantae', 'common', 'fungi'],
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 101,
+    moduleSize: 4,
+    iconicTaxa: allIconicTaxa,
     name: 'O Parque Natural da Arrábida, SE, PT',
     guide: {
       locationPlace: 'O Parque Natural da Arrábida, SE, PT',
@@ -1271,11 +1287,11 @@ const lookalikes = {
 
 export const snapdragonCollections = [
     
-    location,
-    place,
+    // location,
+    // place,
 
-    placeMonsanto,
-    placeArrabida,
+    // placeMonsanto,
+    // placeArrabida,
     
     snapdragonLichens,
     
