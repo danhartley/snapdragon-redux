@@ -98,7 +98,8 @@ export const buildTable = (collection, args) => {
             orderLinkClass: getOrderLinkClass(item),
             taxonomy: item.taxonomy || { family: '', order: ''},
             iconicTaxonIcon,
-            hideFungiIcon
+            hideFungiIcon, 
+            hasVideoClassName: !collection.hasVideo ? 'hide-important' : ''
         };
 
         return itemImage;
@@ -168,8 +169,7 @@ export const buildTable = (collection, args) => {
         headerRow.appendChild(traitNameHeader);
     } else {
         headerRow.appendChild(imageHeader);    
-        headerRow.appendChild(speciesHeader);     
-        // headerRow.appendChild(iconicTaxonHeader);
+        headerRow.appendChild(speciesHeader);
     }
     headerRow.appendChild(accordionHeader);
 

@@ -7,7 +7,8 @@
 
 .step-action-content {
   padding: 0 .5rem;
-  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhDoubleStandardBlock,20vh));
+  /* height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhDoubleStandardBlock,20vh)); */
+  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhStandardBlock,20vh) - var(--vhRunningBlock));
 }
   
   .species-picker-link {
@@ -18,14 +19,13 @@
   .modal-guide-progress > div {
     display: flex;
     align-items: center;
-    padding: .5rem;
-    text-transform: uppercase;
+    padding: .5rem;    
     height: inherit;
   }
 
-  /* .rptr-lessons {
-    height: calc(100vh - 17rem);
-  } */
+  .modal-guide-progress .steps {
+    text-transform: uppercase;
+  }
 
   .modal-body .modal-guide-progress > div div {
     flex: 1;
@@ -58,7 +58,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--snap-filters-ctrl);
+    /* background-color: var(--snap-filters-ctrl); */
     margin: 0 .5rem;
   }
   
@@ -76,6 +76,13 @@
   .arrow-wrapper {
     font-size: 1.6rem;
     pointer-events: none;
+    color: var(--snap-text-light);
+    background-color: var(--snap-collection-active);
+    height: var(--vhRunningBlock);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
   }
   
   .arrow-wrapper i {
@@ -83,19 +90,6 @@
     cursor: pointer;
   }
   
-  .modal-guide-navigation .arrow-wrapper:nth-child(1) {
-    margin: 0 .25rem 0 1rem;
-  }
-  
-  .modal-guide-navigation .arrow-wrapper:nth-child(2) {
-    margin: 0 1rem 0 .25rem;
-  }
-  
-  .modal-guide-navigation > div:nth-child(2).disabled {
-    color: gray;
-    pointer-events: none;
-  }
-
   .modal-guide-wrapper .modal-body .location .current {
     display: flex;
     align-items: center;
@@ -195,29 +189,25 @@
 
 .modal-guide-body .range-slider {
     font-size: .9rem;
-    width: 100%;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
     height: var(--vhStandardBlock);
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+    justify-content: space-evenly;
   }
   
   .modal-guide-body .range-slider > div:nth-child(2) {
-    display: grid;
-    grid-template-columns: 1fr 100% 1fr;
-    width: 100%;
-    grid-gap: .5rem;
+    display: flex;
   }
 
-  .modal-guide-body .range-slider > span:nth-child(2) {  
-    margin-left: .5rem;
-  }
-  
   .range-limits {
     display: none;
   }
   
   .modal-guide-body .set-range-input {
     cursor: pointer;
+    width: 100%;
+    margin: 0 .25rem;
   }
   
   .modal-guide-body .range-slider.disabled .set-range-input {
@@ -294,24 +284,27 @@
     border: .1rem solid var(--snap-text-medium-dark);
   }
   
-  .autocomplete-options-container {
+  .autocomplete-options-container, .inat-autocomplete-options-container {
     z-index: 9999;
-    padding: 0 .25rem;
     color: var(--snap-text-dark-medium-dark);
     background-color: rgb(250, 250, 250);
     border: .05rem solid lightgray;
     text-align: left;
     width: initial;
-    top: calc(var(--vhStandardBlock) + var(--vhStandardBlock) + var(--vhStandardBlock) + var(--vhRunningBlock)) !important;
+    top: calc(var(--vhStandardBlock) + var(--vhStandardBlock) + var(--vhHalfStandardBlock) + var(--vhRunningBlock) + 2rem) !important
   }
-  
-  .autocomplete-options-container > div {
+
+  .autocomplete-options-container > div, .inat-autocomplete-options-container > div {
     padding: .25rem;
   }
   
-  .autocomplete-options-container .selected {
+  .autocomplete-options-container .selected, .inat-autocomplete-options-container .selected {
     color: var(--snap-dd-non-taxa-bg-hover);
     background-color: var(--snap-text-medium-dark);
+  }
+
+  .inat-autocomplete-options-container .selected {
+    background-color: var(--snap-inat);
   }
   
   #place span {
@@ -324,10 +317,6 @@
     display: grid;
     height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhDoubleStandardBlock,20vh) - var(--vhHalfStandardBlock) );
     padding: 1rem;
-  }
-
-  .iconic-taxa-categories #fungi svg {
-    margin-top: -.25rem;
   }
 
   .iconic-taxa-categories > div > div {
@@ -518,14 +507,15 @@
   .location-option {
     display: grid;
     grid-template-rows: 1fr;
+    width: 100%;
+  }
+
+  .location-option > div {
+    width: 100%;
   }
 
   .location-option.place {
     grid-template-rows: 1fr;
-  }
-
-  .location-option.place > div {
-    width: 100%;
   }
 
   .location-option.inat-entry {
@@ -575,20 +565,19 @@
     display: none !important;
   }
 
-  #inat-identity {
-    width: 100%;
-    margin: 0 0 .25rem 0;
-  }
-
-  .filter-option-block {
+  .filter-language-option-block {
     position: absolute;
     bottom: .5rem;
     left: .5rem;
     right: .5rem;
   }
 
-  .filter-option-block > div:nth-child(1) {
+  .filter-language-option-block > div:nth-child(1) {
     margin-bottom: 1rem;
+  }
+
+  .filter-language-option-block span {
+    text-transform: uppercase;
   }
 
   .custom-lesson-species-list {
@@ -603,18 +592,19 @@
     align-items: center;
     justify-content: space-between;
     background-color: var(--snap-lesson-row-blue);
+    height: var(--vhRunningBlock);
   }
 
   .custom-lesson-species-list li span {
     padding: .5rem;
   }
 
-  .custom-lesson-species-list li span:nth-child(2) {
+  /* .custom-lesson-species-list li span:nth-child(2) {
     color: var(--snap-text-light);
     background-color: var(--snap-collection-active);
-  }
+  } */
 
-  .custom-lesson-species-list li:nth-of-type(2n+1) {
+  .custom-lesson-species-list li:nth-of-type(2n) {
     background-color: var(--snap-lesson-row-green);
   }
 
@@ -622,8 +612,13 @@
     display: none !important;
   }
 
-  .modal-guide-progress, .modal-guide-navigation {
+  .modal-guide-progress {
     height: calc(var(--vhStandardBlock, 10vh) - 5px);
+  }
+  
+  .modal-guide-navigation {
+    height: var(--vhRunningBlock, 10vh);
+    background-color: var(--snap-lesson-row-blue);
   }
 
   @media (min-width: 768px) {
@@ -633,9 +628,9 @@
       background-color: var(--snap-text-medium-dark);
     }
 
-    .guide-header-container {
+    /* .guide-header-container {
       height: 2.75rem;
-    }
+    } */
 
     .guide-header-container > div:nth-child(2) {
       flex-direction: row;
@@ -651,32 +646,13 @@
       height: 1rem;
     }
 
-    .iconic-taxa-categories #fungi svg {
-      margin-left: -.25rem;
-    }
-
     .iconic-taxa-categories i {
       font-size: 1.5rem;
-    }
-
-    #inat-identity {      
-      margin: 0 .5rem 0 0;
     }
 
     .inat-entry {
       position: relative;
       display: flex;
-    }
-
-    #set-inat-identity-btn {  
-      width: auto;
-    }
-    .location-option {
-      display: flex;
-    }
-
-    .inat-switch.inat, .guides .inat .inat-switch {
-      flex-direction: row;
     }
 
     .inat.inat-switch .inat-entry {
@@ -694,11 +670,6 @@
     .modal-guide-wrapper .location.inat-switch {
         width: 100%;
         margin-top: 2rem;
-    }
-
-    .modal-guide-wrapper .inat.inat-switch {
-      width: auto;
-      width: 14rem;
     }
 
     .location-option.place {

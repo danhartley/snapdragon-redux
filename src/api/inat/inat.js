@@ -49,8 +49,9 @@ export const getInatSpecies = async config => {
         return taxa;
     };
 
-    const getUserOrProjectIdParameter = config => {
-        const param = config.guide.inatId.param;
+    const getUserOrProjectKeyValuePair = config => {
+        if(!config.guide.inatId) return '';
+        const param = config.guide.inatId.param;    
         const id = config.guide.inatId.id;
         const parameter = `&${param}=${id}`;
         return id ? parameter : '';
@@ -113,8 +114,8 @@ export const getInatSpecies = async config => {
         }
 
         const iconicTaxa = getIconicTaxa(config);
-        // const id = getUserOrProjectIdParameter(config);
-        const url = getBasePath(config) + `&page=${page}&iconic_taxa=${iconicTaxa}&place_id=${placeId}&lat=${lat}&lng=${lng}&radius=${radius}${inat}`;
+        const params = getUserOrProjectKeyValuePair(config);
+        const url = getBasePath(config) + `&page=${page}&iconic_taxa=${iconicTaxa}&place_id=${placeId}&lat=${lat}&lng=${lng}&radius=${radius}${inat}${params}`;
 
         const response = await fetch(url);
         const json = await response.json();
@@ -159,6 +160,9 @@ export async function getHistogram(item, placeId) {
 }
 
 export async function getAutocompleteBy(q, by) {
+
+    // currently set up for USERS and PROJECTS but PLACES? Not sure
+    // https://api.inaturalist.org/v1/places/autocomplete?q=O%20Parque%20Natural%20da%20Arr%C3%A1bida
 
     const url = `https://api.inaturalist.org/v1/${by}/autocomplete?q=${q}`;
     const response = await fetch(url);

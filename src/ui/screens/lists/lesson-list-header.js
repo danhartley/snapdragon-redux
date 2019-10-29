@@ -40,7 +40,6 @@ export const renderLessonListHeader = parent => {
           videoFilter.click();
 };
 
-
 const toggleVideoFilterInputState = () => {
     const input = document.querySelector('#chkVideo');
     if(input.hasAttribute('disabled')) {
@@ -48,4 +47,4 @@ const toggleVideoFilterInputState = () => {
     } else {
       input.setAttribute('disabled', 'disabled');
     }
-  };
+};

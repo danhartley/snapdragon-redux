@@ -2,7 +2,6 @@ import 'ui/create-guide-modal/create-guide.css';
 
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
-import { renderHome } from 'ui/screens/home/home';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderSpecies } from 'ui/create-guide-modal/species';
 import { renderLocation } from 'ui/create-guide-modal/location';
@@ -10,7 +9,7 @@ import { renderInatUser } from 'ui/create-guide-modal/inat-user';
 import { renderCategories } from 'ui/create-guide-modal/categories';
 import { renderSpeciesPicker } from 'ui/create-guide-modal/species-picker';
 import { saveButton } from 'ui/create-guide-modal/common/save-button';
-import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
+import { speciesPendingSpinner } from 'ui/create-guide-modal/species-pending';
 
 import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
 
@@ -27,7 +26,6 @@ class CreateGuide {
             { number: 2, title: 'Create Lesson', description: 'Location', nextStep: 'Taxa', disabled: true, className:'location-actions' },
             { number: 3, title: 'Create Lesson', description: 'Taxa', nextStep: 'Fetch Species', disabled: true, className:'taxa-actions' },
             { number: 4, title: 'Create Lesson', description: 'Spinner', nextStep: 'Open Lesson', disabled: true, className:'filter-actions' }
-            // { number: 4, title: 'Create Lesson', description: 'Season', nextStep: 'Start Lesson', disabled: true, className:'filter-actions' }
         ];
         
         this.modal = document.getElementById('createGuide');
@@ -35,7 +33,7 @@ class CreateGuide {
         if(!this.modal) return;
 
         this.modalTitle = this.modal.querySelector('.js-modal-title div:nth-child(1)');
-        this.modalTitleSteps = this.modal.querySelector('.js-modal-title div:nth-child(2)');
+        // this.modalTitleSteps = this.modal.querySelector('.js-modal-title div:nth-child(2)');
         this.progressSteps = this.modal.querySelectorAll('.js-modal-guide-progress > div > div');
         this.previousStepAction = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(1)');
         this.previousStepTitle = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(1) > div');
@@ -74,7 +72,9 @@ class CreateGuide {
         //       viewport.setAttribute('content', 'width=device-width, initial-scale=1, user-scalable=no');
     }
 
-    addStepActions(className) {
+    addStepActions(nextStep) {
+        
+        if(!nextStep) return;
         
         const parent = this.modal.querySelector('.js-step-action-content');
               parent.innerHTML = '';
@@ -82,20 +82,21 @@ class CreateGuide {
               template.innerHTML = actionsTemplate;
         const description = this.steps.find(step => step.number === this.currentStep).description;
 
-        renderTemplate({ className }, template.content, parent);
+        renderTemplate({ className: nextStep.className }, template.content, parent);
+
+        const options = this.modal.querySelector('.js-options');
+        const navigation = this.modal.querySelector('.js-modal-guide-navigation');
 
         switch(description) {
             case 'Options':
+                options.innerHTML = 'Choose how to find the species you want:';
+                navigation.classList.add('hide-important');
                 renderSpecies(this);
                 break;
-            case 'Location':
+            case 'Location':                
                 
-                const options = this.modal.querySelector('.js-options');
-                      options.classList.add('hide-important');
-                const steps = this.modal.querySelector('.js-steps');
-                      steps.classList.remove('hide-important');
-                const navigation = this.modal.querySelector('.js-modal-guide-navigation');
-                      navigation.classList.remove('hide-important');
+                options.innerHTML = 'Choose species based on location and season.'
+                navigation.classList.remove('hide-important');
 
                 switch(this.option) {
                     case 'A':
@@ -113,8 +114,8 @@ class CreateGuide {
                 renderCategories(this.modal, this);
                 break;
             case 'Spinner':
-                    speciesPendingSpinner(this.getConfig(), this.modal);
-                    break;
+                speciesPendingSpinner(this.getConfig(), this.modal);
+                break;
         }
     }
 
@@ -122,25 +123,10 @@ class CreateGuide {
 
         this.currentStep = nextStep;
         this.direction = direction;
-        this.option = option;
-
-        this.nextStepActionTxt.removeAttribute('data-dismiss');
+        this.option = option || this.option;
 
         if(this.startLesson ) {
             this.currentStep = 0;
-            
-            this.nextStepActionTxt.setAttribute('data-dismiss','modal');
-
-            if(this.getConfig().isLandscapeMode) {
-                this.listeners.forEach((listener, index) => {
-                    listener.element.removeEventListener('click', listener.handler, 'true');
-                });
-                this.listeners = [];
-                return;
-            } else {
-                renderHome(0);
-                return;
-            }
         };
 
         const currentStepProperties = this.steps.filter(s => s.number === this.currentStep);
@@ -148,7 +134,7 @@ class CreateGuide {
         if(!this.modalTitle) return;
         
         this.modalTitle.innerText = currentStepProperties.map(s => s.title);
-        this.modalTitleSteps.innerHTML = `Step ${currentStepProperties.map(s => s.number)} of ${this.steps.length}`;
+        // this.modalTitleSteps.innerHTML = `Step ${currentStepProperties.map(s => s.number)} of ${this.steps.length}`;
         this.nextStepActionTxt.innerHTML = currentStepProperties.map(csp => csp.nextStep);
 
         this.progressSteps.forEach((ps,index) => {
@@ -162,8 +148,8 @@ class CreateGuide {
                 }
             }
         });
-
-        this.addStepActions(this.steps.find(step => step.number === nextStep).className);
+        
+        this.addStepActions(this.steps.find(step => step.number === nextStep));
 
         if(this.currentStep === 1) {
             this.previousStepActionTxt.classList.add('hide-important');
@@ -191,6 +177,7 @@ export const createGuideHandler = step => {
 
     const handleNextStepAction = event => {        
         guide.startLesson = guide.nextStepActionTxt.innerHTML.indexOf('Open Lesson') > -1; // hack
+        if(guide.startLesson) guide.nextStepActionTxt.nextSibling.setAttribute('data-dismiss','modal');
         guide.goToNextStep(guide.getCurrentStep() + 1, 'NEXT');
         guide.listeners.push( { element: guide.nextStepAction, handler: handleNextStepAction });
     };

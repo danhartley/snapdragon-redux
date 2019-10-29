@@ -2,11 +2,12 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
-import { onCloseCreateGuideModal } from 'ui/screens/lists/species-pending';
+import { onCloseCreateGuideModal } from 'ui/create-guide-modal/species-pending';
 import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
 import { enums } from 'ui/helpers/enum-helper';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { lessonListHandler } from 'ui/screens/lists/lesson-list-handler';
+import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 
 import lessonTemplate from 'ui/screens/lists/lesson-template.html';
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
@@ -68,6 +69,11 @@ export const renderLessons = () => {
 
         renderTemplate({ lesson }, template.content, parent);
 
+        document.querySelector('.js-toggle-control').click();
+        document.querySelector('.js-filter-by-video').click();
+
+        lessonListScrollHandler.scrollToTitle(lesson.id);
+
         const row = document.querySelector(`div.js-lesson-list-item[data-lesson-id="${lesson.id}"]`);
               row.classList.add('lesson-list-custom-item');
 
@@ -75,6 +81,6 @@ export const renderLessons = () => {
         lessonListHandler.titleClickHandler(title, lessons, lessonListHandler.onSpeciesListLoad);
 
         const reviewLink = document.querySelector(`div[data-review-link="${lesson.id}"]`);
-        lessonStateHandler.bindAction({ state: enums.lessonState.BEGIN_LESSON, target: reviewLink });
+        lessonStateHandler.bindAction({ state: enums.lessonState.BEGIN_LESSON, target: reviewLink }); 
     });
 };

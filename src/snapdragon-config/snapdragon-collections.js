@@ -35,36 +35,8 @@ export const allIconicTaxa = [
     }
 ];
 
-// const location = {
-//   id:1000,
-//   type: 'custom',
-//   default: true,
-//   behaviour: 'dynamic',
-//   rangeSensitive: true,
-//   glossary: ['plantae', 'common', 'fungi', 'amphibia', 'insecta', 'lichen', 'animalia'],
-//   lessonPlanLandscape: 1,
-//   lessonPlanPortrait: 101,
-//   moduleSize: 4,
-//   iconicTaxa: allIconicTaxa
-// };
-
-const place = {    
-  id: 2000,
-  default: true,    
-  behaviour: 'dynamic',
-  type: 'place',
-  rangeSensitive: true,
-  glossary: ['plantae', 'common', 'fungi'],
-  lessonPlanLandscape: 1,
-  lessonPlanPortrait: 101,
-  moduleSize: 4,
-  iconicTaxa: allIconicTaxa
-};
-
 const placeMonsanto = {    
-    // ...place,  
     id: 1, 
-    // default: false,
     behaviour: 'dynamic',
     type: 'place',
     rangeSensitive: true,
@@ -89,9 +61,7 @@ const placeMonsanto = {
 }
 
 const placeArrabida = {
-    // ...place,
     id: 2, 
-    // default: false,
     behaviour: 'dynamic',
     type: 'place',
     rangeSensitive: true,
@@ -771,9 +741,9 @@ const woodlandsTV1 = {
   }
 };
 
-const selectedItemsCollection = { 
+const customCollection = { 
   id: 9,
-  behaviour: 'static',
+  behaviour: 'dynamic',
   type: 'custom',
   name: 'User collection', 
   moduleSize: 6,
@@ -1287,9 +1257,6 @@ const lookalikes = {
 
 export const snapdragonCollections = [
     
-    // location,
-    // place,
-
     // placeMonsanto,
     // placeArrabida,
     
@@ -1313,5 +1280,5 @@ export const snapdragonCollections = [
     rhsWeeds,
     snapdragonKitchenGarden,
 
-    selectedItemsCollection
+    customCollection
 ];

@@ -4,20 +4,20 @@ import speciesTemplate from 'ui/create-guide-modal/species-template.html';
 
 export const renderSpecies = createGuide => {
 
-    const header = createGuide.modal.querySelector('.js-modal-title');
-          header.innerHTML = 'Create Lesson Wizard';
+    const header = createGuide.modal.querySelector('.js-modal-title > div');
+          header.innerHTML = 'Species picker';
 
     const options = [
         {
-            text: 'A) Location-based',
+            text: 'A) By location and season',
             id: 'A'
         },
         {
-            text: 'B) iNaturalist observations',
+            text: 'B) From iNaturalist observations',
             id: 'B'
         },
         {
-            text: 'C) Species picker',
+            text: 'C) By using a name-based search',
             id: 'C'
         }
     ];

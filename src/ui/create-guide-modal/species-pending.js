@@ -3,8 +3,9 @@ import { actions } from 'redux/actions/action-creators';
 import { collectionHandler } from 'ui/helpers/collection-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { listenToInatRequests } from 'api/inat/inat';
+import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 
-import spinnerTemplate from 'ui/screens/lists/species-pending-template.html';
+import spinnerTemplate from 'ui/create-guide-modal/species-pending-template.html';
 
 const onCloseModalListeners = [];
 
@@ -14,21 +15,20 @@ export const onCloseCreateGuideModal = listener => {
 };
 
 export const speciesPendingSpinner = (config, modal) => {
-    
-    const { collections, counter} = store.getState();
 
-    let newCollection = { 
-        id: collections.length + 100, 
-        name: 'custom lesson',
-        behaviour: 'dynamic',
-        glossary: config.guide.iconicTaxa.map(taxon => taxon.id),
-        lessonPlanLandscape: 1,
-        lessonPlanPortrait: 101,
-    };
+    const title = modal.querySelector('.js-options');
+          title.innerHTML = 'Searching for matching species.';
+    
+    const { counter} = store.getState();
+
+    let newCollection = snapdragonCollections.find(c => c.id === 9);
+
     const returnedSpecies = (collection, config) => {
         newCollection = { ...newCollection, ...collection };
-        feedback.innerHTML = collection.name;
+        feedback.innerHTML = collection.name;        
         actions.boundUpdateCollections(newCollection);
+        const icon = modal.querySelector('.icon i');
+              icon.classList.remove('slow-spin');
     };
     const callbackWhenNoResults = () => {
         console.log('no reults');

@@ -59,8 +59,8 @@ export const renderInatUser = (modal, createGuide) => {
 
     const inatIdentityInput = parent.querySelector('#inat-identity');
 
-    inatIdentityInput.addEventListener('keyup', event => {
-        autocompleteRef = inatAutocomplete(inatIdentityInput, byType, 'autocomplete-options-container', '');
+    inatIdentityInput.addEventListener('keypress', event => {
+        autocompleteRef = inatAutocomplete(inatIdentityInput, byType, 'inat-autocomplete-options-container', '');
     });
 
     const idSwitch = parent.querySelector('.inat-switch-slider');

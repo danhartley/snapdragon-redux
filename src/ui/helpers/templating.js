@@ -5,3 +5,5 @@ export const renderTemplate = (context, content, parent, clone) => {
     var expanded = Stamp.expand(contentClone, context);
     Stamp.appendChildren(parent, expanded);
 };
+
+//https://github.com/jcgregorio/stamp

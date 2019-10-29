@@ -56,11 +56,11 @@ export const renderLocation = (modal, createGuide) => {
                                             ? 'Or start typing the name of a place you are interested in.'
                                             : 'Or start typing the name of a place.'
 
-    let counter = 0;
+    // let counter = 0;
 
     locationPlaceInput.addEventListener('keypress', event => {
-        counter++;
-        console.log(counter);
+        // counter++;
+        // console.log(counter);
         autocompleteRef = inatAutocomplete(locationPlaceInput, 'places', 'autocomplete-options-container', 'place');
         // setTimeout(() => {
         //     const googleImageContainer = modal.querySelector('#inat-place-autocomplete #googleLogoContainer');
@@ -94,7 +94,9 @@ export const renderLocation = (modal, createGuide) => {
             autocompleteRef.destroy();
     });
 
-    modal.querySelector('.js-set-inat-location-btn').addEventListener('click', event => {
+    const saveLocationBtn = modal.querySelector('.js-set-inat-location-btn');
+
+    saveLocationBtn.addEventListener('click', event => {
 
         const iNatLookup = false;
 
@@ -120,6 +122,15 @@ export const renderLocation = (modal, createGuide) => {
 
             GooglePlaceDetails(locationPlaceInput.name, callback);            
         }
+
+        saveLocationBtn.innerHTML = 'Saving…';
+
+        setTimeout(() => {
+            saveLocationBtn.innerHTML = 'Placed saved';
+            setTimeout(() => {
+                saveLocationBtn.innerHTML = 'Save place';
+            }, 2000);
+        }, 2000);
     });
 
     const idSwitch = parent.querySelector('.inat-switch-slider');

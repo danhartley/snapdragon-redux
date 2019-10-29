@@ -28,6 +28,7 @@ button {
 
 input[type="text"] {
   padding: .5rem;
+  width: 100%;
 }
 
 figure {
@@ -45,7 +46,7 @@ ul {
 
 li {
   list-style-type: none;
-  margin: .5rem 0;
+  margin: 0 0 .5rem 0;
 }
 
 progress {
@@ -1500,35 +1501,13 @@ span.hide-empty:empty {
   color: rgb(90, 147, 252);
   display: flex;
   align-items: center;
+  justify-content: center;
+  height: calc(var(--vhStandardBlock, 30vh) * 3);
 }
 
 .question-container .icon {
   color: rgb(90, 147, 252);
   font-size: 1.8rem;
-}
-
-.species-pending > div:nth-child(1),
-.species-pending > div:nth-child(3) {
-  padding: 1rem;
-}
-
-.species-pending > div:nth-child(4) {
-  font-style: italic;
-  padding: 1rem;
-}
-
-.species-pending > div:nth-child(1) {
-  text-transform: uppercase;  
-  color: var(--snap-link);
-  letter-spacing: .3rem;
-}
-
-.species-pending > div:nth-child(2) {
-  padding: 0;
-  /* height: 30vh; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .slow-spin {
