@@ -62,6 +62,7 @@ export const renderLocation = (modal, createGuide) => {
         // counter++;
         // console.log(counter);
         autocompleteRef = inatAutocomplete(locationPlaceInput, 'places', 'autocomplete-options-container', 'place');
+        saveLocationBtn.disabled = false;
         // setTimeout(() => {
         //     const googleImageContainer = modal.querySelector('#inat-place-autocomplete #googleLogoContainer');
         //     if(!googleImageContainer && counter >= 3) {
@@ -123,12 +124,13 @@ export const renderLocation = (modal, createGuide) => {
             GooglePlaceDetails(locationPlaceInput.name, callback);            
         }
 
-        saveLocationBtn.innerHTML = 'Saving…';
+        saveLocationBtn.innerHTML = 'Saving location…';
 
         setTimeout(() => {
-            saveLocationBtn.innerHTML = 'Placed saved';
+            saveLocationBtn.innerHTML = 'Location saved';
             setTimeout(() => {
-                saveLocationBtn.innerHTML = 'Save place';
+                saveLocationBtn.innerHTML = 'Save alternative location';
+                saveLocationBtn.disabled = true;
             }, 2000);
         }, 2000);
     });

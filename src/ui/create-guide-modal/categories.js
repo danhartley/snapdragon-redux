@@ -9,10 +9,12 @@ import categoriesTemplate from 'ui/create-guide-modal/categories-template.html';
 export const renderCategories = (modal, createGuide) => {
 
     const config = createGuide.getConfig();
+          config.guide.iconicTaxa = config.guide.iconicTaxa || allIconicTaxa;
 
     const filterSelectedClass = 'iconic-taxa-selected';
 
-    let iconicTaxa = [ ...config.guide.iconicTaxa ] || [];
+
+    let iconicTaxa = config.guide.iconicTaxa;
 
     const template = document.createElement('template');
           template.innerHTML = categoriesTemplate;
@@ -23,17 +25,15 @@ export const renderCategories = (modal, createGuide) => {
     renderTemplate({}, template.content, parent);
 
     const icons = parent.querySelectorAll('.js-iconic-taxa-categories > div > div:nth-child(1)');
-
-    if(config.guide.iconicTaxa && config.guide.iconicTaxa.length > 0) {
+    
+    if(iconicTaxa) {
         icons.forEach(icon => {
             const filterId = icon.parentElement.id;
-            if(R.contains(filterId, config.guide.iconicTaxa.map(taxon => taxon.id))) {
+            if(R.contains(filterId, iconicTaxa.map(taxon => taxon.id))) {
                 icon.classList.add(filterSelectedClass);
             }
         });
     }
-
-    config.guide.iconicTaxa = iconicTaxa.length === 0 ? allIconicTaxa : iconicTaxa;     
 
     setTimeout(() => {
         const fungiIcon = modal.querySelector('#fungi > div');
@@ -55,8 +55,10 @@ export const renderCategories = (modal, createGuide) => {
                 if(filterId === 'fungi') {
                     filter.querySelector('g g').classList.remove('svg-icon-selected');                    
                 }
-                filter.classList.remove(filterSelectedClass);
-                iconicTaxa = iconicTaxa.filter(taxon => taxon.id !== filterId);
+                if(iconicTaxa.length > 1) {
+                    filter.classList.remove(filterSelectedClass);
+                    iconicTaxa = iconicTaxa.filter(taxon => taxon.id !== filterId);
+                }
 
             } else {
 
@@ -76,11 +78,11 @@ export const renderCategories = (modal, createGuide) => {
             config.guide.iconicTaxa = iconicTaxa;
 
             createGuide.setConfig(config);
-            createGuide.saveStep('SPECIES');            
+            createGuide.saveStep('TAXA');            
         });
     });
 
-    createGuide.saveStep('SPECIES');
+    createGuide.saveStep('TAXA');
 
     document.querySelector('.js-arrow-wrapper').innerHTML = '<i class="far fa-arrow-alt-circle-right"></i>';
 };

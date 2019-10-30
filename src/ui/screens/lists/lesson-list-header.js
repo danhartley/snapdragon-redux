@@ -12,7 +12,7 @@ export const renderLessonListHeader = parent => {
     const toggleCtrl = document.querySelector('.js-toggle-control');
           toggleCtrl.addEventListener('click', e => {
 
-            toggleVideoFilterInputState();
+            // toggleVideoFilterInputState();
 
             e.stopPropagation();
 
@@ -29,22 +29,22 @@ export const renderLessonListHeader = parent => {
             }
           });
 
-    const videoFilter = document.querySelector('.js-filter-by-video');
-          videoFilter.addEventListener('click', e => {
-            const lessonsWithoutVideo = document.querySelectorAll('div[data-has-video="false"]');
-            const checked = e.currentTarget.children[0].checked;
-            checked 
-              ? lessonsWithoutVideo.forEach(lesson => lesson.classList.remove('hide-important'))
-              : lessonsWithoutVideo.forEach(lesson => lesson.classList.add('hide-important'));
-          });
-          videoFilter.click();
+    // const videoFilter = document.querySelector('.js-filter-by-video');
+    //       videoFilter.addEventListener('click', e => {
+    //         const lessonsWithoutVideo = document.querySelectorAll('div[data-has-video="false"]');
+    //         const checked = e.currentTarget.children[0].checked;
+    //         checked 
+    //           ? lessonsWithoutVideo.forEach(lesson => lesson.classList.remove('hide-important'))
+    //           : lessonsWithoutVideo.forEach(lesson => lesson.classList.add('hide-important'));
+    //       });
+    //       videoFilter.click();
 };
 
-const toggleVideoFilterInputState = () => {
-    const input = document.querySelector('#chkVideo');
-    if(input.hasAttribute('disabled')) {
-      input.removeAttribute('disabled');
-    } else {
-      input.setAttribute('disabled', 'disabled');
-    }
-};
+// const toggleVideoFilterInputState = () => {
+//     const input = document.querySelector('#chkVideo');
+//     if(input.hasAttribute('disabled')) {
+//       input.removeAttribute('disabled');
+//     } else {
+//       input.setAttribute('disabled', 'disabled');
+//     }
+// };

@@ -6,8 +6,8 @@
         <div class="input-container">
             <input id="inat-place" type="text" placeholder="Or start typing the name of a place.">
         </div>
-        <div class="input-container">
-            <button id="set-inat-location-btn" class="btn btn-modal js-set-inat-location-btn">Save place</button>
+        <div class="input-container margin-top">
+            <button id="set-inat-location-btn" disabled class="btn btn-modal js-set-inat-location-btn">Save alternative location</button>
         </div>
     </div>
 </div>
@@ -18,17 +18,15 @@
     </div>
 </div>
 
-<div>
-    <div class="filter-options">            
-        <div class="season inat-switch">
-            <div class="embedded-switch">
-                <div class="txt-left"><span>{{ observableMonths }}</span></div>
-                <div class="inat-switch-slider left js-inat-switch-slider">
-                    <div></div>
-                </div>
-                <div class="txt-right"><span>All Year</span></div>
+<div class="filter-options">            
+    <div class="modal-subheader">Find species observed now, or at any time.</div>
+    <div class="season inat-switch margin-top">
+        <div class="embedded-switch">
+            <div class="txt-left"><span>{{ observableMonths }}</span></div>
+            <div class="inat-switch-slider left js-inat-switch-slider">
+                <div></div>
             </div>
+            <div class="txt-right"><span>All Year</span></div>
         </div>
-        <div class="filter-option">Find species active now, or over the whole year.</div>
-    </div>
+    </div>        
 </div>

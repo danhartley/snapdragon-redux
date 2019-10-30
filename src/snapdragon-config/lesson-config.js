@@ -19,7 +19,7 @@ export const config = {
         { name: 'Português', lang: 'pt' }
     ],
     guide: {
-        iconicTaxa: [],
+        iconicTaxa: null,
         locationLongLat: '',
         locationPlace: '',
         locationType: null,

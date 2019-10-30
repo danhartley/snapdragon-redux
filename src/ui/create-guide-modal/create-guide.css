@@ -7,7 +7,6 @@
 
 .step-action-content {
   padding: 0 .5rem;
-  /* height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhDoubleStandardBlock,20vh)); */
   height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhStandardBlock,20vh) - var(--vhRunningBlock));
 }
   
@@ -20,7 +19,11 @@
     display: flex;
     align-items: center;
     padding: .5rem;    
-    height: inherit;
+    height: inherit;    
+  }
+
+  .modal-subheader {
+    font-size: 1.1em;
   }
 
   .modal-guide-progress .steps {
@@ -58,7 +61,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background-color: var(--snap-filters-ctrl); */
     margin: 0 .5rem;
   }
   
@@ -147,7 +149,7 @@
 
   .html5-location-place {
     width: 100%;
-    height: var(--vhStandardBlock);
+    /* height: var(--vhStandardBlock); */
   }
 
   #set-inat-identity-btn {
@@ -162,7 +164,7 @@
   }
 
   .input-container {
-    height: var(--vhStandardBlock);
+    /* height: var(--vhStandardBlock); */
     display: flex;
     align-items: center;
   }
@@ -188,7 +190,7 @@
   /* SLIDER */
 
 .modal-guide-body .range-slider {
-    font-size: .9rem;
+    font-size: .9em;
     height: var(--vhStandardBlock);
     display: flex;
     flex-direction: column;
@@ -217,7 +219,7 @@
   /* SNAPDRAGON SWITCH */
 
   .inat-switch {
-    height: var(--vhStandardBlock);
+    /* height: var(--vhStandardBlock); */
     display: flex;
     align-items: center;
   }
@@ -247,7 +249,7 @@
   display: grid;
   grid-template-columns: 2fr 3.2rem 1fr;
   height: 1.6rem;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
   .inat-switch-slider.left div {
@@ -264,10 +266,6 @@
   .inat-switch .txt-right {
     align-self: center;
     padding: 0 0 0 .5rem;
-  }
-
-  .inat-switch .txt-left.selected span, .inat-switch .txt-right.selected span {
-    color: var(--snap-link);    
   }
 
   .inat-switch-slider.right div {
@@ -291,7 +289,9 @@
     border: .05rem solid lightgray;
     text-align: left;
     width: initial;
-    top: calc(var(--vhStandardBlock) + var(--vhStandardBlock) + var(--vhHalfStandardBlock) + var(--vhRunningBlock) + 2rem) !important
+    top: calc(var(--vhStandardBlock) + var(--vhStandardBlock) + var(--vhHalfStandardBlock) + var(--vhRunningBlock) + 2rem) !important;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .autocomplete-options-container > div, .inat-autocomplete-options-container > div {
@@ -359,14 +359,8 @@
 
   .prop-value-block {
     display: flex;
-  }
-
-  .prop-value-block > span:nth-child(1) {
-    margin-right: .25rem;    
-  }
-
-  .prop-value-block > span:nth-child(1):after {
-    content: ":";
+    justify-content: flex-end;
+    align-items: center;
   }
 
   .prop-value-block > span:nth-child(2) {
@@ -375,7 +369,7 @@
     white-space: nowrap;
     display: inline-block;
     width: inherit;
-    font-style: italic;
+    font-size: 1.1rem;
   }
 
   /* Mushroom icon sizes */
@@ -546,7 +540,13 @@
   }
 
   .location-actions .actions {
-    grid-template-rows: 1fr 2fr 2fr;
+    grid-auto-columns: auto;
+    grid-gap: 1rem;
+    display: grid;
+  }
+
+  .filter-option {
+    color: black;
   }
 
   .taxa-actions .actions {
@@ -593,16 +593,12 @@
     justify-content: space-between;
     background-color: var(--snap-lesson-row-blue);
     height: var(--vhRunningBlock);
+    margin-bottom: 1rem;
   }
 
   .custom-lesson-species-list li span {
     padding: .5rem;
   }
-
-  /* .custom-lesson-species-list li span:nth-child(2) {
-    color: var(--snap-text-light);
-    background-color: var(--snap-collection-active);
-  } */
 
   .custom-lesson-species-list li:nth-of-type(2n) {
     background-color: var(--snap-lesson-row-green);
@@ -621,16 +617,21 @@
     background-color: var(--snap-lesson-row-blue);
   }
 
+  @media (min-width: 600px) {
+    .modal-subheader {
+      font-size: 1.3em;
+    }
+  }
+
+  @media (min-width: 736px) {
+  }  
+
   @media (min-width: 768px) {
 
     .autocomplete-options-container .selected {
       color: var(--snap-dd-non-taxa-bg-hover);
       background-color: var(--snap-text-medium-dark);
     }
-
-    /* .guide-header-container {
-      height: 2.75rem;
-    } */
 
     .guide-header-container > div:nth-child(2) {
       flex-direction: row;
@@ -731,9 +732,6 @@
   .modal-guide-wrapper .modal-body .modal-guide-navigation > div:nth-child(1) > div svg {
       font-size: 2rem;
   }
-}
-
-@media (min-width: 736px) {
 }
 
 @media (min-height: 667px) {

@@ -46,10 +46,10 @@
   }
   
   .table-row img {
-    width: 98px;
-    height: 69px;
+    width: 64px;
+    height: 64px;
     object-fit: none;
-    padding: 6px 0;
+    padding: .5rem;
   }
   
   .table-row .lp-level {
@@ -70,7 +70,7 @@
 
 
   .table-header th:nth-child(1) {
-    min-width: 100px;
+    min-width: 80px;
   }
 
   .species-list .table-header th:nth-child(2):after,
@@ -90,7 +90,7 @@
   
   .table-header th:nth-child(1) > span,
   .table-footer td:nth-child(1) > span {
-    width: 5rem;
+    /* width: 5rem; */
     height: 1px;
     display: flex;
     align-items: center;
@@ -103,7 +103,7 @@
   }
   
   .table-row td:nth-child(1) {
-    width: 105px;
+    width: 80px;
     display: flex;
     align-items: center;
   }
@@ -181,6 +181,19 @@ div.species-description {
 
     .youtube-icon, .accordion-icon {
       font-size: 1.6rem;
+    }
+
+    .table-header th:nth-child(1) {
+      min-width: 105px;
+    }
+
+    .table-row td:nth-child(1) {
+      width: 105px;
+    }
+
+    .table-row img {
+      width: 98px;
+      height: 69px;
     }
   }
 

@@ -220,13 +220,9 @@ a.dropdown-item {
 }
 
 .lesson-title {
-  /* text-decoration: none; */
   border-bottom: solid .05rem !important;
   cursor: pointer;
   pointer-events: initial;
-  /* line-height: 2; */
-  text-transform: uppercase;
-  /* font-size: .8em; */
 }
 
 .toUpperCase {
@@ -247,9 +243,8 @@ a.dropdown-item {
 
 .home, .settings, .list, .glossary, .email, .email > a {
   cursor: pointer;
-  /* margin: 0 0.5rem 0 0; */
   color: var(--snap-text-dark);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .glossary svg {
@@ -298,7 +293,6 @@ a.dropdown-item {
 
 .snapdragon-container {
   justify-content: flex-start;
-  /* background-color: var(--snap-list-alt-background); */
   position: relative;
 }
 
@@ -810,11 +804,6 @@ a.dropdown-item {
 .data-box .taxon-data:nth-child(1) > span {
   text-transform: uppercase;
 } 
-
-/* .taxon-data > span:nth-child(2) {
-  padding: 0 0.5rem;
-  min-width: 7.5rem;  
-} */
 
 .taxon-data {
   display: flex;
@@ -1491,11 +1480,6 @@ span.hide-empty:empty {
   padding: 0 0.5rem;
 }
 
-/* .species-pending {
-  color: var(--snap-link);
-  background-color: var(--snap-list-alt-background);
-} */
-
 .species-pending .icon {
   font-size: 7.5rem;
   color: rgb(90, 147, 252);
@@ -1503,6 +1487,9 @@ span.hide-empty:empty {
   align-items: center;
   justify-content: center;
   height: calc(var(--vhStandardBlock, 30vh) * 3);
+}
+.species-pending .icon i:not(.slow-spin) {
+  color: var(--snap-filters-ctrl);
 }
 
 .question-container .icon {
@@ -1843,19 +1830,19 @@ a.collection-disabled {
 
 
 .padding-bottom {
-  padding: 0 0 .5rem 0;
+  padding-bottom: .5rem;
 }
 
 .padding-top {
-  padding: .5rem 0 0 0;
+  padding-top: .5rem;
 }
 
 .padding-left {
-  padding: 0 0 0 .5rem;
+  padding-left: .5rem;
 }
 
 .padding-right {
-  padding: 0 .5rem 0 0;
+  padding-right: .5rem;
 }
 
 .emphasis {
@@ -1976,7 +1963,6 @@ a.collection-disabled {
 }
 
 .lesson-list .lesson-list-item {
-  /* height: var(--vhRow); */
   padding: 1rem .5rem;
   pointer-events: none;
 }
@@ -2007,9 +1993,9 @@ a.collection-disabled {
   background-color: var(--snap-lesson-row-blue);
 }
 
-.lesson-list .lesson-list-item {
+/* .lesson-list .lesson-list-item {
   text-align: left;
-}
+} */
 
 .lesson-list .scrollable {
   width: 100%;  
@@ -2134,4 +2120,5 @@ a.collection-disabled {
 
 .main-header {
   font-style: italic;
+  font-size: 1.3rem;
 }

@@ -50,21 +50,23 @@ const loadLessons = (savedLessons, collections, videoPlayer, score) => {
 const bindAction = args => {
   
   const { state, target, lesson, container, isInCarousel, requireSpecies, loadSpeciesCallback } = args;
+  const { config, counter } = store.getState();
   switch(state) {
     case enums.lessonState.BEGIN_LESSON:
       onBeginLesson(target, state);
       break;     
     case enums.lessonState.BEGIN_INTRO:
       if(requireSpecies) {
-        const { config, counter } = store.getState();
         config.collection = { id: lesson.id };
         const callback = (collection, config) => {
           renderSpeciesList(collection, { callingParentContainer: container, isInCarousel });
-          loadSpeciesCallback();
+          if(loadSpeciesCallback) loadSpeciesCallback();
         };
         collectionHandler(lesson, config, counter, callback, ()=>{});        
       }
-      renderLesson(lesson);
+      if(config.isLandscapeMode) {
+        renderLesson(lesson);
+      }
       break;
     // case enums.lessonState.GET_SPECIES:
     //   break;
@@ -81,6 +83,7 @@ const loadLesson = (collection, savedLessonNames, videoPlayer, score) => {
   collection.savedState = savedState;
   collection.isPaused = isPaused;
   collection.hasVideo = collection.video ? true : false;
+  collection.showVideoIcon = collection.hasVideo ? '' : 'hide-important';
   collection.videoState = videoHandler.setVideoState(videoPlayer || [], collection);
   collection.reviewState = (!!score && score.collectionId === collection.id) ? 'Resume Review' : 'Lesson Review';
   return collection;  

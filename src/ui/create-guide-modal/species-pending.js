@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { collectionHandler } from 'ui/helpers/collection-handler';
@@ -21,12 +23,20 @@ export const speciesPendingSpinner = (config, modal) => {
     
     const { counter} = store.getState();
 
-    let newCollection = snapdragonCollections.find(c => c.id === 9);
+    let lesson = R.clone(snapdragonCollections.find(c => c.id === 9));
 
     const returnedSpecies = (collection, config) => {
-        newCollection = { ...newCollection, ...collection };
-        feedback.innerHTML = collection.name;        
-        actions.boundUpdateCollections(newCollection);
+        lesson = collection;
+        feedback.innerHTML = `
+                Your new lesson, ${lesson.name}, is ready.
+
+                It contains ${lesson.items.length} species.
+
+                Open the lesson to access your custom species guide.
+
+                Review the lesson to find out what information you have retained.
+            `;
+        actions.boundUpdateCollections(lesson);
         const icon = modal.querySelector('.icon i');
               icon.classList.remove('slow-spin');
     };
@@ -34,7 +44,10 @@ export const speciesPendingSpinner = (config, modal) => {
         console.log('no reults');
     };
 
-    collectionHandler(newCollection, config, counter, returnedSpecies, callbackWhenNoResults);
+    lesson.name = config.guide.locationLongLat ? config.guide.locationLongLat.split(',')[0] : lesson.name;
+    lesson.id = snapdragonCollections.length + 10000 
+
+    collectionHandler(lesson, config, counter, returnedSpecies, callbackWhenNoResults);
 
     const template = document.createElement('template');
           template.innerHTML = spinnerTemplate;
@@ -77,7 +90,7 @@ export const speciesPendingSpinner = (config, modal) => {
     setTimeout(() => {
         close.addEventListener('click', () => {
             setTimeout(() => {
-                onCloseModalListeners.forEach(listener => listener(newCollection));   
+                onCloseModalListeners.forEach(listener => listener(lesson));   
             });
         });   
     });

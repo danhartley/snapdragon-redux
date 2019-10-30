@@ -752,9 +752,9 @@ const customCollection = {
   glossary: ['common'],
   itemNames: [],
   items: [],
-  iconicTaxa: [],
+  iconicTaxa: allIconicTaxa,
   guide: {
-    iconicTaxa: [],
+    iconicTaxa: allIconicTaxa,
     locationPlace: 'User collection',
     locationType: 'taxon',
     place: {

@@ -8,6 +8,7 @@ import { enums } from 'ui/helpers/enum-helper';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { lessonListHandler } from 'ui/screens/lists/lesson-list-handler';
 import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
+import { renderLesson } from 'ui/screens/home/home-lesson-intro';
 
 import lessonTemplate from 'ui/screens/lists/lesson-template.html';
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
@@ -19,7 +20,8 @@ export const renderLessons = () => {
     const template = document.createElement('template');
           template.innerHTML = lessonListTemplate;
 
-    const lessons = lessonStateHandler.loadLessons(savedLessons, collections, videoPlayer, score);
+    let lessons = lessonStateHandler.loadLessons(savedLessons, collections, videoPlayer, score);
+        lessons = [ ...lessons.filter(l => l.hasVideo), ...lessons.filter(l => !l.hasVideo) ];
 
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
         parent.innerHTML = '';
@@ -36,7 +38,7 @@ export const renderLessons = () => {
     const titles = document.querySelectorAll('.js-lesson-title');
 
     if(config.isLandscapeMode) {
-      titles.forEach(title => lessonListHandler.titleClickHandler(title, lessons, lessonListHandler.onSpeciesListLoad));
+      titles.forEach(title => lessonListHandler.titleClickHandler(title, lessons, lessonListHandler.onSpeciesListLoad, config));
     }
 
     if(config.isPortraitMode) {
@@ -44,8 +46,8 @@ export const renderLessons = () => {
       titles.forEach(title => title.addEventListener('click', e => {
         const title = e.currentTarget;
         const lessonId = parseInt(title.dataset.lessonId);
-        const lesson = lessons.find(l => l.id === lessonId);
-        lessonStateHandler.bindAction({ state: enums.lessonState.BEGIN_INTRO, lesson });
+        const lesson = lessons.find(l => l.id === lessonId);        
+        renderLesson(lesson);
       }));      
     }
 
@@ -69,8 +71,8 @@ export const renderLessons = () => {
 
         renderTemplate({ lesson }, template.content, parent);
 
-        document.querySelector('.js-toggle-control').click();
-        document.querySelector('.js-filter-by-video').click();
+        // document.querySelector('.js-toggle-control').click();
+        // document.querySelector('.js-filter-by-video').click();
 
         lessonListScrollHandler.scrollToTitle(lesson.id);
 
@@ -78,7 +80,8 @@ export const renderLessons = () => {
               row.classList.add('lesson-list-custom-item');
 
         const title = document.querySelector(`div.js-lesson-title[data-lesson-id="${lesson.id}"]`);
-        lessonListHandler.titleClickHandler(title, lessons, lessonListHandler.onSpeciesListLoad);
+
+        lessonListHandler.titleClickHandler(title, lessons, lessonListHandler.onSpeciesListLoad, config);
 
         const reviewLink = document.querySelector(`div[data-review-link="${lesson.id}"]`);
         lessonStateHandler.bindAction({ state: enums.lessonState.BEGIN_LESSON, target: reviewLink }); 

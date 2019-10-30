@@ -22,10 +22,10 @@ class CreateGuide {
         this.currentStep = step;
         
         this.steps = [
-            { number: 1, title: 'Create Lesson', description: 'Options', nextStep: '', disabled: true, className:'species-actions' },
-            { number: 2, title: 'Create Lesson', description: 'Location', nextStep: 'Taxa', disabled: true, className:'location-actions' },
-            { number: 3, title: 'Create Lesson', description: 'Taxa', nextStep: 'Fetch Species', disabled: true, className:'taxa-actions' },
-            { number: 4, title: 'Create Lesson', description: 'Spinner', nextStep: 'Open Lesson', disabled: true, className:'filter-actions' }
+            { number: 1, title: 'Species Picker', description: 'Options', nextStep: '', disabled: true, className:'species-actions' },
+            { number: 2, title: 'Species Picker', description: 'Location', nextStep: 'Taxa', disabled: true, className:'location-actions' },
+            { number: 3, title: 'Species Picker', description: 'Taxa', nextStep: 'Fetch Species', disabled: true, className:'taxa-actions' },
+            { number: 4, title: 'Species Picker', description: 'Spinner', nextStep: 'Open Lesson', disabled: true, className:'filter-actions' }
         ];
         
         this.modal = document.getElementById('createGuide');
@@ -111,6 +111,7 @@ class CreateGuide {
                 }
                 break;
             case 'Taxa':
+                options.innerHTML = 'Choose the taxa that interest you.'
                 renderCategories(this.modal, this);
                 break;
             case 'Spinner':

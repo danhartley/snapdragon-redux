@@ -3,6 +3,7 @@
         <div data-lesson-id="{{ lesson.id }}" class="lesson-list-item js-lesson-list-item margin-top" data-has-video="{{ lesson.hasVideo }}">
             <div>
                 <div class="lesson-name js-lesson-title" data-lesson-id="{{ lesson.id }}">
+                    <span class="{{ lesson.showVideoIcon }}"><i class="fab fa-youtube"></i></span>
                     <span id="lesson_{{ lesson.id }}" class="lesson-title">{{ lesson.name }}</span>
                     <span>{{ lesson.savedState }}</span>                    
                     <span class="hide js-loading-message">(Loading species…)</span>

@@ -22,9 +22,9 @@ const siblingsBefore = lessonId => {
 const scrollToTitle = lessonId => {
   setTimeout(() => {
     const standardBlock = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhRow').replace('px', ''));
-    const unit = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));
+    // const unit = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));
     const rows = siblingsBefore(lessonId);
-    const top = (standardBlock * rows) - unit;
+    const top = standardBlock * (rows + 3);
 
     const scroll = document.querySelector('.lesson-list .scrollable');
     scroll.scrollTop = top;
