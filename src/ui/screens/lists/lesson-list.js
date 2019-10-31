@@ -6,7 +6,7 @@ import { onCloseCreateGuideModal } from 'ui/create-guide-modal/species-pending';
 import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
 import { enums } from 'ui/helpers/enum-helper';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
-import { lessonListHandler } from 'ui/screens/lists/lesson-list-handler';
+import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
 import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 import { renderLesson } from 'ui/screens/home/home-lesson-intro';
 
@@ -38,7 +38,7 @@ export const renderLessons = () => {
     const titles = document.querySelectorAll('.js-lesson-title');
 
     if(config.isLandscapeMode) {
-      titles.forEach(title => lessonListHandler.titleClickHandler(title, lessons, lessonListHandler.onSpeciesListLoad, config));
+      titles.forEach(title => lessonListEventHandler.onTitleClickHandler(title, lessons, lessonListEventHandler.onSpeciesListLoad, config));
     }
 
     if(config.isPortraitMode) {
@@ -53,7 +53,7 @@ export const renderLessons = () => {
 
     const reviews = document.querySelectorAll('.js-lesson-review');
           reviews.forEach(reviewLink => {
-            lessonStateHandler.bindAction({ state: enums.lessonState.BEGIN_LESSON, target: reviewLink });
+            lessonStateHandler.bindAction({ state: enums.lessonState.BEGIN_OR_RESUME_LESSON, target: reviewLink });
           });
 
     onCloseCreateGuideModal(collection => {
@@ -61,29 +61,32 @@ export const renderLessons = () => {
         if(!collection || collection.length === 0) return;
 
         const parent = document.querySelector('.lesson-list > .scrollable');
-
         const template = document.createElement('template');
               template.innerHTML = lessonTemplate;
-
+        
         const lesson = lessonStateHandler.loadLesson(collection, savedLessons, videoPlayer, score);
-
         lessons.push(lesson);
-
+        
         renderTemplate({ lesson }, template.content, parent);
-
-        // document.querySelector('.js-toggle-control').click();
-        // document.querySelector('.js-filter-by-video').click();
-
-        lessonListScrollHandler.scrollToTitle(lesson.id);
-
-        const row = document.querySelector(`div.js-lesson-list-item[data-lesson-id="${lesson.id}"]`);
-              row.classList.add('lesson-list-custom-item');
-
+        
+        activateCurrentLesson(lesson);
+        
         const title = document.querySelector(`div.js-lesson-title[data-lesson-id="${lesson.id}"]`);
-
-        lessonListHandler.titleClickHandler(title, lessons, lessonListHandler.onSpeciesListLoad, config);
-
+        lessonListEventHandler.onTitleClickHandler(title, lessons, lessonListEventHandler.onSpeciesListLoad, config);
         const reviewLink = document.querySelector(`div[data-review-link="${lesson.id}"]`);
-        lessonStateHandler.bindAction({ state: enums.lessonState.BEGIN_LESSON, target: reviewLink }); 
+        lessonStateHandler.bindAction({ state: enums.lessonState.BEGIN_OR_RESUME_LESSON, target: reviewLink });
     });
+
+    if(config.collection.id > 0) {
+      
+      const currentLesson = collections.find(collection => collection.id === config.collection.id); 
+
+      activateCurrentLesson(currentLesson)
+    }
 };
+
+const activateCurrentLesson = lesson => {  
+  lessonListScrollHandler.scrollToTitle(lesson.id);
+  const row = document.querySelector(`div.js-lesson-list-item[data-lesson-id="${lesson.id}"]`);
+  row.classList.add('lesson-list-custom-item');
+}

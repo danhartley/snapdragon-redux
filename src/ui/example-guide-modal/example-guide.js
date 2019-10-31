@@ -120,13 +120,13 @@ export const renderExampleGuideHandler = () => {
 
         } else {
 
-          state = enums.lessonState.GET_SPECIES;
+          // state = enums.lessonState.GET_SPECIES;
 
           startText.innerHTML = 'Start lesson';
           
           const { config } = store.getState();
   
-          config.guide = { ...config.guide, ...selectedLesson.guide };
+          // config.guide = { ...config.guide, ...selectedLesson.guide };
           config.collection = { id: selectedLesson.id };
           actions.boundUpdateConfig(config);      
         }

@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 
 import { store } from 'redux/store';
-import { actions } from 'redux/actions/action-creators';
+// import { actions } from 'redux/actions/action-creators';
 import { collectionHandler } from 'ui/helpers/collection-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { listenToInatRequests } from 'api/inat/inat';
@@ -21,7 +21,7 @@ export const speciesPendingSpinner = (config, modal) => {
     const title = modal.querySelector('.js-options');
           title.innerHTML = 'Searching for matching species.';
     
-    const { counter} = store.getState();
+    const { counter, collections } = store.getState();
 
     let lesson = R.clone(snapdragonCollections.find(c => c.id === 9));
 
@@ -36,7 +36,7 @@ export const speciesPendingSpinner = (config, modal) => {
 
                 Review the lesson to find out what information you have retained.
             `;
-        actions.boundUpdateCollections(lesson);
+        // actions.boundUpdateCollections(lesson);
         const icon = modal.querySelector('.icon i');
               icon.classList.remove('slow-spin');
     };
@@ -44,10 +44,10 @@ export const speciesPendingSpinner = (config, modal) => {
         console.log('no reults');
     };
 
-    lesson.name = config.guide.locationLongLat ? config.guide.locationLongLat.split(',')[0] : lesson.name;
+    lesson.name = getLessonName(config, lesson);
     lesson.id = snapdragonCollections.length + 10000 
 
-    collectionHandler(lesson, config, counter, returnedSpecies, callbackWhenNoResults);
+    collectionHandler(collections, lesson, config, counter, returnedSpecies, callbackWhenNoResults);
 
     const template = document.createElement('template');
           template.innerHTML = spinnerTemplate;
@@ -94,4 +94,17 @@ export const speciesPendingSpinner = (config, modal) => {
             });
         });   
     });
+};
+
+const getLessonName = (config, lesson) => {
+        
+    let name = lesson.name;
+    
+    if(config.guide.inatId.key.length > 0) {
+        name = `Observations for ${config.guide.inatId.key}`;
+    } else if(config.guide.locationLongLat) {
+        name = config.guide.locationLongLat.split(',')[0];
+    }
+    
+    return name;
 };

@@ -33,11 +33,12 @@ const parseLessonElement = (e, lessons) => {
     return { title, lesson, state, speciesList, container, lessonVideoState, reviewLink };
 };
 
-const titleClickHandler = (title, lessons, onSpeciesListLoad, config) => {
+const onTitleClickHandler = (title, lessons, onSpeciesListLoad, config) => {
   
   return title.addEventListener('click', e => {
     
     e.stopPropagation();
+
     const { title, lesson, state, speciesList, container, lessonVideoState } = parseLessonElement(e, lessons);
 
     if(config.isLandscapeMode) {   
@@ -69,7 +70,7 @@ const onSpeciesListLoad = (lessonId, loadingMessage) => {
   lessonListScrollHandler.scrollToTitle(lessonId);
 };
 
-export const lessonListHandler = {
-  titleClickHandler,
+export const lessonListEventHandler = {
+  onTitleClickHandler,
   onSpeciesListLoad
 }

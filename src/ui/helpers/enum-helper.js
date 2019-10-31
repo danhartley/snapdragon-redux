@@ -3,8 +3,9 @@ import { Enum } from 'enumify';
 class lessonState extends Enum {};
 lessonState.initEnum([
     'CREATE_LESSON', 
-    'GET_SPECIES', 
+    // 'GET_SPECIES', 
     'BEGIN_LESSON',
+    'BEGIN_OR_RESUME_LESSON',
     'PAUSE_LESSON', 
     'RESUME_LESSON',
     'NEXT_ROUND',

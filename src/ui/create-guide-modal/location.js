@@ -135,7 +135,7 @@ export const renderLocation = (modal, createGuide) => {
         }, 2000);
     });
 
-    const idSwitch = parent.querySelector('.inat-switch-slider');
+    const idSwitch = parent.querySelector('.snap-switch-slider');
 
     const switchCallback = position => {
 

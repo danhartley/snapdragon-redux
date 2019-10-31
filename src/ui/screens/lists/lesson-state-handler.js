@@ -10,22 +10,30 @@ import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 import { collectionHandler } from 'ui/helpers/collection-handler';
 
-const onBeginLesson = (target, state)  => {
+const onBeginOrResumeLesson = (target)  => {
 
   const beginLesson = event => {
+    
     event.stopPropagation();
-    const { collection, config, history } = store.getState();
-    lessonHandler.changeState(state, collection, config, history); 
+
+    const { collection, config, history, score } = store.getState();
+
+    const lessonState = score.collectionId === collection.id 
+            ? enums.lessonState.RESUME_LESSON
+            : enums.lessonState.BEGIN_LESSON;
+
+    lessonHandler.changeState(lessonState, collection, config, history); 
+    // saveLesson(collection);
   };
 
   target.removeEventListener('click', beginLesson);
 
-  target.addEventListener('click', beginLesson);
+  target.addEventListener('click', beginLesson);  
 };
 
 const saveLesson = async collection => {
 
-  const { counter, lessonPlan, lessonPlans, layout, lesson, score, history, bonusLayout, enums } = store.getState();
+  const { counter, lessonPlan, lessonPlans, layout, lesson, score, history, bonusLayout, enums, config } = store.getState();
 
   const savedLesson = { 
       name: collection.name,
@@ -50,10 +58,10 @@ const loadLessons = (savedLessons, collections, videoPlayer, score) => {
 const bindAction = args => {
   
   const { state, target, lesson, container, isInCarousel, requireSpecies, loadSpeciesCallback } = args;
-  const { config, counter } = store.getState();
+  const { config, counter, collections } = store.getState();
   switch(state) {
-    case enums.lessonState.BEGIN_LESSON:
-      onBeginLesson(target, state);
+    case enums.lessonState.BEGIN_OR_RESUME_LESSON:
+      onBeginOrResumeLesson(target);
       break;     
     case enums.lessonState.BEGIN_INTRO:
       if(requireSpecies) {
@@ -62,7 +70,7 @@ const bindAction = args => {
           renderSpeciesList(collection, { callingParentContainer: container, isInCarousel });
           if(loadSpeciesCallback) loadSpeciesCallback();
         };
-        collectionHandler(lesson, config, counter, callback, ()=>{});        
+        collectionHandler(collections, lesson, config, counter, callback, ()=>{});        
       }
       if(config.isLandscapeMode) {
         renderLesson(lesson);

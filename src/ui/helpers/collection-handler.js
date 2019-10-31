@@ -54,9 +54,14 @@ export const keepItems = collection => {
     });
 }
 
-export const collectionHandler = async (collection, config, counter, callback, callbackWhenNoResults) => {
+export const collectionHandler = async (collections, collection, config, counter, callback, callbackWhenNoResults) => {
     
     try {
+
+        if(collections.find(c => c.id !== collection.id)) {
+            actions.boundUpdateCollections(collection);
+        }
+
         console.log('collectionHandler; counter lesson is paused state: ', counter.isLessonPaused);
 
         if(counter.isLessonPaused) {

@@ -44,17 +44,17 @@
     border-right: none;
   }
 
-  #place.completed, #taxon.completed, #custom.completed {
-    background-color: var(--snap-filters-ctrl);
-  }
+  /* #place.completed, #taxon.completed, #custom.completed {
+    background-color: var(--snap-active);
+  } */
   
-  .modal-body .modal-guide-progress .completed {
+  /* .modal-body .modal-guide-progress .completed {
     background-color: rgb(249, 196, 135);
-  }
+  } */
   
   .modal-body .modal-guide-progress .active {
     color: var(--snap-text-dark);
-    background-color: var(--snap-filters-ctrl);
+    background-color: var(--snap-active);
   }
   
   .modal-guide-navigation {
@@ -181,7 +181,7 @@
     display: inline;
   }
   
-  .inat.inat-switch .inat-entry, .inat.inat-switch input[type="text"] {
+  .inat.snap-switch .inat-entry, .inat.snap-switch input[type="text"] {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -218,18 +218,17 @@
   
   /* SNAPDRAGON SWITCH */
 
-  .inat-switch {
-    /* height: var(--vhStandardBlock); */
+  .snap-switch {
     display: flex;
     align-items: center;
   }
   
-  .inat-switch-slider {
+  .snap-switch-slider {
     cursor: pointer;
     background-color: rgb(197, 203, 204);
   }
   
-  .inat-switch-slider div {
+  .snap-switch-slider div {
     height: 1.6rem;
     width: 1.6rem;
     border-radius: .2rem;
@@ -241,7 +240,7 @@
     position: absolute;
   }
 
-  .inat .inat-switch-slider div {
+  .inat .snap-switch-slider div {
     background-color: var(--snap-inat);
   }
   
@@ -249,30 +248,28 @@
   display: grid;
   grid-template-columns: auto 3.2rem 1fr;
   height: 1.6rem;
-  /* text-transform: uppercase; */
 }
 
-  .inat-switch-slider.left div {
+  .snap-switch-slider.left div {
     transform: translateX(0);
   }
   
-  .inat-switch .txt-left {
+  .snap-switch .txt-left {
     align-self: center;
-    /* text-align: right; */
     padding: 0 .5rem 0 0;
     font-size: .9em;
   }
 
-  .inat-switch .txt-right {
+  .snap-switch .txt-right {
     align-self: center;
     padding: 0 0 0 .5rem;
   }
 
-  .inat-switch-slider.right div {
+  .snap-switch-slider.right div {
     transform: translateX(1.6rem);
   }
 
-  .guides .inat .inat-switch {
+  .guides .inat .snap-switch {
     flex-direction: column;
   }
    
@@ -664,19 +661,19 @@
       display: flex;
     }
 
-    .inat.inat-switch .inat-entry {
+    .inat.snap-switch .inat-entry {
         display: flex;
         align-items: center;
         margin: 0 0 0 1rem;
     }
 
-    .inat.inat-switch input[type="text"] {
+    .inat.snap-switch input[type="text"] {
         margin: 0 .5rem 0 0;
         color: var(--snap-text-medium-dark);
         padding: 0 .1rem;
     }
 
-    .modal-guide-wrapper .location.inat-switch {
+    .modal-guide-wrapper .location.snap-switch {
         width: 100%;
         margin-top: 2rem;
     }
@@ -695,7 +692,7 @@
         font-size: 1rem;
     }
 
-    .inat.inat-switch .inat-entry, .inat.inat-switch input[type="text"] {
+    .inat.snap-switch .inat-entry, .inat.snap-switch input[type="text"] {
         width: 12rem;
         width: fit-content;
         padding: 0 .25rem;

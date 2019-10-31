@@ -46,18 +46,18 @@ const placeMonsanto = {
     moduleSize: 4,
     iconicTaxa: allIconicTaxa,  
     name: 'Parque Florestal Monsanto',
-    guide: {
-      locationPlace: 'Monsanto Forest Park, LI, PT',
-      locationType: 'place',
-      place: {
-          name: 'Monsanto Forest Park, LI, PT',
-          id: 61034,
-          type: 'places'
-      },
-      season: {
-          type: 'all_year'
-      }
-  }
+  //   guide: {
+  //     locationPlace: 'Monsanto Forest Park, LI, PT',
+  //     locationType: 'place',
+  //     place: {
+  //         name: 'Monsanto Forest Park, LI, PT',
+  //         id: 61034,
+  //         type: 'places'
+  //     },
+  //     season: {
+  //         type: 'all_year'
+  //     }
+  // }
 }
 
 const placeArrabida = {
@@ -71,19 +71,19 @@ const placeArrabida = {
     moduleSize: 4,
     iconicTaxa: allIconicTaxa,
     name: 'O Parque Natural da Arrábida, SE, PT',
-    guide: {
-      locationPlace: 'O Parque Natural da Arrábida, SE, PT',
-      locationType: 'place',
-      place: {
-          name: 'O Parque Natural da Arrábida, SE, PT',
-          id: 131416,
-          type: 'places'
-      },
-      season: {
-          type: 'all_year'
-      },
-      speciesRange: 0
-  }
+  //   guide: {
+  //     locationPlace: 'O Parque Natural da Arrábida, SE, PT',
+  //     locationType: 'place',
+  //     place: {
+  //         name: 'O Parque Natural da Arrábida, SE, PT',
+  //         id: 131416,
+  //         type: 'places'
+  //     },
+  //     season: {
+  //         type: 'all_year'
+  //     },
+  //     speciesRange: 0
+  // }
 };
 
 const snapdragonLichens = {
@@ -124,19 +124,19 @@ const snapdragonLichens = {
     },
   ],
   items: [],
-  guide: {
-    locationPlace: 'Common Lichens',
-    locationType: 'taxon',
-    place: {
-        name: 'Common Lichens',
-        id: 'any',
-        type: 'places'
-    },
-    season: {
-        type: 'all_year'
-    },
-    speciesRange: 0
-  }
+  // guide: {
+  //   locationPlace: 'Common Lichens',
+  //   locationType: 'taxon',
+  //   place: {
+  //       name: 'Common Lichens',
+  //       id: 'any',
+  //       type: 'places'
+  //   },
+  //   season: {
+  //       type: 'all_year'
+  //   },
+  //   speciesRange: 0
+  // }
 };
 
 const snapdragonKitchenGarden = { 
@@ -210,19 +210,19 @@ const snapdragonKitchenGarden = {
         id: 'plantae',
         common: 'Plants'
     } ],
-    guide: {
-      locationPlace: 'Kitchen Garden',
-      locationType: 'course',
-      place: {
-          name: 'Kitchen Garden',
-          id: 'any',
-          type: 'places'
-      },
-      season: {
-          type: 'all_year'
-      },
-      speciesRange: 0
-  }
+  //   guide: {
+  //     locationPlace: 'Kitchen Garden',
+  //     locationType: 'course',
+  //     place: {
+  //         name: 'Kitchen Garden',
+  //         id: 'any',
+  //         type: 'places'
+  //     },
+  //     season: {
+  //         type: 'all_year'
+  //     },
+  //     speciesRange: 0
+  // }
 };
 
 const rhsTrees = { 
@@ -293,19 +293,19 @@ const rhsTrees = {
     type: 'custom',
     eol_link: 'https://eol.org/collections/140596',
     externalLink: { text: 'RHS Practical Horticulture', url:'https://www.rhs.org.uk/education-learning/qualifications-and-training/rhs-qualifications/level-1-qualifications/level-1-intro-award-in-practical-horticulture' },
-    guide: {
-      locationPlace: 'RHS Trees',
-      locationType: 'course',
-      place: {
-          name: 'RHS Trees',
-          id: 'any',
-          type: 'places'
-      },
-      season: {
-          type: 'all_year'
-      },
-      speciesRange: 0
-  }
+  //   guide: {
+  //     locationPlace: 'RHS Trees',
+  //     locationType: 'course',
+  //     place: {
+  //         name: 'RHS Trees',
+  //         id: 'any',
+  //         type: 'places'
+  //     },
+  //     season: {
+  //         type: 'all_year'
+  //     },
+  //     speciesRange: 0
+  // }
 };
 
 const rhsWeeds = { 
@@ -337,19 +337,19 @@ const rhsWeeds = {
       } ],
     eol_link: 'https://eol.org/collections/140731',
     externalLink: { text: 'RHS Practical Horticulture', url:'https://www.rhs.org.uk/education-learning/qualifications-and-training/rhs-qualifications/level-1-qualifications/level-1-intro-award-in-practical-horticulture' },
-    guide: {
-      locationPlace: 'RHS Weeds',
-      locationType: 'course',
-      place: {
-          name: 'RHS Weeds',
-          id: 'any',
-          type: 'places'
-      },
-      season: {
-          type: 'all_year'
-      },
-      speciesRange: 0
-  }
+  //   guide: {
+  //     locationPlace: 'RHS Weeds',
+  //     locationType: 'course',
+  //     place: {
+  //         name: 'RHS Weeds',
+  //         id: 'any',
+  //         type: 'places'
+  //     },
+  //     season: {
+  //         type: 'all_year'
+  //     },
+  //     speciesRange: 0
+  // }
 };
 
 const kitchen1 = {
@@ -613,19 +613,19 @@ const commonBritishBirds = {
         id: 'aves',
         common: 'Birds'
     } ],
-    guide: {
-      locationPlace: 'Common British Birds',
-      locationType: 'taxon',
-      place: {
-          name: 'Common British Birds',
-          id: 'any',
-          type: 'places'
-      },
-      season: {
-          type: 'all_year'
-      },
-      speciesRange: 0
-  }
+  //   guide: {
+  //     locationPlace: 'Common British Birds',
+  //     locationType: 'taxon',
+  //     place: {
+  //         name: 'Common British Birds',
+  //         id: 'any',
+  //         type: 'places'
+  //     },
+  //     season: {
+  //         type: 'all_year'
+  //     },
+  //     speciesRange: 0
+  // }
 };
 
 const woodlandsTV1 = {
@@ -753,20 +753,20 @@ const customCollection = {
   itemNames: [],
   items: [],
   iconicTaxa: allIconicTaxa,
-  guide: {
-    iconicTaxa: allIconicTaxa,
-    locationPlace: 'User collection',
-    locationType: 'taxon',
-    place: {
-        name: 'User collection',
-        id: 'any',
-        type: 'places'
-    },
-    season: {
-        type: 'all_year'
-    },
-    speciesRange: 0
-}
+//   guide: {
+//     iconicTaxa: allIconicTaxa,
+//     locationPlace: 'User collection',
+//     locationType: 'taxon',
+//     place: {
+//         name: 'User collection',
+//         id: 'any',
+//         type: 'places'
+//     },
+//     season: {
+//         type: 'all_year'
+//     },
+//     speciesRange: 0
+// }
 };
 
 const treesOfLisbon = { 
@@ -815,19 +815,19 @@ const treesOfLisbon = {
       id: 'plantae',
       common: 'Plants'
   } ],
-  guide: {
-    locationPlace: '25 Trees of Lisbon',
-    locationType: 'taxon',
-    place: {
-        name: '25 Trees of Lisbon',
-        id: 'any',
-        type: 'places'
-    },
-    season: {
-        type: 'all_year'
-    },
-    speciesRange: 0
-  }
+  // guide: {
+  //   locationPlace: '25 Trees of Lisbon',
+  //   locationType: 'taxon',
+  //   place: {
+  //       name: '25 Trees of Lisbon',
+  //       id: 'any',
+  //       type: 'places'
+  //   },
+  //   season: {
+  //       type: 'all_year'
+  //   },
+  //   speciesRange: 0
+  // }
 };
 
 const walkOne = { 
@@ -1181,19 +1181,19 @@ const walkTwo = {
       common: 'Plants'
     }
   ],
-  guide: {
-    locationPlace: 'Jardim da Estrela',
-    locationType: 'taxon',
-    place: {
-        name: 'Conifers of Jardim da Estrela',
-        id: 'any',
-        type: 'places'
-    },
-    season: {
-        type: 'all_year'
-    },
-    speciesRange: 0
-  }
+  // guide: {
+  //   locationPlace: 'Jardim da Estrela',
+  //   locationType: 'taxon',
+  //   place: {
+  //       name: 'Conifers of Jardim da Estrela',
+  //       id: 'any',
+  //       type: 'places'
+  //   },
+  //   season: {
+  //       type: 'all_year'
+  //   },
+  //   speciesRange: 0
+  // }
 };
 
 const lookalikes = { 
@@ -1240,19 +1240,19 @@ const lookalikes = {
     'Hygrophoropsis aurantiaca'
   ],
   iconicTaxa: allIconicTaxa,
-  guide: {
-    locationPlace: 'Lookalikes',
-    locationType: 'taxon',
-    place: {
-        name: 'Lookalikes',
-        id: 'any',
-        type: 'places'
-    },
-    season: {
-        type: 'all_year'
-    },
-    speciesRange: 0
-  }
+  // guide: {
+  //   locationPlace: 'Lookalikes',
+  //   locationType: 'taxon',
+  //   place: {
+  //       name: 'Lookalikes',
+  //       id: 'any',
+  //       type: 'places'
+  //   },
+  //   season: {
+  //       type: 'all_year'
+  //   },
+  //   speciesRange: 0
+  // }
 };
 
 export const snapdragonCollections = [

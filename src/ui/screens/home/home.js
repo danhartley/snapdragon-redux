@@ -7,7 +7,7 @@ import homeTemplate from 'ui/screens/home/home-template.html';
 
 export const renderHome = counter => {
 
-    if(counter > 0 && !! counter.isLessonPaused) return;
+    if(counter.index > 0 && !counter.isLessonPaused) return;
 
     let { config } = store.getState();
 

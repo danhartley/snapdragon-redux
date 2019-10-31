@@ -6,7 +6,7 @@ import { progressState } from 'redux/reducers/initial-state/initial-progress-sta
 export const counter = (state = null, action) => {
     switch(action.type) {
         case 'persist/REHYDRATE':
-            return action.payload ? { ...action.payload.counter, isLessonRehydrated: true } : state;
+            return action.payload ? { ...action.payload.counter, isLessonRehydrated: true, isLessonPaused: true } : state;
         case types.RESET_COLLECTION:
             return { ...state, isLessonSelected: false, isLessonPaused: false };
         case types.UPDATE_COLLECTION:    

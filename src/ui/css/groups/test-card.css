@@ -63,9 +63,9 @@
     color: var(--snap-text-medium-light);
 }
 
-.test-card-question .question-sub-header {
+/* .test-card-question .question-sub-header {
     text-transform: uppercase;
-}
+} */
 
 /* .test-card .help-txt {
     margin: .25rem 0 0 .5rem;

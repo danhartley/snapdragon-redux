@@ -110,7 +110,7 @@ export const renderTestCardTemplate = (collection, context) => {
 
     if(R.contains(layout.screens[1].name, multichoices)) {
         traitCardLink.classList.remove('hide-important');
-        document.querySelector('.js-iconic-icon').classList.add('hide-important');
+        // document.querySelector('.js-iconic-icon').classList.add('hide-important');
     }
 
     traitCardLink.addEventListener('click', () => {

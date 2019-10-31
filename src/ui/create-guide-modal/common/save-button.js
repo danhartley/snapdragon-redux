@@ -32,10 +32,9 @@ export const saveButton = (config, step, update = true) => {
             case 'TAXA':
 
                 chosen.innerHTML = '';
-                let iconicTaxa = config.guide.iconicTaxa;
                 let icons = '';
-                if(iconicTaxa.length > 0) {
-                    iconicTaxa.forEach(taxon => {
+                if(config.guide.iconicTaxa.length > 0) {
+                    config.guide.iconicTaxa.forEach(taxon => {
                         const icon = returnTaxonIcon(taxon.id);
                         icons += icon;
                     })

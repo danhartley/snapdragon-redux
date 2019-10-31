@@ -1488,8 +1488,9 @@ span.hide-empty:empty {
   justify-content: center;
   height: calc(var(--vhStandardBlock, 30vh) * 3);
 }
+
 .species-pending .icon i:not(.slow-spin) {
-  color: var(--snap-filters-ctrl);
+  color: var(--snap-active);
 }
 
 .question-container .icon {
@@ -1875,10 +1876,6 @@ a.collection-disabled {
   margin: 1.2rem .5rem 0 .5rem;
 }
 
-.images-names-refresh {
-  margin: 1rem 0 0 0;
-}
-
 .clearSpacing {
   margin: 0 !important;
   padding: 0 !important;
@@ -1962,7 +1959,7 @@ a.collection-disabled {
 }
 
 .lesson-list-custom-item {
-  background-color: var(--snap-toggle-header-off) !important;
+  background-color: var(--snap-active) !important;
 }
 
 .lesson-list .lesson-list-item {
@@ -2043,6 +2040,12 @@ a.collection-disabled {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.vertical-evenly-spaced-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .half-padding-left {
