@@ -1,7 +1,7 @@
 import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { renderSettings } from 'ui/fixtures/settings';
+import { settingsHandler } from 'ui/fixtures/settings';
 import { renderTemplate } from 'ui/helpers/templating';
 import { subscription } from 'redux/subscriptions';
 import { getGlossary } from 'api/glossary/glossary';
@@ -49,7 +49,7 @@ export const renderNavigation = () => {
                         break;
                     case enums.navigation.SETTINGS:
                         toggleIconOnOff(clickedIcon);
-                        renderSettings();
+                        settingsHandler();
                         break;
                     case enums.navigation.PORTRAIT_HOME:
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub)); // lesson handler?                   

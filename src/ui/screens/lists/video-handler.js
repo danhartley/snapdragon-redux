@@ -1,3 +1,5 @@
+import { actions } from 'redux/actions/action-creators';
+
 const onSpeciesTimeMatchListeners = [];
 
 const onSpeciesTimeMatch = listener => {    
@@ -105,6 +107,10 @@ const destroyPlayer = () => {
       }
 };
 
+const saveVideoState = player => {
+    actions.boundUpdateVideoPlayer(player);
+};
+
 export const videoHandler = {
     readyPlayer,
     onSpeciesTimeMatchListeners,
@@ -116,5 +122,6 @@ export const videoHandler = {
     playVideoFrom,
     states,
     setVideoState,
-    destroyPlayer
+    destroyPlayer,
+    saveVideoState
 };

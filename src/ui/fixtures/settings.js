@@ -3,9 +3,10 @@ import { store } from 'redux/store';
 import { persistor } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
+
 import settingsTemplate from 'ui/fixtures/settings-template.html';
 
-export const renderSettings = () => {
+export const settingsHandler = () => {
     
     DOM.modalText.innerHTML = '';
 

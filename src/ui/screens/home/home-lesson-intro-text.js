@@ -5,7 +5,7 @@ import textIntroTemplate from 'ui/screens/home/home-lesson-intro-text-template.h
 
 export const textSetup = (collection, config) => {
 
-    const speciesCount = collection.itemNames.length > 0
+    const speciesCount = (collection.itemNames && collection.itemNames.length > 0)
                             ? collection.itemNames.length 
                             : collection.items.length;
     const iconicTaxa = collection.iconicTaxa 

@@ -1,7 +1,6 @@
 import * as R from 'ramda';
 
 import { store } from 'redux/store';
-// import { actions } from 'redux/actions/action-creators';
 import { collectionHandler } from 'ui/helpers/collection-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { listenToInatRequests } from 'api/inat/inat';
@@ -36,7 +35,7 @@ export const speciesPendingSpinner = (config, modal) => {
 
                 Review the lesson to find out what information you have retained.
             `;
-        // actions.boundUpdateCollections(lesson);
+        
         const icon = modal.querySelector('.icon i');
               icon.classList.remove('slow-spin');
     };

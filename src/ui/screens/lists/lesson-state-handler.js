@@ -97,7 +97,6 @@ const loadLesson = (collection, savedLessonNames, videoPlayer, score) => {
   return collection;  
 };
 
-
 export const lessonStateHandler = {
   loadLesson,
   loadLessons,

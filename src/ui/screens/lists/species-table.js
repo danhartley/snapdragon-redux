@@ -1,10 +1,9 @@
-import { actions } from 'redux/actions/action-creators';
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
-import { iconicTaxa, matchTaxon, matchIcon } from 'api/snapdragon/iconic-taxa';
+import { iconicTaxa, matchIcon } from 'api/snapdragon/iconic-taxa';
 
 import speciesTemplate from 'ui/screens/lists/species-table-template.html';
 
@@ -174,19 +173,6 @@ export const buildTable = (collection, args) => {
     headerRow.appendChild(accordionHeader);
 
     tbody.insertBefore(headerRow, tbody.children[0]);
-
-    const callback = names => {
-        const sortedItems = [];
-        names.forEach(name => {
-            collection.items.forEach(item => {
-                if(item.name === name) {
-                    sortedItems.push(item);
-                }
-            });
-        });
-    
-        actions.boundUpdateCollectionItems(sortedItems);        
-    };
 
     utils.makeSortable(document, callback, wide);
 }

@@ -3,7 +3,6 @@ import * as R from 'ramda';
 import 'ui/css/groups/species-list.css';
 
 import { store } from 'redux/store';
-import { actions } from 'redux/actions/action-creators';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
@@ -279,7 +278,7 @@ const updateVideoPlayer = (collection, species) => {
     activeLesson.speciesName = species.name;
     activeLesson.pausedAt = species.time[0];
 
-    actions.boundUpdateVideoPlayer(playerRecords);
+    videoHandler.saveVideoState(playerRecords);
 };
 
 const closeOpenAccordions = speciesName => {

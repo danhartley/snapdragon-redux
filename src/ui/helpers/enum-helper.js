@@ -40,9 +40,18 @@ guideStep.initEnum([
     'SEASON'
 ]);
 
+class nextStep extends Enum {};
+nextStep.initEnum([
+    'NEXT_ITEM',
+    'NEXT_LAYOUT',
+    'NEXT_LESSON',
+    'NEXT_ROUND',
+]);
+
 export const enums = {
     lessonState,
     navigation,
     taxon,
-    guideStep
+    guideStep,
+    nextStep
 };
