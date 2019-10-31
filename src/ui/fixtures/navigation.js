@@ -7,7 +7,6 @@ import { subscription } from 'redux/subscriptions';
 import { getGlossary } from 'api/glossary/glossary';
 import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { enums } from 'ui/helpers/enum-helper';
-import { videoHandler } from 'ui/screens/lists/video-handler';
 
 import navigationTemplate from 'ui/fixtures/navigation-template.html';
 import definitionCardTemplate from 'ui/screens/cards/definition-card-template.html';
@@ -43,8 +42,8 @@ export const renderNavigation = () => {
                 };
 
                 switch(enums.navigation.enumValueOf(clickedIcon.id)) {
-                    case enums.navigation.HOME:
-                        clickedIcon.classList.add('active-icon');        
+                    case enums.navigation.LANDSCAPE_HOME:
+                        clickedIcon.classList.add('active-icon');
                         lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub)); // lesson handler?
                         break;
@@ -52,10 +51,9 @@ export const renderNavigation = () => {
                         toggleIconOnOff(clickedIcon);
                         renderSettings();
                         break;
-                    case enums.navigation.PORTRAIT_LIST:
+                    case enums.navigation.PORTRAIT_HOME:
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub)); // lesson handler?                   
                         lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
-                        // videoHandler.destroyPlayer();
                         break;
                     case enums.navigation.GLOSSARY:   
                         toggleIconOnOff(clickedIcon);
@@ -72,6 +70,14 @@ export const renderNavigation = () => {
                     default:
                         return;
                 }
-        });
+        });        
     });
+
+    const onLoadState = config => {
+        const id = config.isPortraitMode ? enums.navigation.PORTRAIT_HOME.name : enums.navigation.LANDSCAPE_HOME.name;
+        const icon = document.getElementById(id);
+              icon.classList.add('active-icon');
+    };
+
+    onLoadState(config, enums);
 };

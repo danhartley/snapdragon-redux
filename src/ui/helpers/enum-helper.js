@@ -13,9 +13,9 @@ lessonState.initEnum([
 
 class navigation extends Enum {};
 navigation.initEnum([
-    'HOME', 
+    'LANDSCAPE_HOME', 
     'SETTINGS', 
-    'PORTRAIT_LIST',
+    'PORTRAIT_HOME',
     'GLOSSARY', 
     'EMAIL'
 ]);

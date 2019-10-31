@@ -45,7 +45,7 @@ setTimeout( () => {
 
         subscription.add(renderHeaders, 'collection', 'flow');
         renderNavigation();
-        // subscription.add(renderNavigation, 'collection', 'flow');
+        subscription.add(renderNavigation, 'collection', 'flow');
 
         subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
                 

@@ -15,7 +15,6 @@ async function getItems(collection, config) {
         const collectionIsUnchanged = 
             collection.items && collection.items.length > 0 && collection.items[0].collectionId === collection.id && 
             collection.speciesRange === config.guide.speciesRange &&
-            collection.iconicTaxa === config.guide.iconicTaxa;
 
             console.log('collectionIsUnchanged state: ', collectionIsUnchanged);
 
@@ -34,8 +33,6 @@ async function getItems(collection, config) {
                     long: place.query[0],
                     lat: place.query[1]
                 };
-
-                // actions.boundUpdateConfig(config);
 
                 return await getInatSpecies(config);
             }
@@ -78,7 +75,7 @@ export const collectionHandler = async (collection, config, counter, callback, c
 
             if(collection.nextItem) return; // after refreshing or returning to the page (using rehydrated collection)
 
-            if(R.contains('lepidoptera', config.guide.iconicTaxa.map(taxon => taxon.id)) && !R.contains('insecta', config.guide.iconicTaxa.map(taxon => taxon.id))) {
+            if(R.contains('lepidoptera', collection.iconicTaxa.map(taxon => taxon.id)) && !R.contains('insecta', collection.iconicTaxa.map(taxon => taxon.id))) {
                 const insecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() === 'insecta');
                 const lepidoptera = insecta.filter(i => i.taxonomy.order.toLowerCase() === 'lepidoptera');
                 const noninsecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() !== 'insecta');
@@ -89,9 +86,7 @@ export const collectionHandler = async (collection, config, counter, callback, c
 
                 if(collection.behaviour === 'dynamic') {
                     
-                    // collection.name = config.guide.place.name;
                     collection.speciesRange = config.guide.speciesRange;
-                    collection.iconicTaxa = config.guide.iconicTaxa;
                 }
 
                 collection.items = collection.items.filter(i => i);
