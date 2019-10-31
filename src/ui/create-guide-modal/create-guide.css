@@ -163,11 +163,10 @@
     background-color: rgb(127, 151, 122);
   }
 
-  .input-container {
-    /* height: var(--vhStandardBlock); */
+  /* .input-container {
+    height: var(--vhHalfStandardBlock);
     display: flex;
-    align-items: center;
-  }
+  } */
 
   #inat-place, #input-species {
     width: calc(var(--vwGrid) - 1rem);
@@ -175,6 +174,7 @@
     overflow: hidden;
     white-space: nowrap;
     width: 100%;
+    margin: 1rem 0 .5rem 0;
   }
 
   #inat-place::placeholder {
@@ -247,7 +247,7 @@
   
 .embedded-switch {
   display: grid;
-  grid-template-columns: 2fr 3.2rem 1fr;
+  grid-template-columns: auto 3.2rem 1fr;
   height: 1.6rem;
   /* text-transform: uppercase; */
 }
@@ -258,7 +258,7 @@
   
   .inat-switch .txt-left {
     align-self: center;
-    text-align: right;
+    /* text-align: right; */
     padding: 0 .5rem 0 0;
     font-size: .9em;
   }
@@ -498,19 +498,19 @@
     margin-left: .25rem;
   }
 
-  .location-option {
+  /* .location-option {
     display: grid;
     grid-template-rows: 1fr;
     width: 100%;
-  }
+  } */
 
   .location-option > div {
     width: 100%;
   }
 
-  .location-option.place {
+  /* .location-option.place {
     grid-template-rows: 1fr;
-  }
+  } */
 
   .location-option.inat-entry {
     position: relative;
@@ -539,10 +539,18 @@
     height: 1rem
   }
 
+  .location-actions {
+    height: 100%;
+  }
+
   .location-actions .actions {
-    grid-auto-columns: auto;
+    /* grid-auto-columns: auto;
     grid-gap: 1rem;
+    display: grid; */
+
     display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
   }
 
   .filter-option {
@@ -673,10 +681,10 @@
         margin-top: 2rem;
     }
 
-    .location-option.place {
+    /* .location-option.place {
       margin: 0;
       position: relative;
-    }
+    } */
 
     .location-option.place > button {
       margin-left: .25rem;

@@ -1828,6 +1828,9 @@ a.collection-disabled {
   margin: 0 .5rem 0 0;
 }
 
+.padding {
+  padding: .5rem;
+}
 
 .padding-bottom {
   padding-bottom: .5rem;

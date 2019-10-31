@@ -14,12 +14,18 @@ export const saveButton = (config, step, update = true) => {
 
             case 'LOCATION':
 
+                const splitLocation = locationStr => {
+                    // const parts = locationStr.split(',');
+                    // return `${first}, ${parts[1]}`;
+                    return locationStr;
+                };
+
                 if(config.guide.locationType) {
                     chosen.innerHTML = config.guide.locationType === 'place'
                         ? config.guide.locationPlace
                         : config.isLandscapeMode
                             ? config.guide.locationLongLat
-                            : config.guide.locationLongLat.split(',')[0];
+                            : splitLocation(config.guide.locationLongLat);
                 }
                 break;
 

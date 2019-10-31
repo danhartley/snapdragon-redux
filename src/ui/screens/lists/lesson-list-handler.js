@@ -34,11 +34,13 @@ const parseLessonElement = (e, lessons) => {
 };
 
 const titleClickHandler = (title, lessons, onSpeciesListLoad, config) => {
+  
   return title.addEventListener('click', e => {
     
-    if(config.isPortraitMode) {   
-      e.stopPropagation();
-      const { title, lesson, state, speciesList, container, lessonVideoState } = parseLessonElement(e, lessons);
+    e.stopPropagation();
+    const { title, lesson, state, speciesList, container, lessonVideoState } = parseLessonElement(e, lessons);
+
+    if(config.isLandscapeMode) {   
       if (state.revealSpeciesList) {
         lessonStateHandler.bindAction({ state: enums.lessonState.BEGIN_INTRO, lesson });
         speciesList.classList.remove('hide');

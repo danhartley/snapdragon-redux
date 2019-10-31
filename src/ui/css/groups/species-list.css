@@ -102,7 +102,7 @@
     align-items: flex-start;
   }
   
-  .table-row td:nth-child(1) {
+  .master.table-row td:nth-child(1) {
     width: 80px;
     display: flex;
     align-items: center;
@@ -187,7 +187,7 @@ div.species-description {
       min-width: 105px;
     }
 
-    .table-row td:nth-child(1) {
+    .master.table-row td:nth-child(1) {
       width: 105px;
     }
 

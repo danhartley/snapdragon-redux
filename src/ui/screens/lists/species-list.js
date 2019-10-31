@@ -165,7 +165,7 @@ export const renderSpeciesList = (collection, args) => {
                   activeYouTubeIcon.classList.add('youtube-red-fg');
 
             let description = species.description;
-                description = description || species.traits.description.value ? species.traits.description.value[0] : '';
+                description = !!description ? description : (species.traits.description && species.traits.description.value) ? species.traits.description.value[0] : '';
 
             if(description) {
 
