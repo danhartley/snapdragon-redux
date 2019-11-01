@@ -52,10 +52,10 @@ const loadLessons = (savedLessons, collections, videoPlayer, score) => {
 
   const savedLessonNames = savedLessons.map(collection => collection.name);
 
-  return collections.filter(collection => !collection.default).map(collection => loadLesson(collection, savedLessonNames, videoPlayer, score));
+  return collections.map(collection => loadLesson(collection, savedLessonNames, videoPlayer, score));
 };
 
-const bindAction = args => {
+const bindAction = async args => {
   
   const { state, target, lesson, container, isInCarousel, requireSpecies, loadSpeciesCallback } = args;
   const { config, counter, collections } = store.getState();
@@ -66,18 +66,16 @@ const bindAction = args => {
     case enums.lessonState.BEGIN_INTRO:
       if(requireSpecies) {
         config.collection = { id: lesson.id };
-        const callback = (collection, config) => {
-          renderSpeciesList(collection, { callingParentContainer: container, isInCarousel });
+        const collection = await collectionHandler(collections, lesson, config, counter);
+        if(collection && collection.items && collection.items.length > 0) {
           if(loadSpeciesCallback) loadSpeciesCallback();
-        };
-        collectionHandler(collections, lesson, config, counter, callback, ()=>{});        
+          renderSpeciesList(collection, { callingParentContainer: container, isInCarousel });
+        }
       }
       if(config.isLandscapeMode) {
         renderLesson(lesson);
       }
       break;
-    // case enums.lessonState.GET_SPECIES:
-    //   break;
   }
 };
 

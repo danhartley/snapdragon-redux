@@ -174,5 +174,7 @@ export const buildTable = (collection, args) => {
 
     tbody.insertBefore(headerRow, tbody.children[0]);
 
-    utils.makeSortable(document, callback, wide);
+    const sortableCalback = () => {};
+
+    utils.makeSortable(document, sortableCalback, wide);
 }

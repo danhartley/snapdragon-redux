@@ -54,7 +54,7 @@ export const keepItems = collection => {
     });
 }
 
-export const collectionHandler = async (collections, collection, config, counter, callback, callbackWhenNoResults) => {
+export const collectionHandler = async (collections, collection, config, counter) => {
     
     try {
 
@@ -62,17 +62,13 @@ export const collectionHandler = async (collections, collection, config, counter
             actions.boundUpdateCollections(collection);
         }
 
-        console.log('collectionHandler; counter lesson is paused state: ', counter.isLessonPaused);
-
         if(counter.isLessonPaused) {
             collection.items = await keepItems(collection);
         }
 
-        console.log('collectionHandler; collection items: ', collection.items);
-
         if(counter.isLessonPaused && collection.items && collection.items.length > 0) {
             collection.items = await keepItems(collection);
-            callback(collection, config)();
+            return collection;
         } else {
             
             const items = await getItems(collection, config);
@@ -184,20 +180,19 @@ export const collectionHandler = async (collections, collection, config, counter
                 collection.itemIndex = 0;
 
                 collection.glossary = [ ...collection.glossary, 'common'];
-                collection.default = false;
 
                 actions.boundNewCollection({ config, collection });
                 
                 try {
-                    callback(collection, config)();
+                    return collection;
                 } catch (e) {
                     console.log(e.message);
                 }
 
             } else {
                 console.log('Calling callbackWhenNoResults().');
-                collection.items = [];
-                callbackWhenNoResults();
+                // collection.items = [];
+                return collection;
             }
         }
     } catch (e) {
