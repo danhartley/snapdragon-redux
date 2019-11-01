@@ -2,7 +2,7 @@ import { panels } from 'snapdragon-config/screen-panels';
 
 const { 
     specimenImages, speciesCard, vernaculars, scientifics, text, 
-    command, leaf, leafName, 
+    leaf, leafName, 
     family, familyStrips, taxon, nonTaxon, textComplete, cultivar, cultivarCard, 
     epithets, wildcardCard, wildcard, definitions, 
     specimenCommonMatch, specimenLatinMatch,
@@ -282,19 +282,6 @@ const speciesGenusEntry = {
     screens: [
         { ...specimenImages },
         { ...text, taxon: 'name'}
-    ]
-};
-
-const commandLayout = {
-    name: 'screen-command',
-    type:'test',
-    score: 1,
-    points: 2,
-    kind: 'T',
-    given: 'Various',
-    requirement: 'various',
-    screens: [
-        { ...command },
     ]
 };
 

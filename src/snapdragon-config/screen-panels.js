@@ -66,18 +66,7 @@ const traitImages = {
     name: 'mixed-specimen-questions',
     domain: 'collection'
   };
-  
-  // const command = {
-  //   name: 'command', 
-  //   domain: 'collection',
-  //   left: specimenImages,
-  //   right: {
-  //     cutLength: 5,
-  //     domain: 'collection',
-  //     question: 'Name puzzle'
-  //   }
-  // };
-  
+
   const leaf = {
     name: 'leaf-image',
     domain: 'collection'
@@ -192,9 +181,7 @@ const traitImages = {
     vernaculars,
     text,
     summary,
-  
-    // command,
-  
+
     leaf,
     leafName,
   

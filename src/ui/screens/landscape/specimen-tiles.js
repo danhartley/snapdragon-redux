@@ -90,8 +90,6 @@ const renderSpecimenImageTiles = (collection, images, item) => {
 
     let screen = layout.screens.find(screen => R.contains(screen.name, acceptableScreens));
 
-    // if(layout.screens[0].name === 'command') screen = layout.screens[0].left;
-
     if(!screen) return;
 
     const template = document.createElement('template');
