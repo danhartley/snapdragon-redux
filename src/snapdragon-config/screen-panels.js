@@ -123,17 +123,7 @@ const traitImages = {
     name: 'cultivar-match',
     domain: 'collection'
   };
-  
-  // const wildcardCard = {
-  //   name: 'wildcard-card',
-  //   domain: 'collection'
-  // };
-  
-  // const wildcard = {
-  //   name: 'wildcard-match',
-  //   domain: 'collection'
-  // };
-  
+
   const specimenCommonMatch = {
     name: 'visual-match',
     domain: 'collection',
@@ -196,8 +186,6 @@ const traitImages = {
     textComplete,
     cultivarCard,
     cultivar,
-    // wildcardCard,
-    // wildcard,
   
     specimenCommonMatch,
     specimenLatinMatch,

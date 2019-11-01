@@ -4,7 +4,7 @@ const {
     specimenImages, speciesCard, vernaculars, scientifics, text, 
     leaf, leafName, 
     family, familyStrips, taxon, nonTaxon, textComplete, cultivar, cultivarCard, 
-    epithets, wildcardCard, wildcard, definitions, 
+    epithets, definitions, 
     specimenCommonMatch, specimenLatinMatch,
     definitionCard, 
     traitProperty, symbioticProperty
@@ -369,21 +369,6 @@ const cultivars = {
     ]
 };
 
-const connections = {
-    name: 'screen-connections',
-    type: 'test',
-    score: 1,
-    points: 1,
-    kind: 'MC',
-    given: 'List of traits',
-    requirement: 'List of species',
-    screens: [
-        { ...specimenImages },
-        { ...wildcardCard },
-        { ...wildcard }
-    ]
-};
-
 const mixedSpecimenImages = {
   name: 'mixed-specimen-images',
   type:'test',
@@ -437,7 +422,6 @@ export const layouts = {
   speciesGenusEntry,
   textCompleteSpecies,
   commonEntry,
-  connections,
   leafEntry,
   glossaryTerms,
   latinEpithets,

@@ -34,7 +34,6 @@ const functions = [
     { name: 'non-taxon-card', func: renderNonTaxonCard },
     { name: 'text-complete', func: renderCompleteText },
     { name: 'cultivar-card', func: renderCultivarCard },
-    { name: 'wildcard-match', func: renderMultiStrips },
     { name: 'visual-match', func: renderMultiStrips },
     { name: 'trait-images', func: renderBonusSpecimenTiles },
     { name: 'trait-property', func: renderBonusTest },
