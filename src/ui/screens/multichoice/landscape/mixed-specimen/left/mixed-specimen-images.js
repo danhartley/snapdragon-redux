@@ -1,12 +1,12 @@
 import * as R from 'ramda';
 
 import { firestore } from 'api/firebase/firestore';
-import { scoreHandler } from 'ui/helpers/handlers';
+import { scoreHandler } from 'ui/helpers//score-handler';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { subscription } from 'redux/subscriptions';
-import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
+import { imageUseCases, scaleImage } from 'ui/helpers/image-handler';
 import { DOM } from 'ui/dom';
 import { iconicTaxa, matchIcon } from 'api/snapdragon/iconic-taxa';
 import { renderTemplate } from 'ui/helpers/templating';

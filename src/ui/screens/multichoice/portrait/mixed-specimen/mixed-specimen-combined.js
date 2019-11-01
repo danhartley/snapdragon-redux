@@ -5,9 +5,9 @@ import { store } from 'redux/store';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
-import { scoreHandler, bindScore } from 'ui/helpers/handlers';
+import { scoreHandler, bindScore } from 'ui/helpers//score-handler';
 import { imageSlider } from 'ui/screens/common/image-slider';
-import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
+import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handler';
 import { getPoolItems } from 'snapdragon-engine/pool-handler';
 
 import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-combined-template.html';

@@ -2,7 +2,7 @@ import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
-import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
+import { imageUseCases, scaleImage } from 'ui/helpers/image-handler';
 import { iconicTaxa, matchIcon } from 'api/snapdragon/iconic-taxa';
 
 import speciesTemplate from 'ui/screens/lists/species-table-template.html';

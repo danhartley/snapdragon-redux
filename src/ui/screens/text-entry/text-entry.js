@@ -1,9 +1,8 @@
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
-import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
-import { scoreHandler, bindScore } from 'ui/helpers/handlers';
-import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
+import { scoreHandler, bindScore } from 'ui/helpers//score-handler';
+import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handler';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import textEntryTemplate from 'ui/screens/text-entry/text-entry-templates.html';
 import textEntryPortraitTemplate from 'ui/screens/text-entry/text-entry-portrait-templates.html';

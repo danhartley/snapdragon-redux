@@ -104,7 +104,6 @@ const snapdragonLichens = {
 const snapdragonKitchenGarden = { 
     id: 4,
     behaviour: 'static',
-    type: 'custom',
     name: 'Kitchen Garden', 
     moduleSize: 6,
     lessonPlanLandscape: 1,
@@ -239,7 +238,7 @@ const rhsTrees = {
         id: 'plantae',
         common: 'Plants'
       } ],
-    type: 'custom',
+    type: 'taxon',
     eol_link: 'https://eol.org/collections/140596',
     externalLink: { text: 'RHS Practical Horticulture', url:'https://www.rhs.org.uk/education-learning/qualifications-and-training/rhs-qualifications/level-1-qualifications/level-1-intro-award-in-practical-horticulture' }
 };
@@ -248,7 +247,6 @@ const rhsWeeds = {
     id: 6, 
     behaviour: 'static',
     name: 'RHS Weeds I',
-    type: 'custom',
     moduleSize: 4,
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
@@ -652,7 +650,7 @@ const woodlandsTV1 = {
 };
 
 const customCollection = { 
-  id: 9,
+  id: 0,
   behaviour: 'dynamic',
   type: 'custom',
   name: 'User collection', 
@@ -669,7 +667,7 @@ const treesOfLisbon = {
   behaviour: 'static',
   id: 10, 
   name: '25 Trees of Lisbon',
-  type: 'custom',
+  type: 'taxon',
   descriptions: [
       'Os 25 espécies de árvores mais frequentes.'
   ],
@@ -717,7 +715,6 @@ const walkOne = {
   behaviour: 'static',
   id: 11, 
   name: 'Jardim da Estrela',
-  type: 'custom',
   descriptions: [
       'Jardim da Estrela.'
   ],
@@ -1032,7 +1029,7 @@ const walkTwo = {
   behaviour: 'static',
   id: 12, 
   name: 'Conifers of Jardim da Estrela',
-  type: 'custom',
+  type: 'taxon',
   descriptions: [
       'Conifers of Jardim da Estrela.'
   ],
@@ -1070,7 +1067,6 @@ const lookalikes = {
   behaviour: 'static',
   id: 13, 
   name: 'Lookalikes',
-  type: 'custom',
   descriptions: [
       'Lookalikes'
   ],

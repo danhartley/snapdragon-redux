@@ -4,8 +4,8 @@ import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
-import { markTest } from 'ui/helpers/score-handler';
-import { bindScore } from 'ui/helpers/handlers';
+import { markTest } from 'ui/helpers/test-handler';
+import { bindScore } from 'ui/helpers//score-handler';
 
 import lettersTemplate from 'ui/screens/common/letters-template.html';
 

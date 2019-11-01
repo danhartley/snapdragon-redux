@@ -118,7 +118,7 @@ export const renderSpeciesPicker = createGuide => {
 
         selectedSpecies.push(species);
 
-        const collection = snapdragonCollections.find(c => c.id === 9);
+        const collection = snapdragonCollections.find(c => c.type === 'custom');
 
         config.collection.id = collection.id;
         // config.guide = { ...collection.guide, itemNames: selectedSpecies };

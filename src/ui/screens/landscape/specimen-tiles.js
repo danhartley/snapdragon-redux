@@ -4,8 +4,8 @@ import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { renderTemplate } from 'ui/helpers/templating';
-import { modalImagesHandler } from 'ui/helpers/image-handlers';
-import { imageUseCases, prepImagesForCarousel, prepImageForCarousel, scaleImage } from 'ui/helpers/image-handlers';
+import { modalImagesHandler } from 'ui/helpers/image-handler';
+import { imageUseCases, prepImagesForCarousel, prepImageForCarousel, scaleImage } from 'ui/helpers/image-handler';
 
 import specimensTemplate from 'ui/screens/landscape/specimen-tiles-template.html';
 

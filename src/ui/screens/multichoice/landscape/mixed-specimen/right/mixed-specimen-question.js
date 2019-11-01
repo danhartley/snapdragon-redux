@@ -4,7 +4,7 @@ import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { returnIcon } from 'ui/helpers/icon-handler';
 import { firestore } from 'api/firebase/firestore';
-import { bindScore } from 'ui/helpers/handlers';
+import { bindScore } from 'ui/helpers//score-handler';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { listenToImageSelection, listenToUserAnswer, renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';

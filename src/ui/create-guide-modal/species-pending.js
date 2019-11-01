@@ -24,7 +24,7 @@ export const speciesPendingSpinner = (config, modal) => {
 
     const { counter, collections } = store.getState();
 
-    let lesson = R.clone(snapdragonCollections.find(c => c.id === 9));
+    let lesson = R.clone(snapdragonCollections.find(c => c.type === 'custom '));
 
     const renderNewLessonSummary = collection => {
     
@@ -45,7 +45,7 @@ export const speciesPendingSpinner = (config, modal) => {
     };
 
     lesson.name = getLessonName(config, lesson);
-    lesson.id = snapdragonCollections.length + 10000;
+    lesson.id = collections.length + 10000;
 
     const template = document.createElement('template');
           template.innerHTML = spinnerTemplate;

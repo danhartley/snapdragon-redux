@@ -6,12 +6,12 @@ import { actions } from 'redux/actions/action-creators';
 import { epithets } from 'api/botanical-latin';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { getPoolItems } from 'snapdragon-engine/pool-handler';
-import { scoreHandler } from 'ui/helpers/handlers';
+import { scoreHandler } from 'ui/helpers//score-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { firestore } from 'api/firebase/firestore';
-import { bindScore } from 'ui/helpers/handlers';
+import { bindScore } from 'ui/helpers//score-handler';
 import { subscription } from 'redux/subscriptions';
 
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';

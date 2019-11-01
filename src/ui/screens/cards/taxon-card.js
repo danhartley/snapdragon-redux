@@ -6,7 +6,7 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { taxonInfoSlider } from 'ui/screens/common/info-slider';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderIcon } from 'ui/helpers/icon-handler';
-import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
+import { imageUseCases, scaleImage } from 'ui/helpers/image-handler';
 
 import taxonTemplate from 'ui/screens/cards/taxon-card-template.html';
 

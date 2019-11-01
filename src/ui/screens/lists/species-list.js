@@ -6,7 +6,7 @@ import { store } from 'redux/store';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
-import { modalImageHandler } from 'ui/helpers/image-handlers';
+import { modalImageHandler } from 'ui/helpers/image-handler';
 import { buildTable } from 'ui/screens/lists/species-table';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 

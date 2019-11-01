@@ -10,7 +10,7 @@ import * as group from 'api/snapdragon/non-taxa';
 import { renderWiki } from 'wikipedia/wiki';
 import { renderWikiModal } from 'wikipedia/wiki-modal';
 import { renderTemplate } from 'ui/helpers/templating';
-import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
+import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handler';
 
 import cardTemplate from 'ui/screens/cards/non-taxon-card-template.html';
 

@@ -1,5 +1,5 @@
 import { renderTemplate } from 'ui/helpers/templating';
-import { modalImagesHandler, scaleImage, imageMatch, imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
+import { modalImagesHandler, scaleImage, imageMatch, imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handler';
 import { handleRightsAttribution } from 'ui/screens/common/rights-attribution';
 import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
 

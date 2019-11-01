@@ -7,7 +7,7 @@ import { getBirdSong } from 'xeno-canto/birdsong';
 import { lookalikeSpecies } from 'ui/screens/common/look-alikes';
 import { infoSlider } from 'ui/screens/common/info-slider';
 import { renderIcon } from 'ui/helpers/icon-handler';
-import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
+import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handler';
 import { renderInatDataBox } from 'ui/screens/common/inat-box';
 import { renderCalendar } from 'ui/screens/common/calendar';
 import { renderTaxaBox } from 'ui/screens/common/taxa-box';

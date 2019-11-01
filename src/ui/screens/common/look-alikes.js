@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { imageSideBySlider } from 'ui/screens/common/image-slider';
-import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
+import { imageUseCases, scaleImage } from 'ui/helpers/image-handler';
 import { lookalikeDescriptions } from 'api/snapdragon/look-alike-descriptions';
 import { firestore } from 'api/firebase/firestore';
 
