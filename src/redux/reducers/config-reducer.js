@@ -20,9 +20,6 @@ export const enums = (state = {}, action) => {
     switch(action.type) {
         case types.UPDATE_ENUMS:
             return action.data;
-        // case types.RESTART_LESSON: {
-        //     return action.data.enums;   
-        // }
         default:
             return state;
     }

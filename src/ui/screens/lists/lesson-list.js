@@ -6,9 +6,7 @@ import { onCreateCustomLesson } from 'ui/create-guide-modal/species-pending';
 
 import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
 
-import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
-import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 
 import lessonTemplate from 'ui/screens/lists/lesson-template.html';
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
@@ -20,7 +18,7 @@ export const renderLessons = () => {
     const template = document.createElement('template');
           template.innerHTML = lessonListTemplate;
 
-    let lessons = lessonStateHandler.loadLessonViewStates(savedLessons, collections, videoPlayer, score);
+    let lessons = lessonListEventHandler.onLoadLessonsViewState(savedLessons, collections, videoPlayer, score);
         lessons = [ ...lessons.filter(l => l.hasVideo), ...lessons.filter(l => !l.hasVideo) ];
 
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
@@ -47,28 +45,16 @@ export const renderLessons = () => {
         const template = document.createElement('template');
               template.innerHTML = lessonTemplate;
         
-        const lesson = lessonStateHandler.loadLessonViewState(collection, savedLessons, videoPlayer, score);
+        const lesson = lessonListEventHandler.onLoadLessonViewState(collection, savedLessons, videoPlayer, score);
         
         lessons.push(lesson);
         
         renderTemplate({ lesson }, template.content, parent);
         
-        highlightActiveLesson(lesson);
-        
         const title = document.querySelector(`div.js-lesson-title[data-lesson-id="${lesson.id}"]`);
         lessonListEventHandler.onTitleClickHandler(title, lessons, config);
 
         const reviewLink = document.querySelector(`div[data-review-link="${lesson.id}"]`);
-        lessonStateHandler.onReviewClickHandler(reviewLink);
+        lessonListEventHandler.onReviewClickHandler(reviewLink);
     });
-
-    highlightActiveLesson(collections.find(collection => collection.id === config.collection.id));
 };
-
-const highlightActiveLesson = lesson => {  
-  if(lesson && lesson.id > 0) {
-    lessonListScrollHandler.scrollToTitle(lesson.id);
-    const row = document.querySelector(`div.js-lesson-list-item[data-lesson-id="${lesson.id}"]`);
-    row.classList.add('lesson-list-custom-item');
-  }
-}

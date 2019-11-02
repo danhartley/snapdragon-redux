@@ -1958,8 +1958,8 @@ a.collection-disabled {
   padding-left: 20%;
 }
 
-.lesson-list-custom-item {
-  background-color: var(--snap-active) !important;
+.lesson-list-selected-lesson {
+  background-color: var(--snap-default-background) !important;
 }
 
 .lesson-list .lesson-list-item {
