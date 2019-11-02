@@ -4,36 +4,33 @@ import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';
 import { initialiseConfig } from 'ui/helpers/location-helper';
+
 import { renderSpeciesList } from 'ui/screens/lists/species-list';
-import { renderLesson } from 'ui/screens/home/home-lesson-intro';
+
 import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 import { collectionHandler } from 'ui/helpers/collection-handler';
 
-const onBeginOrResumeLesson = (target)  => {
+const beginOrResumeLesson = async (newCollectionId, currentCollection)  => {
 
-  const beginLesson = event => {
-    
-    event.stopPropagation();
+  const { collections, config, history, score, counter } = store.getState();
 
-    const { collection, config, history, score } = store.getState();
+  const requireSpecies = !(collection && collection.id === newCollectionId && collection.items && collection.items.length > 0);
 
-    const lessonState = score.collectionId === collection.id 
-            ? enums.lessonState.RESUME_LESSON
-            : enums.lessonState.BEGIN_LESSON;
+  const collection = requireSpecies ? await collectionHandler(collections, currentCollection, config, counter) : currentCollection;
+  
+  const lessonState = score.collectionId === collection.id 
+          ? enums.lessonState.RESUME_LESSON
+          : enums.lessonState.BEGIN_LESSON;
 
-    lessonHandler.changeState(lessonState, collection, config, history); 
-    // saveLesson(collection);
-  };
-
-  target.removeEventListener('click', beginLesson);
-
-  target.addEventListener('click', beginLesson);  
+  lessonHandler.changeState(lessonState, collection, config, history); 
 };
 
-const saveLesson = async collection => {
+const saveCurrentLesson = async collection => {
 
   const { counter, lessonPlan, lessonPlans, layout, lesson, score, history, bonusLayout, enums, config } = store.getState();
+  
+  if(collection.id === 0 || collection.items.length === 0 || !score || score.total === 0) return;
 
   const savedLesson = { 
       name: collection.name,
@@ -48,55 +45,48 @@ const saveLesson = async collection => {
   actions.boundUpdateConfig(initialisedConfig);
 };
 
-const loadLessons = (savedLessons, collections, videoPlayer, score) => {
+const loadLessonViewStates = (savedLessons, collections, videoPlayer, score) => {
 
   const savedLessonNames = savedLessons.map(collection => collection.name);
 
-  return collections.map(collection => loadLesson(collection, savedLessonNames, videoPlayer, score));
+  return collections.map(collection => {
+    collection.isPaused = R.contains(collection.name, savedLessonNames);
+    return loadLessonViewState(collection, videoPlayer, score);
+  });
 };
 
-const bindAction = async args => {
-  
-  const { state, target, lesson, container, isInCarousel, requireSpecies, loadSpeciesCallback } = args;
+const beginIntro = async args => {
+
+  const { lesson, container, isInCarousel, requireSpecies } = args;
   const { config, counter, collections } = store.getState();
-  switch(state) {
-    case enums.lessonState.BEGIN_OR_RESUME_LESSON:
-      onBeginOrResumeLesson(target);
-      break;     
-    case enums.lessonState.BEGIN_INTRO:
-      if(requireSpecies) {
-        config.collection = { id: lesson.id };
-        const collection = await collectionHandler(collections, lesson, config, counter);
-        if(collection && collection.items && collection.items.length > 0) {
-          if(loadSpeciesCallback) loadSpeciesCallback();
-          renderSpeciesList(collection, { callingParentContainer: container, isInCarousel });
-        }
-      }
-      if(config.isLandscapeMode) {
-        renderLesson(lesson);
-      }
-      break;
+
+  if(requireSpecies) {
+    config.collection = { id: lesson.id };
+    const collection = await collectionHandler(collections, lesson, config, counter);
+    renderSpeciesList(collection, { callingParentContainer: container, isInCarousel });
   }
+
 };
 
-const loadLesson = (collection, savedLessonNames, videoPlayer, score) => {
+const loadLessonViewState = (collection, videoPlayer, score) => {
 
-  const isPaused = R.contains(collection.name, savedLessonNames);
-  const savedState = isPaused ? '(lesson paused)' : '';
+  const savedState = collection.isPaused ? '(lesson paused)' : '';
   const taxa = collection.iconicTaxa ? collection.iconicTaxa.map(taxon => taxon.common).join(', ') : '';
 
   collection.taxa = taxa;
   collection.savedState = savedState;
-  collection.isPaused = isPaused;
   collection.hasVideo = collection.video ? true : false;
-  collection.showVideoIcon = collection.hasVideo ? '' : 'hide-important';
+  collection.showVideoIconClass = collection.hasVideo ? '' : 'hide-important';
   collection.videoState = videoHandler.setVideoState(videoPlayer || [], collection);
   collection.reviewState = (!!score && score.collectionId === collection.id) ? 'Resume Review' : 'Lesson Review';
+
   return collection;  
 };
 
 export const lessonStateHandler = {
-  loadLesson,
-  loadLessons,
-  bindAction
+  loadLessonViewState,
+  loadLessonViewStates,
+  beginOrResumeLesson,
+  beginIntro,
+  saveCurrentLesson
 }

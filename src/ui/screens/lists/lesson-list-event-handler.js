@@ -1,12 +1,14 @@
+import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';
+
+import { renderLesson } from 'ui/screens/home/home-lesson-intro';
+
 import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
-import { enums } from 'ui/helpers/enum-helper';
-import { renderLesson } from 'ui/screens/home/home-lesson-intro';
 
-const parseLessonElement = (e, lessons) => {
+const checkLessonViewState = (e, lessons) => {
 
     const title = e.currentTarget;
     const lessonId = parseInt(title.dataset.lessonId);
@@ -33,17 +35,17 @@ const parseLessonElement = (e, lessons) => {
     return { title, lesson, state, speciesList, container, lessonVideoState, reviewLink };
 };
 
-const onTitleClickHandler = (title, lessons, onSpeciesListLoad, config) => {
+const onTitleClickHandler = (title, lessons, config) => {
   
-  return title.addEventListener('click', e => {
+  return title.addEventListener('click', async e => {
     
     e.stopPropagation();
 
-    const { title, lesson, state, speciesList, container, lessonVideoState } = parseLessonElement(e, lessons);
+    const { title, lesson, state, speciesList, container, lessonVideoState } = checkLessonViewState(e, lessons);
 
     if(config.isLandscapeMode) {   
       if (state.revealSpeciesList) {
-        lessonStateHandler.bindAction({ state: enums.lessonState.BEGIN_INTRO, lesson });
+        lessonStateHandler.beginIntro({ lesson });
         speciesList.classList.remove('hide');
       }
       if (state.hideSpeciesList) {
@@ -54,13 +56,18 @@ const onTitleClickHandler = (title, lessons, onSpeciesListLoad, config) => {
         title.dataset.selected = true;
         const loadingMessage = title.parentElement.querySelector('.js-loading-message');
               loadingMessage.classList.remove('hide');
-        const loadSpeciesCallback = () => onSpeciesListLoad(lesson.id, loadingMessage);
-        lessonStateHandler.bindAction({ state: enums.lessonState.BEGIN_INTRO, lesson, container, loadSpeciesCallback, isInCarousel: false, requireSpecies: true });
+        await lessonStateHandler.beginIntro({ lesson, container, isInCarousel: false, requireSpecies: true });
+
+        onSpeciesListLoad(lesson.id, loadingMessage);
       }
+
+      renderLesson(lesson);
     }
 
     if(config.isPortraitMode) {
       renderLesson(lesson);
+      const container = DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable');
+      lessonStateHandler.beginIntro({ lesson, container, isInCarousel: false, requireSpecies: true });
     }
   });
 };
@@ -70,7 +77,26 @@ const onSpeciesListLoad = (lessonId, loadingMessage) => {
   lessonListScrollHandler.scrollToTitle(lessonId);
 };
 
+const onReviewClickHandler = reviewLink => {    
+
+  reviewLink.addEventListener('click', () => {
+
+    const { collections, collection } = store.getState();
+
+    const lessonId = parseInt(reviewLink.dataset.lessonId);
+
+    const changeLesson = collection.id !== collections.find(c => c.id === lessonId).id;
+
+    if(changeLesson) {
+      lessonStateHandler.saveCurrentLesson(collection);
+    }
+    
+    lessonStateHandler.beginOrResumeLesson(reviewLessonId, collection);
+  });
+};
+
 export const lessonListEventHandler = {
   onTitleClickHandler,
+  onReviewClickHandler,
   onSpeciesListLoad
 }

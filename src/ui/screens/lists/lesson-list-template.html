@@ -3,7 +3,7 @@
         <div data-lesson-id="{{ lesson.id }}" class="lesson-list-item js-lesson-list-item margin-top" data-has-video="{{ lesson.hasVideo }}">
             <div>
                 <div class="lesson-name js-lesson-title" data-lesson-id="{{ lesson.id }}">
-                    <span class="{{ lesson.showVideoIcon }}"><i class="fab fa-youtube"></i></span>
+                    <span class="{{ lesson.showVideoIconClass }}"><i class="fab fa-youtube"></i></span>
                     <span id="lesson_{{ lesson.id }}" class="lesson-title">{{ lesson.name }}</span>
                     <span>{{ lesson.savedState }}</span>                    
                     <span class="hide js-loading-message">(Loading species…)</span>
@@ -11,7 +11,7 @@
                 <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>
                 <div class="latin hide-empty js-lesson-video-state" data-lesson-id="{{ lesson.id }}">{{ lesson.videoState }}</div>         
             </div> 
-            <div  data-review-link="{{ lesson.id }}" class="lesson-review js-lesson-review">
+            <div  data-lesson-id="{{ lesson.id }}" class="lesson-review js-lesson-review">
                 <div>
                     <span class="underline-link">{{ lesson.reviewState }}</span>
                 </div>

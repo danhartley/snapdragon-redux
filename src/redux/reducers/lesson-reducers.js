@@ -96,6 +96,10 @@ export const lesson = (state = initialState, action) => {
 
 export const lessons = (state = [], action) => {
 
+    // if alreay exists, overwrite
+    // can be saved to cloud as this is a conscious act i.e. user saves or selects another lesson
+    // saving current lesson is somehing different
+
     switch(action.type) {
         case types.SAVE_LESSON:
             const savedLessonNames = state.map(lesson => lesson.name);

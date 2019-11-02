@@ -10,7 +10,7 @@ import spinnerTemplate from 'ui/create-guide-modal/species-pending-template.html
 
 const onCloseModalListeners = [];
 
-export const onCloseCreateGuideModal = listener => { 
+export const onCreateCustomLesson = listener => { 
     onCloseModalListeners.push(listener);
     console.log('onCloseModalListeners: ', onCloseModalListeners.length);
 };
@@ -24,7 +24,7 @@ export const speciesPendingSpinner = (config, modal) => {
 
     const { counter, collections } = store.getState();
 
-    let lesson = R.clone(snapdragonCollections.find(c => c.type === 'custom '));
+    let lesson = R.clone(snapdragonCollections.find(c => c.type === 'custom'));
 
     const renderNewLessonSummary = collection => {
     
