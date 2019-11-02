@@ -12,7 +12,7 @@ import { videoHandler } from 'ui/screens/lists/video-handler';
 
 export const renderSpeciesList = (collection, args) => {
 
-    const { readOnlyMode = false, callingParentContainer, isInCarousel = true } = args;
+    const { readOnlyMode = false, callingParentContainer, isInCarousel = false } = args;
 
     const { config, history, enums: traitEnums  } = store.getState();
 

@@ -11,11 +11,11 @@ export const config = (state = initialConfig, action) => {
             return { ...state, ...action.data };
         case types.UPDATE_LANGUAGE:
             return { ...state, ...{ language: action.data.lang } };
-        case types.PAUSE_LESSON:
-            return { ...state, collection: { id: 0} };
-        case types.RESTART_LESSON: {
-            return action.data.config;   
-        }
+        // case types.PAUSE_LESSON:
+        //     return { ...state, collection: { id: 0} };
+        // case types.RESTART_LESSON: {
+        //     return action.data.config;   
+        // }
         default: 
             return state;
     }
@@ -25,9 +25,9 @@ export const enums = (state = {}, action) => {
     switch(action.type) {
         case types.UPDATE_ENUMS:
             return action.data;
-        case types.RESTART_LESSON: {
-            return action.data.enums;   
-        }
+        // case types.RESTART_LESSON: {
+        //     return action.data.enums;   
+        // }
         default:
             return state;
     }

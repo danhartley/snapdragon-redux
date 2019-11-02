@@ -15,7 +15,7 @@ import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
 
 export const renderLessons = () => {
 
-    let { config, collections, lessons: savedLessons, videoPlayer, score, collection } = store.getState();
+    let { config, collections, lessons: savedLessons, videoPlayer, score } = store.getState();
 
     const template = document.createElement('template');
           template.innerHTML = lessonListTemplate;
@@ -62,16 +62,13 @@ export const renderLessons = () => {
         lessonStateHandler.onReviewClickHandler(reviewLink);
     });
 
-    if(config.collection.id > 0) {
-      
-      const currentLesson = collections.find(collection => collection.id === config.collection.id); 
-
-      highlightActiveLesson(currentLesson);
-    }
+    highlightActiveLesson(collections.find(collection => collection.id === config.collection.id));
 };
 
 const highlightActiveLesson = lesson => {  
-  lessonListScrollHandler.scrollToTitle(lesson.id);
-  const row = document.querySelector(`div.js-lesson-list-item[data-lesson-id="${lesson.id}"]`);
-  row.classList.add('lesson-list-custom-item');
+  if(lesson && lesson.id > 0) {
+    lessonListScrollHandler.scrollToTitle(lesson.id);
+    const row = document.querySelector(`div.js-lesson-list-item[data-lesson-id="${lesson.id}"]`);
+    row.classList.add('lesson-list-custom-item');
+  }
 }

@@ -1,10 +1,11 @@
 import * as R from 'ramda';
 
 import { store } from 'redux/store';
-import { collectionHandler } from 'ui/helpers/collection-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { listenToInatRequests } from 'api/inat/inat';
 import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
+
+import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 
 import spinnerTemplate from 'ui/create-guide-modal/species-pending-template.html';
 
@@ -56,7 +57,7 @@ export const speciesPendingSpinner = (config, modal) => {
 
     const feedback = document.querySelector('.js-request-feedback');
 
-    const collection = await collectionHandler(collections, lesson, config, counter);
+    const collection = await lessonStateHandler.loadCollection(lesson, config, counter);
 
     if(collection && collection.items && collection.items.length > 0) {
         renderNewLessonSummary(collection);

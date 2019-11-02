@@ -2,7 +2,7 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
-import { actions } from 'redux/actions/action-creators';
+// import { actions } from 'redux/actions/action-creators';
 import { getInatSpecies } from 'api/inat/inat';
 import { getPlace } from 'geo/geo';
 import { firestore } from 'api/firebase/firestore';
@@ -47,20 +47,21 @@ async function getItems(collection, config) {
     }
 };
 
-export const keepItems = collection => {
+const keepItems = collection => {
 
     return new Promise(resolve => {
         resolve(collection.items);
     });
-}
+};
 
-export const collectionHandler = async (collections, collection, config, counter) => {
+export const collectionHandler = async (collection, config, counter) => {
     
     try {
 
-        if(collections.find(c => c.id !== collection.id)) {
-            actions.boundUpdateCollections(collection);
-        }
+        // adding new custom lesson
+        // if(collections.find(c => c.id !== collection.id)) {
+        //     actions.boundUpdateCollections(collection);
+        // }
 
         if(counter.isLessonPaused) {
             collection.items = await keepItems(collection);
@@ -181,7 +182,7 @@ export const collectionHandler = async (collections, collection, config, counter
 
                 collection.glossary = [ ...collection.glossary, 'common'];
 
-                actions.boundNewCollection({ config, collection });
+                // actions.boundNewCollection({ config, collection });
                 
                 try {
                     return collection;
