@@ -18,9 +18,6 @@ export const collections = (state = snapdragonCollections.filter(sc => sc.type !
         case types.UPDATE_COLLECTIONS: {
             return [ ...state, action.data ];
         }
-        // case types.PAUSE_LESSON: {
-        //     return state;
-        // }
         default:
             return state;
     }
@@ -116,14 +113,6 @@ export const collection = (state = { id: 0 }, action) => {
             return state;
         }
 
-        // case types.PAUSE_LESSON: {
-        //     return { id: 0 };
-        // }
-
-        // case types.RESTART_LESSON: {
-        //     return action.data.collection;   
-        // }
-
         default: {
             return state; 
         }
@@ -146,14 +135,6 @@ export const bonusLayout = (state = null, action) => {
             }
             return state;
         }
-
-        // case types.PAUSE_LESSON: {
-        //     return null;
-        // }
-
-        // case types.RESTART_LESSON: {
-        //     return action.data.bonusLayout;   
-        // }
 
         default: {
             return state; 

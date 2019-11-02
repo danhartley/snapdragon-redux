@@ -23,12 +23,6 @@ export const counter = (state = null, action) => {
         case types.END_REVISION:
             let i = (state.index + 1) <= action.data.layoutCount ? (state.index + 1) : state.index;
             return { index: i };
-        // case types.PAUSE_LESSON: {
-        //     return { };
-        // }
-        // case types.RESTART_LESSON: {
-        //     return action.data.counter;   
-        // }
         default:
             return state;
     }
@@ -97,12 +91,6 @@ export const score = (state = R.clone(progressState.score), action) => {
         case types.SAVE_LESSON: {
             return R.clone(progressState.score);
         }
-        // case types.PAUSE_LESSON: {
-        //     return R.clone(progressState.score);
-        // }
-        // case types.RESTART_LESSON: {
-        //     return action.data.score;   
-        // }
         default:
             return state;
     }       
@@ -136,12 +124,6 @@ export const history = (state = null, action) => {
         }
         case types.SELECT_COLLECTION:
             return null;   
-        case types.PAUSE_LESSON: {
-            return null;
-        }
-        case types.RESTART_LESSON: {
-            return action.data.history;   
-        }
         default:
             return state;
     }

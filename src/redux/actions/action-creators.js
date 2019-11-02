@@ -33,10 +33,8 @@ const selectCollection = makeActionCreator(types.SELECT_COLLECTION);
 const traitValuesHandler = makeActionCreator(types.UPDATE_LANGUAGE);
 const updateEnums = makeActionCreator(types.UPDATE_ENUMS);
 const updateLesson = makeActionCreator(types.UPDATE_LESSON);
-// const pauseLesson = makeActionCreator(types.PAUSE_LESSON);
 const saveLesson = makeActionCreator(types.SAVE_LESSON);
 const removeSavedLesson = makeActionCreator(types.REMOVE_LESSON);
-// const restartLesson = makeActionCreator(types.RESTART_LESSON);
 const updateVideoPlayer = makeActionCreator(types.UPDATE_VIDEO_PLAYER);
 
 const boundchangeLessonPlan = data => store.dispatch(changeLessonPlan(data));
@@ -70,10 +68,8 @@ const boundSelectCollection = data => store.dispatch(selectCollection(data));
 const boundUpdateLanguage = data => store.dispatch(traitValuesHandler(data));
 const boundUpdateEnums = data => store.dispatch(updateEnums(data));
 const boundUpdateLesson = data => store.dispatch(updateLesson(data));
-// const boundPauseLesson = data => store.dispatch(pauseLesson(data));
 const boundSaveLesson = data => store.dispatch(saveLesson(data));
 const boundRemoveSavedLesson = data => store.dispatch(removeSavedLesson(data));
-// const boundRestartLesson = data => store.dispatch(restartLesson(data));
 const boundUpdateVideoPlayer = data => store.dispatch(updateVideoPlayer(data));
 
 export const actions = {
@@ -99,9 +95,7 @@ export const actions = {
     boundUpdateLanguage,
     boundUpdateEnums,
     boundUpdateLesson,
-    // boundPauseLesson,
     boundSaveLesson,
     boundRemoveSavedLesson,
-    // boundRestartLesson,
     boundUpdateVideoPlayer
 };

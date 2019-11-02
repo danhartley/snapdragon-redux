@@ -80,14 +80,6 @@ export const lesson = (state = initialState, action) => {
             }
         }
 
-        // case types.PAUSE_LESSON: {            
-        //     return initialState;
-        // }
-
-        // case types.RESTART_LESSON: {
-        //     return action.data.lesson;   
-        // }
-
         default: {
             return state; 
         }

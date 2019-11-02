@@ -23,11 +23,9 @@ const UPDATE_LANGUAGE = '[UPDATE_LANGUAGE] Update the current language';
 
 const UPDATE_ENUMS = '[UPDATE_ENUMS] Update enums by config language';
 const UPDATE_LESSON = '[UPDATE_LESSON] Create new lesson';
-const PAUSE_LESSON = '[PAUSE_LESSON] Pause lesson';
 
 const SAVE_LESSON = '[SAVE_LESSON] Add lesson to saved lessons';
 const REMOVE_LESSON = '[REMOVE_LESSON] Remove lesson from saved lessons on restarting lesson';
-// const RESTART_LESSON = '[RESTART_LESSON] Restart paused lesson';
 
 const UPDATE_VIDEO_PLAYER = '[UPDATE_VIDEO_PLAYER] Update video player state';
 
@@ -54,9 +52,7 @@ export const types = {
     UPDATE_LANGUAGE,
     UPDATE_ENUMS,
     UPDATE_LESSON,
-    PAUSE_LESSON,
     SAVE_LESSON,
     REMOVE_LESSON,
-    // RESTART_LESSON,
     UPDATE_VIDEO_PLAYER
 };
