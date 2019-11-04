@@ -17,6 +17,10 @@ export const renderSummary = history => {
 
     const { score, collection, config, lesson } = store.getState();
 
+    lessonHandler.changeState(enums.lessonState.NEXT_ROUND, collection, config, history);
+
+    return;
+
     const template = document.createElement('template');
 
     template.innerHTML = summaryTemplate;

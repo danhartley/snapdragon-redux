@@ -9,7 +9,7 @@ export const renderScore = (score) => {
     
     const { history, collection, config, layout, lesson } = store.getState();
 
-    if(config.isPortraitMode) return; // remove references below
+    // if(config.isPortraitMode) return; // remove references below
 
     const template = document.createElement('template');
 

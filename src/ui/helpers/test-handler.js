@@ -17,9 +17,9 @@ const isAnswerCorrect = score => {
 
     isCorrect = isAnswerEqualToQuestion(score.question, score.answer);
 
-    score.clue = score.clue ? score.clue.toLowerCase().replace(/ /g,'') : null;
+    // score.clue = score.clue ? score.clue.toLowerCase().replace(/ /g,'') : null;
 
-    isCorrect = score.clue ? score.answer.indexOf(score.clue) > -1 : isCorrect;
+    // isCorrect = score.clue ? score.answer.indexOf(score.clue) > -1 : isCorrect;
 
     switch(score.taxon) {
         case 'vernacular':

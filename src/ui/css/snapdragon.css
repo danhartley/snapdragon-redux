@@ -1535,7 +1535,7 @@ a.collection-disabled {
 }
 
 .rights-link {
-  width: 80%;
+  width: 100%;
   position: absolute;
   bottom: 0.5rem;
   background-color: rgb(218, 225, 201, 0.2);
@@ -2126,5 +2126,5 @@ a.collection-disabled {
 
 .main-header {
   font-style: italic;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }

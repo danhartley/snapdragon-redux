@@ -276,9 +276,9 @@ const rhsWeeds = {
 const kitchen1 = {
     id: 15,
     behaviour: 'static',
-    moduleSize: 4,
-    lessonPlanLandscape: 1,
-    lessonPlanPortrait: 101,
+    moduleSize: 1,
+    lessonPlanLandscape: 10,
+    lessonPlanPortrait: 110,
     glossary: ['plantae', 'common'],
     iconicTaxa: [ {
       id: 'plantae',

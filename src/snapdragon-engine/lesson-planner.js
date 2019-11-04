@@ -6,7 +6,7 @@ const { summary, history } = layouts;
 
 const createLessonPlan = async (lessonPlan, config, collection, lesson) => {
 
-    lesson.moduleSize = lesson.moduleSize || config.moduleSize;
+    lesson.moduleSize = lesson.moduleSize || collection.moduleSize || config.moduleSize;
     lesson.currentRound = lesson.currentRound || 1;
 
     let rounds = collection.items.length / lesson.moduleSize;            

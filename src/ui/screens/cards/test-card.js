@@ -6,7 +6,7 @@ import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
-import { renderTraitCard } from 'ui/screens/cards/trait-card';
+// import { renderTraitCard } from 'ui/screens/cards/trait-card';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
 
@@ -100,7 +100,7 @@ export const renderTestCardTemplate = (collection, context) => {
         }, 500);
     });
 
-    const traitCardLink = document.querySelector('.js-traits-link');
+    // const traitCardLink = document.querySelector('.js-traits-link');
 
     const layout = store.getState().layout;
     
@@ -108,20 +108,19 @@ export const renderTestCardTemplate = (collection, context) => {
     
     renderIcon(item.taxonomy, document);
 
-    if(R.contains(layout.screens[1].name, multichoices)) {
-        traitCardLink.classList.remove('hide-important');
-        // document.querySelector('.js-iconic-icon').classList.add('hide-important');
-    }
+    // if(R.contains(layout.screens[1].name, multichoices)) {
+    //     traitCardLink.classList.remove('hide-important');
+    // }
 
-    traitCardLink.addEventListener('click', () => {
-        if(isTraitCard) {            
-            renderTraitCard(item);
-            isTraitCard = false;
-        } else {                  
-            renderMultiStrips(collection);
-            isTraitCard = true;
-        }
-    });
+    // traitCardLink.addEventListener('click', () => {
+    //     if(isTraitCard) {            
+    //         renderTraitCard(item);
+    //         isTraitCard = false;
+    //     } else {                  
+    //         renderMultiStrips(collection);
+    //         isTraitCard = true;
+    //     }
+    // });
 
     const testContentParent = document.querySelector('.js-test-card-content');
 

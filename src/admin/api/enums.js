@@ -1230,7 +1230,11 @@ export const enums = {
     TRANSVERSE: 'Transverse',
   },
   flowerShape: {
-    TRUMPET_SHAPED: 'Trumpet-shaped'
+    TRUMPET_SHAPED: 'Trumpet-shaped',
+    BILABIATE: 'Bilabiate',
+    REGULAR: 'Regular',
+    ACTINOMORPHIC: 'Actinomorphic',
+    ZYGOMORPHIC: 'Zygomorphic'
   },
   branchArrangement: {
     HORIZONTAL: 'Horizontal',

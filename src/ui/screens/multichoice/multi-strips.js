@@ -11,7 +11,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { firestore } from 'api/firebase/firestore';
-import { bindScore } from 'ui/helpers//score-handler';
+import { bindScore, continueLessonHandler } from 'ui/helpers//score-handler';
 import { subscription } from 'redux/subscriptions';
 
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
@@ -67,11 +67,11 @@ export const renderMultiStrips = (collection, bonus) => {
 
                 if(overrides.italicise) strips.forEach(strip => strip.classList.add('binomial'));
 
-                const wordyAnswers = [ 'family-strips', 'definition' ];
+                // const wordyAnswers = [ 'family-strips', 'definition' ];
 
-                if(R.contains(screen.name, wordyAnswers)) {
-                    strips.forEach(strip => strip.classList.add('extra-small-text'));
-                }
+                // if(R.contains(screen.name, wordyAnswers)) {
+                //     strips.forEach(strip => strip.classList.add('extra-small-text'));
+                // }
                 
                 // if(config.isLandscapeMode) {
                 //     if(R.contains(screen.name, ['epithet', 'trait-property', 'species-scientifics', 'species-vernaculars'])) {
@@ -85,31 +85,35 @@ export const renderMultiStrips = (collection, bonus) => {
                         
                 const callback = (score) => {
 
-                    const updateScore = () => {
-                        if(bonus && bonus.callback) {
-                            score.guid = bonus.guid;
-                            actions.boundUpdateTraitScore(score);
-                            bonus.callback(score);
-                        } else {
-                            subscription.removeSubs();
-                            bindScore(score);
-                        }
-                    };
+                    // const updateScore = () => {
+                    //     if(bonus && bonus.callback) {
+                    //         score.guid = bonus.guid;
+                    //         actions.boundUpdateTraitScore(score);
+                    //         bonus.callback(score);
+                    //     } else {
+                    //         subscription.removeSubs();
+                    //         bindScore(score);
+                    //     }
+                    // };
 
                     const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
                     const scoreUpdateTimer = setTimeout(()=>{
-                        updateScore();
+                        subscription.removeSubs();
+                        bindScore(score);
                     }, delay);
                 
-                    const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
+                    // const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
             
-                    continueLessonBtn.disabled = false;
+                    // continueLessonBtn.disabled = false;
             
-                    continueLessonBtn.addEventListener('click', event => {
-                        window.clearTimeout(scoreUpdateTimer);
-                        updateScore();
-                    });
+                    // continueLessonBtn.addEventListener('click', event => {
+                    //     window.clearTimeout(scoreUpdateTimer);
+                    //     subscription.removeSubs();
+                    //     bindScore(score);
+                    // });
+
+                    continueLessonHandler(document.querySelector('.js-continue-lesson-btn'), score, scoreUpdateTimer);
 
                     if(screen.name === 'family-strips') {
                         document.querySelector('.js-question-question').innerHTML = item.taxonomy.family;

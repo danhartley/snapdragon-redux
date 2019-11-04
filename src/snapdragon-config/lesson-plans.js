@@ -7,6 +7,9 @@ import { portraitDefault } from 'snapdragon-config/plans/portrait/portrait-defau
 import { landscapeFungi, landscapeLichens } from 'snapdragon-config/plans/landscape/landscape-fungi';
 import { landscapeLeaf } from 'snapdragon-config/plans/landscape/landscape-leaf';
 
+import { landscapeStatic } from 'snapdragon-config/plans/landscape/landscape-static';
+import { portraitStatic } from 'snapdragon-config/plans/portrait/portrait-static';
+
 const landscapeBirds = { ...R.clone(landscapeDefault), id: 5 }; // simply a copy of default
 
 const portraitLeaf = { ...R.clone(landscapeLeaf), id: 102, portrait: true };
@@ -29,5 +32,8 @@ export const lessonPlans = [
     portraitFungi,    
     portraitLichens,
     portraitLeaf,
-    portraitBirds
+    portraitBirds,
+
+    landscapeStatic,
+    portraitStatic    
 ];

@@ -37,14 +37,14 @@ const showResponseToAnswerHandler = response => {
             </div>`;
 }
 
-const clickContinueLessonButtonHandler = (score, scoreUpdateTimer) => {
+export const continueLessonHandler = (btn, score, timer) => {
         
-    const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
+    btn.disabled = false;
+    btn.style.cursor = 'pointer';
 
-    continueLessonBtn.disabled = false;
-
-    continueLessonBtn.addEventListener('click', event => {
-        window.clearTimeout(scoreUpdateTimer);
+    btn.addEventListener('click', event => {
+        btn.disabled = true;
+        window.clearTimeout(timer);
         subscription.removeSubs();
         bindScore(score);
     });
@@ -65,7 +65,7 @@ const simpleScoreHandler = (test, callback, config) => {
     if(callback) {
         callback(score, scoreUpdateTimer);
     } else {
-        clickContinueLessonButtonHandler(score, scoreUpdateTimer);
+        continueLessonHandler(document.querySelector('.js-continue-lesson-btn'), score, scoreUpdateTimer);
     }
 
     let correct = config.isLandscapeMode ? `That is the right answer.` : `That is the right answer.`;
@@ -152,23 +152,25 @@ const stripScoreHandler = (test, callback, config) => {
 
             if(elem.hasClass(target, 'disabled')) return;
 
-            const answer = target.innerText.trim();
+            const answer = target.querySelector('div:nth-child(1)').innerText.trim();
             const vernacular = target.dataset.vernacular;
 
             test.taxon = 'name';
             test.vernacular = vernacular;
             test.question = taxon.question;
             test.answer = answer;
+                
             const score = markTest(test);
 
             target.classList.add(score.colour);
 
             items.forEach(strip => {   
-                const matchesScientificName = isAnswerEqualToQuestion(strip.innerText, taxon.name);
+                const stripAnswer = strip.querySelector('div:nth-child(1)');
+                const matchesScientificName = isAnswerEqualToQuestion(stripAnswer.innerText, taxon.name);
                 const matchesVernacularName = vernacular 
-                                                ? isAnswerEqualToQuestion(strip.innerText, vernacular) 
+                                                ? isAnswerEqualToQuestion(stripAnswer.innerText, vernacular) 
                                                 : false;
-                const matchesQuestion = isAnswerEqualToQuestion(strip.innerText, taxon.question);
+                const matchesQuestion = isAnswerEqualToQuestion(stripAnswer.innerText, taxon.question);
                 if(matchesScientificName || matchesVernacularName || matchesQuestion) {
                     strip.classList.add('snap-success');
                 }

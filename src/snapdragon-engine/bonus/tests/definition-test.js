@@ -13,7 +13,11 @@ export const getDefinitionTests = item => {
 
     const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa).value, 'common' ]));
 
-    const definition = definitions[0];
+    const term = item.terms ? utils.shuffleArray(item.terms)[0] : null;
+
+    const definition = !!term 
+        ? definitions.find(definition => definition.term.toLowerCase() === term.toLowerCase())
+        : definitions[0];
 
     const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(definitions)).filter(d => d.term.toLowerCase() !== definition.term.toLowerCase())).map(d => utils.capitaliseFirst(d.definition));
     

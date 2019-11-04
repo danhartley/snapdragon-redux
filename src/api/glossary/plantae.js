@@ -157,6 +157,11 @@ export const plantae = [
         wiki: 'https://en.wikipedia.org/wiki/Perianth'
     },
     {
+        term: 'Calyx',
+        definition: 'Collective term for the sepals of a flower.',
+        wiki: 'https://en.wikipedia.org/wiki/Sepal'
+    },
+    {
         term: 'Petal',
         definition: 'A modified leaf that surrounds the reproductive parts of flowers.',
         wiki: 'https://en.wikipedia.org/wiki/Petal'
@@ -210,7 +215,8 @@ export const plantae = [
     },
     {
         term: 'Pseudanthium',
-        definition: 'A "false flower" made up of several true flowers.'
+        definition: 'A "false flower" made up of several true flowers. Capitulum is synonymous but usually used to refer to the Asteraceae.',
+        wiki: 'https://en.wikipedia.org/wiki/Pseudanthium'
     },    
     {
         term: 'Green manure',
@@ -598,6 +604,11 @@ export const plantae = [
         wiki: 'https://en.wikipedia.org/wiki/Achene'
     },
     {
+        term : "Bilabiate",
+        definition : "Zygomorphic corolla with the limb divided into two lips e.g. members of the Lamiaceae family.",
+        wiki: 'https://en.wiktionary.org/wiki/bilabiate'
+    },
+    {
         term : "Raceme",
         definition : "An unbranched, indeterminate inflorescence with pedicellate (having short floral stalks) flowers along the axis.",
         wiki: 'https://en.wikipedia.org/wiki/Raceme',
@@ -663,13 +674,13 @@ export const plantae = [
     },
     {
         term : "Dioecious",
-        definition : "(Botany) species with 'male' and 'female' reproductive structures on separate plants. Opposite monoicous.",
+        definition : "(Botany) species with 'male' and 'female' reproductive structures on separate plants. Opposite monoecious.",
         wiki: 'https://en.wikipedia.org/wiki/Dioecy'
     },
     {
-        term : "Monoicous",
+        term : "Monoecious",
         definition : "(Botany) species with 'male' and 'female' reproductive structures on the same plant. Opposite dioecious.",
-        wiki: 'https://en.wikipedia.org/wiki/Monoicous'
+        wiki: 'https://en.wikipedia.org/wiki/Plant_reproductive_morphology#Variations'
     },
     {
         term : "Synoecious",
@@ -991,5 +1002,31 @@ export const plantae = [
         term: 'Prophyll',
         definition: 'The frequently specialised or reduced leaf produced at the first node of a new shoot.',
         wiki: 'https://en.wiktionary.org/wiki/prophyll'
+    },
+    {
+        term: 'Seed',
+        definition: 'An embryonic plant enclosed in a protective outer covering.',
+        wiki: 'https://en.wiktionary.org/wiki/Seed'
+    },
+    {
+        term: 'Schizocarp',
+        definition: 'A dry fruit that, when mature, splits up into mericarps (each with a single seed).',
+        wiki: 'https://en.wiktionary.org/wiki/Schizocarp'
+    },
+    {
+        term : "Umbel",
+        definition : "An inflorescence that consists of a number of short flower stalks (pedicels) which spread from a common point, somewhat like umbrella ribs.",
+        wiki: 'https://en.wikipedia.org/wiki/Umbel',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Inflorescences_Umbel_Kwiatostan_Baldach.svg',
+            thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Leaf_morphology_bipinnate.png/64px-Leaf_morphology_bipinnate.png',
+            author: 'By commons: Shazz CC BY-SA 3.0',
+            attribution: 'https://commons.wikimedia.org/wiki/File:Inflorescences_Umbel_Kwiatostan_Baldach.svg',        
+        }
+    },
+    {
+        term: 'Rhizome',
+        definition: 'A modified subterranean plant stem that grows horizontally and sends out roots and shoots from its nodes.',
+        wiki: 'https://en.wiktionary.org/wiki/Rhizome'
     },
 ];
