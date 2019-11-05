@@ -1029,4 +1029,34 @@ export const plantae = [
         definition: 'A modified subterranean plant stem that grows horizontally and sends out roots and shoots from its nodes.',
         wiki: 'https://en.wiktionary.org/wiki/Rhizome'
     },
+    {
+        term: 'Tuber',
+        definition: 'Develops from the stem (grow from rhizomes or runners that swell from storing nutrients) or propagates from roots that are modified to store nutrients e.g. potato, yam.',
+        wiki: 'https://en.wikipedia.org/wiki/Vegetative_reproduction#Natural_means'
+    },
+    {
+        term: 'Corm',
+        definition: 'Solid enlarged underground stem that stores nutrients in its fleshy and solid stem tissue and are surrounded by papery leaves e.g. gladiolus, taro.',
+        wiki: 'https://en.wikipedia.org/wiki/Vegetative_reproduction#Natural_means'
+    },
+    {
+        term: 'Sucker',
+        definition: 'Plant stem that arises from buds on the base of parent stems or on a root e.g. apple, banana trees.',
+        wiki: 'https://en.wikipedia.org/wiki/Vegetative_reproduction#Natural_means'
+    },
+    {
+        term: 'Planlet',
+        definition: 'Miniature structure that arises from meristem on a leaf margin; develops roots and drops from the leaf it grew on e.g. mother of thousands.',
+        wiki: 'https://en.wikipedia.org/wiki/Vegetative_reproduction#Natural_means'
+    },
+    {
+        term: 'Keikis',
+        definition: 'Additional offshoot which develops on vegetative stems or flower stalks of several orchids genera e.g. Phalaenopsis.',
+        wiki: 'https://en.wikipedia.org/wiki/Vegetative_reproduction#Natural_means'
+    },
+    {
+        term: 'Apomixis',
+        definition: 'Process of asexual reproduction through seed, in the absence of meiosis and fertilization, generating clonal progeny of maternal origin.',
+        wiki: 'https://en.wikipedia.org/wiki/Vegetative_reproduction#Natural_means'
+    },
 ];

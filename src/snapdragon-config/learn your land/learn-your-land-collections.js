@@ -1,8 +1,8 @@
 const mushroomDefaults = {
     behaviour: 'static',
-    moduleSize: 4,
-    lessonPlanLandscape: 1,
-    lessonPlanPortrait: 101,
+    moduleSize: 1,
+    lessonPlanLandscape: 10,
+    lessonPlanPortrait: 110,
     glossary: ['fungi'],
     iconicTaxa: [ {
         id: 'fungi',

@@ -22,10 +22,11 @@ const renderItemSpecimenTiles = item => {
     
     const { config, collection, layout } = store.getState();
 
+    if(layout.itemIndex === layout.prevItemIndex) return;
+
     let images, items; 
     
     const familes = [ 'family-strips', 'family', 'taxon-card' ];
-    // const familes = [ 'family-strips', 'family', 'taxon-card', 'trait-property' ];
 
     const number = 6;
 
