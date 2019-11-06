@@ -89,14 +89,12 @@ const traitImages = {
   
   const family = {
     name: 'family',
-    domain: 'collection',
-    // question: 'Match species family',
+    domain: 'collection'
   };
   
   const familyStrips = {
     name: 'family-strips',
-    domain: 'collection',
-    // question: 'Match species family',
+    domain: 'collection'
   };
   
   const taxon = {

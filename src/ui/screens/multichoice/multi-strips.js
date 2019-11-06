@@ -67,34 +67,20 @@ export const renderMultiStrips = (collection, bonus) => {
 
                 if(overrides.italicise) strips.forEach(strip => strip.classList.add('binomial'));
 
-                // const wordyAnswers = [ 'family-strips', 'definition' ];
+                if(config.isPortraitMode) {
 
-                // if(R.contains(screen.name, wordyAnswers)) {
-                //     strips.forEach(strip => strip.classList.add('extra-small-text'));
-                // }
-                
-                // if(config.isLandscapeMode) {
-                //     if(R.contains(screen.name, ['epithet', 'trait-property', 'species-scientifics', 'species-vernaculars'])) {
-                //         strips.forEach(strip => strip.classList.add('big-padding'));
-                //     }
-                // }
+                    const wordyAnswers = [ 'family-strips', 'definition', 'trait-property' ];
+    
+                    if(R.contains(screen.name, wordyAnswers)) {
+                        document.querySelector('.js-rptr-strips').classList.add('horizontal');
+                    }
+                }
 
                 const taxon = { name: item.taxonomy.family, binomial: item.name, question: questionValue };
 
                 const test = { itemId: item.id, items: strips, taxon, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points, clue};
                         
                 const callback = (score) => {
-
-                    // const updateScore = () => {
-                    //     if(bonus && bonus.callback) {
-                    //         score.guid = bonus.guid;
-                    //         actions.boundUpdateTraitScore(score);
-                    //         bonus.callback(score);
-                    //     } else {
-                    //         subscription.removeSubs();
-                    //         bindScore(score);
-                    //     }
-                    // };
 
                     const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
@@ -103,16 +89,6 @@ export const renderMultiStrips = (collection, bonus) => {
                         bindScore(score);
                     }, delay);
                 
-                    // const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
-            
-                    // continueLessonBtn.disabled = false;
-            
-                    // continueLessonBtn.addEventListener('click', event => {
-                    //     window.clearTimeout(scoreUpdateTimer);
-                    //     subscription.removeSubs();
-                    //     bindScore(score);
-                    // });
-
                     continueLessonHandler(document.querySelector('.js-continue-lesson-btn'), score, scoreUpdateTimer);
 
                     if(screen.name === 'family-strips') {

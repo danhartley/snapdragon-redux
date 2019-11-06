@@ -21,7 +21,8 @@ export const renderScore = (score) => {
 
     template.innerHTML = config.isPortraitMode
             ?   layout 
-                    ? `<div><span>{{ score.correct }} / {{ score.total }}</span></div>`
+                    ? ''
+                    // ? `<div><span>{{ score.correct }} / {{ score.total }}</span></div>`
                     : ''
             :   layout 
                     ? scoreTemplate

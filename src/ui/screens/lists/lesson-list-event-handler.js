@@ -106,7 +106,7 @@ const onTitleClickHandler = (title, lessons, config) => {
         
         const loadingMessage = title.parentElement.querySelector('.js-loading-message');
               
-              loadingMessage.classList.remove('hide'); // will also need to change state of active lesson, if there is one
+              loadingMessage.classList.remove('hide');
 
         await lessonStateHandler.renderLessonSpeciesList(lesson, container);
 
@@ -133,7 +133,14 @@ const onReviewClickHandler = reviewLink => {
 
     e.stopPropagation();
 
-    lessonStateHandler.beginOrResumeLesson(parseInt(reviewLink.dataset.lessonId));
+    const loadingMessage = reviewLink.parentElement.querySelector('.js-loading-message');
+              
+          loadingMessage.classList.remove('hide');
+          setTimeout(() => {
+            loadingMessage.classList.add('hide');
+          }, 3000);
+
+    lessonStateHandler.beginOrResumeLesson(parseInt(reviewLink.dataset.lessonId));          
   });
 };
 

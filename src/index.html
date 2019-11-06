@@ -20,11 +20,6 @@
                 const iw = (iOS) ? screen.width : window.innerWidth; 
                 const ih = (iOS) ? screen.height : window.innerHeight;
 
-                // console.log('window.innerHeight: ', window.innerHeight);
-                // console.log('screen.height: ', screen.height);
-
-                // console.log('is iOS? ', iOS);
-
                 const verticalHeight = window.innerHeight * 0.01;                
 
                 document.documentElement.style.setProperty('--vh', verticalHeight + 'px');
@@ -35,7 +30,7 @@
                 document.documentElement.style.setProperty('--vhHalfStandardBlock', (verticalHeight * 5) + 'px');
                 document.documentElement.style.setProperty('--vhDoubleStandardBlock', (verticalHeight * 20) + 'px');
                 document.documentElement.style.setProperty('--vhCarousel', (verticalHeight * 30) + 'px');
-                document.documentElement.style.setProperty('--vhButton', (verticalHeight * 5) + 'px');
+                document.documentElement.style.setProperty('--vhButtonBlock', (verticalHeight * 9) + 'px');
                 document.documentElement.style.setProperty('--vhRow', (verticalHeight * 11) + 'px');
                 document.documentElement.style.setProperty('--vhFixtures', (verticalHeight * 15) + 5 + 'px');
                 document.documentElement.style.setProperty('--vhCalender', (verticalHeight * 11) + 'px');                
@@ -46,8 +41,6 @@
                 document.documentElement.style.setProperty('--vhLargeImage', largeImage + 'px');
                 document.documentElement.style.setProperty('--vhSmallImageCarousel', verticalHeight * 23 + 'px');                
 
-                // console.log(verticalHeight * 100);
-
                 const horizontalWidth = window.innerWidth * 0.01;
 
                 document.documentElement.style.setProperty('--vw', horizontalWidth + 'px');
@@ -55,11 +48,6 @@
                 document.documentElement.style.setProperty('--vwGrid', horizontalWidth * 100  + 'px');
                 document.documentElement.style.setProperty('--vwGridNegative', (horizontalWidth * -100) + 52  + 'px');
                 document.documentElement.style.setProperty('--vhScrollingTop', (horizontalWidth * 56.25) + (verticalHeight * 10) + 'px');
-
-                // setTimeout(() => {
-                //     const videoWidth = document.querySelector('.video').offsetWidth;
-                //     document.documentElement.style.setProperty('--vhVideo', (videoWidth * .5625) + 'px');
-                // }, 1000);
             };
 
             setWindowHeight();

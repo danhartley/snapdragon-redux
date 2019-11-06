@@ -11,12 +11,12 @@ export const nextLesson = counter => {
 
     setTimeout(() => {
     
-        const { lessonPlans: userEditedLessonPlans, collection, config, lesson } = store.getState();
+        const { collection, config, lesson } = store.getState();
 
         if(setupHandler.isRequired(enums.nextStep.NEXT_LESSON, { counter, config })) {
 
             const planId = config.isPortraitMode ? collection.lessonPlanPortrait : collection.lessonPlanLandscape;    
-            const lessonPlan = R.clone(userEditedLessonPlans) || R.clone(lessonPlans.find(plan => plan.id === planId && plan.portrait === config.isPortraitMode));
+            const lessonPlan = R.clone(lessonPlans.find(plan => plan.id === planId && plan.portrait === config.isPortraitMode));
 
             if(setupHandler.isRequired(enums.nextStep.NEXT_ROUND, { counter, lesson, collection })) {
 

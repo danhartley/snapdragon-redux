@@ -13,8 +13,7 @@ import { portraitStatic } from 'snapdragon-config/plans/portrait/portrait-static
 const landscapeBirds = { ...R.clone(landscapeDefault), id: 5 }; // simply a copy of default
 
 const portraitLeaf = { ...R.clone(landscapeLeaf), id: 102, portrait: true };
-const portraitFungi = { ...R.clone(portraitDefault), id: 101, portrait: true };
-// const portraitFungi = { ...R.clone(landscapeFungi), id: 103, portrait: true };
+const portraitFungi = { ...R.clone(landscapeFungi), id: 103, portrait: true };
 const portraitLichens = { ...R.clone(landscapeLichens), id: 104, portrait: true };
 
 const portraitBirds = { ...R.clone(portraitDefault), id: 105 };
@@ -35,5 +34,6 @@ export const lessonPlans = [
     portraitBirds,
 
     landscapeStatic,
-    portraitStatic    
+    portraitStatic,
+    portraitFungi    
 ];
