@@ -41,7 +41,7 @@ const getBirdsongTest = (item, itemsInThisRound) => {
 
     const question = item.name;
     const answers = birdNames;
-    const overrides = { question: 'Match the birdsong', vernacularName: 'Common name', binomial: 'Latin name', className: 'sub-header-tall', trait: birdsong };
+    const overrides = { question: 'Match the birdsong', vernacularName: 'Common name', binomial: 'Latin name', trait: birdsong };
 
     return { question, answers, overrides };
 };

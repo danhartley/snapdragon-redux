@@ -575,9 +575,8 @@ a.dropdown-item {
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 2rem;
-  min-width: 100%;
+  min-width: 75%;
 }
 
 .strip > div::first-letter {

@@ -139,7 +139,7 @@ export const renderMultiStrips = (collection, bonus) => {
                         question = item.vernacularName;   
                         answers = await getPoolItems(item, 6);
                         answers = answers.map(a => itemProperties.getVernacularName(a, defaultLanguage));
-                        answers = answers.filter(a => a !== item.vernacularName);
+                        answers = R.take(5, answers.filter(a => a !== item.vernacularName));
                         answers = utils.shuffleArray([item.vernacularName, ...answers]);
                 
                         help = config.isLandscapeMode ? '(Click on the answer.)' : '(Tap on the answer.)';
@@ -169,7 +169,8 @@ export const renderMultiStrips = (collection, bonus) => {
                 
                 const help = config.isLandscapeMode ? '(Click on the description below.)' : '(Tap on the description.)';
 
-                render(question.type, answers.map(a => a.type), { question: 'Match species family', help, conceal: answers.map(a => a.name), clue: item.taxonomy.family });
+                render(question.type, answers.map(a => a.type), { question: 'Match species family', help, clue: item.taxonomy.family });
+                // render(question.type, answers.map(a => a.type), { question: 'Match species family', help, conceal: answers.map(a => a.name), clue: item.taxonomy.family });
             }
 
             if(screen.name === 'epithet') {
@@ -251,6 +252,10 @@ export const renderMultiStrips = (collection, bonus) => {
                             const mp3 = await firestore.getBirdsong(xcID);
                             
                             renderTemplate({ mp3, title: item.name }, template.content, parent);
+
+                            const header = document.querySelector('.js-test-card-question');
+                                  header.classList.remove('standard-block');
+                                  header.classList.add('double-standard-block');
                         };
 
                         renderBirdsong();

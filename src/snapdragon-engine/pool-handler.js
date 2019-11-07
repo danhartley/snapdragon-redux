@@ -28,7 +28,7 @@ export const getPoolItems = async (item, poolSize = 5) => {
     // } 
     else {
 
-      const items = R.take(5, speciesPool);
+      const items = R.take(poolSize, speciesPool);
 
       console.log('pool items from getPoolItems: ', items);
       console.log('\x1b[32m', '------------------------------------------');

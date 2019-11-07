@@ -69,6 +69,11 @@ export const prepImagesForCarousel = (item, config, useCase) => {
 
 export const scaleImage = (image, useCase, config) => {
 
+    if(!image.url) {
+        console.log('scaleImage, missing image url: ', image);
+        return image;
+    }
+
     if(image.url.indexOf('medium') > -1) {
         image.large = `https://static.inaturalist.org/photos/${image.url}`;
         image.medium = image.url.replace('medium', 'small');

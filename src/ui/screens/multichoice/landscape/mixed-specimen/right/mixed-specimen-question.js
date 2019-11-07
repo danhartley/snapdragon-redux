@@ -29,8 +29,7 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
     const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question, help, term: '' });
     
     const template = document.createElement('template');
-
-    template.innerHTML = mixedSpecimenQuestionTemplate;
+          template.innerHTML = mixedSpecimenQuestionTemplate;
 
     const instructions = `Identify & Select`;
     const binomial = item.name;
@@ -53,7 +52,7 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
             const vernacularName = itemProperties.getVernacularName(imageItem, config);
             const taxonIcon = returnIcon(imageItem);
 
-            return `<li id="${species}">${taxonIcon}<span>${vernacularName}</span></li>`;
+            return `<li id="${species}">${taxonIcon}<span>${vernacularName}</span><span class="binomial margin-left">${imageItem.name}</li>`;
         }));
 
         speciesList.innerHTML = speciesItems.join('');

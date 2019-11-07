@@ -148,10 +148,6 @@ export const fungi = [
         wiki: "https://en.wikipedia.org/wiki/Ectomycorrhiza"
     },
     {
-        term: "Infundibuliform",
-        definition: "Having the shape of a funnel or cone."
-    },
-    {
         term: "Basidiomycota",
         definition: "One of two divisions (with Ascomycota) of the `Higher Fungi`. Includes mushrooms.",
         wiki: "https://en.wikipedia.org/wiki/Basidiomycota"
@@ -199,10 +195,6 @@ export const fungi = [
         definition: "A compact mass of hardened fungal mycelium containing food reserves.",
         level: 2,
         group: 2
-    },
-    {
-        term: "Umbonate",
-        definition: "A mushroom having an umbo (raised area) in the centre of its cap."
     },
     {
         term: "Emarginate",
@@ -259,5 +251,95 @@ export const fungi = [
     {
         term: "Inrolled margin",
         definition: "Where the edge of the pileus points inward toward the stipe (common in immature specimens).",
+    },
+    {
+        term: "Campanulate (pileus)",
+        definition: "bell-shaped.",
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/3/3f/Campanulate_cap_icon.svg',
+            author: 'By Debivort on EN wiki - Created by user debivort for EN wiki, published there as Campanulate cap icon.pngVectorised by Lokal_profil using Incscape, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=1192300',
+        }
+    },
+    {
+        term: "Conical (pileus)",
+        definition: "cone-shaped.",
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/9/91/Conical_cap_icon.svg',
+            author: 'By Debivort on EN wiki - PNG Created by user debivort for EN wiki, published there as Conical cap icon.pngVectorised by Lokal_profil using Incscape, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=1192290',
+        }
+    },
+    {
+        term: "Convex (pileus)",
+        definition: "Somewhat the shape of a half-circle, regularly rounded on top.",
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/a/a1/Convex_cap_icon.svg',
+            author: 'By Debivort on EN wiki - Created by user debivort for EN wiki, published there as Convex cap icon.pngVectorised by Lokal_profil using Incscape, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=1196309',
+        }
+    },
+    {
+        term: "Depressed (pileus)",
+        definition: "Somewhat the shape of a half-circle, regularly rounded on top.",
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/a/a1/Convex_cap_icon.svg',
+            author: 'By Debivort on EN wiki - Created by user debivort for EN wiki, published there as Depressed cap icon.pngVectorised by Lokal_profil using Incscape, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=1196342',
+        }
+    },
+    {
+        term: "Flat (pileus)",
+        definition: "With the central part sunken below the level of the margin.",
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/f/f2/Flat_cap_icon.svg',
+            author: 'By Debivort on EN wiki - Created by user debivort for EN wiki, published there as Flat cap icon.pngVectorised by Lokal_profil using Incscape, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=1192306',
+        }
+    },
+    {
+        term: "Infundibuliform (pileus)",
+        definition: "Having the shape of a funnel or cone.",
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/a/a8/Infundibuliform_cap_icon.svg',
+            author: 'By Debivort on EN wiki - Created by user debivort for EN wiki, published there as Infundibuliform cap icon.pngVectorised by Lokal_profil using Incscape, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=1196445',
+        }
+    },
+    {
+        term: "Offset (pileus)",
+        definition: "To one side (eccentric).",
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/1/15/Offset_cap_icon.png',
+            author: 'By Debivort at the English Wikipedia, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=1489193',
+        }
+    },
+    {
+        term: "Ovate (pileus)",
+        definition: "Having an oval outline or ovoid shape, like an egg.",
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Ovate_cap_icon.svg',
+            author: 'By Debivort on EN wiki - Created by user debivort for EN wiki, published there as Ovate cap icon.pngVectorised by Lokal_profil using Incscape, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=1196479',
+        }
+    },
+    {
+        term: "Umbillicate (pileus)",
+        definition: "Having a navel-like central depression.",
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Umbillicate_cap_icon.svg',
+            author: 'By Debivort on EN wiki - Created by user debivort for EN wiki, published there as Umbillicate cap icon.pngVectorised by Lokal_profil using Incscape, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=1220494',
+        }
+    },
+    {
+        term: "Umbonate",
+        definition: "A mushroom having an umbo (raised area) in the centre of its cap.",
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/1/12/Umbonate_cap_icon.svg',
+            author: 'By Debivort on EN wiki - Created by user debivort for EN wiki, published there as Umbonate cap icon.pngVectorised by Lokal_profil using Incscape, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=1220479',
+        }
     },
 ]

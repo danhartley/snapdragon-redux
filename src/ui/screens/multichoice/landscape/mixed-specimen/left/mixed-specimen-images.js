@@ -5,7 +5,6 @@ import { scoreHandler } from 'ui/helpers//score-handler';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
-import { subscription } from 'redux/subscriptions';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handler';
 import { DOM } from 'ui/dom';
 import { iconicTaxa, matchIcon } from 'api/snapdragon/iconic-taxa';
@@ -30,7 +29,7 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
 
     console.log('RENDERMIXEDSPECIMENIMAGES');
 
-    const imagesPerItem = noOfImagesPerItem || 1;
+    let imagesPerItem = noOfImagesPerItem || 1;
 
     const { config, score, lesson } = store.getState();
 
@@ -43,8 +42,7 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
     if(!item) return;
 
     const template = document.createElement('template');
-
-    template.innerHTML = specimensTemplate;
+          template.innerHTML = specimensTemplate;
 
     const parent = DOM.leftBody;
           parent.innerHTML = '';
@@ -55,17 +53,17 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
  
         const mixedItems = preselectedItems || await getPoolItems(item);
 
-        mixedItems.map(item => item.images.map(image => {
-            return image = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config).medium;
-        }));
-
         const images = utils.shuffleArray(mixedItems).map((item, index) => {
             
             const itemImages = utils.shuffleArray(item.images);
 
             return itemImages.map((image, imageIndex) => {
                 if(imageIndex < imagesPerItem) {
-                    return { index: index + index + imageIndex, ...image, itemName: item.name };
+                    if(image.url) {
+                        return { index: index + imageIndex, ...image, medium: scaleImage(image, imageUseCases.MIXED_SPECIMENS, config).medium, itemName: item.name };
+                    } else {
+                        imagesPerItem++;
+                    }
                 }
             }).filter(image => image);
         }).flat();

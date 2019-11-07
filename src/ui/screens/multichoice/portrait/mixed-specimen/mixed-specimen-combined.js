@@ -7,7 +7,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { scoreHandler, bindScore } from 'ui/helpers//score-handler';
 import { imageSlider } from 'ui/screens/common/image-slider';
-import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handler';
+import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handler';
 import { getPoolItems } from 'snapdragon-engine/pool-handler';
 
 import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-combined-template.html';
@@ -74,14 +74,11 @@ export const renderMixedSpecimenCombined = collection => {
                 const callback = (score, scoreUpdateTimer) => {
                     boundScore.score = score;
                     boundScore.scoreUpdateTimer = scoreUpdateTimer;
-                    // score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
                     continueLessonBtn.disabled = false;          
                     if(!score.success) {
                         const wrongItem = items.find(item => item.name === score.answer);
                         const vernacularName = itemProperties.getVernacularName(wrongItem, config);
                         const name = vernacularName || score.answer;
-                        // const wrongAnswerTxt = document.querySelector('.js-wrong-answer-txt');
-                        //     wrongAnswerTxt.innerHTML = score.answer ? `${name} is not right.` : '';
                     }
                 };
 

@@ -34,11 +34,11 @@
    
   /* CONTINUE BUTTON */
 
-  .test-card-question {
+  /* .test-card-question {
     height: var(--vhStandardBlock, 10vh);
     display: flex;
     align-items: center;
-  }
+  } */
 
   .test-card-question .question {
     text-transform: uppercase;
@@ -176,6 +176,18 @@ div.text-entry {
     width: 2rem;
     height: 2rem;
     fill: var(--snap-iconic-icon-header);
+  }
+
+  .mixed-specimen-container {
+    display: grid;
+    margin: 2rem 6rem;
+    grid-row-gap: .5rem;
+    grid-template-rows: 2fr auto 3fr;
+  }
+
+  .mixed-specimen-container .btn {
+    color: var(--snap-text-dark) !important;
+    background-color: var(--snap-list-header) !important;
   }
 
   .images-names-txt i {
