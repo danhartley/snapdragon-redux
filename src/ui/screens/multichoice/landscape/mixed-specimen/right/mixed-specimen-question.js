@@ -73,8 +73,7 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
     continueLessonBtn.addEventListener('click', () => {
         window.clearTimeout(pendingScore.scoreUpdateTimer);
-        bindScore(pendingScore.score);
-        
+        bindScore(pendingScore.score);        
     });
 
     document.querySelector('.js-help-txt').addEventListener('click', () => {

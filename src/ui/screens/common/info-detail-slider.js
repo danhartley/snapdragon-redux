@@ -30,7 +30,7 @@ export const renderInfoDetails = (item, activeTraitKey, activeTraitValue, descri
         linkedTaxa(item, config, parent, mode, isInCarousel, collection, activeTraitValue);
     } else {
 
-        const details = firestore.getDefinition(activeTraitValue, collection.glossary);
+        const details = firestore.getDefinition(activeTraitValue, collection.glossary); // make dependent on a promise
 
         if(!parent) return; // hack! taxon info sliders
 

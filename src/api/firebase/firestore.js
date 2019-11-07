@@ -488,6 +488,15 @@ const getDefinition = (term, required) => {
     return definitions.filter(definition => definition);
 };
 
+const getTraitDefinitions = (required, trait) => {
+    
+    const dictionary = getGlossary(required);
+
+    const traits = dictionary.filter(entry => entry.trait).filter(entry => entry.trait.toLowerCase() === trait.toLowerCase());
+
+    return new Promise(resolve => resolve(traits));
+};
+
 const addTaxon = async props => {
 
     const { language, taxon } = props;
@@ -567,7 +576,8 @@ export const firestore = {
     updateSpeciesNames,
   
     deleteSpeciesByName,
-    deleteSpeciesTraitField
+    deleteSpeciesTraitField,
+    getTraitDefinitions
 };
 
 const getRandomId = () => {

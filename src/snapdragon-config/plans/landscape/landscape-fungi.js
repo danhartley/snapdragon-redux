@@ -4,6 +4,7 @@ import { layouts as L } from 'snapdragon-config/screen-layouts';
 
 const propertyTrait = (traitPropertyMatch, trait) => {
     const layout = R.clone(traitPropertyMatch);
+    layout.screens[0].trait = trait;
     layout.screens[1].trait = trait;
     return layout;
 };
@@ -16,8 +17,9 @@ export const landscapeFungi = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch, ...L.traitPropertyMatch, ...propertyTrait(L.traitPropertyMatch, 'howEdible'), L.textCompleteGenus, L.textCompleteSpecies ],
-            bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'traits', 'song', 'lookalikes', 'definition' ] } ]
+            layouts: [ L.mixedSpecimenImages, propertyTrait(L.mixedTraitImages, 'capShape') ],
+            // layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch, ...L.traitPropertyMatch, ...propertyTrait(L.traitPropertyMatch, 'howEdible'), L.textCompleteGenus, L.textCompleteSpecies ],
+            // bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'traits', 'song', 'lookalikes', 'definition' ] } ]
         },
         // {   id: 1,
         //     name:'Level 1',

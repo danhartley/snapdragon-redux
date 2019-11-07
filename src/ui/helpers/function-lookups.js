@@ -15,6 +15,8 @@ import { renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixe
 import { renderMediaPlayers } from 'ui/screens/media/landscape/media-players';
 import { renderBonusTest } from 'ui/screens/bonus/bonus-test';
 import { renderBonusSpecimenTiles } from 'ui/screens/bonus/bonus-specimen-tiles';
+import { renderMixedTraitImages } from 'ui/screens/multichoice/landscape/mixed-trait/left/mixed-trait-images';
+import { renderMixedTraitQuestion } from 'ui/screens/multichoice/landscape/mixed-trait/right/mixed-trait-question';
 
 const functions = [
     { name: 'mixed-specimen-questions', func: renderMixedSpecimenCombined },
@@ -39,13 +41,15 @@ const functions = [
     { name: 'trait-property', func: renderBonusTest },
     { name: 'lookalike-property', func: renderBonusTest },
     { name: 'symbiotic-property', func: renderMultiStrips },
-    
-    
+        
     { name: 'mixed-specimen-question', func: renderMixedSpecimenQuestion },
     { name: 'mixed-specimen-images', func: renderMixedSpecimenImages },
     
     { name: 'birdsong', func: renderBonusTest },
     { name: 'media-players', func: renderMediaPlayers },    
+
+    { name: 'mixed-trait-images', func: renderMixedTraitImages },
+    { name: 'mixed-trait-question', func: renderMixedTraitQuestion },    
 ];
 
 export const funcByName = name => {

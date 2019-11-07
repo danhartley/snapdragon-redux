@@ -34,12 +34,16 @@ const isAnswerCorrect = score => {
     return isCorrect;
 };
 
+const isTraitAnswerCorrect = score => {
+    return score.answer.toLowerCase().trim() === score.question.toLowerCase().trim();
+};
+
 export const markTest = test => {
 
     const score = R.clone(test);
 
     score.answer = score.answer.trim();
-    score.success = isAnswerCorrect(score);
+    score.success = score.trait ? isTraitAnswerCorrect(score) : isAnswerCorrect(score);
     score.colour  = score.success ? 'snap-success' : 'snap-alert';
     
     return score;

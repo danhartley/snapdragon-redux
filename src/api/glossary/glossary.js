@@ -10,7 +10,7 @@ export const getGlossary = requiredGlossaries => {
     
     let glossary = [];
 
-    requiredGlossaries = [ ...new Set(requiredGlossaries)];
+    requiredGlossaries = requiredGlossaries; // need to remove duplicates here
 
     if(requiredGlossaries) {
         requiredGlossaries.forEach(glossaryName => {

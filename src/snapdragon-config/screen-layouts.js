@@ -15,7 +15,9 @@ const {
     mixedSpecimensLeft,
     mixedSpecimensRight,
     history, summary, 
-    birdsong, mediaPlayers } = panels;
+    birdsong, mediaPlayers,
+    mixedTraitLeft,
+    mixedTraitRight } = panels;
 
 const mixedSpeciesMatch = {
     name: 'screen-mixed-species-match',
@@ -396,8 +398,19 @@ const mediaMatch = {
         // { ...mediaPlayers },
         { ...birdsong }
     ]
-
 };
+
+const mixedTraitImages = {
+    name: 'mixed-trait-images',
+    type:'test',
+    kind: 'T',
+    given: 'Trait images',
+    requirement: 'Select trait image',
+    screens: [
+        { ...mixedTraitLeft },
+        { ...mixedTraitRight }
+    ]
+  };  
 
 export const layouts = {
   mixedSpeciesMatch,
@@ -429,5 +442,6 @@ export const layouts = {
   mixedSpecimenImages,
   history,
   summary,
-  mediaMatch
+  mediaMatch,
+  mixedTraitImages
 }

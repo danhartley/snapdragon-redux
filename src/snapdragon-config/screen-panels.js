@@ -150,12 +150,22 @@ const traitImages = {
   };
 
   const mixedSpecimensLeft = {
-    name: 'mixed-specimen-question',
+    name: 'mixed-specimen-images',
     domain: 'collection'
   };
 
   const mixedSpecimensRight = {
-    name: 'mixed-specimen-images',
+    name: 'mixed-specimen-question',
+    domain: 'collection'
+  };
+  
+  const mixedTraitLeft = {
+    name: 'mixed-trait-images',
+    domain: 'collection'
+  };
+
+  const mixedTraitRight = {
+    name: 'mixed-trait-question',
     domain: 'collection'
   };
   
@@ -198,5 +208,8 @@ const traitImages = {
 
     birdsong,
     mediaPlayers,
-    traitImages
+    traitImages,
+
+    mixedTraitLeft,
+    mixedTraitRight
   };
