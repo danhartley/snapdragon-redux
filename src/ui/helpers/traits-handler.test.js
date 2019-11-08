@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import { getRandomTrait, getTraitValues, getSetOfTraitAnswers, getTraitByKey, getTraitValueByKey, hasTraitPropeties, getTraitsToExclude } from 'ui/helpers/traits-handler';
+import { getRandomTrait, getTraitValues, getSetOfTraitAnswers, getTraitByKey, getTraitValueByKey, hasTraitPropeties, getTraitsToExclude, traitsHandler } from 'ui/helpers/traits-handler';
 
 const fox = {
     "name": "Vulpes vulpes",
@@ -304,4 +304,16 @@ test('should return true for properties when trait properties exist', () => {
 
 test('should return false for no properties when trait properties exist', () => {
   expect(hasTraitPropeties({})).toBeFalsy();
+});
+
+test('should return correct pairs of length 3 from a set of 4 items', () => {
+  expect(traitsHandler.getNPairsFromArray([1, 2, 3, 4], 3)).toEqual([[3,2,1],[4,2,1],[4,3,1],[4,3,2]]);
+});
+
+test('should return false for arrays of different values', () => {
+  expect(traitsHandler.doArraysHaveSameValues([1,2],[2,3])).toBeFalsy();
+});
+
+test('should return true for arrays of equal values', () => {
+  expect(traitsHandler.doArraysHaveSameValues([1,2],[2,1])).toBeTruthy();
 });

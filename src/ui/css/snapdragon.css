@@ -474,14 +474,6 @@ a.dropdown-item {
   width: 10rem;
 }
 
-.big-squares {
-  display: grid;
-  height: 100%;
-  grid-auto-flow: row;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-}
-
 .squares {
   display: grid;
   grid-auto-flow: row;
@@ -499,7 +491,7 @@ a.dropdown-item {
 }
 
 .squares.js-tiles > div {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
 }

@@ -17,7 +17,7 @@ export const landscapeFungi = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ L.mixedSpecimenImages, propertyTrait(L.mixedTraitImages, 'capShape') ],
+            layouts: [ L.mixedSpecimenImages, propertyTrait(L.mixedTraitImages, 'capShape'), propertyTrait(L.mixedTraitImages, 'gillAttachment') ],
             // layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch, ...L.traitPropertyMatch, ...propertyTrait(L.traitPropertyMatch, 'howEdible'), L.textCompleteGenus, L.textCompleteSpecies ],
             // bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'traits', 'song', 'lookalikes', 'definition' ] } ]
         },

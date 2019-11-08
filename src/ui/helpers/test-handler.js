@@ -35,7 +35,7 @@ const isAnswerCorrect = score => {
 };
 
 const isTraitAnswerCorrect = score => {
-    return score.answer.toLowerCase().trim() === score.question.toLowerCase().trim();
+    return R.contains(score.answer, score.question);
 };
 
 export const markTest = test => {

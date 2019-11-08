@@ -298,6 +298,10 @@ const toCamelCase = sentenceCase => {
   return out;
 };
 
+const fromCamelCase = str => {
+  return str.replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase();
+};
+
 export const utils = {
   log,
   encodeQuery,
@@ -323,5 +327,6 @@ export const utils = {
   createSessionToken,
   debounce,
   getRandomObjectProperty,
-  toCamelCase
+  toCamelCase,
+  fromCamelCase
 };

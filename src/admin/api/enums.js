@@ -7,6 +7,7 @@ export const enums = {
   CAP_COLOUR: 'cap colour',
   CAP_DIAMETER: 'cap diameter',
   CAP_WIDTH: 'cap width',
+  CAP_HEIGHT: 'cap height',
   SHELF_WIDTH: 'shelf width',
   SHELF_THICKNESS: 'shelf tHickness',
   ECO_TYPE: 'ecological type',
@@ -176,6 +177,7 @@ export const enums = {
   NUT_TYPE: 'nut type',
   TREE_ECOLOGY: 'Tree ecology',
   KEY_FEATURE: 'Key feature', 
+  GILL_ATTACHMENT : 'gill attachment',
   type: 'name',
   name: 'name'
   },
@@ -1137,16 +1139,18 @@ export const enums = {
   name: 'stipe character'
   },
   gillAttachment: {
-  FREE: 'Free',
-  ADNATE: 'Adnate',
-  DECURRENT: 'Decurrent',
-  NA: 'N/A',
-  NONE: 'None',
-  EMARGINATE: 'emarginate',
-  SUBDECURRENT: 'subdecurrent',
-  ADNEXED: 'adnexed',
-  type: 'gillAttachment',
-  name: 'gill attachment'
+    ADNATE: 'Adnate',
+    ADNEXED: 'Adnexed',
+    DECURRENT: 'Decurrent',
+    EMARGINATE: 'Emarginate',
+    FREE: 'Free',
+    Seceding: 'Seceding',
+    SINUATE: 'Sinuate',
+    SUBDECURRENT: 'Subdecurrent',
+    NA: 'N/A',
+    NONE: 'None',
+    type: 'gillAttachment',
+    name: 'gill attachment'
   },
   grouping: {
     LARGE_GROUPS: 'large groups',
@@ -1288,6 +1292,7 @@ export const enums = {
     { trunkDiameter: [ 'm', 'cm', 'mm'] },
     { capDiameter: [ 'm', 'cm', 'mm'] },
     { capWidth: [ 'm', 'cm', 'mm'] },
+    { capHeight: [ 'm', 'cm', 'mm'] },
     { shelfWidth: [ 'm', 'cm', 'mm'] },
     { shelfThickness: [ 'm', 'cm', 'mm'] },
     { length: [ 'm', 'cm', 'mm'] },

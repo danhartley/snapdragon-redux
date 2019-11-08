@@ -12,7 +12,7 @@ import { getPoolItems } from 'snapdragon-engine/pool-handler';
 
 import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-combined-template.html';
 
-export const renderMixedSpecimenCombined = collection => {
+export const renderMixedSpecimenImagesAndQuestion = collection => {
 
     const { config, lesson, layout, score } = store.getState();
 

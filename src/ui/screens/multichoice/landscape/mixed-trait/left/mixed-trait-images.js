@@ -12,11 +12,11 @@ export const renderMixedTraitImages = collection => {
     const parent = DOM.leftBody;
           parent.innerHTML = '';
 
-    mixedTraitHandler.onTraitsReady((traits, requiredTrait) => {
+    mixedTraitHandler.onTraitsReady((traits, requiredTraits) => {
         
         renderTemplate({ traits }, template.content, parent);
 
         const traitTiles = document.querySelectorAll('.js-tiles img');
-              traitTiles.forEach(tile => mixedTraitHandler.onClickTileHandler(tile, requiredTrait));
+              traitTiles.forEach(tile => mixedTraitHandler.onClickTileHandler(tile, requiredTraits));
     });
 };

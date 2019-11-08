@@ -1,3 +1,4 @@
+import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
@@ -9,21 +10,21 @@ export const renderMixedTraitQuestion = collection => {
 
     const init = async () => {
 
-        const { layout } = store.getState();
+        const { layout, collection } = store.getState();
 
         const template = document.createElement('template');
         template.innerHTML = questionTemplate;
         
         const item = collection.nextItem;
         const trait = layout.screens[1].trait;
-        const question = 'Find the species';
-        const help = '(Click on the matching trait value.)';
+        const question = 'Match the trait';
+        const help = `(${utils.fromCamelCase(trait)}.)`;
 
-        mixedTraitHandler.fetchTraits(trait, item.traits);
+        mixedTraitHandler.fetchTraits(trait, item.traits, collection.glossary);
     
         const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question, help, term: '' });
 
-        mixedTraitHandler.onTraitsReady((traits, requiredTrait) => {            
+        mixedTraitHandler.onTraitsReady((traits, requiredTraits) => {            
             renderTemplate({ traits }, template.content, parent);
         });
     };

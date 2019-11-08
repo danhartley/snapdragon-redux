@@ -200,6 +200,11 @@ div.text-entry {
     margin: 0 .25rem 0 0;
   }
 
+  .traits-names-txt img {
+      width: 1rem;
+      height: 1rem;
+  }
+
 /* CARD HEADER */
 
 .question-container {

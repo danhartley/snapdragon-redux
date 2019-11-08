@@ -112,11 +112,83 @@ export const fungi = [
     },
     {
         term: "Adnate",
-        definition: "Gills are broadly attached to the stalk slightly above the bottom of the gill, with most of the gill fused to the stem."
+        definition: "Gills are broadly attached to the stalk slightly above the bottom of the gill, with most of the gill fused to the stem.",
+        trait: 'gillAttachment',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Adnate_gills_icon2.svg',
+            author: 'By Debivort, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=1488943',
+        }
+    },
+    {
+        term: "Adnexed",
+        definition: "Narrowly attached to a stem or stipe.",
+        trait: 'gillAttachment',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Adnexed_gills_icon2.svg',
+            author: 'By Debivort, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=1488950',
+        }
     },
     {
         term: "Decurrent",
-        definition: "Gills or pores are broadly attached to and extend down the stipe."
+        definition: "Gills or pores are broadly attached to and extend down the stipe.",
+        trait: 'gillAttachment',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e1/Decurrent_gills_icon2.svg',
+            author: 'By Debivort, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=1488859',
+        }
+    },
+    {
+        term: "Emarginate",
+        definition: "Roughly same height for most of its length, becoming much shallower before attachment point.",
+        trait: 'gillAttachment',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Emarginate_gills_icon2.svg',
+            author: 'By Debivort, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=1488866',
+        }
+    },
+    {
+        term: "Free",
+        definition: "Gills are not attached to the stipe.",
+        trait: 'gillAttachment',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Free_gills_icon2.svg',
+            author: 'By Debivort, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=1488862',
+        }
+    },
+    {
+        term: "Seceding",
+        definition: "Gills that were attached to the stem have pulled away from it.",
+        trait: 'gillAttachment',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Seceding_gills_icon2.svg',
+            author: 'By Debivort, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=1488880',
+        }
+    },
+    {
+        term: "Sinuate",
+        definition: "Roughly the same height for most of its length, becoming much shallower and then curving back towards the stem before reaching the attachment point.",
+        trait: 'gillAttachment',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/3/3f/Sinuate_gills_icon2.svg',
+            author: 'By Debivort, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=1488914',
+        }
+    },
+    {
+        term: "Subdecurrent",
+        definition: "Attached to and running downward along a stem or stipe, but curving inward just before the attachment point.",
+        trait: 'gillAttachment',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/4/48/Subdecurrent_gills_icon2.svg',
+            author: 'By Debivort, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=1488940',
+        }
     },
     {
         term: "Ostiole",
@@ -195,10 +267,6 @@ export const fungi = [
         definition: "A compact mass of hardened fungal mycelium containing food reserves.",
         level: 2,
         group: 2
-    },
-    {
-        term: "Emarginate",
-        definition: "Roughly same height for most of its length, becoming much shallower before attachment point."
     },
     {
         term: "Gasteroid fungi ('stomach fungi')",

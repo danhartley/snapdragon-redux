@@ -63,8 +63,7 @@ export const imageSlider = sliderArgs => {
     const { config, images, parent, disableModal, image, parentScreen = document, identifier = '' } = sliderArgs;
 
     const slider = document.createElement('template');
-
-    slider.innerHTML = imageSliderTemplate;
+          slider.innerHTML = imageSliderTemplate;
 
     parent.innerHTML = '';
 

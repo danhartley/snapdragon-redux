@@ -4,6 +4,7 @@ import { store } from 'redux/store';
 import { scoreHandler } from 'ui/helpers//score-handler';
 import { firestore } from 'api/firebase/firestore';
 import { utils } from 'utils/utils';
+import { traitsHandler } from 'ui/helpers/traits-handler';
 
 const onTraitsReadyListeners = [];
 const onTraitsReady = listener => {
@@ -15,23 +16,31 @@ const onTraitClicked = listener => {
     onTraitClickedListeners.push(listener);
 };
 
-const fetchTraits = async (trait, traitValues) => {
+const fetchTraits = async (trait, traitValues, glossary) => {
 
-    let requiredTraitValue;
+    let requiredTraitValues;
 
     for (let [key, obj] of Object.entries(traitValues)) {
         if(utils.toCamelCase(key).toLowerCase() === trait.toLowerCase()) {
-            requiredTraitValue = obj.value[0];
+            requiredTraitValues = obj.value;
         }
     };
 
-    let traits = await firestore.getTraitDefinitions(['fungi'], trait); // hack
+    let traits = await firestore.getTraitDefinitions(glossary, trait);
 
-    let requiredTrait = traits.find(t => t.term === requiredTraitValue);
+    const pairs = traitsHandler.getNPairsFromArray(traits.map(t => t.term), requiredTraitValues.length);
 
-        traits = [ ...R.take(5, traits.filter(t => t.term.toLowerCase() !== requiredTrait.term.toLowerCase())), requiredTrait ];
+    console.log(pairs);
 
-    onTraitsReadyListeners.forEach(listener => listener(traits, requiredTrait));
+    let requiredTraits = traits.filter(t => R.contains(t.term, requiredTraitValues));
+    let number = 6 - requiredTraits.length;
+
+        traits = [ 
+            ...R.take(number, traits.filter(t => !R.contains(t, requiredTraits))),
+            ...requiredTraits 
+        ];
+
+    onTraitsReadyListeners.forEach(listener => listener(traits, requiredTraits));
 };
 
 const pendingScore = {};
@@ -43,7 +52,7 @@ const callback = (score, scoreUpdateTimer) => {
     pendingScore.scoreUpdateTimer = scoreUpdateTimer;
 };
 
-const onClickTileHandler = (tile, requiredTrait) => {
+const onClickTileHandler = (tile, requiredTraits) => {
 
     const { config } = store.getState();
 
@@ -51,7 +60,7 @@ const onClickTileHandler = (tile, requiredTrait) => {
     const trait = e.currentTarget;
     const test = {
         trait: true,
-        question: requiredTrait.term,
+        question: requiredTraits.map(trait => trait.term),
         answer: trait.dataset.term
     }
     scoreHandler('image-match', test, callback, config);

@@ -404,6 +404,8 @@ const mixedTraitImages = {
     name: 'mixed-trait-images',
     type:'test',
     kind: 'T',
+    score: 1,
+    points: 2,
     given: 'Trait images',
     requirement: 'Select trait image',
     screens: [

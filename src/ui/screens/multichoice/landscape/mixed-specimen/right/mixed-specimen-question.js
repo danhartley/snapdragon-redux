@@ -8,6 +8,7 @@ import { bindScore } from 'ui/helpers//score-handler';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { listenToImageSelection, listenToUserAnswer, renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
+import { renderMixedSpecimenImagesAndQuestion } from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-combined';
 import { renderTemplate } from 'ui/helpers/templating';
 
 import mixedSpecimenQuestionTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question-template.html';
@@ -15,6 +16,10 @@ import mixedSpecimenQuestionTemplate from 'ui/screens/multichoice/landscape/mixe
 export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
     const { config, layout } = store.getState();
+
+    if(config.isPortraitMode) {
+        renderMixedSpecimenImagesAndQuestion(collection);
+    }
 
     const item = R.clone(collection.nextItem);
 

@@ -187,6 +187,7 @@ export const getTraitsToExclude = () => {
         //'characteristic'
     ];
 };
+
 export const handleUnit = unit => {
 
     unit = unit || '';
@@ -232,4 +233,35 @@ export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude, item
     }
     
     return includedTraits;
+};
+
+const getNPairsFromArray = (arra, arra_size) => {
+    var result_set = [], 
+        result;
+    
+   
+    for(var x = 0; x < Math.pow(2, arra.length); x++) {
+        result = [];
+        var i = arra.length - 1; 
+        do {
+            if((x & (1 << i)) !== 0) {
+                result.push(arra[i]);
+            }
+        } 
+        
+        while(i--);
+
+        if(result.length >= arra_size) {
+            result_set.push(result);
+        }
+    }
+
+    return result_set.filter(set => set.length === arra_size);
+};
+
+const doArraysHaveSameValues = R.compose(R.isEmpty, R.symmetricDifference)
+
+export const traitsHandler = {
+    getNPairsFromArray,
+    doArraysHaveSameValues
 };
