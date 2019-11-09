@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 
 import { store } from 'redux/store';
-import { scoreHandler } from 'ui/helpers//score-handler';
+import { scoreHandler, bindScore } from 'ui/helpers//score-handler';
 import { firestore } from 'api/firebase/firestore';
 import { utils } from 'utils/utils';
 import { traitsHandler } from 'ui/helpers/traits-handler';
@@ -28,22 +28,21 @@ const fetchTraits = async (trait, traitValues, glossary) => {
 
     let traits = await firestore.getTraitDefinitions(glossary, trait);
 
-    let multiples = traitsHandler.getNPairsFromArray(traits.map(t => t.term), requiredTraitValues.length);
+    let multiples = traitsHandler.getNMultiplesFromArray(traits.map(t => t.term), requiredTraitValues.length);
 
-        multiples.filter(pair => {
-            return !(pair[0] === requiredTraitValues[0] && pair[1] === requiredTraitValues[1] ||
-                    pair[1] === requiredTraitValues[0] && pair[0] === requiredTraitValues[1])
+        multiples.filter(multiple => {
+            return traitsHandler.doArraysHaveSameValues(multiple, requiredTraitValues);
         });
 
         multiples = R.take(5, multiples);
 
     let requiredTraits = traits.filter(t => R.contains(t.term, requiredTraitValues));
 
-        traits = multiples.map(pair => {
-            return pair.map(term => traits.find(trait => trait.term === term));
+        traits = multiples.map(multiple => {
+            return multiple.map(term => traits.find(trait => trait.term === term));
         });
 
-    onTraitsReadyListeners.forEach(listener => listener(traits, requiredTraits));
+    onTraitsReadyListeners.forEach(listener => listener([ ...traits, requiredTraits ], requiredTraits));
 };
 
 const pendingScore = {};
@@ -53,18 +52,31 @@ const callback = (score, scoreUpdateTimer) => {
           continueLessonBtn.disabled = false;
     pendingScore.score = score;
     pendingScore.scoreUpdateTimer = scoreUpdateTimer;
+    
+    continueLessonBtn.addEventListener('click', () => {
+        window.clearTimeout(pendingScore.scoreUpdateTimer);
+        bindScore(pendingScore.score);        
+    });
 };
+
 
 const onClickTileHandler = (tile, requiredTraits) => {
 
-    const { config } = store.getState();
+    const { config, lesson, collection } = store.getState();
+
+    const item = collection.nextItem;
 
     tile.addEventListener('click', e => {
     const trait = e.currentTarget;
+    const traits = Array.from(trait.parentElement.querySelectorAll('img')).map(t => t.dataset.term);
     const test = {
+        points: 0,
+        binomial: item.name, 
         trait: true,
         question: requiredTraits.map(trait => trait.term),
-        answer: trait.dataset.term
+        answer: traits,
+        questionCount: lesson.questionCount, 
+        layoutCount: lesson.layoutCount, 
     }
     scoreHandler('image-match', test, callback, config);
 })};

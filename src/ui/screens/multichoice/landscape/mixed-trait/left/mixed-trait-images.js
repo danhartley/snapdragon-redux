@@ -7,12 +7,12 @@ import imagesTemplate from 'ui/screens/multichoice/landscape/mixed-trait/left/mi
 export const renderMixedTraitImages = collection => {
 
     const template = document.createElement('template');
-    template.innerHTML = imagesTemplate;
-
-    const parent = DOM.leftBody;
-          parent.innerHTML = '';
+          template.innerHTML = imagesTemplate;
 
     mixedTraitHandler.onTraitsReady((traits, requiredTraits) => {
+
+        const parent = DOM.leftBody;
+        parent.innerHTML = '';
         
         renderTemplate({ traits }, template.content, parent);
 

@@ -13,6 +13,8 @@ export const isAnswerEqualToQuestion = (question, answer) => {
 
 const isAnswerCorrect = score => {
 
+    score.answer = score.answer.trim();
+
     let isCorrect;
 
     isCorrect = isAnswerEqualToQuestion(score.question, score.answer);
@@ -35,14 +37,14 @@ const isAnswerCorrect = score => {
 };
 
 const isTraitAnswerCorrect = score => {
-    return R.contains(score.answer, score.question);
+    const doArraysHaveSameValues = R.compose(R.isEmpty, R.symmetricDifference);
+    return doArraysHaveSameValues(score.answer, score.question);
 };
 
 export const markTest = test => {
 
     const score = R.clone(test);
 
-    score.answer = score.answer.trim();
     score.success = score.trait ? isTraitAnswerCorrect(score) : isAnswerCorrect(score);
     score.colour  = score.success ? 'snap-success' : 'snap-alert';
     

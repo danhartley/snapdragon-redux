@@ -235,7 +235,7 @@ export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude, item
     return includedTraits;
 };
 
-const getNPairsFromArray = (arra, arra_size) => {
+const getNMultiplesFromArray = (arra, arra_size) => {
     var result_set = [], 
         result;
     
@@ -259,9 +259,9 @@ const getNPairsFromArray = (arra, arra_size) => {
     return result_set.filter(set => set.length === arra_size);
 };
 
-const doArraysHaveSameValues = R.compose(R.isEmpty, R.symmetricDifference)
+const doArraysHaveSameValues = R.compose(R.isEmpty, R.symmetricDifference);
 
 export const traitsHandler = {
-    getNPairsFromArray,
+    getNMultiplesFromArray,
     doArraysHaveSameValues
 };

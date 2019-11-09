@@ -13,7 +13,7 @@ export const renderMixedTraitQuestion = collection => {
         const { layout, collection } = store.getState();
 
         const template = document.createElement('template');
-        template.innerHTML = questionTemplate;
+              template.innerHTML = questionTemplate;
         
         const item = collection.nextItem;
         const trait = layout.screens[1].trait;
@@ -22,9 +22,10 @@ export const renderMixedTraitQuestion = collection => {
 
         mixedTraitHandler.fetchTraits(trait, item.traits, collection.glossary);
     
-        const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question, help, term: '' });
+        const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question, help, term: '' });              
 
         mixedTraitHandler.onTraitsReady((traits, requiredTraits) => {            
+            parent.innerHTML = '';
             renderTemplate({ traits: Array.from(new Set(traits.flat())) }, template.content, parent);
         });
     };
