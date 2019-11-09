@@ -1,8 +1,8 @@
-<div class="squares js-tiles" data-repeat-trait="{{ traits }}">
-    <div>
+<div class="squares traits js-tiles" data-repeat-trait="{{ traits }}">
+    <div data-repeat-value="{{ trait }}">
         <img class="square"                    
-        src="{{ trait.img.url }}"
-        data-term="{{ trait.term }}"
-        data-url="{{ trait.img.url }}" />
+        src="{{ value.img.url }}"
+        data-term="{{ value.term }}"
+        data-url="{{ value.img.url }}" />
     </div>                
 </div>

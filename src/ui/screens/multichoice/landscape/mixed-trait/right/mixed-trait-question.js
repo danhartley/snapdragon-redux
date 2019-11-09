@@ -25,7 +25,7 @@ export const renderMixedTraitQuestion = collection => {
         const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question, help, term: '' });
 
         mixedTraitHandler.onTraitsReady((traits, requiredTraits) => {            
-            renderTemplate({ traits }, template.content, parent);
+            renderTemplate({ traits: Array.from(new Set(traits.flat())) }, template.content, parent);
         });
     };
 

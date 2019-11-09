@@ -28,17 +28,20 @@ const fetchTraits = async (trait, traitValues, glossary) => {
 
     let traits = await firestore.getTraitDefinitions(glossary, trait);
 
-    const pairs = traitsHandler.getNPairsFromArray(traits.map(t => t.term), requiredTraitValues.length);
+    let multiples = traitsHandler.getNPairsFromArray(traits.map(t => t.term), requiredTraitValues.length);
 
-    console.log(pairs);
+        multiples.filter(pair => {
+            return !(pair[0] === requiredTraitValues[0] && pair[1] === requiredTraitValues[1] ||
+                    pair[1] === requiredTraitValues[0] && pair[0] === requiredTraitValues[1])
+        });
+
+        multiples = R.take(5, multiples);
 
     let requiredTraits = traits.filter(t => R.contains(t.term, requiredTraitValues));
-    let number = 6 - requiredTraits.length;
 
-        traits = [ 
-            ...R.take(number, traits.filter(t => !R.contains(t, requiredTraits))),
-            ...requiredTraits 
-        ];
+        traits = multiples.map(pair => {
+            return pair.map(term => traits.find(trait => trait.term === term));
+        });
 
     onTraitsReadyListeners.forEach(listener => listener(traits, requiredTraits));
 };

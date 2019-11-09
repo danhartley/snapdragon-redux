@@ -490,13 +490,35 @@ a.dropdown-item {
   grid-template-rows: 1fr 1fr;
 }
 
-.squares.js-tiles > div {
+.squares > div {
   display: grid;
   align-items: center;
-  justify-content: center;
+  justify-content: center;  
 }
 
-.squares.js-tiles > div > div {
+.squares img, .tiles img {
+  cursor: pointer;
+  max-height: var(--vhLargeImage);
+  justify-self: center;
+}
+
+.traits.squares > div {
+  padding: 1rem;
+}
+
+.traits.squares > div.multiple {
+  grid-template-columns: 1fr 1fr;
+}
+
+.traits.squares > div img {
+  height: 100%;
+}
+
+.traits.squares > div.multiple img {
+  height: 50%;
+}
+
+.squares > div > div {
   width: 260px;
   height: 190px;
   display: flex;
@@ -504,24 +526,19 @@ a.dropdown-item {
   justify-content: center;  
 }
 
-.squares.js-tiles > div:nth-child(odd) {
+.squares > div:nth-child(odd) {
   border-left: .05rem solid lightgray;
   border-right: .05rem solid lightgray;
 }
 
-.squares.js-tiles > div:nth-child(even) {
+.squares > div:nth-child(even) {
   border-right: .05rem solid lightgray;
 }
 
-.squares.js-tiles > div:nth-child(3),
-.squares.js-tiles > div:nth-child(4) {
+.squares > div:nth-child(3),
+.squares > div:nth-child(4) {
   border-top: .05rem solid lightgray;
   border-bottom: .05rem solid lightgray;
-}
-
-.squares img, .tiles img {
-  cursor: pointer;
-  max-height: var(--vhLargeImage);
 }
 
 .square, .tile {
