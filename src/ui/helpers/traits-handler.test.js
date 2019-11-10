@@ -307,7 +307,7 @@ test('should return false for no properties when trait properties exist', () => 
 });
 
 test('should return correct pairs of length 3 from a set of 4 items', () => {
-  expect(traitsHandler.getNPairsFromArray([1, 2, 3, 4], 3)).toEqual([[3,2,1],[4,2,1],[4,3,1],[4,3,2]]);
+  expect(traitsHandler.getNMultiplesFromArray([1, 2, 3, 4], 3)).toEqual([[3,2,1],[4,2,1],[4,3,1],[4,3,2]]);
 });
 
 test('should return false for arrays of different values', () => {
