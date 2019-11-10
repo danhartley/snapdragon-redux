@@ -385,7 +385,7 @@ export const fungi = [
         definition: "To one side (eccentric).",
         trait: 'capShape',
         img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/1/15/Offset_cap_icon.png',
+            url: 'https://upload.wikimedia.org/wikipedia/commons/a/a1/Offset_cap_icon.svg',
             author: 'By Debivort at the English Wikipedia, CC BY-SA 3.0.',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=1489193',
         }

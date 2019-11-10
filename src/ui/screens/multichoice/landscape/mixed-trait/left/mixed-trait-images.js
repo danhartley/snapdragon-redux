@@ -12,16 +12,20 @@ export const renderMixedTraitImages = collection => {
     mixedTraitHandler.onTraitsReady((traits, requiredTraits) => {
 
         const parent = DOM.leftBody;
-        parent.innerHTML = '';
+              parent.innerHTML = '';
         
         renderTemplate({ traits }, template.content, parent);
 
         const traitTiles = document.querySelectorAll('.js-tiles div');
+        traitTiles.forEach(tile => {
+            if(tile.querySelector('img').src.indexOf('png') > -1) {
+            traitTiles.forEach(tile => tile.classList.add('png'));
+            }
+        });
         if(requiredTraits.length > 1) {
             traitTiles.forEach(tile => tile.classList.add('multiple'));
         }
 
-        const traitTileImages = document.querySelectorAll('.js-tiles img');
-              traitTileImages.forEach(tile => mixedTraitHandler.onClickTileHandler(tile, requiredTraits));
+        traitTiles.forEach(tile => mixedTraitHandler.onClickTileHandler(tile, requiredTraits, traitTiles));
     });
 };

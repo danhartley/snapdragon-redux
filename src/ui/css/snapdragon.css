@@ -508,23 +508,29 @@ a.dropdown-item {
 
 .traits.squares > div.multiple {
   grid-template-columns: 1fr 1fr;
+  cursor: pointer;
 }
 
 .traits.squares > div img {
   height: 100%;
 }
 
+
 .traits.squares > div.multiple img {
   height: 50%;
 }
 
-.squares > div > div {
+.traits.squares > div.png img {
+  width: 50%;
+  height: initial;
+}
+/* .squares > div > div {
   width: 260px;
   height: 190px;
   display: flex;
   align-items: center;
   justify-content: center;  
-}
+} */
 
 .squares > div:nth-child(odd) {
   border-left: .05rem solid lightgray;
@@ -552,6 +558,8 @@ a.dropdown-item {
   display: grid;
   grid-template-columns: 1fr 1fr;
   cursor: pointer;
+  height: calc(100% - var(--vhRunningBlock, 7.5vh));
+  grid-row-gap: 1rem;
 }
 
 .strip {

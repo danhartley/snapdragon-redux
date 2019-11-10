@@ -27,6 +27,11 @@ export const renderMixedTraitQuestion = collection => {
         mixedTraitHandler.onTraitsReady((traits, requiredTraits) => {            
             parent.innerHTML = '';
             renderTemplate({ traits: Array.from(new Set(traits.flat())) }, template.content, parent);
+            document.querySelectorAll('.js-traits-names-txt img').forEach(img => {
+                if(img.src.indexOf('png') > -1) {
+                    img.classList.add('png');
+                }
+            });
         });
     };
 

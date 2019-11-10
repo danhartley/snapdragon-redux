@@ -629,15 +629,29 @@ export const plantae = [
         definition : "(Of leaf) even; with a smooth margin; without toothing.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Leaf_morphology_entire.png'
+            url: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Leaf_morphology_entire.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6563738'
         }
     },
     {
-        term : "Oblong",
-        definition : "(Of leaf) having an elongated form with slightly parallel sides, roughly rectangular.",
+        term : "Ciliate",
+        definition : "(Of leaf) fringed with hairs.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Leaf_morphology_oblong.png'
+            url: 'https://upload.wikimedia.org/wikipedia/commons/8/86/Leaf_morphology_ciliate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6561549'
+        }
+    },
+    {
+        term : "Crenate",
+        definition : "(Of leaf) wavy-toothed; dentate with rounded teeth.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/8/86/Leaf_morphology_ciliate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6561596'
         }
     },
     {
@@ -645,7 +659,51 @@ export const plantae = [
         definition : "(Of leaf) toothed.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Leaf_morphology_dentate.png'
+            url: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Leaf_morphology_dentate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6561609'
+        }
+    },
+    {
+        term : "Denticulate",
+        definition : "(Of leaf) finely toothed.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Leaf_morphology_dentate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6563697'
+        }
+    },
+    {
+        term : "Doubly serrate",
+        definition : "(Of leaf) each tooth bearing smaller teeth.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Leaf_morphology_dentate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6563720'
+        }
+    },
+    {
+        term : "Oblong",
+        definition : "(Of leaf) having an elongated form with slightly parallel sides, roughly rectangular.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        trait: 'leafShape',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Leaf_morphology_oblong.png',
+            author: 'By Eric Bajart - Own work, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6630793',
+        }
+    },
+    {
+        term : "Deltoid",
+        definition : "(Of leaf) shaped like Greek letter Delta, triangular, stem attaches to side.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        trait: 'leafShape',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Leaf_morphology_deltoid.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6561453',
         }
     },
     {
@@ -653,7 +711,9 @@ export const plantae = [
         definition : "(Of leaf) long, wider in the middle, shaped like a lance tip.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Leaf_morphology_lanceolate.png'
+            url: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Leaf_morphology_lanceolate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6549499',
         }
     },
     {
@@ -726,8 +786,11 @@ export const plantae = [
         term : "Ovate",
         definition : "(Of leaf) oval, egg-shaped, with a tapering point and the widest portion near the petiole.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        trait: 'leafShape',
         img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/6/67/Leaf_morphology_ovale.png'
+            url: 'https://upload.wikimedia.org/wikipedia/commons/6/67/Leaf_morphology_ovale.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6549038',
         }
     },
     {
@@ -735,12 +798,84 @@ export const plantae = [
         definition : "(Of leaf) saw-toothed; with asymmetrical teeth pointing forward.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_serrate.png'
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_serrate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6561581'
+        }
+    },
+    {
+        term : "Serrulate",
+        definition : "(Of leaf) finely serrate.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_serrate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6564171'
+        }
+    },
+    {
+        term : "Sinuate",
+        definition : "(Of leaf) with deep, wave-like indentations; coarsely crenate.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_serrate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6564197'
+        }
+    },
+    {
+        term : "Lobate",
+        definition : "(Of leaf) indented, with the indentations not reaching the centre.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_serrate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6564138'
+        }
+    },
+    {
+        term : "Undulate",
+        definition : "(Of leaf) with a wavy edge, shallower than sinuate.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_serrate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6564246'
+        }
+    },
+    {
+        term : "Spiny",
+        definition : "(Of leaf) with stiff, sharp points such as thistles.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_serrate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6564222'
         }
     },
     {
         term: 'Pinnate',
         definition: 'Arrangement of discrete structures (such as leaflets, veins, lobes, branches, or appendages) arising at multiple points along a common axis e.g. once-divided leaf blades having leaflets arranged on both sides of a rachis are pinnately compound leaves.',
+    },
+    {
+        term: 'Filiform',
+        definition: 'Thread-like.',
+        trait: 'leafShape',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Plant_morphology_solid_filiform.png',
+            author: 'By Michael G. Simpson. Redrawn and color: User:RoRo - Simpson (2005) Plant Systematics., Public Domain.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=21084218',
+        }
+    },
+    {
+        term: 'Linear',
+        definition: 'Long and narrow like a blade of grass.',
+        trait: 'leafShape',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Leaf_morphology_linear.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6549785',
+        }
     },
     {
         term: 'Bipinnate',

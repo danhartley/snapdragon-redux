@@ -1,21 +1,13 @@
+import * as R from 'ramda';
+
 import { layouts as L } from 'snapdragon-config/screen-layouts';
 
-let landscapeLayouts = [
-    L.mixedSpecimenImages,    
-    L.traitPropertyMatch,
-    L.textCompleteGenus,
-    L.textCompleteSpecies,
-    L.genusEntry,
-    L.speciesEntry,
-    L.speciesGenusEntry,
-    L.commonEntry,
-    L.latinToCommonMatch,
-    L.familyMatch,
-    L.familyStripsMatch,    
-    L.symbioticPropertyMatch
-];
-
-landscapeLayouts = [ L.mediaMatch ];
+const propertyTrait = (traitPropertyMatch, trait) => {
+    const layout = R.clone(traitPropertyMatch);
+    layout.screens[0].trait = trait;
+    layout.screens[1].trait = trait;
+    return layout;
+};
 
 export const landscapeDefault = {
     id: 1,
@@ -25,9 +17,10 @@ export const landscapeDefault = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
-            reviewLayouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
-            bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'traits', 'song', 'lookalikes', 'definition' ] } ]
+            layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch, propertyTrait(L.mixedTraitImages, 'leafShape'), L.textCompleteSpecies ],
+            // layouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
+            // reviewLayouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
+            // bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'traits', 'song', 'lookalikes', 'definition' ] } ]
         },
         {   id: 2,
             name:'Level 2',

@@ -30,6 +30,11 @@
 
 .test-card-container {
     position: relative;
+    background-color: var(--snap-list-alt-background);
+  }
+
+  .test-card-question {
+    border-bottom: .03rem solid var(--snap-dd-non-taxa-bg-hover);
   }
    
   /* CONTINUE BUTTON */
@@ -205,6 +210,10 @@ div.text-entry {
       height: 2rem;
   }
 
+  .traits-names-txt img.png {
+      height: initial;
+  }
+
 /* CARD HEADER */
 
 .question-container {
@@ -224,13 +233,12 @@ div.text-entry {
 /* Content */
 
 .test-card-content {
-    padding: 0 .5rem;
+    padding: .5rem;
     height: calc(
         var(--vh, 1vh) * 100
       - var(--vhFixtures, 15vh)
       - var(--vhDoubleStandardBlock,20vh) 
-      - var(--vhButtonBlock, 9vh)
-      - 5px);
+      - var(--vhButtonBlock, 9vh));
     top: calc(var(--vhDoubleStandardBlock,20vh));
 }
 

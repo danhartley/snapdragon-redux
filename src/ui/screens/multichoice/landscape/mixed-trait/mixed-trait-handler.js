@@ -22,27 +22,29 @@ const fetchTraits = async (trait, traitValues, glossary) => {
 
     for (let [key, obj] of Object.entries(traitValues)) {
         if(utils.toCamelCase(key).toLowerCase() === trait.toLowerCase()) {
-            requiredTraitValues = obj.value;
+            requiredTraitValues = obj.value.map(v => v.toLowerCase());
         }
     };
 
     let traits = await firestore.getTraitDefinitions(glossary, trait);
+        traits.forEach(trait => trait.term = trait.term.toLowerCase());
 
     let multiples = traitsHandler.getNMultiplesFromArray(traits.map(t => t.term), requiredTraitValues.length);
 
-        multiples.filter(multiple => {
-            return traitsHandler.doArraysHaveSameValues(multiple, requiredTraitValues);
+        multiples = multiples.filter(multiple => {
+            return !traitsHandler.doArraysHaveSameValues(multiple, requiredTraitValues);
         });
 
-        multiples = R.take(5, multiples);
-
-    let requiredTraits = traits.filter(t => R.contains(t.term, requiredTraitValues));
+        
+        let requiredTraits = traits.filter(t => R.contains(t.term, requiredTraitValues));
+        
+        multiples = utils.shuffleArray([ ...R.take(5, multiples), requiredTraitValues ]);
 
         traits = multiples.map(multiple => {
             return multiple.map(term => traits.find(trait => trait.term === term));
         });
 
-    onTraitsReadyListeners.forEach(listener => listener([ ...traits, requiredTraits ], requiredTraits));
+    onTraitsReadyListeners.forEach(listener => listener(traits, requiredTraits));
 };
 
 const pendingScore = {};
@@ -60,25 +62,32 @@ const callback = (score, scoreUpdateTimer) => {
 };
 
 
-const onClickTileHandler = (tile, requiredTraits) => {
+const onClickTileHandler = (tile, requiredTraits, tiles) => {
 
     const { config, lesson, collection } = store.getState();
 
     const item = collection.nextItem;
 
     tile.addEventListener('click', e => {
-    const trait = e.currentTarget;
-    const traits = Array.from(trait.parentElement.querySelectorAll('img')).map(t => t.dataset.term);
-    const test = {
-        points: 0,
-        binomial: item.name, 
-        trait: true,
-        question: requiredTraits.map(trait => trait.term),
-        answer: traits,
-        questionCount: lesson.questionCount, 
-        layoutCount: lesson.layoutCount, 
-    }
-    scoreHandler('image-match', test, callback, config);
+        
+        const tile = e.currentTarget;
+        const traits = Array.from(tile.querySelectorAll('img')).map(t => t.dataset.term);
+        const test = {
+            points: 0,
+            binomial: item.name, 
+            trait: true,
+            question: requiredTraits.map(trait => trait.term),
+            answer: traits,
+            questionCount: lesson.questionCount, 
+            layoutCount: lesson.layoutCount, 
+        }
+        scoreHandler('image-match', test, callback, config);
+
+        tiles.forEach(tile => {
+            if(!traitsHandler.doArraysHaveSameValues(Array.from(tile.querySelectorAll('img')).map(img => img.dataset.term), requiredTraits.map(trait => trait.term))) {
+                tile.querySelectorAll('img').forEach(img => img.classList.add('desaturate'));
+            }
+        });
 })};
 
 export const mixedTraitHandler = {

@@ -129,10 +129,6 @@ export const commmon = [
         wiki: 'https://en.wikipedia.org/wiki/Tubercle'
     },
     {
-        term: 'Filiform',
-        definition: 'Thread-like.'
-    },
-    {
         term: 'Monophagous',
         definition: '(Of an animal) eating only one kind of food.'
     },

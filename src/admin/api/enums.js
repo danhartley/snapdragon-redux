@@ -102,6 +102,7 @@ export const enums = {
   LEAF_VENATION: 'Leaf venation',
   LEAF_BUNDLE_COUNT: 'Leaf bundle count',
   LEAF_FEATURES: 'Leaf features',
+  LEAF_FOLDING: 'Leaf folding',
   BRANCH_ARRANGEMENT: 'Branch arrangement',
   STALK_HEIGHT: 'Stalk height',
   STEM_HEIGHT: 'Stem height',
@@ -502,6 +503,7 @@ export const enums = {
   COMPOUND_BIPINNATE: 'Compound Bipinnate',
   TRIFOLIATE: 'Trifoliate',
   PINNATIFID: 'Pinnatifid',
+  TRIPINNATE: 'Tripinnate',
   SIMPLE: 'Simple ',
   COMPOUND: 'Compound',
   type: 'leafDivision',
@@ -1280,6 +1282,16 @@ export const enums = {
     BLUNT_TIPS: 'Blunt tips',
     STOMATAL_LINES: 'Stomatal lines',
     DROOPING: 'Drooping'
+  },
+  leafFolding: {
+    CARINATE: 'Carinate',
+    CONDUPLICATE: 'Conduplicate',
+    CUCULLATE: 'Cucullate',
+    INVOLUTE: 'Involute',
+    PLICATE: 'Plicate',
+    REDUPLICATE: 'Reduplicate',
+    REVOLUTE: 'Revolute',
+    SUPERVOLUTE: 'Supervolute',
   },
   units: [
     { lifeSpan: [ 'DD', 'MM', 'YY'] },
