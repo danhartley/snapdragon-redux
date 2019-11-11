@@ -193,7 +193,7 @@ export const renderMultiStrips = (collection, bonus) => {
             }
 
             if(screen.name === 'definition') {
-                bonus.overrides.headerClassName = 'definition';
+                // bonus.overrides.headerClassName = 'definition';
                 render(bonus.question, bonus.answers, bonus.overrides);
             }
 
@@ -229,11 +229,11 @@ export const renderMultiStrips = (collection, bonus) => {
 
             if(screen.name === 'trait-property') {
 
-                if(bonus.overrides.question.toLowerCase().indexOf('definition') > -1) {
-                    bonus.overrides.headerClassName = 'definition';
-                } else {
-                    bonus.overrides.headerClassName = '';
-                }
+                // if(bonus.overrides.question.toLowerCase().indexOf('definition') > -1) {
+                //     bonus.overrides.headerClassName = 'definition';
+                // } else {
+                //     bonus.overrides.headerClassName = '';
+                // }
 
                 render(bonus.question, bonus.answers, bonus.overrides);
 

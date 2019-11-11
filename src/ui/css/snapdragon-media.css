@@ -90,9 +90,9 @@
         padding: 0 .5rem;
     } */
 
-    .half-padding-left {
+    /* .half-padding-left {
         padding: 0;
-    }
+    } */
 
     .home-scrolling-container .scrollable {
         position: relative; 
@@ -172,8 +172,12 @@
           margin: 0;
       }
 
+      .info-details {
+        padding: 1rem 4rem;
+      }
+
       .info-details .info_detail img {   
-        max-height: 10rem;
+        max-width: 20%;
       }
     
       /* TRAITS CAROUSEL */

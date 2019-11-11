@@ -185,7 +185,7 @@ div.text-entry {
 
   .mixed-specimen-container {
     display: grid;
-    margin: 2rem 6rem;
+    margin: 2rem 2rem;
     grid-row-gap: .5rem;
     grid-template-rows: 2fr auto 3fr;
   }
@@ -193,6 +193,10 @@ div.text-entry {
   .mixed-specimen-container .btn {
     color: var(--snap-text-dark) !important;
     background-color: var(--snap-list-header) !important;
+  }
+
+  .images-names-txt {
+    min-height: calc( (1em * 6 * 1.5) + (.5rem * 6));
   }
 
   .images-names-txt i {

@@ -23,6 +23,8 @@ export const getDefinitionTests = item => {
     
     const question = definition.definition;
     const answers = utils.shuffleArray([question, ...alternatives]);
+    const help = config.isLandscapeMode ? 'Select the correct answer' : '(Tap on the answer.)';
 
-    return [{ question, answers, overrides : { question: 'Select the definition.', help: '(Tap on a definition.)', binomial: '', vernacularName: definition.term } }];
+    return [{ question, answers, overrides : { question: definition.term, help, binomial: 'Definition', vernacularName: 'Dictionary' } }];
+    // return [{ question, answers, overrides : { question: 'Select the definition.', help, binomial: '', vernacularName: definition.term } }];
 };

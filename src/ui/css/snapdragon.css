@@ -721,7 +721,7 @@ a.dropdown-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  display: none;
+  /* display: none; */
 }
 
 .card-link-container > div {
@@ -774,6 +774,7 @@ a.dropdown-item {
   display: grid;
   grid-template-columns: 2fr 2fr 3fr;
   grid-gap: .5rem;
+  border-bottom: .03rem solid var(--snap-dd-non-taxa-bg-hover);
 }
 
 .mixed-content-container {
@@ -791,11 +792,10 @@ a.dropdown-item {
 .taxon.card-card .mixed-content-container {
   height: calc(
         var(--vh, 1vh) * 100
-      - var(--vhRunningBlocks,15vh)
+      - var(--vhFixtures,15vh)
       - var(--vhDoubleStandardBlock,20vh) 
       - var(--vhCalender)
-      - .5rem 
-      - 1rem);
+      - 5px);
       padding: .5rem;
 }
 
@@ -2086,9 +2086,9 @@ a.collection-disabled {
   justify-content: space-evenly;
 }
 
-.half-padding-left {
+/* .half-padding-left {
   padding-left: .25rem;
-}
+} */
 
 .modal-footer.double-centred-block {
   background-color: var(--snap-portrait);

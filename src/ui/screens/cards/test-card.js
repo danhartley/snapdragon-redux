@@ -17,8 +17,7 @@ let isTraitCard = true;
 export const renderTestCardTemplate = (collection, context) => {
 
     const template = document.createElement('template');
-
-    template.innerHTML = testCardTemplate;
+          template.innerHTML = testCardTemplate;
 
     const parent = DOM.rightBody;
           parent.innerHTML = '';
