@@ -649,6 +649,154 @@ const woodlandsTV1 = {
   }
 };
 
+const wiseWomanTradition = {
+  
+  id: 18,
+  type: 'taxon',
+  name: 'Wild Plant Identification with Susun Weed',
+  behaviour: 'static',
+  moduleSize: 1,
+  lessonPlanLandscape: 1,
+  lessonPlanPortrait: 101,
+  glossary: ['plantae', 'common'],
+  iconicTaxa: [ 
+    {
+      id: 'plantae',
+      common: 'Plants'
+    },
+  ],
+  species: [
+    {
+      name: 'Hypericum perforatum',
+      time: [18],
+      description: ''
+    },
+    {
+      name: 'Lythrum salicaria',
+      time: [40],
+      description: ''
+    },
+    {
+      name: 'Artemisia vulgaris',
+      time: [86],
+      description: ''
+    },
+    {
+      name: 'Rhus typhina',
+      time: [112],
+      description: ''
+    },
+    {
+      name: 'Vitis',
+      time: [172],
+      description: ''
+    },
+    {
+      name: 'Daucus carota',
+      time: [200],
+      description: ''
+    },
+    {
+      name: 'Geranium maculatum',
+      time: [218],
+      description: ''
+    },
+    {
+      name: 'Reynoutria japonica',
+      time: [240],
+      description: ''
+    },
+    {
+      name: 'Impatiens capensis',
+      time: [275],
+      description: ''
+    },
+  ],
+  notes: [
+    {
+      tag: 'Symbiotic association',
+      time: [49]
+    },
+    {
+      tag: 'Fungus structure',
+      time: [51]
+    },
+    {
+      tag: 'Single-celled photosynthetic organism',
+      time: [55]
+    },
+    {
+      tag: 'Cyanobacterium',
+      time: [64]
+    },
+    {
+      tag: 'Second fungus',
+      time: [77]
+    },
+    {
+      tag: 'Fruticose',
+      time: [110],
+      description: `Bushy like a shrub; it is attached to the bark substrate at one point and branches out from there.`
+    },
+    {
+      tag: 'Foliose',
+      time: [126],
+      description: `Flat like a leaf, with both a top side and a bottom side (which can be revelead).`
+    },
+    {
+      tag: 'Crustose',
+      time: [148],
+      description: `Grows directly onto the bark; cannot be pealed off.`
+    },
+    {
+      tag: 'Apothecia',
+      time: [183],
+      description: `Fruiting bodies that release spores.`
+    },
+    {
+      tag: 'Cladonia',
+      time: [224],
+      description: `Forms gothic structures.`
+    },
+    {
+      tag: 'Podetia',
+      time: [231],
+      description: `Structures (feet) that grow upwards from the substrate. A Podetium is a hollow stalk extending from the primary thallus; it is not considered part of the primary thallus as it is a fruiting structure for reproduction.`
+    },
+    {
+      tag: 'Apothecia',
+      time: [238],
+      description: `Liitle brown blobs which are the fruiting bodies which release spores from which the lichen reproduces.`
+    },
+    {
+      tag: 'Role',
+      time: [290],
+      description: `Fix carbon and nitrogen. Habitat for many living things such as bark flies and the wasps that predate on them.`
+    },
+  ],
+  producer: 'WoodlandsTV',
+  video: {
+    id: 'XQ_ZY57MY64',
+    startAt: 48,
+    title: 'An Introduction to Lichen',
+    intro: 'I hope you enjoy this brief introduction to foraging edible mushrooms in Eastern North America. When you\'ve finished watching, review what we covered to see how much you remember, and to reinforce what you learnt.',
+    owner: 'WoodlandsTV',
+    ownerUrl: 'https://www.youtube.com/channel/UCCeOzbtcmqPmWdMeB6x9nvA',
+    presenter: 'Joe Hope',
+    src: 'https://yt3.ggpht.com/a/AGF-l78prjWYkW5Gx8fOdTnDb9nSBy_b287Ge4-81g=s48-c-k-c0xffffffff-no-rj-mo',
+    links: [
+      {
+        label: '',
+        url: ''
+      },
+      {
+        label: 'Website',
+        url: 'youtube.com/channel/UCCeOzbtcmqPmWdMeB6x9nvA'
+      }
+    ],
+  }
+};
+
 const customCollection = { 
   id: 0,
   behaviour: 'dynamic',

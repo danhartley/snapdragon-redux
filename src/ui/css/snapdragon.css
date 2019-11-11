@@ -524,13 +524,6 @@ a.dropdown-item {
   width: 50%;
   height: initial;
 }
-/* .squares > div > div {
-  width: 260px;
-  height: 190px;
-  display: flex;
-  align-items: center;
-  justify-content: center;  
-} */
 
 .squares > div:nth-child(odd) {
   border-left: .05rem solid lightgray;
@@ -721,7 +714,6 @@ a.dropdown-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* display: none; */
 }
 
 .card-link-container > div {
