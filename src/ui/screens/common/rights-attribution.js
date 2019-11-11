@@ -1,10 +1,10 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import rightsAttributionTemplate from 'ui/screens/common/rights-attribution-template.html';
 
-export const handleRightsAttribution = (image, activeNode) => {
+export const handleRightsAttribution = image => {
 
     const template = document.createElement('template');
-    template.innerHTML = rightsAttributionTemplate;    
+          template.innerHTML = rightsAttributionTemplate;
 
     let text;
 
@@ -55,18 +55,23 @@ export const handleRightsAttribution = (image, activeNode) => {
     const author = image.rightsholder || image.rightsHolder || 'Public domain';
     const source = image.source || '';
 
-    renderTemplate({title,author,source,licence}, template.content, activeNode);
+    const parent = document.querySelector('.js-carousel-inner .js-attribution-layer');
+          parent.innerHTML = '';
 
-    const rightsAttribution = activeNode.querySelector('.rights-attribution');
-    const rightsLink = activeNode.querySelector('.js-rights-link .js-copyright');
+    renderTemplate({title,author,source,licence}, template.content, parent);
+
+    const rightsAttribution = parent.querySelector('.rights-attribution');
+    const rightsLink = parent.querySelector('.js-rights-link .js-copyright');
     const indicators = document.querySelector('.carousel-indicators');
 
     const showAttribution = event => {
         rightsAttribution.classList.add('hide-important');
         rightsLink.parentElement.parentElement.classList.remove('hide-important');
         indicators.classList.remove('hide-important');
-        rightsLink.style.display = 'inline-block';
+        rightsLink.parentElement.parentElement.style.display = 'inline-block';
         event.stopPropagation();
+        rightsLink.removeEventListener('click', showLink), true;
+        rightsLink.addEventListener('click', showLink, true);
     };
 
     rightsAttribution.removeEventListener('click', showAttribution, true);
@@ -77,6 +82,8 @@ export const handleRightsAttribution = (image, activeNode) => {
         rightsAttribution.classList.remove('hide-important');
         indicators.classList.add('hide-important');
         event.stopPropagation();
+        rightsAttribution.removeEventListener('click', showAttribution, true);
+        rightsAttribution.addEventListener('click', showAttribution, true);
     };
 
     rightsLink.removeEventListener('click', showLink), true;

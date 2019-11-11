@@ -41,12 +41,6 @@ export const renderInfoDetails = (item, activeTraitKey, activeTraitValue, descri
                 detail.img = detail.img || { url: '' }; 
             });
             renderTemplate({ details }, template.content, parent);
-        } 
-        // else {            
-        //     template.innerHTML = idBoxTemplate;
-        //     renderTemplate({ id: description }, template.content, parent);
-        //     const text = document.querySelector('.id-box > div:nth-child(2) > div');
-        //           text.innerHTML = text.innerHTML.replace(/\r?\n/g, '<br />');
-        // }        
+        }
     }
 };

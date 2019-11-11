@@ -1552,9 +1552,10 @@ a.collection-disabled {
 
 .rights-attribution {
   color: var(--snap-text-dark-medium-dark);
-  width: 80%;
+  left: .5rem;
+  right: .5rem;
+  bottom: .5rem;
   position: absolute;
-  bottom: 0.5rem;
   background-color: rgb(218, 225, 201);
   padding: 0.5rem;
 }
@@ -1565,7 +1566,6 @@ a.collection-disabled {
     height: 1.5rem;
     align-items: center;
     justify-content: center;
-    padding: 0 0 .05rem 0;
     background-color: var(--snap-text-dark);
     color: var(--snap-text-light);
     cursor: pointer;

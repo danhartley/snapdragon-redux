@@ -1,6 +1,7 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import { modalImagesHandler, scaleImage, imageMatch, imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handler';
 import { handleRightsAttribution } from 'ui/screens/common/rights-attribution';
+
 import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
 
 const selectActiveNodeImage = (image, parent, config) => {
@@ -40,20 +41,18 @@ const getActiveBackgroundImage = (parentScreen = document) => {
     return { imageContainer, imageUrl, backgroundImage };
 };
 
-const carouselControlHandler = (event, parentScreen = document) => {
+const carouselControlHandler = (event, parentScreen = document, config) => {
 
     setTimeout(() => {
 
         const activeNode = parentScreen.querySelector(`${event.target.dataset.slider} .carousel-item.active > div`);
         const image = activeNode.dataset;        
-        handleRightsAttribution(image, activeNode);
-    
-        const originalImageLink = parentScreen.querySelector('.js-expand');
         
-        const { backgroundImage } = getActiveBackgroundImage(parentScreen);
-        if(backgroundImage.indexOf('260x190') !== -1 || backgroundImage.indexOf('small') !== -1) {
-            originalImageLink.style.display = 'initial';
-        }
+        handleRightsAttribution(image);
+    
+        const originalImageLink = parentScreen.querySelector('.js-carousel-inner .js-expand');
+              originalImageLink.addEventListener('click', onEnlargeImageHandler(config));
+
     }, 750);
 };
 
@@ -75,18 +74,11 @@ export const imageSlider = sliderArgs => {
     selectActiveNodeImage(image || images[0], parent, config);    
     disableModalPopups(disableModal, parent, config);
 
+    parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
+    parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
+
     const originalImageLink = parentScreen.querySelector('.js-expand');
-
-    parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', e => carouselControlHandler(e,parentScreen));
-    parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', e => carouselControlHandler(e,parentScreen));
-
-    originalImageLink.addEventListener('click', event => {
-        const { imageContainer, imageUrl } = getActiveBackgroundImage();
-        const large = scaleImage({ url: imageUrl }, imageUseCases.ACTUAL_SIZE, config).large;
-        imageContainer.style["background-image"] = `url(${large})`;
-        imageContainer.classList.add('contain-image');
-        // originalImageLink.style.display = 'none';
-    });
+          originalImageLink.addEventListener('click', onEnlargeImageHandler(config));
 };
 
 export const imageSideBySlider = (slides, parent, disableModal = false, config) => {
@@ -112,11 +104,21 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
         const images = prepImagesForCarousel(item, config, imageUseCases.CAROUSEL);
         renderTemplate({ images, identifier, disableModal }, sideBySlider.content, parent);
         const activeNode = document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-item`);
-        activeNode.classList.add('active');        
+              activeNode.classList.add('active');
         disableModalPopups(disableModal, config);
-        handleRightsAttribution(images[0], activeNode.querySelector('div'));
+        handleRightsAttribution(images[0]);
+        // handleRightsAttribution(images[0], activeNode.querySelector('div'));
 
         document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', carouselControlHandler);
         document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', carouselControlHandler);
     });
 };
+
+function onEnlargeImageHandler(config) {
+    return () => {
+        const { imageContainer, imageUrl } = getActiveBackgroundImage();
+        const large = scaleImage({ url: imageUrl }, imageUseCases.ACTUAL_SIZE, config).large;
+        imageContainer.style["background-image"] = `url(${large})`;
+        imageContainer.classList.add('contain-image');
+    };
+}
