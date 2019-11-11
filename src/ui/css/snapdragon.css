@@ -1390,14 +1390,14 @@ label.btn.btn-secondary .lesson-icon {
   flex: 1;
 }
 
-.carousel-inner .image-load-original {
+/* .carousel-inner .image-load-original {
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   height: var(--vhstandardblock);
   z-index: 50;
-}
+} */
 
 .info-box .carousel.slide {
   float: right;
@@ -1573,12 +1573,18 @@ a.collection-disabled {
 }
 
 .rights-link {
-  width: 100%;
   position: absolute;
-  bottom: 0.5rem;
+  left: .5rem;
+  right: .5rem;
+  bottom: .5rem;
   background-color: rgb(218, 225, 201, 0.2);
-  padding: 0.5rem 0 0.5rem 0.5rem;
+  padding: .5rem;
   text-align: left;
+}
+
+.rights-link > div {
+  display: flex;
+  justify-content: space-between;
 }
 
 .rights-attribution > div, .float-right {
@@ -2165,4 +2171,8 @@ a.collection-disabled {
 .main-header {
   font-style: italic;
   font-size: 1.2rem;
+}
+
+.fa, .fab, .fal, .far, .fas {
+  line-height: 1.5;
 }

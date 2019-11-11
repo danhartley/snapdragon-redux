@@ -48,8 +48,7 @@ const carouselControlHandler = (event, parentScreen = document) => {
         const image = activeNode.dataset;        
         handleRightsAttribution(image, activeNode);
     
-        const originalImageLink = parentScreen.querySelector('.js-image-load-original > div');
-              originalImageLink.style.display = 'none';
+        const originalImageLink = parentScreen.querySelector('.js-expand');
         
         const { backgroundImage } = getActiveBackgroundImage(parentScreen);
         if(backgroundImage.indexOf('260x190') !== -1 || backgroundImage.indexOf('small') !== -1) {
@@ -76,7 +75,7 @@ export const imageSlider = sliderArgs => {
     selectActiveNodeImage(image || images[0], parent, config);    
     disableModalPopups(disableModal, parent, config);
 
-    const originalImageLink = parentScreen.querySelector('.js-image-load-original > div');
+    const originalImageLink = parentScreen.querySelector('.js-expand');
 
     parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', e => carouselControlHandler(e,parentScreen));
     parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', e => carouselControlHandler(e,parentScreen));
@@ -86,7 +85,7 @@ export const imageSlider = sliderArgs => {
         const large = scaleImage({ url: imageUrl }, imageUseCases.ACTUAL_SIZE, config).large;
         imageContainer.style["background-image"] = `url(${large})`;
         imageContainer.classList.add('contain-image');
-        originalImageLink.style.display = 'none';
+        // originalImageLink.style.display = 'none';
     });
 };
 

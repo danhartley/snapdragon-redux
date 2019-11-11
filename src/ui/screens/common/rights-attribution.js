@@ -58,12 +58,12 @@ export const handleRightsAttribution = (image, activeNode) => {
     renderTemplate({title,author,source,licence}, template.content, activeNode);
 
     const rightsAttribution = activeNode.querySelector('.rights-attribution');
-    const rightsLink = activeNode.querySelector('.rights-link');
+    const rightsLink = activeNode.querySelector('.js-rights-link .js-copyright');
     const indicators = document.querySelector('.carousel-indicators');
 
     const showAttribution = event => {
         rightsAttribution.classList.add('hide-important');
-        rightsLink.classList.remove('hide-important');
+        rightsLink.parentElement.parentElement.classList.remove('hide-important');
         indicators.classList.remove('hide-important');
         rightsLink.style.display = 'inline-block';
         event.stopPropagation();
@@ -73,7 +73,7 @@ export const handleRightsAttribution = (image, activeNode) => {
     rightsAttribution.addEventListener('click', showAttribution, true);
 
     const showLink = event => {
-        rightsLink.classList.add('hide-important');
+        rightsLink.parentElement.parentElement.classList.add('hide-important');
         rightsAttribution.classList.remove('hide-important');
         indicators.classList.add('hide-important');
         event.stopPropagation();

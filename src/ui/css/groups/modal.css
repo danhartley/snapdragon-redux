@@ -43,6 +43,7 @@
   text-transform: uppercase;
   margin: 0 0 0 1rem; 
   height: initial;
+  line-height: 1;
 }
   
   .modal-title span {
@@ -151,10 +152,10 @@
   bottom: 0;
 }
 
-#imageComparisonModal .carousel-indicators,
+/* #imageComparisonModal .carousel-indicators,
 #imageComparisonModal .image-load-original {
     display: none;
-}
+} */
 
 /* CARD MODAL */
 
