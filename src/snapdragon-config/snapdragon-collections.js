@@ -669,129 +669,69 @@ const wiseWomanTradition = {
     {
       name: 'Hypericum perforatum',
       time: [18],
-      description: ''
+      description: 'Flowers are in perfect condition, just right for picking and making tinctures and oils from the fresh blossoms.'
     },
     {
       name: 'Lythrum salicaria',
       time: [40],
-      description: ''
+      description: 'Deemed invasive, now appreciated more. The flowers (together with chicory and cronewort) are part of my third eye opening tincture.'
     },
     {
       name: 'Artemisia vulgaris',
       time: [86],
-      description: ''
+      description: 'Cronewort, or Common mugwort. White on the back of the leaves, just coming into bud. The flowers of cronewort, chicory and purple loosestrife comprise the third eye opening tincture.'
     },
     {
       name: 'Rhus typhina',
       time: [112],
-      description: ''
+      description: 'Staghorn Sumac, named in honour of the fuzz on the horns of a young male deer. Produces huge clusters of red berries which are high in anti-oxidants including anthocyanins.'
     },
     {
       name: 'Vitis',
       time: [172],
-      description: ''
+      description: 'The tendrils are crisp, cruncy with lots of vitamin C. The grapes and its leaves can also be eaten.'
     },
     {
       name: 'Daucus carota',
       time: [200],
-      description: ''
+      description: 'Flowers are rich in potassium. Together with the leaves, they can go in a salad. The whole plant is edible. (Skin contact with the foliage of Daucus carota, especially wet foliage, can cause skin irritation in some people, ed.). '
     },
     {
       name: 'Geranium maculatum',
       time: [218],
-      description: ''
+      description: 'Wild geranium is widely used by herbalists as an astrigent, something to contract tissues, to counter weeping sores, eczema, etc.'
     },
     {
-      name: 'Reynoutria japonica',
+      name: 'Polygonum cuspidatum',
       time: [240],
-      description: ''
+      description: 'Where there\'s one, there will be more. Dig the root in autumn and make a tincture from it. Dynamite for helping people who are dealing with Lyme disease.'
     },
     {
       name: 'Impatiens capensis',
       time: [275],
-      description: ''
+      description: 'Green blessings are everywhere around you.'
     },
   ],
   notes: [
-    {
-      tag: 'Symbiotic association',
-      time: [49]
-    },
-    {
-      tag: 'Fungus structure',
-      time: [51]
-    },
-    {
-      tag: 'Single-celled photosynthetic organism',
-      time: [55]
-    },
-    {
-      tag: 'Cyanobacterium',
-      time: [64]
-    },
-    {
-      tag: 'Second fungus',
-      time: [77]
-    },
-    {
-      tag: 'Fruticose',
-      time: [110],
-      description: `Bushy like a shrub; it is attached to the bark substrate at one point and branches out from there.`
-    },
-    {
-      tag: 'Foliose',
-      time: [126],
-      description: `Flat like a leaf, with both a top side and a bottom side (which can be revelead).`
-    },
-    {
-      tag: 'Crustose',
-      time: [148],
-      description: `Grows directly onto the bark; cannot be pealed off.`
-    },
-    {
-      tag: 'Apothecia',
-      time: [183],
-      description: `Fruiting bodies that release spores.`
-    },
-    {
-      tag: 'Cladonia',
-      time: [224],
-      description: `Forms gothic structures.`
-    },
-    {
-      tag: 'Podetia',
-      time: [231],
-      description: `Structures (feet) that grow upwards from the substrate. A Podetium is a hollow stalk extending from the primary thallus; it is not considered part of the primary thallus as it is a fruiting structure for reproduction.`
-    },
-    {
-      tag: 'Apothecia',
-      time: [238],
-      description: `Liitle brown blobs which are the fruiting bodies which release spores from which the lichen reproduces.`
-    },
-    {
-      tag: 'Role',
-      time: [290],
-      description: `Fix carbon and nitrogen. Habitat for many living things such as bark flies and the wasps that predate on them.`
-    },
   ],
-  producer: 'WoodlandsTV',
+  producer: 'wisewomantradition',
   video: {
-    id: 'XQ_ZY57MY64',
-    startAt: 48,
-    title: 'An Introduction to Lichen',
-    intro: 'I hope you enjoy this brief introduction to foraging edible mushrooms in Eastern North America. When you\'ve finished watching, review what we covered to see how much you remember, and to reinforce what you learnt.',
-    owner: 'WoodlandsTV',
-    ownerUrl: 'https://www.youtube.com/channel/UCCeOzbtcmqPmWdMeB6x9nvA',
-    presenter: 'Joe Hope',
-    src: 'https://yt3.ggpht.com/a/AGF-l78prjWYkW5Gx8fOdTnDb9nSBy_b287Ge4-81g=s48-c-k-c0xffffffff-no-rj-mo',
+    id: 'Oyb9do5_6Ts',
+    startAt: 0,
+    title: 'Wild Plant Identification with Susun Weed',
+    intro: 'Remember, green blessings are everywhere. When you\'ve finished watching, review what we covered to see how much you remember, and to reinforce what you learnt.',
+    owner: 'wisewomantradition',
+    ownerUrl: 'https://www.youtube.com/channel/UCo0uJBHNwF_IqhvVMbvdDTA',
+    presenter: 'Susun Weed',
+    src: 'https://yt3.ggpht.com/a/AGF-l7_0rsdKYlsNUg8ayuivW0J3LLEK1NtKVKSAPQ=s48-c-k-c0xffffffff-no-rj-mo',
     links: [
       {
         label: '',
         url: ''
       },
       {
-        label: 'Website',
-        url: 'youtube.com/channel/UCCeOzbtcmqPmWdMeB6x9nvA'
+        label: 'Channel',
+        url: 'youtube.com/channel/UCo0uJBHNwF_IqhvVMbvdDTA'
       }
     ],
   }
@@ -1281,5 +1221,6 @@ export const snapdragonCollections = [
     rhsWeeds,
     snapdragonKitchenGarden,
 
-    customCollection
+    customCollection,
+    wiseWomanTradition
 ];

@@ -1262,6 +1262,12 @@ label.btn.btn-secondary .lesson-icon {
   padding: 0.4rem 0.4rem 0.3rem 0.4rem;
 }
 
+.badge-list {
+  height: 100%;
+  padding: 1rem;
+  background-color: var(--snap-dd-collection-bg-active);
+}
+
 .question-images {
   display: grid;
   height: 8rem;
