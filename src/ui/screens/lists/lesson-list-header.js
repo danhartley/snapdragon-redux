@@ -5,8 +5,10 @@ export const renderLessonListHeader = parent => {
     const header = document.createElement("div");
           header.innerHTML = lessonListHeaderTemplate;
 
-    parent = document.querySelector('.lesson-list .scrollable');
-    parent.prepend(header);
+    const sibling = document.querySelector('.lesson-list .scrollable');
+
+    parent = document.querySelector('.lesson-list');
+    parent.insertBefore(header, sibling);
 
     const toggleElem = document.querySelector('.js-toggle-element');
     const toggleCtrl = document.querySelector('.js-toggle-control');

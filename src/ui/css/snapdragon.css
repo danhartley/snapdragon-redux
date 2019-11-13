@@ -2021,22 +2021,19 @@ a.collection-disabled {
   z-index: 30;
 }
 
-.lesson-list div.lesson-list-item:nth-of-type(4n) {
+.lesson-list div.lesson-list-item:nth-of-type(2n) {
   background-color: var(--snap-lesson-row-green);
 }
 
-.lesson-list div.lesson-list-item:nth-of-type(4n+2) {
+.lesson-list div.lesson-list-item:nth-of-type(2n+1) {
   background-color: var(--snap-lesson-row-blue);
 }
 
-/* .lesson-list .lesson-list-item {
-  text-align: left;
-} */
-
 .lesson-list .scrollable {
   width: 100%;  
-  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
+  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhStandardBlock, 10vh));
   flex-direction: column;
+  top: var(--vhStandardBlock, 10vh);
 }
 
 .lesson-list .scrollable .btn input[type=radio] {
@@ -2083,10 +2080,6 @@ a.collection-disabled {
   flex-direction: column;
   justify-content: space-evenly;
 }
-
-/* .half-padding-left {
-  padding-left: .25rem;
-} */
 
 .modal-footer.double-centred-block {
   background-color: var(--snap-portrait);

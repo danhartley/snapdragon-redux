@@ -258,15 +258,16 @@ export const fungi = [
     },
     {
         term: "Symbiont",
-        definition: "An organism living in symbiosis with another.",
-        level: 2,
-        group: 2
+        definition: "An organism living in symbiosis with another."
+    },
+    {
+        term: "Pruinose",
+        definition: "Having a very fine whitish powder (bloom) on a surface.",
+        wiki: 'https://en.wiktionary.org/wiki/pruinose'
     },
     {
         term: "Sclerotium",
-        definition: "A compact mass of hardened fungal mycelium containing food reserves.",
-        level: 2,
-        group: 2
+        definition: "A compact mass of hardened fungal mycelium containing food reserves."
     },
     {
         term: "Gasteroid fungi ('stomach fungi')",

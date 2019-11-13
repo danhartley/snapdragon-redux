@@ -3,9 +3,7 @@ import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
 import { onCreateCustomLesson } from 'ui/create-guide-modal/species-pending';
-
 import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
-
 import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
 
 import lessonTemplate from 'ui/screens/lists/lesson-template.html';

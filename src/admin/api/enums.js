@@ -1137,6 +1137,7 @@ export const enums = {
   CLUB_LIKE: 'Club-like',
   WARTS: 'warts',
   HOLLOW: 'hollow',
+  PRUINOSE: 'pruinose',
   type: 'stipeCharacter',
   name: 'stipe character'
   },
