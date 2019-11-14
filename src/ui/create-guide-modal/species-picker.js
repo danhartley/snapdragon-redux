@@ -1,5 +1,8 @@
 import * as R from 'ramda';
+
 import autocomplete from 'autocompleter';
+
+import { store } from 'redux/store';
 import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 import { renderTemplate } from 'ui/helpers/templating';
 import { firestore } from 'api/firebase/firestore';
@@ -14,11 +17,9 @@ export const renderSpeciesPicker = createGuide => {
           step.innerHTML = 'Picker';
 
     const nextStepActionTxt = modal.querySelector('.js-modal-guide-navigation > div:nth-child(2) > div > span');
-          nextStepActionTxt.innerHTML = 'Open Lesson';
+          nextStepActionTxt.innerHTML = 'Fetch Species';
 
-    // const actionsContainer = modal.querySelector('.js-actions');
-    //       actionsContainer.setAttribute('style', 'justify-content: start;');
-    //       actionsContainer.style.height = '12rem';
+    createGuide.setCurrentStep(createGuide.getCurrentStep() + 1);
 
     const chosenOnes = modal.querySelector('.js-chosen');
           chosenOnes.classList.add('hide-important');
@@ -30,6 +31,21 @@ export const renderSpeciesPicker = createGuide => {
           parent.innerHTML = '';
 
     renderTemplate({}, template.content, parent);
+
+    const addSpeciesToList = species => {
+        
+        if(R.contains(species, selectedSpecies)) return;
+
+        selectedSpecies.push(species);
+
+        config.guide.species = selectedSpecies;
+
+        createGuide.setConfig(config);
+
+        setTimeout(() => {            
+            reDraw();
+        }, 200);
+    };
 
     const input = modal.querySelector("#input-species");
 
@@ -61,7 +77,6 @@ export const renderSpeciesPicker = createGuide => {
             className: 'autocomplete-options-container'
         });
 
-
         input.addEventListener('change', event => {
             setTimeout(() => {
                 const highlightedText = document.querySelector('.selected');
@@ -71,7 +86,6 @@ export const renderSpeciesPicker = createGuide => {
                 }
             }, 100);
         });
-
     };
 
     init();
@@ -105,28 +119,10 @@ export const renderSpeciesPicker = createGuide => {
         })
     };
 
-    let selectedSpecies = config.guide.species ? config.guide.species(s => s.name) || [] : [];
+    let selectedSpecies = !!config.guide.species ? config.guide.species.map(s => s.name) || [] : [];
     
     const selectedSpeciesDisplay = modal.querySelector('.js-selected-species');
           selectedSpeciesDisplay.innerHTML = '';
     
     reDraw();
-
-    const addSpeciesToList = species => {
-        
-        if(R.contains(species, selectedSpecies)) return;
-
-        selectedSpecies.push(species);
-
-        const collection = snapdragonCollections.find(c => c.type === 'custom');
-
-        config.collection.id = collection.id;
-        // config.guide = { ...collection.guide, itemNames: selectedSpecies };
-
-        createGuide.setConfig(config);
-
-        setTimeout(() => {            
-            reDraw();
-        }, 200);
-    };
 };

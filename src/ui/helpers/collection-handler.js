@@ -42,7 +42,6 @@ async function getItems(collection, config) {
         }
     }
     else if(collection.behaviour === 'static') {
-
         return firestore.getSpeciesInParallel(collection.species);
     }
 };

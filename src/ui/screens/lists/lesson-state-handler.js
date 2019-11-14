@@ -10,9 +10,9 @@ import { collectionHandler } from 'ui/helpers/collection-handler';
 
 const beginOrResumeLesson = async reviewLessonId  => {
 
-  const { collections, config, history, score, counter } = store.getState();
+  const { collections, collection: custom, config, history, score, counter } = store.getState();
 
-  const lesson = collections.find(c => c.id === reviewLessonId);
+  const lesson = custom.id > 0 ? custom : collections.find(c => c.id === reviewLessonId);
 
   const collection = await loadCollection(lesson, config, counter);
   

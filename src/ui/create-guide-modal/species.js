@@ -34,7 +34,7 @@ export const renderSpecies = createGuide => {
     renderTemplate({ options, languages }, template.content, parent);
 
     const handleNextStepAction = event => {
-        createGuide.startLesson = createGuide.nextStepActionTxt.innerHTML.indexOf('Open Lesson') > -1; // hack        
+        createGuide.startLesson = false;
         createGuide.goToNextStep(createGuide.getCurrentStep() + 1, 'NEXT', event.currentTarget.dataset.optionId);
         createGuide.listeners.push( { element: createGuide.nextStepAction, handler: handleNextStepAction });
     };

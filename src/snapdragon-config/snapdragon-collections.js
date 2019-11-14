@@ -751,6 +751,20 @@ const customCollection = {
   iconicTaxa: allIconicTaxa
 };
 
+const customStaticCollection = { 
+  id: 10000,
+  behaviour: 'static',
+  type: 'custom-static',
+  name: 'User collection', 
+  moduleSize: 6,
+  lessonPlanLandscape: 1,
+  lessonPlanPortrait: 101,
+  glossary: ['common'],
+  itemNames: [],
+  items: [],
+  iconicTaxa: allIconicTaxa
+};
+
 const treesOfLisbon = { 
   behaviour: 'static',
   id: 10, 
@@ -1165,33 +1179,137 @@ const lookalikes = {
   items: [
     
   ],
-  itemNames: [
-    'Lavandula angustifolia',
-    'Lavandula stoechas',
-    'Taraxacum officinale',
-    'Tussilago farfara',
-    'Lycoperdon pyriforme',
-    'Scleroderma citrinum',
-    'Hirundo rustica',
-    'Apus apus',
-    'Delichon urbicum',
-    'Accipiter nisus',
-    'Falco tinnunculus',
-    'Phoenicurus ochruros',
-    'Phoenicurus phoenicurus',
-    'Hericium coralloides',
-    'Hericium americanum',
-    'Hydnum umbilicatum',
-    'Hydnum repandum',
-    'Delphinus delphis',
-    'Phocoena phocoena',
-    'Laetiporus sulphureus',
-    'Laetiporus cincinnatus',
-    'Polyporus squamosus',
-    'Morchella esculenta',
-    'Gyromitra esculenta',
-    'Cantharellus cibarius',
-    'Hygrophoropsis aurantiaca'
+  species: [
+    {
+      name: 'Lavandula angustifolia',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Lavandula stoechas',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Taraxacum officinale',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Tussilago farfara',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Lycoperdon pyriforme',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Scleroderma citrinum',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Hirundo rustica',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Apus apus',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Delichon urbicum',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Accipiter nisus',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Falco tinnunculus',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Phoenicurus ochruros',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Phoenicurus phoenicurus',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Hericium coralloides',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Hericium americanum',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Hydnum umbilicatum',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Hydnum repandum',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Delphinus delphis',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Phocoena phocoena',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Laetiporus sulphureus',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Laetiporus cincinnatus',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Polyporus squamosus',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Morchella esculenta',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Gyromitra esculenta',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Cantharellus cibarius',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Hygrophoropsis aurantiaca',
+      time: [],
+      description: ''
+    },
   ],
   iconicTaxa: allIconicTaxa
 };
@@ -1207,11 +1325,11 @@ export const snapdragonCollections = [
 
     kitchen1,
 
-    birds1,
+    // birds1,
 
     woodlandsTV1,
 
-    commonBritishBirds,
+    // commonBritishBirds,
     
     walkOne,
     walkTwo,
@@ -1222,5 +1340,6 @@ export const snapdragonCollections = [
     snapdragonKitchenGarden,
 
     customCollection,
+    customStaticCollection,
     wiseWomanTradition
 ];

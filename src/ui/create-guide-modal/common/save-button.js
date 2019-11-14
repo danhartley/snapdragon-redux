@@ -15,8 +15,6 @@ export const saveButton = (config, step, update = true) => {
             case 'LOCATION':
 
                 const splitLocation = locationStr => {
-                    // const parts = locationStr.split(',');
-                    // return `${first}, ${parts[1]}`;
                     return locationStr;
                 };
 

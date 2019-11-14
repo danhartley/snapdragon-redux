@@ -33,7 +33,6 @@ class CreateGuide {
         if(!this.modal) return;
 
         this.modalTitle = this.modal.querySelector('.js-modal-title div:nth-child(1)');
-        // this.modalTitleSteps = this.modal.querySelector('.js-modal-title div:nth-child(2)');
         this.progressSteps = this.modal.querySelectorAll('.js-modal-guide-progress > div > div');
         this.previousStepAction = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(1)');
         this.previousStepTitle = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(1) > div');
@@ -115,7 +114,9 @@ class CreateGuide {
                 renderCategories(this.modal, this);
                 break;
             case 'Spinner':
-                speciesPendingSpinner(this.getConfig(), this.modal);
+                setTimeout(() => {
+                    speciesPendingSpinner(this.getConfig(), this.modal);
+                });
                 break;
         }
     }
@@ -135,7 +136,6 @@ class CreateGuide {
         if(!this.modalTitle) return;
         
         this.modalTitle.innerText = currentStepProperties.map(s => s.title);
-        // this.modalTitleSteps.innerHTML = `Step ${currentStepProperties.map(s => s.number)} of ${this.steps.length}`;
         this.nextStepActionTxt.innerHTML = currentStepProperties.map(csp => csp.nextStep);
 
         this.progressSteps.forEach((ps,index) => {

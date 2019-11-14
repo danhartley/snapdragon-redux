@@ -372,5 +372,5 @@ const learnYourLand2 = {
 
 export const learnYourLand = [
     learnYourLand1,
-    learnYourLand2
+    // learnYourLand2
 ]

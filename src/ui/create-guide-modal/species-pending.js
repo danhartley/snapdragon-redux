@@ -1,5 +1,3 @@
-import * as R from 'ramda';
-
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { listenToInatRequests } from 'api/inat/inat';
@@ -18,18 +16,16 @@ export const onCreateCustomLesson = listener => {
 
 export const speciesPendingSpinner = (config, modal) => {
 
-   const init = async () => {
+    const template = document.createElement('template');
+          template.innerHTML = spinnerTemplate;
 
-    const title = modal.querySelector('.js-options');
-          title.innerHTML = 'Searching for matching species.';
+    const parent = modal.querySelector('.js-step-action-content');
 
-    const { counter, collections } = store.getState();
+    renderTemplate({ }, template.content, parent);
 
-    let lesson = R.clone(snapdragonCollections.find(c => c.type === 'custom'));
+    const feedback = document.querySelector('.js-request-feedback');
 
-    const renderNewLessonSummary = collection => {
-    
-        lesson = collection;
+    const renderNewLessonSummary = lesson => {
 
         feedback.innerHTML = `
                 Your new lesson, ${lesson.name}, is ready.
@@ -45,17 +41,17 @@ export const speciesPendingSpinner = (config, modal) => {
               icon.classList.remove('slow-spin');
     };
 
+   const init = async () => {
+
+    const title = modal.querySelector('.js-options');
+          title.innerHTML = 'Searching for matching species.';
+
+    const { counter, collections } = store.getState();
+
+    const lesson = snapdragonCollections.find(c => c.type === 'custom');
+
     lesson.name = getLessonName(config, lesson);
     lesson.id = collections.length + 10000;
-
-    const template = document.createElement('template');
-          template.innerHTML = spinnerTemplate;
-
-    const parent = modal.querySelector('.js-step-action-content');
-
-    renderTemplate({ }, template.content, parent);
-
-    const feedback = document.querySelector('.js-request-feedback');
 
     const collection = await lessonStateHandler.loadCollection(lesson, config, counter);
 
@@ -95,22 +91,46 @@ export const speciesPendingSpinner = (config, modal) => {
     const close = modal.querySelector('.js-arrow-wrapper');
 
     setTimeout(() => {
-    close.addEventListener('click', () => {
-        setTimeout(() => {
-            onCloseModalListeners.forEach(listener => listener(lesson));   
-        });
-    });   
+        close.addEventListener('click', () => {
+            setTimeout(() => {
+                onCloseModalListeners.forEach(listener => listener(lesson));   
+            });
+        });   
     });
    };
 
-   init();
+   const initX = async () => {
+
+    const custom = {
+        ...snapdragonCollections.find(c => c.type === 'custom-static'),
+        species: config.guide.species.map(sp => {
+            return {
+                name: sp
+            }
+        })
+    };
+
+    config.collection.id = custom.id;
+
+    const collection = await lessonStateHandler.loadCollection(custom, config, store.getState().counter);
+    renderNewLessonSummary(collection);
+   };
+
+   if(config.guide.species) {
+        initX();
+   } else {
+       init();
+   }
 };
 
 const getLessonName = (config, lesson) => {
         
     let name = lesson.name;
     
-    if(config.guide.inatId.key.length > 0) {
+    if(config.guide.name) {
+        name = config.guide.name; // from species picker
+    }
+    else if(config.guide.inatId.key.length > 0) {
         name = `Observations for ${config.guide.inatId.key}`;
     } else if(config.guide.locationLongLat) {
         name = config.guide.locationLongLat.split(',')[0];

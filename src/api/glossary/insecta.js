@@ -25,6 +25,11 @@ export const insecta = [
         wiki: "https://en.wikipedia.org/wiki/Mass_provisioning"
     },
     {
+        term: "Scopa",
+        definition: "Modifications on the body of a non-parasitic bee that form a pollen-carrying apparatus (usually a dense mass of elongated, often branched, hairs or setae on the hind leg).",
+        wiki: "https://en.wikipedia.org/wiki/Scopa_(biology)"
+    },
+    {
         term: "Scutellum",
         definition: "Small sctructure like a shield.",
     },

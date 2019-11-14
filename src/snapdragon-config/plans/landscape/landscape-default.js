@@ -11,6 +11,7 @@ const propertyTrait = (traitPropertyMatch, trait) => {
 
 export const landscapeDefault = {
     id: 1,
+    moduleSize: 1,
     name:'Lesson 1',
     portrait: false,
     default: true,

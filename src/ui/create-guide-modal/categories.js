@@ -13,7 +13,6 @@ export const renderCategories = (modal, createGuide) => {
 
     const filterSelectedClass = 'iconic-taxa-selected';
 
-
     let iconicTaxa = config.guide.iconicTaxa;
 
     const template = document.createElement('template');
