@@ -914,6 +914,7 @@ export const plantae = [
     {
         term: 'Acicular',
         definition: 'Slender and pointed, needle-like.',
+        trait: 'leafShape',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Leaf_morphology_acicular.png',
             thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Leaf_morphology_acicular.png/64px-Leaf_morphology_acicular.png',
@@ -925,6 +926,7 @@ export const plantae = [
     {
         term: 'Acuminate',
         definition: 'Tapering to a long point in a concave manner.',
+        trait: 'leafShape',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/7/72/Leaf_morphology_acuminate.png',
             thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Leaf_morphology_acuminate.png/64px-Leaf_morphology_acuminate.png',
@@ -936,6 +938,7 @@ export const plantae = [
     {
         term: 'Acute',
         definition: 'Pointed, having a short sharp apex angled less than 90°.',
+        trait: 'leafShape',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Leaf_morphology_Acute.png',
             thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Leaf_morphology_Acute.png/64px-Leaf_morphology_Acute.png',
@@ -947,12 +950,24 @@ export const plantae = [
     {
         term: 'Apiculate',
         definition: 'Tapering and ending in a short, slender point.',
+        trait: 'leafShape',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Leaf_morphology_Apiculate.png',
             thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Leaf_morphology_Apiculate.png/64px-Leaf_morphology_Apiculate.png',
             author: 'Wasp32 CC BY-SA 4.0',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=49633342',
             refers: 'leaf tip'
+        }
+    },
+    {
+        term: 'Attenuate',
+        definition: 'Having leaf tissue taper down the petiole to a narrow base, always having some leaf material on each side of the petiole.',
+        trait: 'leafShape',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/9/9e/Leaf_morphology_Attenuate.png',
+            author: 'By Wasp32 - Own work, CC BY-SA 4.0',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=49633343',
+            refers: 'leaf base'
         }
     },
     {
@@ -1193,5 +1208,30 @@ export const plantae = [
         term: 'Apomixis',
         definition: 'Process of asexual reproduction through seed, in the absence of meiosis and fertilization, generating clonal progeny of maternal origin.',
         wiki: 'https://en.wikipedia.org/wiki/Vegetative_reproduction#Natural_means'
+    },
+    {
+        term: 'Scape',
+        definition: 'A long internode that forms the basal part or the whole of a peduncle.',
+        wiki: 'https://en.wikipedia.org/wiki/Scape_(botany)'
+    },
+    {
+        term: 'Internode',
+        definition: 'A non-woody, leafless segment between two leaf-bearing regions.',
+        wiki: 'https://en.wikipedia.org/wiki/Plant_stem'
+    },
+    {
+        term: 'Peduncle',
+        definition: 'A herbaceous stem that is destined to bear one or more flowers or fruit.',
+        wiki: 'https://en.wikipedia.org/wiki/peduncle'
+    },
+    {
+        term: 'Bulb',
+        definition: 'Structurally a short stem with fleshy leaves or leaf bases which function as food storage organs during dormancy.',
+        wiki: 'https://en.wikipedia.org/wiki/Bulb'
+    },
+    {
+        term: 'Terete',
+        definition: 'Describes a cross section that is circular, or like a distorted circle, with a single surface wrapping around it.',
+        wiki: 'https://en.wikipedia.org/wiki/Terete'
     },
 ];

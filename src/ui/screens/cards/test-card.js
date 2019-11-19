@@ -71,7 +71,7 @@ export const renderTestCardTemplate = (collection, context) => {
                 speciesIcon.addEventListener('click', async event => {
 
                     item.lichen 
-                        ? renderNonTaxonCard('SWAP_OUT', item.keyTrait, taxonContainer, item.images[0].url)
+                        ? renderNonTaxonCard('SWAP_OUT', item.keyTrait, taxonContainer, item.images.find(i => i.starred) ? item.images.find(i => i.starred).url : item.images[0].url)
                         : renderTaxonCard(collection, 'SWAP_OUT', item, taxonContainer, false);
                     
                     hideCurrentCard(speciesContainer, speciesCard);

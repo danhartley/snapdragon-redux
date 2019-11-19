@@ -1,5 +1,5 @@
 import { utils } from 'utils/utils';
-import { hasTraitPropeties, getTraitsToExclude, convertTraitsToNameValuePairsArray } from 'ui/helpers/traits-handler';
+import { traitsHandler } from 'ui/helpers/traits-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderInfoDetails } from 'ui/screens/common/info-detail-slider';
 
@@ -61,7 +61,7 @@ export const taxonInfoSlider = (item, traits, parent, mode) => {
 
     const id = mode === 'MODAL' ? 'taxon_1' : 'taxon_0';
 
-    const convertedTraits = convertTraitsToNameValuePairsArray(traits, getTraitsToExclude());
+    const convertedTraits = traitsHandler.convertTraitsToNameValuePairsArray(traits, traitsHandler.getTraitsToExclude());
 
     if(convertedTraits.length > 0) {
         renderInfoSlider(item, convertedTraits, parent, id);
@@ -70,9 +70,9 @@ export const taxonInfoSlider = (item, traits, parent, mode) => {
 
 export const infoSlider = (item, parent, mode) => {
     
-    if(!hasTraitPropeties(item.traits)) return;
+    if(!traitsHandler.hasTraitPropeties(item.traits)) return;
 
-    let traits = convertTraitsToNameValuePairsArray(item.traits, getTraitsToExclude(), item);
+    let traits = traitsHandler.convertTraitsToNameValuePairsArray(item.traits, traitsHandler.getTraitsToExclude(), item);
 
     if(item.traits.description) {
         const description = {

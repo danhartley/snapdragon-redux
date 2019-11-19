@@ -263,14 +263,18 @@ const updateSpecies = async species => {
 
     if(species.images) {
         species.images = species.images.map(image => {
-            return {
+            const updatedSpecies = {
                 license: image.license || '',
                 photographer: image.photographer || '',
                 rightsHolder: image.rightsHolder || '',
                 source: image.source || '',
                 title: image.title || '',
-                url: image.url || ''
+                url: image.url || ''                
+            };
+            if(image.starred) {
+                updatedSpecies.starred = image.starred;
             }
+            return updatedSpecies;
         });
     }
 

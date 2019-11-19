@@ -64,7 +64,7 @@ export const buildTable = (collection, args) => {
 
     const itemImages = collection.items.map(item => { 
 
-        let image = utils.shuffleArray(item.images)[0];
+        let image = item.images.find(i => i.starred) || utils.shuffleArray(item.images)[0];
             image = scaleImage(image, imageUseCases.SPECIES_LIST, config);
 
         const { traitName, keyTratLinkClass } = getTraitName(item, enums);

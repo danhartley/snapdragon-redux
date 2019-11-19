@@ -17,9 +17,10 @@ export const enums = {
   STIPE_CHARACTER: 'stipe character',
   STIPE_LENGTH: 'stipe length',
   STIPE_WIDTH: 'stipe width',
+  STIPE_COLOUR: 'stipe colour',
   GILL_ATTACHMENT: 'gill attachment',
   FLESH: 'flesh',
-  STIPE_COLOUR: 'stipe colour',
+  STEM_CHARACTER: 'stem character',
   GILL_COLOUR: 'gill colour',
   TRUNK_COLOUR: 'trunk colour',
   SUBSTRATE: 'substrate',
@@ -135,6 +136,7 @@ export const enums = {
   CONE_SCALE_COUNT: 'Cone scale count',
   BARK_TYPE: 'Bark type',
   BARK_TEXTURE: 'Bark texture',
+  CAP_TEXTURE: 'Cap texture',
   BARK_COLOUR: 'Bark colour',
   ALLOCHORY: 'Allochory',
   REPRODUCTIVE_CONTAINER: 'Reproductive container',
@@ -179,6 +181,7 @@ export const enums = {
   TREE_ECOLOGY: 'Tree ecology',
   KEY_FEATURE: 'Key feature', 
   GILL_ATTACHMENT : 'gill attachment',
+  MUSHROOM_GROUP : 'Mushroom group',
   type: 'name',
   name: 'name'
   },
@@ -290,9 +293,9 @@ export const enums = {
   name: 'cap shape'
   },
   treeEcology: {
-  OAK: 'Quercus',
-  BEECH: 'Fagus',
-  BIRCH: 'Betula',
+  OAK: 'Oak',
+  BEECH: 'Beech',
+  BIRCH: 'Birch',
   DECIDUOUS: 'Deciduous',
   MIXED_WOODLAND: 'Mixed woodland',
   CONIFERS: 'Conifers',
@@ -1099,6 +1102,7 @@ export const enums = {
   POLYMORPHIC: 'Polymorphic',
   CRYPTIC_SPECIES_COMPLEX: 'Cryptic species complex',  
   RHIZOMORPHS: 'Rhizomorphs',
+  GEOPHYTE: 'Geophyte',
   type: 'characteristic',
   name: 'characteristic'
   },
@@ -1140,6 +1144,10 @@ export const enums = {
   PRUINOSE: 'pruinose',
   type: 'stipeCharacter',
   name: 'stipe character'
+  },
+  stemCharacter: {
+    HOLLOW: 'hollow',
+    TERETE: 'terete',
   },
   gillAttachment: {
     ADNATE: 'Adnate',
@@ -1217,7 +1225,8 @@ export const enums = {
     WOOLY: 'Wooly',
     TOMENTOSE: 'tomentose',
     SCALY: 'Scaly',
-    ROUGH: 'Rough'
+    ROUGH: 'Rough',
+    SMOOTH: 'Smooth',
   },
   treeShape: {
     help: "Which descrption is the best match for this tree?",
@@ -1294,6 +1303,24 @@ export const enums = {
     REVOLUTE: 'Revolute',
     SUPERVOLUTE: 'Supervolute',
   },
+  mushroomGroup: {    
+    MYCOTROPHS: 'Mycotrophs',
+    POLYPORES: 'Polypores',
+    BOLETES: 'Boletes',
+    PUFFBALLS: 'Puffballs',
+    GILLED_MUSHROOMS: 'Gilled Mushrooms',
+    CHANTERELLES_AND_TRUMPETS: 'Chanterelles and Trumpets',
+    TOOTHED_MUSHROOMS: 'Toothed Mushrooms',
+    STINKHORNS: 'Stinkhorns',
+    CUP_FUNGI: 'Cup Fungi',
+    BIRDS_NEST_FUNGI:'Bird\'s Nest Fungi',
+    TRUE_MORELS_AND_VERPAS: 'True Morels and Verpas',
+    FALSE_MORELS: 'False Morels',
+    SADDLES: 'Saddles',
+    JELLY_FUNGI: 'Jelly Fungi',
+    CLUBS_AND_CORALS: 'Clubs and Corals',
+    CRUST_FUNGI: 'Crust Fungi'
+  },
   units: [
     { lifeSpan: [ 'DD', 'MM', 'YY'] },
     { gestation: [ 'DD', 'MM', 'YY'] },
@@ -1335,4 +1362,6 @@ export const enums = {
     { stipeWidth: [ 'm', 'cm', 'mm'] },
     { phValue: ['pH']}
   ],
-}
+};
+
+//Kuo, M. (2007, January). Key to major groups of mushrooms. Retrieved from the MushroomExpert.Com Web site: http://www.mushroomexpert.com/major_groups.html

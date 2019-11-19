@@ -144,7 +144,7 @@ const renderPortrait = (item, config, mode, rootNode) => {
 
 const renderCommonParts = (template, config, item, collection, mode, parent, rootNode, isInCarousel) => {
 
-    const image = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
+    const image = scaleImage({ url: item.starred || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
     
     const clone = document.importNode(template.content, true);
     

@@ -2,7 +2,6 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
-// import { actions } from 'redux/actions/action-creators';
 import { getInatSpecies } from 'api/inat/inat';
 import { getPlace } from 'geo/geo';
 import { firestore } from 'api/firebase/firestore';
@@ -57,11 +56,6 @@ export const collectionHandler = async (collection, config, counter) => {
     
     try {
 
-        // adding new custom lesson
-        // if(collections.find(c => c.id !== collection.id)) {
-        //     actions.boundUpdateCollections(collection);
-        // }
-
         if(counter.isLessonPaused) {
             collection.items = await keepItems(collection);
         }
@@ -85,8 +79,7 @@ export const collectionHandler = async (collection, config, counter) => {
 
             if(collection.items) {
 
-                if(collection.behaviour === 'dynamic') {
-                    
+                if(collection.behaviour === 'dynamic') {                    
                     collection.speciesRange = config.guide.speciesRange;
                 }
 
@@ -179,7 +172,9 @@ export const collectionHandler = async (collection, config, counter) => {
 
                 collection.itemIndex = 0;
 
-                collection.glossary = [ ...collection.glossary, 'common'];
+                // collection.glossary = [ ...collection.glossary, 'common'];
+
+                collection.glossary = [ ...Array.from(new Set(collection.items.map(item => item.iconicTaxon))), 'common'];
 
                 // actions.boundNewCollection({ config, collection });
                 

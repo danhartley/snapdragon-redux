@@ -14,7 +14,7 @@ const beginOrResumeLesson = async reviewLessonId  => {
 
   const lesson = custom.id > 0 ? custom : collections.find(c => c.id === reviewLessonId);
 
-  const collection = await loadCollection(lesson, config, counter);
+  const collection = await loadCollection(lesson, config, counter, collections);
   
   const lessonState = score.collectionId === collection.id 
           ? enums.lessonState.RESUME_LESSON
@@ -25,9 +25,9 @@ const beginOrResumeLesson = async reviewLessonId  => {
 
 const renderLessonSpeciesList = async (lesson, container) => {
 
-  const { config, counter } = store.getState();
+  const { config, counter, collections } = store.getState();
 
-  const collection = await loadCollection(lesson, config, counter);
+  const collection = await loadCollection(lesson, config, counter, collections);
 
   renderSpeciesList(collection, { callingParentContainer: container });
 };
@@ -61,17 +61,21 @@ const restoreSavedLesson = lesson => {
     }
 };
 
-const loadCollection = async (collection, config, counter) => {
+const loadCollection = async (collection, config, counter, collections) => {
 
   saveCurrentLesson(store.getState().collection);
 
   collection = restoreSavedLesson(collection) || collection;
 
-  await collectionHandler(collection, config, counter);
+  await collectionHandler(collection, config, counter, collections);
 
   config.collection = { id: collection.id };
 
   actions.boundNewCollection({ config, collection });
+  
+  if(collections.find(c => c.id !== collection.id)) {
+    actions.boundUpdateCollections(collection);
+  }
 
   return collection;
 } 

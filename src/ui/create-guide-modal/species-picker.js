@@ -2,8 +2,6 @@ import * as R from 'ramda';
 
 import autocomplete from 'autocompleter';
 
-import { store } from 'redux/store';
-import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 import { renderTemplate } from 'ui/helpers/templating';
 import { firestore } from 'api/firebase/firestore';
 

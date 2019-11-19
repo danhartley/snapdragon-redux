@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { types } from 'redux/actions/action-types';
 import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 
-export const collections = (state = snapdragonCollections.filter(sc => sc.type !== 'custom'), action) => {
+export const collections = (state = snapdragonCollections.filter(sc => sc.type !== 'custom' && sc.type !== 'custom-static'), action) => {
     switch(action.type) {
         case types.SELECT_COLLECTION:
             const cols = [ ...state ];

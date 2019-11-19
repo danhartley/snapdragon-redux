@@ -158,4 +158,9 @@ export const commmon = [
         definition : "A relationship between species, where one organism, the parasite, lives on or in another organism, the host, causing it some harm, and is adapted structurally to this way of life.",
         wiki: 'https://en.wikipedia.org/wiki/Parasitism'
     },  
+    {
+        term : "Spore",
+        definition : "A unit of sexual or asexual reproduction that may be adapted for dispersal and for survival, often for extended periods of time, in unfavourable conditions.",
+        wiki: 'https://en.wikipedia.org/wiki/Spore'
+    },  
 ];

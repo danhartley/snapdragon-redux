@@ -75,7 +75,7 @@
   i {
       cursor: pointer;
   }
-  .chkSafety {
+  .chkSafety, .chkStar {
       margin: 0 0 0 1rem;
   }
   input[type=text]:not(.browser-default)[readonly="readonly"]+label {

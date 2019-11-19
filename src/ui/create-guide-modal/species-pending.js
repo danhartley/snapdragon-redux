@@ -39,9 +39,19 @@ export const speciesPendingSpinner = (config, modal) => {
         
         const icon = modal.querySelector('.icon i');
               icon.classList.remove('slow-spin');
+
+        const close = modal.querySelector('.js-arrow-wrapper');
+
+        setTimeout(() => {
+            close.addEventListener('click', () => {
+                setTimeout(() => {
+                    onCloseModalListeners.forEach(listener => listener(lesson));   
+                });
+            });   
+        });
     };
 
-   const init = async () => {
+   const initInatLesson = async () => {
 
     const title = modal.querySelector('.js-options');
           title.innerHTML = 'Searching for matching species.';
@@ -53,7 +63,7 @@ export const speciesPendingSpinner = (config, modal) => {
     lesson.name = getLessonName(config, lesson);
     lesson.id = collections.length + 10000;
 
-    const collection = await lessonStateHandler.loadCollection(lesson, config, counter);
+    const collection = await lessonStateHandler.loadCollection(lesson, config, counter, collections);
 
     if(collection && collection.items && collection.items.length > 0) {
         renderNewLessonSummary(collection);
@@ -79,27 +89,17 @@ export const speciesPendingSpinner = (config, modal) => {
     let unsubscribe;
 
     const callback = request => {
-    if(feedback) {
-        feedback.innerHTML = `Making ${OrdinalSuffixOf(request.page)} request of ${request.numberOfRequests}`;
-    } else {
-        unsubscribe(callback);
-    }
+        if(feedback) {
+            feedback.innerHTML = `Making ${OrdinalSuffixOf(request.page)} request of ${request.numberOfRequests}`;
+        } else {
+            unsubscribe(callback);
+        }
     };
 
     unsubscribe = listenToInatRequests(callback);
-
-    const close = modal.querySelector('.js-arrow-wrapper');
-
-    setTimeout(() => {
-        close.addEventListener('click', () => {
-            setTimeout(() => {
-                onCloseModalListeners.forEach(listener => listener(lesson));   
-            });
-        });   
-    });
    };
 
-   const initX = async () => {
+   const initSelectedSpeciesLesson = async () => {
 
     const custom = {
         ...snapdragonCollections.find(c => c.type === 'custom-static'),
@@ -112,25 +112,21 @@ export const speciesPendingSpinner = (config, modal) => {
 
     config.collection.id = custom.id;
 
-    const collection = await lessonStateHandler.loadCollection(custom, config, store.getState().counter);
+    const { counter, collections } = store.getState();
+
+    const collection = await lessonStateHandler.loadCollection(custom, config, counter, collections);
+
     renderNewLessonSummary(collection);
    };
 
-   if(config.guide.species) {
-        initX();
-   } else {
-       init();
-   }
+   config.guide.species ? initSelectedSpeciesLesson() : initInatLesson();
 };
 
 const getLessonName = (config, lesson) => {
         
     let name = lesson.name;
-    
-    if(config.guide.name) {
-        name = config.guide.name; // from species picker
-    }
-    else if(config.guide.inatId.key.length > 0) {
+
+    if(config.guide.inatId.key.length > 0) {
         name = `Observations for ${config.guide.inatId.key}`;
     } else if(config.guide.locationLongLat) {
         name = config.guide.locationLongLat.split(',')[0];

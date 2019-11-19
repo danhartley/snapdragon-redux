@@ -1,3 +1,6 @@
+import * as R from 'ramda';
+
+
 import autocomplete from 'autocompleter';
 
 import { utils } from 'utils/utils';
@@ -79,24 +82,9 @@ const addSpecies = () => {
         });
     });
 
-    const activateGetTraitsBtn = async item => {
-        
-        const response = await firestore.addSpecies(item);
-
-        const btnAddTraits = document.querySelector('.btnAddTraits');
-              btnAddTraits.classList.remove('hide');
-              btnAddTraits.addEventListener('click', event => {                
-                document.querySelector('#add-traits').click();
-              });
-
-        console.log('Add species response: ', response);
-
-        window.snapdragon.species = item;
-    };
-
     document.querySelectorAll('.btnAddSpecies').forEach(btn => {
         btn.addEventListener('click', e => {
-            addOrUpdateSpeciesToFirestore(item, imageIds, activateGetTraitsBtn);
+            addOrUpdateSpeciesToFirestore(item, imageIds, 'ADD');
         });
     });
 
@@ -119,16 +107,16 @@ const updateSpecies = () => {
 
     const btnRemoveSpecies = document.querySelector('.btnRemoveSpecies');
     const chkSafety = document.querySelector('.chkSafety');
+    const chkStar = document.querySelector('.chkStar');
 
     const removeSpecies = () => {
         firestore.deleteSpeciesByName(input.value);
     };
 
     const safety = document.querySelector("input[type='checkbox']");
-
-    safety.addEventListener('click', () => {
-        btnRemoveSpecies.disabled = !safety.checked;
-    });
+          safety.addEventListener('click', () => {
+            btnRemoveSpecies.disabled = !safety.checked;
+          });
 
     btnRemoveSpecies.addEventListener('click', removeSpecies);
 
@@ -141,6 +129,7 @@ const updateSpecies = () => {
         btnRemoveSpecies.classList.remove('hide');
         btnGetPhotos.classList.remove('hide');
         chkSafety.classList.remove('hide');
+        chkStar.classList.remove('hide');
     };
 
     speciesPicker(input, listenForSpeciesSelection);
@@ -150,8 +139,8 @@ const updateSpecies = () => {
 
     btnGetPhotos.addEventListener('click', async e => {
 
-        // const prefix = item.images ? 'https://content.eol.org/data/media/' : '';
-        const prefix = '';
+        const prefix = item.images ? 'https://content.eol.org/data/media/' : '';
+        // const prefix = '';
 
         if(item.images.length === 0) {
             item.images = await eol.getSpeciesPhotos(item.eolId, 'pd|cc-by|cc-by-sa|cc-by-nd');                                    
@@ -164,10 +153,7 @@ const updateSpecies = () => {
         btnUpdateSpecies.classList.remove('hide');
 
         btnUpdateSpecies.addEventListener('click', e => {
-            addOrUpdateSpeciesToFirestore(item, imageIds, async () => {
-                const response = await firestore.updateSpecies(item);
-                console.log(response);
-            }); 
+            addOrUpdateSpeciesToFirestore(item, imageIds, 'UPDATE'); 
         });
     });
 
@@ -176,6 +162,7 @@ const updateSpecies = () => {
         btnRemoveSpecies.classList.remove('hide');
         btnGetPhotos.classList.remove('hide');
         chkSafety.classList.remove('hide');
+        chkStar.classList.remove('hide');
 
         btnGetPhotos.click();
     }
@@ -295,10 +282,33 @@ export const speciesHandler = {
     updateSpeciesNames
 };
 
-const addOrUpdateSpeciesToFirestore = (item, imageIds, callback) => {
+const addNewSpecies = async item => {
 
     item.iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;
+    
+    const response = await firestore.addSpecies(item);
+
+    const btnAddTraits = document.querySelector('.btnAddTraits');
+          btnAddTraits.classList.remove('hide');
+          btnAddTraits.addEventListener('click', event => {                
+            document.querySelector('#add-traits').click();
+          });
+
+    console.log('Add species response: ', response);
+
+    window.snapdragon.species = item;
+};
+
+const updateExistingSpecies = async item => {
+    console.log(item);
+    const response = await firestore.updateSpecies(item);
+    console.log(response);
+};
+
+const addOrUpdateSpeciesToFirestore = (item, imageIds, action) => {
+
     const images = [];
+
     item.images.forEach((image,index) => {
         imageIds.forEach(id => {
             if(index === id) {
@@ -306,8 +316,36 @@ const addOrUpdateSpeciesToFirestore = (item, imageIds, callback) => {
             }
         });
     });
-    // images.forEach(image => image.url = image.url.replace('https://content.eol.org/data/media/', ''));
-    item.images = images;
 
-    if(callback) callback(item);
+    images.forEach(image => image.url = image.url.replace('https://content.eol.org/data/media/', ''));
+
+    switch(action) {
+        case 'ADD':
+            // item.iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;            
+            item.images = images;
+            addNewSpecies(item);
+            break;
+        case 'UPDATE':
+            const setStarredImage = document.querySelector('.chkStar input').checked;
+            const imageUrls = images.map(i => i.url);
+            if(setStarredImage) {
+                item.images.forEach(image => {
+                    if(R.contains(image.url, imageUrls)) {
+                        image.starred = true;
+                    } else {
+                        if(image.hasOwnProperty('starred')) {
+                            image.starred = false;  
+                        }
+                    }
+                });
+            } else {                
+                item.images = item.images.map(image => {
+                    if(!R.contains(image.url, imageUrls)) {
+                        return image;
+                    }
+                });
+            }
+            updateExistingSpecies(item);
+            break;
+    }
 };

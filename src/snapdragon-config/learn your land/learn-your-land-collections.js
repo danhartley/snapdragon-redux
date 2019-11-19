@@ -21,9 +21,9 @@ const learnYourLand1 = {
         {
           name: 'Grifola frondosa',
           time: [252],
-          description: `A large, grey brown polypore, with overlapping caps, that are fan-shaped and fleshy (unlike many polypores which are woody). Frondosa means leafy or abundant or full of leaves.
+          description: `Key features: a large, grey brown polypore, with overlapping caps, that are fan-shaped and fleshy (unlike many polypores which are woody). The underside is white to grey with numerous tiny pores (and no gills).
           
-          The underside is white to grey with numerous tiny pores (and no gills).          
+          Frondosa means leafy or abundant or full of leaves.
           
           The spore print is white.          
           
@@ -42,6 +42,25 @@ const learnYourLand1 = {
           When fresh it is bright orange to yellow-orange, and sometimes has a bright yellow margin.
           
           Best when young, it is indigestible for some.`
+        },
+        {
+          name: 'Craterellus tubaeformis',
+          time: [510],
+          description: `The winter chanterelle, or yellow foot chanterelle, belongs to the genus Craterellus, the same genus as the black trumpet; both belong to the same family, Cantharellaceae.
+          
+          Fairly easy to identify: it's on the smaller side, typically up to 3" across and 3.5" tall.
+
+          The cap is yellowish brown to grayish brown, and with age it becomes funnel shaped with a central depression.
+          
+          Key feature: on the underside of the cap you will see a fertile surface with vein-like ridges that run down the stalk. These ridges are thickened and blunt, not sharply defined as you would see on most gilled fungi.
+
+          The stalk is hollow, often with a groove running its length, and yellowish-orange.
+
+          The spore print is white.
+          
+          Typically grows in wet conifer forests from moss, even if the moss is growing up the base of a tree.
+
+          I find it in areas with a lot of eastern hemlock trees.`
         },
         {
           name: 'Hydnum repandum',

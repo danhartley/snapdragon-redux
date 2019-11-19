@@ -52,7 +52,8 @@ export const renderLessons = () => {
         const title = document.querySelector(`div.js-lesson-title[data-lesson-id="${lesson.id}"]`);
         lessonListEventHandler.onTitleClickHandler(title, lessons, config);
 
-        const reviewLink = document.querySelector(`div[data-review-link="${lesson.id}"]`);
+      //   const reviewLink = document.querySelector(`div[data-review-link="${lesson.id}"]`);
+        const reviewLink = document.querySelector(`[data-lesson-id="${lesson.id}"]`);
         lessonListEventHandler.onReviewClickHandler(reviewLink);
     });
 };

@@ -211,7 +211,7 @@ export const fungi = [
     },
     {
         term: "Polypore",
-        definition: "Group of fungi that form fruiting bodies with pores or tubes on the underside. Also called bracket or shelf fungi.",
+        definition: "Fungus that forms fruiting bodies with pores or tubes on the underside. Also called bracket or shelf fungus.",
         wiki: "https://en.wikipedia.org/wiki/Polypore"
     },
     {

@@ -57,6 +57,7 @@
   }
 
   .inserted-td {
+    font-size: 1rem;
     white-space: normal;
     text-align: left;
     padding: .5rem;

@@ -71,7 +71,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
 
         const familyStats = itemProperties.getFamilyStats(collection.items);
         const occurrences = familyStats ? familyStats[taxon.name] : 0;
-        const url = item.images ? item.images[0].url : '';
+        const url = item.images ? item.starred ? item.images[0].url : '' : '';
         const image = scaleImage({ url }, imageUseCases.TAXON_CARD, config);
         const vernacularName = taxon.vernacularName || itemProperties.getNestedTaxonProp(taxon, config.language, 'names', 'names', '0').split(',')[0];
         const identification = taxon.identification ? taxon.identification : taxon.descriptions ? taxon.descriptions[0].identification : '';

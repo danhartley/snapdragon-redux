@@ -34,7 +34,6 @@ const fetchTraits = async (trait, traitValues, glossary) => {
         multiples = multiples.filter(multiple => {
             return !traitsHandler.doArraysHaveSameValues(multiple, requiredTraitValues);
         });
-
         
         let requiredTraits = traits.filter(t => R.contains(t.term, requiredTraitValues));
         

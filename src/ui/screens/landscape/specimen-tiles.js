@@ -68,7 +68,7 @@ const renderItemSpecimenTiles = item => {
             i.images = collectionItems.find(i => i.name === itemName).images;
         });
         images = images.map((image, index) => {
-            return prepImageForCarousel(image.images[0], index, image.item, config, imageUseCases.SPECIES_CARD);
+            return prepImageForCarousel(item.images.find(i => i.starred) || image.images[0], index, image.item, config, imageUseCases.SPECIES_CARD);
         });        
     } else {
         images = R.take(6, utils.shuffleArray(R.clone(item.images)));
