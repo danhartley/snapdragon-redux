@@ -172,11 +172,7 @@ export const collectionHandler = async (collection, config, counter) => {
 
                 collection.itemIndex = 0;
 
-                // collection.glossary = [ ...collection.glossary, 'common'];
-
                 collection.glossary = [ ...Array.from(new Set(collection.items.map(item => item.iconicTaxon))), 'common'];
-
-                // actions.boundNewCollection({ config, collection });
                 
                 try {
                     return collection;

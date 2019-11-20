@@ -76,7 +76,7 @@ const addSpecies = () => {
 
     btnGetSpeciesById.addEventListener('click', async e => {
         item = await eol.getSpecies(input.value, selectedLicence);
-        if(imageIds) helpers.getImagesLayout(item, '', imageIds);
+        if(imageIds) helpers.getImagesLayout(item, imageIds);
         document.querySelectorAll('.btnAddSpecies').forEach(btn => {
             btn.classList.remove('hide');
         });
@@ -84,7 +84,7 @@ const addSpecies = () => {
 
     document.querySelectorAll('.btnAddSpecies').forEach(btn => {
         btn.addEventListener('click', e => {
-            addOrUpdateSpeciesToFirestore(item, imageIds, 'ADD');
+            addOrUpdateSpeciesToFirestore(item, imageIds, 'ADD_SPECIES');
         });
     });
 
@@ -139,21 +139,18 @@ const updateSpecies = () => {
 
     btnGetPhotos.addEventListener('click', async e => {
 
-        const prefix = item.images ? 'https://content.eol.org/data/media/' : '';
-        // const prefix = '';
-
         if(item.images.length === 0) {
-            item.images = await eol.getSpeciesPhotos(item.eolId, 'pd|cc-by|cc-by-sa|cc-by-nd');                                    
+            item.images = await eol.getSpeciesPhotos(item.eolId, 'pd|cc-by|cc-by-sa|cc-by-nd');                             
         }
 
         const imageIds = [];
 
-        helpers.getImagesLayout(item, prefix, imageIds);
+        helpers.getImagesLayout(item, imageIds);
 
         btnUpdateSpecies.classList.remove('hide');
 
         btnUpdateSpecies.addEventListener('click', e => {
-            addOrUpdateSpeciesToFirestore(item, imageIds, 'UPDATE'); 
+            addOrUpdateSpeciesToFirestore(item, imageIds, 'UPDATE_PHOTOS'); 
         });
     });
 
@@ -294,15 +291,11 @@ const addNewSpecies = async item => {
             document.querySelector('#add-traits').click();
           });
 
-    console.log('Add species response: ', response);
-
     window.snapdragon.species = item;
 };
 
 const updateExistingSpecies = async item => {
-    console.log(item);
     const response = await firestore.updateSpecies(item);
-    console.log(response);
 };
 
 const addOrUpdateSpeciesToFirestore = (item, imageIds, action) => {
@@ -320,12 +313,11 @@ const addOrUpdateSpeciesToFirestore = (item, imageIds, action) => {
     images.forEach(image => image.url = image.url.replace('https://content.eol.org/data/media/', ''));
 
     switch(action) {
-        case 'ADD':
-            // item.iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;            
+        case 'ADD_SPECIES':       
             item.images = images;
             addNewSpecies(item);
             break;
-        case 'UPDATE':
+        case 'UPDATE_PHOTOS':
             const setStarredImage = document.querySelector('.chkStar input').checked;
             const imageUrls = images.map(i => i.url);
             if(setStarredImage) {
@@ -344,6 +336,7 @@ const addOrUpdateSpeciesToFirestore = (item, imageIds, action) => {
                         return image;
                     }
                 });
+                item.images = item.images.filter(i => i);
             }
             updateExistingSpecies(item);
             break;

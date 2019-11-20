@@ -51,13 +51,15 @@ const getBinomial = item => {
     return binomial;
 };
 
-const getImagesLayout = (species, prefix, imageIds) => {
+const getImagesLayout = (species, imageIds) => {
     let images = '';
     if(!species.images) {
         console.log('No images!');
     };
     species.images.forEach((image, index) => {
-        const url = prefix + image.url.replace('.jpg', '.260x190.jpg');
+        let prefix = image.provider === 'inat' ? 'https://static.inaturalist.org/photos/' : 'https://content.eol.org/data/media/';
+        let url = image.provider === 'inat' ? image.url : image.url.replace('.jpg', '.260x190.jpg');
+            url = prefix + url;
         images = images + `<div><img id="${index}" width="260px" height="190px" style="cursor:pointer; object-fit: cover;" src="${url}"/></div>`;
     });
     document.querySelector('#images').innerHTML = images;  
@@ -147,7 +149,8 @@ const parseSpeciesData = async (item) => {
             source: media.source,
             license: media.license,
             url: media.eolMediaURL,
-            photographer: media.agents.find(agent => agent.role === 'photographer')            
+            photographer: media.agents.find(agent => agent.role === 'photographer'),
+            provider: media.provider || ''    
         }
     }) : [];
     const namesCollection = helpers.parseNames(taxon.vernacularNames, languages);

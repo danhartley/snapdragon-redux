@@ -75,14 +75,6 @@ const snapdragonLichens = {
       common: 'Fungi & Lichens'
     } ], 
   itemNames: [
-      'Xanthoria parietina', 'Physcia adscendens', 'Parmelia saxatilis', 'Graphis scripta',
-      'Ramalina farinacea', 'Evernia prunastri', 'Usnea florida', 
-      'Physcia tenella', 'Placynthium nigrum', 'Physcia aipolia',
-      'Rhizocarpon geographicum', 'Ochrolechia parella',
-      'Platismatia glauca', 'Diploicia canescens', 'Usnea subfloridana',
-      'Cladonia pocillum', 'Peltigera membranacea', 'Cladonia portentosa', 'Cladonia squamosa',
-      'Ramalina fastigiata', 'Flavoparmelia caperata', 'Parmotrema perlatum', 'Parmelia sulcata',
-      'Lecidella elaeochroma', 'Lecanora chlarotera'
   ],
   species: [
     {
@@ -96,6 +88,69 @@ const snapdragonLichens = {
     },
     {
       name: 'Graphis scripta'
+    },
+    {
+      name: 'Ramalina farinacea'
+    },
+    {
+      name: 'Evernia prunastri'
+    },
+    {
+      name: 'Usnea florida'
+    },
+    {
+      name: 'Physcia tenella'
+    },
+    {
+      name: 'Placynthium nigrum'
+    },
+    {
+      name: 'Physcia aipolia'
+    },
+    {
+      name: 'Rhizocarpon geographicum'
+    },
+    {
+      name: 'Ochrolechia parella'
+    },
+    {
+      name: 'Platismatia glauca'
+    },
+    {
+      name: 'Diploicia canescens'
+    },
+    {
+      name: 'Usnea subfloridana'
+    },
+    {
+      name: 'Cladonia pocillum'
+    },
+    {
+      name: 'Peltigera membranacea'
+    },
+    {
+      name: 'Cladonia portentosa'
+    },
+    {
+      name: 'Cladonia squamosa'
+    },
+    {
+      name: 'Ramalina fastigiata'
+    },
+    {
+      name: 'Flavoparmelia caperata'
+    },
+    {
+      name: 'Parmotrema perlatum'
+    },
+    {
+      name: 'Parmelia sulcata'
+    },
+    {
+      name: 'Lecidella elaeochroma'
+    },
+    {
+      name: 'Lecanora chlarotera'
     },
   ],
   items: []
@@ -252,18 +307,19 @@ const rhsWeeds = {
     lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
     items: [],
-    itemNames: [
-        'Elymus repens',
-        'Equisetum arvense',
-        'Dactylis glomerata',
-        'Convolvulus arvensis',
-        'Cerastium fontanum',
-        'Cirsium arvense',
-        'Calystegia sepium',
-        'Cardamine hirsuta',
-        'Aegopodium podagraria',
-        'Capsella bursa-pastoris',
-        'Bellis perennis'
+    itemNames: [],
+    species: [
+        { name: 'Elymus repens' },
+        { name: 'Equisetum arvense' },
+        { name: 'Dactylis glomerata' },
+        { name: 'Convolvulus arvensis' },
+        { name: 'Cerastium fontanum' },
+        { name: 'Cirsium arvense' },
+        { name: 'Calystegia sepium' },
+        { name: 'Cardamine hirsuta' },
+        { name: 'Aegopodium podagraria' },
+        { name: 'Capsella bursa-pastoris' },
+        { name: 'Bellis perennis' }
     ],
     iconicTaxa: [ {
         id: 'plantae',
@@ -904,11 +960,6 @@ const walkOne = {
       description: ''
     },
     {
-      name: 'Chamaerops humilis',
-      time: [],
-      description: ''
-    },
-    {
       name: 'Fatsia japonica',
       time: [],
       description: ''
@@ -1335,7 +1386,7 @@ export const snapdragonCollections = [
     walkTwo,
     lookalikes,
     treesOfLisbon,
-    rhsTrees,
+    // rhsTrees,
     rhsWeeds,
     snapdragonKitchenGarden,
 

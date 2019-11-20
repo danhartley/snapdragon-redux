@@ -98,7 +98,8 @@ export const buildTable = (collection, args) => {
             taxonomy: item.taxonomy || { family: '', order: ''},
             iconicTaxonIcon,
             hideFungiIcon, 
-            hasVideoClassName: !collection.hasVideo ? 'hide-important' : ''
+            hasVideoClassName: !collection.hasVideo ? 'hide-important' : '',
+            provider: image.provider || ''
         };
 
         return itemImage;

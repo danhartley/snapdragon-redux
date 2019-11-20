@@ -81,7 +81,7 @@ const onTitleClickViewState = (e, lessons) => {
   return { title, lesson, state, speciesList, container, lessonVideoState, reviewLink, row };
 };
 
-const onTitleClickHandler = (title, lessons, config) => {
+const onTitleClickHandler = (title, lessons, config, startLesson) => {
   
   return title.addEventListener('click', async e => {
     
@@ -91,7 +91,23 @@ const onTitleClickHandler = (title, lessons, config) => {
 
     if(config.isLandscapeMode) {
 
-      renderLesson(lesson);
+      let siblingChevron;
+
+      if(startLesson) {
+        renderLesson(lesson);
+        siblingChevron = title.parentElement.parentElement.parentElement.children[1];
+        if(state.hideSpeciesList) {
+          siblingChevron.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
+        } else if(!state.revealSpeciesList) {
+          siblingChevron.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
+        }
+      } else {
+        if(state.hideSpeciesList) {
+          title.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
+        } else if(!state.revealSpeciesList) {
+          title.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
+        }
+      }
 
       if(state.revealSpeciesList) {        
         speciesList.classList.remove('hide');

@@ -32,7 +32,10 @@ export const renderLessons = () => {
           });    
 
     const titles = document.querySelectorAll('.js-lesson-title');
-          titles.forEach(title => lessonListEventHandler.onTitleClickHandler(title, lessons, config));
+          titles.forEach(title => lessonListEventHandler.onTitleClickHandler(title, lessons, config, true));
+
+    const chevrons = document.querySelectorAll('.js-lesson-list-chevron');
+          chevrons.forEach(chevron => lessonListEventHandler.onTitleClickHandler(chevron, lessons, config, false));
 
     const reviews = document.querySelectorAll('.js-lesson-review');
           reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink));
@@ -52,7 +55,6 @@ export const renderLessons = () => {
         const title = document.querySelector(`div.js-lesson-title[data-lesson-id="${lesson.id}"]`);
         lessonListEventHandler.onTitleClickHandler(title, lessons, config);
 
-      //   const reviewLink = document.querySelector(`div[data-review-link="${lesson.id}"]`);
         const reviewLink = document.querySelector(`[data-lesson-id="${lesson.id}"]`);
         lessonListEventHandler.onReviewClickHandler(reviewLink);
     });

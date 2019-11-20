@@ -35,17 +35,22 @@ const getTaxonDataIncPhotos = async (name, userId = 19829) => {
     const url = `https://www.inaturalist.org/observations.json?taxon_name=${name}&has[]=photos`;
     const response = await fetch(url);
     const json = await response.json();
-    const userObservations = json.find(observation => observation.user_id === userId).photos;
-    const userPhotos = userObservations.map(photo => {
-        return {
-            license: photo.license_name,
-            rightsHolder: photo.native_username,
-            source: photo.native_page_url,
-            title: name,
-            url: photo.medium_url
-        }
-    });
-    return userPhotos;
+    const userObservations = json.find(observation => observation.user_id === userId);
+    if(userObservations) {
+        const userPhotos = userObservations.photos.map(photo => {
+            return {
+                license: photo.license_name,
+                rightsHolder: photo.native_username,
+                source: photo.native_page_url,
+                title: name,
+                url: photo.medium_url,
+                provider: photo.provider
+            }
+        });
+        return userPhotos; 
+    } else {
+        return [];
+    }
 }; 
 
 export const inat = {

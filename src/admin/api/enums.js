@@ -88,6 +88,7 @@ export const enums = {
   JUVENILE_LEAF_SHAPE: 'Juvenile leaf shape',
   LEAF_MARGIN: 'Leaf margin',
   LEAF_ARRANGEMENT: 'Leaf arrangement',
+  LEAF_ATTACHMENT: 'Leaf attachment',
   LEAF_LENGTH: 'Leaf length',
   JUVENILE_LEAF_LENGTH: 'Juvenile leaf length',
   LEAF_WIDTH: 'Leaf width',
@@ -450,6 +451,7 @@ export const enums = {
   TAN: 'Tan',
   DARK_BROWN: 'Dark brown',
   HONEY: 'Honey',
+  RED_PURPLE: 'Red-purple',
   type: 'colour',
   name: 'colour'
   },
@@ -629,6 +631,11 @@ export const enums = {
   DECUSSATE: 'Decussate',
   type: 'leafArrangement',
   name: 'leaf arrangement'
+  },
+  leafAttachment: {
+    SESSILE: 'Sessile',
+    SUBSESSILE: 'Subsessile',
+    PEDICELLATE: 'Pedicellate',
   },
   leafMargin: {
   ENTIRE: 'Entire',

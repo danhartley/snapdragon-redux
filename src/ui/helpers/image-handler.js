@@ -5,7 +5,7 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { imageSlider } from 'ui/screens/common/image-slider';
 
 const stripImageUrlOfScaleAndPrefix = url => {
-    const prefix = 'https://content.eol.org/data/media/';
+    const prefix = url.provider === 'inat' ? 'https://static.inaturalist.org/photos/' : 'https://content.eol.org/data/media/';
     if(!url || typeof url === 'object') return '';
     url = url.replace('.260x190.jpg', '');
     url = url.replace('.98x68.jpg', '');
@@ -52,7 +52,8 @@ export const prepImageForCarousel = (image, index, item, config, useCase) => {
         itemName: item.name,
         itemCommon: item.itemCommon,
         rightsHolder: image.rightsHolder || '',
-        photographersName : image.photographer ? image.photographer.full_name || '' : ''            
+        photographersName : image.photographer ? image.photographer.full_name || '' : '',
+        provider: image.provider || ''       
     };
     if(image.src) {
         img = { ...img, ...image.src };
@@ -74,18 +75,18 @@ export const scaleImage = (image, useCase, config) => {
         return image;
     }
 
-    if(image.url.indexOf('medium') > -1) {
-        image.large = `https://static.inaturalist.org/photos/${image.url}`;
-        image.medium = image.url.replace('medium', 'small');
+    if(image.provider === 'inat') {
+        image.small = `https://static.inaturalist.org/photos/${image.url}`;
+        image.medium = image.url.replace('small', 'medium');
         image.medium = `https://static.inaturalist.org/photos/${image.medium}`;
-        image.small = image.url.replace('medium', 'thumb');
-        image.small = `https://static.inaturalist.org/photos/${image.small}`;
+        image.large = image.url.replace('small', 'large');
+        image.large = `https://static.inaturalist.org/photos/${image.large}`;
         return image;
     } else {
         image.url = stripImageUrlOfScaleAndPrefix(image.url);
-        image.large = `https://content.eol.org/data/media/${image.url}.jpg`;
-        image.medium = `https://content.eol.org/data/media/${image.url}.260x190.jpg`;
         image.small = `https://content.eol.org/data/media/${image.url}.98x68.jpg`;
+        image.medium = `https://content.eol.org/data/media/${image.url}.260x190.jpg`;
+        image.large = `https://content.eol.org/data/media/${image.url}.jpg`;
         return image;
     }
     

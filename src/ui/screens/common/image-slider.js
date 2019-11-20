@@ -36,9 +36,9 @@ const disableModalPopups = (disableModal, parent, config) => {
 
 const getActiveBackgroundImage = (parentScreen = document) => {
     const imageContainer = parentScreen.querySelector('.carousel-item.active > div');
-    const imageUrl = imageContainer.dataset.url;
+    const image = { url: imageContainer.dataset.url, provider: imageContainer.dataset.provider };
     const backgroundImage = imageContainer.style.backgroundImage.slice(4, -1).replace(/"/g, "");
-    return { imageContainer, imageUrl, backgroundImage };
+    return { imageContainer, image, backgroundImage };
 };
 
 const carouselControlHandler = (event, parentScreen = document, config) => {
@@ -46,7 +46,7 @@ const carouselControlHandler = (event, parentScreen = document, config) => {
     setTimeout(() => {
 
         const activeNode = parentScreen.querySelector(`${event.target.dataset.slider} .carousel-item.active > div`);
-        const image = activeNode.dataset;        
+        const image = activeNode.dataset;   
         
         handleRightsAttribution(image);
     
@@ -68,6 +68,7 @@ export const imageSlider = sliderArgs => {
     images.forEach((img, i) => {
         img.index = i;
         img.rightsHolder = img.rightsHolder || 'Public domain';
+        img.provider = img.provider || 'eol';
     });
 
     renderTemplate({ images, identifier, disableModal }, slider.content, parent);
@@ -116,8 +117,8 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
 
 function onEnlargeImageHandler(config) {
     return () => {
-        const { imageContainer, imageUrl } = getActiveBackgroundImage();
-        const large = scaleImage({ url: imageUrl }, imageUseCases.ACTUAL_SIZE, config).large;
+        const { imageContainer, image } = getActiveBackgroundImage();
+        const large = scaleImage(image, imageUseCases.ACTUAL_SIZE, config).large;
         imageContainer.style["background-image"] = `url(${large})`;
         imageContainer.classList.add('contain-image');
     };
