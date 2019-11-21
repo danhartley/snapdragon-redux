@@ -329,7 +329,7 @@ div.text-entry {
     .text-entry input {
         width: 75%;
         padding: 0.5rem;
-        border: 0.05rem solid var(--snap-border-dark);
+        border: 0.05rem solid var(--snap-border-light);
     }
 
     /* SYSTEM RESPONSE */

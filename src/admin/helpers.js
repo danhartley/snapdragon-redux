@@ -51,13 +51,14 @@ const getBinomial = item => {
     return binomial;
 };
 
-const getImagesLayout = (species, imageIds) => {
+const getImagesLayout = (species, imageIds, addPrefix = true) => {
     let images = '';
     if(!species.images) {
         console.log('No images!');
     };
     species.images.forEach((image, index) => {
         let prefix = image.provider === 'inat' ? 'https://static.inaturalist.org/photos/' : 'https://content.eol.org/data/media/';
+            prefix = addPrefix ? prefix : '';
         let url = image.provider === 'inat' ? image.url : image.url.replace('.jpg', '.260x190.jpg');
             url = prefix + url;
         images = images + `<div><img id="${index}" width="260px" height="190px" style="cursor:pointer; object-fit: cover;" src="${url}"/></div>`;

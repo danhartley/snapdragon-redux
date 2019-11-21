@@ -31,7 +31,7 @@ export const addPhotos = () => {
 
         const sources = document.querySelectorAll('.source');
 
-        let source = 'inat';
+        let source = document.querySelector('input:checked').id;
 
         sources.forEach(option => {
             option.addEventListener('click', e => {
@@ -56,7 +56,7 @@ export const addPhotos = () => {
             renderTemplate(context, template.content, parent);
 
             document.querySelectorAll('img').forEach(image => {
-                const url = image.src.replace(inatPrefix, '').replace(eolPrefix, '');
+                const url = image.src.replace(inatPrefix, '').replace(eolPrefix, '').replace('260x190.jpg', 'jpg');
                 if(R.contains(url, currentPhotoUrls)) {
                     image.style.filter = 'saturate(10%)';
                     image.style.opacity = .3;
@@ -129,7 +129,7 @@ export const addPhotos = () => {
                 case 'eol':
                     photos = await eol.getSpeciesPhotos(species.eolId, 'pd|cc-by|cc-by-sa|cc-by-nd');
                     photos = photos.map((photo, index) => {
-                        return { ...photo, index, provider: 'eol' };       
+                        return { ...photo, index, provider: 'eol', url: photo.url.replace('.jpg', '.260x190.jpg') };       
                     });
                     renderPhotos(photos, species);
                     break;
@@ -141,6 +141,8 @@ export const addPhotos = () => {
                 photo.provider === 'inat' 
                     ? photo.url = photo.url.replace(inatPrefix, '')
                     : photo.url = photo.url.replace(eolPrefix, '');
+                
+                photo.url = photo.url.replace('.260x190.jpg', '.jpg');
 
                 photo.photographer = photo.photographer || '';
                 
@@ -150,6 +152,8 @@ export const addPhotos = () => {
             console.log(photos);
             const response = await firestore.addPhotos(name, photos);
             console.log(response);
+            const parent = document.getElementById('photosGallery');
+                  parent.innerHTML = '';
         };
 
     };

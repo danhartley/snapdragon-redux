@@ -53,7 +53,7 @@
     --snap-progress-bar: rgb(48, 94, 37);
     --snap-no-progress-bar: rgb(48, 94, 37);
   
-    --snap-block-light: rgba(255, 255, 255,.9);
+    --snap-block-light: rgb(245, 245, 245);
 
     --snap-grid-background: rgba(185, 200, 204,.3);
     --snap-container-background: rgb(255, 255, 255);
@@ -68,10 +68,7 @@
     --snap-list-alt-background: rgb(252, 251, 246);
     --snap-default-background: rgb(244, 244, 244);
   
-    --snap-border-dark: rgb(175,175,175);
-    --snap-border-light: rgb(255, 255, 255);
-    
-    --snap-lesson-border-dark: rgba(175,175,175,.6);
+    --snap-border-light: rgb(175,175,175);
 
     --snap-kingdom-plantae: rgb(48, 96, 37);
     --snap-kingdom-fungi: rgba(150, 43, 110,.8);

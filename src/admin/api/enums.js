@@ -1366,8 +1366,11 @@ export const enums = {
     { stemHeight: [ 'm', 'cm', 'mm'] },
     { stemDiameter: [ 'm', 'cm', 'mm'] },
     { stipeLength: [ 'm', 'cm', 'mm'] },
+    { tailLength: [ 'm', 'cm', 'mm'] },
     { stipeWidth: [ 'm', 'cm', 'mm'] },
-    { phValue: ['pH']}
+    { wingSpan: [ 'm', 'cm', 'mm'] },
+    { phValue: ['pH']},
+    { weight: [ 'g', 'kg']}
   ],
 };
 

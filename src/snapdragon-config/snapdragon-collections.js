@@ -880,9 +880,7 @@ const walkOne = {
   lessonPlanLandscape: 1,
   lessonPlanPortrait: 101,
   glossary: ['plantae', 'aves', 'fungi', 'common', 'insecta', 'lichen', 'animalia'],
-  items: [
-    
-  ],
+  items: [],
   species: [
     {
       name: 'Celtis australis',
@@ -1365,6 +1363,64 @@ const lookalikes = {
   iconicTaxa: allIconicTaxa
 };
 
+
+const corvids = { 
+  behaviour: 'static',
+  id: 14, 
+  name: 'BTO Bird ID - Corvids - Crow, Rook, Raven',
+  descriptions: [
+      'BTO Bird ID - Corvids - Crow, Rook, Raven.'
+  ],
+  moduleSize: 1,
+  lessonPlanLandscape: 1,
+  lessonPlanPortrait: 101,
+  glossary: ['aves'],
+  items: [],
+  species: [
+    {
+      name: 'Corvus corax',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Corvus corone',
+      time: [],
+      description: ''
+    },
+    {
+      name: 'Corvus frugilegus',
+      time: [],
+      description: ''
+    },
+  ],
+  iconicTaxa: [ 
+    {
+      id: 'aves',
+      common: 'Birds'
+    }
+  ],
+  video: {
+    id: 'qi1p0yh4X3I',
+    startAt: 0,
+    title: 'BTO Bird ID - Corvids - Crow, Rook, Raven',
+    intro: 'BTO Bird ID - Corvids - Crow, Rook, Raven',
+    owner: 'British Trust for Ornithology',
+    ownerUrl: '',
+    presenter: 'BTOvideo',
+    src: 'https://yt3.ggpht.com/a/AGF-l7_dIfQOLCQyanCxTmXHdRpaktSdtmPAnwy4Hg=s48-c-k-c0xffffffff-no-rj-mo',
+    links: [
+      {
+        label: '',
+        url: ''
+      },
+      {
+        label: 'Channel',
+        url: 'https://www.youtube.com/user/BTOvideo'
+      }
+    ],
+  }  
+};
+
 export const snapdragonCollections = [
     
     // placeMonsanto,
@@ -1392,5 +1448,6 @@ export const snapdragonCollections = [
 
     customCollection,
     customStaticCollection,
-    wiseWomanTradition
+    wiseWomanTradition,
+    corvids
 ];

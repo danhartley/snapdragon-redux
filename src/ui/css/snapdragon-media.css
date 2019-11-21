@@ -70,6 +70,14 @@
 
 @media (min-width: 768px) {
 
+    .bird-song, .taxon-identification, .taxon-summary {
+        margin: 1rem 4rem 0 4rem;
+    }
+
+    .left-grid .header, .left-grid .footer {
+        border-right: 1px solid var(--snap-border-light);
+    }
+
     .strips {
         display: grid;
         grid-template-columns: 1fr 1fr;

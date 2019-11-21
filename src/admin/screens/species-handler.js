@@ -145,7 +145,7 @@ const updateSpecies = () => {
 
         const imageIds = [];
 
-        helpers.getImagesLayout(item, imageIds);
+        helpers.getImagesLayout(item, imageIds, true);
 
         btnUpdateSpecies.classList.remove('hide');
 
@@ -332,10 +332,15 @@ const addOrUpdateSpeciesToFirestore = (item, imageIds, action) => {
                 });
             } else {                
                 item.images = item.images.map(image => {
-                    if(!R.contains(image.url, imageUrls)) {
+                    if(R.contains(image.url, imageUrls)) {
+                        const index = imageUrls.indexOf(image.url);
+                        if(index !== -1) imageUrls.splice(index, 1);
+                    }
+                    else {
                         return image;
                     }
                 });
+
                 item.images = item.images.filter(i => i);
             }
             updateExistingSpecies(item);

@@ -76,7 +76,7 @@ hr {
 }
 
 .no-progress {
-  background-color: var(--snap-no-progress-bar);
+  background-color: var(--snap-progress-bg);
 }
 
 .btn.btn-light,
@@ -166,7 +166,7 @@ hr {
   padding: 0;
   color: var(--snap-text-dark);
   background-color: rgb(207, 218, 204);
-  border: .05rem solid var(--snap-border-dark);
+  border: .05rem solid var(--snap-border-light);
   left: inherit !important;
   background-color: var(--snap-text-light);
 }
@@ -400,11 +400,15 @@ a.dropdown-item {
   grid-template-rows: var(--vhRunningBlock, 7.5vh) 5px auto var(--vhRunningBlock, 7.5vh);
 }
 
+body {
+  background-color: var(--snap-default-background);
+}
+
 .left-body, .right-body {
   display: grid;
   grid-auto-flow: row;
-  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
-  background-color: var(--snap-default-background);
+  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));  
+  background-color: var(--snap-list-alt-background);
 }
 
 .header, .footer {
@@ -414,10 +418,6 @@ a.dropdown-item {
   letter-spacing: 0.07rem;
   text-transform: uppercase;
   color: var(--snap-text-medium-dark);
-}
-
-.header {
-  font-size: ;
 }
 
 .header > div:nth-child(2) {
@@ -885,9 +885,9 @@ button:disabled {
   cursor: not-allowed;
 }
 
-button.btn-light {
+/* button.btn-light {
   border-color: var(--snap-lesson-border-dark);
-}
+} */
 
 button.btn-light.focus,
 button.btn:focus,
@@ -1108,7 +1108,7 @@ span.correct {
 .species-answer,
 .btn-placeholder {
   text-align: center;
-  border: 1px solid var(--snap-border-dark);
+  border: 1px solid var(--snap-border-light);
 }
 
 .species-question.btn,
@@ -1124,10 +1124,10 @@ span.correct {
 .species-answer {
   text-align: center;
   color: var(--snap-text-dark);
-  background-color: var(--snap-border-light);
-  border-left: 1px solid var(--snap-border-dark);
-  border-right: 1px solid var(--snap-border-dark);
-  border-bottom: 1px solid var(--snap-border-dark);
+  background-color: var(--snap-block-light);
+  border-left: 1px solid var(--snap-border-light);
+  border-right: 1px solid var(--snap-border-light);
+  border-bottom: 1px solid var(--snap-border-light);
 }
 
 .answer-box-success .icon {
@@ -1914,8 +1914,8 @@ a.collection-disabled {
 
 .snapdragon-intro > div {
   line-height: 2;
-  font-size: 1.2rem;
-  margin: 1.2rem .5rem 0 .5rem;
+  font-size: 1rem;
+  margin: 1.2rem 2.4rem 0 2.4rem;
 }
 
 .clearSpacing {
@@ -1926,8 +1926,8 @@ a.collection-disabled {
 .lesson-list {
   position: relative;
   background-color: var(--snap-block-light);
-  border-left: 1px solid var(--snap-border-dark);
-  border-right: 1px solid var(--snap-border-dark);
+  /* border-left: 1px solid var(--snap-border-light);
+  border-right: 1px solid var(--snap-border-light); */
 }
 
 .lesson-list-header {
@@ -1957,6 +1957,7 @@ a.collection-disabled {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  background-color: var(--snap-toggle-header-off);
 }
 
 .lesson-list-header > div:nth-child(2) > div {  
@@ -1966,7 +1967,7 @@ a.collection-disabled {
 
 .lesson-list-header > div[data-toggle-state="off"]:nth-child(1), .lesson-list-header > div[data-toggle-state="off"]:nth-child(2) > div {
   color: var(--snap-toggle-header-off);
-  background-color: var(--snap-toggle-header-on);    
+  background-color: var(--snap-toggle-header-on);
 }
 
 .lesson-list-header > div:nth-child(1) {
@@ -1981,9 +1982,9 @@ a.collection-disabled {
   display: none;
 }
 
-.lesson-list-header > div[data-toggle-state="off"]:nth-child(2) {
+/* .lesson-list-header > div[data-toggle-state="off"]:nth-child(2) {
   background-color: var(--snap-toggle-header-off);
-}
+} */
 
 .lesson-list-header > div[data-toggle-state="on"]:nth-child(1), .lesson-list-header > div[data-toggle-state="on"]:nth-child(2) > div {
   color: var(--snap-toggle-header-on);
@@ -2127,7 +2128,7 @@ a.collection-disabled {
   margin: 0;
   padding: 0;
   padding-top: .4rem;
-  border-top: 1px solid var(--snap-border-dark);
+  border-top: 1px solid var(--snap-border-light);
 
   position: relative;
   height: 0;
