@@ -73,7 +73,7 @@ const loadCollection = async (collection, config, counter, collections) => {
 
   actions.boundNewCollection({ config, collection });
   
-  if(collections.find(c => c.id !== collection.id)) {
+  if(!collections.find(c => c.id === collection.id)) {
     actions.boundUpdateCollections(collection);
   }
 

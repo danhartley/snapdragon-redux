@@ -78,7 +78,7 @@ export const imageSlider = sliderArgs => {
     parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
     parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
 
-    const originalImageLink = parentScreen.querySelector('.js-expand');
+    const originalImageLink = parentScreen.querySelector(`#imageSlider_true_${image.itemName.replace(' ', '_')} .js-expand`);
           originalImageLink.addEventListener('click', onEnlargeImageHandler(config));
 };
 
@@ -100,7 +100,7 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
         const identifier = slide.id.replace(' ', '_') || index + 1;
 
         const header = document.querySelectorAll(`#imageComparisonModal .js-modal-image-title > span`)[index];
-        header.innerHTML = `<span class="common-name">${slide.images[0].itemCommon}</span><span class="latin-name">${slide.images[0].itemName}</span>`;
+              header.innerHTML = `<span class="common-name">${slide.images[0].itemCommon}</span><span class="latin-name">${slide.images[0].itemName}</span>`;
         const item = { name: slide.images[0].itemName, itemCommon: slide.images[0].itemCommon, images: slide.images };
         const images = prepImagesForCarousel(item, config, imageUseCases.CAROUSEL);
         renderTemplate({ images, identifier, disableModal }, sideBySlider.content, parent);
@@ -108,10 +108,12 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
               activeNode.classList.add('active');
         disableModalPopups(disableModal, config);
         handleRightsAttribution(images[0]);
-        // handleRightsAttribution(images[0], activeNode.querySelector('div'));
 
-        document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', carouselControlHandler);
-        document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', carouselControlHandler);
+        const originalImageLink = document.querySelector(`#imageSlider_${disableModal}_${identifier} .js-expand`);
+              originalImageLink.classList.add('hide-important');
+
+        // document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', carouselControlHandler);
+        // document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', carouselControlHandler);
     });
 };
 

@@ -1,0 +1,106 @@
+
+const rhsTrees = { 
+    id: 1001,
+    behaviour: 'static',
+    name: 'RHS Trees',
+    type: 'taxon',
+    moduleSize: 6,
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 101,
+    glossary: ['plantae', 'common'],
+    itemNames: [
+        'Styrax hemsleyanus',
+        'Sorbus cashmiriana',
+        'Stewartia pseudocamellia',
+        'Sorbus aucuparia',
+        'Sorbus aria',
+        'Salix alba',
+        'Robinia pseudoacacia',
+        'Quercus robur',
+        'Pyrus salicifolia',
+        'Quercus ilex',
+        'Quercus coccinea',
+        'Pyrus calleryana',
+        'Prunus subhirtella',
+        'Prunus cerasifera',
+        'Platanus orientalis',
+        'Populus nigra',
+        'Prunus avium',
+        'Olea europaea',
+        'Platanus acerifolia',
+        'Malus floribunda',
+        'Malus sylvestris',
+        'Liriodendron tulipifera',
+        'Liquidambar styraciflua',
+        'Ligustrum lucidum',
+        'Juglans regia',
+        'Fraxinus ornus',
+        'Eucalyptus gunnii',
+        'Gleditsia triacanthos',
+        'Fagus sylvatica',
+        'Fraxinus excelsior',
+        'Crataegus laevigata',
+        'Crataegus monogyna',
+        'Cercis siliquastrum',
+        'Cercidiphyllum japonicum',
+        'Catalpa bignonioides',
+        'Betula utilis',
+        'Amelanchier lamarckii',
+        'Castanea sativa',
+        'Carpinus betulus',
+        'Betula pendula',
+        'Amelanchier canadensis',
+        'Alnus cordata',
+        'Alnus glutinosa',
+        'Aesculus hippocastanum',
+        'Acer rubrum',
+        'Acer platanoides',
+        'Acer pseudoplatanus',
+        'Acer davidii',
+        'Acer griseum',
+        'Acacia dealbata'
+      ],
+      items: [],      
+      iconicTaxa: [ {
+        id: 'plantae',
+        common: 'Plants'
+      } ],
+    eol_link: 'https://eol.org/collections/140596',
+    externalLink: { text: 'RHS Practical Horticulture', url:'https://www.rhs.org.uk/education-learning/qualifications-and-training/rhs-qualifications/level-1-qualifications/level-1-intro-award-in-practical-horticulture' }
+};
+
+const rhsWeeds = { 
+    id: 1002, 
+    behaviour: 'static',
+    name: 'RHS Weeds I',
+    moduleSize: 4,
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 101,
+    glossary: ['plantae', 'common'],
+    items: [],
+    itemNames: [],
+    species: [
+        { name: 'Elymus repens' },
+        { name: 'Equisetum arvense' },
+        { name: 'Dactylis glomerata' },
+        { name: 'Convolvulus arvensis' },
+        { name: 'Cerastium fontanum' },
+        { name: 'Cirsium arvense' },
+        { name: 'Calystegia sepium' },
+        { name: 'Cardamine hirsuta' },
+        { name: 'Aegopodium podagraria' },
+        { name: 'Capsella bursa-pastoris' },
+        { name: 'Bellis perennis' }
+    ],
+    iconicTaxa: [ {
+        id: 'plantae',
+        common: 'Plants'
+      } ],
+    eol_link: 'https://eol.org/collections/140731',
+    externalLink: { text: 'RHS Practical Horticulture', url:'https://www.rhs.org.uk/education-learning/qualifications-and-training/rhs-qualifications/level-1-qualifications/level-1-intro-award-in-practical-horticulture' }
+};
+
+export const rhs = [
+    // rhsTrees,
+    rhsWeeds
+];

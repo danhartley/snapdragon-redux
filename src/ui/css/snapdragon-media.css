@@ -74,7 +74,7 @@
         margin: 1rem 4rem 0 4rem;
     }
 
-    .left-grid .header, .left-grid .footer {
+    .left-grid .header, .left-grid .footer, #imageComparisonModal .modal-title > span:nth-child(1) {
         border-right: 1px solid var(--snap-border-light);
     }
 

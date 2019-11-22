@@ -54,15 +54,17 @@ export const handleRightsAttribution = image => {
     const title = image.title;
     const author = image.rightsholder || image.rightsHolder || 'Public domain';
     const source = image.source || '';
-
-    const parent = document.querySelector('.js-carousel-inner .js-attribution-layer');
+    const identifier = `${image.itemName.replace(' ', '_')}`;
+    const parent = image.itemName 
+                    ? document.querySelector(`.${identifier}.js-attribution-layer`)
+                    : document.querySelector('.js-carousel-inner .js-attribution-layer');
           parent.innerHTML = '';
 
     renderTemplate({title,author,source,licence}, template.content, parent);
 
     const rightsAttribution = parent.querySelector('.rights-attribution');
     const rightsLink = parent.querySelector('.js-rights-link .js-copyright');
-    const indicators = document.querySelector('.carousel-indicators');
+    const indicators = document.querySelector(`#imageSlider_true_${identifier} .carousel-indicators`);    
 
     const showAttribution = event => {
         rightsAttribution.classList.add('hide-important');
