@@ -43,9 +43,22 @@ const learnYourLand1 = {
           Best when young, it is indigestible for some.`
         },
         {
+          name: 'Laetiporus cincinnatus',
+          time: [446],
+          description: `Looks similar to chicken of the woods but there are some key differences. 
+          
+          Often grows at the base of hardwood trees or a few feet away.
+
+          The caps are duller and paler than L.sulphureus, almost pale orange to pinkish orange in colour.
+          
+          On the underside the pores are a peachish white in colour.          
+  
+          Culinary: best eaten when young; indigestible for some. Start small, and cook well.`
+        },
+        {
           name: 'Craterellus tubaeformis',
           time: [510],
-          description: `The winter chanterelle, or yellow foot chanterelle, belongs to the genus Craterellus, the same genus as the black trumpet; both belong to the same family, Cantharellaceae.
+          description: `The winter chanterelle, yellow foot chanterelle, or trumpet chanterelle belongs to the genus Craterellus, the same genus as the black trumpet; both belong to the same family, Cantharellaceae.
           
           Fairly easy to identify: it's on the smaller side, typically up to 3" across and 3.5" tall.
 
@@ -89,13 +102,20 @@ const learnYourLand1 = {
 
           Bruises a darker colour when handled. The spore colour is white.
 
-          Habitat: wet conifer wood especially eastern hemlock trees.
+          Ecology: wet conifer wood especially eastern hemlock trees.
           `
         },
         {
-          name: 'Hydnum erinaceus',
-          time: [798],
+          name: 'Hericium erinaceus',
+          time: [758],
           description: `
+
+          Hericium: white-spored mushrooms, genus include lion's mane and its allies.
+
+          Hericium mushrooms grow directly on wood, either living or dead trees, and typically on hardwoods.
+
+          All members of the genus considerd edible and unlikely to be confused with members of any other genus.
+
           Choice edible mushroom that ressembles seafood when cooked properly.
 
           Treats cognitive impairment and depression due to concentration of biosynthesisers hericenones and erinacines that promote nerve growth factor synthesis in vitro.
@@ -126,23 +146,8 @@ const learnYourLand1 = {
           description: ``
         },
         {
-          name: 'Lycoperdon perlatum',
-          time: [],
-          description: ``
-        },
-        {
-          name: 'Lycoperdon pyriforme',
-          time: [],
-          description: ``
-        },
-        {
-          name: 'Craterellus tubaeformis',
-          time: [],
-          description: ``
-        },
-        {
           name: 'Calvatia gigantea',
-          time: [935],
+          time: [934],
           description: `Puffballs are gasteroid mushrooms (stomach fungi) which produce spores internally.
 
           The gleba should be pure white inside; with age it will turn olive-yellow, brown, to purple due to the spores.
@@ -154,30 +159,118 @@ const learnYourLand1 = {
           It may be found in open woods lawns and pastures, through summer-fall.`
         },
         {
+          name: 'Lycoperdon perlatum',
+          time: [1064],
+          description: `Another puffball you are likely to encounter during the summer and autumn months is the gem-studded puffball, or devil's snuffbox.
+
+          It's fruiting bodies are much smaller; they are typically white to cream coloured, 1-2.5" wide up to 3" tall.
+
+          It is rounded, like other puffballs, but unlike the giant puffball, it has an elongated, stem-like base. 
+
+          It is usually covered with whitish spines and granules, which rub off somewhat easily and will not always be present.
+
+          The inside of the gem-studded puffball is white when young, becoming olive-brown and powdery when mature. Harvest and eat when pure white inside.
+
+          Found on woodland paths and soil or leaf litter, not usually directly on wood but rather on the ground.
+          `
+        },
+        {
+          name: 'Lycoperdon pyriforme',
+          time: [1123],
+          description: `One more puffball encountered in summer and autumn, the pear-shaped, or stump, puffball, another member of the Lycoperdon genus.
+
+          It shares many features in common with the gem-studded puffball, but there are differences.
+
+          Key features: typically smaller than the gem-studded puffball. It is also darker, usually tannish brown rather than pure white. 
+
+          They are occasionally covered in tiny scales or spines, but usually less apparent and less dense.
+
+          The inside of the gem-studded puffball is white when young, becoming olive-brown and powdery when mature. Ensure there is no developing mushroom within the fruiting body before eating.
+
+          pear-shaped puffball grows in dense clusters on logs and stumps.
+          `
+        },
+        {
+          name: 'Lepista nuda',
+          time: [1195],
+          description: `
+          This is not an easy mushroom to identify; I don't consider it to be a beginner's mushroom.
+          
+          Key identifying features: the blewit is a terrestrial saprophyte, meaning it grows from the ground and decomposes plant material.
+
+          It is a cooler weather species, typically found in the autumn months, occasionally in winter.
+
+          It is lilac to lavender though with age it can become tannish to light brown, making identification trickier.
+
+          It is a medium-sized mushroom with a cap between 2-5" across and a stalk to 3" tall.
+
+          Often has a bulbous base at the bottom of the stalk but you will not see a ring, a partial veil or a rusty brown cortina (weby veil typically found in Cortinarius mushrooms).
+
+          The underside contains closely-spaced gills that are directly attached to the stalk. These gills are violet in colour, turning brown with age.
+
+          Take a spore print; it should be pinkish buff.
+
+          Ecology: tend to grow in the leaf litter in mixed woods often running parallel to a log, and you will often see a dense white mat of mycelium around the nushrooms.
+          `
+        },
+        {
           name: 'Armillaria mellea',
-          time: [],
-          description: ``
+          time: [1298],
+          description: `Honey mushrooms are prolific during the autumns, and they can be destructuve.
+          
+          Many cause Armillaria root rot ( a fungal root rot caused by several different members of the genus Armillaria ed.)
+
+          Considered good and edible by most, but not all, so start small and cook well.
+
+          Honey mushroom (honey fungus):
+
+          Medium to large-size mushroom grows in dense clusters typically at the bases of both hardwood and conifer trees.
+
+          The caps are up to 4" across, yellow to yellow-brown and typically contain tiny black scales near the centre.
+
+          Underneath the cap, you will see a fertile surface that is comprised of whitish gills that are attached to the stalk. These gills are closely spaced and sometimes decurrent.
+
+          The stalk is up to 6" tall, thick, fibrous and stringy, and usally tapers near the base.
+
+          Key feature: partial veil, or ring around the stalk. 
+          
+          (The partial veil covers the maturing gills when the mushroom is immature. As the mushroom grows, the partial veil breaks and leaves a ring near the top of the stalk).
+
+          Take a sport print to confirm identification; it should show white.
+
+          Considered good and edible by most, but not all, so start small and cook well.
+          `
         },
         {
           name: 'Armillaria tabescens',
-          time: [],
-          description: ``
-        },
+          time: [1387],
+          description: `Common through summer and autumn.
+
+          Similar to the honey mushoom though, as the name suggests, it is ringless.
+
+          Grows in dense clusters and common in yards, lawns, parks and other open spaces.
+
+          Typically darker than the honey mushroom, usually tan or brown in colourand each cap is dry and covered with dark scales, at least when young.
+
+          The spore print is white.
+
+          Make sure the mushrooms are not orange because these could be the toxic  jack-o'-lantern lookalike.
+          `
+        },        
         {
           name: 'Entoloma abortivum',
-          time: [],
-          description: ``
+          time: [1448],
+          description: `This mushroom, pictured on the left, parasatises other mushrooms and turns them into roundish structures, on the right.
+
+          These white, spongey mushrooms contain irregular depressions and are typically 4" wide by 2" tall.
+
+          Ecology: near rotting wood in hardwoods forests, late summer through fall.
+
+          The mushrooms on the left are edible but not recommended because they ressemble other gilled mushrooms in the Entoloma genus some of which can be toxic.
+
+          Therefore concentrate on those pictured on the right, also known as shrimp of the woods which are parasitised versions of honey mushrooms.
+          `
         },
-        {
-          name: 'Polyporus squamosus',
-          time: [],
-          description: ``
-        },        
-        {
-          name: 'Laetiporus cincinnatus',
-          time: [],
-          description: ``
-        },        
     ],
     notes: [
       {
@@ -227,7 +320,7 @@ const learnYourLand2 = {
         
         Key feature: the cap is fully attached to stem but with a small groove or sinus where the base of the cap meets the stem.
         
-        Habitat: under ash, black cherry, tulip poplar.
+        Ecology: under ash, black cherry, tulip poplar.
         
         Season: March-April.`
       },
@@ -244,7 +337,7 @@ const learnYourLand2 = {
         
         Key feature:  the bottom of the cap hangs free from the stem, like a skirt i.e. not fully attached (hence its name).
         
-        Habitat: ash, tulip poplar, American elm, and black cherry.
+        Ecology: ash, tulip poplar, American elm, and black cherry.
         
         Season: after the easter black morel, and before the yellow morel (March-May).`
       },
@@ -261,7 +354,7 @@ const learnYourLand2 = {
         
         It is hollow from top to bottom, and the cap is entirely connected.
         
-        Habitat: grows in association with many trees; dying and dead elms, apple trees, tulip poplars, ash trees, sycamores, and pines.
+        Ecology: grows in association with many trees; dying and dead elms, apple trees, tulip poplars, ash trees, sycamores, and pines.
         
         Season: later, after the black morels, although there may be some overlap.`
       },
@@ -272,7 +365,7 @@ const learnYourLand2 = {
 
         The fertile underside is a honeycomb of small pores which release white spores.
         
-        Habitat: similar to morels; grows directly on wood, esp. dead and decomposing elms; often seen as a consolation when morels are absent.
+        Ecology: similar to morels; grows directly on wood, esp. dead and decomposing elms; often seen as a consolation when morels are absent.
         
         Smell: cucumber or watermelon rind.
         
@@ -291,7 +384,7 @@ const learnYourLand2 = {
         
         A partial veil may be visible on immature mushrooms, leaving a rugged ring when older.
         
-        Habitat: often found in suburban or urban landscapes, and is widely cultivated.
+        Ecology: often found in suburban or urban landscapes, and is widely cultivated.
         
         Culinary: check for insects and the quality of its habitat (avoid pesticides, etc.) before eating.
         
@@ -308,7 +401,7 @@ const learnYourLand2 = {
         
         The spores are pale lilac or white.
         
-        Habitat: oyster mushrooms are decomposers of wood, and only appear on wood (though this may be hidden).
+        Ecology: oyster mushrooms are decomposers of wood, and only appear on wood (though this may be hidden).
         
         Season: prefers cooler weather, appearing mostly spring or later if the season is mild. (If not, your are probably looking at a different species).
         
@@ -325,7 +418,7 @@ const learnYourLand2 = {
         
         When fresh it is bright orange to yellow-orange, sometimes with a bright yellow margin. With age it becomes grey and crumbly. The underside is bright yellow with tiny pores.
         
-        habitat: at the base or a few feet from deciduous trees, in overlapping cluster up and down the tree.
+        Ecology: at the base or a few feet from deciduous trees, in overlapping cluster up and down the tree.
 
         Season: appears spring to mid-autumn.
         
@@ -338,7 +431,7 @@ const learnYourLand2 = {
 
         The caps are duller and paler than L.sulphureus, pale orange to pink orange (rather than vibrant yellow or orange). The pores are a pale peach white.
         
-        Habitat: rarely in overlapping clusters but in rosette or a cluster on or near the tree.
+        Ecology: rarely in overlapping clusters but in rosette or a cluster on or near the tree.
 
         Season: spring and summer into autumn.
 
@@ -357,7 +450,7 @@ const learnYourLand2 = {
                 
         The spore print is black.
 
-        Habitat: they form in large clusters on or around stumps and logs, and the buried wood of commonly broadleaf trees: cherry, ash, oak.
+        Ecology: they form in large clusters on or around stumps and logs, and the buried wood of commonly broadleaf trees: cherry, ash, oak.
         
         Season: all year, but especially in spring.
         

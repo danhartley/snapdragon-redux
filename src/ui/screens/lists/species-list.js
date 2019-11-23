@@ -2,6 +2,7 @@ import * as R from 'ramda';
 
 import 'ui/css/groups/species-list.css';
 
+import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
@@ -9,6 +10,7 @@ import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
 import { modalImageHandler } from 'ui/helpers/image-handler';
 import { buildTable } from 'ui/screens/lists/species-table';
 import { videoHandler } from 'ui/screens/lists/video-handler';
+import { videoSetup } from 'ui/screens/home/home-lesson-intro-video';
 
 export const renderSpeciesList = (collection, args) => {
 
@@ -76,7 +78,10 @@ export const renderSpeciesList = (collection, args) => {
                     openSpeciesDescriptionHandler(collection, species, true);
 
                     if(species && species.time) {
-                        videoHandler.playVideoFrom(species.time[0]);
+
+                        videoHandler.isVideoPlayerReady()
+                            ? videoHandler.playVideoFrom(species.time[0])
+                            : videoSetup(collection, store.getState().videoPlayer || [], DOM.rightBody, species.time[0]);
                     }
 
                     updateVideoPlayer(collection, species);

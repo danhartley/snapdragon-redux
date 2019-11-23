@@ -25,12 +25,13 @@ const subscribeToPlayerStateChange = listener => {
     onPlayerStateChangeListeners.push(listener);
 };
 
-let player;
+let player, isPlayerReady = false;
 
 const readyPlayer = () => {
 
     const onPlayerReady = event => {
         player = event.target;
+        isPlayerReady = true;
     };
     
     const onPlayerStateChange = event => {
@@ -88,6 +89,10 @@ const setVideoState = (videoPlayer, lesson) => {
 
 };
 
+const isVideoPlayerReady = () => {
+    return isPlayerReady;
+};
+
 const destroyPlayer = () => {
 
     while(onPlayerStateChangeListeners.length > 0) {
@@ -123,5 +128,6 @@ export const videoHandler = {
     states,
     setVideoState,
     destroyPlayer,
-    saveVideoState
+    saveVideoState,
+    isVideoPlayerReady
 };

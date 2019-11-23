@@ -5,7 +5,7 @@ import { videoHandler } from 'ui/screens/lists/video-handler';
 
 import videoTemplate from 'ui/screens/home/home-lesson-intro-video-template.html';
 
-export const videoSetup = (collection, videoPlayer, parent) => {
+export const videoSetup = (collection, videoPlayer, parent, startTime) => {
 
     parent.innerHTML = '';
    
@@ -56,6 +56,12 @@ export const videoSetup = (collection, videoPlayer, parent) => {
         };
 
         videoHandler.subscribeToPlayerStateChange(onPlayerStateChangeCallback);
+
+        if(startTime) {
+            setTimeout(() => {
+                videoHandler.playVideoFrom(startTime);
+            }, 1000);
+        }
         
     }, timeBeforeVideoPlayerReady);
         
