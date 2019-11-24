@@ -44,14 +44,6 @@
     border-right: none;
   }
 
-  /* #place.completed, #taxon.completed, #custom.completed {
-    background-color: var(--snap-active);
-  } */
-  
-  /* .modal-body .modal-guide-progress .completed {
-    background-color: rgb(249, 196, 135);
-  } */
-  
   .modal-body .modal-guide-progress .active {
     color: var(--snap-text-dark);
     background-color: var(--snap-active);
@@ -149,7 +141,6 @@
 
   .html5-location-place {
     width: 100%;
-    /* height: var(--vhStandardBlock); */
   }
 
   #set-inat-identity-btn {
@@ -162,11 +153,6 @@
     color: var(--snap-text-light);        
     background-color: rgb(127, 151, 122);
   }
-
-  /* .input-container {
-    height: var(--vhHalfStandardBlock);
-    display: flex;
-  } */
 
   #inat-place, #input-species {
     width: calc(var(--vwGrid) - 1rem);
@@ -286,7 +272,7 @@
     border: .05rem solid lightgray;
     text-align: left;
     width: initial;
-    top: calc(var(--vhStandardBlock) + var(--vhStandardBlock) + var(--vhHalfStandardBlock) + var(--vhRunningBlock) + 2rem) !important;
+    /* top: calc(var(--vhStandardBlock) + var(--vhStandardBlock) + var(--vhHalfStandardBlock) + var(--vhRunningBlock) + 2rem) !important; */
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -495,19 +481,9 @@
     margin-left: .25rem;
   }
 
-  /* .location-option {
-    display: grid;
-    grid-template-rows: 1fr;
-    width: 100%;
-  } */
-
   .location-option > div {
     width: 100%;
   }
-
-  /* .location-option.place {
-    grid-template-rows: 1fr;
-  } */
 
   .location-option.inat-entry {
     position: relative;
@@ -541,13 +517,13 @@
   }
 
   .location-actions .actions {
-    /* grid-auto-columns: auto;
-    grid-gap: 1rem;
-    display: grid; */
-
     display: grid;
     grid-template-rows: 1fr 1fr;
     height: 100%;
+  }
+
+  .species-picker-actions {
+    height: initial;
   }
 
   .filter-option {
@@ -633,6 +609,10 @@
 
   @media (min-width: 768px) {
 
+    .species-picker-actions ul {
+      column-count: 2;
+    }  
+
     .autocomplete-options-container .selected {
       color: var(--snap-dd-non-taxa-bg-hover);
       background-color: var(--snap-text-medium-dark);
@@ -654,11 +634,6 @@
 
     .iconic-taxa-categories i {
       font-size: 1.5rem;
-    }
-
-    .inat-entry {
-      position: relative;
-      display: flex;
     }
 
     .inat.snap-switch .inat-entry {

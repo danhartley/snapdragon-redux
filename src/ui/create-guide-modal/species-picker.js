@@ -28,6 +28,8 @@ export const renderSpeciesPicker = createGuide => {
     const parent = modal.querySelector('.js-actions');
           parent.innerHTML = '';
 
+    document.querySelector('.js-step-action-content .location-actions').classList.add('species-picker-actions');
+
     renderTemplate({}, template.content, parent);
 
     const addSpeciesToList = species => {
@@ -92,7 +94,11 @@ export const renderSpeciesPicker = createGuide => {
             
         selectedSpeciesDisplay.innerHTML = '';
         selectedSpecies.forEach(s => {
-            selectedSpeciesDisplay.innerHTML += `<li>${s} <input id="${s}" type="checkbox" checked></li>`;
+            selectedSpeciesDisplay.innerHTML +=
+                `<li class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="${s}" checked>
+                <label class="custom-control-label" for="${s}">${s}</label>
+                </li>`;
         });        
 
         speciesNames = speciesNames.filter(name => name.value !== input.value);
@@ -117,7 +123,7 @@ export const renderSpeciesPicker = createGuide => {
         })
     };
 
-    let selectedSpecies = !!config.guide.species ? config.guide.species.map(s => s.name) || [] : [];
+    let selectedSpecies = config.guide.species || [];
     
     const selectedSpeciesDisplay = modal.querySelector('.js-selected-species');
           selectedSpeciesDisplay.innerHTML = '';

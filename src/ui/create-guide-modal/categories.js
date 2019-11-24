@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 
 import { elem } from 'ui/helpers/class-behaviour';
-import { allIconicTaxa } from 'snapdragon-config/snapdragon-collections';
+import { iconicTaxa } from 'snapdragon-config/snapdragon-iconic-taxa';
 import { renderTemplate } from 'ui/helpers/templating';
 
 import categoriesTemplate from 'ui/create-guide-modal/categories-template.html';
@@ -9,11 +9,9 @@ import categoriesTemplate from 'ui/create-guide-modal/categories-template.html';
 export const renderCategories = (modal, createGuide) => {
 
     const config = createGuide.getConfig();
-          config.guide.iconicTaxa = config.guide.iconicTaxa || allIconicTaxa;
+          config.guide.iconicTaxa = config.guide.iconicTaxa || iconicTaxa.all;
 
     const filterSelectedClass = 'iconic-taxa-selected';
-
-    let iconicTaxa = config.guide.iconicTaxa;
 
     const template = document.createElement('template');
           template.innerHTML = categoriesTemplate;
@@ -25,10 +23,10 @@ export const renderCategories = (modal, createGuide) => {
 
     const icons = parent.querySelectorAll('.js-iconic-taxa-categories > div > div:nth-child(1)');
     
-    if(iconicTaxa) {
+    if(config.guide.iconicTaxa) {
         icons.forEach(icon => {
             const filterId = icon.parentElement.id;
-            if(R.contains(filterId, iconicTaxa.map(taxon => taxon.id))) {
+            if(R.contains(filterId, config.guide.iconicTaxa.map(taxon => taxon.id))) {
                 icon.classList.add(filterSelectedClass);
             }
         });
@@ -49,14 +47,14 @@ export const renderCategories = (modal, createGuide) => {
             const filterId = filter.parentElement.id;        
             const commonName = filter.parentElement.innerText;              
 
-            if(iconicTaxa.find(taxon => taxon.id === filterId)) {
+            if(config.guide.iconicTaxa.find(taxon => taxon.id === filterId)) {
                 
                 if(filterId === 'fungi') {
                     filter.querySelector('g g').classList.remove('svg-icon-selected');                    
                 }
-                if(iconicTaxa.length > 1) {
+                if(config.guide.iconicTaxa.length > 1) {
                     filter.classList.remove(filterSelectedClass);
-                    iconicTaxa = iconicTaxa.filter(taxon => taxon.id !== filterId);
+                    config.guide.iconicTaxa = config.guide.iconicTaxa.filter(taxon => taxon.id !== filterId);
                 }
 
             } else {
@@ -66,15 +64,13 @@ export const renderCategories = (modal, createGuide) => {
                 }
                 filter.classList.add(filterSelectedClass);
 
-                iconicTaxa.push(
+                config.guide.iconicTaxa.push(
                     {
                         id: filterId,
                         common: commonName    
                     }
                 )
             }
-
-            config.guide.iconicTaxa = iconicTaxa;
 
             createGuide.setConfig(config);
             createGuide.saveStep('TAXA');            

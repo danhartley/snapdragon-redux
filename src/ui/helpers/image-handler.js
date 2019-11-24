@@ -4,13 +4,13 @@ import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { imageSlider } from 'ui/screens/common/image-slider';
 
-const stripImageUrlOfScaleAndPrefix = url => {
-    const prefix = url.provider === 'inat' ? 'https://static.inaturalist.org/photos/' : 'https://content.eol.org/data/media/';
-    if(!url || typeof url === 'object') return '';
-    url = url.replace('.260x190.jpg', '');
-    url = url.replace('.98x68.jpg', '');
-    url = url.replace('.jpg', '');
-    url = url.replace(prefix, '');
+const stripImageUrlOfScaleAndPrefix = img => {
+    const prefix = img.provider === 'inat' ? 'https://static.inaturalist.org/photos/' : 'https://content.eol.org/data/media/';
+    if(!img.url || typeof img.url === 'object') return '';
+    let url = img.url.replace('.260x190.jpg', '');
+        url = url.replace('.98x68.jpg', '');
+        url = url.replace('.jpg', '');
+        url = url.replace(prefix, '');
     return url;
 };
 
@@ -68,12 +68,14 @@ export const prepImagesForCarousel = (item, config, useCase) => {
     return images;
 };
 
-export const scaleImage = (image, useCase, config) => {
+export const scaleImage = image => {
 
     if(!image.url) {
         console.log('scaleImage, missing image url: ', image);
         return image;
     }
+
+    image.url = stripImageUrlOfScaleAndPrefix(image);
 
     if(image.provider === 'inat') {
         image.small = `https://static.inaturalist.org/photos/${image.url}`;
@@ -83,7 +85,6 @@ export const scaleImage = (image, useCase, config) => {
         image.large = `https://static.inaturalist.org/photos/${image.large}`;
         return image;
     } else {
-        image.url = stripImageUrlOfScaleAndPrefix(image.url);
         image.small = `https://content.eol.org/data/media/${image.url}.98x68.jpg`;
         image.medium = `https://content.eol.org/data/media/${image.url}.260x190.jpg`;
         image.large = `https://content.eol.org/data/media/${image.url}.jpg`;
@@ -108,7 +109,8 @@ const handleImageSelectionFromList = (image, item, collection, config, displayNa
         return { ...image, itemName: selectedItem.name, itemCommon: selectedItem.vernacularName };
     }));
     images = denormaliseImages(images);
-    const selectedItemImage = selectedItem.images.find(i => imageMatch(i.url,image.dataset.url));
+    const selectedItemImage = selectedItem.images.find(i => imageMatch(i,image.dataset));
+    // const selectedItemImage = selectedItem.images.find(i => imageMatch(i.url,image.dataset.url));
     const selectedImage = { dataset: { ...image.dataset, ...selectedItemImage } };
     imageSlider({ config, images, parent, disableModal: false, image: selectedImage });
     let displayName = '';

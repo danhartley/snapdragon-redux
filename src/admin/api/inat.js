@@ -5,7 +5,7 @@ const getInatSpecies = (collection) => {
     return observations;
 };
 
-const getInatObservationsById = async (userId = 19829) => {
+const getInatObservationsById = async (userId = 19829) => {    
     const collectionUrl = `https://api.inaturalist.org/v1/observations?user_id=${userId}&order=desc&order_by=created_at`;
     const response = await fetch(collectionUrl);
     const json = await response.json();
@@ -32,7 +32,8 @@ const getInatImages = async (observation) => {
 };
 
 const getTaxonDataIncPhotos = async (name, userId = 19829) => {
-    const url = `https://www.inaturalist.org/observations.json?taxon_name=${name}&has[]=photos`;
+    const place = '7122'; // portugal
+    const url = `https://www.inaturalist.org/observations.json?taxon_name=${name}&has[]=photos&place_id=${place}`;
     const response = await fetch(url);
     const json = await response.json();
     const userObservations = json.find(observation => observation.user_id === userId);

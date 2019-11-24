@@ -150,6 +150,14 @@
 
 /* TEXT ENTRY */
 
+.text-entry-container {
+    padding: .5rem;
+}
+
+.text-entry-container > div {
+    margin: .5rem;
+}
+
 div.text-entry {
     padding: 0;
     position: relative;
@@ -190,7 +198,7 @@ div.text-entry {
     grid-template-rows: 2fr auto 3fr;
   }
 
-  .mixed-specimen-container .btn {
+  .btn.btn-auxiliary {
     color: var(--snap-text-dark) !important;
     background-color: var(--snap-list-header) !important;
   }

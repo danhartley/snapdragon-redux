@@ -6,9 +6,8 @@ import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
 
 const selectActiveNodeImage = (image, parent, config) => {
     parent.querySelectorAll('.carousel-item').forEach(i => {
-        const elemSrc = i.lastElementChild.dataset.url || i.lastElementChild.url;
-        const src = image.dataset ? image.dataset.url : image.url;
-        if(imageMatch(elemSrc, src)) {
+        const elemSrc = i.lastElementChild.dataset || i.lastElementChild;
+        if(imageMatch(elemSrc, image.dataset || image)) {
             i.classList.add('active');
             return;
         }
