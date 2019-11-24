@@ -57,5 +57,8 @@ export const renderLessons = () => {
 
         const reviewLink = document.querySelector(`[data-lesson-id="${lesson.id}"]`);
         lessonListEventHandler.onReviewClickHandler(reviewLink);
+
+        const chevron = document.querySelector(`div.js-lesson-list-chevron[data-lesson-id="${lesson.id}"]`);
+        lessonListEventHandler.onTitleClickHandler(chevron, lessons, config, false);
     });
 };

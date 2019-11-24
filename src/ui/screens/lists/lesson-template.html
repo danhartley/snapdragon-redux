@@ -1,18 +1,24 @@
-<div data-lesson-id="{{ lesson.id }}" class="lesson-list-item js-lesson-list-item" data-has-video="{{ lesson.hasVideo }}">
-    <div>
-        <div class="lesson-name js-lesson-title" data-lesson-id="{{ lesson.id }}">
-            <span id="lesson_{{ lesson.id }}" class="lesson-title">{{ lesson.name }}</span>
-            <span>{{ lesson.savedState }}</span>                    
-            <span class="hide js-loading-message">(Loading species…)</span>
-        </div>
-        <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>
-        <div class="latin hide-empty js-lesson-video-state" data-lesson-id="{{ lesson.id }}">{{ lesson.videoState }}</div>         
-    </div> 
-    <div  data-lesson-id="{{ lesson.id }}" class="lesson-review js-lesson-review">
+<div></div>
+<div class="lesson-list-carousel-item margin-top">
+    <div data-lesson-id="{{ lesson.id }}" class="lesson-list-item js-lesson-list-item" data-has-video="{{ lesson.hasVideo }}">
         <div>
-            <span class="underline-link">{{ lesson.reviewState }}</span>
-            <span class="hide js-loading-message">(Loading species…)</span>
+            <div class="lesson-name js-lesson-title" data-lesson-id="{{ lesson.id }}">
+                <span id="lesson_{{ lesson.id }}" class="lesson-title">{{ lesson.name }}</span>
+                <span>{{ lesson.savedState }}</span>                    
+                <span class="hide js-loading-message">(Loading species…)</span>
+            </div>
+            <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>
+            <div class="latin hide-empty js-lesson-video-state" data-lesson-id="{{ lesson.id }}">{{ lesson.videoState }}</div>         
+        </div> 
+        <div data-lesson-id="{{ lesson.id }}" class="lesson-review js-lesson-review">
+            <div>
+                <span class="underline-link">{{ lesson.reviewState }}</span>
+                <span class="hide js-loading-message">(Loading species…)</span>
+            </div>
         </div>
-    </div>
-</div>           
+    </div>     
+    <div data-lesson-id="{{ lesson.id }}" class="js-lesson-list-chevron">
+        <i class="fas fa-chevron-down"></i>
+    </div> 
+</div>
 <div data-container-id="{{ lesson.id }}" class="species-container js-species-container"></div>

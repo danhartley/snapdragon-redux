@@ -22,7 +22,7 @@ export const renderSpeciesList = (collection, args) => {
         
         accordion.innerHTML = `<i class="fas fa-chevron-up" data-name="${species.name}"></i>`;
         
-        openSpeciesDescriptionHandler(collection, species, true);
+        openSpeciesDescriptionHandler(collection, species, true, false);
 
         const closeAccordionHandler = event => {
             // remove current close accordion handler
@@ -153,7 +153,7 @@ export const renderSpeciesList = (collection, args) => {
     buildTable(collection, { config, enums: traitEnums, overrideParent: callingParentContainer });
     userClickHandlers();
 
-    const openSpeciesDescriptionHandler = (collection, species, enableScroll = true) => {
+    const openSpeciesDescriptionHandler = (collection, species, enableScroll = true, activateYoutubeIcon = true) => {
 
         try {
 
@@ -165,8 +165,10 @@ export const renderSpeciesList = (collection, args) => {
                 activeAccordion.innerHTML = `<i class="fas fa-chevron-up" data-name="${species.name}"></i>`;
             }
 
-            const activeYouTubeIcon = activeAccordion.parentElement.parentElement.querySelector('.js-youtube');
-                  activeYouTubeIcon.classList.add('youtube-red-fg');
+            if(activateYoutubeIcon) {
+                const activeYouTubeIcon = activeAccordion.parentElement.parentElement.querySelector('.js-youtube');
+                      activeYouTubeIcon.classList.add('youtube-red-fg');
+            }
 
             let description = species.description;
                 description = !!description ? description : (species.traits.description && species.traits.description.value) ? species.traits.description.value[0] : '';

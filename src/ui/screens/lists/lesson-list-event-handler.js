@@ -56,7 +56,8 @@ const onTitleClickViewState = (e, lessons) => {
       rows.forEach(row => {
         const isPaused = store.getState().lessons.find(lesson => lesson.collection.id === parseInt(row.dataset.lessonId));
         row.classList.remove('lesson-list-selected-lesson');
-        row.querySelector('.js-lesson-saved-state').innerHTML = !!isPaused ? '(lesson paused)' : '';
+        const speciesVideoState = row.querySelector('.js-lesson-saved-state');
+        if(speciesVideoState) speciesVideoState.innerHTML = !!isPaused ? '(lesson paused)' : '';
       });
 
   let reviewLinks = document.querySelectorAll('.js-lesson-review');
