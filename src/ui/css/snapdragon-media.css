@@ -70,11 +70,6 @@
 
 @media (min-width: 768px) {
 
-    .imageSlider .carousel-control-next,
-    .imageSlider .carousel-control-prev {
-        top: 40%;
-    }
-
     .bird-song, .taxon-identification, .taxon-summary {
         margin: 1rem 4rem 0 4rem;
     }

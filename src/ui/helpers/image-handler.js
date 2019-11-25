@@ -110,9 +110,8 @@ const handleImageSelectionFromList = (image, item, collection, config, displayNa
     }));
     images = denormaliseImages(images);
     const selectedItemImage = selectedItem.images.find(i => imageMatch(i,image.dataset));
-    // const selectedItemImage = selectedItem.images.find(i => imageMatch(i.url,image.dataset.url));
     const selectedImage = { dataset: { ...image.dataset, ...selectedItemImage } };
-    imageSlider({ config, images, parent, disableModal: false, image: selectedImage });
+    imageSlider({ config, images, parent, disableModal: false, image: selectedImage, identifier: selectedImage.dataset.itemName.replace(' ', '_') });
     let displayName = '';
     switch(displayNameType) {
         case 'biomial':

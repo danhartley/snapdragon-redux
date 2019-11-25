@@ -886,10 +886,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* button.btn-light {
-  border-color: var(--snap-lesson-border-dark);
-} */
-
 button.btn-light.focus,
 button.btn:focus,
 button.btn-light:focus,
@@ -1336,7 +1332,7 @@ label.btn.btn-secondary .lesson-icon {
 
 .imageSlider .carousel-control-next,
 .imageSlider .carousel-control-prev {
-  top: 6%;
+  top: 40%;
   height: 20%;
   width: 10%;
   background-color: rgba(211, 214, 173, 0.2);
@@ -1388,15 +1384,6 @@ label.btn.btn-secondary .lesson-icon {
 #imageSlider3 {
   flex: 1;
 }
-
-/* .carousel-inner .image-load-original {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: var(--vhstandardblock);
-  z-index: 50;
-} */
 
 .info-box .carousel.slide {
   float: right;

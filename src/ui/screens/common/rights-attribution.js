@@ -1,7 +1,7 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import rightsAttributionTemplate from 'ui/screens/common/rights-attribution-template.html';
 
-export const handleRightsAttribution = image => {
+export const handleRightsAttribution = (image, disableModal = false, activeItem) => {
 
     const template = document.createElement('template');
           template.innerHTML = rightsAttributionTemplate;
@@ -64,7 +64,7 @@ export const handleRightsAttribution = image => {
 
     const rightsAttribution = parent.querySelector('.rights-attribution');
     const rightsLink = parent.querySelector('.js-rights-link .js-copyright');
-    const indicators = document.querySelector(`#imageSlider_true_${identifier} .carousel-indicators`);    
+    const indicators = document.querySelector(`#imageSlider_${disableModal}_${identifier} .carousel-indicators`);    
 
     const showAttribution = event => {
         rightsAttribution.classList.add('hide-important');

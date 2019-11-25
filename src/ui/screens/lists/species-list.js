@@ -49,7 +49,8 @@ export const renderSpeciesList = (collection, args) => {
         const listItemImages = document.querySelectorAll('.table-row img');
 
               listItemImages.forEach(itemImage => { 
-                  const item = collection.items.find(item => item.name === itemImage.dataset.id)
+                //   const item = collection.items.find(item => item.name === itemImage.dataset.id)
+                  const item = collection.items.find(item => item.name === itemImage.dataset.itemName)
                   modalImageHandler(itemImage, item, collection, config); 
               });
 

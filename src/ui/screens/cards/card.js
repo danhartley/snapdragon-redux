@@ -116,7 +116,7 @@ const renderPortrait = (item, config, mode, rootNode) => {
 
     const parent = rootNode.querySelector('.js-test-card-container-images');
 
-    imageSlider({ config, images, parent, disableModal: mode === 'MODAL', parentScreen: rootNode.querySelector('.card-card'), identifier: 'card-card' });
+    imageSlider({ config, images, parent, disableModal: mode === 'MODAL', parentScreen: rootNode.querySelector('.card-card'), identifier: item.name.replace(' ', '_') });
 
     const player = rootNode.querySelector('.js-bird-song-player');
 

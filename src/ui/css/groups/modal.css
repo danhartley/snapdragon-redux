@@ -8,10 +8,6 @@
   border-radius: 0;
 }
 
-/* .carousel.slide {
-  width: 100%;
-}
-   */
 #cardModal {  
   z-index: 1049; /* wiki is 1050 */
 }
@@ -135,22 +131,11 @@
   padding: 1rem 2rem;
 }
 
-/* #imageComparisonModal .imageSlider.carousel.slide > div:nth-child(2) > div:nth-child(2) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: .5rem;
-  position: absolute;
-  bottom: 0;
-} */
-
 /* CARD MODAL */
 
 #cardModal .card-link {
   display: none;
 }
-
-/* #cardModal .modal-body */
 
 .modal-body {
   height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));

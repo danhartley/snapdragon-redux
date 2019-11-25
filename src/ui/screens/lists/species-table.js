@@ -73,6 +73,7 @@ export const buildTable = (collection, args) => {
         const itemImage = {
             id: item.id,
             name: item.name,
+            itemName: item.name,
             genus: item.taxonomy.genus,
             species: item.taxonomy.species,
             genusLinkClass: item.genus
