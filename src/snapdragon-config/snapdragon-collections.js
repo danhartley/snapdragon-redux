@@ -406,20 +406,111 @@ const btoCorvids = {
   items: [],
   species: [
     {
-      name: 'Corvus corax',
-      time: [],
-      description: ''
+      name: 'Corvus corone',
+      time: [30, 50, 190],
+      description: `Range: found throughtout the British Isles with the exception of NW Scotland and most of Ireland where it is replaced by the hooded crow.
+
+      Behaviour: found singly, more commony in pairs, but frequently in groups.
+
+      Appearance: large and handsome with pleasing proportions. It has a large beak and reasonably upright angle on the ground (at ~45°). Deliberate walking action. 
+      
+      The head is neatly rounded, plumage neat against the body and colour jet black and glossy.
+      
+      In flight: steady wingbeats and heavy, giving the impression that it is bigger than it is (may be mistaken for a buzzard). Pleasingly proportioned effect.
+
+      Vocalisation: highly vocal, give a distinctive, far-carrying 'kaaa', usually repeated 3 times.
+
+      Bill: deeply curved and stout, compared to more straight, dagger-shaped bill of the rook.
+      `
     },
     {
-      name: 'Corvus corone',
-      time: [],
-      description: ''
+      name: 'Corvus cornix',
+      time: [42],
+      description: `Range: replaces the carrion crown in Ireland.
+      
+      Appearance: two-tone grey and black plumage.`
     },
     {
       name: 'Corvus frugilegus',
-      time: [],
-      description: ''
+      time: [110, 198],
+      description: `Appearance: similar in size to the carrion crow.
+       
+      Range: found throughtout Britain & Ireland with the exception of the extreme NW.
+      
+      Behaviour: usually found in groups, nesting in rookeries and foraging in gangs.
+
+      Defining feature: bare white face and pale bill base. 
+
+      On the ground, tend to more upright (than the carrion crow), and look somewhat baggy and scruffy with loose oily-looking plumage, potbelly, higly peaked crown and splendid, baggy pantaloons.
+
+      In flight: look longer winged (than crows) with wings narrowing slightly near the body. The tail is long and graduated (unlike crow), but can look confusingly like a raven tail if size is not apparent.
+
+      In late spring and summer, recently fledged rooks have fully feathered faces and can look crow-like.
+
+      Bill: dagger-shaped, straight, bill, compared to the more deeply curved and stout bill of the rook. Check for adults to help with identification.
+      
+      Vocalisation: extremely vocal with a wide repertoire, rooks have a distinctive, drawn-out 'kaah', which they often utter whilst pitching forward.
+      `
     },
+    {
+      name: 'Corvus corax',
+      time: [213],
+      description: `
+      Appearance: the raven is huge, by far the largest passerine, with similar wingspan to a buzzard (Buteo buteo), and even larger body.
+
+      Habitat: almost everywhere except the far E Scotland & England though may even be found here, especially in winter.
+
+      Appearance: can be mistaken for a crow, but size will usually impress.
+
+      Bill: strikingly long, and heavy. 
+
+      Defining features: size; the bill, heavy ruffle of throat feathers (or hackles), barrel chest and long neck, provide unique, heavy-headed impression.
+
+      Flight: wings are long and broad with well fingered-wingtips, more like a raptor than a crow, but most noticeable is the long graduated, wedge-shaped tail.
+
+      Vocalisation: distinctive gravelly 'kwaak', singly or repeated.
+      `
+    },
+    {
+      name: 'Coloeus monedula',
+      time: [282],
+      description: `Range: found throughout the UK with the exception of far NW Scotland and Shetland.
+
+      Destinctive features: grey nape, black forehead and white eyes.
+
+      Behaviour: highly social usually found in pairs or large groups and are garrulous and noisy.
+
+      Vocalisation: 'jack' or 'chack' most obvious and frequent call.
+
+      In flight: appears neat and often speedier than larger corvids.
+
+      Appearance: broad neck and short bill leads to a blunt appearance at the front end. Individual pairs can easily be picked out of a flock as they fly close to each other.
+
+      Habitat: common in human habitats and frequent nesters in chimneys. Can be confused with choughs near cliffs.
+      `
+    },
+    {
+      name: 'Pyrrhocorax pyrrhocorax',
+      time: [336],
+      description: `Appearance: chough is slightly larger and more rangey than the jackdaw.
+
+      Range: our rarest black crow, found on some Scottish islands, the Irish coast, the Isle of Man, Wales and Cornwall. Best identified feeding on short, cliff top turf.
+
+      Appearance: unique, coral-red, down-curved bill and pinky red legs. The wingtips extend well beyond the tail.
+
+      In flight: accomplished flyers, flying and tumbling aerobatically. Broad-based, paddle-like wings with heavily fingered even frayed tips.
+
+      Vocalisation: like all crows, noisy, and their 'chee-ow' calls echo around the cliffs often giving away their presence. 
+      `
+    },
+    {
+      name: 'Pyrrhocorax graculus',
+      time: [402],
+      description: `European cousin of the British chough.
+
+      Appearance: short wings and long tails, short, slight bills are lemon yellow.
+      `
+    }
   ],
   iconicTaxa: [ 
     {
@@ -430,7 +521,7 @@ const btoCorvids = {
   video: {
     id: 'qi1p0yh4X3I',
     startAt: 0,
-    title: 'BTO Bird ID - Corvids - Crow, Rook, Raven',
+    title: 'BTO Bird ID Crow, Rook, Raven, Jackdaw & Chough',
     intro: 'BTO Bird ID - Corvids - Crow, Rook, Raven',
     owner: 'British Trust for Ornithology',
     ownerUrl: '',
