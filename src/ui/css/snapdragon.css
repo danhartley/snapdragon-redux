@@ -2173,3 +2173,20 @@ a.collection-disabled {
 .fa, .fab, .fal, .far, .fas {
   line-height: 1.5;
 }
+
+#insertParent {
+  background-color: var(--snap-container-background);
+}
+
+#insertParent > div {
+  padding: 1rem;
+  font-size: .8rem;
+}
+
+#insertParent > div > div:nth-child(1) {
+  font-weight: bold;
+}
+
+#insertParent > div > div:nth-child(2) {
+  font-style: italic;
+}

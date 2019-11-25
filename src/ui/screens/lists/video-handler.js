@@ -1,12 +1,20 @@
 import { actions } from 'redux/actions/action-creators';
 
 const onSpeciesTimeMatchListeners = [];
+const onNoteTimeMatchListeners = [];
 
 const onSpeciesTimeMatch = listener => {    
     while(onSpeciesTimeMatchListeners.length > 0) {
         onSpeciesTimeMatchListeners.pop();
     }
     onSpeciesTimeMatchListeners.push(listener);
+};
+
+const onNoteTimeMatch = listener => {    
+    while(onNoteTimeMatchListeners.length > 0) {
+        onNoteTimeMatchListeners.pop();
+    }
+    onNoteTimeMatchListeners.push(listener);
 };
 
 const onSpeciesPlayRequestListeners = [];
@@ -122,7 +130,9 @@ const saveVideoState = player => {
 export const videoHandler = {
     readyPlayer,
     onSpeciesTimeMatchListeners,
+    onNoteTimeMatchListeners,
     onSpeciesTimeMatch,
+    onNoteTimeMatch,
     onSpeciesPlayRequestListeners,
     onSpeciesPlayRequest,
     onPlayerReadyListeners,

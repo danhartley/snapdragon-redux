@@ -37,6 +37,11 @@ export const videoSetup = (collection, videoPlayer, parent, startTime) => {
                if(match) {
                    videoHandler.onSpeciesTimeMatchListeners.map(listener => listener(collection, match));
                }
+               if(!collection.notes) return;
+               const noteMatch = collection.notes.find(note => R.contains(time, note.time));
+               if(noteMatch) {
+                   videoHandler.onNoteTimeMatchListeners.map(listener => listener(collection, noteMatch));
+               }
             }, 1000);
         };
 

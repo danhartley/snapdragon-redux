@@ -11,6 +11,7 @@ import { modalImageHandler } from 'ui/helpers/image-handler';
 import { buildTable } from 'ui/screens/lists/species-table';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 import { videoSetup } from 'ui/screens/home/home-lesson-intro-video';
+import { onSpeciesChangeHandler, openNoteHandler } from 'ui/screens/lists/species-list-definition-insert';
 
 export const renderSpeciesList = (collection, args) => {
 
@@ -48,8 +49,7 @@ export const renderSpeciesList = (collection, args) => {
 
         const listItemImages = document.querySelectorAll('.table-row img');
 
-              listItemImages.forEach(itemImage => { 
-                //   const item = collection.items.find(item => item.name === itemImage.dataset.id)
+              listItemImages.forEach(itemImage => {                 
                   const item = collection.items.find(item => item.name === itemImage.dataset.itemName)
                   modalImageHandler(itemImage, item, collection, config); 
               });
@@ -178,19 +178,20 @@ export const renderSpeciesList = (collection, args) => {
 
                 const id = species.id;
                 const tr = document.querySelector(`#id_${id}`);
-
+                
                 const td = document.createElement('td');
 
                 const text = document.createElement('div');
-                    text.classList.add('inserted-td');
-                    text.innerHTML = description.replace(/\r?\n/g, '<br />');
+                      text.classList.add('inserted-td');
+                      text.innerHTML = description.replace(/\r?\n/g, '<br />');
 
                 td.appendChild(text);
 
                 const insert = document.createElement('div');
-                    insert.classList.add('table-row');
-                    insert.classList.add('species-description');
-                    insert.appendChild(td);
+                      insert.classList.add('table-row');
+                      insert.classList.add('species-description');
+                      insert.appendChild(td);
+
                 tr.parentElement.insertBefore(insert, tr.nextSibling);
 
                 const scrollIntoView = (rowHeight, noOfRows) => {
@@ -213,7 +214,7 @@ export const renderSpeciesList = (collection, args) => {
                 }
             }
         } catch(e) {
-            console.log('error on  in openSpeciesDescriptionHandler: ', name);
+            console.log('error in openSpeciesDescriptionHandler: ', name);
             console.error('error message: ', e.message);
         }
     };
@@ -221,6 +222,11 @@ export const renderSpeciesList = (collection, args) => {
     videoHandler.onSpeciesTimeMatch((collection, species) => {
         openSpeciesDescriptionHandler(collection, species);
         updateVideoPlayer(collection, species);
+        onSpeciesChangeHandler(species);
+    });
+
+    videoHandler.onNoteTimeMatch((collection, note) => {
+        openNoteHandler(note);
     });
 };
 
@@ -311,4 +317,4 @@ const closeOpenAccordions = speciesName => {
             currentDescriptions.forEach(tr => parent.removeChild(tr));
 
     return { accordions };
-}
+};
