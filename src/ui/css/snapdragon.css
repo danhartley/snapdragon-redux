@@ -222,6 +222,7 @@ a.dropdown-item {
   border-bottom: solid .05rem !important;
   cursor: pointer;
   pointer-events: initial;
+  line-height: 1.6;
 }
 
 .toUpperCase {
@@ -1335,7 +1336,7 @@ label.btn.btn-secondary .lesson-icon {
 
 .imageSlider .carousel-control-next,
 .imageSlider .carousel-control-prev {
-  top: 40%;
+  top: 6%;
   height: 20%;
   width: 10%;
   background-color: rgba(211, 214, 173, 0.2);

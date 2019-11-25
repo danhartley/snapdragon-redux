@@ -151,7 +151,9 @@
 
 div.species-description {
   background-color: var(--snap-species-highlight-background);
-  border: .5px solid var(--snap-highlight-border);
+  border-top: .5px solid var(--snap-youtube-red);
+  border-bottom: .5px solid var(--snap-youtube-red);
+  /* border: .5px solid var(--snap-highlight-border); */
   padding: 1rem;
   color: rgba(0, 0, 0, .85);
   height: initial;

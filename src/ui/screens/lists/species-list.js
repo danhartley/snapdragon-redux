@@ -79,7 +79,7 @@ export const renderSpeciesList = (collection, args) => {
 
                     if(species && species.time) {
 
-                        videoHandler.isVideoPlayerReady()
+                        videoHandler.isVideoPlayerReady(collection.video.id)
                             ? videoHandler.playVideoFrom(species.time[0])
                             : videoSetup(collection, store.getState().videoPlayer || [], DOM.rightBody, species.time[0]);
                     }
