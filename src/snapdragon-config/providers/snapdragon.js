@@ -1016,6 +1016,6 @@ const snapdragonCommonBritishBirds = {
 };
 
 export const snapdragon = [
-    snapdragonLichens,
-    snapdragonKitchenGarden
+    // snapdragonLichens,
+    // snapdragonKitchenGarden
 ];

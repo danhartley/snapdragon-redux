@@ -18,7 +18,7 @@ export const videoSetup = (collection, videoPlayer, parent, startTime) => {
     const activeLesson = videoPlayer.find(record => record.collectionId === collection.id) || { collectionId: collection.id, startAt: collection.video.startAt || 0 };
           activeLesson.playAt = activeLesson.pausedAt || activeLesson.startAt;
 
-    renderTemplate({ video: { ...collection.video, playAt: activeLesson.playAt } }, template.content, parent);
+    renderTemplate({ video: { ...collection.video, playAt: activeLesson.playAt, location: collection.video.location || '' } }, template.content, parent);
 
     const timeBeforeVideoPlayerReady = 1000;
 

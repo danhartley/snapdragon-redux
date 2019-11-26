@@ -76,7 +76,7 @@ const addSpecies = () => {
 
     btnGetSpeciesById.addEventListener('click', async e => {
         item = await eol.getSpecies(input.value, selectedLicence);
-        if(imageIds) helpers.getImagesLayout(item, imageIds);
+        if(imageIds) helpers.getImagesLayout(item, imageIds, false);
         document.querySelectorAll('.btnAddSpecies').forEach(btn => {
             btn.classList.remove('hide');
         });

@@ -508,6 +508,7 @@ const learnYourLand2 = {
           url: 'learnyourland.com'
         }
       ],
+      location: 'Eastern North America'
     }
 };
 

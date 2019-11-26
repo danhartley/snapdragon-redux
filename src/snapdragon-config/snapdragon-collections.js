@@ -6,7 +6,7 @@ import { learnYourLand } from 'snapdragon-config/providers/learn-your-land'; // 
 const daisyCreekFarms1 = {
     id: 1005,
     behaviour: 'static',
-    name: '10 Indoor Herbs',
+    name: 'Daisy Creek Farms - 10 Indoor Herbs',
     moduleSize: 1,
     lessonPlanLandscape: 10,
     lessonPlanPortrait: 110,
@@ -196,7 +196,7 @@ const paulDinning1 = {
 const woodlandsTV1 = {  
   id: 1007,
   behaviour: 'static',
-  name: 'An Introduction to Lichen',
+  name: 'WoodlandsTV - An Introduction to Lichen',
   type: 'taxon',
   moduleSize: 4,
   lessonPlanLandscape: 1,
@@ -312,7 +312,7 @@ const woodlandsTV1 = {
 const wiseWomanTradition = {  
   id: 1008,
   behaviour: 'static',
-  name: 'Wild Plant Identification with Susun Weed',
+  name: 'Susun Weed - Wild Plant Identification',
   type: 'taxon',
   moduleSize: 1,
   lessonPlanLandscape: 1,
@@ -399,10 +399,7 @@ const wiseWomanTradition = {
 const btoCorvids = { 
   id: 1009, 
   behaviour: 'static',
-  name: 'BTO Bird ID - Corvids - Crow, Rook, Raven',
-  descriptions: [
-      'BTO Bird ID - Corvids - Crow, Rook, Raven.'
-  ],
+  name: 'British Trust for Ornithology - Corvid Ids',
   moduleSize: 1,
   lessonPlanLandscape: 1,
   lessonPlanPortrait: 101,
@@ -525,8 +522,8 @@ const btoCorvids = {
   video: {
     id: 'qi1p0yh4X3I',
     startAt: 0,
-    title: 'BTO Bird ID Crow, Rook, Raven, Jackdaw & Chough',
-    intro: 'BTO Bird ID - Corvids - Crow, Rook, Raven',
+    title: 'BTO Bird ID: Crow, Rook, Raven, Jackdaw & Chough',
+    intro: 'BTO Bird ID - Corvids',
     owner: 'British Trust for Ornithology',
     ownerUrl: '',
     presenter: 'BTOvideo',
@@ -538,7 +535,233 @@ const btoCorvids = {
       },
       {
         label: 'Channel',
-        url: 'https://www.youtube.com/user/BTOvideo'
+        url: 'https://www.youtube.com/channel/UC1t-goRaF_qrFwwyxipvwow'
+      }
+    ],
+  }  
+};
+
+const bloomsForBeesCU = { 
+  id: 1010, 
+  behaviour: 'static',
+  name: 'Blooms for Bees - Common Bumblebees of the United Kingdom',
+  moduleSize: 1,
+  lessonPlanLandscape: 1,
+  lessonPlanPortrait: 101,
+  glossary: ['insecta'],
+  items: [],
+  species: [
+    {
+      name: 'Bombus terrestris',
+      time: [25],
+      description: `Range: the buff-tailed bumblebee is one of our most common species, present throughout the UK.
+
+      The large queen is one of the first to be seen in early spring.
+
+      Queen appearance: 2 yellow bands and a buff or beige coloured tail.
+      
+      Worker (female) appearance: whiter tail than the queen, with often a thin line of buff hairs at the top of the tail.
+      
+      Male appearance: similar to worker bee, but tails likely to more buff coloured and the yellow colour behind their head reaches further around their body. They never have yellow hair on their heads, the hair is black.
+      `
+    },
+    {
+      name: 'Bombus lucorum',
+      time: [68],
+      description: `Apperance: similar to the buff-tailed bumblebee but with a bright white tail. It also has two yellow bands though these are brighter and more lemony than the buff-tailed bumblebee.
+      
+      Queens and workers: similar in apperance though the queens are larger.
+      
+      Males: similar although the yellow colouring is broader and they have yellow hair on their heads.
+      `
+    },
+    {
+      name: 'Bombus lapidarius',
+      time: [112],
+      description: `The red-tailed bumblebee is common throughout the UK except the far north. 
+
+      Queen and workers appearance: distinctive black body and a dark, orange-red tail.
+
+      Male apperance: yellow behind their head, yellow facial hair and the tail is a pale orange.
+
+      Colours often fade as the sun bleaches their hair.
+      `
+    },
+    {
+      name: 'Bombus hortorum',
+      time: [148],
+      description: `The garden bumblebee is present in gardens but also in other habitats.
+      
+      Appearance: similar to buff and white-tailed bumblebees.
+      
+      Key feature: 3 yellow bands. A long tongue (and face to accomodate it).
+
+      Queens, workers and males similar in appearance and vary somewhat in size.
+      `
+    },
+    {
+      name: 'Bombus pratorum',
+      time: [187],
+      description: `The early bumblebee is a small bumblee, found throughout UK but absent in northern Scotland. 
+      
+      Queens seen from (late February or) March onwards.
+
+      Appearance: quite fluffy. 
+      
+      Queen: 2 yellow bands on an orange tail.
+
+      Worker: a little smaller than the queen with similar colouring but variable; central yellow band may be faint or absent.
+
+      Male: seen from late May, early June; same size as workers but with yellow facial hair.
+      `
+    },
+    {
+      name: 'Bombus pascuorum',
+      time: [240],
+      description: `Most widespread of the carder bumblebees.
+
+      Emerge in March (one of the latest active species).
+
+      Appearance: queens, workers and males are ginger all over but variable from pale to almost black, and fade with age.
+      `
+    },
+    {
+      name: 'Bombus hypnorum',
+      time: [278],
+      description: `The tree bumblebee is a relatively recent arrival to the UK from mainland Europe (2001). Now common and widespread.
+
+      Appearance: queen, workers and males all have ginger thorax, black abdomen and a white tail.
+      
+      Male: larger than workers with brown hairs on their head rather than black. 
+
+      Can appear worn, as though going bald, late in the season.
+      `
+    }
+  ],
+  notes: [
+    {
+      tag: 'Introduction',
+      time: [8],
+      description: `The UK is home to 25 species of bumblebee, only 7 are widspread and common; these account for the majority of sightings.
+      `
+    },
+  ],
+  iconicTaxa: [ 
+    {
+      id: 'insecta',
+      common: 'Insects'
+    },
+  ],
+  video: {
+    id: 'nWhvMwvzgjM',
+    startAt: 0,
+    title: 'Common Bumblebees of the United Kingdom',
+    intro: 'Common Bumblebees of the United Kingdom',
+    owner: 'Blooms For Bees CU',
+    ownerUrl: '',
+    presenter: 'BTOvideoBlooms For Bees CU',
+    src: 'https://yt3.ggpht.com/a/AGF-l7-yYRi6gG9w7Z0WEvJVonpFbmSu2SsHszV5pQ=s48-c-k-c0xffffffff-no-rj-mo',
+    links: [
+      {
+        label: '',
+        url: ''
+      },
+      {
+        label: 'Channel',
+        url: 'https://www.youtube.com/channel/UCMccqprrhQDGrL3bju3GzrA'
+      }
+    ],location: 'UK'
+  }  
+};
+
+const nationalTrustButterflies = { 
+  id: 1011, 
+  behaviour: 'static',
+  name: 'National Trust - Spotting and identifying Britain\'s butterflies',
+  moduleSize: 1,
+  lessonPlanLandscape: 1,
+  lessonPlanPortrait: 101,
+  glossary: ['insecta'],
+  items: [],
+  species: [
+    // {
+    //   name: 'Pieris brassicae',
+    //   time: [20],
+    //   description: ``
+    // },
+    // {
+    //   name: 'Aglais io',
+    //   time: [25],
+    //   description: ``
+    // },
+    {
+      name: 'Polyommatus bellargus',
+      time: [185, 277],
+      description: `(Lysandra bellargus is also known as Polyommatus bellargus).
+      
+      A freshly emerged male Adonis blue. 
+
+      Underside: browny grey with orange dots and black spots.
+
+      Upperside: electric, irridescent, bright blue.
+
+      Species decline: died out in the Cotswalds in 1963 but reappeared 40 years later. Now over 30 colonies.
+
+      Separating the female chalkhill blue and the Adonis blue is extremely difficult. 
+      The tip is, chalkhill blue females are old and ragged when the second brood of the Adonis blue females are flying (so the Adonis flies a little bit later).
+      `
+    },
+    {
+      name: 'Polyommatus icarus',
+      time: [218],
+      description: `A pair of common blues mating. 
+      
+      The butterfly is the mature, reproductive stage of a complex metamorphosis (ed.).
+
+      After mating the female lays eggs.
+      `
+    },
+    {
+      name: 'Lysandra coridon',
+      time: [258],
+      description: `A male chalkhill butterfly.
+
+      Hard to identify because there is not much of him left. The average butterfly of this size lives about a week but individuals live for much longer (he may be 2-3 weeks old).
+      `
+    }
+  ],
+  notes: [
+    {
+      tag: '',
+      time: [],
+      description: `
+        
+      `
+    },
+  ],
+  iconicTaxa: [ 
+    {
+      id: 'insecta',
+      common: 'Insects'
+    },
+  ],
+  video: {
+    id: '9jGWMliBqXw',
+    startAt: 184,
+    title: 'Spotting and identifying Britain\'s butterflies',
+    intro: 'Spotting and identifying Britain\'s butterflies',
+    owner: 'National Trust',
+    ownerUrl: '',
+    presenter: 'Matthew Oates, National Trust Butterfly Specialist.',
+    src: 'https://yt3.ggpht.com/a/AGF-l786SjIkVyF0YCgaLyoTVXtpjCG-RP31KMQVCQ=s48-c-k-c0xffffffff-no-rj-mo',
+    links: [
+      {
+        label: '',
+        url: ''
+      },
+      {
+        label: 'Channel',
+        url: 'https://www.youtube.com/channel/UCbSxeBQ-U-goXdmkiNBSrrg'
       }
     ],
   }  
@@ -555,6 +778,7 @@ export const snapdragonCollections = [
   daisyCreekFarms1,
   woodlandsTV1,
   wiseWomanTradition,
-  btoCorvids
-
+  btoCorvids,
+  bloomsForBeesCU,
+  nationalTrustButterflies
 ];

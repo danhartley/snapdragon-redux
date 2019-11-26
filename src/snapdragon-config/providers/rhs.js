@@ -207,5 +207,5 @@ const rhsWeeds = {
 
 export const rhs = [
     // rhsTrees,
-    rhsWeeds
+    // rhsWeeds
 ];
