@@ -8,63 +8,166 @@ const rhsTrees = {
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
-    itemNames: [
-        'Styrax hemsleyanus',
-        'Sorbus cashmiriana',
-        'Stewartia pseudocamellia',
-        'Sorbus aucuparia',
-        'Sorbus aria',
-        'Salix alba',
-        'Robinia pseudoacacia',
-        'Quercus robur',
-        'Pyrus salicifolia',
-        'Quercus ilex',
-        'Quercus coccinea',
-        'Pyrus calleryana',
-        'Prunus subhirtella',
-        'Prunus cerasifera',
-        'Platanus orientalis',
-        'Populus nigra',
-        'Prunus avium',
-        'Olea europaea',
-        'Platanus acerifolia',
-        'Malus floribunda',
-        'Malus sylvestris',
-        'Liriodendron tulipifera',
-        'Liquidambar styraciflua',
-        'Ligustrum lucidum',
-        'Juglans regia',
-        'Fraxinus ornus',
-        'Eucalyptus gunnii',
-        'Gleditsia triacanthos',
-        'Fagus sylvatica',
-        'Fraxinus excelsior',
-        'Crataegus laevigata',
-        'Crataegus monogyna',
-        'Cercis siliquastrum',
-        'Cercidiphyllum japonicum',
-        'Catalpa bignonioides',
-        'Betula utilis',
-        'Amelanchier lamarckii',
-        'Castanea sativa',
-        'Carpinus betulus',
-        'Betula pendula',
-        'Amelanchier canadensis',
-        'Alnus cordata',
-        'Alnus glutinosa',
-        'Aesculus hippocastanum',
-        'Acer rubrum',
-        'Acer platanoides',
-        'Acer pseudoplatanus',
-        'Acer davidii',
-        'Acer griseum',
-        'Acacia dealbata'
-      ],
-      items: [],      
-      iconicTaxa: [ {
-        id: 'plantae',
-        common: 'Plants'
-      } ],
+    species: [
+      {
+        "name": "Styrax hemsleyanus"
+      },
+      {
+        "name": "Sorbus cashmiriana"
+      },
+      {
+        "name": "Stewartia pseudocamellia"
+      },
+      {
+        "name": "Sorbus aucuparia"
+      },
+      {
+        "name": "Sorbus aria"
+      },
+      {
+        "name": "Salix alba"
+      },
+      {
+        "name": "Robinia pseudoacacia"
+      },
+      {
+        "name": "Quercus robur"
+      },
+      {
+        "name": "Pyrus salicifolia"
+      },
+      {
+        "name": "Quercus ilex"
+      },
+      {
+        "name": "Quercus coccinea"
+      },
+      {
+        "name": "Pyrus calleryana"
+      },
+      {
+        "name": "Prunus subhirtella"
+      },
+      {
+        "name": "Prunus cerasifera"
+      },
+      {
+        "name": "Platanus orientalis"
+      },
+      {
+        "name": "Populus nigra"
+      },
+      {
+        "name": "Prunus avium"
+      },
+      {
+        "name": "Olea europaea"
+      },
+      {
+        "name": "Platanus acerifolia"
+      },
+      {
+        "name": "Malus floribunda"
+      },
+      {
+        "name": "Malus sylvestris"
+      },
+      {
+        "name": "Liriodendron tulipifera"
+      },
+      {
+        "name": "Liquidambar styraciflua"
+      },
+      {
+        "name": "Ligustrum lucidum"
+      },
+      {
+        "name": "Juglans regia"
+      },
+      {
+        "name": "Fraxinus ornus"
+      },
+      {
+        "name": "Eucalyptus gunnii"
+      },
+      {
+        "name": "Gleditsia triacanthos"
+      },
+      {
+        "name": "Fagus sylvatica"
+      },
+      {
+        "name": "Fraxinus excelsior"
+      },
+      {
+        "name": "Crataegus laevigata"
+      },
+      {
+        "name": "Crataegus monogyna"
+      },
+      {
+        "name": "Cercis siliquastrum"
+      },
+      {
+        "name": "Cercidiphyllum japonicum"
+      },
+      {
+        "name": "Catalpa bignonioides"
+      },
+      {
+        "name": "Betula utilis"
+      },
+      {
+        "name": "Amelanchier lamarckii"
+      },
+      {
+        "name": "Castanea sativa"
+      },
+      {
+        "name": "Carpinus betulus"
+      },
+      {
+        "name": "Betula pendula"
+      },
+      {
+        "name": "Amelanchier canadensis"
+      },
+      {
+        "name": "Alnus cordata"
+      },
+      {
+        "name": "Alnus glutinosa"
+      },
+      {
+        "name": "Aesculus hippocastanum"
+      },
+      {
+        "name": "Acer rubrum"
+      },
+      {
+        "name": "Acer platanoides"
+      },
+      {
+        "name": "Acer pseudoplatanus"
+      },
+      {
+        "name": "Acer davidii"
+      },
+      {
+        "name": "Acer griseum"
+      },
+      {
+        "name": "Acacia dealbata"
+      }
+    ],
+    items: [],      
+    iconicTaxa: [ {
+      id: 'plantae',
+      common: 'Plants'
+    } ],
+    guide: {
+      season: 'all_year'
+    },
     eol_link: 'https://eol.org/collections/140596',
     externalLink: { text: 'RHS Practical Horticulture', url:'https://www.rhs.org.uk/education-learning/qualifications-and-training/rhs-qualifications/level-1-qualifications/level-1-intro-award-in-practical-horticulture' }
 };
@@ -78,7 +181,6 @@ const rhsWeeds = {
     lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
     items: [],
-    itemNames: [],
     species: [
         { name: 'Elymus repens' },
         { name: 'Equisetum arvense' },
@@ -95,7 +197,10 @@ const rhsWeeds = {
     iconicTaxa: [ {
         id: 'plantae',
         common: 'Plants'
-      } ],
+    } ],
+    guide: {
+      season: 'all_year'
+    },
     eol_link: 'https://eol.org/collections/140731',
     externalLink: { text: 'RHS Practical Horticulture', url:'https://www.rhs.org.uk/education-learning/qualifications-and-training/rhs-qualifications/level-1-qualifications/level-1-intro-award-in-practical-horticulture' }
 };

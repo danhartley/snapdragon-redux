@@ -10,7 +10,10 @@ const snapdragonMonsanto = {
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     moduleSize: 4,
-    iconicTaxa: iconicTaxa.all
+    iconicTaxa: iconicTaxa.all,
+    guide: {
+      season: 'all_year'
+    }
 }
 
 const snapdragonArrabida = {
@@ -23,7 +26,10 @@ const snapdragonArrabida = {
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     moduleSize: 4,
-    iconicTaxa: iconicTaxa    .all
+    iconicTaxa: iconicTaxa.all,
+    guide: {
+      season: 'all_year'
+    }
 };
 
 const snapdragonLichens = {
@@ -38,9 +44,7 @@ const snapdragonLichens = {
   iconicTaxa: [ {
       id: 'fungi',
       common: 'Fungi & Lichens'
-  } ], 
-  itemNames: [
-  ],
+  } ],
   species: [
     {
       name: 'Xanthoria parietina'
@@ -118,7 +122,10 @@ const snapdragonLichens = {
       name: 'Lecanora chlarotera'
     },
   ],
-  items: []
+  items: [],
+  guide: {
+    season: 'all_year'
+  }
 };
 
 const snapdragonKitchenGarden = { 
@@ -129,68 +136,181 @@ const snapdragonKitchenGarden = {
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
-    itemNames: [
-        'Allium sativum',
-        'Coriandrum sativum',
-        'Cuminum cyminum',
-        'Origanum majorana',
-        'Cymbopogon citratus',
-        'Sinapis alba',
-        'Zingiber officinale',
-        'Brassica nigra',
-        'Carum carvi',
-        'Satureja hortensis',
-        'Piper nigrum',
-        'Laurus nobilis',
-        'Capsicum annuum',
-        'Salvia officinalis',
-        'Origanum vulgare',
-        'Foeniculum vulgare',
-        'Mentha spicata',
-        'Anethum graveolens',
-        'Thymus vulgaris',
-        'Petroselinum crispum',
-        'Ocimum basilicum',
-        'Allium schoenoprasum',
-        'Artemisia dracunculus',
-        'Rosmarinus officinalis',
-        'Borago officinalis',
-        'Cucumis sativus',
-        'Beta vulgaris',
-        'Spinacia oleracea',
-        'Raphanus sativus',
-        'Cucurbita pepo',
-        'Solanum lycopersicum',
-        'Brassica rapa',
-        'Vicia faba',
-        'Phaseolus coccineus',
-        'Pisum sativum',
-        'Pastinaca sativa',
-        'Solanum melongena',
-        'Cynara cardunculus',
-        'Lactuca sativa',
-        'Daucus carota',
-        'Brassica oleracea',
-        'Solanum tuberosum',
-        'Allium cepa',
-        'Vitis vinifera',
-        'Mespilus germanica',
-        'Prunus armeniaca',
-        'Prunus domestica',
-        'Prunus persica',
-        'Rubus idaeus',
-        'Citrus limon',
-        'Pyrus communis',
-        'Ficus carica',
-        'Prunus avium',
-        'Lavandula angustifolia',
-        'Lavandula stoechas'
-      ],
+    species: [
+      {
+        "name": "Allium sativum"
+      },
+      {
+        "name": "Coriandrum sativum"
+      },
+      {
+        "name": "Cuminum cyminum"
+      },
+      {
+        "name": "Origanum majorana"
+      },
+      {
+        "name": "Cymbopogon citratus"
+      },
+      {
+        "name": "Sinapis alba"
+      },
+      {
+        "name": "Zingiber officinale"
+      },
+      {
+        "name": "Brassica nigra"
+      },
+      {
+        "name": "Carum carvi"
+      },
+      {
+        "name": "Satureja hortensis"
+      },
+      {
+        "name": "Piper nigrum"
+      },
+      {
+        "name": "Laurus nobilis"
+      },
+      {
+        "name": "Capsicum annuum"
+      },
+      {
+        "name": "Salvia officinalis"
+      },
+      {
+        "name": "Origanum vulgare"
+      },
+      {
+        "name": "Foeniculum vulgare"
+      },
+      {
+        "name": "Mentha spicata"
+      },
+      {
+        "name": "Anethum graveolens"
+      },
+      {
+        "name": "Thymus vulgaris"
+      },
+      {
+        "name": "Petroselinum crispum"
+      },
+      {
+        "name": "Ocimum basilicum"
+      },
+      {
+        "name": "Allium schoenoprasum"
+      },
+      {
+        "name": "Artemisia dracunculus"
+      },
+      {
+        "name": "Rosmarinus officinalis"
+      },
+      {
+        "name": "Borago officinalis"
+      },
+      {
+        "name": "Cucumis sativus"
+      },
+      {
+        "name": "Beta vulgaris"
+      },
+      {
+        "name": "Spinacia oleracea"
+      },
+      {
+        "name": "Raphanus sativus"
+      },
+      {
+        "name": "Cucurbita pepo"
+      },
+      {
+        "name": "Solanum lycopersicum"
+      },
+      {
+        "name": "Brassica rapa"
+      },
+      {
+        "name": "Vicia faba"
+      },
+      {
+        "name": "Phaseolus coccineus"
+      },
+      {
+        "name": "Pisum sativum"
+      },
+      {
+        "name": "Pastinaca sativa"
+      },
+      {
+        "name": "Solanum melongena"
+      },
+      {
+        "name": "Cynara cardunculus"
+      },
+      {
+        "name": "Lactuca sativa"
+      },
+      {
+        "name": "Daucus carota"
+      },
+      {
+        "name": "Brassica oleracea"
+      },
+      {
+        "name": "Solanum tuberosum"
+      },
+      {
+        "name": "Allium cepa"
+      },
+      {
+        "name": "Vitis vinifera"
+      },
+      {
+        "name": "Mespilus germanica"
+      },
+      {
+        "name": "Prunus armeniaca"
+      },
+      {
+        "name": "Prunus domestica"
+      },
+      {
+        "name": "Prunus persica"
+      },
+      {
+        "name": "Rubus idaeus"
+      },
+      {
+        "name": "Citrus limon"
+      },
+      {
+        "name": "Pyrus communis"
+      },
+      {
+        "name": "Ficus carica"
+      },
+      {
+        "name": "Prunus avium"
+      },
+      {
+        "name": "Lavandula angustifolia"
+      },
+      {
+        "name": "Lavandula stoechas"
+      }
+    ],
     items: [],
     iconicTaxa: [ {
         id: 'plantae',
         common: 'Plants'
-    } ]
+    } ],
+    guide: {
+      season: 'all_year'
+    }
 };
 
 const snapdragonTreesOfLisbon = { 
@@ -205,347 +325,401 @@ const snapdragonTreesOfLisbon = {
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
-    items: [
-      
+    items: [],
+    species: [
+      {
+        "name": "Acer negundo"
+      },
+      {
+        "name": "Acer pseudoplatanus"
+      },
+      {
+        "name": "Celtis australis"
+      },
+      {
+        "name": "Cercis siliquastrum"
+      },
+      {
+        "name": "Cupressus sempervirens"
+      },
+      {
+        "name": "Eucalyptus globulus"
+      },
+      {
+        "name": "Fraxinus angustifolia"
+      },
+      {
+        "name": "Ginkgo biloba"
+      },
+      {
+        "name": "Jacaranda mimosifolia"
+      },
+      {
+        "name": "Olea europaea"
+      },
+      {
+        "name": "Phoenix canariensis"
+      },
+      {
+        "name": "Pinus pinea"
+      },
+      {
+        "name": "Platanus acerifolia"
+      },
+      {
+        "name": "Populus alba"
+      },
+      {
+        "name": "Populus nigra"
+      },
+      {
+        "name": "Quercus faginea"
+      },
+      {
+        "name": "Quercus ilex"
+      },
+      {
+        "name": "Quercus robur"
+      },
+      {
+        "name": "Robinia pseudoacacia"
+      },
+      {
+        "name": "Saphora japonica"
+      },
+      {
+        "name": "Tilia tomentosa"
+      },
+      {
+        "name": "Tipuana tipu"
+      },
+      {
+        "name": "Gleditsia triacanthos"
+      },
+      {
+        "name": "Ulmus minor"
+      },
+      {
+        "name": "Quercus suber"
+      }
     ],
-    itemNames: [
-      'Acer negundo',
-      'Acer pseudoplatanus',
-      'Celtis australis',
-      'Cercis siliquastrum',
-      'Cupressus sempervirens',
-      'Eucalyptus globulus',
-      'Fraxinus angustifolia',
-      'Ginkgo biloba',
-      'Jacaranda mimosifolia',
-      'Olea europaea',
-      'Phoenix canariensis',
-      'Pinus pinea',
-      'Platanus acerifolia',
-      'Populus alba',
-      'Populus nigra',
-      'Quercus faginea',
-      'Quercus ilex',
-      'Quercus robur',
-      'Robinia pseudoacacia',
-      'Saphora japonica',
-      'Tilia tomentosa',
-      'Tipuana tipu',
-      'Gleditsia triacanthos',
-      'Ulmus minor',
-      'Quercus suber',
-      ],
     iconicTaxa: [ {
         id: 'plantae',
         common: 'Plants'
-    } ]
+    } ],
+    guide: {
+      season: 'all_year'
+    }
 };
   
 const snapdragonWalkOne = { 
-behaviour: 'static',
-id: 6, 
-name: 'Jardim da Estrela',
-descriptions: [
-    'Jardim da Estrela.'
-],
-moduleSize: 4,
-lessonPlanLandscape: 1,
-lessonPlanPortrait: 101,
-glossary: ['plantae', 'aves', 'fungi', 'common', 'insecta', 'lichen', 'animalia'],
-items: [],
-species: [
-    {
-    name: 'Celtis australis',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Magnolia grandiflora',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Bauhinia forficata',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Bauhinia variegata',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Tilia platyphyllos',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Tilia tomentosa',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Xanthoria parietina',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Plumbago auriculata',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Lavandula dentata',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Lavandula stoechas',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Platanus acerifolia',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Phoenix canariensis',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Phoenix reclinata',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Chamaerops humilis',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Roystonea regia',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Fatsia japonica',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Cupressus sempervirens',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Cupressus lusitanica',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Taxus baccata',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Passer domesticus',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Turdus merula',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Aesculus hippocastanum',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Cedrus deodara',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Cercis siliquastrum',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Agapanthus africanus',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Lantana',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Nerium oleander',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Quercus robur',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Ginkgo biloba',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Jacaranda mimosifolia',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Olea europaea',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Pinus pinea',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Saphora japonica',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Phytolacca dioica',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Gleditsia triacanthos',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Ficus macrophylla',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Ailanthus altissima',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Araucaria columnaris',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Vanessa cardui',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Ceiba speciosa',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Ceratonia siliqua',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Dombeya wallichii',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Apollonias barbujana',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Dendrocalamus giganteus',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Cedrus libani',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Dracaena draco',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Sequoia sempervirens',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Pittosporum undulatum',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'hibiscus syriacus',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Brugmansia arborea',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Corynocarpus laevigatus',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Pittosporum tobira',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Robinia pseudoacacia',
-    time: [],
-    description: ''
-    },
-    {
-    name: 'Schinus molle',
-    time: [],
-    description: ''
-    }
-    ],
-iconicTaxa: [ 
-    {
-    id: 'fungi',
-    common: 'Fungi & Lichens'
-    },
-    {
-    id: 'plantae',
-    common: 'Plants'
-    },
-    {
-    id: 'aves',
-    common: 'Birds'
-    },
-    {
-    id: 'lepidoptera',
-    common: 'Butterflies & Moths'
-    },
-],
-text: {
-    intro: 'An introduction to the species of Estrela Gardens.'
-}
+  behaviour: 'static',
+  id: 6, 
+  name: 'Jardim da Estrela',
+  descriptions: [
+      'Jardim da Estrela.'
+  ],
+  moduleSize: 4,
+  lessonPlanLandscape: 1,
+  lessonPlanPortrait: 101,
+  glossary: ['plantae', 'aves', 'fungi', 'common', 'insecta', 'lichen', 'animalia'],
+  items: [],
+  species: [
+      {
+      name: 'Celtis australis',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Magnolia grandiflora',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Bauhinia forficata',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Bauhinia variegata',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Tilia platyphyllos',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Tilia tomentosa',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Xanthoria parietina',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Plumbago auriculata',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Lavandula dentata',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Lavandula stoechas',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Platanus acerifolia',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Phoenix canariensis',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Phoenix reclinata',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Chamaerops humilis',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Roystonea regia',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Fatsia japonica',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Cupressus sempervirens',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Cupressus lusitanica',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Taxus baccata',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Passer domesticus',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Turdus merula',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Aesculus hippocastanum',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Cedrus deodara',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Cercis siliquastrum',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Agapanthus africanus',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Lantana',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Nerium oleander',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Quercus robur',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Ginkgo biloba',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Jacaranda mimosifolia',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Olea europaea',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Pinus pinea',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Saphora japonica',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Phytolacca dioica',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Gleditsia triacanthos',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Ficus macrophylla',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Ailanthus altissima',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Araucaria columnaris',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Vanessa cardui',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Ceiba speciosa',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Ceratonia siliqua',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Dombeya wallichii',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Apollonias barbujana',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Dendrocalamus giganteus',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Cedrus libani',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Dracaena draco',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Sequoia sempervirens',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Pittosporum undulatum',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'hibiscus syriacus',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Brugmansia arborea',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Corynocarpus laevigatus',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Pittosporum tobira',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Robinia pseudoacacia',
+      time: [],
+      description: ''
+      },
+      {
+      name: 'Schinus molle',
+      time: [],
+      description: ''
+      }
+      ],
+  iconicTaxa: [ 
+      {
+      id: 'fungi',
+      common: 'Fungi & Lichens'
+      },
+      {
+      id: 'plantae',
+      common: 'Plants'
+      },
+      {
+      id: 'aves',
+      common: 'Birds'
+      },
+      {
+      id: 'lepidoptera',
+      common: 'Butterflies & Moths'
+      },
+  ],
+  text: {
+      intro: 'An introduction to the species of Estrela Gardens.'
+  },
+  guide: {
+    season: 'all_year'
+  }
 };
 
 const snapdragonWalkTwo = { 
@@ -561,27 +735,56 @@ const snapdragonWalkTwo = {
     lessonPlanPortrait: 101,
     glossary: ['plantae'],
     items: [],
-    itemNames: [
-        'Araucaria columnaris',
-        'Buxus sempervirens',
-        'Cedrus atlantica',
-        'Cedrus deodara',
-        'Cedrus libani',
-        'Cupressus lusitanica',
-        'Cupressus sempervirens',
-        'Juniperus chinensis',
-        'Picea abies',
-        'Pinus canariensis',
-        'Pinus halepensis',
-        'Pinus pinea',
-        'Sequoia sempervirens'
+    species: [
+      {
+        "name": "Araucaria columnaris"
+      },
+      {
+        "name": "Buxus sempervirens"
+      },
+      {
+        "name": "Cedrus atlantica"
+      },
+      {
+        "name": "Cedrus deodara"
+      },
+      {
+        "name": "Cedrus libani"
+      },
+      {
+        "name": "Cupressus lusitanica"
+      },
+      {
+        "name": "Cupressus sempervirens"
+      },
+      {
+        "name": "Juniperus chinensis"
+      },
+      {
+        "name": "Picea abies"
+      },
+      {
+        "name": "Pinus canariensis"
+      },
+      {
+        "name": "Pinus halepensis"
+      },
+      {
+        "name": "Pinus pinea"
+      },
+      {
+        "name": "Sequoia sempervirens"
+      }
     ],
     iconicTaxa: [ 
         {
         id: 'plantae',
         common: 'Plants'
         }
-    ]
+    ],
+    guide: {
+      season: 'all_year'
+    }
 };
 
 const snapdragonLookalikes = { 
@@ -730,7 +933,10 @@ const snapdragonLookalikes = {
         description: ''
         },
     ],
-    iconicTaxa: iconicTaxa.all
+    iconicTaxa: iconicTaxa.all,
+    guide: {
+      season: 'all_year'
+    }
 };
 
 const snapdragonCommonBritishBirds = { 
@@ -803,7 +1009,10 @@ const snapdragonCommonBritishBirds = {
   iconicTaxa: [ {
       id: 'aves',
       common: 'Birds'
-  } ]
+  } ],
+  guide: {
+    season: 'all_year'
+  }
 };
 
 export const snapdragon = [

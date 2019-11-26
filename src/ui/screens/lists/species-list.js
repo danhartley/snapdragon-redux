@@ -158,6 +158,9 @@ export const renderSpeciesList = (collection, args) => {
 
         try {
 
+            const parent = document.getElementById('insertParent');
+            if(parent) parent.remove();
+
             const { accordions } = closeOpenAccordions(species.name);
 
             const activeAccordion = accordions.find(accordion => accordion.dataset.name === species.name);

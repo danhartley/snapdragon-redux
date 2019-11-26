@@ -217,30 +217,34 @@ const woodlandsTV1 = {
     {
       name: 'Graphis scripta',
       time: [190],
-      description: 'The apothecia form lines which ressemble some kind of ancient script or writing.'
+      description: 'Graphis scripta. Named for the apothecia which form lines which ressemble some kind of ancient script or writing.'
     },
   ],
   notes: [
     {
       tag: 'Symbiotic association',
-      time: [49]
+      time: [49],
+      description: `
+        Commensalist relationsip between a fungus and a single-celled photosynthetic organism.
+      `
     },
-    {
-      tag: 'Fungus structure',
-      time: [51]
-    },
-    {
-      tag: 'Single-celled photosynthetic organism',
-      time: [55]
-    },
+    // {
+    //   tag: 'Fungus structure',
+    //   time: [51]
+    // },
+    // {
+    //   tag: 'Single-celled photosynthetic organism',
+    //   time: [55]
+    // },
     {
       tag: 'Cyanobacterium',
-      time: [64]
+      time: [64],
+      description: `A photosynthetic prokaryotic (organism whose cells lack a nucleus) microorganisms, of the phylum Cyanobacteria. Formerly called blue-green alga.`
     },
-    {
-      tag: 'Second fungus',
-      time: [77]
-    },
+    // {
+    //   tag: 'Second fungus',
+    //   time: [77]
+    // },
     {
       tag: 'Fruticose',
       time: [110],
@@ -277,8 +281,8 @@ const woodlandsTV1 = {
       description: `Liitle brown blobs which are the fruiting bodies which release spores from which the lichen reproduces.`
     },
     {
-      tag: 'Role',
-      time: [290],
+      tag: 'Role of Lichen',
+      time: [262],
       description: `Fix carbon and nitrogen. Habitat for many living things such as bark flies and the wasps that predate on them.`
     },
   ],

@@ -266,6 +266,11 @@ export const fungi = [
         wiki: 'https://en.wiktionary.org/wiki/pruinose'
     },
     {
+        term: "Cyanobacterium",
+        definition: "A photosynthetic prokaryotic (organism whose cells lack a nucleus) microorganisms, of the phylum Cyanobacteria.",
+        wiki: 'https://en.wiktionary.org/wiki/cyanobacterium'
+    },
+    {
         term: "Sclerotium",
         definition: "A compact mass of hardened fungal mycelium containing food reserves."
     },

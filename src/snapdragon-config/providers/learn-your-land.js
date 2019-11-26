@@ -274,14 +274,44 @@ const learnYourLand1 = {
     ],
     notes: [
       {
+        tag: 'Introduction',
+        time: [56],
+        description: `This is an introduction. It does not serve as a replacement to a field guide, a mushroom club or going out with knowledgeable mushroom hunters.`
+      },
+      {
+        tag: 'Guidelines: 1. Edible when cooked',
+        time: [92],
+        description: `Edibility means edible when cooked.
+        
+        Cook wild mushrooms well, do not eat raw as you could get sick.
+        `
+      },
+      {
+        tag: 'Guidelines: 2. Start small',
+        time: [108],
+        description: `If it's your first time identifying and eating any of these mushrooms, start small.
+        
+        Some people cannot tolerate some of these wild mushroom species.
+        `
+      },
+      {
+        tag: 'Guidelines: 3. Don\'t combine',
+        time: [124],
+        description: `Don't combine wild mushrooms species if it is your first time eating them.
+        
+        Try one species, see how your body reacts, wait 24 hours before moving on to the next.
+        `
+      },
+      {
         tag: 'Hericium',
-        time: [758]
-      }
+        time: [758],
+        description: ``
+      },
     ],
     producer: 'Adam Haritan, Learn Your Land',
     video: {
       id: '6PNq6paMBXU',
-      startAt: 251,
+      startAt: 0,
       title: '16 Wild Edible Mushrooms You Can Forage This Autumn',
       intro: 'I hope you enjoy this brief introduction to foraging edible mushrooms in Eastern North America. When you\'ve finished watching, review what we covered to see how much you remember, and to reinforce what you learnt.',
       owner: 'Learn Your Land',
@@ -298,6 +328,7 @@ const learnYourLand1 = {
           url: 'learnyourland.com'
         }
       ],
+      location: 'Eastern North America'
     }
 };
 

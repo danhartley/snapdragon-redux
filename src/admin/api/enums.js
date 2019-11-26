@@ -47,6 +47,8 @@ export const enums = {
   FRUIT_DIAMETER: 'Fruit diameter',
   FRUIT_LENGTH: 'Fruit length',
   FRUIT_COLOUR: 'Fruit colour',
+  FRUIT_TEXTURE: 'Fruit texture',
+  FRUIT_SURFACE: 'Fruit surface',
   SEED_DISPERSAL: 'Seed dispersal',
   VITAMINS: 'vitamins',
   STAMEN_COUNT: 'Stamen count',
@@ -442,6 +444,7 @@ export const enums = {
   VIOLET: 'Violet',
   BURGUNDY: 'Burgundy',
   PALE_VIOLET: 'Pale violet',
+  VIOLET_PURPLE: 'Violet purple',
   PALE_GREEN: 'Pale green',
   PALE_YELLOW_GREEN: 'Pale yellow-green',
   PALE_GREY_GREEN: 'Pale yellow-green',
@@ -1220,7 +1223,7 @@ export const enums = {
     HAZELNUT: 'hazelnut',
     CHESTNUT: 'chestnut',
   },
-  leafSurface: {
+  surface: {
     GLAUCOUS: 'Glaucous',
     FARINOSE: 'Farinose',
     SCURFY: 'Scurfy',

@@ -2184,9 +2184,10 @@ a.collection-disabled {
 }
 
 #insertParent > div > div:nth-child(1) {
-  font-weight: bold;
+  font-style: italic;
+  font-size: .9rem;
 }
 
-#insertParent > div > div:nth-child(2) {
-  font-style: italic;
+.border-bottom {
+  border-bottom: .5px solid var(--snap-youtube-red);
 }

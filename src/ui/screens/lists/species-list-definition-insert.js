@@ -13,6 +13,7 @@ export const onSpeciesChangeHandler = species => {
         const tr = document.querySelector(`#id_${id}`);
 
         currentlyActiveRow = tr;
+        console.log(currentlyActiveRow);
         currentlyActiveSpecies = species;
         
     } catch(e) {
