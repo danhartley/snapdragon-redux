@@ -23,9 +23,9 @@ export const getPoolItems = async (item, poolSize = 5) => {
 
     // if not enough, only get the additional necessary number (but duplicates???)
 
-    // else if(speciesPool.length < poolSize) {
-    //   getPoolItems(item);
-    // } 
+    else if(speciesPool.length < poolSize) {
+      getPoolItems(item);
+    } 
     else {
 
       const items = R.take(poolSize, speciesPool);

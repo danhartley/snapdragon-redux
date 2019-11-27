@@ -234,6 +234,39 @@ export const plantae = [
         wiki: 'https://en.wikipedia.org/wiki/Pome'
     },
     {
+        term: 'Loam',
+        definition: 'Soil composed mostly of sand, silt, and a smaller amount of clay.',
+        wiki: 'https://en.wikipedia.org/wiki/Loam'
+    },
+    {
+        term: 'Silt',
+        definition: 'Granular material of a size between sand and clay, whose mineral origin is quartz and feldspar.',
+        wiki: 'https://en.wikipedia.org/wiki/Silt'
+    },
+    {
+        term: 'Sand',
+        definition: 'Granular material, finer than gravel and coarser than silt, composed of finely divided rock and mineral particles.',
+        wiki: 'https://en.wikipedia.org/wiki/Sand'
+    },
+    {
+        term: 'Clay',
+        definition: 'A finely-grained natural rock or soil material that combines one or more clay minerals with possible traces of quartz, metal oxides, and organic matter.',
+        wiki: 'https://en.wikipedia.org/wiki/Clay'
+    },
+    {
+        term: 'Gravel',
+        definition: 'A loose aggregation of rock fragments. Gravel is classified by particle size range and includes size classes from granule- to boulder-sized fragments.',
+        wiki: 'https://en.wikipedia.org/wiki/Gravel'
+    },
+    {
+        term: 'Revolute',
+        definition: 'Rolled under (downwards or backwards), for example when the edges of leaves are rolled under towards the midrib. Compare involute.',
+    },
+    {
+        term: 'Involute',
+        definition: 'Rolled inwards, for example when the margins of a leaf are rolled towards the adaxial (usually upper) surface. Compare revolute.',
+    },
+    {
         term: 'Drupe',
         definition: 'Indehiscent fruit in which an outer fleshy part surrounds a single shell of hardened endocarp with a seed inside.',
         wiki: 'https://en.wikipedia.org/wiki/Drupe',
@@ -512,7 +545,15 @@ export const plantae = [
     },
     {
         term: 'Perfect',
-        definition: 'A flower that has both stamens and a pistil.',
+        definition: 'A flower that has both stamens and carpeles (pistil/s).',
+    },
+    {
+        term: 'Carpel',
+        definition: 'The female reproductive part of the flower, interpreted as modified leaves bearing structures called ovules, inside which the egg cells ultimately form.',
+    },
+    {
+        term: 'Pistil',
+        definition: 'Consists either of one carpel, with its ovary, style and stigma, or several carpels joined together with a single ovary in one unit.',
     },
     {
         term: 'Complete',
@@ -618,7 +659,7 @@ export const plantae = [
     },
     {
         term : "Corymb",
-        definition : "An inflorescence with the flowers growing in such a fashion that the outermost are borne on longer pedicels than the inner, bringing all flowers up to a common level.",
+        definition : "An inflorescence with the flowers growing in such a fashion that the outermost are borne on longer pedicels than the innermost, bringing all flowers up to a common level.",
         wiki: 'https://en.wikipedia.org/wiki/Corymb',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/3/3f/Schirmtraube_%28inflorescence%29.svg'
