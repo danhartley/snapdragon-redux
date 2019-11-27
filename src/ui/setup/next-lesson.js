@@ -9,25 +9,26 @@ import { setupHandler } from 'ui/setup/setup-handler';
 
 export const nextLesson = counter => {
 
-    setTimeout(() => {
-    
-        const { collection, config, lesson } = store.getState();
+    const { layout, lessonPlan, config, lesson, collection } = store.getState();
 
-        if(setupHandler.isRequired(enums.nextStep.NEXT_LESSON, { counter, config })) {
+    const args = { layout, counter, lessonPlan, config, lesson, collection };
 
-            const planId = config.isPortraitMode ? collection.lessonPlanPortrait : collection.lessonPlanLandscape;    
-            const lessonPlan = R.clone(lessonPlans.find(plan => plan.id === planId && plan.portrait === config.isPortraitMode));
+    if(setupHandler.isRequired(enums.nextStep.NEXT_LESSON, args)) {
 
-            if(setupHandler.isRequired(enums.nextStep.NEXT_ROUND, { counter, lesson, collection })) {
+        const planId = config.isPortraitMode ? collection.lessonPlanPortrait : collection.lessonPlanLandscape;    
+        const lessonPlan = R.clone(lessonPlans.find(plan => plan.id === planId && plan.portrait === config.isPortraitMode));
 
-                // asyncFunc will return collection, lessonPlan and lesson
+        args.lessonPlan = lessonPlan;
 
-                const asyncFunc = lessonPlanner.createLessonPlan(lessonPlan, config, R.clone(collection), R.clone(lesson)).then(props => {
-                    return { lessonPlan: props.updatedLessonPlan, collection: props.updatedCollection, lesson: props.updatedLesson };
-                });
+        if(setupHandler.isRequired(enums.nextStep.NEXT_ROUND, args)) {
 
-                setupHandler.actionUpdate(enums.nextStep.NEXT_LESSON, { asyncFunc });
-            }
+            // asyncFunc will return collection, lessonPlan and lesson
+
+            const asyncFunc = lessonPlanner.createLessonPlan(lessonPlan, config, R.clone(collection), R.clone(lesson)).then(props => {
+                return { lessonPlan: props.updatedLessonPlan, collection: props.updatedCollection, lesson: props.updatedLesson };
+            });
+
+            setupHandler.actionUpdate(enums.nextStep.NEXT_LESSON, { asyncFunc });
         }
-    });
+    }
 };

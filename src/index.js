@@ -44,15 +44,15 @@ const onLoadHandler = () => {
         actions.boundUpdateConfig(config);
         actions.boundStopStartLesson(counter);
 
-        subscription.add(renderHeaders, 'collection', 'flow');
+        // subscription.add(renderHeaders, 'collection', 'flow');
         renderNavigation();
         subscription.add(renderNavigation, 'collection', 'flow');
 
         subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
                 
+        subscription.add(nextItem, 'layout', 'flow');
         subscription.add(nextLesson, 'counter', 'flow');
         subscription.add(nextLayout, 'counter', 'flow');
-        subscription.add(nextItem, 'layout', 'flow');
         subscription.add(renderScore, 'score', 'flow');
         subscription.add(traitValuesHandler, 'config', 'localisation');
 

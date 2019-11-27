@@ -35,6 +35,6 @@ export const getPoolItems = async (item, poolSize = 5) => {
     
       items.push(item);
     
-      return items;
+      return await items;
     }
   };

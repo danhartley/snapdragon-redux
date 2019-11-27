@@ -4,13 +4,11 @@ import { setupHandler } from 'ui/setup/setup-handler';
 
 export const nextLayout = counter => {
 
-    setTimeout(() => { // hack so that next-lesson runs first, and updates to the next level where appropriate
+    const { layout, lessonPlan, config, lesson, collection } = store.getState();
 
-        const { lessonPlan, config } = store.getState();
+    const args = { layout, counter, lessonPlan, config, lesson, collection };
 
-        if(setupHandler.isRequired(enums.nextStep.NEXT_LAYOUT, { counter, lessonPlan, config })) {
-            setupHandler.actionUpdate(enums.nextStep.NEXT_LAYOUT, { layout: lessonPlan.layouts[counter.index], config });
-        }
-
-    });
+    if(setupHandler.isRequired(enums.nextStep.NEXT_LAYOUT, args)) {
+        setupHandler.actionUpdate(enums.nextStep.NEXT_LAYOUT, { layout: lessonPlan.layouts[counter.index], config });
+    }
 };

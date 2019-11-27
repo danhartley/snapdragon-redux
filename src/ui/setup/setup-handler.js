@@ -17,11 +17,11 @@ const isRequired = (step, args) => {
             if(counter.isLessonPaused) {
                 required = false;
             } else {
-                required = (lessonPlan && lessonPlan.layouts && lessonPlan.layouts[counter.index]);
+                required = (lessonPlan && lessonPlan.layouts && lessonPlan.layouts[counter.index] !== null);
             }
             break;
         case enums.nextStep.NEXT_LESSON:
-            required = config.collection.id > 0 && !counter.isLessonPaused; // check this, often passing when not true (being caught at next step)
+            required = config.collection.id > 0 && !counter.isLessonPaused; // check this, often passing when not true (being caught at next round step)
             break;
         case enums.nextStep.NEXT_ROUND:
             required = counter.index === 0 && lesson.isNextRound && collection.items && collection.items.length > 0;

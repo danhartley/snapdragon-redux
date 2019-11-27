@@ -696,7 +696,7 @@ const nationalTrustButterflies = {
     // },
     {
       name: 'Polyommatus bellargus',
-      time: [185, 277],
+      time: [186, 276],
       description: `(Lysandra bellargus is also known as Polyommatus bellargus).
       
       A freshly emerged male Adonis blue. 
@@ -747,7 +747,7 @@ const nationalTrustButterflies = {
   ],
   video: {
     id: '9jGWMliBqXw',
-    startAt: 184,
+    startAt: 186,
     title: 'Spotting and identifying Britain\'s butterflies',
     intro: 'Spotting and identifying Britain\'s butterflies',
     owner: 'National Trust',

@@ -11,7 +11,7 @@ const onCloseModalListeners = [];
 
 export const onCreateCustomLesson = listener => { 
     onCloseModalListeners.push(listener);
-    console.log('onCloseModalListeners: ', onCloseModalListeners.length);
+    // console.log('onCloseModalListeners: ', onCloseModalListeners.length);
 };
 
 export const speciesPendingSpinner = (config, modal) => {
