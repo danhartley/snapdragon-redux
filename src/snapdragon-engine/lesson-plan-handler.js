@@ -1,4 +1,4 @@
-export const getNextActiveLayerLayouts = (lessonPlan, config, lesson) => {
+export const getNextRoundLayouts = (lessonPlan, config, lesson) => {
 
     // All layouts are currently activated because the lesson edit function is not in use.
 

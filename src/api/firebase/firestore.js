@@ -3,6 +3,7 @@ import { enums } from 'admin/api/enums';
 import { store } from 'redux/store';
 import { getGlossary } from 'api/glossary/glossary';
 import { firebaseConfig } from 'api/firebase/credentials';
+import { questions } from 'api/firebase/questions';
 
 firebase.initializeApp(firebaseConfig);
 
@@ -523,7 +524,7 @@ const getSpeciesInParallel = async species => {
         return Promise.all(species.map(sp => {                    
             return firestore.getSpeciesByName(sp.name).then(async item => {
                 return await {                         
-                    ...item, description: sp.description || '', time: sp.time || 0
+                    ...item, description: sp.description || '', time: sp.time || 0, questionIds: sp.questionIds
                 }
             })                    
         }));
@@ -549,6 +550,20 @@ const getSpeciesByNameInParallel = async itemNames => {
         console.log(`${item} problem!!! For ${name}`)
         console.error(error);
     }
+};
+
+const getQuestionById = (id, name) => {
+
+    return new Promise(resolve => resolve(questions.map(q => {
+        if(q.id === id) {
+            return {
+                ...q,
+                name: name
+            }
+        }
+    })));
+
+    //db.collection('books').doc('fK3ddutEpD2qQqRMXNW5').get()
 };
 
 export const firestore = {
@@ -579,7 +594,8 @@ export const firestore = {
   
     deleteSpeciesByName,
     deleteSpeciesTraitField,
-    getTraitDefinitions
+    getTraitDefinitions,
+    getQuestionById
 };
 
 const getRandomId = () => {

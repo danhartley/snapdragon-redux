@@ -5,7 +5,7 @@ import { getBirdsongTests } from 'snapdragon-engine/bonus/tests/birdsong-test';
 import { getLookalikeTests } from 'snapdragon-engine/bonus/tests/lookalike-test';
 import { getDefinitionTests } from 'snapdragon-engine/bonus/tests/definition-test';
 
-export const getBonusTests = async (collection, itemIndices, bonusLayouts, lessonName, levelName) => {
+const getTests = async (collection, itemIndices, bonusLayouts, lessonName, levelName) => {
 
     const itemsInThisRound = collection.items.map((item, index) => {
         if(R.contains(index, itemIndices)) {
@@ -82,4 +82,8 @@ export const getBonusTests = async (collection, itemIndices, bonusLayouts, lesso
     }
 
     return R.flatten(traitTests);
+};
+
+export const bonusHandler = {
+    getTests
 };

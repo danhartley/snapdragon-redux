@@ -7,7 +7,7 @@ const daisyCreekFarms1 = {
     id: 1005,
     behaviour: 'static',
     name: 'Daisy Creek Farms - 10 Indoor Herbs',
-    moduleSize: 1,
+    moduleSize: 4,
     lessonPlanLandscape: 10,
     lessonPlanPortrait: 110,
     glossary: ['plantae', 'common'],
@@ -20,14 +20,16 @@ const daisyCreekFarms1 = {
       {
         name: 'Anethum graveolens',
         time: [38],
-        description: `You can start dill from seed; in one to two weeks the first set of leaves will emerge and will soon take on their familiar form.`
+        description: `You can start dill from seed; in one to two weeks the first set of leaves will emerge and will soon take on their familiar form.`,
+        questionIds: ['1', '2']
       },
       {
         name: 'Thymus vulgaris',
         time: [65],
         description: `Perennial; frost hardy and can be grown outdoors. 
         
-        Best grown from a cutting.`
+        Best grown from a cutting.`,
+        questionIds: ['3']
       },
       {
         name: 'Origanum vulgare',

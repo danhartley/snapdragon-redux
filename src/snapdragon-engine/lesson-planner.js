@@ -1,6 +1,6 @@
-import { createLesson } from 'snapdragon-engine/lesson-builder';
+import { createNextRound } from 'snapdragon-engine/round-planner';
 import { layouts } from 'snapdragon-config/screen-layouts';
-import { getNextActiveLayerLayouts } from 'snapdragon-engine/lesson-plan-handler';
+import { getNextRoundLayouts } from 'snapdragon-engine/lesson-plan-handler';
 
 const { summary, history } = layouts;
 
@@ -14,11 +14,13 @@ const createLessonPlan = async (lessonPlan, config, collection, lesson) => {
 
     lesson = lesson.level === undefined ? { ...lesson, ...lessonPlan, level: { id: 1 }, rounds } : lesson;
 
-    const layouts = getNextActiveLayerLayouts(lessonPlan, config, lesson);
+    const nextRoundLayoutTemplates = getNextRoundLayouts(lessonPlan, config, lesson);
+
+    console.log(nextRoundLayoutTemplates);
     
-    return await createLesson(
+    return await createNextRound(
         lessonPlan,
-        layouts, 
+        nextRoundLayoutTemplates, 
         [ summary, history ],
         collection,
         lesson
