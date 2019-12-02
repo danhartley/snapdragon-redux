@@ -137,7 +137,7 @@ export const renderMultiStrips = (collection, bonus) => {
                         console.log('calling getPoolItems from renderVernacularQuestions');
 
                         question = item.vernacularName;   
-                        answers = await getPoolItems(item, 6);
+                        answers = await getPoolItems(collection, 6);
                         answers = answers.map(a => itemProperties.getVernacularName(a, defaultLanguage));
                         answers = R.take(5, answers.filter(a => a !== item.vernacularName));
                         answers = utils.shuffleArray([item.vernacularName, ...answers]);

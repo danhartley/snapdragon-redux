@@ -26,8 +26,6 @@ export const listenToImageSelection = listener => {
 
 export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, preselectedItems) => {
 
-    console.log('RENDERMIXEDSPECIMENIMAGES');
-
     let imagesPerItem = noOfImagesPerItem || 1;
 
     const { config, score, lesson } = store.getState();
@@ -35,6 +33,8 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
     const item = R.clone(collection.nextItem);
 
     if(!item) return;
+
+    console.log('RENDERMIXEDSPECIMENIMAGES');
 
     const template = document.createElement('template');
           template.innerHTML = specimensTemplate;
@@ -46,7 +46,7 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
 
         console.log('calling getPoolItems from renderMixedSpecimenImages');
  
-        const mixedItems = preselectedItems || await getPoolItems(item);
+        const mixedItems = preselectedItems || await getPoolItems(collection);
 
         const images = utils.shuffleArray(mixedItems).map((item, index) => {
             

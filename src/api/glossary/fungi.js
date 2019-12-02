@@ -191,6 +191,16 @@ export const fungi = [
         }
     },
     {
+        term: "None",
+        definition: "No gill attachment.",
+        trait: 'gillAttachment',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/NotApplicableSign.png',
+            author: 'AndrewOne [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)]',
+            attribution: 'https://commons.wikimedia.org/wiki/File:NotApplicableSign.png',
+        }
+    },
+    {
         term: "Ostiole",
         definition: "Small hole or opening through which algae or fungi release their mature spores.",
         wiki: "https://en.wikipedia.org/wiki/Ostiole"
