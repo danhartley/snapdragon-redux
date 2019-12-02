@@ -17,6 +17,7 @@ import { renderBonusTest } from 'ui/screens/bonus/bonus-test';
 import { renderBonusSpecimenTiles } from 'ui/screens/bonus/bonus-specimen-tiles';
 import { renderMixedTraitImages } from 'ui/screens/multichoice/landscape/mixed-trait/left/mixed-trait-images';
 import { renderMixedTraitQuestion } from 'ui/screens/multichoice/landscape/mixed-trait/right/mixed-trait-question';
+import { renderHorizontalStrips } from 'ui/screens/multichoice/horizontal-strips.js';
 
 const functions = [
     { name: 'mixed-specimen-questions', func: renderMixedSpecimenImagesAndQuestion },
@@ -49,7 +50,9 @@ const functions = [
     { name: 'media-players', func: renderMediaPlayers },    
 
     { name: 'mixed-trait-images', func: renderMixedTraitImages },
-    { name: 'mixed-trait-question', func: renderMixedTraitQuestion },    
+    { name: 'mixed-trait-question', func: renderMixedTraitQuestion },
+    
+    { name: 'provider-horizontal-strip-questions', func: renderHorizontalStrips },
 ];
 
 export const funcByName = name => {

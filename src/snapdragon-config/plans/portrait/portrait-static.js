@@ -7,8 +7,9 @@ export const portraitStatic = {
     default: true,
     levels: [
         {   id: 1,
-            name:'Level 1',            
-            layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch, L.familyMatch , L.familyStripsMatch, L.textCompleteGenus, L.textCompleteSpecies ],
+            name:'Level 1',     
+            layouts: [ L.mixedSpecimenImages ],       
+            // layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch, L.familyMatch , L.familyStripsMatch, L.textCompleteGenus, L.textCompleteSpecies ],
             // layouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
             // reviewLayouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
             bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'traits', 'song', 'definition' ] } ]

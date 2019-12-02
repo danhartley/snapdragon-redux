@@ -47,7 +47,7 @@
 @media (min-height:812px) {
 }
 
-@media (max-width: 768px) {        
+@media (max-width: 768px) {
     .landscape {
         display: none !important;
     }
@@ -69,6 +69,14 @@
 }
 
 @media (min-width: 768px) {
+
+    .pool {
+        padding: 0 .5rem;
+    }
+
+    /* .horizontal.strips {  
+        width: calc(600px - 1rem);
+    } */
 
     .bird-song, .taxon-identification, .taxon-summary {
         margin: 1rem 4rem 0 4rem;
@@ -121,8 +129,6 @@
           border: 0;
       }
     
-      /* MENU MODAL */
-    
       #basicModal .modal-body.settings-modal {
           padding: rem;
       }
@@ -132,8 +138,6 @@
         margin: calc( var(--vhRunningBlock) + var(--vhStandardBlock) + 5px + .5rem ) auto auto auto;
       }
 
-      /* WIKI */
-    
       #wikiModal .modal-dialog {
         max-width: 900px;
         margin: auto;
@@ -165,8 +169,6 @@
           display: inline;
       }
     
-      /* CARD MODAL */
-    
       #cardModal .feature-types {
           width: 100%;
           margin: 0;
@@ -179,8 +181,6 @@
       .info-details .info_detail img {   
         max-width: 20%;
       }
-    
-      /* TRAITS CAROUSEL */
     
       .info.carousel.slide .carousel-item div {
           padding: .5rem;

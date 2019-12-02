@@ -1,0 +1,43 @@
+import * as R from 'ramda';
+
+import { utils } from 'utils/utils';
+import { store } from 'redux/store';
+
+import { scoreHandler } from 'ui/helpers//score-handler';
+import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
+import { renderTemplate } from 'ui/helpers/templating';
+
+import stripTemplate from 'ui/screens/multichoice/horizontal-strips.html';
+
+export const renderHorizontalStrips = collection => {
+
+    const { config, lesson, layout } = store.getState();
+
+    const item = collection.nextItem || collection.items[collection.itemIndex];
+
+    const binomial = layout.provider.name;
+    const statement = layout.provider.statement;
+    const providerQuestion = layout.provider.question;
+
+    const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial, question: '', help: '', term: '', className: '', headerClassName: '', bonus: undefined, statement, providerQuestion });
+
+    const template = document.createElement('template');
+    
+    template.innerHTML = stripTemplate;
+
+    const answers = [ ...layout.provider.answers, layout.provider.answer ];
+
+    const options = answers.map((answer, index) => {
+        return {
+            answer
+            // ,
+            // conceal: conceal[index]
+        }
+    });
+
+    renderTemplate({ options }, template.content, parent);
+
+    document.querySelector('.js-test-card-question').classList.add('calender-block');
+    document.querySelector('.js-test-card-question').classList.remove('standard-block');
+    document.querySelector('.js-test-card-content').classList.add('horizontal');
+};

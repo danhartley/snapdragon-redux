@@ -2,7 +2,6 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
-import { actions } from 'redux/actions/action-creators';
 import { epithets } from 'api/botanical-latin';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { getPoolItems } from 'snapdragon-engine/pool-handler';

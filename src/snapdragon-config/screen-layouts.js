@@ -17,7 +17,8 @@ const {
     history, summary, 
     birdsong, mediaPlayers,
     mixedTraitLeft,
-    mixedTraitRight } = panels;
+    mixedTraitRight,
+    providerHorizontalStripQuestions } = panels;
 
 const mixedSpeciesMatch = {
     name: 'screen-mixed-species-match',
@@ -414,6 +415,15 @@ const mixedTraitImages = {
     ]
   };  
 
+const providerHorizontalStrip = {
+    name: 'provider-horizontal-strip',
+    type: 'test',
+    screens: [
+        { ...specimenImages },
+        { ...providerHorizontalStripQuestions }
+    ]
+}
+
 export const layouts = {
   mixedSpeciesMatch,
   speciesRevision,
@@ -445,5 +455,6 @@ export const layouts = {
   history,
   summary,
   mediaMatch,
-  mixedTraitImages
+  mixedTraitImages,
+  providerHorizontalStrip
 }

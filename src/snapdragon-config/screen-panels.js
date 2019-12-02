@@ -168,6 +168,11 @@ const traitImages = {
     name: 'mixed-trait-question',
     domain: 'collection'
   };
+
+  const providerHorizontalStripQuestions = {
+    name: 'provider-horizontal-strip-questions',
+    domain: 'collection'
+  };
   
   export const panels = {
     specimenImages,
@@ -211,5 +216,6 @@ const traitImages = {
     traitImages,
 
     mixedTraitLeft,
-    mixedTraitRight
+    mixedTraitRight,
+    providerHorizontalStripQuestions
   };

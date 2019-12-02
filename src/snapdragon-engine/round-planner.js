@@ -6,7 +6,8 @@ import { utils } from 'utils/utils';
 import { roundHandler } from "snapdragon-engine/round-plan-handler";
 import { bonusHandler } from 'snapdragon-engine/bonus/bonus-test-handler';
 import { providerHandler } from 'snapdragon-engine/provider/provider-test-handler';
-import { get } from 'https';
+
+import { layouts as L } from 'snapdragon-config/screen-layouts';
 
 export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressScreens, collection, lesson) => {
 
@@ -31,6 +32,19 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
             } while (itemIndex < layoutsToAdd);
         });
 
+        let providerQuestions = await providerHandler.getLayouts(collection, roundItemNames);
+        providerQuestions = R.flatten(providerQuestions).filter(layout => layout);
+
+        let providerLayouts = providerQuestions.map(provider => {
+            return { ...L.providerHorizontalStrip, lessonName:"Lesson 1", levelName:"Level 1", speciesName: provider.name, provider };
+        });
+
+        console.log(providerLayouts);
+
+        if(providerLayouts) {
+            lessonPlan.layouts = [ ...lessonPlan.layouts, ...providerLayouts ];
+        }
+
         let lessonLayouts = lessonPlan.layouts.filter(layout => !layout.bonus).map((layout, i) => {
             layout.itemIndex = layout.itemIndex === undefined ? utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i) : layout.itemIndex;
             return { ...layout };
@@ -46,11 +60,6 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
             const bonusTests = await bonusHandler.getTests(collection, itemIndices, bonusLayouts, lessonName, levelName);
             lessonPlan.layouts = [ ...lessonPlan.layouts, ...bonusTests ];
         }
-
-        let providerLayouts = await providerHandler.getLayouts(collection, roundItemNames);
-            providerLayouts = R.flatten(providerLayouts).filter(layout => layout);
-
-        console.log(providerLayouts);
 
         lessonLayouts = lessonPlan.layouts.map((layout, i) => {
             layout.roundProgressIndex = i + 1;

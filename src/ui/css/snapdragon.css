@@ -569,13 +569,15 @@ body {
 }
 
 .horizontal.strips {  
+  /* width: calc(100vw - 1rem); */
   cursor: pointer;
-  overflow-x: scroll;
   display: flex;
   flex-wrap: nowrap;
-  width: calc(100vw - 1rem);
-  flex-direction: row;
-  padding: 2rem 0;
+  /* padding: 2rem 0; */
+  flex-direction: column;
+  overflow-y: scroll;
+  /* flex-direction: row;
+  overflow-x: scroll; */
 }
 
 .horizontal.strips .strip {
@@ -720,6 +722,7 @@ body {
 .card-link-container > div {
   display: flex;
   flex-direction: column;
+  font-size: .8rem;
 }
 
 .card-link-container i {
@@ -980,6 +983,7 @@ button.btn-light:focus,
   letter-spacing: .1rem;
   border-radius: .2rem;
   border: .05rem solid var(--snap-text-dark);
+  font-size: 1rem;
 }
 
 .block + hr {
@@ -2033,14 +2037,6 @@ a.collection-disabled {
   background-color: var(--snap-lesson-row-blue);
 }
 
-/* .lesson-list div.lesson-list-item:nth-of-type(2n) {
-  background-color: var(--snap-lesson-row-green);
-}
-
-.lesson-list div.lesson-list-item:nth-of-type(2n+1) {
-  background-color: var(--snap-lesson-row-blue);
-} */
-
 .lesson-list .scrollable {
   width: 100%;  
   height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhStandardBlock, 10vh));
@@ -2059,6 +2055,7 @@ a.collection-disabled {
 
 .standard-block {
   height: var(--vhStandardBlock, 10vh);
+  margin: 0 !important;
 }
 
 .double-standard-block {
@@ -2067,6 +2064,11 @@ a.collection-disabled {
 
 .half-standard-block {
   height: var(--vhHalfStandardBlock, 5vh);
+  margin: 0 !important;
+}
+
+.calender-block{
+  height: var(--vhCalender, 11vh);
 }
 
 .centred-block {
@@ -2153,16 +2155,6 @@ a.collection-disabled {
 
 .lesson-review > div {
   font-size: .7em;
-}
-
-.standard-block {
-  height: var(--vhStandardBlock, 10vh);
-  margin: 0 !important;
-}
-
-.half-block {
-  height: var(--vhHalfStandardBlock, 5vh);
-  margin: 0 !important;
 }
 
 .main-header {

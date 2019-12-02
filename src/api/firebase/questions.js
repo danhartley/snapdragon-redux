@@ -4,9 +4,9 @@ export const questions = [
         iconicTaxon: 'plantae',
         rank: 'family',
         taxon: 'Apiaceae',
-        statement: 'Members of the Apiaceae have flowers that are nearly always aggregated in terminal umbels.',
-        question: 'How would you describe this inflorescence?',
-        answer: 'Having a number of short flower stalks (pedicels) which spread from a common point.',
+        statement: 'A distinctive feature of the Parsely family is compund terminal umbels.',
+        question: 'How would you describe this type of inflorescence?',
+        answer: 'Having a number of short flower stalks (pedicels), of more or less equal length, which spread from a common point, somewhat like umbrella ribs.',
         answers: [
             'Having flowers that do not have a pedicel.',
             'Having flowers growing in such a fashion that the outermost are borne on longer pedicels than the innermost.',

@@ -7,7 +7,7 @@ const daisyCreekFarms1 = {
     id: 1005,
     behaviour: 'static',
     name: 'Daisy Creek Farms - 10 Indoor Herbs',
-    moduleSize: 4,
+    moduleSize: 1,
     lessonPlanLandscape: 10,
     lessonPlanPortrait: 110,
     glossary: ['plantae', 'common'],

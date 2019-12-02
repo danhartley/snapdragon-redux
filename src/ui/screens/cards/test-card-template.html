@@ -40,8 +40,10 @@
         <div class="test-card-question standard-block centred-block js-test-card-question">            
             <div class="question question-txt {{ className }}">
                     <div>
-                        <span class="question-question js-question-question">{{ question }}</span>
+                        <span class="hide-empty question-question js-question-question">{{ question }}</span>
                         <span class="hide-empty question-help js-question-help">{{ help }}</span>
+                        <span class="hide-empty question-statement">{{ statement }}</span>
+                        <span class="hide-empty margin-top question-provider-question">{{ providerQuestion }}</span>
                     </div>
                 </div>
         </div>

@@ -18,7 +18,7 @@ export const renderMixedTraitQuestion = collection => {
         const item = collection.nextItem;
         const trait = layout.screens[1].trait;
         const question = 'Match the trait';
-        const help = `(${utils.fromCamelCase(trait)}.)`;
+        const help = `(${utils.fromCamelCase(trait)})`;
 
         mixedTraitHandler.fetchTraits(trait, item.traits, collection.glossary);
     

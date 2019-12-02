@@ -6,9 +6,7 @@ import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
-// import { renderTraitCard } from 'ui/screens/cards/trait-card';
 import { renderTemplate } from 'ui/helpers/templating';
-import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
 
 import testCardTemplate from 'ui/screens/cards/test-card-template.html';
 
@@ -24,6 +22,9 @@ export const renderTestCardTemplate = (collection, context) => {
 
     context.className = context.className || '';
     context.headerClassName = context.headerClassName || '';
+
+    context.statement = context.statement || '';
+    context.providerQuestion = context.providerQuestion || '';
 
     renderTemplate(context, template.content, parent);
 

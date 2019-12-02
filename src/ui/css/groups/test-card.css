@@ -37,15 +37,7 @@
     border-bottom: .03rem solid var(--snap-dd-non-taxa-bg-hover);
   }
    
-  /* CONTINUE BUTTON */
-
-  /* .test-card-question {
-    height: var(--vhStandardBlock, 10vh);
-    display: flex;
-    align-items: center;
-  } */
-
-  .test-card-question .question {
+  .test-card-question .question-question {
     text-transform: uppercase;
     color: var(--snap-text-dark);
     display: flex;
@@ -55,18 +47,32 @@
     align-items: center;
   }
 
+  .test-card-question .question {
+      width: 100%;
+  }
+
   .test-card-question .question > div {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: center;      
   }
-  
+
 .test-card-question .question-help, .block-container .question > span:nth-child(2) {
     vertical-align: super;
     text-transform: initial;
     margin: 0 .5rem;
     color: var(--snap-text-medium-light);
 }
+
+.test-card-question .question-statement {
+    padding: 0 .5rem;
+    font-size: .7rem;
+    text-align: center;
+}
+
+/* .test-card-question .question-provider-question {
+    text-transform: uppercase;
+} */
 
 .test-card button {
     display: inline-block;
@@ -252,6 +258,17 @@ div.text-entry {
       - var(--vhDoubleStandardBlock,20vh) 
       - var(--vhButtonBlock, 9vh));
     top: calc(var(--vhDoubleStandardBlock,20vh));
+}
+
+.test-card-content.horizontal {
+    padding: .5rem;
+    height: calc(
+        var(--vh, 1vh) * 100
+      - var(--vhFixtures, 15vh)
+      - var(--vhCalenderBlock,11vh)
+      - var(--vhStandardBlock,10vh) 
+      - var(--vhButtonBlock, 9vh));
+    top: calc(var(--vhDoubleStandardBlock,10vh) + var(--vhStandardBlock,10vh) + var(--vhCalenderBlock,11vh));
 }
 
 .iconic-icon {
