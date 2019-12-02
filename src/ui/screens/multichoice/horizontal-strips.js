@@ -1,6 +1,3 @@
-import * as R from 'ramda';
-
-import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 
 import { scoreHandler } from 'ui/helpers//score-handler';
@@ -22,8 +19,7 @@ export const renderHorizontalStrips = collection => {
     const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial, question: '', help: '', term: '', className: '', headerClassName: '', bonus: undefined, statement, providerQuestion });
 
     const template = document.createElement('template');
-    
-    template.innerHTML = stripTemplate;
+          template.innerHTML = stripTemplate;
 
     const answers = [ ...layout.provider.answers, layout.provider.answer ];
 
@@ -40,4 +36,11 @@ export const renderHorizontalStrips = collection => {
     document.querySelector('.js-test-card-question').classList.add('calender-block');
     document.querySelector('.js-test-card-question').classList.remove('standard-block');
     document.querySelector('.js-test-card-content').classList.add('horizontal');
+
+    const strips = document.querySelectorAll('.js-rptr-strips .strip');
+    const taxon = { name: item.taxonomy.family, binomial: item.name, question: layout.provider.answer };
+
+    const test = { itemId: item.id, items: strips, taxon, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points, clue: ''};  
+
+    scoreHandler('strip', test, null, config);
 };

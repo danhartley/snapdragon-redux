@@ -176,7 +176,29 @@ const stripScoreHandler = (test, callback, config) => {
                 }
             });     
             
-            if(callback) callback(score);
+            if(callback) {
+                callback(score);
+            } else {
+                const _callback = (score) => {
+
+                    const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
+
+                    const scoreUpdateTimer = setTimeout(()=>{
+                        subscription.removeSubs();
+                        bindScore(score);
+                    }, delay);
+                
+                    continueLessonHandler(document.querySelector('.js-continue-lesson-btn'), score, scoreUpdateTimer);
+
+                    // screen is always null
+                    if(screen.name === 'family-strips') {
+                        document.querySelector('.js-question-question').innerHTML = item.taxonomy.family;
+                        document.querySelector('.js-question-help').classList.add('hide');
+                    }
+                };
+                _callback(score);
+            }
+                
 
             let correct = config.isLandscapeMode ? `That is the right answer.` : `That is the right answer.`;
             let incorrect = config.isLandscapeMode ? `That is the wrong answer.` : 'That is the wrong answer.';

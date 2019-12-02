@@ -290,6 +290,7 @@ const getRandomObjectProperty = obj => {
 };
 
 const toCamelCase = sentenceCase => {
+  if(sentenceCase === undefined) return '';
   var out = "";
   sentenceCase.split(" ").forEach(function (el, idx) {
       var add = el.toLowerCase();
@@ -299,6 +300,7 @@ const toCamelCase = sentenceCase => {
 };
 
 const fromCamelCase = str => {
+  if(str === undefined) return '';
   return str.replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase();
 };
 

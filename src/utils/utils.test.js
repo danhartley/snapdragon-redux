@@ -182,6 +182,8 @@ const layouts = [
     expect(utils.toCamelCase(string)).toEqual('leafBlade');
     string  = 'behaviour';
     expect(utils.toCamelCase(string)).toEqual('behaviour');
+    string = undefined;
+    expect(utils.toCamelCase(string)).toEqual('');
   });
 
   test('should capitalise only first word of any string', () => {
@@ -189,4 +191,11 @@ const layouts = [
     expect(utils.capitaliseFirst(string)).toEqual('Leaf blade');
     string  = 'behaviour';
     expect(utils.capitaliseFirst(string)).toEqual('Behaviour');
+  });
+
+  test('should return lower case text from any camel-cased string', () => {
+    let string = 'leafBlade';
+    expect(utils.fromCamelCase(string)).toEqual('leaf blade');
+    string = undefined;
+    expect(utils.fromCamelCase(string)).toEqual('');
   });

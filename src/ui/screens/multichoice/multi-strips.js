@@ -28,7 +28,7 @@ export const renderMultiStrips = (collection, bonus) => {
 
         const taxon = matchTaxon(item.taxonomy, iconicTaxa);                        
     
-        screen = bonus ? bonus.screen || layout.screens[1] : layout.screens[1];
+        const screen = bonus ? bonus.screen || layout.screens[1] : layout.screens[1];
 
         const defaultQueryLimit = 6, defaultLanguage = 'en';
 
@@ -79,24 +79,25 @@ export const renderMultiStrips = (collection, bonus) => {
 
                 const test = { itemId: item.id, items: strips, taxon, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points, clue};
                         
-                const callback = (score) => {
+                // const callback = (score) => {
 
-                    const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
+                //     const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
-                    const scoreUpdateTimer = setTimeout(()=>{
-                        subscription.removeSubs();
-                        bindScore(score);
-                    }, delay);
+                //     const scoreUpdateTimer = setTimeout(()=>{
+                //         subscription.removeSubs();
+                //         bindScore(score);
+                //     }, delay);
                 
-                    continueLessonHandler(document.querySelector('.js-continue-lesson-btn'), score, scoreUpdateTimer);
+                //     continueLessonHandler(document.querySelector('.js-continue-lesson-btn'), score, scoreUpdateTimer);
 
-                    if(screen.name === 'family-strips') {
-                        document.querySelector('.js-question-question').innerHTML = item.taxonomy.family;
-                        document.querySelector('.js-question-help').classList.add('hide');
-                    }
-                };
+                //     if(screen.name === 'family-strips') {
+                //         document.querySelector('.js-question-question').innerHTML = item.taxonomy.family;
+                //         document.querySelector('.js-question-help').classList.add('hide');
+                //     }
+                // };
 
-                scoreHandler('strip', test, callback, config);
+                scoreHandler('strip', test, null, config);
+                // scoreHandler('strip', test, callback, config);
             }
 
             if(screen.name === 'species-scientifics') {
