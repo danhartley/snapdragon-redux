@@ -34,12 +34,11 @@ const getTests = async (collection, itemIndices, bonusLayouts, lessonName, level
         return getLookalikeTests(itemsInThisRound);     
     };
 
-    const getDefinitionTypeTests = item => {
-        return new Promise(resolve => resolve(getDefinitionTests(item)));
+    const getDefinitionTypeTests = itemsInThisRound => {
+        return getDefinitionTests(itemsInThisRound);
     };
 
     let traitTests = [], birdsongTests = [], lookalikeTests = [], definitionTests = [];
-    let item = collection.items[0];
 
     let layout = bonusLayouts.find(layout => layout.name === "trait-property-match");
 
@@ -57,7 +56,7 @@ const getTests = async (collection, itemIndices, bonusLayouts, lessonName, level
                     case 'lookalikes':
                         return getTraitTypeLookalikeTests(itemsInThisRound);
                     case 'definition':                        
-                        return getDefinitionTypeTests(item);
+                        return getDefinitionTypeTests(itemsInThisRound);
                 }
             });
 
@@ -77,7 +76,7 @@ const getTests = async (collection, itemIndices, bonusLayouts, lessonName, level
             traitTests = getTraitTypeTests(itemsInThisRound);
             birdsongTests = getTraitTypeBirdsongTests(itemsInThisRound);            
             lookalikeTests = getTraitTypeLookalikeTests(itemsInThisRound);
-            definitionTests = getDefinitionTypeTests(item);
+            definitionTests = getDefinitionTypeTests(itemsInThisRound);
         }
     }
 

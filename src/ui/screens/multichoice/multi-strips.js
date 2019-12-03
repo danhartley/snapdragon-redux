@@ -10,8 +10,6 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { firestore } from 'api/firebase/firestore';
-import { bindScore, continueLessonHandler } from 'ui/helpers//score-handler';
-import { subscription } from 'redux/subscriptions';
 
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
@@ -19,8 +17,6 @@ import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
 export const renderMultiStrips = (collection, bonus) => {
 
     try {
-
-        // console.log('renderMultiStrips collection.nextItem:', collection.nextItem);
 
         const { config, lesson, layout } = store.getState();
 
@@ -193,7 +189,6 @@ export const renderMultiStrips = (collection, bonus) => {
             }
 
             if(screen.name === 'definition') {
-                // bonus.overrides.headerClassName = 'definition';
                 render(bonus.question, bonus.answers, bonus.overrides);
             }
 
@@ -229,12 +224,6 @@ export const renderMultiStrips = (collection, bonus) => {
 
             if(screen.name === 'trait-property') {
 
-                // if(bonus.overrides.question.toLowerCase().indexOf('definition') > -1) {
-                //     bonus.overrides.headerClassName = 'definition';
-                // } else {
-                //     bonus.overrides.headerClassName = '';
-                // }
-
                 render(bonus.question, bonus.answers, bonus.overrides);
 
                 if(bonus.overrides.trait && bonus.overrides.trait.name === 'song') {
@@ -261,7 +250,6 @@ export const renderMultiStrips = (collection, bonus) => {
                         renderBirdsong();
                 }
             }
-
         }
 
         init();

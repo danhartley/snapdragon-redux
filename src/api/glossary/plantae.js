@@ -85,23 +85,21 @@ export const plantae = [
         characteristics: 'Tend not to emit a strong scent, are typically purple, violet, blue, and white, and have open dishes or tubes. High-altitude and high-latitude.',
         examples: ['Bombyliidae', 'Syrphidae']
     },
-    // {
-    //     term: "Aetherolea",
-    //     definition: "Aetherolea also known as volatile oils or essential oils are concentrated hydrophobic liquids that contain volatile aroma compounds from plants which evaporate when exposed to air and are thus capable of distillation.",
-    //     wiki: "https://en.wikipedia.org/wiki/Essential_oil"
-    // },
-
+    {
+        term: "Aetherolea",
+        definition: "Aetherolea also known as volatile oils or essential oils are concentrated hydrophobic liquids that contain volatile aroma compounds from plants which evaporate when exposed to air and are thus capable of distillation.",
+        wiki: "https://en.wikipedia.org/wiki/Essential_oil"
+    },
     {
         term: "Pollination",
         definition: "The transfer of pollen (male gametes) between the male and female parts of flowers."
     },
-    // {
-    //     term: "Model organism",
-    //     definition: "A species studied to understand particular biological phenomena, with the expectation that discoveries will provide insight into the workings of other organisms.",
-    //     wiki: "https://en.wikipedia.org/wiki/Model_organism",
-    //     examples: ['Escherichia coli', 'Drosophila melanogaster', 'Arabidopsis thaliana', 'Saccharomyces cerevisiae', 'Mus musculus']
-    // },
-
+    {
+        term: "Model organism",
+        definition: "A species studied to understand particular biological phenomena, with the expectation that discoveries will provide insight into the workings of other organisms.",
+        wiki: "https://en.wikipedia.org/wiki/Model_organism",
+        examples: ['Escherichia coli', 'Drosophila melanogaster', 'Arabidopsis thaliana', 'Saccharomyces cerevisiae', 'Mus musculus']
+    },
     {
         term: "Dehiscence",
         definition: "The natural opening of fruits, etc. along line of natural weakness releasing seeds/pollen."

@@ -50,7 +50,7 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
             return { ...layout };
         });
 
-        const itemIndices = [ ...new Set(lessonPlan.layouts.map(layout => layout.itemIndex)) ];
+        const itemIndices = [ ...new Set(lessonPlan.layouts.map(layout => layout.itemIndex).filter(i => i !== undefined)) ];
         
         const bonusLayouts = lessonPlan.layouts.filter(layout => layout.bonus);
         

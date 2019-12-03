@@ -23,6 +23,8 @@ export const getLookalikeTests = async itemsInThisRound => {
 
     const tests = await init();
 
+    console.log(tests);
+
     return tests;
 }
 

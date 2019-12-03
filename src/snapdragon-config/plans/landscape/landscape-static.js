@@ -17,9 +17,11 @@ export const landscapeStatic = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch, propertyTrait(L.mixedTraitImages, 'leafShape'), L.textCompleteSpecies ],
+            layouts: [ L.textCompleteSpecies ],
+            // layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch, propertyTrait(L.mixedTraitImages, 'leafShape'), L.textCompleteSpecies ],
             // layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch, L.familyMatch , L.familyStripsMatch, L.textCompleteGenus, L.textCompleteSpecies ],
-            bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'traits', 'song', 'lookalikes', 'definition' ] } ]
+            bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'definition', 'lookalikes' ] } ]
+            // bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'traits', 'song', 'lookalikes', 'definition' ] } ]
         },
         // {   id: 2,
         //     name:'Level 2',

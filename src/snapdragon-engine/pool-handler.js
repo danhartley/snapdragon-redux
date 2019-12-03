@@ -10,8 +10,8 @@ export const getPoolItems = async (collection, poolSize = 5) => {
 
   if(collection.behaviour === 'static') {
     const otherItems = collection.items.filter(i => i.name !== item.name);
-    if(!otherItems) {
-      return getItemsFromCollection(collection, item, poolSize);
+    if(otherItems) {
+      return getItemsFromCollection(otherItems, item, poolSize);
     }
   }
 
@@ -49,5 +49,6 @@ export const getPoolItems = async (collection, poolSize = 5) => {
 };
 
   const getItemsFromCollection = (otherItems, item, poolSize) => {
-    return utils.shuffleArray([ ...R.take(poolSize, utils.shuffleArray(otherItems)), item]);
+    const items = R.take(poolSize, utils.shuffleArray(otherItems));
+    return utils.shuffleArray([ ...items, item]);
   };

@@ -1,6 +1,3 @@
-import * as R from 'ramda';
-
-import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderCard } from 'ui/screens/cards/card';
@@ -9,8 +6,6 @@ import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
 import { renderTemplate } from 'ui/helpers/templating';
 
 import testCardTemplate from 'ui/screens/cards/test-card-template.html';
-
-let isTraitCard = true;
 
 export const renderTestCardTemplate = (collection, context) => {
 
@@ -100,27 +95,7 @@ export const renderTestCardTemplate = (collection, context) => {
         }, 500);
     });
 
-    // const traitCardLink = document.querySelector('.js-traits-link');
-
-    const layout = store.getState().layout;
-    
-    const multichoices = [ 'species-scientifics', 'species-vernaculars', 'epithet', 'definition', 'family-strips' ];
-    
     renderIcon(item.taxonomy, document);
-
-    // if(R.contains(layout.screens[1].name, multichoices)) {
-    //     traitCardLink.classList.remove('hide-important');
-    // }
-
-    // traitCardLink.addEventListener('click', () => {
-    //     if(isTraitCard) {            
-    //         renderTraitCard(item);
-    //         isTraitCard = false;
-    //     } else {                  
-    //         renderMultiStrips(collection);
-    //         isTraitCard = true;
-    //     }
-    // });
 
     const testContentParent = document.querySelector('.js-test-card-content');
 

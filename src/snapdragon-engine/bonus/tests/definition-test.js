@@ -5,7 +5,20 @@ import { store } from 'redux/store';
 import { getGlossary } from 'api/glossary/glossary';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 
-export const getDefinitionTests = item => {
+export const getDefinitionTests = itemsInThisRound => {
+    
+    if(itemsInThisRound === undefined) return [];
+
+    const tests = itemsInThisRound.map(item => {
+
+        return getDefinitionTest(item);
+
+    });
+
+    return tests;
+};
+
+const getDefinitionTest = item => {
 
     const { config } = store.getState();
 
@@ -25,6 +38,5 @@ export const getDefinitionTests = item => {
     const answers = utils.shuffleArray([question, ...alternatives]);
     const help = config.isLandscapeMode ? 'Select the correct answer' : '(Tap on the answer.)';
 
-    return [{ question, answers, overrides : { question: definition.term, help, binomial: 'Definition', vernacularName: 'Dictionary' } }];
-    // return [{ question, answers, overrides : { question: 'Select the definition.', help, binomial: '', vernacularName: definition.term } }];
+    return { question, answers, overrides : { question: definition.term, help, binomial: 'Definition', vernacularName: 'Dictionary' } };
 };
