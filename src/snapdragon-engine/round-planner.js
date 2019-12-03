@@ -52,9 +52,9 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
 
         const itemIndices = [ ...new Set(lessonPlan.layouts.map(layout => layout.itemIndex)) ];
         
-        lessonPlan.layouts = lessonLayouts;
-
         const bonusLayouts = lessonPlan.layouts.filter(layout => layout.bonus);
+        
+        lessonPlan.layouts = lessonLayouts;
 
         if(bonusLayouts) {
             const bonusTests = await bonusHandler.getTests(collection, itemIndices, bonusLayouts, lessonName, levelName);

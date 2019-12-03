@@ -55,12 +55,7 @@ export const handleRightsAttribution = (image, disableModal = false, activeItem)
     const author = image.rightsholder || image.rightsHolder || 'Public domain';
     const source = image.source || '';
     const identifier = `${image.itemName.replace(' ', '_')}`;
-    const parent = document.querySelector('.js-carousel-inner .js-attribution-layer');
-
-    // missing, lookalike side by slider…
-    // const parent = image.itemName 
-    //                 ? document.querySelector(`.js-attribution-layer.${identifier}`)
-    //                 : document.querySelector('.js-carousel-inner .js-attribution-layer');
+    const parent = document.querySelector(`.js-attribution-layer.${identifier}`);
           parent.innerHTML = '';
 
     renderTemplate({title,author,source,licence}, template.content, parent);
