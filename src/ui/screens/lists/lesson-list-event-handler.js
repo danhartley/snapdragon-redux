@@ -92,11 +92,19 @@ const onTitleClickHandler = (title, lessons, config, startLesson) => {
 
     if(config.isLandscapeMode) {
 
+      const lessonYoutubeIcons = document.querySelectorAll('.lesson-list-selected-lesson .youtube-icon');
+            lessonYoutubeIcons.forEach(icon => icon.classList.remove('youtube-green-fg'));
+
+      if(title.dataset.lessonIsYoutubeIcon) {
+        title.classList.add('youtube-green-fg');
+      }
+
       let siblingChevron;
 
       if(startLesson) {
         renderLesson(lesson);
-        siblingChevron = title.parentElement.parentElement.parentElement.children[1];
+        // siblingChevron = title.parentElement.parentElement.parentElement.children[1];
+        siblingChevron = title.parentElement.parentElement.parentElement.children[1].children[0].children[1];
         if(state.hideSpeciesList) {
           siblingChevron.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
         } else if(!state.revealSpeciesList) {
@@ -121,7 +129,8 @@ const onTitleClickHandler = (title, lessons, config, startLesson) => {
 
         title.dataset.selected = true;
         
-        const loadingMessage = title.parentElement.querySelector('.js-loading-message');
+        // const loadingMessage = title.parentElement.querySelector('.js-loading-message');
+        const loadingMessage = title.parentElement.parentElement.parentElement.querySelector('.js-loading-message');
               
               loadingMessage.classList.remove('hide');
 

@@ -71,7 +71,7 @@ export const renderSpeciesList = (collection, args) => {
                     event.stopPropagation();
 
                     const activeIcon = event.currentTarget;
-                          activeIcon.classList.add('youtube-red-fg');
+                          activeIcon.classList.add('youtube-green-fg');
                     const speciesName = activeIcon.dataset.name;
 
                     const species = collection.items.find(item => item.name == speciesName);   
@@ -171,7 +171,7 @@ export const renderSpeciesList = (collection, args) => {
 
             if(activateYoutubeIcon) {
                 const activeYouTubeIcon = activeAccordion.parentElement.parentElement.querySelector('.js-youtube');
-                      activeYouTubeIcon.classList.add('youtube-red-fg');
+                      activeYouTubeIcon.classList.add('youtube-green-fg');
             }
 
             let description = species.description;
@@ -311,7 +311,7 @@ const closeOpenAccordions = speciesName => {
             inactiveAccordion.innerHTML = `<i class="fas fa-chevron-down" data-name="${speciesName}"></i>`;
             
             const inActiveYouTubeIcon = inactiveAccordion.parentElement.parentElement.querySelector('.js-youtube');
-                  inActiveYouTubeIcon.classList.remove('youtube-red-fg');
+                  inActiveYouTubeIcon.classList.remove('youtube-green-fg');
         }
     });
 

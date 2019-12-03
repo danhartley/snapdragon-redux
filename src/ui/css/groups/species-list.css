@@ -151,9 +151,8 @@
 
 div.species-description {
   background-color: var(--snap-species-highlight-background);
-  border-top: .5px solid var(--snap-youtube-red);
-  border-bottom: .5px solid var(--snap-youtube-red);
-  /* border: .5px solid var(--snap-highlight-border); */
+  border-top: .5px solid var(--snap-youtube-green);
+  border-bottom: .5px solid var(--snap-youtube-green);
   padding: 1rem;
   color: rgba(0, 0, 0, .85);
   height: initial;
@@ -183,7 +182,11 @@ div.species-description {
   @media (min-width: 600px) {
 
     .youtube-icon, .accordion-icon {
-      font-size: 1.6rem;
+      font-size: 1.3rem;
+    }
+
+    .lesson-list-action-icons .youtube-icon, .lesson-list-action-icons .accordion-icon {
+      font-size: 1.6rem;;
     }
 
     .table-header th:nth-child(1) {

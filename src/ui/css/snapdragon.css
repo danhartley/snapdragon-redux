@@ -1990,10 +1990,6 @@ a.collection-disabled {
   padding-left: 20%;
 }
 
-/* .lesson-list-selected-lesson {
-  background-color: var(--snap-default-background) !important;
-} */
-
 .lesson-list-carousel-item {
   display: flex;
   width: 100%;
@@ -2050,8 +2046,8 @@ a.collection-disabled {
   clip: rect(0,0,0,0);
 }
 
-.youtube-red-fg {
-  color: var(--snap-youtube-red);
+.youtube-green-fg {
+  color: var(--snap-youtube-green);
 }
 
 .standard-block {
@@ -2192,5 +2188,5 @@ a.collection-disabled {
 }
 
 .border-bottom {
-  border-bottom: .5px solid var(--snap-youtube-red);
+  border-bottom: .5px solid var(--snap-youtube-green);
 }

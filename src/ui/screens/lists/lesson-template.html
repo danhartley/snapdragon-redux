@@ -17,8 +17,15 @@
             </div>
         </div>
     </div>     
-    <div data-lesson-id="{{ lesson.id }}" class="landscape js-lesson-list-chevron">
-        <i class="fas fa-chevron-down"></i>
-    </div> 
+    <div class="lesson-list-action-icons js-lesson-list-action-icons">
+        <div class="landscape">
+            <div data-lesson-id="{{ lesson.id }}" data-lesson-is-youtube-icon="true" class="margin-right js-lesson-list-youtube">
+                <i class="fab fa-youtube youtube-icon""></i>
+            </div>
+            <div data-lesson-id="{{ lesson.id }}" class="js-lesson-list-chevron">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </div>
 </div>
 <div data-container-id="{{ lesson.id }}" class="species-container js-species-container"></div>

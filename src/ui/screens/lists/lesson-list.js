@@ -40,6 +40,9 @@ export const renderLessons = () => {
     const titles = document.querySelectorAll('.js-lesson-title');
           titles.forEach(title => lessonListEventHandler.onTitleClickHandler(title, lessons, config, true));
 
+    const youtubeLessonIcons = document.querySelectorAll('.js-lesson-list-youtube');
+          youtubeLessonIcons.forEach(youtube => lessonListEventHandler.onTitleClickHandler(youtube, lessons, config, true));
+
     const chevrons = document.querySelectorAll('.js-lesson-list-chevron');
           chevrons.forEach(chevron => lessonListEventHandler.onTitleClickHandler(chevron, lessons, config, false));
 
