@@ -163,4 +163,9 @@ export const commmon = [
         definition : "A unit of sexual or asexual reproduction that may be adapted for dispersal and for survival, often for extended periods of time, in unfavourable conditions.",
         wiki: 'https://en.wikipedia.org/wiki/Spore'
     },  
+    {
+        term : "Synanthrope",
+        definition : "A member of a species of wild animals and plants of various kinds that live near, and benefit from, an association with human beings.",
+        wiki: 'https://en.wikipedia.org/wiki/Synanthrope'
+    },  
 ];

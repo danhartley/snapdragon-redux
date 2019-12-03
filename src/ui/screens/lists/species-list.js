@@ -11,6 +11,7 @@ import { modalImageHandler } from 'ui/helpers/image-handler';
 import { buildTable } from 'ui/screens/lists/species-table';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 import { videoSetup } from 'ui/screens/home/home-lesson-intro-video';
+import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { onSpeciesChangeHandler, openNoteHandler } from 'ui/screens/lists/species-list-definition-insert';
 
 export const renderSpeciesList = (collection, args) => {
@@ -153,6 +154,11 @@ export const renderSpeciesList = (collection, args) => {
 
     buildTable(collection, { config, enums: traitEnums, overrideParent: callingParentContainer });
     userClickHandlers();
+
+    const btnBeginLesson = document.querySelector('.js-btn-current-lesson-begin');
+    btnBeginLesson.addEventListener('click', () => {
+      lessonStateHandler.beginOrResumeLesson(collection.id);
+    });
 
     const openSpeciesDescriptionHandler = (collection, species, enableScroll = true, activateYoutubeIcon = true) => {
 

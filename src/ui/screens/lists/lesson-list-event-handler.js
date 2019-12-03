@@ -46,7 +46,7 @@ const onTitleClickViewState = (e, lessons) => {
   const speciesList = document.querySelector(`#species_list_id_${lessonId}`);
   const reviewLink = document.querySelector(`.js-lesson-review[data-review-link="${lessonId}"]`);
 
-  // alternative to this manipulation is to reload the list
+  // alternative to this manipulation is to reload the list (and/or redux state on parts of dom)
 
   let otherSpecies = Array.from(document.querySelectorAll('.js-species-container'));
       otherSpecies = otherSpecies.filter(container => container.id !== `container_${lessonId}`);
@@ -103,7 +103,6 @@ const onTitleClickHandler = (title, lessons, config, startLesson) => {
 
       if(startLesson) {
         renderLesson(lesson);
-        // siblingChevron = title.parentElement.parentElement.parentElement.children[1];
         siblingChevron = title.parentElement.parentElement.parentElement.children[1].children[0].children[1];
         if(state.hideSpeciesList) {
           siblingChevron.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
@@ -129,7 +128,6 @@ const onTitleClickHandler = (title, lessons, config, startLesson) => {
 
         title.dataset.selected = true;
         
-        // const loadingMessage = title.parentElement.querySelector('.js-loading-message');
         const loadingMessage = title.parentElement.parentElement.parentElement.querySelector('.js-loading-message');
               
               loadingMessage.classList.remove('hide');
@@ -166,7 +164,7 @@ const onReviewClickHandler = reviewLink => {
             loadingMessage.classList.add('hide');
           }, 3000);
 
-    lessonStateHandler.beginOrResumeLesson(parseInt(reviewLink.dataset.lessonId));          
+    lessonStateHandler.beginOrResumeLesson(parseInt(reviewLink.dataset.lessonId));        
   });
 };
 

@@ -302,3 +302,8 @@ div.species-description {
 .species-table .underline-link {
     text-transform: initial;
 }  
+
+.btn-current-lesson-begin {
+  width: calc(var(--vwGrid) - 1rem);
+  margin: .5rem;
+}
