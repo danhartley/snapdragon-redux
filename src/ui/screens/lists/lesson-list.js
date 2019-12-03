@@ -27,6 +27,7 @@ export const renderLessons = () => {
     template.innerHTML = lessonTemplate;
 
     lessons.forEach(lesson => {
+      lesson.hideVideoClass = lesson.hasVideo ? '' : 'hide-important';
       renderTemplate({ lesson }, template.content, document.querySelector('.js-lesson-container'));
     });
 
@@ -56,6 +57,7 @@ export const renderLessons = () => {
               template.innerHTML = lessonTemplate;
         
         const lesson = lessonListEventHandler.onLoadLessonViewState(collection, savedLessons, videoPlayer, score);
+              lesson.hideVideoClass = '';
         
         lessons.push(lesson);
         
