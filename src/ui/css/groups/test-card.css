@@ -265,10 +265,10 @@ div.text-entry {
     height: calc(
         var(--vh, 1vh) * 100
       - var(--vhFixtures, 15vh)
-      - var(--vhCalenderBlock,11vh)
+      - var(--vhCalendarBlock,11vh)
       - var(--vhStandardBlock,10vh) 
       - var(--vhButtonBlock, 9vh));
-    top: calc(var(--vhDoubleStandardBlock,10vh) + var(--vhStandardBlock,10vh) + var(--vhCalenderBlock,11vh));
+    top: calc(var(--vhDoubleStandardBlock,10vh) + var(--vhStandardBlock,10vh) + var(--vhCalendarBlock,11vh));
 }
 
 .iconic-icon {

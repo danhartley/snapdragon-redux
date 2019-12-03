@@ -22,7 +22,13 @@ export const renderLessons = () => {
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
         parent.innerHTML = '';
 
-    renderTemplate({ lessons }, template.content, parent);
+    renderTemplate({}, template.content, parent);
+
+    template.innerHTML = lessonTemplate;
+
+    lessons.forEach(lesson => {
+      renderTemplate({ lesson }, template.content, document.querySelector('.js-lesson-container'));
+    });
 
     renderLessonListHeader(parent);
 

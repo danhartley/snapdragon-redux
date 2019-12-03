@@ -113,12 +113,12 @@
     .mixed-content-container {
         top: calc(
               var(--vhStandardBlock, 10vh)
-            + var(--vhCalender,11vh));
+            + var(--vhCalendar,11vh));
         height: calc(
               var(--vh, 1vh) * 100
             - var(--vhRunningBlocks,15vh)
             - var(--vhDoubleStandardBlock,20vh) 
-            - var(--vhCalender,11vh) 
+            - var(--vhCalendar,11vh) 
             - 1.5rem);
       }
 

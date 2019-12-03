@@ -33,7 +33,7 @@ export const renderHorizontalStrips = collection => {
 
     renderTemplate({ options }, template.content, parent);
 
-    document.querySelector('.js-test-card-question').classList.add('calender-block');
+    document.querySelector('.js-test-card-question').classList.add('calendar-block');
     document.querySelector('.js-test-card-question').classList.remove('standard-block');
     document.querySelector('.js-test-card-content').classList.add('horizontal');
 
