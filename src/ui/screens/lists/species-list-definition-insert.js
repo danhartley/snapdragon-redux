@@ -26,7 +26,8 @@ export const openNoteHandler = note => {
 
     console.log(note);
 
-    const parent = document.getElementById('insertParent');
+    let parent = document.getElementById('insertParent');
+
     if(parent) parent.remove();
 
     const template = document.createElement('template');
@@ -35,6 +36,11 @@ export const openNoteHandler = note => {
     const insert = document.createElement('div');
           insert.setAttribute('id', 'insertParent');
 
+    if(note.colCount) {
+        insert.classList.add(`col-count-${note.colCount}`);
+        insert.innerHTML = note.description.replace(/\r?\n/g, '<br />');
+    }
+
     if(!currentlyActiveRow) {
         // first row, before any species have been matched
         currentlyActiveRow = document.querySelector('.js-list-item'); // first by default
@@ -42,5 +48,9 @@ export const openNoteHandler = note => {
 
     currentlyActiveRow.parentElement.insertBefore(insert, currentlyActiveRow);
 
-    renderTemplate({ note }, template.content, document.getElementById('insertParent'));
+    if(!note.colCount) {        
+        parent = document.getElementById('insertParent');
+        parent.innerHTML = '';
+        renderTemplate({ note }, template.content, parent);
+    }    
 };

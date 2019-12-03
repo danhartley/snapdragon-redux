@@ -9,14 +9,15 @@ html {
 }
 
 body {
+  width: var(--vwGrid, 100vh);
+  max-width: var(--vwGrid, 100vh);
+  height: var(--vhGrid, 100vh);
   font-size: .8em;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: var(--vhGrid, 100vh);
   font-family: 'Open Sans', sans-serif;
   color: var(--snap-text-dark);
-  max-width: 1200px;
   margin: auto;
 }
 
@@ -2067,6 +2068,11 @@ a.collection-disabled {
   margin: 0 !important;
 }
 
+.one-and-half-standard-block {
+  height: var(--vhOneAndHalfStandardBlock, 15vh);
+  margin: 0 !important;
+}
+
 .calender-block{
   height: var(--vhCalender, 11vh);
 }
@@ -2167,12 +2173,17 @@ a.collection-disabled {
 }
 
 #insertParent {
-  background-color: var(--snap-container-background);
+  background-color: var(--snap-container-background);  
+  font-size: .7rem;
+  padding: 1rem;
 }
 
-#insertParent > div {
-  padding: 1rem;
-  font-size: .8rem;
+.col-count-2 {
+  column-count: 2;
+}
+
+.col-count-3 {
+  column-count: 3;
 }
 
 #insertParent > div > div:nth-child(1) {

@@ -20,70 +20,115 @@ const daisyCreekFarms1 = {
       {
         name: 'Anethum graveolens',
         time: [38],
-        description: `You can start dill from seed; in one to two weeks the first set of leaves will emerge and will soon take on their familiar form.`,
+        description: `Propagation: you can start dill from seed; in 1-2 weeks the first set of leaves will emerge and will soon take on their familiar form.
+        
+        Dill leaves are thin and look like fine threads. 
+        
+        Dill is perfect for growing on the kitchen counter top.
+
+        Culinary: the taste of dill is a combination of fennel, anise and celery; makes a great addition to soups and roasted potatoes.
+        `,
         questionIds: ['1', '2']
       },
       {
         name: 'Thymus vulgaris',
         time: [65],
-        description: `Perennial; frost hardy and can be grown outdoors. 
-        
-        Best grown from a cutting.`,
+        description: `Propagation: thyme is a perennial; frost hardy herb and can be grown outdoors; best grown from a cutting (difficult to grow from seed).`,
         questionIds: ['3']
       },
       {
         name: 'Origanum vulgare',
         time: [80],
-        description: `Oregano can be grown from a cutting or seed. It is not frost resistant.`
+        description: `Culinary: oregano has a strong flavour, so use carefully in your cooking.
+        
+        Propagation: oregano does not cope with winters well; it is not frost resistant. Howeverm it can be grown easily from a cutting or seed, indoors on a kitchen counter top.`
       },
       {
         name: 'Salvia officinalis',
         time: [98],
-        description: `Sage can tolerant frosts to -10C.`
+        description: `Propagation: sage can tolerant frosts to -10°C (15°F). Extremely good indoor plant if you live in a hot or cold climate.
+
+        Culinary: pine and citrously flavour, often used in combination with other hebrs like thyme and rosemary.
+        `
       },
       {
         name: 'Petroselinum crispum',
         time: [115],
-        description: `Best grown from seed, it can tolerate frosts to -12C.`
+        description: `Culinary: parsley brightens flavours and adds balance to savoury dishes. Goes well with meat, eggs, and most of the vegetables. 
+
+        Propagation: best grown from seed, it can tolerate frosts to -12°C (10°F).`
       },
       {
         name: 'Coriandrum sativum',
         time: [137],
         description: `Also known as Coriander.
         
-        Best grown from seed (which must be split first to ensure it germinates quickly). 
-        
-        Seed leaves will appear within a week. Best planted in fall, in spring it flowers quickly.`
+        Culinary: probably the most popular herb and heavily used in Mexican and Indian cooking.
+
+        Propagation: best grown from seed (which must be split first to ensure it germinates quickly). Seed leaves will appear within a week. 
+        Best planted in fall, in spring it flowers quickly; or grow indoors all year round.`
       },
       {
         name: 'Artemisia dracunculus',
         time: [172],
-        description: `A winter hardy perennial and tolerates forst well (to -20C).`
+        description: `Propagation: a winter hardy perennial that tolerates frost well (to -30°C or -20°F), but that also grows well indoors.
+        
+        Culinary: used extensively in French cooking.`
       },
       {
         name: 'Ocimum basilicum',
         time: [194],
-        description: `Dies in winter; take cuttings and propogate in first week of spring. Also grows well from seed.`
+        description: `        
+        Propagation: grows outdoors in the summer, but dies in winter.
+        To keep it alive, take cuttings and propogate in first week of spring. In this way, I get a head start on my outdoor basil bed for the entire summer.
+        Also grows well from seed.`
       },
       {
         name: 'Mentha spicata',
         time: [224],
-        description: `Grows well from cuttings or roots. It dies back in winter and regrows in spring with plentiful watering. 
+        description: `
+        
+        Culinary: great for drinks and tea.
+
+        Propagation: grows well from cuttings or roots. It dies back in winter and regrows in spring with plentiful watering. 
         
         Alternatively bring inside in winter.`
       },
       {
         name: 'Rosmarinus officinalis',
         time: [241],
-        description: `Place cuttings in water; it will easily root and can then be planted out (indoors or out). 
+        description: `
+        Propagation: grows easily - simply place cuttings in water; it will easily root and can then be planted out (indoors or out). 
         
         Winter hardy but avoid excessive frosts.`
+      },
+    ],
+    notes: [
+      {
+        tag: 'Herbs',
+        time: [1],
+        colCount: 3,
+        description: `Thyme (cuttings, seed)
+        Basil (cuttings, seed)
+        Rosemary (cuttings, plants)
+        Dill (seeds)
+        Oregano (cuttings, seeds)
+        Sage (cutting, seeds)
+        Parsely (seeds)
+        Coriander (seeds)
+        Tarragon (cuttings, plants)
+        Mint (cuttings, plants)`
+      },
+      {
+        tag: 'Sunlight',
+        time: [20],
+        description: `Herbs grown inside require at least 3-4 hours of sunlight a day.`
       },
     ],
     producer: 'Jag Singh - Daisy Creek Farms',
     video: {
       id: 'DeLjnFTDjFc',
-      startAt: 37,
+      startAt: 0,
       title: '10 Herbs You Can Grow Indoors on Kitchen Counter',
       intro: '10 Herbs You Can Grow Indoors on Kitchen Counter.',
       owner: 'Learn Your Land',
@@ -100,6 +145,7 @@ const daisyCreekFarms1 = {
           url: 'www.patreon.com/jagsingh'
         }
       ],
+      location: 'California, US'
     }   
 };
 
@@ -227,8 +273,7 @@ const woodlandsTV1 = {
       tag: 'Symbiotic association',
       time: [49],
       description: `
-        Commensalist relationsip between a fungus and a single-celled photosynthetic organism.
-      `
+        Commensalist relationsip between a fungus and a single-celled photosynthetic organism.`
     },
     // {
     //   tag: 'Fungus structure',
@@ -546,7 +591,7 @@ const btoCorvids = {
 const bloomsForBeesCU = { 
   id: 1010, 
   behaviour: 'static',
-  name: 'Blooms for Bees - Common Bumblebees of the United Kingdom',
+  name: 'Blooms for Bees - Bumblebees of the UK',
   moduleSize: 1,
   lessonPlanLandscape: 1,
   lessonPlanPortrait: 101,
@@ -679,7 +724,7 @@ const bloomsForBeesCU = {
 const nationalTrustButterflies = { 
   id: 1011, 
   behaviour: 'static',
-  name: 'National Trust - Spotting and identifying Britain\'s butterflies',
+  name: 'National Trust - Britain\'s butterflies',
   moduleSize: 1,
   lessonPlanLandscape: 1,
   lessonPlanPortrait: 101,

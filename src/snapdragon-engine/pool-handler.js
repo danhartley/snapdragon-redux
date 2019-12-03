@@ -9,7 +9,10 @@ export const getPoolItems = async (collection, poolSize = 5) => {
   const item = collection.nextItem;
 
   if(collection.behaviour === 'static') {
-    return getItemsFromCollection(collection, item, poolSize);
+    const otherItems = collection.items.filter(i => i.name !== item.name);
+    if(!otherItems) {
+      return getItemsFromCollection(collection, item, poolSize);
+    }
   }
 
   const rank = findRankByIconicTaxon(item.taxonomy, item.iconicTaxon);
@@ -45,6 +48,6 @@ export const getPoolItems = async (collection, poolSize = 5) => {
   }
 };
 
-  const getItemsFromCollection = (collection, item, poolSize) => {
-    return utils.shuffleArray([ ...R.take(poolSize, utils.shuffleArray(collection.items.filter(i => i.name !== item.name))), item]);
+  const getItemsFromCollection = (otherItems, item, poolSize) => {
+    return utils.shuffleArray([ ...R.take(poolSize, utils.shuffleArray(otherItems)), item]);
   };
