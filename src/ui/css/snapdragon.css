@@ -720,14 +720,15 @@ body {
   justify-content: center;
 }
 
-.card-link-container > div {
+/* .card-link-container > div {
   display: flex;
   flex-direction: column;
   font-size: .8rem;
-}
+} */
 
 .card-link-container i {
-  margin-left: .125rem;
+  font-size: 1.5rem;
+  /* margin-left: .125rem; */
 }
 
 .block-container {
