@@ -12,6 +12,8 @@ import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { firestore } from 'api/firebase/firestore';
 
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
+import stripWithImageTemplate from 'ui/screens/multichoice/multi-strips-with-images.html';
+
 import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
 
 export const renderMultiStrips = (collection, bonus, args) => {
@@ -47,7 +49,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
                 const template = document.createElement('template');
                 
-                template.innerHTML = stripTemplate;
+                template.innerHTML = answer.img ? stripWithImageTemplate : stripTemplate;
 
                 answers.forEach((answer, index) => answer.index = index);
 
@@ -146,7 +148,6 @@ export const renderMultiStrips = (collection, bonus, args) => {
                 const help = config.isLandscapeMode ? '(Click on the description below.)' : '(Tap on the description.)';
 
                 render(question.type, answers.map(a => a.type), { question: 'Match species family', help, clue: item.taxonomy.family });
-                // render(question.type, answers.map(a => a.type), { question: 'Match species family', help, conceal: answers.map(a => a.name), clue: item.taxonomy.family });
             }
 
             if(screen.name === 'epithet') {
@@ -171,7 +172,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
             }
 
             if(screen.name === 'definition') {
-                render(bonus.question, bonus.answers, bonus.overrides);
+                render({ term: bonus.question }, bonus.answers.map(a => { return { term: a } }), bonus.overrides);
             }
 
             if(screen.name === 'family') {
@@ -208,7 +209,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
             if(screen.name === 'trait-property') {
 
-                render(bonus.question, bonus.answers, bonus.overrides);
+                render({ term: bonus.question }, bonus.answers.map(a => { return { term: a } }), bonus.overrides);
 
                 if(bonus.overrides.trait && bonus.overrides.trait.name === 'song') {
 

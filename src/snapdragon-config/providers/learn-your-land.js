@@ -20,6 +20,7 @@ const learnYourLand1 = {
         {
           name: 'Grifola frondosa',
           time: [252],
+          questionIds: ['8', '9'],
           description: `Key features: a large, grey brown polypore, with overlapping caps, that are fan-shaped and fleshy (unlike many polypores which are woody). The underside is white to grey with numerous tiny pores (and no gills).
           
           Frondosa means leafy or abundant or full of leaves.
@@ -33,6 +34,7 @@ const learnYourLand1 = {
         {
           name: 'Laetiporus sulphureus',
           time: [360],
+          questionIds: ['10', '11'],
           description: `Chicken of the woods has a chicken like texture. It can be found late spring to mid-autumn.
 
           This mushroom has overlapping clusters or rosette and is commonly found on deciduous trees. 

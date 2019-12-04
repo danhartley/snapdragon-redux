@@ -1,5 +1,5 @@
 import { store } from 'redux/store';
-
+import { utils } from 'utils/utils';
 import { scoreHandler } from 'ui/helpers//score-handler';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -21,7 +21,7 @@ export const renderHorizontalStrips = collection => {
     const template = document.createElement('template');
           template.innerHTML = stripTemplate;
 
-    const answers = [ ...layout.provider.answers, layout.provider.answer ];
+    const answers = utils.shuffleArray([ ...layout.provider.answers, layout.provider.answer ]);
 
     const options = answers.map((answer, index) => {
         return {

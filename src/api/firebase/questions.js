@@ -119,5 +119,65 @@ export const questions = [
             'Ray flowers, bracts, or neither.'
         ]
     },
+    {
+        id: '8',
+        provider: 'snapdragon',
+        iconicTaxon: 'fungi',
+        rank: 'species',
+        taxon: 'Grifola frondosa',
+        statement: 'Hen of the woods is weakly parasitic on several living hardwoods, and is saprobic on decaying wood.',
+        question: 'At the base of which tree is it most commonly found?',
+        answer  : 'Oak',
+        answers: [
+            'Beech',
+            'Elm',
+            'Maple'
+        ]
+    },
+    {
+        id: '9',
+        provider: 'snapdragon',
+        iconicTaxon: 'fungi',
+        rank: 'species',
+        taxon: 'Grifola frondosa',
+        statement: 'The latin name for Hen of the woods is Grifola frondosa.',
+        question: 'What does the epithet frondosa mean?',
+        answer  : 'Full of leaves',
+        answers: [
+            'From the garden',
+            'Hairy',
+            'On walls'
+        ]
+    },
+    {
+        id: '10',
+        provider: 'snapdragon',
+        iconicTaxon: 'fungi',
+        rank: 'species',
+        taxon: 'Laetiporus sulphureus',
+        statement: 'Chicken Of The Woods is a polyore.',
+        question: 'What word cab be used to describe the fruiting body of a polypore?',
+        answer  : 'Conk',
+        answers: [
+            'Pileus',
+            'Cap',
+            'Conker'
+        ]
+    },
+    {
+        id: '11',
+        provider: 'snapdragon',
+        iconicTaxon: 'fungi',
+        rank: 'species',
+        taxon: 'Laetiporus sulphureus',
+        statement: 'Chicken Of The Woods is a parasitic and saprobic in its ecology.',
+        question: 'Which description best fits where it might be found.',
+        answer  : 'Growing in shelves at the base of an oak tree.',
+        answers: [
+            'Growing singly from moss.',
+            'Growing away from the base of an oak tree in a rosette of individual caps.',
+            'Growing in a clump directly from the ground.'
+        ]
+    },
 
 ];

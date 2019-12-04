@@ -27,7 +27,7 @@ export const commmon = [
     },
     {
         term: "Cryptic species complex",
-        definition: "Two or more species hidden under one species name. (See species complex)",
+        definition: "Two or more species hidden under one species name.",
         wiki: "https://en.wikipedia.org/wiki/Species_complex"
     },
     {
