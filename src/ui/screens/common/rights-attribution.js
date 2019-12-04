@@ -55,8 +55,10 @@ export const handleRightsAttribution = (image, disableModal = false, activeItem)
     const author = image.rightsholder || image.rightsHolder || 'Public domain';
     const source = image.source || '';
     const identifier = `${image.itemName.replace(' ', '_')}`;
-    const parent = document.querySelector(`.js-attribution-layer.${identifier}`);
-          parent.innerHTML = '';
+    
+    let parent = document.querySelector(`.js-attribution-layer.${identifier}`);
+        parent = parent || document.querySelector(`.js-attribution-layer.mixed-specimens`);// portrait hack for mixed species specimen carousel
+        parent.innerHTML = '';
 
     renderTemplate({title,author,source,licence}, template.content, parent);
 
