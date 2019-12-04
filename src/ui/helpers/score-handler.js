@@ -152,7 +152,9 @@ const stripScoreHandler = (test, callback, config) => {
 
             if(elem.hasClass(target, 'disabled')) return;
 
-            const answer = target.querySelector('div:nth-child(1)').innerText.trim();
+            const answerNode = target.querySelector('div:nth-child(1)');
+            const answer = answerNode.innerText.trim();
+            const answerIndex = answerNode.dataset.answerIndex;
             const vernacular = target.dataset.vernacular;
 
             test.taxon = 'name';
@@ -160,7 +162,7 @@ const stripScoreHandler = (test, callback, config) => {
             test.question = taxon.question;
             test.answer = answer;
                 
-            const score = markTest(test);
+            const score = markTest({...test, answeredIndex: answerIndex });
 
             target.classList.add(score.colour);
 

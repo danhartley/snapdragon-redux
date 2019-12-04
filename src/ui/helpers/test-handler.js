@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 
 export const cleanText = text => {
-    return text ? text.toLowerCase().replace(/ /g,'') : '';
+    return text.term ? text.term.toLowerCase() : text.toLowerCase().replace(/ /g,'');
 };
 
 export const isAnswerEqualToQuestion = (question, answer) => {
@@ -13,9 +13,13 @@ export const isAnswerEqualToQuestion = (question, answer) => {
 
 const isAnswerCorrect = score => {
 
-    score.answer = score.answer.trim();
-
     let isCorrect;
+
+    if(score.answeredIndex) {
+        return parseInt(score.answeredIndex) === score.answerIndex;
+    }
+
+    score.answer = score.answer.trim();
 
     isCorrect = isAnswerEqualToQuestion(score.question, score.answer);
 

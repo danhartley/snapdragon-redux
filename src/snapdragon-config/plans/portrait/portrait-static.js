@@ -8,11 +8,11 @@ export const portraitStatic = {
     levels: [
         {   id: 1,
             name:'Level 1',     
-            layouts: [ L.mixedSpecimenImages ],       
+            layouts: [ L.familyMatch ],       
             // layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch, L.familyMatch , L.familyStripsMatch, L.textCompleteGenus, L.textCompleteSpecies ],
             // layouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
             // reviewLayouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
-            bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'traits', 'song', 'definition' ] } ]
+            // bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'traits', 'song', 'definition' ] } ]
         },
         // {   id: 2,
         //     name:'Level 2',

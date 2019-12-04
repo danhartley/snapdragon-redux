@@ -17,9 +17,11 @@ export const landscapeFungi = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            // layouts: [ L.mixedSpecimenImages, propertyTrait(L.mixedTraitImages, 'gillAttachment'), propertyTrait(L.mixedTraitImages, 'capShape') ],
-            layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch, propertyTrait(L.mixedTraitImages, 'capShape'), L.textCompleteGenus, propertyTrait(L.mixedTraitImages, 'gillAttachment'), L.textCompleteSpecies ],
-            bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'lookalikes', 'definition' ] } ]
+            layouts: [ L.mixedSpecimenImages, propertyTrait(L.mixedTraitImages, 'gillAttachment'), propertyTrait(L.mixedTraitImages, 'capShape') ],
+            // layouts: [ L.latinToCommonMatch, propertyTrait(L.mixedTraitImages, 'capShape') ],
+            // layouts: [ propertyTrait(L.mixedTraitImages, 'capShape'), L.textCompleteGenus, propertyTrait(L.mixedTraitImages, 'gillAttachment'), L.textCompleteSpecies ],
+            // layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch, propertyTrait(L.mixedTraitImages, 'capShape'), L.textCompleteGenus, propertyTrait(L.mixedTraitImages, 'gillAttachment'), L.textCompleteSpecies ],
+            // bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'lookalikes', 'definition' ] } ]
         },
         // {   id: 1,
         //     name:'Level 1',
