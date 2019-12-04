@@ -16,8 +16,6 @@ const createLessonPlan = async (lessonPlan, config, collection, lesson) => {
 
     const nextRoundLayoutTemplates = getNextRoundLayouts(lessonPlan, config, lesson);
 
-    console.log(nextRoundLayoutTemplates);
-    
     return await createNextRound(
         lessonPlan,
         nextRoundLayoutTemplates, 

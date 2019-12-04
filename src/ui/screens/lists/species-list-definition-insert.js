@@ -13,7 +13,6 @@ export const onSpeciesChangeHandler = species => {
         const tr = document.querySelector(`#id_${id}`);
 
         currentlyActiveRow = tr;
-        console.log(currentlyActiveRow);
         currentlyActiveSpecies = species;
         
     } catch(e) {
@@ -23,8 +22,6 @@ export const onSpeciesChangeHandler = species => {
 };
 
 export const openNoteHandler = note => {
-
-    console.log(note);
 
     let parent = document.getElementById('insertParent');
 

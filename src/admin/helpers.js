@@ -101,13 +101,11 @@ const loadInatCollection = (inat, itis, eol, parseSpeciesData, gbif, inatItems) 
                 };
                 itis.binomialLookup(item.name).then(response => {
                     if(response.scientificNames[0] === null) {
-                        console.log(item.name);
                         return;
                     }
                     const itisId = response.scientificNames[0].tsn;
                     eol.searchEOLByProvider(903, itisId).then(response => {
                         if(response.length === 0) {
-                            console.log('response: ', response);
                             return;
                         }
                         const eolId = response[0].eol_page_id;

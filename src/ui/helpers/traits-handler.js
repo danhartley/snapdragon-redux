@@ -107,7 +107,6 @@ const getSetOfTraitAnswers = (pool, trait) => {
             pool.forEach( b => {
                 if(a !== b) {
                     const exists = sets.filter(s => s === [a,b] || s === [b,a]).length > 0;
-                    console.log(exists);
                     if(!exists) { 
                         sets.push([a,b]);
                     }
@@ -131,12 +130,8 @@ const getSetOfTraitAnswers = (pool, trait) => {
         if(sets.length === 0) {
             sets = ['a', 'b', trait.value];
         }
-
-        console.log(sets);
-
+        
         sets = sets.map(set => set.join(', '));
-
-        console.log(sets);
     }
   
     return utils.shuffleArray(sets);

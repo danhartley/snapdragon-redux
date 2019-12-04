@@ -210,8 +210,8 @@ export const renderSpeciesList = (collection, args) => {
                     const unit = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));
                     const top = (standardBlock * 2) + (rowHeight * (noOfRows - 1)) - ( 2 * unit);
 
-                    console.log('unit: ', unit);
-                    console.log('top: ', top);
+                    // console.log('unit: ', unit);
+                    // console.log('top: ', top);
 
                     scroll.scrollTop = top;
                 };

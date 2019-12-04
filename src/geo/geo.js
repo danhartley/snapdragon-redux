@@ -21,12 +21,12 @@ const getHTML5Location = () => {
 
 export const getLocation = (config) => {
   if(!!config.coordinates && config.coordinates.lat && config.coordinates.long) {
-    console.log(config);
+    console.log('geolocation config: ',config);
     return new Promise(resolve => {
         resolve(config.coordinates);
     });
   } else {
-    console.log(config);
+    console.log('geolocation config: ', config);
     return getHTML5Location();
   }  
 };
@@ -76,7 +76,7 @@ export const getPlace = async (config, force = false) => {
     const json = await response;    
     return await json;
   } else {    
-    console.log(config);
+    console.log('get place config: ', config);
     const coordinates = await getLocation(config);        
     const latitude = coordinates['0'] || coordinates.lat;
     const longitude = coordinates['1'] || coordinates.long;
@@ -208,11 +208,9 @@ export function GoogleAutocomplete_Original(place, callback) {
     const src = `https://maps.googleapis.com/maps/api/js?key=${ACCESS_KEY}&sessiontoken=${SESSION_TOKEN}&libraries=places`;
 
     createScriptRequest(src, () => {
-      console.log('New session');
       getPredictions();
     });
   } else {
-    console.log(place);
     getPredictions();
   }
 }

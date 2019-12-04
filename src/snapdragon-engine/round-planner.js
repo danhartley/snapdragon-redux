@@ -39,8 +39,6 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
             return { ...L.providerHorizontalStrip, lessonName:"Lesson 1", levelName:"Level 1", speciesName: provider.name, provider };
         });
 
-        console.log(providerLayouts);
-
         if(providerLayouts) {
             lessonPlan.layouts = [ ...lessonPlan.layouts, ...providerLayouts ];
         }

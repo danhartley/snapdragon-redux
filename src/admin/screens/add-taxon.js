@@ -96,8 +96,6 @@ export const addTaxon = () => {
             savedText.innerHTML = response;
             savedText.classList.remove('hide');
 
-            console.log(response);
-
         });
 
     };

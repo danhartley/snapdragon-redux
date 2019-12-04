@@ -29,7 +29,7 @@ Array.prototype.concatAll = function() {
           sink();
         }, delay);    
       })
-    .onValue(function(element) { console.log(element) });
+    .onValue(function(element) { console.log('timer: ', element) });
     return id;
   };
   

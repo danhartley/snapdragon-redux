@@ -181,11 +181,11 @@
     justify-content: center;
 }
 
-  #cardModal .compare-species-link {
+  /* #cardModal .compare-species-link {
     pointer-events: none;
     border: none;
     color: var(--snap-progress-bg);
-  }
+  } */
 
   #basicModal .modal-dialog {
     max-width: 600px;
