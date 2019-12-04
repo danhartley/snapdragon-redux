@@ -44,7 +44,8 @@ export const renderTestCardTemplate = (collection, context) => {
         container.classList.add('swap-in-card');
 
         const card = document.querySelector(selector);
-        const icon = card.querySelector('.js-card-link');        
+        const icon = card.querySelector('.js-card-link');
+              icon.classList.remove('disabled-icon');
 
         return { card, icon };
     }
@@ -87,12 +88,12 @@ export const renderTestCardTemplate = (collection, context) => {
 
         await renderSpeciesCard();
 
-        setTimeout(() => {
-            if(item.lichen) {
-                const cardName = document.querySelector('.js-species-card .js-card-link > span:nth-child(1)');
-                      cardName.innerHTML = 'Group';
-            }   
-        }, 500);
+        // setTimeout(() => {
+        //     if(item.lichen) {
+        //         const cardName = document.querySelector('.js-species-card .js-card-link > span:nth-child(1)');
+        //               cardName.innerHTML = 'Group';
+        //     }   
+        // }, 500);
     });
 
     renderIcon(item.taxonomy, document);

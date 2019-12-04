@@ -288,6 +288,12 @@ a.dropdown-item {
   display: none;
 }
 
+.disabled-icon {
+  cursor: initial;
+  opacity: .5;
+  pointer-events: none;
+}
+
 .scrollable.card {
   text-align: left;
 }
@@ -728,7 +734,7 @@ body {
 
 .card-link-container i {
   font-size: 1.5rem;
-  /* margin-left: .125rem; */
+  cursor: pointer;
 }
 
 .block-container {
