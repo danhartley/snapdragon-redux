@@ -968,7 +968,7 @@ export const enums = {
   PLAYFUL: 'Playful',
   TERRITORIAL: 'Territorial',
   NON_TERRITORIAL: 'Non territorial',
-  BIPARENTAL: 'Biparental',
+  BIPARENTAL_CARE: 'Biparental care',
   COOPERATIVE_BREEDING: 'Cooperative breeding',
   TOOL_MAKING: 'Tool making',
   PROBLEM_SOLVING: 'Problem solving',
@@ -1134,6 +1134,7 @@ export const enums = {
   CRYPTIC_SPECIES_COMPLEX: 'Cryptic species complex',  
   RHIZOMORPHS: 'Rhizomorphs',
   GEOPHYTE: 'Geophyte',
+  RICTAL_BRISTLES: 'Rictal bristles',
   type: 'characteristic',
   name: 'characteristic'
   },

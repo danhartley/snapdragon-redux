@@ -26,8 +26,8 @@ const getTests = async (collection, itemIndices, bonusLayouts, lessonName, level
         return new Promise(resolve => resolve(getTraitTests(itemsInThisRound)));
     };
 
-    const getTraitTypeBirdsongTests = itemsInThisRound => {
-        return new Promise(resolve => resolve(getBirdsongTests(itemsInThisRound)));
+    const getTraitTypeBirdsongTests = (itemsInThisRound, collection) => {
+        return new Promise(resolve => resolve(getBirdsongTests(itemsInThisRound, collection)));
     };
 
     const getTraitTypeLookalikeTests = itemsInThisRound => {
@@ -52,7 +52,7 @@ const getTests = async (collection, itemIndices, bonusLayouts, lessonName, level
                     case 'traits':
                         return getTraitTypeTests(itemsInThisRound);
                     case 'song':
-                        return getTraitTypeBirdsongTests(itemsInThisRound);
+                        return getTraitTypeBirdsongTests(itemsInThisRound, collection);
                     case 'lookalikes':
                         return getTraitTypeLookalikeTests(itemsInThisRound);
                     case 'definition':                        
@@ -74,7 +74,7 @@ const getTests = async (collection, itemIndices, bonusLayouts, lessonName, level
 
         } else {
             traitTests = getTraitTypeTests(itemsInThisRound);
-            birdsongTests = getTraitTypeBirdsongTests(itemsInThisRound);            
+            birdsongTests = getTraitTypeBirdsongTests(itemsInThisRound, collection);            
             lookalikeTests = getTraitTypeLookalikeTests(itemsInThisRound);
             definitionTests = getDefinitionTypeTests(itemsInThisRound);
         }

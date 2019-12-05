@@ -179,5 +179,20 @@ export const questions = [
             'Growing in a clump directly from the ground.'
         ]
     },
+    {
+        id: '12',
+        provider: 'snapdragon',
+        iconicTaxon: 'aves',
+        rank: 'order',
+        taxon: 'Passeriformes',
+        statement: 'Passerines are distinguished from other orders of birds by the arrangement of their toes.',
+        question: 'Which description describes this arrangement?',
+        answer  : '3 toes pointing forward and one back (anisodactyly).',
+        answers: [
+            '2 toes facing forward (digits 2 and 3) and 2 back (zygodactyly).',
+            'All 4 toes point forward (pamprodactyly).',
+            '3 toes all of which point forward (tridactyly).'
+        ]
+    },
 
 ];

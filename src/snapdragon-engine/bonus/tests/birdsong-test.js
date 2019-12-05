@@ -2,7 +2,7 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 
-export const getBirdsongTests = itemsInThisRound => {
+export const getBirdsongTests = (itemsInThisRound, collection) => {
 
     if(itemsInThisRound === undefined) return [];
 
@@ -10,7 +10,7 @@ export const getBirdsongTests = itemsInThisRound => {
         
         if(item.taxonomy.class && item.taxonomy.class.toLowerCase() !== 'aves') return [];
         
-        const { question, answers, overrides } = getBirdsongTest(item, itemsInThisRound);
+        const { question, answers, overrides } = getBirdsongTest(item, itemsInThisRound, collection);
 
         if(!question) return {};
 
@@ -25,7 +25,7 @@ export const getBirdsongTests = itemsInThisRound => {
     return tests;
 }
 
-const getBirdsongTest = (item, itemsInThisRound) => {
+const getBirdsongTest = (item, itemsInThisRound, collection) => {
 
     if(!item.traits || Object.keys(item.traits).length === 0) return;
 
@@ -34,7 +34,7 @@ const getBirdsongTest = (item, itemsInThisRound) => {
     
     // require other birds, which may not be in this collection…
 
-    let birds = R.take(3, itemsInThisRound.filter(bird => bird.name.toLowerCase() !== item.name.toLowerCase()));
+    let birds = R.take(3, collection.items.filter(bird => bird.name.toLowerCase() !== item.name.toLowerCase()));
         birds.push(item);
 
     const birdNames = utils.shuffleArray(birds.map(bird => bird.name));

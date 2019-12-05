@@ -33,7 +33,7 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
         });
 
         let providerQuestions = await providerHandler.getLayouts(collection, roundItemNames);
-        providerQuestions = R.flatten(providerQuestions).filter(layout => layout);
+            providerQuestions = R.flatten(providerQuestions).filter(layout => layout);
 
         let providerLayouts = providerQuestions.map(provider => {
             return { ...L.providerHorizontalStrip, lessonName:"Lesson 1", levelName:"Level 1", speciesName: provider.name, provider };

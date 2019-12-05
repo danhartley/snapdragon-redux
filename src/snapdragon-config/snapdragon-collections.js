@@ -455,7 +455,8 @@ const btoCorvids = {
   species: [
     {
       name: 'Corvus corone',
-      time: [30, 50, 190],
+      time: [30, 50],
+      questionIds: ['12'],
       description: `Range: found throughtout the British Isles with the exception of NW Scotland and most of Ireland where it is replaced by the hooded crow.
 
       Behaviour: found singly, more commony in pairs, but frequently in groups.
@@ -466,21 +467,19 @@ const btoCorvids = {
       
       In flight: steady wingbeats and heavy, giving the impression that it is bigger than it is (may be mistaken for a buzzard). Pleasingly proportioned effect.
 
-      Vocalisation: highly vocal, give a distinctive, far-carrying 'kaaa', usually repeated 3 times.
-
-      Bill: deeply curved and stout, compared to more straight, dagger-shaped bill of the rook.
+      Vocalisation: highly vocal, give a distinctive, far-carrying 'kaaa', usually repeated 3 times.      
       `
     },
-    {
-      name: 'Corvus cornix',
-      time: [42],
-      description: `Range: replaces the carrion crown in Ireland.
+    // {
+    //   name: 'Corvus cornix',
+    //   time: [42],
+    //   description: `Range: replaces the carrion crown in Ireland.
       
-      Appearance: two-tone grey and black plumage.`
-    },
+    //   Appearance: two-tone grey and black plumage.`
+    // },
     {
       name: 'Corvus frugilegus',
-      time: [110, 198],
+      time: [110],
       description: `Appearance: similar in size to the carrion crow.
        
       Range: found throughtout Britain & Ireland with the exception of the extreme NW.
@@ -489,13 +488,11 @@ const btoCorvids = {
 
       Defining feature: bare white face and pale bill base. 
 
-      On the ground, tend to more upright (than the carrion crow), and look somewhat baggy and scruffy with loose oily-looking plumage, potbelly, higly peaked crown and splendid, baggy pantaloons.
+      On the ground, tend to more upright (than the carrion crow), and look somewhat scruffy and baggy with loose oily-looking plumage, potbelly, higly peaked crown and splendid, baggy pantaloons.
 
-      In flight: look longer winged (than crows) with wings narrowing slightly near the body. The tail is long and graduated (unlike crow), but can look confusingly like a raven tail if size is not apparent.
+      In flight: rooks look longer winged (than crows) with wings narrowing slightly near the body. The tail is long and graduated (unlike crow), but can look confusingly like a raven tail if size is not apparent.
 
-      In late spring and summer, recently fledged rooks have fully feathered faces and can look crow-like.
-
-      Bill: dagger-shaped, straight, bill, compared to the more deeply curved and stout bill of the rook. Check for adults to help with identification.
+      In late spring and summer, recently fledged rooks have (until they become independent) fully feathered faces and can look crow-like, especially as baggy trousers and oily plummage have yet to develop.      
       
       Vocalisation: extremely vocal with a wide repertoire, rooks have a distinctive, drawn-out 'kaah', which they often utter whilst pitching forward.
       `
@@ -504,7 +501,7 @@ const btoCorvids = {
       name: 'Corvus corax',
       time: [213],
       description: `
-      Appearance: the raven is huge, by far the largest passerine, with similar wingspan to a buzzard (Buteo buteo), and even larger body.
+      Appearance: the raven is huge, by far the largest passerine (perching birds, or songbirds), with similar wingspan to a buzzard (Buteo buteo), and even larger body.
 
       Habitat: almost everywhere except the far E Scotland & England though may even be found here, especially in winter.
 
@@ -559,6 +556,42 @@ const btoCorvids = {
       Appearance: short wings and long tails, short, slight bills are lemon yellow.
       `
     }
+  ],
+  notes: [
+    {
+      tag: 'The crow family',
+      time: [0],
+      description: `A cosmopolitan family of oscine passerine birds (songbirds) that contains the crows, ravens, rooks, choughs and jackdaws as well as the jays, magpies, treepies, and nutcrackers.
+      
+      They are notworthy for their intelligence, self-awareness and tool-making abilities.
+      `
+    },
+    {
+      tag: 'Identification',
+      time: [10],
+      description: `One of the most frustrating ID challenges is being able to separate the 5 all black crows that occur in the UK: crow, rook, raven, jackdaw and chough.
+      
+      On the ground and with good views it is relatively straightforward. But particularly in flight things are more difficult.
+      `
+    },
+    {
+      tag: 'Corvus cornix',
+      time: [42],
+      description: `Range: replaces the carrion crown in Ireland.
+      
+      Appearance: two-tone grey and black plumage.`
+    },
+    {
+      tag: 'Carrion crow v Rook',
+      time: [190],
+      description: `Carrion crow bill: deeply curved and stout, compared to more straight, dagger-shaped bill of the rook.
+
+
+      Rook bill: dagger-shaped, straight, bill, compared to the more deeply curved and stout bill of the rook. Check for adults to help with identification.
+      
+      The presence of nearby adults should give the game away: you will not see rooks feeding crows.
+      `
+    },
   ],
   iconicTaxa: [ 
     {

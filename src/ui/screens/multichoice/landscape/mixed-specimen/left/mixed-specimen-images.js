@@ -24,7 +24,7 @@ export const listenToImageSelection = listener => {
     listenersToImageSelection.push(listener);
 };
 
-export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, preselectedItems) => {
+export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, preselectedItems, randomSelection = false) => {
 
     let imagesPerItem = noOfImagesPerItem || 1;
 
@@ -33,8 +33,6 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
     const item = R.clone(collection.nextItem);
 
     if(!item) return;
-
-    console.log('RENDERMIXEDSPECIMENIMAGES');
 
     const template = document.createElement('template');
           template.innerHTML = specimensTemplate;
@@ -50,7 +48,9 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
 
         const images = utils.shuffleArray(mixedItems).map((item, index) => {
             
-            const itemImages = item.images.filter(i => i.starred).length > 0 ? item.images.filter(i => i.starred) : utils.shuffleArray(item.images);
+            const itemImages = randomSelection
+                    ? utils.shuffleArray(item.images)
+                    : item.images.filter(i => i.starred).length > 0 ? item.images.filter(i => i.starred) : utils.shuffleArray(item.images);
 
             return itemImages.map((image, imageIndex) => {
                 if(imageIndex < imagesPerItem) {

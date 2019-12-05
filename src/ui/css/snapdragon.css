@@ -80,8 +80,7 @@ hr {
   background-color: var(--snap-progress-bg);
 }
 
-.btn.btn-light,
-.btn.btn-light:focus {
+.btn.btn-light, .btn.btn-light:focus {
   color: var(--snap-text-light) !important;
   background-color: var(--snap-collection) !important;
 }
@@ -1957,7 +1956,7 @@ a.collection-disabled {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background-color: var(--snap-toggle-header-off);
+  /* background-color: var(--snap-toggle-header-off); */
 }
 
 .lesson-list-header > div:nth-child(2) > div {  
@@ -1965,10 +1964,10 @@ a.collection-disabled {
   width: calc( var(--vh) * 5);
 }
 
-.lesson-list-header > div[data-toggle-state="off"]:nth-child(1), .lesson-list-header > div[data-toggle-state="off"]:nth-child(2) > div {
+/* .lesson-list-header > div[data-toggle-state="off"]:nth-child(1), .lesson-list-header > div[data-toggle-state="off"]:nth-child(2) > div {
   color: var(--snap-toggle-header-off);
   background-color: var(--snap-toggle-header-on);
-}
+} */
 
 .lesson-list-header > div:nth-child(1) {
   padding-left: .5rem !important;
@@ -1982,14 +1981,14 @@ a.collection-disabled {
   display: none;
 }
 
-.lesson-list-header > div[data-toggle-state="on"]:nth-child(1), .lesson-list-header > div[data-toggle-state="on"]:nth-child(2) > div {
+/* .lesson-list-header > div[data-toggle-state="on"]:nth-child(1), .lesson-list-header > div[data-toggle-state="on"]:nth-child(2) > div {
   color: var(--snap-toggle-header-on);
   background-color: var(--snap-toggle-header-off);
-}
+} */
 
-.lesson-list-header > div[data-toggle-state="on"]:nth-child(2) {
+/* .lesson-list-header > div[data-toggle-state="on"]:nth-child(2) {
   background-color: var(--snap-toggle-header-on);
-}
+} */
 
 .lesson-list-header i {
   font-size: 1.6rem;
@@ -2177,7 +2176,7 @@ a.collection-disabled {
 
 #insertParent {
   background-color: var(--snap-container-background);  
-  font-size: .7rem;
+  font-size: .8rem;
   padding: 1rem;
 }
 

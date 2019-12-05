@@ -49,5 +49,7 @@ export const openNoteHandler = note => {
         parent = document.getElementById('insertParent');
         parent.innerHTML = '';
         renderTemplate({ note }, template.content, parent);
+        const noteText = document.querySelector('#insertParent > div:nth-child(1) > div:nth-child(2)');
+              noteText.innerHTML =noteText.innerHTML.replace(/\r?\n/g, '<br />');
     }    
 };

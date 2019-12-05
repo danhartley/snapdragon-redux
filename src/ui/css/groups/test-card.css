@@ -204,9 +204,10 @@ div.text-entry {
     grid-template-rows: 2fr auto 3fr;
   }
 
-  .btn.btn-auxiliary {
+  .btn.btn-auxiliary, .btn.btn-auxiliary:focus {
     color: var(--snap-text-dark) !important;
-    background-color: var(--snap-list-header) !important;
+    background-color: var(--snap-btn-auxillary) !important;
+    cursor: pointer !important;
   }
 
   .images-names-txt {
@@ -255,9 +256,18 @@ div.text-entry {
     height: calc(
         var(--vh, 1vh) * 100
       - var(--vhFixtures, 15vh)
-      - var(--vhDoubleStandardBlock,20vh) 
+      - var(--vhDoubleStandardBlock,20vh)
       - var(--vhButtonBlock, 9vh));
     top: calc(var(--vhDoubleStandardBlock,20vh));
+}
+
+.test-card-content-less-standard-block {
+    height: calc(
+        var(--vh, 1vh) * 100
+      - var(--vhFixtures, 15vh)
+      - var(--vhDoubleStandardBlock,20vh)
+      - var(--vhStandardBlock,10vh)
+      - var(--vhButtonBlock, 9vh));
 }
 
 .test-card-content.horizontal {

@@ -230,6 +230,9 @@ export const renderMultiStrips = (collection, bonus, args) => {
                             const header = document.querySelector('.js-test-card-question');
                                   header.classList.remove('standard-block');
                                   header.classList.add('double-standard-block');
+
+                            const content = document.querySelector('.js-test-card-content');
+                                  content.classList.add('test-card-content-less-standard-block');
                         };
 
                         renderBirdsong();
