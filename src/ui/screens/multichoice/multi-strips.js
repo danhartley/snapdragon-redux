@@ -84,7 +84,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
                     const buildQuestion = async () => {
 
                         answer = { term: item.name };
-                        answers = await firestore.getSpeciesByIconicTaxon(item, 8);
+                        answers = await getPoolItems(collection, 6);
                         answers = R.take(8, answers).filter(s => s.name.toLowerCase() !== item.name.toLowerCase()).map(s => s.name);
                         answers = R.take(5, answers);
                         answers.push(item.name);

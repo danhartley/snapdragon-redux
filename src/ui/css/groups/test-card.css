@@ -38,8 +38,9 @@
   }
    
   .test-card-question .question-question {
-    text-transform: uppercase;
-    color: var(--snap-text-dark);
+    /* text-transform: uppercase; */
+    font-size: 1.1rem;
+    color: var(--snap-text-medium-light);
     display: flex;
     flex-direction: row;
     width: 100%;

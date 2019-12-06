@@ -3,6 +3,7 @@ import { actions } from 'redux/actions/action-creators';
 import { elem } from 'ui/helpers/class-behaviour';
 import { markTest, isAnswerEqualToQuestion } from 'ui/helpers/test-handler';
 import { subscription } from 'redux/subscriptions';
+import { getTraitsForTests } from '../../api/traits/traits-for-tests';
 
 export const scoreHandler = (type, test, callback, config) => {
     
@@ -168,14 +169,18 @@ const stripScoreHandler = (test, callback, config) => {
 
             items.forEach(strip => {   
                 const stripAnswer = strip.querySelector('div:nth-child(1)');
-                const matchesScientificName = isAnswerEqualToQuestion(stripAnswer.innerText, taxon.name);
-                const matchesVernacularName = vernacular 
-                                                ? isAnswerEqualToQuestion(stripAnswer.innerText, vernacular) 
-                                                : false;
-                const matchesQuestion = isAnswerEqualToQuestion(stripAnswer.innerText, taxon.question);
-                if(matchesScientificName || matchesVernacularName || matchesQuestion) {
+                const stripAnswerIndex = parseInt(stripAnswer.dataset.answerIndex);
+                if(stripAnswerIndex === test.answerIndex) {
                     strip.classList.add('snap-success');
                 }
+                // const matchesScientificName = isAnswerEqualToQuestion(stripAnswer.innerText, taxon.name);
+                // const matchesVernacularName = vernacular 
+                //                                 ? isAnswerEqualToQuestion(stripAnswer.innerText, vernacular) 
+                //                                 : false;
+                // const matchesQuestion = isAnswerEqualToQuestion(stripAnswer.innerText, taxon.question);
+                // if(matchesScientificName || matchesVernacularName || matchesQuestion) {
+                //     strip.classList.add('snap-success');
+                // }
             });     
             
             if(callback) {

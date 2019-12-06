@@ -131,6 +131,12 @@ export const plantae = [
         examples: ['Solanaceae', 'Solanum lycopersicum', 'Solanum melongena', 'Solanum tuberosum', 'Vaccinium']
     },
     {
+        term: 'Nectar spur',
+        definition: 'A hollow, nectar-containing tube that extends part of a flower. An example of coevolution (flower + pollinating insect).',
+        wiki: 'https://en.wikipedia.org/wiki/https://en.wikipedia.org/wiki/Nectar_spur',
+        examples: ['Hypericum perforatum']
+    },
+    {
         term: 'Stamen',
         definition: 'Pollen-producing organ of a flower. Consists of a filament and pollen-carrying anther.',
         wiki: 'https://en.wikipedia.org/wiki/Stamen',
@@ -215,6 +221,16 @@ export const plantae = [
         term: 'Pseudanthium',
         definition: 'A "false flower" made up of several true flowers. Capitulum is synonymous but usually used to refer to the Asteraceae.',
         wiki: 'https://en.wikipedia.org/wiki/Pseudanthium'
+    },    
+    {
+        term: 'Involucre',
+        definition: 'A whorl or rosette of bracts surrounding an inflorescence (especially a capitulum) or at the base of an umbel.',
+        wiki: 'https://en.wikipedia.org/wiki/Involucre'
+    },    
+    {
+        term: 'Infructescence',
+        definition: '(Fruiting head) is defined as the ensemble of fruits derived from the ovaries of an inflorescence.',
+        wiki: 'https://en.wikipedia.org/wiki/Infructescence'
     },    
     {
         term: 'Green manure',
@@ -360,6 +376,26 @@ export const plantae = [
         wiki: 'https://en.wikipedia.org/wiki/Inflorescence#Determinate_or_cymose'
     },
     {
+        term: 'Blossom',
+        definition: 'The flowers of stone fruit trees (genus Prunus) and of some other plants with a similar appearance that flower profusely for a period of time in spring.',
+        wiki: 'https://en.wikipedia.org/wiki/Blossom'
+    },
+    {
+        term: 'Clonal colony',
+        definition: 'A group of genetically identical individuals, such as plants, fungi, or bacteria, that have grown in a given location, all originating vegetatively, not sexually, from a single ancestor.',
+        wiki: 'https://en.wikipedia.org/wiki/Clonal_colony'
+    },
+    {
+        term: 'Pollination syndrome',
+        definition: 'Suites of flower traits that have evolved in response to natural selection imposed by different (abiotic or biotic) pollen vectors such as birds, bees, flies, inc. flower shape, size, colour, etc.',
+        wiki: 'https://en.wikipedia.org/wiki/Pollination_syndrome'
+    },
+    {
+        term: 'Sessility',
+        definition: 'A characteristic of plant parts that have no stalk. Flowers or leaves are borne directly from the stem or peduncle, and thus lack a petiole or pedicel.',
+        wiki: 'https://en.wikipedia.org/wiki/Sessility_(botany)'
+    },
+    {
         term: 'Racemose',
         definition: 'Category of inflorescence (indeterminate) where the youngest (and smallest) flowers are located at the top or centre. Opposite of cymose.',
         wiki: 'https://en.wikipedia.org/wiki/Inflorescence#Indeterminate_or_racemose'
@@ -411,11 +447,6 @@ export const plantae = [
         definition: "Plant species that is first to colonise disturbed lands.",
         wiki: "https://en.wikipedia.org/wiki/Ruderal_species",
         examples: ['Cirsium arvense']
-    },
-    {
-        term: "Supertramp",
-        definition: "Animal which follows strategy of high dispersion among different habitats where it is not specialised.",
-        wiki: "https://en.wikipedia.org/wiki/Supertramp_(ecology)",
     },
     {
         term: "Capsule",
@@ -748,11 +779,45 @@ export const plantae = [
     {
         term : "Lanceolate",
         definition : "(Of leaf) long, wider in the middle, shaped like a lance tip.",
+        trait: 'leafShape',
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Leaf_morphology_lanceolate.png',
             author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=6549499',
+        }
+    },
+    {
+        term : "Palmatisect",
+        definition : "(Of leaf) having lobes with incisions that extend almost up, but not quite to the petiole.",
+        trait: 'leafShape',
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/3/37/Palmatis%C3%A9qu%C3%A9e.svg',
+            author: 'By Pancrat - Own work, CC BY-SA 4.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=36185851',
+        }
+    },
+    {
+        term : "Imparipinnate",
+        definition : "(Of leaf) with an odd number of leaflets, pinnate with a terminal leaflet (the opposite of paripinnate).",
+        trait: 'leafDivision',
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_odd_pinnate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6559076',
+        }
+    },
+    {
+        term : "Paripinnate",
+        definition : "(Of leaf) pinnate with an even number of leaflets, lacking a terminal leaflet (the opposite of imparipinnate).",
+        trait: 'leafDivision',
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Leaf_morphology_even_pinnate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6559114',
         }
     },
     {
@@ -1027,7 +1092,7 @@ export const plantae = [
     },
     {
         term: 'Lobed',
-        definition: 'Being divided by clefts, may be pinnately lobed or palmately lobed.',
+        definition: 'Being divided by clefts, may be pinnate or palmate.',
         img: {
             url: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#/media/File:Leaf_morphology_lobed.png'
         },
@@ -1059,7 +1124,7 @@ export const plantae = [
     },
     {
         term: 'Panicle',
-        definition: 'A much-branched inflorescence, often racemes. A panicle may have determinate or indeterminate growth. Typical of grasses such as oat.',
+        definition: 'A much-branched inflorescence, often of racemes. It may have determinate or indeterminate growth. Typical of grasses such as oat.',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Inflorescences_Panicle_Kwiatostan_Wiecha.svg/800px-Inflorescences_Panicle_Kwiatostan_Wiecha.svg.png'
         },
@@ -1272,5 +1337,10 @@ export const plantae = [
         term: 'Terete',
         definition: 'Describes a cross section that is circular, or like a distorted circle, with a single surface wrapping around it.',
         wiki: 'https://en.wikipedia.org/wiki/Terete'
+    },
+    {
+        term: 'Cleistogamy',
+        definition: 'A type of automatic self-pollination of plants that can propagate by using non-opening, self-pollinating flowers. Common in the grass family, the Viola genus and peanuts and peas.',
+        wiki: 'https://en.wikipedia.org/wiki/Cleistogamy'
     },
 ];

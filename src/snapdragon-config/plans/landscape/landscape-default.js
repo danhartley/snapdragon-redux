@@ -18,8 +18,11 @@ export const landscapeDefault = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch, L.textCompleteSpecies ],
-            // layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch, propertyTrait(L.mixedTraitImages, 'leafShape'), L.textCompleteSpecies ],
+            layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch, L.textCompleteGenus
+                , propertyTrait(L.mixedTraitImages, 'leafShape')
+                , L.textCompleteSpecies, L.latinToCommonMatch
+            ],
+            // layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch ],
             bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'traits', 'song', 'lookalikes', 'definition' ] } ]
         },
         {   id: 2,

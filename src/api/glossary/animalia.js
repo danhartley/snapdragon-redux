@@ -9,8 +9,9 @@ export const animalia = [
         definition: "Feeding on grain.",
     },
     {
-        term: "Sward",
-        definition: "Expanse of short grass.",
+        term: "Supertramp",
+        definition: "Animal which follows strategy of high dispersion among different habitats where it is not specialised.",
+        wiki: "https://en.wikipedia.org/wiki/Supertramp_(ecology)",
     },
     {
         term: 'Crypsis',

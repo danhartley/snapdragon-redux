@@ -375,7 +375,12 @@ const wiseWomanTradition = {
     {
       name: 'Hypericum perforatum',
       time: [18],
-      description: 'Flowers are in perfect condition, just right for picking and making tinctures and oils from the fresh blossoms.'
+      description: `Flowers are in perfect condition, just right for picking and making tinctures and oils from the fresh blossoms.
+      
+      A tincture is typically an extract of plant or animal material dissolved in ethanol (ethyl alcohol).
+
+      In herbal medicine, alcoholic tinctures are most commonly made with a 20% ethanol concentration (Snapdragon).
+      `
     },
     {
       name: 'Lythrum salicaria',
@@ -390,7 +395,12 @@ const wiseWomanTradition = {
     {
       name: 'Rhus typhina',
       time: [112],
-      description: 'Staghorn Sumac, named in honour of the fuzz on the horns of a young male deer. Produces huge clusters of red berries which are high in anti-oxidants including anthocyanins.'
+      description: `Staghorn Sumac, named in honour of the fuzz on the horns of a young male deer. Produces huge clusters of red berries which are high in anti-oxidants including anthocyanins.
+      
+      Antioxidants are compounds that inhibit oxidation which produces free radicals, thereby leading to chain reactions that may damage the cells of organisms (Snapdragon).
+
+      Anthocyanins are water-soluble pigments that, depending on their pH, may appear red, purple, blue or black. Colouration may attract pollinators (to flowers), animals for seed dispersal (fruit), and protect against extreme weather (Snapdragon). 
+      `
     },
     {
       name: 'Vitis',
@@ -400,7 +410,9 @@ const wiseWomanTradition = {
     {
       name: 'Daucus carota',
       time: [200],
-      description: 'Flowers are rich in potassium. Together with the leaves, they can go in a salad. The whole plant is edible. (Skin contact with the foliage of Daucus carota, especially wet foliage, can cause skin irritation in some people, ed.). '
+      description: `Flowers are rich in potassium. Together with the leaves, they can go in a salad. The whole plant is edible. 
+      
+      Skin contact with the foliage of Daucus carota, especially wet foliage, can cause skin irritation in some people, (Snapdragon). `
     },
     {
       name: 'Geranium maculatum',
@@ -470,13 +482,6 @@ const btoCorvids = {
       Vocalisation: highly vocal, give a distinctive, far-carrying 'kaaa', usually repeated 3 times.      
       `
     },
-    // {
-    //   name: 'Corvus cornix',
-    //   time: [42],
-    //   description: `Range: replaces the carrion crown in Ireland.
-      
-    //   Appearance: two-tone grey and black plumage.`
-    // },
     {
       name: 'Corvus frugilegus',
       time: [110],
@@ -796,7 +801,7 @@ const nationalTrustButterflies = {
       time: [218],
       description: `A pair of common blues mating. 
       
-      The butterfly is the mature, reproductive stage of a complex metamorphosis (ed.).
+      The butterfly is the mature, reproductive stage of a complex metamorphosis (Snapdragon).
 
       After mating the female lays eggs.
       `
