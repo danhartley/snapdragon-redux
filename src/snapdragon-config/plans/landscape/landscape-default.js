@@ -2,10 +2,10 @@ import * as R from 'ramda';
 
 import { layouts as L } from 'snapdragon-config/screen-layouts';
 
-const propertyTrait = (traitPropertyMatch, trait) => {
+const propertyTrait = (traitPropertyMatch, traits) => {
     const layout = R.clone(traitPropertyMatch);
-    layout.screens[0].trait = trait;
-    layout.screens[1].trait = trait;
+    layout.screens[0].traits = traits;
+    layout.screens[1].traits = traits;
     return layout;
 };
 
@@ -19,7 +19,7 @@ export const landscapeDefault = {
         {   id: 1,
             name:'Level 1',
             layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch, L.textCompleteGenus
-                , propertyTrait(L.mixedTraitImages, 'leafShape')
+                , propertyTrait(L.mixedTraitImages, ['leafShape', 'leafDivision'])
                 , L.textCompleteSpecies, L.latinToCommonMatch
             ],
             // layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch ],

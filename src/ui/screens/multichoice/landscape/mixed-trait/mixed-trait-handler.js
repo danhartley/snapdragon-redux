@@ -16,15 +16,24 @@ const onTraitClicked = listener => {
     onTraitClickedListeners.push(listener);
 };
 
-const fetchTraits = async (trait, traitValues, glossary) => {
+const getMatchingTrait = (layoutTraits, traitValues) => {
 
-    let requiredTraitValues;
+    let requiredTraitValues, trait;
 
     for (let [key, obj] of Object.entries(traitValues)) {
-        if(utils.toCamelCase(key).toLowerCase() === trait.toLowerCase()) {
-            requiredTraitValues = obj.value.map(v => v.toLowerCase());
-        }
+        let t;
+        layoutTraits.map(t => { 
+            if(t.toLowerCase() === utils.toCamelCase(key).toLowerCase()) {
+                requiredTraitValues = obj.value.map(v => v.toLowerCase());
+                trait = t;
+            }
+        }) 
     };
+
+    return { requiredTraitValues, trait };
+};
+
+const fetchTraits = async (trait, requiredTraitValues, glossary) => {
 
     let traits = await firestore.getTraitDefinitions(glossary, trait);
         traits.forEach(trait => trait.term = trait.term.toLowerCase());
@@ -44,6 +53,8 @@ const fetchTraits = async (trait, traitValues, glossary) => {
         });
 
     onTraitsReadyListeners.forEach(listener => listener(traits, requiredTraits));
+
+    return trait;
 };
 
 const pendingScore = {};
@@ -59,7 +70,6 @@ const callback = (score, scoreUpdateTimer) => {
         bindScore(pendingScore.score);        
     });
 };
-
 
 const onClickTileHandler = (tile, requiredTraits, tiles) => {
 
@@ -90,6 +100,7 @@ const onClickTileHandler = (tile, requiredTraits, tiles) => {
 })};
 
 export const mixedTraitHandler = {
+    getMatchingTrait,
     fetchTraits,
     onTraitsReady,
     onTraitClicked,

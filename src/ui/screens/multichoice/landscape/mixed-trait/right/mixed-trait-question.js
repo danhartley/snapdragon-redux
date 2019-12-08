@@ -17,11 +17,13 @@ export const renderMixedTraitQuestion = collection => {
               template.innerHTML = questionTemplate;
         
         const item = collection.nextItem;
-        const trait = layout.screens[1].trait;
         const question = 'Match the trait';
-        const help = `(${utils.fromCamelCase(trait)})`;
+        
+        const { requiredTraitValues, trait } = mixedTraitHandler.getMatchingTrait(utils.shuffleArray(layout.screens[1].traits), item.traits);
 
-        mixedTraitHandler.fetchTraits(trait, item.traits, collection.glossary);
+        mixedTraitHandler.fetchTraits(trait, requiredTraitValues, collection.glossary);
+        
+        const help = `(${utils.fromCamelCase(trait)})`;
     
         const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question, help, term: '' });              
 
