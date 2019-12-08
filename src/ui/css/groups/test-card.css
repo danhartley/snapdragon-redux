@@ -226,15 +226,13 @@ div.text-entry {
   }
 
   .traits-names-txt img {
-      width: 2rem;
-      height: 2rem;
+    max-width: 2rem;
+    max-height: 3rem;
   }
 
   .traits-names-txt img.png {
       height: initial;
   }
-
-/* CARD HEADER */
 
 .question-container {
     grid-template-columns: 1fr 3fr 1fr;
@@ -249,8 +247,6 @@ div.text-entry {
     margin: 0.5rem 0 0 0;
     display: block;
   }
-
-/* Content */
 
 .test-card-content {
     padding: .5rem;
@@ -307,6 +303,11 @@ div.text-entry {
 }
 
 @media (min-width: 768px) {
+
+    .traits-names-txt {
+        column-count: 2;
+        padding: 1rem;
+    }
 
     .iconic-icon {
         font-size: 2rem;

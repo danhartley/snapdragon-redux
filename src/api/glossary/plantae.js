@@ -396,14 +396,47 @@ export const plantae = [
         wiki: 'https://en.wikipedia.org/wiki/Sessility_(botany)'
     },
     {
+        term: 'Sessile',
+        definition: 'Having no stalk, borne directly from the stem or peduncle, and thus lack a petiole or pedicel.',
+        wiki: 'https://en.wikipedia.org/wiki/Sessility_(botany)'
+    },
+    {
         term: 'Racemose',
         definition: 'Category of inflorescence (indeterminate) where the youngest (and smallest) flowers are located at the top or centre. Opposite of cymose.',
         wiki: 'https://en.wikipedia.org/wiki/Inflorescence#Indeterminate_or_racemose'
     },
     {
         term: 'Spadix',
+        trait: 'inflorescence',
         definition: 'Type of spike inflorescence having small flowers borne on a fleshy stem.',
-        wiki: 'https://en.wikipedia.org/wiki/Spadix_(botany)'
+        wiki: 'https://en.wikipedia.org/wiki/Spadix_(botany)',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Kolben_%28inflorescence%29.svg/320px-Kolben_%28inflorescence%29.svg.png',
+            author: 'By Amada44 - Own work, Public Domain.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=3270931',
+        }
+    },
+    {
+        term: 'Catkin',
+        trait: 'inflorescence',
+        definition: 'A slim, cylindrical flower cluster (a spike), with inconspicuous or no petals.',
+        wiki: 'https://en.wikipedia.org/wiki/Catkin',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Kaetzchen_%28inflorescence%29.svg/800px-Kaetzchen_%28inflorescence%29.svg.png',
+            author: 'By Amada44 - Own work, Public Domain',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=3270803',
+        }
+    },
+    {
+        term: 'Panicle',
+        trait: 'inflorescence',
+        definition: 'A much-branched inflorescence, often of racemes. It may have determinate or indeterminate growth. Typical of grasses such as oat.',
+        wiki: 'https://en.wikipedia.org/wiki/Panicle',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Inflorescences_Panicle_Kwiatostan_Wiecha.svg/800px-Inflorescences_Panicle_Kwiatostan_Wiecha.svg.png',
+            author: 'CC BY-SA 3.0',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=755437',
+        }
     },
     {
         term: 'Spathe',
@@ -612,7 +645,7 @@ export const plantae = [
     },
     {
         term : "Phyllotaxis",
-        definition : "Arrangement of leaveson a plant stem.",
+        definition : "Arrangement of leaves on a plant stem.",
         wiki: 'https://en.wikipedia.org/wiki/Phyllotaxis'
     },
     {
@@ -662,6 +695,7 @@ export const plantae = [
     },
     {
         term : "Spike",
+        trait: 'inflorescence',
         definition : "(Infloresence) a type of raceme with flowers that do not have a pedicel.",
         wiki: 'https://en.wikipedia.org/wiki/Inflorescence',
         img: {
@@ -680,6 +714,7 @@ export const plantae = [
     },
     {
         term : "Raceme",
+        trait: 'inflorescence',
         definition : "An unbranched, indeterminate inflorescence with pedicellate (having short floral stalks) flowers along the axis.",
         wiki: 'https://en.wikipedia.org/wiki/Raceme',
         img: {
@@ -688,6 +723,7 @@ export const plantae = [
     },
     {
         term : "Corymb",
+        trait: 'inflorescence',
         definition : "An inflorescence with the flowers growing in such a fashion that the outermost are borne on longer pedicels than the innermost, bringing all flowers up to a common level.",
         wiki: 'https://en.wikipedia.org/wiki/Corymb',
         img: {
@@ -818,6 +854,17 @@ export const plantae = [
             url: 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Leaf_morphology_even_pinnate.png',
             author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=6559114',
+        }
+    },
+    {
+        term : "Alternipinnate",
+        definition : "(Of leaf) pinnate with an odd number of leaflets, alternating (cf. imparipinnate).",
+        trait: 'leafDivision',
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/6/69/Leaf_morphology_alternipinnada.png',
+            author: 'By Maksim - File:Leaf morphology odd pinnate.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=17387300',
         }
     },
     {
@@ -1123,14 +1170,6 @@ export const plantae = [
         wiki: 'https://en.wiktionary.org/wiki/paripinnate'
     },
     {
-        term: 'Panicle',
-        definition: 'A much-branched inflorescence, often of racemes. It may have determinate or indeterminate growth. Typical of grasses such as oat.',
-        img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Inflorescences_Panicle_Kwiatostan_Wiecha.svg/800px-Inflorescences_Panicle_Kwiatostan_Wiecha.svg.png'
-        },
-        wiki: 'https://en.wikipedia.org/wiki/Panicle'
-    },
-    {
         term: 'Arcuate',
         definition: 'Secondary arching toward the apex.',
         img: {
@@ -1269,6 +1308,7 @@ export const plantae = [
     },
     {
         term : "Umbel",
+        trait: 'inflorescence',
         definition : "An inflorescence that consists of a number of short flower stalks (pedicels) which spread from a common point, somewhat like umbrella ribs.",
         wiki: 'https://en.wikipedia.org/wiki/Umbel',
         img: {

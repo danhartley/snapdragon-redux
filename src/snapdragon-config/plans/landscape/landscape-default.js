@@ -19,7 +19,7 @@ export const landscapeDefault = {
         {   id: 1,
             name:'Level 1',
             layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch, L.textCompleteGenus
-                , propertyTrait(L.mixedTraitImages, ['leafShape', 'leafDivision'])
+                , propertyTrait(L.mixedTraitImages, ['leafShape', 'leafDivision', 'inflorescence'])
                 , L.textCompleteSpecies, L.latinToCommonMatch
             ],
             // layouts: [ L.mixedSpecimenImages, L.commonToLatinMatch ],

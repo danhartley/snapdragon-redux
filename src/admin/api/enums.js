@@ -106,6 +106,7 @@ export const enums = {
   LEAF_TEXTURE: 'Leaf texture',
   JUVENILE_TEXTURE: 'Juvenile leaf texture',
   LEAF_SHAPE: 'Leaf shape',
+  LEAFLET_SHAPE: 'Leaflet shape',
   LEAF_BELOW_COLOUR: 'Leaf below colour',
   LEAF_ABOVE_COLOUR: 'Leaf above colour',
   LEAF_VENATION: 'Leaf venation',
@@ -647,8 +648,6 @@ export const enums = {
   UNIFOLIATE: 'unifoliate',
   FLAT: 'Flat',
   NEEDLE: 'Needle',
-  type: 'leafShape',
-  name: 'leaf shape'
   },
   reproduction: {
   SELF_POLLINATION: 'Self-pollination',
@@ -960,7 +959,6 @@ export const enums = {
   help: 'What type of inflorescence does this plant have?',
   CATKIN: 'catkin',
   UMBEL: 'umbel',
-  SPIKE: 'spike',
   RACEME: 'raceme',
   CORYMB: 'corymb',
   SPIKE: 'Spike',

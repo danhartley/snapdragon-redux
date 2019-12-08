@@ -42,15 +42,19 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
 
     const renderSpecimenImages = async () => {
 
-        console.log('calling getPoolItems from renderMixedSpecimenImages');
- 
         const mixedItems = preselectedItems || await getPoolItems(collection);
 
         const images = utils.shuffleArray(mixedItems).map((item, index) => {
             
-            const itemImages = randomSelection
+            let itemImages = randomSelection
                     ? utils.shuffleArray(item.images)
                     : item.images.filter(i => i.starred).length > 0 ? item.images.filter(i => i.starred) : utils.shuffleArray(item.images);
+
+            // add more images to starred image, if there is one (when the count will always be 1)
+            if(itemImages.length < imagesPerItem) {
+                itemImages = [ ...itemImages, ...R.take(imagesPerItem -itemImages.length, utils.shuffleArray(item.images).filter(i => !i.starred)) ];
+            }
+            
 
             return itemImages.map((image, imageIndex) => {
                 if(imageIndex < imagesPerItem) {

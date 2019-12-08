@@ -169,7 +169,7 @@ export const commmon = [
     },  
     {
         term : "Synanthrope",
-        definition : "A member of a species of wild animals and plants of various kinds that live near, and benefit from, an association with human beings.",
+        definition : "Species of wild animals or plants that live near, and benefit from, an association with human beings.",
         wiki: 'https://en.wikipedia.org/wiki/Synanthrope'
     },  
 ];
