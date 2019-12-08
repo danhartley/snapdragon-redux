@@ -105,6 +105,10 @@ export const plantae = [
         definition: "The natural opening of fruits, etc. along line of natural weakness releasing seeds/pollen."
     },
     {
+        term: "Explosive dehiscence",
+        definition: "A ballistic form of dispersal that flings seeds or spores far from the parent plant."
+    },
+    {
         term: "Cultivar",
         definition: "A plant variety that has been produced in cultivation by selective breeding."
     },
@@ -732,6 +736,7 @@ export const plantae = [
     },
     {
         term : "Entire",
+        trait: 'leafMargin',
         definition : "(Of leaf) even; with a smooth margin; without toothing.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
@@ -742,6 +747,7 @@ export const plantae = [
     },
     {
         term : "Ciliate",
+        trait: 'leafMargin',
         definition : "(Of leaf) fringed with hairs.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
@@ -752,17 +758,19 @@ export const plantae = [
     },
     {
         term : "Crenate",
+        trait: 'leafMargin',
         definition : "(Of leaf) wavy-toothed; dentate with rounded teeth.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/8/86/Leaf_morphology_ciliate.png',
-            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0',
+            url: 'https://upload.wikimedia.org/wikipedia/commons/4/4f/Leaf_morphology_crenate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=6561596'
         }
     },
     {
         term : "Dentate",
         definition : "(Of leaf) toothed.",
+        trait: 'leafMargin',
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Leaf_morphology_dentate.png',
@@ -773,9 +781,10 @@ export const plantae = [
     {
         term : "Denticulate",
         definition : "(Of leaf) finely toothed.",
+        trait: 'leafMargin',
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Leaf_morphology_dentate.png',
+            url: 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Leaf_morphology_denticulate.png',
             author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=6563697'
         }
@@ -783,10 +792,11 @@ export const plantae = [
     {
         term : "Doubly serrate",
         definition : "(Of leaf) each tooth bearing smaller teeth.",
+        trait: 'leafMargin',
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Leaf_morphology_dentate.png',
-            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            url: 'https://upload.wikimedia.org/wikipedia/commons/3/32/Leaf_morphology_doubly_serrate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=6563720'
         }
     },
@@ -854,6 +864,17 @@ export const plantae = [
             url: 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Leaf_morphology_even_pinnate.png',
             author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=6559114',
+        }
+    },
+    {
+        term : "Alternipinnate",
+        definition : "(Of leaf) pinnate with an odd number of leaflets, alternating (cf. imparipinnate).",
+        trait: 'leafDivision',
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/6/69/Leaf_morphology_alternipinnada.png',
+            author: 'By Maksim - File:Leaf morphology odd pinnate.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=17387300',
         }
     },
     {
@@ -1122,7 +1143,8 @@ export const plantae = [
         }
     },
     {
-        term: 'Compound Palmate',
+        term: 'Palmate',
+        trait: 'leafDivision',
         definition: 'Consisting of leaflets all radiating from one point.',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Leaf_morphology_Palmately_compound.png'

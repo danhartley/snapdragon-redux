@@ -1164,8 +1164,8 @@ export const enums = {
   RHIZOMORPHS: 'Rhizomorphs',
   GEOPHYTE: 'Geophyte',
   RICTAL_BRISTLES: 'Rictal bristles',
-  type: 'characteristic',
-  name: 'characteristic'
+  DEHISCENCE: 'Dehiscence',
+  EXPLOSIVE_DEHISCENCE: 'Explosive dehiscence',
   },
   climate: {
   HOT: 'Hot',
