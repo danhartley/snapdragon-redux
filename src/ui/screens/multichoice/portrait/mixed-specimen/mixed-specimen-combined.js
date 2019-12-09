@@ -24,7 +24,8 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
 
         const getPortraitImages = images => {
             const multiImages = utils.flatten(images.map(image => { 
-                const item = { name: image.itemName, images: R.take(1, utils.shuffleArray(image.srcs)) };
+                const images = image.srcs.filter(i => i.starred) || R.take(1, utils.shuffleArray(image.srcs));
+                const item = { name: image.itemName, images };
                 return prepImagesForCarousel(item, config, imageUseCases.MIXED_SPECIMENS);
             }));
             return multiImages;
