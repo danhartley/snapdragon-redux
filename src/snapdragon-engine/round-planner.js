@@ -32,15 +32,17 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
             } while (itemIndex < layoutsToAdd);
         });
 
-        let providerQuestions = await providerHandler.getLayouts(collection, roundItemNames);
-            providerQuestions = R.flatten(providerQuestions).filter(layout => layout);
+        if(lesson.currentRound === 1) {
+            let providerQuestions = await providerHandler.getLayouts(collection, roundItemNames);
+                providerQuestions = R.flatten(providerQuestions).filter(layout => layout);
 
-        let providerLayouts = providerQuestions.map(provider => {
-            return { ...L.providerHorizontalStrip, lessonName:"Lesson 1", levelName:"Level 1", speciesName: provider.name, provider };
-        });
+            let providerLayouts = providerQuestions.map(provider => {
+                return { ...L.providerHorizontalStrip, lessonName:"Lesson 1", levelName:"Level 1", speciesName: provider.name, provider };
+            });
 
-        if(providerLayouts) {
-            lessonPlan.layouts = [ ...lessonPlan.layouts, ...providerLayouts ];
+            if(providerLayouts) {
+                lessonPlan.layouts = [ ...lessonPlan.layouts, ...providerLayouts ];
+            }
         }
 
         let lessonLayouts = lessonPlan.layouts.filter(layout => !layout.bonus).map((layout, i) => {
@@ -50,13 +52,15 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
 
         const itemIndices = [ ...new Set(lessonPlan.layouts.map(layout => layout.itemIndex).filter(i => i !== undefined)) ];
         
-        const bonusLayouts = lessonPlan.layouts.filter(layout => layout.bonus);
-        
         lessonPlan.layouts = lessonLayouts;
 
-        if(bonusLayouts) {
-            const bonusTests = await bonusHandler.getTests(collection, itemIndices, bonusLayouts, lessonName, levelName);
-            lessonPlan.layouts = [ ...lessonPlan.layouts, ...bonusTests ];
+        if(lesson.currentRound === 1) {
+            const bonusLayouts = lessonPlan.layouts.filter(layout => layout.bonus);
+            
+            if(bonusLayouts) {
+                const bonusTests = await bonusHandler.getTests(collection, itemIndices, bonusLayouts, lessonName, levelName);
+                lessonPlan.layouts = [ ...lessonPlan.layouts, ...bonusTests ];
+            }
         }
 
         lessonLayouts = lessonPlan.layouts.map((layout, i) => {
@@ -107,6 +111,7 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
         lessonPlan.layouts.map(layout => layout.roundScoreCount = roundScoreCount);
 
         lesson.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
+        
         lesson.layoutCount = lessonPlan.layouts.length;
         lesson.layoutNames = lessonPlan.layouts.map(layout => layout.name);
 

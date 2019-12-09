@@ -281,8 +281,11 @@ export const enums = {
   PINE: 'pine',
   BEECH: 'beech',
   OAK: 'oak',
-  type: 'habitat',
-  name: 'habitat'
+  DITCH: 'Ditch',
+  WET_MEADOW: 'Wet meadow',
+  LAKESIDE: 'Lakeside',
+  RIPERIAN: 'Riperian',
+  WETLANDS: 'Wetlands'
   },
   ecologicalType: {
   help: 'What is the ecological type of this mushroom?',
@@ -356,8 +359,6 @@ export const enums = {
   HAWTHORN: 'Hawthorn',
   BUSH: 'Bush',
   SHRUB: 'Shrub',
-  type: 'treeType',
-  name: 'tree type'
   },
   hymeniumType: {
   help: 'What is the hymenium type?',
@@ -877,6 +878,7 @@ export const enums = {
   soilType: {
   SILICEOUS: 'Siliceous',
   CALCAREOUS: 'Calcareous',
+  NITROGENOUS: 'Nitrogenous',
   NUTRIENT_POOR: 'Nutrient poor',
   WELL_DRAINED: 'Well-drained',
   WELL_WATERED: 'Well-watered',
@@ -1292,6 +1294,7 @@ export const enums = {
     RUGOSE: 'Rugose',
     GLABROUS: 'Glabrous',
     PUBESCENT: 'Pubescent',
+    TOMENTOSE: 'tomentose',
   },
   texture: {
     LEATHERY: 'Leathery',

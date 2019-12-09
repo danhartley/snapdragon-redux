@@ -194,5 +194,20 @@ export const questions = [
             '3 toes all of which point forward (tridactyly).'
         ]
     },
+    {
+        id: '13',
+        provider: 'snapdragon',
+        iconicTaxon: 'plantae',
+        rank: 'species',
+        taxon: 'Daucus carota',
+        statement: 'Named in N America for it\'s similarity to lace.',
+        question: 'To which queen of England is this lace attributed?',
+        answer  : 'Anne',
+        answers: [
+            'Elizabeth',
+            'Mary',
+            'Victoria'
+        ]
+    },
 
 ];

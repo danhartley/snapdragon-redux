@@ -51,13 +51,15 @@ const getAll = () => {
 
 const removeSubs = () => {
 
-    const screens = getByRole('screen');
+    let screens = getByRole('screen');
 
-    screens.forEach(s => console.log(`%c${s.name}`, "color:green"));
-
-    // console.log(`%cmy subs: ${subscriptions.map(s=>s.name).join(', ')}`, "color: blue;");
+    screens.forEach(s => console.log(`%c${ 'Subs being removed: ' + s.name}`, "color:green"));
 
     screens.forEach(sub => subscription.remove(sub));
+
+    screens = getByRole('screen');
+
+    screens.forEach(s => console.log(`%c${ 'Subs still active: ' + s.name}`, "color:blue"));
 
 };
 

@@ -9,8 +9,6 @@ import summaryTemplate from 'ui/screens/progress/summary-template.html';
 
 export const renderSummary = history => {
 
-    console.log('\x1b[32m', 'renderSummary');
-
     subscription.removeSubs();
 
     subscription.getByRole('screen').forEach(sub => console.log('renderSummary subscriptions:', sub.name));
@@ -19,7 +17,9 @@ export const renderSummary = history => {
 
     lessonHandler.changeState(enums.lessonState.NEXT_ROUND, collection, config, history);
 
-    return;
+    if(!lesson.isLessonComplete) return;
+
+    console.log('\x1b[32m', 'renderSummary');
 
     const template = document.createElement('template');
 

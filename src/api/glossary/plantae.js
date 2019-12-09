@@ -312,6 +312,11 @@ export const plantae = [
         wiki: 'https://en.wikipedia.org/wiki/Legume'
     },
     {
+        term: 'Nitrogen fixation',
+        definition: 'Process by which molecular nitrogen in the air is converted into ammonia (NH3) or related nitrogenous compounds in soil.',
+        wiki: 'https://en.wikipedia.org/wiki/Nitrogen_fixation'
+    },
+    {
         term: 'Capsule',
         definition: 'Simple, dry, though rarely fleshy dehiscent fruit produced by many species of angiosperms.',
         wiki: 'https://en.wikipedia.org/wiki/Capsule_(fruit)'

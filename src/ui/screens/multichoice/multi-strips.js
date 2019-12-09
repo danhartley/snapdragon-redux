@@ -139,15 +139,15 @@ export const renderMultiStrips = (collection, bonus, args) => {
                 const number = config.isPortraitMode ? 4 : 4;
 
                 const families = await firestore.getFamiliesByIconicTaxon(taxon.rank, taxon.value, item.lichen, config);
-                const question = { type: { term: item.family[type] }, name: item.family.name } || { type: { term: `Missing ${type}`}, name: item.family.name };
+                const answer = { term: item.family[type], name: item.family.name } || { type: { term: `Missing ${type}`}, name: item.family.name };
                 const alternativeFamilies = R.take(number-1, R.take(number, utils.shuffleArray(families))).filter(f => f.name.toLowerCase() !== item.taxonomy.family.toLowerCase());
                 let alternatives = alternativeFamilies.filter(f => f[type] && f[type] !== undefined && f[type] !== '').map(f => { return { type: f[type], name: f.name } });
-                    alternatives = alternatives.map(a => { return { term: a } });
-                let answers = utils.shuffleArray([question, ...alternatives]);                    
+                    alternatives = alternatives.map(a => { return { term: a.type } });
+                let answers = utils.shuffleArray([answer, ...alternatives]);                    
                 
                 const help = config.isLandscapeMode ? '(Click on the description below.)' : '(Tap on the description.)';
 
-                render(question.type, answers.map(a => a.type), { question: 'Match species family', help, clue: item.taxonomy.family });
+                render(answer, answers, { question: 'Match species family', help, clue: item.taxonomy.family });
             }
 
             if(screen.name === 'epithet') {

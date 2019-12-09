@@ -31,6 +31,9 @@ export const getNextRoundLayouts = (lessonPlan, config, lesson) => {
             if(layouts.length > 0) return;
 
             const level = lessonPlan.levels.find(level => level.id === levelId + increment);
+
+            if(!level) return;
+            
             lesson.level = level;
 
             lesson.level = level;
