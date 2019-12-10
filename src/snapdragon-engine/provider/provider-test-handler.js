@@ -13,6 +13,7 @@ const getLayouts = async (collection, roundItemNames) => {
     
     if (itemsQuestions) {
         const promises = itemsQuestions.map(async (itemQuestions) => {
+            console.log(itemsQuestions);
             if(itemQuestions.questionIds) return await getItemLayouts(itemQuestions);
         });
         return await Promise.all(promises);

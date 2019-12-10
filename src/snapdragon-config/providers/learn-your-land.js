@@ -17,68 +17,70 @@ const learnYourLand1 = {
     name: 'Learn Your Land - Autumn foraging',
     ...mushroomDefaults,
     species: [ 
-        {
-          name: 'Grifola frondosa',
-          time: [252],
-          questionIds: ['8', '9'],
-          description: `Key features: a large, grey brown polypore, with overlapping caps, that are fan-shaped and fleshy (unlike many polypores which are woody). The underside is white to grey with numerous tiny pores (and no gills).
+        // {
+        //   name: 'Grifola frondosa',
+        //   time: [252],
+        //   questionIds: ['8', '9'],
+        //   description: `Key features: a large, grey brown polypore, with overlapping caps, that are fan-shaped and fleshy (unlike many polypores which are woody). The underside is white to grey with numerous tiny pores (and no gills).
           
-          Frondosa means leafy or abundant or full of leaves.
+        //   Frondosa means leafy or abundant or full of leaves.
           
-          The spore print is white.          
+        //   The spore print is white.          
           
-          This mushroom can be found in late summer to fall in the Northeast US especially on large, old oaks (and generally on living or dead oaks), beeches, maples and other hardwoods. It grows at the base, or close to the base, or on the trunks of trees.          
+        //   This mushroom can be found in late summer to fall in the Northeast US especially on large, old oaks (and generally on living or dead oaks), beeches, maples and other hardwoods. It grows at the base, or close to the base, or on the trunks of trees.          
           
-          D‐Fraction, an extract of Maitake my have properties beneficial in the treatment of cancer.`
-        },
-        {
-          name: 'Laetiporus sulphureus',
-          time: [360],
-          questionIds: ['10', '11'],
-          description: `Chicken of the woods has a chicken like texture. It can be found late spring to mid-autumn.
+        //   D‐Fraction, an extract of Maitake my have properties beneficial in the treatment of cancer.`
+        // },
+        // {
+        //   name: 'Laetiporus sulphureus',
+        //   time: [360],
+        //   questionIds: ['10', '11'],
+        //   description: `Chicken of the woods has a chicken like texture. It can be found late spring to mid-autumn.
 
-          This mushroom has overlapping clusters or rosette and is commonly found on deciduous trees. 
+        //   This mushroom has overlapping clusters or rosette and is commonly found on deciduous trees. 
           
-          The cap may be up 12". The top is smooth and faintly wrinkled.
-          When fresh it is bright orange to yellow-orange, and sometimes has a bright yellow margin.
+        //   The cap may be up 12". The top is smooth and faintly wrinkled.
+        //   When fresh it is bright orange to yellow-orange, and sometimes has a bright yellow margin.
           
-          Best when young, it is indigestible for some.`
-        },
-        {
-          name: 'Laetiporus cincinnatus',
-          time: [446],
-          description: `Looks similar to chicken of the woods but there are some key differences. 
+        //   Best when young, it is indigestible for some.`
+        // },
+        // {
+        //   name: 'Laetiporus cincinnatus',
+        //   time: [446],
+        //   description: `Looks similar to chicken of the woods but there are some key differences. 
           
-          Often grows at the base of hardwood trees or a few feet away.
+        //   Often grows at the base of hardwood trees or a few feet away.
 
-          The caps are duller and paler than L.sulphureus, almost pale orange to pinkish orange in colour.
+        //   The caps are duller and paler than L.sulphureus, almost pale orange to pinkish orange in colour.
           
-          On the underside the pores are a peachish white in colour.          
+        //   On the underside the pores are a peachish white in colour.          
   
-          Culinary: best eaten when young; indigestible for some. Start small, and cook well.`
-        },
-        {
-          name: 'Craterellus tubaeformis',
-          time: [510],
-          description: `The winter chanterelle, yellow foot chanterelle, or trumpet chanterelle belongs to the genus Craterellus, the same genus as the black trumpet; both belong to the same family, Cantharellaceae.
+        //   Culinary: best eaten when young; indigestible for some. Start small, and cook well.`
+        // },
+        // {
+        //   name: 'Craterellus tubaeformis',
+        //   time: [510],
+        //   questionIds: [15],
+        //   description: `The winter chanterelle, yellow foot chanterelle, or trumpet chanterelle belongs to the genus Craterellus, the same genus as the black trumpet; both belong to the same family, Cantharellaceae.
           
-          Fairly easy to identify: it's on the smaller side, typically up to 3" across and 3.5" tall.
+        //   Fairly easy to identify: it's on the smaller side, typically up to 3" across and 3.5" tall.
 
-          The cap is yellowish brown to grayish brown, and with age it becomes funnel shaped with a central depression.
+        //   The cap is yellowish brown to grayish brown, and with age it becomes funnel shaped with a central depression.
           
-          Key feature: on the underside of the cap you will see a fertile surface with vein-like ridges that run down the stalk. These ridges are thickened and blunt, not sharply defined as you would see on most gilled fungi.
+        //   Key feature: on the underside of the cap you will see a fertile surface with vein-like ridges that run down the stalk. These ridges are thickened and blunt, not sharply defined as you would see on most gilled fungi.
 
-          The stalk is hollow, often with a groove running its length, and yellowish-orange.
+        //   The stalk is hollow, often with a groove running its length, and yellowish-orange.
 
-          The spore print is white.
+        //   The spore print is white.
           
-          Typically grows in wet conifer forests from moss, even if the moss is growing up the base of a tree.
+        //   Typically grows in wet conifer forests from moss, even if the moss is growing up the base of a tree.
 
-          I find it in areas with a lot of eastern hemlock trees.`
-        },
+        //   I find it in areas with a lot of eastern hemlock trees.`
+        // },
         {
           name: 'Hydnum repandum',
           time: [592],
+          questionIds: [14],
           description: `Hydnum mushrooms related to the chanterelles and back trumpets; they all belong to the Cantharellales order.
 
           Toothed mycorrhizal fungi growing summer through fall, and they are a terrestrial mushroom so they do not grow on wood but from the ground under hardwood trees and conifer trees.
@@ -150,6 +152,7 @@ const learnYourLand1 = {
         {
           name: 'Calvatia gigantea',
           time: [934],
+          quality:[16],
           description: `Puffballs are gasteroid mushrooms (stomach fungi) which produce spores internally.
 
           The gleba should be pure white inside; with age it will turn olive-yellow, brown, to purple due to the spores.

@@ -372,41 +372,41 @@ const wiseWomanTradition = {
     },
   ],
   species: [
-    // {
-    //   name: 'Hypericum perforatum',
-    //   time: [18],
-    //   description: `Flowers are in perfect condition, just right for picking and making tinctures and oils from the fresh blossoms.
+    {
+      name: 'Hypericum perforatum',
+      time: [18],
+      description: `Flowers are in perfect condition, just right for picking and making tinctures and oils from the fresh blossoms.
       
-    //   A tincture is typically an extract of plant or animal material dissolved in ethanol (ethyl alcohol).
+      A tincture is typically an extract of plant or animal material dissolved in ethanol (ethyl alcohol).
 
-    //   In herbal medicine, alcoholic tinctures are most commonly made with a 20% ethanol concentration (Snapdragon).
-    //   `
-    // },
-    // {
-    //   name: 'Lythrum salicaria',
-    //   time: [40],
-    //   description: 'Deemed invasive, now appreciated more. The flowers (together with chicory and cronewort) are part of my third eye opening tincture.'
-    // },
-    // {
-    //   name: 'Artemisia vulgaris',
-    //   time: [86],
-    //   description: 'Cronewort, or Common mugwort. White on the back of the leaves, just coming into bud. The flowers of cronewort, chicory and purple loosestrife comprise the third eye opening tincture.'
-    // },
-    // {
-    //   name: 'Rhus typhina',
-    //   time: [112],
-    //   description: `Staghorn Sumac, named in honour of the fuzz on the horns of a young male deer. Produces huge clusters of red berries which are high in anti-oxidants including anthocyanins.
+      In herbal medicine, alcoholic tinctures are most commonly made with a 20% ethanol concentration (Snapdragon).
+      `
+    },
+    {
+      name: 'Lythrum salicaria',
+      time: [40],
+      description: 'Deemed invasive, now appreciated more. The flowers (together with chicory and cronewort) are part of my third eye opening tincture.'
+    },
+    {
+      name: 'Artemisia vulgaris',
+      time: [86],
+      description: 'Cronewort, or Common mugwort. White on the back of the leaves, just coming into bud. The flowers of cronewort, chicory and purple loosestrife comprise the third eye opening tincture.'
+    },
+    {
+      name: 'Rhus typhina',
+      time: [112],
+      description: `Staghorn Sumac, named in honour of the fuzz on the horns of a young male deer. Produces huge clusters of red berries which are high in anti-oxidants including anthocyanins.
       
-    //   Antioxidants are compounds that inhibit oxidation which produces free radicals, thereby leading to chain reactions that may damage the cells of organisms (Snapdragon).
+      Antioxidants are compounds that inhibit oxidation which produces free radicals, thereby leading to chain reactions that may damage the cells of organisms (Snapdragon).
 
-    //   Anthocyanins are water-soluble pigments that, depending on their pH, may appear red, purple, blue or black. Colouration may attract pollinators (to flowers), animals for seed dispersal (fruit), and protect against extreme weather (Snapdragon). 
-    //   `
-    // },
-    // {
-    //   name: 'Vitis',
-    //   time: [172],
-    //   description: 'The tendrils are crisp, cruncy with lots of vitamin C. The grapes and its leaves can also be eaten.'
-    // },
+      Anthocyanins are water-soluble pigments that, depending on their pH, may appear red, purple, blue or black. Colouration may attract pollinators (to flowers), animals for seed dispersal (fruit), and protect against extreme weather (Snapdragon). 
+      `
+    },
+    {
+      name: 'Vitis',
+      time: [172],
+      description: 'The tendrils are crisp, cruncy with lots of vitamin C. The grapes and its leaves can also be eaten.'
+    },
     {
       name: 'Daucus carota',
       time: [200],
@@ -415,16 +415,16 @@ const wiseWomanTradition = {
       Skin contact with the foliage of Daucus carota, especially wet foliage, can cause skin irritation in some people, (Snapdragon). `,
       questionIds: ['13']
     },
-    // {
-    //   name: 'Geranium maculatum',
-    //   time: [218],
-    //   description: 'Wild geranium is widely used by herbalists as an astrigent, something to contract tissues, to counter weeping sores, eczema, etc.'
-    // },
-    // {
-    //   name: 'Polygonum cuspidatum',
-    //   time: [240],
-    //   description: 'Where there\'s one, there will be more. Dig the root in autumn and make a tincture from it. Dynamite for helping people who are dealing with Lyme disease.'
-    // },
+    {
+      name: 'Geranium maculatum',
+      time: [218],
+      description: 'Wild geranium is widely used by herbalists as an astrigent, something to contract tissues, to counter weeping sores, eczema, etc.'
+    },
+    {
+      name: 'Polygonum cuspidatum',
+      time: [240],
+      description: 'Where there\'s one, there will be more. Dig the root in autumn and make a tincture from it. Dynamite for helping people who are dealing with Lyme disease.'
+    },
     {
       name: 'Impatiens capensis',
       time: [275],

@@ -796,6 +796,7 @@ export const plantae = [
     },
     {
         term : "Doubly serrate",
+        trait: 'leafMargin',
         definition : "(Of leaf) each tooth bearing smaller teeth.",
         trait: 'leafMargin',
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
@@ -972,6 +973,7 @@ export const plantae = [
     },
     {
         term : "Serrate",
+        trait: 'leafMargin',
         definition : "(Of leaf) saw-toothed; with asymmetrical teeth pointing forward.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
@@ -982,6 +984,7 @@ export const plantae = [
     },
     {
         term : "Serrulate",
+        trait: 'leafMargin',
         definition : "(Of leaf) finely serrate.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
@@ -992,6 +995,7 @@ export const plantae = [
     },
     {
         term : "Sinuate",
+        trait: 'leafMargin',
         definition : "(Of leaf) with deep, wave-like indentations; coarsely crenate.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
@@ -1002,6 +1006,7 @@ export const plantae = [
     },
     {
         term : "Lobate",
+        trait: 'leafMargin',
         definition : "(Of leaf) indented, with the indentations not reaching the centre.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
@@ -1012,6 +1017,7 @@ export const plantae = [
     },
     {
         term : "Undulate",
+        trait: 'leafMargin',
         definition : "(Of leaf) with a wavy edge, shallower than sinuate.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
@@ -1022,6 +1028,7 @@ export const plantae = [
     },
     {
         term : "Spiny",
+        trait: 'leafMargin',
         definition : "(Of leaf) with stiff, sharp points such as thistles.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
@@ -1347,13 +1354,20 @@ export const plantae = [
     },
     {
         term: 'Rhizome',
+        alt: 'Rhizomes',
         definition: 'A modified subterranean plant stem that grows horizontally and sends out roots and shoots from its nodes.',
         wiki: 'https://en.wiktionary.org/wiki/Rhizome'
     },
     {
         term: 'Tuber',
+        alt: 'Tubers',
         definition: 'Develops from the stem (grow from rhizomes or runners that swell from storing nutrients) or propagates from roots that are modified to store nutrients e.g. potato, yam.',
         wiki: 'https://en.wikipedia.org/wiki/Vegetative_reproduction#Natural_means'
+    },
+    {
+        term: 'Resin canal',
+        definition: 'Elongated, tube-shaped intercellular space surrounded by epithelial cells which secrete resin into the canal; antiseptic, aromatic and prevents the development of fungi and deters insects.',
+        wiki: 'https://en.wikipedia.org/wiki/Resin_canal'
     },
     {
         term: 'Corm',
@@ -1362,6 +1376,7 @@ export const plantae = [
     },
     {
         term: 'Sucker',
+        alt: 'Suckers',
         definition: 'Plant stem that arises from buds on the base of parent stems or on a root e.g. apple, banana trees.',
         wiki: 'https://en.wikipedia.org/wiki/Vegetative_reproduction#Natural_means'
     },

@@ -32,7 +32,7 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
             } while (itemIndex < layoutsToAdd);
         });
 
-        if(lesson.currentRound === 1) {
+        if(lesson.level.id === 1) {
             let providerQuestions = await providerHandler.getLayouts(collection, roundItemNames);
                 providerQuestions = R.flatten(providerQuestions).filter(layout => layout);
 
@@ -54,7 +54,7 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
         
         lessonPlan.layouts = lessonLayouts;
 
-        if(lesson.currentRound === 1) {
+        if(lesson.level.id === 1) {
             const bonusLayouts = lessonPlan.layouts.filter(layout => layout.bonus);
             
             if(bonusLayouts) {

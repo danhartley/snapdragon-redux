@@ -323,21 +323,6 @@ const deleteSpeciesByName = async name => {
     });
 };
 
-// const addTraits = async props => {
-
-//     const { language, traits } = props;
-
-//     let docRef;
-
-//     try {
-//         docRef = await db.collection(`traits_en`).add(traits);
-//     } catch(err) {
-//         console.error("Error writing document: ", error);
-//     }
-
-//     return docRef;
-// };
-
 const addTraits = async (name, trait, collection = 'traits_en') => {
 
     let speciesTraitsRef;
@@ -354,11 +339,16 @@ const addTraits = async (name, trait, collection = 'traits_en') => {
                 speciesTraitsRef = doc.ref;
             });
 
+            console.log(trait);
+
             await speciesTraitsRef.update(trait); 
+
+            console.log(speciesTraitsRef);
 
             return 'Update successful';
         }
     } catch(e) {
+        console.log(`Update failed. Error ${e.message}.`);
         return `Update failed. Error ${e.message}.`;
     }
 };
@@ -554,8 +544,10 @@ const getSpeciesByNameInParallel = async itemNames => {
 
 const getQuestionById = (id, name) => {
 
+    console.log(id);
+
     return new Promise(resolve => resolve(questions.map(q => {
-        if(q.id === id) {
+        if(parseInt(q.id) === id) {
             return {
                 ...q,
                 name: name

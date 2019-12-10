@@ -111,6 +111,11 @@ export const fungi = [
         wiki: 'https://en.wikipedia.org/wiki/Gleba'
     },
     {
+        term: "False gills",
+        alt: 'Ridge',
+        definition: "(Ridges) are folds in the spore-bearing surface that can approximate true gills, but are not structurally distinct units.",
+    },
+    {
         term: "Adnate",
         definition: "Gills are broadly attached to the stalk slightly above the bottom of the gill, with most of the gill fused to the stem.",
         trait: 'gillAttachment',
@@ -226,7 +231,7 @@ export const fungi = [
     },
     {
         term: "Ectomycorrhiza",
-        definition: "Symbiotic relationship between fungal symbiont and roots of various plant species (without penetrating host’s cell walls.).",
+        definition: "Symbiotic relationship between fungal symbiont and roots of various plant species (without penetrating host’s cell walls).",
         wiki: "https://en.wikipedia.org/wiki/Ectomycorrhiza"
     },
     {

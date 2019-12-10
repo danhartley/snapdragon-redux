@@ -293,8 +293,6 @@ export const enums = {
   PARASITIC: 'Parasitic',
   MYCORRHIZAL: 'Mycorrhizal',
   PLANT_PATHOGEN: 'Plant pathogen',  
-  type: 'ecoType',
-  name: 'eco type'
   },
   capShape: {
   help: 'How would you describe the pileus?',
@@ -368,8 +366,7 @@ export const enums = {
   SMOOTH: 'Smooth',
   TEETH: 'Teeth',
   RIDGES: 'Ridges',
-  type: 'hymeniumType',
-  name: 'hymenium type'
+  FALSE_GILLS: 'False gills',
   },
   associate: {
   ALGA: 'Alga',
@@ -1170,6 +1167,7 @@ export const enums = {
   RICTAL_BRISTLES: 'Rictal bristles',
   DEHISCENCE: 'Dehiscence',
   EXPLOSIVE_DEHISCENCE: 'Explosive dehiscence',
+  RESIN_CANAL: 'Resin canal'
   },
   climate: {
   HOT: 'Hot',

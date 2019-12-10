@@ -140,7 +140,10 @@ const addTraits = () => {
 
         if(item.taxon == 'family') {
             const entries = Object.entries(trait);
-            item.traits[entries[0][0]] = entries[0][1];
+            item.traits = item.traits || {};
+            entries.forEach(entry => {
+                item.traits[entry[0]] = { value: [entry[1].value]};
+            });
         }
 
         const update = item.taxon ? { traits: item.traits } : trait;

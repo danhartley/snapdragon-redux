@@ -209,5 +209,50 @@ export const questions = [
             'Victoria'
         ]
     },
+    {
+        id: '14',
+        provider: 'snapdragon',
+        iconicTaxon: 'fungi',
+        rank: 'species',
+        taxon: 'Hydnum repandum',
+        statement: 'The ecology of hedgehog mushroom is mycorrhizal.',
+        question: 'How is the ecology of this fungus manifest?',
+        answer  : 'Colonises roots of a vascular host plant in a (generally) mutualistic relationship.',
+        answers: [
+            'Lives off decayed organic matter',
+            'Lives off a living host.',
+            'Has symbiotic relationship with roots of various plant species (without penetrating host’s cell walls).'
+        ]
+    },
+    {
+        id: '15',
+        provider: 'snapdragon',
+        iconicTaxon: 'fungi',
+        rank: 'species',
+        taxon: 'Craterellus tubaeformis',
+        statement: 'Chanterelle and trumpet mushrooms have a distinctive spore-bearing surface.',
+        question: 'Which of these appear on that surface?',
+        answer  : 'False gills',
+        answers: [
+            'Gleba',
+            'Gills',
+            'Pores'
+        ]
+    },
+    {
+        id: '16',
+        provider: 'snapdragon',
+        iconicTaxon: 'fungi',
+        rank: 'species',
+        taxon: 'Calvatia gigantea',
+        statement: 'Puffballs have a distinctive fruitbody.',
+        question: 'How would you recognise a puffball?',
+        answer  : 'It\'s brown, dust-like spores are emitted when the mature fruitbody bursts or is impacted.',
+        answers: [
+            'It has an open cap with spore-bearing gills.',
+            'The spores develop internally in the gleba and are exposed in the form of a foul-smelling gel.',
+            'Spores form on a spongy mass of downward-pointing tubes.'
+        ]
+    },
 
 ];
