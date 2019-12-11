@@ -133,7 +133,9 @@
     position: absolute;
     bottom: var(--vhRunningBlock, 7.5vh);
     left: 0rem;
-    padding: 0 0 0 .75rem;
+    left: .5rem;
+    display: flex;
+    align-items: center;
     height: var(--vhButtonBlock, 9vh);
 }
 

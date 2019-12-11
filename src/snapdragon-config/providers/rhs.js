@@ -5,8 +5,8 @@ const rhsTrees = {
     name: 'RHS Trees',
     type: 'taxon',
     moduleSize: 6,
-    lessonPlanLandscape: 1,
-    lessonPlanPortrait: 101,
+    lessonPlanLandscape: 10,
+    lessonPlanPortrait: 110,
     glossary: ['plantae', 'common'],
     species: [
       {
@@ -177,8 +177,8 @@ const rhsWeeds = {
     behaviour: 'static',
     name: 'RHS Weeds I',
     moduleSize: 4,
-    lessonPlanLandscape: 1,
-    lessonPlanPortrait: 101,
+    lessonPlanLandscape: 10,
+    lessonPlanPortrait: 110,
     glossary: ['plantae', 'common'],
     items: [],
     species: [

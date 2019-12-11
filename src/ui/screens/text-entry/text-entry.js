@@ -48,8 +48,7 @@ export const renderInput = (screen, question) => {
     }
 
     const template = document.createElement('template');
-    
-    template.innerHTML = config.isLandscapeMode ? textEntryTemplate : textEntryPortraitTemplate;
+          template.innerHTML = config.isLandscapeMode ? textEntryTemplate : textEntryPortraitTemplate;
     
     renderTemplate({ }, template.content, parent);
 
@@ -75,29 +74,38 @@ export const renderInput = (screen, question) => {
             break;
     }
 
-    const answerBtn = document.querySelector('.js-check-answer');
-
     const boundScore = {};
 
+    const answerBtn = document.querySelector('.js-check-answer');
+
     const callback = (score, scoreUpdateTimer) => {        
+        console.log('score result: ', score)
         boundScore.scoreUpdateTimer = scoreUpdateTimer;
         boundScore.score = score;        
-        answerBtn.removeEventListener('click', scoreEventHandler);
-        if(config.isPortraitMode) {
-            answerBtn.innerHTML = question.taxon === 'vernacular' ? item.vernacularName : item.name;
-            answerBtn.classList.add('portrait-answer');
-        }
+        if(answerBtn) answerBtn.removeEventListener('click', scoreEventHandler);
     };
 
     const scoreEventHandler = event => {
         const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames };
         scoreHandler('text', score, callback, config);
-        answerBtn.disabled = true;
+        if(answerBtn) answerBtn.disabled = true;
         document.querySelector('.js-continue-lesson-btn').disabled = false;
-        helpTxt.innerHTML = question.taxon === 'vernacular' ? item.vernacularName : item.name;
+        if(helpTxt) helpTxt.innerHTML = question.taxon === 'vernacular' ? item.vernacularName : item.name;
     };
 
-    answerBtn.addEventListener('click', scoreEventHandler);
+    if(config.isLandscapeMode) {
+        answerBtn.addEventListener('click', scoreEventHandler);
+    } else {
+        document.addEventListener('focusout', e => {
+
+            const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames };
+
+            console.log(score);
+
+            scoreHandler('text', score, callback, config);
+            document.querySelector('.js-continue-lesson-btn').disabled = false;
+        });
+    }
     
     if(config.isPortraitMode) renderPortrait(item, config);
     else renderLandscape(item, config, question);
@@ -201,18 +209,17 @@ const renderLandscape = (item, config, question) => {
     });
 
     const keyboardBtn = document.querySelector('.js-toggle-keyboard');
-
-    keyboardBtn.addEventListener('click', () =>{
-        const disabled = input.hasAttribute('disabled');
-        if(disabled) {
-            keyboardBtn.innerHTML = 'Enable letters';
-            input.removeAttribute('disabled');
-            input.focus();
-        } else {
-            keyboardBtn.innerHTML = 'Enable keyboard'
-            input.setAttribute('disabled', 'disabled');
-        }
-    });
+          keyboardBtn.addEventListener('click', () =>{
+            const disabled = input.hasAttribute('disabled');
+            if(disabled) {
+                keyboardBtn.innerHTML = 'Enable letters';
+                input.removeAttribute('disabled');
+                input.focus();
+            } else {
+                keyboardBtn.innerHTML = 'Enable keyboard'
+                input.setAttribute('disabled', 'disabled');
+            }
+          });
 
     const blockArray = [ ...blocks ];    
     const entries = [];

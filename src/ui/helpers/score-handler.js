@@ -27,8 +27,8 @@ export const scoreHandler = (type, test, callback, config) => {
 };
 
 const showResponseToAnswerHandler = response => {
-    const container = response.container || '.js-txt-question';
-    const questionText = document.querySelector(container);
+    const questionText = document.querySelector(response.container) || document.querySelector('.js-txt-question');
+    if(questionText) {
           questionText.innerHTML = response.success
             ? `<div class="answer-box-success">
                 <span class="icon"><i class="fas fa-check"></i></span><span>${ response.correct }</span>
@@ -36,6 +36,7 @@ const showResponseToAnswerHandler = response => {
             : `<div class="answer-box-alert">
                 <span class="icon"><i class="fas fa-times"></i></span><span>${response.incorrect}</span>
             </div>`;
+    }
 }
 
 export const continueLessonHandler = (btn, score, timer) => {
@@ -173,14 +174,6 @@ const stripScoreHandler = (test, callback, config) => {
                 if(stripAnswerIndex === test.answerIndex) {
                     strip.classList.add('snap-success');
                 }
-                // const matchesScientificName = isAnswerEqualToQuestion(stripAnswer.innerText, taxon.name);
-                // const matchesVernacularName = vernacular 
-                //                                 ? isAnswerEqualToQuestion(stripAnswer.innerText, vernacular) 
-                //                                 : false;
-                // const matchesQuestion = isAnswerEqualToQuestion(stripAnswer.innerText, taxon.question);
-                // if(matchesScientificName || matchesVernacularName || matchesQuestion) {
-                //     strip.classList.add('snap-success');
-                // }
             });     
             
             if(callback) {

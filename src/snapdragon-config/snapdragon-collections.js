@@ -154,8 +154,8 @@ const paulDinning1 = {
     behaviour: 'static',
     name: 'UK Garden Bird Identification',
     moduleSize: 4,
-    lessonPlanLandscape: 1,
-    lessonPlanPortrait: 101,
+    lessonPlanLandscape: 10,
+    lessonPlanPortrait: 110,
     glossary: ['animalia', 'common'],
     iconicTaxa: [ {
       id: 'aves',
@@ -247,8 +247,8 @@ const woodlandsTV1 = {
   name: 'WoodlandsTV - An Introduction to Lichen',
   type: 'taxon',
   moduleSize: 4,
-  lessonPlanLandscape: 1,
-  lessonPlanPortrait: 101,
+  lessonPlanLandscape: 10,
+  lessonPlanPortrait: 110,
   glossary: ['lichen', 'common'],
   iconicTaxa: [ 
     {
@@ -362,8 +362,8 @@ const wiseWomanTradition = {
   name: 'Susun Weed - Wild Plant Identification',
   type: 'taxon',
   moduleSize: 1,
-  lessonPlanLandscape: 1,
-  lessonPlanPortrait: 101,
+  lessonPlanLandscape: 10,
+  lessonPlanPortrait: 110,
   glossary: ['plantae', 'common'],
   iconicTaxa: [ 
     {
@@ -632,8 +632,8 @@ const bloomsForBeesCU = {
   behaviour: 'static',
   name: 'Blooms for Bees - Bumblebees of the UK',
   moduleSize: 1,
-  lessonPlanLandscape: 1,
-  lessonPlanPortrait: 101,
+  lessonPlanLandscape: 10,
+  lessonPlanPortrait: 110,
   glossary: ['insecta'],
   items: [],
   species: [
@@ -765,8 +765,8 @@ const nationalTrustButterflies = {
   behaviour: 'static',
   name: 'National Trust - Britain\'s butterflies',
   moduleSize: 1,
-  lessonPlanLandscape: 1,
-  lessonPlanPortrait: 101,
+  lessonPlanLandscape: 10,
+  lessonPlanPortrait: 110,
   glossary: ['insecta'],
   items: [],
   species: [

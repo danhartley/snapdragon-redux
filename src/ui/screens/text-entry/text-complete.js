@@ -91,16 +91,6 @@ export const renderCompleteText = (collection) => {
             }
         });
 
-        // const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
-
-        // continueLessonBtn.innerHTML = 'Continue lesson';
-
-        // continueLessonBtn.style.cursor = 'pointer';
-        // continueLessonBtn.disabled = false;
-        // continueLessonBtn.addEventListener('click', () => {
-        //     window.clearTimeout(scoreUpdateTimer);
-        //     bindScore(score);
-        // });
         continueLessonHandler(document.querySelector('.js-continue-lesson-btn'), score, scoreUpdateTimer);
     };
 

@@ -616,7 +616,7 @@ export const plantae = [
     },
     {
         term: 'Perfect',
-        definition: 'A flower that has both stamens and carpeles (pistil/s).',
+        definition: 'A flower that has both stamens and carpels (pistil/s).',
     },
     {
         term: 'Carpel',
