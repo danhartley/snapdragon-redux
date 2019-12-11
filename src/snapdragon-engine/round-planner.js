@@ -45,6 +45,8 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
             }
         }
 
+        const bonusLayouts = lessonPlan.layouts.filter(layout => layout.bonus);
+
         let lessonLayouts = lessonPlan.layouts.filter(layout => !layout.bonus).map((layout, i) => {
             layout.itemIndex = layout.itemIndex === undefined ? utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i) : layout.itemIndex;
             return { ...layout };
@@ -55,7 +57,8 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
         lessonPlan.layouts = lessonLayouts;
 
         if(lesson.level.id === 1) {
-            const bonusLayouts = lessonPlan.layouts.filter(layout => layout.bonus);
+
+            console.log('bonusLayouts: ', bonusLayouts);
             
             if(bonusLayouts) {
                 const bonusTests = await bonusHandler.getTests(collection, itemIndices, bonusLayouts, lessonName, levelName);

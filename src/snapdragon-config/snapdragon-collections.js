@@ -461,8 +461,8 @@ const btoCorvids = {
   behaviour: 'static',
   name: 'British Trust for Ornithology - Corvid Ids',
   moduleSize: 1,
-  lessonPlanLandscape: 1,
-  lessonPlanPortrait: 101,
+  lessonPlanLandscape: 5,
+  lessonPlanPortrait: 105,
   glossary: ['aves'],
   items: [],
   species: [

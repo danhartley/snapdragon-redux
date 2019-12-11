@@ -18,19 +18,24 @@ const onTraitClicked = listener => {
 
 const getMatchingTrait = (layoutTraits, traitValues) => {
 
-    let requiredTraitValues, trait;
+    try {
+        let requiredTraitValues, trait;
 
-    for (let [key, obj] of Object.entries(traitValues)) {
-        let t;
-        layoutTraits.map(t => { 
-            if(t.toLowerCase() === utils.toCamelCase(key).toLowerCase()) {
-                requiredTraitValues = obj.value.map(v => v.toLowerCase());
-                trait = t;
-            }
-        }) 
-    };
+        for (let [key, obj] of Object.entries(traitValues)) {
+            let t;
+            layoutTraits.map(t => { 
+                if(t.toLowerCase() === utils.toCamelCase(key).toLowerCase()) {
+                    requiredTraitValues = obj.value.map(v => v.toLowerCase());
+                    trait = t;
+                }
+            }) 
+        };
+    
+        return { requiredTraitValues, trait };
+    } catch (e) {
+        console.log('getMatchingTrait error: ', e.message);
+    }
 
-    return { requiredTraitValues, trait };
 };
 
 const fetchTraits = async (trait, requiredTraitValues, glossary) => {

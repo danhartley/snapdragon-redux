@@ -35,11 +35,6 @@ export const commmon = [
         wiki: "https://en.wikipedia.org/wiki/Species_complex"
     },
     {
-        term: "Plant pathogen",
-        definition: "A broad term that refers to any of the organisms, such as fungi, bacteria, protists, nematodes, and viruses that cause plant diseases.",
-        wiki: "https://en.wikipedia.org/wiki/Plant_pathology"
-    },
-    {
         term: "Introduced",
         definition: "A species found outside its native distributional range due to human activity.",
         wiki: "https://en.wikipedia.org/wiki/Introduced_species"

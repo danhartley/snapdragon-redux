@@ -1425,4 +1425,9 @@ export const plantae = [
         definition: 'A type of automatic self-pollination of plants that can propagate by using non-opening, self-pollinating flowers. Common in the grass family, the Viola genus and peanuts and peas.',
         wiki: 'https://en.wikipedia.org/wiki/Cleistogamy'
     },
+    {
+        term: "Plant pathogen",
+        definition: "A broad term that refers to any of the organisms, such as fungi, bacteria, protists, nematodes, and viruses that cause plant diseases.",
+        wiki: "https://en.wikipedia.org/wiki/Plant_pathology"
+    },
 ];
