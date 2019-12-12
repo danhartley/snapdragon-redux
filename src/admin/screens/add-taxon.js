@@ -67,19 +67,20 @@ export const addTaxon = () => {
             const summary = taxonSummary.value;
             const identification = taxonIdentification.value;
             
-            const descriptions = [
-                {
-                    language: 'en',
-                    summary,
-                    identification
-                }
-            ];
+            // const descriptions = [
+            //     {
+            //         language: 'en',
+            //         summary,
+            //         identification
+            //     }
+            // ];
 
             const taxon = {
                 taxon: rank,
                 name,
                 names,
-                descriptions
+                summary,
+                identification
             }
 
 

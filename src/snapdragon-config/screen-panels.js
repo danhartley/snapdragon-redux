@@ -31,8 +31,7 @@ const traitImages = {
 
   const birdsong = {
     name: 'birdsong',
-    domain: 'bonusLayout',  
-    // domain: 'collection',  
+    domain: 'bonusLayout',
   }
 
   const mediaPlayers = {
@@ -173,6 +172,14 @@ const traitImages = {
     name: 'provider-horizontal-strip-questions',
     domain: 'collection'
   };
+
+    
+  const speciesIdentification = {
+    name: 'species-identification',
+    domain: 'collection',
+    taxon: 'name'
+  };
+
   
   export const panels = {
     specimenImages,
@@ -217,5 +224,6 @@ const traitImages = {
 
     mixedTraitLeft,
     mixedTraitRight,
-    providerHorizontalStripQuestions
+    providerHorizontalStripQuestions,
+    speciesIdentification
   };

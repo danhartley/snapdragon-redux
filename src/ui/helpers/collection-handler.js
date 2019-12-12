@@ -90,11 +90,24 @@ export const collectionHandler = async (collection, config, counter) => {
 
                 const families = [ ...new Set(collection.items.map(i => i.taxonomy.family)) ];
                 const orders = [ ...new Set(collection.items.map(i => i.taxonomy.order)) ];
+                const genera = [ ...new Set(collection.items.map(i => i.taxonomy.genus).filter(g => g)) ];
 
-                const familyTaxa = [], orderTaxa = [];
+                const familyTaxa = [], orderTaxa = [], genusTaxa = [];
 
                 let taxa = await firestore.getTaxaNames();
                     taxa = taxa[0].value;
+
+                const getGenusTaxa = async genera => {
+                    return Promise.all(
+                        genera.map(async(genus) => {
+                            const genusTaxon = await firestore.getTaxonByName(config, genus);
+                            genusTaxa.push(genusTaxon);
+                            return genusTaxon;
+                        })
+                    );
+                };
+
+                await getGenusTaxa(genera);
 
                 const getFamilyTaxa = async families => {
                     return Promise.all(
@@ -135,6 +148,7 @@ export const collectionHandler = async (collection, config, counter) => {
                     item.taxonomy.genus = names[0];                
                     item.taxonomy.species = names[1];
 
+                    item.genus = genusTaxa.find(genus => genus.name === item.taxonomy[enums.taxon.GENUS.name.toLowerCase()]);
                     item.family = familyTaxa.find(family => family.name === item.taxonomy[enums.taxon.FAMILY.name.toLowerCase()]);
                     if(item.family) {
                         item.family.names = getFamilyNames(item);
@@ -151,12 +165,12 @@ export const collectionHandler = async (collection, config, counter) => {
                     
                     item.name = names.slice(0,2).join(' ');
 
-                    if(R.contains(item.taxonomy.genus, taxa)) {
-                        item.genus = await firestore.getTaxonByName({language: 'en'}, item.taxonomy.genus);
-                        if(item.genus) {
-                            item.genus.traits = await firestore.getTraitsBySpeciesName(item.taxonomy.genus);
-                        }
-                    }
+                    // if(R.contains(item.taxonomy.genus, taxa)) {
+                    //     item.genus = await firestore.getTaxonByName({language: 'en'}, item.taxonomy.genus);
+                    //     if(item.genus) {
+                    //         item.genus.traits = await firestore.getTraitsBySpeciesName(item.taxonomy.genus);
+                    //     }
+                    // }
 
                 });
 

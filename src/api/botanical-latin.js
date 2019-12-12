@@ -740,4 +740,9 @@ export const epithets = [
         "en" : ["sideways"],
         species: [ 'Pleurotus ostreatus' ]      
     },
+    {
+        "latin" : ["sema"],
+        "en" : ["sign"],
+        genus: [ 'Bombus' ]      
+    },
 ];

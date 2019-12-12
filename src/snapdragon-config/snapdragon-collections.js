@@ -142,7 +142,7 @@ const daisyCreekFarms1 = {
         },
         {
           label: 'Patreon',
-          url: 'www.patreon.com/jagsingh'
+          url: 'https://www.patreon.com/jagsingh'
         }
       ],
       location: 'California, US'
@@ -350,7 +350,7 @@ const woodlandsTV1 = {
       },
       {
         label: 'Website',
-        url: 'youtube.com/channel/UCCeOzbtcmqPmWdMeB6x9nvA'
+        url: 'https://www.youtube.com/channel/UCCeOzbtcmqPmWdMeB6x9nvA'
       }
     ],
   }
@@ -450,7 +450,7 @@ const wiseWomanTradition = {
       },
       {
         label: 'Channel',
-        url: 'youtube.com/channel/UCo0uJBHNwF_IqhvVMbvdDTA'
+        url: 'https://www.youtube.com/channel/UCo0uJBHNwF_IqhvVMbvdDTA'
       }
     ],
   }
@@ -632,14 +632,16 @@ const bloomsForBeesCU = {
   behaviour: 'static',
   name: 'Blooms for Bees - Bumblebees of the UK',
   moduleSize: 1,
-  lessonPlanLandscape: 10,
-  lessonPlanPortrait: 110,
+  lessonPlanLandscape: 11,
+  lessonPlanPortrait: 111,
   glossary: ['insecta'],
   items: [],
   species: [
     {
       name: 'Bombus terrestris',
       time: [25],
+      questionIds: [18],
+      quickId: 'Worker: 2 dark yellow or orange bands and a white tail.',
       description: `Range: the buff-tailed bumblebee is one of our most common species, present throughout the UK.
 
       The large queen is one of the first to be seen in early spring.
@@ -653,10 +655,12 @@ const bloomsForBeesCU = {
     },
     {
       name: 'Bombus lucorum',
-      time: [68],
+      time: [67],
+      questionIds: [19],
+      quickId: 'Worker: 2 bright lemon yellow bands and a bright white tail.',
       description: `Apperance: similar to the buff-tailed bumblebee but with a bright white tail. It also has two yellow bands though these are brighter and more lemony than the buff-tailed bumblebee.
       
-      Queens and workers: similar in apperance though the queens are larger.
+      Queens and workers: similar in appearance though the queens are larger.
       
       Males: similar although the yellow colouring is broader and they have yellow hair on their heads.
       `
@@ -664,11 +668,13 @@ const bloomsForBeesCU = {
     {
       name: 'Bombus lapidarius',
       time: [112],
+      questionIds: [20],
+      quickId: 'Worker: black body and a dark, orange-red tail.',
       description: `The red-tailed bumblebee is common throughout the UK except the far north. 
 
       Queen and workers appearance: distinctive black body and a dark, orange-red tail.
 
-      Male apperance: yellow behind their head, yellow facial hair and the tail is a pale orange.
+      Male appearance: yellow behind their head, yellow facial hair and the tail is a pale orange.
 
       Colours often fade as the sun bleaches their hair.
       `
@@ -676,6 +682,8 @@ const bloomsForBeesCU = {
     {
       name: 'Bombus hortorum',
       time: [148],
+      questionIds: [21],
+      quickId: 'Worker: 3 yellow bands and a long tongue.',
       description: `The garden bumblebee is present in gardens but also in other habitats.
       
       Appearance: similar to buff and white-tailed bumblebees.
@@ -688,13 +696,15 @@ const bloomsForBeesCU = {
     {
       name: 'Bombus pratorum',
       time: [187],
+      questionIds: [22],
+      quickId: 'Worker: 2 yellow bands (one may be faint or absent) and an orange tail.',
       description: `The early bumblebee is a small bumblee, found throughout UK but absent in northern Scotland. 
       
       Queens seen from (late February or) March onwards.
 
       Appearance: quite fluffy. 
       
-      Queen: 2 yellow bands on an orange tail.
+      Queen: 2 yellow bands and an orange tail.
 
       Worker: a little smaller than the queen with similar colouring but variable; central yellow band may be faint or absent.
 
@@ -704,16 +714,19 @@ const bloomsForBeesCU = {
     {
       name: 'Bombus pascuorum',
       time: [240],
+      questionIds: [23],
+      quickId: 'Worker: ginger all over but variable from pale to almost black, and fades with age.',
       description: `Most widespread of the carder bumblebees.
 
       Emerge in March (one of the latest active species).
 
-      Appearance: queens, workers and males are ginger all over but variable from pale to almost black, and fade with age.
+      Appearance: queens, workers and males are ginger all over but variable from pale to almost black, and fades with age.
       `
     },
     {
       name: 'Bombus hypnorum',
       time: [278],
+      quickId: 'Worker: ginger thorax, black abdomen and a white tail.',
       description: `The tree bumblebee is a relatively recent arrival to the UK from mainland Europe (2001). Now common and widespread.
 
       Appearance: queen, workers and males all have ginger thorax, black abdomen and a white tail.

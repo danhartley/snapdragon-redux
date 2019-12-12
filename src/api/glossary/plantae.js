@@ -1430,4 +1430,9 @@ export const plantae = [
         definition: "A broad term that refers to any of the organisms, such as fungi, bacteria, protists, nematodes, and viruses that cause plant diseases.",
         wiki: "https://en.wikipedia.org/wiki/Plant_pathology"
     },
+    {
+        term: "Pollen",
+        definition: "A fine to coarse powdery substance comprising pollen grains which are male microgametophytes of seed plants.",
+        wiki: "https://en.wikipedia.org/wiki/Pollen"
+    },
 ];

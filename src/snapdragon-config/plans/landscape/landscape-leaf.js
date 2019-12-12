@@ -1,14 +1,14 @@
-import { layouts as L } from 'snapdragon-config/screen-layouts';
+// import { layouts as L } from 'snapdragon-config/screen-layouts';
 
-export const landscapeLeaf = {
-    id: 2,
-    name:'Lesson 2',
-    portrait: false,
-    levels: [
-        {   id: 1,
-            name:'Level 1',
-            description: 'Name the leaf structure',
-            layouts: [ L.leafEntry ]
-        }
-    ]
-};
+// export const landscapeLeaf = {
+//     id: 2,
+//     name:'Lesson 2',
+//     portrait: false,
+//     levels: [
+//         {   id: 1,
+//             name:'Level 1',
+//             description: 'Name the leaf structure',
+//             layouts: [ L.leafEntry ]
+//         }
+//     ]
+// };

@@ -91,7 +91,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
                         answers = answers.map(a => { return { term: a } });
                         answers = utils.shuffleArray(answers);
                         
-                        help = config.isLandscapeMode ? '(Click on the answer.)' : '(Tap on the answer.)';
+                        help = config.isLandscapeMode ? '(Click on the answer)' : '(Tap on the answer)';
                     }
 
                     await buildQuestion();
@@ -119,7 +119,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
                         answers = utils.shuffleArray([item.vernacularName, ...answers]);
                         answers = answers.map(a => { return { term: a } });
                 
-                        help = config.isLandscapeMode ? '(Click on the answer.)' : '(Tap on the answer.)';
+                        help = config.isLandscapeMode ? '(Click on the answer)' : '(Tap on the answer)';
                     };
 
                     await buildQuestion();
@@ -128,6 +128,34 @@ export const renderMultiStrips = (collection, bonus, args) => {
                 };
 
                 renderVernacularQuestions();
+            }
+
+            if(screen.name === 'species-identification') {
+
+                const renderIdQuestions = async () => {
+
+                    let answer, answers, help;
+
+                    const buildQuestion = async () => {
+
+                        console.log('calling getPoolItems from renderIdQuestions');
+
+                        answer = { term: item.quickId };   
+                        answers = await getPoolItems(collection, 6);
+                        answers = answers.map(a => a.quickId);
+                        answers = R.take(5, answers.filter(a => a !== item.quickId));
+                        answers = utils.shuffleArray([item.quickId, ...answers]);
+                        answers = answers.map(a => { return { term: a } });
+                
+                        help = config.isLandscapeMode ? '(Click on the answer)' : '(Tap on the answer)';
+                    };
+
+                    await buildQuestion();
+
+                    render(answer, answers, { vernacularName: item.vernacularName, question: 'What does it look like?', help });
+                };
+
+                renderIdQuestions();
             }
 
             if(screen.name === 'family-strips') {

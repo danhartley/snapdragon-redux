@@ -27,6 +27,7 @@ const functions = [
     { name: 'species-card', func: renderCard },
     { name: 'species-scientifics', func: renderMultiStrips },
     { name: 'species-vernaculars', func: renderMultiStrips },
+    { name: 'species-identification', func: renderMultiStrips },
     { name: 'summary', func: renderSummary },
     { name: 'history', func: renderHistory },
     { name: 'epithet', func: renderMultiStrips },

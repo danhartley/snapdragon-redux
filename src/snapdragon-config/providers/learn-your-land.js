@@ -330,7 +330,7 @@ const learnYourLand1 = {
         },
         {
           label: 'Website',
-          url: 'learnyourland.com'
+          url: 'https://www.learnyourland.com'
         }
       ],
       location: 'Eastern North America'
@@ -510,7 +510,7 @@ const learnYourLand2 = {
         },
         {
           label: 'Website',
-          url: 'learnyourland.com'
+          url: 'https://www.learnyourland.com'
         }
       ],
       location: 'Eastern North America'

@@ -18,7 +18,8 @@ const {
     birdsong, mediaPlayers,
     mixedTraitLeft,
     mixedTraitRight,
-    providerHorizontalStripQuestions } = panels;
+    providerHorizontalStripQuestions,
+    speciesIdentification } = panels;
 
 const mixedSpeciesMatch = {
     name: 'screen-mixed-species-match',
@@ -115,6 +116,20 @@ const commonToLatinMatch = {
     screens: [
         { ...specimenImages },
         { ...scientifics }
+    ]
+};
+
+const speciesIdentificationMatch = {
+    name: 'screen-species-identification',
+    type:'test',
+    score: 1,
+    points: 1,
+    kind: 'MC',
+    given: 'Given species name',
+    requirement: 'Select identification',
+    screens: [
+        { ...specimenImages },
+        { ...speciesIdentification }
     ]
 };
 
@@ -456,5 +471,6 @@ export const layouts = {
   summary,
   mediaMatch,
   mixedTraitImages,
-  providerHorizontalStrip
+  providerHorizontalStrip,
+  speciesIdentificationMatch
 }

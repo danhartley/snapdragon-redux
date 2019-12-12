@@ -160,4 +160,25 @@ export const animalia = [
         definition: 'Females has one mate at a time.',
         wiki: 'https://en.wikipedia.org/wiki/Monandrous'
     },
+    {
+        term: 'Aposematism',
+        alt: 'Aposematic',
+        definition: 'Advertising by an animal to potential predators that it is not worth attacking or eating.',
+        wiki: 'https://en.wikipedia.org/wiki/Aposematism'
+    },
+    {
+        term: 'Batesian mimicry',
+        definition: 'Where a harmless mimic poses as harmful.',
+        wiki: 'https://en.wikipedia.org/wiki/Batesian_mimicry'
+    },
+    {
+        term: 'Müllerian mimicry',
+        definition: 'Where 2 or more harmful species mutually advertise themselves as harmful.',
+        wiki: 'https://en.wikipedia.org/wiki/Müllerian_mimicry'
+    },
+    {
+        term: 'Mertensian mimicry',
+        definition: 'Where a deadly mimic resembles a less harmful but lesson-teaching model.',
+        wiki: 'https://en.wikipedia.org/wiki/Mimicry#Mertensian'
+    },
 ];

@@ -1048,8 +1048,6 @@ export const enums = {
   VISUAL: 'Visual',
   OLFACTORY: 'Olfactory',
   AUDITORY: 'Auditory',
-  type: 'crypsis',
-  name: 'crypsis'
   },
   allochory: {
   ANEMOCHORY: 'Anemochory',
@@ -1167,7 +1165,8 @@ export const enums = {
   RICTAL_BRISTLES: 'Rictal bristles',
   DEHISCENCE: 'Dehiscence',
   EXPLOSIVE_DEHISCENCE: 'Explosive dehiscence',
-  RESIN_CANAL: 'Resin canal'
+  RESIN_CANAL: 'Resin canal',
+  APOSEMATIC: 'Aposematic'
   },
   climate: {
   HOT: 'Hot',

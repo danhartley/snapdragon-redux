@@ -254,5 +254,110 @@ export const questions = [
             'Spores form on a spongy mass of downward-pointing tubes.'
         ]
     },
+    {
+        id: '17',
+        provider: 'snapdragon',
+        iconicTaxon: 'fungi',
+        rank: 'species',
+        taxon: 'Calvatia gigantea',
+        statement: 'Puffballs have a distinctive fruitbody.',
+        question: 'How would you recognise a puffball?',
+        answer  : 'It\'s brown, dust-like spores are emitted when the mature fruitbody bursts or is impacted.',
+        answers: [
+            'It has an open cap with spore-bearing gills.',
+            'The spores develop internally in the gleba and are exposed in the form of a foul-smelling gel.',
+            'Spores form on a spongy mass of downward-pointing tubes.'
+        ]
+    },
+    {
+        id: '18',
+        provider: 'snapdragon',
+        iconicTaxon: 'insecta',
+        rank: 'genus',
+        taxon: 'Bombus',
+        statement: 'Bumblebees form colonies with a single queen.',
+        question: 'How many individuals would typically be found in a nest?',
+        answer  : '50',
+        answers: [
+            '250',
+            '1000',
+            '5000'
+        ]
+    },
+    {
+        id: '19',
+        provider: 'snapdragon',
+        iconicTaxon: 'insecta',
+        rank: 'genus',
+        taxon: 'Bombus',
+        statement: 'Different species of bumblebee in a region often resemble each other in a mutually protective way.',
+        question: 'What name has been given to this natural phenomenon?',
+        answer  : 'Müllerian mimicry',
+        answers: [
+            'Batesian mimicry',
+            'Mertensian mimicry',
+            'Wasmannian mimicry',
+        ]
+    },
+    {
+        id: '20',
+        provider: 'snapdragon',
+        iconicTaxon: 'insecta',
+        rank: 'genus',
+        taxon: 'Bombus',
+        statement: 'Bumblebees have aposematic (warning) coloration, often consisting of contrasting bands of colour.',
+        question: 'What purpose does this serve?',
+        answer  : 'Beneficial to both predator and prey, since both avoid potential harm.',
+        answers: [
+            'Beneficial to both potential predators since they avoid potential harm.',
+            'Beneficial to the bumblee since it avoids potential harm.',
+            'Benefits species ressembling bumblees by warding off potential predators.',
+        ]
+    },
+    {
+        id: '21',
+        provider: 'snapdragon',
+        iconicTaxon: 'insecta',
+        rank: 'genus',
+        taxon: 'Bombus',
+        statement: 'Bumblebees have long hairy tongues.',
+        question: 'How are they put to use?',
+        answer  : 'Feeding and gathering nectar for their young.',
+        answers: [
+            'Feeding and gathering pollen for their young.',
+            'For pollination in return to nectar.',
+            'For pollination in return to pollen.',
+        ]
+    },
+    {
+        id: '22',
+        provider: 'snapdragon',
+        iconicTaxon: 'plantae',
+        rank: 'genus',
+        taxon: 'Bombus',
+        statement: 'Pollen grains are male microgametophytes of seed plants.',
+        question: 'What are gametophytes?',
+        answer  : 'One of the 2 alternating phases in the life cycle of plants and most algae.',
+        answers: [
+            'The diploid multicellular stage in the life cycle of a plant or alga.',
+            'One of the 3 alternating phases in the life cycle of plants and most algae.',
+            'A diploid multicellular organism that develops from a haploid spore.',
+        ]
+    },
+    {
+        id: '23',
+        provider: 'snapdragon',
+        iconicTaxon: 'insecta',
+        rank: 'genus',
+        taxon: 'Bombus',
+        statement: 'Queen bumblebees lay one of two types of egg.',
+        question: 'What do unfertilised eggs which contain chromosomes only from the queen become?',
+        answer  : 'Male bees',
+        answers: [
+            'Male worker bees',
+            'Female worker bees',
+            'Queen bees',
+        ]
+    },
 
 ];

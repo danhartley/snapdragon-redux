@@ -100,6 +100,10 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
         taxonInfoSlider(item, taxon.traits, rootNode.querySelector('.js-taxon-info-box'), mode);
 
         switch(rank) {
+            case 'GENUS': 
+                rootNode.querySelector('.js-taxon-genus').classList.add('hide-important');
+                rootNode.querySelector('.js-taxon-family').classList.add('hide-important');
+                break;
             case 'FAMILY': 
                 rootNode.querySelector('.js-taxon-family').classList.add('hide-important');
                 break;
