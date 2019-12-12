@@ -99,6 +99,7 @@
         grid-template-columns: 1fr 1fr;
         cursor: pointer;
         width: initial;
+        overflow-y: auto;
     }
 
     .strip {

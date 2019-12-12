@@ -167,4 +167,24 @@ export const commmon = [
         definition : "Species of wild animals or plants that live near, and benefit from, an association with human beings.",
         wiki: 'https://en.wikipedia.org/wiki/Synanthrope'
     },  
+    {
+        term: "Eusociality",
+        definition: "Cooperative brood care, overlapping generations and division of labour into reproductive and non-reproductive groups.",
+        wiki: 'https://en.wikipedia.org/wiki/Eusociality'
+    },
+    {
+        term: "Nectar",
+        definition: "A sugar-rich liquid produced by plants in glands called nectaries",
+        wiki: 'https://en.wikipedia.org/wiki/Nectar'
+    },
+    {
+        term: "Pollen",
+        definition: "A fine to coarse powdery substance comprising pollen grains which are male microgametophytes of seed plants.",
+        wiki: "https://en.wikipedia.org/wiki/Pollen"
+    },
+    {
+        term: "Haplodiploidy",
+        definition: "A sex-determination system in which males develop from unfertilised eggs and are haploid, and females develop from fertilised eggs and are diploid.",
+        wiki: "https://en.wikipedia.org/wiki/Haplodiploidy"
+    },
 ];

@@ -152,7 +152,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
                     await buildQuestion();
 
-                    render(answer, answers, { vernacularName: item.vernacularName, question: 'What does it look like?', help });
+                    render(answer, answers, { vernacularName: item.vernacularName, question: 'Which description fits best?', help });
                 };
 
                 renderIdQuestions();

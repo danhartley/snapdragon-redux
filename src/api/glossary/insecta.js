@@ -30,6 +30,11 @@ export const insecta = [
         wiki: "https://en.wikipedia.org/wiki/Scopa_(biology)"
     },
     {
+        term: "Pollen basket",
+        definition: "A polished cavity surrounded by a fringe of hairs in which bees collect pollen. Only honey bees, bumblebees, stingless bees, and orchid bees have corbiculae (pollen baskets)",
+        wiki: "https://en.wikipedia.org/wiki/Pollen_basket"
+    },
+    {
         term: "Scutellum",
         definition: "Small sctructure like a shield.",
     },

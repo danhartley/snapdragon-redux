@@ -522,7 +522,7 @@ export const plantae = [
     },
     {
         term: 'Allogamy (cross-fertilisation)',
-        definition: 'The fertilization of an ovum from one individual with the spermatozoa of another.',
+        definition: 'The fertilisation of an ovum from one individual with the spermatozoa of another.',
         wiki: 'https://en.wikipedia.org/wiki/Allogamy'
     },
     {
@@ -1392,7 +1392,7 @@ export const plantae = [
     },
     {
         term: 'Apomixis',
-        definition: 'Process of asexual reproduction through seed, in the absence of meiosis and fertilization, generating clonal progeny of maternal origin.',
+        definition: 'Process of asexual reproduction through seed, in the absence of meiosis and fertilisation, generating clonal progeny of maternal origin.',
         wiki: 'https://en.wikipedia.org/wiki/Vegetative_reproduction#Natural_means'
     },
     {
@@ -1429,10 +1429,5 @@ export const plantae = [
         term: "Plant pathogen",
         definition: "A broad term that refers to any of the organisms, such as fungi, bacteria, protists, nematodes, and viruses that cause plant diseases.",
         wiki: "https://en.wikipedia.org/wiki/Plant_pathology"
-    },
-    {
-        term: "Pollen",
-        definition: "A fine to coarse powdery substance comprising pollen grains which are male microgametophytes of seed plants.",
-        wiki: "https://en.wikipedia.org/wiki/Pollen"
     },
 ];

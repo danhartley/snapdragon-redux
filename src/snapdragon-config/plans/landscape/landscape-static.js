@@ -40,13 +40,14 @@ export const landscapeStaticTaxonGroup = {
         {   id: 1,
             name:'Level 1',
             layouts: [                          
-                        L.mixedSpecimenImages, 
                         L.speciesIdentificationMatch,
-                        // L.latinToCommonMatch, L.commonEntry,
-                        // L.commonToLatinMatch,
-                        // L.textCompleteGenus, L.genusEntry,                        
-                        // L.textCompleteSpecies, L.speciesEntry,
-                        // L.speciesGenusEntry,
+                        L.mixedSpecimenImages, 
+                        L.latinToCommonMatch, L.commonEntry,
+                        L.commonToLatinMatch,
+                        L.textCompleteGenus, 
+                        L.genusEntry,                        
+                        L.textCompleteSpecies, L.speciesEntry,
+                        L.speciesGenusEntry,
                     ],
             bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'lookalikes', 'definition' ] } ]
         }

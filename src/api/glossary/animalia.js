@@ -33,11 +33,6 @@ export const animalia = [
         wiki: 'https://en.wikipedia.org/wiki/Precociality'
     },
     {
-        term: "Eusociality",
-        definition: "Cooperative brood care, overlapping generations and division of labor into reproductive and non-reproductive groups.",
-        wiki: 'https://en.wikipedia.org/wiki/Eusociality'
-    },
-    {
         term: "Hoarding",
         definition: "Storage of food in locations hidden from the sight of both conspecifics and members of other species.",
         wiki: 'https://en.wikipedia.org/wiki/Hoarding_(animal_behavior)'
@@ -180,5 +175,21 @@ export const animalia = [
         term: 'Mertensian mimicry',
         definition: 'Where a deadly mimic resembles a less harmful but lesson-teaching model.',
         wiki: 'https://en.wikipedia.org/wiki/Mimicry#Mertensian'
+    },
+    {
+        term: 'Cooperative breeding',
+        definition: 'A social system whereby offspring receive care not only from their parents, but also from additional group members, often called helpers.',
+        wiki: 'https://en.wikipedia.org/wiki/Cooperative_breeding'
+    },
+    {
+        term: 'Territory',
+        alt: 'Territorial',
+        definition: 'The sociographical area that an animal consistently defends against conspecifics (or, occasionally, animals of other species).',
+        wiki: 'https://en.wikipedia.org/wiki/Territory_(animal)'
+    },
+    {
+        term: 'Episodic memory',
+        definition: 'The memory of autobiographical events; personal experiences that occurred at a particular time and place',
+        wiki: 'https://en.wikipedia.org/wiki/Episodic_memory'
     },
 ];

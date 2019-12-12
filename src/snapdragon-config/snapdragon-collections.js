@@ -461,8 +461,8 @@ const btoCorvids = {
   behaviour: 'static',
   name: 'British Trust for Ornithology - Corvid Ids',
   moduleSize: 1,
-  lessonPlanLandscape: 5,
-  lessonPlanPortrait: 105,
+  lessonPlanLandscape: 11,
+  lessonPlanPortrait: 111,
   glossary: ['aves'],
   items: [],
   species: [
@@ -470,6 +470,7 @@ const btoCorvids = {
       name: 'Corvus corone',
       time: [30, 50],
       questionIds: ['12'],
+      quickId: 'Large and handsome with pleasing proportions; the head is neatly rounded, plumage neat against the body and colour jet black and glossy.',
       description: `Range: found throughtout the British Isles with the exception of NW Scotland and most of Ireland where it is replaced by the hooded crow.
 
       Behaviour: found singly, more commony in pairs, but frequently in groups.
@@ -486,6 +487,7 @@ const btoCorvids = {
     {
       name: 'Corvus frugilegus',
       time: [110],
+      quickId: 'Bare white face and pale bill base; somewhat scruffy and baggy with loose oily-looking plumage, potbelly, higly peaked crown and splendid, baggy pantaloons.',
       description: `Appearance: similar in size to the carrion crow.
        
       Range: found throughtout Britain & Ireland with the exception of the extreme NW.
@@ -506,6 +508,7 @@ const btoCorvids = {
     {
       name: 'Corvus corax',
       time: [213],
+      quickId: 'Huge. Long, heavy bill. Heavy ruffle of throat feathers (or hackles), barrel chest and long neck, provide unique, heavy-headed impression.',
       description: `
       Appearance: the raven is huge, by far the largest passerine (perching birds, or songbirds), with similar wingspan to a buzzard (Buteo buteo), and even larger body.
 
@@ -525,6 +528,7 @@ const btoCorvids = {
     {
       name: 'Coloeus monedula',
       time: [282],
+      quickId: 'Broad neck and short bill leads to a blunt appearance at the front end. Individual pairs fly close to each other.',
       description: `Range: found throughout the UK with the exception of far NW Scotland and Shetland.
 
       Destinctive features: grey nape, black forehead and white eyes.
@@ -543,6 +547,7 @@ const btoCorvids = {
     {
       name: 'Pyrrhocorax pyrrhocorax',
       time: [336],
+      quickId: 'Unique, coral-red, down-curved bill and pinky red legs. The wingtips extend well beyond the tail.',
       description: `Appearance: chough is slightly larger and more rangey than the jackdaw.
 
       Range: our rarest black crow, found on some Scottish islands, the Irish coast, the Isle of Man, Wales and Cornwall. Best identified feeding on short, cliff top turf.
@@ -557,6 +562,7 @@ const btoCorvids = {
     {
       name: 'Pyrrhocorax graculus',
       time: [402],
+      quickId: 'Short wings and long tails, short, slight bills are lemon yellow.',
       description: `European cousin of the British chough.
 
       Appearance: short wings and long tails, short, slight bills are lemon yellow.
@@ -634,7 +640,7 @@ const bloomsForBeesCU = {
   moduleSize: 1,
   lessonPlanLandscape: 11,
   lessonPlanPortrait: 111,
-  glossary: ['insecta'],
+  glossary: ['insecta', 'animalia'],
   items: [],
   species: [
     {

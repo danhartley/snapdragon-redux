@@ -186,7 +186,7 @@ export const questions = [
         rank: 'order',
         taxon: 'Passeriformes',
         statement: 'Passerines are distinguished from other orders of birds by the arrangement of their toes.',
-        question: 'Which description describes this arrangement?',
+        question: 'Which description is correct?',
         answer  : '3 toes pointing forward and one back (anisodactyly).',
         answers: [
             '2 toes facing forward (digits 2 and 3) and 2 back (zygodactyly).',
@@ -309,7 +309,7 @@ export const questions = [
         question: 'What purpose does this serve?',
         answer  : 'Beneficial to both predator and prey, since both avoid potential harm.',
         answers: [
-            'Beneficial to both potential predators since they avoid potential harm.',
+            'Beneficial to a potential predators since it avoids potential harm.',
             'Beneficial to the bumblee since it avoids potential harm.',
             'Benefits species ressembling bumblees by warding off potential predators.',
         ]
@@ -325,8 +325,8 @@ export const questions = [
         answer  : 'Feeding and gathering nectar for their young.',
         answers: [
             'Feeding and gathering pollen for their young.',
-            'For pollination in return to nectar.',
-            'For pollination in return to pollen.',
+            'For pollination in return for nectar.',
+            'For pollination in return for pollen.',
         ]
     },
     {

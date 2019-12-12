@@ -20,13 +20,22 @@ export const getDefinitionTests = itemsInThisRound => {
 
 const getDefinitionTest = item => {
 
-    const { config } = store.getState();
+    const { config, collection } = store.getState();
 
     const number = config.isPortraitMode ? 4 : 4;
 
     const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa).value, 'common' ]));
 
-    const term = item.terms ? utils.shuffleArray(item.terms)[0] : null;
+    const term = item.terms 
+                    ? utils.shuffleArray(item.terms)[0] 
+                    : item.genus.terms
+                        ? item.genus.terms[collection.itemIndex] 
+                            ? item.genus.terms[collection.itemIndex] 
+                            : item.family.terms
+                                ? utils.shuffleArray(item.family.terms)[0]
+                                : null
+                        : null;
+                    
 
     const definition = !!term 
         ? definitions.find(definition => definition.term.toLowerCase() === term.toLowerCase())
