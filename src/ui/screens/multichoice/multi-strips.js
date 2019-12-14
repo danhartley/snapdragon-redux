@@ -2,26 +2,23 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
-import { actions } from 'redux/actions/action-creators';
 import { epithets } from 'api/botanical-latin';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { getPoolItems } from 'snapdragon-engine/pool-handler';
-import { scoreHandler } from 'ui/helpers/handlers';
+import { scoreHandler } from 'ui/helpers//score-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { firestore } from 'api/firebase/firestore';
-// import { subsHandler } from 'ui/helpers/subscription-handler';
-import { subscription } from 'redux/subscriptions';
 
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
+import stripWithImageTemplate from 'ui/screens/multichoice/multi-strips-with-images.html';
+
 import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
 
-export const renderMultiStrips = (collection, bonus) => {
+export const renderMultiStrips = (collection, bonus, args) => {
 
     try {
-
-        // console.log('renderMultiStrips collection.nextItem:', collection.nextItem);
 
         const { config, lesson, layout } = store.getState();
 
@@ -29,13 +26,13 @@ export const renderMultiStrips = (collection, bonus) => {
 
         const taxon = matchTaxon(item.taxonomy, iconicTaxa);                        
     
-        screen = bonus ? bonus.screen || layout.screens[1] : layout.screens[1];
+        const screen = bonus ? bonus.screen || layout.screens[1] : layout.screens[1];
 
         const defaultQueryLimit = 6, defaultLanguage = 'en';
 
         const init = async () => {
 
-            const render = (questionValue, answers, overrides) => {
+            const render = (answer, answers, overrides) => {
 
                 const vernacularName = (overrides && overrides.vernacularName !== undefined) ? overrides.vernacularName : item.vernacularName;
                 const binomial = (overrides && overrides.binomial !== undefined) ? overrides.binomial : item.name;
@@ -52,95 +49,54 @@ export const renderMultiStrips = (collection, bonus) => {
 
                 const template = document.createElement('template');
                 
-                template.innerHTML = stripTemplate;
+                template.innerHTML = answer.img ? stripWithImageTemplate : stripTemplate;
 
-                const options = answers.map((answer, index) => {
-                    return {
-                        answer,
-                        conceal: conceal[index]
-                    }
-                });
+                answers.forEach((answer, index) => answer.index = index);
 
-                renderTemplate({ options }, template.content, parent);
+                renderTemplate({ answers }, template.content, parent);
 
                 const strips = document.querySelectorAll('.js-rptr-strips .strip');
 
                 if(overrides.italicise) strips.forEach(strip => strip.classList.add('binomial'));
 
-                const wordyAnswers = [ 'family-strips', 'definition' ];
+                if(config.isPortraitMode) {
 
-                if(R.contains(screen.name, wordyAnswers)) {
-                    strips.forEach(strip => strip.classList.add('extra-small-text'));
-                }
-                
-                if(config.isLandscapeMode) {
-                    if(R.contains(screen.name, ['epithet', 'trait-property', 'species-scientifics', 'species-vernaculars'])) {
-                        strips.forEach(strip => strip.classList.add('big-padding'));
+                    const wordyAnswers = [ 'family-strips', 'definition', 'trait-property' ];
+    
+                    if(R.contains(screen.name, wordyAnswers)) {
+                        document.querySelector('.js-rptr-strips').classList.add('horizontal');
                     }
                 }
 
-                const taxon = { name: item.taxonomy.family, binomial: item.name, question: questionValue };
+                const taxon = { name: item.taxonomy.family, binomial: item.name, question: answer };
 
-                const test = { itemId: item.id, items: strips, taxon, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points, clue};
+                const test = { itemId: item.id, items: strips, taxon, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points, clue, answerIndex: answers.findIndex(a => a.term === answer.term)};
                         
-                const callback = (score) => {
-
-                    const updateScore = () => {
-                        if(bonus && bonus.callback) {
-                            score.guid = bonus.guid;
-                            actions.boundUpdateTraitScore(score);
-                            bonus.callback(score);
-                        } else {
-                            subscription.removeSubs();
-                            actions.boundUpdateScore(score);
-                        }
-                    };
-
-                    const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
-
-                    const scoreUpdateTimer = setTimeout(()=>{
-                        updateScore();
-                    }, delay);
-                
-                    const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
-            
-                    continueLessonBtn.disabled = false;
-            
-                    continueLessonBtn.addEventListener('click', event => {
-                        window.clearTimeout(scoreUpdateTimer);
-                        updateScore();
-                    });
-
-                    if(screen.name === 'family-strips') {
-                        document.querySelector('.js-question-question').innerHTML = item.taxonomy.family;
-                        document.querySelector('.js-question-help').classList.add('hide');
-                    }
-                };
-
-                scoreHandler('strip', test, callback, config);
+                scoreHandler('strip', test, null, config);
             }
 
             if(screen.name === 'species-scientifics') {
 
                 const renderBinomialQuestions = async () => {
 
-                    let question, answers, help;
+                    let answer, answers, help;
 
                     const buildQuestion = async () => {
 
-                        question = item.name;
-                        answers = await firestore.getSpeciesByIconicTaxon(item, 8);
+                        answer = { term: item.name };
+                        answers = await getPoolItems(collection, 6);
                         answers = R.take(8, answers).filter(s => s.name.toLowerCase() !== item.name.toLowerCase()).map(s => s.name);
                         answers = R.take(5, answers);
                         answers.push(item.name);
+                        answers = answers.map(a => { return { term: a } });
                         answers = utils.shuffleArray(answers);
                         
-                        help = config.isLandscapeMode ? '(Click on the answer.)' : '(Tap on the answer.)';
+                        help = config.isLandscapeMode ? '(Click on the answer)' : '(Tap on the answer)';
                     }
 
                     await buildQuestion();
 
-                    render(question, answers, { binomial: 'Latin name', question: 'What is the latin name?', help, italicise: true });
+                    render( answer, answers, { binomial: 'Latin name', question: 'What is the latin name?', help, italicise: true });
                 };
 
                 renderBinomialQuestions();
@@ -150,27 +106,56 @@ export const renderMultiStrips = (collection, bonus) => {
 
                 const renderVernacularQuestions = async () => {
 
-                    let question, answers, help;
+                    let answer, answers, help;
 
                     const buildQuestion = async () => {
 
                         console.log('calling getPoolItems from renderVernacularQuestions');
 
-                        question = item.vernacularName;   
-                        answers = await getPoolItems(item, 6);
+                        answer = { term: item.vernacularName };   
+                        answers = await getPoolItems(collection, 6);
                         answers = answers.map(a => itemProperties.getVernacularName(a, defaultLanguage));
-                        answers = answers.filter(a => a !== item.vernacularName);
+                        answers = R.take(5, answers.filter(a => a !== item.vernacularName));
                         answers = utils.shuffleArray([item.vernacularName, ...answers]);
+                        answers = answers.map(a => { return { term: a } });
                 
-                        help = config.isLandscapeMode ? '(Click on the answer.)' : '(Tap on the answer.)';
+                        help = config.isLandscapeMode ? '(Click on the answer)' : '(Tap on the answer)';
                     };
 
                     await buildQuestion();
 
-                    render(question, answers, { vernacularName: 'Common name', question: 'What is the common name?', help });
+                    render(answer, answers, { vernacularName: 'Common name', question: 'What is the common name?', help });
                 };
 
                 renderVernacularQuestions();
+            }
+
+            if(screen.name === 'species-identification') {
+
+                const renderIdQuestions = async () => {
+
+                    let answer, answers, help;
+
+                    const buildQuestion = async () => {
+
+                        console.log('calling getPoolItems from renderIdQuestions');
+
+                        answer = { term: item.quickId };   
+                        answers = await getPoolItems(collection, 6);
+                        answers = answers.map(a => a.quickId);
+                        answers = R.take(5, answers.filter(a => a !== item.quickId));
+                        answers = utils.shuffleArray([item.quickId, ...answers]);
+                        answers = answers.map(a => { return { term: a } });
+                
+                        help = config.isLandscapeMode ? '(Click on the answer)' : '(Tap on the answer)';
+                    };
+
+                    await buildQuestion();
+
+                    render(answer, answers, { vernacularName: item.vernacularName, question: 'Which description fits best?', help });
+                };
+
+                renderIdQuestions();
             }
 
             if(screen.name === 'family-strips') {
@@ -182,14 +167,15 @@ export const renderMultiStrips = (collection, bonus) => {
                 const number = config.isPortraitMode ? 4 : 4;
 
                 const families = await firestore.getFamiliesByIconicTaxon(taxon.rank, taxon.value, item.lichen, config);
-                const question = { type: item.family[type], name: item.family.name } || { type: `Missing ${type}`, name: item.family.name };
+                const answer = { term: item.family[type], name: item.family.name } || { type: { term: `Missing ${type}`}, name: item.family.name };
                 const alternativeFamilies = R.take(number-1, R.take(number, utils.shuffleArray(families))).filter(f => f.name.toLowerCase() !== item.taxonomy.family.toLowerCase());
-                const alternatives = alternativeFamilies.filter(f => f[type] && f[type] !== undefined && f[type] !== '').map(f => { return { type: f[type], name: f.name } });
-                const answers = utils.shuffleArray([question, ...alternatives]);
+                let alternatives = alternativeFamilies.filter(f => f[type] && f[type] !== undefined && f[type] !== '').map(f => { return { type: f[type], name: f.name } });
+                    alternatives = alternatives.map(a => { return { term: a.type } });
+                let answers = utils.shuffleArray([answer, ...alternatives]);                    
                 
                 const help = config.isLandscapeMode ? '(Click on the description below.)' : '(Tap on the description.)';
 
-                render(question.type, answers.map(a => a.type), { question: 'Match species family', help, conceal: answers.map(a => a.name), clue: item.taxonomy.family });
+                render(answer, answers, { question: 'Match species family', help, clue: item.taxonomy.family });
             }
 
             if(screen.name === 'epithet') {
@@ -198,63 +184,60 @@ export const renderMultiStrips = (collection, bonus) => {
                 const number = config.isPortraitMode ? 6 : 6;
                 
                 let alternatives = R.take(number-1, utils.shuffleArray(epithets)).filter(e => !R.contains(e.latin, epithet));
-                alternatives = alternatives.map(e => e.en.join(', '));
-                let question = epithets.find(e => e.latin.join(', ').toUpperCase() === epithet.toUpperCase());
-                question = question ? question[config.language][0] : epithet;
+                    alternatives = alternatives.map(e => e.en.join(', '));
+                    alternatives = alternatives.map(a => { return { term: a } });
+                let answer = epithets.find(e => e.latin.join(', ').toUpperCase() === epithet.toUpperCase());
+                    answer = answer ? answer[config.language][0] : epithet;
+                    answer = { term: answer };
                 
-                const answers = utils.shuffleArray([question, ...alternatives]);
+                const answers = utils.shuffleArray([answer, ...alternatives]);
                 
                 if(config.isLandscapeMode) {            
-                    render(question, answers, { question: layout.epithet.latin.join(', '), help: '(Match the latin term)' });
+                    render(answer, answers, { question: layout.epithet.latin.join(', '), help: '(Match the latin term)' });
                 } else {
-                    render(question, answers, { question: 'Match latin word', help: '', vernacularName: '', binomial: '', term: layout.epithet.latin.join(', ') });
+                    render(answer, answers, { question: 'Match latin word', help: '', vernacularName: '', binomial: '', term: layout.epithet.latin.join(', ') });
                 }
             }
 
             if(screen.name === 'definition') {
-                bonus.overrides.headerClassName = 'definition';
-                render(bonus.question, bonus.answers, bonus.overrides);
+                render({ term: bonus.question }, bonus.answers.map(a => { return { term: a } }), bonus.overrides);
             }
 
             if(screen.name === 'family') {
 
                 const indices = config.isPortraitMode ? [5,6] : [5,6];
 
-                const families = await firestore.getFamiliesByIconicTaxon(taxon.rank, taxon.value, item.lichen, config);
-                const family = item.taxonomy.family;
-                const otherFamilies = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(family => family.name.toLowerCase() !== item.taxonomy.family.toLowerCase()));
-                const otherFamiliesLatinNames = otherFamilies.map(family => family.name);
-                const otherFamiliesCommonNames = otherFamilies.map(of => of.names[0]);
+                let families = await firestore.getFamiliesByIconicTaxon(taxon.rank, taxon.value, item.lichen, config);
+                let family = item.taxonomy.family;
+                let otherFamilies = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(family => family.name.toLowerCase() !== item.taxonomy.family.toLowerCase()));
+                let otherFamiliesLatinNames = otherFamilies.map(family => family.name);
+                let otherFamiliesCommonNames = otherFamilies.map(of => of.names[0]);
                 
-                let question, answers;
+                let answer, answers;
 
                 const random = utils.getRandomInt(2);
 
                 switch(random) {            
                     case 0:
-                        question = item.family.vernacularName;
-                        answers = utils.shuffleArray([question, ...otherFamiliesCommonNames]);
-                        if(question === undefined) console.log('Missing question - case 0 - in multi-strips for: ', item.name);
-                        render(question, answers, { question: 'Match family name' });
+                        answer = { term: item.family.vernacularName };
+                        otherFamiliesCommonNames = otherFamiliesCommonNames.map(a => { return { term: a } });
+                        answers = utils.shuffleArray([answer, ...otherFamiliesCommonNames]);
+                        if(answer === undefined) console.log('Missing question - case 0 - in multi-strips for: ', item.name);
+                        render(answer, answers, { question: 'Match family name' });
                     break;
                     case 1:
-                        question = family;
-                        answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
-                        if(question === undefined) console.log('Missing question - case 1 - in multi-strips for: ', item.name);
-                        render(question, answers, { question: 'Match family name', italicise: true });
+                        answer = { term: family };
+                        otherFamiliesLatinNames = otherFamiliesLatinNames.map(a => { return { term: a } });
+                        answers = utils.shuffleArray([answer, ...otherFamiliesLatinNames]);
+                        if(answer === undefined) console.log('Missing question - case 1 - in multi-strips for: ', item.name);
+                        render(answer, answers, { question: 'Match family name', italicise: true });
                     break;
                 } 
             }
 
             if(screen.name === 'trait-property') {
 
-                if(bonus.overrides.question.toLowerCase().indexOf('definition') > -1) {
-                    bonus.overrides.headerClassName = 'definition';
-                } else {
-                    bonus.overrides.headerClassName = '';
-                }
-
-                render(bonus.question, bonus.answers, bonus.overrides);
+                render({ term: bonus.question }, bonus.answers.map(a => { return { term: a } }), bonus.overrides);
 
                 if(bonus.overrides.trait && bonus.overrides.trait.name === 'song') {
 
@@ -271,12 +254,31 @@ export const renderMultiStrips = (collection, bonus) => {
                             const mp3 = await firestore.getBirdsong(xcID);
                             
                             renderTemplate({ mp3, title: item.name }, template.content, parent);
+
+                            const header = document.querySelector('.js-test-card-question');
+                                  header.classList.remove('standard-block');
+                                  header.classList.add('double-standard-block');
+
+                            const content = document.querySelector('.js-test-card-content');
+                                  content.classList.add('test-card-content-less-standard-block');
                         };
 
                         renderBirdsong();
                 }
             }
 
+            if(layout.name === 'mixed-trait-images') {
+
+                // portrait only - redirect from renderMixedTraitImages
+
+                const { traits, requiredTraits, item, question, help } = args;
+
+                const answers = R.flatten(traits);
+                const answer = requiredTraits[0];
+
+                render(answer, answers, { binomial: item.name, question, help, italicise: true});
+
+            }
         }
 
         init();

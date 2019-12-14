@@ -1,63 +1,62 @@
 <div class="snapdragon-container test-card-container">
     <div class="taxon card-card js-taxon-card">
         <div id="taxon-card-header" class="question-container">
-                            
-                <div class="species-header landscape">                        
-                    <img src="{{ image.small }}" alt="">
-                </div>
+            <div class="iconic-icon double-centred-block js-iconic-icon">
+                <i class=""></i>
+            </div>
 
-                <div class="portrait iconic-icon js-iconic-icon">
-                    <i class=""></i>
-                </div>
-
-                <div class="hide-empty question-header">
-                    <div>
-                        <div class="names-container vernacular-name-badge js-names-container">
-                            <div>
-                                <span>{{ vernacularName }}</span>                                
-                            </div>
-                            <div>
-                                <span class="binomial">{{ name }}</span>
-                                <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ occurrences }}</span>
-                            </div>
+            <div class="hide-empty question-header">
+                <div>
+                    <div class="names-container vernacular-name-badge js-names-container">
+                        <div>
+                            <span>{{ vernacularName }}</span>                                
+                        </div>
+                        <div>
+                            <span class="binomial">{{ name }}</span>
+                            <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ occurrences }}</span>
                         </div>
                     </div>
                 </div>
-            
-                <div class="card-link-container">
-                    <div class="card-link js-card-link">
-                        <span>Test</span>
-                        <span>Card<i class="far fa-arrow-alt-circle-right"></i></span>
-                    </div>
+            </div>
+        
+            <div class="card-link-container">
+                <i class="disabled-icon far fa-arrow-alt-circle-right js-card-link"></i>
+            </div>
+            <!-- <div class="card-link-container">
+                <div class="card-link js-card-link">
+                    <span>Test</span>
+                    <span>Card<i class="far fa-arrow-alt-circle-right"></i></span>
                 </div>
-
+            </div> -->
         </div>  
         <div class="data-box-container sub-header">
             <div class="data-box">
                 <div class="taxon-data js-taxon-rank"><span>Rank</span> <span>{{ rank }}</span></div>
                 <div class="taxon-data"><span>Species</span> <span>{{ species }}</span></div>
-                <div class="taxon-data"><span>Genera</span> <span>{{ genera }}</span></div>
+                <div class="taxon-data js-taxon-genus"><span>Genera</span> <span>{{ genera }}</span></div>
                 <div class="taxon-data js-taxon-family"><span>Families</span> <span>{{ families }}</span></div>
             </div>
             <div class="landscape external-links js-external-links">
-                <div><a href="{{ eol }}" target="_blank" class="underline-link">EOL</a></div>
-                <div><a href="{{ wiki }}" class="underline-link" data-toggle="modal" data-target="#wikiModal">WIKI MODAL</a></div>
+                <div><a href="{{ eol }}" target="_blank" class="underline-link">EOL</a><span> taxon home page</span> <span class="names-badge"> <i class="fas fa-external-link-alt"></i></span></div>
+                <div><a href="{{ wiki }}" class="underline-link" data-toggle="modal" data-target="#wikiModal">Wikipedia page</a></div>
             </div>
         </div>
-        <div class="card-scrollable-container">
-            <div class="id-box-container">
-                <div class="id-box">
-                    <div>
-                        <div class="landscape">Quick ID</div>
-                        <div class="portrait">ID</div>
-                    </div>
-                    <div>
-                        <div class="taxon-identification">{{ identification }}</div>
+        <div class="mixed-content-container">
+            <div class="centred-block">
+                <div class="id-box-container">
+                    <div class="id-box">
+                        <div>
+                            <!-- <div class="landscape">Quick ID</div>
+                            <div class="portrait">ID</div> -->
+                        </div>
+                        <div>
+                            <div class="taxon-identification">{{ identification }}</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="taxon-summary">
-                <div>{{ summary }}</div>
+                <div class="taxon-summary">
+                    <div>{{ summary }}</div>
+                </div>
             </div>
         </div>
         <div class="info-box js-taxon-info-box"></div>

@@ -1,8 +1,7 @@
 import * as R from 'ramda';
 
 import { elem } from 'ui/helpers/class-behaviour';
-import { allIconicTaxa } from 'snapdragon-config/snapdragon-collections';
-import { renderSpeciesPicker } from 'ui/create-guide-modal/species-picker';
+import { iconicTaxa } from 'snapdragon-config/snapdragon-iconic-taxa';
 import { renderTemplate } from 'ui/helpers/templating';
 
 import categoriesTemplate from 'ui/create-guide-modal/categories-template.html';
@@ -10,20 +9,9 @@ import categoriesTemplate from 'ui/create-guide-modal/categories-template.html';
 export const renderCategories = (modal, createGuide) => {
 
     const config = createGuide.getConfig();
-
-    const guideTxt = modal.querySelector('.js-guide-text');
-
-    const goToSpeciesPicker = () => {
-        renderSpeciesPicker(modal, createGuide);
-    };
+          config.guide.iconicTaxa = config.guide.iconicTaxa || iconicTaxa.all;
 
     const filterSelectedClass = 'iconic-taxa-selected';
-
-    guideTxt.innerHTML = config.isLandscapeMode
-                            ? 'Click on the taxa that interest you.'
-                            : 'Tap on the taxa that interest you.'
-
-    let iconicTaxa = [ ...config.guide.iconicTaxa ] || [];
 
     const template = document.createElement('template');
           template.innerHTML = categoriesTemplate;
@@ -33,14 +21,9 @@ export const renderCategories = (modal, createGuide) => {
     
     renderTemplate({}, template.content, parent);
 
-    const linkTxt = modal.querySelector('.js-species-picker-link');
-
-    linkTxt.removeEventListener('click',  goToSpeciesPicker);
-    linkTxt.addEventListener('click',  goToSpeciesPicker);
-
     const icons = parent.querySelectorAll('.js-iconic-taxa-categories > div > div:nth-child(1)');
-
-    if(config.guide.iconicTaxa && config.guide.iconicTaxa.length > 0) {
+    
+    if(config.guide.iconicTaxa) {
         icons.forEach(icon => {
             const filterId = icon.parentElement.id;
             if(R.contains(filterId, config.guide.iconicTaxa.map(taxon => taxon.id))) {
@@ -48,8 +31,6 @@ export const renderCategories = (modal, createGuide) => {
             }
         });
     }
-
-    config.guide.iconicTaxa = iconicTaxa.length === 0 ? allIconicTaxa : iconicTaxa;     
 
     setTimeout(() => {
         const fungiIcon = modal.querySelector('#fungi > div');
@@ -66,13 +47,15 @@ export const renderCategories = (modal, createGuide) => {
             const filterId = filter.parentElement.id;        
             const commonName = filter.parentElement.innerText;              
 
-            if(iconicTaxa.find(taxon => taxon.id === filterId)) {
+            if(config.guide.iconicTaxa.find(taxon => taxon.id === filterId)) {
                 
                 if(filterId === 'fungi') {
                     filter.querySelector('g g').classList.remove('svg-icon-selected');                    
                 }
-                filter.classList.remove(filterSelectedClass);
-                iconicTaxa = iconicTaxa.filter(taxon => taxon.id !== filterId);
+                if(config.guide.iconicTaxa.length > 1) {
+                    filter.classList.remove(filterSelectedClass);
+                    config.guide.iconicTaxa = config.guide.iconicTaxa.filter(taxon => taxon.id !== filterId);
+                }
 
             } else {
 
@@ -81,7 +64,7 @@ export const renderCategories = (modal, createGuide) => {
                 }
                 filter.classList.add(filterSelectedClass);
 
-                iconicTaxa.push(
+                config.guide.iconicTaxa.push(
                     {
                         id: filterId,
                         common: commonName    
@@ -89,14 +72,12 @@ export const renderCategories = (modal, createGuide) => {
                 )
             }
 
-            config.guide.iconicTaxa = iconicTaxa;
-
             createGuide.setConfig(config);
-            createGuide.saveStep('SPECIES');            
+            createGuide.saveStep('TAXA');            
         });
     });
 
-    createGuide.saveStep('SPECIES');
+    createGuide.saveStep('TAXA');
 
     document.querySelector('.js-arrow-wrapper').innerHTML = '<i class="far fa-arrow-alt-circle-right"></i>';
 };

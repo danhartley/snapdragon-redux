@@ -1,41 +1,21 @@
+/* iPhone 5, ?? */
+
 @media (max-width: 320px) and (max-height: 568px) {
-    .id-box > div:nth-child(1) {
-        font-size: 1rem;
-    }
-    .id-box > div:nth-child(2) {
-        font-size: .9rem;
-    }
-    .taxon-summary {
-        font-size: .9rem;
+    .imageSlider .active.carousel-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
-
 
 @media (min-width: 320px) {
-    .tile span {
-        padding: 0 .2rem;
-        font-size: 1.8rem;
-    }
 }
 @media (min-width: 414px) {
-    .block {
-        font-size: 1.4rem;
-    }
-    .taxon-highlight {
-        font-size: 1rem;  
-    }
 }
 
 /* iPHONE 6,7,8 */
 
 @media (max-width:375px) and (min-height:667px) {
-    .strips {
-        grid-template-columns: 1fr;
-        height: calc(100vh - 22rem);
-    }
-    .strip {
-        padding: .75rem;        
-    }
 }
 
 /* Galaxy S5 */
@@ -44,13 +24,6 @@
     .names-container .vernacular-name {
         max-width: 13.5rem;
     }
-    .snapdragon-create-guide > div:nth-child(1) {
-        font-size: 1.6rem;
-      }
-      
-      .snapdragon-create-guide > div:nth-child(1) > span:nth-child(1) {
-        font-size: 1.6rem;
-      }
 }
 
 /* iPHONE 6,7,8 PLUS, iPHONE X, GALAXY S9/S9+ */
@@ -58,94 +31,103 @@
 @media  (max-width:414px) and (min-height:736px),
         (max-width:375px) and (min-height:812px),
         (max-width:360px) and (min-height:740px) {
-    .strips {
-        grid-template-columns: 1fr;
-    }
-    .strip {
-        font-size: 1.2rem;
-        padding: .65rem;
-    }
 }
 
-/* Nexus 7 */
+@media (min-width: 576px) {
+}
 
-@media (max-width: 600px) and (max-height: 960px) {
-    html {
-        font-size: 20px;
+/* NEXUS 7 */
+
+@media (width: 600px) and (max-height: 960px) {
+    body {
+        font-size: 1em;
     }
 }
 
 @media (min-height:812px) {
-    .strip {
-        margin: .5rem;
-    }
-    .extra-small-text {
-        font-size: .9rem;
-    }
 }
 
-@media (max-width: 768px) {    
+@media (max-width: 768px) {
     .landscape {
         display: none !important;
     }
     .portrait-grid {
-        display: grid;
+        display: grid;        
     }
 }
 
-
-@media (min-height: 640px) {    
-    .imageSlider .carousel-item {
-        height: 30vh;
-        padding: 1rem 10%;
-    }
+@media (min-height: 640px) {   
+    .modal-title {
+        line-height: 1.5;
+    } 
 }
 
-
-@media (min-width: 1024px) {
-    .strips {
-        height: calc(100vh - 25rem);
-    }
-    .narrow-screen {
-        display: none !important;
-    }
-}
-
-@media (max-width: 1024px) {    
-    .wide-screen {
-      display: none !important;
+@media (min-width: 600px) {    
+    .main-header {
+        font-size: 1.3rem;
     }
 }
 
 @media (min-width: 768px) {
 
-    .taxon-summary {
-        position: absolute;
-        bottom: 6rem;
+    .lesson-list-carousel-item > div:nth-child(2) > div {
+        display: flex;
     }
 
-    .modal-content {
-        border-top-left-radius: .3rem;
-        border-top-right-radius: .3rem;
+    body {
+        max-width: 1200px;
+    }
+
+    .pool {
+        padding: 0 .5rem;
+    }
+
+    /* .horizontal.strips {  
+        width: calc(600px - 1rem);
+    } */
+
+    .bird-song, .taxon-identification, .taxon-summary {
+        margin: 1rem 4rem 0 4rem;
+    }
+
+    .left-grid .header, .left-grid .footer, #imageComparisonModal .modal-title > span:nth-child(1) {
+        border-right: 1px solid var(--snap-border-light);
+    }
+
+    .strips {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        cursor: pointer;
+        width: initial;
+        overflow-y: auto;
+    }
+
+    .strip {
+        min-width: initial;
+    }
+
+    body {
+        font-size: .9em;
+    }
+
+    .home-scrolling-container .scrollable {
+        position: relative; 
+        top: 0;
+    }
+
+    .mixed-content-container {
+        top: calc(
+              var(--vhStandardBlock, 10vh)
+            + var(--vhCalendar,11vh));
+        height: calc(
+              var(--vh, 1vh) * 100
+            - var(--vhRunningBlocks,15vh)
+            - var(--vhDoubleStandardBlock,20vh) 
+            - var(--vhCalendar,11vh) 
+            - 1.5rem);
       }
-    
-      .modal-title {
-        font-size: 1rem;
-      }
-    
-      .modal-dialog {
-        /* margin: 0rem auto; */
-        margin: 0 0 auto;
-        height: 100%;
-        padding: 1rem;
-      }
-    
-      .modal-body {
-          padding: 1rem;
-      }
-    
+
       .modal-header {
-          padding: .5rem;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -156,36 +138,27 @@
           border: 0;
       }
     
-      /* MENU MODAL */
-    
-      #menuModal .modal-body.settings-modal {
+      #basicModal .modal-body.settings-modal {
           padding: rem;
       }
-    
-      /* WIKI */
-    
-      #wikiModal {
-        top: 3rem;
+
+      #badgeListModal .modal-dialog {
+        width: 30vw;
+        margin: calc( var(--vhRunningBlock) + var(--vhStandardBlock) + 5px + .5rem ) auto auto auto;
       }
-    
+
       #wikiModal .modal-dialog {
-          max-width: 60vw;
-      } 
-    
-      #wikiModal .modal-content {
-          height: 80vh;
+        max-width: 900px;
+        margin: auto;
       }
-    
-      #wikiModal .modal-body {
-          height: 90%;
-      }
-    
+
       #wikiModal iframe {
           height: 100%;
       }
     
       #imageModal .modal-dialog {
-          max-width: 50vw;
+        max-width: 600px;
+        margin: auto;
       }
         
       #imageModal .modal-title span {
@@ -202,47 +175,24 @@
       }
       
       #iNatWidgetModal .modal-header {
-          font-size: 1.2rem;
           display: inline;
       }
-    
-      /* CARD MODAL */
-    
-      /* #cardModal .modal-dialog {
-          min-width: 32rem;
-          max-width: 600px;
-      } */
     
       #cardModal .feature-types {
           width: 100%;
           margin: 0;
       }
-    
-      #cardModal .modal-body {
-        padding: 1rem 0;
-      }
-    
-      .modal-body .language-options button {
-        width: initial;
-      }
-
-    #cardModal .mixed-container {
-        height: calc(90vh - 16rem);
-      }
 
       .info-details {
-        height: calc(90vh - 23rem);  
+        padding: 1rem 4rem;
       }
-    
+
       .info-details .info_detail img {   
-        max-height: 10rem;
+        max-width: 20%;
       }
-    
-      /* TRAITS CAROUSEL */
     
       .info.carousel.slide .carousel-item div {
           padding: .5rem;
-          font-size: 1rem;
       }
 
     .non-taxon.card img {
@@ -250,11 +200,6 @@
         width: 5.5rem;
       }
 
-    .left-body, .right-body {
-        margin: 0;
-    }
-
-    .action-update,
     .response-update {
         left: 0;
         right: 0;
@@ -266,7 +211,6 @@
     }
 
     .strip {
-        font-size: 1rem;
         display: flex;
         flex-direction: column;
     }
@@ -285,12 +229,10 @@
 
     button {
         width: auto;
-        width: fit-content;
     }
 
     .grid {
         grid-template-columns: 1fr 1fr;
-        /* grid-template-columns: 10fr .25rem 10fr; */
     }
 
     .left-grid {
@@ -299,72 +241,14 @@
 
     .right-grid {
         grid-column: 2;
-        /* grid-column: 3; */
     }
 
     .left-grid {
         display: grid;
     }    
 
-    /* .header-text {
-        font-size: 1rem;
-    } */
-
     .header > div:nth-child(2) {
-        font-size: .8rem;
         max-width: initial;
-    }
-
-    .species-grid-container {
-        display: flex;
-        align-items: center;
-        /* display: none; */
-    }
-
-    .species-grid {
-        width: 389px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        height: 600px;
-        overflow: hidden;
-    }
-
-    .species-grid img {
-        width: 7.5rem;
-        max-width: 7.5rem;
-        height: 7.5rem;    
-        object-fit: cover;
-        cursor: pointer;
-    }
-
-    .home-container .snapdragon-tag, .home-container .summary-scores {
-        font-size: 2rem;
-    }
-
-    .home-container .snapdragon-tag .inat-widget span:nth-child(1) {
-        font-size: 3rem;
-    }
-
-    .home-guide .taxa {
-        font-size: 2rem;
-    }
-
-    .snapdragon-intro, .snapdragon-help {
-        margin: 0 2rem;
-        font-size: 1.6rem;
-    }
-
-    .card-card .test-card-container.scrollable {
-        top: 11rem;
-    }
-
-    .sub-header {
-        margin-bottom: 1rem;
-        background-color: var(--snap-list-alt-background);
-    }
-
-    .taxon.card-card .data-box-container {
-        grid-template-columns: 5fr 5.5rem;
     }
 
     .non-taxa {
@@ -387,120 +271,21 @@
     .non-taxon-card-wiki {
         margin: 0 .5rem 0 0;
     }
+
+    .modal-header-container {
+        padding-bottom: 4px;
+        border-bottom: 1px solid var(--snap-border-light);
+    }
 }
 
 @media (min-width: 1024px) {
 
-    .id-box-container {
-        position: absolute;
-        top: 13rem;
+    .narrow-screen {
+        display: none !important;
     }
-
-    .grid {
-        max-height: 840px;
-    }
-
-    .lesson-option-headers {
-        font-size: 1.4rem;
-    }
-
-    .snapdragon-options .btn.btn-secondary {
-        height: 2.5rem;
-    } 
-
-    .home-container .snapdragon-header {
-        font-size: 3.6rem;
-        height: 120px;
-    }
-
-    .snapdragon-create-guide {
-        height: 6rem;
-    }
-
-    .snapdragon-create-guide > div:nth-child(1), .snapdragon-create-guide > div:nth-child(1) > span:nth-child(1) {
-        font-size: 2.6rem;
-    }
-      
-    .home-container .snapdragon-tag, .summary-scores {
-        margin: -2rem auto 7rem; /* 6 + 1 */
-    }
-
-    .species-pending > div:nth-child(1) {
-        font-size: 3.6rem;
-    }
-
-    .species-pending > div:nth-child(2) {
-        height: 240px;
-    }
-
-    .species-pending > div:nth-child(4) {
-        font-size: 1.6rem;
-      }
-
-    .species-grid {
-        width: 512px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-
-    .home-guide {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .strip {
-        margin: .5rem 1rem;
-        padding: .5rem;
-    }
-
-    .big-padding {
-        padding: 1.25rem !important;
-    }
-
-    .pool {
-        margin: 1rem 0;
-    }
-
+    
     .block.given {
         margin: 1rem 0;
-    }
-
-    .sub-header {
-        border-bottom: .03rem solid var(--snap-dd-non-taxa-bg-hover);
-    }
-
-    .sub-header-tall {
-        height: 7.5rem;
-    }
-
-    .data-box-container {
-        /* margin: 0 .5rem; */
-        margin: 0;
-        padding: 0 0 .25rem 0;
-    }
-
-    .data-box-container div.native {
-        font-family: serif;
-        font-style: italic;
-        letter-spacing: .03rem;
-    }
-
-    .id-box-container {
-        padding: 0 1rem;
-        margin: 0; 
-    }
-
-    .carousel-inner .image-load-original > div {
-        cursor: pointer;
-    }
-
-    .taxon-summary {
-        padding: 1rem 2rem;
-        margin: 0 1rem;
-    }
-
-    .summary-scores .summary-progress {
-        font-size: 1.4rem;
     }
 
     .names-container .vernacular-name {
@@ -508,20 +293,11 @@
       }
 }
 
+@media (max-width: 1024px) {    
+    .wide-screen {
+      display: none !important;
+    }
+}
+
 @media (min-width: 1200px) {
-    
-    .grid {        
-      /* max-width: 1200px;       */
-      margin: auto;
-    }
-
-    /* .left-grid, .right-grid {
-        width: 600px;
-    } */
-
-    .species-grid {
-      width: 600px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
 }

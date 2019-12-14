@@ -5,7 +5,7 @@ import { getBirdsongTests } from 'snapdragon-engine/bonus/tests/birdsong-test';
 import { getLookalikeTests } from 'snapdragon-engine/bonus/tests/lookalike-test';
 import { getDefinitionTests } from 'snapdragon-engine/bonus/tests/definition-test';
 
-export const getBonusTests = async (collection, itemIndices, bonusLayouts, lessonName, levelName) => {
+const getTests = async (collection, itemIndices, bonusLayouts, lessonName, levelName) => {
 
     const itemsInThisRound = collection.items.map((item, index) => {
         if(R.contains(index, itemIndices)) {
@@ -26,20 +26,19 @@ export const getBonusTests = async (collection, itemIndices, bonusLayouts, lesso
         return new Promise(resolve => resolve(getTraitTests(itemsInThisRound)));
     };
 
-    const getTraitTypeBirdsongTests = itemsInThisRound => {
-        return new Promise(resolve => resolve(getBirdsongTests(itemsInThisRound)));
+    const getTraitTypeBirdsongTests = (itemsInThisRound, collection) => {
+        return new Promise(resolve => resolve(getBirdsongTests(itemsInThisRound, collection)));
     };
 
     const getTraitTypeLookalikeTests = itemsInThisRound => {
         return getLookalikeTests(itemsInThisRound);     
     };
 
-    const getDefinitionTypeTests = item => {
-        return new Promise(resolve => resolve(getDefinitionTests(item)));
+    const getDefinitionTypeTests = itemsInThisRound => {
+        return getDefinitionTests(itemsInThisRound);
     };
 
     let traitTests = [], birdsongTests = [], lookalikeTests = [], definitionTests = [];
-    let item = collection.items[0];
 
     let layout = bonusLayouts.find(layout => layout.name === "trait-property-match");
 
@@ -53,11 +52,11 @@ export const getBonusTests = async (collection, itemIndices, bonusLayouts, lesso
                     case 'traits':
                         return getTraitTypeTests(itemsInThisRound);
                     case 'song':
-                        return getTraitTypeBirdsongTests(itemsInThisRound);
+                        return getTraitTypeBirdsongTests(itemsInThisRound, collection);
                     case 'lookalikes':
                         return getTraitTypeLookalikeTests(itemsInThisRound);
                     case 'definition':                        
-                        return getDefinitionTypeTests(item);
+                        return getDefinitionTypeTests(itemsInThisRound);
                 }
             });
 
@@ -75,11 +74,15 @@ export const getBonusTests = async (collection, itemIndices, bonusLayouts, lesso
 
         } else {
             traitTests = getTraitTypeTests(itemsInThisRound);
-            birdsongTests = getTraitTypeBirdsongTests(itemsInThisRound);            
+            birdsongTests = getTraitTypeBirdsongTests(itemsInThisRound, collection);            
             lookalikeTests = getTraitTypeLookalikeTests(itemsInThisRound);
-            definitionTests = getDefinitionTypeTests(item);
+            definitionTests = getDefinitionTypeTests(itemsInThisRound);
         }
     }
 
     return R.flatten(traitTests);
+};
+
+export const bonusHandler = {
+    getTests
 };

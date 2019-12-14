@@ -1,5 +1,5 @@
 import { utils } from 'utils/utils';
-import { hasTraitPropeties, getTraitsToExclude, convertTraitsToNameValuePairsArray } from 'ui/helpers/traits-handler';
+import { traitsHandler } from 'ui/helpers/traits-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderInfoDetails } from 'ui/screens/common/info-detail-slider';
 
@@ -17,9 +17,10 @@ const renderInfoSlider = (item, traits, parent, id) => {
     traits.forEach(trait => {        
         trait.name = trait.name ? trait.name === 'ph' ? 'pH' : utils.capitaliseFirst(trait.name) : '';
         if(trait.name.toLowerCase() === 'role') trait.name = trait.type || 'role';
+        trait.name = trait.name === 'Ph value' ? 'pH value' : trait.name; 
         trait.unit = trait.unit ? trait.unit.toLowerCase() === 'colour' ? '' : trait.unit : '';
         trait.description = trait.value;
-        trait.value = trait.name.toLowerCase() === 'description' ? 'Navigate < or > for traits' : trait.value.join(', ');
+        trait.value = trait.name.toLowerCase() === 'description' ? '< traits >' : trait.value.join(', ');
     });
     
     let description = traits.find(trait => trait.name.toLowerCase() === 'description');
@@ -47,7 +48,7 @@ const renderInfoSlider = (item, traits, parent, id) => {
             activeTraitKey = activeTrait.querySelector('div:nth-child(1)').innerHTML;
             activeTraitValue = activeTrait.querySelector('div:nth-child(3)').innerHTML;
             renderInfoDetails(item, activeTraitKey, activeTraitValue, description);
-        }, 500);
+        }, 1000);
     };
 
     changeTraitHandler();
@@ -60,7 +61,7 @@ export const taxonInfoSlider = (item, traits, parent, mode) => {
 
     const id = mode === 'MODAL' ? 'taxon_1' : 'taxon_0';
 
-    const convertedTraits = convertTraitsToNameValuePairsArray(traits, getTraitsToExclude());
+    const convertedTraits = traitsHandler.convertTraitsToNameValuePairsArray(traits, traitsHandler.getTraitsToExclude());
 
     if(convertedTraits.length > 0) {
         renderInfoSlider(item, convertedTraits, parent, id);
@@ -69,9 +70,9 @@ export const taxonInfoSlider = (item, traits, parent, mode) => {
 
 export const infoSlider = (item, parent, mode) => {
     
-    if(!hasTraitPropeties(item.traits)) return;
+    if(!traitsHandler.hasTraitPropeties(item.traits)) return;
 
-    let traits = convertTraitsToNameValuePairsArray(item.traits, getTraitsToExclude(), item);
+    let traits = traitsHandler.convertTraitsToNameValuePairsArray(item.traits, traitsHandler.getTraitsToExclude(), item);
 
     if(item.traits.description) {
         const description = {

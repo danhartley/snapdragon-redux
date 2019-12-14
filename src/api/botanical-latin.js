@@ -735,4 +735,14 @@ export const epithets = [
         "en" : ["bearing red berries"],
         species: [ 'Taxus baccata' ]      
     },
+    {
+        "latin" : ["pleurotus"],
+        "en" : ["sideways"],
+        species: [ 'Pleurotus ostreatus' ]      
+    },
+    {
+        "latin" : ["sema"],
+        "en" : ["sign"],
+        genus: [ 'Bombus' ]      
+    },
 ];

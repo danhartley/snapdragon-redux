@@ -174,9 +174,7 @@ const initAutocomplete = (input, options)  => {
         input: input,
         fetch: function(text, update) {
             text = text.toLowerCase();
-            console.log(input);
             const suggestions = options.filter(n => n.value.toLowerCase().startsWith(text));
-            console.log(suggestions);
             update(suggestions);
         },
         onSelect: function(item) {

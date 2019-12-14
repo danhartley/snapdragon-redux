@@ -3,18 +3,20 @@ import { Enum } from 'enumify';
 class lessonState extends Enum {};
 lessonState.initEnum([
     'CREATE_LESSON', 
-    'GET_SPECIES', 
+    // 'GET_SPECIES', 
     'BEGIN_LESSON',
+    'BEGIN_OR_RESUME_LESSON',
     'PAUSE_LESSON', 
     'RESUME_LESSON',
-    'NEXT_ROUND'
+    'NEXT_ROUND',
+    'BEGIN_INTRO'
 ]);
 
 class navigation extends Enum {};
 navigation.initEnum([
-    'HOME', 
+    'LANDSCAPE_HOME', 
     'SETTINGS', 
-    'LIST',
+    'PORTRAIT_HOME',
     'GLOSSARY', 
     'EMAIL'
 ]);
@@ -38,9 +40,18 @@ guideStep.initEnum([
     'SEASON'
 ]);
 
+class nextStep extends Enum {};
+nextStep.initEnum([
+    'NEXT_ITEM',
+    'NEXT_LAYOUT',
+    'NEXT_LESSON',
+    'NEXT_ROUND',
+]);
+
 export const enums = {
     lessonState,
     navigation,
     taxon,
-    guideStep
+    guideStep,
+    nextStep
 };

@@ -2,12 +2,13 @@ import * as R from 'ramda';
 
 import { types } from 'redux/actions/action-types';
 import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
-import { enums } from 'ui/helpers/enum-helper';
 
 export const counter = (state = null, action) => {
     switch(action.type) {
         case 'persist/REHYDRATE':
-            return action.payload ? { ...action.payload.counter, isLessonRehydrated: true } : state;
+            return action.payload ? { ...action.payload.counter, isLessonRehydrated: true, isLessonPaused: true } : state;
+        case types.RESET_COLLECTION:
+            return { ...state, isLessonSelected: false, isLessonPaused: false };
         case types.UPDATE_COLLECTION:    
             return { ...state, isLessonRehydrated: false };
         case types.NEXT_ROUND:
@@ -17,19 +18,11 @@ export const counter = (state = null, action) => {
         case types.NEXT_LEVEL:
             return { ...state, index: action.data.index };
         case types.STOP_START_LESSON:
-            const _counter = action.data;
-            const isLessonPaused = (!!_counter && !!_counter.log);
-            return { ...action.data, isLessonPaused };
+            return { ...action.data };
         case types.UPDATE_SCORE:
         case types.END_REVISION:
             let i = (state.index + 1) <= action.data.layoutCount ? (state.index + 1) : state.index;
             return { index: i };
-        case types.PAUSE_LESSON: {
-            return { };
-        }
-        case types.RESTART_LESSON: {
-            return action.data.counter;   
-        }
         default:
             return state;
     }
@@ -95,11 +88,8 @@ export const score = (state = R.clone(progressState.score), action) => {
             );
             return { ...state, bonusScores: bonusScores };
         }
-        case types.PAUSE_LESSON: {
+        case types.SAVE_LESSON: {
             return R.clone(progressState.score);
-        }
-        case types.RESTART_LESSON: {
-            return action.data.score;   
         }
         default:
             return state;
@@ -134,33 +124,15 @@ export const history = (state = null, action) => {
         }
         case types.SELECT_COLLECTION:
             return null;   
-        case types.PAUSE_LESSON: {
-            return null;
-        }
-        case types.RESTART_LESSON: {
-            return action.data.history;   
-        }
         default:
             return state;
     }
 };
 
-export const page = (state = { name: enums.navigation.HOME, glossary: false }, action) => {
+export const videoPlayer = (state = null, action) => {
     switch(action.type) {
-        case types.CHANGE_PAGE:
-            return { ...state, ...action.data };
-        case types.NEW_COLLECTION:
-            return { name: '', glossary: true };
-        case types.NEXT_LESSON:
-            return { name: '', glossary: true };
-        case types.NEXT_LAYOUT:
-            return { name: '', type: action.data.type, glossary: true };
-        case types.PAUSE_LESSON: {
-            return { name: enums.navigation.HOME, glossary: false };
-        }
-        case types.RESTART_LESSON: {
-            return action.data.page;   
-        }
+        case types.UPDATE_VIDEO_PLAYER:
+            return action.data;
         default:
             return state;
     }

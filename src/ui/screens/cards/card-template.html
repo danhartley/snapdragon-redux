@@ -2,11 +2,11 @@
     <div class="card-card js-species-card">
         <div id="card-header" class="question-container">
             
-            <div class="species-header landscape">                        
+            <!-- <div class="species-header landscape">                        
                 <img src="{{ image.small }}" alt="">
-            </div>
+            </div> -->
 
-            <div class="portrait iconic-icon js-iconic-icon">
+            <div class="iconic-icon double-centred-block js-iconic-icon">
                 <i class=""></i>
             </div>
 
@@ -19,7 +19,7 @@
                         <div>
                             <span class="binomial">{{ name }}</span>
                             <span class="js-names-badge"></span>
-                            <span class="portrait bird-song-icon-disabled js-bird-song-player" data-src='player' data-toggle="modal" data-target="#menuModal">
+                            <span class="portrait bird-song-icon-disabled js-bird-song-player" data-src='player' data-toggle="modal" data-target="#basicModal">
                                 <i class="fas fa-music"></i>
                             </span>
                         </div>
@@ -28,22 +28,26 @@
             </div>
 
             <div class="card-link-container">
+                <i class="disabled-icon far fa-arrow-alt-circle-right js-card-link"></i>
+            </div>
+            <!-- <div class="card-link-container">
                 <div class="card-link js-card-link">
                     <span>Family</span>
                     <span>card<i class="far fa-arrow-alt-circle-right"></i></span>
                 </div>
-            </div>
+            </div> -->
     
         </div>            
-        <div class="data-box-container sub-header landscape">
-            <div class="calender-container landscape">
+        <div class="data-box-container landscape">
+            <div class="calendar-container landscape">
                 <div class="js-calendar-box"></div>
             </div>
+            
             <div class="inat-box js-inat-box"></div>
             <div class="taxa-container landscape js-taxa-box"></div>            
         </div>
-        <div class="mixed-container">
-            <div class="portrait-grid species-card-images carousel js-test-card-container-images"></div>
+        <div class="portrait-grid species-card-images carousel js-test-card-container-images"></div>
+        <div class="mixed-content-container scrollable">
             <div class="landscape bird-song">
                 <div class="hide-empty">
                     <iframe class="js-bird-song" src='' scrolling='no' frameborder='0' width='80vw' height='115'>                    

@@ -1,17 +1,15 @@
 import * as R from 'ramda';
 
 import { firestore } from 'api/firebase/firestore';
-import { scoreHandler } from 'ui/helpers/handlers';
+import { scoreHandler } from 'ui/helpers//score-handler';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
-import { subscription } from 'redux/subscriptions';
-import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
+import { imageUseCases, scaleImage } from 'ui/helpers/image-handler';
 import { DOM } from 'ui/dom';
 import { iconicTaxa, matchIcon } from 'api/snapdragon/iconic-taxa';
 import { renderTemplate } from 'ui/helpers/templating';
 import { getPoolItems } from 'snapdragon-engine/pool-handler';
-import { renderMixedSpecimenCombined } from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-combined';
 
 import specimensTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images-template.html';
 
@@ -26,46 +24,45 @@ export const listenToImageSelection = listener => {
     listenersToImageSelection.push(listener);
 };
 
-export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, preselectedItems) => {
+export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, preselectedItems, randomSelection = false) => {
 
-    console.log('RENDERMIXEDSPECIMENIMAGES');
-
-    const imagesPerItem = noOfImagesPerItem || 1;
+    let imagesPerItem = noOfImagesPerItem || 1;
 
     const { config, score, lesson } = store.getState();
-
-    if(config.isPortraitMode) {
-        renderMixedSpecimenCombined(collection);
-    }
 
     const item = R.clone(collection.nextItem);
 
     if(!item) return;
 
     const template = document.createElement('template');
-
-    template.innerHTML = specimensTemplate;
+          template.innerHTML = specimensTemplate;
 
     const parent = DOM.leftBody;
           parent.innerHTML = '';
 
     const renderSpecimenImages = async () => {
 
-        console.log('calling getPoolItems from renderMixedSpecimenImages');
- 
-        const mixedItems = preselectedItems || await getPoolItems(item);
-
-        mixedItems.map(item => item.images.map(image => {
-            return image = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config).medium;
-        }));
+        const mixedItems = preselectedItems || await getPoolItems(collection);
 
         const images = utils.shuffleArray(mixedItems).map((item, index) => {
             
-            const itemImages = utils.shuffleArray(item.images);
+            let itemImages = randomSelection
+                    ? utils.shuffleArray(item.images)
+                    : item.images.filter(i => i.starred).length > 0 ? item.images.filter(i => i.starred) : utils.shuffleArray(item.images);
+
+            // add more images to starred image, if there is one (when the count will always be 1)
+            if(itemImages.length < imagesPerItem) {
+                itemImages = [ ...itemImages, ...R.take(imagesPerItem -itemImages.length, utils.shuffleArray(item.images).filter(i => !i.starred)) ];
+            }
+            
 
             return itemImages.map((image, imageIndex) => {
                 if(imageIndex < imagesPerItem) {
-                    return { index: index + index + imageIndex, ...image, itemName: item.name };
+                    if(image.url) {
+                        return { index: index + imageIndex, ...image, medium: scaleImage(image, imageUseCases.MIXED_SPECIMENS, config).medium, itemName: item.name };
+                    } else {
+                        imagesPerItem++;
+                    }
                 }
             }).filter(image => image);
         }).flat();

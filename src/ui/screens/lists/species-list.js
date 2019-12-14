@@ -2,123 +2,129 @@ import * as R from 'ramda';
 
 import 'ui/css/groups/species-list.css';
 
+import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { actions } from 'redux/actions/action-creators';
-import { subscription } from 'redux/subscriptions';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
-import { modalImageHandler } from 'ui/helpers/image-handlers';
-import { lessonHandler } from 'ui/helpers/lesson-handler';
-import { buildTable } from 'ui/screens/lists/species-table-no-scores';
-import { collectionHandler } from 'ui/helpers/collection-handler';
-import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
-import { renderHome } from 'ui/screens/home/home';
-import { enums } from 'ui/helpers/enum-helper';
+import { modalImageHandler } from 'ui/helpers/image-handler';
+import { buildTable } from 'ui/screens/lists/species-table';
+import { videoHandler } from 'ui/screens/lists/video-handler';
+import { videoSetup } from 'ui/screens/home/home-lesson-intro-video';
+import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
+import { onSpeciesChangeHandler, openNoteHandler } from 'ui/screens/lists/species-list-definition-insert';
 
-export const renderSpeciesCollectionList = (collection, args) => {
+export const renderSpeciesList = (collection, args) => {
 
-    const { readOnlyMode = false, parent, tableParent, loadSpeciesCallback, isInCarousel = true } = args;
+    const { readOnlyMode = false, callingParentContainer, isInCarousel = false } = args;
 
-    const { config: configState, history, counter, enums: traitEnums, lesson  } = store.getState();
+    const { config, history, enums: traitEnums  } = store.getState();
 
-    let config = R.clone(configState);
-    
-    if(!collection.itemNames) {
-        speciesPendingSpinner(config);
-    }
+    const openAccordionHandler = (species, accordion) => {
+        
+        accordion.innerHTML = `<i class="fas fa-chevron-up" data-name="${species.name}"></i>`;
+        
+        openSpeciesDescriptionHandler(collection, species, true, false);
 
-    // if(!config.guide.ready || !collection) return; // hack!, may be required!!
-
-    config.collection = { id: collection.id };
-
-    const handleUserEvents = () => {
-
-        const headerCheckbox = document.querySelector(".table-header #inputCheckAll");
-        const itemCheckboxes = document.querySelectorAll(".table-row .custom-control-input");
-
-        let hasCollectionChanged = false;
-
-        if(headerCheckbox) {
-            if(readOnlyMode) {
-                headerCheckbox.disabled = true;
-            } else {
-                headerCheckbox.addEventListener('click', event => {
-                    hasCollectionChanged = true;
-                    if(headerCheckbox.checked) {
-                        itemCheckboxes.forEach(checkbox => {
-                            checkbox.checked = true;
-                        });        
-                        collection.items.forEach(item => item.isDeselected = false);
-                    } else { 
-                        itemCheckboxes.forEach(checkbox => {
-                            checkbox.checked = false;
-                        });                
-                        collection.items.forEach(item => item.isDeselected = true);
-                    }                
-                    actions.boundUpdateCollectionItems(collection.items);
-                });
+        const closeAccordionHandler = event => {
+            // remove current close accordion handler
+            accordion.removeEventListener('click', closeAccordionHandler);
+            // change direction of chevron       
+            accordion.innerHTML = `<i class="fas fa-chevron-down" data-name="${species.name}"></i>`;
+            // attach new open accordion listener
+            accordion.addEventListener('click', event => {
+                openAccordionHandler(species, accordion);
+            });
+            // remove the species description - handled in group action
+            const description = document.querySelector('.species-description');
+            if(description) {
+                description.parentNode.removeChild(description);
             }
-        }
+        };
 
-        itemCheckboxes.forEach(checkbox => {
-            if(readOnlyMode) { 
-                checkbox.disabled = true;
-            } else {     
-                checkbox.addEventListener('click', event => {
-                    hasCollectionChanged = true;
-                    const name = checkbox.getAttribute('name');
-                    const item = collection.items.find(item => item.name === name);
-                    item.isDeselected = !checkbox.checked;
-                    actions.boundUpdateCollectionItems(collection.items);
-                });
-            }
-        });
+        // attach close accordion handler
+        accordion.addEventListener('click', closeAccordionHandler);
+    };
+
+    const userClickHandlers = () => {
 
         const listItemImages = document.querySelectorAll('.table-row img');
 
-        listItemImages.forEach(itemImage => { 
-            const item = collection.items.find(item => item.name === itemImage.dataset.id)
-            modalImageHandler(itemImage, item, collection, config); 
-        });    
+              listItemImages.forEach(itemImage => {                 
+                  const item = collection.items.find(item => item.name === itemImage.dataset.itemName)
+                  modalImageHandler(itemImage, item, collection, config); 
+              });
 
-        const continueLearningActionBtn = document.querySelector('.js-species-list-btn-action');
+        const accordions = document.querySelectorAll('.js-accordion');
+
+              accordions.forEach(accordion => {
+                  const accordionHandler = event => {
+                      const species = collection.items.find(item => item.name === event.currentTarget.dataset.name);
+                    openAccordionHandler(species, accordion);
+                  };
+                  accordion.addEventListener('click', accordionHandler);
+              });
+
+        const youtubeIcons = document.querySelectorAll('.js-youtube');
+              youtubeIcons.forEach(icon => {                  
+                  icon.addEventListener('click', event => {       
+
+                    event.stopPropagation();
+
+                    const activeIcon = event.currentTarget;
+                          activeIcon.classList.add('youtube-green-fg');
+                    const speciesName = activeIcon.dataset.name;
+
+                    const species = collection.items.find(item => item.name == speciesName);   
+
+                    openSpeciesDescriptionHandler(collection, species, true);
+
+                    if(species && species.time) {
+
+                        videoHandler.isVideoPlayerReady(collection.video.id)
+                            ? videoHandler.playVideoFrom(species.time[0])
+                            : videoSetup(collection, store.getState().videoPlayer || [], DOM.rightBody, species.time[0]);
+                    }
+
+                    updateVideoPlayer(collection, species);
+                  });
+              });
 
         const cardModal = document.querySelector('#cardModal .js-modal-body');
 
         setTimeout(() => {
             
             const speciesCardLinks = document.querySelectorAll('.js-test-card-container-link span');
-            speciesCardLinks.forEach((link, index) => {                
-                link.addEventListener('click', event => {                    
-                    const name = event.target.dataset.name;
-                    document.querySelector('#cardModal .prev > span').dataset.card = 'species-card';
-                    renderCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal, isInCarousel);
-                });
-            });
+                  speciesCardLinks.forEach((link, index) => {                
+                      link.addEventListener('click', event => {                    
+                        const name = event.target.dataset.name;
+                        document.querySelector('#cardModal .prev > span').dataset.card = 'species-card';
+                        renderCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal, isInCarousel);
+                      });
+                  });
 
             const traitCardLinks = document.querySelectorAll('.js-key-trait-link');
-            traitCardLinks.forEach(link => {
-                link.addEventListener('click', event => {
-                    const keyTrait = event.target.dataset.keyTrait;
-                    const url = event.target.dataset.url;
-                    renderNonTaxonCard('MODAL', keyTrait, cardModal, url);
-                });
-            });
+                  traitCardLinks.forEach(link => {
+                    link.addEventListener('click', event => {
+                        const keyTrait = event.target.dataset.keyTrait;
+                        const url = event.target.dataset.url;
+                        renderNonTaxonCard('MODAL', keyTrait, cardModal, url);
+                    });
+                  });
 
             const taxonCardLinks = document.querySelectorAll('.js-taxon-card-link');
-            taxonCardLinks.forEach(link => {
-                link.addEventListener('click', event => {
-                    const taxon = event.target.dataset.family || event.target.dataset.order;
-                    const name = event.target.dataset.name;
-                    const rank = event.target.dataset.rank;
-                    document.querySelector('#cardModal .prev > span').dataset.rank = rank;
-                    document.querySelector('#cardModal .prev > span').dataset.card = 'taxon-card';
-                    document.querySelector('#cardModal .next > span').dataset.rank = rank;
-                    document.querySelector('#cardModal .next > span').dataset.card = 'taxon-card';
-                    renderTaxonCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal, taxon, rank, isInCarousel);
-                });
-            });
+                  taxonCardLinks.forEach(link => {
+                    link.addEventListener('click', event => {
+                        const taxon = event.target.dataset.family || event.target.dataset.order;
+                        const name = event.target.dataset.name;
+                        const rank = event.target.dataset.rank;
+                        document.querySelector('#cardModal .prev > span').dataset.rank = rank;
+                        document.querySelector('#cardModal .prev > span').dataset.card = 'taxon-card';
+                        document.querySelector('#cardModal .next > span').dataset.rank = rank;
+                        document.querySelector('#cardModal .next > span').dataset.card = 'taxon-card';
+                        renderTaxonCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal, taxon, rank, isInCarousel);
+                    });
+                  });
 
             document.querySelectorAll('.mushroom-icon').forEach(icon => {
                 icon.innerHTML = '<svg-icon class="si-glyph-mushrooms"><src href="./icons/si-glyph-mushrooms.svg"/></svg>';
@@ -144,88 +150,94 @@ export const renderSpeciesCollectionList = (collection, args) => {
                 }
             });
         });
-
-        // Portrait mode only
-
-        if(continueLearningActionBtn) {
-
-            actions.boundNewPage({ name: 'LIST'});
-        
-            if(history || counter.isLessonPaused) {
-                continueLearningActionBtn.innerHTML = 'Continue lesson';
-            }
-            
-            if(lesson.isLessonComplete) {
-                continueLearningActionBtn.innerHTML = 'End lesson (delete data) | Choose a new lesson';
-            }
-
-            continueLearningActionBtn.addEventListener('click', event => {
-
-                if(lesson.isLessonComplete) {
-                    lessonHandler.purgeLesson();
-                } else {
-                    if(readOnlyMode) {
-                        const lessonState = counter.isLessonPaused ? enums.lessonState.RESUME_LESSON : enums.lessonState.NEXT_ROUND;
-                        lessonHandler.getLessonItems(lessonState, collection, config, history);
-                    }
-                    else {
-                        if(counter.isLessonPaused) {
-                            lessonHandler.getLessonItems(enums.lessonState.RESUME_LESSON, collection, config, history);
-                        } else {
-                            lessonHandler.getLessonItems(enums.lessonState.BEGIN_LESSON, collection, config, history);
-                        }
-                    }
-
-                    actions.boundNewPage({ name: ''});
-
-                    subscription.remove(subscription.getByName('renderHistory'));                    
-                }            
-            });
-        }
     };    
 
-    if(readOnlyMode) {
-        buildTable(collection, { config, enums: traitEnums } );
-        handleUserEvents();        
-    }
-    else {
-        function callback(collection, config) {
+    buildTable(collection, { config, enums: traitEnums, overrideParent: callingParentContainer });
+    userClickHandlers();
 
-            loadSpeciesCallback();
+    const btnBeginLesson = document.querySelector('.js-btn-current-lesson-begin');
+    btnBeginLesson.addEventListener('click', () => {
+      lessonStateHandler.beginOrResumeLesson(collection.id);
+    });
 
-            if(collection.items && collection.items.length) {
-                return function () {
-                    buildTable(collection, { config, enums: traitEnums, overrideParent: tableParent });
-                    handleUserEvents();
-                    const { counter } = store.getState();
-                    listeners.forEach(listener => listener(counter, collection.items.length));
+    const openSpeciesDescriptionHandler = (collection, species, enableScroll = true, activateYoutubeIcon = true) => {
+
+        try {
+
+            const parent = document.getElementById('insertParent');
+            if(parent) parent.remove();
+
+            const { accordions } = closeOpenAccordions(species.name);
+
+            const activeAccordion = accordions.find(accordion => accordion.dataset.name === species.name);
+            
+            if(activeAccordion) {
+                activeAccordion.innerHTML = `<i class="fas fa-chevron-up" data-name="${species.name}"></i>`;
+            }
+
+            if(activateYoutubeIcon) {
+                const activeYouTubeIcon = activeAccordion.parentElement.parentElement.querySelector('.js-youtube');
+                      activeYouTubeIcon.classList.add('youtube-green-fg');
+            }
+
+            let description = species.description;
+                description = !!description ? description : (species.traits.description && species.traits.description.value) ? species.traits.description.value[0] : '';
+
+            if(description) {
+
+                const id = species.id;
+                const tr = document.querySelector(`#id_${id}`);
+                
+                const td = document.createElement('td');
+
+                const text = document.createElement('div');
+                      text.classList.add('inserted-td');
+                      text.innerHTML = description.replace(/\r?\n/g, '<br />');
+
+                td.appendChild(text);
+
+                const insert = document.createElement('div');
+                      insert.classList.add('table-row');
+                      insert.classList.add('species-description');
+                      insert.appendChild(td);
+
+                tr.parentElement.insertBefore(insert, tr.nextSibling);
+
+                const scrollIntoView = (rowHeight, noOfRows) => {
+
+                    const scroll = document.querySelector('.scrollable');
+                    const standardBlock = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhStandardBlock').replace('px', ''));
+                    const unit = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));
+                    const top = (standardBlock * 2) + (rowHeight * (noOfRows - 1)) - ( 2 * unit);
+
+                    // console.log('unit: ', unit);
+                    // console.log('top: ', top);
+
+                    scroll.scrollTop = top;
+                };
+
+                if(enableScroll) {
+                    config.isLandscapeMode 
+                        ? tr.previousElementSibling.scrollIntoView()
+                        : scrollIntoView(tr.offsetHeight, species.snapIndex);
                 }
             }
-
-            else {
-                console.log('No items');
-            }
+        } catch(e) {
+            console.log('error in openSpeciesDescriptionHandler: ', name);
+            console.error('error message: ', e.message);
         }
-        function callbackWhenNoResults() {
-            const spinner = document.querySelector('.js-species-pending i');
-                  spinner.classList.remove('slow-spin');
+    };
 
-            const feedback = document.querySelector('.js-request-feedback');
-                  feedback.innerHTML = 'That search returned no matches.';
+    videoHandler.onSpeciesTimeMatch((collection, species) => {
+        openSpeciesDescriptionHandler(collection, species);
+        updateVideoPlayer(collection, species);
+        onSpeciesChangeHandler(species);
+    });
 
-            renderHome(counter, false, true);
-        }
-        if(config.collection.id === 0) return;
-        collectionHandler(collection, config, counter, callback, callbackWhenNoResults);
-    }
+    videoHandler.onNoteTimeMatch((collection, note) => {
+        openNoteHandler(note);
+    });
 };
-
-const listeners = [];
-
-export const listenToSpeciesCollectionListenReady = listener => { 
-    listeners.push(listener);
-  };
-  
 
 let currentIndex = 0;
 
@@ -251,7 +263,7 @@ const carouselControlHandler = event => {
 
     let nextItem = collection.items.find((item,index) => index === currentIndex);
 
-    parent = document.querySelector(`#${modal} .js-modal-body`);
+    const parent = document.querySelector(`#${modal} .js-modal-body`);
     
     switch(card) {
         case 'species-card':
@@ -274,3 +286,44 @@ const nextTaxon = document.querySelector('#cardModal .js-next');
 
 if(prevTaxon) prevTaxon.addEventListener('click', carouselControlHandler);
 if(nextTaxon) nextTaxon.addEventListener('click', carouselControlHandler);
+
+const updateVideoPlayer = (collection, species) => {
+        
+    const playerRecords = store.getState().videoPlayer || [];
+    
+    let activeLesson = playerRecords.find(p => p.collectionId === collection.id); 
+    
+    if(!activeLesson) {
+        activeLesson = { collectionId: collection.id };
+        playerRecords.push(activeLesson);
+    };
+
+    activeLesson.speciesName = species.name;
+    activeLesson.pausedAt = species.time[0];
+
+    videoHandler.saveVideoState(playerRecords);
+};
+
+const closeOpenAccordions = speciesName => {
+
+    const accordions = Array.from(document.querySelectorAll('.js-accordion'));
+    const openAccordions = accordions.filter(accordion => accordion.dataset.name !== speciesName);
+        
+    openAccordions.forEach(inactiveAccordion => {
+        
+        if (inactiveAccordion.innerHTML.indexOf('fa-chevron-up') > -1) {
+            
+            inactiveAccordion.click();
+            inactiveAccordion.innerHTML = `<i class="fas fa-chevron-down" data-name="${speciesName}"></i>`;
+            
+            const inActiveYouTubeIcon = inactiveAccordion.parentElement.parentElement.querySelector('.js-youtube');
+                  inActiveYouTubeIcon.classList.remove('youtube-green-fg');
+        }
+    });
+
+    const parent = document.querySelector('.species-table tbody');
+    const currentDescriptions = document.querySelectorAll('.species-description');
+            currentDescriptions.forEach(tr => parent.removeChild(tr));
+
+    return { accordions };
+};

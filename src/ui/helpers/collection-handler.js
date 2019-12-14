@@ -2,7 +2,6 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
-import { actions } from 'redux/actions/action-creators';
 import { getInatSpecies } from 'api/inat/inat';
 import { getPlace } from 'geo/geo';
 import { firestore } from 'api/firebase/firestore';
@@ -15,9 +14,8 @@ async function getItems(collection, config) {
         const collectionIsUnchanged = 
             collection.items && collection.items.length > 0 && collection.items[0].collectionId === collection.id && 
             collection.speciesRange === config.guide.speciesRange &&
-            collection.iconicTaxa === config.guide.iconicTaxa;
 
-            console.log('collectionIsUnchanged ', collectionIsUnchanged);
+            console.log('collectionIsUnchanged state: ', collectionIsUnchanged);
 
         if(collectionIsUnchanged) {
             return new Promise(resolve => {
@@ -35,8 +33,6 @@ async function getItems(collection, config) {
                     lat: place.query[1]
                 };
 
-                // actions.boundUpdateConfig(config);
-
                 return await getInatSpecies(config);
             }
             else {
@@ -45,163 +41,161 @@ async function getItems(collection, config) {
         }
     }
     else if(collection.behaviour === 'static') {
-
-        // const loadSpeciesInParallel = async itemNames => {
-        //     try {
-        //         return Promise.all(itemNames.map(name => {                    
-        //             return firestore.getSpeciesByName(name).then(async item => {
-        //                 return await {                         
-        //                     ...item
-        //                 }
-        //             })                    
-        //         }));
-    
-        //     } catch (error) {
-        //         console.log(`${item} problem!!! For ${name}`)
-        //         console.error(error);
-        //     }
-        // };
-
-        const itemNames = collection.itemNames.length > 0 ? collection.itemNames : config.guide.itemNames;
-
-        return firestore.getSpeciesByNameInParallel(itemNames);
+        return firestore.getSpeciesInParallel(collection.species);
     }
 };
 
-export const keepItems = collection => {
+const keepItems = collection => {
 
     return new Promise(resolve => {
         resolve(collection.items);
     });
-}
+};
 
-export const collectionHandler = async (collection, config, counter, callback, callbackWhenNoResults) => {
+export const collectionHandler = async (collection, config, counter) => {
     
-    if(counter.isLessonPaused) {
-        collection.items = await keepItems(collection);
-        callback(collection, config)();
-    } else {
-           
-        const items = await getItems(collection, config);
-        collection.items = items.filter(item => item.name);
+    try {
 
-        if(collection.nextItem) return; // after refreshing or returning to the page (using rehydrated collection)
+        console.log('collection from handler: ', collection);
 
-        if(R.contains('lepidoptera', config.guide.iconicTaxa.map(taxon => taxon.id)) && !R.contains('insecta', config.guide.iconicTaxa.map(taxon => taxon.id))) {
-            const insecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() === 'insecta');
-            const lepidoptera = insecta.filter(i => i.taxonomy.order.toLowerCase() === 'lepidoptera');
-            const noninsecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() !== 'insecta');
-            collection.items = [ ...lepidoptera, ...noninsecta ];
+        if(counter.isLessonPaused) {
+            collection.items = await keepItems(collection);
         }
 
-        if(collection.items) {
+        if(counter.isLessonPaused && collection.items && collection.items.length > 0) {
+            collection.items = await keepItems(collection);
+            return collection;
+        } else {
+            
+            const items = await getItems(collection, config);
+            collection.items = items.filter(item => item.name);
 
-            if(collection.behaviour === 'dynamic') {
-                collection.name = config.guide.place.name;
-                collection.speciesRange = config.guide.speciesRange;
-                collection.iconicTaxa = config.guide.iconicTaxa;
+            if(collection.nextItem) return; // after refreshing or returning to the page (using rehydrated collection)
+
+            if(R.contains('lepidoptera', collection.iconicTaxa.map(taxon => taxon.id)) && !R.contains('insecta', collection.iconicTaxa.map(taxon => taxon.id))) {
+                const insecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() === 'insecta');
+                const lepidoptera = insecta.filter(i => i.taxonomy.order.toLowerCase() === 'lepidoptera');
+                const noninsecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() !== 'insecta');
+                collection.items = [ ...lepidoptera, ...noninsecta ];
             }
 
-            collection.items = collection.items.filter(i => i);
-            collection.items = utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc');
+            if(collection.items) {
 
-            const families = [ ...new Set(collection.items.map(i => i.taxonomy.family)) ];
-            const orders = [ ...new Set(collection.items.map(i => i.taxonomy.order)) ];
-
-            const familyTaxa = [], orderTaxa = [];
-
-            let taxa = await firestore.getTaxaNames();
-                taxa = taxa[0].value;
-
-            const getFamilyTaxa = async families => {
-                return Promise.all(
-                    families.map(async(family) => {
-                        const familyTaxon = await firestore.getTaxonByName(config, family);
-                        familyTaxa.push(familyTaxon);
-                        return familyTaxon;
-                    })
-                );
-            };
-
-            await getFamilyTaxa(families);
-
-            const getOrderTaxa = async orders => {
-                return Promise.all(
-                    orders.map(async(order) => {
-                        const orderTaxon = await firestore.getTaxonByName(config, order);
-                        orderTaxa.push(orderTaxon);
-                        return orderTaxon;
-                    })
-                );
-            };
-
-            await getOrderTaxa(orders);
-
-            const getFamilyNames = item => {
-                if(item.family && item.family.names) {
-                    return item.family.names[0].names ? item.family.names[0].names : item.family.names;
-                } else {
-                    return '';
+                if(collection.behaviour === 'dynamic') {                    
+                    collection.speciesRange = config.guide.speciesRange;
                 }
-            }
 
-            collection.items.forEach( async (item,index) => {
+                collection.items = collection.items.filter(i => i);
+                collection.items = utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc');
 
-                const names = item.name.split(' ');
+                const families = [ ...new Set(collection.items.map(i => i.taxonomy.family)) ];
+                const orders = [ ...new Set(collection.items.map(i => i.taxonomy.order)) ];
+                const genera = [ ...new Set(collection.items.map(i => i.taxonomy.genus).filter(g => g)) ];
 
-                item.taxonomy.genus = names[0];                
-                item.taxonomy.species = names[1];
+                const familyTaxa = [], orderTaxa = [], genusTaxa = [];
 
-                item.family = familyTaxa.find(family => family.name === item.taxonomy[enums.taxon.FAMILY.name.toLowerCase()]);
-                if(item.family) {
-                    item.family.names = getFamilyNames(item);
-                    item.family.vernacularName = item.family.names[0];
-                }
-                
-                item.order = orderTaxa.find(order => order.name === item.taxonomy[enums.taxon.ORDER.name.toLowerCase()]);
+                let taxa = await firestore.getTaxaNames();
+                    taxa = taxa[0].value;
 
-                item.snapIndex = index + 1;
-                item.id = item.eolId;
+                const getGenusTaxa = async genera => {
+                    return Promise.all(
+                        genera.map(async(genus) => {
+                            const genusTaxon = await firestore.getTaxonByName(config, genus);
+                            genusTaxa.push(genusTaxon);
+                            return genusTaxon;
+                        })
+                    );
+                };
 
-                item.vernacularNames = itemProperties.getVernacularNames(item, config);
-                item.vernacularName = itemProperties.getVernacularName(item, config);                                
-                
-                item.name = names.slice(0,2).join(' ');
+                await getGenusTaxa(genera);
 
-                if(R.contains(item.taxonomy.genus, taxa)) {
-                    item.genus = await firestore.getTaxonByName({language: 'en'}, item.taxonomy.genus);
-                    if(item.genus) {
-                        item.genus.traits = await firestore.getTraitsBySpeciesName(item.taxonomy.genus);
+                const getFamilyTaxa = async families => {
+                    return Promise.all(
+                        families.map(async(family) => {
+                            const familyTaxon = await firestore.getTaxonByName(config, family);
+                            familyTaxa.push(familyTaxon);
+                            return familyTaxon;
+                        })
+                    );
+                };
+
+                await getFamilyTaxa(families);
+
+                const getOrderTaxa = async orders => {
+                    return Promise.all(
+                        orders.map(async(order) => {
+                            const orderTaxon = await firestore.getTaxonByName(config, order);
+                            orderTaxa.push(orderTaxon);
+                            return orderTaxon;
+                        })
+                    );
+                };
+
+                await getOrderTaxa(orders);
+
+                const getFamilyNames = item => {
+                    if(item.family && item.family.names) {
+                        return item.family.names[0].names ? item.family.names[0].names : item.family.names;
+                    } else {
+                        return '';
                     }
                 }
 
-            });
+                collection.items.forEach( async (item,index) => {
 
-            const loadTraitsInParallel = items => {
-                return Promise.all(
-                    items.map(async(item) => {
-                        const itemTraits = await firestore.getTraitsBySpeciesName(item.name);
-                        item.traits = itemTraits || {};
-                        return item;                 
-                    })
-                );
-            };
+                    const names = item.name.split(' ');
 
-            await loadTraitsInParallel(collection.items);
+                    item.taxonomy.genus = names[0];                
+                    item.taxonomy.species = names[1];
 
-            collection.itemIndex = 0;
+                    item.genus = genusTaxa.find(genus => genus.name === item.taxonomy[enums.taxon.GENUS.name.toLowerCase()]);
+                    item.family = familyTaxa.find(family => family.name === item.taxonomy[enums.taxon.FAMILY.name.toLowerCase()]);
+                    if(item.family) {
+                        item.family.names = getFamilyNames(item);
+                        item.family.vernacularName = item.family.names[0];
+                    }
+                    
+                    item.order = orderTaxa.find(order => order.name === item.taxonomy[enums.taxon.ORDER.name.toLowerCase()]);
 
-            collection.glossary = [ ...collection.glossary, 'common'];
-            collection.default = false;
+                    item.snapIndex = index + 1;
+                    item.id = item.eolId;
 
-            // actions.boundNewCollection({ config, collection });
-            
-            callback(collection, config)();
+                    item.vernacularNames = itemProperties.getVernacularNames(item, config);
+                    item.vernacularName = itemProperties.getVernacularName(item, config);                                
+                    
+                    item.name = names.slice(0,2).join(' ');
 
-        } else {
-            console.log('** Hitting callbackWhenNoResults() **');
-            collection.items = [];
-            callbackWhenNoResults();
+                });
+
+                const loadTraitsInParallel = items => {
+                    return Promise.all(
+                        items.map(async(item) => {
+                            const itemTraits = await firestore.getTraitsBySpeciesName(item.name);
+                            item.traits = itemTraits || {};
+                            return item;                 
+                        })
+                    );
+                };
+
+                await loadTraitsInParallel(collection.items);
+
+                collection.itemIndex = 0;
+
+                collection.glossary = [ ...Array.from(new Set(collection.items.map(item => item.iconicTaxon))), 'common'];
+                
+                try {
+                    return collection;
+                } catch (e) {
+                    console.log(e.message);
+                }
+
+            } else {
+                console.log('Calling callbackWhenNoResults().');
+                // collection.items = [];
+                return collection;
+            }
         }
+    } catch (e) {
+        console.log('Error for collectionHandler: ', e.message);
     }
 };

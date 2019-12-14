@@ -7,7 +7,7 @@ import { getBirdSong } from 'xeno-canto/birdsong';
 import { lookalikeSpecies } from 'ui/screens/common/look-alikes';
 import { infoSlider } from 'ui/screens/common/info-slider';
 import { renderIcon } from 'ui/helpers/icon-handler';
-import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
+import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handler';
 import { renderInatDataBox } from 'ui/screens/common/inat-box';
 import { renderCalendar } from 'ui/screens/common/calendar';
 import { renderTaxaBox } from 'ui/screens/common/taxa-box';
@@ -18,6 +18,8 @@ import { firestore } from 'api/firebase/firestore';
 import cardTemplate from 'ui/screens/cards/card-template.html';
 
 export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.rightBody, isInCarousel = true) => {
+
+    if(!selectedItem) return;
 
     const { layout, config } = store.getState();
 
@@ -114,7 +116,7 @@ const renderPortrait = (item, config, mode, rootNode) => {
 
     const parent = rootNode.querySelector('.js-test-card-container-images');
 
-    imageSlider({ config, images, parent, disableModal: mode === 'MODAL', parentScreen: rootNode.querySelector('.card-card'), identifier: 'card-card' });
+    imageSlider({ config, images, parent, disableModal: mode === 'MODAL', parentScreen: rootNode.querySelector('.card-card'), identifier: item.name.replace(' ', '_') });
 
     const player = rootNode.querySelector('.js-bird-song-player');
 
@@ -130,9 +132,9 @@ const renderPortrait = (item, config, mode, rootNode) => {
         iframe.id = 'birdsong';
         iframe.style.border = 0;
         iframe.src = player.dataset.src;
-        document.querySelector('#menuModal .modal-body').classList.add('bird-song-bg');
-        document.querySelector('#menuModal .js-modal-text-title').innerHTML = `${item.name}`;
-        const elm = document.querySelector('#menuModal .js-modal-text');
+        document.querySelector('#basicModal .modal-body').classList.add('bird-song-bg');
+        document.querySelector('#basicModal .js-modal-text-title').innerHTML = `${item.name}`;
+        const elm = document.querySelector('#basicModal .js-modal-text');
         while (elm.firstChild) {
             elm.removeChild(elm.firstChild);
          }
@@ -142,7 +144,7 @@ const renderPortrait = (item, config, mode, rootNode) => {
 
 const renderCommonParts = (template, config, item, collection, mode, parent, rootNode, isInCarousel) => {
 
-    const image = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
+    const image = scaleImage({ url: item.starred || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
     
     const clone = document.importNode(template.content, true);
     

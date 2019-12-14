@@ -1,39 +1,21 @@
 /* TABLE BASICS */
 
-table {
-    font-size: 0.9rem;
-}
-
-.table-header,
-.table-footer {
+.table-header {
   background-color: rgb(153, 172, 149);
   color: var(--snap-text-dark);
-  line-height: 2.5;
   cursor: pointer;
   display: flex;
   flex-direction: row;
   border: 0;
-  height: 2.5rem;
-  position: sticky;
-  position: -webkit-sticky;
+  height: var(--vhRunningBlock,7.5vh);
   z-index: 10;
-  border-radius: 0.25rem 0.25rem 0 0;
-  letter-spacing: 0.03rem;
   align-items: center;
   text-transform: uppercase;
-  font-size: 0.85rem;
-}
-
-.table-header {
   top: 0;
+  font-size: .9em;
 }
 
-.table-footer {
-  top: 300px;
-}
-
-.table-header th,
-.table-footer td {
+.table-header th {
   cursor: pointer;
   font-weight: initial;
 }
@@ -41,33 +23,46 @@ table {
 .table-row {
     display: flex;
     flex-direction: row;
-    border-left: 0.1em solid var(--snap-border-dark);
-    border-right: 0.075rem solid var(--snap-border-dark);
+    height: var(--vhRow, 12.5vh);
+    font-size: .8em;
   }
   
-  tr.table-row:nth-child(2n) {
+  .table-row-chevron {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  tr.master:nth-child(2n) {
     background-color: var(--snap-list-background);
   }
   
-  tr.table-row:nth-child(2n + 1) {
+  tr.master:nth-child(2n + 1) {
     background-color: var(--snap-list-alt-background);
   }
-  
+ 
   .table-row img, table input {
     cursor: pointer;
   }
   
   .table-row img {
-    width: 5rem;
-    height: 5rem;
+    width: 64px;
+    height: 64px;
     object-fit: none;
-    padding: 0.5rem;
+    padding: .5rem;
   }
   
   .table-row .lp-level {
     padding: 0 0 0 0.5rem;
   }
-  
+
+  .inserted-td {
+    font-size: .9rem;
+    white-space: normal;
+    text-align: left;
+    padding: .5rem;
+  }
+
   /* SORT INDICATORS */
   
   th {
@@ -96,7 +91,7 @@ table {
   
   .table-header th:nth-child(1) > span,
   .table-footer td:nth-child(1) > span {
-    width: 5rem;
+    /* width: 5rem; */
     height: 1px;
     display: flex;
     align-items: center;
@@ -108,12 +103,21 @@ table {
     align-items: flex-start;
   }
   
+  .master.table-row td:nth-child(1) {
+    width: 80px;
+    display: flex;
+    align-items: center;
+  }
+
+  .species-description > td:nth-child(1) {
+    width: 100%;
+  }
+
   .table-row td:nth-child(2) {
     flex: 3;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    /* align-items: initial; */
     justify-content: space-evenly;
   }
   
@@ -145,33 +149,74 @@ table {
   height: 1rem;
  }
 
- .species-list .scrollable {    
-  top: 7.5%;
-  bottom: calc(7.5% + 3rem);
-  /* top: 2.8rem;
-  bottom: 5.8rem; 2.5 + .3 + 2.5 + .5 */
+div.species-description {
+  background-color: var(--snap-species-highlight-background);
+  border-top: .5px solid var(--snap-youtube-green);
+  border-bottom: .5px solid var(--snap-youtube-green);
+  padding: 1rem;
+  color: rgba(0, 0, 0, .85);
+  height: initial;
 }
-  
+
+.species-description > td {
+  width: 100%;
+}
+
+.youtube-icon, .accordion-icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.species-container {
+  position: relative;
+  width: 100%;
+}
+
+  @media (min-width:414px) {
+
+    .youtube-icon, .accordion-icon {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media (min-width: 600px) {
+
+    .youtube-icon, .accordion-icon {
+      font-size: 1.3rem;
+    }
+
+    .lesson-list-action-icons .youtube-icon, .lesson-list-action-icons .accordion-icon {
+      font-size: 1.6rem;;
+    }
+
+    .table-header th:nth-child(1) {
+      min-width: 105px;
+    }
+
+    .master.table-row td:nth-child(1) {
+      width: 105px;
+    }
+
+    .table-row img {
+      width: 98px;
+      height: 69px;
+    }
+  }
+
   @media (min-width: 768px) {
 
-    .table-header,
-    .table-footer {
+    .table-header {
       background-color: var(--snap-landscape);
     }
 
     .table-row td:nth-child(3) {
         display: flex;
         flex-direction: column;
-        font-size: .8rem;
         justify-content: space-evenly;
         align-items: flex-start;
     }
 
     /* SCROLLING */
-
-    .scrollable {
-        position: absolute;
-    }
 
     .species-list .scrollable {
       bottom: 0;
@@ -234,7 +279,6 @@ table {
     /* DOUBLE HEADER */
 
     .table-header th:nth-child(3) {
-        font-size: .7rem;
         flex-direction: column;
         display: flex;
         align-items: start;
@@ -258,3 +302,8 @@ table {
 .species-table .underline-link {
     text-transform: initial;
 }  
+
+.btn-current-lesson-begin {
+  width: calc(var(--vwGrid) - 1rem);
+  margin: .5rem;
+}

@@ -59,11 +59,11 @@ export const renderInatUser = (modal, createGuide) => {
 
     const inatIdentityInput = parent.querySelector('#inat-identity');
 
-    inatIdentityInput.addEventListener('keyup', event => {
-        autocompleteRef = inatAutocomplete(inatIdentityInput, byType, 'autocomplete-options-container', '');
+    inatIdentityInput.addEventListener('keypress', event => {
+        autocompleteRef = inatAutocomplete(inatIdentityInput, byType, 'inat-autocomplete-options-container', '');
     });
 
-    const idSwitch = parent.querySelector('.inat-switch-slider');
+    const idSwitch = parent.querySelector('.snap-switch-slider');
 
     const switchCallback = position => {
         
@@ -84,15 +84,15 @@ export const renderInatUser = (modal, createGuide) => {
 
     switchHandler(idSwitch, position, switchCallback);
 
-    const linktoStandardOptions = parent.querySelector('.js-location-options1 span:nth-child(1)');
+    // const linktoStandardOptions = parent.querySelector('.js-location-options1 span:nth-child(1)');
 
-    const renderLookupLocation = () => {
-        const config = createGuide.getConfig();
-              config.guide.locationType = 'longLat';
-        createGuide.setConfig(config);
-        renderLocation(createGuide.modal, createGuide);
-    };
+    // const renderLookupLocation = () => {
+    //     const config = createGuide.getConfig();
+    //           config.guide.locationType = 'longLat';
+    //     createGuide.setConfig(config);
+    //     renderLocation(createGuide.modal, createGuide);
+    // };
 
-    linktoStandardOptions.removeEventListener('click', renderLookupLocation, true);
-    linktoStandardOptions.addEventListener('click', renderLookupLocation, true);
+    // linktoStandardOptions.removeEventListener('click', renderLookupLocation, true);
+    // linktoStandardOptions.addEventListener('click', renderLookupLocation, true);
 };

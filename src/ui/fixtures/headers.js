@@ -2,9 +2,11 @@ import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { enums } from 'ui/helpers/enum-helper';
 
-export const renderHeaders = page => {
+export const renderHeaders = collection => {
+
+    // be simple, left/right for landscape learn/save and portrait learn (for now…)
     
-    let lessonPlan, config, counter, collection, layout;
+    let lessonPlan, config, counter, layout;
 
     setTimeout(() => {
         lessonPlan = store.getState().lessonPlan;
@@ -31,10 +33,10 @@ export const renderHeaders = page => {
         LANDSCAPE = config.isLandscapeMode;
     
         if(collection.name) {        
-            LANDSCAPE_HOME = page.name === enums.navigation.HOME && LANDSCAPE;
+            // LANDSCAPE_HOME = page.name === enums.navigation.HOME && LANDSCAPE;
             COLLECTION = !!collection;
             if(COLLECTION) collection.name ? leftHeaderText = collection.name : title;
-            SPECIES_LIST = page.name === enums.navigation.LIST || page.name === enums.navigation.HOME && LANDSCAPE;
+            // SPECIES_LIST = page.name === enums.navigation.PORTRAIT_HOME || page.name === enums.navigation.HOME && LANDSCAPE;
             if(SPECIES_LIST && PORTRAIT) rightHeaderText = collection.name;
             if(LANDSCAPE_HOME) {
                 leftHeaderText = collection.name;

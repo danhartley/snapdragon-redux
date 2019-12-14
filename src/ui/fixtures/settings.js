@@ -3,9 +3,10 @@ import { store } from 'redux/store';
 import { persistor } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
+
 import settingsTemplate from 'ui/fixtures/settings-template.html';
 
-export const renderSettings = () => {
+export const settingsHandler = () => {
     
     DOM.modalText.innerHTML = '';
 
@@ -28,7 +29,7 @@ export const renderSettings = () => {
     const setDelayInput = document.querySelector('.js-set-delay-input');
     const delayTxt = document.querySelector('.js-delay-text');
 
-    document.querySelector('#menuModal .modal-body').classList.remove('bird-song-bg');
+    document.querySelector('#basicModal .modal-body').classList.remove('bird-song-bg');
 
     delayTxt.innerHTML = delay === 1
     ? `The current delay is ${delay} second.`

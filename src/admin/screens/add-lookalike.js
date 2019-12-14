@@ -43,7 +43,7 @@ export const addLookalike = () => {
             const btnUpdateLookalikes = document.querySelectorAll('.btnUpdateLookalike').forEach(update => {
                 update.addEventListener('click', async e => {
                     const name = e.target.id;
-                    const log = await firestore.addSpeciesTraits(name, trait);
+                    const log = await firestore.addTraits(name, trait);
                     console.log('update lookalike feedback: ', log);
                 });
             });

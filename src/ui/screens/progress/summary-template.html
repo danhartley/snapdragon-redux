@@ -1,18 +1,18 @@
-<div class="snapdragon-container home-container">  
-    <div>
-        <div class="snapdragon-header">
+<div class="home-container">
+        <div class="snapdragon-header double-centred-block">
             <div>
-                A lull
+                    Finis
             </div>
         </div>
         <div class="summary-scores">
             <div>
-                <div class=""><span>{{ score.correct }}</span><span>out of</span><span>{{ score.total }}</span><span>correct answers</span></div>
+                    <div class=""><span>{{ history.correct }}</span><span>out of</span><span>{{ history.total }}</span><span></span></div>
+                <!-- <div class=""><span>{{ score.correct }}</span><span>out of</span><span>{{ score.total }}</span><span>correct answers</span></div>
                 <div class=""><span>{{ history.correct }}</span><span>out of</span><span>{{ history.total }}</span><span>correct over all</span></div>
-                <div class="summary-progress">That session was:-<span class="js-progress"></span></div>
+                <div class="summary-progress">That session was:-<span class="js-progress"></span></div> -->
             </div>
         </div>
-        <div class="snapdragon-create-guide">
+        <div class="portrait snapdragon-create-guide">
             <div>
                 <span class="underline-link js-continue-link" data-toggle="modal" data-target="#createGuide">Continue</span> <span>lesson</span>
             </div>
@@ -20,6 +20,5 @@
                 <span class="underline-link disabled">Delete lesson</span>
                 <input type="checkbox">
             </div>
-        </div>            
-    </div>
+        </div>
 </div>

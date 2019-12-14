@@ -51,13 +51,16 @@ const getBinomial = item => {
     return binomial;
 };
 
-const getImagesLayout = (species, prefix, imageIds) => {
+const getImagesLayout = (species, imageIds, addPrefix = true) => {
     let images = '';
     if(!species.images) {
         console.log('No images!');
     };
     species.images.forEach((image, index) => {
-        const url = prefix + image.url.replace('.jpg', '.260x190.jpg');
+        let prefix = image.provider === 'inat' ? 'https://static.inaturalist.org/photos/' : 'https://content.eol.org/data/media/';
+            prefix = addPrefix ? prefix : '';
+        let url = image.provider === 'inat' ? image.url : image.url.replace('.jpg', '.260x190.jpg');
+            url = prefix + url;
         images = images + `<div><img id="${index}" width="260px" height="190px" style="cursor:pointer; object-fit: cover;" src="${url}"/></div>`;
     });
     document.querySelector('#images').innerHTML = images;  
@@ -98,13 +101,11 @@ const loadInatCollection = (inat, itis, eol, parseSpeciesData, gbif, inatItems) 
                 };
                 itis.binomialLookup(item.name).then(response => {
                     if(response.scientificNames[0] === null) {
-                        console.log(item.name);
                         return;
                     }
                     const itisId = response.scientificNames[0].tsn;
                     eol.searchEOLByProvider(903, itisId).then(response => {
                         if(response.length === 0) {
-                            console.log('response: ', response);
                             return;
                         }
                         const eolId = response[0].eol_page_id;
@@ -147,7 +148,8 @@ const parseSpeciesData = async (item) => {
             source: media.source,
             license: media.license,
             url: media.eolMediaURL,
-            photographer: media.agents.find(agent => agent.role === 'photographer')            
+            photographer: media.agents.find(agent => agent.role === 'photographer'),
+            provider: media.provider || ''    
         }
     }) : [];
     const namesCollection = helpers.parseNames(taxon.vernacularNames, languages);

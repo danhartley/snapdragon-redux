@@ -36,9 +36,10 @@
 
     --snap-lesson: rgb(52, 105, 23);
     
+    --snap-active: rgb(246, 157, 53);
     --snap-alert: rgba(183, 12, 21,.8);
     --snap-inactive: rgba(7, 2, 2, 0.4);
-    --snap-active: rgb(0, 42, 84);
+    
     --snap-success: rgba(41, 108, 44,.8);
     
     --snap-link: rgb(54, 69, 82);
@@ -48,11 +49,11 @@
     --snap-question-radio: rgb(147, 208, 244);
     --snap-id-border: rgb(129, 67, 101);
 
-    --snap-progress-bg: rgb(128, 128, 128);
+    --snap-progress-bg: rgb(168, 168, 168);
     --snap-progress-bar: rgb(48, 94, 37);
     --snap-no-progress-bar: rgb(48, 94, 37);
   
-    --snap-block-light: rgba(255, 255, 255,.9);
+    --snap-block-light: rgb(245, 245, 245);
 
     --snap-grid-background: rgba(185, 200, 204,.3);
     --snap-container-background: rgb(255, 255, 255);
@@ -62,14 +63,13 @@
     --snap-species-highlight-background: rgb(249, 248, 238);
     --snap-species-header-background: rgb(226, 222, 180);
     --snap-strips-background: rgba(182, 201, 213,.5);
-    --snap-list-header: rgba(95, 125, 89,.8);
+    --snap-btn-auxillary: rgb(96, 117, 90);
     --snap-list-background: rgb(232, 235, 234);
     --snap-list-alt-background: rgb(252, 251, 246);
+    --snap-default-background: rgb(244, 244, 244);
   
-    --snap-border-dark: rgb(175,175,175);
-    --snap-border-light: rgb(255, 255, 255);
-    
-    --snap-lesson-border-dark: rgba(175,175,175,.6);
+    --snap-border-light: rgb(175,175,175);
+    --snap-border-lightest: rgb(215,215,215);
 
     --snap-kingdom-plantae: rgb(48, 96, 37);
     --snap-kingdom-fungi: rgba(150, 43, 110,.8);
@@ -77,8 +77,16 @@
 
     --snap-data-box-bg: rgb(179, 197, 174);
     --snap-traits-carousel: rgba(185, 200, 204,.4);
-    --snap-filters-ctrl: rgb(246, 157, 53);
+    
     --snap-iconic-icon-header: rgb(193, 186, 112);
 
-    --snap-inat: rgb(135, 157, 60);
+    --snap-inat: rgb(127, 151, 122);
+
+    /* as snap-lesson */
+    --snap-youtube-green: rgb(52, 105, 23);
+    /* --snap-youtube-green: rgb(255,0,0); */
+    --snap-highlight-border: rgb(250, 152, 149);
+
+    --snap-toggle-header-on: rgb(240, 240, 240);
+    --snap-toggle-header-off: rgb(253, 224, 223);
   }

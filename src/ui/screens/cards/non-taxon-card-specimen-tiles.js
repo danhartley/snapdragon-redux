@@ -1,7 +1,7 @@
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { renderTemplate } from 'ui/helpers/templating';
-import { modalImagesHandler } from 'ui/helpers/image-handlers';
+import { modalImagesHandler } from 'ui/helpers/image-handler';
 import { subscribeToNonTaxaSelection } from 'ui/screens/cards/non-taxon-card';
 import specimensTemplate from 'ui/screens/landscape/specimen-tiles-template.html';
 

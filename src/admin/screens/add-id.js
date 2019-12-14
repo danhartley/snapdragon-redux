@@ -46,11 +46,14 @@ export const addId = () => {
                         value: [ textArea.value ]   
                     }
                 };
-                const log = await firestore.addSpeciesTraits(item.name, trait);
+                const log = await firestore.addTraits(item.name, trait);
                 
                 if(log) {
                     const message = document.querySelector('.js-message');
                           message.innerHTML = 'Quick ID updated.';
+                    setTimeout(() => {
+                        message.innerHTML = '';
+                    }, 1000);
                 }
             });
         };

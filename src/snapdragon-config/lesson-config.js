@@ -2,7 +2,7 @@ export const config = {
     language: 'en',
     moduleSize: 4,
     callbackTime: 1500,
-    callbackDelay: 500,
+    callbackDelay: 1500,
     excludeRevision: false,
     isPortraitMode: false,
     isLandscapeMode: true,
@@ -19,7 +19,7 @@ export const config = {
         { name: 'Português', lang: 'pt' }
     ],
     guide: {
-        iconicTaxa: [],
+        iconicTaxa: null,
         locationLongLat: '',
         locationPlace: '',
         locationType: null,
@@ -28,7 +28,6 @@ export const config = {
             name: ''
         },
         speciesRange: 10,
-        ready: false,
         inatId: { key: '', type: '', param: 'user_id' },
         season: {}
     },    

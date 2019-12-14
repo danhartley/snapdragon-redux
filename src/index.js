@@ -20,16 +20,17 @@ import { renderHome } from 'ui/screens/home/home';
 import { renderNavigation } from 'ui/fixtures/navigation';
 import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
-import { updateLanguage } from 'api/traits/trait-types';
+import { traitValuesHandler } from 'api/traits/trait-types';
 import { initialiseConfig } from 'ui/helpers/location-helper';
 
-setTimeout( () => {
+const onLoadHandler = () => {
+    setTimeout( () => {
 
     let lessonPlan;
 
     try {
 
-        console.log('index page')
+        // console.log('index.js')
         
         const { config, counter: currentCounter, lessonPlan: statePlans } = store.getState();
 
@@ -38,21 +39,22 @@ setTimeout( () => {
         config.isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
         config.isLandscapeMode = !config.isPortraitMode;
 
-        const counter = currentCounter ? { ...currentCounter } : { index: null };
+        const counter = currentCounter ? { ...currentCounter } : { index: null, isLessonPaused: true };
 
         actions.boundUpdateConfig(config);
-        actions.boundToggleLesson(counter);
+        actions.boundStopStartLesson(counter);
 
-        subscription.add(renderHeaders, 'page', 'flow');
-        subscription.add(renderNavigation, 'page', 'flow');
+        subscription.add(renderHeaders, 'collection', 'flow');
+        renderNavigation();
+        subscription.add(renderNavigation, 'collection', 'flow');
 
         subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
                 
+        subscription.add(nextItem, 'layout', 'flow');
         subscription.add(nextLesson, 'counter', 'flow');
         subscription.add(nextLayout, 'counter', 'flow');
-        subscription.add(nextItem, 'layout', 'flow');
         subscription.add(renderScore, 'score', 'flow');
-        subscription.add(updateLanguage, 'config', 'localisation');
+        subscription.add(traitValuesHandler, 'config', 'localisation');
 
         const updateConfig = async () => {
             const initialisedConfig = await initialiseConfig(config);
@@ -64,8 +66,11 @@ setTimeout( () => {
         }
     }
     catch(e) {
-        console.log(e)
+        console.log('home page error: ', e)
         // persistor.purge();
         // window.location.reload(true);        
     }
-});
+    });
+};
+
+onLoadHandler();

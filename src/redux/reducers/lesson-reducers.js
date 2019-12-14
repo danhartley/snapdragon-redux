@@ -80,14 +80,6 @@ export const lesson = (state = initialState, action) => {
             }
         }
 
-        case types.PAUSE_LESSON: {            
-            return initialState;
-        }
-
-        case types.RESTART_LESSON: {
-            return action.data.lesson;   
-        }
-
         default: {
             return state; 
         }
@@ -106,9 +98,9 @@ export const lessons = (state = [], action) => {
             } else {
                 return [ ...state, action.data ];
             }
-        case types.RESTART_LESSON: {
-            return state.filter(lesson => lesson.name !== action.data.collection.name);            
-        }    
+            case types.REMOVE_LESSON: {
+                return state.filter(lesson => lesson.name !== action.data.name); 
+            }
         default:
             return state;
     }

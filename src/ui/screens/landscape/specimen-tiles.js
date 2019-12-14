@@ -4,8 +4,8 @@ import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { renderTemplate } from 'ui/helpers/templating';
-import { modalImagesHandler } from 'ui/helpers/image-handlers';
-import { imageUseCases, prepImagesForCarousel, prepImageForCarousel, scaleImage } from 'ui/helpers/image-handlers';
+import { modalImagesHandler } from 'ui/helpers/image-handler';
+import { imageUseCases, prepImagesForCarousel, prepImageForCarousel, scaleImage } from 'ui/helpers/image-handler';
 
 import specimensTemplate from 'ui/screens/landscape/specimen-tiles-template.html';
 
@@ -22,10 +22,11 @@ const renderItemSpecimenTiles = item => {
     
     const { config, collection, layout } = store.getState();
 
+    if(layout.itemIndex === layout.prevItemIndex) return;
+
     let images, items; 
     
     const familes = [ 'family-strips', 'family', 'taxon-card' ];
-    // const familes = [ 'family-strips', 'family', 'taxon-card', 'trait-property' ];
 
     const number = 6;
 
@@ -67,7 +68,7 @@ const renderItemSpecimenTiles = item => {
             i.images = collectionItems.find(i => i.name === itemName).images;
         });
         images = images.map((image, index) => {
-            return prepImageForCarousel(image.images[0], index, image.item, config, imageUseCases.SPECIES_CARD);
+            return prepImageForCarousel(item.images.find(i => i.starred) || image.images[0], index, image.item, config, imageUseCases.SPECIES_CARD);
         });        
     } else {
         images = R.take(6, utils.shuffleArray(R.clone(item.images)));
@@ -89,8 +90,6 @@ const renderSpecimenImageTiles = (collection, images, item) => {
     const acceptableScreens = [ 'specimen-images', 'trait-images' ]; // lookalike options?
 
     let screen = layout.screens.find(screen => R.contains(screen.name, acceptableScreens));
-
-    // if(layout.screens[0].name === 'command') screen = layout.screens[0].left;
 
     if(!screen) return;
 

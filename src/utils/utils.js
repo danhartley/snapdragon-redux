@@ -29,7 +29,7 @@ Array.prototype.concatAll = function() {
           sink();
         }, delay);    
       })
-    .onValue(function(element) { console.log(element) });
+    .onValue(function(element) { console.log('timer: ', element) });
     return id;
   };
   
@@ -290,12 +290,18 @@ const getRandomObjectProperty = obj => {
 };
 
 const toCamelCase = sentenceCase => {
+  if(sentenceCase === undefined) return '';
   var out = "";
   sentenceCase.split(" ").forEach(function (el, idx) {
       var add = el.toLowerCase();
       out += (idx === 0 ? add : add[0].toUpperCase() + add.slice(1));
   });
   return out;
+};
+
+const fromCamelCase = str => {
+  if(str === undefined) return '';
+  return str.replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase();
 };
 
 export const utils = {
@@ -323,5 +329,6 @@ export const utils = {
   createSessionToken,
   debounce,
   getRandomObjectProperty,
-  toCamelCase
+  toCamelCase,
+  fromCamelCase
 };

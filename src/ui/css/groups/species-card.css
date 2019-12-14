@@ -1,5 +1,3 @@
-/* TRAITS CAROUSEL */
-
 .bird-song iframe {
     width: 100%;
     border: 0;
@@ -15,7 +13,7 @@
     min-width: 1rem;
     min-height: 1rem;
     display: inline-block;
-    font-size: .6rem;
+    font-size: .9em;
 }
 
 .traits-count-badge {
@@ -47,102 +45,61 @@
 
   .info-box {
     position: absolute;
-    bottom: .5rem;
-    left: .5rem;
-    right: .5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--vhStandardBlock, 10vh);
   }
 
   .taxa-container {
     text-align: left;
-    font-size: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: var(--snap-text-medium-light);
+    font-size: .8rem;
   }
 
   .taxa-container > span {
-    max-width: 8.4rem;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
   }
 
-  .extra-small-text {
-    font-size: .8rem;
+  .taxon.card-card .data-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: inherit;
+    border-right: 1px solid lightgray;
   }
 
-  /* TAXON CARD  */
-
-  .taxon.card-card .data-box {
-    font-family: sentinel;
-    letter-spacing: .05rem;
-    font-size: .9rem;
+  .external-links {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  .external-links {
-    margin: .5rem 0 0 .75rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  .external-links .names-badge {
+    font-size: .7em;
   }
-
-  /* FEATURES */
-
-.feature-symbiont-list table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.feature-symbiont-list thead > tr:nth-child(1) {  
-    line-height: 1.5rem;
-    background-color: rgba(52, 58, 64,.7);
-    line-height: 1.5rem;
-    color: var(--snap-text-light);
-    letter-spacing: .05rem;
-    position: sticky;
-    position: -webkit-sticky;
-}
 
 td:empty:after{
   content: "\00a0";
 }
 
-.feature-symbiont-list th,
-.feature-symbiont-list td {
-    text-align: left;
-    font-weight: normal;
-    border: 0;
-    border: 1px solid lightgray;
-    padding: 0 0 0 0.5rem;
-    text-transform: capitalize;
-    font-size: 0.8rem;
-    line-height: 1.5rem;
+.card-card {
+  height: calc( var(--vh, 1vh) * 100 - var(--vhRunningBlocks,15vh) - 5px);
+  position: relative;
 }
 
-.feature-symbiont-list th {
-    text-transform: uppercase;
-}
-    
-.feature-symbiont-list .underline-link {
-    text-transform: initial;
-}
-
-.card-scrollable-container {
-  overflow-y: scroll;
-  height: calc(100vh - 22rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.modal-content .card-card {
+  height: calc( var(--vh, 1vh) * 100 - var(--vhRunningBlocks,15vh) - 10px );
+  position: relative;
 }
 
 .info-details {
-  height: calc(90vh - 20rem);  
-  margin: .5rem 0;
-  overflow-y: scroll;
+  padding: .5rem;
 }
 
 .info-details .info_detail {
@@ -150,23 +107,18 @@ td:empty:after{
   flex-direction: column; 
   align-items: center;
   height: inherit;
-  font-size: .8rem;
+  margin: 0 .5rem;
 }
 
 .info-details .info_detail div:nth-child(1) { 
   font-style: italic;
-  font-size: 1.1rem;
   margin: 1rem 0 .5rem 0;
 }
 
 .info-details img {   
   max-width: 100%;
-  height: 10vh;
+  max-height: 10vh;
   margin: .5rem 0;
-}
-
-.lookalike-card {
-  font-size: .9rem;
 }
 
 .lookalike-card div:nth-child(1), .lookalike-card div:nth-child(3) {
@@ -183,7 +135,6 @@ td:empty:after{
   border: 1px solid lightgray;
   margin: .25rem;
   padding: .5rem;
-  font-size: .8rem;
 }
 
 .relationship-card .cols {

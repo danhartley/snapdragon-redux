@@ -57,7 +57,7 @@ const searchEOL = async (input, asyncProgress, callback, selectedLicence = 'pd|c
         
         item = await getSpecies(input.name, selectedLicence);
         
-        if(imageIds) helpers.getImagesLayout(item, '', imageIds);
+        if(imageIds) helpers.getImagesLayout(item, imageIds, false);
         
         asyncProgress.classList.remove('hide');
         asyncProgress.innerHTML = 'Fetching matching species…';

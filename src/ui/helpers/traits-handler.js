@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { utils } from 'utils/utils';
 
-export const getRandomTrait = (traits, traitsToIgnore) => {    
+const getRandomTrait = (traits, traitsToIgnore) => {    
 
     const allowedTraits = {};
 
@@ -17,7 +17,7 @@ export const getRandomTrait = (traits, traitsToIgnore) => {
     return trait;
 };
 
-export const getTraitsPoolForUnits = trait => {
+const getTraitsPoolForUnits = trait => {
     // create set of numeric answers based on the value
 
     const traitsPool = [1,2,3,4,5,6,7,8,9];
@@ -31,13 +31,13 @@ export const getTraitsPoolForUnits = trait => {
     return { traitsPool, help: 'Pick the best range'};
 };
 
-export const getTraitsPoolForRoles = trait => {    
+const getTraitsPoolForRoles = trait => {    
     enumKey = trait.role; // e.g. name of role, but role of predator; (and possibly need to apply logic as below)
     const traitsPool = ['role1', 'role2', 'role3', 'role4', 'role5', 'role6', 'role7', 'role8', 'role9', 'role10'];
     return { traitsPool, help: 'symbiosis'};
 };
 
-export const getTraitValues = (trait, traits) => {
+const getTraitValues = (trait, traits) => {
 
     let traitKeyParts = trait.key.split(' ');
     let enumKey; // e.g map 'leaf variation' to leafVariation
@@ -55,7 +55,7 @@ export const getTraitValues = (trait, traits) => {
     return traitValues;
 };
 
-export const getTraitsPool = (trait, traits) => {
+const getTraitsPool = (trait, traits) => {
 
     let traitsPool = [];
 
@@ -83,7 +83,7 @@ export const getTraitsPool = (trait, traits) => {
     return { traitsPool, help };
 };
 
-export const getSetOfTraitAnswers = (pool, trait) => {
+const getSetOfTraitAnswers = (pool, trait) => {
 
     let traitSet = trait.value;
         traitSet = traitSet.map(t => t.trim());
@@ -107,7 +107,6 @@ export const getSetOfTraitAnswers = (pool, trait) => {
             pool.forEach( b => {
                 if(a !== b) {
                     const exists = sets.filter(s => s === [a,b] || s === [b,a]).length > 0;
-                    console.log(exists);
                     if(!exists) { 
                         sets.push([a,b]);
                     }
@@ -131,27 +130,23 @@ export const getSetOfTraitAnswers = (pool, trait) => {
         if(sets.length === 0) {
             sets = ['a', 'b', trait.value];
         }
-
-        console.log(sets);
-
+        
         sets = sets.map(set => set.join(', '));
-
-        console.log(sets);
     }
   
     return utils.shuffleArray(sets);
 };
 
-export const getTraitByKey = (traits, traitKey) => {
+const getTraitByKey = (traits, traitKey) => {
     return traits[Object.keys(traits).find(key => key === traitKey)];
 }
 
-export const getTraitValueByKey = (traits, traitKey) => {
+const getTraitValueByKey = (traits, traitKey) => {
     const trait = getTraitByKey(traits, traitKey);
     if(trait) return trait.value;
 }
 
-export const hasTraitPropeties = traits => {
+const hasTraitPropeties = traits => {
     for(var prop in traits) {
         if (traits.hasOwnProperty(prop)) {
             return true;
@@ -159,7 +154,7 @@ export const hasTraitPropeties = traits => {
     }
 };
 
-export const getLinkedTaxaTraits = traits => {
+const getLinkedTaxaTraits = traits => {
     
     const taxaTraits = [];
 
@@ -176,16 +171,19 @@ export const getLinkedTaxaTraits = traits => {
     return taxaTraits;
 };
 
-export const getTraitsToExclude = () => {
+const getTraitsToExclude = () => {
     return [ 
         'symbionts', 'voice', 'pollination', 'name', 
         'units', 'song', 'uk rank',
         'colour', 'bark colour', 'height',
-        'physiology', 'characteristic', 'description',
-        'usage', 'habitat'
+        'physiology', 'description',
+        'usage', 'habitat',
+        'symbiont'
+        //'characteristic'
     ];
 };
-export const handleUnit = unit => {
+
+const handleUnit = unit => {
 
     unit = unit || '';
 
@@ -201,7 +199,7 @@ export const handleUnit = unit => {
     }    
 };
 
-export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude, item) => {
+const convertTraitsToNameValuePairsArray = (traits, traitsToExclude, item) => {
 
     if(!hasTraitPropeties(traits)) return {};
     
@@ -230,4 +228,51 @@ export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude, item
     }
     
     return includedTraits;
+};
+
+const getNMultiplesFromArray = (arra, arra_size) => {
+
+    if(arra.length === 0) return [];
+
+    var result_set = [], 
+        result;
+    
+   
+    for(var x = 0; x < Math.pow(2, arra.length); x++) {
+        result = [];
+        var i = arra.length - 1; 
+        do {
+            if((x & (1 << i)) !== 0) {
+                result.push(arra[i]);
+            }
+        } 
+        
+        while(i--);
+
+        if(result.length >= arra_size) {
+            result_set.push(result);
+        }
+    }
+
+    return result_set.filter(set => set.length === arra_size);
+};
+
+const doArraysHaveSameValues = R.compose(R.isEmpty, R.symmetricDifference);
+
+export const traitsHandler = {
+    getRandomTrait,
+    getTraitsPoolForUnits,  
+    getTraitsPoolForRoles,
+    getTraitValues,
+    getTraitsPool,
+    getSetOfTraitAnswers,
+    getTraitByKey,
+    getTraitValueByKey,
+    getLinkedTaxaTraits,
+    getTraitsToExclude,
+    convertTraitsToNameValuePairsArray,
+    getNMultiplesFromArray,
+
+    doArraysHaveSameValues,
+    hasTraitPropeties,
 };

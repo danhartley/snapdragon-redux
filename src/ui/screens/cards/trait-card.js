@@ -103,5 +103,5 @@ export const renderTraitCard = item => {
     })();
 
    traitIterator.getTraitTestCard(item);
-//    traitIterator.getNextTrait();
+
 };

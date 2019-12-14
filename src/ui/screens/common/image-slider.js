@@ -1,23 +1,31 @@
 import { renderTemplate } from 'ui/helpers/templating';
-import { modalImagesHandler, scaleImage, imageMatch, imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
+import { modalImagesHandler, scaleImage, imageMatch, imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handler';
 import { handleRightsAttribution } from 'ui/screens/common/rights-attribution';
+
 import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
 
-const selectActiveNodeImage = (image, parent, config) => {
+const selectActiveImage = (image, parent, config) => {
     parent.querySelectorAll('.carousel-item').forEach(i => {
-        const elemSrc = i.lastElementChild.dataset.url || i.lastElementChild.url;
-        const src = image.dataset ? image.dataset.url : image.url;
-        if(imageMatch(elemSrc, src)) {
+        const elemSrc = i.lastElementChild.dataset || i.lastElementChild;
+        if(imageMatch(elemSrc, image.dataset || image)) {
             i.classList.add('active');
             return;
         }
     });    
+    
     const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active > div'); 
-    document.querySelector('.carousel-indicators li').classList.add('active');
+    
+    const indicators = document.querySelectorAll('.carousel-indicators li');
+          indicators.forEach(i => {
+              if(i.dataset.slideTo === activeNode.dataset.index) {
+                  i.classList.add('active');
+              }
+          });
+
     let img = image.dataset || image;
     img.title = img.title || img.itemName;
     img = scaleImage(img, imageUseCases.CAROUSEL, config);
-    handleRightsAttribution(img, activeNode);
+    handleRightsAttribution(img, false);
 
     return img;
 };
@@ -35,26 +43,23 @@ const disableModalPopups = (disableModal, parent, config) => {
 
 const getActiveBackgroundImage = (parentScreen = document) => {
     const imageContainer = parentScreen.querySelector('.carousel-item.active > div');
-    const imageUrl = imageContainer.dataset.url;
+    const image = { url: imageContainer.dataset.url, provider: imageContainer.dataset.provider };
     const backgroundImage = imageContainer.style.backgroundImage.slice(4, -1).replace(/"/g, "");
-    return { imageContainer, imageUrl, backgroundImage };
+    return { imageContainer, image, backgroundImage };
 };
 
-const carouselControlHandler = (event, parentScreen = document) => {
+const carouselControlHandler = (event, parentScreen = document, config) => {
 
     setTimeout(() => {
 
         const activeNode = parentScreen.querySelector(`${event.target.dataset.slider} .carousel-item.active > div`);
-        const image = activeNode.dataset;        
-        handleRightsAttribution(image, activeNode);
-    
-        const originalImageLink = parentScreen.querySelector('.js-image-load-original > div');
-              originalImageLink.style.display = 'none';
+        const image = activeNode.dataset;   
         
-        const { backgroundImage } = getActiveBackgroundImage(parentScreen);
-        if(backgroundImage.indexOf('260x190') !== -1 || backgroundImage.indexOf('small') !== -1) {
-            originalImageLink.style.display = 'initial';
-        }
+        handleRightsAttribution(image);
+    
+        const originalImageLink = parentScreen.querySelector('.js-carousel-inner .js-expand');
+              originalImageLink.addEventListener('click', onEnlargeImageHandler(config));
+
     }, 750);
 };
 
@@ -63,42 +68,33 @@ export const imageSlider = sliderArgs => {
     const { config, images, parent, disableModal, image, parentScreen = document, identifier = '' } = sliderArgs;
 
     const slider = document.createElement('template');
-
-    slider.innerHTML = imageSliderTemplate;
+          slider.innerHTML = imageSliderTemplate;
 
     parent.innerHTML = '';
 
     images.forEach((img, i) => {
         img.index = i;
         img.rightsHolder = img.rightsHolder || 'Public domain';
+        img.provider = img.provider || 'eol';
     });
 
     renderTemplate({ images, identifier, disableModal }, slider.content, parent);
-    selectActiveNodeImage(image || images[0], parent, config);    
+    selectActiveImage(image || images[0], parent, config);    
     disableModalPopups(disableModal, parent, config);
 
-    const originalImageLink = parentScreen.querySelector('.js-image-load-original > div');
+    parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
+    parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
 
-    parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', e => carouselControlHandler(e,parentScreen));
-    parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', e => carouselControlHandler(e,parentScreen));
-
-    originalImageLink.addEventListener('click', event => {
-        const { imageContainer, imageUrl } = getActiveBackgroundImage();
-        const large = scaleImage({ url: imageUrl }, imageUseCases.ACTUAL_SIZE, config).large;
-        imageContainer.style["background-image"] = `url(${large})`;
-        imageContainer.classList.add('contain-image');
-        originalImageLink.style.display = 'none';
-    });
+    const originalImageLink = parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .js-expand`);
+          originalImageLink.addEventListener('click', onEnlargeImageHandler(config));
 };
 
 export const imageSideBySlider = (slides, parent, disableModal = false, config) => {
 
     const sideBySlider = document.createElement('template');
-
-    sideBySlider.innerHTML = imageSliderTemplate;
+          sideBySlider.innerHTML = imageSliderTemplate;
 
     parent.innerHTML = '';
-
     parent.classList.add('slideBySliderContainer');
 
     document.querySelector(`#imageComparisonModal .js-modal-image-title span:nth-child(3)`).innerHTML = '';
@@ -109,16 +105,30 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
         const identifier = slide.id.replace(' ', '_') || index + 1;
 
         const header = document.querySelectorAll(`#imageComparisonModal .js-modal-image-title > span`)[index];
-        header.innerHTML = `<span class="common-name">${slide.images[0].itemCommon}</span><span class="latin-name">${slide.images[0].itemName}</span>`;
+              header.innerHTML = `<span class="common-name">${slide.images[0].itemCommon}</span><span class="latin-name">${slide.images[0].itemName}</span>`;
         const item = { name: slide.images[0].itemName, itemCommon: slide.images[0].itemCommon, images: slide.images };
         const images = prepImagesForCarousel(item, config, imageUseCases.CAROUSEL);
+        
         renderTemplate({ images, identifier, disableModal }, sideBySlider.content, parent);
+        
         const activeNode = document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-item`);
-        activeNode.classList.add('active');        
+              activeNode.classList.add('active');
         disableModalPopups(disableModal, config);
-        handleRightsAttribution(images[0], activeNode.querySelector('div'));
+        handleRightsAttribution(images[0], disableModal);
 
-        document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', carouselControlHandler);
-        document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', carouselControlHandler);
+        const originalImageLink = document.querySelector(`#imageSlider_${disableModal}_${identifier} .js-expand`);
+              originalImageLink.classList.add('hide-important');
+
+        // document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', carouselControlHandler);
+        // document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', carouselControlHandler);
     });
 };
+
+function onEnlargeImageHandler(config) {
+    return () => {
+        const { imageContainer, image } = getActiveBackgroundImage();
+        const large = scaleImage(image, imageUseCases.ACTUAL_SIZE, config).large;
+        imageContainer.style["background-image"] = `url(${large})`;
+        imageContainer.classList.add('contain-image');
+    };
+}

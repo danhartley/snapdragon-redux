@@ -1,16 +1,10 @@
 
 
 <div id="imageSlider_{{ disableModal }}_{{ identifier }}" class="imageSlider carousel slide" data-ride="carousel" data-interval="false">
-  <div class="carousel-inner">
-
-      <div class="image-load-original js-image-load-original landscape">
-        <div class="underline-link">Load original size</div>
-      </div>
-
-      <ol class="landscape carousel-indicators"  data-repeat-image="{{ images }}">
+  <div class="carousel-inner js-carousel-inner">
+      <ol class="carousel-indicators"  data-repeat-image="{{ images }}">
           <li data-target="#carouselExampleIndicators" data-slide-to="{{ image.index }}"></li>
       </ol>
-
       <div data-repeat-image="{{ images }}">
         <div class="carousel-item">
             <div class="d-block w-100" 
@@ -20,7 +14,10 @@
                 data-license="{{ image.license }}"
                 data-rights-holder="{{ image.rightsHolder }}"
                 data-photographers-name="{{ image.photographersName }}"
-                data-url="{{ image.url }}">    
+                data-url="{{ image.url }}"
+                data-provider="{{ image.provider }}"
+                data-item-name="{{ image.itemName }}"
+                data-index="{{ image.index }}">
                 <div data-item-name="{{ image.itemName }}" class="layer"></div>        
         </div>
         </div>
@@ -33,7 +30,8 @@
       <span class="carousel-control-next-icon" aria-hidden="true" data-slider="#imageSlider_{{ disableModal }}_{{ identifier }}"></span>
       <span class="sr-only">Next</span>
     </a>
+    <div class="js-attribution-layer {{ identifier }}"></div>
   </div>  
   <div class="description_{{ identifier }}"></div>
-  <div class=""></div>
+  <div class="double-centred-block"></div>
 </div>

@@ -5,12 +5,13 @@ import { fungi } from 'api/glossary/fungi';
 import { lichen } from 'api/glossary/lichen';
 import { insecta } from 'api/glossary/insecta';
 import { amphibia } from 'api/glossary/amphibia';
+import { aves } from 'api/glossary/aves';
 
 export const getGlossary = requiredGlossaries => {
     
     let glossary = [];
 
-    requiredGlossaries = [ ...new Set(requiredGlossaries)];
+    requiredGlossaries = requiredGlossaries; // need to remove duplicates here
 
     if(requiredGlossaries) {
         requiredGlossaries.forEach(glossaryName => {
@@ -36,10 +37,16 @@ export const getGlossary = requiredGlossaries => {
                 case 'amphibia':
                     glossary = [ ...glossary, ...amphibia ];
                     break;
+                case 'aves':
+                    glossary = [ ...glossary, ...aves ];
+                    break;
             }
         });
+        if(glossary.length === 0) {
+            glossary = [ ...commmon ];
+        }
     } else {
-        glossary = [ ...glossary, ...commmon, ...plantae, ...animalia, ...amphibia, ...fungi, ...lichen, ...insecta ];
+        glossary = [ ...glossary, ...commmon, ...plantae, ...animalia, ...amphibia, ...fungi, ...lichen, ...insecta, ...aves ];
     }
 
     return glossary;

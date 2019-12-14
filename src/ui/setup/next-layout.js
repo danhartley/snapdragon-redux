@@ -1,23 +1,14 @@
-import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
-import { subscription } from 'redux/subscriptions';
+import { enums } from 'ui/helpers/enum-helper';
+import { setupHandler } from 'ui/setup/setup-handler';
 
-export const nextLayout = (counter) => {
+export const nextLayout = counter => {
 
-    setTimeout(() => { // hack so that next-lesson runs first, and updates to the next level where appropriate
+    const { layout, lessonPlan, config, lesson, collection } = store.getState();
 
-        if(counter.isLessonPaused) return;
+    const args = { layout, counter, lessonPlan, config, lesson, collection };
 
-        const { lessonPlan, config } = store.getState();
-    
-        if(!lessonPlan || !lessonPlan.layouts) return;
-    
-        const layout = lessonPlan.layouts[counter.index];
-    
-        if(!layout) return;
-    
-        actions.boundNextLayout(layout);
-    
-        subscription.addSubs(layout, config);   
-    });
+    if(setupHandler.isRequired(enums.nextStep.NEXT_LAYOUT, args)) {
+        setupHandler.actionUpdate(enums.nextStep.NEXT_LAYOUT, { layout: lessonPlan.layouts[counter.index], config });
+    }
 };

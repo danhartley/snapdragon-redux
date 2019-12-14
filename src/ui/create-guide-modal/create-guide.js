@@ -1,24 +1,17 @@
 import 'ui/create-guide-modal/create-guide.css';
 
-import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
-import { renderHome } from 'ui/screens/home/home';
 import { renderTemplate } from 'ui/helpers/templating';
+import { renderSpecies } from 'ui/create-guide-modal/species';
 import { renderLocation } from 'ui/create-guide-modal/location';
+import { renderInatUser } from 'ui/create-guide-modal/inat-user';
 import { renderCategories } from 'ui/create-guide-modal/categories';
-import { renderSeason } from 'ui/create-guide-modal/season';
+import { renderSpeciesPicker } from 'ui/create-guide-modal/species-picker';
 import { saveButton } from 'ui/create-guide-modal/common/save-button';
-import { enums } from 'ui/helpers/enum-helper';
+import { speciesPendingSpinner } from 'ui/create-guide-modal/species-pending';
 
 import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
-import createGuideTemplate from 'ui/create-guide-modal/create-guide-template.html';
-
-const closeModalListeners = [];
-
-export const listenToCloseCreateGuideModal = listener => { 
-    closeModalListeners.push(listener);
-};
 
 class CreateGuide {
 
@@ -29,10 +22,10 @@ class CreateGuide {
         this.currentStep = step;
         
         this.steps = [
-            { number: 1, title: 'Create Lesson', description: 'Location', nextStep: 'Filter species by category', disabled: true, className:'location-actions' },
-            { number: 2, title: 'Create Lesson', description: 'Species', nextStep: 'Choose season', disabled: true, className:'species-actions',
-                alternative: { nextStep: 'Start Lesson' } },
-            { number: 3, title: 'Create Lesson', description: 'Season', nextStep: 'Start Lesson', disabled: true, className:'filter-actions' }
+            { number: 1, title: 'Species Picker', description: 'Options', nextStep: '', disabled: true, className:'species-actions' },
+            { number: 2, title: 'Species Picker', description: 'Location', nextStep: 'Taxa', disabled: true, className:'location-actions' },
+            { number: 3, title: 'Species Picker', description: 'Taxa', nextStep: 'Fetch Species', disabled: true, className:'taxa-actions' },
+            { number: 4, title: 'Species Picker', description: 'Spinner', nextStep: 'Open Lesson', disabled: true, className:'filter-actions' }
         ];
         
         this.modal = document.getElementById('createGuide');
@@ -40,7 +33,6 @@ class CreateGuide {
         if(!this.modal) return;
 
         this.modalTitle = this.modal.querySelector('.js-modal-title div:nth-child(1)');
-        this.modalTitleSteps = this.modal.querySelector('.js-modal-title div:nth-child(2)');
         this.progressSteps = this.modal.querySelectorAll('.js-modal-guide-progress > div > div');
         this.previousStepAction = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(1)');
         this.previousStepTitle = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(1) > div');
@@ -72,62 +64,78 @@ class CreateGuide {
         this.setCurrentStep = step => {
             this.currentStep = step;
         }
+
+        // prevent user rescaling which is caused by autocomplete
+
+        // const viewport = document.querySelector("meta[name=viewport]");
+        //       viewport.setAttribute('content', 'width=device-width, initial-scale=1, user-scalable=no');
     }
 
-    addStepActions(className) {
+    addStepActions(nextStep) {
         
-        let template = '';
-        const parent = this.modal.querySelector('.js-landscape-inner-body');
-        parent.innerHTML = '';
-        template = document.createElement('template');
+        if(!nextStep) return;
+        
+        const parent = this.modal.querySelector('.js-step-action-content');
+              parent.innerHTML = '';
+        const template = document.createElement('template');
+              template.innerHTML = actionsTemplate;
         const description = this.steps.find(step => step.number === this.currentStep).description;
 
-        template.innerHTML = actionsTemplate;
-        renderTemplate({ className }, template.content, parent);
+        renderTemplate({ className: nextStep.className }, template.content, parent);
+
+        const options = this.modal.querySelector('.js-options');
+        const navigation = this.modal.querySelector('.js-modal-guide-navigation');
 
         switch(description) {
-            case 'Location':
-                renderLocation(this.modal, this);
+            case 'Options':
+                options.innerHTML = 'Choose how to find the species you want:';
+                navigation.classList.add('hide-important');
+                renderSpecies(this);
                 break;
-            case 'Species':
+            case 'Location':                
+                
+                options.innerHTML = 'Choose species based on location and season.'
+                navigation.classList.remove('hide-important');
+
+                switch(this.option) {
+                    case 'A':
+                        renderLocation(this.modal, this);
+                        break;
+                    case 'B':
+                        renderInatUser(this.modal, this);
+                        break;
+                    case 'C':                        
+                        renderSpeciesPicker(this);
+                        break;
+                }
+                break;
+            case 'Taxa':
+                options.innerHTML = 'Choose the taxa that interest you.'
                 renderCategories(this.modal, this);
                 break;
-            case 'Season':
-                renderSeason(this.modal, this);
+            case 'Spinner':
+                setTimeout(() => {
+                    speciesPendingSpinner(this.getConfig(), this.modal);
+                });
                 break;
         }
     }
 
-    createStep(nextStep, direction) {
+    goToNextStep(nextStep, direction, option) {
 
         this.currentStep = nextStep;
         this.direction = direction;
-
-        this.nextStepActionTxt.removeAttribute('data-dismiss');
+        this.option = option || this.option;
 
         if(this.startLesson ) {
-            closeModalListeners.forEach(listener => listener(enums.lessonState.GET_SPECIES));
             this.currentStep = 0;
-            const config = this.getConfig();
-            config.guide.ready = true;
-            this.setConfig(config);
-            
-            if(config.isLandscapeMode) {
-                this.nextStepActionTxt.setAttribute('data-dismiss','modal');
-                this.listeners.forEach((listener, index) => {
-                    listener.element.removeEventListener('click', listener.handler, 'true');
-                });
-                this.listeners = [];
-                return;
-            } else {
-                renderHome(0);
-                return;
-            }
         };
 
         const currentStepProperties = this.steps.filter(s => s.number === this.currentStep);
+
+        if(!this.modalTitle) return;
+        
         this.modalTitle.innerText = currentStepProperties.map(s => s.title);
-        this.modalTitleSteps.innerHTML = `Step ${currentStepProperties.map(s => s.number)} of ${this.steps.length}`;
         this.nextStepActionTxt.innerHTML = currentStepProperties.map(csp => csp.nextStep);
 
         this.progressSteps.forEach((ps,index) => {
@@ -141,8 +149,8 @@ class CreateGuide {
                 }
             }
         });
-
-        this.addStepActions(this.steps.find(step => step.number === nextStep).className);
+        
+        this.addStepActions(this.steps.find(step => step.number === nextStep));
 
         if(this.currentStep === 1) {
             this.previousStepActionTxt.classList.add('hide-important');
@@ -162,34 +170,25 @@ class CreateGuide {
     }
 };
 
-export const createGuideHandler = (step) => {
-
-    const { config } = store.getState();
-    
-    if(config.isPortraitMode) {
-        const template = document.createElement('template');
-        template.innerHTML = createGuideTemplate;
-        DOM.rightBody.innerHTML = '';
-        renderTemplate({}, template.content, DOM.rightBody);
-    }
+export const createGuideHandler = step => {
 
     const guide = new CreateGuide(step);
 
-    guide.createStep(step);
+    guide.goToNextStep(step);
 
-    const handleNextStepAction = event => {
-        guide.startLesson = guide.nextStepActionTxt.innerHTML.indexOf('Start Lesson') > -1; // hack
-        guide.createStep(guide.getCurrentStep() + 1, 'NEXT');
+    const handleNextStepAction = event => {        
+        guide.startLesson = guide.nextStepActionTxt.innerHTML.indexOf('Open Lesson') > -1; // hack
+        if(guide.startLesson) guide.nextStepActionTxt.nextSibling.setAttribute('data-dismiss','modal');
+        guide.goToNextStep(guide.getCurrentStep() + 1, 'NEXT');
         guide.listeners.push( { element: guide.nextStepAction, handler: handleNextStepAction });
     };
 
     guide.nextStepAction.addEventListener('click', handleNextStepAction, true);
 
     const handlePreviousStepAction = event => {
-        guide.createStep(guide.getCurrentStep() - 1, 'PREVIOUS');
+        guide.goToNextStep(guide.getCurrentStep() - 1, 'PREVIOUS');
         guide.listeners.push( { element: guide.previousStepAction, handler: handlePreviousStepAction });
     };
 
     guide.previousStepAction.addEventListener('click', handlePreviousStepAction, true);
-
 }

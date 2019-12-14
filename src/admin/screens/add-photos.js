@@ -1,3 +1,6 @@
+import * as R from 'ramda';
+
+import { eol } from 'admin/api/eol';
 import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
 import { speciesPicker } from 'admin/screens/taxa-pickers';
@@ -8,8 +11,11 @@ import addphotosGalleryTemplate from 'admin/screens/add-photos-gallery.html';
 
 export const addPhotos = () => {
 
-    const init = async () => {
+    const inatPrefix = 'https://static.inaturalist.org/photos/';
+    const eolPrefix = 'https://content.eol.org/data/media/';
 
+    const init = async () => {
+        
         let item = window.snapdragon.species;
 
         const template = document.createElement('template');
@@ -23,24 +29,49 @@ export const addPhotos = () => {
         const input = document.querySelector('#input-species-to-update');
               input.focus();
 
-        const renderPhotos = photos => {
+        const sources = document.querySelectorAll('.source');
 
-            const smallPhotos = photos.map((photo, index) => {
-                return { ...photo, url: photo.url.replace('medium', 'small'), index };       
+        let source = document.querySelector('input:checked').id;
+
+        sources.forEach(option => {
+            option.addEventListener('click', e => {
+                source = e.currentTarget.id;
+                console.log('source: ', source);
+                input.focus();
+                const parent = document.getElementById('photosGallery');
+                      parent.innerHTML = '';
             });
+        });
+
+        const renderPhotos = (photos, item) => {
+
+            const currentPhotoUrls = item.images.map(image => image.url);
 
             const parent = document.getElementById('photosGallery');
   
             template.innerHTML = addphotosGalleryTemplate;
 
-            const context = { photos: smallPhotos };
+            const context = { photos };
 
             renderTemplate(context, template.content, parent);
+
+            document.querySelectorAll('img').forEach(image => {
+                const url = image.src.replace(inatPrefix, '').replace(eolPrefix, '').replace('260x190.jpg', 'jpg');
+                if(R.contains(url, currentPhotoUrls)) {
+                    image.style.filter = 'saturate(10%)';
+                    image.style.opacity = .3;
+                }
+            });
 
             const photoIds = [];
 
             const btnAddAllPhotos = document.querySelector('.btnAddAllPhotos');
             const btnAddSelectedPhotos = document.querySelector('.btnAddSelectedPhotos');
+
+            if(photos.length === 0) {
+                btnAddAllPhotos.classList.add('hide');
+                document.querySelector('.noPhotos').innerHTML = 'No matching photos.'
+            }
 
             document.querySelectorAll('img').forEach(img => {
                 img.addEventListener('click', e => {
@@ -84,15 +115,45 @@ export const addPhotos = () => {
             });
         };
 
-        speciesPicker(input, async () => {
+        speciesPicker(input, async species => {
             const name = input.value;
-            const photos = await inat.getTaxonDataIncPhotos(name);
-            renderPhotos(photos);
+            let photos;       
+            switch(source) {
+                case 'inat':
+                    photos = await inat.getTaxonDataIncPhotos(name);
+                    photos = photos.map((photo, index) => {
+                        return { ...photo, url: photo.url.replace('medium', 'small'), index, provider: 'inat' };       
+                    });
+                    renderPhotos(photos, species);
+                    break;
+                case 'eol':
+                    photos = await eol.getSpeciesPhotos(species.eolId, 'pd|cc-by|cc-by-sa|cc-by-nd');
+                    photos = photos.map((photo, index) => {
+                        return { ...photo, index, provider: 'eol', url: photo.url.replace('.jpg', '.260x190.jpg') };       
+                    });
+                    renderPhotos(photos, species);
+                    break;
+            }
         });
 
-        const addPhotosToSpecies = async (name, photos) => {
+        const addPhotosToSpecies = async (name, photos) => {            
+            photos.forEach(photo => {                
+                photo.provider === 'inat' 
+                    ? photo.url = photo.url.replace(inatPrefix, '')
+                    : photo.url = photo.url.replace(eolPrefix, '');
+                
+                photo.url = photo.url.replace('.260x190.jpg', '.jpg');
+
+                photo.photographer = photo.photographer || '';
+                
+                delete photo.index;
+                
+            });
+            console.log(photos);
             const response = await firestore.addPhotos(name, photos);
             console.log(response);
+            const parent = document.getElementById('photosGallery');
+                  parent.innerHTML = '';
         };
 
     };

@@ -2,9 +2,8 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
-import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
-import { scoreHandler } from 'ui/helpers/handlers';
+import { scoreHandler, bindScore, continueLessonHandler } from 'ui/helpers//score-handler';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 
 import completeTemplate from 'ui/screens/text-entry/text-complete-template.html';
@@ -92,16 +91,7 @@ export const renderCompleteText = (collection) => {
             }
         });
 
-        const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
-
-        continueLessonBtn.innerHTML = 'Continue lesson';
-
-        continueLessonBtn.style.cursor = 'pointer';
-        continueLessonBtn.disabled = false;
-        continueLessonBtn.addEventListener('click', () => {
-            window.clearTimeout(scoreUpdateTimer);
-            actions.boundUpdateScore(score);
-        });
+        continueLessonHandler(document.querySelector('.js-continue-lesson-btn'), score, scoreUpdateTimer);
     };
 
     document.querySelectorAll('.pool .block span').forEach(answer => {

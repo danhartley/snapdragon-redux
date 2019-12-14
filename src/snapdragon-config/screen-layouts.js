@@ -2,9 +2,9 @@ import { panels } from 'snapdragon-config/screen-panels';
 
 const { 
     specimenImages, speciesCard, vernaculars, scientifics, text, 
-    command, leaf, leafName, 
+    leaf, leafName, 
     family, familyStrips, taxon, nonTaxon, textComplete, cultivar, cultivarCard, 
-    epithets, wildcardCard, wildcard, definitions, 
+    epithets, definitions, 
     specimenCommonMatch, specimenLatinMatch,
     definitionCard, 
     traitProperty, symbioticProperty
@@ -15,7 +15,11 @@ const {
     mixedSpecimensLeft,
     mixedSpecimensRight,
     history, summary, 
-    birdsong, mediaPlayers } = panels;
+    birdsong, mediaPlayers,
+    mixedTraitLeft,
+    mixedTraitRight,
+    providerHorizontalStripQuestions,
+    speciesIdentification } = panels;
 
 const mixedSpeciesMatch = {
     name: 'screen-mixed-species-match',
@@ -112,6 +116,20 @@ const commonToLatinMatch = {
     screens: [
         { ...specimenImages },
         { ...scientifics }
+    ]
+};
+
+const speciesIdentificationMatch = {
+    name: 'screen-species-identification',
+    type:'test',
+    score: 1,
+    points: 1,
+    kind: 'MC',
+    given: 'Given species name',
+    requirement: 'Select identification',
+    screens: [
+        { ...specimenImages },
+        { ...speciesIdentification }
     ]
 };
 
@@ -285,19 +303,6 @@ const speciesGenusEntry = {
     ]
 };
 
-const commandLayout = {
-    name: 'screen-command',
-    type:'test',
-    score: 1,
-    points: 2,
-    kind: 'T',
-    given: 'Various',
-    requirement: 'various',
-    screens: [
-        { ...command },
-    ]
-};
-
 const leafEntry = {
     type:'test',
     score: 1,
@@ -382,21 +387,6 @@ const cultivars = {
     ]
 };
 
-const connections = {
-    name: 'screen-connections',
-    type: 'test',
-    score: 1,
-    points: 1,
-    kind: 'MC',
-    given: 'List of traits',
-    requirement: 'List of species',
-    screens: [
-        { ...specimenImages },
-        { ...wildcardCard },
-        { ...wildcard }
-    ]
-};
-
 const mixedSpecimenImages = {
   name: 'mixed-specimen-images',
   type:'test',
@@ -424,8 +414,30 @@ const mediaMatch = {
         // { ...mediaPlayers },
         { ...birdsong }
     ]
-
 };
+
+const mixedTraitImages = {
+    name: 'mixed-trait-images',
+    type:'test',
+    kind: 'T',
+    score: 1,
+    points: 2,
+    given: 'Trait images',
+    requirement: 'Select trait image',
+    screens: [
+        { ...mixedTraitLeft },
+        { ...mixedTraitRight }
+    ]
+  };  
+
+const providerHorizontalStrip = {
+    name: 'provider-horizontal-strip',
+    type: 'test',
+    screens: [
+        { ...specimenImages },
+        { ...providerHorizontalStripQuestions }
+    ]
+}
 
 export const layouts = {
   mixedSpeciesMatch,
@@ -450,7 +462,6 @@ export const layouts = {
   speciesGenusEntry,
   textCompleteSpecies,
   commonEntry,
-  connections,
   leafEntry,
   glossaryTerms,
   latinEpithets,
@@ -458,5 +469,8 @@ export const layouts = {
   mixedSpecimenImages,
   history,
   summary,
-  mediaMatch
+  mediaMatch,
+  mixedTraitImages,
+  providerHorizontalStrip,
+  speciesIdentificationMatch
 }

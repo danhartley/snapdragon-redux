@@ -10,7 +10,7 @@ import * as group from 'api/snapdragon/non-taxa';
 import { renderWiki } from 'wikipedia/wiki';
 import { renderWikiModal } from 'wikipedia/wiki-modal';
 import { renderTemplate } from 'ui/helpers/templating';
-import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
+import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handler';
 
 import cardTemplate from 'ui/screens/cards/non-taxon-card-template.html';
 
@@ -24,8 +24,10 @@ export const renderNonTaxonCard = (mode = 'STAND_ALONE', keyTrait, parent = DOM.
 
     const prev = document.querySelector('#cardModal .js-prev');
     const next = document.querySelector('#cardModal .js-next');
-    if(prev) prev.style.display = 'none';
-    if(next) next.style.display = 'none';
+
+    if(prev) isInCarousel ? prev.classList.remove('hide-important') : prev.classList.add('hide-important');
+    if(next) isInCarousel ? next.classList.remove('hide-important') : next.classList.add('hide-important');
+    
 
     const { enums, config } = store.getState();
 

@@ -1,30 +1,25 @@
-import * as R from 'ramda';
-
-import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
-import { renderTraitCard } from 'ui/screens/cards/trait-card';
 import { renderTemplate } from 'ui/helpers/templating';
-import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
 
 import testCardTemplate from 'ui/screens/cards/test-card-template.html';
-
-let isTraitCard = true;
 
 export const renderTestCardTemplate = (collection, context) => {
 
     const template = document.createElement('template');
-
-    template.innerHTML = testCardTemplate;
+          template.innerHTML = testCardTemplate;
 
     const parent = DOM.rightBody;
           parent.innerHTML = '';
 
     context.className = context.className || '';
     context.headerClassName = context.headerClassName || '';
+
+    context.statement = context.statement || '';
+    context.providerQuestion = context.providerQuestion || '';
 
     renderTemplate(context, template.content, parent);
 
@@ -49,7 +44,8 @@ export const renderTestCardTemplate = (collection, context) => {
         container.classList.add('swap-in-card');
 
         const card = document.querySelector(selector);
-        const icon = card.querySelector('.js-card-link');        
+        const icon = card.querySelector('.js-card-link');
+              icon.classList.remove('disabled-icon');
 
         return { card, icon };
     }
@@ -72,7 +68,7 @@ export const renderTestCardTemplate = (collection, context) => {
                 speciesIcon.addEventListener('click', async event => {
 
                     item.lichen 
-                        ? renderNonTaxonCard('SWAP_OUT', item.keyTrait, taxonContainer, item.images[0].url)
+                        ? renderNonTaxonCard('SWAP_OUT', item.keyTrait, taxonContainer, item.images.find(i => i.starred) ? item.images.find(i => i.starred).url : item.images[0].url)
                         : renderTaxonCard(collection, 'SWAP_OUT', item, taxonContainer, false);
                     
                     hideCurrentCard(speciesContainer, speciesCard);
@@ -92,36 +88,15 @@ export const renderTestCardTemplate = (collection, context) => {
 
         await renderSpeciesCard();
 
-        setTimeout(() => {
-            if(item.lichen) {
-                const cardName = document.querySelector('.js-species-card .js-card-link > span:nth-child(1)');
-                      cardName.innerHTML = 'Group';
-            }   
-        }, 500);
+        // setTimeout(() => {
+        //     if(item.lichen) {
+        //         const cardName = document.querySelector('.js-species-card .js-card-link > span:nth-child(1)');
+        //               cardName.innerHTML = 'Group';
+        //     }   
+        // }, 500);
     });
 
-    const traitCardLink = document.querySelector('.js-traits-link');
-
-    const layout = store.getState().layout;
-    
-    const multichoices = [ 'species-scientifics', 'species-vernaculars', 'epithet', 'definition', 'family-strips' ];
-    
     renderIcon(item.taxonomy, document);
-
-    if(R.contains(layout.screens[1].name, multichoices)) {
-        traitCardLink.classList.remove('hide-important');
-        document.querySelector('.js-iconic-icon').classList.add('hide-important');
-    }
-
-    traitCardLink.addEventListener('click', () => {
-        if(isTraitCard) {            
-            renderTraitCard(item);
-            isTraitCard = false;
-        } else {                  
-            renderMultiStrips(collection);
-            isTraitCard = true;
-        }
-    });
 
     const testContentParent = document.querySelector('.js-test-card-content');
 

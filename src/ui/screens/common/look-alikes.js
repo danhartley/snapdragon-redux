@@ -1,10 +1,7 @@
-import * as R from 'ramda';
-
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { imageSideBySlider } from 'ui/screens/common/image-slider';
-import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
-import { lookalikeDescriptions } from 'api/snapdragon/look-alike-descriptions';
+import { imageUseCases, scaleImage } from 'ui/helpers/image-handler';
 import { firestore } from 'api/firebase/firestore';
 
 import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
@@ -30,7 +27,7 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
 
             const readyLookalikesForRendering = async () => {
                 
-                console.log(lookalikes);
+                console.log('lookalikes: ', lookalikes);
 
                 species = [ ...lookalikes.map(lookalike => lookalike.lookalike), { name: item.name, description: lookalikes[0].description } ];
 
@@ -75,6 +72,7 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
             const getTrait = async (itemName, parent) => {
     
                 const item = await firestore.getSpeciesByName(itemName);
+                item.traits = await firestore.getTraitsBySpeciesName(item.name);
                     
                 if(item.taxonomy.class.toLowerCase() === 'aves') {
     
@@ -84,7 +82,7 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
     
                     if(!xcID) return;
         
-                    const mp3 = `./songs/${xcID}.mp3`;
+                    const mp3 = await firestore.getBirdsong(xcID);
     
                     const template = document.createElement('template');
                           template.innerHTML = audioMediaTemplate;
@@ -102,7 +100,7 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
                 species.forEach(lookalike => {
                     const identifier = `.description_${lookalike.name.replace(' ', '_')}`;
                     const description = document.querySelector(identifier);
-                          description.innerHTML = lookalike.description;
+                          description.innerHTML = lookalike.description;                    
                     getTrait(lookalike.name, document.querySelector(`${identifier} + div`));
                 });
                 

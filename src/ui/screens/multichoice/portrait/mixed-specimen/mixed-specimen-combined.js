@@ -1,19 +1,18 @@
 import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
-import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
-import { scoreHandler } from 'ui/helpers/handlers';
+import { scoreHandler, bindScore } from 'ui/helpers//score-handler';
 import { imageSlider } from 'ui/screens/common/image-slider';
-import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
+import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handler';
 import { getPoolItems } from 'snapdragon-engine/pool-handler';
 
 import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-combined-template.html';
 
-export const renderMixedSpecimenCombined = collection => {
+export const renderMixedSpecimenImagesAndQuestion = collection => {
 
     const { config, lesson, layout, score } = store.getState();
 
@@ -25,13 +24,14 @@ export const renderMixedSpecimenCombined = collection => {
 
         const getPortraitImages = images => {
             const multiImages = utils.flatten(images.map(image => { 
-                const item = { name: image.itemName, images: R.take(1, utils.shuffleArray(image.srcs)) };
+                const images = image.srcs.filter(i => i.starred) || R.take(1, utils.shuffleArray(image.srcs));
+                const item = { name: image.itemName, images };
                 return prepImagesForCarousel(item, config, imageUseCases.MIXED_SPECIMENS);
             }));
             return multiImages;
         }
 
-        const items = await getPoolItems(item);
+        const items = await getPoolItems(collection);
 
         let images = items.map((item, index) => { 
             return { index: index + 1, srcs: item.images, itemName: item.name };
@@ -75,14 +75,11 @@ export const renderMixedSpecimenCombined = collection => {
                 const callback = (score, scoreUpdateTimer) => {
                     boundScore.score = score;
                     boundScore.scoreUpdateTimer = scoreUpdateTimer;
-                    // score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
                     continueLessonBtn.disabled = false;          
                     if(!score.success) {
                         const wrongItem = items.find(item => item.name === score.answer);
                         const vernacularName = itemProperties.getVernacularName(wrongItem, config);
                         const name = vernacularName || score.answer;
-                        // const wrongAnswerTxt = document.querySelector('.js-wrong-answer-txt');
-                        //     wrongAnswerTxt.innerHTML = score.answer ? `${name} is not right.` : '';
                     }
                 };
 
@@ -95,11 +92,11 @@ export const renderMixedSpecimenCombined = collection => {
             if(!score.success) {            
                 setTimeout(() => {
                     window.clearTimeout(boundScore.scoreUpdateTimer);
-                    actions.boundUpdateScore(boundScore.score);
+                    bindScore(boundScore.score);
                 });
             } else {
                 window.clearTimeout(boundScore.scoreUpdateTimer);
-                actions.boundUpdateScore(boundScore.score);
+                bindScore(boundScore.score);
             }
 
         });

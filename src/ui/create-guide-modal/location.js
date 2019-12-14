@@ -1,7 +1,7 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import { getPlace, GooglePlaceDetails } from 'geo/geo';
 import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
-import { renderInatUser } from 'ui/create-guide-modal/inat-user';
+import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
 
 import locationsTemplate from 'ui/create-guide-modal/locations-template.html';
 import googleLogoImg from 'img/powered_by_google_on_white_hdpi.png';
@@ -10,16 +10,8 @@ export const renderLocation = (modal, createGuide) => {
 
     const config = createGuide.getConfig();
 
-    if(config.guide.locationType === 'inat') {
-        renderInatUser(modal, createGuide);
-        return;
-    }
-
     createGuide.saveStep('LOCATION');
- 
-    const guideTxt = modal.querySelector('.js-guide-text');
-          guideTxt.innerHTML = 'Choose where you want to explore.';
-        
+
     let locationPlace = config.guide.locationPlace;
     let autocompleteRef;
 
@@ -28,7 +20,15 @@ export const renderLocation = (modal, createGuide) => {
     const parent = modal.querySelector('.js-actions');
           parent.innerHTML = '';
 
-    renderTemplate({}, template.content, parent);
+    config.guide.season.observableMonths = config.guide.season.observableMonths || config.season.observableMonths;
+
+    if(config.guide.season.observableMonths) {
+
+        const months = config.guide.season.observableMonths.map(month => month.name);
+        const observableMonths = `${months[0]}-${months[months.length - 1]}`;
+
+        renderTemplate({ observableMonths }, template.content, parent);
+    }
 
     const defaultLocationTxt = 'Use your current location';
 
@@ -56,22 +56,13 @@ export const renderLocation = (modal, createGuide) => {
                                             ? 'Or start typing the name of a place you are interested in.'
                                             : 'Or start typing the name of a place.'
 
-    let counter = 0;
-
-    // locationPlaceInput.addEventListener('focus', event => {
-    //     counter = 0;
-    // });
-
-    // locationPlaceInput.addEventListener('keypress', event => {
-    //     if(event.keyCode == 13) {
-    //         counter = 0;
-    //     }
-    // });
+    // let counter = 0;
 
     locationPlaceInput.addEventListener('keypress', event => {
-        counter++;
-        console.log(counter);
+        // counter++;
+        // console.log(counter);
         autocompleteRef = inatAutocomplete(locationPlaceInput, 'places', 'autocomplete-options-container', 'place');
+        saveLocationBtn.disabled = false;
         // setTimeout(() => {
         //     const googleImageContainer = modal.querySelector('#inat-place-autocomplete #googleLogoContainer');
         //     if(!googleImageContainer && counter >= 3) {
@@ -104,7 +95,9 @@ export const renderLocation = (modal, createGuide) => {
             autocompleteRef.destroy();
     });
 
-    modal.querySelector('.js-set-inat-location-btn').addEventListener('click', event => {
+    const saveLocationBtn = modal.querySelector('.js-set-inat-location-btn');
+
+    saveLocationBtn.addEventListener('click', event => {
 
         const iNatLookup = false;
 
@@ -130,14 +123,40 @@ export const renderLocation = (modal, createGuide) => {
 
             GooglePlaceDetails(locationPlaceInput.name, callback);            
         }
+
+        saveLocationBtn.innerHTML = 'Saving location…';
+
+        setTimeout(() => {
+            saveLocationBtn.innerHTML = 'Location saved';
+            setTimeout(() => {
+                saveLocationBtn.innerHTML = 'Save alternative location';
+                saveLocationBtn.disabled = true;
+            }, 2000);
+        }, 2000);
     });
 
-    const linktoInatOptions = modal.querySelector('.js-location-options2 span:nth-child(2)');    
+    const idSwitch = parent.querySelector('.snap-switch-slider');
 
-    const renderInatUserLocation = () => {
-        renderInatUser(modal, createGuide);
+    const switchCallback = position => {
+
+        const config = createGuide.getConfig();
+
+        const currentType = config.guide.season.type;
+
+        if(position === 'right') {
+            config.guide.season.type = 'all_year';
+        } else {
+            config.guide.season.type = 'months';
+        }
+
+        createGuide.setConfig(config);
+        
+        if(config.guide.season.type !== currentType) {
+            createGuide.saveStep('SEASON');
+        }        
     };
 
-    linktoInatOptions.removeEventListener('click', renderInatUserLocation, true);
-    linktoInatOptions.addEventListener('click', renderInatUserLocation, true);
+    const position = config.guide.season.type === 'months' ? 'left' : 'right';
+
+    switchHandler(idSwitch, position, switchCallback);
 }

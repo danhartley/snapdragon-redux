@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import { getRandomTrait, getTraitValues, getSetOfTraitAnswers, getTraitByKey, getTraitValueByKey, hasTraitPropeties, getTraitsToExclude } from 'ui/helpers/traits-handler';
+import { traitsHandler } from 'ui/helpers/traits-handler';
 
 const fox = {
     "name": "Vulpes vulpes",
@@ -201,15 +201,15 @@ const notAllowedTraitsSpecies = {
   'voice': { key:'', value:'' }
 };
 
-const traitsToExclude = getTraitsToExclude();
+const traitsToExclude = traitsHandler.getTraitsToExclude();
 
 test('should exclude specified traits', () => {  
-  const trait = getRandomTrait(fox, traitsToExclude);
+  const trait = traitsHandler.getRandomTrait(fox, traitsToExclude);
   expect(!R.contains(trait.key, traitsToExclude)).toBe(true);
 });
 
 test('should return null when there are no allowed traits', () => {  
-  const trait = getRandomTrait(notAllowedTraitsSpecies, traitsToExclude);
+  const trait = traitsHandler.getRandomTrait(notAllowedTraitsSpecies, traitsToExclude);
   expect(trait).toEqual({"key": undefined, "value": undefined});
 });
 
@@ -260,7 +260,7 @@ test('should match trait to pool of answers', () => {
       name: 'female'
     }
   };
-  expect(getTraitValues(trait, traits)).toEqual( {"CALF": "Calf", "CATERPILLAR": "Caterpillar", "CHICK": "Chick", "CUB": "Cub", "DUCKLING": "Duckling", "EYAS": "Eyas", "GOSLING": "Gosling", "KID": "Kid", "KIT": "Kit", "KITTEN": "Kitten", "LARVA": "Larva", "LEVERET": "Leveret", "MAGGOT": "Maggot", "NYMPH": "Nymph", "PUP": "Pup", "SALAMANQUESA": "Salamanquesa", "SQUEAKER": "Squeaker", "help": "What is the name for the young of this species?", "name": "young", "type": "young"});
+  expect(traitsHandler.getTraitValues(trait, traits)).toEqual( {"CALF": "Calf", "CATERPILLAR": "Caterpillar", "CHICK": "Chick", "CUB": "Cub", "DUCKLING": "Duckling", "EYAS": "Eyas", "GOSLING": "Gosling", "KID": "Kid", "KIT": "Kit", "KITTEN": "Kitten", "LARVA": "Larva", "LEVERET": "Leveret", "MAGGOT": "Maggot", "NYMPH": "Nymph", "PUP": "Pup", "SALAMANQUESA": "Salamanquesa", "SQUEAKER": "Squeaker", "help": "What is the name for the young of this species?", "name": "young", "type": "young"});
 });
 
 test('should create set of questions with equal number of elements', () => {
@@ -282,26 +282,42 @@ test('should create set of questions with equal number of elements', () => {
     "type": "shelter"
   };
 
-  const sets = getSetOfTraitAnswers(pool, trait);
+  const sets = traitsHandler.getSetOfTraitAnswers(pool, trait);
 
 });
 
 test('should return trait by trait key from traits collection', () => {
-  expect(getTraitByKey(mushroom.traits, 'ecology')).toEqual({value:[
+  expect(traitsHandler.getTraitByKey(mushroom.traits, 'ecology')).toEqual({value:[
     'woodland'
   ]});
 });
 
 test('should return trait value by trait key from traits collection', () => {
-  expect(getTraitValueByKey(mushroom.traits, 'ecology')).toEqual([
+  expect(traitsHandler.getTraitValueByKey(mushroom.traits, 'ecology')).toEqual([
     'woodland'
   ]);
 });
 
 test('should return true for properties when trait properties exist', () => {
-  expect(hasTraitPropeties(mushroom.traits)).toBeTruthy();
+  expect(traitsHandler.hasTraitPropeties(mushroom.traits)).toBeTruthy();
 });
 
 test('should return false for no properties when trait properties exist', () => {
-  expect(hasTraitPropeties({})).toBeFalsy();
+  expect(traitsHandler.hasTraitPropeties({})).toBeFalsy();
+});
+
+test('should return correct pairs of length 3 from a set of 4 items', () => {
+  expect(traitsHandler.getNMultiplesFromArray([1, 2, 3, 4], 3)).toEqual([[3,2,1],[4,2,1],[4,3,1],[4,3,2]]);
+});
+
+test('should return false for arrays of different values', () => {
+  expect(traitsHandler.doArraysHaveSameValues([1,2],[2,3])).toBeFalsy();
+});
+
+test('should return true for arrays of equal values', () => {
+  expect(traitsHandler.doArraysHaveSameValues([1,2],[2,1])).toBeTruthy();
+});
+
+test('should return empty array when empty array passed in', () => {
+  expect(traitsHandler.getNMultiplesFromArray([], 1)).toEqual([]);
 });

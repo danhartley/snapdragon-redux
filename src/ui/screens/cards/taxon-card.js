@@ -6,7 +6,7 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { taxonInfoSlider } from 'ui/screens/common/info-slider';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderIcon } from 'ui/helpers/icon-handler';
-import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
+import { imageUseCases, scaleImage } from 'ui/helpers/image-handler';
 
 import taxonTemplate from 'ui/screens/cards/taxon-card-template.html';
 
@@ -71,7 +71,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
 
         const familyStats = itemProperties.getFamilyStats(collection.items);
         const occurrences = familyStats ? familyStats[taxon.name] : 0;
-        const url = item.images ? item.images[0].url : '';
+        const url = item.images ? item.starred ? item.images[0].url : '' : '';
         const image = scaleImage({ url }, imageUseCases.TAXON_CARD, config);
         const vernacularName = taxon.vernacularName || itemProperties.getNestedTaxonProp(taxon, config.language, 'names', 'names', '0').split(',')[0];
         const identification = taxon.identification ? taxon.identification : taxon.descriptions ? taxon.descriptions[0].identification : '';
@@ -100,6 +100,10 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
         taxonInfoSlider(item, taxon.traits, rootNode.querySelector('.js-taxon-info-box'), mode);
 
         switch(rank) {
+            case 'GENUS': 
+                rootNode.querySelector('.js-taxon-genus').classList.add('hide-important');
+                rootNode.querySelector('.js-taxon-family').classList.add('hide-important');
+                break;
             case 'FAMILY': 
                 rootNode.querySelector('.js-taxon-family').classList.add('hide-important');
                 break;

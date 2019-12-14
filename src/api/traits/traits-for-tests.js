@@ -1,22 +1,22 @@
 import { utils } from 'utils/utils';
-import { getRandomTrait, getTraitsPoolForUnits, getTraitsPoolForRoles, getTraitsPool, getSetOfTraitAnswers, getTraitsToExclude } from 'ui/helpers/traits-handler';
+import { traitsHandler } from 'ui/helpers/traits-handler';
 
 export const getTraitsForTests = (enums, item, alreadyTestedTraits = []) => {
 
     if(item.traits === undefined || (Object.keys(item.traits).length === 0 && item.traits.constructor === Object)) return {};
 
-    const excludedTraits = [ ...getTraitsToExclude(), ...alreadyTestedTraits, 'lookalikes', 'relationships' ].filter(et => et);
+    const excludedTraits = [ ...traitsHandler.getTraitsToExclude(), ...alreadyTestedTraits, 'lookalikes', 'relationships' ].filter(et => et);
 
-    const trait = getRandomTrait(item.traits, excludedTraits);
+    const trait = traitsHandler.getRandomTrait(item.traits, excludedTraits);
 
     if((Object.keys(trait).length === 0 && trait.constructor === Object)) return {};
  
     let { traitsPool, help } = 
         trait.unit 
-            ? getTraitsPoolForUnits(trait)
+            ? traitsHandler.getTraitsPoolForUnits(trait)
             : trait.role
-                ? getTraitsPoolForRoles(trait)
-                : getTraitsPool(trait, enums);
+                ? traitsHandler.getTraitsPoolForRoles(trait)
+                : traitsHandler.getTraitsPool(trait, enums);
 
     const question = trait.unit
                         ? trait.value.join('-')
@@ -24,7 +24,7 @@ export const getTraitsForTests = (enums, item, alreadyTestedTraits = []) => {
                            
     trait.value = trait.value.map(t => utils.capitaliseFirst(t));
 
-    const answers = getSetOfTraitAnswers(traitsPool, trait);        
+    const answers = traitsHandler.getSetOfTraitAnswers(traitsPool, trait);        
 
     help = help || trait.key;
 

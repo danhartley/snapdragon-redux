@@ -18,24 +18,24 @@ const getLatestCounter = () => {
     return { index };
 };
 
-const getLessonItems = (lessonState, collection, config, history) => {    
+const changeState = (lessonState, collection, config, history) => {    
 
     const { lesson } = store.getState();
 
     switch(lessonState) {
         case enums.lessonState.BEGIN_LESSON: {
-            actions.boundToggleLesson({ index: 0 });
+            actions.boundStopStartLesson({ index: 0, isLessonPaused: false });
             break;
         }
         case enums.lessonState.PAUSE_LESSON: {
             if(collection.items) {
                 const { index } = getLatestCounter();
-                actions.boundToggleLesson({ index: 0, log: { index: index, collection: collection.id  } });
+                actions.boundStopStartLesson({ index: 0, isLessonPaused: true, log: { index: index, collection: collection.id  } });
             }
             break;
         }
         case enums.lessonState.RESUME_LESSON: {
-            actions.boundToggleLesson(getLatestCounter());
+            actions.boundStopStartLesson({ ...getLatestCounter(), isLessonPaused: false });
             break;
         }
         case enums.lessonState.NEXT_ROUND: {
@@ -88,6 +88,6 @@ const purgeLesson = () => {
 
 export const lessonHandler = {
     getMode,
-    getLessonItems,    
+    changeState,    
     purgeLesson
 }

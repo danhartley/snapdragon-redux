@@ -85,26 +85,28 @@ export const plantae = [
         characteristics: 'Tend not to emit a strong scent, are typically purple, violet, blue, and white, and have open dishes or tubes. High-altitude and high-latitude.',
         examples: ['Bombyliidae', 'Syrphidae']
     },
-    // {
-    //     term: "Aetherolea",
-    //     definition: "Aetherolea also known as volatile oils or essential oils are concentrated hydrophobic liquids that contain volatile aroma compounds from plants which evaporate when exposed to air and are thus capable of distillation.",
-    //     wiki: "https://en.wikipedia.org/wiki/Essential_oil"
-    // },
-
+    {
+        term: "Aetherolea",
+        definition: "Aetherolea also known as volatile oils or essential oils are concentrated hydrophobic liquids that contain volatile aroma compounds from plants which evaporate when exposed to air and are thus capable of distillation.",
+        wiki: "https://en.wikipedia.org/wiki/Essential_oil"
+    },
     {
         term: "Pollination",
         definition: "The transfer of pollen (male gametes) between the male and female parts of flowers."
     },
-    // {
-    //     term: "Model organism",
-    //     definition: "A species studied to understand particular biological phenomena, with the expectation that discoveries will provide insight into the workings of other organisms.",
-    //     wiki: "https://en.wikipedia.org/wiki/Model_organism",
-    //     examples: ['Escherichia coli', 'Drosophila melanogaster', 'Arabidopsis thaliana', 'Saccharomyces cerevisiae', 'Mus musculus']
-    // },
-
+    {
+        term: "Model organism",
+        definition: "A species studied to understand particular biological phenomena, with the expectation that discoveries will provide insight into the workings of other organisms.",
+        wiki: "https://en.wikipedia.org/wiki/Model_organism",
+        examples: ['Escherichia coli', 'Drosophila melanogaster', 'Arabidopsis thaliana', 'Saccharomyces cerevisiae', 'Mus musculus']
+    },
     {
         term: "Dehiscence",
         definition: "The natural opening of fruits, etc. along line of natural weakness releasing seeds/pollen."
+    },
+    {
+        term: "Explosive dehiscence",
+        definition: "A ballistic form of dispersal that flings seeds or spores far from the parent plant."
     },
     {
         term: "Cultivar",
@@ -133,6 +135,12 @@ export const plantae = [
         examples: ['Solanaceae', 'Solanum lycopersicum', 'Solanum melongena', 'Solanum tuberosum', 'Vaccinium']
     },
     {
+        term: 'Nectar spur',
+        definition: 'A hollow, nectar-containing tube that extends part of a flower. An example of coevolution (flower + pollinating insect).',
+        wiki: 'https://en.wikipedia.org/wiki/https://en.wikipedia.org/wiki/Nectar_spur',
+        examples: ['Hypericum perforatum']
+    },
+    {
         term: 'Stamen',
         definition: 'Pollen-producing organ of a flower. Consists of a filament and pollen-carrying anther.',
         wiki: 'https://en.wikipedia.org/wiki/Stamen',
@@ -155,6 +163,11 @@ export const plantae = [
         term: 'Perianth',
         definition: 'Non-reproductive part of flower around sexual organs: calyx (sepals) and corolla (petals).',
         wiki: 'https://en.wikipedia.org/wiki/Perianth'
+    },
+    {
+        term: 'Calyx',
+        definition: 'Collective term for the sepals of a flower.',
+        wiki: 'https://en.wikipedia.org/wiki/Sepal'
     },
     {
         term: 'Petal',
@@ -210,7 +223,18 @@ export const plantae = [
     },
     {
         term: 'Pseudanthium',
-        definition: 'A "false flower" made up of several true flowers.'
+        definition: 'A "false flower" made up of several true flowers. Capitulum is synonymous but usually used to refer to the Asteraceae.',
+        wiki: 'https://en.wikipedia.org/wiki/Pseudanthium'
+    },    
+    {
+        term: 'Involucre',
+        definition: 'A whorl or rosette of bracts surrounding an inflorescence (especially a capitulum) or at the base of an umbel.',
+        wiki: 'https://en.wikipedia.org/wiki/Involucre'
+    },    
+    {
+        term: 'Infructescence',
+        definition: '(Fruiting head) is defined as the ensemble of fruits derived from the ovaries of an inflorescence.',
+        wiki: 'https://en.wikipedia.org/wiki/Infructescence'
     },    
     {
         term: 'Green manure',
@@ -226,6 +250,39 @@ export const plantae = [
         term: 'Pome',
         definition: 'Type of fruit produced by flowering plants in the subtribe Malinae of the family Rosaceae.',
         wiki: 'https://en.wikipedia.org/wiki/Pome'
+    },
+    {
+        term: 'Loam',
+        definition: 'Soil composed mostly of sand, silt, and a smaller amount of clay.',
+        wiki: 'https://en.wikipedia.org/wiki/Loam'
+    },
+    {
+        term: 'Silt',
+        definition: 'Granular material of a size between sand and clay, whose mineral origin is quartz and feldspar.',
+        wiki: 'https://en.wikipedia.org/wiki/Silt'
+    },
+    {
+        term: 'Sand',
+        definition: 'Granular material, finer than gravel and coarser than silt, composed of finely divided rock and mineral particles.',
+        wiki: 'https://en.wikipedia.org/wiki/Sand'
+    },
+    {
+        term: 'Clay',
+        definition: 'A finely-grained natural rock or soil material that combines one or more clay minerals with possible traces of quartz, metal oxides, and organic matter.',
+        wiki: 'https://en.wikipedia.org/wiki/Clay'
+    },
+    {
+        term: 'Gravel',
+        definition: 'A loose aggregation of rock fragments. Gravel is classified by particle size range and includes size classes from granule- to boulder-sized fragments.',
+        wiki: 'https://en.wikipedia.org/wiki/Gravel'
+    },
+    {
+        term: 'Revolute',
+        definition: 'Rolled under (downwards or backwards), for example when the edges of leaves are rolled under towards the midrib. Compare involute.',
+    },
+    {
+        term: 'Involute',
+        definition: 'Rolled inwards, for example when the margins of a leaf are rolled towards the adaxial (usually upper) surface. Compare revolute.',
     },
     {
         term: 'Drupe',
@@ -253,6 +310,11 @@ export const plantae = [
         term: 'Legume',
         definition: 'Fruit from the Fabaceae family (also pulse).',
         wiki: 'https://en.wikipedia.org/wiki/Legume'
+    },
+    {
+        term: 'Nitrogen fixation',
+        definition: 'Process by which molecular nitrogen in the air is converted into ammonia (NH3) or related nitrogenous compounds in soil.',
+        wiki: 'https://en.wikipedia.org/wiki/Nitrogen_fixation'
     },
     {
         term: 'Capsule',
@@ -323,14 +385,67 @@ export const plantae = [
         wiki: 'https://en.wikipedia.org/wiki/Inflorescence#Determinate_or_cymose'
     },
     {
+        term: 'Blossom',
+        definition: 'The flowers of stone fruit trees (genus Prunus) and of some other plants with a similar appearance that flower profusely for a period of time in spring.',
+        wiki: 'https://en.wikipedia.org/wiki/Blossom'
+    },
+    {
+        term: 'Clonal colony',
+        definition: 'A group of genetically identical individuals, such as plants, fungi, or bacteria, that have grown in a given location, all originating vegetatively, not sexually, from a single ancestor.',
+        wiki: 'https://en.wikipedia.org/wiki/Clonal_colony'
+    },
+    {
+        term: 'Pollination syndrome',
+        definition: 'Suites of flower traits that have evolved in response to natural selection imposed by different (abiotic or biotic) pollen vectors such as birds, bees, flies, inc. flower shape, size, colour, etc.',
+        wiki: 'https://en.wikipedia.org/wiki/Pollination_syndrome'
+    },
+    {
+        term: 'Sessility',
+        definition: 'A characteristic of plant parts that have no stalk. Flowers or leaves are borne directly from the stem or peduncle, and thus lack a petiole or pedicel.',
+        wiki: 'https://en.wikipedia.org/wiki/Sessility_(botany)'
+    },
+    {
+        term: 'Sessile',
+        definition: 'Having no stalk, borne directly from the stem or peduncle, and thus lack a petiole or pedicel.',
+        wiki: 'https://en.wikipedia.org/wiki/Sessility_(botany)'
+    },
+    {
         term: 'Racemose',
         definition: 'Category of inflorescence (indeterminate) where the youngest (and smallest) flowers are located at the top or centre. Opposite of cymose.',
         wiki: 'https://en.wikipedia.org/wiki/Inflorescence#Indeterminate_or_racemose'
     },
     {
         term: 'Spadix',
+        trait: 'inflorescence',
         definition: 'Type of spike inflorescence having small flowers borne on a fleshy stem.',
-        wiki: 'https://en.wikipedia.org/wiki/Spadix_(botany)'
+        wiki: 'https://en.wikipedia.org/wiki/Spadix_(botany)',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Kolben_%28inflorescence%29.svg/320px-Kolben_%28inflorescence%29.svg.png',
+            author: 'By Amada44 - Own work, Public Domain.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=3270931',
+        }
+    },
+    {
+        term: 'Catkin',
+        trait: 'inflorescence',
+        definition: 'A slim, cylindrical flower cluster (a spike), with inconspicuous or no petals.',
+        wiki: 'https://en.wikipedia.org/wiki/Catkin',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Kaetzchen_%28inflorescence%29.svg/800px-Kaetzchen_%28inflorescence%29.svg.png',
+            author: 'By Amada44 - Own work, Public Domain',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=3270803',
+        }
+    },
+    {
+        term: 'Panicle',
+        trait: 'inflorescence',
+        definition: 'A much-branched inflorescence, often of racemes. It may have determinate or indeterminate growth. Typical of grasses such as oat.',
+        wiki: 'https://en.wikipedia.org/wiki/Panicle',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Inflorescences_Panicle_Kwiatostan_Wiecha.svg/800px-Inflorescences_Panicle_Kwiatostan_Wiecha.svg.png',
+            author: 'CC BY-SA 3.0',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=755437',
+        }
     },
     {
         term: 'Spathe',
@@ -376,11 +491,6 @@ export const plantae = [
         examples: ['Cirsium arvense']
     },
     {
-        term: "Supertramp",
-        definition: "Animal which follows strategy of high dispersion among different habitats where it is not specialised.",
-        wiki: "https://en.wikipedia.org/wiki/Supertramp_(ecology)",
-    },
-    {
         term: "Capsule",
         definition: "A type of simple, dry, though rarely fleshy dehiscent fruit produced by many species of angiosperms.",
         wiki: "https://en.wikipedia.org/wiki/Capsule_(fruit)",
@@ -412,7 +522,7 @@ export const plantae = [
     },
     {
         term: 'Allogamy (cross-fertilisation)',
-        definition: 'The fertilization of an ovum from one individual with the spermatozoa of another.',
+        definition: 'The fertilisation of an ovum from one individual with the spermatozoa of another.',
         wiki: 'https://en.wikipedia.org/wiki/Allogamy'
     },
     {
@@ -442,7 +552,7 @@ export const plantae = [
     },
     {
         term: 'Tropism',
-        definition: 'A tropism (from Greek τρόπος, tropos, "a turning") is a biological phenomenon, indicating growth or turning movement of a biological organism, usually a plant, in response to an environmental stimulus.',
+        definition: 'A biological phenomenon, indicating growth or turning movement of a biological organism, usually a plant, in response to an environmental stimulus.',
         wiki: 'https://en.wikipedia.org/wiki/Tropism'
     },
     {
@@ -506,7 +616,15 @@ export const plantae = [
     },
     {
         term: 'Perfect',
-        definition: 'A flower that has both stamens and a pistil.',
+        definition: 'A flower that has both stamens and carpels (pistil/s).',
+    },
+    {
+        term: 'Carpel',
+        definition: 'The female reproductive part of the flower, interpreted as modified leaves bearing structures called ovules, inside which the egg cells ultimately form.',
+    },
+    {
+        term: 'Pistil',
+        definition: 'Consists either of one carpel, with its ovary, style and stigma, or several carpels joined together with a single ovary in one unit.',
     },
     {
         term: 'Complete',
@@ -536,7 +654,7 @@ export const plantae = [
     },
     {
         term : "Phyllotaxis",
-        definition : "Arrangement of leaveson a plant stem.",
+        definition : "Arrangement of leaves on a plant stem.",
         wiki: 'https://en.wikipedia.org/wiki/Phyllotaxis'
     },
     {
@@ -586,6 +704,7 @@ export const plantae = [
     },
     {
         term : "Spike",
+        trait: 'inflorescence',
         definition : "(Infloresence) a type of raceme with flowers that do not have a pedicel.",
         wiki: 'https://en.wikipedia.org/wiki/Inflorescence',
         img: {
@@ -598,7 +717,13 @@ export const plantae = [
         wiki: 'https://en.wikipedia.org/wiki/Achene'
     },
     {
+        term : "Bilabiate",
+        definition : "Zygomorphic corolla with the limb divided into two lips e.g. members of the Lamiaceae family.",
+        wiki: 'https://en.wiktionary.org/wiki/bilabiate'
+    },
+    {
         term : "Raceme",
+        trait: 'inflorescence',
         definition : "An unbranched, indeterminate inflorescence with pedicellate (having short floral stalks) flowers along the axis.",
         wiki: 'https://en.wikipedia.org/wiki/Raceme',
         img: {
@@ -607,7 +732,8 @@ export const plantae = [
     },
     {
         term : "Corymb",
-        definition : "An inflorescence with the flowers growing in such a fashion that the outermost are borne on longer pedicels than the inner, bringing all flowers up to a common level.",
+        trait: 'inflorescence',
+        definition : "An inflorescence with the flowers growing in such a fashion that the outermost are borne on longer pedicels than the innermost, bringing all flowers up to a common level.",
         wiki: 'https://en.wikipedia.org/wiki/Corymb',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/3/3f/Schirmtraube_%28inflorescence%29.svg'
@@ -615,34 +741,157 @@ export const plantae = [
     },
     {
         term : "Entire",
+        trait: 'leafMargin',
         definition : "(Of leaf) even; with a smooth margin; without toothing.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Leaf_morphology_entire.png'
+            url: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Leaf_morphology_entire.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6563738'
+        }
+    },
+    {
+        term : "Ciliate",
+        trait: 'leafMargin',
+        definition : "(Of leaf) fringed with hairs.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/8/86/Leaf_morphology_ciliate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6561549'
+        }
+    },
+    {
+        term : "Crenate",
+        trait: 'leafMargin',
+        definition : "(Of leaf) wavy-toothed; dentate with rounded teeth.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/4/4f/Leaf_morphology_crenate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6561596'
+        }
+    },
+    {
+        term : "Dentate",
+        definition : "(Of leaf) toothed.",
+        trait: 'leafMargin',
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Leaf_morphology_dentate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6561609'
+        }
+    },
+    {
+        term : "Denticulate",
+        definition : "(Of leaf) finely toothed.",
+        trait: 'leafMargin',
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Leaf_morphology_denticulate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6563697'
+        }
+    },
+    {
+        term : "Doubly serrate",
+        trait: 'leafMargin',
+        definition : "(Of leaf) each tooth bearing smaller teeth.",
+        trait: 'leafMargin',
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/3/32/Leaf_morphology_doubly_serrate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6563720'
         }
     },
     {
         term : "Oblong",
         definition : "(Of leaf) having an elongated form with slightly parallel sides, roughly rectangular.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        trait: 'leafShape',
         img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Leaf_morphology_oblong.png'
+            url: 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Leaf_morphology_oblong.png',
+            author: 'By Eric Bajart - Own work, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6630793',
         }
     },
     {
-        term : "Dentate",
-        definition : "(Of leaf) toothed.",
+        term : "Deltoid",
+        definition : "(Of leaf) shaped like Greek letter Delta, triangular, stem attaches to side.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        trait: 'leafShape',
         img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Leaf_morphology_dentate.png'
+            url: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Leaf_morphology_deltoid.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6561453',
         }
     },
     {
         term : "Lanceolate",
         definition : "(Of leaf) long, wider in the middle, shaped like a lance tip.",
+        trait: 'leafShape',
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Leaf_morphology_lanceolate.png'
+            url: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Leaf_morphology_lanceolate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6549499',
+        }
+    },
+    {
+        term : "Palmatisect",
+        definition : "(Of leaf) having lobes with incisions that extend almost up, but not quite to the petiole.",
+        trait: 'leafShape',
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/3/37/Palmatis%C3%A9qu%C3%A9e.svg',
+            author: 'By Pancrat - Own work, CC BY-SA 4.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=36185851',
+        }
+    },
+    {
+        term : "Imparipinnate",
+        definition : "(Of leaf) with an odd number of leaflets, pinnate with a terminal leaflet (the opposite of paripinnate).",
+        trait: 'leafDivision',
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_odd_pinnate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6559076',
+        }
+    },
+    {
+        term : "Paripinnate",
+        definition : "(Of leaf) pinnate with an even number of leaflets, lacking a terminal leaflet (the opposite of imparipinnate).",
+        trait: 'leafDivision',
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Leaf_morphology_even_pinnate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6559114',
+        }
+    },
+    {
+        term : "Alternipinnate",
+        definition : "(Of leaf) pinnate with an odd number of leaflets, alternating (cf. imparipinnate).",
+        trait: 'leafDivision',
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/6/69/Leaf_morphology_alternipinnada.png',
+            author: 'By Maksim - File:Leaf morphology odd pinnate.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=17387300',
+        }
+    },
+    {
+        term : "Alternipinnate",
+        definition : "(Of leaf) pinnate with an odd number of leaflets, alternating (cf. imparipinnate).",
+        trait: 'leafDivision',
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/6/69/Leaf_morphology_alternipinnada.png',
+            author: 'By Maksim - File:Leaf morphology odd pinnate.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=17387300',
         }
     },
     {
@@ -663,13 +912,13 @@ export const plantae = [
     },
     {
         term : "Dioecious",
-        definition : "(Botany) species with 'male' and 'female' reproductive structures on separate plants. Opposite monoicous.",
+        definition : "(Botany) species with 'male' and 'female' reproductive structures on separate plants. Opposite monoecious.",
         wiki: 'https://en.wikipedia.org/wiki/Dioecy'
     },
     {
-        term : "Monoicous",
+        term : "Monoecious",
         definition : "(Botany) species with 'male' and 'female' reproductive structures on the same plant. Opposite dioecious.",
-        wiki: 'https://en.wikipedia.org/wiki/Monoicous'
+        wiki: 'https://en.wikipedia.org/wiki/Plant_reproductive_morphology#Variations'
     },
     {
         term : "Synoecious",
@@ -715,21 +964,102 @@ export const plantae = [
         term : "Ovate",
         definition : "(Of leaf) oval, egg-shaped, with a tapering point and the widest portion near the petiole.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        trait: 'leafShape',
         img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/6/67/Leaf_morphology_ovale.png'
+            url: 'https://upload.wikimedia.org/wikipedia/commons/6/67/Leaf_morphology_ovale.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6549038',
         }
     },
     {
         term : "Serrate",
+        trait: 'leafMargin',
         definition : "(Of leaf) saw-toothed; with asymmetrical teeth pointing forward.",
         wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
         img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_serrate.png'
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_serrate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6561581'
+        }
+    },
+    {
+        term : "Serrulate",
+        trait: 'leafMargin',
+        definition : "(Of leaf) finely serrate.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_serrate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6564171'
+        }
+    },
+    {
+        term : "Sinuate",
+        trait: 'leafMargin',
+        definition : "(Of leaf) with deep, wave-like indentations; coarsely crenate.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_serrate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6564197'
+        }
+    },
+    {
+        term : "Lobate",
+        trait: 'leafMargin',
+        definition : "(Of leaf) indented, with the indentations not reaching the centre.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_serrate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6564138'
+        }
+    },
+    {
+        term : "Undulate",
+        trait: 'leafMargin',
+        definition : "(Of leaf) with a wavy edge, shallower than sinuate.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_serrate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6564246'
+        }
+    },
+    {
+        term : "Spiny",
+        trait: 'leafMargin',
+        definition : "(Of leaf) with stiff, sharp points such as thistles.",
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Leaf_morphology_serrate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6564222'
         }
     },
     {
         term: 'Pinnate',
         definition: 'Arrangement of discrete structures (such as leaflets, veins, lobes, branches, or appendages) arising at multiple points along a common axis e.g. once-divided leaf blades having leaflets arranged on both sides of a rachis are pinnately compound leaves.',
+    },
+    {
+        term: 'Filiform',
+        definition: 'Thread-like.',
+        trait: 'leafShape',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Plant_morphology_solid_filiform.png',
+            author: 'By Michael G. Simpson. Redrawn and color: User:RoRo - Simpson (2005) Plant Systematics., Public Domain.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=21084218',
+        }
+    },
+    {
+        term: 'Linear',
+        definition: 'Long and narrow like a blade of grass.',
+        trait: 'leafShape',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Leaf_morphology_linear.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6549785',
+        }
     },
     {
         term: 'Bipinnate',
@@ -768,6 +1098,7 @@ export const plantae = [
     {
         term: 'Acicular',
         definition: 'Slender and pointed, needle-like.',
+        trait: 'leafShape',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Leaf_morphology_acicular.png',
             thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Leaf_morphology_acicular.png/64px-Leaf_morphology_acicular.png',
@@ -779,6 +1110,7 @@ export const plantae = [
     {
         term: 'Acuminate',
         definition: 'Tapering to a long point in a concave manner.',
+        trait: 'leafShape',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/7/72/Leaf_morphology_acuminate.png',
             thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Leaf_morphology_acuminate.png/64px-Leaf_morphology_acuminate.png',
@@ -790,6 +1122,7 @@ export const plantae = [
     {
         term: 'Acute',
         definition: 'Pointed, having a short sharp apex angled less than 90°.',
+        trait: 'leafShape',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Leaf_morphology_Acute.png',
             thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Leaf_morphology_Acute.png/64px-Leaf_morphology_Acute.png',
@@ -801,6 +1134,7 @@ export const plantae = [
     {
         term: 'Apiculate',
         definition: 'Tapering and ending in a short, slender point.',
+        trait: 'leafShape',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Leaf_morphology_Apiculate.png',
             thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Leaf_morphology_Apiculate.png/64px-Leaf_morphology_Apiculate.png',
@@ -810,7 +1144,19 @@ export const plantae = [
         }
     },
     {
-        term: 'Compound Palmate',
+        term: 'Attenuate',
+        definition: 'Having leaf tissue taper down the petiole to a narrow base, always having some leaf material on each side of the petiole.',
+        trait: 'leafShape',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/9/9e/Leaf_morphology_Attenuate.png',
+            author: 'By Wasp32 - Own work, CC BY-SA 4.0',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=49633343',
+            refers: 'leaf base'
+        }
+    },
+    {
+        term: 'Palmate',
+        trait: 'leafDivision',
         definition: 'Consisting of leaflets all radiating from one point.',
         img: {
             url: 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Leaf_morphology_Palmately_compound.png'
@@ -827,7 +1173,7 @@ export const plantae = [
     },
     {
         term: 'Lobed',
-        definition: 'Being divided by clefts, may be pinnately lobed or palmately lobed.',
+        definition: 'Being divided by clefts, may be pinnate or palmate.',
         img: {
             url: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#/media/File:Leaf_morphology_lobed.png'
         },
@@ -856,14 +1202,6 @@ export const plantae = [
             url: 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Leaf_morphology_even_pinnate.png'
         },
         wiki: 'https://en.wiktionary.org/wiki/paripinnate'
-    },
-    {
-        term: 'Panicle',
-        definition: 'A much-branched inflorescence, often racemes. A panicle may have determinate or indeterminate growth. Typical of grasses such as oat.',
-        img: {
-            url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Inflorescences_Panicle_Kwiatostan_Wiecha.svg/800px-Inflorescences_Panicle_Kwiatostan_Wiecha.svg.png'
-        },
-        wiki: 'https://en.wikipedia.org/wiki/Panicle'
     },
     {
         term: 'Arcuate',
@@ -991,5 +1329,105 @@ export const plantae = [
         term: 'Prophyll',
         definition: 'The frequently specialised or reduced leaf produced at the first node of a new shoot.',
         wiki: 'https://en.wiktionary.org/wiki/prophyll'
+    },
+    {
+        term: 'Seed',
+        definition: 'An embryonic plant enclosed in a protective outer covering.',
+        wiki: 'https://en.wiktionary.org/wiki/Seed'
+    },
+    {
+        term: 'Schizocarp',
+        definition: 'A dry fruit that, when mature, splits up into mericarps (each with a single seed).',
+        wiki: 'https://en.wiktionary.org/wiki/Schizocarp'
+    },
+    {
+        term : "Umbel",
+        trait: 'inflorescence',
+        definition : "An inflorescence that consists of a number of short flower stalks (pedicels) which spread from a common point, somewhat like umbrella ribs.",
+        wiki: 'https://en.wikipedia.org/wiki/Umbel',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Inflorescences_Umbel_Kwiatostan_Baldach.svg',
+            thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Leaf_morphology_bipinnate.png/64px-Leaf_morphology_bipinnate.png',
+            author: 'By commons: Shazz CC BY-SA 3.0',
+            attribution: 'https://commons.wikimedia.org/wiki/File:Inflorescences_Umbel_Kwiatostan_Baldach.svg',        
+        }
+    },
+    {
+        term: 'Rhizome',
+        alt: 'Rhizomes',
+        definition: 'A modified subterranean plant stem that grows horizontally and sends out roots and shoots from its nodes.',
+        wiki: 'https://en.wiktionary.org/wiki/Rhizome'
+    },
+    {
+        term: 'Tuber',
+        alt: 'Tubers',
+        definition: 'Develops from the stem (grow from rhizomes or runners that swell from storing nutrients) or propagates from roots that are modified to store nutrients e.g. potato, yam.',
+        wiki: 'https://en.wikipedia.org/wiki/Vegetative_reproduction#Natural_means'
+    },
+    {
+        term: 'Resin canal',
+        definition: 'Elongated, tube-shaped intercellular space surrounded by epithelial cells which secrete resin into the canal; antiseptic, aromatic and prevents the development of fungi and deters insects.',
+        wiki: 'https://en.wikipedia.org/wiki/Resin_canal'
+    },
+    {
+        term: 'Corm',
+        definition: 'Solid enlarged underground stem that stores nutrients in its fleshy and solid stem tissue and are surrounded by papery leaves e.g. gladiolus, taro.',
+        wiki: 'https://en.wikipedia.org/wiki/Vegetative_reproduction#Natural_means'
+    },
+    {
+        term: 'Sucker',
+        alt: 'Suckers',
+        definition: 'Plant stem that arises from buds on the base of parent stems or on a root e.g. apple, banana trees.',
+        wiki: 'https://en.wikipedia.org/wiki/Vegetative_reproduction#Natural_means'
+    },
+    {
+        term: 'Planlet',
+        definition: 'Miniature structure that arises from meristem on a leaf margin; develops roots and drops from the leaf it grew on e.g. mother of thousands.',
+        wiki: 'https://en.wikipedia.org/wiki/Vegetative_reproduction#Natural_means'
+    },
+    {
+        term: 'Keikis',
+        definition: 'Additional offshoot which develops on vegetative stems or flower stalks of several orchids genera e.g. Phalaenopsis.',
+        wiki: 'https://en.wikipedia.org/wiki/Vegetative_reproduction#Natural_means'
+    },
+    {
+        term: 'Apomixis',
+        definition: 'Process of asexual reproduction through seed, in the absence of meiosis and fertilisation, generating clonal progeny of maternal origin.',
+        wiki: 'https://en.wikipedia.org/wiki/Vegetative_reproduction#Natural_means'
+    },
+    {
+        term: 'Scape',
+        definition: 'A long internode that forms the basal part or the whole of a peduncle.',
+        wiki: 'https://en.wikipedia.org/wiki/Scape_(botany)'
+    },
+    {
+        term: 'Internode',
+        definition: 'A non-woody, leafless segment between two leaf-bearing regions.',
+        wiki: 'https://en.wikipedia.org/wiki/Plant_stem'
+    },
+    {
+        term: 'Peduncle',
+        definition: 'A herbaceous stem that is destined to bear one or more flowers or fruit.',
+        wiki: 'https://en.wikipedia.org/wiki/peduncle'
+    },
+    {
+        term: 'Bulb',
+        definition: 'Structurally a short stem with fleshy leaves or leaf bases which function as food storage organs during dormancy.',
+        wiki: 'https://en.wikipedia.org/wiki/Bulb'
+    },
+    {
+        term: 'Terete',
+        definition: 'Describes a cross section that is circular, or like a distorted circle, with a single surface wrapping around it.',
+        wiki: 'https://en.wikipedia.org/wiki/Terete'
+    },
+    {
+        term: 'Cleistogamy',
+        definition: 'A type of automatic self-pollination of plants that can propagate by using non-opening, self-pollinating flowers. Common in the grass family, the Viola genus and peanuts and peas.',
+        wiki: 'https://en.wikipedia.org/wiki/Cleistogamy'
+    },
+    {
+        term: "Plant pathogen",
+        definition: "A broad term that refers to any of the organisms, such as fungi, bacteria, protists, nematodes, and viruses that cause plant diseases.",
+        wiki: "https://en.wikipedia.org/wiki/Plant_pathology"
     },
 ];

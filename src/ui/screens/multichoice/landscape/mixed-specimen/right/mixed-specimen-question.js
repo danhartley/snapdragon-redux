@@ -1,13 +1,14 @@
 import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
-import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { returnIcon } from 'ui/helpers/icon-handler';
 import { firestore } from 'api/firebase/firestore';
+import { bindScore } from 'ui/helpers//score-handler';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { listenToImageSelection, listenToUserAnswer, renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
+import { renderMixedSpecimenImagesAndQuestion } from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-combined';
 import { renderTemplate } from 'ui/helpers/templating';
 
 import mixedSpecimenQuestionTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question-template.html';
@@ -15,6 +16,10 @@ import mixedSpecimenQuestionTemplate from 'ui/screens/multichoice/landscape/mixe
 export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
     const { config, layout } = store.getState();
+
+    if(config.isPortraitMode) {
+        renderMixedSpecimenImagesAndQuestion(collection);
+    }
 
     const item = R.clone(collection.nextItem);
 
@@ -29,8 +34,7 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
     const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question, help, term: '' });
     
     const template = document.createElement('template');
-
-    template.innerHTML = mixedSpecimenQuestionTemplate;
+          template.innerHTML = mixedSpecimenQuestionTemplate;
 
     const instructions = `Identify & Select`;
     const binomial = item.name;
@@ -53,7 +57,7 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
             const vernacularName = itemProperties.getVernacularName(imageItem, config);
             const taxonIcon = returnIcon(imageItem);
 
-            return `<li id="${species}">${taxonIcon}<span>${vernacularName}</span></li>`;
+            return `<li id="${species}">${taxonIcon}<span>${vernacularName}</span><span class="binomial margin-left">${imageItem.name}</li>`;
         }));
 
         speciesList.innerHTML = speciesItems.join('');
@@ -74,12 +78,12 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
     continueLessonBtn.addEventListener('click', () => {
         window.clearTimeout(pendingScore.scoreUpdateTimer);
-        actions.boundUpdateScore(pendingScore.score);
+        bindScore(pendingScore.score);        
     });
 
     document.querySelector('.js-help-txt').addEventListener('click', () => {
         const noOfImagesPerItem = layout.bonusLayout ? 6 / collection.items.length : 1;
         const preselectedItems = layout.bonusLayout ? collection.items : null;
-        renderMixedSpecimenImages(collection, noOfImagesPerItem, preselectedItems);
+        renderMixedSpecimenImages(collection, noOfImagesPerItem, preselectedItems, true);
     });    
 };

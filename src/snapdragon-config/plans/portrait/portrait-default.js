@@ -19,30 +19,34 @@ export const portraitDefault = {
     default: true,
     levels: [
         {   id: 1,
-            name:'Level 1',            
-            layouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
-            reviewLayouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
-            bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'traits', 'song', 'definition' ] } ]
+            name:'Level 1',
+            layouts: [ L.mixedSpecimenImages, L.familyMatch, L.familyStripsMatch ],
         },
-        {   id: 2,
-            name:'Level 2',
-            layouts: [ L.commonToLatinMatch, L.textCompleteGenus, L.textCompleteSpecies ],
-            reviewLayouts: [ L.commonToLatinMatch, L.textCompleteGenus, L.textCompleteSpecies ]
-        },
-        {   id: 3,
-            name:'Level 3',
-            layouts: [ L.commonEntry, L.familyMatch, L.familyStripsMatch ],
-            reviewLayouts: [ L.commonEntry, L.familyStripsMatch ]
-        },
-        {   id: 4,
-            name:'Level 4',
-            layouts: [ L.speciesEntry, L.genusEntry ],
-            reviewLayouts: [ L.speciesEntry, L.genusEntry ]
-        },
-        {   id: 5,
-            name:'Level 5',
-            layouts: [ L.speciesGenusEntry ],
-            reviewLayouts: [ L.speciesGenusEntry ]
-        }
+        // {   id: 1,
+        //     name:'Level 1',            
+        //     layouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
+        //     reviewLayouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
+        //     bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'traits', 'song', 'definition' ] } ]
+        // },
+        // {   id: 2,
+        //     name:'Level 2',
+        //     layouts: [ L.commonToLatinMatch, L.textCompleteGenus, L.textCompleteSpecies ],
+        //     reviewLayouts: [ L.commonToLatinMatch, L.textCompleteGenus, L.textCompleteSpecies ]
+        // },
+        // {   id: 3,
+        //     name:'Level 3',
+        //     layouts: [ L.commonEntry, L.familyMatch, L.familyStripsMatch ],
+        //     reviewLayouts: [ L.commonEntry, L.familyStripsMatch ]
+        // },
+        // {   id: 4,
+        //     name:'Level 4',
+        //     layouts: [ L.speciesEntry, L.genusEntry ],
+        //     reviewLayouts: [ L.speciesEntry, L.genusEntry ]
+        // },
+        // {   id: 5,
+        //     name:'Level 5',
+        //     layouts: [ L.speciesGenusEntry ],
+        //     reviewLayouts: [ L.speciesGenusEntry ]
+        // }
     ]
 };

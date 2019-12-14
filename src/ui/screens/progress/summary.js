@@ -9,13 +9,17 @@ import summaryTemplate from 'ui/screens/progress/summary-template.html';
 
 export const renderSummary = history => {
 
-    console.log('\x1b[32m', 'renderSummary');
-
     subscription.removeSubs();
 
     subscription.getByRole('screen').forEach(sub => console.log('renderSummary subscriptions:', sub.name));
 
     const { score, collection, config, lesson } = store.getState();
+
+    lessonHandler.changeState(enums.lessonState.NEXT_ROUND, collection, config, history);
+
+    if(!lesson.isLessonComplete) return;
+
+    console.log('\x1b[32m', 'renderSummary');
 
     const template = document.createElement('template');
 
@@ -40,7 +44,7 @@ export const renderSummary = history => {
         if(lesson.isLessonComplete) {
             lessonHandler.purgeLesson();
         }
-        else lessonHandler.getLessonItems(enums.lessonState.NEXT_ROUND, collection, config, history);
+        else lessonHandler.changeState(enums.lessonState.NEXT_ROUND, collection, config, history);
     };
 
     actionLink.removeEventListener('click', handleBtnClickEvent);

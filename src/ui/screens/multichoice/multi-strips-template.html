@@ -1,5 +1,6 @@
-<div class="strips description js-rptr-strips scrollable" data-repeat-option="{{ options }}">
+<div class="strips description js-rptr-strips" data-repeat-answer="{{ answers }}">
 <div class="strip">
-    <div>{{ option.answer }}</div>
-    <div class="hide-empty landscape conceal">{{ option.conceal }}</div>
+    <div data-answer-index="{{ answer.index }}">
+        <span>{{ answer.term }}</span>
+    </div>
 </div>

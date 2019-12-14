@@ -16,9 +16,9 @@ export const renderInfoDetails = (item, activeTraitKey, activeTraitValue, descri
 
     if(!parent) return; // hack! currently the case with (non-species) taxon cards (see same below)
 
-          parent.innerHTML = '';
+    parent.innerHTML = '';
 
-    if(activeTraitKey.toLowerCase() === 'description') {        
+    if(activeTraitKey.toLowerCase().indexOf('description') > -1) {        
         template.innerHTML = idBoxTemplate;
         renderTemplate({ id: activeTraitValue }, template.content, parent);
         const text = document.querySelector('.id-box > div:nth-child(2) > div');
@@ -30,7 +30,7 @@ export const renderInfoDetails = (item, activeTraitKey, activeTraitValue, descri
         linkedTaxa(item, config, parent, mode, isInCarousel, collection, activeTraitValue);
     } else {
 
-        const details = firestore.getDefinition(activeTraitValue, collection.glossary);
+        const details = firestore.getDefinition(activeTraitValue, collection.glossary); // make dependent on a promise
 
         if(!parent) return; // hack! taxon info sliders
 
@@ -41,11 +41,6 @@ export const renderInfoDetails = (item, activeTraitKey, activeTraitValue, descri
                 detail.img = detail.img || { url: '' }; 
             });
             renderTemplate({ details }, template.content, parent);
-        } else {            
-            template.innerHTML = idBoxTemplate;
-            renderTemplate({ id: description }, template.content, parent);
-            const text = document.querySelector('.id-box > div:nth-child(2) > div');
-                  text.innerHTML = text.innerHTML.replace(/\r?\n/g, '<br />');
-        }        
+        }
     }
 };

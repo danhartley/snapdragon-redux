@@ -9,8 +9,9 @@ export const animalia = [
         definition: "Feeding on grain.",
     },
     {
-        term: "Sward",
-        definition: "Expanse of short grass.",
+        term: "Supertramp",
+        definition: "Animal which follows strategy of high dispersion among different habitats where it is not specialised.",
+        wiki: "https://en.wikipedia.org/wiki/Supertramp_(ecology)",
     },
     {
         term: 'Crypsis',
@@ -30,11 +31,6 @@ export const animalia = [
         term: "Precociality",
         definition: "Having young relatively mature and mobile from the moment of birth or hatching.",
         wiki: 'https://en.wikipedia.org/wiki/Precociality'
-    },
-    {
-        term: "Eusociality",
-        definition: "Cooperative brood care, overlapping generations and division of labor into reproductive and non-reproductive groups.",
-        wiki: 'https://en.wikipedia.org/wiki/Eusociality'
     },
     {
         term: "Hoarding",
@@ -158,5 +154,42 @@ export const animalia = [
         term: 'Monandrous (animals)',
         definition: 'Females has one mate at a time.',
         wiki: 'https://en.wikipedia.org/wiki/Monandrous'
+    },
+    {
+        term: 'Aposematism',
+        alt: 'Aposematic',
+        definition: 'Advertising by an animal to potential predators that it is not worth attacking or eating.',
+        wiki: 'https://en.wikipedia.org/wiki/Aposematism'
+    },
+    {
+        term: 'Batesian mimicry',
+        definition: 'Where a harmless mimic poses as harmful.',
+        wiki: 'https://en.wikipedia.org/wiki/Batesian_mimicry'
+    },
+    {
+        term: 'Müllerian mimicry',
+        definition: 'Where 2 or more harmful species mutually advertise themselves as harmful.',
+        wiki: 'https://en.wikipedia.org/wiki/Müllerian_mimicry'
+    },
+    {
+        term: 'Mertensian mimicry',
+        definition: 'Where a deadly mimic resembles a less harmful but lesson-teaching model.',
+        wiki: 'https://en.wikipedia.org/wiki/Mimicry#Mertensian'
+    },
+    {
+        term: 'Cooperative breeding',
+        definition: 'A social system whereby offspring receive care not only from their parents, but also from additional group members, often called helpers.',
+        wiki: 'https://en.wikipedia.org/wiki/Cooperative_breeding'
+    },
+    {
+        term: 'Territory',
+        alt: 'Territorial',
+        definition: 'The sociographical area that an animal consistently defends against conspecifics (or, occasionally, animals of other species).',
+        wiki: 'https://en.wikipedia.org/wiki/Territory_(animal)'
+    },
+    {
+        term: 'Episodic memory',
+        definition: 'The memory of autobiographical events; personal experiences that occurred at a particular time and place',
+        wiki: 'https://en.wikipedia.org/wiki/Episodic_memory'
     },
 ];

@@ -3,10 +3,10 @@ import { utils } from 'utils/utils';
 
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { actions } from 'redux/actions/action-creators';
-import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
-import { markTest } from 'ui/helpers/score-handler';
+import { markTest } from 'ui/helpers/test-handler';
+import { bindScore } from 'ui/helpers//score-handler';
+
 import lettersTemplate from 'ui/screens/common/letters-template.html';
 
 export const renderLetters = (letters, item, callbackTime) => {
@@ -62,7 +62,7 @@ export const renderLetters = (letters, item, callbackTime) => {
                     response.layoutCount = lessonPlan.layouts.length;
                     response.itemId = item.id;
                     setTimeout(()=>{
-                        actions.boundUpdateScore(response);
+                        bindScore(response);
                     }, callbackTime);
                 } else if(itemName.length >= item.name.length) {
                     selectedBlocks.forEach(block => {
@@ -96,7 +96,7 @@ export const renderLetters = (letters, item, callbackTime) => {
         response.layoutCount = lesson.layoutCount;
         reponse.itemId = item.id;
         setTimeout(()=>{
-            actions.boundUpdateScore(response);
+            bindScore(response)
         }, callbackTime);
     });
 };

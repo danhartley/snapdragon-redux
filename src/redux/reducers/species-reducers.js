@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { types } from 'redux/actions/action-types';
 import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 
-export const collections = (state = snapdragonCollections, action) => {
+export const collections = (state = snapdragonCollections.filter(sc => sc.id < 10000), action) => {
     switch(action.type) {
         case types.SELECT_COLLECTION:
             const cols = [ ...state ];
@@ -17,9 +17,6 @@ export const collections = (state = snapdragonCollections, action) => {
             return cols;
         case types.UPDATE_COLLECTIONS: {
             return [ ...state, action.data ];
-        }
-        case types.PAUSE_LESSON: {
-            return state;
         }
         default:
             return state;
@@ -81,6 +78,10 @@ export const collection = (state = { id: 0 }, action) => {
             return { ...state, ...action.data.collection };
         }
 
+        case types.RESET_COLLECTION: {
+            return action.data.collection;
+        }
+
         case types.UPDATE_COLLECTION: {            
             const { collection, nextItem } = updateCollection(state, action);
             return { ...state, ...collection, nextItem };
@@ -89,7 +90,6 @@ export const collection = (state = { id: 0 }, action) => {
         case types.NEXT_LAYOUT: {
             const layout = action.data;
             return layout.bonus ? state : state;
-            // return layout.bonus ? state : { ...state, layoutName: layout.name };
         }            
 
         case types.NEXT_ITEM: {
@@ -110,14 +110,6 @@ export const collection = (state = { id: 0 }, action) => {
 
         case types.NEXT_LEVEL: {
             return state;
-        }
-
-        case types.PAUSE_LESSON: {
-            return { id: 0 };
-        }
-
-        case types.RESTART_LESSON: {
-            return action.data.collection;   
         }
 
         default: {
@@ -141,14 +133,6 @@ export const bonusLayout = (state = null, action) => {
                 state = layout;
             }
             return state;
-        }
-
-        case types.PAUSE_LESSON: {
-            return null;
-        }
-
-        case types.RESTART_LESSON: {
-            return action.data.bonusLayout;   
         }
 
         default: {

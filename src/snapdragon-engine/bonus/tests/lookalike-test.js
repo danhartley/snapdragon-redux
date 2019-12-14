@@ -40,6 +40,8 @@ const getLookalikeTest = item => {
 
         if(lookalikes.length === 0) return {};
 
+        // check current collection first?
+
         const getLookalikes = async () => {
             return Promise.all(lookalikes.map(async name => {
                 return await firestore.getSpeciesByName(name);

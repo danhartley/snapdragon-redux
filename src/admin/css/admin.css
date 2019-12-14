@@ -75,7 +75,7 @@
   i {
       cursor: pointer;
   }
-  .chkSafety {
+  .chkSafety, .chkStar {
       margin: 0 0 0 1rem;
   }
   input[type=text]:not(.browser-default)[readonly="readonly"]+label {
@@ -120,4 +120,15 @@
       height: initial;
       width: initial;
       margin: 1rem 0 0 0;
+  }
+
+  /* Move to common fieldset */
+
+  .side-by-side {
+      display: flex;
+      align-items: center;      
+  }
+  
+  .side-by-side > div:nth-child(1) {
+      margin-left: .5rem;
   }

@@ -3,16 +3,60 @@
     <head>
         <title>Species recognition and recall</title>
         <meta http-equiv="content-type" content="text/html;charset=utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
         <link rel="canonical" href="https://danhartley.github.io/snapdragon-redux/dist/">
         <meta name="description" content="Recognise species and learn their common and scientific names with lessons">
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
-        <!-- <script src="https://kraaden.github.io/autocomplete/autocomplete.js"></script>
-        <link rel="stylesheet" type="text/css" href="https://kraaden.github.io/autocomplete/autocomplete.css"> -->
         <script>
+
+            // https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+
+            const setWindowHeight = () => {
+
+                const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream; 
+                const iw = (iOS) ? screen.width : window.innerWidth; 
+                const ih = (iOS) ? screen.height : window.innerHeight;
+
+                const verticalHeight = window.innerHeight * 0.01;                
+
+                document.documentElement.style.setProperty('--vh', verticalHeight + 'px');
+                document.documentElement.style.setProperty('--vhGrid', verticalHeight * 100  + 'px');
+                document.documentElement.style.setProperty('--vhRunningBlock', (verticalHeight * 7.5) + 'px');
+                document.documentElement.style.setProperty('--vhRunningBlocks', (verticalHeight * 15) + 'px');
+                document.documentElement.style.setProperty('--vhStandardBlock', (verticalHeight * 10) + 'px');
+                document.documentElement.style.setProperty('--vhHalfStandardBlock', (verticalHeight * 5) + 'px');
+                document.documentElement.style.setProperty('--vhOneAndHalfStandardBlock', (verticalHeight * 15) + 'px');
+                document.documentElement.style.setProperty('--vhDoubleStandardBlock', (verticalHeight * 20) + 'px');
+                document.documentElement.style.setProperty('--vhCarousel', (verticalHeight * 30) + 'px');
+                document.documentElement.style.setProperty('--vhButtonBlock', (verticalHeight * 9) + 'px');
+                document.documentElement.style.setProperty('--vhRow', (verticalHeight * 11) + 'px');
+                document.documentElement.style.setProperty('--vhFixtures', (verticalHeight * 15) + 5 + 'px');
+                document.documentElement.style.setProperty('--vhCalendar', (verticalHeight * 11) + 'px');                
+
+                const fixtures = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhFixtures').replace('px', ''));
+                const largeImage = ((verticalHeight * 100) - fixtures) / 3;
+
+                document.documentElement.style.setProperty('--vhLargeImage', largeImage + 'px');
+                document.documentElement.style.setProperty('--vhSmallImageCarousel', verticalHeight * 40 + 'px');                
+
+                const horizontalWidth = window.innerWidth * 0.01;
+
+                document.documentElement.style.setProperty('--vw', horizontalWidth + 'px');
+
+                document.documentElement.style.setProperty('--vwGrid', horizontalWidth * 100  + 'px');
+                document.documentElement.style.setProperty('--vwGridNegative', (horizontalWidth * -100) + 52  + 'px');
+                document.documentElement.style.setProperty('--vhScrollingTop', (horizontalWidth * 56.25) + (verticalHeight * 10) + 'px');
+            };
+
+            setWindowHeight();
+
+            window.addEventListener('resize', () => {
+                setWindowHeight();
+            });
+
             if(window.location.origin.indexOf('learn-the-planet') > -1) {
                 console.log('Live site detected.');
                 if(window.location.protocol != 'https:') {
@@ -34,6 +78,7 @@
                   });
                 }
         </script>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="57x57" href="./favicons/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="./favicons/apple-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="./favicons/apple-icon-72x72.png">
@@ -67,16 +112,29 @@
         
     </head>
     <body>
+        <script>
+
+            var tag = document.createElement('script');
+
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    
+            window.onYouTubeIframeAPIReady = function() {
+                window.YT = YT;
+            }
+            
+        </script>
         <div class="grid">
             <div class="left-grid js-left-grid">                    
                     <div class="header js-left-header">
-                        <div class="header-text js-left-txt-header"></div>
+                        <div class="header-text js-left-txt-header">learn the planet</div>
                         <div class="header-text txt-specimen-species js-txt-specimen-species"></div>                         
                     </div>       
                     <div class="no-progress"></div>             
                     <div class="left-body js-left-body"></div>
                     <div class="footer js-left-footer">
-                        <span class="nav-icons js-nav-icons"></span>
+                        <span class="nav-icons centred-block js-nav-icons"></span>
                     </div>
             </div>
             <div class="right-grid js-right-grid">
@@ -87,7 +145,7 @@
                 <progress style="margin: 1000px 0 0 0" value="0" max="6"></progress>
                 <div class="right-body js-right-body"></div>
                 <div class="footer js-right-footer">
-                    <span class="nav-icons js-nav-icons"></span>
+                    <span class="nav-icons centred-block js-nav-icons"></span>
                     <span class="footer-score js-footer-score"></span>
                 </div>
             </div>
@@ -96,18 +154,25 @@
         <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <div class="modal-title js-modal-image-title">
-                        <span></span><span></span>
-                    </div>                
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                <div class="modal-header-container">
+                    <div class="modal-header">
+                        <div class="modal-title js-modal-image-title">
+                            <span></span><span></span>
+                        </div>                
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
                 </div>
                 <div class="modal-rights-attribution js-modal-rights-attribution"></div>
                 <div class="modal-body">
                     <div class="modal-image js-modal-image"></div>
-                </div>                    
+                </div>
+                <div class="modal-footer double-centred-block" data-dismiss="modal" aria-label="Close">
+                    <div>
+                        <span aria-hidden="true">Close</span>
+                    </div>
+                </div>             
             </div>
             </div>
         </div>
@@ -115,14 +180,16 @@
         <div class="modal fade" id="imageComparisonModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <div class="modal-title js-modal-image-title">
-                    <div class="modal-rights-attribution js-modal-rights-attribution"></div>
-                    <span></span><span></span><span class="hide-empty"></span><span class="hide-empty"></span>
+                <div class="modal-header-container">
+                    <div class="modal-header">
+                        <div class="modal-title js-modal-image-title">
+                        <div class="modal-rights-attribution js-modal-rights-attribution"></div>
+                        <span></span><span></span><span class="hide-empty"></span><span class="hide-empty"></span>
+                    </div>
                 </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
-                </button>
+                </button> -->
             </div>
             <div class="modal-body">
                 <div class="modal-image js-modal-image"></div>
@@ -134,46 +201,38 @@
         <div class="modal fade" id="wikiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content"> 
-                <div class="modal-header">
-                <h5 class="modal-title js-external-page-title"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <div class="modal-header-container">
+                    <div class="modal-header">
+                        <div class="modal-title js-external-page-title"></div>
+                    </div>                       
                 </div>
                 <div class="modal-body js-external-page-body">
                 </div>
+                <div class="modal-footer double-centred-block" data-dismiss="modal" aria-label="Close">
+                    <div>
+                        <span aria-hidden="true">Close</span>
+                    </div>
+                </div>
             </div>
             </div>
         </div>
         
-        <div class="modal fade" id="menuModal" tabindex="-1" role="dialog" aria-labelledby="menuModalLabel" aria-hidden="true">
+        <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title js-modal-text-title"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <div class="modal-header-container">
+                        <div class="modal-header">
+                            <div class="modal-title js-modal-text-title"></div>
+                        </div>
                     </div>
                     <div class="modal-body">
                         <div class="modal-text js-modal-text"></div>
-                    </div>                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="modal fade" id="listModal" tabindex="-1" role="dialog" aria-labelledby="listModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title js-modal-text-title"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                    <div class="modal-body js-modal-body">
-                        <div class="modal-text js-modal-text"></div>
-                    </div>                    
+                    </div>       
+                    <div class="modal-footer double-centred-block" data-dismiss="modal" aria-label="Close">
+                        <div>
+                            <span aria-hidden="true">Close</span>
+                        </div>
+                    </div>             
                 </div>
             </div>
         </div>
@@ -181,11 +240,10 @@
         <div class="modal fade" id="cardModal" tabindex="-1" role="dialog" aria-labelledby="speciesCardLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">                        
-                    <h5 class="modal-title js-modal-text-title"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <div class="modal-header-container">
+                        <div class="modal-header">
+                            <div class="modal-title js-modal-text-title"></div>
+                        </div>                       
                     </div>
                     <div class="carousel slide">
                         <div class="carousel-inner">
@@ -202,6 +260,11 @@
                             </a>
                         </div>
                     </div>
+                    <div class="modal-footer double-centred-block" data-dismiss="modal" aria-label="Close">
+                        <div>
+                            <span aria-hidden="true">Close</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -209,16 +272,59 @@
         <div class="modal fade" id="badgeListModal" tabindex="-1" role="dialog" aria-labelledby="badgeListModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title js-modal-text-title"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <div class="modal-header-container">
+                        <div class="modal-header">
+                            <div class="modal-title js-modal-text-title"></div>
+                        </div>                       
                     </div>
                     <div class="modal-body js-modal-body">
-                        <div class="modal-text js-modal-text"></div>
+                        <div class="modal-text js-modal-text"></div>                        
                     </div>                    
+                    <div class="modal-footer double-centred-block" data-dismiss="modal" aria-label="Close">
+                        <div>
+                            <span aria-hidden="true">Close</span>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="modal fade modal-guide-wrapper" id="createGuide" tabindex="-1" role="dialog" aria-labelledby="createGuideModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header-container">
+                    <div class="modal-header">
+                        <div class="modal-title js-modal-title">
+                            <div class="header"></div>
+                            <!-- <div>Step title</div><div>Step 1 of 3</div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body modal-guide-body">
+                    <div class="modal-guide-progress js-modal-guide-progress">
+                        <div class="modal-subheader js-options">Choose how to find the species you want:</div>
+                        <div class="hide-important steps js-steps">
+                            <div class="completed">Step 1</div>
+                            <div>Step 2</div>
+                            <div>Step 3</div>
+                        </div>
+                    </div>
+                    <div class="step-action-content js-step-action-content">Step action</div>
+                    <div class="hide-important modal-guide-navigation js-modal-guide-navigation">
+                        <div>
+                            <div><span class="arrow-wrapper"><i class="far fa-arrow-alt-circle-left"></i></span><span class="margin-left"></span></div>
+                        </div>
+                        <div>
+                            <div><span class="margin-right"></span><span class="arrow-wrapper js-arrow-wrapper"><i class="far fa-arrow-alt-circle-right"></i></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer double-centred-block js-create-guide-close-btn" data-dismiss="modal" aria-label="Close">
+                    <div>
+                        <span aria-hidden="true">Close</span>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
 
@@ -231,7 +337,7 @@
         <!-- <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script> -->
 
         <!-- <script src="/__/firebase/init.js"></script> -->
-
+        
     </body>    
     </html>
  

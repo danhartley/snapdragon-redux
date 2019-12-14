@@ -7,24 +7,32 @@ export const saveButton = (config, step, update = true) => {
     const handleSaveEvent = () => {
 
         switch(step) {
+
+            case 'SPECIES':
+
+            break;
+
             case 'LOCATION':
+
+                const splitLocation = locationStr => {
+                    return locationStr;
+                };
 
                 if(config.guide.locationType) {
                     chosen.innerHTML = config.guide.locationType === 'place'
                         ? config.guide.locationPlace
                         : config.isLandscapeMode
                             ? config.guide.locationLongLat
-                            : config.guide.locationLongLat.split(',')[0];
+                            : splitLocation(config.guide.locationLongLat);
                 }
                 break;
 
-            case 'SPECIES':
+            case 'TAXA':
 
                 chosen.innerHTML = '';
-                let iconicTaxa = config.guide.iconicTaxa;
                 let icons = '';
-                if(iconicTaxa.length > 0) {
-                    iconicTaxa.forEach(taxon => {
+                if(config.guide.iconicTaxa.length > 0) {
+                    config.guide.iconicTaxa.forEach(taxon => {
                         const icon = returnTaxonIcon(taxon.id);
                         icons += icon;
                     })

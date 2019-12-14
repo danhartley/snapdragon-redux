@@ -1,12 +1,12 @@
 <div class="col s4">
     <button class="btnAddAllPhotos btn">Add all photos</button>
+    <div class="noPhotos"></div>
 </div>
 
 <ul data-repeat-photo="{{ photos }}">
-    <img id="{{ photo.index }}" src="{{ photo.url }}" alt="">
+    <img width="260px" height="190px" style="cursor:pointer; object-fit: cover;" id="{{ photo.index }}" src="{{ photo.url }}" alt="">
 </ul>
 
 <div class="col s4">
     <button class="btnAddSelectedPhotos btn hide">Add selected photos only</button>
 </div>
-    

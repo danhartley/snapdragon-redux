@@ -5,7 +5,7 @@ const getInatSpecies = (collection) => {
     return observations;
 };
 
-const getInatObservationsById = async (userId = 19829) => {
+const getInatObservationsById = async (userId = 19829) => {    
     const collectionUrl = `https://api.inaturalist.org/v1/observations?user_id=${userId}&order=desc&order_by=created_at`;
     const response = await fetch(collectionUrl);
     const json = await response.json();
@@ -32,20 +32,26 @@ const getInatImages = async (observation) => {
 };
 
 const getTaxonDataIncPhotos = async (name, userId = 19829) => {
-    const url = `https://www.inaturalist.org/observations.json?taxon_name=${name}&has[]=photos`;
+    const place = '7122'; // portugal
+    const url = `https://www.inaturalist.org/observations.json?taxon_name=${name}&has[]=photos&place_id=${place}`;
     const response = await fetch(url);
     const json = await response.json();
-    const userObservations = json.find(observation => observation.user_id === userId).photos;
-    const userPhotos = userObservations.map(photo => {
-        return {
-            license: photo.license_name,
-            rightsHolder: photo.native_username,
-            source: photo.native_page_url,
-            title: name,
-            url: photo.medium_url
-        }
-    });
-    return userPhotos;
+    const userObservations = json.find(observation => observation.user_id === userId);
+    if(userObservations) {
+        const userPhotos = userObservations.photos.map(photo => {
+            return {
+                license: photo.license_name,
+                rightsHolder: photo.native_username,
+                source: photo.native_page_url,
+                title: name,
+                url: photo.medium_url,
+                provider: photo.provider
+            }
+        });
+        return userPhotos; 
+    } else {
+        return [];
+    }
 }; 
 
 export const inat = {

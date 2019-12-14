@@ -1,4 +1,4 @@
-export const getNextActiveLayerLayouts = (lessonPlan, config, lesson) => {
+export const getNextRoundLayouts = (lessonPlan, config, lesson) => {
 
     // All layouts are currently activated because the lesson edit function is not in use.
 
@@ -31,6 +31,9 @@ export const getNextActiveLayerLayouts = (lessonPlan, config, lesson) => {
             if(layouts.length > 0) return;
 
             const level = lessonPlan.levels.find(level => level.id === levelId + increment);
+
+            if(!level) return;
+            
             lesson.level = level;
 
             lesson.level = level;

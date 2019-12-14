@@ -3,6 +3,7 @@ import { enums } from 'admin/api/enums';
 import { store } from 'redux/store';
 import { getGlossary } from 'api/glossary/glossary';
 import { firebaseConfig } from 'api/firebase/credentials';
+import { questions } from 'api/firebase/questions';
 
 firebase.initializeApp(firebaseConfig);
 
@@ -173,11 +174,11 @@ const getTaxonByName = async (config, name) => {
     }
 };
 
-const getAsyncTraitsBySpeciesName = async (name, language) => {
+const getAsyncTraitsByNameAndCollection = async (name, collection = 'traits_en', language) => {
 
     try {
     
-    const languageTraits = db.collection(`traits_en`).where("name", "==", name);
+    const languageTraits = db.collection(collection).where("name", "==", name);
   
     const traits = await languageTraits.get();
   
@@ -192,7 +193,24 @@ const getTraitsBySpeciesName = async (name, language = 'en') => {
 
     let traits;
 
-    const querySnapshot = await getAsyncTraitsBySpeciesName(name, language);
+    const querySnapshot = await getAsyncTraitsByNameAndCollection(name, 'traits_en', language);
+
+    if(!querySnapshot || !querySnapshot.docs) return new Promise(resolve => resolve({}));
+
+    if(querySnapshot.docs.length > 0) {
+        querySnapshot.forEach(doc => {
+        traits = doc.data();
+      });
+    }
+
+    return await traits;
+};
+
+const getTraitsByTaxonName = async (name, language = 'en') => {
+
+    let traits;
+
+    const querySnapshot = await getAsyncTraitsByNameAndCollection(name, 'taxa_en', language);
 
     if(!querySnapshot || !querySnapshot.docs) return new Promise(resolve => resolve({}));
 
@@ -246,14 +264,18 @@ const updateSpecies = async species => {
 
     if(species.images) {
         species.images = species.images.map(image => {
-            return {
+            const updatedSpecies = {
                 license: image.license || '',
                 photographer: image.photographer || '',
                 rightsHolder: image.rightsHolder || '',
                 source: image.source || '',
                 title: image.title || '',
-                url: image.url || ''
+                url: image.url || ''     
+            };
+            if(image.starred) {
+                updatedSpecies.starred = image.starred;
             }
+            return updatedSpecies;
         });
     }
 
@@ -301,43 +323,32 @@ const deleteSpeciesByName = async name => {
     });
 };
 
-const addTraits = async props => {
-
-    const { language, traits } = props;
-
-    let docRef;
-
-    try {
-        docRef = await db.collection(`traits_en`).add(traits);
-    } catch(err) {
-        console.error("Error writing document: ", error);
-    }
-
-    return docRef;
-};
-
-const addSpeciesTraits = async (name, trait) => {
+const addTraits = async (name, trait, collection = 'traits_en') => {
 
     let speciesTraitsRef;
 
     try {
 
-        const querySnapshot = await db.collection("traits_en").where("name", "==", name).get();
+        const querySnapshot = await db.collection(collection).where("name", "==", name).get();
         
         if(querySnapshot.empty) {
             trait.name = name;
-            return await db.collection(`traits_en`).add(trait);
+            return await db.collection(collection).add(trait);
         } else {
             querySnapshot.forEach(function(doc) {
                 speciesTraitsRef = doc.ref;
             });
 
+            console.log(trait);
+
             await speciesTraitsRef.update(trait); 
+
+            console.log(speciesTraitsRef);
 
             return 'Update successful';
         }
-    } catch (e) {
-
+    } catch(e) {
+        console.log(`Update failed. Error ${e.message}.`);
         return `Update failed. Error ${e.message}.`;
     }
 };
@@ -465,11 +476,20 @@ const getDefinition = (term, required) => {
     let definitions = [];
 
     for(let term of terms) {        
-        const definition = dictionary.find(definition => definition.term.toLowerCase() === term.trim().toLowerCase());
+        const definition = dictionary.find(definition => definition.term.toLowerCase() === term.trim().toLowerCase() || definition.alt && definition.alt.toLowerCase() === term.trim().toLowerCase());
         definitions.push(definition);
     };
     
     return definitions.filter(definition => definition);
+};
+
+const getTraitDefinitions = (required, trait) => {
+    
+    const dictionary = getGlossary(required);
+
+    const traits = dictionary.filter(entry => entry.trait).filter(entry => entry.trait.toLowerCase() === trait.toLowerCase());
+
+    return new Promise(resolve => resolve(traits));
 };
 
 const addTaxon = async props => {
@@ -488,6 +508,24 @@ const addTaxon = async props => {
     return docRef;
 };
 
+const getSpeciesInParallel = async species => {
+
+    try {
+        return Promise.all(species.map(sp => {                    
+            return firestore.getSpeciesByName(sp.name).then(async item => {
+                return await {                         
+                    ...item, description: sp.description || '', time: sp.time || 0, questionIds: sp.questionIds, quickId: sp.quickId || ''
+                }
+            })                    
+        }));
+
+    } catch (error) {
+        console.log(`error calling getSpeciesInParallel for species ${sp.name}.`)
+        console.log(`species object ${item}`)
+        console.error('error message: ', error.message);
+    }
+};
+
 const getSpeciesByNameInParallel = async itemNames => {
     try {
         return Promise.all(itemNames.map(name => {                    
@@ -504,6 +542,22 @@ const getSpeciesByNameInParallel = async itemNames => {
     }
 };
 
+const getQuestionById = (id, name) => {
+
+    console.log(id);
+
+    return new Promise(resolve => resolve(questions.map(q => {
+        if(parseInt(q.id) === parseInt(id)) {
+            return {
+                ...q,
+                name: name
+            }
+        }
+    })));
+
+    //db.collection('books').doc('fK3ddutEpD2qQqRMXNW5').get()
+};
+
 export const firestore = {
     getSpecies,
     getSpeciesNames,
@@ -513,15 +567,16 @@ export const firestore = {
     getFamiliesByIconicTaxon,
     getTaxonByName,
     getTraitsBySpeciesName,
+    getTraitsByTaxonName,
     getBirdsong,
     getTraitValues,
     getRandomSpecies,
     getDefinition,
+    getSpeciesInParallel,
     getSpeciesByNameInParallel,
     
     addSpecies,
     addTraits,
-    addSpeciesTraits,
     addSpeciesRelationship,
     addPhotos,
     addTaxon,
@@ -530,7 +585,9 @@ export const firestore = {
     updateSpeciesNames,
   
     deleteSpeciesByName,
-    deleteSpeciesTraitField
+    deleteSpeciesTraitField,
+    getTraitDefinitions,
+    getQuestionById
 };
 
 const getRandomId = () => {

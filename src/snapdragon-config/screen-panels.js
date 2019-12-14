@@ -31,8 +31,7 @@ const traitImages = {
 
   const birdsong = {
     name: 'birdsong',
-    domain: 'bonusLayout',  
-    // domain: 'collection',  
+    domain: 'bonusLayout',
   }
 
   const mediaPlayers = {
@@ -66,18 +65,7 @@ const traitImages = {
     name: 'mixed-specimen-questions',
     domain: 'collection'
   };
-  
-  // const command = {
-  //   name: 'command', 
-  //   domain: 'collection',
-  //   left: specimenImages,
-  //   right: {
-  //     cutLength: 5,
-  //     domain: 'collection',
-  //     question: 'Name puzzle'
-  //   }
-  // };
-  
+
   const leaf = {
     name: 'leaf-image',
     domain: 'collection'
@@ -100,14 +88,12 @@ const traitImages = {
   
   const family = {
     name: 'family',
-    domain: 'collection',
-    // question: 'Match species family',
+    domain: 'collection'
   };
   
   const familyStrips = {
     name: 'family-strips',
-    domain: 'collection',
-    // question: 'Match species family',
+    domain: 'collection'
   };
   
   const taxon = {
@@ -134,17 +120,7 @@ const traitImages = {
     name: 'cultivar-match',
     domain: 'collection'
   };
-  
-  // const wildcardCard = {
-  //   name: 'wildcard-card',
-  //   domain: 'collection'
-  // };
-  
-  // const wildcard = {
-  //   name: 'wildcard-match',
-  //   domain: 'collection'
-  // };
-  
+
   const specimenCommonMatch = {
     name: 'visual-match',
     domain: 'collection',
@@ -173,14 +149,37 @@ const traitImages = {
   };
 
   const mixedSpecimensLeft = {
-    name: 'mixed-specimen-question',
+    name: 'mixed-specimen-images',
     domain: 'collection'
   };
 
   const mixedSpecimensRight = {
-    name: 'mixed-specimen-images',
+    name: 'mixed-specimen-question',
     domain: 'collection'
   };
+  
+  const mixedTraitLeft = {
+    name: 'mixed-trait-images',
+    domain: 'collection'
+  };
+
+  const mixedTraitRight = {
+    name: 'mixed-trait-question',
+    domain: 'collection'
+  };
+
+  const providerHorizontalStripQuestions = {
+    name: 'provider-horizontal-strip-questions',
+    domain: 'collection'
+  };
+
+    
+  const speciesIdentification = {
+    name: 'species-identification',
+    domain: 'collection',
+    taxon: 'name'
+  };
+
   
   export const panels = {
     specimenImages,
@@ -192,9 +191,7 @@ const traitImages = {
     vernaculars,
     text,
     summary,
-  
-    // command,
-  
+
     leaf,
     leafName,
   
@@ -209,8 +206,6 @@ const traitImages = {
     textComplete,
     cultivarCard,
     cultivar,
-    // wildcardCard,
-    // wildcard,
   
     specimenCommonMatch,
     specimenLatinMatch,
@@ -225,5 +220,10 @@ const traitImages = {
 
     birdsong,
     mediaPlayers,
-    traitImages
+    traitImages,
+
+    mixedTraitLeft,
+    mixedTraitRight,
+    providerHorizontalStripQuestions,
+    speciesIdentification
   };

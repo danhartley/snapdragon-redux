@@ -21,6 +21,20 @@ export const commmon = [
         wiki: "https://en.wikipedia.org/wiki/Endemism"
     },
     {
+        term: "Species complex",
+        definition: "A group of closely related organisms that are very similar in appearance to the point that the boundaries between them are often unclear.",
+        wiki: "https://en.wikipedia.org/wiki/Species_complex"
+    },
+    {
+        term: "Sward",
+        definition: "Expanse of short grass.",
+    },
+    {
+        term: "Cryptic species complex",
+        definition: "Two or more species hidden under one species name.",
+        wiki: "https://en.wikipedia.org/wiki/Species_complex"
+    },
+    {
         term: "Introduced",
         definition: "A species found outside its native distributional range due to human activity.",
         wiki: "https://en.wikipedia.org/wiki/Introduced_species"
@@ -114,10 +128,6 @@ export const commmon = [
         wiki: 'https://en.wikipedia.org/wiki/Tubercle'
     },
     {
-        term: 'Filiform',
-        definition: 'Thread-like.'
-    },
-    {
         term: 'Monophagous',
         definition: '(Of an animal) eating only one kind of food.'
     },
@@ -135,5 +145,46 @@ export const commmon = [
         term : "Cline",
         definition : "A measurable gradient in a single character (or biological trait) of a species across its geographical range.",
         wiki: 'https://en.wikipedia.org/wiki/Cline_(biology)'
+    },
+    {
+        term : "Polymorphism",
+        alt: 'Polymorphic',
+        definition : "The occurrence of two or more clearly different morphs or forms (alternative phenotypes), in the population of a species.",
+        wiki: 'https://en.wikipedia.org/wiki/Polymorphism_(biology)'
+    },
+    {
+        term : "Parasitism",
+        definition : "A relationship between species, where one organism, the parasite, lives on or in another organism, the host, causing it some harm, and is adapted structurally to this way of life.",
+        wiki: 'https://en.wikipedia.org/wiki/Parasitism'
+    },  
+    {
+        term : "Spore",
+        definition : "A unit of sexual or asexual reproduction that may be adapted for dispersal and for survival, often for extended periods of time, in unfavourable conditions.",
+        wiki: 'https://en.wikipedia.org/wiki/Spore'
+    },  
+    {
+        term : "Synanthrope",
+        definition : "Species of wild animals or plants that live near, and benefit from, an association with human beings.",
+        wiki: 'https://en.wikipedia.org/wiki/Synanthrope'
+    },  
+    {
+        term: "Eusociality",
+        definition: "Cooperative brood care, overlapping generations and division of labour into reproductive and non-reproductive groups.",
+        wiki: 'https://en.wikipedia.org/wiki/Eusociality'
+    },
+    {
+        term: "Nectar",
+        definition: "A sugar-rich liquid produced by plants in glands called nectaries",
+        wiki: 'https://en.wikipedia.org/wiki/Nectar'
+    },
+    {
+        term: "Pollen",
+        definition: "A fine to coarse powdery substance comprising pollen grains which are male microgametophytes of seed plants.",
+        wiki: "https://en.wikipedia.org/wiki/Pollen"
+    },
+    {
+        term: "Haplodiploidy",
+        definition: "A sex-determination system in which males develop from unfertilised eggs and are haploid, and females develop from fertilised eggs and are diploid.",
+        wiki: "https://en.wikipedia.org/wiki/Haplodiploidy"
     },
 ];
