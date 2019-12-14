@@ -274,7 +274,7 @@
 
     .modal-header-container {
         padding-bottom: 4px;
-        border-bottom: 1px solid lightgray;
+        border-bottom: 1px solid var(--snap-border-light);
     }
 }
 

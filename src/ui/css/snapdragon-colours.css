@@ -49,7 +49,7 @@
     --snap-question-radio: rgb(147, 208, 244);
     --snap-id-border: rgb(129, 67, 101);
 
-    --snap-progress-bg: rgb(128, 128, 128);
+    --snap-progress-bg: rgb(168, 168, 168);
     --snap-progress-bar: rgb(48, 94, 37);
     --snap-no-progress-bar: rgb(48, 94, 37);
   
@@ -63,12 +63,13 @@
     --snap-species-highlight-background: rgb(249, 248, 238);
     --snap-species-header-background: rgb(226, 222, 180);
     --snap-strips-background: rgba(182, 201, 213,.5);
-    --snap-btn-auxillary: rgb(174, 188, 168);
+    --snap-btn-auxillary: rgb(96, 117, 90);
     --snap-list-background: rgb(232, 235, 234);
     --snap-list-alt-background: rgb(252, 251, 246);
     --snap-default-background: rgb(244, 244, 244);
   
     --snap-border-light: rgb(175,175,175);
+    --snap-border-lightest: rgb(215,215,215);
 
     --snap-kingdom-plantae: rgb(48, 96, 37);
     --snap-kingdom-fungi: rgba(150, 43, 110,.8);

@@ -156,7 +156,7 @@ export const questions = [
         rank: 'species',
         taxon: 'Laetiporus sulphureus',
         statement: 'Chicken Of The Woods is a polyore.',
-        question: 'What word cab be used to describe the fruiting body of a polypore?',
+        question: 'What word can be used to describe the fruiting body of a polypore?',
         answer  : 'Conk',
         answers: [
             'Pileus',
@@ -170,7 +170,7 @@ export const questions = [
         iconicTaxon: 'fungi',
         rank: 'species',
         taxon: 'Laetiporus sulphureus',
-        statement: 'Chicken Of The Woods is a parasitic and saprobic in its ecology.',
+        statement: 'Chicken Of The Woods is parasitic and saprobic in its ecology.',
         question: 'Which description best fits where it might be found.',
         answer  : 'Growing in shelves at the base of an oak tree.',
         answers: [

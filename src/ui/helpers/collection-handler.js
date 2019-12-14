@@ -165,13 +165,6 @@ export const collectionHandler = async (collection, config, counter) => {
                     
                     item.name = names.slice(0,2).join(' ');
 
-                    // if(R.contains(item.taxonomy.genus, taxa)) {
-                    //     item.genus = await firestore.getTaxonByName({language: 'en'}, item.taxonomy.genus);
-                    //     if(item.genus) {
-                    //         item.genus.traits = await firestore.getTraitsBySpeciesName(item.taxonomy.genus);
-                    //     }
-                    // }
-
                 });
 
                 const loadTraitsInParallel = items => {

@@ -23,7 +23,7 @@ export const renderMixedTraitQuestion = collection => {
 
         mixedTraitHandler.fetchTraits(trait, requiredTraitValues, collection.glossary);
         
-        const help = `(${utils.fromCamelCase(trait)})`;
+        const help = `Select the correct ${utils.fromCamelCase(trait)}`;
     
         const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question, help, term: '' });              
 
@@ -35,7 +35,7 @@ export const renderMixedTraitQuestion = collection => {
             }
 
             parent.innerHTML = '';
-            renderTemplate({ traits: Array.from(new Set(traits.flat())) }, template.content, parent);
+            renderTemplate({ traits: Array.from(new Set(traits.flat())), help }, template.content, parent);
             document.querySelectorAll('.js-traits-names-txt img').forEach(img => {
                 if(img.src.indexOf('png') > -1) {
                     img.classList.add('png');

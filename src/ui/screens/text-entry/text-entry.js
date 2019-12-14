@@ -35,7 +35,7 @@ export const renderInput = (screen, question) => {
         case 'vernacular':
             vernacularName = '--- ---';
             binomial = item.name;
-            questionTxt = 'Give the common name';
+            questionTxt = 'Enter the common name';
             break;
     }
 

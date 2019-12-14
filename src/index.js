@@ -44,7 +44,7 @@ const onLoadHandler = () => {
         actions.boundUpdateConfig(config);
         actions.boundStopStartLesson(counter);
 
-        // subscription.add(renderHeaders, 'collection', 'flow');
+        subscription.add(renderHeaders, 'collection', 'flow');
         renderNavigation();
         subscription.add(renderNavigation, 'collection', 'flow');
 

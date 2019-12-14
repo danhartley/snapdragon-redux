@@ -38,8 +38,8 @@
   }
    
   .test-card-question .question-question {
-    /* text-transform: uppercase; */
-    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-size: 1.4rem;
     color: var(--snap-text-medium-light);
     display: flex;
     flex-direction: row;
@@ -65,15 +65,15 @@
     color: var(--snap-text-medium-light);
 }
 
+.test-card-question .question-help {
+    display: none;;
+}
+
 .test-card-question .question-statement {
     padding: 0 .5rem;
     font-size: .7rem;
     text-align: center;
 }
-
-/* .test-card-question .question-provider-question {
-    text-transform: uppercase;
-} */
 
 .test-card button {
     display: inline-block;
@@ -211,8 +211,13 @@ div.text-entry {
     grid-template-rows: 2fr auto 3fr;
   }
 
+  .mixed-specimen-container > div > span {
+      /* color: var(--snap-lesson); */
+      font-size: 1.1rem;
+  }
+
   .btn.btn-auxiliary, .btn.btn-auxiliary:focus {
-    color: var(--snap-text-dark) !important;
+    color: var(--snap-text-light) !important;
     background-color: var(--snap-btn-auxillary) !important;
     cursor: pointer !important;
   }
@@ -313,6 +318,7 @@ div.text-entry {
     .traits-names-txt {
         column-count: 2;
         padding: 1rem;
+        border-bottom: 1px solid var(--snap-border-lightest);
     }
 
     .iconic-icon {
