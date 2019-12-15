@@ -25,8 +25,13 @@ export const nextLesson = counter => {
             // asyncFunc will return collection, lessonPlan and lesson
 
             const asyncFunc = lessonPlanner.createLessonPlan(lessonPlan, config, R.clone(collection), R.clone(lesson)).then(props => {
+                if(!props) return;
                 return { lessonPlan: props.updatedLessonPlan, collection: props.updatedCollection, lesson: props.updatedLesson };
             });
+
+            console.log('asyncFunc: ', asyncFunc);
+
+            if(asyncFunc === null) return;
 
             setupHandler.actionUpdate(enums.nextStep.NEXT_LESSON, { asyncFunc });
         }

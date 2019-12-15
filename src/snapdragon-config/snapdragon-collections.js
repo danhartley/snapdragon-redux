@@ -246,8 +246,8 @@ const woodlandsTV1 = {
   behaviour: 'static',
   name: 'WoodlandsTV - An Introduction to Lichen',
   type: 'taxon',
-  moduleSize: 4,
-  lessonPlanLandscape: 10,
+  moduleSize: 1,
+  lessonPlanLandscape: 12,
   lessonPlanPortrait: 110,
   glossary: ['lichen', 'common'],
   iconicTaxa: [ 
@@ -257,16 +257,26 @@ const woodlandsTV1 = {
     },
   ],
   species: [
-    {
-      name: 'Quercus rubra',
-      time: [85],
-      description: 'Supports a wide variety of lichens.'
-    },
+    // {
+    //   name: 'Quercus rubra',      
+    //   time: [85],
+    //   description: 'Supports a wide variety of lichens.'
+    // },
     {
       name: 'Graphis scripta',
       time: [190],
+      questionIds: ['24', '25', '26'],
       description: 'Graphis scripta. Named for the apothecia which form lines which ressemble some kind of ancient script or writing.'
     },
+    {
+      name: 'Xanthoria parietina',
+      questionIds: ['27', '28', '29'],
+    },
+    {
+      name: 'Ramalina farinacea',
+      questionIds: ['30']
+    },
+    
   ],
   notes: [
     {

@@ -53,3 +53,17 @@ export const landscapeStaticTaxonGroup = {
         }
     ]
 };
+
+export const landscapeStaticProviderQuestionsOnly = {
+    id: 12,
+    name:'Lesson 12',
+    portrait: false,
+    default: true,
+    levels: [
+        {   id: 1,
+            name:'Level 1',
+            layouts: [],
+            bonusLayouts: []
+        }
+    ]
+};

@@ -82,10 +82,6 @@
         padding: 0 .5rem;
     }
 
-    /* .horizontal.strips {  
-        width: calc(600px - 1rem);
-    } */
-
     .bird-song, .taxon-identification, .taxon-summary {
         margin: 1rem 4rem 0 4rem;
     }
@@ -255,7 +251,6 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        margin-top: 1rem;
     }
 
     .non-taxa .btn-group {
@@ -266,6 +261,7 @@
 
     .non-taxa .btn.btn-secondary {
         height: 3rem;
+        cursor: pointer !important;
     }
 
     .non-taxon-card-wiki {

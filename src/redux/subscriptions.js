@@ -53,7 +53,7 @@ const removeSubs = () => {
 
     let screens = getByRole('screen');
 
-    screens.forEach(s => console.log(`%c${ 'Subs being removed: ' + s.name}`, "color:green"));
+    // screens.forEach(s => console.log(`%c${ 'Subs being removed: ' + s.name}`, "color:green"));
 
     screens.forEach(sub => subscription.remove(sub));
 
@@ -77,6 +77,8 @@ const addSubs = (layout, config) => {
             }                           
         }
     });
+
+    layout.screens.forEach(s => console.log(`%c${ 'Subs active: ' + s.name}`, "color:blue"));
 };
 
 export const subscription = {

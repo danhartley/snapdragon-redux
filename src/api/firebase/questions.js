@@ -359,5 +359,107 @@ export const questions = [
             'Queen bees',
         ]
     },
+    {
+        id: '24',
+        provider: 'snapdragon',
+        iconicTaxon: 'fungi',
+        rank: 'kingdom',
+        taxon: 'fungi',
+        statement: 'Lichens are complex organisms formed from 2 or 3 species.',
+        question: 'The symbiotic relationship between them is an example of?',
+        answer  : 'Mutualism',
+        answers: [
+            'Parasitism',
+            'Predation',
+            'Competition',
+        ]
+    },
+    {
+        id: '25',
+        provider: 'snapdragon',
+        iconicTaxon: 'fungi',
+        rank: 'kingdom',
+        taxon: 'fungi',
+        statement: 'Photosynthesis converts light energy into chemical energy.',
+        question: 'Which of these organisms photosynthesises?',
+        answer  : 'Alga',
+        answers: [
+            'Fungus'
+        ]
+    },
+    {
+        id: '26',
+        provider: 'snapdragon',
+        iconicTaxon: 'fungi',
+        rank: 'kingdom',
+        taxon: 'fungi',
+        statement: 'Graphis scripta is an example of a crustose lichen.',
+        question: 'How would you describe a crustose lichen?',
+        answer  : 'Grows directly onto the bark; cannot be peeled off.',
+        answers: [
+            'Bushy like a shrub; it is attached to the bark substrate at one point and branches out from there.',
+            'Flat like a leaf, with both a top side and a bottom side (which can be revelead).'
+        ]
+    },
+    {
+        id: '27',
+        provider: 'snapdragon',
+        iconicTaxon: 'fungi',
+        rank: 'kingdom',
+        taxon: 'fungi',
+        statement: 'Lichens grow on plants, but not as parasites.',
+        question: 'What term describes the surface of the plant?',
+        answer  : 'Substrate',
+        answers: [
+            'Podetia',
+            'Substratum',
+            'Stratum'
+        ]
+    },
+    {
+        id: '28',
+        provider: 'snapdragon',
+        iconicTaxon: 'fungi',
+        rank: 'kingdom',
+        taxon: 'fungi',
+        statement: 'Most lichens are ascolichens (ascomycetes).',
+        question: 'Their spores are produced in fruiting bodies called?',
+        answer  : 'Ascomata',
+        answers: [
+            'Stomata',
+            'Tomato',
+            'Palmata'
+        ]
+    },
+    {
+        id: '29',
+        provider: 'snapdragon',
+        iconicTaxon: 'fungi',
+        rank: 'kingdom',
+        taxon: 'fungi',
+        statement: 'Lichens are grouped by the look of their vegetative body parts.',
+        question: 'What is the technical name for this growth form?',
+        answer  : 'Thallus',
+        answers: [
+            'Pileus',
+            'Stipe',
+            'Substrate'
+        ]
+    },
+    {
+        id: '30',
+        provider: 'snapdragon',
+        iconicTaxon: 'fungi',
+        rank: 'kingdom',
+        taxon: 'fungi',
+        statement: 'Lichens are grouped by thallus types.',
+        question: 'Which set of names has only valid types?',
+        answer  : 'Fruticose, foliose, crustose, squamulose, leprose',
+        answers: [
+            'Fruticose, foliose, crustose, rugose, farinose',
+            'Tomentose, foliose, crustose, fruticose, farinose',
+            'Leprose, foliose, crustose, fruticose, farinose',
+        ]
+    },
 
 ];

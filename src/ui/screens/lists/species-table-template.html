@@ -30,12 +30,12 @@
             </td>
             <td class="wide-screen">
                 <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="family" data-family="{{ item.taxonomy.family }}" data-target="#cardModal" class="{{ item.familyLinkClass }}">{{ item.taxonomy.family }}</span>
-                <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="order" data-order="{{ item.taxonomy.order }}" data-target="#cardModal" class="{{ item.orderLinkClass }}">{{ item.taxonomy.order }}</span>
+                <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="order" data-order="{{ item.taxonomy.order }}" data-target="#cardModal" class="{{ item.orderLinkClass }} js-order-link">{{ item.taxonomy.order }}</span>                
+                <span data-toggle="modal" data-url="{{ item.url }}" data-target="#cardModal" data-key-trait="{{ item.keyTrait }}" class="{{ item.keyTratLinkClass }}">{{ item.keyTrait }}</span>
             </td>
             <td class="wide-screen {{ item.iconicTaxon }}">
                 <span id="{{ item.id }}" name="{{ item.name }}"><i class="{{ item.iconicTaxonIcon }}"></i></span>
-                <span class="mushroom-icon {{ item.hideFungiIcon }}"></span>
-                <span data-key-trait="{{ item.keyTrait }}" class="{{ item.keyTratLinkClass }}"></span>
+                <span class="mushroom-icon {{ item.hideFungiIcon }}"></span>                
             </td>
             <td>
                 <span data-name="{{ item.name }}" class="js-youtube {{ item.hasVideoClassName }}">

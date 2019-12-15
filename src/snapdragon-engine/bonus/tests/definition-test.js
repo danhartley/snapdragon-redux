@@ -28,12 +28,16 @@ const getDefinitionTest = item => {
 
     const term = item.terms 
                     ? utils.shuffleArray(item.terms)[0] 
-                    : item.genus.terms
-                        ? item.genus.terms[collection.itemIndex] 
+                    : item.genus
+                        ? item.genus.terms
                             ? item.genus.terms[collection.itemIndex] 
-                            : item.family.terms
-                                ? utils.shuffleArray(item.family.terms)[0]
-                                : null
+                                ? item.genus.terms[collection.itemIndex] 
+                                    : item.family
+                                    ? item.family.terms
+                                        ? utils.shuffleArray(item.family.terms)[0]
+                                        : null
+                                    : null
+                            : null
                         : null;
                     
 

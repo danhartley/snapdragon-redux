@@ -3,10 +3,6 @@
     border: 0;
 }
 
-.vernacular-name-badge {
-    position: relative;
-}
-
 .names-badge {    
     vertical-align: top;
     cursor: pointer;
@@ -20,8 +16,6 @@
   min-width: 1rem;
   min-height: 1rem;
 }
-
-  /* CARD */
 
 .card {
     flex: auto;

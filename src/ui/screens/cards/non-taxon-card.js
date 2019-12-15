@@ -20,7 +20,7 @@ export const subscribeToNonTaxaSelection = callback => {
     subscriptions.push(callback);
 };
 
-export const renderNonTaxonCard = (mode = 'STAND_ALONE', keyTrait, parent = DOM.rightBody, url) => {
+export const renderNonTaxonCard = (mode = 'STAND_ALONE', keyTrait, parent = DOM.rightBody, url, isInCarousel = false) => {
 
     const prev = document.querySelector('#cardModal .js-prev');
     const next = document.querySelector('#cardModal .js-next');
