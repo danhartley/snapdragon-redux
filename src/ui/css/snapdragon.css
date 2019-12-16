@@ -71,6 +71,13 @@ hr {
   margin: 0;
 }
 
+img {
+  object-fit: contain !important;
+}
+.font-size-small {
+  font-size: .7rem;
+}
+
 .desaturate {
   opacity: .6;
   filter: grayscale(80%);
@@ -303,6 +310,7 @@ a.dropdown-item {
 }
 
 .home-container {
+  position: relative;
   display: grid;
   grid-template-rows: var(--vhStandardBlock) auto;
 }
@@ -314,8 +322,6 @@ a.dropdown-item {
 .species.card {
   margin: 0;
 }
-
-/* LICHEN FORM */
 
 .non-taxa {
   display: flex;
@@ -504,6 +510,9 @@ body {
   cursor: pointer;
   max-height: var(--vhLargeImage);
   justify-self: center;
+  height: 140px;
+  width: 210px;
+  min-height: 120px;
 }
 
 .traits.squares > div {
@@ -529,20 +538,20 @@ body {
   height: initial;
 }
 
-.squares > div:nth-child(odd) {
-  border-left: .05rem solid lightgray;
-  border-right: .05rem solid lightgray;
+/* .squares > div:nth-child(odd) {
+  border-left: .05rem solid var(--snap-border-lightest);
+  border-right: .05rem solid var(--snap-border-lightest);
 }
 
 .squares > div:nth-child(even) {
-  border-right: .05rem solid lightgray;
+  border-right: .05rem solid var(--snap-border-lightest);
 }
 
 .squares > div:nth-child(3),
 .squares > div:nth-child(4) {
-  border-top: .05rem solid lightgray;
-  border-bottom: .05rem solid lightgray;
-}
+  border-top: .05rem solid var(--snap-border-lightest);
+  border-bottom: .05rem solid var(--snap-border-lightest);
+} */
 
 .square, .tile {
   border-radius: 0.2rem;
@@ -813,7 +822,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-right: 1px solid lightgray;
+  border-right: 1px solid var(--snap-border-lightest);
   font-size: .8rem
 }
 
@@ -1317,7 +1326,7 @@ label.btn.btn-secondary .lesson-icon {
 }
 
 .faded {
-  color: lightgray;
+  color: var(--snap-border-lightest);
 }
 
 .compare-species-link {
@@ -1654,7 +1663,7 @@ a.collection-disabled {
 .calendar-container {
   display: flex;
   align-items: center;
-  border-right: 1px solid lightgray;
+  border-right: 1px solid var(--snap-border-lightest);
 }
 
 .calendar-box .row {
@@ -1809,7 +1818,6 @@ a.collection-disabled {
 }
 
 .snapdragon-create-guide {  
-  height: 5rem;
   position: absolute;
   bottom: 1rem;
   right: 1rem;
@@ -1820,15 +1828,6 @@ a.collection-disabled {
   letter-spacing: .05rem;
   text-transform: uppercase;
 }
-
-/* .snapdragon-create-guide > div:nth-child(1) > span:nth-child(1) {
-  font-family: "PT Sans", "Roboto", arial, sans-serif;
-}
-
-.snapdragon-create-guide > div:nth-child(1) > span:nth-child(2) {
-  font-family: 'SharpGroteskWide', sans-serif;
-  color: var(--snap-collection-active);
-} */
 
 .snapdragon-create-guide .for-text {
   vertical-align: middle;
@@ -2024,6 +2023,7 @@ a.collection-disabled {
   position: -webkit-sticky;
   top: 0;
   z-index: 30;
+  width: 100%;
 }
 
 .lesson-list div.lesson-list-carousel-item:nth-of-type(2n) {

@@ -96,7 +96,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
                     await buildQuestion();
 
-                    render( answer, answers, { binomial: 'Latin name', question: 'What is the latin name?', help, italicise: true });
+                    render( answer, answers, { binomial: 'Latin name', question: 'What\'s the latin name?', help, italicise: true });
                 };
 
                 renderBinomialQuestions();
@@ -124,7 +124,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
                     await buildQuestion();
 
-                    render(answer, answers, { vernacularName: 'Common name', question: 'What is the common name?', help });
+                    render(answer, answers, { vernacularName: 'Common name', question: `What's the common name?`, help });
                 };
 
                 renderVernacularQuestions();
@@ -152,7 +152,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
                     await buildQuestion();
 
-                    render(answer, answers, { vernacularName: item.vernacularName, question: 'Which description fits best?', help });
+                    render(answer, answers, { vernacularName: item.vernacularName, question: 'Which description fits?', help });
                 };
 
                 renderIdQuestions();

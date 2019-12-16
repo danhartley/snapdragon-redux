@@ -46,6 +46,8 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+    /* font-family: "PT Sans", "Roboto", arial, sans-serif; */
+    letter-spacing: .05rem;
   }
 
   .test-card-question .question {
@@ -71,7 +73,7 @@
 
 .test-card-question .question-statement {
     padding: 0 .5rem;
-    font-size: .7rem;
+    font-size: .8rem;
     text-align: center;
 }
 
@@ -139,8 +141,6 @@
     height: var(--vhButtonBlock, 9vh);
 }
 
-/* SCROLLING */
-
 .test-card .portrait-answer {
     font-style: italic;
     text-transform: capitalize;
@@ -149,15 +149,15 @@
 .answer-box-success > span:nth-child(2), 
 .answer-box-alert > span:nth-child(2) {
     color: var(--snap-success);
-    font-family: serif;
+    /* font-family: serif; */
     font-weight: bold;
+    font-size: 1rem;
+    /* letter-spacing: .01rem; */
 }
 
 .answer-box-alert > span:nth-child(2) {
     color: var(--snap-alert);
 }
-
-/* TEXT ENTRY */
 
 .text-entry-container {
     padding: .5rem;
@@ -168,7 +168,7 @@
 }
 
 .help-txt {
-    margin: .5rem 1rem !important;
+    margin: 1rem !important;
 }
 
 div.text-entry {
@@ -196,8 +196,6 @@ div.text-entry {
     margin: 0 .5rem;
   }
 
-  /* FUNGI ICONS */
-
   .mushroom-icon-header svg {
     width: 2rem;
     height: 2rem;
@@ -212,7 +210,6 @@ div.text-entry {
   }
 
   .mixed-specimen-container > div > span {
-      /* color: var(--snap-lesson); */
       font-size: 1.1rem;
   }
 
@@ -251,7 +248,6 @@ div.text-entry {
     background-color: var(--snap-species-header-background);
     height: var(--vhStandardBlock, 10vh);
     color: var(--snap-text-medium-light);
-    border-radius: 0.2rem;
 }
 
   .question-container > span:nth-child(2) {
@@ -325,8 +321,6 @@ div.text-entry {
         font-size: 2rem;
     }
 
-    /* CARD HEADER */
-
     .question-container {
         grid-template-columns: 1fr 4fr 1fr;
         display: initial;
@@ -380,8 +374,6 @@ div.text-entry {
         padding: 0.5rem;
         border: 0.05rem solid var(--snap-border-light);
     }
-
-    /* SYSTEM RESPONSE */
 
     .test-card-container .text-question {
         left: 1rem;

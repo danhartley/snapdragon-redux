@@ -65,7 +65,7 @@
     flex-direction: column;
     justify-content: center;
     height: inherit;
-    border-right: 1px solid lightgray;
+    border-right: 1px solid var(--snap-border-lightest);
   }
 
   .external-links {
@@ -126,7 +126,7 @@ td:empty:after{
 }
 
 .relationship-card {
-  border: 1px solid lightgray;
+  border: 1px solid var(--snap-border-lightest);
   margin: .25rem;
   padding: .5rem;
 }

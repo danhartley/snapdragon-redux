@@ -49,7 +49,7 @@ const getDefinitionTest = item => {
     
     const question = definition.definition;
     const answers = utils.shuffleArray([question, ...alternatives]);
-    const help = config.isLandscapeMode ? 'Select the correct answer' : '(Tap on the answer.)';
+    const help = config.isLandscapeMode ? 'Select the correct answer' : '(Tap on the answer)';
 
     return { question, answers, overrides : { question: definition.term, help, binomial: 'Definition', vernacularName: 'Dictionary' } };
 };

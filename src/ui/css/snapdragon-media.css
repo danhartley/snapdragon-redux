@@ -70,6 +70,25 @@
 
 @media (min-width: 768px) {
 
+    .text-entry-container {
+        padding: .5rem 0;
+    }
+
+    /* .action-update button {
+        width: initial;
+        float: right;
+    } */
+
+    .btn {
+        width: fit-content;
+    }
+
+    .squares {
+        margin: 0 0 var(--vhStandardBlock, 10vh) 0;
+        /* border-top: .05rem solid var(--snap-border-lightest);
+        border-bottom: .05rem solid var(--snap-border-lightest); */
+    }
+
     .lesson-list-carousel-item > div:nth-child(2) > div {
         display: flex;
     }
@@ -78,8 +97,17 @@
         max-width: 1200px;
     }
 
+    .left-grid {
+        width: 480px;
+    }
+
+    .right-grid {
+        width: 720px;
+    }
+
     .pool {
         padding: 0 .5rem;
+        max-width: 70%;
     }
 
     .bird-song, .taxon-identification, .taxon-summary {
@@ -100,6 +128,8 @@
 
     .strip {
         min-width: initial;
+        margin: .75rem;
+        padding: .75rem;
     }
 
     body {
@@ -245,6 +275,7 @@
 
     .header > div:nth-child(2) {
         max-width: initial;
+        text-transform: initial;
     }
 
     .non-taxa {

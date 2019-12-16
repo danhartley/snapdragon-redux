@@ -821,9 +821,6 @@ const nationalTrustButterflies = {
       Upperside: electric, irridescent, bright blue.
 
       Species decline: died out in the Cotswalds in 1963 but reappeared 40 years later. Now over 30 colonies.
-
-      Separating the female chalkhill blue and the Adonis blue is extremely difficult. 
-      The tip is, chalkhill blue females are old and ragged when the second brood of the Adonis blue females are flying (so the Adonis flies a little bit later).
       `
     },
     {
@@ -841,16 +838,17 @@ const nationalTrustButterflies = {
       time: [258],
       description: `A male chalkhill butterfly.
 
-      Hard to identify because there is not much of him left. The average butterfly of this size lives about a week but individuals live for much longer (he may be 2-3 weeks old).
+      Hard to identify because there is not much of him left. The average butterfly of this size lives about a week but individuals may live for much longer (he may be 2-3 weeks old).
       `
     }
   ],
   notes: [
     {
-      tag: '',
-      time: [],
-      description: `
-        
+      tag: 'Chalkhill blue vs Adonis blue',
+      time: [276],
+      description: `Separating the female chalkhill blue and the Adonis blue is extremely difficult:
+      
+      Chalkhill blue females are old and ragged when the second brood of the Adonis blue females are flying (so the Adonis flies a little bit later).        
       `
     },
   ],
@@ -877,8 +875,9 @@ const nationalTrustButterflies = {
       {
         label: 'Channel',
         url: 'https://www.youtube.com/channel/UCbSxeBQ-U-goXdmkiNBSrrg'
-      }
+      },
     ],
+    location: 'UK'
   }  
 };
 
