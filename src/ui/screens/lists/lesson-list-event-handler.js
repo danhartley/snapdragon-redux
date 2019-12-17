@@ -5,6 +5,7 @@ import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';
 
 import { renderLesson } from 'ui/screens/home/home-lesson-intro';
+import { lessonHandler } from 'ui/helpers/lesson-handler';
 
 import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 import { videoHandler } from 'ui/screens/lists/video-handler';
@@ -154,6 +155,8 @@ const onTitleClickHandler = (title, lessons, config, startLesson) => {
 const onReviewClickHandler = reviewLink => {    
 
   reviewLink.addEventListener('click', async e => {
+
+    // lessonHandler.purgeLesson();
 
     e.stopPropagation();
 

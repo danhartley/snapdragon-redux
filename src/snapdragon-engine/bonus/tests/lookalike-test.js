@@ -26,13 +26,15 @@ export const getLookalikeTests = async itemsInThisRound => {
     return tests;
 }
 
-export const getLookalikes = async item => {
+export const getItemLookalikes = async item => {
 
     if(!item.traits || Object.keys(item.traits).length === 0) return {};
 
     const lookaliketraits = item.traits['lookalikes'];
 
-    if(!lookaliketraits) return {};
+    console.log(lookalikes)
+
+    if(!lookaliketraits) return new Promise(resolve => resolve([]));
 
     let lookalikes = lookaliketraits.map(trait => trait.lookalike.name);
 
@@ -56,7 +58,7 @@ const getLookalikeTest = item => {
 
     const init = async () => {
 
-        const lookalikes = getLookalikes(item);
+        const lookalikes = await getItemLookalikes(item);
 
         const question = item.name;
         const answers = [ question, ...lookalikes.map(item => item.name) ];
