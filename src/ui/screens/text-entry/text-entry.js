@@ -79,7 +79,7 @@ export const renderInput = (screen, question) => {
     const answerBtn = document.querySelector('.js-check-answer');
 
     const callback = (score, scoreUpdateTimer) => {        
-        console.log('score result: ', score)
+        // console.log('score result: ', score)
         boundScore.scoreUpdateTimer = scoreUpdateTimer;
         boundScore.score = score;        
         if(answerBtn) answerBtn.removeEventListener('click', scoreEventHandler);
@@ -100,7 +100,7 @@ export const renderInput = (screen, question) => {
 
             const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames };
 
-            console.log(score);
+            // console.log(score);
 
             scoreHandler('text', score, callback, config);
             document.querySelector('.js-continue-lesson-btn').disabled = false;

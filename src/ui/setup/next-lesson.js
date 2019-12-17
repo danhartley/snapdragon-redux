@@ -29,8 +29,6 @@ export const nextLesson = counter => {
                 return { lessonPlan: props.updatedLessonPlan, collection: props.updatedCollection, lesson: props.updatedLesson };
             });
 
-            console.log('asyncFunc: ', asyncFunc);
-
             if(asyncFunc === null) return;
 
             setupHandler.actionUpdate(enums.nextStep.NEXT_LESSON, { asyncFunc });

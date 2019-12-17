@@ -384,7 +384,9 @@ export const questions = [
         question: 'Which of these organisms photosynthesises?',
         answer  : 'Alga',
         answers: [
-            'Fungus'
+            'Fungus',
+            'Mycellium',
+            'Apothecium'
         ]
     },
     {
@@ -459,6 +461,21 @@ export const questions = [
             'Fruticose, foliose, crustose, rugose, farinose',
             'Tomentose, foliose, crustose, fruticose, farinose',
             'Leprose, foliose, crustose, fruticose, farinose',
+        ]
+    },
+    {
+        id: '31',
+        provider: 'snapdragon',
+        iconicTaxon: 'fungi',
+        rank: 'kingdom',
+        taxon: 'fungi',
+        statement: 'Lichens have fruiting bodies called ascomata.',
+        question: 'When saucer or cup-shaped what they are called?',
+        answer  : 'Apothecium',
+        answers: [
+            'Cyanobacterium',
+            'Hymenium',
+            'Gymnothecium',
         ]
     },
 

@@ -71,9 +71,10 @@ hr {
   margin: 0;
 }
 
-img {
+/* img {
   object-fit: contain !important;
-}
+} */
+
 .font-size-small {
   font-size: .7rem;
 }
@@ -502,21 +503,31 @@ body {
 
 .squares > div {
   display: grid;
-  align-items: center;
-  justify-content: center;  
+  /* align-items: center;
+  justify-content: center;   */
+  justify-self: center;
+  height: 148px;
+  width: 232px;
+  /* height: 140px;
+  width: 210px; */
+  /* min-height: 120px; */
 }
 
 .squares img, .tiles img {
   cursor: pointer;
-  max-height: var(--vhLargeImage);
-  justify-self: center;
-  height: 140px;
-  width: 210px;
-  min-height: 120px;
+  /* max-height: var(--vhLargeImage); */
+  /* justify-self: center; */
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
 }
 
-.traits.squares > div {
+/* .traits.squares > div {
   padding: 1rem;
+} */
+
+.traits.squares img {
+  object-fit: scale-down;
 }
 
 .traits.squares > div.multiple {
@@ -524,10 +535,9 @@ body {
   cursor: pointer;
 }
 
-.traits.squares > div img {
+/* .traits.squares > div img {
   height: 100%;
 }
-
 
 .traits.squares > div.multiple img {
   height: 50%;
@@ -536,7 +546,7 @@ body {
 .traits.squares > div.png img {
   max-width: 50%;
   height: initial;
-}
+} */
 
 /* .squares > div:nth-child(odd) {
   border-left: .05rem solid var(--snap-border-lightest);

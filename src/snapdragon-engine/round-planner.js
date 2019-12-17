@@ -58,7 +58,7 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
 
         if(lesson.level.id === 1) {
 
-            console.log('bonusLayouts: ', bonusLayouts);
+            // console.log('bonusLayouts: ', bonusLayouts);
             
             if(bonusLayouts) {
                 const bonusTests = await bonusHandler.getTests(collection, itemIndices, bonusLayouts, lessonName, levelName);

@@ -78,7 +78,7 @@ const addSubs = (layout, config) => {
         }
     });
 
-    layout.screens.forEach(s => console.log(`%c${ 'Subs active: ' + s.name}`, "color:blue"));
+    // layout.screens.forEach(s => console.log(`%c${ 'Subs active: ' + s.name}`, "color:blue"));
 };
 
 export const subscription = {

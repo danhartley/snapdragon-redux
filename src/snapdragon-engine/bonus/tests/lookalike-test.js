@@ -32,8 +32,6 @@ export const getItemLookalikes = async item => {
 
     const lookaliketraits = item.traits['lookalikes'];
 
-    console.log(lookalikes)
-
     if(!lookaliketraits) return new Promise(resolve => resolve([]));
 
     let lookalikes = lookaliketraits.map(trait => trait.lookalike.name);

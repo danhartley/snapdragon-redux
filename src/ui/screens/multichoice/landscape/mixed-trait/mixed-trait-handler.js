@@ -34,6 +34,7 @@ const getMatchingTrait = (layoutTraits, traitValues) => {
         return { requiredTraitValues, trait };
     } catch (e) {
         console.log('getMatchingTrait error: ', e.message);
+        return { requiredTraitValues: [], trait: {}};
     }
 
 };

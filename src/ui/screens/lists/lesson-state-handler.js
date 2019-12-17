@@ -12,7 +12,7 @@ const beginOrResumeLesson = async reviewLessonId  => {
 
   const { collections, collection: custom, config, history, score, counter } = store.getState();
 
-  const lesson = custom.id > 0 ? custom : collections.find(c => c.id === reviewLessonId);
+  const lesson = (custom.id && config.collection.id !== 0) > 0 ? custom : collections.find(c => c.id === reviewLessonId);
 
   const collection = await loadCollection(lesson, config, counter, collections);
   
@@ -34,9 +34,11 @@ const renderLessonSpeciesList = async (lesson, container) => {
 
 const saveCurrentLesson = async collection => {
 
+  console.log('saveCurrentLesson: ', collection);
+
   const { counter, lessonPlan, lessonPlans, layout, lesson, score, history, bonusLayout, enums, config } = store.getState();
   
-  if(!score || score.total === 0) return; // only save lessons that the user has started
+  // if(!score || score.total === 0) return; // only save lessons that the user has started
 
   const savedLesson = { 
       name: collection.name,
@@ -83,5 +85,6 @@ const loadCollection = async (collection, config, counter, collections) => {
 export const lessonStateHandler = {
   beginOrResumeLesson,
   renderLessonSpeciesList,
-  loadCollection
+  loadCollection,
+  saveCurrentLesson
 };

@@ -48,7 +48,7 @@ export const renderLessons = () => {
           chevrons.forEach(chevron => lessonListEventHandler.onTitleClickHandler(chevron, lessons, config, false));
 
     const reviews = document.querySelectorAll('.js-lesson-review');
-          reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink));
+          reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink, lessons));
 
     onCreateCustomLesson(collection => {
 
@@ -67,7 +67,7 @@ export const renderLessons = () => {
         lessonListEventHandler.onTitleClickHandler(title, lessons, config);
 
         const reviewLink = document.querySelector(`[data-lesson-id="${lesson.id}"]`);
-        lessonListEventHandler.onReviewClickHandler(reviewLink);
+        lessonListEventHandler.onReviewClickHandler(reviewLink, lessons);
 
         const chevron = document.querySelector(`div.js-lesson-list-chevron[data-lesson-id="${lesson.id}"]`);
         lessonListEventHandler.onTitleClickHandler(chevron, lessons, config, false);
