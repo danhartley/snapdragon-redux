@@ -26,30 +26,37 @@ export const getLookalikeTests = async itemsInThisRound => {
     return tests;
 }
 
+export const getLookalikes = async item => {
+
+    if(!item.traits || Object.keys(item.traits).length === 0) return {};
+
+    const lookaliketraits = item.traits['lookalikes'];
+
+    if(!lookaliketraits) return {};
+
+    let lookalikes = lookaliketraits.map(trait => trait.lookalike.name);
+
+    if(lookalikes.length === 0) return {};
+
+    // check current collection first?
+
+    const getLookalikes = async () => {
+        return Promise.all(lookalikes.map(async name => {
+            return await firestore.getSpeciesByName(name);
+        })
+    )};
+    
+    lookalikes = await getLookalikes();
+    lookalikes = lookalikes.filter(lookalike => lookalike);
+
+    return lookalikes;
+};
+
 const getLookalikeTest = item => {
 
     const init = async () => {
 
-        if(!item.traits || Object.keys(item.traits).length === 0) return {};
-
-        const lookaliketraits = item.traits['lookalikes'];
-
-        if(!lookaliketraits) return {};
-
-        let lookalikes = lookaliketraits.map(trait => trait.lookalike.name);
-
-        if(lookalikes.length === 0) return {};
-
-        // check current collection first?
-
-        const getLookalikes = async () => {
-            return Promise.all(lookalikes.map(async name => {
-                return await firestore.getSpeciesByName(name);
-            })
-        )};
-        
-        lookalikes = await getLookalikes();
-        lookalikes = lookalikes.filter(lookalike => lookalike);
+        const lookalikes = getLookalikes(item);
 
         const question = item.name;
         const answers = [ question, ...lookalikes.map(item => item.name) ];
