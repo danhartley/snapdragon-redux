@@ -57,7 +57,8 @@ export const handleRightsAttribution = (image, disableModal = false, activeItem)
     const identifier = `${image.itemName.replace(' ', '_')}`;
     
     let parent = document.querySelector(`.js-attribution-layer.${identifier}`);
-        parent = parent || document.querySelector(`.js-attribution-layer.mixed-specimens`);// portrait hack for mixed species specimen carousel
+        parent = parent || document.querySelector(`.js-attribution-layer`);
+        // parent = parent || document.querySelector(`.js-attribution-layer.mixed-specimens`);
         parent.innerHTML = '';
 
     renderTemplate({title,author,source,licence}, template.content, parent);

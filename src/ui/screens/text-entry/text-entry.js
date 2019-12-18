@@ -93,18 +93,18 @@ export const renderInput = (screen, question) => {
         if(helpTxt) helpTxt.innerHTML = question.taxon === 'vernacular' ? item.vernacularName : item.name;
     };
 
+    const loseFocusMobileHandler = e => {
+        document.removeEventListener('focusout', loseFocusMobileHandler);        
+        const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames };
+        // console.log(score);
+        scoreHandler('text', score, callback, config);
+        document.querySelector('.js-continue-lesson-btn').disabled = false;
+    };
+
     if(config.isLandscapeMode) {
         answerBtn.addEventListener('click', scoreEventHandler);
     } else {
-        document.addEventListener('focusout', e => {
-
-            const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames };
-
-            // console.log(score);
-
-            scoreHandler('text', score, callback, config);
-            document.querySelector('.js-continue-lesson-btn').disabled = false;
-        });
+        document.addEventListener('focusout', loseFocusMobileHandler);
     }
     
     if(config.isPortraitMode) renderPortrait(item, config);

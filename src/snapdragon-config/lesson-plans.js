@@ -2,8 +2,7 @@ import * as R from 'ramda';
 
 import { layouts as L } from 'snapdragon-config/screen-layouts';
 
-// import { landscapeDefault } from 'snapdragon-config/plans/landscape/landscape-default';
-// import { portraitDefault } from 'snapdragon-config/plans/portrait/portrait-default';
+import { landscapeCustom } from 'snapdragon-config/plans/landscape/landscape-custom';
 import { landscapeFungi, landscapeLichens } from 'snapdragon-config/plans/landscape/landscape-fungi';
 
 import { landscapeStatic, landscapeStaticTaxonGroup, landscapeStaticProviderQuestionsOnly } from 'snapdragon-config/plans/landscape/landscape-static';
@@ -20,7 +19,7 @@ const portraitLichens = { ...R.clone(landscapeLichens), id: 104, portrait: true 
 
 export const lessonPlans = [
 
-    // landscapeDefault,
+    landscapeCustom,
     landscapeStatic,
     landscapeStaticTaxonGroup,
     landscapeStaticProviderQuestionsOnly,
@@ -28,7 +27,6 @@ export const lessonPlans = [
     landscapeLichens,
     landscapeBirds,
     
-    // portraitDefault,
     portraitStatic,
     portraitStaticTaxonGroup,    
     portraitFungi,    

@@ -11,6 +11,9 @@
 @media (min-width: 320px) {
 }
 @media (min-width: 414px) {
+    .test-card-question .question-question {
+        font-size: 1.4rem;
+    }
 }
 
 /* iPHONE 6,7,8 */
