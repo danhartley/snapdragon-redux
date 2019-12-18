@@ -35,7 +35,7 @@ export const renderHorizontalStrips = collection => {
 
     document.querySelector('.js-test-card-question').classList.add('calendar-block');
     document.querySelector('.js-test-card-question').classList.remove('standard-block');
-    document.querySelector('.js-test-card-content').classList.add('horizontal');
+    // document.querySelector('.js-test-card-content').classList.add('horizontal');
 
     const strips = document.querySelectorAll('.js-rptr-strips .strip');
     const taxon = { name: item.taxonomy.family, binomial: item.name, question: layout.provider.answer };

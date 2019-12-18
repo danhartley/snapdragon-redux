@@ -42,7 +42,7 @@ const getMatchingTrait = (layoutTraits, traitValues) => {
 const fetchTraits = async (trait, requiredTraitValues, glossary) => {
 
     let traits = await firestore.getTraitDefinitions(glossary, trait);
-        traits.forEach(trait => trait.term = trait.term.toLowerCase());
+        traits.forEach(t => t.term = t.term.toLowerCase());
 
     let multiples = traitsHandler.getNMultiplesFromArray(traits.map(t => t.term), requiredTraitValues.length);
 

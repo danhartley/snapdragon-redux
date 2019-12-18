@@ -63,9 +63,9 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
                     const wordyAnswers = [ 'family-strips', 'definition', 'trait-property' ];
     
-                    if(R.contains(screen.name, wordyAnswers)) {
-                        document.querySelector('.js-rptr-strips').classList.add('horizontal');
-                    }
+                    // if(R.contains(screen.name, wordyAnswers)) {
+                    //     document.querySelector('.js-rptr-strips').classList.add('horizontal');
+                    // }
                 }
 
                 const taxon = { name: item.taxonomy.family, binomial: item.name, question: answer };

@@ -26,7 +26,7 @@ export const portraitStatic = {
                         L.speciesGenusEntry,
                         L.familyMatch , L.familyStripsMatch
                     ],
-            bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'lookalikes', 'definition' ] } ]
+            bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'definition' ] } ]
         }
     ]
 };

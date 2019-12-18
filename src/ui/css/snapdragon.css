@@ -590,16 +590,12 @@ body {
   justify-content: center;
 }
 
-.horizontal.strips {  
-  /* width: calc(100vw - 1rem); */
+/* .horizontal.strips {  
   cursor: pointer;
   display: flex;
   flex-wrap: nowrap;
-  /* padding: 2rem 0; */
   flex-direction: column;
   overflow-y: scroll;
-  /* flex-direction: row;
-  overflow-x: scroll; */
 }
 
 .horizontal.strips .strip {
@@ -612,7 +608,7 @@ body {
   justify-content: center;
   padding: 2rem;
   min-width: 75%;
-}
+} */
 
 .strip > div::first-letter {
   text-transform: capitalize;
