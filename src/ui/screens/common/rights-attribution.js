@@ -64,7 +64,8 @@ export const handleRightsAttribution = (image, disableModal = false, activeItem)
 
     const rightsAttribution = parent.querySelector('.rights-attribution');
     const rightsLink = parent.querySelector('.js-rights-link .js-copyright');
-    const indicators = document.querySelector(`#imageSlider_${disableModal}_${identifier} .carousel-indicators`);    
+    const indicators = document.querySelector(`.carousel-indicators`);    
+    // const indicators = document.querySelector(`#imageSlider_${disableModal}_${identifier} .carousel-indicators`);    
 
     const showAttribution = event => {
         rightsAttribution.classList.add('hide-important');

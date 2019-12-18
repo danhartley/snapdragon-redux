@@ -28,12 +28,16 @@ const getDefinitionTest = item => {
 
     const term = item.terms 
                     ? utils.shuffleArray(item.terms)[0] 
-                    : item.genus.terms
-                        ? item.genus.terms[collection.itemIndex] 
+                    : item.genus
+                        ? item.genus.terms
                             ? item.genus.terms[collection.itemIndex] 
-                            : item.family.terms
-                                ? utils.shuffleArray(item.family.terms)[0]
-                                : null
+                                ? item.genus.terms[collection.itemIndex] 
+                                    : item.family
+                                    ? item.family.terms
+                                        ? utils.shuffleArray(item.family.terms)[0]
+                                        : null
+                                    : null
+                            : null
                         : null;
                     
 
@@ -45,7 +49,7 @@ const getDefinitionTest = item => {
     
     const question = definition.definition;
     const answers = utils.shuffleArray([question, ...alternatives]);
-    const help = config.isLandscapeMode ? 'Select the correct answer' : '(Tap on the answer.)';
+    const help = config.isLandscapeMode ? 'Select the correct answer' : '(Tap on the answer)';
 
     return { question, answers, overrides : { question: definition.term, help, binomial: 'Definition', vernacularName: 'Dictionary' } };
 };

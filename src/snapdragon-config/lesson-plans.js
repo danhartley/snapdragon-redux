@@ -6,7 +6,7 @@ import { layouts as L } from 'snapdragon-config/screen-layouts';
 // import { portraitDefault } from 'snapdragon-config/plans/portrait/portrait-default';
 import { landscapeFungi, landscapeLichens } from 'snapdragon-config/plans/landscape/landscape-fungi';
 
-import { landscapeStatic, landscapeStaticTaxonGroup } from 'snapdragon-config/plans/landscape/landscape-static';
+import { landscapeStatic, landscapeStaticTaxonGroup, landscapeStaticProviderQuestionsOnly } from 'snapdragon-config/plans/landscape/landscape-static';
 import { portraitStatic, portraitStaticTaxonGroup } from 'snapdragon-config/plans/portrait/portrait-static';
 
 const landscapeBirds = { ...R.clone(landscapeStatic), id: 5 };
@@ -23,6 +23,7 @@ export const lessonPlans = [
     // landscapeDefault,
     landscapeStatic,
     landscapeStaticTaxonGroup,
+    landscapeStaticProviderQuestionsOnly,
     landscapeFungi,    
     landscapeLichens,
     landscapeBirds,

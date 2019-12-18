@@ -37,7 +37,7 @@
   }
   
   .modal-body .modal-guide-progress > div > div {
-    border-right: .005rem solid lightgray;
+    border-right: .005rem solid var(--snap-border-lightest);
   }
   
   .modal-body .modal-guide-progress > div > div:last-child {
@@ -269,7 +269,7 @@
     z-index: 9999;
     color: var(--snap-text-dark-medium-dark);
     background-color: rgb(250, 250, 250);
-    border: .05rem solid lightgray;
+    border: .05rem solid var(--snap-border-lightest);
     text-align: left;
     width: initial;
     /* top: calc(var(--vhStandardBlock) + var(--vhStandardBlock) + var(--vhHalfStandardBlock) + var(--vhRunningBlock) + 2rem) !important; */
@@ -683,7 +683,8 @@
 
     .range-slider > span:nth-child(2) {
         width: fit-content;
-        border: .05rem solid lightgray;
+        border: .05rem solid var(--snap-border-lightest)
+  ;
         padding: .5rem;
     }
 

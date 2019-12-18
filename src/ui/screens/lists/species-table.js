@@ -114,7 +114,7 @@ export const buildTable = (collection, args) => {
     parent = overrideParent || parent;
     template.innerHTML = speciesTemplate;
 
-    renderTemplate({ id: collection.id,itemImages }, template.content, parent);
+    renderTemplate({ id: collection.id, itemImages }, template.content, parent);
 
     const keyTraits = document.querySelectorAll('.js-key-trait-link');
 

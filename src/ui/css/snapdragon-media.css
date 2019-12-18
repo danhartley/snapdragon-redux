@@ -70,6 +70,25 @@
 
 @media (min-width: 768px) {
 
+    .text-entry-container {
+        padding: .5rem 0;
+    }
+
+    /* .action-update button {
+        width: initial;
+        float: right;
+    } */
+
+    .btn {
+        width: fit-content;
+    }
+
+    .squares {
+        margin: 0 0 var(--vhStandardBlock, 10vh) 0;
+        /* border-top: .05rem solid var(--snap-border-lightest);
+        border-bottom: .05rem solid var(--snap-border-lightest); */
+    }
+
     .lesson-list-carousel-item > div:nth-child(2) > div {
         display: flex;
     }
@@ -78,13 +97,18 @@
         max-width: 1200px;
     }
 
-    .pool {
-        padding: 0 .5rem;
+    .left-grid {
+        width: 480px;
     }
 
-    /* .horizontal.strips {  
-        width: calc(600px - 1rem);
-    } */
+    .right-grid {
+        width: 720px;
+    }
+
+    .pool {
+        padding: 0 .5rem;
+        max-width: 70%;
+    }
 
     .bird-song, .taxon-identification, .taxon-summary {
         margin: 1rem 4rem 0 4rem;
@@ -104,6 +128,8 @@
 
     .strip {
         min-width: initial;
+        margin: .75rem;
+        padding: .75rem;
     }
 
     body {
@@ -249,13 +275,13 @@
 
     .header > div:nth-child(2) {
         max-width: initial;
+        text-transform: initial;
     }
 
     .non-taxa {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        margin-top: 1rem;
     }
 
     .non-taxa .btn-group {
@@ -266,6 +292,7 @@
 
     .non-taxa .btn.btn-secondary {
         height: 3rem;
+        cursor: pointer !important;
     }
 
     .non-taxon-card-wiki {

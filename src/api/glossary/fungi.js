@@ -286,6 +286,11 @@ export const fungi = [
         wiki: 'https://en.wiktionary.org/wiki/cyanobacterium'
     },
     {
+        term: "Alga",
+        definition: "A photosynthetic eukaryotic organism.",
+        wiki: 'https://en.wiktionary.org/wiki/Algae'
+    },
+    {
         term: "Sclerotium",
         definition: "A compact mass of hardened fungal mycelium containing food reserves."
     },

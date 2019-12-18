@@ -12,9 +12,16 @@ const createLessonPlan = async (lessonPlan, config, collection, lesson) => {
     let rounds = collection.items.length / lesson.moduleSize;            
         rounds = collection.items.length % lesson.moduleSize === 0 ? rounds : rounds === 1 ? 1 : Math.floor(rounds) + 1;
 
-    lesson = lesson.level === undefined ? { ...lesson, ...lessonPlan, level: { id: 1 }, rounds } : lesson;
+    lesson = lesson.level === undefined 
+            ? { ...lesson, ...lessonPlan, level: { id: 1 }, rounds } 
+            : lesson;
 
     const nextRoundLayoutTemplates = getNextRoundLayouts(lessonPlan, config, lesson);
+
+    if(lesson.level === undefined) {
+        console.log('end of the lesson');
+        return new Promise(resolve => resolve(null));
+    }
 
     return await createNextRound(
         lessonPlan,

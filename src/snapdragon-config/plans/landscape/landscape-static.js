@@ -2,10 +2,10 @@ import * as R from 'ramda';
 
 import { layouts as L } from 'snapdragon-config/screen-layouts';
 
-const propertyTrait = (traitPropertyMatch, trait) => {
+const propertyTrait = (traitPropertyMatch, traits) => {
     const layout = R.clone(traitPropertyMatch);
-    layout.screens[0].trait = trait;
-    layout.screens[1].trait = trait;
+    layout.screens[0].traits = traits;
+    layout.screens[1].traits = traits;
     return layout;
 };
 
@@ -50,6 +50,20 @@ export const landscapeStaticTaxonGroup = {
                         L.speciesGenusEntry,
                     ],
             bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'lookalikes', 'definition' ] } ]
+        }
+    ]
+};
+
+export const landscapeStaticProviderQuestionsOnly = {
+    id: 12,
+    name:'Lesson 12',
+    portrait: false,
+    default: true,
+    levels: [
+        {   id: 1,
+            name:'Level 1',
+            layouts: [],
+            bonusLayouts: []
         }
     ]
 };

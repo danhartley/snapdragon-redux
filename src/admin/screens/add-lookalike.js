@@ -40,10 +40,12 @@ export const addLookalike = () => {
 
             M.updateTextFields();
 
-            const btnUpdateLookalikes = document.querySelectorAll('.btnUpdateLookalike').forEach(update => {
+            document.querySelectorAll('.btnUpdateLookalike').forEach(update => {
                 update.addEventListener('click', async e => {
-                    const name = e.target.id;
-                    const log = await firestore.addTraits(name, trait);
+                    const name = e.target.dataset.name;
+                    const description = document.getElementById(name).value;
+                    const trait = { update: { description, name } };
+                    const log = firestore.addSpeciesRelationship('lookalikes', [ trait ])
                     console.log('update lookalike feedback: ', log);
                 });
             });
@@ -59,8 +61,7 @@ export const addLookalike = () => {
         });
 
         const inputSnapdragonB = document.querySelector('#input-species-snapdragon-b');
-            //   inputSnapdragonB.focus();
-
+ 
         speciesPicker(inputSnapdragonB, species => {
             item = species;
             snapdragonSpeciesB = inputSnapdragonB.value;

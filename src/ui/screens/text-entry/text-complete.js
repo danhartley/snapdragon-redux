@@ -76,7 +76,7 @@ export const renderCompleteText = (collection) => {
             ? `<span class="icon"><i class="fas fa-check"></i></span>`
             : `<span class="icon"><i class="fas fa-times"></i></span>`;
 
-        const response = score.success ? 'That is the correct answer.' : 'That is the wrong answer.';
+        const response = score.success ? `That's the correct answer` : `That's the wrong answer`;
         
         document.querySelector('.js-txt-question').innerHTML = `<div class="${iconColour}"><span>${answerIcon}</span><span>${ response }</span</div>`;        
 

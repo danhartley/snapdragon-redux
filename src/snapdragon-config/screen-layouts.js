@@ -433,6 +433,7 @@ const mixedTraitImages = {
 const providerHorizontalStrip = {
     name: 'provider-horizontal-strip',
     type: 'test',
+    score: 1,
     screens: [
         { ...specimenImages },
         { ...providerHorizontalStripQuestions }

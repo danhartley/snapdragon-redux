@@ -71,6 +71,14 @@ hr {
   margin: 0;
 }
 
+/* img {
+  object-fit: contain !important;
+} */
+
+.font-size-small {
+  font-size: .7rem;
+}
+
 .desaturate {
   opacity: .6;
   filter: grayscale(80%);
@@ -303,6 +311,7 @@ a.dropdown-item {
 }
 
 .home-container {
+  position: relative;
   display: grid;
   grid-template-rows: var(--vhStandardBlock) auto;
 }
@@ -314,8 +323,6 @@ a.dropdown-item {
 .species.card {
   margin: 0;
 }
-
-/* LICHEN FORM */
 
 .non-taxa {
   display: flex;
@@ -330,6 +337,7 @@ a.dropdown-item {
   flex-direction: column;
   margin: 0 .5rem;
   justify-content: space-evenly;
+  background-color: var(--snap-landscape);
 }
 
 .non-taxa .btn.btn-secondary {
@@ -362,10 +370,7 @@ a.dropdown-item {
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
-}
-
-.non-taxon .id-box {
-  margin: 0 .5rem;
+  text-align: left;
 }
 
 .species.card-small {
@@ -486,7 +491,6 @@ body {
   grid-auto-flow: row;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  /* background-color: rgb(238, 236, 230); */
 }
 
 .tiles {
@@ -499,18 +503,31 @@ body {
 
 .squares > div {
   display: grid;
-  align-items: center;
-  justify-content: center;  
+  /* align-items: center;
+  justify-content: center;   */
+  justify-self: center;
+  height: 148px;
+  width: 232px;
+  /* height: 140px;
+  width: 210px; */
+  /* min-height: 120px; */
 }
 
 .squares img, .tiles img {
   cursor: pointer;
-  max-height: var(--vhLargeImage);
-  justify-self: center;
+  /* max-height: var(--vhLargeImage); */
+  /* justify-self: center; */
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
 }
 
-.traits.squares > div {
+/* .traits.squares > div {
   padding: 1rem;
+} */
+
+.traits.squares img {
+  object-fit: scale-down;
 }
 
 .traits.squares > div.multiple {
@@ -518,10 +535,9 @@ body {
   cursor: pointer;
 }
 
-.traits.squares > div img {
+/* .traits.squares > div img {
   height: 100%;
 }
-
 
 .traits.squares > div.multiple img {
   height: 50%;
@@ -530,22 +546,22 @@ body {
 .traits.squares > div.png img {
   max-width: 50%;
   height: initial;
-}
+} */
 
-.squares > div:nth-child(odd) {
-  border-left: .05rem solid lightgray;
-  border-right: .05rem solid lightgray;
+/* .squares > div:nth-child(odd) {
+  border-left: .05rem solid var(--snap-border-lightest);
+  border-right: .05rem solid var(--snap-border-lightest);
 }
 
 .squares > div:nth-child(even) {
-  border-right: .05rem solid lightgray;
+  border-right: .05rem solid var(--snap-border-lightest);
 }
 
 .squares > div:nth-child(3),
 .squares > div:nth-child(4) {
-  border-top: .05rem solid lightgray;
-  border-bottom: .05rem solid lightgray;
-}
+  border-top: .05rem solid var(--snap-border-lightest);
+  border-bottom: .05rem solid var(--snap-border-lightest);
+} */
 
 .square, .tile {
   border-radius: 0.2rem;
@@ -725,12 +741,6 @@ body {
   justify-content: center;
 }
 
-/* .card-link-container > div {
-  display: flex;
-  flex-direction: column;
-  font-size: .8rem;
-} */
-
 .card-link-container i {
   font-size: 1.5rem;
   cursor: pointer;
@@ -822,7 +832,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-right: 1px solid lightgray;
+  border-right: 1px solid var(--snap-border-lightest);
   font-size: .8rem
 }
 
@@ -1326,7 +1336,7 @@ label.btn.btn-secondary .lesson-icon {
 }
 
 .faded {
-  color: lightgray;
+  color: var(--snap-border-lightest);
 }
 
 .compare-species-link {
@@ -1636,6 +1646,8 @@ a.collection-disabled {
 .carousel-indicators {
   margin-right: 25%;
   margin-left: 25%;
+
+  bottom: 0;
 }
 
 .carousel-indicators li {
@@ -1663,7 +1675,7 @@ a.collection-disabled {
 .calendar-container {
   display: flex;
   align-items: center;
-  border-right: 1px solid lightgray;
+  border-right: 1px solid var(--snap-border-lightest);
 }
 
 .calendar-box .row {
@@ -1818,7 +1830,6 @@ a.collection-disabled {
 }
 
 .snapdragon-create-guide {  
-  height: 5rem;
   position: absolute;
   bottom: 1rem;
   right: 1rem;
@@ -1829,15 +1840,6 @@ a.collection-disabled {
   letter-spacing: .05rem;
   text-transform: uppercase;
 }
-
-/* .snapdragon-create-guide > div:nth-child(1) > span:nth-child(1) {
-  font-family: "PT Sans", "Roboto", arial, sans-serif;
-}
-
-.snapdragon-create-guide > div:nth-child(1) > span:nth-child(2) {
-  font-family: 'SharpGroteskWide', sans-serif;
-  color: var(--snap-collection-active);
-} */
 
 .snapdragon-create-guide .for-text {
   vertical-align: middle;
@@ -2033,6 +2035,7 @@ a.collection-disabled {
   position: -webkit-sticky;
   top: 0;
   z-index: 30;
+  width: 100%;
 }
 
 .lesson-list div.lesson-list-carousel-item:nth-of-type(2n) {

@@ -151,7 +151,7 @@ const onTitleClickHandler = (title, lessons, config, startLesson) => {
   });
 };
 
-const onReviewClickHandler = reviewLink => {    
+const onReviewClickHandler = (reviewLink, lessons) => {    
 
   reviewLink.addEventListener('click', async e => {
 

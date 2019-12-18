@@ -1,12 +1,14 @@
 import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { settingsHandler } from 'ui/fixtures/settings';
 import { renderTemplate } from 'ui/helpers/templating';
 import { subscription } from 'redux/subscriptions';
 import { getGlossary } from 'api/glossary/glossary';
-import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { enums } from 'ui/helpers/enum-helper';
+
+import { lessonHandler } from 'ui/helpers/lesson-handler';
+import { settingsHandler } from 'ui/fixtures/settings';
+import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 
 import navigationTemplate from 'ui/fixtures/navigation-template.html';
 import definitionCardTemplate from 'ui/screens/cards/definition-card-template.html';
@@ -46,6 +48,9 @@ export const renderNavigation = () => {
                         clickedIcon.classList.add('active-icon');
                         lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub)); // lesson handler?
+
+                        lessonStateHandler.saveCurrentLesson(collection);
+                        
                         break;
                     case enums.navigation.SETTINGS:
                         toggleIconOnOff(clickedIcon);

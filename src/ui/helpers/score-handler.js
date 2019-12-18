@@ -70,8 +70,8 @@ const simpleScoreHandler = (test, callback, config) => {
         continueLessonHandler(document.querySelector('.js-continue-lesson-btn'), score, scoreUpdateTimer);
     }
 
-    let correct = config.isLandscapeMode ? `That is the right answer.` : `That is the right answer.`;
-    let incorrect = config.isLandscapeMode ? `That is the wrong answer.` : 'That is the wrong answer.';
+    let correct = `That's the right answer`;
+    let incorrect = `That's the wrong answer`;
 
     showResponseToAnswerHandler({ success: score.success, correct, incorrect });
 }
@@ -105,8 +105,8 @@ const genericScoreHandler = (_score, callback, config) => {
         labelTxt = 'Family name';
     }
 
-    let correct = config.isLandscapeMode ? `That is the right answer.` : `That is the right answer.`;
-    let incorrect = config.isLandscapeMode ? `That is the wrong answer.` : 'That is the wrong answer.';
+    let correct = `That's the right answer`;
+    let incorrect = `That's the wrong answer`;
 
     const container = window.matchMedia("(max-height: 568px)").matches ? '.js-check-answer' : '.js-txt-question';
 
@@ -200,8 +200,8 @@ const stripScoreHandler = (test, callback, config) => {
             }
                 
 
-            let correct = config.isLandscapeMode ? `That is the right answer.` : `That is the right answer.`;
-            let incorrect = config.isLandscapeMode ? `That is the wrong answer.` : 'That is the wrong answer.';
+            let correct = `That's the right answer`;
+            let incorrect = `That's the wrong answer`;
 
             showResponseToAnswerHandler({ success: score.success, correct, incorrect });
 

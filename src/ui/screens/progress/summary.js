@@ -52,6 +52,8 @@ export const renderSummary = history => {
 
     const progress = document.querySelector('.js-progress');
 
+    if(!progress) return;
+
     const scoreAverage = (score.correct/score.total);
     const historyAverage = (history.correct/history.total);
 

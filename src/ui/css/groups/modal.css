@@ -181,12 +181,6 @@
     justify-content: center;
 }
 
-  /* #cardModal .compare-species-link {
-    pointer-events: none;
-    border: none;
-    color: var(--snap-progress-bg);
-  } */
-
   #basicModal .modal-dialog {
     max-width: 600px;
     margin: auto;
@@ -209,8 +203,6 @@
   #basicModal .modal-body.settings-modal {
     padding: 0;
   }
-  
-  /* BADGE MODAL (Common names & Members of) */
 
   #badgeListModal .modal-dialog {
     width: 100%;
@@ -235,8 +227,6 @@
   #badgeListModal .modal-text {  
     color: var(--snap-text-medium-dark);
   }
-
-/* GLOSSARY MODAL */
 
 #basicModal .definition.card {
     padding: 0 .5rem;

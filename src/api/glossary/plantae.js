@@ -851,6 +851,17 @@ export const plantae = [
         }
     },
     {
+        term : "Palmatifid",
+        definition : "(Of leaf) having lobes with incisions that extend almost up, but not quite to the petiole.",
+        trait: 'leafShape',
+        wiki: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#Leaf_and_leaflet_shapes',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Palmatifide.svg',
+            author: 'By Pancrat - Own work, CC BY-SA 4.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=36182091',
+        }
+    },
+    {
         term : "Imparipinnate",
         definition : "(Of leaf) with an odd number of leaflets, pinnate with a terminal leaflet (the opposite of paripinnate).",
         trait: 'leafDivision',
@@ -1151,6 +1162,18 @@ export const plantae = [
             url: 'https://upload.wikimedia.org/wikipedia/commons/9/9e/Leaf_morphology_Attenuate.png',
             author: 'By Wasp32 - Own work, CC BY-SA 4.0',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=49633343',
+            refers: 'leaf base'
+        }
+    },
+    {
+        term: 'Cuneate',
+        alt: 'Triangular',
+        definition: 'Triangular, wedge-shaped, stem attaches to point.',
+        trait: 'leafShape',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Leaf_morphology_cuneate.png',
+            author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
+            attribution: 'https://commons.wikimedia.org/w/index.php?curid=6561428',
             refers: 'leaf base'
         }
     },

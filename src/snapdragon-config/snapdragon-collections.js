@@ -238,6 +238,7 @@ const paulDinning1 = {
           url: ''
         }
       ],
+      location: 'UK'
     }   
 };
 
@@ -246,8 +247,8 @@ const woodlandsTV1 = {
   behaviour: 'static',
   name: 'WoodlandsTV - An Introduction to Lichen',
   type: 'taxon',
-  moduleSize: 4,
-  lessonPlanLandscape: 10,
+  moduleSize: 1,
+  lessonPlanLandscape: 12,
   lessonPlanPortrait: 110,
   glossary: ['lichen', 'common'],
   iconicTaxa: [ 
@@ -257,23 +258,33 @@ const woodlandsTV1 = {
     },
   ],
   species: [
-    {
-      name: 'Quercus rubra',
-      time: [85],
-      description: 'Supports a wide variety of lichens.'
-    },
+    // {
+    //   name: 'Quercus rubra',      
+    //   time: [85],
+    //   description: 'Supports a wide variety of lichens.'
+    // },
     {
       name: 'Graphis scripta',
       time: [190],
+      questionIds: ['24', '25', '26', '31'],
       description: 'Graphis scripta. Named for the apothecia which form lines which ressemble some kind of ancient script or writing.'
     },
+    {
+      name: 'Xanthoria parietina',
+      questionIds: ['27', '28', '29'],
+    },
+    {
+      name: 'Ramalina farinacea',
+      questionIds: ['30']
+    },
+    
   ],
   notes: [
     {
       tag: 'Symbiotic association',
       time: [49],
       description: `
-        Commensalist relationsip between a fungus and a single-celled photosynthetic organism.`
+      Commensalist relationsip between a fungus and a single-celled photosynthetic organism such as an alga or cyanobacterium.`
     },
     // {
     //   tag: 'Fungus structure',
@@ -284,28 +295,54 @@ const woodlandsTV1 = {
     //   time: [55]
     // },
     {
+      tag: 'Alga',
+      time: [59],
+      description: `
+      A photosynthetic eukaryotic organism.`
+    },
+    {
       tag: 'Cyanobacterium',
       time: [64],
-      description: `A photosynthetic prokaryotic (organism whose cells lack a nucleus) microorganisms, of the phylum Cyanobacteria. Formerly called blue-green alga.`
+      description: `
+      A photosynthetic prokaryotic (organism whose cells lack a nucleus) microorganisms, of the phylum Cyanobacteria. Formerly called blue-green alga.`
     },
-    // {
-    //   tag: 'Second fungus',
-    //   time: [77]
-    // },
     {
-      tag: 'Fruticose',
+      tag: 'Lichen composition',
+      time: [70],
+      description: `
+      Some lichens have both an alga and a cyanobacterium.
+      
+      It has recently been discovered that some lichens also have a second fungus as an integral part of their ecosystem.
+      `
+    },
+    {
+      tag: 'Quercus rubra',      
+      time: [85],
+      description: `
+      Red oak tree.
+
+      Here supporting a wide variety of lichens including one each from the 3 main groups or growth forms.`
+    },
+    {
+      tag: `Fruticose or 'shrubby'`,
       time: [110],
-      description: `Bushy like a shrub; it is attached to the bark substrate at one point and branches out from there.`
+      description: `
+      Bushy like a shrub; it is attached to the bark substrate at one point and branches out from there.`
     },
     {
-      tag: 'Foliose',
+      tag: `Foliose or 'leafy'`,
       time: [126],
-      description: `Flat like a leaf, with both a top side and a bottom side (which can be revelead).`
+      description: `
+      Flat like a leaf, with both a top side and a bottom side (which can be revelead).`
     },
     {
-      tag: 'Crustose',
+      tag: `Crustose or 'crusty'`,
       time: [148],
-      description: `Grows directly onto the bark; cannot be pealed off.`
+      description: `
+      Grows directly onto the bark; cannot be pealed off.
+      
+      Difficult to tell apart because they have fewer features than foliose or fruticose lichens.
+      `
     },
     {
       tag: 'Apothecia',
@@ -315,28 +352,44 @@ const woodlandsTV1 = {
     {
       tag: 'Cladonia',
       time: [224],
-      description: `Forms gothic structures.`
+      description: `
+      Cladonia (cup lichen) is a genus of moss-like lichens in the family Cladoniaceae. They are the primary food source for reindeer/caribou (Snapdragon).
+
+      Forms gothic structures (podetia).`
     },
     {
       tag: 'Podetia',
       time: [231],
-      description: `Structures (feet) that grow upwards from the substrate. A Podetium is a hollow stalk extending from the primary thallus; it is not considered part of the primary thallus as it is a fruiting structure for reproduction.`
+      description: `
+      Structures (feet) that grow upwards from the substrate. 
+      
+      A Podetium is a hollow stalk extending from the primary thallus; it is not considered part of the primary thallus as it is a fruiting structure for reproduction (Snapdragon).`
     },
     {
       tag: 'Apothecia',
       time: [238],
-      description: `Liitle brown blobs which are the fruiting bodies which release spores from which the lichen reproduces.`
+      description: `
+      Liitle brown blobs which are the fruiting bodies which release spores from which the lichen fungus reproduces.`
     },
     {
       tag: 'Role of Lichen',
-      time: [262],
-      description: `Fix carbon and nitrogen. Habitat for many living things such as bark flies and the wasps that predate on them.`
+      time: [250],
+      description: `
+      Lichens fix carbon and nitrogen. 
+      
+      Form habitats for many living things such as bark flies and the wasps that predate on them.
+      
+      Snapdragon:
+      
+      Enrich the soil by trapping water, dust and silt. 
+      Contribute organic matter to the soil when they die.
+      Act as bioindicators (revealing air quality and presence of toxic compounds).`
     },
   ],
   producer: 'WoodlandsTV',
   video: {
     id: 'XQ_ZY57MY64',
-    startAt: 48,
+    startAt: 0,
     title: 'An Introduction to Lichen',
     intro: 'I hope you enjoy this brief introduction to foraging edible mushrooms in Eastern North America. When you\'ve finished watching, review what we covered to see how much you remember, and to reinforce what you learnt.',
     owner: 'WoodlandsTV',
@@ -353,6 +406,7 @@ const woodlandsTV1 = {
         url: 'https://www.youtube.com/channel/UCCeOzbtcmqPmWdMeB6x9nvA'
       }
     ],
+    location: 'UK'
   }
 };
 
@@ -453,6 +507,7 @@ const wiseWomanTradition = {
         url: 'https://www.youtube.com/channel/UCo0uJBHNwF_IqhvVMbvdDTA'
       }
     ],
+    location: 'US'
   }
 };
 
@@ -630,6 +685,7 @@ const btoCorvids = {
         url: 'https://www.youtube.com/channel/UC1t-goRaF_qrFwwyxipvwow'
       }
     ],
+    location: 'UK'
   }  
 };
 
@@ -811,9 +867,6 @@ const nationalTrustButterflies = {
       Upperside: electric, irridescent, bright blue.
 
       Species decline: died out in the Cotswalds in 1963 but reappeared 40 years later. Now over 30 colonies.
-
-      Separating the female chalkhill blue and the Adonis blue is extremely difficult. 
-      The tip is, chalkhill blue females are old and ragged when the second brood of the Adonis blue females are flying (so the Adonis flies a little bit later).
       `
     },
     {
@@ -831,16 +884,17 @@ const nationalTrustButterflies = {
       time: [258],
       description: `A male chalkhill butterfly.
 
-      Hard to identify because there is not much of him left. The average butterfly of this size lives about a week but individuals live for much longer (he may be 2-3 weeks old).
+      Hard to identify because there is not much of him left. The average butterfly of this size lives about a week but individuals may live for much longer (he may be 2-3 weeks old).
       `
     }
   ],
   notes: [
     {
-      tag: '',
-      time: [],
-      description: `
-        
+      tag: 'Chalkhill blue vs Adonis blue',
+      time: [276],
+      description: `Separating the female chalkhill blue and the Adonis blue is extremely difficult:
+      
+      Chalkhill blue females are old and ragged when the second brood of the Adonis blue females are flying (so the Adonis flies a little bit later).        
       `
     },
   ],
@@ -867,8 +921,9 @@ const nationalTrustButterflies = {
       {
         label: 'Channel',
         url: 'https://www.youtube.com/channel/UCbSxeBQ-U-goXdmkiNBSrrg'
-      }
+      },
     ],
+    location: 'UK'
   }  
 };
 

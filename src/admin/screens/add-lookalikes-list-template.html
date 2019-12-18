@@ -1,9 +1,9 @@
 <div data-repeat-lookalike="{{ species }}">
     <div class="row">
         <div class="input-field col s12">
-            <textarea rows="5" cols="100" id="textarea-description" class="validate">{{ lookalike.description }}</textarea>
+            <textarea id="{{ lookalike.name }}" rows="5" cols="100" id="textarea-description" class="validate">{{ lookalike.description }}</textarea id="{{ lookalike.name }}">
             <label for="textarea-description">{{ lookalike.name }}</label>            
         </div>
-        <button id="{{ lookalike.name }}" class="btnUpdateLookalike btn">Update description</button>
+        <button data-name="{{ lookalike.name }}" class="btnUpdateLookalike btn">Update description</button>
     </div>
 </div>
