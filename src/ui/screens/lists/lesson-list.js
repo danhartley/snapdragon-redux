@@ -71,5 +71,8 @@ export const renderLessons = () => {
 
         const chevron = document.querySelector(`div.js-lesson-list-chevron[data-lesson-id="${lesson.id}"]`);
         lessonListEventHandler.onTitleClickHandler(chevron, lessons, config, false);
+
+        const youtubeLessonIcon = document.querySelector(`div.js-lesson-list-youtube[data-lesson-id="${lesson.id}"]`);
+              youtubeLessonIcon.classList.add('hide-important');
     });
 };
