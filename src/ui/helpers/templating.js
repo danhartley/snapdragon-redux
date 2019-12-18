@@ -6,4 +6,4 @@ export const renderTemplate = (context, content, parent, clone) => {
     Stamp.appendChildren(parent, expanded);
 };
 
-//https://github.com/jcgregorio/stamp
+//https://github.com/jcgregorio/stamp/wiki

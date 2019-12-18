@@ -98,10 +98,14 @@ const setVideoState = (videoPlayer, lesson) => {
 };
 
 const isVideoPlayerReady = videoId => {
-    console.log('video player: ', player);
-    console.log('video url: ', player.getVideoUrl());
-    const doIdsMatch = videoId === player.getVideoData().video_id;
-    return isPlayerReady && doIdsMatch;
+    if(isPlayerReady) {
+        console.log('video player: ', player);
+        console.log('video url: ', player.getVideoUrl());
+        const doIdsMatch = videoId === player.getVideoData().video_id;
+        return isPlayerReady && doIdsMatch;
+    } else {
+        return false;
+    }
 };
 
 const destroyPlayer = () => {

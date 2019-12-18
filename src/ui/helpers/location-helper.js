@@ -26,7 +26,11 @@ export const initialiseConfig = async originalConfig => {
             config.ipLocation = location;
             config.guide.locationType = 'longLat';
             config.guide.locationLongLat = location;
-            config.guide.place.name = location;            
+            config.guide.place.name = location;
+            config.guide.coordinates = {
+                lat: ipLocation.latitude,
+                long: ipLocation.longitude
+            }; 
         }
         else {
             config.guide.locationPlace = 'Earth';
