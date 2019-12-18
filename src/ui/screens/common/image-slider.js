@@ -57,7 +57,8 @@ const carouselControlHandler = (event, parentScreen = document, config) => {
         
         handleRightsAttribution(image);
     
-        const originalImageLink = parentScreen.querySelector('.js-carousel-inner .js-expand');
+        // const originalImageLink = parentScreen.querySelector('.js-carousel-inner .js-expand');
+        const originalImageLink = parentScreen.querySelector('.js-carousel-inner');
               originalImageLink.addEventListener('click', onEnlargeImageHandler(config));
 
     }, 750);
@@ -85,7 +86,9 @@ export const imageSlider = sliderArgs => {
     parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
     parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
 
-    const originalImageLink = parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .js-expand`);
+    // const imageLink = `#imageSlider_${ disableModal }_${identifier} .js-expand`;
+    const imageLink = `#imageSlider_${ disableModal }_${identifier}`;
+    const originalImageLink = parentScreen.querySelector(imageLink);
           originalImageLink.addEventListener('click', onEnlargeImageHandler(config));
 };
 

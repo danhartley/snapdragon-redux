@@ -5,7 +5,10 @@
             <div class="lesson-name js-lesson-title" data-lesson-id="{{ lesson.id }}">
                 <span id="lesson_{{ lesson.id }}" class="lesson-title">{{ lesson.name }}</span>
                 <span>{{ lesson.savedState }}</span>                    
-                <span class="hide js-loading-message">(Loading species…)</span>
+                <span class="hide js-loading-message">
+                    <span class="landscape">(Loading species…)</span>
+                    <span class="portrait"><i class="fas fa-spinner"></i></span>
+                </span>
             </div>
             <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>
             <div class="latin hide-empty js-lesson-video-state" data-lesson-id="{{ lesson.id }}">{{ lesson.videoState }}</div>         
@@ -13,7 +16,10 @@
         <div data-lesson-id="{{ lesson.id }}" class="lesson-review js-lesson-review">
             <div>
                 <span class="underline-link">{{ lesson.reviewState }}</span>
-                <span class="hide js-loading-message">(Loading species…)</span>
+                <span class="hide js-loading-message">
+                    <span class="landscape">(Loading species…)</span>
+                    <span class="portrait"><i class="fas fa-spinner"></i></span>
+                </span>
             </div>
         </div>
     </div>     

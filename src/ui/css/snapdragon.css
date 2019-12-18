@@ -1646,6 +1646,8 @@ a.collection-disabled {
 .carousel-indicators {
   margin-right: 25%;
   margin-left: 25%;
+
+  bottom: 0;
 }
 
 .carousel-indicators li {
