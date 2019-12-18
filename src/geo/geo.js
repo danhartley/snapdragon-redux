@@ -33,7 +33,7 @@ export const getLocation = (config) => {
 
 const listeners = [];
 
-async function parseMapBoxPlace(json, config) {
+const parseMapBoxPlace = async (json, config) => {
   const place = await json;
   const locality = place.features.find(f => f.place_type[0] === 'locality');
   const region = place.features.find(f => f.place_type[0] === 'region');
@@ -55,7 +55,7 @@ async function parseMapBoxPlace(json, config) {
   return await updatedPlace;
 }
 
-async function getMapBoxPlace(long, lat, config) {
+const getMapBoxPlace = async (long, lat, config) => {
   const token = 'pk.eyJ1IjoiZGFuaGFydGxleSIsImEiOiJjam84Zjd3aGowMDdoM2ttaDAzeDk4bHJ6In0.oEcO6w3DhHUv_mXrFW1clg';  
   const longitude = long;// || '-9.163009899999999';
   const latitude = lat;// || '38.7155762';  
@@ -90,7 +90,7 @@ export const listenToPlaceChange = listener => {
   listeners.push(listener);
 };
 
-async function IPCountryLookup() {
+const IPCountryLookup = async () => {
   const ACCESS_KEY = '69402a39530c7ae8218dfaf69ef78337';  
   const url = `http://api.ipstack.com/check?access_key=${ACCESS_KEY}`;
   try {
@@ -103,16 +103,17 @@ async function IPCountryLookup() {
   }  
 }
 
-async function LocationLookup(ip) {
+const LocationLookup = async ip => {
   const ACCESS_KEY = 'a8563e7b75654ae8b016dc52719dee3b';
-  const url = `https://api.ipgeolocation.io/ipgeo?apiKey=${ACCESS_KEY}&ip=${ip}&fields=city,state_prov,country_name&output=json`;
+  const url = `https://api.ipgeolocation.io/ipgeo?apiKey=${ACCESS_KEY}&ip=${ip}&fields=city,state_prov,country_name,latitude,longitude&output=json`;
   const response = await fetch(url);
   const json = await response.json();
-  const { city, state_prov, country_name } = await json; 
-  return { city, state_prov, country_name };
+  console.log(json);
+  const { city, state_prov, country_name, latitude, longitude } = await json; 
+  return { city, state_prov, country_name, latitude, longitude };
 }
 
-async function IPLookup() {  
+const IPLookup = async () => {  
   const url = 'https://api.ipgeolocation.io/getip';
   const response = await fetch(url);
   const json = await response.json();
@@ -120,7 +121,8 @@ async function IPLookup() {
   return ip;
 }
 
-export async function getIPLocation(config, force = false) {
+export const getIPLocation = async (config, force = false) => {
+
      if(!!config.ipLocation && !force) {
       const response = new Promise(resolve => {
         resolve(config.ipLocation);
@@ -129,8 +131,8 @@ export async function getIPLocation(config, force = false) {
       return await json;
      } else {
       const ip = await IPLookup();
-      const { city, state_prov, country_name } = await LocationLookup(ip);
-      return { city, state_prov, country_name };
+      const { city, state_prov, country_name, latitude, longitude } = await LocationLookup(ip);
+      return { city, state_prov, country_name, latitude, longitude };
      }
 };
 
@@ -180,7 +182,7 @@ const createScriptRequest = (src, callback) => {
     });
 }
 
-export function GoogleAutocomplete_Original(place, callback) {
+export const GoogleAutocomplete_Original = (place, callback) => {
 
   const getPredictions = () => {
     
@@ -215,7 +217,7 @@ export function GoogleAutocomplete_Original(place, callback) {
   }
 }
 
-export function GoogleAutocomplete(place, callback) {
+export const GoogleAutocomplete = (place, callback) => {
 
   const getPredictions = SESSION_TOKEN => {
 
@@ -246,7 +248,7 @@ export function GoogleAutocomplete(place, callback) {
   }
 }
 
-export function GooglePlaceDetails(placeId, callback) {
+export const GooglePlaceDetails = (placeId, callback) => {
   
   var request = {
     placeId: placeId,
