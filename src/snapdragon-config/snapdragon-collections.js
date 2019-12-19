@@ -238,7 +238,7 @@ const paulDinning1 = {
           url: ''
         }
       ],
-      location: 'UK'
+      location: 'United Kingdom'
     }   
 };
 
@@ -406,7 +406,7 @@ const woodlandsTV1 = {
         url: 'https://www.youtube.com/channel/UCCeOzbtcmqPmWdMeB6x9nvA'
       }
     ],
-    location: 'UK'
+    location: 'United Kingdom'
   }
 };
 
@@ -507,7 +507,7 @@ const wiseWomanTradition = {
         url: 'https://www.youtube.com/channel/UCo0uJBHNwF_IqhvVMbvdDTA'
       }
     ],
-    location: 'US'
+    location: 'United States'
   }
 };
 
@@ -685,7 +685,7 @@ const btoCorvids = {
         url: 'https://www.youtube.com/channel/UC1t-goRaF_qrFwwyxipvwow'
       }
     ],
-    location: 'UK'
+    location: 'United Kingdom'
   }  
 };
 
@@ -831,7 +831,7 @@ const bloomsForBeesCU = {
         label: 'Channel',
         url: 'https://www.youtube.com/channel/UCMccqprrhQDGrL3bju3GzrA'
       }
-    ],location: 'UK'
+    ],location: 'United Kingdom'
   }  
 };
 
@@ -923,7 +923,7 @@ const nationalTrustButterflies = {
         url: 'https://www.youtube.com/channel/UCbSxeBQ-U-goXdmkiNBSrrg'
       },
     ],
-    location: 'UK'
+    location: 'United Kingdom'
   }  
 };
 

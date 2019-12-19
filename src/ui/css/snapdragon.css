@@ -518,6 +518,7 @@ body {
 .traits.squares > div.multiple {
   grid-template-columns: 1fr 1fr;
   cursor: pointer;
+  width: 80%;
 }
 
 .square, .tile {
