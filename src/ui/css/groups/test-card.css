@@ -46,7 +46,6 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    /* font-family: "PT Sans", "Roboto", arial, sans-serif; */
     letter-spacing: .05rem;
   }
 
@@ -112,11 +111,10 @@
 }
 
 .test-card-container .text-question {
-    width: 100%;
     position: absolute;
     bottom: var(--vhRunningBlock, 7.5vh);
-    left: 0rem;
     left: .5rem;
+    right: .5rem;
     display: flex;
     align-items: center;
     height: var(--vhButtonBlock, 9vh);
@@ -131,7 +129,7 @@
 }
 
   .text-question span:nth-child(2) {
-    margin: 0 0 0 0.25rem;
+    margin: .25rem 0 0 .25rem;
     font-family: serif;
     letter-spacing: .1rem;
     text-transform: uppercase;
@@ -283,6 +281,10 @@ div.text-entry {
 }
 
 @media (min-width: 768px) {
+
+    .text-question span:nth-child(2) {
+        margin: 0 0 0 .25rem;
+    }
 
     .answer-box-success, .answer-box-alert {
         justify-content: left;

@@ -1,5 +1,3 @@
-/* TABLE BASICS */
-
 .table-header {
   background-color: rgb(153, 172, 149);
   color: var(--snap-text-dark);
@@ -63,8 +61,6 @@
     padding: .5rem;
   }
 
-  /* SORT INDICATORS */
-  
   th {
     text-align: initial;
   }
@@ -91,7 +87,6 @@
   
   .table-header th:nth-child(1) > span,
   .table-footer td:nth-child(1) > span {
-    /* width: 5rem; */
     height: 1px;
     display: flex;
     align-items: center;
@@ -141,8 +136,6 @@
       display: flex;
       align-items: center;
   }
-
- /* FUNGI ICONS */
 
  .species-table .mushroom-icon svg {
   width: 1rem;
@@ -216,8 +209,6 @@ div.species-description {
         align-items: flex-start;
     }
 
-    /* SCROLLING */
-
     .species-list .scrollable {
       bottom: 0;
       top: 0;      
@@ -237,8 +228,6 @@ div.species-description {
     .table-header th:nth-child(4), .table-row td:nth-child(4) {
         flex: 2;
     }
- 
-    /* SORT INDICATORS */
 
     .table-header th:nth-child(3) span:nth-child(2):after {
         margin-left: .355rem;
@@ -276,8 +265,6 @@ div.species-description {
         cursor: default;
     }
 
-    /* DOUBLE HEADER */
-
     .table-header th:nth-child(3) {
         flex-direction: column;
         display: flex;
@@ -296,9 +283,7 @@ div.species-description {
         align-items: center;
     }
   }
-  
-/* TWEAKS */
-
+ 
 .species-table .underline-link {
     text-transform: initial;
 }  

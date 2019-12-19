@@ -71,10 +71,6 @@ hr {
   margin: 0;
 }
 
-/* img {
-  object-fit: contain !important;
-} */
-
 .font-size-small {
   font-size: .7rem;
 }
@@ -503,28 +499,17 @@ body {
 
 .squares > div {
   display: grid;
-  /* align-items: center;
-  justify-content: center;   */
   justify-self: center;
   height: 148px;
   width: 232px;
-  /* height: 140px;
-  width: 210px; */
-  /* min-height: 120px; */
 }
 
 .squares img, .tiles img {
   cursor: pointer;
-  /* max-height: var(--vhLargeImage); */
-  /* justify-self: center; */
   height: inherit;
   width: inherit;
   object-fit: cover;
 }
-
-/* .traits.squares > div {
-  padding: 1rem;
-} */
 
 .traits.squares img {
   object-fit: scale-down;
@@ -535,40 +520,10 @@ body {
   cursor: pointer;
 }
 
-/* .traits.squares > div img {
-  height: 100%;
-}
-
-.traits.squares > div.multiple img {
-  height: 50%;
-}
-
-.traits.squares > div.png img {
-  max-width: 50%;
-  height: initial;
-} */
-
-/* .squares > div:nth-child(odd) {
-  border-left: .05rem solid var(--snap-border-lightest);
-  border-right: .05rem solid var(--snap-border-lightest);
-}
-
-.squares > div:nth-child(even) {
-  border-right: .05rem solid var(--snap-border-lightest);
-}
-
-.squares > div:nth-child(3),
-.squares > div:nth-child(4) {
-  border-top: .05rem solid var(--snap-border-lightest);
-  border-bottom: .05rem solid var(--snap-border-lightest);
-} */
-
 .square, .tile {
   border-radius: 0.2rem;
   cursor: pointer;
 }
-
-/* STRIPS */
 
 .strips {
   display: grid;
@@ -1374,6 +1329,10 @@ label.btn.btn-secondary .lesson-icon {
 
 .carousel-item-next, .carousel-item-prev, .carousel-item.active {
   display: flex;
+}
+
+.info-box .carousel-item-next, .info-box .carousel-item-prev, .info-box .carousel-item.active {
+  display: grid;
 }
 
 .imageSlider .carousel-item > div {
