@@ -23,14 +23,17 @@ export const renderInput = (screen, question) => {
         case 'genus': 
             vernacularName = item.vernacularName;
             binomial = binomial = `--- ${question.species}`;
+            questionTxt = 'Enter the genus name';
             break;
         case 'species': 
             vernacularName = item.vernacularName;
             binomial = binomial = `${question.genus} ---`;
+            questionTxt = 'Enter the species name';
             break;
         case 'name': 
             vernacularName = item.vernacularName;
             binomial = binomial = `--- ---`;
+            questionTxt = 'Enter full latin name';
             break;
         case 'vernacular':
             vernacularName = '--- ---';
@@ -79,7 +82,6 @@ export const renderInput = (screen, question) => {
     const answerBtn = document.querySelector('.js-check-answer');
 
     const callback = (score, scoreUpdateTimer) => {        
-        // console.log('score result: ', score)
         boundScore.scoreUpdateTimer = scoreUpdateTimer;
         boundScore.score = score;        
         if(answerBtn) answerBtn.removeEventListener('click', scoreEventHandler);
@@ -96,7 +98,6 @@ export const renderInput = (screen, question) => {
     const loseFocusMobileHandler = e => {
         document.removeEventListener('focusout', loseFocusMobileHandler);        
         const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames };
-        // console.log(score);
         scoreHandler('text', score, callback, config);
         document.querySelector('.js-continue-lesson-btn').disabled = false;
     };
