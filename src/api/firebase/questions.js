@@ -125,7 +125,7 @@ export const questions = [
         iconicTaxon: 'fungi',
         rank: 'species',
         taxon: 'Grifola frondosa',
-        statement: 'Hen of the woods is weakly parasitic on several living hardwoods, and is saprobic on decaying wood.',
+        statement: 'Hen of the woods is weakly parasitic on several hardwoods, and saprobic on decaying wood.',
         question: 'At the base of which tree is it most commonly found?',
         answer  : 'Oak',
         answers: [
@@ -221,7 +221,7 @@ export const questions = [
         answers: [
             'Lives off decayed organic matter',
             'Lives off a living host.',
-            'Has symbiotic relationship with roots of various plant species (without penetrating host’s cell walls).'
+            'Has symbiotic relationship with roots of various plants (without penetrating host’s cell walls).'
         ]
     },
     {

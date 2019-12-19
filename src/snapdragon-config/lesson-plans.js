@@ -15,7 +15,8 @@ const portraitBirds = { ...R.clone(portraitStatic), id: 105 };
       portraitBirds.levels[0].layouts.push(L.mediaMatch); 
 
 const portraitFungi = { ...R.clone(landscapeFungi), id: 103, portrait: true };
-const portraitLichens = { ...R.clone(landscapeLichens), id: 104, portrait: true };
+      portraitFungi.levels[0].bonusLayouts = [ { ...L.traitPropertyMatch, types: [ 'definition' ] } ];
+const portraitLichens = { ...R.clone(portraitFungi), id: 104 };
 
 export const lessonPlans = [
 

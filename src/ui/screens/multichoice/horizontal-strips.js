@@ -21,26 +21,24 @@ export const renderHorizontalStrips = collection => {
     const template = document.createElement('template');
           template.innerHTML = stripTemplate;
 
-    const answers = utils.shuffleArray([ ...layout.provider.answers, layout.provider.answer ]);
+    let answers = utils.shuffleArray([ ...layout.provider.answers, layout.provider.answer ]);
 
-    const options = answers.map((answer, index) => {
+    answers = answers.map((answer, index) => {
         return {
-            answer
-            // ,
-            // conceal: conceal[index]
+            term: answer,
+            index
         }
     });
 
-    renderTemplate({ options }, template.content, parent);
+    renderTemplate({ answers }, template.content, parent);
 
     document.querySelector('.js-test-card-question').classList.add('calendar-block');
     document.querySelector('.js-test-card-question').classList.remove('standard-block');
-    // document.querySelector('.js-test-card-content').classList.add('horizontal');
 
     const strips = document.querySelectorAll('.js-rptr-strips .strip');
     const taxon = { name: item.taxonomy.family, binomial: item.name, question: layout.provider.answer };
 
-    const test = { itemId: item.id, items: strips, taxon, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points, clue: ''};  
+    const test = { itemId: item.id, items: strips, taxon, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points, clue: '', answerIndex: answers.findIndex(a => a.term === layout.provider.answer)};  
 
     scoreHandler('strip', test, null, config);
 };

@@ -70,8 +70,8 @@ const simpleScoreHandler = (test, callback, config) => {
         continueLessonHandler(document.querySelector('.js-continue-lesson-btn'), score, scoreUpdateTimer);
     }
 
-    let correct = `That's the right answer`;
-    let incorrect = `That's the wrong answer`;
+    let correct = `Correct`;
+    let incorrect = `Incorrect`;
 
     showResponseToAnswerHandler({ success: score.success, correct, incorrect });
 }
@@ -105,8 +105,8 @@ const genericScoreHandler = (_score, callback, config) => {
         labelTxt = 'Family name';
     }
 
-    let correct = `That's the right answer`;
-    let incorrect = `That's the wrong answer`;
+    let correct = `Correct`;
+    let incorrect = `Incorrect`;
 
     const container = window.matchMedia("(max-height: 568px)").matches ? '.js-check-answer' : '.js-txt-question';
 
@@ -200,8 +200,8 @@ const stripScoreHandler = (test, callback, config) => {
             }
                 
 
-            let correct = `That's the right answer`;
-            let incorrect = `That's the wrong answer`;
+            let correct = `Correct`;
+            let incorrect = `Incorrect`;
 
             showResponseToAnswerHandler({ success: score.success, correct, incorrect });
 

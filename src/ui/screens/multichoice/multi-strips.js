@@ -48,8 +48,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
                 const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question, help, term, className, headerClassName, bonus });
 
                 const template = document.createElement('template');
-                
-                template.innerHTML = answer.img ? stripWithImageTemplate : stripTemplate;
+                      template.innerHTML = answer.img ? stripWithImageTemplate : stripTemplate;
 
                 answers.forEach((answer, index) => answer.index = index);
 
@@ -58,15 +57,6 @@ export const renderMultiStrips = (collection, bonus, args) => {
                 const strips = document.querySelectorAll('.js-rptr-strips .strip');
 
                 if(overrides.italicise) strips.forEach(strip => strip.classList.add('binomial'));
-
-                if(config.isPortraitMode) {
-
-                    const wordyAnswers = [ 'family-strips', 'definition', 'trait-property' ];
-    
-                    // if(R.contains(screen.name, wordyAnswers)) {
-                    //     document.querySelector('.js-rptr-strips').classList.add('horizontal');
-                    // }
-                }
 
                 const taxon = { name: item.taxonomy.family, binomial: item.name, question: answer };
 

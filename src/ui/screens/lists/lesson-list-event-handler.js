@@ -12,7 +12,11 @@ import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 
 const onLoadLessonViewState = (collection, videoPlayer, score) => {
 
-  const savedState = collection.isPaused ? '(lesson paused)' : '';
+  const savedState = collection.isPaused
+    ? store.getState().config.isLandscapeMode
+       ? '(lesson paused)' 
+       : ''
+    : '';
   const taxa = collection.iconicTaxa ? collection.iconicTaxa.map(taxon => taxon.common).join(', ') : '';
   const isPaused = (!!score && score.collectionId === collection.id) || store.getState().lessons.find(lesson => lesson.collection.id === collection.id);
 
