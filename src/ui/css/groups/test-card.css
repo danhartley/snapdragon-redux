@@ -101,26 +101,6 @@
     text-transform: capitalize;
 }
 
-  .text-question .icon {
-    font-size: 1.5rem;
-    margin: 0;
-  }
-  
-  .text-question span:nth-child(2),
-  .text-question span:nth-child(3) {
-    vertical-align: text-bottom;
-  }
-  
-  .text-question span:nth-child(2) {
-    margin: 0 0 0 0.25rem;
-  }
-
-  .wrong-answer-txt {
-      margin: .5rem .5rem 0 .75rem;
-  }
-
-/* SYSTEM RESPONSE */
-
 .action-update-container {
     position: absolute;
     bottom: 0rem;
@@ -132,6 +112,7 @@
 }
 
 .test-card-container .text-question {
+    width: 100%;
     position: absolute;
     bottom: var(--vhRunningBlock, 7.5vh);
     left: 0rem;
@@ -139,36 +120,38 @@
     display: flex;
     align-items: center;
     height: var(--vhButtonBlock, 9vh);
-}
-
-.test-card .portrait-answer {
-    font-style: italic;
-    text-transform: capitalize;
-}
-
-.answer-box-success > span:nth-child(2), 
-.answer-box-alert > span:nth-child(2) {
-    color: var(--snap-success);
-    /* font-family: serif; */
-    font-weight: bold;
     font-size: 1rem;
-    /* letter-spacing: .01rem; */
+}
+
+.answer-box-success, .answer-box-alert {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  .text-question span:nth-child(2) {
+    margin: 0 0 0 0.25rem;
+    font-family: serif;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+  }
+
+.answer-box-success > span:nth-child(2) {
+    color: var(--snap-success);
 }
 
 .answer-box-alert > span:nth-child(2) {
     color: var(--snap-alert);
 }
 
-.text-entry-container {
-    padding: .5rem;
-}
-
 .text-entry-container > div {
-    margin: .5rem;    
+    margin: 1rem 0;
 }
 
 .help-txt {
     margin: 1rem !important;
+    margin: 1rem .5rem !important;
 }
 
 div.text-entry {
@@ -275,17 +258,6 @@ div.text-entry {
       - var(--vhButtonBlock, 9vh));
 }
 
-/* .test-card-content.horizontal {
-    padding: .5rem;
-    height: calc(
-        var(--vh, 1vh) * 100
-      - var(--vhFixtures, 15vh)
-      - var(--vhCalendarBlock,11vh)
-      - var(--vhStandardBlock,10vh) 
-      - var(--vhButtonBlock, 9vh));
-    top: calc(var(--vhDoubleStandardBlock,10vh) + var(--vhStandardBlock,10vh) + var(--vhCalendarBlock,11vh));
-} */
-
 .iconic-icon {
     font-size: 1.5rem;
     color: var(--snap-iconic-icon-header);
@@ -311,6 +283,10 @@ div.text-entry {
 }
 
 @media (min-width: 768px) {
+
+    .answer-box-success, .answer-box-alert {
+        justify-content: left;
+    }
 
     .traits-names-txt {
         column-count: 2;
@@ -356,7 +332,13 @@ div.text-entry {
     }
 
     .test-card-content {
-        top: calc(var(--vhRunningBlock,7.5vh) + var(--vhDoubleStandardBlock,20vh));
+        height: calc(
+            var(--vh, 1vh) * 100
+          - var(--vhFixtures, 15vh)
+          - var(--vhStandardBlock,10vh)
+          - var(--vhStandardBlock,10vh)
+          - var(--vhButtonBlock, 9vh));
+        top: calc(var(--vhRunningBlock,7.5vh) + var(--vhStandardBlock,10vh));
     }
 
     .test-card button {

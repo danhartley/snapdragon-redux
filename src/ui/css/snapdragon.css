@@ -1012,6 +1012,7 @@ button.btn-light:focus,
 .pool {
   display: flex;
   flex-wrap: wrap;
+  margin-left: .5rem;
 }
 
 .pool .block.active {
@@ -1371,8 +1372,12 @@ label.btn.btn-secondary .lesson-icon {
   height: var(--vhSmallImageCarousel);
 }
 
+.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+  display: flex;
+}
+
 .imageSlider .carousel-item > div {
-  height: 100%;
+  height: 90%;
   background-size: inherit;
   background-repeat: no-repeat;
   background-position: center;  

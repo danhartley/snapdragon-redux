@@ -61,7 +61,7 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
                 const layer = event.target;
                 const selectedName = layer.dataset.itemName;
                 const question = item.name;
-                const answer = selectedName || 'wrong answer!';
+                const answer = selectedName || 'incorrect';
                 const isCorrect = answer === question;
                 const answerIcon = document.createElement('span');
                 answerIcon.innerHTML = isCorrect 
