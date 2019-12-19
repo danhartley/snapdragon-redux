@@ -23,7 +23,7 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
     const item = R.clone(collection.nextItem);
 
-    let question = 'Slide to ID this species';
+    let question = config.isPortraitMode ? 'Slide to ID this species' : 'Identify this species';
     let help = '(Click on the matching photo.)';
 
     if(bonusLayout) {
