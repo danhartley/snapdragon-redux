@@ -36,10 +36,9 @@ landscapeLichens.levels[0] = {
     id: 1,
     name:'Level 1',
     description: 'Species recognition',
-    layouts: [ 
-        L.speciesRevision,
-        L.multiSpecimenCommonMatch,
-        L.mixedSpecimensRight
+    layouts: [                          
+        L.mixedSpecimenImages
     ],
-    reviewLayouts: [ L.multiSpecimenCommonMatch, L.mixedSpecimensRight ]
+    // bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'definition' ] } ]
+    // reviewLayouts: [ L.multiSpecimenCommonMatch, L.mixedSpecimensRight ]
 };

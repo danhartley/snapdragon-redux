@@ -41,7 +41,7 @@ const daisyCreekFarms1 = {
         time: [80],
         description: `Culinary: oregano has a strong flavour, so use carefully in your cooking.
         
-        Propagation: oregano does not cope with winters well; it is not frost resistant. Howeverm it can be grown easily from a cutting or seed, indoors on a kitchen counter top.`
+        Propagation: oregano does not cope with winters well; it is not frost resistant. However, it can be grown easily from a cutting or seed, indoors on a kitchen counter top.`
       },
       {
         name: 'Salvia officinalis',
@@ -66,6 +66,7 @@ const daisyCreekFarms1 = {
         Culinary: probably the most popular herb and heavily used in Mexican and Indian cooking.
 
         Propagation: best grown from seed (which must be split first to ensure it germinates quickly). Seed leaves will appear within a week. 
+        
         Best planted in fall, in spring it flowers quickly; or grow indoors all year round.`
       },
       {
@@ -78,17 +79,15 @@ const daisyCreekFarms1 = {
       {
         name: 'Ocimum basilicum',
         time: [194],
-        description: `        
-        Propagation: grows outdoors in the summer, but dies in winter.
+        description: `Propagation: grows outdoors in the summer, but dies in winter.
+        
         To keep it alive, take cuttings and propogate in first week of spring. In this way, I get a head start on my outdoor basil bed for the entire summer.
         Also grows well from seed.`
       },
       {
         name: 'Mentha spicata',
         time: [224],
-        description: `
-        
-        Culinary: great for drinks and tea.
+        description: `Culinary: great for drinks and tea.
 
         Propagation: grows well from cuttings or roots. It dies back in winter and regrows in spring with plentiful watering. 
         
@@ -97,8 +96,7 @@ const daisyCreekFarms1 = {
       {
         name: 'Rosmarinus officinalis',
         time: [241],
-        description: `
-        Propagation: grows easily - simply place cuttings in water; it will easily root and can then be planted out (indoors or out). 
+        description: `Propagation: grows easily - simply place cuttings in water; it will easily root and can then be planted out (indoors or out). 
         
         Winter hardy but avoid excessive frosts.`
       },
@@ -248,8 +246,8 @@ const woodlandsTV1 = {
   name: 'WoodlandsTV - An Introduction to Lichen',
   type: 'taxon',
   moduleSize: 1,
-  lessonPlanLandscape: 12,
-  lessonPlanPortrait: 110,
+  lessonPlanLandscape: 4,
+  lessonPlanPortrait: 104,
   glossary: ['lichen', 'common'],
   iconicTaxa: [ 
     {
