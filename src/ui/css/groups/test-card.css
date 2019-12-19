@@ -190,8 +190,9 @@ div.text-entry {
     grid-template-rows: 2fr auto 3fr;
   }
 
-  .mixed-specimen-container > div > span {
-      font-size: 1.1rem;
+  .mixed-specimen-container > div > span > span {
+    font-weight: bold;
+    color: var(--snap-btn-auxillary)
   }
 
   .btn.btn-auxiliary, .btn.btn-auxiliary:focus {

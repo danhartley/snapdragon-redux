@@ -39,7 +39,7 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
 
         images = getPortraitImages(images);
 
-        let parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question: 'Find the species', help: '(Click on the matching photo.)', term: '' });
+        let parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question: 'Slide to ID this species', help: '(Click on the matching photo.)', term: '' });
             
         const template = document.createElement('template');
 

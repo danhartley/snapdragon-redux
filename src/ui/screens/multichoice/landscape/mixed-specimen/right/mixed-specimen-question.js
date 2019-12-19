@@ -23,7 +23,7 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
     const item = R.clone(collection.nextItem);
 
-    let question = 'Find the species';
+    let question = 'Slide to ID this species';
     let help = '(Click on the matching photo.)';
 
     if(bonusLayout) {
@@ -40,6 +40,9 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
     const binomial = item.name;
 
     renderTemplate({ instructions, binomial }, template.content, parent);
+
+    const subheader = document.querySelector('.mixed-specimen-container > div > span');
+          subheader.innerHTML = `Find <span>${item.vernacularName} </span>from among the pictured species :`;
 
     const listenToImageChangeHandler = async images => {        
 

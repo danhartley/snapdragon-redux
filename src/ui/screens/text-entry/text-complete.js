@@ -18,10 +18,11 @@ export const renderCompleteText = (collection) => {
     
     if(!screen) return;
 
-    let question, genus, species, givenTaxon, vernacularName, binomial;
+    let question, genus, species, givenTaxon, vernacularName, binomial, questionTxt;
 
     vernacularName = item.vernacularName;
     binomial = item.name;
+    questionTxt = 'Complete the latin name';
 
     switch(screen.type) {
         case 'text-complete-genus':
@@ -30,6 +31,7 @@ export const renderCompleteText = (collection) => {
             species = item.taxonomy.species;
             binomial = `--- ${item.taxonomy.species}`;
             givenTaxon = 'genus';
+            questionTxt = 'Select the correct genus';
             break;
         case 'text-complete-species':
             question = item.taxonomy.species;
@@ -37,10 +39,11 @@ export const renderCompleteText = (collection) => {
             species = '---';
             binomial = `${item.taxonomy.genus} ---`;
             givenTaxon = 'species';
+            questionTxt = 'Select the correct species';
             break;
     }
 
-    const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: 'Complete the latin name', help: '(Select the name below.)', term: '' });
+    const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: questionTxt, help: '(Select the name below.)', term: '' });
 
     const template = document.createElement('template');
 
