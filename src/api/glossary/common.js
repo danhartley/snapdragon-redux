@@ -169,6 +169,7 @@ export const commmon = [
     },  
     {
         term: "Eusociality",
+        alt: 'Eusocial',
         definition: "Cooperative brood care, overlapping generations and division of labour into reproductive and non-reproductive groups.",
         wiki: 'https://en.wikipedia.org/wiki/Eusociality'
     },

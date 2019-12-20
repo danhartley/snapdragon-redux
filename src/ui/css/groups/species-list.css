@@ -113,7 +113,12 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+    justify-content: center;
+  }
+
+  .table-row td:nth-child(2) > span:nth-child(1) {
+    margin-bottom: .5rem;
   }
   
   .table-header th:nth-child(3),
@@ -205,9 +210,13 @@ div.species-description {
     .table-row td:nth-child(3) {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
         align-items: flex-start;
-    }
+        justify-content: center;
+      }
+    
+      .table-row td:nth-child(3) > span:nth-child(1) {
+        margin-bottom: .4rem;
+      }
 
     .species-list .scrollable {
       bottom: 0;
@@ -218,7 +227,7 @@ div.species-description {
   @media (min-width: 1024px) {
      
     .table-header th:nth-child(2), .table-row td:nth-child(2) {
-        flex: 4;
+        flex: 5;
     }
     
     .table-header th:nth-child(3), .table-row td:nth-child(3) {
