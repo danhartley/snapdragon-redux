@@ -1873,6 +1873,11 @@ a.collection-disabled {
   pointer-events: none;
 }
 
+.snapdragon-intro {
+  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhStandardBlock,20vh) - var(--vhRunningBlock));
+  top: calc(var(--vhStandardBlock));  
+}
+
 .snapdragon-intro > div {
   line-height: 2;
   font-size: 1rem;

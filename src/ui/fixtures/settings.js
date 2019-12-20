@@ -3,6 +3,7 @@ import { store } from 'redux/store';
 import { persistor } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
+import { cookieHandler } from 'ui/helpers/cookie-handler';
 
 import settingsTemplate from 'ui/fixtures/settings-template.html';
 
@@ -40,8 +41,9 @@ export const settingsHandler = () => {
         setTimeout(() => {
             persistor.purge();
             clearCacheBtn.innerText = 'Cache cleared';
+            cookieHandler.removeFirstTimeVisitorCookie();
             setTimeout(() => {                                
-                setTimeout(() => {
+                setTimeout(() => {                    
                     window.location.reload(true);
                 }, 500);
             }, 500);

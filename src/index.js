@@ -30,8 +30,6 @@ const onLoadHandler = () => {
 
     try {
 
-        // console.log('index.js')
-        
         const { config, counter: currentCounter, lessonPlan: statePlans } = store.getState();
 
         lessonPlan = statePlans;

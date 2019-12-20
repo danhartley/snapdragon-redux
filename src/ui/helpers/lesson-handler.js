@@ -82,6 +82,7 @@ const changeState = (lessonState, collection, config, history) => {
 };
 
 const purgeLesson = () => {
+
     persistor.purge();
     window.location.reload(true);
 };

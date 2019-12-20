@@ -5,7 +5,9 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { subscription } from 'redux/subscriptions';
 import { getGlossary } from 'api/glossary/glossary';
 import { enums } from 'ui/helpers/enum-helper';
+import { renderLessons } from 'ui/screens/lists/lesson-list';
 
+import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { settingsHandler } from 'ui/fixtures/settings';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
@@ -48,17 +50,17 @@ export const renderNavigation = () => {
                         clickedIcon.classList.add('active-icon');
                         lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub)); // lesson handler?
-
-                        lessonStateHandler.saveCurrentLesson(collection);
-                        
+                        lessonStateHandler.saveCurrentLesson(collection);                        
                         break;
                     case enums.navigation.SETTINGS:
                         toggleIconOnOff(clickedIcon);
                         settingsHandler();
                         break;
                     case enums.navigation.PORTRAIT_HOME:
+                        clickedIcon.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub)); // lesson handler?                   
                         lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
+                        renderLessons();
                         break;
                     case enums.navigation.GLOSSARY:   
                         toggleIconOnOff(clickedIcon);
@@ -81,7 +83,10 @@ export const renderNavigation = () => {
     const onLoadState = config => {
         const id = config.isPortraitMode ? enums.navigation.PORTRAIT_HOME.name : enums.navigation.LANDSCAPE_HOME.name;
         const icon = document.getElementById(id);
-              icon.classList.add('active-icon');
+
+        if(id === enums.navigation.LANDSCAPE_HOME.name || (id === enums.navigation.PORTRAIT_HOME.name && !cookieHandler.isFirstTimeVisitor())) {
+            icon.classList.add('active-icon');
+        }
     };
 
     onLoadState(config, enums);

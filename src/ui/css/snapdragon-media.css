@@ -73,14 +73,13 @@
 
 @media (min-width: 768px) {
 
+    .snapdragon-intro {
+        height: initial;  
+      }
+
     .text-entry-container {
         padding: .5rem 0;
     }
-
-    /* .action-update button {
-        width: initial;
-        float: right;
-    } */
 
     .btn {
         width: fit-content;
@@ -88,8 +87,6 @@
 
     .squares {
         margin: 0 0 var(--vhStandardBlock, 10vh) 0;
-        /* border-top: .05rem solid var(--snap-border-lightest);
-        border-bottom: .05rem solid var(--snap-border-lightest); */
     }
 
     .lesson-list-carousel-item > div:nth-child(2) > div {
