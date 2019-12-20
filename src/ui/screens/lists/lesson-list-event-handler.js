@@ -12,16 +12,16 @@ import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 
 const onLoadLessonViewState = (collection, videoPlayer, score) => {
 
-  const savedState = collection.isPaused
-    ? store.getState().config.isLandscapeMode
-       ? '(lesson paused)' 
-       : ''
-    : '';
+  // const savedState = collection.isPaused
+  //   ? store.getState().config.isLandscapeMode
+  //      ? '(lesson paused)' 
+  //      : ''
+  //   : '';
   const taxa = collection.iconicTaxa ? collection.iconicTaxa.map(taxon => taxon.common).join(', ') : '';
   const isPaused = (!!score && score.collectionId === collection.id) || store.getState().lessons.find(lesson => lesson.collection.id === collection.id);
 
   collection.taxa = taxa;
-  collection.savedState = savedState;
+  // collection.savedState = savedState;
   collection.hasVideo = collection.video ? true : false;
   collection.showVideoIconClass = collection.hasVideo ? '' : 'hide-important';
   collection.videoState = videoHandler.setVideoState(videoPlayer || [], collection);
@@ -50,19 +50,24 @@ const onTitleClickViewState = (e, lessons) => {
   const speciesList = document.querySelector(`#species_list_id_${lessonId}`);
   const reviewLink = document.querySelector(`.js-lesson-review[data-review-link="${lessonId}"]`);
 
-  // alternative to this manipulation is to reload the list (and/or redux state on parts of dom)
-
-  let otherSpecies = Array.from(document.querySelectorAll('.js-species-container'));
-      otherSpecies = otherSpecies.filter(container => container.id !== `container_${lessonId}`);
-      otherSpecies.forEach(container => container.innerHTML = '');
-
-  let rows = document.querySelectorAll('.js-lesson-list-item');
-      rows.forEach(row => {
-        const isPaused = store.getState().lessons.find(lesson => lesson.collection.id === parseInt(row.dataset.lessonId));
-        row.classList.remove('lesson-list-selected-lesson');
-        const speciesVideoState = row.querySelector('.js-lesson-saved-state');
-        if(speciesVideoState) speciesVideoState.innerHTML = !!isPaused ? '(lesson paused)' : '';
+  let otherChevrons = Array.from(document.querySelectorAll('.js-lesson-list-chevron .fa-chevron-up'));
+      otherChevrons.forEach(chevron => {
+        const lessonToHide = parseInt(chevron.dataset.lessonId);
+        if(lessonToHide !== lessonId) {
+          chevron.classList.remove('fa-chevron-up');
+          chevron.classList.add('fa-chevron-down');
+          const speciesTableToHide = document.getElementById(`species_list_id_${lessonToHide}`);
+                speciesTableToHide.classList.add('hide');
+        }        
       });
+
+  // let rows = document.querySelectorAll('.js-lesson-list-item');
+  //     rows.forEach(row => {
+  //       const isPaused = store.getState().lessons.find(lesson => lesson.collection.id === parseInt(row.dataset.lessonId));
+  //       row.classList.remove('lesson-list-selected-lesson');
+  //       const speciesVideoState = row.querySelector('.js-lesson-saved-state');
+  //       if(speciesVideoState) speciesVideoState.innerHTML = !!isPaused ? '(lesson paused)' : '';
+  //     });
 
   let reviewLinks = document.querySelectorAll('.js-lesson-review');
       reviewLinks.forEach(link => {

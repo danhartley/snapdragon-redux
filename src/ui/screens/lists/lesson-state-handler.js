@@ -34,7 +34,7 @@ const renderLessonSpeciesList = async (lesson, container) => {
 
 const saveCurrentLesson = async collection => {
 
-  console.log('saveCurrentLesson: ', collection);
+  // console.log('saveCurrentLesson: ', collection);
 
   const { counter, lessonPlan, lessonPlans, layout, lesson, score, history, bonusLayout, enums, config } = store.getState();
   
