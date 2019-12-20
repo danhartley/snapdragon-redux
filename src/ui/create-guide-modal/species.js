@@ -5,7 +5,7 @@ import speciesTemplate from 'ui/create-guide-modal/species-template.html';
 export const renderSpecies = createGuide => {
 
     const header = createGuide.modal.querySelector('.js-modal-title > div');
-          header.innerHTML = 'Species picker';
+          header.innerHTML = 'Create your own lesson';
 
     const options = [
         {

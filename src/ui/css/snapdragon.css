@@ -1653,8 +1653,8 @@ a.collection-disabled {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
 .most-observations {
@@ -1871,6 +1871,11 @@ a.collection-disabled {
 
 .no-pointer-events {
   pointer-events: none;
+}
+
+.snapdragon-intro {
+  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhStandardBlock,20vh) - var(--vhRunningBlock));
+  top: calc(var(--vhStandardBlock));  
 }
 
 .snapdragon-intro > div {

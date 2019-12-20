@@ -19,9 +19,9 @@ export const textSetup = (collection, config) => {
     const months = config.guide.season.observableMonths.map(month => month.name);
     const observableMonths = `${months[0]}-${months[months.length - 1]}`;
     const season = config.guide.season 
-                    ? 'Species observations drawn from the whole year.'
+                    ? 'Species observations are drawn from the whole year.'
                     : config.guide.season === 'all_year'
-                        ? 'Species observations drawn from the whole year.'
+                        ? 'Species observations are drawn from the whole year.'
                         : `Species observations are from ${observableMonths}.`;
 
     let speciesSummary = getSpeciesSummary(iconicTaxa, speciesCount);
