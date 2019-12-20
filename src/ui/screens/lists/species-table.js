@@ -142,7 +142,8 @@ export const buildTable = (collection, args) => {
         }
     });
 
-    const tbody = document.querySelector('.species-table tbody');
+    const table = document.getElementById(`species_list_id_${collection.id}`);
+    const tbody = table.querySelector('.species-table tbody');
 
     if(!tbody) return;
     

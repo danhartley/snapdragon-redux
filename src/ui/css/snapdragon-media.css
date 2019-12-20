@@ -45,6 +45,9 @@
     body {
         font-size: 1em;
     }
+    .snapdragon-intro > div {
+        font-size: 1.2rem;
+    }
 }
 
 @media (min-height:812px) {

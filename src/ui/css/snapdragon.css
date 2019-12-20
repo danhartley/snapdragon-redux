@@ -1948,19 +1948,9 @@ a.collection-disabled {
   display: none;
 }
 
-/* .lesson-list-header > div[data-toggle-state="on"]:nth-child(1), .lesson-list-header > div[data-toggle-state="on"]:nth-child(2) > div {
-  color: var(--snap-toggle-header-on);
-  background-color: var(--snap-toggle-header-off);
-} */
-
-/* .lesson-list-header > div[data-toggle-state="on"]:nth-child(2) {
-  background-color: var(--snap-toggle-header-on);
-} */
-
 .lesson-list-header i {
   font-size: 1.6rem;
   color: var(--snap-text-medium-light);
-  padding-left: 20%;
 }
 
 .lesson-list-carousel-item {
