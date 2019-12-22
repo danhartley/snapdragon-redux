@@ -6,6 +6,7 @@ import { utils } from 'utils/utils';
 import { roundHandler } from "snapdragon-engine/round-plan-handler";
 import { bonusHandler } from 'snapdragon-engine/bonus/bonus-test-handler';
 import { providerHandler } from 'snapdragon-engine/provider/provider-test-handler';
+import { mixedTraitHandler } from 'ui/screens/multichoice/landscape/mixed-trait/mixed-trait-handler';
 
 import { layouts as L } from 'snapdragon-config/screen-layouts';
 
@@ -27,6 +28,21 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
         nextRoundLayoutTemplates.forEach( async (layout, index) => {
             let itemIndex = 0;
             do {
+                if(layout.name === 'mixed-trait-images') {
+                    
+                    console.log('layout: ', layout);
+
+                    const { requiredTraitValues, trait } = mixedTraitHandler.getMatchingTrait(utils.shuffleArray(layout.screens[1].traits), collection.items[itemIndex].traits);
+
+                    const { traits, requiredTraits } = await mixedTraitHandler.fetchTraits(trait, requiredTraitValues, collection.glossary);
+
+                    layout.trait = trait;
+                    layout.traits = traits;
+                    layout.requiredTraits = requiredTraits;
+
+                    console.log('traits: ', traits);
+        
+                }
                 lessonPlan.layouts.push({...layout, lessonName, levelName, speciesName: roundItemNames[itemIndex] });
                 itemIndex++;
             } while (itemIndex < layoutsToAdd);
