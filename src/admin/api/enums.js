@@ -1197,7 +1197,6 @@ export const enums = {
   RING_AND_VOLVA: 'ring and volva',
   BARE: 'Bare',
   NA: 'N/A',
-  NONE: 'None',
   SHORT: 'short',
   STUMPY: 'stumpy',
   CLUB_LIKE: 'Club-like',
@@ -1233,7 +1232,6 @@ export const enums = {
     SINUATE: 'Sinuate',
     SUBDECURRENT: 'Subdecurrent',
     NA: 'N/A',
-    NONE: 'None',
     type: 'gillAttachment',
     name: 'gill attachment'
   },

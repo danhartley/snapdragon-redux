@@ -32,6 +32,8 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
             } while (itemIndex < layoutsToAdd);
         });
 
+        console.log('lessonPlan.layouts: ', lessonPlan.layouts);
+
         if(lesson.level.id === 1) {
             let providerQuestions = await providerHandler.getLayouts(collection, roundItemNames);
                 providerQuestions = R.flatten(providerQuestions).filter(layout => layout);

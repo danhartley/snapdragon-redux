@@ -2,13 +2,6 @@ import * as R from 'ramda';
 
 import { layouts as L } from 'snapdragon-config/screen-layouts';
 
-const propertyTrait = (traitPropertyMatch, traits) => {
-    const layout = R.clone(traitPropertyMatch);
-    layout.screens[0].traits = traits;
-    layout.screens[1].traits = traits;
-    return layout;
-};
-
 export const landscapeFungi = {
     id: 3,
     name:'Lesson 3',
@@ -18,12 +11,12 @@ export const landscapeFungi = {
         {   id: 1,
             name:'Level 1',
             layouts: [                          
-                        L.mixedSpecimenImages, L.latinToCommonMatch, L.commonEntry,
-                        L.commonToLatinMatch,
-                        L.textCompleteGenus, L.genusEntry,                        
-                        L.textCompleteSpecies, L.speciesEntry,
-                        propertyTrait(L.mixedTraitImages, ['capShape']),
-                        propertyTrait(L.mixedTraitImages, ['gillAttachment']),
+                        // L.mixedSpecimenImages, L.latinToCommonMatch, L.commonEntry,
+                        // L.commonToLatinMatch,
+                        // L.textCompleteGenus, L.genusEntry,                        
+                        // L.textCompleteSpecies, L.speciesEntry,
+                        L.propertyTrait(L.mixedTraitImages, ['capShape']),
+                        L.propertyTrait(L.mixedTraitImages, ['gillAttachment']),
                         L.speciesGenusEntry
                     ],
             bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'lookalikes', 'definition' ] } ]

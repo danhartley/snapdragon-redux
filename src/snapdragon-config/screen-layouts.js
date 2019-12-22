@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { panels } from 'snapdragon-config/screen-panels';
 
 const { 
@@ -438,7 +440,14 @@ const providerHorizontalStrip = {
         { ...specimenImages },
         { ...providerHorizontalStripQuestions }
     ]
-}
+};
+
+const propertyTrait = (traitPropertyMatch, traits) => {
+    const layout = R.clone(traitPropertyMatch);
+    layout.screens[0].traits = traits;
+    layout.screens[1].traits = traits;
+    return layout;
+};
 
 export const layouts = {
   mixedSpeciesMatch,
@@ -473,5 +482,6 @@ export const layouts = {
   mediaMatch,
   mixedTraitImages,
   providerHorizontalStrip,
-  speciesIdentificationMatch
+  speciesIdentificationMatch,
+  propertyTrait
 }

@@ -21,26 +21,23 @@ export const renderMixedTraitQuestion = collection => {
         
         const { requiredTraitValues, trait } = mixedTraitHandler.getMatchingTrait(utils.shuffleArray(layout.screens[1].traits), item.traits);
 
-        mixedTraitHandler.fetchTraits(trait, requiredTraitValues, collection.glossary);
+        const { traits, requiredTraits } = await mixedTraitHandler.fetchTraits(trait, requiredTraitValues, collection.glossary);
         
         const help = `Select the correct ${utils.fromCamelCase(trait)}`;
     
         const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question, help, term: '' });              
 
-        mixedTraitHandler.onTraitsReady((traits, requiredTraits) => {         
-            
-            if(config.isPortraitMode) {
-                renderMultiStrips(collection, null, { traits, requiredTraits, item, question, help });
-                return;
-            }
+        if(config.isPortraitMode) {
+            renderMultiStrips(collection, null, { traits, requiredTraits, item, question, help });
+            return;
+        }
 
-            parent.innerHTML = '';
-            renderTemplate({ traits: Array.from(new Set(traits.flat())), help }, template.content, parent);
-            document.querySelectorAll('.js-traits-names-txt img').forEach(img => {
-                if(img.src.indexOf('png') > -1) {
-                    img.classList.add('png');
-                }
-            });
+        parent.innerHTML = '';
+        renderTemplate({ traits: Array.from(new Set(traits.flat())), help }, template.content, parent);
+        document.querySelectorAll('.js-traits-names-txt img').forEach(img => {
+            if(img.src.indexOf('png') > -1) {
+                img.classList.add('png');
+            }
         });
     };
 

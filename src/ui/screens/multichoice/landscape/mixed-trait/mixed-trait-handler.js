@@ -42,7 +42,11 @@ const getMatchingTrait = (layoutTraits, traitValues) => {
 const fetchTraits = async (trait, requiredTraitValues, glossary) => {
 
     let traits = await firestore.getTraitDefinitions(glossary, trait);
-        traits.forEach(t => t.term = t.term.toLowerCase());
+        traits.forEach(t => {
+            t.term = t.term.toLowerCase();
+            if(t.alt) t.alt = t.alt.toLowerCase();
+            return t;
+        });
 
     let multiples = traitsHandler.getNMultiplesFromArray(traits.map(t => t.term), requiredTraitValues.length);
 
@@ -60,7 +64,7 @@ const fetchTraits = async (trait, requiredTraitValues, glossary) => {
 
     onTraitsReadyListeners.forEach(listener => listener(traits, requiredTraits));
 
-    return trait;
+    return { traits, requiredTraits };
 };
 
 const pendingScore = {};
