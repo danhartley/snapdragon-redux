@@ -1637,6 +1637,7 @@ a.collection-disabled {
   display: flex;
   align-items: center;
   border-right: 1px solid var(--snap-border-lightest);
+  justify-content: center;
 }
 
 .calendar-box .row {

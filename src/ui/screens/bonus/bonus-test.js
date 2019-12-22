@@ -11,7 +11,7 @@ export const renderBonusTest = bonusLayout => {
     collection.nextItem = bonusLayout.item;
 
     if(bonusLayout.overrides && bonusLayout.overrides.trait && bonusLayout.overrides.trait.name === 'lookalikes') {
-        collection.items = bonusLayout.overrides.trait.lookalikes;
+        collection.items = [ ...bonusLayout.overrides.trait.lookalikes, collection.nextItem ];
         renderMixedSpecimenQuestion(collection, bonusLayout);
     } else {        
         renderMultiStrips(collection, bonusLayout);
