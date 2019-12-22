@@ -6,6 +6,7 @@ import { utils } from 'utils/utils';
 import { roundHandler } from "snapdragon-engine/round-plan-handler";
 import { bonusHandler } from 'snapdragon-engine/bonus/bonus-test-handler';
 import { providerHandler } from 'snapdragon-engine/provider/provider-test-handler';
+import { mixedTraitHandler } from 'ui/screens/multichoice/landscape/mixed-trait/mixed-trait-handler';
 
 import { layouts as L } from 'snapdragon-config/screen-layouts';
 
@@ -27,8 +28,34 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
         nextRoundLayoutTemplates.forEach( async (layout, index) => {
             let itemIndex = 0;
             do {
-                lessonPlan.layouts.push({...layout, lessonName, levelName, speciesName: roundItemNames[itemIndex] });
+                if(layout.name === 'mixed-trait-images') {
+                    
+                    const item = collection.items.find(i => i.name === roundItemNames[itemIndex]);
+
+                    console.log('round planner roundItemNames: ', roundItemNames);
+                    console.log('round planner item.name: ', item.name);
+
+                    const { requiredTraitValues, trait } = mixedTraitHandler.getMatchingTrait(utils.shuffleArray(layout.screens[1].traits), item.traits);
+
+                    const { traits, requiredTraits } = await mixedTraitHandler.fetchTraits(trait, requiredTraitValues, collection.glossary);
+
+                    layout.trait = trait;
+                    layout.traits = traits;
+                    layout.requiredTraits = requiredTraits;
+
+                    const traitsToIgnore = [ 'n/a', 'none' ];
+                    const addLayout = !!requiredTraits.find(t => !R.contains(t.term.toLowerCase(), traitsToIgnore));
+
+                    if(addLayout) {
+                        lessonPlan.layouts.push({...layout, lessonName, levelName, speciesName: roundItemNames[itemIndex] });
+                    }
+        
+                } else {
+                    lessonPlan.layouts.push({...layout, lessonName, levelName, speciesName: roundItemNames[itemIndex] });
+                }
+
                 itemIndex++;
+                
             } while (itemIndex < layoutsToAdd);
         });
 
@@ -58,8 +85,6 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
 
         if(lesson.level.id === 1) {
 
-            // console.log('bonusLayouts: ', bonusLayouts);
-            
             if(bonusLayouts) {
                 const bonusTests = await bonusHandler.getTests(collection, itemIndices, bonusLayouts, lessonName, levelName);
                 lessonPlan.layouts = [ ...lessonPlan.layouts, ...bonusTests ];

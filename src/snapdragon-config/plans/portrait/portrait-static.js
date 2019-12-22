@@ -2,13 +2,6 @@ import * as R from 'ramda';
 
 import { layouts as L } from 'snapdragon-config/screen-layouts';
 
-const propertyTrait = (traitPropertyMatch, traits) => {
-    const layout = R.clone(traitPropertyMatch);
-    layout.screens[0].traits = traits;
-    layout.screens[1].traits = traits;
-    return layout;
-};
-
 export const portraitStatic = {
     id: 110,
     name:'Lesson 110',
@@ -22,7 +15,7 @@ export const portraitStatic = {
                         L.commonToLatinMatch,
                         L.textCompleteGenus, L.genusEntry,                        
                         L.textCompleteSpecies, L.speciesEntry,
-                        propertyTrait(L.mixedTraitImages, ['capShape', 'gillAttachment', 'leafShape', 'leafDivision', 'inflorescence', 'leafMargin']),
+                        L.propertyTrait(L.mixedTraitImages, ['capShape', 'gillAttachment', 'leafShape', 'leafDivision', 'inflorescence', 'leafMargin']),
                         L.speciesGenusEntry,
                         L.familyMatch , L.familyStripsMatch
                     ],

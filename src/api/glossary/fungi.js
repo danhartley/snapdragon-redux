@@ -196,7 +196,7 @@ export const fungi = [
         }
     },
     {
-        term: "None",
+        term: "N/A",
         definition: "No gill attachment.",
         trait: 'gillAttachment',
         img: {
@@ -345,6 +345,16 @@ export const fungi = [
     {
         term: "Inrolled margin",
         definition: "Where the edge of the pileus points inward toward the stipe (common in immature specimens).",
+    },
+    {
+        term: "n/a",
+        definition: "Not relevant.",
+        trait: 'capShape',
+        img: {
+            url: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/NotApplicableSign.png',
+            author: 'AndrewOne [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)]',
+            attribution: 'https://commons.wikimedia.org/wiki/File:NotApplicableSign.png',
+        }
     },
     {
         term: "Campanulate",

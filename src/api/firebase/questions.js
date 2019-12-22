@@ -219,7 +219,7 @@ export const questions = [
         question: 'How is the ecology of this fungus manifest?',
         answer  : 'Colonises roots of a vascular host plant in a (generally) mutualistic relationship.',
         answers: [
-            'Lives off decayed organic matter',
+            'Lives off decayed organic matter.',
             'Lives off a living host.',
             'Has symbiotic relationship with roots of various plants (without penetrating host’s cell walls).'
         ]
