@@ -85,8 +85,8 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
     });
 
     document.querySelector('.js-help-txt').addEventListener('click', () => {
-        const noOfImagesPerItem = layout.bonusLayout ? 6 / collection.items.length : 1;
-        const preselectedItems = layout.bonusLayout ? collection.items : null;
+        const noOfImagesPerItem = layout.bonus ? 6 / collection.items.length : 1;
+        const preselectedItems = layout.bonus ? collection.items : null;
         renderMixedSpecimenImages(collection, noOfImagesPerItem, preselectedItems, true);
     });    
 };

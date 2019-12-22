@@ -110,6 +110,8 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
                     points: 0, icon: matchIcon(item.taxonomy, iconicTaxa),
                     vernacularName: itemProperties.getVernacularName(questionItem, config),
                     answerVernacularName: itemProperties.getVernacularName(answerItem, config)};
+
+                    delete test.answeredIndex;
                     
                 scoreHandler('image-match', test, callback, config);
             });
