@@ -58,8 +58,9 @@ const getLookalikeTest = item => {
 
         const lookalikes = await getItemLookalikes(item);
 
-        const question = item.name;
+        const question = lookalikes.length > 0 ? item.name : null;
         const answers = [ question, ...lookalikes.map(item => item.name) ];
+
 
         return { question, answers, overrides : { question: 'Avoid look-alikes', help: '(Pick one correct image)', binomial: 'Latin name', vernacularName: 'Common name', trait: { name: 'lookalikes', lookalikes } } };
     };

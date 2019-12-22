@@ -30,9 +30,12 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
             do {
                 if(layout.name === 'mixed-trait-images') {
                     
-                    console.log('layout: ', layout);
+                    const item = collection.items.find(i => i.name === roundItemNames[itemIndex]);
 
-                    const { requiredTraitValues, trait } = mixedTraitHandler.getMatchingTrait(utils.shuffleArray(layout.screens[1].traits), collection.items[itemIndex].traits);
+                    console.log('round planner roundItemNames: ', roundItemNames);
+                    console.log('round planner item.name: ', item.name);
+
+                    const { requiredTraitValues, trait } = mixedTraitHandler.getMatchingTrait(utils.shuffleArray(layout.screens[1].traits), item.traits);
 
                     const { traits, requiredTraits } = await mixedTraitHandler.fetchTraits(trait, requiredTraitValues, collection.glossary);
 
@@ -40,15 +43,21 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
                     layout.traits = traits;
                     layout.requiredTraits = requiredTraits;
 
-                    console.log('traits: ', traits);
+                    const traitsToIgnore = [ 'n/a', 'none' ];
+                    const addLayout = !!requiredTraits.find(t => !R.contains(t.term.toLowerCase(), traitsToIgnore));
+
+                    if(addLayout) {
+                        lessonPlan.layouts.push({...layout, lessonName, levelName, speciesName: roundItemNames[itemIndex] });
+                    }
         
+                } else {
+                    lessonPlan.layouts.push({...layout, lessonName, levelName, speciesName: roundItemNames[itemIndex] });
                 }
-                lessonPlan.layouts.push({...layout, lessonName, levelName, speciesName: roundItemNames[itemIndex] });
+
                 itemIndex++;
+                
             } while (itemIndex < layoutsToAdd);
         });
-
-        console.log('lessonPlan.layouts: ', lessonPlan.layouts);
 
         if(lesson.level.id === 1) {
             let providerQuestions = await providerHandler.getLayouts(collection, roundItemNames);
@@ -76,8 +85,6 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
 
         if(lesson.level.id === 1) {
 
-            // console.log('bonusLayouts: ', bonusLayouts);
-            
             if(bonusLayouts) {
                 const bonusTests = await bonusHandler.getTests(collection, itemIndices, bonusLayouts, lessonName, levelName);
                 lessonPlan.layouts = [ ...lessonPlan.layouts, ...bonusTests ];

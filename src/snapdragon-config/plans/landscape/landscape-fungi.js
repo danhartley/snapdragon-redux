@@ -11,10 +11,10 @@ export const landscapeFungi = {
         {   id: 1,
             name:'Level 1',
             layouts: [                          
-                        // L.mixedSpecimenImages, L.latinToCommonMatch, L.commonEntry,
-                        // L.commonToLatinMatch,
-                        // L.textCompleteGenus, L.genusEntry,                        
-                        // L.textCompleteSpecies, L.speciesEntry,
+                        L.mixedSpecimenImages, L.latinToCommonMatch, L.commonEntry,
+                        L.commonToLatinMatch,
+                        L.textCompleteGenus, L.genusEntry,                        
+                        L.textCompleteSpecies, L.speciesEntry,
                         L.propertyTrait(L.mixedTraitImages, ['capShape']),
                         L.propertyTrait(L.mixedTraitImages, ['gillAttachment']),
                         L.speciesGenusEntry

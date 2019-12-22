@@ -12,26 +12,21 @@ export const renderMixedTraitImages = collection => {
     const template = document.createElement('template');
           template.innerHTML = imagesTemplate;
 
-    // mixedTraitHandler.onTraitsReady((traits, requiredTraits) => {
+    const parent = DOM.leftBody;
+            parent.innerHTML = '';
+    
+    renderTemplate({ traits: layout.traits }, template.content, parent);
 
-        const parent = DOM.leftBody;
-              parent.innerHTML = '';
-        
-        renderTemplate({ traits: layout.traits }, template.content, parent);
-        // renderTemplate({ traits }, template.content, parent);
-
-        const traitTiles = document.querySelectorAll('.js-tiles div');
-        traitTiles.forEach(tile => {
-            if(tile.querySelector('img').src.indexOf('png') > -1) {
-            traitTiles.forEach(tile => tile.classList.add('png'));
-            }
-        });
-        // if(requiredTraits.length > 1) {
-        if(layout.requiredTraits.length > 1) {
-            traitTiles.forEach(tile => tile.classList.add('multiple'));
+    const traitTiles = document.querySelectorAll('.js-tiles div');
+    traitTiles.forEach(tile => {
+        if(tile.querySelector('img').src.indexOf('png') > -1) {
+        traitTiles.forEach(tile => tile.classList.add('png'));
         }
+    });
 
-        traitTiles.forEach(tile => mixedTraitHandler.onClickTileHandler(tile, layout.requiredTraits, layout.traitTiles));
-        // traitTiles.forEach(tile => mixedTraitHandler.onClickTileHandler(tile, requiredTraits, traitTiles));
-    // });
+    if(layout.requiredTraits.length > 1) {
+        traitTiles.forEach(tile => tile.classList.add('multiple'));
+    }
+
+    traitTiles.forEach(tile => mixedTraitHandler.onClickTileHandler(tile, layout.requiredTraits, traitTiles));
 };
