@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: row;
     height: var(--vhRow, 12.5vh);
-    font-size: .8em;
+    font-size: .9em;
   }
   
   .table-row-chevron {
@@ -113,12 +113,12 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    /* justify-content: space-evenly; */
     justify-content: center;
+    padding-right: .25rem;
   }
 
   .table-row td:nth-child(2) > span:nth-child(1) {
-    margin-bottom: .5rem;
+    margin-bottom: .25rem;
   }
   
   .table-header th:nth-child(3),
@@ -128,6 +128,7 @@
     flex: 1;
     display: flex;
     align-items: center;
+    padding-right: .25rem;
   }
 
   .table-header th:nth-child(5), .table-row td:nth-child(5) {
@@ -202,6 +203,10 @@ div.species-description {
   }
 
   @media (min-width: 768px) {
+
+    .table-row {
+      font-size: .8rem;
+    }
 
     .table-header {
       background-color: var(--snap-landscape);
