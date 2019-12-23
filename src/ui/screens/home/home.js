@@ -6,7 +6,7 @@ import { cookieHandler } from 'ui/helpers/cookie-handler';
 
 import homeTemplate from 'ui/screens/home/home-template.html';
 
-export const renderHome = counter => {
+export const renderHome = (counter, forceIntroDisplay = false) => {
     
     const isFirstTimeVisitor = cookieHandler.setFirstTimeVisitorCookie();
 
@@ -14,11 +14,11 @@ export const renderHome = counter => {
 
     let { config } = store.getState();
 
-    if(config.isLandscapeMode || !isFirstTimeVisitor) {
+    if(config.isLandscapeMode || !isFirstTimeVisitor && !forceIntroDisplay) {
         renderLessons();
     }
 
-    if(config.isLandscapeMode || isFirstTimeVisitor) {
+    if(config.isLandscapeMode || isFirstTimeVisitor || forceIntroDisplay) {
         renderSnapdragonIntro();
     }
 };

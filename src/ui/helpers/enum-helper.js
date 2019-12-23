@@ -18,7 +18,8 @@ navigation.initEnum([
     'SETTINGS', 
     'PORTRAIT_HOME',
     'GLOSSARY', 
-    'EMAIL'
+    'EMAIL',
+    'INFO'
 ]);
 
 class taxon extends Enum {};

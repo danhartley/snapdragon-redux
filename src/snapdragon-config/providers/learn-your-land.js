@@ -93,8 +93,7 @@ const learnYourLand1 = {
         {
           name: 'Hydnum umbilicatum',
           time: [688],
-          description: `
-          The species name umbilicatum means navel.
+          description: `The species name umbilicatum means navel.
           
           Ressembles Hydnum repandum in many ways, though generally smaller, with a darker cap and a conspicuous central depression on the cap.
           
@@ -112,9 +111,7 @@ const learnYourLand1 = {
         {
           name: 'Hericium erinaceus',
           time: [758],
-          description: `
-
-          Hericium: white-spored mushrooms, genus include lion's mane and its allies.
+          description: `Hericium: white-spored mushrooms, genus include lion's mane and its allies.
 
           Hericium mushrooms grow directly on wood, either living or dead trees, and typically on hardwoods.
 
@@ -136,8 +133,7 @@ const learnYourLand1 = {
         {
           name: 'Hericium americanum',
           time: [848],
-          description: `
-          Comprised of numerous down-pointing spines that are soft and white.
+          description: `Comprised of numerous down-pointing spines that are soft and white.
 
           Key feature: each spine or tooth is similar in size to those found in Lion's mane.
 
@@ -198,8 +194,7 @@ const learnYourLand1 = {
         {
           name: 'Lepista nuda',
           time: [1195],
-          description: `
-          This is not an easy mushroom to identify; I don't consider it to be a beginner's mushroom.
+          description: `This is not an easy mushroom to identify; I don't consider it to be a beginner's mushroom.
           
           Key identifying features: the blewit is a terrestrial saprophyte, meaning it grows from the ground and decomposes plant material.
 

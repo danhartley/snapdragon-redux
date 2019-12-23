@@ -19,6 +19,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: var(--snap-text-dark);
   margin: auto;
+  background-color: var(--snap-default-background);
 }
 
 button {
@@ -245,7 +246,7 @@ a.dropdown-item {
   display: none !important;
 }
 
-.home, .settings, .list, .glossary, .email, .email > a {
+.home, .settings, .nav-info, .list, .glossary, .email, .email > a {
   cursor: pointer;
   color: var(--snap-text-dark);
   font-size: 1.4rem;
@@ -406,10 +407,6 @@ a.dropdown-item {
   grid-template-columns: 100%;
   grid-auto-flow: column;
   grid-template-rows: var(--vhRunningBlock, 7.5vh) 5px auto var(--vhRunningBlock, 7.5vh);
-}
-
-body {
-  background-color: var(--snap-default-background);
 }
 
 .left-body, .right-body {
@@ -707,13 +704,13 @@ body {
   text-transform: capitalize;
 }
 
-.species-traits span {
+/* .species-traits span {
   font-weight: bold;
   color: rgb(97, 109, 25);
   text-transform: capitalize;
-}
+} */
 
-.cultivar.card {
+/* .cultivar.card {
   display: flex;
 }
 
@@ -732,7 +729,7 @@ body {
   flex: 1;
   text-align: left;
   padding: 0.15rem;
-}
+} */
 
 .data-box-container {
   height: var(--vhCalendar, 11vh);
@@ -2154,4 +2151,8 @@ a.collection-disabled {
 
 .border-bottom {
   border-bottom: .5px solid var(--snap-youtube-green);
+}
+
+.title {
+  padding: 0 .5rem;
 }

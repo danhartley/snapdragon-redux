@@ -5,6 +5,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { subscription } from 'redux/subscriptions';
 import { getGlossary } from 'api/glossary/glossary';
 import { enums } from 'ui/helpers/enum-helper';
+import { renderHome } from 'ui/screens/home/home';
 import { renderLessons } from 'ui/screens/lists/lesson-list';
 
 import { cookieHandler } from 'ui/helpers/cookie-handler';
@@ -56,9 +57,15 @@ export const renderNavigation = () => {
                         toggleIconOnOff(clickedIcon);
                         settingsHandler();
                         break;
-                    case enums.navigation.PORTRAIT_HOME:
+                    case enums.navigation.INFO:
+                        document.querySelector('.js-list.active-icon').classList.remove('active-icon');
                         clickedIcon.classList.add('active-icon');
-                        subscription.getByRole('screen').forEach(sub => subscription.remove(sub)); // lesson handler?                   
+                        renderHome(store.getState().counter, true);
+                        break;
+                    case enums.navigation.PORTRAIT_HOME:
+                        document.querySelector('.js-info.active-icon').classList.remove('active-icon');
+                        clickedIcon.classList.add('active-icon');
+                        subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
                         lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
                         renderLessons();
                         break;

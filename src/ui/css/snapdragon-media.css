@@ -34,6 +34,15 @@
 @media  (max-width:414px) and (min-height:736px),
         (max-width:375px) and (min-height:812px),
         (max-width:360px) and (min-height:740px) {
+            body {
+                font-size: 1em;
+            }
+}
+
+@media (max-height:568px) {
+    .test-card .help-txt {
+        display: none;
+    }
 }
 
 @media (min-width: 576px) {

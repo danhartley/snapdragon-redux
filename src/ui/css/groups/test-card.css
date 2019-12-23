@@ -370,16 +370,3 @@ div.text-entry {
         margin: 0 0 0 .5rem;
     }
 }
-
-/* iPHONE 6,7,8 PLUS, iPHONE X, GALAXY S9/S9+ */
-
-@media  (max-width:414px) and (min-height:736px),
-        (max-width:375px) and (min-height:812px),
-        (max-width:360px) and (min-height:740px) {
-        }
-
-@media (max-height:568px) {
-    .test-card .help-txt {
-        display: none;
-    }
-}
