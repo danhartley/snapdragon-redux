@@ -58,12 +58,14 @@ export const renderNavigation = () => {
                         settingsHandler();
                         break;
                     case enums.navigation.INFO:
-                        document.querySelector('.js-list.active-icon').classList.remove('active-icon');
+                        const activeHomeIcon = document.querySelector('.js-list.active-icon');
+                        if(activeHomeIcon) activeHomeIcon.classList.remove('active-icon');
                         clickedIcon.classList.add('active-icon');
                         renderHome(store.getState().counter, true);
                         break;
                     case enums.navigation.PORTRAIT_HOME:
-                        document.querySelector('.js-info.active-icon').classList.remove('active-icon');
+                        const activeInfoIcon = document.querySelector('.js-info.active-icon');
+                        if(activeInfoIcon) activeInfoIcon.classList.remove('active-icon');
                         clickedIcon.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
                         lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
@@ -89,9 +91,12 @@ export const renderNavigation = () => {
 
     const onLoadState = config => {
         const id = config.isPortraitMode ? enums.navigation.PORTRAIT_HOME.name : enums.navigation.LANDSCAPE_HOME.name;
-        const icon = document.getElementById(id);
+        let icon = document.getElementById(id);
 
         if(id === enums.navigation.LANDSCAPE_HOME.name || (id === enums.navigation.PORTRAIT_HOME.name && !cookieHandler.isFirstTimeVisitor())) {
+            icon.classList.add('active-icon');
+        } else if(id === enums.navigation.PORTRAIT_HOME.name && cookieHandler.isFirstTimeVisitor()) {
+            icon = document.querySelector('.js-info');
             icon.classList.add('active-icon');
         }
     };
