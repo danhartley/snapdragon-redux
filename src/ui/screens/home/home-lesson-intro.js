@@ -5,7 +5,10 @@ import { textSetup } from 'ui/screens/home/home-lesson-intro-text';
 
 export const renderLesson = collection => {
 
-    const { config, videoPlayer } = store.getState();
+    const { config, videoPlayer, collection: lesson } = store.getState();
+
+    collection = { ...collection, items: lesson.items };
 
     collection.video ? videoSetup(collection, videoPlayer || [], DOM.rightBody) : textSetup(collection, config);
+    
 }

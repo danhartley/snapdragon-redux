@@ -904,7 +904,7 @@ const nationalTrustButterflies = {
   ],
   video: {
     id: '9jGWMliBqXw',
-    startAt: 186,
+    startAt: 0,
     title: 'Spotting and identifying Britain\'s butterflies',
     intro: 'Spotting and identifying Britain\'s butterflies',
     owner: 'National Trust',

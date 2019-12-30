@@ -491,7 +491,7 @@ const learnYourLand2 = {
     producer: 'Adam Haritan, Learn Your Land',
     video: {
       id: 'OE54NpooUls',
-      startAt: 285,
+      startAt: 0,
       title: '9 Wild Edible Mushrooms',
       intro: 'I hope you enjoy this brief introduction to foraging edible mushrooms in Eastern North America. When you\'ve finished watching, review what we covered to see how much you remember, and to reinforce what you learnt.',
       owner: 'Learn Your Land',

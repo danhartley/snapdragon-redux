@@ -12,16 +12,10 @@ import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 
 const onLoadLessonViewState = (collection, videoPlayer, score) => {
 
-  // const savedState = collection.isPaused
-  //   ? store.getState().config.isLandscapeMode
-  //      ? '(lesson paused)' 
-  //      : ''
-  //   : '';
   const taxa = collection.iconicTaxa ? collection.iconicTaxa.map(taxon => taxon.common).join(', ') : '';
   const isPaused = (!!score && score.collectionId === collection.id) || store.getState().lessons.find(lesson => lesson.collection.id === collection.id);
 
   collection.taxa = taxa;
-  // collection.savedState = savedState;
   collection.hasVideo = collection.video ? true : false;
   collection.showVideoIconClass = collection.hasVideo ? '' : 'hide-important';
   collection.videoState = videoHandler.setVideoState(videoPlayer || [], collection);
@@ -60,14 +54,6 @@ const onTitleClickViewState = (e, lessons) => {
                 speciesTableToHide.classList.add('hide');
         }        
       });
-
-  // let rows = document.querySelectorAll('.js-lesson-list-item');
-  //     rows.forEach(row => {
-  //       const isPaused = store.getState().lessons.find(lesson => lesson.collection.id === parseInt(row.dataset.lessonId));
-  //       row.classList.remove('lesson-list-selected-lesson');
-  //       const speciesVideoState = row.querySelector('.js-lesson-saved-state');
-  //       if(speciesVideoState) speciesVideoState.innerHTML = !!isPaused ? '(lesson paused)' : '';
-  //     });
 
   let reviewLinks = document.querySelectorAll('.js-lesson-review');
       reviewLinks.forEach(link => {
@@ -110,6 +96,10 @@ const onTitleClickHandler = (title, lessons, config, startLesson) => {
 
       let siblingChevron;
 
+      if(state.requiresSpeciesList) {
+        await loadAndDisplaySpeciesList(title, lesson, container);
+      }
+
       if(startLesson) {
         renderLesson(lesson);
         siblingChevron = title.parentElement.parentElement.parentElement.children[1].children[0].children[1];
@@ -133,20 +123,9 @@ const onTitleClickHandler = (title, lessons, config, startLesson) => {
         speciesList.classList.add('hide');
         lessonVideoState.innerHTML = videoHandler.setVideoState(store.getState().videoPlayer || [], lesson);
       }
-      if(state.requiresSpeciesList) {
-
-        title.dataset.selected = true;
-        
-        const loadingMessage = title.parentElement.parentElement.parentElement.querySelector('.js-loading-message');
-              
-              loadingMessage.classList.remove('hide');
-
-        await lessonStateHandler.renderLessonSpeciesList(lesson, container);
-
-              loadingMessage.classList.add('hide');
-        
-        lessonListScrollHandler.scrollToTitle(lesson.id);
-      }      
+      // if(state.requiresSpeciesList) {
+      //   await loadAndDisplaySpeciesList(title, lesson, container);
+      // }      
     }
 
     if(config.isPortraitMode) {
@@ -182,4 +161,13 @@ export const lessonListEventHandler = {
   onLoadLessonsViewState,
   onTitleClickHandler,
   onReviewClickHandler
+}
+
+async function loadAndDisplaySpeciesList(title, lesson, container) {
+  title.dataset.selected = true;
+  const loadingMessage = title.parentElement.parentElement.parentElement.querySelector('.js-loading-message');
+  loadingMessage.classList.remove('hide');
+  await lessonStateHandler.renderLessonSpeciesList(lesson, container);
+  loadingMessage.classList.add('hide');
+  lessonListScrollHandler.scrollToTitle(lesson.id);
 }

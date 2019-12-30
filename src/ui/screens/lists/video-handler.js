@@ -71,11 +71,11 @@ const playVideoFrom = time => {
 };
 
 // -1 – unstarted
-// 0 – ended
-// 1 – playing
-// 2 – paused
-// 3 – buffering
-// 5 – video cued
+//  0 – ended
+//  1 – playing
+//  2 – paused
+//  3 – buffering
+//  5 – video cued
 
 const states = [ { key: -1, value: 'unstarted' }, { key: 1, value: 'playing' }, { key: 2, value: 'paused' } ];
 
