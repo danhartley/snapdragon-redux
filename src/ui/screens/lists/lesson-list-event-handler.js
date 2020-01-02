@@ -43,17 +43,9 @@ const onTitleClickViewState = (e, lessons) => {
   const container = document.querySelector(`.js-species-container[data-container-id="${lessonId}"]`);
   const speciesList = document.querySelector(`#species_list_id_${lessonId}`);
   const reviewLink = document.querySelector(`.js-lesson-review[data-review-link="${lessonId}"]`);
+  const upChevrons = Array.from(document.querySelectorAll('.js-lesson-list-chevron .fa-chevron-up'));
 
-  let otherChevrons = Array.from(document.querySelectorAll('.js-lesson-list-chevron .fa-chevron-up'));
-      otherChevrons.forEach(chevron => {
-        const lessonToHide = parseInt(chevron.dataset.lessonId);
-        if(lessonToHide !== lessonId) {
-          chevron.classList.remove('fa-chevron-up');
-          chevron.classList.add('fa-chevron-down');
-          const speciesTableToHide = document.getElementById(`species_list_id_${lessonToHide}`);
-                speciesTableToHide.classList.add('hide');
-        }        
-      });
+  hideOtherContentAndRevertChevrons(upChevrons, lessonId);
 
   let reviewLinks = document.querySelectorAll('.js-lesson-review');
       reviewLinks.forEach(link => {
@@ -79,9 +71,7 @@ const onTitleClickViewState = (e, lessons) => {
 
 const onTitleClickHandler = (title, lessons, config, startLesson) => {
   
-  return title.addEventListener('click', async e => {
-    
-    e.stopPropagation();
+  return title.addEventListener('click', async e => {    
 
     const { title, lesson, state, speciesList, container, lessonVideoState, row } = onTitleClickViewState(e, lessons);
 
@@ -118,6 +108,7 @@ const onTitleClickHandler = (title, lessons, config, startLesson) => {
 
       if(state.revealSpeciesList) {        
         speciesList.classList.remove('hide');
+        title.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
       }
       if(state.hideSpeciesList) {
         speciesList.classList.add('hide');
@@ -161,6 +152,21 @@ export const lessonListEventHandler = {
   onLoadLessonsViewState,
   onTitleClickHandler,
   onReviewClickHandler
+}
+
+function hideOtherContentAndRevertChevrons(upChevrons, selectedLessonId) {
+
+  upChevrons.forEach(chevron => {
+    
+    const chevronLessonId = parseInt(chevron.dataset.lessonId);
+    
+    if (chevronLessonId !== selectedLessonId) {
+      chevron.classList.remove('fa-chevron-up');
+      chevron.classList.add('fa-chevron-down');
+      const speciesTableToHide = document.getElementById(`species_list_id_${chevronLessonId}`);
+      speciesTableToHide.classList.add('hide');
+    }
+  });
 }
 
 async function loadAndDisplaySpeciesList(title, lesson, container) {
