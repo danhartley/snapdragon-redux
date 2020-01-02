@@ -55,15 +55,16 @@ const onTitleClickViewState = (e, lessons) => {
         }
       });
 
-  const isSpeciesListAvailable = !!title.dataset.selected && !!speciesList; 
+  const isSpeciesListAvailable = !!speciesList;
   const isSpeciesListHidden = elem.hasClass(speciesList, 'hide');
 
   const lessonVideoState = document.querySelector(`.js-lesson-video-state[data-lesson-id="${lessonId}"]`);
+  const iconIsChevron = !title.dataset.lessonIsYoutubeIcon;
 
   const state = {
     requiresSpeciesList: !isSpeciesListAvailable,
     revealSpeciesList: isSpeciesListAvailable && isSpeciesListHidden,
-    hideSpeciesList: isSpeciesListAvailable && !isSpeciesListHidden
+    hideSpeciesList: isSpeciesListAvailable && !isSpeciesListHidden && iconIsChevron
   };
 
   return { title, lesson, state, speciesList, container, lessonVideoState, reviewLink, row };
@@ -170,7 +171,10 @@ function hideOtherContentAndRevertChevrons(upChevrons, selectedLessonId) {
 }
 
 async function loadAndDisplaySpeciesList(title, lesson, container) {
-  title.dataset.selected = true;
+  // title.dataset.selected = true;
+
+  Array.from(title.parentElement.children).forEach(child => child.dataset.selected = true);
+
   const loadingMessage = title.parentElement.parentElement.parentElement.querySelector('.js-loading-message');
   loadingMessage.classList.remove('hide');
   await lessonStateHandler.renderLessonSpeciesList(lesson, container);
