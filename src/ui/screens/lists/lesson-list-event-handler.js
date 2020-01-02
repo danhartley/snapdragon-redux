@@ -67,19 +67,21 @@ const onTitleClickViewState = (e, lessons) => {
     hideSpeciesList: isSpeciesListAvailable && !isSpeciesListHidden && iconIsChevron
   };
 
-  return { icon, lesson, state, speciesList, container, lessonVideoState, reviewLink, row };
+  const isYoutubeIcon = elem.hasClass(icon, 'js-lesson-list-youtube');
+
+  return { icon, lesson, state, speciesList, container, lessonVideoState, reviewLink, row, isYoutubeIcon };
 };
 
 const onTitleClickHandler = (icon, lessons, config, startLesson) => {
   
   return icon.addEventListener('click', async e => {    
 
-    const { icon, lesson, state, speciesList, container, lessonVideoState, row } = onTitleClickViewState(e, lessons);
+    const { icon, lesson, state, speciesList, container, lessonVideoState, row, isYoutubeIcon } = onTitleClickViewState(e, lessons);
 
     if(config.isLandscapeMode) {
 
       const lessonYoutubeIcons = document.querySelectorAll('.lesson-list-selected-lesson .youtube-icon');
-            lessonYoutubeIcons.forEach(icon => icon.classList.remove('youtube-green-fg'));
+            lessonYoutubeIcons.forEach(icon => icon.parentElement.classList.remove('youtube-green-fg'));
 
       if(icon.dataset.lessonIsYoutubeIcon) {
         icon.classList.add('youtube-green-fg');
@@ -94,30 +96,33 @@ const onTitleClickHandler = (icon, lessons, config, startLesson) => {
       if(startLesson) {
         renderLesson(lesson);
         siblingChevron = icon.parentElement.parentElement.parentElement.children[1].children[0].children[1];
-        if(state.hideSpeciesList) {
-          siblingChevron.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
-        } else if(!state.revealSpeciesList) {
-          siblingChevron.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
+        if(isYoutubeIcon) {
+          if(state.hideSpeciesList) {
+            siblingChevron.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
+          } else if(!state.revealSpeciesList) {
+            siblingChevron.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
+          }
         }
       } else {
-        if(state.hideSpeciesList) {
-          icon.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
-        } else if(!state.revealSpeciesList) {
-          icon.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
+        if(!isYoutubeIcon) {
+          if(state.hideSpeciesList) {
+            icon.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
+          } else if(!state.revealSpeciesList) {
+            icon.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
+          }
         }
       }
 
       if(state.revealSpeciesList) {        
         speciesList.classList.remove('hide');
-        icon.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
+        if(!isYoutubeIcon) {
+          icon.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
+        }
       }
       if(state.hideSpeciesList) {
         speciesList.classList.add('hide');
         lessonVideoState.innerHTML = videoHandler.setVideoState(store.getState().videoPlayer || [], lesson);
       }
-      // if(state.requiresSpeciesList) {
-      //   await loadAndDisplaySpeciesList(icon, lesson, container);
-      // }      
     }
 
     if(config.isPortraitMode) {
