@@ -224,9 +224,9 @@ a.dropdown-item {
 }
 
 .lesson-title {
-  border-bottom: solid .05rem !important;
-  cursor: pointer;
-  pointer-events: initial;
+  /* border-bottom: solid .05rem !important; */
+  /* cursor: pointer; */
+  /* pointer-events: initial; */
   line-height: 1.6;
 }
 

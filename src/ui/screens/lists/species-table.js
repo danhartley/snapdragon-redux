@@ -175,7 +175,9 @@ export const buildTable = (collection, args) => {
     }
     headerRow.appendChild(accordionHeader);
 
-    tbody.insertBefore(headerRow, tbody.children[0]);
+    if(!tbody.querySelector('.table-header')) {
+        tbody.insertBefore(headerRow, tbody.children[0]);
+    }
 
     const sortableCalback = () => {};
 
