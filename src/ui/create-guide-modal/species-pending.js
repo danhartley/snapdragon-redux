@@ -11,7 +11,6 @@ const onCloseModalListeners = [];
 
 export const onCreateCustomLesson = listener => { 
     onCloseModalListeners.push(listener);
-    // console.log('onCloseModalListeners: ', onCloseModalListeners.length);
 };
 
 export const speciesPendingSpinner = (config, modal) => {
@@ -62,6 +61,8 @@ export const speciesPendingSpinner = (config, modal) => {
 
     lesson.name = getLessonName(config, lesson);
     lesson.id = collections.length + 10000;
+    lesson.taxa = config.guide.iconicTaxa.map(i => i.common).join(', ');
+    lesson.iconicTaxa = config.guide.iconicTaxa;
 
     const collection = await lessonStateHandler.loadCollection(lesson, config, counter, collections);
 
