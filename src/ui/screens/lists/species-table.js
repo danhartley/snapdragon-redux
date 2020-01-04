@@ -116,9 +116,11 @@ export const buildTable = (collection, args) => {
 
     renderTemplate({ id: collection.id, itemImages }, template.content, parent);
 
-    const keyTraits = document.querySelectorAll('.js-key-trait-link');
+    const table = document.getElementById(`species_list_id_${collection.id}`);
 
-    keyTraits.forEach(vn => {        
+    const keyTraits = table.querySelectorAll('.js-key-trait-link');
+
+    keyTraits.forEach(vn => {
         const keyTrait = vn.dataset.keyTrait;
         const span = document.createElement('span');
         switch(keyTrait) {                
@@ -142,7 +144,6 @@ export const buildTable = (collection, args) => {
         }
     });
 
-    const table = document.getElementById(`species_list_id_${collection.id}`);
     const tbody = table.querySelector('.species-table tbody');
 
     if(!tbody) return;
