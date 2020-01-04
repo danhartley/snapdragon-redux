@@ -29,6 +29,11 @@ export const renderLessons = () => {
     lessons.forEach(lesson => {
       lesson.hideVideoClass = lesson.hasVideo ? '' : 'hide-important';
       renderTemplate({ lesson }, template.content, document.querySelector('.js-lesson-container'));
+
+      if(!lesson.hasVideo) {
+            const chevron = document.querySelector(`div.js-lesson-list-chevron[data-lesson-id="${lesson.id}"]`);
+                  chevron.classList.remove('landscape');
+      }
     });
 
     renderLessonListHeader(parent);
@@ -67,6 +72,7 @@ export const renderLessons = () => {
         lessonListEventHandler.onReviewClickHandler(reviewLink, lessons);
 
         const chevron = document.querySelector(`div.js-lesson-list-chevron[data-lesson-id="${lesson.id}"]`);
+              chevron.classList.remove('landscape');
         lessonListEventHandler.onTitleClickHandler(chevron, lessons, config, false);
 
         const youtubeLessonIcon = document.querySelector(`div.js-lesson-list-youtube[data-lesson-id="${lesson.id}"]`);
