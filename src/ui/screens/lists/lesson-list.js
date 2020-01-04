@@ -38,14 +38,6 @@ export const renderLessons = () => {
             createGuideHandler(1);
           });    
 
-//     const createCustomLessonBtn = parent.querySelector('.js-create-custom-lesson');          
-//           createCustomLessonBtn.addEventListener('click', e => {
-//             createGuideHandler(1);
-//           });    
-
-//     const titles = document.querySelectorAll('.js-lesson-title');
-//           titles.forEach(title => lessonListEventHandler.onTitleClickHandler(title, lessons, config, true));
-
     const youtubeLessonIcons = document.querySelectorAll('.js-lesson-list-youtube');
           youtubeLessonIcons.forEach(youtube => lessonListEventHandler.onTitleClickHandler(youtube, lessons, config, true));
 
