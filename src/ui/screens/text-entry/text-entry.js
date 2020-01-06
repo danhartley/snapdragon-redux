@@ -163,9 +163,12 @@ const renderLandscape = (item, config, question) => {
 
     const letters = [];
 
-    const deleteLetter = (letter) => {
-        let lastLetter = letter || letters[letters.length-1];
+    const deleteLetter = letter => {
         let value = document.querySelector('.js-txt-input').value;
+        let activeBlocks = Array.from(document.querySelectorAll('.block.active'));
+        let activeLetters = Array.from(value);
+        let activeBlock = activeBlocks.find(block => block.innerText.trim() === activeLetters[activeLetters.length-1].trim());
+        let lastLetter = letter || activeBlock;
         if(value.length > 0){
             let indexInInput = value.lastIndexOf(lastLetter.innerHTML);            
             let newValue = '';
@@ -174,14 +177,17 @@ const renderLandscape = (item, config, question) => {
             letters.forEach(letter => newValue += letter);            
             input.value = newValue;
         }
+        let correctBlocks = Array.from(document.querySelectorAll('.correct'));
+            correctBlocks.forEach(b => b.classList.remove('correct'));
+            correctBlocks.forEach(b => b.classList.add('active'));
         lastLetter.classList.remove('active');
-        letters.forEach(l => {
+        letters.forEach(l => {            
             if(l.id === lastLetter.id) {
                 const letterIndex = letters.indexOf(l);
                 if(letterIndex > -1)
                     letters.splice(letterIndex,1);
             }
-        });
+        });        
     };
 
     const blocks = document.querySelectorAll('.block');

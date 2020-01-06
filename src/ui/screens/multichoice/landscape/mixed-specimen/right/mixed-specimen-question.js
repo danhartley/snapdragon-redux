@@ -41,8 +41,8 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
     renderTemplate({ instructions, binomial }, template.content, parent);
 
-    const subheader = document.querySelector('.mixed-specimen-container > div > span');
-          subheader.innerHTML = `Find <span>${item.vernacularName} </span>from among the pictured species :`;
+    const subheader = document.querySelector('.mixed-specimen-container > div > span:nth-child(1)');
+          subheader.innerHTML = `Click the picture of <span>${item.vernacularName} </span> from among those on the left.`;
 
     const listenToImageChangeHandler = async images => {        
 
