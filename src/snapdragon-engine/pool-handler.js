@@ -27,13 +27,13 @@ export const getPoolItems = async (collection, poolSize = 5) => {
   const speciesPool = utils.shuffleArray(taxonicMatches.filter(ci => ci.name.toLowerCase() !== item.name.toLowerCase()));
   
   if(!speciesPool) {
-    getPoolItems(item);
+    getPoolItems(collection);
   }
 
   // if not enough, only get the additional necessary number (but duplicates???)
 
   else if(speciesPool.length < poolSize) {
-    getPoolItems(item);
+    getPoolItems(collection);
   } 
   else {
 

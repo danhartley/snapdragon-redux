@@ -57,7 +57,6 @@ const carouselControlHandler = (event, parentScreen = document, config) => {
         
         handleRightsAttribution(image);
     
-        // const originalImageLink = parentScreen.querySelector('.js-carousel-inner .js-expand');
         const originalImageLink = parentScreen.querySelector('.js-carousel-inner');
               originalImageLink.addEventListener('click', onEnlargeImageHandler(config));
 
@@ -128,6 +127,7 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
 };
 
 function onEnlargeImageHandler(config) {
+    if(config.isPortraitMode) return;
     return () => {
         const { imageContainer, image } = getActiveBackgroundImage();
         const large = scaleImage(image, imageUseCases.ACTUAL_SIZE, config).large;
