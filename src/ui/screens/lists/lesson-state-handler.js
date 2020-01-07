@@ -65,7 +65,9 @@ const restoreSavedLesson = lesson => {
 
 const loadCollection = async (collection, config, counter, collections) => {
 
-  saveCurrentLesson(store.getState().collection);
+  if(store.getState().collection.id !== 0) {
+    saveCurrentLesson(store.getState().collection); 
+  }
 
   collection = restoreSavedLesson(collection) || collection;
 

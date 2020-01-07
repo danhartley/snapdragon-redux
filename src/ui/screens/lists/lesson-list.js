@@ -16,7 +16,7 @@ export const renderLessons = () => {
     const template = document.createElement('template');
           template.innerHTML = lessonListTemplate;
 
-    let lessons = lessonListEventHandler.onLoadLessonsViewState(savedLessons, collections, videoPlayer, score);
+    let lessons = lessonListEventHandler.onLoadLessonsViewState(collections, videoPlayer, score);
         lessons = [ ...lessons.filter(l => l.hasVideo), ...lessons.filter(l => !l.hasVideo) ];
 
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
@@ -27,12 +27,29 @@ export const renderLessons = () => {
     template.innerHTML = lessonTemplate;
 
     lessons.forEach(lesson => {
+
       lesson.hideVideoClass = lesson.hasVideo ? '' : 'hide-important';
+
+      const savedLesson = savedLessons.find(saved => saved.collection.id === lesson.id);
+
+      lesson.isPaused = !!savedLesson;
+
       renderTemplate({ lesson }, template.content, document.querySelector('.js-lesson-container'));
 
       if(!lesson.hasVideo) {
             const chevron = document.querySelector(`div.js-lesson-list-chevron[data-lesson-id="${lesson.id}"]`);
-                  chevron.classList.remove('landscape');
+            chevron.classList.remove('landscape');                                  
+      }
+
+      if(lesson.isPaused) {
+
+            const progressBar = document.querySelector(`div.js-lesson-review[data-lesson-id="${lesson.id}"]  progress`);
+                  progressBar.classList.remove('hide');
+      
+            const savedLesson = savedLessons.find(saved => saved.collection.id === lesson.id);
+
+            progressBar.max = savedLesson.layout.roundScoreCount;
+            progressBar.value = savedLesson.layout.roundProgressIndex || progressBar.value;  
       }
     });
 

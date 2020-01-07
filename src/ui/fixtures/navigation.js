@@ -50,8 +50,9 @@ export const renderNavigation = () => {
                     case enums.navigation.LANDSCAPE_HOME:
                         clickedIcon.classList.add('active-icon');
                         lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
-                        subscription.getByRole('screen').forEach(sub => subscription.remove(sub)); // lesson handler?
-                        lessonStateHandler.saveCurrentLesson(collection);                        
+                        subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
+                        lessonStateHandler.saveCurrentLesson(collection);
+                        renderLessons();                
                         break;
                     case enums.navigation.SETTINGS:
                         toggleIconOnOff(clickedIcon);
@@ -69,6 +70,7 @@ export const renderNavigation = () => {
                         clickedIcon.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
                         lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
+                        lessonStateHandler.saveCurrentLesson(collection);
                         renderLessons();
                         break;
                     case enums.navigation.GLOSSARY:   

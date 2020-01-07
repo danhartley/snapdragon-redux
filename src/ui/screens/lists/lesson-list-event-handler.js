@@ -27,12 +27,9 @@ const onLoadLessonViewState = (collection, videoPlayer, score) => {
   return collection;  
 };
 
-const onLoadLessonsViewState = (savedLessons, collections, videoPlayer, score) => {
-
-  const savedLessonNames = savedLessons.map(collection => collection.name);
+const onLoadLessonsViewState = (collections, videoPlayer, score) => {
 
   return collections.map(collection => {
-    collection.isPaused = R.contains(collection.name, savedLessonNames);
     return onLoadLessonViewState(collection, videoPlayer, score);
   });
 };
@@ -150,7 +147,7 @@ const onReviewClickHandler = (reviewLink, lessons) => {
           loadingMessage.classList.remove('hide');
           setTimeout(() => {
             loadingMessage.classList.add('hide');
-          }, 3000);
+          }, 10000);
 
     lessonStateHandler.beginOrResumeLesson(parseInt(reviewLink.dataset.lessonId));        
   });

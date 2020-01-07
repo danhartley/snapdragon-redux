@@ -68,6 +68,10 @@ progress::-moz-progress-bar {
   background-color: var(--snap-progress-bar);
 }
 
+.lesson-list-carousel-item progress {
+  width: 20%;
+}
+
 hr {
   margin: 0;
 }
@@ -213,6 +217,8 @@ a.dropdown-item {
   color: inherit;
   cursor: pointer;
   text-transform: uppercase;
+  display: inline-block;
+  line-height: 1.8;
 }
 
 .underline-external-link {
@@ -2163,6 +2169,6 @@ a.collection-disabled {
     justify-content: center;
     font-style: italic;
     font-size: 1.1em;
-    /* height: var(--vhButtonBlock, 9vh); */
+    height: 5vh;
     margin-bottom: .5rem;
 }

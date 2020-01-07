@@ -33,10 +33,8 @@ export const renderHeaders = collection => {
         LANDSCAPE = config.isLandscapeMode;
     
         if(collection.name) {        
-            // LANDSCAPE_HOME = page.name === enums.navigation.HOME && LANDSCAPE;
             COLLECTION = !!collection;
             if(COLLECTION) collection.name ? leftHeaderText = collection.name : title;
-            // SPECIES_LIST = page.name === enums.navigation.PORTRAIT_HOME || page.name === enums.navigation.HOME && LANDSCAPE;
             if(SPECIES_LIST && PORTRAIT) rightHeaderText = collection.name;
             if(LANDSCAPE_HOME) {
                 leftHeaderText = collection.name;
@@ -48,7 +46,7 @@ export const renderHeaders = collection => {
     
             const item = collection.nextItem;
             const progressBar = document.querySelector('.js-right-grid progress');
-            const questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;        
+            const questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
             const questionFormat = `Question ${ layout.roundProgressIndex } of ${questionCount}`;
     
             progressBar.max = questionCount;
