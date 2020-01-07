@@ -19,7 +19,10 @@ const onLoadLessonViewState = (collection, videoPlayer, score) => {
   collection.hasVideo = collection.video ? true : false;
   collection.showVideoIconClass = collection.hasVideo ? '' : 'hide-important';
   collection.videoState = videoHandler.setVideoState(videoPlayer || [], collection);
-  collection.reviewState = isPaused ? 'Resume Review' : `${collection.species.length} x 2 Minute Reviews`;
+  collection.reviewState = isPaused ? 'Resume Review' : 
+      collection.species 
+        ? `${collection.species.length} x 2 Minute Reviews`
+        : `${collection.items.length} x 2 Minute Reviews`;
 
   return collection;  
 };
