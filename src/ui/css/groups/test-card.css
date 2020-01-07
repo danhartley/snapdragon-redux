@@ -146,11 +146,11 @@
 .text-entry-container > div {
     margin: 1rem 0;
 }
-
+/* 
 .help-txt {
     margin: 1rem !important;
     margin: 1rem .5rem !important;
-}
+} */
 
 div.text-entry {
     padding: 0;
@@ -185,9 +185,9 @@ div.text-entry {
 
   .mixed-specimen-container {
     display: grid;
-    margin: 2rem 2rem;
+    margin: 2rem 0 0 .5rem;
     grid-row-gap: .5rem;
-    grid-template-rows: 2fr auto 3fr;
+    grid-template-rows: 2fr auto 1fr;
   }
 
   .mixed-specimen-container > div > span > span {
@@ -203,6 +203,7 @@ div.text-entry {
 
   .images-names-txt {
     min-height: calc( (1em * 6 * 1.5) + (.5rem * 6));
+    margin-left: .5rem;
   }
 
   .images-names-txt i {
@@ -335,13 +336,14 @@ div.text-entry {
     }
 
     .test-card-content {
+        padding: 1rem;
         height: calc(
             var(--vh, 1vh) * 100
           - var(--vhFixtures, 15vh)
           - var(--vhStandardBlock,10vh)
           - var(--vhStandardBlock,10vh)
           - var(--vhButtonBlock, 9vh));
-        top: calc(var(--vhRunningBlock,7.5vh) + var(--vhStandardBlock,10vh));
+        top: calc(var(--vhStandardBlock,10vh) + var(--vhStandardBlock,10vh));
     }
 
     .test-card button {
@@ -362,7 +364,7 @@ div.text-entry {
     }
 
     .test-card-container .text-question {
-        left: 1rem;
+        left: 1.5rem;
     }
 
     .answer-box-success > span:nth-child(2), 

@@ -31,7 +31,7 @@ export const renderCompleteText = (collection) => {
             species = item.taxonomy.species;
             binomial = `--- ${item.taxonomy.species}`;
             givenTaxon = 'genus';
-            questionTxt = 'Select the correct genus';
+            questionTxt = 'Complete the latin name';
             break;
         case 'text-complete-species':
             question = item.taxonomy.species;
@@ -39,7 +39,7 @@ export const renderCompleteText = (collection) => {
             species = '---';
             binomial = `${item.taxonomy.genus} ---`;
             givenTaxon = 'species';
-            questionTxt = 'Select the correct species';
+            questionTxt = 'Complete the latin name';
             break;
     }
 
