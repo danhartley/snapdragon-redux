@@ -40,6 +40,8 @@ const saveCurrentLesson = async collection => {
   
   // if(!score || score.total === 0) return; // only save lessons that the user has started
 
+  config.collection.id = collection.id;
+
   const savedLesson = { 
       name: collection.name,
       config, collection, counter, lessonPlan, lessonPlans, layout, lesson, score, history, bonusLayout, enums

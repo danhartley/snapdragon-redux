@@ -13,7 +13,9 @@ import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 const onLoadLessonViewState = (collection, videoPlayer, score) => {
 
   const taxa = collection.iconicTaxa ? collection.iconicTaxa.map(taxon => taxon.common).join(', ') : '';
-  const isPaused = (!!score && score.collectionId === collection.id) || store.getState().lessons.find(lesson => lesson.collection.id === collection.id);
+  const isCurrentLessonPaused = (!!score && score.collectionId === collection.id);
+  const isStoredLessonPaused = store.getState().lessons.find(lesson => lesson.collection.id === collection.id);
+  const isPaused = isCurrentLessonPaused || isStoredLessonPaused;
 
   collection.taxa = taxa;
   collection.hasVideo = collection.video ? true : false;
@@ -28,7 +30,6 @@ const onLoadLessonViewState = (collection, videoPlayer, score) => {
 };
 
 const onLoadLessonsViewState = (collections, videoPlayer, score) => {
-
   return collections.map(collection => {
     return onLoadLessonViewState(collection, videoPlayer, score);
   });
