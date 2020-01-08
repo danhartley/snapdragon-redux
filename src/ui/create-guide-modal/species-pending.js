@@ -55,7 +55,7 @@ export const speciesPendingSpinner = (config, modal) => {
     const title = modal.querySelector('.js-options');
           title.innerHTML = 'Searching for matching species.';
 
-    const { counter, collections } = store.getState();
+    const { collections } = store.getState();
 
     const lesson = snapdragonCollections.find(c => c.type === 'custom');
 
@@ -64,7 +64,7 @@ export const speciesPendingSpinner = (config, modal) => {
     lesson.taxa = config.guide.iconicTaxa.map(i => i.common).join(', ');
     lesson.iconicTaxa = config.guide.iconicTaxa;
 
-    const collection = await lessonStateHandler.loadCollection(lesson, config, counter, collections);
+    const collection = await lessonStateHandler.loadCollection(lesson, config, collections);
 
     if(collection && collection.items && collection.items.length > 0) {
         renderNewLessonSummary(collection);
@@ -113,9 +113,9 @@ export const speciesPendingSpinner = (config, modal) => {
 
     config.collection.id = custom.id;
 
-    const { counter, collections } = store.getState();
+    const { collections } = store.getState();
 
-    const collection = await lessonStateHandler.loadCollection(custom, config, counter, collections);
+    const collection = await lessonStateHandler.loadCollection(custom, config, collections);
 
     renderNewLessonSummary(collection);
    };

@@ -10,13 +10,13 @@ import { collectionHandler } from 'ui/helpers/collection-handler';
 
 const beginOrResumeLesson = async reviewLessonId  => {
 
-  const { collections, collection: currentCollection, config, history, score, counter } = store.getState();
+  const { collections, collection: currentCollection, config, history, score } = store.getState();
 
   const resumeLesson = currentCollection.id > 0 && currentCollection.id === reviewLessonId && config.collection.id !== 0;
 
-  const lesson = resumeLesson ? currentCollection : collections.find(c => c.id === reviewLessonId);
+  const collectionToLoad = resumeLesson ? currentCollection : collections.find(c => c.id === reviewLessonId);
 
-  const collection = await loadCollection(lesson, config, counter, collections);
+  const collection = await loadCollection(collectionToLoad, config, collections);
   
   const lessonState = score.collectionId === collection.id 
           ? enums.lessonState.RESUME_LESSON
@@ -25,11 +25,11 @@ const beginOrResumeLesson = async reviewLessonId  => {
   lessonHandler.changeState(lessonState, collection, config, history); 
 };
 
-const renderLessonSpeciesList = async (lesson, container) => {
+const renderLessonSpeciesList = async (collectionToLoad, container) => {
 
-  const { config, counter, collections } = store.getState();
+  const { config, collections } = store.getState();
 
-  const collection = await loadCollection(lesson, config, counter, collections);
+  const collection = await loadCollection(collectionToLoad, config, collections);
 
   renderSpeciesList(collection, { callingParentContainer: container });
 };
@@ -55,47 +55,37 @@ const saveCurrentLesson = async collection => {
   actions.boundUpdateConfig(initialisedConfig);
 };
 
-const restoreSavedLessonOrReturnNew = (collectionToLoad, currentCounter) => {
+const restoreSavedLessonOrReturnNewOne = collectionToLoad => {
 
-    const restoredLesson = store.getState().lessons.find(l => l.name === collectionToLoad.name);
+    const { lessons} = store.getState();
 
-    let collection, counter;
+    const restoredLesson = lessons.find(l => l.name === collectionToLoad.name);
+
+    let lesson;
 
     if(restoredLesson) {
       actions.boundRemoveSavedLesson(restoredLesson);
-      collection = restoredLesson.collection;
-      counter = restoredLesson.counter;
+      lesson = restoredLesson;
     } else {
-      collection = collectionToLoad;
-      counter = { index: 0 };
+      lesson = { collection: collectionToLoad, counter: { index: 0}};
     }
 
-    return { collection, counter };
+    return new Promise(resolve => resolve(lesson));
 };
 
-const loadCollection = async (collectionToLoad, config, currentCounter, collections) => {
+const loadCollection = async (collectionToLoad, config, collections) => {
 
-  const currentCollection = store.getState().collection;
+  const lesson = await restoreSavedLessonOrReturnNewOne(collectionToLoad);
 
-  if(currentCollection.id !== 0) {
-    saveCurrentLesson(currentCollection); 
-  }
+  await collectionHandler(lesson.collection, config, lesson.counter, collections);
 
-  const { collection, counter } = restoreSavedLessonOrReturnNew(collectionToLoad, currentCounter);
-
-  console.log('collection: ', collection.name);
-
-  await collectionHandler(collection, config, counter, collections);
-
-  config.collection = { id: collection.id };
-
-  actions.boundNewCollection({ config, collection, counter });
+  actions.boundNewCollection({ lesson });
   
-  if(!collections.find(c => c.id === collection.id)) {
-    actions.boundUpdateCollections(collection);
+  if(!collections.find(c => c.id === lesson.collection.id)) {
+    actions.boundUpdateCollections(lesson.collection);
   }
 
-  return collection;
+  return lesson.collection;
 } 
 
 export const lessonStateHandler = {
