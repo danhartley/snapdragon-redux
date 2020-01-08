@@ -22,7 +22,9 @@ const renderItemSpecimenTiles = item => {
     
     const { config, collection, layout } = store.getState();
 
-    if(layout.itemIndex === layout.prevItemIndex) return;
+    const hasTiles = layout.itemIndex === layout.prevItemIndex && !!document.querySelector('.js-tiles');
+
+    if(hasTiles) return;
 
     let images, items; 
     
