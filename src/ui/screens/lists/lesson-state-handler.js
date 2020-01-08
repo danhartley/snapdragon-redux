@@ -57,7 +57,7 @@ const saveCurrentLesson = async collection => {
 
 const restoreSavedLessonOrReturnNewOne = collectionToLoad => {
 
-    const { lessons} = store.getState();
+    const { counter, lessons} = store.getState();
 
     const restoredLesson = lessons.find(l => l.name === collectionToLoad.name);
 
@@ -67,7 +67,7 @@ const restoreSavedLessonOrReturnNewOne = collectionToLoad => {
       actions.boundRemoveSavedLesson(restoredLesson);
       lesson = restoredLesson;
     } else {
-      lesson = { collection: collectionToLoad, counter: { index: 0}};
+      lesson = { collection: collectionToLoad, counter: { ...counter, index: 0} };
     }
 
     return new Promise(resolve => resolve(lesson));

@@ -25,7 +25,7 @@ export const counter = (state = null, action) => {
             let i = (state.index + 1) <= action.data.layoutCount ? (state.index + 1) : state.index;
             return { index: i };
         case types.NEW_COLLECTION:
-                return { ...state, ...action.data.lesson.counter };
+            return { ...state, ...action.data.lesson.counter };
         default:
             return state;
     }

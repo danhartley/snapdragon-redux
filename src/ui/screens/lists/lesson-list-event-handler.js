@@ -154,14 +154,7 @@ const onReviewClickHandler = (reviewLink, lessons) => {
   });
 };
 
-export const lessonListEventHandler = {
-  onLoadLessonViewState,
-  onLoadLessonsViewState,
-  onTitleClickHandler,
-  onReviewClickHandler
-}
-
-function hideOtherContentAndRevertChevrons(upChevrons, selectedLessonId) {
+const hideOtherContentAndRevertChevrons = (upChevrons, selectedLessonId) => {
 
   upChevrons.forEach(chevron => {
     
@@ -174,6 +167,14 @@ function hideOtherContentAndRevertChevrons(upChevrons, selectedLessonId) {
       speciesTableToHide.classList.add('hide');
     }
   });
+};
+
+export const lessonListEventHandler = {
+  onLoadLessonViewState,
+  onLoadLessonsViewState,
+  onTitleClickHandler,
+  onReviewClickHandler,
+  hideOtherContentAndRevertChevrons
 }
 
 async function loadAndDisplaySpeciesList(icon, lesson, container) {
