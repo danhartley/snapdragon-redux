@@ -38,9 +38,10 @@ const saveCurrentLesson = async collection => {
 
   const { counter, lessonPlan, lessonPlans, layout, lesson, score, history, bonusLayout, enums, config } = store.getState();
   
-  // if(!score || score.total === 0) return; // only save lessons that the user has started
+  if(!collection || collection.id === 0) return; // ignore default lesson
 
   config.collection.id = collection.id;
+  layout.fromSaved = true;
 
   const savedLesson = { 
       name: collection.name,
@@ -54,30 +55,37 @@ const saveCurrentLesson = async collection => {
   actions.boundUpdateConfig(initialisedConfig);
 };
 
-const restoreSavedLesson = lesson => {
-    const savedLesson = store.getState().lessons.find(l => l.name === lesson.name);
+const restoreSavedLesson = (savedCollection, savedCounter) => {
+
+    const savedLesson = store.getState().lessons.find(l => l.name === savedCollection.name);
+
+    let collection, counter;
 
     if(savedLesson) {
       actions.boundRemoveSavedLesson(savedLesson);
-      return savedLesson.collection;
+      collection = savedLesson.collection;
+      counter = savedLesson.counter;
     } else {
-      return null;
+      collection = savedCollection;
+      counter = savedCounter;
     }
+
+    return { collection, counter };
 };
 
-const loadCollection = async (collection, config, counter, collections) => {
+const loadCollection = async (savedCollection, config, savedCounter, collections) => {
 
   if(store.getState().collection.id !== 0) {
     saveCurrentLesson(store.getState().collection); 
   }
 
-  collection = restoreSavedLesson(collection) || collection;
+  const { collection, counter } = restoreSavedLesson(savedCollection, savedCounter);
 
   await collectionHandler(collection, config, counter, collections);
 
   config.collection = { id: collection.id };
 
-  actions.boundNewCollection({ config, collection });
+  actions.boundNewCollection({ config, collection, counter });
   
   if(!collections.find(c => c.id === collection.id)) {
     actions.boundUpdateCollections(collection);
