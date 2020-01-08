@@ -75,7 +75,7 @@ const onTitleClickViewState = (e, lessons) => {
 
 const onTitleClickHandler = (icon, lessons, config, startLesson) => {
   
-  return icon.addEventListener('click', async e => {    
+  return icon.addEventListener('click', async e => {      
 
     const { icon, lesson, state, speciesList, container, lessonVideoState, row, isYoutubeIcon } = onTitleClickViewState(e, lessons);
 

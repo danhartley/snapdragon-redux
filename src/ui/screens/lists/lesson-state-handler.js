@@ -10,9 +10,11 @@ import { collectionHandler } from 'ui/helpers/collection-handler';
 
 const beginOrResumeLesson = async reviewLessonId  => {
 
-  const { collections, collection: custom, config, history, score, counter } = store.getState();
+  const { collections, collection: currentCollection, config, history, score, counter } = store.getState();
 
-  const lesson = (custom.id && config.collection.id !== 0) > 0 ? custom : collections.find(c => c.id === reviewLessonId);
+  const resumeLesson = currentCollection.id > 0 && currentCollection.id === reviewLessonId && config.collection.id !== 0;
+
+  const lesson = resumeLesson ? currentCollection : collections.find(c => c.id === reviewLessonId);
 
   const collection = await loadCollection(lesson, config, counter, collections);
   
@@ -34,8 +36,6 @@ const renderLessonSpeciesList = async (lesson, container) => {
 
 const saveCurrentLesson = async collection => {
 
-  // console.log('saveCurrentLesson: ', collection);
-
   const { counter, lessonPlan, lessonPlans, layout, lesson, score, history, bonusLayout, enums, config } = store.getState();
   
   if(!collection || collection.id === 0) return; // ignore default lesson
@@ -55,31 +55,35 @@ const saveCurrentLesson = async collection => {
   actions.boundUpdateConfig(initialisedConfig);
 };
 
-const restoreSavedLesson = (savedCollection, savedCounter) => {
+const restoreSavedLessonOrReturnNew = (collectionToLoad, currentCounter) => {
 
-    const savedLesson = store.getState().lessons.find(l => l.name === savedCollection.name);
+    const restoredLesson = store.getState().lessons.find(l => l.name === collectionToLoad.name);
 
     let collection, counter;
 
-    if(savedLesson) {
-      actions.boundRemoveSavedLesson(savedLesson);
-      collection = savedLesson.collection;
-      counter = savedLesson.counter;
+    if(restoredLesson) {
+      actions.boundRemoveSavedLesson(restoredLesson);
+      collection = restoredLesson.collection;
+      counter = restoredLesson.counter;
     } else {
-      collection = savedCollection;
-      counter = savedCounter;
+      collection = collectionToLoad;
+      counter = { index: 0 };
     }
 
     return { collection, counter };
 };
 
-const loadCollection = async (savedCollection, config, savedCounter, collections) => {
+const loadCollection = async (collectionToLoad, config, currentCounter, collections) => {
 
-  if(store.getState().collection.id !== 0) {
-    saveCurrentLesson(store.getState().collection); 
+  const currentCollection = store.getState().collection;
+
+  if(currentCollection.id !== 0) {
+    saveCurrentLesson(currentCollection); 
   }
 
-  const { collection, counter } = restoreSavedLesson(savedCollection, savedCounter);
+  const { collection, counter } = restoreSavedLessonOrReturnNew(collectionToLoad, currentCounter);
+
+  console.log('collection: ', collection.name);
 
   await collectionHandler(collection, config, counter, collections);
 
