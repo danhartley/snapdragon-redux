@@ -18,11 +18,14 @@ export const counter = (state = null, action) => {
         case types.NEXT_LEVEL:
             return { ...state, index: action.data.index };
         case types.STOP_START_LESSON:
-            return { ...action.data };
+            const index = (state && state.index) || 0;
+            return { ...action.data, index };
         case types.UPDATE_SCORE:
         case types.END_REVISION:
             let i = (state.index + 1) <= action.data.layoutCount ? (state.index + 1) : state.index;
             return { index: i };
+        case types.NEW_COLLECTION:
+                return { ...state, ...action.data.counter };
         default:
             return state;
     }
