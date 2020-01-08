@@ -58,6 +58,8 @@ export const collectionHandler = async (collection, config, counter) => {
 
         console.log('collection from handler: ', collection);
 
+        config.collection = { id: collection.id };
+
         if(counter.isLessonPaused) {
             collection.items = await keepItems(collection);
         }

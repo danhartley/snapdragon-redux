@@ -9,9 +9,9 @@ export const nextLayout = counter => {
     const args = { layout, counter, lessonPlan, config, lesson, collection };
 
     if(setupHandler.isRequired(enums.nextStep.NEXT_LAYOUT, args)) {
-        let resume = (layout && layout.fromSaved);
-            resume = resume && collection.items[counter.index].name === layout.screens.speciesName;
-        const nextLayout = resume ? layout : lessonPlan.layouts[counter.index];
+        let resumeJustPausedLesson = (layout && layout.fromSaved);
+            resumeJustPausedLesson = resumeJustPausedLesson && collection.items[counter.index].name === layout.screens.speciesName;
+        const nextLayout = resumeJustPausedLesson ? layout : lessonPlan.layouts[counter.index];
         setupHandler.actionUpdate(enums.nextStep.NEXT_LAYOUT, { layout: nextLayout, config });
     }
 };
