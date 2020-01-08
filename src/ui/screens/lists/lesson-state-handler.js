@@ -79,10 +79,14 @@ const loadCollection = async (collectionToLoad, config, collections) => {
 
   await collectionHandler(lesson.collection, config, lesson.counter, collections);
 
-  actions.boundNewCollection({ lesson });
+  if(lesson.collection.items.length > 0) {
+    actions.boundNewCollection({ lesson });
+  }
   
   if(!collections.find(c => c.id === lesson.collection.id)) {
-    actions.boundUpdateCollections(lesson.collection);
+    if(lesson.collection.items.length > 0) {
+      actions.boundUpdateCollections(lesson.collection);
+    }
   }
 
   return lesson.collection;

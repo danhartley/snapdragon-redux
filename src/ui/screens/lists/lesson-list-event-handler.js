@@ -177,7 +177,6 @@ function hideOtherContentAndRevertChevrons(upChevrons, selectedLessonId) {
 }
 
 async function loadAndDisplaySpeciesList(icon, lesson, container) {
-  // icon.dataset.selected = true;
 
   Array.from(icon.parentElement.children).forEach(child => child.dataset.selected = true);
 

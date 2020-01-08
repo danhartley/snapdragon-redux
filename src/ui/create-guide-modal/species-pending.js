@@ -10,6 +10,7 @@ import spinnerTemplate from 'ui/create-guide-modal/species-pending-template.html
 const onCloseModalListeners = [];
 
 export const onCreateCustomLesson = listener => { 
+    onCloseModalListeners.pop();
     onCloseModalListeners.push(listener);
 };
 
