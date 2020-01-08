@@ -28,6 +28,13 @@ export const renderScore = (score) => {
                     ? scoreTemplate
                     : '';
 
+    // header hack
+    if(config.isPortraitMode) {
+        DOM.rightHeaderScoreTxt.innerHTML = score.total === 0
+            ? ''
+            : `${score.correct}/${score.total}`;
+    }
+
     const runningTotal = history ? { ...history } : { correct: 0, total: 0 };
 
     runningTotal.correct = runningTotal.correct + score.correct;

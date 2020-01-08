@@ -50,7 +50,7 @@ export const renderLessons = () => {
                   const progressBar = document.querySelector(`div.js-lesson-review[data-lesson-id="${lesson.id}"]  progress`);
                         progressBar.classList.remove('hide');
                         progressBar.max = savedLesson.layout.roundScoreCount;
-                        progressBar.value = savedLesson.layout.roundProgressIndex || progressBar.value;  
+                        progressBar.value = savedLesson.layout.roundProgressIndex || progressBar.value;
             }
       }
     });
