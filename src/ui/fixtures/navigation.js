@@ -16,9 +16,9 @@ import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import navigationTemplate from 'ui/fixtures/navigation-template.html';
 import definitionCardTemplate from 'ui/screens/cards/definition-card-template.html';
 
-export const renderNavigation = () => {
+export const renderNavigation = collection => {
 
-    const { config } = store.getState();
+    const { config, counter } = store.getState();
 
     const template = document.createElement('template');
 
@@ -91,17 +91,28 @@ export const renderNavigation = () => {
         });        
     });
 
-    const onLoadState = config => {
-        const id = config.isPortraitMode ? enums.navigation.PORTRAIT_HOME.name : enums.navigation.LANDSCAPE_HOME.name;
-        let icon = document.getElementById(id);
+    const onLoadState = (config, counter) => {
+        
+        if(config.isPortraitMode && config.collection.id !== 0 && !counter.isLessonRehydrated) {
+            navIcons.forEach(icon => icon.classList.remove('active-icon'));
+            return;
+        }
 
-        if(id === enums.navigation.LANDSCAPE_HOME.name || (id === enums.navigation.PORTRAIT_HOME.name && !cookieHandler.isFirstTimeVisitor())) {
-            icon.classList.add('active-icon');
-        } else if(id === enums.navigation.PORTRAIT_HOME.name && cookieHandler.isFirstTimeVisitor()) {
-            icon = document.querySelector('.js-info');
-            icon.classList.add('active-icon');
+        if(counter.isLessonPaused) {
+
+            const id = config.isPortraitMode ? enums.navigation.PORTRAIT_HOME.name : enums.navigation.LANDSCAPE_HOME.name;
+            let icon = document.getElementById(id);
+
+            if(id === enums.navigation.LANDSCAPE_HOME.name || (id === enums.navigation.PORTRAIT_HOME.name && !cookieHandler.isFirstTimeVisitor())) {
+                icon.classList.add('active-icon');
+            } else if(id === enums.navigation.PORTRAIT_HOME.name && cookieHandler.isFirstTimeVisitor()) {
+                icon = document.querySelector('.js-info');
+                icon.classList.add('active-icon');
+            }
+        } else {
+            navIcons.forEach(icon => icon.classList.remove('active-icon'));
         }
     };
 
-    onLoadState(config, enums);
+    onLoadState(config, counter);
 };
