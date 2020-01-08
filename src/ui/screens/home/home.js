@@ -1,3 +1,4 @@
+import { subscription } from 'redux/subscriptions';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -7,6 +8,8 @@ import { cookieHandler } from 'ui/helpers/cookie-handler';
 import homeTemplate from 'ui/screens/home/home-template.html';
 
 export const renderHome = (counter, forceIntroDisplay = false) => {
+    
+    subscription.remove(subscription.getByName('renderHome'));
     
     const isFirstTimeVisitor = cookieHandler.setFirstTimeVisitorCookie();
 
@@ -21,6 +24,18 @@ export const renderHome = (counter, forceIntroDisplay = false) => {
     if(config.isLandscapeMode || isFirstTimeVisitor || forceIntroDisplay) {
         renderSnapdragonIntro();
     }
+
+    // let { config } = store.getState();
+
+    // if(counter.index === 0 || counter.isLessonPaused) {
+    //     if(config.isLandscapeMode || !isFirstTimeVisitor && !forceIntroDisplay) {
+    //         renderLessons();
+    //     }
+    
+    //     if(config.isLandscapeMode || isFirstTimeVisitor || forceIntroDisplay) {
+    //         renderSnapdragonIntro();
+    //     }
+    // }
 };
 
 const renderSnapdragonIntro = () => {

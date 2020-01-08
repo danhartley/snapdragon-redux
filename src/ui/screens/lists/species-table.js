@@ -114,7 +114,11 @@ export const buildTable = (collection, args) => {
     // parent = overrideParent || parent;
     template.innerHTML = speciesTemplate;
 
-    renderTemplate({ id: collection.id, itemImages }, template.content, document.querySelector(`.js-species-container[data-container-id="${collection.id}"]`));
+    let parent = config.isPortraitMode
+            ? overrideParent
+            : document.querySelector(`.js-species-container[data-container-id="${collection.id}"]`);
+
+    renderTemplate({ id: collection.id, itemImages }, template.content, parent);
 
     const table = document.getElementById(`species_list_id_${collection.id}`);
 

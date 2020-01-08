@@ -60,6 +60,11 @@ export const renderLessons = () => {
     const createCustomLessonBtn = parent.querySelector('.js-create-custom-lesson');          
           createCustomLessonBtn.addEventListener('click', e => {
             createGuideHandler(1);
+
+            // close all open lessons
+            const upChevrons = Array.from(document.querySelectorAll('.js-lesson-list-chevron .fa-chevron-up'));
+            lessonListEventHandler.hideOtherContentAndRevertChevrons(upChevrons, 0);
+
           });    
 
     const youtubeLessonIcons = document.querySelectorAll('.js-lesson-list-youtube');
