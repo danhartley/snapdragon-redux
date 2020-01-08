@@ -11,6 +11,7 @@ export const DOM = {
     rightGrid : document.getElementsByClassName('js-right-grid')[0],
     rightHeader : document.getElementsByClassName('js-right-header')[0],
     rightHeaderTxt : document.getElementsByClassName('js-right-txt-header')[0],
+    rightHeaderScoreTxt : document.getElementsByClassName('js-right-txt-score')[0],
     rightBody : document.getElementsByClassName('js-right-body')[0],
     rightRptrSummary : document.getElementsByClassName('js-summary')[0],
     rightBodyBottom : document.getElementsByClassName('js-right-body-bottom')[0],

@@ -106,15 +106,15 @@ export const buildTable = (collection, args) => {
         return itemImage;
     });
 
-    let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
-    if(!overrideParent) { // hacky!!
-        parent.innerHTML = '<div class="snapdragon-container species-list js-species-list"></div>';
-        parent = parent.querySelector('.snapdragon-container.js-species-list');
-    }
-    parent = overrideParent || parent;
+    // let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
+    // if(!overrideParent) { // hacky!!
+    //     parent.innerHTML = '<div class="snapdragon-container species-list js-species-list"></div>';
+    //     parent = parent.querySelector('.snapdragon-container.js-species-list');
+    // }
+    // parent = overrideParent || parent;
     template.innerHTML = speciesTemplate;
 
-    renderTemplate({ id: collection.id, itemImages }, template.content, parent);
+    renderTemplate({ id: collection.id, itemImages }, template.content, document.querySelector(`.js-species-container[data-container-id="${collection.id}"]`));
 
     const table = document.getElementById(`species_list_id_${collection.id}`);
 
