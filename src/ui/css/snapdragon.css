@@ -1612,7 +1612,7 @@ a.collection-disabled {
 .carousel-indicators {
   margin-right: 25%;
   margin-left: 25%;
-  margin-bottom: .25rem;
+  /* margin-bottom: .25rem; */
   bottom: 0;
 }
 

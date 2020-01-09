@@ -143,7 +143,7 @@ const onReviewClickHandler = (reviewLink, lessons) => {
 
     e.stopPropagation();
 
-    const loadingMessage = reviewLink.parentElement.querySelector('.js-loading-message');
+    const loadingMessage = reviewLink.parentElement.querySelector('.js-loading-review-message');
               
           loadingMessage.classList.remove('hide');
           setTimeout(() => {
