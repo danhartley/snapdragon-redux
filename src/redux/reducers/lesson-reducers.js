@@ -80,6 +80,9 @@ export const lesson = (state = initialState, action) => {
             }
         }
 
+        case types.NEW_COLLECTION:
+            return { ...state, ...action.data.lesson.lesson };
+
         default: {
             return state; 
         }
