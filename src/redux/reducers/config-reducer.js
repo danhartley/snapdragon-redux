@@ -11,6 +11,8 @@ export const config = (state = initialConfig, action) => {
             return { ...state, ...action.data };
         case types.UPDATE_LANGUAGE:
             return { ...state, ...{ language: action.data.lang } };
+        case types.NEW_COLLECTION:
+            return { ...state, ...action.data.lesson.config };
         default: 
             return state;
     }
