@@ -135,6 +135,9 @@ export const bonusLayout = (state = null, action) => {
             return state;
         }
 
+        case types.NEW_COLLECTION:
+            return { ...state, ...action.data.lesson.bonusLayout };
+
         default: {
             return state; 
         }
