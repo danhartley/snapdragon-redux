@@ -75,6 +75,9 @@ exports.addTaxon = taxonTrigger.onCreate(async(documentSnapshot, context) => {
 });
 
 exports.updateRandomSpeciesList = functions.pubsub.schedule('every day 00:00').onRun(async context => {
+
+    // Check against https://bost.ocks.org/mike/shuffle/ Fisher–Yates Shuffle
+
     const getRandomInt = max => {
         return Math.floor(Math.random() * Math.floor(max));
     };

@@ -38,7 +38,7 @@ export const renderHorizontalStrips = collection => {
     const strips = document.querySelectorAll('.js-rptr-strips .strip');
     const taxon = { name: item.taxonomy.family, binomial: item.name, question: layout.provider.answer };
 
-    const test = { itemId: item.id, items: strips, taxon, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points, clue: '', answerIndex: answers.findIndex(a => a.term === layout.provider.answer)};  
+    const test = { itemId: item.id, items: strips, taxon, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points, clue: '', answerIndex: answers.findIndex(a => a.term === layout.provider.answer), answers, questionText: providerQuestion, statement};  
 
     scoreHandler('strip', test, null, config);
 };

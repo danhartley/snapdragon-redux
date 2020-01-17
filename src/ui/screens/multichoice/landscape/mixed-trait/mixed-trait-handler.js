@@ -98,7 +98,7 @@ const onClickTileHandler = (tile, requiredTraits, tiles) => {
             question: requiredTraits.map(trait => trait.term),
             answer: traits,
             questionCount: lesson.questionCount, 
-            layoutCount: lesson.layoutCount, 
+            layoutCount: lesson.layoutCount,
         }
         scoreHandler('image-match', test, callback, config);
 

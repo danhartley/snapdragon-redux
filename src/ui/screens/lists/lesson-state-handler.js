@@ -57,7 +57,11 @@ const saveCurrentLesson = async collection => {
 
 const restoreSavedLessonOrReturnNewOne = collectionToLoad => {
 
-    const { counter, lessons} = store.getState();
+    const { counter, lessons, score, collection } = store.getState();
+
+    if(score.total > 0 && collecion.id > 0) {
+      saveCurrentLesson(collection);
+    }
 
     const restoredLesson = lessons.find(l => l.name === collectionToLoad.name);
 

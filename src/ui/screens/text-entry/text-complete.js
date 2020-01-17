@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
-import { scoreHandler, bindScore, continueLessonHandler } from 'ui/helpers//score-handler';
+import { scoreHandler, continueLessonHandler } from 'ui/helpers//score-handler';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 
 import completeTemplate from 'ui/screens/text-entry/text-complete-template.html';
@@ -31,7 +31,7 @@ export const renderCompleteText = (collection) => {
             species = item.taxonomy.species;
             binomial = `--- ${item.taxonomy.species}`;
             givenTaxon = 'genus';
-            questionTxt = 'Complete the latin name';
+            questionTxt = 'Select genus name';
             break;
         case 'text-complete-species':
             question = item.taxonomy.species;
@@ -39,7 +39,7 @@ export const renderCompleteText = (collection) => {
             species = '---';
             binomial = `${item.taxonomy.genus} ---`;
             givenTaxon = 'species';
-            questionTxt = 'Complete the latin name';
+            questionTxt = 'Select species name';
             break;
     }
 
@@ -106,6 +106,8 @@ export const renderCompleteText = (collection) => {
                 document.querySelector('.genus').innerHTML = answer;
             }
             score.answer = answer;
+            score.answers = answers;
+            score.questionText = questionTxt;
             scoreHandler('block', score, callback, config);
         });
     });    

@@ -5,7 +5,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 
 import scoreTemplate from 'ui/fixtures/score-template.html';
 
-export const renderScore = (score) => {
+export const renderScore = score => {
     
     const { history, collection, config, layout, lesson } = store.getState();
 

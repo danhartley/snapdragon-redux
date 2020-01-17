@@ -56,6 +56,8 @@ Array.prototype.concatAll = function() {
   
   const shuffleArray = array => {
 
+    // Check against https://bost.ocks.org/mike/shuffle/ Fisher–Yates Shuffle
+
     if(!array || array.length === 0) return;
 
     var currentIndex = array.length, temporaryValue, randomIndex;

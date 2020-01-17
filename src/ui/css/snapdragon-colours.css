@@ -38,9 +38,10 @@
     
     --snap-active: rgb(246, 157, 53);
     --snap-alert: rgba(183, 12, 21,.8);
+    --snap-alert-light: rgb(241, 229, 225);
     --snap-inactive: rgba(7, 2, 2, 0.4);
-    
     --snap-success: rgba(41, 108, 44,.8);
+    --snap-success-light: rgb(216, 225, 208);
     
     --snap-link: rgb(54, 69, 82);
     --snap-info-background: rgba(26, 67, 91, .5);

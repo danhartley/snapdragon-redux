@@ -4,10 +4,11 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { scoreHandler, bindScore } from 'ui/helpers//score-handler';
 import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handler';
 import { imageSlider } from 'ui/screens/common/image-slider';
+import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
+
 import textEntryTemplate from 'ui/screens/text-entry/text-entry-templates.html';
 import textEntryPortraitTemplate from 'ui/screens/text-entry/text-entry-portrait-templates.html';
 
-import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 
 export const renderInput = (screen, question) => {
 
@@ -88,7 +89,8 @@ export const renderInput = (screen, question) => {
     };
 
     const scoreEventHandler = event => {
-        const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames };
+        const answer = document.querySelector('.js-txt-input').value;
+        const score = { itemId: item.id, question, answer, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames, questionText: questionTxt, answers: [question.question, answer] };
         scoreHandler('text', score, callback, config);
         if(answerBtn) answerBtn.disabled = true;
         document.querySelector('.js-continue-lesson-btn').disabled = false;
@@ -97,7 +99,7 @@ export const renderInput = (screen, question) => {
 
     const loseFocusMobileHandler = e => {
         document.removeEventListener('focusout', loseFocusMobileHandler);        
-        const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames };
+        const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames, questionText: questionTxt };
         scoreHandler('text', score, callback, config);
         document.querySelector('.js-continue-lesson-btn').disabled = false;
     };
