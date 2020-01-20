@@ -68,8 +68,13 @@ progress::-moz-progress-bar {
   background-color: var(--snap-progress-bar);
 }
 
+.progress-icon {
+  color: var(--snap-progress-bar);
+}
+
 .lesson-list-carousel-item progress {
-  width: 20%;
+  /* width: 20%; */
+  width: 50px;
 }
 
 hr {
@@ -286,7 +291,8 @@ a.dropdown-item {
 }
 
 .nav-icons .active-icon {
-  color: var(--orange);
+  /* color: var(--orange); */
+  color: white;
 }
 
 .nav-icons .inactive-icon {
@@ -314,7 +320,8 @@ a.dropdown-item {
 }
 
 .snapdragon-container .standard-block, .lesson-list-header.spaced-block {
-  background-color: var(--snap-block-light);
+  /* background-color: var(--snap-block-light); */
+  border-bottom: .03rem solid lightgray
 }
 
 .home-container {
@@ -430,7 +437,7 @@ a.dropdown-item {
   display: flex;
   align-items: center;
   padding: 0 0.5rem;
-  letter-spacing: 0.07rem;
+  letter-spacing: 0.1rem;
   text-transform: uppercase;
   color: var(--snap-text-medium-dark);
 }
@@ -456,15 +463,25 @@ a.dropdown-item {
 
 .left-grid .header, .left-grid .footer {
   background-color: var(--snap-portrait);
+  background-color: var(--snap-border-light);
 }
 
 .right-grid .header, .right-grid .footer {
   background-color: var(--snap-landscape);
+  background-color: var(--snap-border-light);
 }
 
 .right-grid .header, .right-grid .footer {
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  
+  justify-content: flex-end;
+  padding-right: 1rem;
 }
+
+.header-text {
+  color: white;
+}
+
 
 .scrollable {
   overflow-y: auto;
@@ -1584,7 +1601,7 @@ a.collection-disabled {
   margin: 0 0 0 0.25rem;
 }
 
-.fungi-block {
+/* .fungi-block {
   color: var(--snap-text-light);
   background-color: var(--snap-kingdom-fungi);
 }
@@ -1597,7 +1614,7 @@ a.collection-disabled {
 .plantae-block {
   color: var(--snap-text-light);
   background-color: var(--snap-kingdom-plantae);
-}
+} */
 
 .greek {
   vertical-align: super;
@@ -1689,6 +1706,7 @@ a.collection-disabled {
 .home-container .snapdragon-header {
   text-transform: uppercase;
   color: var(--snap-collection-active);
+  color: var(--snap-text-medium-light);
   font-size: 1.6rem;
   letter-spacing: .25rem;
   border-bottom: 1px solid var(--snap-border-lightest);
@@ -1904,6 +1922,10 @@ a.collection-disabled {
   border-right: 1px solid var(--snap-border-light); */
 }
 
+.lesson-list > div {
+  border-bottom: .03rem solid lightgray;
+}
+
 .lesson-list-header {
   padding: 0 !important;
   background-color: var(--snap-list-alt-background);
@@ -1931,8 +1953,6 @@ a.collection-disabled {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  /* background-color: var(--snap-toggle-header-off);
-  background-color: rgb(253, 224, 223,.6); */
 }
 
 .lesson-list-header > div:nth-child(2) i {
@@ -1979,9 +1999,14 @@ a.collection-disabled {
   pointer-events: none;
 }
 
-.lesson-list .lesson-list-item .lesson-review {
+.lesson-review {
   pointer-events: initial;
   font-size: 1rem;
+}
+
+.lesson-review i {
+  font-size: 1.4rem;
+  color: var(--snap-collection);
 }
 
 .lesson-list .lesson-taxa {
@@ -2136,7 +2161,10 @@ a.collection-disabled {
 
 .main-header {
   font-size: 1.2rem;
-  color: var(--snap-text-medium-light);
+  /* color: var(--snap-text-medium-light); */
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
 }
 
 .fa, .fab, .fal, .far, .fas {
@@ -2182,19 +2210,34 @@ a.collection-disabled {
 
 .score-summary {
   top: calc(var(--vhStandardBlock));
-  margin: .5rem 1.5rem;
+  padding: .5rem 1.5rem;
   /* background-color: rgb(247, 246, 241); */
 }
 
-.review-collection {
+.review-summary {
   background-color: rgb(252, 251, 246) !important;
+  background-color: rgb(189, 243, 201) !important;
+  background-color: rgb(251, 236, 208) !important;
+  background-color: var(--snap-list-alt-background) !important;
 }
 
 .score-summary-row {
   display: flex;
   border-bottom: .03rem solid var(--snap-dd-non-taxa-bg-hover);
   border-bottom: .3rem solid var(--snap-dd-non-taxa-bg-hover);
+  border-bottom: .3rem solid white;
   padding: 1rem 0;
+}
+
+/* .score-summary-row:nth-child(1) {
+  border: none;
+} */
+
+.score-summary-row.species {
+  background-color: var(--snap-alert-light);
+  background-color: rgb(233, 236, 239) !important;
+  background-color: rgb(213, 213, 210) !important;
+  border: none;
 }
 
 .score-summary-row.header {
@@ -2202,6 +2245,8 @@ a.collection-disabled {
   background-color: initial;
   font-size: initial;
   letter-spacing: initial;
+  background-color: rgb(249, 242, 239);
+  background-color: rgb(240, 239, 233);
 }
 
 .score-summary-row > div:nth-child(1), .score-summary-row > div:nth-child(3) {

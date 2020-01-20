@@ -4,6 +4,8 @@ import { enums } from 'ui/helpers/enum-helper';
 
 export const renderHeaders = collection => {
 
+    return;
+
     // be simple, left/right for landscape learn/save and portrait learn (for now…)
     
     let lessonPlan, config, counter, layout;

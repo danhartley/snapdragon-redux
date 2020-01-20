@@ -2,8 +2,8 @@
 
     --snap-body-bg: rgb(240, 240, 240);
 
-    --snap-dd-collection-bg-intial: rgb(166, 183, 197);
-    --snap-dd-collection-bg-hover: rgb(198, 206, 217);
+    /* --snap-dd-collection-bg-intial: rgb(166, 183, 197); */
+    /* --snap-dd-collection-bg-hover: rgb(198, 206, 217); */
     --snap-dd-collection-bg-active: rgb(198, 206, 217);
 
     --snap-lesson-row-blue: rgb(218, 230, 237);
@@ -13,16 +13,16 @@
     --snap-dd-non-taxa-bg-hover: rgb(229, 227, 220);
     --snap-dd-non-taxa-bg-active: rgb(229, 227, 220);
 
-    --snap-list-bg:rgb(127, 151, 122);
+    /* --snap-list-bg:rgb(127, 151, 122); */
 
     --snap-text-dark: rgb(62, 63, 62);
     --snap-text-dark-medium-dark: rgb(50, 50, 50);
     --snap-text-medium-dark: rgb(52, 58, 64);
     --snap-text-medium-light:rgb(73, 80, 87);
-    --snap-text-light: rgb(211, 211, 211);
+    /* --snap-text-light: rgb(211, 211, 211); */
 
     --snap-text-light:rgb(245, 245, 245);
-    --snap-green-ident: rgb(20, 39, 15);
+    /* --snap-green-ident: rgb(20, 39, 15); */
     --snap-green-feature-txt: rgb(16, 66, 28);
     
     --snap-portrait: rgb(179, 197, 174);
@@ -32,7 +32,7 @@
     --snap-collection-active: rgb(95, 125, 89);
     --snap-non-taxa: rgb(165, 159, 131);
     
-    --snap-language: rgb(186, 214, 229);
+    /* --snap-language: rgb(186, 214, 229); */
 
     --snap-lesson: rgb(52, 105, 23);
     
@@ -44,11 +44,11 @@
     --snap-success-light: rgb(216, 225, 208);
     
     --snap-link: rgb(54, 69, 82);
-    --snap-info-background: rgba(26, 67, 91, .5);
+    /* --snap-info-background: rgba(26, 67, 91, .5); */
   
-    --snap-question-background: rgba(26, 67, 91,.4);
-    --snap-question-radio: rgb(147, 208, 244);
-    --snap-id-border: rgb(129, 67, 101);
+    /* --snap-question-background: rgba(26, 67, 91,.4); */
+    /* --snap-question-radio: rgb(147, 208, 244); */
+    /* --snap-id-border: rgb(129, 67, 101); */
 
     --snap-progress-bg: rgb(168, 168, 168);
     --snap-progress-bar: rgb(48, 94, 37);
@@ -59,25 +59,25 @@
     --snap-grid-background: rgba(185, 200, 204,.3);
     --snap-container-background: rgb(255, 255, 255);
     --snap-taxon-card-background: rgba(52, 105, 23,.1);
-    --snap-taxon-highlight-background: rgba(52, 105, 23,.3);
-    --snap-species-card-background: rgba(194, 183, 91,.2);
+    /* --snap-taxon-highlight-background: rgba(52, 105, 23,.3); */
+    /* --snap-species-card-background: rgba(194, 183, 91,.2); */
     --snap-species-highlight-background: rgb(249, 248, 238);
     --snap-species-header-background: rgb(226, 222, 180);
-    --snap-strips-background: rgba(182, 201, 213,.5);
+    /* --snap-strips-background: rgba(182, 201, 213,.5); */
     --snap-btn-auxillary: rgb(96, 117, 90);
-    --snap-list-background: rgb(232, 235, 234);
+    /* --snap-list-background: rgb(232, 235, 234); */
     --snap-list-alt-background: rgb(252, 251, 246);
     --snap-default-background: rgb(244, 244, 244);
   
     --snap-border-light: rgb(175,175,175);
     --snap-border-lightest: rgb(225,225,225);
 
-    --snap-kingdom-plantae: rgb(48, 96, 37);
+    /* --snap-kingdom-plantae: rgb(48, 96, 37);
     --snap-kingdom-fungi: rgba(150, 43, 110,.8);
-    --snap-kingdom-animalia: rgb(96, 121, 147);
+    --snap-kingdom-animalia: rgb(96, 121, 147); */
 
-    --snap-data-box-bg: rgb(179, 197, 174);
-    --snap-traits-carousel: rgba(185, 200, 204,.4);
+    /* --snap-data-box-bg: rgb(179, 197, 174); */
+    /* --snap-traits-carousel: rgba(185, 200, 204,.4); */
     
     --snap-iconic-icon-header: rgb(193, 186, 112);
 
@@ -88,6 +88,6 @@
     /* --snap-youtube-green: rgb(255,0,0); */
     --snap-highlight-border: rgb(250, 152, 149);
 
-    --snap-toggle-header-on: rgb(240, 240, 240);
-    --snap-toggle-header-off: rgb(253, 224, 223);
+    /* --snap-toggle-header-on: rgb(240, 240, 240);
+    --snap-toggle-header-off: rgb(253, 224, 223); */
   }

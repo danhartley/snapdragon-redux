@@ -15,7 +15,10 @@
         <div data-lesson-id="{{ lesson.id }}" class="lesson-review js-lesson-review">
             <div>
                 <span class="underline-link margin-right">{{ lesson.reviewState }}</span>
-                <progress class="hide" value="0" max="6"></progress>
+                <span class="hide">
+                    <progress value="0" max="6"></progress>
+                    <i class="fas fa-tasks margin-left"></i>
+                </span>
                 <span class="hide js-loading-review-message">
                     <span class="landscape">(Loading…)</span>
                     <span class="portrait"><i class="fas fa-spinner"></i></span>

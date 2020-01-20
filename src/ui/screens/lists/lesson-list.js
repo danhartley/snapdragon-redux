@@ -58,14 +58,16 @@ export const renderLessons = () => {
                   // current lesson
 
                   if(layout && layout.roundScoreCount) {
-                        const progressBar = document.querySelector(`div.js-lesson-review[data-lesson-id="${lesson.id}"]  progress`);
-                              progressBar.classList.remove('hide');
+                        const progressBar = document.querySelector(`div.js-lesson-review[data-lesson-id="${lesson.id}"] progress`);
+                              progressBar.parentElement.classList.remove('hide');
                               progressBar.max = layout.roundScoreCount;
                               progressBar.value = layout.roundProgressIndex || progressBar.value;
+                        const tasksIcon = document.querySelector(`div.js-lesson-review[data-lesson-id="${lesson.id}"] i`);
+                              tasksIcon.classList.add('progress-icon');
                   }
 
                   const row = document.querySelector(`.lesson-list-carousel-item[data-lesson-id="${lesson.id}"]`)
-                        row.classList.add('review-collection');
+                        row.classList.add('review-summary');
             }
       }
     });

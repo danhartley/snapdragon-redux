@@ -46,7 +46,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    letter-spacing: .05rem;
+    letter-spacing: .1rem;
   }
 
   .test-card-question .question {

@@ -1,0 +1,46 @@
+<div class="score-summary-row species">
+    <div></div>
+    <div>
+        <div></div>
+        <div>
+            <span>{{ vernacularName }}</span>
+            <span class="latin">{{ binomial }}</span>
+        </div>                
+    </div>
+    <div></div>
+</div>
+
+<div data-repeat-row="{{ rows }}">
+
+    <div class="collapsed score-summary-row header" data-toggle="collapse" data-target="#{{ row.id }}" aria-expanded="false" aria-controls="{{ row.id }}">  
+        <div data-is-true="{{ row.success }}">
+            <i class="fas fa-check"></i>
+            <i class="fas fa-times"></i>
+        </div>
+        <div>
+            <div class="binomial">{{ row.statement }}</div>
+            <div>{{ row.questionText }}</div>
+        </div>
+        <div>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+    
+    <div id="{{ row.id }}" class="collapse score-summary-row in-columns" data-repeat-answer="{{ row.answers }}" data-parent="#accordion">  
+        <div data-question="{{ ^.row.question }}">
+            <div>                    
+            </div>
+            <div data-is-true="{{ answer.isTrue }}" data-is-wrong-answer="{{ answer.isWrongAnswer }}">
+                <div>
+                    <img data-has-image="{{ answer.hasImage }}" src="{{ answer.url }}" alt="{{ answer.value }}">
+                </div>
+                <div>
+                    <span>{{ answer.value }}</span>
+                </div>
+                <div></div>
+            </div>
+            <div></div>
+        </div>
+    </div>
+
+</div>
