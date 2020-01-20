@@ -11,7 +11,7 @@ import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
 
 export const renderLessons = () => {
 
-    let { config, collections, lessons: savedLessons, videoPlayer, score } = store.getState();
+    let { config, collections, lessons: savedLessons, videoPlayer, score, layout } = store.getState();
 
     const template = document.createElement('template');
           template.innerHTML = lessonListTemplate;
@@ -32,7 +32,7 @@ export const renderLessons = () => {
 
       const savedLesson = savedLessons.find(saved => saved.collection.id === lesson.id);
 
-      lesson.isPaused = !!savedLesson;
+      lesson.isPaused = !!savedLesson || config.collection.id === lesson.id;
 
       renderTemplate({ lesson }, template.content, document.querySelector('.js-lesson-container'));
 
@@ -45,12 +45,27 @@ export const renderLessons = () => {
 
             const savedLesson = savedLessons.find(saved => saved.collection.id === lesson.id);
 
-            if(savedLesson.layout) {
+            if(savedLesson && savedLesson.layout) {
 
                   const progressBar = document.querySelector(`div.js-lesson-review[data-lesson-id="${lesson.id}"]  progress`);
                         progressBar.classList.remove('hide');
                         progressBar.max = savedLesson.layout.roundScoreCount;
                         progressBar.value = savedLesson.layout.roundProgressIndex || progressBar.value;
+            }
+
+            if(config.collection.id === lesson.id) {
+
+                  // current lesson
+
+                  if(layout && layout.roundScoreCount) {
+                        const progressBar = document.querySelector(`div.js-lesson-review[data-lesson-id="${lesson.id}"]  progress`);
+                              progressBar.classList.remove('hide');
+                              progressBar.max = layout.roundScoreCount;
+                              progressBar.value = layout.roundProgressIndex || progressBar.value;
+                  }
+
+                  const row = document.querySelector(`.lesson-list-carousel-item[data-lesson-id="${lesson.id}"]`)
+                        row.classList.add('review-collection');
             }
       }
     });

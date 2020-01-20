@@ -98,7 +98,7 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
                 const answers = []
 
                 imageTiles.forEach(tile => {
-                    answers.push(tile.dataset.itemName);// wrong, we want real options
+                    answers.push({ value: tile.dataset.itemName, url: scaleImage({ url:tile.dataset.url }).small });                    
                     if(tile.dataset.itemName !== item.name) {
                         tile.classList.add('desaturate');
                     }
@@ -125,4 +125,4 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
     };
 
     renderSpecimenImages();
-};
+};      

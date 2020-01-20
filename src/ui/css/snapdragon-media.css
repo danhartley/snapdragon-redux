@@ -57,6 +57,9 @@
     .snapdragon-intro > div {
         font-size: 1.2rem;
     }
+    .youtube-icon {
+        font-size: 2rem !important;
+    }
 }
 
 @media (min-height:812px) {
@@ -85,9 +88,14 @@
 
 @media (min-width: 768px) {
 
+
+    .snapdragon-intro > div:nth-child(1) {
+        margin: 0rem 2.4rem 0 2.4rem !important;
+    }
+
     .snapdragon-intro {
         height: initial;  
-        padding: 2rem;
+        padding: .5rem 2rem;
       }
 
     .text-entry-container {
@@ -100,6 +108,11 @@
 
     .lesson-list-carousel-item > div:nth-child(2) > div {
         display: flex;
+    }
+
+    .lesson-list-carousel-item > div:nth-child(2) > div > div {
+        display: flex;
+        align-items: center;
     }
 
     body {

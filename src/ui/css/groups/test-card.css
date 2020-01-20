@@ -33,10 +33,10 @@
     background-color: var(--snap-list-alt-background);
   }
 
-  .test-card-question {
+  /* .test-card-question {
     border-bottom: .03rem solid var(--snap-dd-non-taxa-bg-hover);
   }
-   
+    */
   .test-card-question .question-question {
     font-size: 1.2rem;
     text-transform: uppercase;

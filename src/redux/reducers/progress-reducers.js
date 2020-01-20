@@ -35,7 +35,7 @@ export const score = (state = R.clone(progressState.score), action) => {
     switch(action.type) {
         case types.UPDATE_SCORE: {
         
-            const score = { ...state, ...action.data };
+            const score = { ...state, ...action.data, statement: action.data.statement || '' };
 
             console.log('score.questionText: ', score.questionText);
             

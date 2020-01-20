@@ -91,6 +91,8 @@ const onClickTileHandler = (tile, requiredTraits, tiles) => {
         
         const tile = e.currentTarget;
         const traits = Array.from(tile.querySelectorAll('img')).map(t => t.dataset.term);
+        const images = Array.from(tiles).map(t => t.querySelector('img').dataset);
+        const answers = images.map(i => { return { value: i.term, url: i.url } })
         const test = {
             points: 0,
             binomial: item.name, 
@@ -99,6 +101,8 @@ const onClickTileHandler = (tile, requiredTraits, tiles) => {
             answer: traits,
             questionCount: lesson.questionCount, 
             layoutCount: lesson.layoutCount,
+            answers,
+            questionText: 'Match the trait'
         }
         scoreHandler('image-match', test, callback, config);
 

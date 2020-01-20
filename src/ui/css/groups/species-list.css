@@ -1,5 +1,6 @@
 .table-header {
-  background-color: rgb(153, 172, 149);
+  /* background-color: rgb(153, 172, 149); */
+  background-color: rgb(185, 200, 204,.6);
   color: var(--snap-text-dark);
   cursor: pointer;
   display: flex;
@@ -31,9 +32,9 @@
     width: 100%;
   }
 
-  tr.master:nth-child(2n) {
+  /* tr.master:nth-child(2n) {
     background-color: var(--snap-list-background);
-  }
+  } */
   
   tr.master:nth-child(2n + 1) {
     background-color: var(--snap-list-alt-background);
@@ -178,15 +179,19 @@ div.species-description {
     }
   }
 
+  .lesson-list-action-icons {
+    color: var(--snap-collection)
+  }
+
   @media (min-width: 600px) {
 
-    .youtube-icon, .accordion-icon {
+    /* .youtube-icon, .accordion-icon {
       font-size: 1.3rem;
-    }
+    } */
 
-    .lesson-list-action-icons .youtube-icon, .lesson-list-action-icons .accordion-icon {
+    /* .lesson-list-action-icons .youtube-icon, .lesson-list-action-icons .accordion-icon {
       font-size: 1.6rem;;
-    }
+    } */
 
     .table-header th:nth-child(1) {
       min-width: 105px;
@@ -208,9 +213,9 @@ div.species-description {
       font-size: .8rem;
     }
 
-    .table-header {
+    /* .table-header {
       background-color: var(--snap-landscape);
-    }
+    } */
 
     .table-row td:nth-child(3) {
         display: flex;

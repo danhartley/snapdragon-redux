@@ -59,7 +59,7 @@ const restoreSavedLessonOrReturnNewOne = collectionToLoad => {
 
     const { counter, lessons, score, collection } = store.getState();
 
-    if(score.total > 0 && collecion.id > 0) {
+    if(score.total > 0 && collection.id > 0 && collection.id !== collectionToLoad.id) {
       saveCurrentLesson(collection);
     }
 
