@@ -4,7 +4,7 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';
 
-import { renderLesson } from 'ui/screens/home/home-lesson-intro';
+import { renderLessonIntro } from 'ui/screens/home/home-lesson-intro';
 
 import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 import { videoHandler } from 'ui/screens/lists/video-handler';
@@ -95,7 +95,7 @@ const onTitleClickHandler = (icon, lessons, config, startLesson) => {
       }
 
       if(startLesson) {
-        renderLesson(lesson);
+        renderLessonIntro(lesson);
         siblingChevron = icon.parentElement.parentElement.parentElement.children[1].children[0].children[1];
         if(isYoutubeIcon) {
           if(state.hideSpeciesList) {
@@ -128,7 +128,7 @@ const onTitleClickHandler = (icon, lessons, config, startLesson) => {
 
     if(config.isPortraitMode) {
 
-      renderLesson(lesson);
+      renderLessonIntro(lesson);
       
       lessonStateHandler.renderLessonSpeciesList(lesson, DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable'));
     }

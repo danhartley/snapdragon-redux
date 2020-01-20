@@ -3,7 +3,7 @@ import { store } from 'redux/store';
 import { videoSetup } from 'ui/screens/home/home-lesson-intro-video';
 import { textSetup } from 'ui/screens/home/home-lesson-intro-text';
 
-export const renderLesson = collection => {
+export const renderLessonIntro = collection => {
 
     const { config, videoPlayer, collection: lesson } = store.getState();
 

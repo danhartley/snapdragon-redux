@@ -52,7 +52,6 @@ export const renderNavigation = collection => {
                         clickedIcon.classList.add('active-icon');
                         lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
-                        // lessonStateHandler.saveCurrentLesson(collection);
                         renderLessons();     
                         renderScoreSummary(); 
                         break;
@@ -72,7 +71,6 @@ export const renderNavigation = collection => {
                         clickedIcon.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
                         lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
-                        // lessonStateHandler.saveCurrentLesson(collection);
                         renderLessons();
                         break;
                     case enums.navigation.GLOSSARY:   
