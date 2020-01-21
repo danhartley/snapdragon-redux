@@ -112,8 +112,6 @@ export const renderNavigation = collection => {
         } else {
             navIcons.forEach(icon => icon.classList.remove('active-icon'));
         }
-
-        // renderScoreSummary();// temp hack!!!
     };
 
     onLoadState(config, counter);

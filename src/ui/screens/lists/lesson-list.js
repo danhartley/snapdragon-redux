@@ -7,12 +7,13 @@ import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
 import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
 import { renderLesson } from 'ui/screens/lists/lesson';
 import { renderCustomLesson } from 'ui/screens/lists/lesson-custom';
+import { renderScoreSummary } from 'ui/screens/progress/score-summary';
 
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
 
 export const renderLessons = () => {
 
-    let { config, collections, lessons: savedLessons, videoPlayer, score, layout } = store.getState();
+    let { config, collections, lessons: savedLessons, videoPlayer, score } = store.getState();
 
     const template = document.createElement('template');
           template.innerHTML = lessonListTemplate;
@@ -25,7 +26,7 @@ export const renderLessons = () => {
 
     renderTemplate({}, template.content, parent);
 
-    lessons.forEach(lesson => renderLesson(lesson, config, savedLessons, layout));
+      lessons.forEach(lesson => renderLesson(lesson));
 
       renderLessonListHeader(parent);
 
@@ -47,6 +48,9 @@ export const renderLessons = () => {
 
       const reviews = document.querySelectorAll('.js-lesson-review');
             reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink, lessons));
+
+      const summaries = Array.from(document.querySelectorAll('.js-review-summary'));
+            summaries.forEach(summary => renderScoreSummary(summary.dataset.lessonId));
 
       renderCustomLesson(lessons, savedLessons, videoPlayer, score, config);
 };

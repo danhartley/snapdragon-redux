@@ -85,7 +85,26 @@ export const imageSlider = sliderArgs => {
     parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
     parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
 
-    // const imageLink = `#imageSlider_${ disableModal }_${identifier} .js-expand`;
+    let next, prev;
+
+    if(config.isPortraitMode) {
+        next = document.querySelector('.carousel-control-next-icon');
+        next.classList.add('invisible');
+
+        prev = document.querySelector('.carousel-control-prev-icon');
+        prev.classList.add('invisible');
+    }
+    
+    document.addEventListener('swiped-left', function(e) {
+        console.log('swiped-left!');
+        next.click();
+      });
+
+    document.addEventListener('swiped-right', function(e) {
+        console.log('swiped-right!');        
+        prev.click();
+      });
+
     const imageLink = `#imageSlider_${ disableModal }_${identifier}`;
     const originalImageLink = parentScreen.querySelector(imageLink);
           originalImageLink.addEventListener('click', onEnlargeImageHandler(config));

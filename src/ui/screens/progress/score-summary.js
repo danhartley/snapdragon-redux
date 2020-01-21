@@ -8,7 +8,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import summaryTemplate from 'ui/screens/progress/score-summary-template.html';
 import summaryRowTemplate from 'ui/screens/progress/score-summary-row-template.html';
 
-export const renderScoreSummary = () => {
+export const renderScoreSummary = id => {
 
       const template = document.createElement('template');
             template.innerHTML = summaryTemplate;
@@ -16,14 +16,16 @@ export const renderScoreSummary = () => {
       const parent = DOM.rightBody;
             parent.innerHTML = '';
       
-      renderTemplate({ collection: store.getState().collection }, template.content, parent);
+      const collection = id  ? store.getState().collections.find(c => c.id === parseInt(id)) : store.getState().collection;
+
+      renderTemplate({ collection }, template.content, parent);
 
       const scores  = store.getState().history ? store.getState().history.scores : [ store.getState().score ];
 
       scores.forEach( score => renderScoreSummaryRow(score));
 }
 
-export const renderScoreSummaryRow = score => {
+const renderScoreSummaryRow = score => {
     
       const template = document.createElement('template');
             template.innerHTML = summaryRowTemplate;

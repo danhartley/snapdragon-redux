@@ -69,11 +69,11 @@ progress::-moz-progress-bar {
 }
 
 .progress-icon {
-  color: var(--snap-progress-bar);
+  color: var(--snap-progress-bar) !important;
+  cursor: pointer;
 }
 
 .lesson-list-carousel-item progress {
-  /* width: 20%; */
   width: 50px;
 }
 
@@ -235,9 +235,6 @@ a.dropdown-item {
 }
 
 .lesson-title {
-  /* border-bottom: solid .05rem !important; */
-  /* cursor: pointer; */
-  /* pointer-events: initial; */
   line-height: 1.6;
 }
 
@@ -291,7 +288,6 @@ a.dropdown-item {
 }
 
 .nav-icons .active-icon {
-  /* color: var(--orange); */
   color: white;
 }
 
@@ -320,7 +316,6 @@ a.dropdown-item {
 }
 
 .snapdragon-container .standard-block, .lesson-list-header.spaced-block {
-  /* background-color: var(--snap-block-light); */
   border-bottom: .03rem solid lightgray
 }
 
@@ -472,8 +467,6 @@ a.dropdown-item {
 }
 
 .right-grid .header, .right-grid .footer {
-  /* justify-content: space-between; */
-  
   justify-content: flex-end;
   padding-right: 1rem;
 }
@@ -569,26 +562,6 @@ a.dropdown-item {
   align-items: center;
   justify-content: center;
 }
-
-/* .horizontal.strips {  
-  cursor: pointer;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  overflow-y: scroll;
-}
-
-.horizontal.strips .strip {
-  background: #fff;
-  border: none;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  min-width: 75%;
-} */
 
 .strip > div::first-letter {
   text-transform: capitalize;
@@ -730,33 +703,6 @@ a.dropdown-item {
 .species-common-name {  
   text-transform: capitalize;
 }
-
-/* .species-traits span {
-  font-weight: bold;
-  color: rgb(97, 109, 25);
-  text-transform: capitalize;
-} */
-
-/* .cultivar.card {
-  display: flex;
-}
-
-.cultivar.card div {
-  flex: 1;
-}
-
-.cultivar.card .title {
-  flex: initial;
-  text-align: left;
-  flex-shrink: initial;
-  padding: 0.5rem 0;
-}
-
-.cultivar.card span {
-  flex: 1;
-  text-align: left;
-  padding: 0.15rem;
-} */
 
 .data-box-container {
   height: var(--vhCalendar, 11vh);
@@ -992,7 +938,6 @@ button.btn-light:focus,
 .pool {
   display: flex;
   flex-wrap: wrap;
-  /* margin-left: .5rem; */
 }
 
 .pool .block.active {
@@ -1310,7 +1255,6 @@ label.btn.btn-secondary .lesson-icon {
     letter-spacing: 0.03rem;
     padding: 0;
     width: fit-content;
-    /* font-family: "AtlasGrotesk","Open Sans",sans-serif; */
 }
 
 .faded {
@@ -1573,7 +1517,7 @@ a.collection-disabled {
   left: .5rem;
   right: .5rem;
   bottom: .5rem;
-  background-color: rgb(218, 225, 201, 0.2);
+  background-color: rgb(218, 225, 201);
   padding: .5rem;
   text-align: left;
 }
@@ -1600,21 +1544,6 @@ a.collection-disabled {
   vertical-align: baseline;
   margin: 0 0 0 0.25rem;
 }
-
-/* .fungi-block {
-  color: var(--snap-text-light);
-  background-color: var(--snap-kingdom-fungi);
-}
-
-.animalia-block {
-  color: var(--snap-text-light);
-  background-color: var(--snap-kingdom-animalia);
-}
-
-.plantae-block {
-  color: var(--snap-text-light);
-  background-color: var(--snap-kingdom-plantae);
-} */
 
 .greek {
   vertical-align: super;
@@ -1700,8 +1629,6 @@ a.collection-disabled {
   margin: .5rem;
   padding: .8rem 1.1rem;
 }
-
-/* HOME PAGE */
 
 .home-container .snapdragon-header {
   text-transform: uppercase;
@@ -1918,8 +1845,6 @@ a.collection-disabled {
 .lesson-list {
   position: relative;
   background-color: var(--snap-block-light);
-  /* border-left: 1px solid var(--snap-border-light);
-  border-right: 1px solid var(--snap-border-light); */
 }
 
 .lesson-list > div {
@@ -2005,8 +1930,13 @@ a.collection-disabled {
 }
 
 .lesson-review i {
-  font-size: 1.4rem;
+  font-size: .9rem;
   color: var(--snap-collection);
+}
+
+.lesson-review i.fa-sync {
+  font-size: 1.3rem;
+  color: var(--snap-active);
 }
 
 .lesson-list .lesson-taxa {
@@ -2025,13 +1955,10 @@ a.collection-disabled {
 
 .lesson-list div.lesson-list-carousel-item:nth-of-type(2n) {
   background-color: var(--snap-lesson-row-green);
-  /* background-color: var(--snap-container-background);
-  background-color: white; */
 }
 
 .lesson-list div.lesson-list-carousel-item:nth-of-type(2n+1) {
   background-color: var(--snap-lesson-row-blue);
-  /* background-color: white; */
 }
 
 .lesson-list .scrollable {
@@ -2157,11 +2084,11 @@ a.collection-disabled {
 
 .lesson-review > div {
   font-size: .7em;
+  line-height: 3;
 }
 
 .main-header {
   font-size: 1.2rem;
-  /* color: var(--snap-text-medium-light); */
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: .1rem;
@@ -2211,7 +2138,6 @@ a.collection-disabled {
 .score-summary {
   top: calc(var(--vhStandardBlock));
   padding: .5rem 1.5rem;
-  /* background-color: rgb(247, 246, 241); */
 }
 
 .review-summary {
@@ -2228,10 +2154,6 @@ a.collection-disabled {
   border-bottom: .3rem solid white;
   padding: 1rem 0;
 }
-
-/* .score-summary-row:nth-child(1) {
-  border: none;
-} */
 
 .score-summary-row.species {
   background-color: var(--snap-alert-light);
@@ -2252,10 +2174,6 @@ a.collection-disabled {
 .score-summary-row > div:nth-child(1), .score-summary-row > div:nth-child(3) {
   width: 5rem;
 }
-
-/* .score-summary-row > div:nth-child(3) {
-  color: rgb(52, 58, 64,.7);
-} */
 
 .score-summary-row > div:nth-child(1) i, .score-summary-row > div:nth-child(3) i {
   font-size: 1.2rem;
@@ -2283,7 +2201,6 @@ a.collection-disabled {
   display: flex;
   flex-direction: row;
   width: 100%;
-  /* border-bottom: .03rem solid var(--snap-dd-non-taxa-bg-hover); */
 }
 
 .score-summary-row.in-columns > div > div {
@@ -2305,12 +2222,10 @@ a.collection-disabled {
 }
 
 .score-summary-row.in-columns > div > div:nth-child(2) > div {
-  /* padding: 0 0 0 1rem;  */
   font-size: .8rem;
 }
 
 .score-summary-row.in-columns > div > div:nth-child(2) > div:nth-child(1) {
-  /* width: 105px; */
   padding: .5rem;
 }
 
@@ -2353,4 +2268,8 @@ img[data-has-image="false"] {
 .score-summary-row img {
   width: 98px;
   height: 68px;
+}
+
+.invisible {
+  opacity: 0;
 }

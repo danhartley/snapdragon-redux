@@ -9,9 +9,9 @@ import { setupHandler } from 'ui/setup/setup-handler';
 
 export const nextLesson = counter => {
 
-    const { layout, lessonPlan, config, lesson, collection } = store.getState();
+    const { layout, config, lesson, collection } = store.getState();
 
-    const args = { layout, counter, lessonPlan, config, lesson, collection };
+    const args = { layout, counter, config, lesson, collection };
 
     if(setupHandler.isRequired(enums.nextStep.NEXT_LESSON, args)) {
 

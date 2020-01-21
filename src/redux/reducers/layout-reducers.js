@@ -4,6 +4,8 @@ export const lessonPlans = (state = null, action) => {
     switch(action.type) {
         case types.CHANGE_LESSON_PLANS:
             return action.data;
+        // case types.NEW_COLLECTION:
+        //     return { ...state, ...action.data.lesson.lessonPlans };
         default:
             return state;
     }
@@ -15,8 +17,8 @@ export const lessonPlan = (state = null, action) => {
             return action.data || state;
         case types.NEXT_LESSON:
             return action.data.lessonPlan || state;
-        case types.NEW_COLLECTION:
-            return { ...state, ...action.data.lesson.lessonPlan };
+        // case types.NEW_COLLECTION:
+        //     return { ...state, ...action.data.lesson.lessonPlan };
         default:
             return state;
     }
@@ -35,6 +37,8 @@ export const layout = (state = null, action) => {
             } else {
                 return action.data;
             }
+        // case types.NEW_COLLECTION:
+        //     return { ...state, ...action.data.lesson.layout };
         default: 
             return state;
     }

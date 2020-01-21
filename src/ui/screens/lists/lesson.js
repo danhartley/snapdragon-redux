@@ -1,52 +1,45 @@
+import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 
 import lessonTemplate from 'ui/screens/lists/lesson-template.html';
 
-export const renderLesson = (lesson, config, savedLessons, layout) => {
+export const renderLesson = (lesson) => {
 
-    const template = document.createElement('template');
-          template.innerHTML = lessonTemplate;
+      const { config, lessons, layout } = store.getState();
 
-    lesson.hideVideoClass = lesson.hasVideo ? '' : 'hide-important';
+      const template = document.createElement('template');
+            template.innerHTML = lessonTemplate;
 
-    const savedLesson = savedLessons.find(saved => saved.collection.id === lesson.id);
+      lesson.hideVideoClass = lesson.hasVideo ? '' : 'hide-important';
 
-    lesson.isPaused = !!savedLesson || config.collection.id === lesson.id;
+      const savedLesson = lessons.find(saved => saved.collection.id === lesson.id);
 
-    renderTemplate({ lesson }, template.content, document.querySelector('.js-lesson-container'));
+      lesson.isPaused = !!savedLesson || config.collection.id === lesson.id;
 
-    if(!lesson.hasVideo) {
-          const chevron = document.querySelector(`div.js-lesson-list-chevron[data-lesson-id="${lesson.id}"]`);
-                chevron.classList.remove('landscape');                                  
-    }
+      renderTemplate({ lesson }, template.content, document.querySelector('.js-lesson-container'));
 
-    if(lesson.isPaused) {
+      if(!lesson.hasVideo) {
+            const chevron = document.querySelector(`div.js-lesson-list-chevron[data-lesson-id="${lesson.id}"]`);
+                  chevron.classList.remove('landscape');                                  
+      }
 
-          const savedLesson = savedLessons.find(saved => saved.collection.id === lesson.id);
+      if(savedLesson) {
+            renderReview(savedLesson.layout, savedLesson.collection);
+      } else if(config.collection.id === lesson.id) {
 
-          if(savedLesson && savedLesson.layout) {
+            // current lesson whose current state is not yet saved
+            if(layout && layout.roundScoreCount) {
+                  renderReview(layout, lesson, 'progress-icon');
+            }
 
-                const progressBar = document.querySelector(`div.js-lesson-review[data-lesson-id="${lesson.id}"]  progress`);
-                      progressBar.classList.remove('hide');
-                      progressBar.max = savedLesson.layout.roundScoreCount;
-                      progressBar.value = savedLesson.layout.roundProgressIndex || progressBar.value;
-          }
-
-          if(config.collection.id === lesson.id) {
-
-                // current lesson
-
-                if(layout && layout.roundScoreCount) {
-                      const progressBar = document.querySelector(`div.js-lesson-review[data-lesson-id="${lesson.id}"] progress`);
-                            progressBar.parentElement.classList.remove('hide');
-                            progressBar.max = layout.roundScoreCount;
-                            progressBar.value = layout.roundProgressIndex || progressBar.value;
-                      const tasksIcon = document.querySelector(`div.js-lesson-review[data-lesson-id="${lesson.id}"] i`);
-                            tasksIcon.classList.add('progress-icon');
-                }
-
-                const row = document.querySelector(`.lesson-list-carousel-item[data-lesson-id="${lesson.id}"]`)
-                      row.classList.add('review-summary');
-          }
-    }
+            const row = document.querySelector(`.lesson-list-carousel-item[data-lesson-id="${lesson.id}"]`)
+                  row.classList.add('review-summary');
+      }
 }; 
+
+function renderReview(layout, lesson, className) {
+      const review = `<progress value="${layout.roundProgressIndex || progressBar.value}" max="${layout.roundScoreCount}"></progress>
+                      <i data-lesson-id="${lesson.id}" class="fas fa-tasks margin-left ${ className } js-review-summary"></i>`;
+      const parent = document.querySelector(`.js-review[data-lesson-id="${lesson.id}"]`);
+            parent.innerHTML = review;
+}
