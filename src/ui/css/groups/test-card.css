@@ -33,10 +33,6 @@
     background-color: var(--snap-list-alt-background);
   }
 
-  /* .test-card-question {
-    border-bottom: .03rem solid var(--snap-dd-non-taxa-bg-hover);
-  }
-    */
   .test-card-question .question-question {
     font-size: 1.2rem;
     text-transform: uppercase;
@@ -146,11 +142,6 @@
 .text-entry-container > div {
     margin: 1rem 0;
 }
-/* 
-.help-txt {
-    margin: 1rem !important;
-    margin: 1rem .5rem !important;
-} */
 
 div.text-entry {
     padding: 0;
@@ -280,95 +271,4 @@ div.text-entry {
 
 .input-trait-field input {
     margin: 0 .5rem;
-}
-
-@media (min-width: 768px) {
-
-    .text-question span:nth-child(2) {
-        margin: 0 0 0 .25rem;
-    }
-
-    .answer-box-success, .answer-box-alert {
-        justify-content: left;
-    }
-
-    .traits-names-txt {
-        column-count: 2;
-        padding: 1rem;
-        border-bottom: 1px solid var(--snap-border-lightest);
-    }
-
-    .iconic-icon {
-        font-size: 2rem;
-    }
-
-    .question-container {
-        grid-template-columns: 1fr 4fr 1fr;
-        display: initial;
-    }
-
-    .question-container .mushroom-icon-header svg {
-        width: 1.8rem;
-        height: 1.8rem;
-        fill: var(--snap-iconic-icon-header);
-    }
-
-    .test-card-container .question-header > div {
-        flex-direction: column;
-        width: initial;
-    }
-
-    .question-container {
-        display: grid;
-        grid-template-columns: 1fr 4fr 1fr;
-        background-color: var(--snap-species-header-background);
-    }
-
-    .species-header {
-        text-align: right;
-    }
-
-    .test-card-question .help-txt {
-        margin: 1rem .5rem;
-        font-family: serif;
-        font-weight: bold;
-        letter-spacing: .05rem;
-    }
-
-    .test-card-content {
-        padding: 1rem;
-        height: calc(
-            var(--vh, 1vh) * 100
-          - var(--vhFixtures, 15vh)
-          - var(--vhStandardBlock,10vh)
-          - var(--vhStandardBlock,10vh)
-          - var(--vhButtonBlock, 9vh));
-        top: calc(var(--vhStandardBlock,10vh) + var(--vhStandardBlock,10vh));
-    }
-
-    .test-card button {
-        width: 12rem;
-        width: fit-content;
-        margin: 0 0 0 .25rem;
-    }
-
-    div.text-entry {
-        margin: 1rem 0;
-        padding: 0.5rem;
-    }
-
-    .text-entry input {
-        width: 75%;
-        padding: 0.5rem;
-        border: 0.05rem solid var(--snap-border-light);
-    }
-
-    .test-card-container .text-question {
-        left: 1.5rem;
-    }
-
-    .answer-box-success > span:nth-child(2), 
-    .answer-box-alert > span:nth-child(2) {
-        margin: 0 0 0 .5rem;
-    }
 }

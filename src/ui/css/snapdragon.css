@@ -462,17 +462,12 @@ a.dropdown-item {
 }
 
 .right-grid .header, .right-grid .footer {
-  background-color: var(--snap-landscape);
+  justify-content: center;
   background-color: var(--snap-border-light);
 }
 
-.right-grid .header, .right-grid .footer {
-  justify-content: flex-end;
-  padding-right: 1rem;
-}
-
 .header-text {
-  color: white;
+  color: var(--snap-text-dark-medium-dark);
 }
 
 
@@ -1847,9 +1842,9 @@ a.collection-disabled {
   background-color: var(--snap-block-light);
 }
 
-.lesson-list > div {
+/* .lesson-list > div {
   border-bottom: .03rem solid lightgray;
-}
+} */
 
 .lesson-list-header {
   padding: 0 !important;
@@ -1966,6 +1961,7 @@ a.collection-disabled {
   height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhStandardBlock, 10vh));
   flex-direction: column;
   top: var(--vhStandardBlock, 10vh);
+  border-top: 1px solid var(--snap-border-lightest);
 }
 
 .lesson-list .scrollable .btn input[type=radio] {
@@ -2088,8 +2084,7 @@ a.collection-disabled {
 }
 
 .main-header {
-  font-size: 1.2rem;
-  font-size: 1rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: .1rem;
 }

@@ -46,11 +46,14 @@ export const renderLessons = () => {
       const chevrons = document.querySelectorAll('.js-lesson-list-chevron');
             chevrons.forEach(chevron => lessonListEventHandler.onTitleClickHandler(chevron, lessons, config, false));
 
-      const reviews = document.querySelectorAll('.js-lesson-review');
-            reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink, lessons));
+      const reviews = document.querySelectorAll('.js-lesson-review .underline-link');
+            reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink.parentElement.parentElement, lessons));
 
       const summaries = Array.from(document.querySelectorAll('.js-review-summary'));
-            summaries.forEach(summary => renderScoreSummary(summary.dataset.lessonId));
+            summaries.forEach(summary => summary.addEventListener('click', e => {
+                  console.log('summary icon clicked');
+                  renderScoreSummary(summary.dataset.lessonId);
+            }));
 
       renderCustomLesson(lessons, savedLessons, videoPlayer, score, config);
 };
