@@ -98,12 +98,12 @@ export const imageSlider = sliderArgs => {
     document.addEventListener('swiped-left', function(e) {
         console.log('swiped-left!');
         next.click();
-      });
+    });
 
     document.addEventListener('swiped-right', function(e) {
         console.log('swiped-right!');        
         prev.click();
-      });
+    });
 
     const imageLink = `#imageSlider_${ disableModal }_${identifier}`;
     const originalImageLink = parentScreen.querySelector(imageLink);

@@ -1317,6 +1317,7 @@ label.btn.btn-secondary .lesson-icon {
 
 .imageSlider .carousel-control-next-icon,
 .imageSlider .carousel-control-prev-icon {
+  opacity: 0;
   width: 1.5rem;
   height: 1.5rem;
 }
@@ -2267,4 +2268,8 @@ img[data-has-image="false"] {
 
 .invisible {
   opacity: 0;
+}
+
+.fa, .fab, .fal, .far, .fas {
+  line-height: 1.5 !important;
 }

@@ -114,7 +114,7 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
                     vernacularName: itemProperties.getVernacularName(questionItem, config),
                     answerVernacularName: itemProperties.getVernacularName(answerItem, config),
                     answers,
-                    questionText: config.isPortraitMode ? 'Slide to ID this species' : 'Identify this species'
+                    questionText: config.isPortraitMode ? 'Swipe and tap to ID' : 'Identify this species'
                 };
 
                     delete test.answeredIndex;

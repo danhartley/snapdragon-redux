@@ -111,12 +111,12 @@
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-    padding-right: .25rem;
+    /* padding-right: .25rem; */
   }
 
-  .table-row td:nth-child(2) > span:nth-child(1) {
+  /* .table-row td:nth-child(2) > span:nth-child(1) {
     margin-bottom: .25rem;
-  }
+  } */
   
   .table-header th:nth-child(3),
   .table-row td:nth-child(3),
@@ -125,7 +125,7 @@
     flex: 1;
     display: flex;
     align-items: center;
-    padding-right: .25rem;
+    /* padding-right: .25rem; */
   }
 
   .table-header th:nth-child(5), .table-row td:nth-child(5) {
@@ -143,6 +143,7 @@
  .species-table .mushroom-icon svg {
   width: 1rem;
   height: 1rem;
+  margin-top: .3rem;
  }
 
 div.species-description {

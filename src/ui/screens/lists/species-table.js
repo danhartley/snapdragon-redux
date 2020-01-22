@@ -164,6 +164,7 @@ export const buildTable = (collection, args) => {
           accordionHeader.classList.add('not-sortable');
 
     speciesHeader.innerHTML = '<span>Species</span';
+    // familyHeader.innerHTML = '<span>Rank</span>';
     familyHeader.innerHTML = '<span>Family</span><span>Order</span>';
     traitNameHeader.innerHTML = '<span></span>';
     iconicTaxonHeader.innerHTML = '<span><i class="fas fa-sliders-h"></i></span>';
@@ -172,7 +173,7 @@ export const buildTable = (collection, args) => {
         headerRow.appendChild(imageHeader);
         headerRow.appendChild(speciesHeader);    
         headerRow.appendChild(familyHeader);
-        headerRow.appendChild(iconicTaxonHeader);
+        // headerRow.appendChild(iconicTaxonHeader);
         headerRow.appendChild(traitNameHeader);
     } else {
         headerRow.appendChild(imageHeader);    
