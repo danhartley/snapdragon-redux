@@ -13,7 +13,8 @@ const selectActiveImage = (image, parent, config) => {
         }
     });    
     
-    const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active > div'); 
+    // const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active > div'); 
+    const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active > img'); 
     
     const indicators = document.querySelectorAll('.carousel-indicators li');
           indicators.forEach(i => {
@@ -58,7 +59,7 @@ const carouselControlHandler = (event, parentScreen = document, config) => {
         handleRightsAttribution(image);
     
         const originalImageLink = parentScreen.querySelector('.js-carousel-inner');
-              originalImageLink.addEventListener('click', onEnlargeImageHandler(config));
+              originalImageLink.addEventListener('click', onEnlargeImageHandler(config, parentScreen));
 
     }, 750);
 };
@@ -88,10 +89,10 @@ export const imageSlider = sliderArgs => {
     let next, prev;
 
     if(config.isPortraitMode) {
-        next = document.querySelector('.carousel-control-next-icon');
+        next = document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next-icon`);
         next.classList.add('invisible');
 
-        prev = document.querySelector('.carousel-control-prev-icon');
+        prev = document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev-icon`);
         prev.classList.add('invisible');
     }
     
@@ -107,7 +108,7 @@ export const imageSlider = sliderArgs => {
 
     const imageLink = `#imageSlider_${ disableModal }_${identifier}`;
     const originalImageLink = parentScreen.querySelector(imageLink);
-          originalImageLink.addEventListener('click', onEnlargeImageHandler(config));
+          originalImageLink.addEventListener('click', onEnlargeImageHandler(config, parentScreen));
 };
 
 export const imageSideBySlider = (slides, parent, disableModal = false, config) => {
@@ -145,12 +146,14 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
     });
 };
 
-function onEnlargeImageHandler(config) {
-    if(config.isPortraitMode) return;
+function onEnlargeImageHandler(config, parentScreen) {
+    // if(config.isPortraitMode) return;
     return () => {
-        const { imageContainer, image } = getActiveBackgroundImage();
-        const large = scaleImage(image, imageUseCases.ACTUAL_SIZE, config).large;
-        imageContainer.style["background-image"] = `url(${large})`;
-        imageContainer.classList.add('contain-image');
+        // const { imageContainer, image } = getActiveBackgroundImage();
+        const image = parentScreen.querySelector('.carousel-item.active > img');
+        const large = scaleImage( { url:image.src }, imageUseCases.ACTUAL_SIZE, config).large;
+        image.src = large;
+        // imageContainer.style["background-image"] = `url(${large})`;
+        // imageContainer.classList.add('contain-image');
     };
 }

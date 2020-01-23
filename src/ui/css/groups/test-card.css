@@ -66,9 +66,9 @@
     display: none;;
 }
 
-.test-card-question .question-statement {
-    padding: 0 .5rem;
+.test-card-question .question-statement, .test-card-question .question-provider-question {
     font-size: .8rem;
+    padding: 0 .5rem;
     text-align: center;
 }
 

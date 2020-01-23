@@ -73,6 +73,10 @@ progress::-moz-progress-bar {
   cursor: pointer;
 }
 
+.no-progress {
+  background-color: var(--snap-progress-bg);
+}
+
 .lesson-list-carousel-item progress {
   width: 50px;
 }
@@ -457,13 +461,14 @@ a.dropdown-item {
 }
 
 .left-grid .header, .left-grid .footer {
-  background-color: var(--snap-portrait);
   background-color: var(--snap-border-light);
+  background-color: var(--snap-portrait);
 }
 
 .right-grid .header, .right-grid .footer {
   justify-content: center;
   background-color: var(--snap-border-light);
+  background-color: var(--snap-landscape);
 }
 
 .header-text {
@@ -514,7 +519,7 @@ a.dropdown-item {
   display: grid;
   justify-self: center;
   height: 148px;
-  width: 232px;
+  width: 222px;
 }
 
 .squares img, .tiles img {
@@ -686,8 +691,9 @@ a.dropdown-item {
 }
 
 .card-link-container i {
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
+  color: var(--snap-iconic-icon-header);
 }
 
 .block-container {
@@ -1292,8 +1298,17 @@ label.btn.btn-secondary .lesson-icon {
   height: var(--vhSmallImageCarousel);
 }
 
-.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+.species-card-images .carousel-item-next, .species-card-images .carousel-item-prev, .species-card-images .carousel-item.active {
   display: flex;
+  align-items: center;
+  padding-bottom: 4vh;
+  justify-content: center;
+}
+
+.imageSlider .carousel-item-next, .imageSlider .carousel-item-prev, .imageSlider .carousel-item.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .info-box .carousel-item-next, .info-box .carousel-item-prev, .info-box .carousel-item.active {
@@ -1317,7 +1332,7 @@ label.btn.btn-secondary .lesson-icon {
 
 .imageSlider .carousel-control-next-icon,
 .imageSlider .carousel-control-prev-icon {
-  opacity: 0;
+  /* opacity: 0; */
   width: 1.5rem;
   height: 1.5rem;
 }
@@ -1498,14 +1513,18 @@ a.collection-disabled {
 
 .rights-link-copyright {
     display: flex;
-    width: 1.5rem;
-    height: 1.5rem;
     align-items: center;
-    justify-content: center;
-    background-color: var(--snap-text-dark);
-    color: var(--snap-text-light);
     cursor: pointer;
-    border-radius: 0.1rem;
+}
+
+.rights-link-copyright i {
+  color: var(--snap-progress-bar);
+  color: white;
+  font-size: 1.3rem;
+}
+
+.rights-link-copyright i.fas.fa-copyright {
+  font-size: 1.5rem;
 }
 
 .rights-link {
@@ -1514,8 +1533,10 @@ a.collection-disabled {
   right: .5rem;
   bottom: .5rem;
   background-color: rgb(218, 225, 201);
+  background-color: rgb(96, 117, 90,.6);
   padding: .5rem;
   text-align: left;
+  z-index: 999;
 }
 
 .rights-link > div {
@@ -1558,6 +1579,7 @@ a.collection-disabled {
   margin-right: 25%;
   margin-left: 25%;
   bottom: 0;
+  margin-bottom: 1.5rem;
 }
 
 .carousel-indicators li {
@@ -1568,6 +1590,7 @@ a.collection-disabled {
 
 .carousel-indicators .active {
   background-color: var(--snap-success);
+  background-color: white;
 }
 
 .question-header {
@@ -1860,7 +1883,7 @@ a.collection-disabled {
 }
 
 .lesson-list-header > div:nth-child(1) > div {
-  color: var(--snap-text-medium-dark);
+  color: var(--snap-text-medium-light);
   display: flex;
   align-items: center;
   width: 100%;
@@ -1931,7 +1954,7 @@ a.collection-disabled {
 }
 
 .lesson-review i.fa-sync {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--snap-active);
 }
 
@@ -2127,8 +2150,7 @@ a.collection-disabled {
     justify-content: center;
     font-style: italic;
     font-size: 1.1em;
-    height: 5vh;
-    margin-bottom: .5rem;
+    height: var(--vhStandardBlock, 10vh);
 }
 
 .score-summary {

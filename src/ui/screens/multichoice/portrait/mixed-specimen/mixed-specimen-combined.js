@@ -54,7 +54,8 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
         const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
         const boundScore = {};
 
-        document.querySelectorAll('#imageSlider_true_mixed-specimens .carousel-item .layer').forEach(img => {
+        // document.querySelectorAll('#imageSlider_true_mixed-specimens .carousel-item .layer').forEach(img => {
+        document.querySelectorAll('#imageSlider_true_mixed-specimens .carousel-item img').forEach(img => {
             
             img.addEventListener('click', event => {
 

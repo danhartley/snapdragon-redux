@@ -43,8 +43,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
         }
 
         const template = document.createElement('template');
-
-        template.innerHTML = taxonTemplate;
+              template.innerHTML = taxonTemplate;
         
         const clone = document.importNode(template.content, true);
 
@@ -162,31 +161,12 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
 
         setTimeout(() => {        
 
-            let next, prev;
-
-            if(config.isPortraitMode) {
-                next = document.querySelector('.carousel-control-next-icon');
-                next.classList.add('invisible');
-        
-                prev = document.querySelector('.carousel-control-prev-icon');
-                prev.classList.add('invisible');
-            }
-            
             switch(transition) {
                 case 'next':
-                    document.addEventListener('swiped-left', function(e) {
-                        console.log('swiped-left!');
-                        document.querySelector('#cardModal .carousel-control-next-icon').click();
-                        // next.click();
-                    });                    
+                    document.querySelector('#cardModal .carousel-control-next-icon').click();                   
                     break;
                 case 'prev':
-                    document.addEventListener('swiped-right', function(e) {
-                        console.log('swiped-right!');        
-                        document.querySelector('#cardModal .carousel-control-prev-icon').click();
-                        // prev.click();
-                    });
-                    
+                    document.querySelector('#cardModal .carousel-control-prev-icon').click();                    
                     break;
             }
         });
