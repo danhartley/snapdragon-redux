@@ -170,7 +170,8 @@ div.species-description {
 }
 
 .lesson-list-action-icons {
-  color: var(--snap-collection)
+  color: var(--snap-collection);
+  color: var(--snap-text-medium-dark);
 }
  
 .species-table .underline-link {

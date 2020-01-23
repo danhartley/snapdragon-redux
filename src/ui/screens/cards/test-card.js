@@ -1,4 +1,5 @@
 import { DOM } from 'ui/dom';
+import { store } from 'redux/store';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
@@ -23,7 +24,7 @@ export const renderTestCardTemplate = (collection, context) => {
 
     renderTemplate(context, template.content, parent);
 
-    toggleStatementAndQuestion();
+    toggleStatementAndQuestion(store.getState().config);
 
     const testCardContainer = document.querySelector('.js-test-card-container');
     const testCard = document.querySelector('.js-test-card-container');
@@ -98,7 +99,9 @@ export const renderTestCardTemplate = (collection, context) => {
     return testContentParent;
 };
 
-const toggleStatementAndQuestion = () => {
+const toggleStatementAndQuestion = config => {
+
+    if(config.isLandscapeMode) return;
     
     const statement = document.querySelector('.js-statement-para');
     const question = document.querySelector('.js-question-para');

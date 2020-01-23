@@ -13,7 +13,6 @@ const selectActiveImage = (image, parent, config) => {
         }
     });    
     
-    // const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active > div'); 
     const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active > img'); 
     
     const indicators = document.querySelectorAll('.carousel-indicators li');
@@ -40,13 +39,6 @@ const disableModalPopups = (disableModal, parent, config) => {
     } else {
         modalImagesHandler(parent.querySelectorAll('.carousel-item > div'), null, config, null);
     }
-};
-
-const getActiveBackgroundImage = (parentScreen = document) => {
-    const imageContainer = parentScreen.querySelector('.carousel-item.active > div');
-    const image = { url: imageContainer.dataset.url, provider: imageContainer.dataset.provider };
-    const backgroundImage = imageContainer.style.backgroundImage.slice(4, -1).replace(/"/g, "");
-    return { imageContainer, image, backgroundImage };
 };
 
 const carouselControlHandler = (event, parentScreen = document, config) => {
@@ -90,10 +82,10 @@ export const imageSlider = sliderArgs => {
 
     if(config.isPortraitMode) {
         next = document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next-icon`);
-        next.classList.add('invisible');
+        next.classList.add('concealed');
 
         prev = document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev-icon`);
-        prev.classList.add('invisible');
+        prev.classList.add('concealed');
     }
     
     document.addEventListener('swiped-left', function(e) {
@@ -140,20 +132,14 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
 
         const originalImageLink = document.querySelector(`#imageSlider_${disableModal}_${identifier} .js-expand`);
               originalImageLink.classList.add('hide-important');
-
-        // document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', carouselControlHandler);
-        // document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', carouselControlHandler);
     });
 };
 
 function onEnlargeImageHandler(config, parentScreen) {
-    // if(config.isPortraitMode) return;
+    if(config.isPortraitMode) return;
     return () => {
-        // const { imageContainer, image } = getActiveBackgroundImage();
         const image = parentScreen.querySelector('.carousel-item.active > img');
         const large = scaleImage( { url:image.src }, imageUseCases.ACTUAL_SIZE, config).large;
         image.src = large;
-        // imageContainer.style["background-image"] = `url(${large})`;
-        // imageContainer.classList.add('contain-image');
     };
 }

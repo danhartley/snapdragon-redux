@@ -5,7 +5,9 @@
     --snap-dd-collection-bg-active: rgb(198, 206, 217);
 
     --snap-lesson-row-blue: rgb(218, 230, 237);
+    --snap-lesson-row-blue: rgb(231, 234, 228);
     --snap-lesson-row-green: rgb(216, 223, 210);
+    --snap-lesson-row-green: rgb(231, 234, 228);
 
     --snap-dd-non-taxa-bg-intial: rgb(197, 193, 175);
     --snap-dd-non-taxa-bg-hover: rgb(229, 227, 220);
@@ -51,6 +53,7 @@
     --snap-default-background: rgb(244, 244, 244);
   
     --snap-border-light: rgb(175,175,175);
+    --snap-border-medium: rgb(211, 211, 211);
     --snap-border-lightest: rgb(225,225,225);
 
     

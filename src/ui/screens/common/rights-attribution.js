@@ -58,15 +58,13 @@ export const handleRightsAttribution = (image, disableModal = false, activeItem)
     
     let parent = document.querySelector(`.js-attribution-layer.${identifier}`);
         parent = parent || document.querySelector(`.js-attribution-layer`);
-        // parent = parent || document.querySelector(`.js-attribution-layer.mixed-specimens`);
         parent.innerHTML = '';
 
     renderTemplate({title,author,source,licence}, template.content, parent);
 
     const rightsAttribution = parent.querySelector('.rights-attribution');
     const rightsLink = parent.querySelector('.js-rights-link .js-copyright');
-    const indicators = document.querySelector(`.carousel-indicators`);    
-    // const indicators = document.querySelector(`#imageSlider_${disableModal}_${identifier} .carousel-indicators`);    
+    const indicators = document.querySelector(`.carousel-indicators`);
 
     const showAttribution = event => {
         rightsAttribution.classList.add('hide-important');
