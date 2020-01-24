@@ -131,7 +131,7 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
         handleRightsAttribution(images[0], disableModal);
 
         const originalImageLink = document.querySelector(`#imageSlider_${disableModal}_${identifier} .js-expand`);
-              originalImageLink.classList.add('hide-important');
+        if(originalImageLink) originalImageLink.classList.add('hide-important');
     });
 };
 
