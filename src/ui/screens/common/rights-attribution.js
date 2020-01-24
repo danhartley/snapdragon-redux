@@ -62,16 +62,14 @@ export const handleRightsAttribution = (image, disableModal = false, activeItem)
 
     renderTemplate({title,author,source,licence}, template.content, parent);
 
-    const rightsAttribution = parent.querySelector('.rights-attribution');
+    const rightsAttribution = parent.querySelector('.js-rights-attribution .js-copyright');
     const rightsLink = parent.querySelector('.js-rights-link .js-copyright');
     const indicators = document.querySelector(`.carousel-indicators`);
 
     const showAttribution = event => {
-        rightsAttribution.classList.add('hide-important');
-        rightsLink.parentElement.parentElement.classList.remove('hide-important');
+        rightsAttribution.parentElement.classList.add('hide-important');
+        rightsLink.parentElement.classList.remove('hide-important');
         indicators.classList.remove('hide-important');
-        rightsLink.parentElement.parentElement.style.display = 'inline-block';
-        event.stopPropagation();
         rightsLink.removeEventListener('click', showLink), true;
         rightsLink.addEventListener('click', showLink, true);
     };
@@ -80,10 +78,9 @@ export const handleRightsAttribution = (image, disableModal = false, activeItem)
     rightsAttribution.addEventListener('click', showAttribution, true);
 
     const showLink = event => {
-        rightsLink.parentElement.parentElement.classList.add('hide-important');
-        rightsAttribution.classList.remove('hide-important');
+        rightsAttribution.parentElement.classList.remove('hide-important');
+        rightsLink.parentElement.classList.add('hide-important');
         indicators.classList.add('hide-important');
-        event.stopPropagation();
         rightsAttribution.removeEventListener('click', showAttribution, true);
         rightsAttribution.addEventListener('click', showAttribution, true);
     };

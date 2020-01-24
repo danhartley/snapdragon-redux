@@ -7,9 +7,7 @@ import scoreTemplate from 'ui/fixtures/score-template.html';
 
 export const renderScore = score => {
     
-    const { history, collection, config, layout, lesson } = store.getState();
-
-    // if(config.isPortraitMode) return; // remove references below
+    const { history, collection, config, layout, lesson, lessonPlan } = store.getState();
 
     const template = document.createElement('template');
 
@@ -28,13 +26,6 @@ export const renderScore = score => {
                     ? scoreTemplate
                     : '';
 
-    // header hack
-    if(config.isPortraitMode) {
-        DOM.rightHeaderScoreTxt.innerHTML = score.total === 0
-            ? ''
-            : `${score.correct}/${score.total}`;
-    }
-
     const runningTotal = history ? { ...history } : { correct: 0, total: 0 };
 
     runningTotal.correct = runningTotal.correct + score.correct;
@@ -43,7 +34,24 @@ export const renderScore = score => {
     const parent = config.isPortraitMode ? DOM.rightFooter.querySelector('.js-footer-score') : DOM.rightFooter;
           parent.innerHTML = '';
 
-    renderTemplate({ score, history: runningTotal, collection, config, layout, scoreText, currentRound }, template.content, parent);
+    let questionCount, questionFormat = '';
+
+    if(lessonPlan) {
+        questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
+        questionFormat = `Question ${ layout.roundProgressIndex } of ${questionCount}`;
+    }
+
+    if(config.isPortraitMode) {
+        DOM.rightHeaderTxt.innerHTML = score.total === 0
+            ? 'Learn the planet'
+            : questionFormat;
+
+        DOM.rightHeaderScoreTxt.innerHTML = score.total === 0
+            ? '<span class="margin-right">Learn the planet</span>'
+            : `<span class="margin-left">${score.correct}/${score.total}</span>`;
+    }    
+
+    renderTemplate({ score, history: runningTotal, collection, config, layout, scoreText, currentRound, questionFormat }, template.content, parent);
 
     score.mode = config.mode;
 

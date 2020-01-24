@@ -1304,7 +1304,6 @@ label.btn.btn-secondary .lesson-icon {
 .species-card-images .carousel-item-next, .species-card-images .carousel-item-prev, .species-card-images .carousel-item.active {
   display: flex;
   align-items: center;
-  padding-bottom: 4vh;
   justify-content: center;
 }
 
@@ -1505,13 +1504,11 @@ a.collection-disabled {
 }
 
 .rights-attribution {
-  left: .5rem;
-  right: .5rem;
-  bottom: .5rem;
-  position: absolute;
-  background-color: rgb(96, 117, 90);
-  padding: 0.5rem;
-  z-index: 999;
+  display: grid;
+  grid-template-columns: 2rem auto;
+  height: var(--vhRunningBlock);
+  background-color: rgb(166, 177, 155);
+  font-size: .7rem;
 }
 
 .rights-attribution .underline-link {
@@ -1519,40 +1516,34 @@ a.collection-disabled {
 }
 
 .rights-link-copyright {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 25;
+}
+
+.rights-link-copyright .underline-link {
+  line-height: 1.5;
 }
 
 .rights-link-copyright i {
-  color: var(--snap-progress-bar);
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .rights-link-copyright i.fas.fa-copyright {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .rights-link {
-  position: absolute;
-  left: .5rem;
-  right: .5rem;
-  bottom: .5rem;
-  background-color: rgb(96, 117, 90,.5);
-  padding: .5rem;
-  text-align: left;
-  z-index: 999;
+  height: var(--vhRunningBlock);
+  grid-template-columns: 2rem auto 2rem;
+  background-color: rgb(166, 177, 155);
+  display: grid;
 }
 
-.rights-link > div {
-  display: flex;
-  justify-content: space-between;
-}
-
-.rights-attribution > div, .float-right {
-  display: flex;
-  align-items: flex-end;
+.rights-link > div:nth-child(1), .rights-link > div:nth-child(3) {
+  cursor: pointer;
 }
 
 .rights-attribution > div > div:nth-child(1) {
@@ -1582,16 +1573,19 @@ a.collection-disabled {
 }
 
 .carousel-indicators {
-  margin-right: 25%;
-  margin-left: 25%;
+  height: var(--vhRunningBlock);
   bottom: 0;
-  margin-bottom: 1.5rem;
+  margin: 0 !important;
+  margin-left: 2.5rem !important;
+  margin-right: 2.5rem !important;
+  align-items: center;
 }
 
 .carousel-indicators li {
-  background-color: black;
+  background-color: var(--snap-text-medium-dark);
   width: 1rem;
   height: 0.25rem;
+  margin-bottom: 0;
 }
 
 .carousel-indicators .active {

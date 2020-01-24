@@ -1,5 +1,3 @@
-/* CREATE GUIDE */
-
 #createGuide .modal-dialog {
   max-width: 600px;
   margin: auto;
@@ -7,7 +5,7 @@
 
 .step-action-content {
   padding: 0 .5rem;
-  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhStandardBlock,20vh) - var(--vhRunningBlock));
+  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhStandardBlock,20vh) - var(--vhRunningBlock));  
 }
   
   .species-picker-link {
@@ -597,12 +595,6 @@
     height: var(--vhRunningBlock, 10vh);
     background-color: var(--snap-lesson-row-blue);
   }
-
-  /* @media (min-width: 600px) {
-    .modal-subheader {
-      font-size: 1.3em;
-    }
-  } */
 
 @media (min-height: 640px) {  
   .modal-guide-wrapper .modal-body .modal-guide-navigation > div:nth-child(1) > div svg {

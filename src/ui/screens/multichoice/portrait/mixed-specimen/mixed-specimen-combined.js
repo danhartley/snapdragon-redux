@@ -54,7 +54,6 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
         const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
         const boundScore = {};
 
-        // document.querySelectorAll('#imageSlider_true_mixed-specimens .carousel-item .layer').forEach(img => {
         document.querySelectorAll('#imageSlider_true_mixed-specimens .carousel-item img').forEach(img => {
             
             img.addEventListener('click', event => {
@@ -69,8 +68,6 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
                         ? '<span class="icon"><i class="fas fa-check-circle"></i></span>'
                         : '<span class="icon"><i class="fas fa-times-circle"></i></span>';
 
-                document.querySelector('.attribution-layer').style.display = 'none';
-                
                 const test = { ...score, itemId: item.id, question, answer, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points};
 
                 const callback = (score, scoreUpdateTimer) => {

@@ -72,6 +72,8 @@ export const renderNavigation = collection => {
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
                         lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
                         renderLessons();
+                        DOM.rightHeaderTxt.innerHTML = 'Learn the planet';
+                        DOM.rightHeaderScoreTxt.innerHTML = '';
                         break;
                     case enums.navigation.GLOSSARY:   
                         toggleIconOnOff(clickedIcon);

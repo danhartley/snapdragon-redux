@@ -102,7 +102,8 @@
 }
 
 #imageModal .imageSlider .carousel-item {
-  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
+  height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) );
+  width: 100%;
 }
 
 #imageComparisonModal .modal-dialog {

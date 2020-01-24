@@ -34,7 +34,7 @@
   }
 
   .test-card-question .question-question {
-    font-size: 1.2rem;
+    font-size: .9rem;
     text-transform: uppercase;
     color: var(--snap-text-medium-light);
     display: flex;

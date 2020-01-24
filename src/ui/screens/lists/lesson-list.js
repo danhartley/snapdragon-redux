@@ -4,10 +4,11 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
 
 import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
-import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
 import { renderLesson } from 'ui/screens/lists/lesson';
 import { renderCustomLesson } from 'ui/screens/lists/lesson-custom';
 import { renderScoreSummary } from 'ui/screens/progress/score-summary';
+
+import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
 
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
 

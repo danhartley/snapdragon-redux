@@ -9,7 +9,7 @@ const score = {
     fails: [],
     passes: [],
     success: false,
-    mode: 'learn',
+    mode: '',
     totalPassPoints: 0,
     totalPoints: 0
 };

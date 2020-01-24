@@ -12,7 +12,10 @@
 }
 @media (min-width: 414px) {
     .test-card-question .question-question {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+    }
+    .rights-link, .rights-attribution {
+        grid-template-columns: 4rem auto 4rem;
     }
 }
 
@@ -58,6 +61,9 @@
 }
 
 @media (min-width: 600px) {
+    .test-card-question .question-question {
+        font-size: 1.4rem;
+    }
     .modal-subheader {
       font-size: 1.3em;
     }
@@ -122,6 +128,35 @@
 }
 
 @media (min-width: 768px) {
+
+    .imageSlider .carousel-control-next, .imageSlider .carousel-control-prev {
+        top: 15%;
+        top: calc(
+            (var(--vh, 1vh) * 75 * .5) -
+            (var(--vh, 1vh) * 7.5) -
+            .5rem
+        );
+    }
+
+    .modal-image .carousel-inner > div:nth-child(1) {
+        height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhRunningBlock));
+        /* display: flex;
+        align-items: center; */
+    }
+
+    .carousel-indicators {
+        position: absolute;
+        left: .5rem;
+        right: .5rem;
+        padding: .5rem;
+        text-align: left;
+        margin-left: 4rem !important;
+        margin-right: 4rem !important;
+    }
+
+    .carousel-indicators li {
+        margin-bottom: 0;
+    }
 
     .test-card-question .question-statement, .test-card-question .question-provider-question {
         font-size: 1rem;
@@ -319,10 +354,6 @@
         align-items: flex-start;
         justify-content: center;
     }
-        
-    /* .table-row td:nth-child(3) > span:nth-child(1) {
-        margin-bottom: .4rem;
-    } */
 
     .species-list .scrollable {
         bottom: 0;
@@ -334,13 +365,18 @@
         padding-right: 1rem;
     }
 
+    .right-grid .footer {
+        text-transform: none;
+        justify-content: space-between;
+    }
+
     .snapdragon-intro > div:nth-child(1) {
         margin: 0rem 2.4rem 0 2.4rem !important;
     }
 
     .snapdragon-intro {
         height: initial;  
-        padding: .5rem;
+        padding: 2rem;
       }
 
     .text-entry-container {
@@ -382,9 +418,9 @@
         margin: 1rem 4rem 0 4rem;
     }
 
-    .left-grid .header, .left-grid .footer, #imageComparisonModal .modal-title > span:nth-child(1) {
+    /* .left-grid .header, .left-grid .footer, #imageComparisonModal .modal-title > span:nth-child(1) {
         border-right: 1px solid var(--snap-border-light);
-    }
+    } */
 
     .strips {
         display: grid;

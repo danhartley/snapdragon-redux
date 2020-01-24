@@ -98,7 +98,7 @@ export const imageSlider = sliderArgs => {
         prev.click();
     });
 
-    const imageLink = `#imageSlider_${ disableModal }_${identifier}`;
+    const imageLink = `#imageSlider_${ disableModal }_${identifier} .js-expand`;
     const originalImageLink = parentScreen.querySelector(imageLink);
           originalImageLink.addEventListener('click', onEnlargeImageHandler(config, parentScreen));
 };

@@ -120,6 +120,9 @@ export const score = (state = R.clone(progressState.score), action) => {
         }
         case types.NEW_COLLECTION:
             return { ...state, ...action.data.lesson.score };
+        case types.NEXT_LESSON: {
+            return { ...state, mode: 'learn'};
+            }
         default:
             return state;
     }       
