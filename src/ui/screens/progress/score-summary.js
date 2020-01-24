@@ -1,14 +1,29 @@
 import * as R from 'ramda';
 
+import { subscription } from 'redux/subscriptions';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
+import { enums } from 'ui/helpers/enum-helper';
 import { renderTemplate } from 'ui/helpers/templating';
+import { lessonHandler } from 'ui/helpers/lesson-handler';
 
 import summaryTemplate from 'ui/screens/progress/score-summary-template.html';
 import summaryRowTemplate from 'ui/screens/progress/score-summary-row-template.html';
 
-export const renderScoreSummary = id => {
+export const renderScoreSummary = (id, endOfRound) => {
+
+      subscription.removeSubs();
+
+      subscription.getByRole('screen').forEach(sub => console.log('renderSummary subscriptions:', sub.name));
+
+      const collection = id 
+                  ? store.getState().collections.find(c => c.id === parseInt(id)) 
+                  : store.getState().collection;
+
+      const { history, score, config } = store.getState();
+
+      lessonHandler.changeState(enums.lessonState.NEXT_ROUND, collection, config, history);
 
       const template = document.createElement('template');
             template.innerHTML = summaryTemplate;
@@ -16,13 +31,33 @@ export const renderScoreSummary = id => {
       const parent = DOM.rightBody;
             parent.innerHTML = '';
       
-      const collection = id  ? store.getState().collections.find(c => c.id === parseInt(id)) : store.getState().collection;
-
       renderTemplate({ collection }, template.content, parent);
 
-      const scores  = store.getState().history ? store.getState().history.scores : [ store.getState().score ];
+      const scores  = endOfRound
+            ? [ history.scores[history.scores.length - 1] ]
+            : history 
+                  ? [ ...history.scores, score ] 
+                  : [ score ];
 
       scores.forEach( score => renderScoreSummaryRow(score));
+
+      const handleBtnClickEvent = event => {
+
+            const { lesson, config, history } = store.getState();
+    
+            subscription.remove(subscription.getByName('renderSummary'));
+            subscription.remove(subscription.getByName('renderHistory'));
+    
+            if(lesson.isLessonComplete) {
+                lessonHandler.purgeLesson();
+            }
+            else lessonHandler.changeState(enums.lessonState.NEXT_ROUND, collection, config, history);
+        };
+
+        let actionLink = document.querySelector('.js-continue-link');
+
+        actionLink.removeEventListener('click', handleBtnClickEvent);
+        actionLink.addEventListener('click', handleBtnClickEvent);
 }
 
 const renderScoreSummaryRow = score => {

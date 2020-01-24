@@ -4,6 +4,7 @@ import { DOM } from 'ui/dom';
 import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { enums } from 'ui/helpers/enum-helper';
+import { renderScoreSummary } from 'ui/screens/progress/score-summary';
 
 import summaryTemplate from 'ui/screens/progress/summary-template.html';
 
@@ -17,7 +18,12 @@ export const renderSummary = history => {
 
     lessonHandler.changeState(enums.lessonState.NEXT_ROUND, collection, config, history);
 
-    if(!lesson.isLessonComplete) return;
+    if(!lesson.isLessonComplete) {
+        renderScoreSummary(collection.id, true);
+        return;
+    }
+
+    return;
 
     const renderScreen = () => {
         
