@@ -13,17 +13,11 @@ import summaryRowTemplate from 'ui/screens/progress/score-summary-row-template.h
 
 export const renderScoreSummary = (id, endOfRound) => {
 
-      subscription.removeSubs();
-
-      subscription.getByRole('screen').forEach(sub => console.log('renderSummary subscriptions:', sub.name));
-
       const collection = id 
                   ? store.getState().collections.find(c => c.id === parseInt(id)) 
                   : store.getState().collection;
 
-      const { history, score, config } = store.getState();
-
-      lessonHandler.changeState(enums.lessonState.NEXT_ROUND, collection, config, history);
+      const { history, score } = store.getState();
 
       const template = document.createElement('template');
             template.innerHTML = summaryTemplate;
@@ -45,6 +39,8 @@ export const renderScoreSummary = (id, endOfRound) => {
 
             const { lesson, config, history } = store.getState();
     
+            lessonHandler.changeState(enums.lessonState.NEXT_ROUND, collection, config, history);
+
             subscription.remove(subscription.getByName('renderSummary'));
             subscription.remove(subscription.getByName('renderHistory'));
     
@@ -54,10 +50,12 @@ export const renderScoreSummary = (id, endOfRound) => {
             else lessonHandler.changeState(enums.lessonState.NEXT_ROUND, collection, config, history);
         };
 
-        let actionLink = document.querySelector('.js-continue-link');
+        const actionLinks = document.querySelectorAll('.js-continue-link');
 
-        actionLink.removeEventListener('click', handleBtnClickEvent);
-        actionLink.addEventListener('click', handleBtnClickEvent);
+        actionLinks.forEach(actionLink => {
+            actionLink.removeEventListener('click', handleBtnClickEvent);
+            actionLink.addEventListener('click', handleBtnClickEvent);
+        });
 }
 
 const renderScoreSummaryRow = score => {

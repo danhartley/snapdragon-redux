@@ -7,7 +7,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { scoreHandler, bindScore } from 'ui/helpers//score-handler';
 import { imageSlider } from 'ui/screens/common/image-slider';
-import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handler';
+import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handler';
 import { getPoolItems } from 'snapdragon-engine/pool-handler';
 
 import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-combined-template.html';
@@ -54,6 +54,12 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
         const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
         const boundScore = {};
 
+        const answers = [];
+
+        images.forEach(image => {
+            answers.push({ value: image.itemName, url: scaleImage({ url:image.url }).small });
+        });
+
         document.querySelectorAll('#imageSlider_true_mixed-specimens .carousel-item img').forEach(img => {
             
             img.addEventListener('click', event => {
@@ -64,11 +70,17 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
                 const answer = selectedName || 'incorrect';
                 const isCorrect = answer === question;
                 const answerIcon = document.createElement('span');
-                answerIcon.innerHTML = isCorrect 
-                        ? '<span class="icon"><i class="fas fa-check-circle"></i></span>'
-                        : '<span class="icon"><i class="fas fa-times-circle"></i></span>';
+                      answerIcon.innerHTML = isCorrect 
+                            ? '<span class="icon"><i class="fas fa-check-circle"></i></span>'
+                            : '<span class="icon"><i class="fas fa-times-circle"></i></span>';
 
-                const test = { ...score, itemId: item.id, question, answer, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points};
+                const test = { ...score, itemId: item.id, 
+                    question, answer, binomial: item.name, 
+                    questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, 
+                    points: layout.points,
+                    answers,
+                    questionText: config.isPortraitMode ? 'Swipe and tap to ID' : 'Identify this species'
+                };
 
                 const callback = (score, scoreUpdateTimer) => {
                     boundScore.score = score;

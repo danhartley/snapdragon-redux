@@ -129,6 +129,14 @@
 
 @media (min-width: 768px) {
 
+    .score-summary-row {
+        display: flex;
+    }
+
+    .continue-link {
+        margin-right: .5rem;  
+      }
+
     #imageModal .imageSlider .carousel-item, #imageComparisonModal .imageSlider .carousel-item {        
         height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - 300px ); /* see below (hack) */
     }
@@ -168,7 +176,7 @@
     }
 
     .test-card-question .question-statement, .test-card-question .question-provider-question {
-        font-size: 1rem;
+        font-size: .9rem;
     }
 
     .species-picker-actions ul {

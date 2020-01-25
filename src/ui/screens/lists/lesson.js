@@ -38,7 +38,9 @@ export const renderLesson = (lesson) => {
 }; 
 
 function renderReview(layout, lesson, className) {
-      const review = `<progress value="${layout.roundProgressIndex || progressBar.value}" max="${layout.roundScoreCount}"></progress>
+      const progressBar = document.querySelector('.js-right-grid progress');
+      const value = layout.roundProgressIndex || progressBar ? progressBar.value : 0;
+      const review = `<progress value="${ value }" max="${layout.roundScoreCount}"></progress>
                       <i data-lesson-id="${lesson.id}" class="fas fa-tasks margin-left ${ className } js-review-summary"></i>`;
       const parent = document.querySelector(`.js-review[data-lesson-id="${lesson.id}"]`);
             parent.innerHTML = review;

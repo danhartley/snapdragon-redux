@@ -2153,6 +2153,10 @@ a.collection-disabled {
   padding: .5rem 1.5rem;
 }
 
+.continue-link {
+  margin-top: .5rem;  
+}
+
 .review-summary {
   background-color: rgb(252, 251, 246) !important;
   background-color: rgb(189, 243, 201) !important;
@@ -2160,19 +2164,19 @@ a.collection-disabled {
   background-color: var(--snap-list-alt-background) !important;
 }
 
+.review-summary .underline-link {
+  font-size: .7rem;
+}
+
 .score-summary-row {
-  display: flex;
-  border-bottom: .03rem solid var(--snap-dd-non-taxa-bg-hover);
-  border-bottom: .3rem solid var(--snap-dd-non-taxa-bg-hover);
   border-bottom: .3rem solid white;
   padding: 1rem 0;
 }
 
 .score-summary-row.species {
-  background-color: var(--snap-alert-light);
-  background-color: rgb(233, 236, 239) !important;
   background-color: rgb(213, 213, 210) !important;
   border: none;
+  display: flex;
 }
 
 .score-summary-row.header {
@@ -2180,7 +2184,6 @@ a.collection-disabled {
   background-color: initial;
   font-size: initial;
   letter-spacing: initial;
-  background-color: rgb(249, 242, 239);
   background-color: rgb(240, 239, 233);
 }
 
@@ -2250,6 +2253,7 @@ a.collection-disabled {
 .score-summary-row.in-columns div[data-is-true="true"] span {
   border: solid 1px var(--snap-progress-bar);
   padding: .3rem;
+  display: inline-block;
 }
 
 .score-summary-row.in-columns div[data-is-wrong-answer="true"] {
