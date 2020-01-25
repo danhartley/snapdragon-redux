@@ -33,7 +33,7 @@ export const renderScoreSummary = (id, endOfRound) => {
                   ? [ ...history.scores, score ] 
                   : [ score ];
 
-      scores.forEach( score => renderScoreSummaryRow(score));
+      scores.forEach(s => renderScoreSummaryRow(s));
 
       const handleBtnClickEvent = event => {
 
@@ -69,7 +69,7 @@ const renderScoreSummaryRow = score => {
 
       rows = rows.map((r,i) => {
             return { ...r, id: `${i}${utils.toCamelCase(r.binomial)}`, question: r.question.term ? r.question.term : r.question, answers: r.answers.map(a => {
-                  const answer = { 
+                  const _answer = { 
                               value: typeof a === 'object' ? a.value : a, 
                               url: typeof a === 'object' ? a.url : '', 
                               hasImage: typeof a === 'object',
@@ -78,8 +78,8 @@ const renderScoreSummaryRow = score => {
                                     || utils.parseToLowerCase(a) === utils.parseToLowerCase(r.question.term)
                                     || R.contains(a.value, r.answer)
                         };
-                        answer.isWrongAnswer = !answer.isTrue && utils.parseToLowerCase(answer.value) === utils.parseToLowerCase(r.answer);
-                  return answer;
+                        _answer.isWrongAnswer = !_answer.isTrue && utils.parseToLowerCase(_answer.value) === utils.parseToLowerCase(r.answer);
+                  return _answer;
             })};
       });
 

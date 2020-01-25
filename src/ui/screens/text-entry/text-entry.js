@@ -46,10 +46,6 @@ export const renderInput = (screen, question) => {
     const help = config.isLandscapeMode ? '(Complete the name below.)' : '(Scroll to see more images.)';
 
     const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: questionTxt, help, term: '' });
-    
-    if(config.isPortraitMode) {
-        document.querySelector('.js-test-card-content').classList.add('clearSpacing');
-    }
 
     const template = document.createElement('template');
           template.innerHTML = config.isLandscapeMode ? textEntryTemplate : textEntryPortraitTemplate;
@@ -90,7 +86,12 @@ export const renderInput = (screen, question) => {
 
     const scoreEventHandler = event => {
         const answer = document.querySelector('.js-txt-input').value;
-        const score = { itemId: item.id, question, answer, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames, questionText: questionTxt, answers: [question.question, answer] };
+        const score = { 
+            itemId: item.id, question, answer, target: event.target, 
+            layoutCount: lessonPlan.layouts.length, points: layout.points, 
+            names: item.vernacularNames, questionText: questionTxt, 
+            answers: [question.question, answer]
+        };
         scoreHandler('text', score, callback, config);
         if(answerBtn) answerBtn.disabled = true;
         document.querySelector('.js-continue-lesson-btn').disabled = false;
@@ -98,8 +99,14 @@ export const renderInput = (screen, question) => {
     };
 
     const loseFocusMobileHandler = e => {
-        document.removeEventListener('focusout', loseFocusMobileHandler);        
-        const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames, questionText: questionTxt };
+        document.removeEventListener('focusout', loseFocusMobileHandler);
+        const answer = document.querySelector('.js-txt-input').value;
+        const score = { 
+            itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, 
+            layoutCount: lessonPlan.layouts.length, points: layout.points, 
+            names: item.vernacularNames, questionText: questionTxt,
+            answers: [question.question, answer]
+        };
         scoreHandler('text', score, callback, config);
         document.querySelector('.js-continue-lesson-btn').disabled = false;
     };
@@ -117,6 +124,16 @@ export const renderInput = (screen, question) => {
         window.clearTimeout(boundScore.scoreUpdateTimer);
         bindScore(boundScore.score);
     });
+
+    if(config.isPortraitMode) {
+
+        // hide attribution for now - space issue various across devices
+        const attribution = document.querySelector('.js-attribution-layer');
+        const indicators = document.querySelector('.js-carousel-indicators');
+        
+        attribution.classList.add('hide-important');
+        indicators.classList.add('hide-important');
+    }
 };
 
 const renderPortrait = (item, config) => {

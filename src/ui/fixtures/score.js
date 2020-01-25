@@ -47,7 +47,9 @@ export const renderScore = score => {
             : questionFormat;
 
         DOM.rightHeaderScoreTxt.innerHTML = score.total === 0
-            ? '<span class="margin-right">Learn the planet</span>'
+            ? config.isLandscapeMode
+                    ? '<span class="margin-right">Learn the planet</span>'
+                    : '<span class="margin-right"></span>'
             : `<span class="margin-left">${score.correct}/${score.total}</span>`;
     }    
 

@@ -1298,7 +1298,11 @@ label.btn.btn-secondary .lesson-icon {
 }
 
 .imageSlider .carousel-item {
-  height: var(--vhSmallImageCarousel);
+  height: var(--vhExtraSmallImageCarousel);
+}
+
+.imageSlider .carousel-item img {
+
 }
 
 .species-card-images .carousel-item-next, .species-card-images .carousel-item-prev, .species-card-images .carousel-item.active {
@@ -1853,11 +1857,6 @@ a.collection-disabled {
   line-height: 2;
   font-size: 1rem;
   margin: 1.2rem 2.4rem 0 2.4rem !important;
-}
-
-.clearSpacing {
-  margin: 0 !important;
-  padding: 0 !important;
 }
 
 .lesson-list {
