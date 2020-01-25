@@ -52,6 +52,7 @@ export const renderLessons = () => {
 
       const summaries = Array.from(document.querySelectorAll('.js-review-summary'));
             summaries.forEach(summary => summary.addEventListener('click', e => {
+                  e.stopPropagation();
                   console.log('summary icon clicked');
                   renderScoreSummary(summary.dataset.lessonId);
             }));
