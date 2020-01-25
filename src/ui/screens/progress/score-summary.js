@@ -46,8 +46,11 @@ export const renderScoreSummary = (id, endOfRound) => {
     
             if(lesson.isLessonComplete) {
                 lessonHandler.purgeLesson();
+            } else if(lesson.isNexRound) {
+                  lessonHandler.changeState(enums.lessonState.NEXT_ROUND, collection, config, history);
+            } else {
+                  lessonHandler.changeState(enums.lessonState.RESUME_LESSON, collection, config, history); 
             }
-            else lessonHandler.changeState(enums.lessonState.NEXT_ROUND, collection, config, history);
         };
 
         const actionLinks = document.querySelectorAll('.js-continue-link');
