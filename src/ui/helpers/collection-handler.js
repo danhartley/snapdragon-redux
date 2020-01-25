@@ -56,7 +56,9 @@ export const collectionHandler = async (collection, config, counter) => {
     
     try {
 
-        // console.log('collection from handler: ', collection);
+        console.log('collection from handler: ', collection);
+
+        if(collection.items && collection.items.length > 0) return collection;
 
         config.collection = { id: collection.id };
 

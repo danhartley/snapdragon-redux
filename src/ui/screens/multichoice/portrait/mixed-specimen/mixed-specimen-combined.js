@@ -49,10 +49,6 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
 
         parent = document.querySelector('.js-test-card-container-images');
 
-        // images.forEach(image => {
-        //     scaleImage(image, imageUseCases.CAROUSEL, config);
-        // }); 
-
         imageSlider({ config, images: utils.shuffleArray(images), parent, disableModal: true, identifier: 'mixed-specimens' });
 
         const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
@@ -83,7 +79,8 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
                     questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, 
                     points: layout.points,
                     answers,
-                    questionText: config.isPortraitMode ? 'Swipe and tap to ID' : 'Identify this species'
+                    questionText: config.isPortraitMode ? 'Swipe and tap to ID' : 'Identify this species',
+                    vernacularName: itemProperties.getVernacularName(item, config),
                 };
 
                 const callback = (score, scoreUpdateTimer) => {

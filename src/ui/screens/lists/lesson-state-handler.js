@@ -10,13 +10,13 @@ import { collectionHandler } from 'ui/helpers/collection-handler';
 
 const beginOrResumeLesson = async reviewLessonId  => {
 
-  const { collections, collection: currentCollection, config, history, score } = store.getState();
+  const { collections, collection: currentCollection, config, history, score, counter } = store.getState();
 
   const resumeLesson = currentCollection.id > 0 && currentCollection.id === reviewLessonId && config.collection.id !== 0;
 
   const collectionToLoad = resumeLesson ? currentCollection : collections.find(c => c.id === reviewLessonId);
 
-  const collection = await loadCollection(collectionToLoad, config, collections);
+  const collection = await loadCollection(collectionToLoad, config, collections, counter);
   
   const lessonState = score.collectionId === collection.id 
           ? enums.lessonState.RESUME_LESSON
@@ -27,9 +27,9 @@ const beginOrResumeLesson = async reviewLessonId  => {
 
 const renderLessonSpeciesList = async (collectionToLoad, container) => {
 
-  const { config, collections } = store.getState();
+  const { config, collections, counter } = store.getState();
 
-  const collection = await loadCollection(collectionToLoad, config, collections);
+  const collection = await loadCollection(collectionToLoad, config, collections, counter);
 
   renderSpeciesList(collection, { callingParentContainer: container });
 };
@@ -77,13 +77,16 @@ const restoreSavedLessonOrReturnNewOne = collectionToLoad => {
     return new Promise(resolve => resolve(lesson));
 };
 
-const loadCollection = async (collectionToLoad, config, collections) => {
+const loadCollection = async (collectionToLoad, config, collections, counter) => {
 
   const lesson = await restoreSavedLessonOrReturnNewOne(collectionToLoad);
 
   await collectionHandler(lesson.collection, config, lesson.counter, collections);
 
   if(lesson.collection.items.length > 0) {
+    if(lesson.collection.id === config.collection.id) {
+      lesson.counter = counter || lesson.counter;
+    }    
     actions.boundNewCollection({ lesson });
   }
   

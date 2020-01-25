@@ -50,7 +50,7 @@ export const renderNavigation = collection => {
                 switch(enums.navigation.enumValueOf(clickedIcon.id)) {
                     case enums.navigation.LANDSCAPE_HOME:
                         clickedIcon.classList.add('active-icon');
-                        lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
+                        // lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
                         renderLessons();     
                         renderScoreSummary(); 
