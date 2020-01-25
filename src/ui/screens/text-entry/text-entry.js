@@ -129,10 +129,9 @@ export const renderInput = (screen, question) => {
 
         // hide attribution for now - space issue various across devices
         const attribution = document.querySelector('.js-attribution-layer');
+              attribution.classList.add('hide-important');
         const indicators = document.querySelector('.js-carousel-indicators');
-        
-        attribution.classList.add('hide-important');
-        indicators.classList.add('hide-important');
+              indicators.classList.add('hide-important');
     }
 };
 
