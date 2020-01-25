@@ -95,7 +95,10 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
                 const question = item.name;
                 const answer = selectedItem.name;
 
+                const answers = []
+
                 imageTiles.forEach(tile => {
+                    answers.push({ value: tile.dataset.itemName, url: scaleImage({ url:tile.dataset.url }).small });                
                     if(tile.dataset.itemName !== item.name) {
                         tile.classList.add('desaturate');
                     }
@@ -109,7 +112,10 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
                     questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, 
                     points: 0, icon: matchIcon(item.taxonomy, iconicTaxa),
                     vernacularName: itemProperties.getVernacularName(questionItem, config),
-                    answerVernacularName: itemProperties.getVernacularName(answerItem, config)};
+                    answerVernacularName: itemProperties.getVernacularName(answerItem, config),
+                    answers,
+                    questionText: config.isPortraitMode ? 'Swipe and tap to ID' : 'Identify this species'
+                };
 
                     delete test.answeredIndex;
                     
@@ -119,4 +125,4 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
     };
 
     renderSpecimenImages();
-};
+};      

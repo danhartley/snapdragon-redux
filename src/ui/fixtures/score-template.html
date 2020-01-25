@@ -1,7 +1,7 @@
 <!-- <div class="footer-round js-footer-round">{{ layout.levelName }}, round {{ currentRound }}</div> -->
-<div></div>
+<div>{{ questionFormat }}</div>
 <div class="footer-score js-footer-score">
-    <span style="display:none;">{{ score.correct }} {{ scoreText }}</span>
+    <span class="hide-important">{{ score.correct }} {{ scoreText }}</span>
     <span>Score: {{ score.correct }} / {{ score.total }}</span>
     <span>History: {{ history.correct }} / {{ history.total }}</span>
 </div>

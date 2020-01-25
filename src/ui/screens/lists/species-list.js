@@ -1,7 +1,5 @@
 import * as R from 'ramda';
 
-import 'ui/css/groups/species-list.css';
-
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderCard } from 'ui/screens/cards/card';

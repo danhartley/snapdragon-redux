@@ -12,7 +12,10 @@
 }
 @media (min-width: 414px) {
     .test-card-question .question-question {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+    }
+    .rights-link, .rights-attribution {
+        grid-template-columns: 4rem auto 4rem;
     }
 }
 
@@ -26,6 +29,15 @@
 @media (min-width:360px) {
     .names-container .vernacular-name {
         max-width: 13.5rem;
+    }
+}
+
+@media (min-width:414px) {
+    .youtube-icon, .accordion-icon {
+        font-size: 1.4rem;
+    }
+    .species-table .youtube-icon, .accordion-icon {
+        font-size: 1.2rem;
     }
 }
 
@@ -48,14 +60,56 @@
 @media (min-width: 576px) {
 }
 
+@media (min-width: 600px) {
+    .test-card-question .question-question {
+        font-size: 1.4rem;
+    }
+    .modal-subheader {
+      font-size: 1.3em;
+    }
+    .table-header th:nth-child(1) {
+        min-width: 105px;
+    }
+
+    .master.table-row td:nth-child(1) {
+        width: 105px;
+    }
+
+    .table-row img {
+        width: 98px;
+        height: 69px;
+    }
+  }
+
+/* NEXUS 6 */
+
+@media (width: 412px) and (max-height: 732px) {
+    .youtube-icon {
+        font-size: 1.5rem !important;
+    }
+}
+
 /* NEXUS 7 */
 
 @media (width: 600px) and (max-height: 960px) {
+
+    .block {
+        font-size: 1.3rem;
+    }    
+    .test-card-question .question-statement, .test-card-question .question-provider-question {
+        font-size: 1rem;
+    }
+    .lesson-review > div {
+        font-size: .9em;
+    }
     body {
-        font-size: 1em;
+        font-size: 1.2em;
     }
     .snapdragon-intro > div {
         font-size: 1.2rem;
+    }
+    .youtube-icon {
+        font-size: 2rem !important;
     }
 }
 
@@ -77,13 +131,269 @@
     } 
 }
 
-@media (min-width: 600px) {    
-    .main-header {
-        font-size: 1.3rem;
-    }
-}
-
 @media (min-width: 768px) {
+
+    .imageSlider .carousel-item {
+        height: var(--vhSmallImageCarousel);
+    }
+
+    .score-summary-row {
+        display: flex;
+    }
+
+    .continue-link {
+        margin-right: .5rem;  
+      }
+
+    #imageModal .imageSlider .carousel-item, #imageComparisonModal .imageSlider .carousel-item {        
+        height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - 300px ); /* see below (hack) */
+    }
+
+    .image-description {
+        padding: 1rem 4rem;
+        margin-top: -300px; /* see above (hack) */
+        color: black; /* to compensate for layer above (hack) */
+    }
+
+    .imageSlider .carousel-control-next, .imageSlider .carousel-control-prev {
+        top: 15%;
+        top: calc(
+            (var(--vh, 1vh) * 75 * .5) -
+            (var(--vh, 1vh) * 7.5) -
+            .5rem
+            - 100px /* see above (hack) */
+        );
+    }
+
+    .modal-image .carousel-inner > div:nth-child(1) {
+        height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhRunningBlock));
+    }
+
+    .carousel-indicators {
+        position: absolute;
+        left: .5rem;
+        right: .5rem;
+        padding: .5rem;
+        text-align: left;
+        margin-left: 4rem !important;
+        margin-right: 4rem !important;
+    }
+
+    .carousel-indicators li {
+        margin-bottom: 0;
+    }
+
+    .test-card-question .question-statement, .test-card-question .question-provider-question {
+        font-size: .9rem;
+    }
+
+    .species-picker-actions ul {
+        column-count: 2;
+    }  
+
+    .autocomplete-options-container .selected {
+        color: var(--snap-dd-non-taxa-bg-hover);
+        background-color: var(--snap-text-medium-dark);
+    }
+
+    .guide-header-container > div:nth-child(2) {
+        flex-direction: row;
+    }
+
+    .iconic-taxa-categories svg {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .iconic-taxa-categories-selected svg {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .iconic-taxa-categories i {
+        font-size: 1.5rem;
+    }
+
+    .inat.snap-switch .inat-entry {
+        display: flex;
+        align-items: center;
+        margin: 0 0 0 1rem;
+    }
+
+    .inat.snap-switch input[type="text"] {
+        margin: 0 .5rem 0 0;
+        color: var(--snap-text-medium-dark);
+        padding: 0 .1rem;
+    }
+
+    .modal-guide-wrapper .location.snap-switch {
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    .location-option.place > button {
+        margin-left: .25rem;
+    }
+
+    #inat-place::placeholder {
+        color: var(--gray);
+        font-size: 1rem;
+    }
+
+    .inat.snap-switch .inat-entry, .inat.snap-switch input[type="text"] {
+        width: 12rem;
+        width: fit-content;
+        padding: 0 .25rem;
+    }  
+
+    .range-slider {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .range-slider > span:nth-child(2) {
+        width: fit-content;
+        border: .05rem solid var(--snap-border-lightest);
+        padding: .5rem;
+    }
+
+    .range-limits {
+        display: initial;
+    }
+
+    .inat-location-elsewhere {
+        display: grid;
+        grid-template-columns: 1fr .25rem 1fr;
+    }
+
+    .iconic-taxa-categories {     
+    display: grid; 
+    grid-template-columns: 1fr 1fr;      
+    }
+
+    .iconic-taxa-categories > div > div:nth-child(1) { 
+        margin: 0 0.5rem 0.5rem 0;
+    }
+    
+    .text-question span:nth-child(2) {
+        margin: 0 0 0 .25rem;
+    }
+
+    .answer-box-success, .answer-box-alert {
+        justify-content: left;
+    }
+
+    .traits-names-txt {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 1rem;
+        border-bottom: 1px solid var(--snap-border-lightest);
+    }
+
+    .iconic-icon {
+        font-size: 2rem;
+    }
+
+    .question-container {
+        grid-template-columns: 1fr 4fr 1fr;
+        display: initial;
+    }
+
+    .question-container .mushroom-icon-header svg {
+        width: 1.8rem;
+        height: 1.8rem;
+        fill: var(--snap-iconic-icon-header);
+    }
+
+    .test-card-container .question-header > div {
+        flex-direction: column;
+        width: initial;
+    }
+
+    .question-container {
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        background-color: var(--snap-species-header-background);
+    }
+
+    .species-header {
+        text-align: right;
+    }
+
+    .test-card-question .help-txt {
+        margin: 1rem .5rem;
+        font-family: serif;
+        font-weight: bold;
+        letter-spacing: .05rem;
+    }
+
+    .test-card-content {
+        padding: 1rem;
+        height: calc(
+            var(--vh, 1vh) * 100
+          - var(--vhFixtures, 15vh)
+          - var(--vhStandardBlock,10vh)
+          - var(--vhStandardBlock,10vh)
+          - var(--vhButtonBlock, 9vh));
+        top: calc(var(--vhStandardBlock,10vh) + var(--vhStandardBlock,10vh));
+    }
+
+    .test-card button {
+        width: 12rem;
+        width: fit-content;
+        margin: 0 0 0 .25rem;
+    }
+
+    div.text-entry {
+        margin: 1rem 0;
+        padding: 0.5rem;
+    }
+
+    .text-entry input {
+        width: 75%;
+        padding: 0.5rem;
+        border: 0.05rem solid var(--snap-border-light);
+    }
+
+    .test-card-container .text-question {
+        left: 1.5rem;
+    }
+
+    .answer-box-success > span:nth-child(2), 
+    .answer-box-alert > span:nth-child(2) {
+        margin: 0 0 0 .5rem;
+    }
+
+    .table-row {
+        font-size: .8rem;
+    }
+
+    .table-row td:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .species-list .scrollable {
+        bottom: 0;
+        top: 0;      
+    }
+        
+    .right-grid .header, .right-grid .footer {
+        justify-content: flex-end;
+        padding-right: 1rem;
+    }
+
+    .right-grid .footer {
+        text-transform: none;
+        justify-content: space-between;
+    }
+
+    .snapdragon-intro > div:nth-child(1) {
+        margin: 0rem 2.4rem 0 2.4rem !important;
+    }
 
     .snapdragon-intro {
         height: initial;  
@@ -102,16 +412,23 @@
         display: flex;
     }
 
+    .lesson-list-carousel-item > div:nth-child(2) > div > div {
+        display: flex;
+        align-items: center;
+    }
+
     body {
         max-width: 1200px;
     }
 
     .left-grid {
         width: 480px;
+        width: 458px;
     }
 
     .right-grid {
         width: 720px;
+        width: 742px;
     }
 
     .pool {
@@ -122,9 +439,9 @@
         margin: 1rem 4rem 0 4rem;
     }
 
-    .left-grid .header, .left-grid .footer, #imageComparisonModal .modal-title > span:nth-child(1) {
+    /* .left-grid .header, .left-grid .footer, #imageComparisonModal .modal-title > span:nth-child(1) {
         border-right: 1px solid var(--snap-border-light);
-    }
+    } */
 
     .strips {
         display: grid;
@@ -315,6 +632,79 @@
 }
 
 @media (min-width: 1024px) {
+
+    .table-header th:nth-child(2), .table-row td:nth-child(2) {
+        flex: 5;
+        flex: 9;
+    }
+    
+    .table-header th:nth-child(3), .table-row td:nth-child(3) {
+        flex: 3;
+        flex: 2;
+        flex: 5;
+        font-size: .7rem;
+        line-height: 2;
+        padding-left: 1rem;
+    }
+    
+    .table-header th:nth-child(4), .table-row td:nth-child(4) {
+        flex: 2;
+    }
+
+    .table-header th:nth-child(3) span:nth-child(2):after {
+        margin-left: .355rem;
+    }
+
+    .table-header th:nth-child(3):after {
+        display: none;
+    }
+
+    .species-list .table-header th:nth-child(3) span:after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: .255rem;
+        vertical-align: middle;
+        content: "";
+        border-top: .3rem solid;
+        border-right: .3rem solid transparent;
+        border-bottom: 0;
+        border-left: .3rem solid transparent;
+        cursor: default;
+    }
+
+    .species-list .table-header th:nth-child(4):after, .species-list .table-header th:nth-child(5):after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: .255rem;
+        vertical-align: middle;
+        content: "";
+        border-top: .3rem solid;
+        border-right: .3rem solid transparent;
+        border-bottom: 0;
+        border-left: .3rem solid transparent;
+        cursor: default;
+    }
+
+    .table-header th:nth-child(3) {
+        flex-direction: column;
+        display: flex;
+        align-items: start;
+    }
+
+    .table-header th:nth-child(3) span {
+        flex: 1;
+        line-height: initial;
+    }
+
+    .table-header th:nth-child(5), .table-row td:nth-child(5),
+    .table-header th:nth-child(6), .table-row td:nth-child(6) {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding-right: .5rem;
+    }
 
     .narrow-screen {
         display: none !important;

@@ -1,4 +1,5 @@
 import { DOM } from 'ui/dom';
+import { store } from 'redux/store';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
@@ -22,6 +23,8 @@ export const renderTestCardTemplate = (collection, context) => {
     context.providerQuestion = context.providerQuestion || '';
 
     renderTemplate(context, template.content, parent);
+
+    toggleStatementAndQuestion(store.getState().config);
 
     const testCardContainer = document.querySelector('.js-test-card-container');
     const testCard = document.querySelector('.js-test-card-container');
@@ -87,13 +90,6 @@ export const renderTestCardTemplate = (collection, context) => {
         };
 
         await renderSpeciesCard();
-
-        // setTimeout(() => {
-        //     if(item.lichen) {
-        //         const cardName = document.querySelector('.js-species-card .js-card-link > span:nth-child(1)');
-        //               cardName.innerHTML = 'Group';
-        //     }   
-        // }, 500);
     });
 
     renderIcon(item.taxonomy, document);
@@ -101,4 +97,30 @@ export const renderTestCardTemplate = (collection, context) => {
     const testContentParent = document.querySelector('.js-test-card-content');
 
     return testContentParent;
+};
+
+const toggleStatementAndQuestion = config => {
+
+    if(config.isLandscapeMode) return;
+    
+    const statement = document.querySelector('.js-statement-para');
+    const question = document.querySelector('.js-question-para');
+
+    question.classList.add('hide');
+
+    var iterations = 20;
+    var i = 0;
+
+    var interval = setInterval(function() { 
+            if(i % 2) {
+                question.classList.add('hide');
+                statement.classList.remove('hide');
+            } else {
+                question.classList.remove('hide');
+                statement.classList.add('hide');
+            }
+            i++; 
+            if(i >= iterations) clearInterval(interval);
+    }, 5000);
+
 };

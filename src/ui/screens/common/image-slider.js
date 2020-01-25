@@ -13,7 +13,7 @@ const selectActiveImage = (image, parent, config) => {
         }
     });    
     
-    const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active > div'); 
+    const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active > img'); 
     
     const indicators = document.querySelectorAll('.carousel-indicators li');
           indicators.forEach(i => {
@@ -41,13 +41,6 @@ const disableModalPopups = (disableModal, parent, config) => {
     }
 };
 
-const getActiveBackgroundImage = (parentScreen = document) => {
-    const imageContainer = parentScreen.querySelector('.carousel-item.active > div');
-    const image = { url: imageContainer.dataset.url, provider: imageContainer.dataset.provider };
-    const backgroundImage = imageContainer.style.backgroundImage.slice(4, -1).replace(/"/g, "");
-    return { imageContainer, image, backgroundImage };
-};
-
 const carouselControlHandler = (event, parentScreen = document, config) => {
 
     setTimeout(() => {
@@ -58,7 +51,7 @@ const carouselControlHandler = (event, parentScreen = document, config) => {
         handleRightsAttribution(image);
     
         const originalImageLink = parentScreen.querySelector('.js-carousel-inner');
-              originalImageLink.addEventListener('click', onEnlargeImageHandler(config));
+              originalImageLink.addEventListener('click', onEnlargeImageHandler(config, parentScreen));
 
     }, 750);
 };
@@ -85,10 +78,29 @@ export const imageSlider = sliderArgs => {
     parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
     parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
 
-    // const imageLink = `#imageSlider_${ disableModal }_${identifier} .js-expand`;
-    const imageLink = `#imageSlider_${ disableModal }_${identifier}`;
+    let next, prev;
+
+    if(config.isPortraitMode) {
+        next = document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next-icon`);
+        next.classList.add('concealed');
+
+        prev = document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev-icon`);
+        prev.classList.add('concealed');
+    }
+    
+    document.addEventListener('swiped-left', function(e) {
+        console.log('swiped-left!');
+        next.click();
+    });
+
+    document.addEventListener('swiped-right', function(e) {
+        console.log('swiped-right!');        
+        prev.click();
+    });
+
+    const imageLink = `#imageSlider_${ disableModal }_${identifier} .js-expand`;
     const originalImageLink = parentScreen.querySelector(imageLink);
-          originalImageLink.addEventListener('click', onEnlargeImageHandler(config));
+          originalImageLink.addEventListener('click', onEnlargeImageHandler(config, parentScreen));
 };
 
 export const imageSideBySlider = (slides, parent, disableModal = false, config) => {
@@ -119,19 +131,15 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
         handleRightsAttribution(images[0], disableModal);
 
         const originalImageLink = document.querySelector(`#imageSlider_${disableModal}_${identifier} .js-expand`);
-              originalImageLink.classList.add('hide-important');
-
-        // document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', carouselControlHandler);
-        // document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', carouselControlHandler);
+        if(originalImageLink) originalImageLink.classList.add('hide-important');
     });
 };
 
-function onEnlargeImageHandler(config) {
+function onEnlargeImageHandler(config, parentScreen) {
     if(config.isPortraitMode) return;
     return () => {
-        const { imageContainer, image } = getActiveBackgroundImage();
-        const large = scaleImage(image, imageUseCases.ACTUAL_SIZE, config).large;
-        imageContainer.style["background-image"] = `url(${large})`;
-        imageContainer.classList.add('contain-image');
+        const image = parentScreen.querySelector('.carousel-item.active > img');
+        const large = scaleImage( { url:image.src }, imageUseCases.ACTUAL_SIZE, config).large;
+        image.src = large;
     };
 }

@@ -35,7 +35,9 @@ export const score = (state = R.clone(progressState.score), action) => {
     switch(action.type) {
         case types.UPDATE_SCORE: {
         
-            const score = { ...state, ...action.data };
+            const score = { ...state, ...action.data, statement: action.data.statement || '' };
+
+            console.log('score.questionText: ', score.questionText);
             
             score.totalPoints = score.totalPoints || 0;
             score.totalPassPoints = score.totalPassPoints || 0;
@@ -47,12 +49,34 @@ export const score = (state = R.clone(progressState.score), action) => {
             if(score.success) {
                 score.totalPassPoints += score.points ? score.points : 0;
                 score.correct++;
-                score.passes.push({ itemId: score.itemId, taxon: score.taxon, binomial: score.binomial, question: score.question, answer: score.answer });
+                score.passes.push({ 
+                    itemId: score.itemId, 
+                    taxon: score.taxon, 
+                    binomial: score.binomial, 
+                    question: score.question, 
+                    statement: score.statement || '',
+                    answer: score.answer,
+                    answers: score.answers,
+                    index: score.total - 1,
+                    success: score.success,
+                    questionText: score.questionText
+                });
             }
             else {
                 score.incorrect++;
                 score.totalFailPoints += score.points ? score.points : 0;
-                score.fails.push({ itemId: score.itemId, taxon: score.taxon, binomial: score.binomial, question: score.question, answer: score.answer });
+                score.fails.push({ 
+                    itemId: score.itemId, 
+                    taxon: score.taxon, 
+                    binomial: score.binomial, 
+                    question: score.question,
+                    statement: score.statement || '', 
+                    answer: score.answer,
+                    answers: score.answers,
+                    index: score.total - 1,
+                    success: score.success,
+                    questionText: score.questionText
+                });
             }
             score.questionTotal = score.passes.length + score.fails.length;
             
@@ -96,6 +120,9 @@ export const score = (state = R.clone(progressState.score), action) => {
         }
         case types.NEW_COLLECTION:
             return { ...state, ...action.data.lesson.score };
+        case types.NEXT_LESSON: {
+            return { ...state, mode: 'learn'};
+            }
         default:
             return state;
     }       

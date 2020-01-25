@@ -1,5 +1,6 @@
 .table-header {
-  background-color: rgb(153, 172, 149);
+  background-color: rgb(185, 200, 204,.6);
+  background-color: rgb(213, 213, 210);
   color: var(--snap-text-dark);
   cursor: pointer;
   display: flex;
@@ -31,10 +32,6 @@
     width: 100%;
   }
 
-  tr.master:nth-child(2n) {
-    background-color: var(--snap-list-background);
-  }
-  
   tr.master:nth-child(2n + 1) {
     background-color: var(--snap-list-alt-background);
   }
@@ -114,12 +111,12 @@
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-    padding-right: .25rem;
+    /* padding-right: .25rem; */
   }
 
-  .table-row td:nth-child(2) > span:nth-child(1) {
+  /* .table-row td:nth-child(2) > span:nth-child(1) {
     margin-bottom: .25rem;
-  }
+  } */
   
   .table-header th:nth-child(3),
   .table-row td:nth-child(3),
@@ -128,7 +125,7 @@
     flex: 1;
     display: flex;
     align-items: center;
-    padding-right: .25rem;
+    /* padding-right: .25rem; */
   }
 
   .table-header th:nth-child(5), .table-row td:nth-child(5) {
@@ -146,6 +143,7 @@
  .species-table .mushroom-icon svg {
   width: 1rem;
   height: 1rem;
+  margin-top: .3rem;
  }
 
 div.species-description {
@@ -171,135 +169,14 @@ div.species-description {
   width: 100%;
 }
 
-  @media (min-width:414px) {
-
-    .youtube-icon, .accordion-icon {
-      font-size: 1.4rem;
-    }
-  }
-
-  @media (min-width: 600px) {
-
-    .youtube-icon, .accordion-icon {
-      font-size: 1.3rem;
-    }
-
-    .lesson-list-action-icons .youtube-icon, .lesson-list-action-icons .accordion-icon {
-      font-size: 1.6rem;;
-    }
-
-    .table-header th:nth-child(1) {
-      min-width: 105px;
-    }
-
-    .master.table-row td:nth-child(1) {
-      width: 105px;
-    }
-
-    .table-row img {
-      width: 98px;
-      height: 69px;
-    }
-  }
-
-  @media (min-width: 768px) {
-
-    .table-row {
-      font-size: .8rem;
-    }
-
-    .table-header {
-      background-color: var(--snap-landscape);
-    }
-
-    .table-row td:nth-child(3) {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-      }
-    
-      .table-row td:nth-child(3) > span:nth-child(1) {
-        margin-bottom: .4rem;
-      }
-
-    .species-list .scrollable {
-      bottom: 0;
-      top: 0;      
-    }
-  }
-
-  @media (min-width: 1024px) {
-     
-    .table-header th:nth-child(2), .table-row td:nth-child(2) {
-        flex: 5;
-    }
-    
-    .table-header th:nth-child(3), .table-row td:nth-child(3) {
-        flex: 3;
-    }
-    
-    .table-header th:nth-child(4), .table-row td:nth-child(4) {
-        flex: 2;
-    }
-
-    .table-header th:nth-child(3) span:nth-child(2):after {
-        margin-left: .355rem;
-    }
-
-    .table-header th:nth-child(3):after {
-        display: none;
-    }
-
-    .species-list .table-header th:nth-child(3) span:after {
-        display: inline-block;
-        width: 0;
-        height: 0;
-        margin-left: .255rem;
-        vertical-align: middle;
-        content: "";
-        border-top: .3rem solid;
-        border-right: .3rem solid transparent;
-        border-bottom: 0;
-        border-left: .3rem solid transparent;
-        cursor: default;
-    }
-
-    .species-list .table-header th:nth-child(4):after, .species-list .table-header th:nth-child(5):after {
-        display: inline-block;
-        width: 0;
-        height: 0;
-        margin-left: .255rem;
-        vertical-align: middle;
-        content: "";
-        border-top: .3rem solid;
-        border-right: .3rem solid transparent;
-        border-bottom: 0;
-        border-left: .3rem solid transparent;
-        cursor: default;
-    }
-
-    .table-header th:nth-child(3) {
-        flex-direction: column;
-        display: flex;
-        align-items: start;
-    }
-
-    .table-header th:nth-child(3) span {
-        flex: 1;
-        line-height: initial;
-    }
-
-    .table-header th:nth-child(5), .table-row td:nth-child(5),
-    .table-header th:nth-child(6), .table-row td:nth-child(6) {
-        flex: 1;
-        display: flex;
-        align-items: center;
-    }
-  }
+.lesson-list-action-icons {
+  color: var(--snap-collection);
+  color: var(--snap-text-medium-dark);
+}
  
 .species-table .underline-link {
     text-transform: initial;
+    display: initial;
 }  
 
 .btn-current-lesson-begin {

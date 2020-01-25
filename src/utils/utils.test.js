@@ -199,3 +199,20 @@ const layouts = [
     string = undefined;
     expect(utils.fromCamelCase(string)).toEqual('');
   });
+
+  test('should return lower case argument for any string, handling objects, nulls and undefined', () => {
+    
+    let arg;
+    
+    arg = '';
+    expect(utils.parseToLowerCase(arg)).toEqual('');
+    arg = 'Dill';
+    expect(utils.parseToLowerCase(arg)).toEqual('dill');
+    arg = {term:'Dill'};
+    expect(utils.parseToLowerCase(arg)).toEqual(arg);
+    arg = undefined;
+    expect(utils.parseToLowerCase(arg)).toEqual('');
+    arg = null;
+    expect(utils.parseToLowerCase(arg)).toEqual('');
+
+  });

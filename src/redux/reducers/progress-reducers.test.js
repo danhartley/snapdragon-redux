@@ -13,10 +13,12 @@ test('score state should reflect correct answer', () => {
       incorrect: 0,
       question: 'Anagallis arvensis',
       fails: [],
-      passes: []
+      passes: [],
+      answers: [],
+      statement: '',      
     }
 
-    const stateAfter = {"answer": "Anagallis arvensis", "binomial": "Anagallis arvensis", "correct": 10, "fails": [], "failsTotals": {"1": 0}, "incorrect": 0, "itemId": 1, "passes": [{"answer": "Anagallis arvensis", "binomial": "Anagallis arvensis", "itemId": 1, "question": "Anagallis arvensis", "taxon": "name"}], "passesTotals": {"1": 1}, "question": "Anagallis arvensis", "questionTotal": 1, "success": true, "taxon": "name", "total": 11, "totalFailPoints": 0, "totalPassPoints": 0, "totalPoints": 0}
+    const stateAfter = {"answer": "Anagallis arvensis", "answers": [], "binomial": "Anagallis arvensis", "correct": 10, "fails": [], "failsTotals": {"1": 0}, "incorrect": 0, "itemId": 1, "passes": [{"answer": "Anagallis arvensis", "answers": [], "binomial": "Anagallis arvensis", "index": 10, "itemId": 1, "question": "Anagallis arvensis", "statement": "", "taxon": "name","success": true}], "passesTotals": {"1": 1}, "question": "Anagallis arvensis", "questionTotal": 1, "statement": "", "success": true, "taxon": "name", "total": 11, "totalFailPoints": 0, "totalPassPoints": 0, "totalPoints": 0, success: true};
   
     const action = {
       type: types.UPDATE_SCORE,
@@ -48,28 +50,13 @@ test('score state should reflect correct answer', () => {
       incorrect: 0,
       question: '',
       fails: [],
-      passes: []
+      passes: [],
+      statement: "",
+      answers: []
     }
   
-    const stateAfter = {
-      total: 11,
-      correct: 9,
-      taxon: 'name',
-      binomial: 'Anagallis arvensis',
-      passesTotals: {"1": 0},
-      question: 'Anagallis arvensis',
-      questionTotal: 1,
-      answer: 'Malva sylvestris',
-      success: false,
-      incorrect: 1,
-      itemId: 1,
-      fails: [{ itemId: 1, taxon: 'name', binomial: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Malva sylvestris'}],
-      passes: [],
-      totalPoints: 0,
-      totalPassPoints: 0,
-      totalFailPoints: 0,
-      failsTotals: { 1: 1 }
-    }
+    const stateAfter = {"answer": "Malva sylvestris", "answers": [], "binomial": "Anagallis arvensis", "correct": 9, "fails": [{"answer": "Malva sylvestris", "answers": [], "binomial": "Anagallis arvensis", "index": 10, "itemId": 1, "question": "Anagallis arvensis", "statement": "", "taxon": "name", "success": false}], "failsTotals": {"1": 1}, "incorrect": 1, "itemId": 1, "passes": [], "passesTotals": {"1": 0}, "question": "Anagallis arvensis", "questionTotal": 1, "statement": "", "success": false, "taxon": "name", "total": 11, "totalFailPoints": 0, "totalPassPoints": 0, "totalPoints": 0};
+    
   
     Object.freeze(stateBefore);
     Object.freeze(action);

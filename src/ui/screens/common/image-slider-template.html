@@ -2,13 +2,9 @@
 
 <div id="imageSlider_{{ disableModal }}_{{ identifier }}" class="imageSlider carousel slide" data-ride="carousel" data-interval="false">
   <div class="carousel-inner js-carousel-inner">
-      <ol class="carousel-indicators"  data-repeat-image="{{ images }}">
-          <li data-target="#carouselExampleIndicators" data-slide-to="{{ image.index }}"></li>
-      </ol>
       <div data-repeat-image="{{ images }}">
         <div class="carousel-item">
-            <div class="d-block w-100" 
-                style="background-image: url('{{ image.medium }}');" 
+          <img src="{{ image.medium }}" 
                 data-title="{{ image.itemName }}"
                 data-source="{{ image.source }}"
                 data-license="{{ image.license }}"
@@ -17,21 +13,26 @@
                 data-url="{{ image.url }}"
                 data-provider="{{ image.provider }}"
                 data-item-name="{{ image.itemName }}"
-                data-index="{{ image.index }}">
-                <div data-item-name="{{ image.itemName }}" class="layer"></div>        
+                data-index="{{ image.index }}" 
+          alt="">
         </div>
-        </div>
-      </div>            
-    <a class="carousel-control-prev" href="#imageSlider_{{ disableModal }}_{{ identifier }}" role="button" data-slide="prev" data-slider="#imageSlider_{{ disableModal }}_{{ identifier }}">
-      <span class="carousel-control-prev-icon" aria-hidden="true" data-slider="#imageSlider_{{ disableModal }}_{{ identifier }}"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#imageSlider_{{ disableModal }}_{{ identifier }}" role="button" data-slide="next" data-slider="#imageSlider_{{ disableModal }}_{{ identifier }}">
-      <span class="carousel-control-next-icon" aria-hidden="true" data-slider="#imageSlider_{{ disableModal }}_{{ identifier }}"></span>
-      <span class="sr-only">Next</span>
-    </a>
-    <div class="js-attribution-layer {{ identifier }}"></div>
-  </div>  
-  <div class="description_{{ identifier }}"></div>
+      </div>
+      <div>
+        <div class="attribution-layer js-attribution-layer {{ identifier }}"></div>
+        <ol class="carousel-indicators js-carousel-indicators" data-repeat-image="{{ images }}">
+          <li data-target="#carouselExampleIndicators" data-slide-to="{{ image.index }}"></li>
+      </ol>
+      </div>
+  </div>            
+  <a class="carousel-control-prev" href="#imageSlider_{{ disableModal }}_{{ identifier }}" role="button" data-slide="prev" data-slider="#imageSlider_{{ disableModal }}_{{ identifier }}">
+    <span class="carousel-control-prev-icon" aria-hidden="true" data-slider="#imageSlider_{{ disableModal }}_{{ identifier }}"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#imageSlider_{{ disableModal }}_{{ identifier }}" role="button" data-slide="next" data-slider="#imageSlider_{{ disableModal }}_{{ identifier }}">
+    <span class="carousel-control-next-icon" aria-hidden="true" data-slider="#imageSlider_{{ disableModal }}_{{ identifier }}"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  <div class="description_{{ identifier }} image-description"></div>
   <div class="double-centred-block"></div>
 </div>
+</div>  

@@ -7,6 +7,7 @@ import { getGlossary } from 'api/glossary/glossary';
 import { enums } from 'ui/helpers/enum-helper';
 import { renderHome } from 'ui/screens/home/home';
 import { renderLessons } from 'ui/screens/lists/lesson-list';
+import { renderScoreSummary } from 'ui/screens/progress/score-summary';
 
 import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { lessonHandler } from 'ui/helpers/lesson-handler';
@@ -51,8 +52,8 @@ export const renderNavigation = collection => {
                         clickedIcon.classList.add('active-icon');
                         lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
-                        lessonStateHandler.saveCurrentLesson(collection);
-                        renderLessons();                
+                        renderLessons();     
+                        renderScoreSummary(); 
                         break;
                     case enums.navigation.SETTINGS:
                         toggleIconOnOff(clickedIcon);
@@ -70,8 +71,9 @@ export const renderNavigation = collection => {
                         clickedIcon.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
                         lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
-                        lessonStateHandler.saveCurrentLesson(collection);
                         renderLessons();
+                        DOM.rightHeaderTxt.innerHTML = 'Learn the planet';
+                        DOM.rightHeaderScoreTxt.innerHTML = '';
                         break;
                     case enums.navigation.GLOSSARY:   
                         toggleIconOnOff(clickedIcon);

@@ -7,7 +7,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { scoreHandler, bindScore } from 'ui/helpers//score-handler';
 import { imageSlider } from 'ui/screens/common/image-slider';
-import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handler';
+import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handler';
 import { getPoolItems } from 'snapdragon-engine/pool-handler';
 
 import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-combined-template.html';
@@ -39,7 +39,7 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
 
         images = getPortraitImages(images);
 
-        let parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question: 'Slide to ID this species', help: '(Click on the matching photo.)', term: '' });
+        let parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question: 'Swipe and tap to ID', help: '(Click on the matching photo.)', term: '' });
             
         const template = document.createElement('template');
 
@@ -49,12 +49,22 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
 
         parent = document.querySelector('.js-test-card-container-images');
 
+        // images.forEach(image => {
+        //     scaleImage(image, imageUseCases.CAROUSEL, config);
+        // }); 
+
         imageSlider({ config, images: utils.shuffleArray(images), parent, disableModal: true, identifier: 'mixed-specimens' });
 
         const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
         const boundScore = {};
 
-        document.querySelectorAll('#imageSlider_true_mixed-specimens .carousel-item .layer').forEach(img => {
+        const answers = [];
+
+        images.forEach(image => {
+            answers.push({ value: image.itemName, url: scaleImage({ url:image.url }).small });
+        });
+
+        document.querySelectorAll('#imageSlider_true_mixed-specimens .carousel-item img').forEach(img => {
             
             img.addEventListener('click', event => {
 
@@ -64,13 +74,17 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
                 const answer = selectedName || 'incorrect';
                 const isCorrect = answer === question;
                 const answerIcon = document.createElement('span');
-                answerIcon.innerHTML = isCorrect 
-                        ? '<span class="icon"><i class="fas fa-check-circle"></i></span>'
-                        : '<span class="icon"><i class="fas fa-times-circle"></i></span>';
+                      answerIcon.innerHTML = isCorrect 
+                            ? '<span class="icon"><i class="fas fa-check-circle"></i></span>'
+                            : '<span class="icon"><i class="fas fa-times-circle"></i></span>';
 
-                document.querySelector('.attribution-layer').style.display = 'none';
-                
-                const test = { ...score, itemId: item.id, question, answer, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points};
+                const test = { ...score, itemId: item.id, 
+                    question, answer, binomial: item.name, 
+                    questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, 
+                    points: layout.points,
+                    answers,
+                    questionText: config.isPortraitMode ? 'Swipe and tap to ID' : 'Identify this species'
+                };
 
                 const callback = (score, scoreUpdateTimer) => {
                     boundScore.score = score;

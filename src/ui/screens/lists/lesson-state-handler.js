@@ -34,13 +34,13 @@ const renderLessonSpeciesList = async (collectionToLoad, container) => {
   renderSpeciesList(collection, { callingParentContainer: container });
 };
 
-const saveCurrentLesson = async collection => {
+const saveCurrentLesson = async (collection, collectionToLoad) => {
 
   const { counter, lessonPlan, lessonPlans, layout, lesson, score, history, bonusLayout, enums, config } = store.getState();
   
   if(!collection || collection.id === 0) return; // ignore default lesson
 
-  config.collection.id = collection.id;
+  config.collection.id = collectionToLoad.id;
   layout.fromSaved = true;
 
   const savedLesson = { 
@@ -57,7 +57,11 @@ const saveCurrentLesson = async collection => {
 
 const restoreSavedLessonOrReturnNewOne = collectionToLoad => {
 
-    const { counter, lessons} = store.getState();
+    const { counter, lessons, score, collection } = store.getState();
+
+    if(score.total > 0 && collection.id > 0 && collection.id !== collectionToLoad.id) {
+      saveCurrentLesson(collection, collectionToLoad);
+    }
 
     const restoredLesson = lessons.find(l => l.name === collectionToLoad.name);
 

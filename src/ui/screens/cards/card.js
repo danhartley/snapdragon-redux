@@ -178,4 +178,15 @@ const renderCommonParts = (template, config, item, collection, mode, parent, roo
 
         Array.from(lines).forEach(hr => hr.style.display = 'none');
     }
+
+    setTimeout(() => {
+        
+        if(config.isPortraitMode) {
+            // hide attribution for now - space issue various across devices
+            const attributions = document.querySelectorAll('.js-attribution-layer');
+                    attributions.forEach(attribution => attribution.classList.add('hide-important'));
+            const indicators = document.querySelectorAll('.js-carousel-indicators');
+                    indicators.forEach(indicator => indicator.classList.add('hide-important'));
+        }
+    });
 };

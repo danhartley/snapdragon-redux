@@ -21,7 +21,8 @@ const isRequired = (step, args) => {
             }
             break;
         case enums.nextStep.NEXT_LESSON:
-            required = config.collection.id > 0 && !counter.isLessonPaused; // check this, often passing when not true (being caught at next round step)
+            required =      (config.collection.id > 0 && !counter.isLessonPaused) // new lesson
+                        ||  (config.collection.id > 0 && config.collection.id !== collection.id); // new lesson from new collection
             break;
         case enums.nextStep.NEXT_ROUND:
             required = counter.index === 0 && lesson.isNextRound && collection.items && collection.items.length > 0;

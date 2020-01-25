@@ -1,12 +1,12 @@
 <div></div>
-<div class="lesson-list-carousel-item margin-bottom">
+<div data-lesson-id="{{ lesson.id }}" class="lesson-list-carousel-item margin-bottom js-lesson-list-carousel-item">
     <div data-lesson-id="{{ lesson.id }}" class="lesson-list-item js-lesson-list-item" data-has-video="{{ lesson.hasVideo }}">
         <div>
             <div class="lesson-name js-lesson-title" data-lesson-id="{{ lesson.id }}">
                 <span id="lesson_{{ lesson.id }}" class="lesson-title">{{ lesson.name }}</span>
                 <span class="hide js-loading-message">
                     <span class="landscape">(Loading…)</span>
-                    <span class="portrait"><i class="fas fa-spinner"></i></span>
+                    <span class="portrait"><i class="fas fa-sync slow-spin"></i></span>
                 </span>
             </div>
             <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>
@@ -15,10 +15,10 @@
         <div data-lesson-id="{{ lesson.id }}" class="lesson-review js-lesson-review">
             <div>
                 <span class="underline-link margin-right">{{ lesson.reviewState }}</span>
-                <progress class="hide" value="0" max="6"></progress>
+                <span data-lesson-id="{{ lesson.id }}" class="js-review"></span>
                 <span class="hide js-loading-review-message">
                     <span class="landscape">(Loading…)</span>
-                    <span class="portrait"><i class="fas fa-spinner"></i></span>
+                    <span class="portrait"><i class="fas fa-sync slow-spin"></i></span>
                 </span>
             </div>
         </div>
@@ -33,5 +33,5 @@
             </div>
         </div>
     </div>
-</div>
+</div data-lesson-id="{{ lesson.id }}">
 <div data-container-id="{{ lesson.id }}" class="species-container js-species-container"></div>

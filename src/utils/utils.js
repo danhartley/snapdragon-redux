@@ -56,6 +56,8 @@ Array.prototype.concatAll = function() {
   
   const shuffleArray = array => {
 
+    // Check against https://bost.ocks.org/mike/shuffle/ Fisher–Yates Shuffle
+
     if(!array || array.length === 0) return;
 
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -304,6 +306,12 @@ const fromCamelCase = str => {
   return str.replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase();
 };
 
+const parseToLowerCase = value => {
+  if(value === undefined || value === null) return '';
+  else if(typeof value === 'object') return value;
+  else return !!value ? value.toLowerCase() : '';
+};
+
 export const utils = {
   log,
   encodeQuery,
@@ -330,5 +338,6 @@ export const utils = {
   debounce,
   getRandomObjectProperty,
   toCamelCase,
-  fromCamelCase
+  fromCamelCase,
+  parseToLowerCase
 };

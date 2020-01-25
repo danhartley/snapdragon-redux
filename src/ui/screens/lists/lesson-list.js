@@ -2,11 +2,14 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
-import { onCreateCustomLesson } from 'ui/create-guide-modal/species-pending';
+
 import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
+import { renderLesson } from 'ui/screens/lists/lesson';
+import { renderCustomLesson } from 'ui/screens/lists/lesson-custom';
+import { renderScoreSummary } from 'ui/screens/progress/score-summary';
+
 import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
 
-import lessonTemplate from 'ui/screens/lists/lesson-template.html';
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
 
 export const renderLessons = () => {
@@ -24,90 +27,34 @@ export const renderLessons = () => {
 
     renderTemplate({}, template.content, parent);
 
-    template.innerHTML = lessonTemplate;
+      lessons.forEach(lesson => renderLesson(lesson));
 
-    lessons.forEach(lesson => {
+      renderLessonListHeader(parent);
 
-      lesson.hideVideoClass = lesson.hasVideo ? '' : 'hide-important';
+      const createCustomLessonBtn = parent.querySelector('.js-create-custom-lesson');          
+            createCustomLessonBtn.addEventListener('click', e => {
+                  createGuideHandler(1);
 
-      const savedLesson = savedLessons.find(saved => saved.collection.id === lesson.id);
+                  // close all open lessons
+                  const upChevrons = Array.from(document.querySelectorAll('.js-lesson-list-chevron .fa-chevron-up'));
+                  lessonListEventHandler.hideOtherContentAndRevertChevrons(upChevrons, 0);
 
-      lesson.isPaused = !!savedLesson;
+            });    
 
-      renderTemplate({ lesson }, template.content, document.querySelector('.js-lesson-container'));
+      const youtubeLessonIcons = document.querySelectorAll('.js-lesson-list-youtube');
+            youtubeLessonIcons.forEach(youtube => lessonListEventHandler.onTitleClickHandler(youtube, lessons, config, true));
 
-      if(!lesson.hasVideo) {
-            const chevron = document.querySelector(`div.js-lesson-list-chevron[data-lesson-id="${lesson.id}"]`);
-            chevron.classList.remove('landscape');                                  
-      }
+      const chevrons = document.querySelectorAll('.js-lesson-list-chevron');
+            chevrons.forEach(chevron => lessonListEventHandler.onTitleClickHandler(chevron, lessons, config, false));
 
-      if(lesson.isPaused) {
+      const reviews = document.querySelectorAll('.js-lesson-review .underline-link');
+            reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink.parentElement.parentElement, lessons));
 
-            const savedLesson = savedLessons.find(saved => saved.collection.id === lesson.id);
+      const summaries = Array.from(document.querySelectorAll('.js-review-summary'));
+            summaries.forEach(summary => summary.addEventListener('click', e => {
+                  console.log('summary icon clicked');
+                  renderScoreSummary(summary.dataset.lessonId);
+            }));
 
-            if(savedLesson.layout) {
-
-                  const progressBar = document.querySelector(`div.js-lesson-review[data-lesson-id="${lesson.id}"]  progress`);
-                        progressBar.classList.remove('hide');
-                        progressBar.max = savedLesson.layout.roundScoreCount;
-                        progressBar.value = savedLesson.layout.roundProgressIndex || progressBar.value;
-            }
-      }
-    });
-
-    renderLessonListHeader(parent);
-
-    const createCustomLessonBtn = parent.querySelector('.js-create-custom-lesson');          
-          createCustomLessonBtn.addEventListener('click', e => {
-            createGuideHandler(1);
-
-            // close all open lessons
-            const upChevrons = Array.from(document.querySelectorAll('.js-lesson-list-chevron .fa-chevron-up'));
-            lessonListEventHandler.hideOtherContentAndRevertChevrons(upChevrons, 0);
-
-          });    
-
-    const youtubeLessonIcons = document.querySelectorAll('.js-lesson-list-youtube');
-          youtubeLessonIcons.forEach(youtube => lessonListEventHandler.onTitleClickHandler(youtube, lessons, config, true));
-
-    const chevrons = document.querySelectorAll('.js-lesson-list-chevron');
-          chevrons.forEach(chevron => lessonListEventHandler.onTitleClickHandler(chevron, lessons, config, false));
-
-    const reviews = document.querySelectorAll('.js-lesson-review');
-          reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink, lessons));
-
-    onCreateCustomLesson(collection => {
-
-        const parent = document.querySelector('.lesson-list > .scrollable');
-        const template = document.createElement('template');
-              template.innerHTML = lessonTemplate;
-        
-        const lesson = lessonListEventHandler.onLoadLessonViewState(collection, savedLessons, videoPlayer, score);
-              lesson.hideVideoClass = '';
-        
-        lessons.push(lesson);
-        
-        renderTemplate({ lesson }, template.content, parent);
-        
-        const title = document.querySelector(`div.js-lesson-title[data-lesson-id="${lesson.id}"]`);
-        lessonListEventHandler.onTitleClickHandler(title, lessons, config, true);
-
-        const reviewLink = document.querySelector(`[data-lesson-id="${lesson.id}"]`);
-        lessonListEventHandler.onReviewClickHandler(reviewLink, lessons);
-
-        const chevron = document.querySelector(`div.js-lesson-list-chevron[data-lesson-id="${lesson.id}"]`);
-              chevron.classList.remove('landscape');
-        lessonListEventHandler.onTitleClickHandler(chevron, lessons, config, false);
-
-        const youtubeLessonIcon = document.querySelector(`div.js-lesson-list-youtube[data-lesson-id="${lesson.id}"]`);
-              youtubeLessonIcon.classList.add('hide-important');
-
-              const scrollOptions = {
-                left: 0,
-                top: 1000,
-                behavior: 'smooth'
-              }
-            
-              document.querySelector('.js-lesson-container').scrollTo(scrollOptions);
-    });
+      renderCustomLesson(lessons, savedLessons, videoPlayer, score, config);
 };

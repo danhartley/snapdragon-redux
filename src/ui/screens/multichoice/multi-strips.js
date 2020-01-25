@@ -60,7 +60,18 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
                 const taxon = { name: item.taxonomy.family, binomial: item.name, question: answer };
 
-                const test = { itemId: item.id, items: strips, taxon, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points, clue, answerIndex: answers.findIndex(a => a.term === answer.term)};
+                const test = { 
+                    itemId: item.id, 
+                    items: strips, 
+                    taxon, binomial: 
+                    item.name, 
+                    questionCount: lesson.questionCount, 
+                    layoutCount: lesson.layoutCount, 
+                    points: layout.points, 
+                    clue, 
+                    answerIndex: answers.findIndex(a => a.term === answer.term),
+                    questionText: question
+                };
                         
                 scoreHandler('strip', test, null, config);
             }

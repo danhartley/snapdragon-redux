@@ -15,8 +15,6 @@ export const lessonPlan = (state = null, action) => {
             return action.data || state;
         case types.NEXT_LESSON:
             return action.data.lessonPlan || state;
-        case types.NEW_COLLECTION:
-            return { ...state, ...action.data.lesson.lessonPlan };
         default:
             return state;
     }

@@ -22,7 +22,7 @@ export const questions = [
         taxon: 'Apiaceae',
         statement: 'Companion planting is the placement of different crops in proximity to the benefit of one or both plants.',
         question: 'How do species in the parsley family typically act as companions?',
-        answer: 'Their the tiny flowers clustered into umbels produce nectar which attracts insects that prey on the pests of neighbouring plants.',
+        answer: 'Their tiny flowers clustered into umbels produce nectar which attracts insects that prey on the pests of neighbouring plants.',
         answers: [
             'Provide nitrogen compounds to other plants such as grasses by fixing nitrogen from the air with symbiotic bacteria in their root nodules.',
             'Attract pests away from neighbouring plants.',

@@ -10,6 +10,7 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+        <script src="./pure-swipe.js"></script>   
         <script>
 
             // https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
@@ -40,8 +41,8 @@
                 const largeImage = ((verticalHeight * 100) - fixtures) / 3;
 
                 document.documentElement.style.setProperty('--vhLargeImage', largeImage + 'px');
-                document.documentElement.style.setProperty('--vhSmallImageCarousel', verticalHeight * 36 + 'px');
-                // document.documentElement.style.setProperty('--vhSmallImageCarousel', verticalHeight * 40 + 'px');            
+                document.documentElement.style.setProperty('--vhSmallImageCarousel', verticalHeight * 36 + 'px');           
+                document.documentElement.style.setProperty('--vhExtraSmallImageCarousel', verticalHeight * 36    + 'px');           
 
                 const horizontalWidth = window.innerWidth * 0.01;
 

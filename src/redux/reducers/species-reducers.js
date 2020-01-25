@@ -75,7 +75,7 @@ export const collection = (state = { id: 0 }, action) => {
         }
 
         case types.NEW_COLLECTION: {
-            return { ...state, ...action.data.lesson.collection };
+            return { ...state, ...action.data.lesson.collection, nextItem: action.data.lesson.collection.items[0] };
         }
 
         case types.RESET_COLLECTION: {

@@ -4,10 +4,11 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { scoreHandler, bindScore } from 'ui/helpers//score-handler';
 import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handler';
 import { imageSlider } from 'ui/screens/common/image-slider';
+import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
+
 import textEntryTemplate from 'ui/screens/text-entry/text-entry-templates.html';
 import textEntryPortraitTemplate from 'ui/screens/text-entry/text-entry-portrait-templates.html';
 
-import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 
 export const renderInput = (screen, question) => {
 
@@ -45,10 +46,6 @@ export const renderInput = (screen, question) => {
     const help = config.isLandscapeMode ? '(Complete the name below.)' : '(Scroll to see more images.)';
 
     const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: questionTxt, help, term: '' });
-    
-    if(config.isPortraitMode) {
-        document.querySelector('.js-test-card-content').classList.add('clearSpacing');
-    }
 
     const template = document.createElement('template');
           template.innerHTML = config.isLandscapeMode ? textEntryTemplate : textEntryPortraitTemplate;
@@ -88,7 +85,13 @@ export const renderInput = (screen, question) => {
     };
 
     const scoreEventHandler = event => {
-        const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames };
+        const answer = document.querySelector('.js-txt-input').value;
+        const score = { 
+            itemId: item.id, question, answer, target: event.target, 
+            layoutCount: lessonPlan.layouts.length, points: layout.points, 
+            names: item.vernacularNames, questionText: questionTxt, 
+            answers: [question.question, answer]
+        };
         scoreHandler('text', score, callback, config);
         if(answerBtn) answerBtn.disabled = true;
         document.querySelector('.js-continue-lesson-btn').disabled = false;
@@ -96,8 +99,14 @@ export const renderInput = (screen, question) => {
     };
 
     const loseFocusMobileHandler = e => {
-        document.removeEventListener('focusout', loseFocusMobileHandler);        
-        const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames };
+        document.removeEventListener('focusout', loseFocusMobileHandler);
+        const answer = document.querySelector('.js-txt-input').value;
+        const score = { 
+            itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, 
+            layoutCount: lessonPlan.layouts.length, points: layout.points, 
+            names: item.vernacularNames, questionText: questionTxt,
+            answers: [question.question, answer]
+        };
         scoreHandler('text', score, callback, config);
         document.querySelector('.js-continue-lesson-btn').disabled = false;
     };
@@ -115,6 +124,15 @@ export const renderInput = (screen, question) => {
         window.clearTimeout(boundScore.scoreUpdateTimer);
         bindScore(boundScore.score);
     });
+
+    if(config.isPortraitMode) {
+
+        // hide attribution for now - space issue various across devices
+        const attribution = document.querySelector('.js-attribution-layer');
+              attribution.classList.add('hide-important');
+        const indicators = document.querySelector('.js-carousel-indicators');
+              indicators.classList.add('hide-important');
+    }
 };
 
 const renderPortrait = (item, config) => {

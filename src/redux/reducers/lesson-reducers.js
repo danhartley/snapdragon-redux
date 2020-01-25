@@ -81,7 +81,7 @@ export const lesson = (state = initialState, action) => {
         }
 
         case types.NEW_COLLECTION:
-            return { ...state, ...action.data.lesson.lesson };
+            return { ...state, ...action.data.lesson.lesson, isNextRound: true };
 
         default: {
             return state; 

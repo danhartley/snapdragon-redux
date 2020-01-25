@@ -1,9 +1,8 @@
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { elem } from 'ui/helpers/class-behaviour';
-import { markTest, isAnswerEqualToQuestion } from 'ui/helpers/test-handler';
+import { markTest} from 'ui/helpers/test-handler';
 import { subscription } from 'redux/subscriptions';
-import { getTraitsForTests } from '../../api/traits/traits-for-tests';
 
 export const scoreHandler = (type, test, callback, config) => {
     
@@ -78,8 +77,8 @@ const simpleScoreHandler = (test, callback, config) => {
 
 const genericScoreHandler = (_score, callback, config) => {
     
-    const { itemId, question, answer, target, layoutCount, points, names } = _score;
-    const test = { itemId, ...question, answer, points, names };
+    const { itemId, question, answer, target, layoutCount, points, names, questionText, answers } = _score;
+    const test = { itemId, ...question, answer, points, names, questionText, answers };
 
     const score = markTest(test);
 
@@ -164,13 +163,14 @@ const stripScoreHandler = (test, callback, config) => {
             test.question = taxon.question;
             test.answer = answer;
                 
-            const score = markTest({...test, answeredIndex: answerIndex });
+            const score = markTest({...test, answeredIndex: answerIndex, answers: [] });
 
             target.classList.add(score.colour);
 
             items.forEach(strip => {   
                 const stripAnswer = strip.querySelector('div:nth-child(1)');
                 const stripAnswerIndex = parseInt(stripAnswer.dataset.answerIndex);
+                score.answers.push(stripAnswer.innerText);
                 if(stripAnswerIndex === test.answerIndex) {
                     strip.classList.add('snap-success');
                 }
