@@ -92,6 +92,10 @@
 /* NEXUS 7 */
 
 @media (width: 600px) and (max-height: 960px) {
+
+    .block {
+        font-size: 1.3rem;
+    }    
     .test-card-question .question-statement, .test-card-question .question-provider-question {
         font-size: 1rem;
     }

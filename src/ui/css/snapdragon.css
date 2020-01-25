@@ -919,6 +919,7 @@ button.btn-light:focus,
 }
 
 .block {
+  font-size: 1rem;
   display: inline-block;
   cursor: pointer;
   width: fit-content;
@@ -929,7 +930,6 @@ button.btn-light:focus,
   letter-spacing: .1rem;
   border-radius: .2rem;
   border: .05rem solid var(--snap-text-dark);
-  font-size: 1rem;
 }
 
 .block + hr {

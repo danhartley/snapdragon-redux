@@ -73,10 +73,10 @@ const renderScoreSummaryRow = score => {
                               value: typeof a === 'object' ? a.value : a, 
                               url: typeof a === 'object' ? a.url : '', 
                               hasImage: typeof a === 'object',
-                              isTrue: utils.parseToLowerCase(a) === utils.parseToLowerCase(r.question) 
-                                    || utils.parseToLowerCase(a.value) === utils.parseToLowerCase(r.question) 
-                                    || utils.parseToLowerCase(a) === utils.parseToLowerCase(r.question.term)
-                                    || R.contains(a.value, r.answer)
+                              isTrue: a !== "" && (utils.parseToLowerCase(a) === utils.parseToLowerCase(r.question) 
+                                                || utils.parseToLowerCase(a.value) === utils.parseToLowerCase(r.question) 
+                                                || utils.parseToLowerCase(a) === utils.parseToLowerCase(r.question.term)
+                                                || R.contains(a.value, r.answer))
                         };
                         _answer.isWrongAnswer = !_answer.isTrue && utils.parseToLowerCase(_answer.value) === utils.parseToLowerCase(r.answer);
                   return _answer;
