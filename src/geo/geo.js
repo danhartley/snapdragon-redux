@@ -108,7 +108,7 @@ const LocationLookup = async ip => {
   const url = `https://api.ipgeolocation.io/ipgeo?apiKey=${ACCESS_KEY}&ip=${ip}&fields=city,state_prov,country_name,latitude,longitude&output=json`;
   const response = await fetch(url);
   const json = await response.json();
-  console.log(json);
+  console.log('location lookup:', json);
   const { city, state_prov, country_name, latitude, longitude } = await json; 
   return { city, state_prov, country_name, latitude, longitude };
 }

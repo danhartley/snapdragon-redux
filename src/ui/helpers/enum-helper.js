@@ -2,14 +2,14 @@ import { Enum } from 'enumify';
 
 class lessonState extends Enum {};
 lessonState.initEnum([
-    'CREATE_LESSON', 
-    // 'GET_SPECIES', 
+    'CREATE_LESSON',
     'BEGIN_LESSON',
     'BEGIN_OR_RESUME_LESSON',
     'PAUSE_LESSON', 
     'RESUME_LESSON',
     'NEXT_ROUND',
-    'BEGIN_INTRO'
+    'BEGIN_INTRO',
+    'REVIEW_SUMMARY'
 ]);
 
 class navigation extends Enum {};

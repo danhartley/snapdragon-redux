@@ -1,5 +1,3 @@
-import * as R from 'ramda';
-
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';
@@ -147,14 +145,16 @@ const onReviewClickHandler = (reviewLink, lessons) => {
 
     e.stopPropagation();
 
-    const loadingMessage = reviewLink.parentElement.querySelector('.js-loading-review-message');
-              
+    console.log('1. onReviewClickHandler');
+
+    const loadingMessage = reviewLink.parentElement.querySelector('.js-loading-review-message');              
           loadingMessage.classList.remove('hide');
+
           setTimeout(() => {
             loadingMessage.classList.add('hide');
           }, 10000);
 
-    lessonStateHandler.beginOrResumeLesson(parseInt(reviewLink.dataset.lessonId));        
+    lessonStateHandler.beginOrResumeLesson(parseInt(reviewLink.dataset.lessonId));   
   });
 };
 

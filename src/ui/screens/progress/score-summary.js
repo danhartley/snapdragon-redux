@@ -4,20 +4,17 @@ import { subscription } from 'redux/subscriptions';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
-import { enums } from 'ui/helpers/enum-helper';
 import { renderTemplate } from 'ui/helpers/templating';
-import { lessonHandler } from 'ui/helpers/lesson-handler';
+import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 
 import summaryTemplate from 'ui/screens/progress/score-summary-template.html';
 import summaryRowTemplate from 'ui/screens/progress/score-summary-row-template.html';
 
-export const renderScoreSummary = (id, endOfRound) => {
+export const renderScoreSummary = async (collectionId, endOfRound) => {
 
-      const collection = id 
-                  ? store.getState().collections.find(c => c.id === parseInt(id)) 
-                  : store.getState().collection;
-
-      const { history, score } = store.getState();
+      const { lessons } = store.getState();
+      
+      const { collection, score, history, lesson } = lessons.find(l => l.collection.id === parseInt(collectionId));
 
       const template = document.createElement('template');
             template.innerHTML = summaryTemplate;
@@ -35,22 +32,16 @@ export const renderScoreSummary = (id, endOfRound) => {
 
       scores.forEach(s => renderScoreSummaryRow(s));
 
-      const handleBtnClickEvent = event => {
-
-            const { lesson, config, history } = store.getState();
+      const handleBtnClickEvent = async event => {
     
-            lessonHandler.changeState(enums.lessonState.NEXT_ROUND, collection, config, history);
-
             subscription.remove(subscription.getByName('renderSummary'));
             subscription.remove(subscription.getByName('renderHistory'));
     
             if(lesson.isLessonComplete) {
-                lessonHandler.purgeLesson();
-            } else if(lesson.isNexRound) {
-                  lessonHandler.changeState(enums.lessonState.NEXT_ROUND, collection, config, history);
+                  await lessonStateHandler.purgeLesson();
             } else {
-                  lessonHandler.changeState(enums.lessonState.RESUME_LESSON, collection, config, history); 
-            }
+                  lessonStateHandler.beginOrResumeLesson(collectionId);
+            }            
         };
 
         const actionLinks = document.querySelectorAll('.js-continue-link');

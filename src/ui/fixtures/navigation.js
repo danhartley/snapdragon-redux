@@ -8,9 +8,7 @@ import { enums } from 'ui/helpers/enum-helper';
 import { renderHome } from 'ui/screens/home/home';
 import { renderLessons } from 'ui/screens/lists/lesson-list';
 import { renderScoreSummary } from 'ui/screens/progress/score-summary';
-
 import { cookieHandler } from 'ui/helpers/cookie-handler';
-import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { settingsHandler } from 'ui/fixtures/settings';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 
@@ -34,11 +32,11 @@ export const renderNavigation = collection => {
 
     navIcons.forEach(icon => {
 
-        icon.addEventListener('click', event => {
+        icon.addEventListener('click', async event => {
             
                 const clickedIcon = event.currentTarget;
                 
-                const { collection, config, history } = store.getState();
+                const { collection, config } = store.getState();
 
                 const toggleIconOnOff = clickedIcon => {
                     clickedIcon.classList.add('active-icon');
@@ -47,13 +45,15 @@ export const renderNavigation = collection => {
                     }, 1000);
                 };
 
+                let lesson;
+
                 switch(enums.navigation.enumValueOf(clickedIcon.id)) {
                     case enums.navigation.LANDSCAPE_HOME:
                         clickedIcon.classList.add('active-icon');
-                        // lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
+                        lesson = await lessonStateHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config);
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
                         renderLessons();     
-                        renderScoreSummary(); 
+                        renderScoreSummary(lesson.collection.id);
                         break;
                     case enums.navigation.SETTINGS:
                         toggleIconOnOff(clickedIcon);
@@ -70,7 +70,7 @@ export const renderNavigation = collection => {
                         if(activeInfoIcon) activeInfoIcon.classList.remove('active-icon');
                         clickedIcon.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
-                        lessonHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config, history);
+                        lesson = await lessonStateHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config);
                         renderLessons();
                         DOM.rightHeaderTxt.innerHTML = 'Learn the planet';
                         DOM.rightHeaderScoreTxt.innerHTML = '';
