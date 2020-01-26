@@ -32,8 +32,8 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
                     
                     const item = collection.items.find(i => i.name === roundItemNames[itemIndex]);
 
-                    console.log('round planner roundItemNames: ', roundItemNames);
-                    console.log('round planner item.name: ', item.name);
+                    // console.log('round planner roundItemNames: ', roundItemNames);
+                    // console.log('round planner item.name: ', item.name);
 
                     const { requiredTraitValues, trait } = mixedTraitHandler.getMatchingTrait(utils.shuffleArray(layout.screens[1].traits), item.traits);
 

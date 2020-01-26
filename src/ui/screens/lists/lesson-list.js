@@ -50,6 +50,8 @@ export const renderLessons = () => {
       const reviews = document.querySelectorAll('.js-lesson-review .underline-link');
             reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink.parentElement.parentElement, lessons));
 
+      renderCustomLesson(lessons, savedLessons, videoPlayer, score, config);
+      
       const summaries = Array.from(document.querySelectorAll('.js-review-summary'));
             summaries.forEach(summary => summary.addEventListener('click', e => {
                   e.stopPropagation();
@@ -57,5 +59,4 @@ export const renderLessons = () => {
                   renderScoreSummary(summary.dataset.lessonId);
             }));
 
-      renderCustomLesson(lessons, savedLessons, videoPlayer, score, config);
 };

@@ -37,7 +37,7 @@ export const score = (state = R.clone(progressState.score), action) => {
         
             const score = { ...state, ...action.data, statement: action.data.statement || '' };
 
-            console.log('score.questionText: ', score.questionText);
+            // console.log('score.questionText: ', score.questionText);
             
             score.totalPoints = score.totalPoints || 0;
             score.totalPassPoints = score.totalPassPoints || 0;

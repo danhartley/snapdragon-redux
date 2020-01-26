@@ -544,8 +544,6 @@ const getSpeciesByNameInParallel = async itemNames => {
 
 const getQuestionById = (id, name) => {
 
-    console.log(id);
-
     return new Promise(resolve => resolve(questions.map(q => {
         if(parseInt(q.id) === parseInt(id)) {
             return {

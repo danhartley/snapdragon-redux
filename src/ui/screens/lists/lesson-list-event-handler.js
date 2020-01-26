@@ -1,5 +1,3 @@
-import * as R from 'ramda';
-
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';
@@ -128,6 +126,10 @@ const onTitleClickHandler = (icon, lessons, config, startLesson) => {
 
     if(config.isPortraitMode) {
 
+      if(state.requiresSpeciesList) {
+        await loadAndDisplaySpeciesList(icon, lesson, container);
+      }
+
       renderLessonIntro(lesson);
       
       lessonStateHandler.renderLessonSpeciesList(lesson, DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable'));
@@ -143,14 +145,16 @@ const onReviewClickHandler = (reviewLink, lessons) => {
 
     e.stopPropagation();
 
-    const loadingMessage = reviewLink.parentElement.querySelector('.js-loading-review-message');
-              
+    console.log('1. onReviewClickHandler');
+
+    const loadingMessage = reviewLink.parentElement.querySelector('.js-loading-review-message');              
           loadingMessage.classList.remove('hide');
+
           setTimeout(() => {
             loadingMessage.classList.add('hide');
           }, 10000);
 
-    lessonStateHandler.beginOrResumeLesson(parseInt(reviewLink.dataset.lessonId));        
+    lessonStateHandler.beginOrResumeLesson(parseInt(reviewLink.dataset.lessonId));   
   });
 };
 
@@ -177,7 +181,7 @@ export const lessonListEventHandler = {
   hideOtherContentAndRevertChevrons
 }
 
-async function loadAndDisplaySpeciesList(icon, lesson, container) {
+const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
 
   Array.from(icon.parentElement.children).forEach(child => child.dataset.selected = true);
 

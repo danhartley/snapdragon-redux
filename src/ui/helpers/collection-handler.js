@@ -45,32 +45,16 @@ async function getItems(collection, config) {
     }
 };
 
-const keepItems = collection => {
-
-    return new Promise(resolve => {
-        resolve(collection.items);
-    });
-};
-
 export const collectionHandler = async (collection, config, counter) => {
     
     try {
 
-        console.log('collection from handler: ', collection);
+        // console.log('4. collection name from handler: ', collection.name);
 
         if(collection.items && collection.items.length > 0) return collection;
 
         config.collection = { id: collection.id };
 
-        if(counter.isLessonPaused) {
-            collection.items = await keepItems(collection);
-        }
-
-        if(counter.isLessonPaused && collection.items && collection.items.length > 0) {
-            collection.items = await keepItems(collection);
-            return collection;
-        } else {
-            
             const items = await getItems(collection, config);
             collection.items = items.filter(item => item.name);
 
@@ -198,7 +182,7 @@ export const collectionHandler = async (collection, config, counter) => {
                 // collection.items = [];
                 return collection;
             }
-        }
+        // }
     } catch (e) {
         console.log('Error for collectionHandler: ', e.message);
     }

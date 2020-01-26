@@ -1947,7 +1947,7 @@ a.collection-disabled {
   color: var(--snap-collection);
 }
 
-.lesson-review i.fa-sync {
+.lesson-review i.fa-sync, .lesson-list-item i.fa-sync {
   font-size: 1.2rem;
   color: var(--snap-active);
 }
