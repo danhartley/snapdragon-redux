@@ -128,6 +128,10 @@ const onTitleClickHandler = (icon, lessons, config, startLesson) => {
 
     if(config.isPortraitMode) {
 
+      if(state.requiresSpeciesList) {
+        await loadAndDisplaySpeciesList(icon, lesson, container);
+      }
+
       renderLessonIntro(lesson);
       
       lessonStateHandler.renderLessonSpeciesList(lesson, DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable'));
@@ -177,7 +181,7 @@ export const lessonListEventHandler = {
   hideOtherContentAndRevertChevrons
 }
 
-async function loadAndDisplaySpeciesList(icon, lesson, container) {
+const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
 
   Array.from(icon.parentElement.children).forEach(child => child.dataset.selected = true);
 

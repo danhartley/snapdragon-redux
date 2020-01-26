@@ -26,7 +26,7 @@ const scrollToTitle = lessonId => {
     const top = standardBlock * (rows);
 
     const scroll = document.querySelector('.lesson-list .scrollable');
-    scroll.scrollTop = top;
+    if(scroll) scroll.scrollTop = top;
   });
 };
 

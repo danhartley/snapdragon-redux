@@ -420,6 +420,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    line-height: 3;
   }
 
   .lesson-taxa span:nth-child(1) {
