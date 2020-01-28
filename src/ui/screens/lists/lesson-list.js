@@ -47,7 +47,7 @@ export const renderLessons = () => {
       const chevrons = document.querySelectorAll('.js-lesson-list-chevron');
             chevrons.forEach(chevron => lessonListEventHandler.onTitleClickHandler(chevron, lessons, config, false));
 
-      const reviews = document.querySelectorAll('.js-lesson-review .underline-link');
+      const reviews = document.querySelectorAll('.js-review-link');
             reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink.parentElement.parentElement, lessons));
 
       renderCustomLesson(lessons, savedLessons, videoPlayer, score, config);

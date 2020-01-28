@@ -41,12 +41,12 @@ const onTitleClickViewState = (e, lessons) => {
   const lesson = lessons.find(l => l.id === lessonId);
   const container = document.querySelector(`.js-species-container[data-container-id="${lessonId}"]`);
   const speciesList = document.querySelector(`#species_list_id_${lessonId}`);
-  const reviewLink = document.querySelector(`.js-lesson-review[data-review-link="${lessonId}"]`);
+  const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lessonId}"]`);
   const upChevrons = Array.from(document.querySelectorAll('.js-lesson-list-chevron .fa-chevron-up'));
 
   hideOtherContentAndRevertChevrons(upChevrons, lessonId);
 
-  let reviewLinks = document.querySelectorAll('.js-lesson-review');
+  let reviewLinks = document.querySelectorAll('.js-review-link');
       reviewLinks.forEach(link => {
         const isPaused = store.getState().lessons.find(lesson => lesson.collection.id === parseInt(link.dataset.lessonId));
         if(isPaused) {

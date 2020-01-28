@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { itemProperties } from 'ui/helpers/data-checking';
 import { subscription } from 'redux/subscriptions';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
@@ -14,7 +15,7 @@ export const renderScoreSummary = async (collectionId, endOfRound) => {
 
       const { lessons } = store.getState();
       
-      const { collection, score, history, lesson } = lessons.find(l => l.collection.id === parseInt(collectionId));
+      const { collection, score, history, lesson, config } = lessons.find(l => l.collection.id === parseInt(collectionId));
 
       const template = document.createElement('template');
             template.innerHTML = summaryTemplate;
@@ -30,7 +31,7 @@ export const renderScoreSummary = async (collectionId, endOfRound) => {
                   ? [ ...history.scores, score ] 
                   : [ score ];
 
-      scores.forEach(s => renderScoreSummaryRow(s));
+      scores.forEach(s => renderScoreSummaryRow(s, config));
 
       const handleBtnClickEvent = async event => {
     
@@ -52,7 +53,7 @@ export const renderScoreSummary = async (collectionId, endOfRound) => {
         });
 }
 
-const renderScoreSummaryRow = score => {
+const renderScoreSummaryRow = (score, config) => {
     
       const template = document.createElement('template');
             template.innerHTML = summaryRowTemplate;
@@ -77,5 +78,7 @@ const renderScoreSummaryRow = score => {
             })};
       });
 
-      renderTemplate({ vernacularName: score.vernacularName, binomial: score.binomial, rows }, template.content, parent);
+      const vernacularName = score.vernacularName || itemProperties.getVernacularName(score.binomial, config);
+
+      renderTemplate({ vernacularName, binomial: score.binomial, rows }, template.content, parent);
 };
