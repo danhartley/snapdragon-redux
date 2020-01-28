@@ -11,13 +11,13 @@ import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import summaryTemplate from 'ui/screens/progress/score-summary-template.html';
 import summaryRowTemplate from 'ui/screens/progress/score-summary-row-template.html';
 
-export const renderScoreSummary = async (collectionId, endOfRound) => {
+export const renderScoreSummary = async (collectionId) => {
 
       const { lessons } = store.getState();
       
-      const { collection, score, history, lesson, config } = lessons
-                  ? store.getState()
-                  : lessons.find(l => l.collection.id === parseInt(collectionId));
+      const { collection, score, history, lesson, config } = lessons.length > 0
+                  ? lessons.find(l => l.collection.id === parseInt(collectionId))
+                  : store.getState();
 
       const template = document.createElement('template');
             template.innerHTML = summaryTemplate;
@@ -27,7 +27,7 @@ export const renderScoreSummary = async (collectionId, endOfRound) => {
       
       renderTemplate({ collection }, template.content, parent);
 
-      const scores  = endOfRound
+      const scores  = lesson.isNextRound
             ? [ history.scores[history.scores.length - 1] ]
             : history 
                   ? [ ...history.scores, score ] 
@@ -43,7 +43,7 @@ export const renderScoreSummary = async (collectionId, endOfRound) => {
             if(lesson.isLessonComplete) {
                   await lessonStateHandler.purgeLesson();
             } else {
-                  lessonStateHandler.beginOrResumeLesson(collectionId);
+                  lessonStateHandler.beginOrResumeLesson(collectionId, store.getState().lesson.isNextRound);
             }            
         };
 

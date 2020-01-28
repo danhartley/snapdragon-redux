@@ -50,7 +50,7 @@ const onTitleClickViewState = (e, lessons) => {
       reviewLinks.forEach(link => {
         const isPaused = store.getState().lessons.find(lesson => lesson.collection.id === parseInt(link.dataset.lessonId));
         if(isPaused) {
-          link.querySelector('.underline-link').innerHTML = 'Resume Review';
+          link.innerHTML = 'Resume Review';
         }
       });
 
@@ -144,8 +144,6 @@ const onReviewClickHandler = (reviewLink, lessons) => {
   reviewLink.addEventListener('click', async e => {
 
     e.stopPropagation();
-
-    console.log('1. onReviewClickHandler');
 
     const loadingMessage = reviewLink.parentElement.querySelector('.js-loading-review-message');              
           loadingMessage.classList.remove('hide');

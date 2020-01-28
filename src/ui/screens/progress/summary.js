@@ -6,8 +6,8 @@ export const renderSummary = history => {
     const { collection, lesson } = store.getState();
 
     lesson.isLessonComplete
-        ? renderScoreSummary(collection.id, false)
-        : renderScoreSummary(collection.id, true);
+        ? renderScoreSummary(collection.id)
+        : renderScoreSummary(collection.id);
 
     return;
 };

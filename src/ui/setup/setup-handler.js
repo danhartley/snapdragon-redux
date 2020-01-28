@@ -41,7 +41,6 @@ const actionUpdate = (step, args) => {
             actions.boundNextItem(layout.itemIndex);            
             break;
         case enums.nextStep.NEXT_LAYOUT:
-            layout.fromSaved = false;
             actions.boundNextLayout(layout);
             subscription.addSubs(layout, config);
             break;
