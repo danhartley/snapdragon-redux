@@ -149,7 +149,7 @@ export const collectionHandler = async (collection, config, counter) => {
                     item.id = item.eolId;
 
                     item.vernacularNames = itemProperties.getVernacularNames(item, config);
-                    item.vernacularName = itemProperties.getVernacularName(item, config);                                
+                    item.vernacularName = itemProperties.getVernacularName(item, config);                
                     
                     item.name = names.slice(0,2).join(' ');
 

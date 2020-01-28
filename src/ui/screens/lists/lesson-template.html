@@ -14,12 +14,12 @@
         </div> 
         <div data-lesson-id="{{ lesson.id }}" class="lesson-review js-lesson-review">
             <div>
-                <span class="underline-link margin-right">{{ lesson.reviewState }}</span>
-                <span data-lesson-id="{{ lesson.id }}" class="js-review"></span>
+                <span data-lesson-id="{{ lesson.id }}" class="underline-link margin-right js-review-link">{{ lesson.reviewState }}</span data-lesson-id="{{ lesson.id }}">
                 <span class="hide js-loading-review-message">
                     <span class="landscape">(Loading…)</span>
                     <span class="portrait"><i class="fas fa-sync slow-spin"></i></span>
                 </span>
+                <span data-lesson-id="{{ lesson.id }}" class="js-review"></span>
             </div>
         </div>
     </div>     
