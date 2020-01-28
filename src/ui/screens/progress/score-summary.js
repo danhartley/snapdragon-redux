@@ -15,7 +15,9 @@ export const renderScoreSummary = async (collectionId, endOfRound) => {
 
       const { lessons } = store.getState();
       
-      const { collection, score, history, lesson, config } = lessons.find(l => l.collection.id === parseInt(collectionId));
+      const { collection, score, history, lesson, config } = lessons
+                  ? store.getState()
+                  : lessons.find(l => l.collection.id === parseInt(collectionId));
 
       const template = document.createElement('template');
             template.innerHTML = summaryTemplate;
