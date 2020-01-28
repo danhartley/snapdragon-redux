@@ -259,5 +259,5 @@ export const bindScore = score => {
 
     score.collectionId = collection.id;
 
-    actions.boundUpdateScore(score);  
+    actions.boundUpdateScore(score);
 };

@@ -1,3 +1,5 @@
+import { subscription } from 'redux/subscriptions';
+import { renderLessons } from 'ui/screens/lists/lesson-list';
 import { stats } from 'ui/helpers/stats';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
@@ -6,19 +8,21 @@ import { initialiseConfig } from 'ui/helpers/location-helper';
 import { renderSpeciesList } from 'ui/screens/lists/species-list';
 import { collectionHandler } from 'ui/helpers/collection-handler';
 
-const beginOrResumeLesson = async reviewLessonId  => {
+const beginOrResumeLesson = async (reviewLessonId, isNextRound)  => {
 
-  console.log('2. beginOrResumeLesson');
+  const { collections, collection: currentCollection, config } = store.getState();
 
-  const { collections, collection: currentCollection, config, score } = store.getState();
+  if(isNextRound) {
+    await changeState(enums.lessonState.NEXT_ROUND, currentCollection, config);
+  }
 
   const resumeCurrentLesson = currentCollection.id > 0 && currentCollection.id === parseInt(reviewLessonId) && config.collection.id !== 0;
 
   const collectionToLoad = resumeCurrentLesson ? currentCollection : collections.find(c => c.id === parseInt(reviewLessonId));
 
-  const collection = await loadCollection(collectionToLoad, config, collections);
+  const { collection, score } = await loadLesson(collectionToLoad, config, collections);
 
-  const lessonState = score.collectionId === collection.id 
+  const lessonState = (score && score.collectionId) === collection.id 
           ? enums.lessonState.RESUME_LESSON
           : enums.lessonState.BEGIN_LESSON;
 
@@ -29,14 +33,12 @@ const renderLessonSpeciesList = async (collectionToLoad, container) => {
 
   const { config, collections, counter } = store.getState();
 
-  const collection = await loadCollection(collectionToLoad, config, collections);
+  const { collection } = await loadLesson(collectionToLoad, config, collections);
 
   renderSpeciesList(collection, { callingParentContainer: container });
 };
 
 const saveCurrentLesson = async collection => {
-
-  console.log('5. saveCurrentLesson');
 
   const { counter, lessonPlan, lessonPlans, layout, lesson, score, history, bonusLayout, enums, config, lessons } = store.getState();
   
@@ -44,7 +46,7 @@ const saveCurrentLesson = async collection => {
 
   if(!layout) return;
 
-  layout.fromSaved = true;
+  // layout.fromSaved = true;
 
   const savedLesson = { 
       name: collection.name,
@@ -60,9 +62,7 @@ const saveCurrentLesson = async collection => {
   return savedLesson;
 };
 
-const loadCollection = async (collectionToLoad, config, collections) => {
-
-  console.log('3. loadCollection');
+const loadLesson = async (collectionToLoad, config, collections) => {
 
   const { counter, lessons } = store.getState();
 
@@ -71,15 +71,16 @@ const loadCollection = async (collectionToLoad, config, collections) => {
   let lesson;
 
   if(restoredLesson) {
-    // actions.boundRemoveSavedLesson(restoredLesson);
     lesson = restoredLesson;
   } else {
-    lesson = { collection: collectionToLoad, counter: { ...counter, index: 0} };
-    console.log('4. get new collection');
+    lesson = { 
+      collection: collectionToLoad, 
+      counter: { ...counter, index: 0}, 
+      lesson: { currentRound: 1, rounds: 0, isNextRound: true },
+      layout: null
+    };
     await collectionHandler(lesson.collection, config, lesson.counter, collections);
   }
-
-  console.log('5. lesson and collection ready');
 
   if(lesson.collection.items.length > 0) {
     actions.boundNewCollection({ lesson });
@@ -91,7 +92,7 @@ const loadCollection = async (collectionToLoad, config, collections) => {
     }
   }
 
-  return lesson.collection;
+  return lesson;
 };
 
 const getMode = (mode, isLevelComplete, itemsToReview) => {    
@@ -109,15 +110,12 @@ const getLatestCounter = collection => {
                   ? lessons.find(l => l.collection.id === collection.id).counter.index
                   : counter.index;
 
-  console.log('counter.index after change state: ', counter.index);
-  console.log('counter.isLessonPaused change state: ', counter.isLessonPaused);
-
   return { index };
 };
 
 const changeState = async (lessonState, collection, config) => {    
 
-  let savedLesson, lesson;
+  let lesson;
 
   switch(lessonState) {
       case enums.lessonState.BEGIN_LESSON: {
@@ -126,9 +124,9 @@ const changeState = async (lessonState, collection, config) => {
       }
       case enums.lessonState.PAUSE_LESSON: {
           if(collection.items) {
-            lesson = await saveCurrentLesson(collection);
+              lesson = await saveCurrentLesson(collection);
               const { index } = getLatestCounter(collection);
-              actions.boundStopStartLesson({ index: 0, isLessonPaused: true, log: { index: index, collection: collection.id  } });
+              actions.boundStopStartLesson({ index, isLessonPaused: true, log: { index: index, collection: collection.id  } });
           }
           break;
       }
@@ -137,11 +135,15 @@ const changeState = async (lessonState, collection, config) => {
           break;
       }
       case enums.lessonState.NEXT_ROUND: {
-          savedLesson = store.getState().lessons.find(l => l.collection.id === parseInt(collection.id));
-          lesson = savedLesson.lesson;
-          const itemsToReview = stats.getItemsForRevision(collection, lesson.history, 1);
-          const mode = getMode(config.mode, lesson.isLevelComplete, itemsToReview);
-          config.mode = mode;
+          const currentLesson = await saveCurrentLesson(collection);
+          lesson = currentLesson.lesson;
+
+          // const itemsToReview = stats.getItemsForRevision(collection, currentLesson.history, 1);
+          // const mode = getMode(config.mode, lesson.isLevelComplete, itemsToReview);
+          // console.log('mode: ', mode);
+          // config.mode = mode;
+
+          const mode = 'learn';
 
           switch(mode) {  
               case 'learn': {
@@ -191,7 +193,7 @@ const purgeLesson = () => {
 export const lessonStateHandler = {
   beginOrResumeLesson,
   renderLessonSpeciesList,
-  loadCollection,
+  loadLesson,
   getMode,
   changeState,    
   purgeLesson

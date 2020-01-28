@@ -65,7 +65,7 @@ export const speciesPendingSpinner = (config, modal) => {
     lesson.taxa = config.guide.iconicTaxa.map(i => i.common).join(', ');
     lesson.iconicTaxa = config.guide.iconicTaxa;
 
-    const collection = await lessonStateHandler.loadCollection(lesson, config, collections);
+    const { collection } = await lessonStateHandler.loadLesson(lesson, config, collections);
 
     if(collection && collection.items && collection.items.length > 0) {
         renderNewLessonSummary(collection);
@@ -116,7 +116,7 @@ export const speciesPendingSpinner = (config, modal) => {
 
     const { collections } = store.getState();
 
-    const collection = await lessonStateHandler.loadCollection(custom, config, collections);
+    const { collection } = await lessonStateHandler.loadLesson(custom, config, collections);
 
     renderNewLessonSummary(collection);
    };
