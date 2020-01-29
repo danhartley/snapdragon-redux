@@ -13,15 +13,15 @@ export const landscapeStatic = {
             layouts: [                          
                         L.mixedSpecimenImages, 
                         L.latinToCommonMatch, 
-                        // L.commonEntry,
-                        // L.commonToLatinMatch,
-                        // L.textCompleteGenus, L.genusEntry,                        
-                        // L.textCompleteSpecies, L.speciesEntry,
-                        // L.propertyTrait(L.mixedTraitImages, ['capShape', 'gillAttachment', 'leafShape', 'leafDivision', 'inflorescence', 'leafMargin']),
-                        // L.speciesGenusEntry,
-                        // L.familyMatch , L.familyStripsMatch
+                        L.commonEntry,
+                        L.commonToLatinMatch,
+                        L.textCompleteGenus, L.genusEntry,                        
+                        L.textCompleteSpecies, L.speciesEntry,
+                        L.propertyTrait(L.mixedTraitImages, ['capShape', 'gillAttachment', 'leafShape', 'leafDivision', 'inflorescence', 'leafMargin']),
+                        L.speciesGenusEntry,
+                        L.familyMatch , L.familyStripsMatch
                     ],
-            // bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'lookalikes', 'definition' ] } ]
+            bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'lookalikes', 'definition' ] } ]
         }
     ]
 };
