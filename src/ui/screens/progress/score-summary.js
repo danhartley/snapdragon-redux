@@ -13,13 +13,12 @@ import summaryRowTemplate from 'ui/screens/progress/score-summary-row-template.h
 
 export const renderScoreSummary = async (collectionId) => {
 
-      subscription.remove(subscription.getByName('renderSummary'));
-      subscription.remove(subscription.getByName('renderHistory'));
-
       const { lessons, score } = store.getState();
       
       const { collection, history, lesson, config, score: savedScore } = lessons.length > 0
-                  ? lessons.find(l => l.collection.id === parseInt(collectionId))
+                  ? !!lessons.find(l => l.collection.id === parseInt(collectionId))
+                        ? lessons.find(l => l.collection.id === parseInt(collectionId))
+                        : store.getState()
                   : store.getState();
 
       const template = document.createElement('template');
@@ -45,6 +44,9 @@ export const renderScoreSummary = async (collectionId) => {
       scores.forEach(s => renderScoreSummaryRow(s, config));
 
       const handleBtnClickEvent = async event => {
+
+            subscription.remove(subscription.getByName('renderSummary'));
+            subscription.remove(subscription.getByName('renderHistory'));      
     
             if(lesson.isLessonComplete) {
                   await lessonStateHandler.purgeLesson();
