@@ -1,6 +1,9 @@
+import * as R from 'ramda';
+
 import { subscription } from 'redux/subscriptions';
 import { renderLessons } from 'ui/screens/lists/lesson-list';
 import { stats } from 'ui/helpers/stats';
+import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';
@@ -46,8 +49,6 @@ const saveCurrentLesson = async collection => {
 
   if(!layout) return;
 
-  // layout.fromSaved = true;
-
   const savedLesson = { 
       name: collection.name,
       config, collection, counter, lessonPlan, lessonPlans, layout, lesson, score, history, bonusLayout, enums
@@ -72,12 +73,16 @@ const loadLesson = async (collectionToLoad, config, collections) => {
 
   if(restoredLesson) {
     lesson = restoredLesson;
+    if(lesson.lesson.isNextRound) {
+      lesson.score = R.clone(progressState.score)
+    }
   } else {
     lesson = { 
       collection: collectionToLoad, 
       counter: { ...counter, index: 0}, 
       lesson: { currentRound: 1, rounds: 0, isNextRound: true },
-      layout: null
+      layout: null,
+      history: null
     };
     await collectionHandler(lesson.collection, config, lesson.counter, collections);
   }

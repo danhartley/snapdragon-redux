@@ -13,9 +13,12 @@ import summaryRowTemplate from 'ui/screens/progress/score-summary-row-template.h
 
 export const renderScoreSummary = async (collectionId) => {
 
-      const { lessons } = store.getState();
+      subscription.remove(subscription.getByName('renderSummary'));
+      subscription.remove(subscription.getByName('renderHistory'));
+
+      const { lessons, score } = store.getState();
       
-      const { collection, score, history, lesson, config } = lessons.length > 0
+      const { collection, history, lesson, config, score: savedScore } = lessons.length > 0
                   ? lessons.find(l => l.collection.id === parseInt(collectionId))
                   : store.getState();
 
@@ -27,18 +30,21 @@ export const renderScoreSummary = async (collectionId) => {
       
       renderTemplate({ collection }, template.content, parent);
 
-      const scores  = lesson.isNextRound
-            ? [ history.scores[history.scores.length - 1] ]
-            : history 
-                  ? [ ...history.scores, score ] 
-                  : [ score ];
+      let scores = history
+                        ? lesson.isNextRound
+                              ? R.contains(score.binomial, history.scores.map(s => s.binomial))
+                                    ? history.scores
+                                    : score.total === 0
+                                          ? history.scores
+                                          : [ ...history.scores, score ]
+                              : score.total === 0
+                                    ? [ ...history.scores, savedScore ]
+                                    : [ ...history.scores, score ]
+                        : [ savedScore ];
 
       scores.forEach(s => renderScoreSummaryRow(s, config));
 
       const handleBtnClickEvent = async event => {
-    
-            subscription.remove(subscription.getByName('renderSummary'));
-            subscription.remove(subscription.getByName('renderHistory'));
     
             if(lesson.isLessonComplete) {
                   await lessonStateHandler.purgeLesson();

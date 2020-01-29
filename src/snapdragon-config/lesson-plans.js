@@ -9,7 +9,7 @@ import { landscapeStatic, landscapeStaticTaxonGroup, landscapeStaticProviderQues
 import { portraitStatic, portraitStaticTaxonGroup } from 'snapdragon-config/plans/portrait/portrait-static';
 
 const landscapeBirds = { ...R.clone(landscapeStatic), id: 5 };
-      landscapeBirds.levels[0].bonusLayouts[0].types.push('song');
+      if(landscapeBirds.levels[0].bonusLayouts) landscapeBirds.levels[0].bonusLayouts[0].types.push('song');
 
 const portraitBirds = { ...R.clone(portraitStatic), id: 105 };
       portraitBirds.levels[0].layouts.push(L.mediaMatch); 

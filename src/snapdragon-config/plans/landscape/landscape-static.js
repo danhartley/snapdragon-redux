@@ -12,15 +12,16 @@ export const landscapeStatic = {
             name:'Level 1',
             layouts: [                          
                         L.mixedSpecimenImages, 
-                        L.latinToCommonMatch, L.commonEntry,
-                        L.commonToLatinMatch,
-                        L.textCompleteGenus, L.genusEntry,                        
-                        L.textCompleteSpecies, L.speciesEntry,
-                        L.propertyTrait(L.mixedTraitImages, ['capShape', 'gillAttachment', 'leafShape', 'leafDivision', 'inflorescence', 'leafMargin']),
-                        L.speciesGenusEntry,
-                        L.familyMatch , L.familyStripsMatch
+                        L.latinToCommonMatch, 
+                        // L.commonEntry,
+                        // L.commonToLatinMatch,
+                        // L.textCompleteGenus, L.genusEntry,                        
+                        // L.textCompleteSpecies, L.speciesEntry,
+                        // L.propertyTrait(L.mixedTraitImages, ['capShape', 'gillAttachment', 'leafShape', 'leafDivision', 'inflorescence', 'leafMargin']),
+                        // L.speciesGenusEntry,
+                        // L.familyMatch , L.familyStripsMatch
                     ],
-            bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'lookalikes', 'definition' ] } ]
+            // bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'lookalikes', 'definition' ] } ]
         }
     ]
 };
@@ -34,8 +35,8 @@ export const landscapeStaticTaxonGroup = {
         {   id: 1,
             name:'Level 1',
             layouts: [                          
+                        L.mixedSpecimenImages,
                         L.speciesIdentificationMatch,
-                        L.mixedSpecimenImages, 
                         L.latinToCommonMatch, L.commonEntry,
                         L.commonToLatinMatch,
                         L.textCompleteGenus, 
@@ -43,7 +44,7 @@ export const landscapeStaticTaxonGroup = {
                         L.textCompleteSpecies, L.speciesEntry,
                         L.speciesGenusEntry,
                     ],
-            bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'lookalikes', 'definition' ] } ]
+            // bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'lookalikes', 'definition' ] } ]
         }
     ]
 };

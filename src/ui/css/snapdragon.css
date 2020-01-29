@@ -1792,23 +1792,23 @@ a.collection-disabled {
 }
 
 .margin-all {
-  margin: .5rem;
+  margin: .5rem !important;
 }
 
 .margin-top {
-  margin-top: .5rem;
+  margin-top: .5rem !important;
 }
 
 .margin-right {
-  margin-right: .5rem;
+  margin-right: .5rem !important;
 }
 
 .margin-bottom {
-  margin-bottom: .5rem;
+  margin-bottom: .5rem !important;
 }
 
 .margin-left {
-  margin-left: .5rem;
+  margin-left: .5rem !important;
 }
 
 .padding {

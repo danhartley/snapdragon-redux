@@ -48,6 +48,8 @@ const fetchTraits = async (trait, requiredTraitValues, glossary) => {
             return t;
         });
 
+    if(!requiredTraitValues) return { traits: null, requiredTraits: null};
+
     let multiples = traitsHandler.getNMultiplesFromArray(traits.map(t => t.term), requiredTraitValues.length);
 
         multiples = multiples.filter(multiple => {

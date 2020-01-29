@@ -37,8 +37,6 @@ export const score = (state = R.clone(progressState.score), action) => {
         
             const score = { ...state, ...action.data, statement: action.data.statement || '' };
 
-            // console.log('score.questionText: ', score.questionText);
-            
             score.totalPoints = score.totalPoints || 0;
             score.totalPassPoints = score.totalPassPoints || 0;
             score.totalFailPoints = score.totalFailPoints || 0;
@@ -157,7 +155,7 @@ export const history = (state = null, action) => {
         case types.SELECT_COLLECTION:
             return null;   
         case types.NEW_COLLECTION:
-            return action.data.lesson.history ? { ...state,  ...action.data.lesson.history } : state;
+            return action.data.lesson.history;
         default:
             return state;
     }
