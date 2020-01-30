@@ -647,6 +647,10 @@
         width: 633px;
     }
 
+    .squares {
+        padding-top: 2rem;
+    }
+
     .squares > div {
         width: 190px;
         height: 150px;
@@ -754,6 +758,11 @@
         height: calc( ((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhDoubleStandardBlock,20vh)) / 3);
         width: 225px; 
     }
+
+    .squares {
+        padding-top: 1rem;
+    }
+    
     .squares > div img {
         padding: .5rem;
     }
@@ -772,6 +781,7 @@
     .right-grid {
         width: 742px;
     }
+
     .squares > div {
         width: 229px;
     }

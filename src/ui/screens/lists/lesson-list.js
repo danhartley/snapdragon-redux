@@ -55,7 +55,13 @@ export const renderLessons = () => {
       const summaries = Array.from(document.querySelectorAll('.js-review-summary'));
             summaries.forEach(summary => summary.addEventListener('click', e => {
                   e.stopPropagation();
-                  console.log('summary icon clicked');
+
+                  const rows = document.querySelectorAll('.js-lesson-list-carousel-item');
+                        rows.forEach(row => row.classList.remove('review-summary'));
+
+                  const row = document.querySelector(`.js-lesson-list-carousel-item[data-lesson-id="${summary.dataset.lessonId}"]`);
+                        row.classList.add('review-summary');
+
                   renderScoreSummary(summary.dataset.lessonId);
             }));
 

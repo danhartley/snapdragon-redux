@@ -25,15 +25,17 @@ export const renderLesson = (lesson) => {
 
       if(savedLesson) {
             renderReview(savedLesson.layout, savedLesson.collection);
-      } else if(config.collection.id === lesson.id) {
+      } 
+      
+      if(config.collection.id === lesson.id) {
+
+            const row = document.querySelector(`.js-lesson-list-carousel-item[data-lesson-id="${lesson.id}"]`)
+                  row.classList.add('review-summary');
 
             // current lesson whose current state is not yet saved
             if(layout && layout.roundScoreCount) {
                   renderReview(layout, lesson, 'progress-icon');
             }
-
-            const row = document.querySelector(`.lesson-list-carousel-item[data-lesson-id="${lesson.id}"]`)
-                  row.classList.add('review-summary');
       }
 }; 
 
