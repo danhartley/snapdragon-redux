@@ -5,8 +5,9 @@
             <div class="lesson-name js-lesson-title" data-lesson-id="{{ lesson.id }}">
                 <span id="lesson_{{ lesson.id }}" class="lesson-title margin-right">{{ lesson.name }}</span>
                 <span class="hide js-loading-message">
-                    <span class="landscape">(Loading…)</span>
-                    <span class="portrait"><i class="fas fa-sync slow-spin"></i></span>
+                    <!-- <span class="landscape">(Loading…)</span>
+                    <span class="portrait"><i class="fas fa-sync slow-spin"></i></span> -->
+                    <span></span><i class="fas fa-sync slow-spin"></i></span>
                 </span>
             </div>
             <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>
@@ -15,7 +16,7 @@
         <div data-lesson-id="{{ lesson.id }}" class="lesson-review js-lesson-review">
             <div>
                 <span data-lesson-id="{{ lesson.id }}" class="underline-link margin-right js-review-link">{{ lesson.reviewState }}</span data-lesson-id="{{ lesson.id }}">
-                <span class="hide js-loading-review-message">
+                <span class="hide margin-right js-loading-review-message">
                     <span class="landscape">(Loading…)</span>
                     <span class="portrait"><i class="fas fa-sync slow-spin"></i></span>
                 </span>
