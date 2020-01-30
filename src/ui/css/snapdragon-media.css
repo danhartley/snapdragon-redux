@@ -133,6 +133,10 @@
 
 @media (min-width: 768px) {
 
+    .squares {
+        height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhDoubleStandardBlock,20vh));
+    }
+
     .lesson-name {
         line-height: initial !important;
     }
@@ -426,12 +430,10 @@
     }
 
     .left-grid {
-        width: 480px;
         width: 458px;
     }
 
     .right-grid {
-        width: 720px;
         width: 742px;
     }
 
@@ -637,6 +639,19 @@
 
 @media (min-width: 1024px) {
 
+    .left-grid {
+        width: 391px;
+    }
+
+    .right-grid {
+        width: 633px;
+    }
+
+    .squares > div {
+        width: 190px;
+        height: 150px;
+    }
+
     .table-header th:nth-child(2), .table-row td:nth-child(2) {
         flex: 5;
         flex: 9;
@@ -729,5 +744,35 @@
     }
 }
 
+@media (min-width: 1024px) {
+
+    .left-grid, .tiles-container {
+        width: 450px;
+    }
+
+    .squares > div {
+        height: calc( ((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhDoubleStandardBlock,20vh)) / 3);
+        width: 225px; 
+    }
+    .squares > div img {
+        padding: .5rem;
+    }
+
+    .right-grid {
+        width: 662px;
+    }
+}
+
 @media (min-width: 1200px) {
+    
+    .left-grid, .tiles-container {
+        width: 458px;
+    }
+
+    .right-grid {
+        width: 742px;
+    }
+    .squares > div {
+        width: 229px;
+    }
 }
