@@ -1,12 +1,14 @@
 <div class="standard-block border-bottom double-centred-block"></div>
-<div class="squares js-tiles" data-repeat-image="{{ images }}">
-    <div>
-        <img class="square"                    
-        src="{{ image.medium }}"
-        data-toggle="modal" data-target="#imageModal"
-        data-item-name="{{ image.itemName }}"
-        data-url="{{ image.url }}" />
-    </div>              
+<div class="tiles-container">
+    <div class="squares js-tiles" data-repeat-image="{{ images }}">
+        <div>
+            <img class="square"                    
+            src="{{ image.medium }}"
+            data-toggle="modal" data-target="#imageModal"
+            data-item-name="{{ image.itemName }}"
+            data-url="{{ image.url }}" />
+        </div>              
+    </div>
 </div>
 
 <div class="lesson-companion">
