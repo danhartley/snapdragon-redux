@@ -1,6 +1,5 @@
 .table-header {
-  background-color: rgb(185, 200, 204,.6);
-  background-color: rgb(213, 213, 210);
+  background-color: var(--snap-header-background);
   color: var(--snap-text-dark);
   cursor: pointer;
   display: flex;
@@ -33,7 +32,7 @@
   }
 
   tr.master:nth-child(2n + 1) {
-    background-color: var(--snap-list-alt-background);
+    background-color: var(--snap-content-background);
   }
  
   .table-row img, table input {

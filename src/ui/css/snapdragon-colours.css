@@ -1,6 +1,6 @@
 :root {
 
-    --snap-body-bg: rgb(240, 240, 240);
+    
 
     --snap-dd-collection-bg-active: rgb(198, 206, 217);
 
@@ -43,14 +43,19 @@
   
     --snap-block-light: rgb(245, 245, 245);
 
-    --snap-grid-background: rgba(185, 200, 204,.3);
-    --snap-container-background: rgb(255, 255, 255);
+    --snap-main-background: rgb(244, 244, 244);
+    --snap-content-background: rgb(255, 255, 243);
+    --snap-header-background: rgb(213, 213, 210);
+    --snap-list-header-background: rgb(252, 251, 246);
+    --snap-row-background: rgb(240, 239, 233);
+    
+
     --snap-taxon-card-background: rgba(52, 105, 23,.1);
     --snap-species-highlight-background: rgb(249, 248, 238);
     --snap-species-header-background: rgb(226, 222, 180);
+    
     --snap-btn-auxillary: rgb(96, 117, 90);
-    --snap-list-alt-background: rgb(252, 251, 246);
-    --snap-default-background: rgb(244, 244, 244);
+    --snap-btn-hover: rgb(240, 240, 240);
   
     --snap-border-light: rgb(175,175,175);
     --snap-border-medium: rgb(211, 211, 211);

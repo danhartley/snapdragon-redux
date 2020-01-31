@@ -19,7 +19,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: var(--snap-text-dark);
   margin: auto;
-  background-color: var(--snap-default-background);
+  background-color: var(--snap-main-background);
 }
 
 button {
@@ -330,7 +330,7 @@ a.dropdown-item {
 }
 
 .feature-types {
-  background-color: var(--snap-list-alt-background);
+  background-color: var(--snap-content-background);
 }
 
 .species.card {
@@ -429,7 +429,7 @@ a.dropdown-item {
   display: grid;
   grid-auto-flow: row;
   height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));  
-  background-color: var(--snap-list-alt-background);
+  background-color: var(--snap-content-background);
 }
 
 .header, .footer {
@@ -1866,7 +1866,7 @@ a.collection-disabled {
 
 .lesson-list-header {
   padding: 0 !important;
-  background-color: var(--snap-list-alt-background);
+  background-color: var(--snap-list-header-background);
   justify-content: space-between;
 }
 
@@ -2113,7 +2113,7 @@ a.collection-disabled {
 }
 
 #insertParent {
-  background-color: var(--snap-container-background);  
+  /* background-color: var(--snap-container-background);   */
   font-size: .8rem;
   padding: 1rem;
 }
@@ -2131,9 +2131,9 @@ a.collection-disabled {
   font-size: .9rem;
 }
 
-.border-bottom {
+/* .border-bottom {
   border-bottom: .5px solid var(--snap-youtube-green);
-}
+} */
 
 .title {
   padding: 0 .5rem;
@@ -2158,7 +2158,7 @@ a.collection-disabled {
 }
 
 .review-summary {
-  background-color: var(--snap-list-alt-background) !important;
+  background-color: var(--snap-content-background) !important;
 }
 
 .review-summary .underline-link {
@@ -2166,12 +2166,12 @@ a.collection-disabled {
 }
 
 .score-summary-row {
-  border-bottom: .3rem solid white;
+  border-bottom: .3rem solid var(--snap-content-background);
   padding: 1rem 0;
 }
 
 .score-summary-row.species {
-  background-color: rgb(213, 213, 210) !important;
+  background-color: var(--snap-header-background);
   border: none;
   display: flex;
 }
@@ -2181,7 +2181,7 @@ a.collection-disabled {
   background-color: initial;
   font-size: initial;
   letter-spacing: initial;
-  background-color: rgb(240, 239, 233);
+  background-color: var(--snap-row-background);
 }
 
 .score-summary-row > div:nth-child(1), .score-summary-row > div:nth-child(3) {
