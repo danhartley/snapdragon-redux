@@ -60,7 +60,7 @@ export const renderLessons = () => {
                         rows.forEach(row => row.classList.remove('review-summary'));
 
                   const row = document.querySelector(`.js-lesson-list-carousel-item[data-lesson-id="${summary.dataset.lessonId}"]`);
-                        row.classList.add('review-summary');
+                        row.classList.add('review-summary');                        
 
                   renderScoreSummary(summary.dataset.lessonId);
             }));

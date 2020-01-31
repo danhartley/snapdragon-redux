@@ -149,9 +149,9 @@
         display: flex;
     }
 
-    .continue-link {
+    /* .continue-link {
         margin-right: .5rem;  
-      }
+      } */
 
     #imageModal .imageSlider .carousel-item, #imageComparisonModal .imageSlider .carousel-item {        
         height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - 300px ); /* see below (hack) */
