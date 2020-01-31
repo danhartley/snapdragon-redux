@@ -2176,6 +2176,7 @@ a.collection-disabled {
   background-color: var(--snap-header-background);
   border: none;
   display: flex;
+  width: 100%;
 }
 
 .score-summary-row.header {
@@ -2285,6 +2286,17 @@ img[data-has-image="false"] {
 .score-summary-row img {
   width: 98px;
   height: 68px;
+}
+
+.score-summary-row.title > span {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.score-summary-footer {
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-top: 1rem;
 }
 
 .concealed {

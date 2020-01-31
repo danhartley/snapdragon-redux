@@ -32,6 +32,13 @@ export const renderLesson = (lesson) => {
             const row = document.querySelector(`.js-lesson-list-carousel-item[data-lesson-id="${lesson.id}"]`)
                   row.classList.add('review-summary');
 
+            if(config.isLandscapeMode) {
+                  setTimeout(() => {
+                        const reviewLink = row.querySelector('.js-review-summary');                  
+                        if(reviewLink) reviewLink.click();
+                  });
+            }
+
             // current lesson whose current state is not yet saved
             if(layout && layout.roundScoreCount) {
                   renderReview(layout, lesson, 'progress-icon');
