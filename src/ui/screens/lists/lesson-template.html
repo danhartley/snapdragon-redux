@@ -1,13 +1,11 @@
 <div></div>
-<div data-lesson-id="{{ lesson.id }}" class="lesson-list-carousel-item margin-bottom js-lesson-list-carousel-item">
+<div data-lesson-id="{{ lesson.id }}" class="lesson-list-carousel-item padding-left margin-bottom js-lesson-list-carousel-item">
     <div data-lesson-id="{{ lesson.id }}" class="lesson-list-item js-lesson-list-item" data-has-video="{{ lesson.hasVideo }}">
         <div>
             <div class="lesson-name js-lesson-title" data-lesson-id="{{ lesson.id }}">
                 <span id="lesson_{{ lesson.id }}" class="lesson-title margin-right">{{ lesson.name }}</span>
                 <span class="hide js-loading-message">
-                    <!-- <span class="landscape">(Loading…)</span>
-                    <span class="portrait"><i class="fas fa-sync slow-spin"></i></span> -->
-                    <span></span><i class="fas fa-sync slow-spin"></i></span>
+                    <span>i class="fas fa-sync slow-spin"></i></span>
                 </span>
             </div>
             <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>
