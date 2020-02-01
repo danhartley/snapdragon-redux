@@ -64,6 +64,7 @@ export const speciesPendingSpinner = (config, modal) => {
     lesson.id = collections.length + 10000;
     lesson.taxa = config.guide.iconicTaxa.map(i => i.common).join(', ');
     lesson.iconicTaxa = config.guide.iconicTaxa;
+    config.collection.id = lesson.id;
 
     const { collection } = await lessonStateHandler.loadLesson(lesson, config, collections);
 

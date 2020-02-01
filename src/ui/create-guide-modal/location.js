@@ -28,6 +28,8 @@ export const renderLocation = (modal, createGuide) => {
         const observableMonths = `${months[0]}-${months[months.length - 1]}`;
 
         renderTemplate({ observableMonths }, template.content, parent);
+
+        
     }
 
     const defaultLocationTxt = 'Use your current location';
@@ -54,7 +56,8 @@ export const renderLocation = (modal, createGuide) => {
     const locationPlaceInput = modal.querySelector('#inat-place');
           locationPlaceInput.placeholder = config.isLandscapeMode
                                             ? 'Or start typing the name of a place you are interested in.'
-                                            : 'Or start typing the name of a place.'
+                                            : 'Or start typing the name of a place.';
+          locationPlaceInput.focus();
 
     // let counter = 0;
 
@@ -74,7 +77,6 @@ export const renderLocation = (modal, createGuide) => {
 
     locationPlaceInput.addEventListener('click', e => {
         e.preventDefault();
-        console.log('click, triggered enter text field');
     });
 
     // Required to prevent the modal CLOSING
@@ -90,8 +92,7 @@ export const renderLocation = (modal, createGuide) => {
         } else {
             const container = document.querySelector('.autocomplete-options-container');
             if(container) {
-                selected = container.querySelector('div.selected');
-                console.log('Value of selected: ', selected.innerHTML);                
+                selected = container.querySelector('div.selected');  
             }
         }
     });
@@ -100,7 +101,6 @@ export const renderLocation = (modal, createGuide) => {
 
     document.getElementById('locationForm').addEventListener('submit', e => {
         e.preventDefault();
-        console.log('submit, triggered by GO button');
         if(locationPlaceInput.value !== '') {
             saveDefaultLocation(config, locationPlaceInput, locationPlace, createGuide, selected);
         }
@@ -110,13 +110,9 @@ export const renderLocation = (modal, createGuide) => {
 
     locationPlaceInput.addEventListener('focusout', e => {
         e.preventDefault();
-
-            console.log('e.target.value: ', e.target.value);
-            console.log('focusout');    
             if(selected) {
                 saveDefaultLocation(config, locationPlaceInput, locationPlace, createGuide, selected);
             }
-
     });
 
     let range = config.guide.speciesRange;
