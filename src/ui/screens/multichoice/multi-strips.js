@@ -42,7 +42,6 @@ export const renderMultiStrips = (collection, bonus, args) => {
                 const term = (overrides && overrides.term !== undefined) ? overrides.term : '';
                 const className = (overrides && overrides.className !== undefined) ? overrides.className : '';
                 const headerClassName = (overrides && overrides.headerClassName !== undefined) ? overrides.headerClassName : '';
-                const conceal = (overrides && overrides.conceal !== undefined) ? overrides.conceal : ['', '', '', '', '', ''];
                 const clue = (overrides && overrides.clue !== undefined) ? overrides.clue : null;
                 
                 const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question, help, term, className, headerClassName, bonus });
@@ -50,7 +49,11 @@ export const renderMultiStrips = (collection, bonus, args) => {
                 const template = document.createElement('template');
                       template.innerHTML = answer.img ? stripWithImageTemplate : stripTemplate;
 
-                answers.forEach((answer, index) => answer.index = index);
+                answers.forEach((answer, index) => {
+                    answer.index = index;
+                    answer.name = answer.name || '';
+                    answer.names = answer.names ? answer.names.join(', ') : '';
+                });
 
                 renderTemplate({ answers }, template.content, parent);
 

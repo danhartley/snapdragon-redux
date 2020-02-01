@@ -156,12 +156,13 @@ const stripScoreHandler = (test, callback, config) => {
             const answerNode = target.querySelector('div:nth-child(1)');
             const answer = answerNode.innerText.trim();
             const answerIndex = answerNode.dataset.answerIndex;
+            const name = answerNode.dataset.name;
             const vernacular = target.dataset.vernacular;
 
             test.taxon = 'name';
             test.vernacular = vernacular;
             test.question = taxon.question;
-            test.answer = answer;
+            test.answer = (name && name !== '') ? { term: answer, name } : answer;
                 
             const score = markTest({...test, answeredIndex: answerIndex, answers: [] });
 
@@ -170,7 +171,15 @@ const stripScoreHandler = (test, callback, config) => {
             items.forEach(strip => {   
                 const stripAnswer = strip.querySelector('div:nth-child(1)');
                 const stripAnswerIndex = parseInt(stripAnswer.dataset.answerIndex);
-                score.answers.push(stripAnswer.innerText);
+                const stripAnswerName = stripAnswer.dataset.name || '';
+                
+                stripAnswer === '' 
+                    ? score.answers.push(stripAnswer.innerText) 
+                    : score.answers.push({
+                        term: stripAnswer.innerText,
+                        name: stripAnswerName
+                    });
+                
                 if(stripAnswerIndex === test.answerIndex) {
                     strip.classList.add('snap-success');
                 }

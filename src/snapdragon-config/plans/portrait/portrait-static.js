@@ -12,13 +12,13 @@ export const portraitStatic = {
             name:'Level 1',
             layouts: [                          
                         L.mixedSpecimenImages, 
-                        L.latinToCommonMatch, 
-                        L.commonEntry,
-                        L.commonToLatinMatch,
-                        L.textCompleteGenus, L.genusEntry,                        
-                        L.textCompleteSpecies, L.speciesEntry,
-                        L.propertyTrait(L.mixedTraitImages, ['capShape', 'gillAttachment', 'leafShape', 'leafDivision', 'inflorescence', 'leafMargin']),
-                        L.speciesGenusEntry,
+                        // L.latinToCommonMatch, 
+                        // L.commonEntry,
+                        // L.commonToLatinMatch,
+                        // L.textCompleteGenus, L.genusEntry,                        
+                        // L.textCompleteSpecies, L.speciesEntry,
+                        // L.propertyTrait(L.mixedTraitImages, ['capShape', 'gillAttachment', 'leafShape', 'leafDivision', 'inflorescence', 'leafMargin']),
+                        // L.speciesGenusEntry,
                         L.familyMatch , L.familyStripsMatch
                     ],
             bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'definition' ] } ]
