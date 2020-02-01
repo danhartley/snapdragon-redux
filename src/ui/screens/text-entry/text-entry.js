@@ -6,9 +6,10 @@ import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handler';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 
+import { onAddLoseFocusListener } from 'ui/fixtures/navigation';
+
 import textEntryTemplate from 'ui/screens/text-entry/text-entry-templates.html';
 import textEntryPortraitTemplate from 'ui/screens/text-entry/text-entry-portrait-templates.html';
-
 
 export const renderInput = (screen, question) => {
 
@@ -115,6 +116,9 @@ export const renderInput = (screen, question) => {
         answerBtn.addEventListener('click', scoreEventHandler);
     } else {
         document.addEventListener('focusout', loseFocusMobileHandler);
+        onAddLoseFocusListener(()=>{
+            document.removeEventListener('focusout', loseFocusMobileHandler);
+        });
     }
     
     if(config.isPortraitMode) renderPortrait(item, config);
