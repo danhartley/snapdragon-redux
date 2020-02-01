@@ -39,6 +39,9 @@ export const getPoolItems = async (collection, poolSize = 5) => {
 
     const items = R.take(poolSize, speciesPool);
 
+    console.clear();
+    console.log('poolSize: ', poolSize);
+    console.log('speciesPool: ', speciesPool);
     console.log('pool items from getPoolItems: ', items);
     console.log('\x1b[32m', '------------------------------------------');
   

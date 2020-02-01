@@ -1433,7 +1433,7 @@ iframe#birdsong {
 
 div.hide-empty:empty,
 span.hide-empty:empty {
-  display: none;
+  display: none !important;
 }
 
 .visual-match .description {
@@ -2246,11 +2246,11 @@ a.collection-disabled {
   padding: .5rem;
 }
 
-.score-summary-row.in-columns div[data-is-true="true"] {
+.score-summary-row.in-columns div[data-is-true="true"] > div:nth-child(2) {
   color: var(--snap-success);
 }
 
-.score-summary-row.in-columns div[data-is-true="true"] span {
+.score-summary-row.in-columns div[data-is-true="true"] > div:nth-child(2) {
   border: solid 1px var(--snap-progress-bar);
   padding: .3rem;
   display: inline-block;

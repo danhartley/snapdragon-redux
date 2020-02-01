@@ -1,8 +1,5 @@
-import * as R from 'ramda';
-
 import { itemProperties } from 'ui/helpers/data-checking';
 import { subscription } from 'redux/subscriptions';
-import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -62,23 +59,7 @@ const renderScoreSummaryRow = (score, config) => {
       const parent = document.querySelector('.js-score-summary-rows');
 
       let rows = [ ...score.passes, ...score.fails ];
-
-      rows = rows.map((r,i) => {
-            return { ...r, id: `${i}${utils.toCamelCase(r.binomial)}`, question: r.question.term ? r.question.term : r.question, answers: r.answers.map(a => {
-                  const _answer = { 
-                              value: typeof a === 'object' ? a.value : a, 
-                              url: typeof a === 'object' ? a.url : '', 
-                              hasImage: typeof a === 'object',
-                              isTrue: a !== "" && (utils.parseToLowerCase(a) === utils.parseToLowerCase(r.question) 
-                                                || utils.parseToLowerCase(a.value) === utils.parseToLowerCase(r.question) 
-                                                || utils.parseToLowerCase(a) === utils.parseToLowerCase(r.question.term)
-                                                || R.contains(a.value, r.answer))
-                        };
-                        _answer.isWrongAnswer = !_answer.isTrue && utils.parseToLowerCase(_answer.value) === utils.parseToLowerCase(r.answer);
-                        _answer.name = typeof a === 'object' ? a.name || '' : '';
-                  return _answer;
-            })};
-      });
+          rows = scoreSummaryHandler.getSummaryRows(rows);
 
       const vernacularName = score.vernacularName || itemProperties.getVernacularName(score.binomial, config);
 
