@@ -51,9 +51,9 @@ const saveCurrentLesson = async collection => {
 
   const savedLesson = { 
       name: collection.name,
-      config, collection, counter, lessonPlan, lessonPlans, layout, lesson, score, history, bonusLayout, enums
+      config, collection, counter, lessonPlan, lessonPlans, layout, lesson, score: R.clone(score), history, bonusLayout, enums
   };
-  
+
   actions.boundSaveLesson(savedLesson);
 
   const initialisedConfig = await initialiseConfig(config);
@@ -74,7 +74,7 @@ const loadLesson = async (collectionToLoad, config, collections) => {
   if(restoredLesson) {
     lesson = restoredLesson;
     if(lesson.lesson.isNextRound) {
-      lesson.score = R.clone(progressState.score)
+      lesson.score = R.clone(progressState.score);
     }
   } else {
     lesson = { 
@@ -82,7 +82,8 @@ const loadLesson = async (collectionToLoad, config, collections) => {
       counter: { ...counter, index: 0}, 
       lesson: { currentRound: 1, rounds: 0, isNextRound: true },
       layout: null,
-      history: null
+      history: null,
+      score: R.clone(progressState.score)
     };
     await collectionHandler(lesson.collection, config, lesson.counter, collections);
   }

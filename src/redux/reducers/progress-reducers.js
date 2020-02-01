@@ -113,11 +113,8 @@ export const score = (state = R.clone(progressState.score), action) => {
             );
             return { ...state, bonusScores: bonusScores };
         }
-        case types.SAVE_LESSON: {
-            return R.clone(progressState.score);
-        }
         case types.NEW_COLLECTION:
-            return { ...state, ...action.data.lesson.score };
+            return action.data.lesson.score;
         case types.NEXT_LESSON: {
             return { ...state, mode: 'learn'};
             }

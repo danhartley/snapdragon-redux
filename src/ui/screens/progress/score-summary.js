@@ -7,6 +7,7 @@ import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { renderTemplate } from 'ui/helpers/templating';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
+import { scoreSummaryHandler } from 'ui/screens/progress/score-summary-handler';
 
 import summaryTemplate from 'ui/screens/progress/score-summary-template.html';
 import summaryRowTemplate from 'ui/screens/progress/score-summary-row-template.html';
@@ -29,17 +30,7 @@ export const renderScoreSummary = async (collectionId) => {
       
       renderTemplate({ collection }, template.content, parent);
 
-      let scores = history
-                        ? lesson.isNextRound
-                              ? R.contains(score.binomial, history.scores.map(s => s.binomial))
-                                    ? history.scores
-                                    : score.total === 0
-                                          ? history.scores
-                                          : [ ...history.scores, score ]
-                              : score.total === 0
-                                    ? [ ...history.scores, savedScore ]
-                                    : [ ...history.scores, score ]
-                        : [ savedScore ];
+      let scores = scoreSummaryHandler.getLessonScores(history, lesson, score, savedScore);
 
       scores.forEach(s => renderScoreSummaryRow(s, config));
 
@@ -84,6 +75,7 @@ const renderScoreSummaryRow = (score, config) => {
                                                 || R.contains(a.value, r.answer))
                         };
                         _answer.isWrongAnswer = !_answer.isTrue && utils.parseToLowerCase(_answer.value) === utils.parseToLowerCase(r.answer);
+                        _answer.name = typeof a === 'object' ? a.name || '' : '';
                   return _answer;
             })};
       });
