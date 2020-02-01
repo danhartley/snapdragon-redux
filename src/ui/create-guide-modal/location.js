@@ -77,7 +77,7 @@ export const renderLocation = (modal, createGuide) => {
         console.log('click, triggered enter text field');
     });
 
-    // This works for GO followed by DONE, required to prevent the modal CLOSING for mobile
+    // Required to prevent the modal CLOSING
 
     let selected = null;
 
