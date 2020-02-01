@@ -84,6 +84,7 @@ const renderScoreSummaryRow = (score, config) => {
                                                 || R.contains(a.value, r.answer))
                         };
                         _answer.isWrongAnswer = !_answer.isTrue && utils.parseToLowerCase(_answer.value) === utils.parseToLowerCase(r.answer);
+                        _answer.name = typeof a === 'object' ? a.name || '' : '';
                   return _answer;
             })};
       });
