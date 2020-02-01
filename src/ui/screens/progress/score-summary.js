@@ -44,7 +44,7 @@ export const renderScoreSummary = async (collectionId) => {
       scores.forEach(s => renderScoreSummaryRow(s, config));
 
       const handleBtnClickEvent = async event => {
-
+            
             subscription.remove(subscription.getByName('renderSummary'));
             subscription.remove(subscription.getByName('renderHistory'));      
     

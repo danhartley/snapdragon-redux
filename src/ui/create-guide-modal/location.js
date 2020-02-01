@@ -58,11 +58,11 @@ export const renderLocation = (modal, createGuide) => {
 
     // let counter = 0;
 
-    locationPlaceInput.addEventListener('keypress', event => {
+    locationPlaceInput.addEventListener('keypress', e => {
         // counter++;
         // console.log(counter);
         autocompleteRef = inatAutocomplete(locationPlaceInput, 'places', 'autocomplete-options-container', 'place');
-        saveLocationBtn.disabled = false;
+        // saveLocationBtn.disabled = false;        
         // setTimeout(() => {
         //     const googleImageContainer = modal.querySelector('#inat-place-autocomplete #googleLogoContainer');
         //     if(!googleImageContainer && counter >= 3) {
@@ -70,6 +70,53 @@ export const renderLocation = (modal, createGuide) => {
         //         if(options) options.innerHTML += `<div id="googleLogoContainer"><img id="googleLogo" src="${googleLogoImg}" alt=""></div>`;
         //     }            
         // },750);  
+    });
+
+    locationPlaceInput.addEventListener('click', e => {
+        e.preventDefault();
+        console.log('click, triggered enter text field');
+    });
+
+    // Required to prevent the modal CLOSING
+
+    let selected = null;
+
+    locationPlaceInput.addEventListener('keyup', e => {
+        e.preventDefault();
+        if(e.keyCode == 13) {
+            if(selected) {
+                saveDefaultLocation(config, locationPlaceInput, locationPlace, createGuide, selected);
+            }
+        } else {
+            const container = document.querySelector('.autocomplete-options-container');
+            if(container) {
+                selected = container.querySelector('div.selected');
+                console.log('Value of selected: ', selected.innerHTML);                
+            }
+        }
+    });
+
+    // Required for mobile:
+
+    document.getElementById('locationForm').addEventListener('submit', e => {
+        e.preventDefault();
+        console.log('submit, triggered by GO button');
+        if(locationPlaceInput.value !== '') {
+            saveDefaultLocation(config, locationPlaceInput, locationPlace, createGuide, selected);
+        }
+    });
+
+    // Required for mobile:
+
+    locationPlaceInput.addEventListener('focusout', e => {
+        e.preventDefault();
+
+            console.log('e.target.value: ', e.target.value);
+            console.log('focusout');    
+            if(selected) {
+                saveDefaultLocation(config, locationPlaceInput, locationPlace, createGuide, selected);
+            }
+
     });
 
     let range = config.guide.speciesRange;
@@ -93,46 +140,6 @@ export const renderLocation = (modal, createGuide) => {
     createGuide.nextStepAction.addEventListener('click', event => {
         if(autocompleteRef)
             autocompleteRef.destroy();
-    });
-
-    const saveLocationBtn = modal.querySelector('.js-set-inat-location-btn');
-
-    saveLocationBtn.addEventListener('click', event => {
-
-        const iNatLookup = false;
-
-        if(iNatLookup) {
-            config.guide.locationType = 'place';
-            config.guide.place = { name: locationPlaceInput.value, id: locationPlaceInput.name, type: 'places' };
-            locationPlace = locationPlaceInput.value;
-            config.guide.locationPlace = locationPlace;
-        } else {
-            config.guide.locationType = 'longLat';
-            config.guide.locationLongLat = locationPlaceInput.value;
-
-            const callback = geocoderResult => {
-                const lat = geocoderResult[0].geometry.location.lat();
-                const long = geocoderResult[0].geometry.location.lng();
-                config.guide.coordinates = { lat, long };
-
-                locationPlaceInput.value = '';
-
-                createGuide.setConfig(config);
-                createGuide.saveStep('LOCATION');
-            };
-
-            GooglePlaceDetails(locationPlaceInput.name, callback);            
-        }
-
-        saveLocationBtn.innerHTML = 'Saving location…';
-
-        setTimeout(() => {
-            saveLocationBtn.innerHTML = 'Location saved';
-            setTimeout(() => {
-                saveLocationBtn.innerHTML = 'Save alternative location';
-                saveLocationBtn.disabled = true;
-            }, 2000);
-        }, 2000);
     });
 
     const idSwitch = parent.querySelector('.snap-switch-slider');
@@ -159,4 +166,45 @@ export const renderLocation = (modal, createGuide) => {
     const position = config.guide.season.type === 'months' ? 'left' : 'right';
 
     switchHandler(idSwitch, position, switchCallback);
+}
+
+const saveDefaultLocation = (config, locationPlaceInput, locationPlace, createGuide, selected) => {
+
+    const iNatLookup = false;
+    
+    let selectedText = locationPlaceInput.value;
+    let selectedId = locationPlaceInput.name;
+
+    if(selected) {
+        selectedText = selected.innerHTML;
+        selectedId = selected.dataset.id;
+        locationPlaceInput.value = selectedText;
+        selected = null;
+    }
+
+    if (iNatLookup) {
+        config.guide.locationType = 'place';
+        config.guide.place = { name: selectedText, id: selectedId, type: 'places' };
+        locationPlace = selectedText;
+        config.guide.locationPlace = locationPlace;
+    }
+    else {
+        config.guide.locationType = 'longLat';
+        config.guide.locationLongLat = selectedText;
+
+        const callback = geocoderResult => {
+            if(geocoderResult && geocoderResult.length > 0) {
+                const lat = geocoderResult[0].geometry.location.lat();
+                const long = geocoderResult[0].geometry.location.lng();
+                config.guide.coordinates = { lat, long };
+                
+                locationPlaceInput.value = '';
+                
+                createGuide.setConfig(config);
+                createGuide.saveStep('LOCATION');
+            }
+        };
+        GooglePlaceDetails(selectedId, callback);
+    }
+    return locationPlace;
 }
