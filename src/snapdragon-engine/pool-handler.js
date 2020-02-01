@@ -25,21 +25,24 @@ export const getPoolItems = async (collection, poolSize = 5) => {
   }
 
   const speciesPool = utils.shuffleArray(taxonicMatches.filter(ci => ci.name.toLowerCase() !== item.name.toLowerCase()));
+
+  console.clear();
   
   if(!speciesPool) {
+    console.log('!speciesPool');
     getPoolItems(collection);
   }
 
   // if not enough, only get the additional necessary number (but duplicates???)
 
   else if(speciesPool.length < poolSize) {
+    console.log('speciesPool.length < poolSize');
     getPoolItems(collection);
   } 
   else {
 
     const items = R.take(poolSize, speciesPool);
 
-    console.clear();
     console.log('poolSize: ', poolSize);
     console.log('speciesPool: ', speciesPool);
     console.log('pool items from getPoolItems: ', items);

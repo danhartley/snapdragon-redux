@@ -15,6 +15,13 @@ import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import navigationTemplate from 'ui/fixtures/navigation-template.html';
 import definitionCardTemplate from 'ui/screens/cards/definition-card-template.html';
 
+const onLoseFocusListeners = [];
+
+export const onAddLoseFocusListener = listener => {
+    onLoseFocusListeners.pop();
+    onLoseFocusListeners.push(listener);
+}
+
 export const renderNavigation = collection => {
 
     const { config, counter } = store.getState();
@@ -66,6 +73,7 @@ export const renderNavigation = collection => {
                         renderHome(store.getState().counter, true);
                         break;
                     case enums.navigation.PORTRAIT_HOME:
+                        onLoseFocusListeners.forEach(listener => listener());
                         const activeInfoIcon = document.querySelector('.js-info.active-icon');
                         if(activeInfoIcon) activeInfoIcon.classList.remove('active-icon');
                         clickedIcon.classList.add('active-icon');
