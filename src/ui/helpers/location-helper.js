@@ -11,7 +11,7 @@ export const initialiseConfig = async originalConfig => {
 
     config.season = { observableMonths };
     config.guide.season.observableMonths = observableMonths;
-    config.guide.season.type = config.guide.season.type || 'months';
+    config.guide.season.type = config.guide.season.type || 'all_year';
 
     config.collection.id = config.collection.id || 0; 
     config.guide.locationPlace = '';

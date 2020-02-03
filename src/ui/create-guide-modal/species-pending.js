@@ -28,13 +28,11 @@ export const speciesPendingSpinner = (config, modal) => {
     const renderNewLessonSummary = lesson => {
 
         feedback.innerHTML = `
-                Your new lesson, ${lesson.name}, is ready.
+                Your new lesson, <span>${lesson.name}</span>, is ready.
 
-                It contains ${lesson.items.length} species.
+                <p>It contains ${lesson.items.length} species.</p>   
 
                 Open the lesson to access your custom species guide.
-
-                Review the lesson to find out what information you have retained.
             `;
         
         const icon = modal.querySelector('.icon i');
@@ -65,6 +63,11 @@ export const speciesPendingSpinner = (config, modal) => {
     lesson.taxa = config.guide.iconicTaxa.map(i => i.common).join(', ');
     lesson.iconicTaxa = config.guide.iconicTaxa;
     config.collection.id = lesson.id;
+
+    console.log('config.guide.iconicTaxa: ', config.guide.iconicTaxa);
+    console.log('config.guide.place: ', config.guide.place);
+    console.log('config.guide.season.observableMonths: ', config.guide.season.observableMonths);
+    console.log('config.guide.season.type: ', config.guide.season.type);
 
     const { collection } = await lessonStateHandler.loadLesson(lesson, config, collections);
 

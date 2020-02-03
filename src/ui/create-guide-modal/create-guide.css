@@ -517,7 +517,7 @@
 
   .location-actions .actions {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 2rem 1fr;
     height: 100%;
   }
 
@@ -610,7 +610,7 @@
     font-size: 1.4rem;
   }
 
-  svg-icon.si-glyph-mushrooms svg {
+  .taxa-actions svg-icon.si-glyph-mushrooms svg {
     height: 2rem;
   }
 }
