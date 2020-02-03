@@ -61,7 +61,8 @@ export const renderLocation = (modal, createGuide) => {
 
     // let counter = 0;
 
-    locationPlaceInput.addEventListener('keypress', e => {
+    const handleLocationPlaceInput =  e => {
+        locationPlaceInput.removeEventListener('keypress', handleLocationPlaceInput);
         // counter++;
         // console.log(counter);
         autocompleteRef = inatAutocomplete(locationPlaceInput, 'places', 'autocomplete-options-container', 'place');
@@ -73,7 +74,9 @@ export const renderLocation = (modal, createGuide) => {
         //         if(options) options.innerHTML += `<div id="googleLogoContainer"><img id="googleLogo" src="${googleLogoImg}" alt=""></div>`;
         //     }            
         // },750);  
-    });
+    }
+
+    locationPlaceInput.addEventListener('keypress', handleLocationPlaceInput);
 
     locationPlaceInput.addEventListener('click', e => {
         e.preventDefault();
@@ -138,7 +141,7 @@ export const renderLocation = (modal, createGuide) => {
             autocompleteRef.destroy();
     });
 
-    const idSwitch = parent.querySelector('.snap-switch-slider');
+    const idSwitch = parent.querySelector('.js-snap-switch-slider');
 
     const switchCallback = position => {
 
@@ -166,8 +169,6 @@ export const renderLocation = (modal, createGuide) => {
 
 const saveDefaultLocation = (config, locationPlaceInput, locationPlace, createGuide, selected) => {
 
-    const iNatLookup = false;
-    
     let selectedText = locationPlaceInput.value;
     let selectedId = locationPlaceInput.name;
 
@@ -178,29 +179,26 @@ const saveDefaultLocation = (config, locationPlaceInput, locationPlace, createGu
         selected = null;
     }
 
-    if (iNatLookup) {
-        config.guide.locationType = 'place';
-        config.guide.place = { name: selectedText, id: selectedId, type: 'places' };
-        locationPlace = selectedText;
-        config.guide.locationPlace = locationPlace;
-    }
-    else {
-        config.guide.locationType = 'longLat';
-        config.guide.locationLongLat = selectedText;
+    config.guide.locationType = 'longLat';
+    config.guide.place.name = selectedText;
+    config.guide.locationLongLat = selectedText;
 
-        const callback = geocoderResult => {
-            if(geocoderResult && geocoderResult.length > 0) {
-                const lat = geocoderResult[0].geometry.location.lat();
-                const long = geocoderResult[0].geometry.location.lng();
-                config.guide.coordinates = { lat, long };
-                
-                locationPlaceInput.value = '';
-                
-                createGuide.setConfig(config);
-                createGuide.saveStep('LOCATION');
-            }
-        };
-        GooglePlaceDetails(selectedId, callback);
-    }
+    config.guide.locationType = 'longLat';
+    config.guide.locationLongLat = selectedText;
+
+    const callback = geocoderResult => {
+        if(geocoderResult && geocoderResult.length > 0) {
+            const lat = geocoderResult[0].geometry.location.lat();
+            const long = geocoderResult[0].geometry.location.lng();
+            config.guide.coordinates = { lat, long };
+            
+            locationPlaceInput.value = '';
+            
+            createGuide.setConfig(config);
+            createGuide.saveStep('LOCATION');
+        }
+    };
+    GooglePlaceDetails(selectedId, callback);
+
     return locationPlace;
 }

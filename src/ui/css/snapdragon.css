@@ -2133,9 +2133,9 @@ a.collection-disabled {
   font-size: .9rem;
 }
 
-/* .border-bottom {
-  border-bottom: .5px solid var(--snap-youtube-green);
-} */
+.border-bottom {
+  border-bottom: .03rem solid var(--snap-border-medium);
+}
 
 .title {
   padding: 0 .5rem;

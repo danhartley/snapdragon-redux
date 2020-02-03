@@ -272,7 +272,3 @@ div.text-entry {
 .input-trait-field input {
     margin: 0 .5rem;
 }
-
-.border-bottom {
-  border-bottom: .03rem solid var(--snap-border-medium);
-}

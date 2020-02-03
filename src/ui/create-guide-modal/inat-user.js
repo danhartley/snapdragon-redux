@@ -1,7 +1,6 @@
 import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
 import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 import { renderTemplate } from 'ui/helpers/templating';
-import { renderLocation } from 'ui/create-guide-modal/location';
 
 import inatTemplate from 'ui/create-guide-modal/inat-user-template.html';
 
@@ -31,37 +30,40 @@ export const renderInatUser = (modal, createGuide) => {
     let autocompleteRef;
 
     const setiNatIdentityBtn = parent.querySelector('.js-set-inat-identity-btn');
+          setiNatIdentityBtn.addEventListener('click', event => {        
+            
+            const key = parent.querySelector('#inat-identity').value;
+            const id = parent.querySelector('#inat-identity').name;
+            config.guide.inatId.key = key;
+            config.guide.inatId.id = id;
 
-    setiNatIdentityBtn.addEventListener('click', event => {        
-        
-        const key = parent.querySelector('#inat-identity').value;
-        const id = parent.querySelector('#inat-identity').name;
-        config.guide.inatId.key = key;
-        config.guide.inatId.id = id;
+            if(key !== '') {
+                config.guide.locationType = 'inat';
 
-        if(key !== '') {
-            config.guide.locationType = 'inat';
+                createGuide.setConfig(config);
+                createGuide.saveStep('INAT');
 
-            createGuide.setConfig(config);
-            createGuide.saveStep('INAT');
+                parent.querySelector('#inat-identity').value = '';            
 
-            parent.querySelector('#inat-identity').value = '';            
-
-            if(autocompleteRef) {
-                autocompleteRef.destroy();
+                if(autocompleteRef) {
+                    autocompleteRef.destroy();
+                }
             }
-        }
-    });
+          });
 
     const position = config.guide.inatId.param === 'user_id' ? 'left' : 'right';
 
     let byType = 'users';
 
     const inatIdentityInput = parent.querySelector('#inat-identity');
+          inatIdentityInput.focus();
 
-    inatIdentityInput.addEventListener('keypress', event => {
+    const handlerInatIdentityInput = e => {
+        inatIdentityInput.removeEventListener('keypress', handlerInatIdentityInput);
         autocompleteRef = inatAutocomplete(inatIdentityInput, byType, 'inat-autocomplete-options-container', '');
-    });
+    }
+
+    inatIdentityInput.addEventListener('keypress', handlerInatIdentityInput);
 
     const idSwitch = parent.querySelector('.snap-switch-slider');
 
@@ -83,16 +85,4 @@ export const renderInatUser = (modal, createGuide) => {
     };
 
     switchHandler(idSwitch, position, switchCallback);
-
-    // const linktoStandardOptions = parent.querySelector('.js-location-options1 span:nth-child(1)');
-
-    // const renderLookupLocation = () => {
-    //     const config = createGuide.getConfig();
-    //           config.guide.locationType = 'longLat';
-    //     createGuide.setConfig(config);
-    //     renderLocation(createGuide.modal, createGuide);
-    // };
-
-    // linktoStandardOptions.removeEventListener('click', renderLookupLocation, true);
-    // linktoStandardOptions.addEventListener('click', renderLookupLocation, true);
 };

@@ -49,9 +49,6 @@ export const inatAutocomplete = (input, type, className, rb) => {
                     });
                     break;
                 case 'places':
-                    // getInatPlaceSuggestions(text).then(places => {
-                    //     update(places);
-                    // });
                     getPlaceSuggestions(text, update);
                     break;
                 case 'projects':
