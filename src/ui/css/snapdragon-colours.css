@@ -56,6 +56,9 @@
     
     --snap-btn-auxillary: rgb(96, 117, 90);
     --snap-btn-hover: rgb(240, 240, 240);
+    
+    --snap-btn-dropdown: rgb(252, 193, 186);
+    --snap-btn-dropdown-options: rgb(254, 240, 229);
   
     --snap-border-light: rgb(175,175,175);
     --snap-border-medium: rgb(211, 211, 211);
@@ -67,5 +70,5 @@
     --snap-inat: rgb(127, 151, 122);
 
     --snap-youtube-green: rgb(52, 105, 23);
-    --snap-highlight-border: rgb(250, 152, 149);
+    /* --snap-highlight-border: rgb(250, 152, 149); */
   }

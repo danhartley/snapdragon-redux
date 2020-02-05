@@ -183,10 +183,8 @@ hr {
   margin: 0.15rem 0 0 0;
   padding: 0;
   color: var(--snap-text-dark);
-  background-color: rgb(207, 218, 204);
   border: .05rem solid var(--snap-border-light);
   left: inherit !important;
-  background-color: var(--snap-text-light);
 }
 
 .non-taxa .dropdown-menu {

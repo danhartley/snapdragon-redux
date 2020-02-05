@@ -88,7 +88,7 @@ class CreateGuide {
 
         switch(description) {
             case 'Options':
-                options.innerHTML = 'Choose how to find the species you want:';
+                options.innerHTML = 'Select species:';
                 navigation.classList.add('hide-important');
                 renderSpecies(this);
                 break;

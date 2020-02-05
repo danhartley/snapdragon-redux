@@ -9,15 +9,15 @@ export const renderSpecies = createGuide => {
 
     const options = [
         {
-            text: 'A) By location and season',
+            text: 'By location and season',
             id: 'A'
         },
         {
-            text: 'B) From iNaturalist observations',
+            text: 'From iNaturalist observations',
             id: 'B'
         },
         {
-            text: 'C) By using a name-based search',
+            text: 'By using a name-based search',
             id: 'C'
         }
     ];
@@ -45,7 +45,7 @@ export const renderSpecies = createGuide => {
         });
 
         const taxonLanguageBtn = document.querySelector('#taxonLanguageBtn');
-        taxonLanguageBtn.innerHTML = `Taxon language [${languages.find(l => l.lang === config.language).name}] `;
+        taxonLanguageBtn.innerHTML = `Taxon language [ ${languages.find(l => l.lang === config.language).name} ] `;
 
         const taxonLanguageTxt = document.querySelector('#taxonLanguageTxt');
                 taxonLanguageTxt.innerHTML = languages.find(l => l.lang === config.language).name;
@@ -55,7 +55,7 @@ export const renderSpecies = createGuide => {
                 config.language = languages.find(l => l.lang === event.target.id).lang;
                 createGuide.setConfig(config);
                 const name = languages.find(l => l.lang === event.target.id).name;
-                taxonLanguageBtn.innerHTML = `Taxon language [${name}]`;
+                taxonLanguageBtn.innerHTML = `Taxon language [ ${name} ]`;
                 taxonLanguageTxt.innerHTML = name;
             });
         });
