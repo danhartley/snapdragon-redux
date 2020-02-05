@@ -9,6 +9,15 @@ export const renderHeaders = collection => {
     DOM.leftHeaderTxt.innerHTML = 'Learn the planet';
     DOM.rightHeaderTxt.innerHTML = config.isLandscapeMode ? 'Save the planet' : 'Learn the planet';
 
+    setTimeout(() => {
+        const { layout, lessonPlan } = store.getState();
+        const progressBar = document.querySelector('.js-right-grid progress');
+        const questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
+    
+        progressBar.max = questionCount;
+        progressBar.value = layout.roundProgressIndex || progressBar.value;
+    });
+
     // return;
     
     // let lessonPlan, config, counter, layout;
