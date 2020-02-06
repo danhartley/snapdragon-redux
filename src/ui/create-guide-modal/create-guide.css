@@ -52,6 +52,11 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 .5rem;
+    height: var(--vhRunningBlock, 10vh);
+    background-color: var(--snap-lesson-row-blue);
+    background-color: var(--snap-species-highlight-background);
+    border-top: 1px solid var(--snap-border-light);
+    border-bottom: 1px solid var(--snap-border-light);
   }
   
   .modal-guide-navigation > div > div {
@@ -70,6 +75,7 @@
     pointer-events: none;
     color: var(--snap-text-light);
     background-color: var(--snap-collection-active);
+    background-color: var(--snap-collection);
     height: var(--vhRunningBlock);
     display: flex;
     align-items: center;
@@ -270,7 +276,6 @@
     border: .05rem solid var(--snap-border-lightest);
     text-align: left;
     width: initial;
-    /* top: calc(var(--vhStandardBlock) + var(--vhStandardBlock) + var(--vhHalfStandardBlock) + var(--vhRunningBlock) + 2rem) !important; */
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -580,9 +585,9 @@
     padding: .5rem;
   }
 
-  .custom-lesson-species-list li:nth-of-type(2n) {
+  /* .custom-lesson-species-list li:nth-of-type(2n) {
     background-color: var(--snap-lesson-row-green);
-  }
+  } */
 
   .species-actions + div {
     display: none !important;
@@ -590,11 +595,6 @@
 
   .modal-guide-progress {
     height: calc(var(--vhStandardBlock, 10vh) - 5px);
-  }
-  
-  .modal-guide-navigation {
-    height: var(--vhRunningBlock, 10vh);
-    background-color: var(--snap-lesson-row-blue);
   }
 
 @media (min-height: 640px) {  

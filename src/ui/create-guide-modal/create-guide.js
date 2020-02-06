@@ -88,13 +88,13 @@ class CreateGuide {
 
         switch(description) {
             case 'Options':
-                options.innerHTML = 'Select species:';
+                options.innerHTML = 'Select the species you want to study.';
                 navigation.classList.add('hide-important');
                 renderSpecies(this);
                 break;
             case 'Location':                
                 
-                options.innerHTML = 'Choose species based on location and season.'
+                options.innerHTML = 'Filter species by location and season.'
                 navigation.classList.remove('hide-important');
 
                 switch(this.option) {
@@ -110,7 +110,7 @@ class CreateGuide {
                 }
                 break;
             case 'Taxa':
-                options.innerHTML = 'Choose the taxa that interest you.'
+                options.innerHTML = 'Filter species by taxa.'
                 renderCategories(this.modal, this);
                 break;
             case 'Spinner':

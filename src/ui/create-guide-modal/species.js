@@ -17,7 +17,7 @@ export const renderSpecies = createGuide => {
             id: 'B'
         },
         {
-            text: 'By using a name-based search',
+            text: 'Using a name-based search',
             id: 'C'
         }
     ];
