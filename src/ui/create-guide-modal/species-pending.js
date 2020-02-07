@@ -2,7 +2,7 @@ import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { listenToInatRequests } from 'api/inat/inat';
 import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
-
+import { enums } from 'ui/helpers/enum-helper';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 
 import spinnerTemplate from 'ui/create-guide-modal/species-pending-template.html';
@@ -14,7 +14,9 @@ export const onCreateCustomLesson = listener => {
     onCloseModalListeners.push(listener);
 };
 
-export const speciesPendingSpinner = (config, modal) => {
+export const speciesPendingSpinner = context => {
+
+    const { config, modal, option } = context;
 
     const template = document.createElement('template');
           template.innerHTML = spinnerTemplate;
@@ -51,22 +53,18 @@ export const speciesPendingSpinner = (config, modal) => {
         });
     };
 
-   const initInatLesson = async () => {
+    const initInatLesson = async () => {
 
     const { collections } = store.getState();
 
     const lesson = snapdragonCollections.find(c => c.type === 'custom');
+            lesson.name = getLessonName(config, lesson);
+            lesson.id = collections.length + 10000;
+            lesson.taxa = config.guide.iconicTaxa.map(i => i.common).join(', ');
+            lesson.iconicTaxa = config.guide.iconicTaxa;
 
-    lesson.name = getLessonName(config, lesson);
-    lesson.id = collections.length + 10000;
-    lesson.taxa = config.guide.iconicTaxa.map(i => i.common).join(', ');
-    lesson.iconicTaxa = config.guide.iconicTaxa;
     config.collection.id = lesson.id;
-
-    console.log('config.guide.iconicTaxa: ', config.guide.iconicTaxa);
-    console.log('config.guide.place: ', config.guide.place);
-    console.log('config.guide.season.observableMonths: ', config.guide.season.observableMonths);
-    console.log('config.guide.season.type: ', config.guide.season.type);
+    config.guide.guideType = option;
 
     const { collection } = await lessonStateHandler.loadLesson(lesson, config, collections);
 
@@ -102,29 +100,36 @@ export const speciesPendingSpinner = (config, modal) => {
     };
 
     unsubscribe = listenToInatRequests(callback);
-   };
-
-   const initSelectedSpeciesLesson = async () => {
-
-    const custom = {
-        ...snapdragonCollections.find(c => c.type === 'custom-static'),
-        species: config.guide.species.map(sp => {
-            return {
-                name: sp
-            }
-        })
     };
 
-    config.collection.id = custom.id;
+   const initSelectedSpeciesLesson = async collectionToLoad => {
+
+    config.collection.id = collectionToLoad.id;
 
     const { collections } = store.getState();
 
-    const { collection } = await lessonStateHandler.loadLesson(custom, config, collections);
+    const { collection } = await lessonStateHandler.loadLesson(collectionToLoad, config, collections);
 
     renderNewLessonSummary(collection);
    };
 
-   config.guide.species ? initSelectedSpeciesLesson() : initInatLesson();
+   switch(option) {
+        case enums.guideOption.LOCATION.name:
+            initSelectedSpeciesLesson({ 
+                ...snapdragonCollections.find(c => c.guideType === option),
+                iconicTaxa: config.guide.iconicTaxa
+            });
+            break;
+        case enums.guideOption.INAT.name:
+            initInatLesson();
+            break;
+        case enums.guideOption.PICKER.name:                
+            initSelectedSpeciesLesson({
+                ...snapdragonCollections.find(c => c.guideType === option),
+                species: config.guide.species.map(sp => { return { name: sp } })
+            });
+            break;
+    }
 
    const title = modal.querySelector('.js-options');
          title.innerHTML = 'Searching for matching species.';

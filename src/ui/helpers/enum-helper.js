@@ -32,13 +32,11 @@ taxon.initEnum([
     'SPECIES',
 ]);
 
-class guideStep extends Enum {};
-guideStep.initEnum([
+class guideOption extends Enum {};
+guideOption.initEnum([
     'LOCATION',
-    'SPECIES',
     'INAT',
-    'PICKER',
-    'SEASON'
+    'PICKER'
 ]);
 
 class nextStep extends Enum {};
@@ -53,6 +51,6 @@ export const enums = {
     lessonState,
     navigation,
     taxon,
-    guideStep,
+    guideOption,
     nextStep
 };

@@ -40,8 +40,12 @@ export const renderCategories = (modal, createGuide) => {
         }   
     },250);
     
+    config.guide.hasChanged = false;
+
     icons.forEach(category => {
         category.addEventListener('click', event => {
+
+            config.guide.hasChanged = true;
             
             const filter = event.currentTarget;
             const filterId = filter.parentElement.id;        

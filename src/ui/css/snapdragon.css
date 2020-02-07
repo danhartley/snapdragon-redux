@@ -199,7 +199,6 @@ hr {
 a.dropdown-item {
   color: var(--snap-text-medium-dark);
   padding: 0.5rem 0 0.5rem 1rem;
-  /* border-bottom: .05rem solid rgb(236, 244, 252); */
   cursor: pointer;
 }
 

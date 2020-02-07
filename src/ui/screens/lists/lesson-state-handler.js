@@ -84,7 +84,7 @@ const loadLesson = async (collectionToLoad, config, collections) => {
       layout: null,
       history: null,
       score: R.clone(progressState.score)
-    };
+    };    
     await collectionHandler(lesson.collection, config, lesson.counter, collections);
   }
 

@@ -1,4 +1,5 @@
 import { renderTemplate } from 'ui/helpers/templating';
+import { enums } from 'ui/helpers/enum-helper';
 
 import speciesTemplate from 'ui/create-guide-modal/species-template.html';
 
@@ -10,15 +11,15 @@ export const renderSpecies = createGuide => {
     const options = [
         {
             text: 'By location and season',
-            id: 'A'
+            id: enums.guideOption.LOCATION.name
         },
         {
             text: 'From iNaturalist observations',
-            id: 'B'
+            id: enums.guideOption.INAT.name
         },
         {
             text: 'Using a name-based search',
-            id: 'C'
+            id: enums.guideOption.PICKER.name
         }
     ];
 
