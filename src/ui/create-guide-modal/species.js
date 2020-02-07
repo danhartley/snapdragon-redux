@@ -17,7 +17,7 @@ export const renderSpecies = createGuide => {
             id: 'B'
         },
         {
-            text: 'By using a name-based search',
+            text: 'Using a name-based search',
             id: 'C'
         }
     ];
@@ -34,8 +34,15 @@ export const renderSpecies = createGuide => {
     renderTemplate({ options, languages }, template.content, parent);
 
     const handleNextStepAction = event => {
-        createGuide.startLesson = false;
-        createGuide.goToNextStep(createGuide.getCurrentStep() + 1, 'NEXT', event.currentTarget.dataset.optionId);
+
+        const optionId = event.currentTarget.dataset.optionId;
+        const step = createGuide.steps.find(s => s.number === createGuide.getCurrentStep().number);
+        const nextStepName = step.nextSteps.find(step => step.id === optionId).step;
+        const nextStep = createGuide.steps.find(s => s.description === nextStepName);
+
+        createGuide.startLesson = false;        
+        createGuide.goToNextStep(createGuide.getCurrentStep().number + 1, 'NEXT', optionId, nextStep);
+        createGuide.listeners = [];
         createGuide.listeners.push( { element: createGuide.nextStepAction, handler: handleNextStepAction });
     };
 
@@ -45,10 +52,10 @@ export const renderSpecies = createGuide => {
         });
 
         const taxonLanguageBtn = document.querySelector('#taxonLanguageBtn');
-        taxonLanguageBtn.innerHTML = `Taxon language [ ${languages.find(l => l.lang === config.language).name} ] `;
+              taxonLanguageBtn.innerHTML = `Taxon language [ ${languages.find(l => l.lang === config.language).name} ] `;
 
         const taxonLanguageTxt = document.querySelector('#taxonLanguageTxt');
-                taxonLanguageTxt.innerHTML = languages.find(l => l.lang === config.language).name;
+              taxonLanguageTxt.innerHTML = languages.find(l => l.lang === config.language).name;
 
         document.querySelectorAll('.dropdown-item').forEach(language => {
             language.addEventListener('click', event => {

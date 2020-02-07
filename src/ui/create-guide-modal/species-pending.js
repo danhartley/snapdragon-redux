@@ -30,9 +30,11 @@ export const speciesPendingSpinner = (config, modal) => {
         feedback.innerHTML = `
                 Your new lesson, <span>${lesson.name}</span>, is ready.
 
-                <p>It contains ${lesson.items.length} species.</p>   
+                It contains ${lesson.items.length} species.
 
-                Open the lesson to access your custom species guide.
+                </br>
+
+                Open Lesson to access your custom species guide.
             `;
         
         const icon = modal.querySelector('.icon i');
@@ -50,9 +52,6 @@ export const speciesPendingSpinner = (config, modal) => {
     };
 
    const initInatLesson = async () => {
-
-    const title = modal.querySelector('.js-options');
-          title.innerHTML = 'Searching for matching species.';
 
     const { collections } = store.getState();
 
@@ -126,6 +125,9 @@ export const speciesPendingSpinner = (config, modal) => {
    };
 
    config.guide.species ? initSelectedSpeciesLesson() : initInatLesson();
+
+   const title = modal.querySelector('.js-options');
+         title.innerHTML = 'Searching for matching species.';
 };
 
 const getLessonName = (config, lesson) => {
@@ -133,7 +135,7 @@ const getLessonName = (config, lesson) => {
     let name = lesson.name;
 
     if(config.guide.inatId.key.length > 0) {
-        name = `Observations for ${config.guide.inatId.key}`;
+        name = `${config.guide.inatId.key}'s observations`;
     } else if(config.guide.locationLongLat) {
         name = config.guide.locationLongLat.split(',')[0];
     }

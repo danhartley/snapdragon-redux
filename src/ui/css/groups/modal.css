@@ -24,6 +24,7 @@
     justify-content: space-between;
     height: var(--vhRunningBlock,7.5vh);
     background-color: var(--snap-portrait);
+    background-color: var(--snap-landscape);
     border: none;
 }
 

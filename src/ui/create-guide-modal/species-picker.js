@@ -11,14 +11,6 @@ export const renderSpeciesPicker = createGuide => {
 
     const { config, modal } = createGuide;
 
-    const step = modal.querySelector('.js-steps > .active');
-          step.innerHTML = 'Picker';
-
-    const nextStepActionTxt = modal.querySelector('.js-modal-guide-navigation > div:nth-child(2) > div > span');
-          nextStepActionTxt.innerHTML = 'Fetch Species';
-
-    createGuide.setCurrentStep(createGuide.getCurrentStep() + 1);
-
     const chosenOnes = modal.querySelector('.js-chosen');
           chosenOnes.classList.add('hide-important');
 
@@ -47,7 +39,11 @@ export const renderSpeciesPicker = createGuide => {
         }, 200);
     };
 
+    const title = modal.querySelector('.js-options');
+          title.innerHTML = 'Add species by name.';
+
     const input = modal.querySelector("#input-species");
+          input.focus();
 
     let speciesNames = [];
 

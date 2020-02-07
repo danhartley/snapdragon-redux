@@ -48,10 +48,28 @@
   }
   
   .modal-guide-navigation {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
     justify-content: space-between;
     align-items: center;
-    margin: 0 .5rem;
+    margin: 0 .25rem;
+    height: var(--vhRunningBlock, 10vh);
+    background-color: var(--snap-species-highlight-background);    
+  }
+
+  .progress-container {
+    border-top: 1px solid var(--snap-border-light);
+    border-bottom: 1px solid var(--snap-border-light);
+  }
+
+  .modal-guide-navigation >:nth-child(2) {
+    display: flex;
+    justify-content: center;
+  }
+
+  .modal-guide-navigation >:nth-child(3) {
+    display: flex;
+    justify-content: flex-end;
   }
   
   .modal-guide-navigation > div > div {
@@ -69,7 +87,7 @@
     font-size: 1.6rem;
     pointer-events: none;
     color: var(--snap-text-light);
-    background-color: var(--snap-collection-active);
+    background-color: var(--snap-collection-light);
     height: var(--vhRunningBlock);
     display: flex;
     align-items: center;
@@ -77,6 +95,10 @@
     padding: .5rem;
   }
   
+  .arrow-wrapper-hidden {
+    background-color: var(--snap-species-highlight-background);
+  }
+
   .arrow-wrapper i {
     pointer-events: initial;
     cursor: pointer;
@@ -270,7 +292,6 @@
     border: .05rem solid var(--snap-border-lightest);
     text-align: left;
     width: initial;
-    /* top: calc(var(--vhStandardBlock) + var(--vhStandardBlock) + var(--vhHalfStandardBlock) + var(--vhRunningBlock) + 2rem) !important; */
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -545,15 +566,11 @@
     display: none !important;
   }
 
-  .filter-language-option-block {
-    position: absolute;
-    bottom: 2rem;
-    left: .5rem;
-    right: .5rem;
-  }
-
   .filter-language-option-block > div:nth-child(1) {
-    margin-bottom: 1rem;
+    border-top: 1px solid var(--snap-border-lightest);
+    margin-bottom: .5rem;
+    padding-top: 2rem;
+    margin-top: 2rem;
   }
 
   .filter-language-option-block span {
@@ -571,7 +588,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--snap-lesson-row-blue);
+    /* background-color: var(--snap-lesson-row-blue); */
+    border: 1px solid var(--snap-border-light);
     height: var(--vhRunningBlock);
     margin-bottom: 1rem;
   }
@@ -580,21 +598,12 @@
     padding: .5rem;
   }
 
-  .custom-lesson-species-list li:nth-of-type(2n) {
-    background-color: var(--snap-lesson-row-green);
-  }
-
   .species-actions + div {
     display: none !important;
   }
 
   .modal-guide-progress {
     height: calc(var(--vhStandardBlock, 10vh) - 5px);
-  }
-  
-  .modal-guide-navigation {
-    height: var(--vhRunningBlock, 10vh);
-    background-color: var(--snap-lesson-row-blue);
   }
 
 @media (min-height: 640px) {  
