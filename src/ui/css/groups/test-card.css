@@ -181,7 +181,7 @@ div.text-entry {
     grid-template-rows: 2fr auto 1fr;
   }
 
-  .mixed-specimen-container > div > span > span {
+  .mixed-specimen-container > div > span > span, .request-feedback > span {
     font-weight: bold;
     color: var(--snap-btn-auxillary)
   }

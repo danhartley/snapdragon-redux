@@ -25,6 +25,7 @@
     
     --snap-collection: rgb(87, 97, 99);
     --snap-collection-active: rgb(95, 125, 89);
+    --snap-collection-light: rgb(126, 137, 140);
     --snap-non-taxa: rgb(165, 159, 131);
 
     --snap-lesson: rgb(52, 105, 23);
@@ -49,7 +50,6 @@
     --snap-list-header-background: rgb(252, 251, 246);
     --snap-row-background: rgb(240, 239, 233);
     
-
     --snap-taxon-card-background: rgba(52, 105, 23,.1);
     --snap-species-highlight-background: rgb(249, 248, 238);
     --snap-species-header-background: rgb(226, 222, 180);
@@ -70,5 +70,4 @@
     --snap-inat: rgb(127, 151, 122);
 
     --snap-youtube-green: rgb(52, 105, 23);
-    /* --snap-highlight-border: rgb(250, 152, 149); */
   }

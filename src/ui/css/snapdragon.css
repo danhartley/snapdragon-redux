@@ -192,16 +192,6 @@ hr {
   background-color: var(--snap-dd-non-taxa-bg-intial);
 }
 
-a.dropdown-item.active {
-  color: var(--snap-text-medium-dark);
-  background-color: rgb(240, 244, 239);
-  cursor: default;
-}
-
-.languages a.dropdown-item.active {
-  background-color: rgba(205, 209, 211, 0.3);
-}
-
 .non-taxa a.dropdown-item.active {
   background-color: var(--snap-dd-non-taxa-bg-active);
 }
@@ -209,8 +199,12 @@ a.dropdown-item.active {
 a.dropdown-item {
   color: var(--snap-text-medium-dark);
   padding: 0.5rem 0 0.5rem 1rem;
-  border-bottom: .05rem solid rgb(236, 244, 252);
+  /* border-bottom: .05rem solid rgb(236, 244, 252); */
   cursor: pointer;
+}
+
+.dropdown-menu.show {
+  top: -.25rem !important;
 }
 
 .non-taxa a.dropdown-item:hover {

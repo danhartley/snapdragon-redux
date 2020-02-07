@@ -32,8 +32,10 @@ export const renderInatUser = (modal, createGuide) => {
     const setiNatIdentityBtn = parent.querySelector('.js-set-inat-identity-btn');
           setiNatIdentityBtn.addEventListener('click', event => {        
             
-            const key = parent.querySelector('#inat-identity').value;
-            const id = parent.querySelector('#inat-identity').name;
+            const input = parent.querySelector('#inat-identity');
+                  input.focus();
+            const key = input.value;
+            const id = input.name;
             config.guide.inatId.key = key;
             config.guide.inatId.id = id;
 
