@@ -1466,7 +1466,7 @@ span.hide-empty:empty {
   padding: 0 0.5rem;
 }
 
-.species-pending .icon {
+.species-search .icon {
   font-size: 7.5rem;
   color: rgb(90, 147, 252);
   display: flex;
@@ -1475,7 +1475,7 @@ span.hide-empty:empty {
   height: calc(var(--vhStandardBlock, 30vh) * 3);
 }
 
-.species-pending .icon i:not(.slow-spin) {
+.species-search .icon i:not(.slow-spin) {
   color: var(--snap-active);
 }
 

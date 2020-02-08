@@ -1,9 +1,9 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import { enums } from 'ui/helpers/enum-helper';
 
-import speciesTemplate from 'ui/create-guide-modal/species-template.html';
+import speciesTemplate from 'ui/create-guide-modal/species-search-options-template.html';
 
-export const renderSpecies = createGuide => {
+export const renderSpeciesSearchOptions = createGuide => {
 
     const header = createGuide.modal.querySelector('.js-modal-title > div');
           header.innerHTML = 'Create your own lesson';

@@ -1,4 +1,4 @@
-import { onCreateCustomLesson } from 'ui/create-guide-modal/species-pending';
+import { onCreateCustomLesson } from 'ui/create-guide-modal/species-search';
 import { renderTemplate } from 'ui/helpers/templating';
 import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
 

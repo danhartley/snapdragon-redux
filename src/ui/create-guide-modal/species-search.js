@@ -6,7 +6,7 @@ import { enums } from 'ui/helpers/enum-helper';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { speciesEditor } from 'ui/create-guide-modal/species-editor';
 
-import spinnerTemplate from 'ui/create-guide-modal/species-pending-template.html';
+import spinnerTemplate from 'ui/create-guide-modal/species-search-template.html';
 import speciesSummaryTemplate from 'ui/create-guide-modal/species-summary-template.html';
 
 const onCloseModalListeners = [];
@@ -16,7 +16,7 @@ export const onCreateCustomLesson = listener => {
     onCloseModalListeners.push(listener);
 };
 
-export const speciesPendingSpinner = context => {
+export const speciesSearch = context => {
 
     const { config, modal, option } = context;
 

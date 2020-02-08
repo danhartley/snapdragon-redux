@@ -3,13 +3,13 @@ import 'ui/create-guide-modal/create-guide.css';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
-import { renderSpecies } from 'ui/create-guide-modal/species';
+import { renderSpeciesSearchOptions } from 'ui/create-guide-modal/species-search-options';
 import { renderLocation } from 'ui/create-guide-modal/location';
 import { renderInatUser } from 'ui/create-guide-modal/inat-user';
 import { renderCategories } from 'ui/create-guide-modal/categories';
 import { renderSpeciesPicker } from 'ui/create-guide-modal/species-picker';
 import { saveGuide } from 'ui/create-guide-modal/common/save-button';
-import { speciesPendingSpinner } from 'ui/create-guide-modal/species-pending';
+import { speciesSearch } from 'ui/create-guide-modal/species-search';
 import { enums } from 'ui/helpers/enum-helper';
 
 import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
@@ -99,7 +99,7 @@ class CreateGuide {
         switch(description) {
             case 'Provenance':
                 options.innerHTML = 'Select the species you want to study.';
-                renderSpecies(this);
+                renderSpeciesSearchOptions(this);
                 break;
             case 'Location':                                
                 options.innerHTML = 'Filter species by location and season.'
@@ -121,7 +121,7 @@ class CreateGuide {
                 break;
             case 'Spinner':
                 setTimeout(() => {
-                    speciesPendingSpinner(this);
+                    speciesSearch(this);
                 });
                 break;
         }
