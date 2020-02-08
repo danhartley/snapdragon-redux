@@ -54,14 +54,12 @@ export const speciesSearch = context => {
 
         title.innerHTML = 'Matching species.';
 
-        const speciesNames = [];
-
         const editSpecies = modal.querySelector('.js-edit-species');
               editSpecies.addEventListener('click', e => {
-                const selectedSpeciesDisplay = modal.querySelector('.js-selected-species');
+                const selectedSpeciesDisplay = modal.querySelector('.js-selected-species-container');
                       selectedSpeciesDisplay.classList.remove('hide-important');
                       selectedSpeciesDisplay.innerHTML = '';
-                speciesEditor(config, modal, lesson.items.map(i => i.name), speciesNames, selectedSpeciesDisplay);
+                speciesEditor(config, modal, selectedSpeciesDisplay, context, lesson.items.map(i => i.name));
               });
     };
 

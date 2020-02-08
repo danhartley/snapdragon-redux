@@ -588,7 +588,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background-color: var(--snap-lesson-row-blue); */
     border: 1px solid var(--snap-border-light);
     height: var(--vhRunningBlock);
     margin-bottom: 1rem;
@@ -602,8 +601,24 @@
     display: none !important;
   }
 
-  .modal-guide-progress {
-    height: calc(var(--vhStandardBlock, 10vh) - 5px);
+  .request-feedback .edit-species {
+    margin: .5rem;
+    height: var(--vhHalfStandardBlock, 10vh);
+  }
+
+  .request-feedback .lesson-list-item {
+    background-color: var(--snap-lesson-row-green);
+    pointer-events: all;
+  }
+
+  .selected-species-container {
+    position: relative;
+    height: 300px;
+    margin-left: 1rem;
+  }
+
+  .selected-species-container ul {
+    column-count: 2;
   }
 
 @media (min-height: 640px) {  
