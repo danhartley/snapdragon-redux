@@ -1,10 +1,15 @@
+import * as R from 'ramda';
+
 import { store } from 'redux/store';
+import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import { listenToInatRequests } from 'api/inat/inat';
 import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 import { enums } from 'ui/helpers/enum-helper';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { speciesEditor } from 'ui/create-guide-modal/species-editor';
+import { getSnapdragonSpeciesData, loadCollectionItemProperties } from 'ui/helpers/collection-handler';
+import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
 
 import spinnerTemplate from 'ui/create-guide-modal/species-search-template.html';
 import speciesSummaryTemplate from 'ui/create-guide-modal/species-summary-template.html';
@@ -29,25 +34,45 @@ export const speciesSearch = context => {
 
     const feedback = document.querySelector('.js-request-feedback');
 
-    const renderNewLessonSummary = lesson => {
+    const renderNewCollectionSummary = collection => {
 
         template.innerHTML = speciesSummaryTemplate;
 
         feedback.innerHTML = '';
 
-        lesson.taxa = lesson.iconicTaxa.map(taxon => taxon.common).join(', ');
+        collection.taxa = collection.iconicTaxa.map(taxon => taxon.common).join(', ');
         
-        renderTemplate({ lesson }, template.content, feedback);
+        renderTemplate({ collection }, template.content, feedback);
 
         const icon = modal.querySelector('.icon i');
               icon.classList.remove('slow-spin');
 
-        const close = modal.querySelector('.js-arrow-wrapper');
+        const close = modal.querySelector('.far.fa-arrow-alt-circle-right');
 
         setTimeout(() => {
             close.addEventListener('click', () => {
-                setTimeout(() => {
-                    onCloseModalListeners.forEach(listener => listener(lesson));   
+                setTimeout( async () => {
+
+                    if(config.guide.extraSpecies) {                        
+                        let species = config.guide.extraSpecies .map(sp => { return { name: sp } });
+                        let items = await getSnapdragonSpeciesData(species);
+                        const collectionExtension = await loadCollectionItemProperties({ items }, config);
+                        collection.items = [ ...collection.items, ...collectionExtension.items ];
+
+                        const lesson = { 
+                            collection, 
+                            counter: { ...store.getState().counter, index: 0 }, 
+                            lesson: { currentRound: 1, rounds: 0, isNextRound: true },
+                            layout: null,
+                            history: null,
+                            score: R.clone(progressState.score)
+                          }
+
+                        actions.boundNewCollection({ lesson });
+                        onCloseModalListeners.forEach(listener => listener(collection));   
+                    } else {
+                        onCloseModalListeners.forEach(listener => listener(collection));   
+                    }
                 });
             });   
         });
@@ -59,7 +84,7 @@ export const speciesSearch = context => {
                 const selectedSpeciesDisplay = modal.querySelector('.js-selected-species-container');
                       selectedSpeciesDisplay.classList.remove('hide-important');
                       selectedSpeciesDisplay.innerHTML = '';
-                speciesEditor(config, modal, selectedSpeciesDisplay, context, lesson.items.map(i => i.name));
+                speciesEditor(config, modal, selectedSpeciesDisplay, context, collection.items.map(i => i.name));
               });
     };
 
@@ -67,22 +92,23 @@ export const speciesSearch = context => {
 
     const { collections } = store.getState();
 
-    const lesson = {
+    let collection = {
         ...collectionToLoad,
         id: collections.length + 10000,
         taxa: config.guide.iconicTaxa.map(i => i.common).join(', '),
         iconicTaxa: config.guide.iconicTaxa
     };
     
-    lesson.name = getLessonName(config, lesson);
+    collection.name = getCollectionName(config, collection);
 
-    config.collection.id = lesson.id;
+    config.collection.id = collection.id;
     config.guide.guideType = option;
 
-    const { collection } = await lessonStateHandler.loadLesson(lesson, config, collections);
+    collection = await lessonStateHandler.loadLesson(collection, config, collections);
+    lessonStateHandler.saveCurrentLesson(collection);
 
     if(collection && collection.items && collection.items.length > 0) {
-        renderNewLessonSummary(collection);
+        renderNewCollectionSummary(collection);
     } else {
         feedback.innerHTML = 'No species were found. Try widening your parameters.';
     }
@@ -122,8 +148,8 @@ export const speciesSearch = context => {
     const { collections } = store.getState();
 
     const { collection } = await lessonStateHandler.loadLesson(collectionToLoad, config, collections);
-
-    renderNewLessonSummary(collection);
+    
+    renderNewCollectionSummary(collection);
    };
 
    switch(option) {
@@ -149,7 +175,7 @@ export const speciesSearch = context => {
          title.innerHTML = 'Searching for matching species.';
 };
 
-const getLessonName = (config, lesson) => {
+const getCollectionName = (config, lesson) => {
         
     let name = lesson.name;
 

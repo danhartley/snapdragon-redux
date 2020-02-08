@@ -28,6 +28,9 @@ export const speciesEditor = (config, modal, selectedSpeciesDisplay, createGuide
         selectedSpecies.push(species);
 
         config.guide.species = selectedSpecies;
+        config.guide.extraSpecies = config.guide.extraSpecies
+                ? config.guide.extraSpecies.push(species)
+                : [ species ];
 
         createGuide.setConfig(config);
 
@@ -92,6 +95,7 @@ export const speciesEditor = (config, modal, selectedSpeciesDisplay, createGuide
             selectedSpecies = selectedSpecies.filter(species => species !== removedSpecies);
             
             config.guide.species = selectedSpecies;
+            config.guide.extraSpecies = config.guide.extraSpecies.filter(sp => sp !== removedSpecies);
 
             createGuide.setConfig(config);
             
