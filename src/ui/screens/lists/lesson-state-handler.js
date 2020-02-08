@@ -84,10 +84,14 @@ const loadLesson = async (collectionToLoad, config, collections) => {
       history: null,
       score: R.clone(progressState.score)
     };    
-    await collectionHandler(lesson.collection, config, lesson.counter, collections);
+    if(collectionToLoad.behaviour === 'dynamic' && collectionToLoad.items.length === 0) {
+      await collectionHandler(lesson.collection, config, lesson.counter, collections);
+    } else if(collectionToLoad.behaviour !== 'dynamic') {
+      await collectionHandler(lesson.collection, config, lesson.counter, collections);
+    }
   }
 
-  if(lesson.collection.items.length > 0 && collectionToLoad.behaviour !== 'dynamic' ) {
+  if(lesson.collection.items.length > 0 && collectionToLoad.behaviour !== 'dynamic') {
     actions.boundNewCollection({ lesson });
   }
   
