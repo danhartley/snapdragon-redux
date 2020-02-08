@@ -105,7 +105,6 @@ export const speciesSearch = context => {
     config.guide.guideType = option;
 
     collection = await lessonStateHandler.loadLesson(collection, config, collections);
-    lessonStateHandler.saveCurrentLesson(collection);
 
     if(collection && collection.items && collection.items.length > 0) {
         renderNewCollectionSummary(collection);

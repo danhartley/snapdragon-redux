@@ -46,7 +46,7 @@ const saveCurrentLesson = async collection => {
   
   config.collection.id = collection.id;
 
-  // if(!layout) return;
+  if(!layout) return;
  
   const savedLesson = { 
       name: collection.name,
@@ -196,6 +196,5 @@ export const lessonStateHandler = {
   loadLesson,
   getMode,
   changeState,    
-  purgeLesson,
-  saveCurrentLesson
+  purgeLesson
 };
