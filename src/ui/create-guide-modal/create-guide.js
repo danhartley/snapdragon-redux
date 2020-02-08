@@ -30,7 +30,7 @@ class CreateGuide {
             { number: 2, title: 'Species Picker', description: 'Location', nextStep: 'Taxa', prevStep: 'Provenance', disabled: true, className:'location-actions' },
             { number: 2, title: 'Species Picker', description: 'Picker', nextStep: 'Fetch Species', prevStep: 'Provenance', disabled: true, className:'location-actions' },
             { number: 3, title: 'Species Picker', description: 'Taxa', nextStep: 'Fetch Species', disabled: true, className:'taxa-actions' },
-            { number: 4, title: 'Species Picker', description: 'Spinner', nextStep: 'Open Lesson', disabled: true, className:'filter-actions' }
+            { number: 4, title: 'Species Picker', description: 'Spinner', nextStep: 'View Guide', disabled: true, className:'filter-actions' }
         ];
 
         this.currentStep = this.steps.find(s => s.number == step);
@@ -191,7 +191,7 @@ export const createGuideHandler = step => {
     guide.goToNextStep(step);
 
     const handleNextStepAction = event => {        
-        guide.startLesson = guide.nextStepActionTxt.innerHTML.indexOf('Open Lesson') > -1; // hack
+        guide.startLesson = guide.nextStepActionTxt.innerHTML.indexOf('View Guide') > -1; // hack
         if(guide.startLesson) guide.nextStepActionTxt.nextSibling.setAttribute('data-dismiss','modal');
         guide.goToNextStep(guide.getCurrentStep().number + 1, 'NEXT');
         guide.listeners.push( { element: guide.nextStepAction, handler: handleNextStepAction });

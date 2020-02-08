@@ -13,9 +13,7 @@ async function getItems(collection, config) {
 
         const collectionIsUnchanged = 
             collection.items && collection.items.length > 0 && collection.items[0].collectionId === collection.id && 
-            collection.speciesRange === config.guide.speciesRange &&
-
-            console.log('collectionIsUnchanged state: ', collectionIsUnchanged);
+            collection.speciesRange === config.guide.speciesRange;
 
         if(collectionIsUnchanged) {
             return new Promise(resolve => {
@@ -24,7 +22,7 @@ async function getItems(collection, config) {
 
         } else {
 
-            if(config.guide.locationType === 'longLat' && !config.guide.coordinates) {
+            if(config.guide.guideType === 'LOCATION') {
                 
                 const place = await getPlace(config, true);
 
@@ -45,11 +43,9 @@ async function getItems(collection, config) {
     }
 };
 
-export const collectionHandler = async (collection, config, counter) => {
+export const collectionHandler = async (collection, config) => {
     
     try {
-
-        console.log('4. collection name from handler: ', collection.name);
 
         if(collection.items && collection.items.length > 0 && !config.guide.hasChanged) return collection;
 

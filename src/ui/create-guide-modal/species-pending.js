@@ -4,8 +4,10 @@ import { listenToInatRequests } from 'api/inat/inat';
 import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 import { enums } from 'ui/helpers/enum-helper';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
+import { speciesEditor } from 'ui/create-guide-modal/species-editor';
 
 import spinnerTemplate from 'ui/create-guide-modal/species-pending-template.html';
+import speciesSummaryTemplate from 'ui/create-guide-modal/species-summary-template.html';
 
 const onCloseModalListeners = [];
 
@@ -29,16 +31,14 @@ export const speciesPendingSpinner = context => {
 
     const renderNewLessonSummary = lesson => {
 
-        feedback.innerHTML = `
-                Your new lesson, <span>${lesson.name}</span>, is ready.
+        template.innerHTML = speciesSummaryTemplate;
 
-                It contains ${lesson.items.length} species.
+        feedback.innerHTML = '';
 
-                </br>
-
-                Open Lesson to access your custom species guide.
-            `;
+        lesson.taxa = lesson.iconicTaxa.map(taxon => taxon.common).join(', ');
         
+        renderTemplate({ lesson }, template.content, feedback);
+
         const icon = modal.querySelector('.icon i');
               icon.classList.remove('slow-spin');
 
@@ -51,17 +51,32 @@ export const speciesPendingSpinner = context => {
                 });
             });   
         });
+
+        title.innerHTML = 'Matching species.';
+
+        const speciesNames = [];
+
+        const editSpecies = modal.querySelector('.js-edit-species');
+              editSpecies.addEventListener('click', e => {
+                const selectedSpeciesDisplay = modal.querySelector('.js-selected-species');
+                      selectedSpeciesDisplay.classList.remove('hide-important');
+                      selectedSpeciesDisplay.innerHTML = '';
+                speciesEditor(config, modal, lesson.items.map(i => i.name), speciesNames, selectedSpeciesDisplay);
+              });
     };
 
-    const initInatLesson = async () => {
+    const initInatLesson = async collectionToLoad => {
 
     const { collections } = store.getState();
 
-    const lesson = snapdragonCollections.find(c => c.type === 'custom');
-            lesson.name = getLessonName(config, lesson);
-            lesson.id = collections.length + 10000;
-            lesson.taxa = config.guide.iconicTaxa.map(i => i.common).join(', ');
-            lesson.iconicTaxa = config.guide.iconicTaxa;
+    const lesson = {
+        ...collectionToLoad,
+        id: collections.length + 10000,
+        taxa: config.guide.iconicTaxa.map(i => i.common).join(', '),
+        iconicTaxa: config.guide.iconicTaxa
+    };
+    
+    lesson.name = getLessonName(config, lesson);
 
     config.collection.id = lesson.id;
     config.guide.guideType = option;
@@ -117,13 +132,14 @@ export const speciesPendingSpinner = context => {
         case enums.guideOption.LOCATION.name:
             initSelectedSpeciesLesson({ 
                 ...snapdragonCollections.find(c => c.guideType === option),
-                iconicTaxa: config.guide.iconicTaxa
+                iconicTaxa: config.guide.iconicTaxa,
+                name: config.guide.place.name
             });
             break;
         case enums.guideOption.INAT.name:
-            initInatLesson();
+            initInatLesson(snapdragonCollections.find(c => c.guideType === option));
             break;
-        case enums.guideOption.PICKER.name:                
+        case enums.guideOption.PICKER.name:
             initSelectedSpeciesLesson({
                 ...snapdragonCollections.find(c => c.guideType === option),
                 species: config.guide.species.map(sp => { return { name: sp } })

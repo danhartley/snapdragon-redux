@@ -114,7 +114,7 @@ export const getInatSpecies = async config => {
         }
 
         const iconicTaxa = getIconicTaxa(config);
-        const params = getUserOrProjectKeyValuePair(config);
+        const params = config.guide.guideTpe === 'INAT' ? getUserOrProjectKeyValuePair(config) : '';
         const url = getBasePath(config) + `&page=${page}&iconic_taxa=${iconicTaxa}&place_id=${placeId}&lat=${lat}&lng=${lng}&radius=${radius}${inat}${params}`;
 
         const response = await fetch(url);
