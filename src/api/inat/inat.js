@@ -126,7 +126,8 @@ export const getInatSpecies = async config => {
     }
 
     let observations = await getAllInatObservations(config);
-        observations = observations.filter(o => R.contains(o.taxon.name, names));
+        observations = observations.filter(observation => R.contains(observation.taxon.name, names));
+        console.log('inat: observations:', observations);
 
     return await loadSpeciesInParallel(observations);
 }
