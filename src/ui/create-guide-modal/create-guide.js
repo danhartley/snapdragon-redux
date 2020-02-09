@@ -188,25 +188,12 @@ export const createGuideHandler = step => {
 
     guide.goToNextStep(step);
 
-    const handleNextStepAction = event => {        
+    const handleNextStepAction = event => {
         guide.startLesson = guide.nextStepActionTxt.innerHTML.indexOf('View Guide') > -1; // hack
         if(guide.startLesson) { 
             guide.nextStepActionArrow.setAttribute('data-dismiss','modal');
-            // const config = guide.getConfig();
-            // config.guide = {
-            //     iconicTaxa: null,
-            //     locationLongLat: '',
-            //     locationPlace: '',
-            //     locationType: null,
-            //     place: {
-            //         id: 1,
-            //         name: ''
-            //     },
-            //     speciesRange: 10,
-            //     inatId: { key: '', type: '', param: 'user_id' },
-            //     season: {}
-            // };
-            // actions.boundUpdateConfig(config);
+        } else {
+            guide.nextStepActionArrow.removeAttribute('data-dismiss');
         }
         const step = guide.steps.find(step => step.description === guide.getCurrentStep().nextStep);
         if(step) guide.goToNextStep(step.number, 'NEXT');

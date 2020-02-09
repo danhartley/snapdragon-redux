@@ -60,10 +60,14 @@ export const speciesSearch = context => {
     
                         const species = config.guide.extraSpecies.map(sp => { return { name: sp }; });              
                         await lessonStateHandler.addExtraSpeciesSelection(config, collection, species);
-                        onCloseModalListeners.forEach(listener => listener(collection));   
+                        onCloseModalListeners.forEach(listener => listener(collection));
+                        onCloseModalListeners.pop();
+                        lessonStateHandler.clearGuide();
                         
                     } else {
-                        onCloseModalListeners.forEach(listener => listener(collection));   
+                        onCloseModalListeners.forEach(listener => listener(collection));
+                        onCloseModalListeners.pop();
+                        lessonStateHandler.clearGuide();
                     }
                 });
             });   
