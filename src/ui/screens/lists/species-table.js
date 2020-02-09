@@ -99,19 +99,14 @@ export const buildTable = (collection, args) => {
             taxonomy: item.taxonomy || { family: '', order: ''},
             iconicTaxonIcon,
             hideFungiIcon, 
-            hasVideoClassName: !collection.hasVideo ? 'hide-important' : '',
+            hasVideoClassName: !collection.hasVideo ? 'hide-column' : '',
+            hasTaxonClassName: collection.hasVideo ? 'hide-column' : '',
             provider: image.provider || ''
         };
 
         return itemImage;
     });
 
-    // let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
-    // if(!overrideParent) { // hacky!!
-    //     parent.innerHTML = '<div class="snapdragon-container species-list js-species-list"></div>';
-    //     parent = parent.querySelector('.snapdragon-container.js-species-list');
-    // }
-    // parent = overrideParent || parent;
     template.innerHTML = speciesTemplate;
 
     let parent = config.isPortraitMode
@@ -164,7 +159,6 @@ export const buildTable = (collection, args) => {
           accordionHeader.classList.add('not-sortable');
 
     speciesHeader.innerHTML = '<span>Species</span';
-    // familyHeader.innerHTML = '<span>Rank</span>';
     familyHeader.innerHTML = '<span>Family</span><span>Order</span>';
     traitNameHeader.innerHTML = '<span></span>';
     iconicTaxonHeader.innerHTML = '<span><i class="fas fa-sliders-h"></i></span>';
@@ -173,13 +167,19 @@ export const buildTable = (collection, args) => {
         headerRow.appendChild(imageHeader);
         headerRow.appendChild(speciesHeader);    
         headerRow.appendChild(familyHeader);
-        // headerRow.appendChild(iconicTaxonHeader);
-        headerRow.appendChild(traitNameHeader);
+        if(collection.behaviour === 'dynamic') {
+            headerRow.appendChild(iconicTaxonHeader);
+        }
     } else {
         headerRow.appendChild(imageHeader);    
         headerRow.appendChild(speciesHeader);
+        if(collection.behaviour === 'dynamic') {
+            headerRow.appendChild(iconicTaxonHeader);
+        }
     }
-    headerRow.appendChild(accordionHeader);
+    if(collection.behaviour === 'static') {
+        headerRow.appendChild(accordionHeader);
+    }
 
     if(!tbody.querySelector('.table-header')) {
         tbody.insertBefore(headerRow, tbody.children[0]);

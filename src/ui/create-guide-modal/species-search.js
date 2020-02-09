@@ -50,11 +50,12 @@ export const speciesSearch = context => {
             close.addEventListener('click', () => {
                 setTimeout( async () => {
 
-                    collection.items = collection.items.filter(item => {
-                        return R.contains(item.name, config.guide.species);
-                    });
-
                     if(config.guide.extraSpecies) {          
+
+                        collection.items = collection.items.filter(item => {
+                            return R.contains(item.name, config.guide.species);
+                        });
+    
                         const species = config.guide.extraSpecies.map(sp => { return { name: sp }; });              
                         await lessonStateHandler.addExtraSpeciesSelection(config, collection, species);
                         onCloseModalListeners.forEach(listener => listener(collection));   

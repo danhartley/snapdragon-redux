@@ -208,9 +208,6 @@ export const renderSpeciesList = (collection, args) => {
                     const unit = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));
                     const top = (standardBlock * 2) + (rowHeight * (noOfRows - 1)) - ( 2 * unit);
 
-                    // console.log('unit: ', unit);
-                    // console.log('top: ', top);
-
                     scroll.scrollTop = top;
                 };
 
@@ -221,8 +218,6 @@ export const renderSpeciesList = (collection, args) => {
                 }
             }
         } catch(e) {
-            console.log('error in openSpeciesDescriptionHandler: ', name);
-            console.error('error message: ', e.message);
         }
     };
 
