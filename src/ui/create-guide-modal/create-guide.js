@@ -208,8 +208,8 @@ export const createGuideHandler = step => {
             // };
             // actions.boundUpdateConfig(config);
         }
-        // guide.goToNextStep(guide.getCurrentStep().number + 1, 'NEXT');
-        guide.goToNextStep(guide.steps.find(step => step.description === guide.getCurrentStep().nextStep).number, 'NEXT');
+        const step = guide.steps.find(step => step.description === guide.getCurrentStep().nextStep);
+        if(step) guide.goToNextStep(step.number, 'NEXT');
         guide.listeners.push( { element: guide.nextStepActionArrow, handler: handleNextStepAction });
     };
 

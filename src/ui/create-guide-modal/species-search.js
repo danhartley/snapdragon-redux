@@ -50,7 +50,9 @@ export const speciesSearch = context => {
             close.addEventListener('click', () => {
                 setTimeout( async () => {
 
-                    if(config.guide.extraSpecies) {          
+                    if(config.guide.extraSpecies.length > 0 && collection.guideType !== 'PICKER') {          
+
+                        // we ignore picker because new picker lesson will be bound in the usual way
 
                         collection.items = collection.items.filter(item => {
                             return R.contains(item.name, config.guide.species);
@@ -59,6 +61,7 @@ export const speciesSearch = context => {
                         const species = config.guide.extraSpecies.map(sp => { return { name: sp }; });              
                         await lessonStateHandler.addExtraSpeciesSelection(config, collection, species);
                         onCloseModalListeners.forEach(listener => listener(collection));   
+                        
                     } else {
                         onCloseModalListeners.forEach(listener => listener(collection));   
                     }
