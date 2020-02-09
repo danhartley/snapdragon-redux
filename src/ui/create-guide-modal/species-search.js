@@ -65,6 +65,7 @@ export const speciesSearch = context => {
               editSpecies.addEventListener('click', e => {
                 const selectedSpeciesDisplay = modal.querySelector('.js-selected-species-container');
                       selectedSpeciesDisplay.classList.remove('hide-important');
+                      selectedSpeciesDisplay.style.height = "300px";
                       selectedSpeciesDisplay.innerHTML = '';
                 speciesEditor(config, modal, selectedSpeciesDisplay, context, collection.items.map(i => i.name));
               });

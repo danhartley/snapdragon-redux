@@ -613,7 +613,7 @@
 
   .selected-species-container {
     position: relative;
-    height: 300px;
+    /* height: 300px; */
     margin-left: 1rem;
   }
 
