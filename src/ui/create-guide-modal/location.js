@@ -136,7 +136,7 @@ export const renderLocation = (modal, createGuide) => {
     
     slider.addEventListener('change', updateSlider);
 
-    createGuide.nextStepAction.addEventListener('click', event => {
+    createGuide.nextStepActionArrow.addEventListener('click', event => {
         if(autocompleteRef)
             autocompleteRef.destroy();
     });

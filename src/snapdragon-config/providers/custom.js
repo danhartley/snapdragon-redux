@@ -37,7 +37,7 @@ const byInatCollection = {
 const byPickerCollection = { 
     id: 10000,
     behaviour: 'static',
-    name: 'Named species collection', 
+    name: 'Custom collection', 
     guideType: 'PICKER',
     moduleSize: 1,
     lessonPlanLandscape: 1,

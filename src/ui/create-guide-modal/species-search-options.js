@@ -44,7 +44,7 @@ export const renderSpeciesSearchOptions = createGuide => {
         createGuide.startLesson = false;        
         createGuide.goToNextStep(createGuide.getCurrentStep().number + 1, 'NEXT', optionId, nextStep);
         createGuide.listeners = [];
-        createGuide.listeners.push( { element: createGuide.nextStepAction, handler: handleNextStepAction });
+        createGuide.listeners.push( { element: createGuide.nextStepActionArrow, handler: handleNextStepAction });
     };
 
     const lessonOptions = document.querySelectorAll('.custom-lesson-species-list li');

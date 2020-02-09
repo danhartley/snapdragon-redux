@@ -44,7 +44,7 @@ export const speciesSearch = context => {
         const icon = modal.querySelector('.icon i');
               icon.classList.remove('slow-spin');
 
-        const close = modal.querySelector('.far.fa-arrow-alt-circle-right');
+        const close = modal.querySelector('.js-right .js-arrow-wrapper');
 
         setTimeout(() => {
             close.addEventListener('click', () => {
