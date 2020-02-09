@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { listenToInatRequests } from 'api/inat/inat';
@@ -47,6 +49,10 @@ export const speciesSearch = context => {
         setTimeout(() => {
             close.addEventListener('click', () => {
                 setTimeout( async () => {
+
+                    collection.items = collection.items.filter(item => {
+                        return R.contains(item.name, config.guide.species);
+                    });
 
                     if(config.guide.extraSpecies) {          
                         const species = config.guide.extraSpecies.map(sp => { return { name: sp }; });              
