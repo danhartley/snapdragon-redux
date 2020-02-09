@@ -22,7 +22,7 @@ export const renderCustomLesson = (lessons, savedLessons, videoPlayer, score, co
         const title = document.querySelector(`div.js-lesson-title[data-lesson-id="${lesson.id}"]`);
         lessonListEventHandler.onTitleClickHandler(title, lessons, config, true);
 
-        const reviewLink = document.querySelector(`[data-lesson-id="${lesson.id}"]`);
+        const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lesson.id}"]`);
         lessonListEventHandler.onReviewClickHandler(reviewLink, lessons);
 
         const chevron = document.querySelector(`div.js-lesson-list-chevron[data-lesson-id="${lesson.id}"]`);

@@ -1,15 +1,10 @@
-import * as R from 'ramda';
-
 import { store } from 'redux/store';
-import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import { listenToInatRequests } from 'api/inat/inat';
 import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 import { enums } from 'ui/helpers/enum-helper';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { speciesEditor } from 'ui/create-guide-modal/species-editor';
-import { getSnapdragonSpeciesData, loadCollectionItemProperties } from 'ui/helpers/collection-handler';
-import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
 
 import spinnerTemplate from 'ui/create-guide-modal/species-search-template.html';
 import speciesSummaryTemplate from 'ui/create-guide-modal/species-summary-template.html';
@@ -53,22 +48,9 @@ export const speciesSearch = context => {
             close.addEventListener('click', () => {
                 setTimeout( async () => {
 
-                    if(config.guide.extraSpecies) {                        
-                        let species = config.guide.extraSpecies .map(sp => { return { name: sp } });
-                        let items = await getSnapdragonSpeciesData(species);
-                        const collectionExtension = await loadCollectionItemProperties({ items }, config);
-                        collection.items = [ ...collection.items, ...collectionExtension.items ];
-
-                        const lesson = { 
-                            collection, 
-                            counter: { ...store.getState().counter, index: 0 }, 
-                            lesson: { currentRound: 1, rounds: 0, isNextRound: true },
-                            layout: null,
-                            history: null,
-                            score: R.clone(progressState.score)
-                          }
-
-                        actions.boundNewCollection({ lesson });
+                    if(config.guide.extraSpecies) {          
+                        const species = config.guide.extraSpecies.map(sp => { return { name: sp }; });              
+                        await lessonStateHandler.addExtraSpeciesSelection(config, collection, species);
                         onCloseModalListeners.forEach(listener => listener(collection));   
                     } else {
                         onCloseModalListeners.forEach(listener => listener(collection));   

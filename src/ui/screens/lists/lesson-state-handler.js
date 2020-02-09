@@ -6,7 +6,7 @@ import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';
 import { initialiseConfig } from 'ui/helpers/location-helper';
 import { renderSpeciesList } from 'ui/screens/lists/species-list';
-import { collectionHandler } from 'ui/helpers/collection-handler';
+import { collectionHandler, getSnapdragonSpeciesData, loadCollectionItemProperties } from 'ui/helpers/collection-handler';
 
 const beginOrResumeLesson = async (reviewLessonId, isNextRound)  => {
 
@@ -194,11 +194,28 @@ const purgeLesson = () => {
   window.location.reload(true);
 };
 
+const addExtraSpeciesSelection = async (config, collection, species) => {
+    
+  const items = await getSnapdragonSpeciesData(species);
+  const collectionExtension = await loadCollectionItemProperties({ items }, config);
+  collection.items = [...collection.items, ...collectionExtension.items];
+  const lesson = {
+      collection,
+      counter: { ...store.getState().counter, index: 0 },
+      lesson: { currentRound: 1, rounds: 0, isNextRound: true },
+      layout: null,
+      history: null,
+      score: R.clone(progressState.score)
+  };
+  actions.boundNewCollection({ lesson });
+};
+
 export const lessonStateHandler = {
   beginOrResumeLesson,
   renderLessonSpeciesList,
   loadLesson,
   getMode,
   changeState,    
-  purgeLesson
+  purgeLesson,
+  addExtraSpeciesSelection
 };
