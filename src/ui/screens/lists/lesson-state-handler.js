@@ -1,19 +1,18 @@
 import * as R from 'ramda';
 
-import { subscription } from 'redux/subscriptions';
-import { renderLessons } from 'ui/screens/lists/lesson-list';
-import { stats } from 'ui/helpers/stats';
 import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';
 import { initialiseConfig } from 'ui/helpers/location-helper';
 import { renderSpeciesList } from 'ui/screens/lists/species-list';
-import { collectionHandler } from 'ui/helpers/collection-handler';
+import { collectionHandler, getSnapdragonSpeciesData, loadCollectionItemProperties } from 'ui/helpers/collection-handler';
 
 const beginOrResumeLesson = async (reviewLessonId, isNextRound)  => {
 
   const { collections, collection: currentCollection, config } = store.getState();
+
+  console.log('currentCollection: ', currentCollection);
 
   if(isNextRound) {
     await changeState(enums.lessonState.NEXT_ROUND, currentCollection, config);
@@ -48,7 +47,7 @@ const saveCurrentLesson = async collection => {
   config.collection.id = collection.id;
 
   if(!layout) return;
-
+ 
   const savedLesson = { 
       name: collection.name,
       config, collection, counter, lessonPlan, lessonPlans, layout, lesson, score: R.clone(score), history, bonusLayout, enums
@@ -84,11 +83,15 @@ const loadLesson = async (collectionToLoad, config, collections) => {
       layout: null,
       history: null,
       score: R.clone(progressState.score)
-    };
-    await collectionHandler(lesson.collection, config, lesson.counter, collections);
+    };    
+    if(collectionToLoad.behaviour === 'dynamic' && collectionToLoad.items.length === 0) {
+      await collectionHandler(lesson.collection, config, lesson.counter, collections);
+    } else if(collectionToLoad.behaviour !== 'dynamic') {
+      await collectionHandler(lesson.collection, config, lesson.counter, collections);
+    }
   }
 
-  if(lesson.collection.items.length > 0) {
+  if(lesson.collection.items.length > 0 && collectionToLoad.behaviour !== 'dynamic') {
     actions.boundNewCollection({ lesson });
   }
   
@@ -144,11 +147,6 @@ const changeState = async (lessonState, collection, config) => {
           const currentLesson = await saveCurrentLesson(collection);
           lesson = currentLesson.lesson;
 
-          // const itemsToReview = stats.getItemsForRevision(collection, currentLesson.history, 1);
-          // const mode = getMode(config.mode, lesson.isLevelComplete, itemsToReview);
-          // console.log('mode: ', mode);
-          // config.mode = mode;
-
           const mode = 'learn';
 
           switch(mode) {  
@@ -196,11 +194,28 @@ const purgeLesson = () => {
   window.location.reload(true);
 };
 
+const addExtraSpeciesSelection = async (config, collection, species) => {
+    
+  const items = await getSnapdragonSpeciesData(species);
+  const collectionExtension = await loadCollectionItemProperties({ items }, config);
+  collection.items = [...collection.items, ...collectionExtension.items];
+  const lesson = {
+      collection,
+      counter: { ...store.getState().counter, index: 0 },
+      lesson: { currentRound: 1, rounds: 0, isNextRound: true },
+      layout: null,
+      history: null,
+      score: R.clone(progressState.score)
+  };
+  actions.boundNewCollection({ lesson });
+};
+
 export const lessonStateHandler = {
   beginOrResumeLesson,
   renderLessonSpeciesList,
   loadLesson,
   getMode,
   changeState,    
-  purgeLesson
+  purgeLesson,
+  addExtraSpeciesSelection
 };

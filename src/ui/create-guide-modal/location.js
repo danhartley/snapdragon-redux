@@ -3,7 +3,7 @@ import { getPlace, GooglePlaceDetails } from 'geo/geo';
 import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
 
-import locationsTemplate from 'ui/create-guide-modal/locations-template.html';
+import locationTemplate from 'ui/create-guide-modal/location-template.html';
 import googleLogoImg from 'img/powered_by_google_on_white_hdpi.png';
 
 export const renderLocation = (modal, createGuide) => {
@@ -16,7 +16,7 @@ export const renderLocation = (modal, createGuide) => {
     let autocompleteRef;
 
     const template = document.createElement('template');
-          template.innerHTML = locationsTemplate;
+          template.innerHTML = locationTemplate;
     const parent = modal.querySelector('.js-actions');
           parent.innerHTML = '';
 

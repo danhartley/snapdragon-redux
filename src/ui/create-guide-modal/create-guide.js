@@ -3,13 +3,14 @@ import 'ui/create-guide-modal/create-guide.css';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
-import { renderSpecies } from 'ui/create-guide-modal/species';
+import { renderSpeciesSearchOptions } from 'ui/create-guide-modal/species-search-options';
 import { renderLocation } from 'ui/create-guide-modal/location';
 import { renderInatUser } from 'ui/create-guide-modal/inat-user';
 import { renderCategories } from 'ui/create-guide-modal/categories';
 import { renderSpeciesPicker } from 'ui/create-guide-modal/species-picker';
-import { saveButton } from 'ui/create-guide-modal/common/save-button';
-import { speciesPendingSpinner } from 'ui/create-guide-modal/species-pending';
+import { saveGuide } from 'ui/create-guide-modal/common/save-button';
+import { speciesSearch } from 'ui/create-guide-modal/species-search';
+import { enums } from 'ui/helpers/enum-helper';
 
 import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
 
@@ -20,16 +21,16 @@ class CreateGuide {
         this.listeners = [];
 
         this.steps = [
-            { number: 1, title: 'Species Picker', description: 'Options', nextStep: '', disabled: true, className:'species-actions',
+            { number: 1, title: 'Species Picker', description: 'Provenance', nextStep: '', disabled: true, className:'species-actions',
                 nextSteps: [
-                    { id: 'A', step: 'Location'},
-                    { id: 'B', step: 'Location'},
-                    { id: 'C', step: 'Picker'},
+                    { id: enums.guideOption.LOCATION.name, step: 'Location' },
+                    { id: enums.guideOption.INAT.name, step: 'Location'},
+                    { id: enums.guideOption.PICKER.name, step: 'Picker'},
                 ] },
-            { number: 2, title: 'Species Picker', description: 'Location', nextStep: 'Taxa', prevStep: 'Options', disabled: true, className:'location-actions' },
-            { number: 2, title: 'Species Picker', description: 'Picker', nextStep: 'Fetch Species', prevStep: 'Options', disabled: true, className:'location-actions' },
+            { number: 2, title: 'Species Picker', description: 'Location', nextStep: 'Taxa', prevStep: 'Provenance', disabled: true, className:'location-actions' },
+            { number: 2, title: 'Species Picker', description: 'Picker', nextStep: 'Fetch Species', prevStep: 'Provenance', disabled: true, className:'location-actions' },
             { number: 3, title: 'Species Picker', description: 'Taxa', nextStep: 'Fetch Species', disabled: true, className:'taxa-actions' },
-            { number: 4, title: 'Species Picker', description: 'Spinner', nextStep: 'Open Lesson', disabled: true, className:'filter-actions' }
+            { number: 4, title: 'Species Picker', description: 'Spinner', nextStep: 'View Guide', disabled: true, className:'filter-actions' }
         ];
 
         this.currentStep = this.steps.find(s => s.number == step);
@@ -96,22 +97,20 @@ class CreateGuide {
         const options = this.modal.querySelector('.js-options');
 
         switch(description) {
-            case 'Options':
+            case 'Provenance':
                 options.innerHTML = 'Select the species you want to study.';
-                renderSpecies(this);
+                renderSpeciesSearchOptions(this);
                 break;
-            case 'Location':                
-                
+            case 'Location':                                
                 options.innerHTML = 'Filter species by location and season.'
-
                 switch(this.option) {
-                    case 'A':
+                    case enums.guideOption.LOCATION.name:
                         renderLocation(this.modal, this);
                         break;
-                    case 'B':
+                    case enums.guideOption.INAT.name:
                         renderInatUser(this.modal, this);
                         break;
-                    case 'C':                        
+                    case enums.guideOption.PICKER.name:                        
                         renderSpeciesPicker(this);
                         break;
                 }
@@ -122,7 +121,7 @@ class CreateGuide {
                 break;
             case 'Spinner':
                 setTimeout(() => {
-                    speciesPendingSpinner(this.getConfig(), this.modal);
+                    speciesSearch(this);
                 });
                 break;
         }
@@ -180,8 +179,8 @@ class CreateGuide {
         }
     }
 
-    saveStep(stepDescription, update = true) {
-        saveButton(this.getConfig(), stepDescription)();
+    saveStep(stepDescription) {
+        saveGuide(this.getConfig(), stepDescription)();
     }
 };
 
@@ -192,7 +191,7 @@ export const createGuideHandler = step => {
     guide.goToNextStep(step);
 
     const handleNextStepAction = event => {        
-        guide.startLesson = guide.nextStepActionTxt.innerHTML.indexOf('Open Lesson') > -1; // hack
+        guide.startLesson = guide.nextStepActionTxt.innerHTML.indexOf('View Guide') > -1; // hack
         if(guide.startLesson) guide.nextStepActionTxt.nextSibling.setAttribute('data-dismiss','modal');
         guide.goToNextStep(guide.getCurrentStep().number + 1, 'NEXT');
         guide.listeners.push( { element: guide.nextStepAction, handler: handleNextStepAction });

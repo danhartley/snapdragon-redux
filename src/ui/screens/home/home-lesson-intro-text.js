@@ -59,8 +59,8 @@ function handleSpeciesUpdate(speciesCount, collection, speciesSummary, iconicTax
 
 function getSpeciesSummary(iconicTaxa, speciesCount) {
     return iconicTaxa.length === 1
-        ? `There are ${speciesCount} species in this lesson in ${iconicTaxa.length} taxon.`
-        : `There are ${speciesCount} species in this lesson in ${iconicTaxa.length} taxa.`;
+        ? `${speciesCount} species in ${iconicTaxa.length} taxon.`
+        : `${speciesCount} species in ${iconicTaxa.length} taxa.`;
 }
 
 function getSpeciesCount(collection) {
