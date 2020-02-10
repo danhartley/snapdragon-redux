@@ -78,33 +78,27 @@ export const renderLocation = (modal, createGuide) => {
 
     locationPlaceInput.addEventListener('keypress', handleLocationPlaceInput);
 
-    // Prevent any unexpected behaviour
     locationPlaceInput.addEventListener('click', e => {
         e.preventDefault();
     });
 
-    // Prevent any unexpected behaviour
     locationPlaceInput.addEventListener('keyup', e => {
         e.preventDefault('e.keyCode: ', e.keyCode);
     });
 
-    // Required for landscape both for value and to prevent page reloading, 
-    // Required in portrait to prevent page reloading
     document.getElementById('locationForm').addEventListener('submit', e => {
         e.preventDefault();
-        if(config.isLandscapeMode && locationPlaceInput.value !== '') {
-            saveDefaultLocation(config, locationPlaceInput, locationPlace, createGuide);
+        if(locationPlaceInput.value !== '') {
+            saveLocation(config, locationPlaceInput, locationPlace, createGuide);
         }
     });
 
-    // Required for mobile (uses the input value captured) when clicking on an item in the list:
     if(config.isPortraitMode) {
         locationPlaceInput.addEventListener('focusout', e => {
-            console.log('focusout');
             const container = document.querySelector('.autocomplete-options-container');
                 if(container) {
                     setTimeout(() => {
-                        saveDefaultLocation(config, locationPlaceInput, locationPlace, createGuide);                   
+                        saveLocation(config, locationPlaceInput, locationPlace, createGuide);                   
                     });
                     e.preventDefault();
                 }
@@ -160,7 +154,7 @@ export const renderLocation = (modal, createGuide) => {
     switchHandler(idSwitch, position, switchCallback);
 }
 
-const saveDefaultLocation = (config, locationPlaceInput, locationPlace, createGuide) => {
+const saveLocation = (config, locationPlaceInput, locationPlace, createGuide) => {
 
     let selectedText = locationPlaceInput.value;
     let selectedId = locationPlaceInput.name;

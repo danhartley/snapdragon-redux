@@ -2023,6 +2023,11 @@ a.collection-disabled {
   width: 100%;
 }
 
+.bottom-aligned {
+  display: flex;
+  align-items: flex-end;
+}
+
 .double-centred-block {
   display: flex;
   align-items: center;
