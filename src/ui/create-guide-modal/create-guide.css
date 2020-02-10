@@ -275,6 +275,13 @@
     width: initial;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    top: calc(
+      var(--vhRunningBlock, 7.5vh) + 
+      5px +
+      var(--vhStandardBlock, 10vh) +
+      var(--vhRunningBlock, 9vh) +
+      var(--vhStandardBlock, 10vh) +
+      .5rem) !important;
   }
 
   .autocomplete-options-container > div, .inat-autocomplete-options-container > div {
@@ -288,6 +295,17 @@
 
   .inat-autocomplete-options-container .selected {
     background-color: var(--snap-inat);
+  }
+
+  .autocomplete-options-container .selected {
+    color: var(--snap-dd-non-taxa-bg-hover);
+    background-color: var(--snap-text-medium-dark);
+  }
+  
+  .autocomplete-options-container > div:hover:not(.group), .autocomplete-options-container > div.selected {
+    color: var(--snap-dd-non-taxa-bg-hover);
+    background-color: var(--snap-text-medium-dark);
+    cursor: pointer;
   }
   
   #place span {

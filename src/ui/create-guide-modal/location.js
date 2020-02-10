@@ -78,45 +78,38 @@ export const renderLocation = (modal, createGuide) => {
 
     locationPlaceInput.addEventListener('keypress', handleLocationPlaceInput);
 
+    // Prevent any unexpected behaviour
     locationPlaceInput.addEventListener('click', e => {
         e.preventDefault();
     });
 
-    // Required to prevent the modal CLOSING
-
-    let selected = null;
-
+    // Prevent any unexpected behaviour
     locationPlaceInput.addEventListener('keyup', e => {
-        e.preventDefault();
-        if(e.keyCode == 13) {
-            if(selected) {
-                saveDefaultLocation(config, locationPlaceInput, locationPlace, createGuide, selected);
-            }
-        } else {
-            const container = document.querySelector('.autocomplete-options-container');
-            if(container) {
-                selected = container.querySelector('div.selected');  
-            }
-        }
+        e.preventDefault('e.keyCode: ', e.keyCode);
     });
 
-    // Required for mobile:
-
+    // Required for landscape both for value and to prevent page reloading, 
+    // Required in portrait to prevent page reloading
     document.getElementById('locationForm').addEventListener('submit', e => {
         e.preventDefault();
-        if(locationPlaceInput.value !== '') {
-            saveDefaultLocation(config, locationPlaceInput, locationPlace, createGuide, selected);
+        if(locationPlaceInput.value !== '') {                     
+            saveDefaultLocation(config, locationPlaceInput, locationPlace, createGuide);
         }
     });
 
-    // Required for mobile:
-
-    locationPlaceInput.addEventListener('focusout', e => {
-        e.preventDefault();
-            if(selected) {
-                saveDefaultLocation(config, locationPlaceInput, locationPlace, createGuide, selected);
-            }
-    });
+    // Required for mobile (uses the input value captured) when clicking on an item in the list:
+    if(config.isPortraitMode) {
+        locationPlaceInput.addEventListener('focusout', e => {
+            console.log('focusout');
+            const container = document.querySelector('.autocomplete-options-container');
+                if(container) {
+                    setTimeout(() => {
+                        saveDefaultLocation(config, locationPlaceInput, locationPlace, createGuide);                   
+                    });
+                    e.preventDefault();
+                }
+        });
+    }
 
     let range = config.guide.speciesRange;
     const rangeTxt = modal.querySelector('.js-range');
@@ -167,17 +160,10 @@ export const renderLocation = (modal, createGuide) => {
     switchHandler(idSwitch, position, switchCallback);
 }
 
-const saveDefaultLocation = (config, locationPlaceInput, locationPlace, createGuide, selected) => {
+const saveDefaultLocation = (config, locationPlaceInput, locationPlace, createGuide) => {
 
     let selectedText = locationPlaceInput.value;
     let selectedId = locationPlaceInput.name;
-
-    if(selected) {
-        selectedText = selected.innerHTML;
-        selectedId = selected.dataset.id;
-        locationPlaceInput.value = selectedText;
-        selected = null;
-    }
 
     config.guide.locationType = 'longLat';
     config.guide.place.name = selectedText;

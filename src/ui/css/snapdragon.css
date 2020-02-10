@@ -2004,6 +2004,12 @@ a.collection-disabled {
   margin: 0 !important;
 }
 
+.button-block {
+  height: var(--vhButtonBlock, 9vh);
+  margin: 0 !important;
+}
+
+
 .calendar-block {
   height: var(--vhCalendar, 11vh);
 }
@@ -2297,4 +2303,9 @@ img[data-has-image="false"] {
 
 .fa, .fab, .fal, .far, .fas {
   line-height: 1.5 !important;
+}
+
+.autocomplete {
+  height: 5rem !important;
+  position: absolute !important;
 }
