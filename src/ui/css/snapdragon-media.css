@@ -24,7 +24,7 @@
 @media (max-width:375px) and (min-height:667px) {
     .autocomplete {
         height: 8rem !important;
-    }    
+    }
 }
 
 /* Galaxy S5 */
@@ -136,6 +136,10 @@
 
 @media (min-width: 768px) {
 
+    .autocomplete {
+        height: 15rem !important;
+    }
+
     .squares {
         height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhDoubleStandardBlock,20vh));
     }
@@ -151,10 +155,6 @@
     .score-summary-row {
         display: flex;
     }
-
-    /* .continue-link {
-        margin-right: .5rem;  
-      } */
 
     #imageModal .imageSlider .carousel-item, #imageComparisonModal .imageSlider .carousel-item {        
         height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - 300px ); /* see below (hack) */
@@ -201,17 +201,6 @@
     .species-picker-actions ul {
         column-count: 2;
     }  
-
-    /* .autocomplete-options-container .selected {
-        color: var(--snap-dd-non-taxa-bg-hover);
-        background-color: var(--snap-text-medium-dark);
-    }
-
-    .autocomplete-options-container > div:hover:not(.group), .autocomplete-options-container > div.selected {
-        color: var(--snap-dd-non-taxa-bg-hover);
-        background-color: var(--snap-text-medium-dark);
-        cursor: pointer;
-    } */
 
     .guide-header-container > div:nth-child(2) {
         flex-direction: row;

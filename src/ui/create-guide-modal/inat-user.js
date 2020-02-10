@@ -33,7 +33,9 @@ export const renderInatUser = (modal, createGuide) => {
           setiNatIdentityBtn.addEventListener('click', event => {        
             
             const input = parent.querySelector('#inat-identity');
-                  input.focus();
+            
+            if(config.isLandsapeMode) input.focus();
+            
             const key = input.value;
             const id = input.name;
             config.guide.inatId.key = key;
@@ -45,7 +47,7 @@ export const renderInatUser = (modal, createGuide) => {
                 createGuide.setConfig(config);
                 createGuide.saveStep('INAT');
 
-                parent.querySelector('#inat-identity').value = '';            
+                parent.querySelector('#inat-identity').value = '';
 
                 if(autocompleteRef) {
                     autocompleteRef.destroy();

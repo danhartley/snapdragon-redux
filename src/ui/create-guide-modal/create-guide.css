@@ -279,9 +279,10 @@
       var(--vhRunningBlock, 7.5vh) + 
       5px +
       var(--vhStandardBlock, 10vh) +
-      var(--vhRunningBlock, 9vh) +
-      var(--vhStandardBlock, 10vh) +
-      .5rem) !important;
+      var(--vhRunningBlock, 7.5vh) +
+      var(--vhStandardBlock, 10vh)
+      + .25rem
+      ) !important;
   }
 
   .autocomplete-options-container > div, .inat-autocomplete-options-container > div {

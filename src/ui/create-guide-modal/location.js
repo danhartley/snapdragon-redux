@@ -92,7 +92,7 @@ export const renderLocation = (modal, createGuide) => {
     // Required in portrait to prevent page reloading
     document.getElementById('locationForm').addEventListener('submit', e => {
         e.preventDefault();
-        if(locationPlaceInput.value !== '') {                     
+        if(config.isLandscapeMode && locationPlaceInput.value !== '') {
             saveDefaultLocation(config, locationPlaceInput, locationPlace, createGuide);
         }
     });

@@ -2009,6 +2009,9 @@ a.collection-disabled {
   margin: 0 !important;
 }
 
+.running-block {
+  height: var(--vhRunningBlock, 9vh);
+}
 
 .calendar-block {
   height: var(--vhCalendar, 11vh);
