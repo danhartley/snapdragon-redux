@@ -31,6 +31,13 @@ export const speciesSearch = context => {
 
     const feedback = document.querySelector('.js-request-feedback');
 
+    setTimeout(() => {
+        feedback.innerHTML = 'Receiving species data…';
+        setTimeout(() => {
+            feedback.innerHTML = 'Still receiving data…';
+        }, 3500);
+    }, 2000);
+
     const renderNewCollectionSummary = collection => {
 
         template.innerHTML = speciesSummaryTemplate;
@@ -44,13 +51,15 @@ export const speciesSearch = context => {
         const icon = modal.querySelector('.icon i');
               icon.classList.remove('slow-spin');
 
-        const close = modal.querySelector('.far.fa-arrow-alt-circle-right');
+        const close = modal.querySelector('.js-right .js-arrow-wrapper');
 
         setTimeout(() => {
             close.addEventListener('click', () => {
                 setTimeout( async () => {
 
-                    if(config.guide.extraSpecies) {          
+                    if(config.guide.extraSpecies.length > 0 && collection.guideType !== 'PICKER') {          
+
+                        // we ignore picker because new picker lesson will be bound in the usual way
 
                         collection.items = collection.items.filter(item => {
                             return R.contains(item.name, config.guide.species);
@@ -58,9 +67,14 @@ export const speciesSearch = context => {
     
                         const species = config.guide.extraSpecies.map(sp => { return { name: sp }; });              
                         await lessonStateHandler.addExtraSpeciesSelection(config, collection, species);
-                        onCloseModalListeners.forEach(listener => listener(collection));   
+                        onCloseModalListeners.forEach(listener => listener(collection));
+                        onCloseModalListeners.pop();
+                        lessonStateHandler.clearGuide();
+                        
                     } else {
-                        onCloseModalListeners.forEach(listener => listener(collection));   
+                        onCloseModalListeners.forEach(listener => listener(collection));
+                        onCloseModalListeners.pop();
+                        lessonStateHandler.clearGuide();
                     }
                 });
             });   
@@ -72,8 +86,8 @@ export const speciesSearch = context => {
               editSpecies.addEventListener('click', e => {
                 const selectedSpeciesDisplay = modal.querySelector('.js-selected-species-container');
                       selectedSpeciesDisplay.classList.remove('hide-important');
-                      selectedSpeciesDisplay.style.height = "300px";
                       selectedSpeciesDisplay.innerHTML = '';
+                      editSpecies.classList.add('hide-important');
                 speciesEditor(config, modal, selectedSpeciesDisplay, context, collection.items.map(i => i.name));
               });
     };
@@ -94,7 +108,9 @@ export const speciesSearch = context => {
     config.collection.id = collection.id;
     config.guide.guideType = option;
 
-    collection = await lessonStateHandler.loadLesson(collection, config, collections);
+    const lesson = await lessonStateHandler.loadLesson(collection, config, collections);
+    
+    collection = lesson.collection;
 
     if(collection && collection.items && collection.items.length > 0) {
         renderNewCollectionSummary(collection);

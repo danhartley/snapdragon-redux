@@ -82,41 +82,28 @@ export const renderLocation = (modal, createGuide) => {
         e.preventDefault();
     });
 
-    // Required to prevent the modal CLOSING
-
-    let selected = null;
-
     locationPlaceInput.addEventListener('keyup', e => {
-        e.preventDefault();
-        if(e.keyCode == 13) {
-            if(selected) {
-                saveDefaultLocation(config, locationPlaceInput, locationPlace, createGuide, selected);
-            }
-        } else {
-            const container = document.querySelector('.autocomplete-options-container');
-            if(container) {
-                selected = container.querySelector('div.selected');  
-            }
-        }
+        e.preventDefault('e.keyCode: ', e.keyCode);
     });
-
-    // Required for mobile:
 
     document.getElementById('locationForm').addEventListener('submit', e => {
         e.preventDefault();
         if(locationPlaceInput.value !== '') {
-            saveDefaultLocation(config, locationPlaceInput, locationPlace, createGuide, selected);
+            saveLocation(config, locationPlaceInput, locationPlace, createGuide);
         }
     });
 
-    // Required for mobile:
-
-    locationPlaceInput.addEventListener('focusout', e => {
-        e.preventDefault();
-            if(selected) {
-                saveDefaultLocation(config, locationPlaceInput, locationPlace, createGuide, selected);
-            }
-    });
+    if(config.isPortraitMode) {
+        locationPlaceInput.addEventListener('focusout', e => {
+            const container = document.querySelector('.autocomplete-options-container');
+                if(container) {
+                    setTimeout(() => {
+                        saveLocation(config, locationPlaceInput, locationPlace, createGuide);                   
+                    });
+                    e.preventDefault();
+                }
+        });
+    }
 
     let range = config.guide.speciesRange;
     const rangeTxt = modal.querySelector('.js-range');
@@ -136,7 +123,7 @@ export const renderLocation = (modal, createGuide) => {
     
     slider.addEventListener('change', updateSlider);
 
-    createGuide.nextStepAction.addEventListener('click', event => {
+    createGuide.nextStepActionArrow.addEventListener('click', event => {
         if(autocompleteRef)
             autocompleteRef.destroy();
     });
@@ -167,17 +154,10 @@ export const renderLocation = (modal, createGuide) => {
     switchHandler(idSwitch, position, switchCallback);
 }
 
-const saveDefaultLocation = (config, locationPlaceInput, locationPlace, createGuide, selected) => {
+const saveLocation = (config, locationPlaceInput, locationPlace, createGuide) => {
 
     let selectedText = locationPlaceInput.value;
     let selectedId = locationPlaceInput.name;
-
-    if(selected) {
-        selectedText = selected.innerHTML;
-        selectedId = selected.dataset.id;
-        locationPlaceInput.value = selectedText;
-        selected = null;
-    }
 
     config.guide.locationType = 'longLat';
     config.guide.place.name = selectedText;

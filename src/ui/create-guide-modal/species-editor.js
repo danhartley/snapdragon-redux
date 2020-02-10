@@ -6,7 +6,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 
 import editorTemplate from 'ui/create-guide-modal/species-editor-template.html';
 
-export const speciesEditor = (config, modal, selectedSpeciesDisplay, createGuide, selectedSpecies) => {
+export const speciesEditor = (config, modal, selectedSpeciesDisplay, createGuide, selectedSpecies, savedSpeciesNames) => {
 
     const spinner = modal.querySelector('.js-species-search');
     if(spinner) spinner.classList.add('hide-important');
@@ -18,8 +18,14 @@ export const speciesEditor = (config, modal, selectedSpeciesDisplay, createGuide
 
     renderTemplate({selectedSpecies}, template.content, selectedSpeciesDisplay);
 
+    // const species = modal.querySelector('.js-lesson-taxa');
+    //       species.innerHTML = ?? not known at this stage taxon of species added (though could be if import with inat data)
+
+    const speciesCount = modal.querySelector('.js-lesson-taxa-count');
+    if(speciesCount) speciesCount.innerHTML = selectedSpecies.length;
+
     const input = modal.querySelector("#input-species");
-          input.focus();
+          if(config.isLandscapeMode()) input.focus();
 
     const addSpeciesToList = species => {
         
@@ -28,62 +34,66 @@ export const speciesEditor = (config, modal, selectedSpeciesDisplay, createGuide
         selectedSpecies.push(species);
 
         config.guide.species = selectedSpecies;
-        config.guide.extraSpecies = config.guide.extraSpecies
-                ? config.guide.extraSpecies.push(species)
-                : [ species ];
+        config.guide.extraSpecies.push(species);
 
         createGuide.setConfig(config);
 
+        speciesNames = speciesNames.filter(name => name.value !== input.value);
+        input.value = '';
+
         setTimeout(() => {            
-            speciesEditor(config, modal, selectedSpeciesDisplay, createGuide, selectedSpecies);
+            speciesEditor(config, modal, selectedSpeciesDisplay, createGuide, selectedSpecies, speciesNames);
         }, 200);
     };
 
-    let speciesNames = [];
+    let speciesNames = savedSpeciesNames || [];
 
     const init = async () => {
 
-    speciesNames = await firestore.getSpeciesNames()
-    speciesNames = speciesNames[0].value.map(name => {
-        return {
-            label: name,
-            value: name
+        if(speciesNames.length === 0) {
+
+            speciesNames = await firestore.getSpeciesNames()
+            speciesNames = speciesNames[0].value.map(name => {
+                return {
+                    label: name,
+                    value: name
+                }
+            });
         }
-    });
 
-    autocomplete({
-        input: input,
-        fetch: function(text, update) {
-            text = text.toLowerCase();
-            const suggestions = speciesNames.filter(n => n.value.toLowerCase().startsWith(text))
-            update(suggestions);
-        },
-        onSelect: function(item) {
-            input.value = item.label;
-            addSpeciesToList(input.value);
-        },
-        minLength: 3,
-        debounceWaitMs: 200,
-        className: 'autocomplete-options-container'
-    });
-
-    input.addEventListener('change', event => {
-        setTimeout(() => {
-            const highlightedText = document.querySelector('.selected');
-            if(highlightedText) {
-                input.value = highlightedText.innerText;
+        autocomplete({
+            input: input,
+            fetch: function(text, update) {
+                text = text.toLowerCase();
+                const suggestions = speciesNames.filter(n => n.value.toLowerCase().startsWith(text))
+                update(suggestions);
+            },
+            onSelect: function(item) {
+                input.value = item.label;
                 addSpeciesToList(input.value);
-            }
-        }, 100);
-    });
+            },
+            minLength: 3,
+            debounceWaitMs: 200,
+            className: 'autocomplete-options-container'
+        });
+
+        input.addEventListener('change', event => {
+            setTimeout(() => {
+                const highlightedText = document.querySelector('.selected');
+                if(highlightedText) {
+                    input.value = highlightedText.innerText;
+                    addSpeciesToList(input.value);
+                }
+            }, 100);
+        });
     };
-
+    
     init();
-
-    if(input) {
-        speciesNames = speciesNames.filter(name => name.value !== input.value);
-        input.value = '';
-    }
+    
+    // if(input) {
+    //     speciesNames = speciesNames.filter(name => name.value !== input.value);
+    //     input.value = '';
+    // }
 
     modal.querySelectorAll('li input').forEach(checkBox => {
         
@@ -99,7 +109,7 @@ export const speciesEditor = (config, modal, selectedSpeciesDisplay, createGuide
 
             createGuide.setConfig(config);
             
-            speciesEditor(config, modal, selectedSpecies, speciesNames, selectedSpeciesDisplay, createGuide, input, selectedSpecies);
+            speciesEditor(config, modal, selectedSpeciesDisplay, createGuide, selectedSpecies, speciesNames);
         });
     })
 };

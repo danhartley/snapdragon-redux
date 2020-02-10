@@ -29,30 +29,6 @@ export const renderInatUser = (modal, createGuide) => {
 
     let autocompleteRef;
 
-    const setiNatIdentityBtn = parent.querySelector('.js-set-inat-identity-btn');
-          setiNatIdentityBtn.addEventListener('click', event => {        
-            
-            const input = parent.querySelector('#inat-identity');
-                  input.focus();
-            const key = input.value;
-            const id = input.name;
-            config.guide.inatId.key = key;
-            config.guide.inatId.id = id;
-
-            if(key !== '') {
-                config.guide.locationType = 'inat';
-
-                createGuide.setConfig(config);
-                createGuide.saveStep('INAT');
-
-                parent.querySelector('#inat-identity').value = '';            
-
-                if(autocompleteRef) {
-                    autocompleteRef.destroy();
-                }
-            }
-          });
-
     const position = config.guide.inatId.param === 'user_id' ? 'left' : 'right';
 
     let byType = 'users';
@@ -67,14 +43,37 @@ export const renderInatUser = (modal, createGuide) => {
 
     inatIdentityInput.addEventListener('keypress', handlerInatIdentityInput);
 
+    inatIdentityInput.addEventListener('click', e => {
+        e.preventDefault();
+    });
+
+    inatIdentityInput.addEventListener('keyup', e => {
+        e.preventDefault('e.keyCode: ', e.keyCode);
+    });
+
+    document.getElementById('inatForm').addEventListener('submit', e => {
+        e.preventDefault();
+        if(inatIdentityInput.value !== '') {
+            saveInatId(parent, config, createGuide, autocompleteRef);
+        }
+    });
+
+    if(config.isPortraitMode) {
+        inatIdentityInput.addEventListener('focusout', e => {
+            const container = document.querySelector('.inat-autocomplete-options-container');
+                if(container) {
+                    setTimeout(() => {
+                        saveInatId(parent, config, createGuide, autocompleteRef);
+                    });
+                    e.preventDefault();
+                }
+        });
+    }
+
     const idSwitch = parent.querySelector('.snap-switch-slider');
 
     const switchCallback = position => {
         
-        setiNatIdentityBtn.innerHTML = position === 'left'
-            ? 'Save iNaturalist User'
-            : 'Save iNaturalist Project'
-
         byType = position === 'left' ? 'users' : 'projects';
 
         const type = position === 'left' ? 'iNat user ID' : 'iNat project ID';
@@ -88,3 +87,24 @@ export const renderInatUser = (modal, createGuide) => {
 
     switchHandler(idSwitch, position, switchCallback);
 };
+
+const saveInatId = (parent, config, createGuide, autocompleteRef) => {
+    const input = parent.querySelector('#inat-identity');
+    if (config.isLandsapeMode) {
+        input.value = '';
+        input.focus();
+    }
+    const key = input.value;
+    const id = input.name;
+    config.guide.inatId.key = key;
+    config.guide.inatId.id = id;
+    if (key !== '') {
+        config.guide.locationType = 'inat';
+        createGuide.setConfig(config);
+        createGuide.saveStep('INAT');
+        parent.querySelector('#inat-identity').value = '';
+        if (autocompleteRef) {
+            // autocompleteRef.destroy();
+        }
+    }
+}

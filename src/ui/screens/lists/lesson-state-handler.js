@@ -210,6 +210,25 @@ const addExtraSpeciesSelection = async (config, collection, species) => {
   actions.boundNewCollection({ lesson });
 };
 
+const clearGuide = () => {
+  const config = store.getState().config;
+  config.guide = {
+      iconicTaxa: null,
+      locationLongLat: '',
+      locationPlace: '',
+      locationType: null,
+      place: {
+          id: 1,
+          name: ''
+      },
+      speciesRange: 10,
+      inatId: { key: '', type: '', param: 'user_id' },
+      season: {},
+      extraSpecies: []
+  };
+  actions.boundUpdateConfig(config);
+};
+
 export const lessonStateHandler = {
   beginOrResumeLesson,
   renderLessonSpeciesList,
@@ -217,5 +236,6 @@ export const lessonStateHandler = {
   getMode,
   changeState,    
   purgeLesson,
-  addExtraSpeciesSelection
+  addExtraSpeciesSelection,
+  clearGuide
 };

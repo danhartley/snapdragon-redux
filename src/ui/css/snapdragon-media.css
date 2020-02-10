@@ -22,6 +22,9 @@
 /* iPHONE 6,7,8 */
 
 @media (max-width:375px) and (min-height:667px) {
+    .autocomplete {
+        height: 8rem !important;
+    }
 }
 
 /* Galaxy S5 */
@@ -133,6 +136,15 @@
 
 @media (min-width: 768px) {
 
+    .species-search .icon {
+        font-size: 5.5rem;
+        height: calc(var(--vhStandardBlock, 30vh) * 2);
+    }
+
+    .autocomplete {
+        height: 15rem !important;
+    }
+
     .squares {
         height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhDoubleStandardBlock,20vh));
     }
@@ -148,10 +160,6 @@
     .score-summary-row {
         display: flex;
     }
-
-    /* .continue-link {
-        margin-right: .5rem;  
-      } */
 
     #imageModal .imageSlider .carousel-item, #imageComparisonModal .imageSlider .carousel-item {        
         height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - 300px ); /* see below (hack) */
@@ -198,11 +206,6 @@
     .species-picker-actions ul {
         column-count: 2;
     }  
-
-    .autocomplete-options-container .selected {
-        color: var(--snap-dd-non-taxa-bg-hover);
-        background-color: var(--snap-text-medium-dark);
-    }
 
     .guide-header-container > div:nth-child(2) {
         flex-direction: row;

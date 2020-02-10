@@ -8,7 +8,7 @@ import { renderLocation } from 'ui/create-guide-modal/location';
 import { renderInatUser } from 'ui/create-guide-modal/inat-user';
 import { renderCategories } from 'ui/create-guide-modal/categories';
 import { renderSpeciesPicker } from 'ui/create-guide-modal/species-picker';
-import { saveGuide } from 'ui/create-guide-modal/common/save-button';
+import { saveGuide } from 'ui/create-guide-modal/common/save-guide';
 import { speciesSearch } from 'ui/create-guide-modal/species-search';
 import { enums } from 'ui/helpers/enum-helper';
 
@@ -30,7 +30,7 @@ class CreateGuide {
             { number: 2, title: 'Species Picker', description: 'Location', nextStep: 'Taxa', prevStep: 'Provenance', disabled: true, className:'location-actions' },
             { number: 2, title: 'Species Picker', description: 'Picker', nextStep: 'Fetch Species', prevStep: 'Provenance', disabled: true, className:'location-actions' },
             { number: 3, title: 'Species Picker', description: 'Taxa', nextStep: 'Fetch Species', disabled: true, className:'taxa-actions' },
-            { number: 4, title: 'Species Picker', description: 'Spinner', nextStep: 'View Guide', disabled: true, className:'filter-actions' }
+            { number: 4, title: 'Species Picker', description: 'Fetch Species', nextStep: 'View Guide', disabled: true, className:'filter-actions' }
         ];
 
         this.currentStep = this.steps.find(s => s.number == step);
@@ -42,16 +42,15 @@ class CreateGuide {
         this.modalTitle = this.modal.querySelector('.js-modal-title div:nth-child(1)');
         this.navigationContainer = this.modal.querySelector('.js-modal-guide-navigation');
         this.progressSteps = this.modal.querySelectorAll('.js-modal-guide-progress > div > div');
-        this.previousStepAction = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(1)');
-        this.previousStepTitle = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(1) > div');
-        this.previousStepActionArrow = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(1) > div > span:nth-child(1)');
-        this.previousStepActionTxt = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(1) > div > span:nth-child(2)');
-        this.previousStepIcon = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(1) > div > span:nth-child(1)');
-        this.optionsTxt = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(2) > span');
-        this.nextStepAction = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(3)');
-        this.nextStepTitle = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(3) > div');
-        this.nextStepActionTxt = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(3) > div > span:nth-child(1)');
-        this.nextStepActionArrow = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(3) > div > span:nth-child(2)');
+        
+        this.previousStepActionArrow = this.modal.querySelector('.js-left .js-arrow-wrapper');
+        this.previousStepActionTxt = this.modal.querySelector('.js-left .title');
+        this.previousStepIcon = this.modal.querySelector('.js-left .js-arrow-wrapper i');
+
+        this.optionsTxt = this.modal.querySelector('.js-centre .title');
+        
+        this.nextStepActionArrow = this.modal.querySelector('.js-right .js-arrow-wrapper');        
+        this.nextStepActionTxt = this.modal.querySelector('.js-right .title');
 
         this.progressSteps.forEach((ps,index) => {
             ps.innerHTML = this.steps[index].description;
@@ -119,7 +118,7 @@ class CreateGuide {
                 options.innerHTML = 'Filter species by taxa.'
                 renderCategories(this.modal, this);
                 break;
-            case 'Spinner':
+            case 'Fetch Species':
                 setTimeout(() => {
                     speciesSearch(this);
                 });
@@ -170,7 +169,6 @@ class CreateGuide {
             this.previousStepActionArrow.classList.remove('arrow-wrapper-hidden');
             this.nextStepActionArrow.classList.remove('arrow-wrapper-hidden');
             this.previousStepActionTxt.classList.remove('hide-important');
-            this.previousStepTitle.classList.remove('hide-important');
             this.previousStepIcon.classList.remove('hide-important');
             const previousStepProperties = this.currentStep.prevStep
                                                 ? this.steps.find(s => s.description === this.currentStep.prevStep)
@@ -190,19 +188,24 @@ export const createGuideHandler = step => {
 
     guide.goToNextStep(step);
 
-    const handleNextStepAction = event => {        
+    const handleNextStepAction = event => {
         guide.startLesson = guide.nextStepActionTxt.innerHTML.indexOf('View Guide') > -1; // hack
-        if(guide.startLesson) guide.nextStepActionTxt.nextSibling.setAttribute('data-dismiss','modal');
-        guide.goToNextStep(guide.getCurrentStep().number + 1, 'NEXT');
-        guide.listeners.push( { element: guide.nextStepAction, handler: handleNextStepAction });
+        if(guide.startLesson) { 
+            guide.nextStepActionArrow.setAttribute('data-dismiss','modal');
+        } else {
+            guide.nextStepActionArrow.removeAttribute('data-dismiss');
+        }
+        const step = guide.steps.find(step => step.description === guide.getCurrentStep().nextStep);
+        if(step) guide.goToNextStep(step.number, 'NEXT');
+        guide.listeners.push( { element: guide.nextStepActionArrow, handler: handleNextStepAction });
     };
 
-    guide.nextStepAction.addEventListener('click', handleNextStepAction, true);
+    guide.nextStepActionArrow.addEventListener('click', handleNextStepAction, true);
 
     const handlePreviousStepAction = event => {
         guide.goToNextStep(guide.getCurrentStep().number - 1, 'PREVIOUS');
-        guide.listeners.push( { element: guide.previousStepAction, handler: handlePreviousStepAction });
+        guide.listeners.push( { element: guide.previousStepActionArrow, handler: handlePreviousStepAction });
     };
 
-    guide.previousStepAction.addEventListener('click', handlePreviousStepAction, true);
+    guide.previousStepActionArrow.addEventListener('click', handlePreviousStepAction, true);
 };

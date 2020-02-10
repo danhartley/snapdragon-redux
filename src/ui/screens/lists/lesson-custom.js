@@ -38,6 +38,6 @@ export const renderCustomLesson = (lessons, savedLessons, videoPlayer, score, co
                 behavior: 'smooth'
               }
             
-              document.querySelector('.js-lesson-container').scrollTo(scrollOptions);
+        document.querySelector('.js-lesson-container').scrollTo(scrollOptions);
     });
 };
