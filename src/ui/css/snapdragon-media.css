@@ -136,6 +136,11 @@
 
 @media (min-width: 768px) {
 
+    .species-search .icon {
+        font-size: 5.5rem;
+        height: calc(var(--vhStandardBlock, 30vh) * 2);
+    }
+
     .autocomplete {
         height: 15rem !important;
     }

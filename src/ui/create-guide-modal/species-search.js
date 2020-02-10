@@ -31,6 +31,13 @@ export const speciesSearch = context => {
 
     const feedback = document.querySelector('.js-request-feedback');
 
+    setTimeout(() => {
+        feedback.innerHTML = 'Receiving species data…';
+        setTimeout(() => {
+            feedback.innerHTML = 'Still receiving data…';
+        }, 3500);
+    }, 2000);
+
     const renderNewCollectionSummary = collection => {
 
         template.innerHTML = speciesSummaryTemplate;
@@ -79,8 +86,8 @@ export const speciesSearch = context => {
               editSpecies.addEventListener('click', e => {
                 const selectedSpeciesDisplay = modal.querySelector('.js-selected-species-container');
                       selectedSpeciesDisplay.classList.remove('hide-important');
-                      selectedSpeciesDisplay.style.height = "300px";
                       selectedSpeciesDisplay.innerHTML = '';
+                      editSpecies.classList.add('hide-important');
                 speciesEditor(config, modal, selectedSpeciesDisplay, context, collection.items.map(i => i.name));
               });
     };

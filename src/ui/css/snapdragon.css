@@ -1467,12 +1467,12 @@ span.hide-empty:empty {
 }
 
 .species-search .icon {
-  font-size: 7.5rem;
+  font-size: 2.5rem;
+  height: calc(var(--vhStandardBlock, 30vh) * 1.5);
   color: rgb(90, 147, 252);
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(var(--vhStandardBlock, 30vh) * 3);
 }
 
 .species-search .icon i:not(.slow-spin) {

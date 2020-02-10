@@ -25,7 +25,7 @@ export const speciesEditor = (config, modal, selectedSpeciesDisplay, createGuide
     if(speciesCount) speciesCount.innerHTML = selectedSpecies.length;
 
     const input = modal.querySelector("#input-species");
-          input.focus();
+          if(config.isLandscapeMode()) input.focus();
 
     const addSpeciesToList = species => {
         
