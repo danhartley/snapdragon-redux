@@ -25,7 +25,7 @@ export const speciesEditor = (config, modal, selectedSpeciesDisplay, createGuide
     if(speciesCount) speciesCount.innerHTML = selectedSpecies.length;
 
     const input = modal.querySelector("#input-species");
-          if(config.isLandscapeMode()) input.focus();
+          if(config.isLandscapeMode) input.focus();
 
     const addSpeciesToList = species => {
         
@@ -89,11 +89,6 @@ export const speciesEditor = (config, modal, selectedSpeciesDisplay, createGuide
     };
     
     init();
-    
-    // if(input) {
-    //     speciesNames = speciesNames.filter(name => name.value !== input.value);
-    //     input.value = '';
-    // }
 
     modal.querySelectorAll('li input').forEach(checkBox => {
         
