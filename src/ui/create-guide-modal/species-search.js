@@ -3,7 +3,6 @@ import * as R from 'ramda';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { listenToInatRequests } from 'api/inat/inat';
-// import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 import { enums } from 'ui/helpers/enum-helper';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { speciesEditor } from 'ui/create-guide-modal/species-editor';
