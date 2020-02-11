@@ -736,9 +736,9 @@
         display: none !important;
     }
     
-    .block.given {
+    /* .block.given {
         margin: 1rem 0;
-    }
+    } */
 
     .names-container .vernacular-name {
         max-width: none;
