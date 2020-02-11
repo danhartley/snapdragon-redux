@@ -1,9 +1,8 @@
 import * as R from 'ramda';
 
 import { types } from 'redux/actions/action-types';
-import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 
-export const collections = (state = snapdragonCollections.filter(sc => sc.id < 10000), action) => {
+export const collections = (state = [], action) => {
     switch(action.type) {
         case types.SELECT_COLLECTION:
             const cols = [ ...state ];
@@ -16,7 +15,7 @@ export const collections = (state = snapdragonCollections.filter(sc => sc.id < 1
             });
             return cols;
         case types.UPDATE_COLLECTIONS: {
-            return [ ...state, action.data ];
+            return state ? [ ...state, ...action.data ] : action.data;
         }
         default:
             return state;

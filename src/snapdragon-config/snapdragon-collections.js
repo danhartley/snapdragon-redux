@@ -927,16 +927,16 @@ const nationalTrustButterflies = {
 
 export const snapdragonCollections = [
     
-  ...custom,
+  // ...custom,
 
-  ...snapdragon,    
-  ...rhs,
-  ...learnYourLand,
+  // ...snapdragon,    
+  // ...rhs,
+  // ...learnYourLand,
 
-  daisyCreekFarms1,
-  woodlandsTV1,
-  wiseWomanTradition,
-  btoCorvids,
-  bloomsForBeesCU,
-  nationalTrustButterflies
+  // daisyCreekFarms1,
+  // woodlandsTV1,
+  // wiseWomanTradition,
+  // btoCorvids,
+  // bloomsForBeesCU,
+  // nationalTrustButterflies
 ];

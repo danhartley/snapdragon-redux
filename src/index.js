@@ -23,9 +23,10 @@ import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
 import { traitValuesHandler } from 'api/traits/trait-types';
 import { initialiseConfig } from 'ui/helpers/location-helper';
+import { firestore } from 'api/firebase/firestore';
 
 const onLoadHandler = () => {
-    setTimeout( () => {
+    setTimeout( async () => {
 
     let lessonPlan;
 
@@ -42,6 +43,10 @@ const onLoadHandler = () => {
 
         actions.boundUpdateConfig(config);
         actions.boundStopStartLesson(counter);
+
+        const collections = await firestore.getCollections();
+
+        actions.boundUpdateCollections(collections);
 
         subscription.add(renderHeaders, 'collection', 'flow');
         renderNavigation();

@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { listenToInatRequests } from 'api/inat/inat';
-import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
+// import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 import { enums } from 'ui/helpers/enum-helper';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { speciesEditor } from 'ui/create-guide-modal/species-editor';
@@ -143,7 +143,7 @@ export const speciesSearch = context => {
 
         case enums.guideOption.LOCATION.name:
             initLesson({ 
-                ...snapdragonCollections.find(c => c.guideType === option),
+                ...collections.find(c => c.guideType === option),
                 id: collections.length + 10000,
                 name: config.guide.place.name,
                 taxa: config.guide.iconicTaxa.map(i => i.common).join(', '),
@@ -152,7 +152,7 @@ export const speciesSearch = context => {
             break;
         case enums.guideOption.INAT.name:
             initLesson({
-                ...snapdragonCollections.find(c => c.guideType === option),
+                ...collections.find(c => c.guideType === option),
                 id: collections.length + 10000,                
                 name: `${config.guide.inatId.key}'s observations`,
                 taxa: config.guide.iconicTaxa.map(i => i.common).join(', '),
@@ -161,7 +161,7 @@ export const speciesSearch = context => {
             break;
         case enums.guideOption.PICKER.name:
             initLesson({
-                ...snapdragonCollections.find(c => c.guideType === option),
+                ...collections.find(c => c.guideType === option),
                 species: config.guide.species.map(sp => { return { name: sp } })
             });
             break;

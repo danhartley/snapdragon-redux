@@ -556,6 +556,44 @@ const getQuestionById = (id, name) => {
     //db.collection('books').doc('fK3ddutEpD2qQqRMXNW5').get()
 };
 
+
+const addCollection = async collection => {
+
+    let docRef;
+  
+    try {
+        docRef = await db.collection('collections').add(collection);
+    } catch(err) {
+        console.error("Error writing document: ", err);
+    }
+  
+    return docRef;
+  };
+  
+  const getCollectionsWhere = async props => {
+  
+    const { key, operator, value, limit } = props;
+  
+    const collectionRef = limit
+      ? db.collection(`collections`).where(key, operator, value).limit(limit)
+      : db.collection(`collections`).where(key, operator, value);
+  
+    const querySnapshot = await collectionRef.get();
+    
+    const docs = [];
+  
+    querySnapshot.forEach(doc => {
+      docs.push(doc.data());
+      // console.log(doc.data());
+    });
+  
+    return docs;
+  };
+
+  const getCollections = async => {
+    return getCollectionsWhere({ key:'id', operator:'>', value: 1 });
+  };
+
 export const firestore = {
     getSpecies,
     getSpeciesNames,
@@ -572,12 +610,15 @@ export const firestore = {
     getDefinition,
     getSpeciesInParallel,
     getSpeciesByNameInParallel,
+    getCollections,
+    getCollectionsWhere,
     
     addSpecies,
     addTraits,
     addSpeciesRelationship,
     addPhotos,
     addTaxon,
+    addCollection,
     
     updateSpecies,
     updateSpeciesNames,
