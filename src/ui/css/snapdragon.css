@@ -310,7 +310,7 @@ a.dropdown-item {
   position: relative;
 }
 
-.snapdragon-container .standard-block, .lesson-list-header.spaced-block {
+.test-card-question.standard-block, .lesson-list-header.spaced-block {
   border-bottom: .03rem solid var(--snap-border-medium);
 }
 
@@ -916,19 +916,19 @@ button.btn-light:focus,
   width: fit-content;
   background-color: var(--snap-block-light);
   color: var(--snap-text-dark);
-  margin: 0 .5rem .5rem 0;
+  margin: 0 .5rem 0 0;
   padding: .25rem .5rem;
   letter-spacing: .1rem;
   border-radius: .2rem;
   border: .05rem solid var(--snap-text-dark);
 }
 
-.block + hr {
-  margin: .5rem 0 0 0;
+.pool .block {
+  margin: 0 .5rem .5rem 0;
 }
 
-.block.given {
-  margin: 0 0 0.5rem 0;
+.block + hr {
+  margin: .5rem 0 0 0;
 }
 
 .pool {
@@ -1213,12 +1213,12 @@ label.btn.btn-secondary .lesson-icon {
   grid-gap: 0.5rem;
 }
 
-.answer-container {
+/* .answer-container {
   border: .05 solid var(--snap-dd-non-taxa-bg-active);
   padding: 0.25rem 0.5rem;
   padding: 0.25rem 0 0.5rem 0;
   margin: 2rem 0 1rem 0;
-}
+} */
 
 .layer-container {
   cursor: pointer;

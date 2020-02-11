@@ -136,6 +136,10 @@
 
 @media (min-width: 768px) {
 
+    /* .autocomplete-options-container, .inat-autocomplete-options-container {
+        width: initial;
+    } */
+
     .species-search .icon {
         font-size: 5.5rem;
         height: calc(var(--vhStandardBlock, 30vh) * 2);
@@ -410,10 +414,6 @@
         height: initial;  
         padding: 2rem;
       }
-
-    .text-entry-container {
-        padding: .5rem 0;
-    }
 
     .btn {
         width: fit-content;
@@ -732,9 +732,9 @@
         display: none !important;
     }
     
-    .block.given {
+    /* .block.given {
         margin: 1rem 0;
-    }
+    } */
 
     .names-container .vernacular-name {
         max-width: none;

@@ -2,7 +2,6 @@ const mushroomDefaults = {
     moduleSize: 1,
     lessonPlanLandscape: 3,
     lessonPlanPortrait: 103,
-    glossary: ['fungi'],
     iconicTaxa: [ {
         id: 'fungi',
         common: 'Fungi & Lichens'

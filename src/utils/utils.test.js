@@ -7,12 +7,6 @@ test('shuffleArray should return an non-equal array of the same size', () => {
     expect(array.length).toEqual(source.length);
 });
 
-test('nextItem() returns the next item from a given starting point', ()=>{
-    const species = [{id:1},{id:2},{id:3},{id:4}];
-    expect(utils.nextItem(species, 3)).toEqual({id:4, index: 3});
-    expect(utils.nextItem(species, 4)).toEqual({id:1, index: 0});
-});
-
 test('should return 10 random image indexes including 0', () => {
     const source = [ 1,2,3,4,5,6,7,8,9,10 ];
     const num = 10;

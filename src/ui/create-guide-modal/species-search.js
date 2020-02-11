@@ -3,7 +3,6 @@ import * as R from 'ramda';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { listenToInatRequests } from 'api/inat/inat';
-import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 import { enums } from 'ui/helpers/enum-helper';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { speciesEditor } from 'ui/create-guide-modal/species-editor';
@@ -21,6 +20,7 @@ export const onCreateCustomLesson = listener => {
 export const speciesSearch = context => {
 
     const { config, modal, option } = context;
+    const { collections } = store.getState();
 
     const template = document.createElement('template');
           template.innerHTML = spinnerTemplate;
@@ -31,14 +31,16 @@ export const speciesSearch = context => {
 
     const feedback = document.querySelector('.js-request-feedback');
 
-    setTimeout(() => {
+    let timer = setTimeout(() => {
         feedback.innerHTML = 'Receiving species data…';
-        setTimeout(() => {
+        timer = setTimeout(() => {
             feedback.innerHTML = 'Still receiving data…';
         }, 3500);
     }, 2000);
 
     const renderNewCollectionSummary = collection => {
+
+        clearTimeout(timer);
 
         template.innerHTML = speciesSummaryTemplate;
 
@@ -80,11 +82,12 @@ export const speciesSearch = context => {
             });   
         });
 
-        title.innerHTML = 'Matching species.';
+        title.innerHTML = 'New collection species.';
 
         const editSpecies = modal.querySelector('.js-edit-species');
               editSpecies.addEventListener('click', e => {
                 const selectedSpeciesDisplay = modal.querySelector('.js-selected-species-container');
+                      selectedSpeciesDisplay.classList.add('open');
                       selectedSpeciesDisplay.classList.remove('hide-important');
                       selectedSpeciesDisplay.innerHTML = '';
                       editSpecies.classList.add('hide-important');
@@ -92,25 +95,14 @@ export const speciesSearch = context => {
               });
     };
 
-    const initInatLesson = async collectionToLoad => {
+    const initLesson = async collectionToLoad => {
 
-    const { collections } = store.getState();
-
-    let collection = {
-        ...collectionToLoad,
-        id: collections.length + 10000,
-        taxa: config.guide.iconicTaxa.map(i => i.common).join(', '),
-        iconicTaxa: config.guide.iconicTaxa
-    };
-    
-    collection.name = getCollectionName(config, collection);
-
-    config.collection.id = collection.id;
+    config.collection.id = collectionToLoad.id;
     config.guide.guideType = option;
 
-    const lesson = await lessonStateHandler.loadLesson(collection, config, collections);
+    const lesson = await lessonStateHandler.loadLesson(collectionToLoad, config, collections);
     
-    collection = lesson.collection;
+    const collection = lesson.collection;
 
     if(collection && collection.items && collection.items.length > 0) {
         renderNewCollectionSummary(collection);
@@ -146,49 +138,34 @@ export const speciesSearch = context => {
     unsubscribe = listenToInatRequests(callback);
     };
 
-   const initSelectedSpeciesLesson = async collectionToLoad => {
-
-    config.collection.id = collectionToLoad.id;
-
-    const { collections } = store.getState();
-
-    const { collection } = await lessonStateHandler.loadLesson(collectionToLoad, config, collections);
-    
-    renderNewCollectionSummary(collection);
-   };
-
    switch(option) {
+
         case enums.guideOption.LOCATION.name:
-            initSelectedSpeciesLesson({ 
-                ...snapdragonCollections.find(c => c.guideType === option),
+            initLesson({ 
+                ...collections.find(c => c.guideType === option),
+                id: collections.length + 10000,
+                name: config.guide.place.name,
+                taxa: config.guide.iconicTaxa.map(i => i.common).join(', '),
                 iconicTaxa: config.guide.iconicTaxa,
-                name: config.guide.place.name
             });
             break;
         case enums.guideOption.INAT.name:
-            initInatLesson(snapdragonCollections.find(c => c.guideType === option));
+            initLesson({
+                ...collections.find(c => c.guideType === option),
+                id: collections.length + 10000,                
+                name: `${config.guide.inatId.key}'s observations`,
+                taxa: config.guide.iconicTaxa.map(i => i.common).join(', '),
+                iconicTaxa: config.guide.iconicTaxa,
+            });        
             break;
         case enums.guideOption.PICKER.name:
-            initSelectedSpeciesLesson({
-                ...snapdragonCollections.find(c => c.guideType === option),
+            initLesson({
+                ...collections.find(c => c.guideType === option),
                 species: config.guide.species.map(sp => { return { name: sp } })
             });
             break;
     }
 
    const title = modal.querySelector('.js-options');
-         title.innerHTML = 'Searching for matching species.';
-};
-
-const getCollectionName = (config, lesson) => {
-        
-    let name = lesson.name;
-
-    if(config.guide.inatId.key.length > 0) {
-        name = `${config.guide.inatId.key}'s observations`;
-    } else if(config.guide.locationLongLat) {
-        name = config.guide.locationLongLat.split(',')[0];
-    }
-    
-    return name;
+         title.innerHTML = 'Requesting species images and traits.';
 };

@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { firestore } from 'api/firebase/firestore';
 import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
@@ -98,6 +99,7 @@ const loadLesson = async (collectionToLoad, config, collections) => {
   if(!collections.find(c => c.id === lesson.collection.id)) {
     if(lesson.collection.items.length > 0) {
       actions.boundUpdateCollections(lesson.collection);
+      // firestore.addCollection(lesson.collection);
     }
   }
 
