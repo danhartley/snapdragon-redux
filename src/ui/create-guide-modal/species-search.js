@@ -83,7 +83,7 @@ export const speciesSearch = context => {
             });   
         });
 
-        title.innerHTML = 'Matching species.';
+        title.innerHTML = 'New collection species.';
 
         const editSpecies = modal.querySelector('.js-edit-species');
               editSpecies.addEventListener('click', e => {
@@ -168,5 +168,5 @@ export const speciesSearch = context => {
     }
 
    const title = modal.querySelector('.js-options');
-         title.innerHTML = 'Searching for matching species.';
+         title.innerHTML = 'Requesting species images and traits.';
 };

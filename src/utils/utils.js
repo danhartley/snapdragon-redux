@@ -95,12 +95,6 @@ Array.prototype.concatAll = function() {
     }
     return r([]);
   };
-  
-  const nextItem = (array, index) => {    
-    const item = array[index % array.length];
-    item.index = index % array.length;
-    return item;
-  };
 
   const insertObjectBetweenItems = (array, insert) => {
     const insertedIntoArray = array.reduce( (acc, curr, currIndex) => {        
@@ -141,10 +135,6 @@ const calcItemIndex = (offSet, moduleSize, index) => {
           ? offSet
           : offSet + (offSet + index) % moduleSize;
   return itemIndex;
-};
-
-const isIterable = array => {
-  return Array.isArray(array) && array.length !== 0;
 };
 
 const capitaliseFirst = str => {
@@ -318,7 +308,6 @@ export const utils = {
   timer, 
   intervalTimer,
   shuffleArray,
-  nextItem,
   randomiseSelection,
   insertObjectBetweenItems,
   doubledItemsInArray,
@@ -326,7 +315,6 @@ export const utils = {
   sortBy,
   sortAlphabeticallyBy,
   calcItemIndex,
-  isIterable,
   capitaliseFirst,
   capitaliseAll,
   makeSortable,
