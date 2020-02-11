@@ -139,8 +139,8 @@
     color: var(--snap-alert);
 }
 
-.text-entry-container > div {
-    margin: 1rem 0;
+.text-entry-container, .text-complete-container {
+    margin: 1rem 0 0 0;
 }
 
 div.text-entry {

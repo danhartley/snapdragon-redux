@@ -1,13 +1,12 @@
-<div>
-    <div class="centred-block one-and-half-standard-block">
-        <span class="block given genus">{{ genus }}</span> <span class="block species">{{ species }}</span>
-        <hr class="portrait">
-    </div>
+<div class="centred-block standard-block">
+    <span class="block given genus">{{ genus }}</span> <span class="block species">{{ species }}</span>
 </div>
-<div class="margin-bottom landscape">Click to select the correct name:</div>
-<div class="margin-bottom portrait">Tap to select the correct name:</div>
-<div class="pool" data-repeat-answer="{{ answers }}">    
-    <div class="block">
-        <span>{{ answer }}</span>
+<div class="text-complete-container">
+    <div class="margin-bottom landscape">Click to select the correct name:</div>
+    <div class="margin-bottom portrait">Tap to select the correct name:</div>
+    <div class="pool" data-repeat-answer="{{ answers }}">    
+        <div class="block">
+            <span>{{ answer }}</span>
+        </div>
     </div>
 </div>
