@@ -26,7 +26,9 @@ export const getPoolItems = async (collection, poolSize = 5) => {
 
   const speciesPool = utils.shuffleArray(taxonicMatches.filter(ci => ci.name.toLowerCase() !== item.name.toLowerCase()));
 
-  console.clear();
+  // temporary exceptions because there are so few (6 and 3) members of these taxa
+
+  const isException = item.iconicTaxon.toLowerCase() === 'reptilia' || item.iconicTaxon.toLowerCase() === 'amphibia';
   
   if(!speciesPool) {
     console.log('!speciesPool');
@@ -35,7 +37,7 @@ export const getPoolItems = async (collection, poolSize = 5) => {
 
   // if not enough, only get the additional necessary number (but duplicates???)
 
-  else if(speciesPool.length < poolSize) {
+  else if(speciesPool.length < poolSize && !isException) {
     console.log('speciesPool.length < poolSize');
     getPoolItems(collection);
   } 
