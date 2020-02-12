@@ -45,7 +45,7 @@ async function getItems(collection, config) {
     }
 };
 
-export const collectionHandler = async (collection, config) => {
+const loadCollection = async (collection, config) => {
     
     try {
 
@@ -91,7 +91,7 @@ export const collectionHandler = async (collection, config) => {
     }
 };
 
-export const loadCollectionItemProperties = async (collection, config) => {
+const loadCollectionItemProperties = async (collection, config) => {
 
     collection.items = collection.items.filter(i => i);
     collection.items = utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc');
@@ -165,5 +165,10 @@ export const loadCollectionItemProperties = async (collection, config) => {
 
 export const getSnapdragonSpeciesData = species => {
     return firestore.getSpeciesInParallel(species);
+}
+
+export const collectionHandler = {
+    loadCollection,
+    loadCollectionItemProperties
 }
 

@@ -32,7 +32,7 @@ const onLoadHandler = () => {
 
     try {
 
-        const { config, counter: currentCounter, lessonPlan: statePlans } = store.getState();
+        const { config, counter: currentCounter, lessonPlan: statePlans, collections } = store.getState();
 
         lessonPlan = statePlans;
 
@@ -44,9 +44,10 @@ const onLoadHandler = () => {
         actions.boundUpdateConfig(config);
         actions.boundStopStartLesson(counter);
 
-        const collections = await firestore.getCollections();
-
-        actions.boundUpdateCollections(collections);
+        if(collections && collections.length === 0) {
+            const cloudConnections = await firestore.getCollections();
+            actions.boundUpdateCollections(cloudConnections);
+        }
 
         subscription.add(renderHeaders, 'collection', 'flow');
         renderNavigation();
