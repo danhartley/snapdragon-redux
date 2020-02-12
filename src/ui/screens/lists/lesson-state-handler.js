@@ -7,7 +7,7 @@ import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';
 import { initialiseConfig } from 'ui/helpers/location-helper';
 import { renderSpeciesList } from 'ui/screens/lists/species-list';
-import { collectionHandler, getSnapdragonSpeciesData, loadCollectionItemProperties } from 'ui/helpers/collection-handler';
+import { collectionHandler  } from 'ui/helpers/collection-handler';
 
 const beginOrResumeLesson = async (reviewLessonId, isNextRound)  => {
 
@@ -84,22 +84,32 @@ const loadLesson = async (collectionToLoad, config, collections) => {
       layout: null,
       history: null,
       score: R.clone(progressState.score)
-    };    
-    if(collectionToLoad.behaviour === 'dynamic' && collectionToLoad.items.length === 0) {
-      await collectionHandler(lesson.collection, config, lesson.counter, collections);
-    } else if(collectionToLoad.behaviour !== 'dynamic') {
-      await collectionHandler(lesson.collection, config, lesson.counter, collections);
-    }
+    };
   }
 
-  if(lesson.collection.items.length > 0 && collectionToLoad.behaviour !== 'dynamic') {
+  console.log('collectionToLoad: ', collectionToLoad);
+
+  const requiresCollection = 
+      (!!collectionToLoad.items && collectionToLoad.items.length === 0) ||
+      (!collectionToLoad.items && !!collectionToLoad.species);
+
+  console.log('requiresCollection: ', requiresCollection);
+
+  if(requiresCollection) {
+    await collectionHandler.loadCollection(lesson.collection, config, lesson.counter, collections);
     actions.boundNewCollection({ lesson });
+  } else {
+    actions.boundNewCollection({ lesson });  
   }
   
-  if(!collections.find(c => c.id === lesson.collection.id)) {
+  const requiresAddingToCollections = !collections.find(c => c.id === lesson.collection.id);
+
+  console.log('requiresAddingToCollections: ', requiresAddingToCollections);
+
+  if(requiresAddingToCollections) {
     if(lesson.collection.items.length > 0) {
-      actions.boundUpdateCollections(lesson.collection);
-      // firestore.addCollection(lesson.collection);
+      actions.boundUpdateCollections([lesson.collection]);
+      firestore.addCollection(lesson.collection);
     }
   }
 
@@ -198,8 +208,8 @@ const purgeLesson = () => {
 
 const addExtraSpeciesSelection = async (config, collection, species) => {
     
-  const items = await getSnapdragonSpeciesData(species);
-  const collectionExtension = await loadCollectionItemProperties({ items }, config);
+  const items = await collectionHandler.getSnapdragonSpeciesData(species);
+  const collectionExtension = await collectionHandler.loadCollectionItemProperties({ items }, config);
   collection.items = [...collection.items, ...collectionExtension.items];
   const lesson = {
       collection,
@@ -210,6 +220,7 @@ const addExtraSpeciesSelection = async (config, collection, species) => {
       score: R.clone(progressState.score)
   };
   actions.boundNewCollection({ lesson });
+  console.log('boundNewCollection');
 };
 
 const clearGuide = () => {

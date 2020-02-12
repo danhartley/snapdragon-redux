@@ -559,6 +559,9 @@ const getQuestionById = (id, name) => {
 
 const addCollection = async collection => {
 
+    collection.isActive = true;
+    collection.isPrivate = true;
+
     let docRef;
   
     try {
@@ -575,8 +578,10 @@ const addCollection = async collection => {
     const { key, operator, value, limit } = props;
   
     const collectionRef = limit
-      ? db.collection(`collections`).where(key, operator, value).limit(limit)
-      : db.collection(`collections`).where(key, operator, value);
+      ? db.collection('collections').where(key, operator, value).limit(limit)
+        : key
+            ? db.collection('collections').where(key, operator, value)
+            : db.collection('collections');
   
     const querySnapshot = await collectionRef.get();
     
@@ -591,7 +596,7 @@ const addCollection = async collection => {
   };
 
   const getCollections = async => {
-    return getCollectionsWhere({ key:'id', operator:'>', value: 1 });
+    return getCollectionsWhere({});
   };
 
 export const firestore = {
