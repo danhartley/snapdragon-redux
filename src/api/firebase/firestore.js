@@ -565,6 +565,7 @@ const addCollection = async collection => {
     let docRef;
   
     try {
+        console.log('addCollection: ', collection);
         docRef = await db.collection('collections').add(collection);
     } catch(err) {
         console.error("Error writing document: ", err);
