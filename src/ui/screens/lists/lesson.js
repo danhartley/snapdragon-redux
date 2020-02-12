@@ -30,7 +30,7 @@ export const renderLesson = (lesson) => {
       if(config.collection.id === lesson.id) {
 
             const row = document.querySelector(`.js-lesson-list-carousel-item[data-lesson-id="${lesson.id}"]`)
-                  row.classList.add('review-summary');
+                  if(row) row.classList.add('review-summary');
 
             if(config.isLandscapeMode) {
                   setTimeout(() => {
