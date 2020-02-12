@@ -22,6 +22,7 @@ const NEXT_LEVEL = '[NEXT_LEVEL] Go to next level';
 const UPDATE_LANGUAGE = '[UPDATE_LANGUAGE] Update the current language';
 
 const UPDATE_ENUMS = '[UPDATE_ENUMS] Update enums by config language';
+const UPDATE_USER = '[UPDATE_USER] Update user';
 const UPDATE_LESSON = '[UPDATE_LESSON] Create new lesson';
 
 const SAVE_LESSON = '[SAVE_LESSON] Add lesson to saved lessons';
@@ -54,5 +55,6 @@ export const types = {
     UPDATE_LESSON,
     SAVE_LESSON,
     REMOVE_LESSON,
-    UPDATE_VIDEO_PLAYER
+    UPDATE_VIDEO_PLAYER,
+    UPDATE_USER
 };

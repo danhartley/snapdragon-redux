@@ -10,6 +10,7 @@ import { renderLessons } from 'ui/screens/lists/lesson-list';
 import { renderScoreSummary } from 'ui/screens/progress/score-summary';
 import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { settingsHandler } from 'ui/fixtures/settings';
+import { renderLogin } from 'ui/fixtures/login';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 
 import navigationTemplate from 'ui/fixtures/navigation-template.html';
@@ -24,7 +25,7 @@ export const onAddLoseFocusListener = listener => {
 
 export const renderNavigation = collection => {
 
-    const { config, counter } = store.getState();
+    const { config, counter, user } = store.getState();
 
     const template = document.createElement('template');
 
@@ -66,12 +67,12 @@ export const renderNavigation = collection => {
                         toggleIconOnOff(clickedIcon);
                         settingsHandler();
                         break;
-                    case enums.navigation.INFO:
-                        const activeHomeIcon = document.querySelector('.js-list.active-icon');
-                        if(activeHomeIcon) activeHomeIcon.classList.remove('active-icon');
-                        clickedIcon.classList.add('active-icon');
-                        renderHome(store.getState().counter, true);
-                        break;
+                    // case enums.navigation.INFO:
+                    //     const activeHomeIcon = document.querySelector('.js-list.active-icon');
+                    //     if(activeHomeIcon) activeHomeIcon.classList.remove('active-icon');
+                    //     clickedIcon.classList.add('active-icon');
+                    //     renderHome(store.getState().counter, true);
+                    //     break;
                     case enums.navigation.PORTRAIT_HOME:
                         onLoseFocusListeners.forEach(listener => listener());
                         const activeInfoIcon = document.querySelector('.js-info.active-icon');
@@ -95,6 +96,9 @@ export const renderNavigation = collection => {
                     case enums.navigation.EMAIL:
                         toggleIconOnOff(clickedIcon);
                         break;
+                    case enums.navigation.LOGIN:
+                        renderLogin(user);
+                        break;
                     default:
                         return;
                 }
@@ -115,12 +119,24 @@ export const renderNavigation = collection => {
 
             if(id === enums.navigation.LANDSCAPE_HOME.name || (id === enums.navigation.PORTRAIT_HOME.name && !cookieHandler.isFirstTimeVisitor())) {
                 icon.classList.add('active-icon');
-            } else if(id === enums.navigation.PORTRAIT_HOME.name && cookieHandler.isFirstTimeVisitor()) {
-                icon = document.querySelector('.js-info');
-                icon.classList.add('active-icon');
-            }
+            } 
+            // else if(id === enums.navigation.PORTRAIT_HOME.name && cookieHandler.isFirstTimeVisitor()) {
+            //     icon = document.querySelector('.js-info');
+            //     icon.classList.add('active-icon');
+            // }
         } else {
             navIcons.forEach(icon => icon.classList.remove('active-icon'));
+        }
+
+        const loggedOutIcon = document.querySelector('.js-login i:nth-child(1)');
+        const loggedInIcon = document.querySelector('.js-login i:nth-child(2)');
+
+        if(user) {
+            loggedOutIcon.classList.add('hide-important');
+            loggedInIcon.classList.remove('hide-important');
+        } else {
+            loggedOutIcon.classList.remove('hide-important');
+            loggedInIcon.classList.add('hide-important');
         }
     };
 

@@ -109,7 +109,7 @@ const loadLesson = async (collectionToLoad, config, collections) => {
   if(requiresAddingToCollections) {
     if(lesson.collection.items.length > 0) {
       firestore.addCollection(lesson.collection);
-      actions.boundUpdateCollections([lesson.collection]);
+      // actions.boundUpdateCollections([lesson.collection]);
     }
   }
 

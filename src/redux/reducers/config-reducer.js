@@ -26,3 +26,12 @@ export const enums = (state = {}, action) => {
             return state;
     }
 }
+
+export const user = (state = null, action) => {
+    switch(action.type) {
+        case types.UPDATE_USER:
+            return action.data;
+        default:
+            return state;
+    }
+}

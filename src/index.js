@@ -32,6 +32,15 @@ const onLoadHandler = () => {
 
     try {
 
+        const auth = firebase.auth();
+
+        const email = 'danhartleybcn@gmail.com';
+        const password = 'sarcarsnap1929';
+
+        // auth.signInWithEmailAndPassword(email, password).then((cred) => {
+        //     console.log('login credentials: ', cred);
+        // });
+
         const { config, counter: currentCounter, lessonPlan: statePlans, collections } = store.getState();
 
         lessonPlan = statePlans;

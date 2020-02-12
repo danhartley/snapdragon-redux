@@ -136,9 +136,15 @@
 
 @media (min-width: 768px) {
 
-    /* .autocomplete-options-container, .inat-autocomplete-options-container {
-        width: initial;
-    } */
+    .autocomplete-options-container{
+        top: calc(
+            var(--vhRunningBlock, 7.5vh) + 
+            5px +
+            var(--vhStandardBlock, 10vh) +
+            var(--vhStandardBlock, 10vh)
+            + .25rem
+        ) !important;
+    }
 
     .species-search .icon {
         font-size: 5.5rem;
