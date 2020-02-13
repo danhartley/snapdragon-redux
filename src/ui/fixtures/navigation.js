@@ -97,7 +97,7 @@ export const renderNavigation = collection => {
                         toggleIconOnOff(clickedIcon);
                         break;
                     case enums.navigation.LOGIN:
-                        renderLogin(user);
+                        renderLogin(store.getState().user);
                         break;
                     default:
                         return;
@@ -127,18 +127,13 @@ export const renderNavigation = collection => {
         } else {
             navIcons.forEach(icon => icon.classList.remove('active-icon'));
         }
-
-        const loggedOutIcon = document.querySelector('.js-login i:nth-child(1)');
-        const loggedInIcon = document.querySelector('.js-login i:nth-child(2)');
-
-        if(user) {
-            loggedOutIcon.classList.add('hide-important');
-            loggedInIcon.classList.remove('hide-important');
-        } else {
-            loggedOutIcon.classList.remove('hide-important');
-            loggedInIcon.classList.add('hide-important');
-        }
     };
 
     onLoadState(config, counter);
+};
+
+export const renderLoginChanges = user => {
+
+    const login = document.querySelector('.js-login');
+          login.dataset.isLoggedIn = !!user;
 };

@@ -1,8 +1,14 @@
 <div class="modal-content">
     <div class="snapdragon-container">        
         <form id="logout-form">
-            <div>{{ email }}</div>
-            <button id="js-logout-btn" class="btn btn-modal">Log out</button>
+            <div class="vertical-centred-block double-standard-block">
+                <span>You are logged in with the account:</span>
+                <span>{{ email }}</span>
+            </div>
+            <div>
+                <button id="js-logout-btn" class="btn btn-modal">Log out</button>
+            </div>
         </form>
+        <div class="standard-block centred-block hide-important js-logged-out">You are now logged out.</div>
     </div>
 </div>

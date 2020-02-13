@@ -21,19 +21,29 @@ export const renderLogin = user => {
 
         DOM.modalTextTitle.innerHTML = 'Snapdragon logout';
 
+        const footer = document.querySelector('.js-modal-footer');
+
         setTimeout(() => {
             
             const form = document.querySelector('#logout-form');
                   form.addEventListener('submit', e => {
 
-                  e.preventDefault();
-              
-                  auth.signOut().then(() => {
+                e.preventDefault();
+
+                const logOut = document.querySelector('#js-logout-btn');
+                      logOut.setAttribute('disabled', 'disabled');
+
+                  auth.signOut()
+                  .then(() => {
                     actions.boundUpdateUser(null);
+                    logOut.innerHTML = 'Success';
+                    setTimeout(() => {
+                        footer.click();
+                    }, 3000);
                   });
           });
 
-        }, 1000);
+        }, 500);
 
 
     } else {
@@ -43,6 +53,8 @@ export const renderLogin = user => {
         renderTemplate({ }, template.content, DOM.modalText);
 
         DOM.modalTextTitle.innerHTML = 'Snapdragon login';
+
+        const footer = document.querySelector('.js-modal-footer');
 
         setTimeout(() => {
 
@@ -55,17 +67,42 @@ export const renderLogin = user => {
                   form.addEventListener('submit', e => {
 
                     e.preventDefault();
+
+                    const logIn = document.querySelector('#js-login-btn');
+                          logIn.setAttribute('disabled', 'disabled');              
                     
-                    auth.signInWithEmailAndPassword(email.value, password.value).then((credentials) => {
-                        console.log('login credentials: ', credentials);
+                    auth.signInWithEmailAndPassword(email.value, password.value)
+                    .then((credentials) => {
                         actions.boundUpdateUser({
                             email: email.value,
                             password: password.value
                         });
+                        logIn.innerHTML = 'Success';
+                        setTimeout(() => {
+                            footer.click();
+                        }, 3000);
+                    })
+                    .catch( error => {
+                        const notLoggedIn = document.querySelector('.js-not-logged-in');
+                              if(notLoggedIn) notLoggedIn.classList.remove('hide-important');
+                              if(notLoggedIn) notLoggedIn.querySelector('.js-message').innerHTML = error.message;
                     });
                 });
 
-        }, 1000);
+        }, 500);
 
+    }
+};
+
+export const renderLoggedIn = user => {
+
+    if(user) {
+        const loggedIn = document.querySelector('.js-logged-in');
+              if(loggedIn) loggedIn.classList.remove('hide-important');
+    } else {
+        const notLoggedIn = document.querySelector('.js-not-logged-in');
+              if(notLoggedIn) notLoggedIn.classList.remove('hide-important');
+        const loggedOut = document.querySelector('.js-logged-out');
+              if(loggedOut) loggedOut.classList.remove('hide-important');
     }
 };

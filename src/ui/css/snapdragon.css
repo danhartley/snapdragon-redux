@@ -2321,3 +2321,15 @@ img[data-has-image="false"] {
   height: 5rem !important;
   position: absolute !important;
 }
+
+.login.icon > i:nth-child(2) {
+  color: var(--snap-text-light);
+}
+
+.login.icon[data-is-logged-in="true"] > i:nth-child(1) {
+  display: none;
+}
+
+.login.icon[data-is-logged-in="false"] > i:nth-child(2) {
+  display: none;
+}
