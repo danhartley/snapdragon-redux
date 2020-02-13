@@ -75,6 +75,8 @@ class CreateGuide {
             this.currentStep = this.steps.find(s => s.number === step);
         }
 
+        this.user = store.getState().user;
+
         // prevent user rescaling which is caused by autocomplete
 
         // const viewport = document.querySelector("meta[name=viewport]");

@@ -1,5 +1,10 @@
 <div class="lesson-list-item one-and-half-standard-block">
-    <div class="lesson-name">{{ collection.name }}</div>
+    <div class="lesson-name" id="js-collection-name">
+        <span>{{ collection.name }}</span>
+    </div>
+    <div class="lesson-name hide-important" id="js-input-collection-name">
+        <input type="text" value="{{ collection.name }}">
+    </div>
     <div class="lesson-taxa"><span class="js-lesson-taxa-count">{{ collection.items.length }}</span> <span class="js-lesson-taxa">{{ collection.taxa }}</span></div>
 </div>
 <div class="edit-species centred-block half-standard-block js-edit-species">

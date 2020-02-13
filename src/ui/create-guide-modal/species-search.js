@@ -17,9 +17,9 @@ export const onCreateCustomLesson = listener => {
     onCloseModalListeners.push(listener);
 };
 
-export const speciesSearch = context => {
+export const speciesSearch = createGuide => {
 
-    const { config, modal, option } = context;
+    const { config, modal, option } = createGuide;
     const { collections } = store.getState();
 
     const template = document.createElement('template');
@@ -91,7 +91,21 @@ export const speciesSearch = context => {
                       selectedSpeciesDisplay.classList.remove('hide-important');
                       selectedSpeciesDisplay.innerHTML = '';
                       editSpecies.classList.add('hide-important');
-                speciesEditor(config, modal, selectedSpeciesDisplay, context, collection.items.map(i => i.name));
+                speciesEditor(config, modal, selectedSpeciesDisplay, createGuide, collection.items.map(i => i.name));
+
+                const collectionName = modal.querySelector('#js-collection-name');
+                      collectionName.classList.add('hide-important');
+
+                const editableCollectionName = modal.querySelector('#js-input-collection-name');
+                      editableCollectionName.classList.remove('hide-important');
+                      editableCollectionName.addEventListener('focusout', e => {                          
+                          collectionName.innerHTML = e.target.value;
+                          collectionName.classList.remove('hide-important');
+                          editableCollectionName.classList.add('hide-important');
+                          config.guide.name = e.target.value;
+                          createGuide.setConfig(config);
+                          collection.name =  e.target.value;
+                      });
               });
     };
 
