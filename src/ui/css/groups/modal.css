@@ -6,6 +6,7 @@
 .modal-content {
   border: none;
   border-radius: 0;
+  background-color: inherit;
 }
 
 #cardModal {  

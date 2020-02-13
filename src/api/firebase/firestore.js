@@ -552,19 +552,21 @@ const getQuestionById = (id, name) => {
             }
         }
     })));
-
-    //db.collection('books').doc('fK3ddutEpD2qQqRMXNW5').get()
 };
 
 
-const addCollection = async collection => {
+const addCollection = async (collection, user) => {
+
+    if(!user) return;
 
     collection.isActive = true;
     collection.isPrivate = true;
+    collection.user = user;
 
     let docRef;
   
     try {
+        console.log('addCollection: ', collection);
         docRef = await db.collection('collections').add(collection);
     } catch(err) {
         console.error("Error writing document: ", err);

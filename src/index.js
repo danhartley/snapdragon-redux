@@ -18,12 +18,13 @@ import { nextItem } from 'ui/setup/next-item';
 import { renderHeaders } from 'ui/fixtures/headers';
 import { renderScore } from 'ui/fixtures/score';
 import { renderHome } from 'ui/screens/home/home';
-import { renderNavigation } from 'ui/fixtures/navigation';
+import { renderNavigation, renderLoginChanges } from 'ui/fixtures/navigation';
 import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
 import { traitValuesHandler } from 'api/traits/trait-types';
 import { initialiseConfig } from 'ui/helpers/location-helper';
 import { firestore } from 'api/firebase/firestore';
+import { renderLoggedIn } from 'ui/fixtures/login';
 
 const onLoadHandler = () => {
     setTimeout( async () => {
@@ -31,6 +32,15 @@ const onLoadHandler = () => {
     let lessonPlan;
 
     try {
+
+        const auth = firebase.auth();
+
+        const email = 'danhartleybcn@gmail.com';
+        const password = 'sarcarsnap1929';
+
+        // auth.signInWithEmailAndPassword(email, password).then((cred) => {
+        //     console.log('login credentials: ', cred);
+        // });
 
         const { config, counter: currentCounter, lessonPlan: statePlans, collections } = store.getState();
 
@@ -52,6 +62,9 @@ const onLoadHandler = () => {
         subscription.add(renderHeaders, 'collection', 'flow');
         renderNavigation();
         subscription.add(renderNavigation, 'collection', 'flow');
+        renderLoginChanges();
+        subscription.add(renderLoginChanges, 'user', 'flow');
+        subscription.add(renderLoggedIn, 'user', 'flow');
 
         subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
                 

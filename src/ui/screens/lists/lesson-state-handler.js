@@ -65,7 +65,7 @@ const saveCurrentLesson = async collection => {
 
 const loadLesson = async (collectionToLoad, config, collections) => {
 
-  const { counter, lessons } = store.getState();
+  const { counter, lessons, user } = store.getState();
 
   const restoredLesson = lessons.find(l => l.name === collectionToLoad.name);
 
@@ -102,14 +102,14 @@ const loadLesson = async (collectionToLoad, config, collections) => {
     actions.boundNewCollection({ lesson });  
   }
   
-  const requiresAddingToCollections = !collections.find(c => c.id === lesson.collection.id);
+  const requiresAddingToCollections = !collections.filter(collection => collection.isActive).find(c => c.id === lesson.collection.id);
 
   console.log('requiresAddingToCollections: ', requiresAddingToCollections);
 
   if(requiresAddingToCollections) {
     if(lesson.collection.items.length > 0) {
+      firestore.addCollection(lesson.collection, user);
       actions.boundUpdateCollections([lesson.collection]);
-      firestore.addCollection(lesson.collection);
     }
   }
 

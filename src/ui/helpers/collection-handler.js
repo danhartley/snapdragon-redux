@@ -98,30 +98,33 @@ const loadCollectionItemProperties = async (collection, config) => {
     const families = [...new Set(collection.items.map(i => i.taxonomy.family))];
     const orders = [...new Set(collection.items.map(i => i.taxonomy.order))];
     const genera = [...new Set(collection.items.map(i => i.taxonomy.genus).filter(g => g))];
-    const familyTaxa = [], orderTaxa = [], genusTaxa = [];
+    let familyTaxa = [], orderTaxa = [], genusTaxa = [];
     let taxa = await firestore.getTaxaNames();
     taxa = taxa[0].value;
     const getGenusTaxa = async (genera) => {
         return Promise.all(genera.map(async (genus) => {
             const genusTaxon = await firestore.getTaxonByName(config, genus);
-            genusTaxa.push(genusTaxon);
-            return genusTaxon;
+            if(Object.entries(genusTaxon).length > 0 && genusTaxon.constructor === Object)
+                genusTaxa.push(genusTaxon);
+            return genusTaxa;
         }));
     };
     await getGenusTaxa(genera);
     const getFamilyTaxa = async (families) => {
         return Promise.all(families.map(async (family) => {
             const familyTaxon = await firestore.getTaxonByName(config, family);
-            familyTaxa.push(familyTaxon);
-            return familyTaxon;
+            if(Object.entries(familyTaxon).length > 0 && familyTaxon.constructor === Object)
+                familyTaxa.push(familyTaxon);
+            return familyTaxa;
         }));
     };
     await getFamilyTaxa(families);
     const getOrderTaxa = async (orders) => {
         return Promise.all(orders.map(async (order) => {
             const orderTaxon = await firestore.getTaxonByName(config, order);
-            orderTaxa.push(orderTaxon);
-            return orderTaxon;
+            if(Object.entries(orderTaxon).length > 0 && orderTaxon.constructor === Object)
+                orderTaxa.push(orderTaxon);
+            return orderTaxa;
         }));
     };
     await getOrderTaxa(orders);
@@ -133,22 +136,30 @@ const loadCollectionItemProperties = async (collection, config) => {
             return '';
         }
     };
+
+    const findRank = (taxa, item, rank) => {
+        const taxonRank = item.taxonomy[rank.name.toLowerCase()];
+        const taxon = taxa.length > 0 ? taxa.find(taxon => taxon.name === taxonRank) : null;
+        return taxon || '';
+    };
+
     collection.items.forEach(async (item, index) => {
         const names = item.name.split(' ');
         item.taxonomy.genus = names[0];
         item.taxonomy.species = names[1];
-        item.genus = genusTaxa.find(genus => genus.name === item.taxonomy[enums.taxon.GENUS.name.toLowerCase()]);
-        item.family = familyTaxa.find(family => family.name === item.taxonomy[enums.taxon.FAMILY.name.toLowerCase()]);
+        item.genus = findRank(genusTaxa, item, enums.taxon.GENUS);
+        item.family = findRank(familyTaxa, item, enums.taxon.FAMILY);
         if (item.family) {
             item.family.names = getFamilyNames(item);
             item.family.vernacularName = item.family.names[0];
         }
-        item.order = orderTaxa.find(order => order.name === item.taxonomy[enums.taxon.ORDER.name.toLowerCase()]);
+        item.order = findRank(orderTaxa, item, enums.taxon.ORDER);
         item.snapIndex = index + 1;
         item.id = item.eolId;
         item.vernacularNames = itemProperties.getVernacularNames(item, config);
         item.vernacularName = itemProperties.getVernacularName(item, config);
         item.name = names.slice(0, 2).join(' ');
+        item.questionIds = item.questionIds || [];
     });
     const loadTraitsInParallel = items => {
         return Promise.all(items.map(async (item) => {
