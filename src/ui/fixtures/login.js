@@ -39,7 +39,7 @@ export const renderLogin = user => {
                     logOut.innerHTML = 'Success';
                     setTimeout(() => {
                         footer.click();
-                    }, 3000);
+                    }, 2500);
                   });
           });
 
@@ -80,7 +80,7 @@ export const renderLogin = user => {
                         logIn.innerHTML = 'Success';
                         setTimeout(() => {
                             footer.click();
-                        }, 3000);
+                        }, 2500);
                     })
                     .catch( error => {
                         const notLoggedIn = document.querySelector('.js-not-logged-in');

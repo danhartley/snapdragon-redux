@@ -48,6 +48,7 @@ export const renderSpeciesSearchOptions = createGuide => {
     };
 
     const lessonOptions = document.querySelectorAll('.custom-lesson-species-list li');
+    
           lessonOptions.forEach((option, index) => {
             option.addEventListener('click', handleNextStepAction, true);
         });
@@ -67,4 +68,10 @@ export const renderSpeciesSearchOptions = createGuide => {
                 taxonLanguageTxt.innerHTML = name;
             });
         });
+
+        const warning = createGuide.modal.querySelector('.js-persistence-warning');
+              
+        if(createGuide.user) {
+            warning.classList.add('hide-important');
+        }
 };

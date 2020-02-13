@@ -568,15 +568,9 @@
     display: none !important;
   }
 
-  .filter-language-option-block > div:nth-child(1) {
-    border-top: 1px solid var(--snap-border-lightest);
-    margin-bottom: .5rem;
-    padding-top: 2rem;
-    margin-top: 2rem;
-  }
-
   .filter-language-option-block span {
     text-transform: uppercase;
+    margin-left: .15rem;
   }
 
   .custom-lesson-species-list {
@@ -619,6 +613,10 @@
 
   .request-feedback .lesson-list-item {
     line-height: initial !important ;
+  }
+
+  .request-feedback .lesson-name {
+    line-height: initial;
   }
 
   .selected-species-container {
