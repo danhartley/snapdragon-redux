@@ -18,7 +18,8 @@
 .dropdown-content li>a, .dropdown-content li>span {
     color: rgb(87, 97, 99);
 }
-#images {
+
+.images {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;                
     min-height: 80vh;
@@ -142,4 +143,12 @@
     border-bottom: 1px solid var(--snap-success);
     -webkit-box-shadow: 0 1px 0 0 var(--snap-success);
     box-shadow: 0 1px 0 0 var(--snap-success);
+  }
+
+  li i {
+      font-size: .8rem;
+  }
+
+  .btn:hover, .btn-large:hover, .btn-small:hover {
+      background-color: var(--snap-collection-light);
   }

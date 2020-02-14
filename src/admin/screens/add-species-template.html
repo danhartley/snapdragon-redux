@@ -14,10 +14,10 @@
         
         <div class="input-field col s2">
             <input id="input-species" type="text" class="validate">
-            <label for="input-species">Enter EOL ID</label>
+            <label for="input-species">Or enter EOL ID</label>
         </div>
 
-        <div class="col s2"><a id="btnGetSpeciesById" class="btn">Get EOL Ref</a></div>    
+        <div class="col s2"><a id="btnGetSpeciesById" class="btn">Search by EOL Ref</a></div>
     </div>
 
     <div class="row">
@@ -26,20 +26,25 @@
         </div>
     </div>
     
-    <div class="row">
-                
-        <div class="input-field col s4">
-            <select name="names" id="names"></select>
-            <label>Matching EOL species</label>
-        </div>
+    <div class="row">            
 
         <div class="col s4">
-            <button class="btnAddSpecies btn hide">Save species</button>
-            <button class="btnAddTraits btn hide">Add traits</button>
+            <button class="btnAddSpecies btn hide">Save species and selected images</button>
+            <button class="btnAddTraits btn hide">Add species traits</button>
         </div>
+        <div class="js-saved-images"></div>
+
     </div>
-    <div class="sub container">
-        <div id="images"></div>        
+    
+    <div class="sub container hide-important js-images-container">
+
+        <div class="row">
+            <div class="col s4">
+                <label>Available species photos. Click to add a photo.</label>             
+            </div>
+        </div>
+
+        <div class="images" id="js-images"></div>        
     </div>
 
 </div>
