@@ -1,6 +1,7 @@
 import "babel-polyfill";
 
 import 'admin/css/admin.css';
+import 'admin/css/snapdragon-colours.css';
 
 import { listenForActiveSpecies } from 'admin/screens/taxa-pickers';
 import { initMaterialize } from 'admin/scripts/materialize';

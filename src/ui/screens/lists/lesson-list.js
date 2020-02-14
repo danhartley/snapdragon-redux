@@ -19,7 +19,7 @@ export const renderLessons = () => {
     const template = document.createElement('template');
           template.innerHTML = lessonListTemplate;
 
-    let lessons = lessonListEventHandler.onLoadLessonsViewState(collections.filter(collection => collection.isActive), videoPlayer, score);
+    let lessons = lessonListEventHandler.onLoadLessonsViewState(collections.filter(collection => (collection.isActive === undefined || collection.isActive)), videoPlayer, score);
 
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
         parent.innerHTML = '';
