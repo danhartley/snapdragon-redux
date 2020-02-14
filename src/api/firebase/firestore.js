@@ -558,8 +558,7 @@ const getQuestionById = (id, name) => {
 const addCollection = async (collection, user) => {
 
     if(!user) return;
-
-    collection.isActive = true;
+    
     collection.isPrivate = true;
     collection.user = user;
 
