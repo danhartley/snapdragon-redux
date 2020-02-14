@@ -80,10 +80,10 @@
     width: 100%;
 }
 
-.test-card button:hover {
+/* .test-card button:hover {
     background-color: var(--snap-text-medium-light);
     color: var(--snap-btn-hover);
-}
+} */
 
 .test-card .small-icon {
     font-size: .7rem;

@@ -8,6 +8,7 @@ import { enums } from 'ui/helpers/enum-helper';
 import { initialiseConfig } from 'ui/helpers/location-helper';
 import { renderSpeciesList } from 'ui/screens/lists/species-list';
 import { collectionHandler  } from 'ui/helpers/collection-handler';
+import { collections } from '../../../redux/reducers/species-reducers';
 
 const beginOrResumeLesson = async (reviewLessonId, isNextRound)  => {
 
@@ -108,6 +109,7 @@ const loadLesson = async (collectionToLoad, config, collections) => {
 
   if(requiresAddingToCollections) {
     if(lesson.collection.items.length > 0) {
+      lesson.collection.isActive = true;
       firestore.addCollection(lesson.collection, user);
       actions.boundUpdateCollections([lesson.collection]);
     }
@@ -242,6 +244,10 @@ const clearGuide = () => {
   actions.boundUpdateConfig(config);
 };
 
+const updateCollection = (config, collection) => {
+  actions.boundUpdateCollection({config,collection});
+};
+
 export const lessonStateHandler = {
   beginOrResumeLesson,
   renderLessonSpeciesList,
@@ -250,5 +256,6 @@ export const lessonStateHandler = {
   changeState,    
   purgeLesson,
   addExtraSpeciesSelection,
-  clearGuide
+  clearGuide,
+  updateCollection
 };

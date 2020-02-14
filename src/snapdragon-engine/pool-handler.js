@@ -10,7 +10,7 @@ export const getPoolItems = async (collection, poolSize = 5) => {
 
   if(collection.behaviour === 'static') {
     const otherItems = collection.items.filter(i => i.name !== item.name);
-    if(otherItems) {
+    if(otherItems && otherItems.length > 0) {
       return getItemsFromCollection(otherItems, item, poolSize);
     }
   }

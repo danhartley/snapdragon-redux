@@ -18,7 +18,8 @@
 .dropdown-content li>a, .dropdown-content li>span {
     color: rgb(87, 97, 99);
 }
-#images {
+
+.images {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;                
     min-height: 80vh;
@@ -131,4 +132,23 @@
   
   .side-by-side > div:nth-child(1) {
       margin-left: .5rem;
+  }
+  
+  /* ul:not(.browser-default)>li {
+    background-color: #f5f5f5 !important;
+  } */
+
+  /* input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label, */
+  input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), input[type="email"]:not(.browser-default):focus:not([readonly]), input[type="url"]:not(.browser-default):focus:not([readonly]), input[type="time"]:not(.browser-default):focus:not([readonly]), input[type="date"]:not(.browser-default):focus:not([readonly]), input[type="datetime"]:not(.browser-default):focus:not([readonly]), input[type="datetime-local"]:not(.browser-default):focus:not([readonly]), input[type="tel"]:not(.browser-default):focus:not([readonly]), input[type="number"]:not(.browser-default):focus:not([readonly]), input[type="search"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid var(--snap-success);
+    -webkit-box-shadow: 0 1px 0 0 var(--snap-success);
+    box-shadow: 0 1px 0 0 var(--snap-success);
+  }
+
+  li i {
+      font-size: .8rem;
+  }
+
+  .btn:hover, .btn-large:hover, .btn-small:hover {
+      background-color: var(--snap-collection-light);
   }

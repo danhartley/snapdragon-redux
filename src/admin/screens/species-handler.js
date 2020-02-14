@@ -59,7 +59,10 @@ const addSpecies = () => {
     document.getElementById('licences').value = noneExcludedFromCommercialUse;
     
     const inputSearch = document.querySelector('#input-search');
+          inputSearch.focus();
     const asyncProgress = document.querySelector('.async-progress');
+    const activeSpecies = document.querySelector('.js-active-species');
+          activeSpecies.classList.add('hide');
 
     const searchEOLCallback = (species, ref) => {
         item = species;

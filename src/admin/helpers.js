@@ -52,6 +52,10 @@ const getBinomial = item => {
 };
 
 const getImagesLayout = (species, imageIds, addPrefix = true) => {
+
+    const container = document.querySelector('.js-images-container');
+          container.classList.remove('hide-important');
+
     let images = '';
     if(!species.images) {
         console.log('No images!');
@@ -63,7 +67,10 @@ const getImagesLayout = (species, imageIds, addPrefix = true) => {
             url = prefix + url;
         images = images + `<div><img id="${index}" width="260px" height="190px" style="cursor:pointer; object-fit: cover;" src="${url}"/></div>`;
     });
-    document.querySelector('#images').innerHTML = images;  
+    document.querySelector('#js-images').innerHTML = images;
+
+    // const savedImages = document.querySelector('.imageIds');
+
     document.querySelectorAll('img').forEach(image => {
         image.addEventListener('click', event => {
             const image = event.target;
