@@ -152,3 +152,7 @@
   .btn:hover, .btn-large:hover, .btn-small:hover {
       background-color: var(--snap-collection-light);
   }
+
+  li a > i, li a > span {
+      pointer-events: none;
+  }

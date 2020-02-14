@@ -10,6 +10,7 @@ import 'ui/css/groups/species-card.css';
 import 'ui/css/groups/modal.css';
 import 'ui/css/groups/species-list.css';
 import 'ui/css/snapdragon-media.css';
+import 'ui/css/common.css';
 
 import { store } from 'redux/store';
 import { nextLesson } from 'ui/setup/next-lesson';

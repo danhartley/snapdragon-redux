@@ -1,7 +1,8 @@
 import "babel-polyfill";
 
 import 'admin/css/admin.css';
-import 'admin/css/snapdragon-colours.css';
+import 'ui/css/snapdragon-colours.css';
+import 'ui/css/common.css';
 
 import { listenForActiveSpecies } from 'admin/screens/taxa-pickers';
 import { initMaterialize } from 'admin/scripts/materialize';
@@ -56,9 +57,14 @@ const activeSpecies = document.querySelector('.js-active-species');
 
 const actions = document.querySelectorAll('li a');
       actions.forEach(action => action.addEventListener('click', e => {
-            e.target.id === 'add-species' || e.target.parentElement.id === 'add-species'
-                  ? activeSpecies.classList.add('hide')
-                  : activeSpecies.classList.remove('hide');
+            const isAddSpecies = e.target.id === 'add-species' || e.target.id === 'add-taxon';
+                  isAddSpecies
+                        ? activeSpecies.classList.add('hide')
+                        : activeSpecies.classList.remove('hide');
+
+            if(!isAddSpecies) {
+                  activeSpecies.innerHTML = window.snapdragon.species ? window.snapdragon.species.name : '';
+            }
       }));
       
 const updateSpecies = document.querySelector('#update-species');

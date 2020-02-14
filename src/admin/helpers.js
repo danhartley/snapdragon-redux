@@ -54,7 +54,7 @@ const getBinomial = item => {
 const getImagesLayout = (species, imageIds, addPrefix = true) => {
 
     const container = document.querySelector('.js-images-container');
-          container.classList.remove('hide-important');
+          if(container) container.classList.remove('hide-important');
 
     let images = '';
     if(!species.images) {
