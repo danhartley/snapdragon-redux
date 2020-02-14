@@ -98,66 +98,67 @@ export const speciesSearch = createGuide => {
 
                 const editableCollectionName = modal.querySelector('#js-input-collection-name');
                       editableCollectionName.classList.remove('hide-important');
-                      editableCollectionName.addEventListener('focusout', e => {                          
-                          collectionName.innerHTML = e.target.value;
+                      editableCollectionName.addEventListener('focusout', e => {      
+                          const name = e.target.value;                    
+                          collectionName.innerHTML = name;
                           collectionName.classList.remove('hide-important');
                           editableCollectionName.classList.add('hide-important');
-                          config.guide.name = e.target.value;
-                          createGuide.setConfig(config);
-                          collection.name =  e.target.value;
+                          config.guide.name = name;
+                          collection.name =  name;
+                          lessonStateHandler.updateCollection(config, collection);
                       });
               });
     };
 
     const initLesson = async collectionToLoad => {
 
-    config.collection.id = collectionToLoad.id;
-    config.guide.guideType = option;
+        collectionToLoad.id = collections.length + 10000, // temp
+        config.collection.id = collectionToLoad.id;
+        config.guide.guideType = option;
 
-    const lesson = await lessonStateHandler.loadLesson(collectionToLoad, config, collections);
-    
-    const collection = lesson.collection;
+        const lesson = await lessonStateHandler.loadLesson(collectionToLoad, config, collections);
+        
+        const collection = lesson.collection;
 
-    if(collection && collection.items && collection.items.length > 0) {
-        renderNewCollectionSummary(collection);
-    } else {
-        feedback.innerHTML = 'No species were found. Try widening your parameters.';
-    }
-
-    const OrdinalSuffixOf = i => {
-    var j = i % 10,
-        k = i % 100;
-    if (j == 1 && k != 11) {
-        return i + "st";
-    }
-    if (j == 2 && k != 12) {
-        return i + "nd";
-    }
-    if (j == 3 && k != 13) {
-        return i + "rd";
-    }
-    return i + "th";
-    }
-
-    let unsubscribe;
-
-    const callback = request => {
-        if(feedback) {
-            feedback.innerHTML = `Making ${OrdinalSuffixOf(request.page)} request of ${request.numberOfRequests}`;
+        if(collection && collection.items && collection.items.length > 0) {
+            renderNewCollectionSummary(collection);
         } else {
-            unsubscribe(callback);
+            feedback.innerHTML = 'No species were found. Try widening your parameters.';
         }
-    };
 
-    unsubscribe = listenToInatRequests(callback);
+        const OrdinalSuffixOf = i => {
+        var j = i % 10,
+            k = i % 100;
+        if (j == 1 && k != 11) {
+            return i + "st";
+        }
+        if (j == 2 && k != 12) {
+            return i + "nd";
+        }
+        if (j == 3 && k != 13) {
+            return i + "rd";
+        }
+        return i + "th";
+        }
+
+        let unsubscribe;
+
+        const callback = request => {
+            if(feedback) {
+                feedback.innerHTML = `Making ${OrdinalSuffixOf(request.page)} request of ${request.numberOfRequests}`;
+            } else {
+                unsubscribe(callback);
+            }
+        };
+
+        unsubscribe = listenToInatRequests(callback);
     };
 
    switch(option) {
 
         case enums.guideOption.LOCATION.name:
             initLesson({ 
-                ...collections.find(c => c.guideType === option),
-                id: collections.length + 10000,
+                ...collections.find(c => c.guideType === option),                
                 name: config.guide.place.name,
                 taxa: config.guide.iconicTaxa.map(i => i.common).join(', '),
                 iconicTaxa: config.guide.iconicTaxa,
@@ -165,8 +166,7 @@ export const speciesSearch = createGuide => {
             break;
         case enums.guideOption.INAT.name:
             initLesson({
-                ...collections.find(c => c.guideType === option),
-                id: collections.length + 10000,                
+                ...collections.find(c => c.guideType === option),  
                 name: `${config.guide.inatId.key}'s observations`,
                 taxa: config.guide.iconicTaxa.map(i => i.common).join(', '),
                 iconicTaxa: config.guide.iconicTaxa,

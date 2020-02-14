@@ -17,6 +17,18 @@ export const collections = (state = [], action) => {
         case types.UPDATE_COLLECTIONS: {
             return state ? [ ...state, ...action.data ] : action.data;
         }
+        case types.UPDATE_COLLECTION: {
+
+            const collections = [ ...state ];
+
+            collections.forEach(collection => {
+                if(collection.id === action.data.collection.id) {
+                    collection = action.data.collection;
+                }
+            });
+
+            return collections;
+        }
         default:
             return state;
     }
