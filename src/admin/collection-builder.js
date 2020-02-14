@@ -51,6 +51,15 @@ const updateSpeciesNamesClickHandler = e => {
 const addTraitsClickHandler = e => {
   traitsHandler.addTraits();
 };
+
+const activeSpecies = document.querySelector('.js-active-species');
+
+const actions = document.querySelectorAll('li a');
+      actions.forEach(action => action.addEventListener('click', e => {
+            e.target.id === 'add-species' || e.target.parentElement.id === 'add-species'
+                  ? activeSpecies.classList.add('hide')
+                  : activeSpecies.classList.remove('hide');
+      }));
       
 const updateSpecies = document.querySelector('#update-species');
       updateSpecies.addEventListener('click', updateSpeciesClickHandler);
@@ -88,32 +97,29 @@ const setupUI = (user) => {
 };
 
 const loginForm = document.querySelector('#login-form');
-loginForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  
-  const email = loginForm['login-email'].value;
-  const password = loginForm['login-password'].value;
+      loginForm.addEventListener('submit', (e) => {
+            
+            e.preventDefault();
+            
+            const email = loginForm['login-email'].value;
+            const password = loginForm['login-password'].value;
 
-  auth.signInWithEmailAndPassword(email, password).then((cred) => {
-    const modal = document.querySelector('#modal-login');
-    M.Modal.getInstance(modal).close();
-    loginForm.reset();
-  });
-
-});
+            auth.signInWithEmailAndPassword(email, password).then((cred) => {
+            const modal = document.querySelector('#modal-login');
+            M.Modal.getInstance(modal).close();
+            loginForm.reset();
+            });
+      });
 
 const logout = document.querySelector('#logout');
-logout.addEventListener('click', (e) => {
-  e.preventDefault();
-  auth.signOut();
-});
+      logout.addEventListener('click', (e) => {
+            e.preventDefault();
+            auth.signOut();
+      });
 
 initMaterialize();
 
 listenForActiveSpecies(species => {
-  
-  const activeSpecies = document.querySelector('.js-active-species > span:nth-child(2)');
-        activeSpecies.innerHTML = species.name;
-
+  activeSpecies.querySelectorAll('span:nth-child(2)').innerHTML = species.name;
   window.snapdragon.species = species;
 });
