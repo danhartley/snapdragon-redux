@@ -156,3 +156,11 @@
   li a > i, li a > span {
       pointer-events: none;
   }
+
+  .collection-species {
+      margin: 0 2rem;
+  }
+
+  .collection-details > div > span:nth-child(1) {
+      margin-right: .5rem;
+  }

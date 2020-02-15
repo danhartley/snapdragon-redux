@@ -6,8 +6,8 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { speciesPicker } from 'admin/screens/taxa-pickers';
 import { inat } from 'admin/api/inat';
 
-import addPhotosTemplate from 'admin/screens/add-photos.html';
-import addphotosGalleryTemplate from 'admin/screens/add-photos-gallery.html';
+import addPhotosTemplate from 'admin/screens/species/add-photos.html';
+import addphotosGalleryTemplate from 'admin/screens/species/add-photos-gallery.html';
 
 export const addPhotos = () => {
 

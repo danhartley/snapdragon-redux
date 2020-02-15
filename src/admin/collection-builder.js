@@ -6,13 +6,14 @@ import 'ui/css/common.css';
 
 import { listenForActiveSpecies } from 'admin/screens/taxa-pickers';
 import { initMaterialize } from 'admin/scripts/materialize';
-import { speciesHandler } from 'admin/screens/species-handler';
+import { speciesHandler } from 'admin/screens/species/species-handler';
 import { traitsHandler } from 'admin/screens/traits-handler';
-import { addRelationship } from 'admin/screens/add-relationship';
-import { addLookalike } from 'admin/screens/add-lookalike';
-import { addPhotos } from 'admin/screens/add-photos';
+import { addRelationship } from 'admin/screens/species/add-relationship';
+import { addLookalike } from 'admin/screens/species/add-lookalike';
+import { addPhotos } from 'admin/screens/species/add-photos';
 import { addTaxon } from 'admin/screens/add-taxon';
-import { addId } from 'admin/screens/add-id';
+import { addId } from 'admin/screens/species/add-id';
+import { editCollection } from 'admin/screens/collection/edit-collection';
 
 const auth = firebase.auth();
 
@@ -90,6 +91,9 @@ const addTaxonTab = document.querySelector('#add-taxon');
 
 const addIdTab = document.querySelector('#add-id');
       addIdTab.addEventListener('click', addId);
+
+const editCollectionTab = document.querySelector('#edit-collection');
+      editCollectionTab.addEventListener('click', editCollection);
 
 const setupUI = (user) => {
   if (user) {

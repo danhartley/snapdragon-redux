@@ -6,8 +6,8 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { speciesPicker } from 'admin/screens/taxa-pickers';
 import { eol } from 'admin/api/eol';
 
-import lookalikeTemplate from 'admin/screens/add-lookalike-template.html';
-import lookalikesListTemplate from 'admin/screens/add-lookalikes-list-template.html';
+import lookalikeTemplate from 'admin/screens/species/add-lookalike-template.html';
+import lookalikesListTemplate from 'admin/screens/species/add-lookalikes-list-template.html';
 
 export const addLookalike = () => {
 

@@ -1,0 +1,17 @@
+<div class="collection-details">
+    <div>
+        <span>Id</span><span>{{ collection.id }}</span>
+    </div>
+    <div>
+        <span>Active</span><span>{{ collection.isActive }}</span>
+    </div>
+    <div>
+        <span>Private</span><span>{{ collection.isPrivate }}</span>
+    </div>    
+</div>
+
+<ul data-repeat-species="{{ items }}">
+    <li>
+        <span>{{ species.name }}</span>
+    </li>
+</ul>

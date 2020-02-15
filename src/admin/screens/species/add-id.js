@@ -2,8 +2,8 @@ import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
 import { speciesPicker } from 'admin/screens/taxa-pickers';
 
-import idTemplate from 'admin/screens/add-id-template.html';
-import idTextTemplate from 'admin/screens/add-id-text-template.html';
+import idTemplate from 'admin/screens/species/add-id-template.html';
+import idTextTemplate from 'admin/screens/species/add-id-text-template.html';
 
 export const addId = () => {
 
