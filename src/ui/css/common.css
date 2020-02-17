@@ -66,3 +66,23 @@
   .padding-left {
     padding-left: .5rem;
   }
+
+  .custom-control {
+    display: flex;
+    align-items: center;
+  }
+  
+  .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: rgb(98, 127, 134);
+  }
+  
+  .custom-checkbox
+    .custom-control-input:disabled:checked
+    ~ .custom-control-label::before {
+    background-color: rgba(41, 108, 44, 0.3);
+    pointer-events: none;
+  }
+  
+  .custom-checkbox input {
+    margin: 0 0.5rem 0 0;
+  }

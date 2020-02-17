@@ -7,7 +7,7 @@
 }            
 .sub.container {
     width: 100%;
-    margin: 2rem .75rem;
+    margin: 0 .75rem;
 }
 .input-field {
     margin-top: 0;
@@ -96,7 +96,9 @@
     margin: 0 1rem 0 0;
   }
   .active-species {
-    padding: 1rem 0 0 .75rem;
+    padding: 1rem 0 0 1.75rem;
+    font-size: 1.1rem;
+    font-style: italic;
   }
   .alert {
       color: rgba(183, 12, 21,.8);
@@ -163,4 +165,18 @@
 
   .collection-details > div > span:nth-child(1) {
       margin-right: .5rem;
+  }
+
+  .row {
+      display: block;
+  }
+
+  li.custom-control, li label {
+      width: 12rem;
+      width: fit-content;
+      font-size: .9rem;
+  }
+
+  .input-field {
+      margin-bottom: .5rem;
   }

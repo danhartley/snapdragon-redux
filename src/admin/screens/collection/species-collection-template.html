@@ -11,7 +11,9 @@
 </div>
 
 <ul data-repeat-species="{{ items }}">
-    <li>
-        <span>{{ species.name }}</span>
+    <li class="custom-control custom-checkbox" data-tooltip="{{ species.vernacularName }}" data-position="right">
+        <input type="checkbox" class="custom-control-input" data-is-active="{{ ^.collection.isActive }}" checked>
+        <!-- <img src="{{ species.image }}" alt=""> -->
+        <label class="custom-control-label" for="{{ species.name }}">{{ species.name }}</label>
     </li>
 </ul>

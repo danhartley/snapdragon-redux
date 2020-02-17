@@ -1443,7 +1443,7 @@ span.hide-empty:empty {
   padding: 0.5rem;
 }
 
-.custom-control {
+/* .custom-control {
   display: flex;
   align-items: center;
 }
@@ -1461,7 +1461,7 @@ span.hide-empty:empty {
 
 .custom-checkbox input {
   margin: 0 0.5rem 0 0;
-}
+} */
 
 .comparison-description {
   display: flex;

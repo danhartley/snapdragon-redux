@@ -1,5 +1,8 @@
 import "babel-polyfill";
 
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import 'admin/css/admin.css';
 import 'ui/css/snapdragon-colours.css';
 import 'ui/css/common.css';
@@ -14,6 +17,7 @@ import { addPhotos } from 'admin/screens/species/add-photos';
 import { addTaxon } from 'admin/screens/add-taxon';
 import { addId } from 'admin/screens/species/add-id';
 import { editCollection } from 'admin/screens/collection/edit-collection';
+import { addQuestion } from 'admin/screens/questions/add-question';
 
 const auth = firebase.auth();
 
@@ -54,7 +58,7 @@ const addTraitsClickHandler = e => {
   traitsHandler.addTraits();
 };
 
-const activeSpecies = document.querySelector('.js-active-species');
+const activeSpecies = document.querySelector('.js-active-species > span:nth-child(2)');
 
 const actions = document.querySelectorAll('li a');
       actions.forEach(action => action.addEventListener('click', e => {
@@ -95,11 +99,14 @@ const addIdTab = document.querySelector('#add-id');
 const editCollectionTab = document.querySelector('#edit-collection');
       editCollectionTab.addEventListener('click', editCollection);
 
+const addQuestionTab = document.querySelector('#add-question');
+      addQuestionTab.addEventListener('click', addQuestion);
+
 const setupUI = (user) => {
   if (user) {
     loggedInLinks.forEach(item => item.classList.remove('hide'));
     loggedOutLinks.forEach(item => item.classList.add('hide'));
-    addIdTab.click();
+    addQuestionTab.click();
 } else {    
     loggedInLinks.forEach(item => item.classList.add('hide'));
     loggedOutLinks.forEach(item => item.classList.remove('hide'));
