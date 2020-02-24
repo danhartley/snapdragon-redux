@@ -1,19 +1,42 @@
 <div class="collection-details">
-    <div>
-        <span>Id</span><span>{{ collection.id }}</span>
-    </div>
-    <div>
-        <span>Active</span><span>{{ collection.isActive }}</span>
-    </div>
-    <div>
-        <span>Private</span><span>{{ collection.isPrivate }}</span>
-    </div>    
+
+    <li class="custom-control custom-checkbox">
+        <input id="isActiveChkBox" type="checkbox" class="custom-control-input" data-is-active="{{ collection.isActive }}" value="{{ collection.isActive }}">
+        <label class="custom-control-label" for="isActive">
+            <span class="cursor-pointer js-species-link">
+                <span id="isActive">Active</span>
+            </span>
+        </label>
+    </li>
+
+    <li class="custom-control custom-checkbox">
+        <input id="isPrivateChkBox" type="checkbox" class="custom-control-input" data-is-active="{{ collection.isPrivate }}" value="{{ collection.isPrivate }}">
+        <label class="custom-control-label" for="isPrivate">
+            <span class="cursor-pointer js-species-link">
+                <span id="isPrivate">Private</span>
+            </span>
+        </label>
+    </li>
+
 </div>
 
 <ul data-repeat-species="{{ items }}">
     <li class="custom-control custom-checkbox" data-tooltip="{{ species.vernacularName }}" data-position="right">
         <input type="checkbox" class="custom-control-input" data-is-active="{{ ^.collection.isActive }}" checked>
-        <!-- <img src="{{ species.image }}" alt=""> -->
-        <label class="custom-control-label" for="{{ species.name }}">{{ species.name }}</label>
+        <label class="custom-control-label" for="{{ species.name }}">
+            <span class="cursor-pointer js-species-link">
+                <span id="{{ species.name }}">{{ species.name }}</span>
+                <!-- <i class="far fa-comments"></i> -->
+            </span>
+        </label>
     </li>
 </ul>
+
+<div>
+    <li class="custom-control custom-checkbox">
+        <a href="#" class="grey-text js-add-species">
+            <i class="fas fa-plus" aria-hidden="true"></i>
+            <span>Species</span>
+        </a>
+    </li>
+</div>

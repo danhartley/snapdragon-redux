@@ -26,6 +26,12 @@
     flex-direction: column;
     justify-content: space-evenly;
   }
+  
+  .horizontal-evenly-spaced-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 
   .margin-all {
     margin: .5rem !important;
@@ -85,4 +91,47 @@
   
   .custom-checkbox input {
     margin: 0 0.5rem 0 0;
+  }
+
+  .show {
+    display: inline;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .hide-important {
+    display: none !important;
+  }
+  
+  .underline-link {
+    color: var(--snap-link) !important;
+    text-decoration: none;
+    border-bottom: solid .05rem !important;
+    color: inherit;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 1.8;
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  .border-top {
+    border-bottom: 1px solid var(--snap-border-light);
+  }
+
+  .border-right {
+    border-right: 1px solid var(--snap-border-light);
+  }
+
+  .border-bottom {
+    border-bottom: 1px solid var(--snap-border-light);
+  }
+
+  .border-left {
+    border-left: 1px solid var(--snap-border-light);
   }

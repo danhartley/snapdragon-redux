@@ -210,17 +210,6 @@ a.dropdown-item {
   background-color: var(--snap-dd-non-taxa-bg-hover);
 }
 
-.underline-link {
-  color: var(--snap-link) !important;
-  text-decoration: none;
-  border-bottom: solid .05rem !important;
-  color: inherit;
-  cursor: pointer;
-  text-transform: uppercase;
-  display: inline-block;
-  line-height: 1.8;
-}
-
 .underline-external-link {
   color: var(--snap-link) !important;
   text-decoration: none;
@@ -235,18 +224,6 @@ a.dropdown-item {
 
 .toUpperCase {
   text-transform: uppercase;
-}
-
-.show {
-  display: inline;
-}
-
-.hide {
-  display: none;
-}
-
-.hide-important {
-  display: none !important;
 }
 
 .home, .settings, .nav-info, .list, .glossary, .email, .login, .email > a {

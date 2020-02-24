@@ -1420,7 +1420,7 @@ export const plantae = [
     },
     {
         term: 'Scape',
-        definition: 'A long internode that forms the basal part or the whole of a peduncle.',
+        definition: 'A long internode that forms the basal part or the whole of a peduncle, typically in the form of a long, leafless flowering stem.',
         wiki: 'https://en.wikipedia.org/wiki/Scape_(botany)'
     },
     {
@@ -1452,5 +1452,20 @@ export const plantae = [
         term: "Plant pathogen",
         definition: "A broad term that refers to any of the organisms, such as fungi, bacteria, protists, nematodes, and viruses that cause plant diseases.",
         wiki: "https://en.wikipedia.org/wiki/Plant_pathology"
+    },
+    {
+        term: "Abscission",
+        definition: "The shedding of various parts of an organism, such as a plant dropping a leaf, fruit, flower, or seed (from Latin ab, 'away', and scindere, 'to cut').",
+        wiki: "https://en.wikipedia.org/wiki/Abscission"
+    },
+    {
+        term: "Marcescence",
+        definition: "The retention of dead plant organs that normally are shed.",
+        wiki: "https://en.wikipedia.org/wiki/Marcescence"
+    },
+    {
+        term: "Coriaceous",
+        definition: "Leathery; stiff and tough, but flexible.",
+        wiki: "https://en.wikipedia.org/wiki/Glossary_of_botanical_terms#coriaceous"
     },
 ];

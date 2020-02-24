@@ -58,17 +58,20 @@ const addTraitsClickHandler = e => {
   traitsHandler.addTraits();
 };
 
-const activeSpecies = document.querySelector('.js-active-species > span:nth-child(2)');
+const activeSpecies = document.querySelector('.js-active-species');
 
 const actions = document.querySelectorAll('li a');
       actions.forEach(action => action.addEventListener('click', e => {
-            const isAddSpecies = e.target.id === 'add-species' || e.target.id === 'add-taxon';
-                  isAddSpecies
-                        ? activeSpecies.classList.add('hide')
-                        : activeSpecies.classList.remove('hide');
 
-            if(!isAddSpecies) {
-                  activeSpecies.innerHTML = window.snapdragon.species ? window.snapdragon.species.name : '';
+            activeSpecies.classList.remove('hide');
+
+            const hideActiveSpecies = e.target.id === 'add-species' || e.target.id === 'add-taxon';
+
+            if(hideActiveSpecies) {
+                  activeSpecies.querySelector('span:nth-child(2)').innerHTML = 'N/A';
+            }
+            else {
+                  activeSpecies.querySelector('span:nth-child(2)').innerHTML = window.snapdragon.species ? window.snapdragon.species.name : '';
             }
       }));
       
@@ -106,7 +109,8 @@ const setupUI = (user) => {
   if (user) {
     loggedInLinks.forEach(item => item.classList.remove('hide'));
     loggedOutLinks.forEach(item => item.classList.add('hide'));
-    addQuestionTab.click();
+//     addQuestionTab.click();
+      editCollectionTab.click();
 } else {    
     loggedInLinks.forEach(item => item.classList.add('hide'));
     loggedOutLinks.forEach(item => item.classList.remove('hide'));

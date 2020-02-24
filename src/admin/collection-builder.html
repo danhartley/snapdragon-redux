@@ -6,25 +6,28 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <title>Collection builder</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/d14c13adbf.js" crossorigin="anonymous"></script>
     </head>
     <body class="container">
 
         <nav class="z-depth-0 grey lighten-4">
             <div class="nav-wrapper container">
-                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <ul id="nav-mobile" class="hide-on-med-and-down">
                     <!-- <li class="logged-in hide">
                     <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
                     </li> -->
                     <li class="logged-in hide">
-                        <a href="#" class="grey-text" id="logout">Logout</a>
+                        <a href="#" class="grey-text" id="logout">
+                            <i class="fas fa-user"></i>
+                        </a>
                     </li>
-                    <li class="logged-in hide">
+                    <li class="logged-in hide border-left">
                         <a href="#" class="grey-text" id="add-species">
                             <i class="fas fa-plus"></i>
                             <span>Species</span>
                         </a>
                     </li>
-                    <li class="logged-in hide">
+                    <li class="logged-in hide border-right">
                         <a href="#" class="grey-text" id="add-taxon">
                             <i class="fas fa-plus"></i>
                             <span>Taxon</span> </a>
@@ -63,7 +66,7 @@
                     <li class="logged-in hide">
                         <a href="#" class="grey-text" id="update-names">
                             <i class="far fa-edit"></i>
-                            <span>Common Names</span>
+                            <span>Names</span>
                         </a>
                     </li>
                     <li class="logged-in hide">
@@ -85,7 +88,9 @@
                         </a>
                     </li>
                     <li class="logged-out hide">
-                        <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+                        <a href="#" class="grey-text modal-trigger" data-target="modal-login">
+                            <i class="fas fa-user-slash"></i>
+                        </a>
                     </li>
                     <li class="logged-out hide">
                         <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
@@ -95,10 +100,8 @@
             </div>
         </nav>
 
-        <div class="row">
-            <div class="active-species js-active-species">
-                <span>Active species:</span><span class="feedback"></span>
-            </div>
+        <div class="active-species hide js-active-species">
+            <span>Active species:</span><span class="feedback">--- ---</span>
         </div>
             
          <!-- SIGN UP MODAL -->
@@ -161,6 +164,6 @@
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
         <script type="text/javascript" src="./stamp.js"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"> -->
     </body>
 </html>
