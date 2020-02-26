@@ -1,7 +1,7 @@
-
 .sub.container {
     width: 100%;    
-    margin: 0 .75rem;
+    margin: 0 !important;
+    padding: 0;
 }
 .input-field {
     margin-top: 0;
@@ -94,7 +94,7 @@
     width: 100%;
     justify-content: flex-start;
     font-size: .9rem;
-    margin: 1rem 0 2rem 2.5rem;
+    margin: .5rem 0 1.5rem .75rem;
   }
   .alert {
       color: rgba(183, 12, 21,.8);
@@ -107,6 +107,19 @@
   .feedback {
       margin: 0 0 0 .5rem;
       font-style: italic;
+  }
+
+  .input-field {
+      font-size: .9rem;
+      line-height: 2.5rem;
+  }
+
+  .input-field > input {
+    font-size: .9rem !important;
+  }
+
+  .input-field > label {
+    font-size: .9rem !important;
   }
 
   .input-field input[type=text]:focus {
@@ -155,12 +168,12 @@
   }
 
   .collection-species {
-      margin: 0 2rem;
+      margin: 0 1rem;
   }
 
   .collection-details {
-    background-color: #d3d3d359;
-    margin: -1rem 0 1rem -.5rem;
+    background-color: var(--snap-block-light);
+    margin: 0 0 1rem -.5rem;
     padding: .5rem;
   }
 
@@ -170,6 +183,12 @@
 
   .row {
       display: block;
+      margin: 0;
+      margin-bottom: 1rem;
+  }
+
+  .collection-container > .row {
+      margin: 0;
   }
 
   li.custom-control, li label {
@@ -207,6 +226,41 @@
 
   #input-collection {
       font-size: .9rem;
+  }
+
+  .admin.container .modal {
+      bottom: initial;
+  }
+
+  .selected-species-container > input {
+      width: 17rem;
+  }
+
+  .tabs {
+    margin-left: -.5rem;
+  }
+
+  .tabs, .tabs .tab {
+    line-height: 32px;
+    height: 32px;
+  }
+
+  .tabs .tab {
+    text-transform: initial; 
+  }
+
+  .tabs .tab a {
+    color: var(--snap-text-dark-medium-dark);
+    background-color: var(--snap-block-light);
+  }
+
+  .tabs .tab a:hover, .tabs .tab a.active {
+    color: var(--snap-text-dark-medium-dark);
+    background-color: rgb(253, 240, 241);
+  }
+
+  .tabs .indicator {
+      height: 0;
   }
 
   @media (min-width: 1200px) {

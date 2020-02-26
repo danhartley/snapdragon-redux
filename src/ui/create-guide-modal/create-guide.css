@@ -50,7 +50,7 @@
   .modal-guide-navigation {
     display: grid;
     grid-template-columns: 1fr 4fr auto 4fr 1fr;
-    margin: 0 .25rem;
+    margin: 0 .5rem;
     height: var(--vhRunningBlock, 10vh);
     background-color: var(--snap-species-highlight-background);    
   }

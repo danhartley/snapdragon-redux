@@ -6,43 +6,39 @@ import { renderTemplate } from 'ui/helpers/templating';
 
 import editorTemplate from 'ui/create-guide-modal/species-editor-template.html';
 
-export const speciesEditor = (config, modal, selectedSpeciesDisplay, createGuide, selectedSpecies, savedSpeciesNames) => {
+const listenersToAddedSpecies = [];
 
-    const spinner = modal.querySelector('.js-species-search');
-    if(spinner) spinner.classList.add('hide-important');
+export const addListenerToAddedSpecies = listener => {
+    listenersToAddedSpecies.pop();  
+    listenersToAddedSpecies.push(listener);
+};
+
+export const speciesEditor = (container, selectedSpeciesDisplay, selectedSpecies, savedSpeciesNames, addedSpecies) => {
 
     const template = document.createElement('template');
           template.innerHTML = editorTemplate;
 
-    selectedSpeciesDisplay.innerHTML = ''
+    selectedSpeciesDisplay.innerHTML = '';
 
-    renderTemplate({selectedSpecies}, template.content, selectedSpeciesDisplay);
+    renderTemplate({addedSpecies}, template.content, selectedSpeciesDisplay);
 
-    // const species = modal.querySelector('.js-lesson-taxa');
-    //       species.innerHTML = ?? not known at this stage taxon of species added (though could be if import with inat data)
-
-    const speciesCount = modal.querySelector('.js-lesson-taxa-count');
-    if(speciesCount) speciesCount.innerHTML = selectedSpecies.length;
-
-    const input = modal.querySelector("#input-species");
-          if(config.isLandscapeMode) input.focus();
+    const input = container.querySelector("#input-species");
+          input.focus();
 
     const addSpeciesToList = species => {
         
         if(R.contains(species, selectedSpecies)) return;
 
         selectedSpecies.push(species);
-
-        config.guide.species = selectedSpecies;
-        config.guide.extraSpecies.push(species);
-
-        createGuide.setConfig(config);
+        addedSpecies.push(species);
 
         speciesNames = speciesNames.filter(name => name.value !== input.value);
         input.value = '';
 
+        listenersToAddedSpecies.forEach(listener => listener(species));
+
         setTimeout(() => {            
-            speciesEditor(config, modal, selectedSpeciesDisplay, createGuide, selectedSpecies, speciesNames);
+            speciesEditor(container, selectedSpeciesDisplay, selectedSpecies, speciesNames, addedSpecies);
         }, 200);
     };
 
@@ -65,7 +61,7 @@ export const speciesEditor = (config, modal, selectedSpeciesDisplay, createGuide
             input: input,
             fetch: function(text, update) {
                 text = text.toLowerCase();
-                const suggestions = speciesNames.filter(n => n.value.toLowerCase().startsWith(text))
+                const suggestions = speciesNames.filter(n => n.value.toLowerCase().startsWith(text) && !R.contains(n.value, selectedSpecies));
                 update(suggestions);
             },
             onSelect: function(item) {
@@ -90,7 +86,7 @@ export const speciesEditor = (config, modal, selectedSpeciesDisplay, createGuide
     
     init();
 
-    modal.querySelectorAll('li input').forEach(checkBox => {
+    container.querySelectorAll('li input').forEach(checkBox => {
         
         checkBox.addEventListener('change', event => {
 
@@ -98,13 +94,8 @@ export const speciesEditor = (config, modal, selectedSpeciesDisplay, createGuide
 
             speciesNames.push({ label: removedSpecies, value: removedSpecies});
             selectedSpecies = selectedSpecies.filter(species => species !== removedSpecies);
-            
-            config.guide.species = selectedSpecies;
-            config.guide.extraSpecies = config.guide.extraSpecies.filter(sp => sp !== removedSpecies);
-
-            createGuide.setConfig(config);
-            
-            speciesEditor(config, modal, selectedSpeciesDisplay, createGuide, selectedSpecies, speciesNames);
+                        
+            speciesEditor(container, selectedSpeciesDisplay, selectedSpecies, speciesNames);
         });
     })
 };

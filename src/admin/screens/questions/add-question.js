@@ -16,7 +16,7 @@ export const addQuestion = (activeSpecies, parent = null) => {
         const questions = await firestore.getQuestionsWhere({
             key: 'taxon',
             operator: '==',
-            value: species.name
+            value: species ? species.name : ''
         });
 
         renderTemplate({ questions }, template.content, parent);

@@ -573,6 +573,22 @@ const addCollection = async (collection, user) => {
   
     return docRef;
   };
+
+  const updateCollection = async collection => {
+
+    let docRef;
+
+    const querySnapshot = await db.collection("collections").where("name", "==", collection.name).get();
+    
+    querySnapshot.forEach(function(doc) {
+        docRef = doc.ref;
+    });
+
+    console.log(docRef);
+
+    return await docRef.update(collection);
+
+};
   
   const getCollectionsWhere = async props => {
   
@@ -663,6 +679,7 @@ export const firestore = {
     
     updateSpecies,
     updateSpeciesNames,
+    updateCollection,
   
     deleteSpeciesByName,
     deleteSpeciesTraitField,

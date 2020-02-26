@@ -4,31 +4,37 @@ import { createQuestion } from 'admin/screens/questions/create-question';
 
 import questionTabsTemplate from 'admin/screens/questions/questions-tabs-template.html';
 
-export const renderQuestionTabs = (species, parent) => {
+export const renderQuestionTabs = (collection, species, parent) => {
 
     const init = async () => {
 
-        const template = document.createElement('template');
-              template.innerHTML = questionTabsTemplate;
-    
-        parent.innerHTML = '';
-    
-        renderTemplate({}, template.content, parent);
+      const template = document.createElement('template');
+            template.innerHTML = questionTabsTemplate;
 
-        const questionPanel = document.querySelector('.js-question-panel');
-              questionPanel.innerHTML = '';
+      parent.innerHTML = '';
 
-        const addQuestionTab = document.querySelector('#addQuestionTab');
-              addQuestionTab.addEventListener('click', async e => {
-                questionPanel.innerHTML = '';
-                addQuestion(species, questionPanel);
-              });
+      renderTemplate({}, template.content, parent);
 
-        const createQuestionTab = document.querySelector('#createQuestionTab');
-              createQuestionTab.addEventListener('click', e => {
-                questionPanel.innerHTML = '';
-                createQuestion(species, questionPanel);
-              });    
+      const tabs = document.querySelector('.tabs');
+
+      var instance = M.Tabs.init(tabs, {});
+
+      const questionPanel = document.querySelector('.js-question-panel');
+            questionPanel.innerHTML = '';
+
+      const addQuestionTab = document.querySelector('#addQuestionTab');
+            addQuestionTab.addEventListener('click', async e => {
+            questionPanel.innerHTML = '';
+            addQuestion(species, questionPanel);
+            });
+
+      const createQuestionTab = document.querySelector('#createQuestionTab');
+            createQuestionTab.addEventListener('click', e => {
+            questionPanel.innerHTML = '';
+            createQuestion(collection, species, questionPanel);
+            });    
+
+            createQuestionTab.click();
     }
 
     init();

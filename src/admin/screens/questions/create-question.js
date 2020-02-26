@@ -1,11 +1,12 @@
 import autocomplete from 'autocompleter';
 
+import { firestore } from 'api/firebase/firestore';
 import { matchTaxon, iconicTaxa  } from 'api/snapdragon/iconic-taxa';
 import { renderTemplate } from 'ui/helpers/templating';
 
 import createQuestionTemplate from 'admin/screens/questions/create-question-template.html';
 
-export const createQuestion = (activeSpecies, parent = null) => {
+export const createQuestion = (collection, activeSpecies, parent = null) => {
 
     const init = async () => {
 
@@ -14,6 +15,9 @@ export const createQuestion = (activeSpecies, parent = null) => {
 
         const template = document.createElement('template');
               template.innerHTML = createQuestionTemplate;
+
+        parent = parent || document.querySelector('#content-container');
+        parent.innerHTML = '';
 
         renderTemplate({}, template.content, parent);
 
@@ -102,24 +106,40 @@ export const createQuestion = (activeSpecies, parent = null) => {
         var elems = document.querySelectorAll('.has-character-counter');
         M.CharacterCounter.init(elems);
         
-        const btnCreateQuestion = document.querySelector('.btnCreateQuestion');
-
-        const question = {
-            provider: 'snapdragon',
-            iconicTaxon: inputIconicTaxon.value,
-            rank: inputTaxonRank.value,
-            taxon: inputTaxon.value,
-            statement: inputStatement.value,
-            question: inputQuestion.value,
-            answer: inputAnswer.value,
-            answers: [
-                inputAnswers1.value,
-                inputAnswers2.value,
-                inputAnswers3.value,
-            ]
+        const getQuestion = () => {
+            return {
+                provider: 'snapdragon',
+                iconicTaxon: inputIconicTaxon.value,
+                rank: inputTaxonRank.value,
+                taxon: inputTaxon.value,
+                statement: inputStatement.value,
+                question: inputQuestion.value,
+                answer: inputAnswer.value,
+                answers: [
+                    inputAnswers1.value,
+                    inputAnswers2.value,
+                    inputAnswers3.value,
+                ]
+            };
         };
 
-        console.log(question);
+        const btnCreateQuestion = document.querySelector('.btnCreateQuestion');
+              btnCreateQuestion.addEventListener('click', async e => {
+                const question = getQuestion();
+                console.log('question: ', question);
+                const questionDocRef = await firestore.addQuestion(question);
+                if(questionDocRef) {
+                    console.log('questionDocRef: ', questionDocRef);                    
+                }   
+                collection.species.forEach(species => {
+                    if(species.name === activeSpecies.name) {
+                        species.questions = species.questions || [];
+                        species.questions.push(question);
+                    }
+                });
+                console.log('collection: ', collection);
+                const collectionDocRef = await firestore.updateCollection(collection);
+              });
     };
 
     setTimeout(() => {

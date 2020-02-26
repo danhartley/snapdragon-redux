@@ -111,8 +111,17 @@ class CreateGuide {
                     case enums.guideOption.INAT.name:
                         renderInatUser(this.modal, this);
                         break;
-                    case enums.guideOption.PICKER.name:                        
-                        renderSpeciesPicker(this);
+                    case enums.guideOption.PICKER.name:
+                        const chosenOnes = this.modal.querySelector('.js-chosen');
+                              chosenOnes.classList.add('hide-important');
+                        document.querySelector('.js-step-action-content .location-actions').classList.add('species-picker-actions');
+                        renderSpeciesPicker({
+                            container: this.modal,
+                            config: this.config,
+                            setConfig: this.setConfig
+                        }, this.modal.querySelector('.js-actions'));
+                        const title = this.modal.querySelector('.js-options');
+                              title.innerHTML = 'Add species by name.';            
                         break;
                 }
                 break;

@@ -3,7 +3,7 @@
     <li class="custom-control custom-checkbox">
         <input id="isActiveChkBox" type="checkbox" class="custom-control-input" data-is-active="{{ collection.isActive }}" value="{{ collection.isActive }}">
         <label class="custom-control-label" for="isActive">
-            <span class="cursor-pointer js-species-link">
+            <span class="cursor-pointer">
                 <span id="isActive">Active</span>
             </span>
         </label>
@@ -12,7 +12,7 @@
     <li class="custom-control custom-checkbox">
         <input id="isPrivateChkBox" type="checkbox" class="custom-control-input" data-is-active="{{ collection.isPrivate }}" value="{{ collection.isPrivate }}">
         <label class="custom-control-label" for="isPrivate">
-            <span class="cursor-pointer js-species-link">
+            <span class="cursor-pointer">
                 <span id="isPrivate">Private</span>
             </span>
         </label>
@@ -20,15 +20,11 @@
 
 </div>
 
-<ul data-repeat-species="{{ items }}">
-    <li class="custom-control custom-checkbox" data-tooltip="{{ species.vernacularName }}" data-position="right">
-        <input type="checkbox" class="custom-control-input" data-is-active="{{ ^.collection.isActive }}" checked>
-        <label class="custom-control-label" for="{{ species.name }}">
-            <span class="cursor-pointer js-species-link">
-                <span id="{{ species.name }}">{{ species.name }}</span>
-                <!-- <i class="far fa-comments"></i> -->
-            </span>
-        </label>
+<ul class="js-colection-items" data-repeat-species="{{ items }}">
+    <li class="custom-control custom-checkbox">
+        <input id="{{ species.name }}" type="checkbox" class="custom-control-input" data-is-active="{{ ^.collection.isActive }}" checked>
+        <label class="custom-control-label cursor-pointer" for="{{ species.name }}">{{ species.name }}</label>
+        <i name="{{ species.name }}" class="fas fa-marker margin-left"></i>
     </li>
 </ul>
 
