@@ -1,4 +1,9 @@
-.centred-block {
+
+  .flex {
+    display: flex;
+  }
+
+ .centred-block {
     display: flex;
     align-items: center;
     width: 100%;

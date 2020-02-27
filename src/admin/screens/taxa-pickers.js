@@ -1,4 +1,5 @@
 import { firestore } from 'api/firebase/firestore';
+import { itemProperties } from 'ui/helpers/data-checking';
 
 const activeSpeciesListeners = [];
 const activeTaxonListeners = [];
@@ -31,9 +32,21 @@ export const speciesPicker = async (input, listener) => {
         if(e.keyCode == 13) {
             const species = await firestore.getSpeciesByName(input.value);
             listener(species);
-            activeSpeciesListeners.forEach(l => l(species));   
+            activeSpeciesListeners.forEach(l => l(species));
+            updateActiveSpecies(species);
+
         }
     });
+};
+
+const updateActiveSpecies = species => {
+
+    window.snapdragon.species = species;
+    
+    const activeSpecies = document.querySelector('.js-active-species');    
+          activeSpecies.querySelector('span:nth-child(2)').innerHTML = !!species.vernacularName
+            ? `${species.name} (${species.vernacularName})`
+            : `${species.name} (${itemProperties.getVernacularName(species, { language: 'en'})})`;            
 };
 
 export const taxonPicker = async (input, listener) => {
