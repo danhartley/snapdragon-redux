@@ -7,7 +7,7 @@ import { firestore } from 'api/firebase/firestore';
 import { speciesPicker } from 'admin/screens/taxa-pickers';
 import { eol } from 'admin/api/eol';
 
-import relationshipTemplate from 'admin/screens/add-relationship-template.html';
+import relationshipTemplate from 'admin/screens/species/add-relationship-template.html';
 
 export const addRelationship = () => {
 

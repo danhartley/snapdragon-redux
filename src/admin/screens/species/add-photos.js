@@ -6,8 +6,8 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { speciesPicker } from 'admin/screens/taxa-pickers';
 import { inat } from 'admin/api/inat';
 
-import addPhotosTemplate from 'admin/screens/add-photos.html';
-import addphotosGalleryTemplate from 'admin/screens/add-photos-gallery.html';
+import addPhotosTemplate from 'admin/screens/species/add-photos.html';
+import addphotosGalleryTemplate from 'admin/screens/species/add-photos-gallery.html';
 
 export const addPhotos = () => {
 
@@ -117,23 +117,7 @@ export const addPhotos = () => {
 
         speciesPicker(input, async species => {
             const name = input.value;
-            let photos;       
-            switch(source) {
-                case 'inat':
-                    photos = await inat.getTaxonDataIncPhotos(name);
-                    photos = photos.map((photo, index) => {
-                        return { ...photo, url: photo.url.replace('medium', 'small'), index, provider: 'inat' };       
-                    });
-                    renderPhotos(photos, species);
-                    break;
-                case 'eol':
-                    photos = await eol.getSpeciesPhotos(species.eolId, 'pd|cc-by|cc-by-sa|cc-by-nd');
-                    photos = photos.map((photo, index) => {
-                        return { ...photo, index, provider: 'eol', url: photo.url.replace('.jpg', '.260x190.jpg') };       
-                    });
-                    renderPhotos(photos, species);
-                    break;
-            }
+            const photos = await loadPhotos(source, renderPhotos, species, name);
         });
 
         const addPhotosToSpecies = async (name, photos) => {            
@@ -155,8 +139,35 @@ export const addPhotos = () => {
             const parent = document.getElementById('photosGallery');
                   parent.innerHTML = '';
         };
+        
+        if(item) {
+            loadPhotos(source, renderPhotos, item, item.name);
+        }
 
     };
 
     init();
 };
+
+async function loadPhotos(source, renderPhotos, species, name) {
+    let photos;
+    switch (source) {
+        case 'inat':
+            photos = await inat.getTaxonDataIncPhotos(name);
+            photos = photos.map((photo, index) => {
+                return { ...photo, url: photo.url.replace('medium', 'small'), index, provider: 'inat' };
+            });
+            console.log('inat photos: ', photos);
+            renderPhotos(photos, species);
+            break;
+        case 'eol':
+            photos = await eol.getSpeciesPhotos(species.eolId, 'pd|cc-by|cc-by-sa|cc-by-nd');
+            photos = photos.map((photo, index) => {
+                return { ...photo, index, provider: 'eol', url: photo.url.replace('.jpg', '.260x190.jpg') };
+            });
+            console.log('inat photos: ', photos);
+            renderPhotos(photos, species);
+            break;
+    }
+    return photos;
+}

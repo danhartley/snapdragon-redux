@@ -11,10 +11,10 @@ import { eol } from 'admin/api/eol';
 import { firestore } from 'api/firebase/firestore';
 import { speciesPicker } from 'admin/screens/taxa-pickers';
 
-import addSpeciesTemplate from 'admin/screens/add-species-template.html';
-import updateSpeciesTemplate from 'admin/screens/update-species-template.html';
-import updateSpeciesNamesTemplate from 'admin/screens/update-species-names-template.html';
-import updateSpeciesNamesListTemplate from 'admin/screens/update-species-names-list-template.html';
+import addSpeciesTemplate from 'admin/screens/species/add-species-template.html';
+import updateSpeciesTemplate from 'admin/screens/species/update-species-template.html';
+import updateSpeciesNamesTemplate from 'admin/screens/species/update-species-names-template.html';
+import updateSpeciesNamesListTemplate from 'admin/screens/species/update-species-names-list-template.html';
 
 const addSpecies = () => {
 
@@ -61,8 +61,6 @@ const addSpecies = () => {
     const inputSearch = document.querySelector('#input-search');
           inputSearch.focus();
     const asyncProgress = document.querySelector('.async-progress');
-    const activeSpecies = document.querySelector('.js-active-species');
-          activeSpecies.classList.add('hide');
 
     const searchEOLCallback = (species, ref) => {
         item = species;

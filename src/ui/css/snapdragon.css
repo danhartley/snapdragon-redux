@@ -210,17 +210,6 @@ a.dropdown-item {
   background-color: var(--snap-dd-non-taxa-bg-hover);
 }
 
-.underline-link {
-  color: var(--snap-link) !important;
-  text-decoration: none;
-  border-bottom: solid .05rem !important;
-  color: inherit;
-  cursor: pointer;
-  text-transform: uppercase;
-  display: inline-block;
-  line-height: 1.8;
-}
-
 .underline-external-link {
   color: var(--snap-link) !important;
   text-decoration: none;
@@ -235,18 +224,6 @@ a.dropdown-item {
 
 .toUpperCase {
   text-transform: uppercase;
-}
-
-.show {
-  display: inline;
-}
-
-.hide {
-  display: none;
-}
-
-.hide-important {
-  display: none !important;
 }
 
 .home, .settings, .nav-info, .list, .glossary, .email, .login, .email > a {
@@ -1443,26 +1420,6 @@ span.hide-empty:empty {
   padding: 0.5rem;
 }
 
-.custom-control {
-  display: flex;
-  align-items: center;
-}
-
-.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
-  background-color: rgb(98, 127, 134);
-}
-
-.custom-checkbox
-  .custom-control-input:disabled:checked
-  ~ .custom-control-label::before {
-  background-color: rgba(41, 108, 44, 0.3);
-  pointer-events: none;
-}
-
-.custom-checkbox input {
-  margin: 0 0.5rem 0 0;
-}
-
 .comparison-description {
   display: flex;
   flex-direction: column;
@@ -1786,46 +1743,6 @@ a.collection-disabled {
   margin: 0 .5rem 0 0;
 }
 
-.margin-all {
-  margin: .5rem !important;
-}
-
-.margin-top {
-  margin-top: .5rem !important;
-}
-
-.margin-right {
-  margin-right: .5rem !important;
-}
-
-.margin-bottom {
-  margin-bottom: .5rem !important;
-}
-
-.margin-left {
-  margin-left: .5rem !important;
-}
-
-.padding {
-  padding: .5rem;
-}
-
-.padding-top {
-  padding-top: .5rem;
-}
-
-.padding-right {
-  padding-right: .5rem;
-}
-
-.padding-bottom {
-  padding-bottom: .5rem;
-}
-
-.padding-left {
-  padding-left: .5rem;
-}
-
 .emphasis {
   font-weight: bold;
   letter-spacing: .03rem;
@@ -2021,38 +1938,8 @@ a.collection-disabled {
   height: var(--vhCalendar, 11vh);
 }
 
-.centred-block {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.bottom-aligned {
-  display: flex;
-  align-items: flex-end;
-}
-
-.double-centred-block {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.vertical-centred-block {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.vertical-evenly-spaced-block {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
 .modal-footer.double-centred-block {
   background-color: var(--snap-portrait);
-  background-color: var(--snap-landscape);
   text-transform: uppercase;
   cursor: pointer;
 }

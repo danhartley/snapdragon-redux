@@ -573,6 +573,22 @@ const addCollection = async (collection, user) => {
   
     return docRef;
   };
+
+  const updateCollection = async collection => {
+
+    let docRef;
+
+    const querySnapshot = await db.collection("collections").where("name", "==", collection.name).get();
+    
+    querySnapshot.forEach(function(doc) {
+        docRef = doc.ref;
+    });
+
+    console.log(docRef);
+
+    return await docRef.update(collection);
+
+};
   
   const getCollectionsWhere = async props => {
   
@@ -600,6 +616,39 @@ const addCollection = async (collection, user) => {
     return getCollectionsWhere({});
   };
 
+  const addQuestion = async question => {
+
+    let docRef;
+  
+    try {
+        docRef = await db.collection('questions').add(question);
+    } catch(err) {
+        console.error("Error writing document: ", err);
+    }
+  
+    return docRef;
+  };
+  
+  const getQuestionsWhere = async props => {
+  
+    const { key, operator, value } = props;
+  
+    const collectionRef = key 
+            ? db.collection(`questions`).where(key, operator, value)
+            : db.collection(`questions`);
+  
+    const querySnapshot = await collectionRef.get();
+    
+    const docs = [];
+  
+    querySnapshot.forEach(doc => {
+      docs.push(doc.data());
+      // console.log(doc.data());
+    });
+  
+    return docs;
+  };
+
 export const firestore = {
     getSpecies,
     getSpeciesNames,
@@ -618,6 +667,7 @@ export const firestore = {
     getSpeciesByNameInParallel,
     getCollections,
     getCollectionsWhere,
+    getQuestionsWhere,
     
     addSpecies,
     addTraits,
@@ -625,9 +675,11 @@ export const firestore = {
     addPhotos,
     addTaxon,
     addCollection,
+    addQuestion,
     
     updateSpecies,
     updateSpeciesNames,
+    updateCollection,
   
     deleteSpeciesByName,
     deleteSpeciesTraitField,

@@ -1,0 +1,142 @@
+
+  .flex {
+    display: flex;
+  }
+
+ .centred-block {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .bottom-aligned {
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .double-centred-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .vertical-centred-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .vertical-evenly-spaced-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .horizontal-evenly-spaced-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .margin-all {
+    margin: .5rem !important;
+  }
+  
+  .margin-top {
+    margin-top: .5rem !important;
+  }
+  
+  .margin-right {
+    margin-right: .5rem !important;
+  }
+  
+  .margin-bottom {
+    margin-bottom: .5rem !important;
+  }
+  
+  .margin-left {
+    margin-left: .5rem !important;
+  }
+  
+  .padding {
+    padding: .5rem;
+  }
+  
+  .padding-top {
+    padding-top: .5rem;
+  }
+  
+  .padding-right {
+    padding-right: .5rem;
+  }
+  
+  .padding-bottom {
+    padding-bottom: .5rem;
+  }
+  
+  .padding-left {
+    padding-left: .5rem;
+  }
+
+  .custom-control {
+    display: flex;
+    align-items: center;
+  }
+  
+  .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: rgb(98, 127, 134);
+  }
+  
+  .custom-checkbox
+    .custom-control-input:disabled:checked
+    ~ .custom-control-label::before {
+    background-color: rgba(41, 108, 44, 0.3);
+    pointer-events: none;
+  }
+  
+  .custom-checkbox input {
+    margin: 0 0.5rem 0 0;
+  }
+
+  .show {
+    display: inline;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .hide-important {
+    display: none !important;
+  }
+  
+  .underline-link {
+    color: var(--snap-link) !important;
+    text-decoration: none;
+    border-bottom: solid .05rem !important;
+    color: inherit;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 1.8;
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  .border-top {
+    border-bottom: 1px solid var(--snap-border-light);
+  }
+
+  .border-right {
+    border-right: 1px solid var(--snap-border-light);
+  }
+
+  .border-bottom {
+    border-bottom: 1px solid var(--snap-border-light);
+  }
+
+  .border-left {
+    border-left: 1px solid var(--snap-border-light);
+  }

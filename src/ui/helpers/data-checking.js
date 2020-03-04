@@ -27,7 +27,7 @@ const getVernacularName = (item, config, useShortForm = false, namePart = 'verna
         }
         return capitalisedName;
     } catch(e) {
-        console.error('Failing getting vernacular name for: ', item);
+        console.error('Failing getting vernacular name for: ', item, 'error: ', e.message);
         return '';
     }
 };

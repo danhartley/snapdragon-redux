@@ -80,7 +80,7 @@ export const scaleImage = image => {
     if(image.provider === 'inat') {
         image.small = `https://static.inaturalist.org/photos/${image.url}`;
         image.medium = image.url.replace('small', 'medium');
-        image.medium = `https://static.inaturalist.org/photos/${image.medium}`;
+        image.medium = `https://static.inaturalist.org/photos/${image.url}`;
         image.large = image.url.replace('small', 'large');
         image.large = `https://static.inaturalist.org/photos/${image.large}`;
         return image;

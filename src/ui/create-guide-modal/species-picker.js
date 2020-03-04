@@ -1,30 +1,26 @@
 import { renderTemplate } from 'ui/helpers/templating';
+import { speciesInGuideEditor } from 'ui/create-guide-modal/species-in-guide-editor';
 import { speciesEditor } from 'ui/create-guide-modal/species-editor';
 
 import speciesPickerTemplate from 'ui/create-guide-modal/species-picker-template.html';
 
-export const renderSpeciesPicker = createGuide => {
+export const renderSpeciesPicker = (props, parent) => {
 
-    const { config, modal } = createGuide;
+      const { config, container, selectedSpecies } = props;
 
-    const chosenOnes = modal.querySelector('.js-chosen');
-          chosenOnes.classList.add('hide-important');
+      const template = document.createElement('template');
+            template.innerHTML = speciesPickerTemplate;
 
-    const template = document.createElement('template');
-          template.innerHTML = speciesPickerTemplate;
+      parent.innerHTML = '';
 
-    const parent = modal.querySelector('.js-actions');
-          parent.innerHTML = '';
+      renderTemplate({}, template.content, parent);
 
-    document.querySelector('.js-step-action-content .location-actions').classList.add('species-picker-actions');
+      const selectedSpeciesDisplay = parent.querySelector('.js-selected-species-container');
+            selectedSpeciesDisplay.innerHTML = '';
 
-    renderTemplate({}, template.content, parent);
-
-    const title = modal.querySelector('.js-options');
-          title.innerHTML = 'Add species by name.';
-
-    const selectedSpeciesDisplay = modal.querySelector('.js-selected-species-container');
-          selectedSpeciesDisplay.innerHTML = '';
-    
-    speciesEditor(config, modal, selectedSpeciesDisplay, createGuide, config.guide.species || []);
+      if(config) {
+            speciesInGuideEditor(config, container, selectedSpeciesDisplay, props, config.guide.species || []);
+      } else {
+            speciesEditor(parent, selectedSpeciesDisplay, selectedSpecies, [], []);
+      }
 };

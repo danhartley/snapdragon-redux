@@ -5,7 +5,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { listenToInatRequests } from 'api/inat/inat';
 import { enums } from 'ui/helpers/enum-helper';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
-import { speciesEditor } from 'ui/create-guide-modal/species-editor';
+import { speciesInGuideEditor } from 'ui/create-guide-modal/species-in-guide-editor';
 
 import spinnerTemplate from 'ui/create-guide-modal/species-search-template.html';
 import speciesSummaryTemplate from 'ui/create-guide-modal/species-summary-template.html';
@@ -91,7 +91,7 @@ export const speciesSearch = createGuide => {
                       selectedSpeciesDisplay.classList.remove('hide-important');
                       selectedSpeciesDisplay.innerHTML = '';
                       editSpecies.classList.add('hide-important');
-                speciesEditor(config, modal, selectedSpeciesDisplay, createGuide, collection.items.map(i => i.name));
+                speciesInGuideEditor(config, modal, selectedSpeciesDisplay, createGuide, collection.items.map(i => i.name));
 
                 const collectionName = modal.querySelector('#js-collection-name');
                       collectionName.classList.add('hide-important');

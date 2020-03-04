@@ -3,89 +3,104 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <title>Collection builder</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/d14c13adbf.js" crossorigin="anonymous"></script>
     </head>
-    <body class="container">
+    <body class="admin container">
 
         <nav class="z-depth-0 grey lighten-4">
             <div class="nav-wrapper container">
-                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <ul id="nav-mobile" class="hide-on-med-and-down">
                     <!-- <li class="logged-in hide">
                     <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
                     </li> -->
                     <li class="logged-in hide">
-                    <a href="#" class="grey-text" id="logout">Logout</a>
+                        <a href="#" class="grey-text" id="logout">
+                            <i class="fas fa-user"></i>
+                        </a>
                     </li>
-                    <li class="logged-in hide">
-                    <a href="#" class="grey-text" id="add-species">
-                        <i class="fas fa-plus"></i>
-                        <span>Species</span>
-                    </a>
+                    <li class="logged-in hide border-left">
+                        <a href="#" class="grey-text" id="add-species">
+                            <i class="fas fa-plus"></i>
+                            <span>Species</span>
+                        </a>
                     </li>
-                    <li class="logged-in hide">
+                    <li class="logged-in hide border-right">
                         <a href="#" class="grey-text" id="add-taxon">
                             <i class="fas fa-plus"></i>
                             <span>Taxon</span> </a>
                         </a>
                     </li>
                     <li class="logged-in hide">
-                    <a href="#" class="grey-text" id="add-traits">
-                        <i class="fas fa-plus"></i>
-                        <span>Traits</span>
-                    </a>
+                        <a href="#" class="grey-text" id="add-traits">
+                            <i class="fas fa-plus"></i>
+                            <span>Traits</span>
+                        </a>
                     </li>
                     <li class="logged-in hide">
-                    <a href="#" class="grey-text" id="add-relationship">
-                        <i class="fas fa-plus"></i>
-                        <span>Relationship</span>
-                    </a>
+                        <a href="#" class="grey-text" id="add-relationship">
+                            <i class="fas fa-plus"></i>
+                            <span>Relationship</span>
+                        </a>
                     </li>
                     <li class="logged-in hide">
-                    <a href="#" class="grey-text" id="add-lookalike">
-                        <i class="fas fa-plus"></i>
-                        <span>Lookalike</span> </a>
+                        <a href="#" class="grey-text" id="add-lookalike">
+                            <i class="fas fa-plus"></i>
+                            <span>Lookalike</span>
+                        </a>
                     </li>
                     <li class="logged-in hide">
-                    <a href="#" class="grey-text" id="add-id">
-                        <i class="fas fa-plus"></i>
-                        <span>Id</span> </a>
-                    </a>
+                        <a href="#" class="grey-text" id="add-id">
+                            <i class="fas fa-plus"></i>
+                            <span>Id</span> </a>
+                        </a>
                     </li>
                     <li class="logged-in hide">
-                    <a href="#" class="grey-text" id="update-species">
-                        <i class="far fa-edit"></i>
-                        <span>Species</span>
-                    </a>
+                        <a href="#" class="grey-text" id="update-species">
+                            <i class="far fa-edit"></i>
+                            <span>Species</span>
+                        </a>
                     </li>
                     <li class="logged-in hide">
-                    <a href="#" class="grey-text" id="update-names">
-                        <i class="far fa-edit"></i>
-                        <span>Common Names</span>
-                    </a>
+                        <a href="#" class="grey-text" id="update-names">
+                            <i class="far fa-edit"></i>
+                            <span>Names</span>
+                        </a>
                     </li>
                     <li class="logged-in hide">
-                    <a href="#" class="grey-text" id="add-photos">
-                        <i class="fas fa-plus"></i>
-                        <span>Photos</span> </a>
-                    </a>
+                        <a href="#" class="grey-text" id="add-photos">
+                            <i class="fas fa-plus"></i>
+                            <span>Photos</span> </a>
+                        </a>
+                    </li>
+                    <li class="logged-in hide">
+                        <a href="#" class="grey-text" id="edit-collection">
+                            <i class="fas fa-edit"></i>
+                            <span>Collection</span> </a>
+                        </a>
+                    </li>
+                    <li class="logged-in hide">
+                        <a href="#" class="grey-text" id="create-question">
+                            <i class="fas fa-plus"></i>
+                            <span>Question</span> </a>
+                        </a>
                     </li>
                     <li class="logged-out hide">
-                    <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+                        <a href="#" class="grey-text modal-trigger" data-target="modal-login">
+                            <i class="fas fa-user-slash"></i>
+                        </a>
                     </li>
                     <li class="logged-out hide">
-                    <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+                        <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
                     </li>
                 </span>
                 </ul>
             </div>
         </nav>
 
-        <div class="row">
-            <div class="active-species js-active-species">
-                <span>Active species:</span><span class="feedback"></span>
-            </div>
+        <div class="active-species hide js-active-species">
+            <span>Active species:</span><span class="feedback">--- ---</span>
         </div>
             
          <!-- SIGN UP MODAL -->
@@ -101,7 +116,7 @@
                     <input type="password" id="signup-password" required />
                     <label for="signup-password">Choose password</label>
                     </div>
-                    <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+                    <button class="btn darken-2 z-depth-0">Sign up</button>
                 </form>
                 </div>
         </div>
@@ -118,7 +133,7 @@
                 <input type="password" id="login-password" required />
                 <label for="login-password">Your password</label>
                 </div>
-                <button class="btn yellow darken-2 z-depth-0">Login</button>
+                <button class="btn darken-2 z-depth-0">Login</button>
             </form>
             </div>
         </div>
@@ -148,6 +163,5 @@
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
         <script type="text/javascript" src="./stamp.js"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <script type="text/javascript" src="admin.bundle.js"></script></body>
 </html>

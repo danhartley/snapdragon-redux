@@ -8,7 +8,6 @@ import { enums } from 'ui/helpers/enum-helper';
 import { initialiseConfig } from 'ui/helpers/location-helper';
 import { renderSpeciesList } from 'ui/screens/lists/species-list';
 import { collectionHandler  } from 'ui/helpers/collection-handler';
-import { collections } from '../../../redux/reducers/species-reducers';
 
 const beginOrResumeLesson = async (reviewLessonId, isNextRound)  => {
 

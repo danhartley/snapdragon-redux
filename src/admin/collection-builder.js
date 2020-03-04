@@ -1,17 +1,25 @@
 import "babel-polyfill";
 
+import 'admin/scss/materialize.scss';
+
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'ui/css/snapdragon-colours.css';
+
 import 'admin/css/admin.css';
-import 'admin/css/snapdragon-colours.css';
+import 'ui/css/common.css';
 
 import { listenForActiveSpecies } from 'admin/screens/taxa-pickers';
 import { initMaterialize } from 'admin/scripts/materialize';
-import { speciesHandler } from 'admin/screens/species-handler';
+import { speciesHandler } from 'admin/screens/species/species-handler';
 import { traitsHandler } from 'admin/screens/traits-handler';
-import { addRelationship } from 'admin/screens/add-relationship';
-import { addLookalike } from 'admin/screens/add-lookalike';
-import { addPhotos } from 'admin/screens/add-photos';
+import { addRelationship } from 'admin/screens/species/add-relationship';
+import { addLookalike } from 'admin/screens/species/add-lookalike';
+import { addPhotos } from 'admin/screens/species/add-photos';
 import { addTaxon } from 'admin/screens/add-taxon';
-import { addId } from 'admin/screens/add-id';
+import { addId } from 'admin/screens/species/add-id';
+import { editCollection } from 'admin/screens/collection/edit-collection';
+import { createQuestion } from 'admin/screens/questions/create-question';
 
 const auth = firebase.auth();
 
@@ -51,6 +59,23 @@ const updateSpeciesNamesClickHandler = e => {
 const addTraitsClickHandler = e => {
   traitsHandler.addTraits();
 };
+
+const activeSpecies = document.querySelector('.js-active-species');
+
+const actions = document.querySelectorAll('li a');
+      actions.forEach(action => action.addEventListener('click', e => {
+
+            activeSpecies.classList.remove('hide');
+
+            const hideActiveSpecies = e.target.id === 'add-species' || e.target.id === 'add-taxon';
+
+            if(hideActiveSpecies) {
+                  activeSpecies.querySelector('span:nth-child(2)').innerHTML = 'N/A';
+            }
+            else {
+                  activeSpecies.querySelector('span:nth-child(2)').innerHTML = window.snapdragon.species ? window.snapdragon.species.name : '';
+            }
+      }));
       
 const updateSpecies = document.querySelector('#update-species');
       updateSpecies.addEventListener('click', updateSpeciesClickHandler);
@@ -76,11 +101,18 @@ const addTaxonTab = document.querySelector('#add-taxon');
 const addIdTab = document.querySelector('#add-id');
       addIdTab.addEventListener('click', addId);
 
+const editCollectionTab = document.querySelector('#edit-collection');
+      editCollectionTab.addEventListener('click', editCollection);
+
+const createQuestionTab = document.querySelector('#create-question');
+      createQuestionTab.addEventListener('click', createQuestion);
+
 const setupUI = (user) => {
   if (user) {
     loggedInLinks.forEach(item => item.classList.remove('hide'));
     loggedOutLinks.forEach(item => item.classList.add('hide'));
-    addIdTab.click();
+//     createQuestionTab.click();
+      editCollectionTab.click();
 } else {    
     loggedInLinks.forEach(item => item.classList.add('hide'));
     loggedOutLinks.forEach(item => item.classList.remove('hide'));
@@ -88,32 +120,29 @@ const setupUI = (user) => {
 };
 
 const loginForm = document.querySelector('#login-form');
-loginForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  
-  const email = loginForm['login-email'].value;
-  const password = loginForm['login-password'].value;
+      loginForm.addEventListener('submit', (e) => {
+            
+            e.preventDefault();
+            
+            const email = loginForm['login-email'].value;
+            const password = loginForm['login-password'].value;
 
-  auth.signInWithEmailAndPassword(email, password).then((cred) => {
-    const modal = document.querySelector('#modal-login');
-    M.Modal.getInstance(modal).close();
-    loginForm.reset();
-  });
-
-});
+            auth.signInWithEmailAndPassword(email, password).then((cred) => {
+            const modal = document.querySelector('#modal-login');
+            M.Modal.getInstance(modal).close();
+            loginForm.reset();
+            });
+      });
 
 const logout = document.querySelector('#logout');
-logout.addEventListener('click', (e) => {
-  e.preventDefault();
-  auth.signOut();
-});
+      logout.addEventListener('click', (e) => {
+            e.preventDefault();
+            auth.signOut();
+      });
 
 initMaterialize();
 
 listenForActiveSpecies(species => {
-  
-  const activeSpecies = document.querySelector('.js-active-species > span:nth-child(2)');
-        activeSpecies.innerHTML = species.name;
-
+  activeSpecies.querySelectorAll('span:nth-child(2)').innerHTML = species.name;
   window.snapdragon.species = species;
 });

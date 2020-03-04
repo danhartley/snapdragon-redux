@@ -19,40 +19,53 @@ module.exports = {
       path: path.resolve(__dirname, 'dist')
     },    
     module: {
-        rules: [{
+        rules: [
+          {
             test: /\.css$/,
             use: [
               'style-loader',
-              'css-loader'
-            ]},
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                  loader: "babel-loader"
-                }
-            },
-            {
-              test: /\.html$/,
-              exclude: [ /node_modules/, path.resolve(__dirname, 'src/index.html')],
-              use: {loader: 'html-loader'}
-            },
-            {
-              test: /collection-builder.html$/,
-              exclude: [ /node_modules/, path.resolve(__dirname, 'src/admin/collection-builder.html')],
-              use: {loader: 'html-loader'}
-            },
-            {
-              test: /\.(png|svg|jpg|gif)$/,
-              use: [{
-                loader: 'file-loader',
-                options: {
-                  name: '[name].[ext]',
-                  ouputPath: 'img/',
-                  publicPath: 'img/'
-                }
-              }]
-            }
+              'css-loader',
+            ]
+          },
+          {
+            test: /\.s[ac]ss$/i,
+            use: [
+              // Creates `style` nodes from JS strings
+              'style-loader',
+              // Translates CSS into CommonJS
+              'css-loader',
+              // Compiles Sass to CSS
+              'sass-loader',
+            ],
+          },
+          {
+              test: /\.js$/,
+              exclude: /node_modules/,
+              use: {
+                loader: "babel-loader"
+              }
+          },
+          {
+            test: /\.html$/,
+            exclude: [ /node_modules/, path.resolve(__dirname, 'src/index.html')],
+            use: {loader: 'html-loader'}
+          },
+          {
+            test: /collection-builder.html$/,
+            exclude: [ /node_modules/, path.resolve(__dirname, 'src/admin/collection-builder.html')],
+            use: {loader: 'html-loader'}
+          },
+          {
+            test: /\.(png|svg|jpg|gif)$/,
+            use: [{
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                ouputPath: 'img/',
+                publicPath: 'img/'
+              }
+            }]
+          }
         ],
     },
     plugins: [
