@@ -77,6 +77,16 @@ const onTitleClickHandler = (icon, lessons, config, startLesson) => {
 
     const { icon, lesson, state, speciesList, container, lessonVideoState, row, isYoutubeIcon } = onTitleClickViewState(e, lessons);
 
+    const isItemActive = item => {
+      if(item.hasOwnProperty('isActive')) {
+        return item.isActive;
+      } else {
+        return true;
+      }
+    };
+
+    lesson.items = lesson.items.filter(item => isItemActive(item));
+
     if(config.isLandscapeMode) {
 
       const lessonYoutubeIcons = document.querySelectorAll('.lesson-list-selected-lesson .youtube-icon');

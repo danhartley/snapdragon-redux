@@ -1468,4 +1468,24 @@ export const plantae = [
         definition: "Leathery; stiff and tough, but flexible.",
         wiki: "https://en.wikipedia.org/wiki/Glossary_of_botanical_terms#coriaceous"
     },
+    {
+        term: "Galbulus",
+        definition: "A fleshy cone (megastrobilus); chiefly relating to those borne by junipers and cypresses (often mistakenly called a berry).",
+        wiki: "https://en.wikipedia.org/wiki/Galbulus"
+    },
+    {
+        term: "Strobilus",
+        definition: "A structure present on many land plant species consisting of sporangia-bearing structures densely aggregated along a stem (often called a cone).",
+        wiki: "https://en.wikipedia.org/wiki/Strobilus"
+    },
+    {
+        term: "Palisade cell",
+        definition: "Located on leaves, below the epidermis and cuticle. Contain chloroplasts.",
+        wiki: "https://en.wikipedia.org/wiki/Palisade_cell"
+    },
+    {
+        term: "Plant cuticle",
+        definition: "A protecting film covering the epidermis of leaves, young shoots and other aerial plant organs without periderm.",
+        wiki: "https://en.wikipedia.org/wiki/Plant_cuticle"
+    },
 ];

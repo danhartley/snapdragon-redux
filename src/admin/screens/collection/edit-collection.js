@@ -50,26 +50,39 @@ export const editCollection = () => {
                 if(collection) items = collection.items;
             }
 
+            items.forEach(item => {
+                if(!item.hasOwnProperty('isActive')) {
+                    item.isActive = true; 
+                }                
+            });
+
             renderTemplate({ collection, items }, template.content, parent);
-            
+
             if(collection.isActive) document.querySelector('#isActiveChkBox').setAttribute('checked', 'checked');
             if(collection.isPrivate) document.querySelector('#isPrivateChkBox').setAttribute('checked', 'checked');
-
-            const options = { margin: 5 };
-
-            // const instances = M.Tooltip.init(document.querySelectorAll('ul > li'), options);
-
-            if(collection.isActive) {
-                const chkBoxes = document.querySelectorAll('ul > li > input.custom-control-input');
-                      chkBoxes.forEach(chkBox => chkBox.setAttribute('disabled', 'disabled'));
-            }
 
             const optionsParent = document.querySelector('#js-collection-options');
 
             const chkBoxes = document.querySelectorAll('.custom-control-input');
+
+                  chkBoxes.forEach(chkBox => {
+                    if(chkBox.dataset.isActive === 'true') {
+                        chkBox.setAttribute('checked', 'checked');
+                    } else {
+                        chkBox.parentElement.classList.add('disabled');
+                    }
+                  });
+
                   chkBoxes.forEach(chkBox => chkBox.addEventListener('click', e => {
-                      console.log(e.target.checked);
-                  }));
+                      const species = e.target;
+                      collection.items.forEach(async item => {
+                          if(item.name === species.id) {                              
+                              item.isActive = species.checked;
+                              species.checked ? chkBox.parentElement.classList.remove('disabled') : chkBox.parentElement.classList.add('disabled');;
+                              await firestore.updateCollection(collection);
+                          }
+                      });
+                  }));            
 
             const speciesLinks = document.querySelectorAll('i.fa-marker');
                   speciesLinks.forEach(link => addSpeciesClickHandler(link, optionsParent));

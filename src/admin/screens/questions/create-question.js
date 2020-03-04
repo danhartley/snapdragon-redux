@@ -103,6 +103,8 @@ export const createQuestion = (collection, activeSpecies, parent = null) => {
         const inputAnswers2 = document.querySelector('#input-answers2');
         const inputAnswers3 = document.querySelector('#input-answers3');
 
+        inputStatement.focus();
+
         var elems = document.querySelectorAll('.has-character-counter');
         M.CharacterCounter.init(elems);
         
@@ -144,5 +146,5 @@ export const createQuestion = (collection, activeSpecies, parent = null) => {
 
     setTimeout(() => {
         init();   
-    },1000);
+    },500);
 };

@@ -188,4 +188,19 @@ export const commmon = [
         definition: "A sex-determination system in which males develop from unfertilised eggs and are haploid, and females develop from fertilised eggs and are diploid.",
         wiki: "https://en.wikipedia.org/wiki/Haplodiploidy"
     },
+    {
+        term: "Trichome",
+        definition: "Fine outgrowths or appendages (including hairs) on plants, algae, lichens, and certain protists.",
+        wiki: "https://en.wikipedia.org/wiki/Trichome"
+    },
+    {
+        term: "Indumentum",
+        definition: "A covering of trichomes (fine 'hairs') on a plant or of bristles (rarely scales) of an insect.",
+        wiki: "https://en.wikipedia.org/wiki/Indumentum"
+    },
+    {
+        term: "Dorsiventral",
+        definition: "An organ that has two surfaces differing from each other in appearance and structure, as an ordinary leaf (Lat. dorsum, 'the back', venter, 'the belly').",
+        wiki: "https://en.wikipedia.org/wiki/Dorsiventral"
+    },
 ];
