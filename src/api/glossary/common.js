@@ -203,4 +203,9 @@ export const commmon = [
         definition: "An organ that has two surfaces differing from each other in appearance and structure, as an ordinary leaf (Lat. dorsum, 'the back', venter, 'the belly').",
         wiki: "https://en.wikipedia.org/wiki/Dorsiventral"
     },
+    {
+        term: "Folivore",
+        definition: "A herbivore that specializes in eating leaves.",
+        wiki: "https://en.wikipedia.org/wiki/Folivore"
+    },
 ];

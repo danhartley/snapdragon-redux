@@ -1488,4 +1488,38 @@ export const plantae = [
         definition: "A protecting film covering the epidermis of leaves, young shoots and other aerial plant organs without periderm.",
         wiki: "https://en.wikipedia.org/wiki/Plant_cuticle"
     },
+    {
+        term: "Inosculation",
+        definition: "A natural phenomenon in which trunks, branches or roots of two trees grow together.",
+        wiki: "https://en.wikipedia.org/wiki/Inosculation"
+    },
+    {
+        term: "Lenticel",
+        definition: "A porous tissue of cells with large intercellular spaces in the periderm of secondarily thickened organs and bark of woody stems and roots of dicotyledonous angiosperms.",
+        wiki: "https://en.wikipedia.org/wiki/Lenticel"
+    },
+    {
+        term: "Bud",
+        definition: "An undeveloped or embryonic shoot and normally occurs in the axil of a leaf or at the tip of a stem.",
+        wiki: "https://en.wikipedia.org/wiki/Bud",
+        tags: ["Tree"]
+    },
+    {
+        term: "Shoot",
+        definition: "Consists of stems including their appendages, leaves and lateral buds, flowering stems and flower buds.",
+        wiki: "https://en.wikipedia.org/wiki/Shoot",
+        tags: ["Tree"]
+    },
+    {
+        term: "Meristem",
+        definition: "A tissue in plants that consists of undifferentiated cells capable of cell division.",
+        wiki: "https://en.wikipedia.org/wiki/Meristem",
+        tags: ["Tree"]
+    },
+    {
+        term: "Auxin",
+        definition: "A class of plant hormones that coordinate many growth and behavioral processes in plant life cycles and plant body development.",
+        wiki: "https://en.wikipedia.org/wiki/Auxin",
+        tags: ["Tree"]
+    },
 ];
