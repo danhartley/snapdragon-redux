@@ -12,6 +12,7 @@ import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { settingsHandler } from 'ui/fixtures/settings';
 import { renderLogin } from 'ui/fixtures/login';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
+import { quickFire } from 'ui/quick-fire-modal/quick-fire';
 
 import navigationTemplate from 'ui/fixtures/navigation-template.html';
 import definitionCardTemplate from 'ui/screens/cards/definition-card-template.html';
@@ -91,7 +92,15 @@ export const renderNavigation = collection => {
                               template.innerHTML = definitionCardTemplate;                 
                         DOM.modalTextTitle.innerHTML = 'Glossary';
                         const glossary = utils.sortAlphabeticallyBy(getGlossary(collection.glossary || ['common']), 'term');
-                        renderTemplate({ glossary }, template.content, DOM.modalText);                        
+                        renderTemplate({ glossary }, template.content, DOM.modalText);
+                        const headerBlock = document.querySelector('#basicModal .js-modal-header-block');
+                        const quickFireLink = headerBlock.querySelector(':nth-child(2)');
+                              quickFireLink.innerHTML = `
+                                <div class="underline-link margin-right small-text js-quick-fire-review">Quick-fire review</div>
+                              `;
+                              quickFireLink.addEventListener('click', e => {
+                                quickFire.review();
+                              });
                         break;
                     case enums.navigation.EMAIL:
                         toggleIconOnOff(clickedIcon);

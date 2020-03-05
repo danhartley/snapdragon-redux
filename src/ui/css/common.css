@@ -140,3 +140,11 @@
   .border-left {
     border-left: 1px solid var(--snap-border-light);
   }
+
+  .justify-space-between {
+    justify-content: space-between;
+  }
+
+  .small-text {
+    font-size: .8rem;;
+  }
