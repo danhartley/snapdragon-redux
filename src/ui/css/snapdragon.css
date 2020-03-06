@@ -783,18 +783,6 @@ a.dropdown-item {
   margin: 0 0 1rem 0;
 }
 
-.capitalise {
-  text-transform: capitalize;
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-.line-through {
-  text-decoration: line-through;
-}
-
 .clickable {
   cursor: pointer;
 }
@@ -2216,7 +2204,8 @@ img[data-has-image="false"] {
 }
 
 .quick-fire input {
-  width: 2.5rem;
+  width: 4rem;
+  padding: .5rem;
 }
 
 .quick-fire-taxa {

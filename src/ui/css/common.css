@@ -50,6 +50,10 @@
     margin-right: .5rem !important;
   }
   
+  .double-margin-right {
+    margin-right: 1rem !important;
+  }
+  
   .margin-bottom {
     margin-bottom: .5rem !important;
   }
@@ -147,4 +151,20 @@
 
   .small-text {
     font-size: .8rem;;
+  }
+
+  .capitalise {
+    text-transform: capitalize;
+  }
+  
+  .uppercase {
+    text-transform: uppercase;
+  }
+  
+  .line-through {
+    text-decoration: line-through;
+  }
+
+  .modal-background-relief {
+    background-color: var(--snap-content-background-relief);
   }

@@ -1,21 +1,17 @@
-import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { subscription } from 'redux/subscriptions';
-import { getGlossary } from 'api/glossary/glossary';
 import { enums } from 'ui/helpers/enum-helper';
-import { renderHome } from 'ui/screens/home/home';
 import { renderLessons } from 'ui/screens/lists/lesson-list';
 import { renderScoreSummary } from 'ui/screens/progress/score-summary';
 import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { settingsHandler } from 'ui/fixtures/settings';
 import { renderLogin } from 'ui/fixtures/login';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
-import { quickFire } from 'ui/quick-fire-modal/quick-fire';
+import { renderGlossary } from 'ui/fixtures/glossary';
 
 import navigationTemplate from 'ui/fixtures/navigation-template.html';
-import definitionCardTemplate from 'ui/screens/cards/definition-card-template.html';
 
 const onLoseFocusListeners = [];
 
@@ -68,12 +64,6 @@ export const renderNavigation = collection => {
                         toggleIconOnOff(clickedIcon);
                         settingsHandler();
                         break;
-                    // case enums.navigation.INFO:
-                    //     const activeHomeIcon = document.querySelector('.js-list.active-icon');
-                    //     if(activeHomeIcon) activeHomeIcon.classList.remove('active-icon');
-                    //     clickedIcon.classList.add('active-icon');
-                    //     renderHome(store.getState().counter, true);
-                    //     break;
                     case enums.navigation.PORTRAIT_HOME:
                         onLoseFocusListeners.forEach(listener => listener());
                         const activeInfoIcon = document.querySelector('.js-info.active-icon');
@@ -87,20 +77,7 @@ export const renderNavigation = collection => {
                         break;
                     case enums.navigation.GLOSSARY:   
                         toggleIconOnOff(clickedIcon);
-                        DOM.modalText.innerHTML = '';
-                        const template = document.createElement('template');                    
-                              template.innerHTML = definitionCardTemplate;                 
-                        DOM.modalTextTitle.innerHTML = 'Glossary';
-                        const glossary = utils.sortAlphabeticallyBy(getGlossary(collection.glossary || ['common']), 'term');
-                        renderTemplate({ glossary }, template.content, DOM.modalText);
-                        const headerBlock = document.querySelector('#basicModal .js-modal-header-block');
-                        const quickFireLink = headerBlock.querySelector(':nth-child(2)');
-                              quickFireLink.innerHTML = `
-                                <div class="underline-link margin-right small-text js-quick-fire-review">Quick-fire review</div>
-                              `;
-                              quickFireLink.addEventListener('click', e => {
-                                quickFire.review();
-                              });
+                        renderGlossary({ required: collection.glossary });
                         break;
                     case enums.navigation.EMAIL:
                         toggleIconOnOff(clickedIcon);

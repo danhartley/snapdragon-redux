@@ -273,7 +273,7 @@ export const plantae = [
     },
     {
         term: 'Gravel',
-        definition: 'A loose aggregation of rock fragments. Gravel is classified by particle size range and includes size classes from granule- to boulder-sized fragments.',
+        definition: 'A loose aggregation of rock fragments; classified by particle size range and includes size classes from granule- to boulder-sized fragments.',
         wiki: 'https://en.wikipedia.org/wiki/Gravel'
     },
     {

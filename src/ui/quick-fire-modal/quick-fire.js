@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
@@ -7,11 +8,47 @@ import { firestore } from 'api/firebase/firestore';
 import { iconicTaxa  } from 'api/snapdragon/iconic-taxa';
 import { enums } from 'ui/helpers/enum-helper';
 import { renderTemplate } from 'ui/helpers/templating';
+import { renderGlossary } from 'ui/fixtures/glossary';
 
 import templateCreateQuickFire from 'ui/quick-fire-modal/quick-fire-create-template.html';
 import templateQuestionQuickFire from 'ui/quick-fire-modal/quick-fire-question-template.html';
 
+const headers = screen => {
+
+    const glossaryLink = document.querySelector('.js-modal-text-title');
+    const quickFireLink = document.querySelector('.js-quick-fire-review');
+    const quickFireFilters = document.querySelector('.js-quick-fire-filters');
+
+    switch(screen) {
+        case 'REVIEW':
+            quickFireFilters.classList.add('hide-important');
+            glossaryLink.classList.add('underline-link');
+        break;
+        
+        case 'CREATE':
+            quickFireLink.classList.remove('hide-important');
+            quickFireLink.classList.remove('underline-link');
+            quickFireFilters.classList.add('hide-important');
+            glossaryLink.addEventListener('click', e => {
+                renderGlossary({ definitions: quickFire.items });
+                glossaryLink.classList.remove('underline-link');
+            });
+        break;
+
+        case 'QUESTION': 
+            quickFireLink.classList.add('hide-important');
+            quickFireFilters.classList.remove('hide-important');
+            glossaryLink.addEventListener('click', e => {
+                renderGlossary({ definitions: quickFire.items });
+                glossaryLink.classList.remove('underline-link');
+            });
+        break;
+    }
+};
+
 const review = async () => {
+
+    quickFire.headers('REVIEW');
 
     let taxa = [];
 
@@ -36,6 +73,8 @@ const review = async () => {
 };
 
 const create = args => {
+
+    headers('CREATE');
 
     const template = document.createElement('template');
           template.innerHTML = templateCreateQuickFire;
@@ -65,6 +104,10 @@ const create = args => {
 
     renderTemplate({ quickFire }, template.content, parent);
 
+    const input = document.querySelector('.quick-fire input');
+
+    quickFire.poolSize = parseInt(input.value);
+
     const updateArray = (arr, elem) => {
         if(arr.find(e => e === elem)) {
             return arr.filter(iconicTaxon => iconicTaxon !== elem); 
@@ -84,7 +127,9 @@ const create = args => {
                 quickFire.count = quickFire.items.length;
                 document.querySelectorAll('.js-quick-fire-count').forEach(counter => {
                     counter.innerHTML = quickFire.count;
-                }); 
+                });
+                input.value = quickFire.count;
+                quickFire.poolSize = parseInt(input.value);
               });
           });
 
@@ -100,7 +145,9 @@ const question = (state = quickFire) => {
 
     const quickFire = R.clone(state);
 
-    if(!quickFire) return;    
+    if(!quickFire) return;
+
+    headers('QUESTION');
 
     const template = document.createElement('template');
           template.innerHTML = templateQuestionQuickFire;
@@ -108,7 +155,7 @@ const question = (state = quickFire) => {
     const parent = document.querySelector('.snapdragon-container');
           parent.innerHTML = '';
 
-    const items = utils.shuffleArray(quickFire.items);
+    const items = R.take(quickFire.poolSize, utils.shuffleArray(quickFire.items));
 
     quickFire.question = items[0];
 
@@ -122,7 +169,9 @@ const question = (state = quickFire) => {
             }
         });
 
-    renderTemplate({ question: quickFire.question, answers }, template.content, parent);
+    renderTemplate({ question: quickFire.question, answers, total: quickFire.score.total + 1, count: quickFire.count, correct: quickFire.score.correct, answered: quickFire.score.total }, template.content, parent);
+
+    let timer;
 
     const options = Array.from(document.querySelectorAll('.js-quick-fire-options > div'));
           options.forEach(option => {
@@ -148,7 +197,7 @@ const question = (state = quickFire) => {
                         option.classList.add('snap-success');
                     }
                 });
-                setTimeout(() => {
+                timer = setTimeout(() => {
                     continueQuickFireBtn.click();
                 }, 1500);
               });
@@ -156,20 +205,15 @@ const question = (state = quickFire) => {
 
     const continueQuickFireBtn = document.querySelector('.js-continue-quick-fire-btn');
           continueQuickFireBtn.addEventListener('click', e => {
-                clear();
+                clearTimeout(timer);
                 actions.boundCreateQuickFire(quickFire);
           });
 
 };
 
-const clear = () => {
-    // subscription.add(question, 'quickFire', 'modal');
-    const parent = document.querySelector('.snapdragon-container');
-          parent.innerHTML = '';
-}
-
 export const quickFire = {
     review,
     create,
-    question
+    question,
+    headers
 };
