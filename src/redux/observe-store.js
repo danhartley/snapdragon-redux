@@ -25,7 +25,7 @@ export const observeStore = (store, select, onChange, domain, layout) => {
           case 'screen-genus-completion':
           case 'screen-latin-to-common':
           case 'media-match':
-            hasStateSignificantlyChanged = currentState.nextItem.name !== nextState.nextItem.name;
+            hasStateSignificantlyChanged = nextState.nextItem.name !== currentState.nextItem.name;
             break;
             // hasStateSignificantlyChanged = currentState.speciesVernacularNames !== nextState.speciesVernacularNames;
             // break;
@@ -35,6 +35,10 @@ export const observeStore = (store, select, onChange, domain, layout) => {
             // break;
             // hasStateSignificantlyChanged = currentState.speciesNames !== nextState.speciesNames;
             // break;
+        }
+
+        if(nextState.score) {
+          hasStateSignificantlyChanged = nextState.score.total !== currentState.score.total;
         }
       }
 

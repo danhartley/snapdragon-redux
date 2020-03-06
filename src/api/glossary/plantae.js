@@ -542,12 +542,12 @@ export const plantae = [
     },
     {
         term: 'Turgor pressure',
-        definition: 'Turgor pressure is the force within the cell that pushes the plasma (cell) membrane against the cell wall.',
+        definition: 'The force within the cell that pushes the plasma (cell) membrane against the cell wall.',
         wiki: 'https://en.wikipedia.org/wiki/Turgor_pressure'
     },
     {
         term: 'Nastic movement',
-        definition: 'Nastic movements are directional responses to stimuli (e.g. temperature, humidity, light irradiance), and are usually associated with plants.',
+        definition: 'Directional responses to stimuli (e.g. temperature, humidity, light irradiance), and are usually associated with plants.',
         wiki: 'https://en.wikipedia.org/wiki/Nastic_movements'
     },
     {

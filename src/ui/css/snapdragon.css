@@ -291,7 +291,7 @@ a.dropdown-item {
   position: relative;
 }
 
-.test-card-question.standard-block, .lesson-list-header.spaced-block {
+.test-card-question.standard-block, .lesson-list-header.centred-block {
   border-bottom: .03rem solid var(--snap-border-medium);
 }
 
@@ -1944,12 +1944,6 @@ a.collection-disabled {
   cursor: pointer;
 }
 
-.spaced-block {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
 .video {
   position: sticky;
   position: -webkit-sticky; 
@@ -2219,4 +2213,12 @@ img[data-has-image="false"] {
 
 .login.icon[data-is-logged-in="false"] > i:nth-child(2) {
   display: none;
+}
+
+.quick-fire input {
+  width: 2.5rem;
+}
+
+.quick-fire-taxa {
+  column-count: 2;
 }

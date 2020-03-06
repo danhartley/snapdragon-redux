@@ -11,6 +11,7 @@ import { collections, collection, bonusLayout } from 'redux/reducers/species-red
 import { counter, score, history, videoPlayer } from 'redux/reducers/progress-reducers';
 import { lessonPlans, lessonPlan, layout } from 'redux/reducers/layout-reducers';
 import { lesson, lessons } from 'redux/reducers/lesson-reducers';
+import { quickFire } from 'redux/reducers/quick-fire-reducers';
 
 const reducer = combineReducers({
     counter,
@@ -27,7 +28,8 @@ const reducer = combineReducers({
     lesson,
     bonusLayout,
     lessons,
-    user
+    user,
+    quickFire
 });
 
 const persistConfig = {

@@ -1,3 +1,16 @@
-<div>
-    <button class="btn btn-light js-create-quick-fire">Start quick-fire review</button>
+<div class="quick-fire">
+    <div class="centred-block standard-block">
+        Answer <input min="1" required class="margin-left margin-right" type="number" value="10">
+        <span class="landscape">questions selected at random from <span class="js-quick-fire-count">{{ quickFire.count }}</span> terms.</span>
+        <span class="portrait">from <span class="js-quick-fire-count">{{ quickFire.count }}</span> terms.</span>
+    </div>
+    <ul class="quick-fire-taxa margin-top margin-bottom js-quick-fire-taxa" data-repeat-taxon="{{ quickFire.filter.iconicTaxa }}">
+        <li class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="{{ taxon }}" checked>
+            <label class="custom-control-label" for="{{ taxon }}">{{ taxon }}</label>
+        </li>
+    </ul>
+    <div class="centred-block double-standard-block">
+        <button class="btn btn-light js-create-quick-fire">Start quick-fire review</button>
+    </div>
 </div>

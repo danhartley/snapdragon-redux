@@ -14,7 +14,7 @@ const add = (subscription, domain, role, layout) => {
     const sub = observeStore(store, select, onChange, domain, layout);
 
     subscriptions.push({ ...sub, role});
-    // console.log(`%cmy subs: ${subscriptions.map(s=>s.name).join(', ')}`, "color: blue;");
+    console.log(`%cmy subs: ${subscriptions.map(s=>s.name).join(', ')}`, "color: blue;");
     return sub;
 };
 
@@ -65,15 +65,17 @@ const removeSubs = () => {
 
 const addSubs = (layout, config) => {
 
+    if(!layout) return;
+    
     layout.screens.forEach( (screen, index) => {
 
         const func = funcByName(screen.name);
 
         if(func) {
             if(config.isPortraitMode) {
-                if(index === 1 || screen.name === 'summary') subscription.add(func, screen.domain, 'screen', layout.name);
+                if(index === 1 || screen.name === 'summary') subscription.add(func, screen.domain, 'screen', layout ? layout.name : '');
             } else {
-                subscription.add(func, screen.domain, 'screen', layout.name);
+                subscription.add(func, screen.domain, 'screen', layout ? layout.name : '');
             }                           
         }
     });
