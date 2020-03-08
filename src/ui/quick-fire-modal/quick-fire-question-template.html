@@ -1,0 +1,25 @@
+<div class="margin-left centred-block standard-block">
+    Question {{ total }} of {{ count }}
+</div>
+
+<div class="centred-block double-standard-block modal-background-relief">
+    <span class="margin-left">{{ question.definition }}</span>
+</div>
+
+<div class="strips description js-quick-fire-options" data-repeat-answer="{{ answers }}">
+    <div class="strip" id="{{ answer.term }}">
+        <div data-answer-index="{{ answer.index }}">
+            <span>{{ answer.term }}</span>
+        </div>
+    </div>
+</div>
+
+<div class="standard-block">
+    <div class="action-update">
+        <button disabled class="btn btn-light js-continue-quick-fire-btn">Continue lesson</button>
+    </div>
+</div>
+
+<div class="margin-left centred-block standard-block">
+    Score {{ correct }} of {{ answered }}
+</div>

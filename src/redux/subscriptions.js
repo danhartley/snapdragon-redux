@@ -65,15 +65,17 @@ const removeSubs = () => {
 
 const addSubs = (layout, config) => {
 
+    if(!layout) return;
+    
     layout.screens.forEach( (screen, index) => {
 
         const func = funcByName(screen.name);
 
         if(func) {
             if(config.isPortraitMode) {
-                if(index === 1 || screen.name === 'summary') subscription.add(func, screen.domain, 'screen', layout.name);
+                if(index === 1 || screen.name === 'summary') subscription.add(func, screen.domain, 'screen', layout ? layout.name : '');
             } else {
-                subscription.add(func, screen.domain, 'screen', layout.name);
+                subscription.add(func, screen.domain, 'screen', layout ? layout.name : '');
             }                           
         }
     });

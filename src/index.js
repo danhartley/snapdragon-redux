@@ -26,6 +26,7 @@ import { traitValuesHandler } from 'api/traits/trait-types';
 import { initialiseConfig } from 'ui/helpers/location-helper';
 import { firestore } from 'api/firebase/firestore';
 import { renderLoggedIn } from 'ui/fixtures/login';
+import { quickFire } from 'ui/quick-fire-modal/quick-fire';
 
 const onLoadHandler = () => {
     setTimeout( async () => {

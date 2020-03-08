@@ -291,7 +291,7 @@ a.dropdown-item {
   position: relative;
 }
 
-.test-card-question.standard-block, .lesson-list-header.spaced-block {
+.test-card-question.standard-block, .lesson-list-header.centred-block {
   border-bottom: .03rem solid var(--snap-border-medium);
 }
 
@@ -781,18 +781,6 @@ a.dropdown-item {
 
 .history div {
   margin: 0 0 1rem 0;
-}
-
-.capitalise {
-  text-transform: capitalize;
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-.line-through {
-  text-decoration: line-through;
 }
 
 .clickable {
@@ -1944,12 +1932,6 @@ a.collection-disabled {
   cursor: pointer;
 }
 
-.spaced-block {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
 .video {
   position: sticky;
   position: -webkit-sticky; 
@@ -2219,4 +2201,20 @@ img[data-has-image="false"] {
 
 .login.icon[data-is-logged-in="false"] > i:nth-child(2) {
   display: none;
+}
+
+.quick-fire input {
+  width: 4rem;
+  padding: .5rem;
+}
+
+.quick-fire-taxa {
+  column-count: 2;
+}
+
+.quick-fire-taxa span {
+  vertical-align: sub;
+  display: inline-block;
+  font-size: .6rem;
+  padding: .125rem;
 }

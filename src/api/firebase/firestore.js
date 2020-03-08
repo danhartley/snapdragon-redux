@@ -483,6 +483,13 @@ const getDefinition = (term, required) => {
     return definitions.filter(definition => definition);
 };
 
+const getDefinitions = required => {
+
+    const dictionary = getGlossary(required);
+
+    return new Promise(resolve => resolve(dictionary));
+};
+
 const getTraitDefinitions = (required, trait) => {
     
     const dictionary = getGlossary(required);
@@ -683,6 +690,7 @@ export const firestore = {
   
     deleteSpeciesByName,
     deleteSpeciesTraitField,
+    getDefinitions,
     getTraitDefinitions,
     getQuestionById
 };

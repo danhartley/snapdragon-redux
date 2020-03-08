@@ -48,10 +48,18 @@ nextStep.initEnum([
     'NEXT_ROUND',
 ]);
 
+class quickFireType extends Enum {};
+quickFireType.initEnum([
+    'DEFINITION',
+    'REVERSE_DEFINITION',
+    'TEXT_ENTRY'
+]);
+
 export const enums = {
     lessonState,
     navigation,
     taxon,
     guideOption,
-    nextStep
+    nextStep,
+    quickFireType
 };

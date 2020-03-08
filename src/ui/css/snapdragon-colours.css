@@ -44,6 +44,7 @@
 
     --snap-main-background: rgb(244, 244, 244);
     --snap-content-background: rgb(255, 255, 243);
+    --snap-content-background-relief: rgb(251, 251, 247);
     --snap-header-background: rgb(213, 213, 210);
     --snap-list-header-background: rgb(252, 251, 246);
     --snap-row-background: rgb(240, 239, 233);

@@ -273,7 +273,7 @@ export const plantae = [
     },
     {
         term: 'Gravel',
-        definition: 'A loose aggregation of rock fragments. Gravel is classified by particle size range and includes size classes from granule- to boulder-sized fragments.',
+        definition: 'A loose aggregation of rock fragments; classified by particle size range and includes size classes from granule- to boulder-sized fragments.',
         wiki: 'https://en.wikipedia.org/wiki/Gravel'
     },
     {
@@ -542,12 +542,12 @@ export const plantae = [
     },
     {
         term: 'Turgor pressure',
-        definition: 'Turgor pressure is the force within the cell that pushes the plasma (cell) membrane against the cell wall.',
+        definition: 'The force within the cell that pushes the plasma (cell) membrane against the cell wall.',
         wiki: 'https://en.wikipedia.org/wiki/Turgor_pressure'
     },
     {
         term: 'Nastic movement',
-        definition: 'Nastic movements are directional responses to stimuli (e.g. temperature, humidity, light irradiance), and are usually associated with plants.',
+        definition: 'Directional responses to stimuli (e.g. temperature, humidity, light irradiance), and are usually associated with plants.',
         wiki: 'https://en.wikipedia.org/wiki/Nastic_movements'
     },
     {
@@ -1487,5 +1487,39 @@ export const plantae = [
         term: "Plant cuticle",
         definition: "A protecting film covering the epidermis of leaves, young shoots and other aerial plant organs without periderm.",
         wiki: "https://en.wikipedia.org/wiki/Plant_cuticle"
+    },
+    {
+        term: "Inosculation",
+        definition: "A natural phenomenon in which trunks, branches or roots of two trees grow together.",
+        wiki: "https://en.wikipedia.org/wiki/Inosculation"
+    },
+    {
+        term: "Lenticel",
+        definition: "A porous tissue of cells with large intercellular spaces in the periderm of secondarily thickened organs and bark of woody stems and roots of dicotyledonous angiosperms.",
+        wiki: "https://en.wikipedia.org/wiki/Lenticel"
+    },
+    {
+        term: "Bud",
+        definition: "An undeveloped or embryonic shoot and normally occurs in the axil of a leaf or at the tip of a stem.",
+        wiki: "https://en.wikipedia.org/wiki/Bud",
+        tags: ["Tree"]
+    },
+    {
+        term: "Shoot",
+        definition: "Consists of stems including their appendages, leaves and lateral buds, flowering stems and flower buds.",
+        wiki: "https://en.wikipedia.org/wiki/Shoot",
+        tags: ["Tree"]
+    },
+    {
+        term: "Meristem",
+        definition: "A tissue in plants that consists of undifferentiated cells capable of cell division.",
+        wiki: "https://en.wikipedia.org/wiki/Meristem",
+        tags: ["Tree"]
+    },
+    {
+        term: "Auxin",
+        definition: "A class of plant hormones that coordinate many growth and behavioral processes in plant life cycles and plant body development.",
+        wiki: "https://en.wikipedia.org/wiki/Auxin",
+        tags: ["Tree"]
     },
 ];
