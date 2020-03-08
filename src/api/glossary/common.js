@@ -1,4 +1,4 @@
-export const commmon = [
+export const common = [
     {
         term: 'Garigue',
         definition: "Low open scrubland found in poor or dry soil in the Mediterranean.",

@@ -31,12 +31,12 @@ export const insecta = [
     },
     {
         term: "Pollen basket",
-        definition: "A polished cavity surrounded by a fringe of hairs in which bees collect pollen. Only honey bees, bumblebees, stingless bees, and orchid bees have corbiculae (pollen baskets)",
+        definition: "A polished cavity surrounded by a fringe of hairs in which bees collect pollen. Only honey bees, bumblebees, stingless bees, and orchid bees have corbiculae.",
         wiki: "https://en.wikipedia.org/wiki/Pollen_basket"
     },
     {
         term: "Scutellum",
-        definition: "Small sctructure like a shield.",
+        definition: "Small structure like a shield.",
     },
     {
         term: "Mucivore",

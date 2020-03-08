@@ -53,6 +53,7 @@ const review = async () => {
     let taxa = [];
 
     let iconicTaxaKeys = Object.keys(iconicTaxa).map(key => key.toLowerCase());
+        iconicTaxaKeys.push('common');
     
     iconicTaxaKeys.forEach(taxon => {
         taxa.push(taxon);
@@ -101,6 +102,16 @@ const create = args => {
             ]
         },
     };
+
+    quickFire.filter.taxa = filter.iconicTaxa.map(taxon => {
+        const iconicTaxon = {
+            name: taxon,
+            count: items.filter(item => item.taxon === taxon).length
+        }
+        return iconicTaxon;
+    });
+
+    quickFire.filter.taxa = quickFire.filter.taxa.filter(taxon => taxon.count > 0);
 
     renderTemplate({ quickFire }, template.content, parent);
 
@@ -205,6 +216,7 @@ const question = (state = quickFire) => {
 
     const continueQuickFireBtn = document.querySelector('.js-continue-quick-fire-btn');
           continueQuickFireBtn.addEventListener('click', e => {
+                quickFire.items = quickFire.items.filter(item => item.term !== quickFire.question.term);
                 clearTimeout(timer);
                 actions.boundCreateQuickFire(quickFire);
           });

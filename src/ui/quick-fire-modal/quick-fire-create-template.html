@@ -4,10 +4,11 @@
         <span class="landscape">questions selected at random from <span class="js-quick-fire-count">{{ quickFire.count }}</span> terms.</span>
         <span class="portrait">from <span class="js-quick-fire-count">{{ quickFire.count }}</span> terms.</span>
     </div>
-    <ul class="quick-fire-taxa margin-left margin-top margin-bottom js-quick-fire-taxa" data-repeat-taxon="{{ quickFire.filter.iconicTaxa }}">
+    <ul class="quick-fire-taxa margin-left margin-top margin-bottom js-quick-fire-taxa" data-repeat-taxon="{{ quickFire.filter.taxa }}">
         <li class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="{{ taxon }}" checked>
-            <label class="custom-control-label" for="{{ taxon }}">{{ taxon }}</label>
+            <input type="checkbox" class="custom-control-input" id="{{ taxon.name }}" checked>
+            <label class="custom-control-label" for="{{ taxon.name }}">{{ taxon.name }}</label>
+            <span class="">{{ taxon.count }}</span>
         </li>
     </ul>
     <div class="centred-block double-standard-block">

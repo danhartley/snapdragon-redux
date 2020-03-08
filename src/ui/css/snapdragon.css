@@ -2211,3 +2211,10 @@ img[data-has-image="false"] {
 .quick-fire-taxa {
   column-count: 2;
 }
+
+.quick-fire-taxa span {
+  vertical-align: sub;
+  display: inline-block;
+  font-size: .6rem;
+  padding: .125rem;
+}
