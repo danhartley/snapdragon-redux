@@ -2241,3 +2241,7 @@ img[data-has-image="false"] {
 .quick-fire .btn {  
   cursor: pointer !important;
 }
+
+.quick-fire-text-entry > div{
+  width: 100%;
+}

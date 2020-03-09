@@ -200,7 +200,7 @@ const question = (state = quickFire) => {
         const layouts = document.querySelectorAll('.js-quick-layouts');
               layouts.forEach(layout => {
                   layout.classList.add('hide');
-                  if(layout.id === quickFire.filter.option.key) layout.remove('hide');
+                  if(layout.id === quickFire.filter.option.key) layout.classList.remove('hide');                  
               });
 
         const options = Array.from(document.querySelectorAll('.js-quick-fire-options > div'));
@@ -210,11 +210,11 @@ const question = (state = quickFire) => {
                     const isCorrect = answer === quickFire.question.term;
                     quickFire.score.total++;
                     if(isCorrect) {
-                        quickFire.score.correct++; 
+                        quickFire.score.correct++;
                         quickFire.score.isCorrect = true;
                         quickFire.score.isIncorrect = false;
                     } else {
-                        quickFire.score.incorrect++; 
+                        quickFire.score.incorrect++;
                         quickFire.score.isCorrect = false;
                         quickFire.score.isIncorrect = true;
                     }                
@@ -233,12 +233,29 @@ const question = (state = quickFire) => {
                 });
             });
 
+        const quickFireInput = document.querySelector('.js-quick-fire-text-entry input');
+        if(quickFire.filter.option.key === '1') quickFireInput.focus();
+        const quickFireMessage = document.querySelector('.js-quick-fire-message');
+
         const continueQuickFireBtn = document.querySelector('.js-continue-quick-fire-btn');
               continueQuickFireBtn.addEventListener('click', e => {
                     quickFire.items = quickFire.items.filter(item => item.term !== quickFire.question.term);
                     clearTimeout(timer);
-                    actions.boundCreateQuickFire(quickFire);
+                    actions.boundCreateQuickFire(quickFire); 
               });
+
+        quickFireInput.addEventListener('keydown', event => {
+            if (event.keyCode == 9) {
+              timer = handleKeyAction(event, quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
+            }
+        });
+
+        quickFireInput.addEventListener('keypress', event => {
+            if (event.keyCode == 13) {
+              timer = handleKeyAction(event, quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
+            }
+        });
+
     } else {
         template.innerHTML = templateSummaryQuickFire;        
         renderTemplate({ correct: quickFire.score.correct, answered: quickFire.score.total }, template.content, parent);
@@ -251,6 +268,26 @@ export const quickFire = {
     question,
     headers
 };
+
+function handleKeyAction(event, quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn) {    
+        if (quickFire.filter.option.key === '1') {
+            const isCorrect = quickFireInput.value.toLowerCase() === quickFire.question.term.toLowerCase();
+            quickFire.score.total++;
+            if (isCorrect) {
+                quickFire.score.correct++;
+            }
+            else {
+                quickFire.score.incorrect++;
+            }
+            quickFireMessage.innerHTML = isCorrect
+                ? 'That is correct.'
+                : `That is incorrect. The correct answer is ${quickFire.question.term}.`;
+            timer = setTimeout(() => {
+                continueQuickFireBtn.click();
+            }, 2000);
+        }
+    return timer;
+}
 
 async function init() {
     let taxa = [];
