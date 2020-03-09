@@ -1,6 +1,5 @@
 import * as R from 'ramda';
 
-import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
@@ -12,6 +11,7 @@ import { renderGlossary } from 'ui/fixtures/glossary';
 
 import templateCreateQuickFire from 'ui/quick-fire-modal/quick-fire-create-template.html';
 import templateQuestionQuickFire from 'ui/quick-fire-modal/quick-fire-question-template.html';
+import templateSummaryQuickFire from 'ui/quick-fire-modal/quick-fire-summary-template.html';
 
 const headers = screen => {
 
@@ -50,30 +50,13 @@ const review = async () => {
 
     quickFire.headers('REVIEW');
 
-    let taxa = [];
-
-    let iconicTaxaKeys = Object.keys(iconicTaxa).map(key => key.toLowerCase());
-        iconicTaxaKeys.push('common');
-    
-    iconicTaxaKeys.forEach(taxon => {
-        taxa.push(taxon);
-    });
-
-    const items = await firestore.getDefinitions(taxa);
-
-    const args = {
-        items,
-        type: enums.quickFireType.DEFINITION,
-        filter: {
-            iconicTaxa: taxa
-        }
-    };
+    const args = await init();
 
     create(args);
 
 };
 
-const create = args => {
+const create = async args => {
 
     headers('CREATE');
 
@@ -83,7 +66,9 @@ const create = args => {
     const parent = document.querySelector('.snapdragon-container');
           parent.innerHTML = '';
 
-    const { items, type, filter } = args;
+    args = args || await init();
+
+    let { items, type, filter } = args;
 
     const quickFire = {
         index: 0,
@@ -113,9 +98,19 @@ const create = args => {
 
     quickFire.filter.taxa = quickFire.filter.taxa.filter(taxon => taxon.count > 0);
 
-    renderTemplate({ quickFire }, template.content, parent);
+    const options = [
+        { key: 0, value: 'multiple choice only' },
+        { key: 1, value: 'text entry only' },
+        // { key: 2, value: 'multiple choice followed by text entry' },
+        // { key: 3, value: 'mixed multiple choice and text entry' },
+    ]
 
-    const input = document.querySelector('.quick-fire input');
+    renderTemplate({ quickFire, options }, template.content, parent);
+
+    const input = document.querySelector('.js-input-quick-fire');
+          input.addEventListener('input', e => {
+            quickFire.poolSize = parseInt(e.target.value);          
+          });
 
     quickFire.poolSize = parseInt(input.value);
 
@@ -149,7 +144,17 @@ const create = args => {
             subscription.add(question, 'quickFire', 'modal');
             question(quickFire);
           });
-    
+
+    const quickFireOptions = document.querySelectorAll('.js-quick-fire-options .btn');
+          quickFireOptions[0].click();
+          Array.from(quickFireOptions).forEach(option => {
+              option.addEventListener('click', e => {
+                  quickFire.filter.option = {
+                      key: e.target.dataset.key,
+                      value: e.target.dataset.value
+                  };
+              });
+          });
 };
 
 const question = (state = quickFire) => {
@@ -160,67 +165,84 @@ const question = (state = quickFire) => {
 
     headers('QUESTION');
 
-    const template = document.createElement('template');
-          template.innerHTML = templateQuestionQuickFire;
-
-    const parent = document.querySelector('.snapdragon-container');
+    const parent = document.querySelector('.snapdragon-container');          
           parent.innerHTML = '';
 
-    const items = R.take(quickFire.poolSize, utils.shuffleArray(quickFire.items));
-
-    quickFire.question = items[0];
-
-    let answers = R.take(3, items.splice(1));
-        answers.push(quickFire.question);
-        answers = utils.shuffleArray(answers);
-        answers = answers.map((item, index) => {
-            return {
-                term: item.term,
-                index
-            }
-        });
-
-    renderTemplate({ question: quickFire.question, answers, total: quickFire.score.total + 1, count: quickFire.count, correct: quickFire.score.correct, answered: quickFire.score.total }, template.content, parent);
+    const template = document.createElement('template');
 
     let timer;
 
-    const options = Array.from(document.querySelectorAll('.js-quick-fire-options > div'));
-          options.forEach(option => {
-              option.addEventListener('click', e => {
-                const answer = e.target.id;
-                const isCorrect = answer === quickFire.question.term;
-                quickFire.score.total++;
-                if(isCorrect) {
-                    quickFire.score.correct++; 
-                    quickFire.score.isCorrect = true;
-                    quickFire.score.isIncorrect = false;
-                } else {
-                    quickFire.score.incorrect++; 
-                    quickFire.score.isCorrect = false;
-                    quickFire.score.isIncorrect = true;
-                }                
-                continueQuickFireBtn.disabled = false;
-                if(quickFire.score.isIncorrect) {
-                    option.classList.add('snap-alert');
+    if(quickFire.items.length > 0) {        
+
+        template.innerHTML = templateQuestionQuickFire;
+        
+        const items = R.take(quickFire.poolSize, utils.shuffleArray(quickFire.items));
+
+        quickFire.question = items[0];
+
+        let answers = R.take(3, items.splice(1));
+            answers.push(quickFire.question);
+            answers = utils.shuffleArray(answers);
+            answers = answers.map((item, index) => {
+                return {
+                    term: item.term,
+                    index
                 }
-                options.forEach(option => {
-                    if(option.id === quickFire.question.term) {
-                        option.classList.add('snap-success');
-                    }
-                });
-                timer = setTimeout(() => {
-                    continueQuickFireBtn.click();
-                }, 1500);
+            });
+
+        renderTemplate({ question: quickFire.question, 
+                answers, total: quickFire.score.total + 1, 
+                count: quickFire.poolSize, 
+                correct: quickFire.score.correct, 
+                answered: quickFire.score.total 
+            }, template.content, parent);
+
+        const layouts = document.querySelectorAll('.js-quick-layouts');
+              layouts.forEach(layout => {
+                  layout.classList.add('hide');
+                  if(layout.id === quickFire.filter.option.key) layout.remove('hide');
               });
-          });
 
-    const continueQuickFireBtn = document.querySelector('.js-continue-quick-fire-btn');
-          continueQuickFireBtn.addEventListener('click', e => {
-                quickFire.items = quickFire.items.filter(item => item.term !== quickFire.question.term);
-                clearTimeout(timer);
-                actions.boundCreateQuickFire(quickFire);
-          });
+        const options = Array.from(document.querySelectorAll('.js-quick-fire-options > div'));
+            options.forEach(option => {
+                option.addEventListener('click', e => {
+                    const answer = e.target.id;
+                    const isCorrect = answer === quickFire.question.term;
+                    quickFire.score.total++;
+                    if(isCorrect) {
+                        quickFire.score.correct++; 
+                        quickFire.score.isCorrect = true;
+                        quickFire.score.isIncorrect = false;
+                    } else {
+                        quickFire.score.incorrect++; 
+                        quickFire.score.isCorrect = false;
+                        quickFire.score.isIncorrect = true;
+                    }                
+                    continueQuickFireBtn.disabled = false;
+                    if(quickFire.score.isIncorrect) {
+                        option.classList.add('snap-alert');
+                    }
+                    options.forEach(option => {
+                        if(option.id === quickFire.question.term) {
+                            option.classList.add('snap-success');
+                        }
+                    });
+                    timer = setTimeout(() => {
+                        continueQuickFireBtn.click();
+                    }, 1500);
+                });
+            });
 
+        const continueQuickFireBtn = document.querySelector('.js-continue-quick-fire-btn');
+              continueQuickFireBtn.addEventListener('click', e => {
+                    quickFire.items = quickFire.items.filter(item => item.term !== quickFire.question.term);
+                    clearTimeout(timer);
+                    actions.boundCreateQuickFire(quickFire);
+              });
+    } else {
+        template.innerHTML = templateSummaryQuickFire;        
+        renderTemplate({ correct: quickFire.score.correct, answered: quickFire.score.total }, template.content, parent);
+    }
 };
 
 export const quickFire = {
@@ -229,3 +251,21 @@ export const quickFire = {
     question,
     headers
 };
+
+async function init() {
+    let taxa = [];
+    let iconicTaxaKeys = Object.keys(iconicTaxa).map(key => key.toLowerCase());
+    iconicTaxaKeys.push('common');
+    iconicTaxaKeys.forEach(taxon => {
+        taxa.push(taxon);
+    });
+    const items = await firestore.getDefinitions(taxa);
+    const args = {
+        items,
+        type: enums.quickFireType.DEFINITION,
+        filter: {
+            iconicTaxa: taxa
+        }
+    };
+    return args;
+}

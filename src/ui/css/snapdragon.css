@@ -2203,7 +2203,7 @@ img[data-has-image="false"] {
   display: none;
 }
 
-.quick-fire input {
+.quick-fire input[type="number"] {
   width: 4rem;
   padding: .5rem;
 }
@@ -2212,9 +2212,32 @@ img[data-has-image="false"] {
   column-count: 2;
 }
 
+.quick-fire-taxa label {
+  cursor: pointer;
+}
+
 .quick-fire-taxa span {
   vertical-align: sub;
   display: inline-block;
   font-size: .6rem;
   padding: .125rem;
+}
+
+.quick-fire .btn-group >.btn {
+  background-color: var(--snap-success-light);
+  margin: 0 0 .5rem 0;
+  border-radius: .25rem;
+  letter-spacing: .03rem;
+  width: fit-content;
+  width: max-content;
+  cursor: pointer !important;
+}
+
+.quick-fire .btn-secondary:not(:disabled):not(.disabled).active {
+  background-color: var(--snap-btn-auxillary);
+  color: var(--snap-text-light);
+}
+
+.quick-fire .btn {  
+  cursor: pointer !important;
 }

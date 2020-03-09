@@ -11,6 +11,15 @@
             <span class="">{{ taxon.count }}</span>
         </li>
     </ul>
+
+    <br>
+
+    <div class="btn-group btn-group-toggle margin-left margin-top vertical-block js-quick-fire-options" data-toggle="buttons" data-repeat-option="{{ options }}">
+        <label data-key="{{ option.key }}" class="btn btn-secondary" data-value="{{ option.value }}">
+          <input type="radio" name="options" id="{{ option.key }}" autocomplete="off" checked> {{ option.value }}
+        </label>
+    </div>
+
     <div class="centred-block double-standard-block">
         <button class="btn btn-light js-create-quick-fire">Start quick-fire review</button>
     </div>

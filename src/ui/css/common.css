@@ -168,3 +168,16 @@
   .modal-background-relief {
     background-color: var(--snap-content-background-relief);
   }
+
+  .border-light {
+    border: 1px solid var(--snap-border-light) !important;
+  }
+
+  .border-medium {
+    border: 1px solid var(--snap-border-medium);
+  }
+
+  .vertical-block {
+    display: flex;
+    flex-direction: column;
+  }

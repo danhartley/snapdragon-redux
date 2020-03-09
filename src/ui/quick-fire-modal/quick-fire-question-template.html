@@ -2,16 +2,19 @@
     Question {{ total }} of {{ count }}
 </div>
 
-<div class="centred-block double-standard-block modal-background-relief">
+<div class="centred-block double-standard-block modal-background-relief border-light js-quick-fire-definition">
     <span class="margin-left">{{ question.definition }}</span>
 </div>
 
-<div class="strips description js-quick-fire-options" data-repeat-answer="{{ answers }}">
+<div id="0" class="strips description margin-top js-quick-layouts js-quick-fire-options" data-repeat-answer="{{ answers }}">
     <div class="strip" id="{{ answer.term }}">
         <div data-answer-index="{{ answer.index }}">
             <span>{{ answer.term }}</span>
         </div>
     </div>
+</div>
+<div id="1" class="centred-block margin-top double-standard-block js-quick-layouts js-quick-fire-text-entry">
+    <input type="text">
 </div>
 
 <div class="standard-block">
