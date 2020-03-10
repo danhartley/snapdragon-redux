@@ -2197,6 +2197,15 @@ img[data-has-image="false"] {
   display: none;
 }
 
+.quick-fire {
+  position: relative;
+  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
+}
+
+.quick-fire .strips {
+  height: initial;
+}
+
 .quick-fire input[type="number"] {
   width: 4rem;
   padding: .5rem;
@@ -2206,15 +2215,19 @@ img[data-has-image="false"] {
   column-count: 2;
 }
 
-.quick-fire-taxa label {
+.quick-fire label, .quick-fire-taxa label {
   cursor: pointer;
 }
 
 .quick-fire-taxa span, .quick-fire-branches span {
+  font-size: .6rem;
   vertical-align: super;
   display: inline-block;
-  font-size: .6rem;
   padding: .125rem;
+}
+
+.quick-fire-branches span {
+  font-size: .4rem;
 }
 
 .quick-fire .btn-group {
@@ -2241,6 +2254,7 @@ img[data-has-image="false"] {
 }
 
 .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
+  font-size: .6rem;
   background-color: var(--snap-species-header-dark-background);
   color: var(--snap-text-light);
 }

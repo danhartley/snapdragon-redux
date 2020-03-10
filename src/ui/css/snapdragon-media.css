@@ -136,6 +136,14 @@
 
 @media (min-width: 768px) {
 
+    .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
+        font-size: .9rem;
+    }
+
+    .quick-fire-branches span {
+        font-size: .6rem;
+    }
+
     .autocomplete-options-container{
         top: calc(
             var(--vhRunningBlock, 7.5vh) + 

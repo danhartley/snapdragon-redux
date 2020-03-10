@@ -171,11 +171,11 @@
   }
 
   .modal-background-relief {
-    background-color: var(--snap-content-background-relief);
+    background-color: var(--snap-species-highlight-background);
   }
 
   .border-light {
-    border: 1px solid var(--snap-border-light) !important;
+    border: 1px solid var(--snap-success-light) !important;
   }
 
   .border-medium {
@@ -192,4 +192,7 @@
     letter-spacing: .03rem;
   }
   
-  
+  .absolute-bottom {
+    position: absolute;
+    bottom: .5rem;
+  }

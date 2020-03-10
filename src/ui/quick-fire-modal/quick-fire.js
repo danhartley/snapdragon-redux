@@ -36,6 +36,7 @@ const headers = screen => {
                 renderGlossary({ definitions: quickFire.items });
                 glossaryLink.classList.remove('underline-link');
             });
+            subscription.remove(subscription.getByName('question'));
         break;
 
         case 'QUESTION': 
@@ -141,12 +142,7 @@ const create = async args => {
                 const updatedTaxa = updateArray(filter.iconicTaxa, selectedTaxon);
                 quickFire.filter.iconicTaxa = updatedTaxa;
                 quickFire.items = await getItems(updatedTaxa);
-                quickFire.count = quickFire.items.length;
-                document.querySelectorAll('.js-quick-fire-count').forEach(counter => {
-                    counter.innerHTML = quickFire.count;
-                });
-                input.value = quickFire.count;
-                quickFire.poolSize = parseInt(input.value);
+                updateCounts(quickFire, input);
               });
           });
 
@@ -175,14 +171,16 @@ const create = async args => {
                     checkedBranches = checkedBranches.map(b => b.dataset.key);
                 quickFire.items = await getItems(quickFire.filter.iconicTaxa);
                 quickFire.items = quickFire.items.filter(item => R.contains(item.branch, checkedBranches));
-                quickFire.count = quickFire.items.length;
-                document.querySelectorAll('.js-quick-fire-count').forEach(counter => {
-                    counter.innerHTML = quickFire.count;
-                });
-                input.value = quickFire.count;
-                quickFire.poolSize = parseInt(input.value);
+                updateCounts(quickFire, input);
             });
               });
+          });
+
+    const technical = document.querySelector('.js-quick-fire-technical');
+          technical.addEventListener('change', async e => {
+            const isSelected = e.target.checked;
+            quickFire.items = await getItems(quickFire.filter.iconicTaxa, isSelected);
+            updateCounts(quickFire, input);
           });
 };
 
@@ -336,8 +334,23 @@ const init = async () => {
     return args;
 };
 
-const getItems = async taxa => {
+const getItems = async (taxa, isSelected = false) => {
+    
     allItems = allItems || await firestore.getDefinitions(taxa);
-    return allItems.filter(item => R.contains(item.taxon, taxa));
+    let selectedItems = [];
+    isSelected
+        ? selectedItems = allItems
+        : selectedItems= allItems.filter(item => item.technical !== 'true');
+
+    return selectedItems.filter(item => R.contains(item.taxon, taxa));
 };
 
+const updateCounts = (quickFire, input) => {
+
+    quickFire.count = quickFire.items.length;
+    document.querySelectorAll('.js-quick-fire-count').forEach(counter => {
+        counter.innerHTML = quickFire.count;
+    });
+    input.value = quickFire.count;
+    quickFire.poolSize = parseInt(input.value);
+};

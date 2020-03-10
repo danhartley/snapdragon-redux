@@ -1,4 +1,5 @@
 <div class="quick-fire">
+    
     <div class="centred-block standard-block">
         Answer <input min="1" required class="margin-left margin-right js-input-quick-fire" type="number" value="{{ quickFire.count }}">
         <span class="landscape">questions selected at random from <span class="js-quick-fire-count">{{ quickFire.count }}</span> terms.</span>
@@ -30,7 +31,15 @@
         </label>        
     </div>
 
-    <div class="centred-block double-standard-block">
+    <div class="margin-left margin-top">
+        <li class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input js-quick-fire-technical" id="technical">
+            <label class="custom-control-label" for="technical">technical (advanced)</label>
+        </li>
+    </div>
+
+    <div class="centred-block absolute-bottom">
         <button class="btn btn-light js-create-quick-fire">Start quick-fire review</button>
     </div>
+
 </div>
