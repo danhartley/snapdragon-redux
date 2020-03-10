@@ -1,6 +1,7 @@
 import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
+import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
 import { firestore } from 'api/firebase/firestore';
@@ -12,6 +13,8 @@ import { renderGlossary } from 'ui/fixtures/glossary';
 import templateCreateQuickFire from 'ui/quick-fire-modal/quick-fire-create-template.html';
 import templateQuestionQuickFire from 'ui/quick-fire-modal/quick-fire-question-template.html';
 import templateSummaryQuickFire from 'ui/quick-fire-modal/quick-fire-summary-template.html';
+
+let allItems = null;
 
 const headers = screen => {
 
@@ -103,9 +106,17 @@ const create = async args => {
         { key: 1, value: 'text entry only' },
         // { key: 2, value: 'multiple choice followed by text entry' },
         // { key: 3, value: 'mixed multiple choice and text entry' },
-    ]
+    ];
 
-    renderTemplate({ quickFire, options }, template.content, parent);
+    let branches = [ ...new Set(items.filter(item => item.taxon === 'plantae').map(item => item.branch)) ];
+        branches = branches.map(branch => {
+            return {
+                name: branch,
+                count: items.filter(item => item.branch == branch).length
+            }
+          });
+
+    renderTemplate({ quickFire, options, branches }, template.content, parent);
 
     const input = document.querySelector('.js-input-quick-fire');
           input.addEventListener('input', e => {
@@ -129,7 +140,7 @@ const create = async args => {
                 const selectedTaxon = e.target.id;
                 const updatedTaxa = updateArray(filter.iconicTaxa, selectedTaxon);
                 quickFire.filter.iconicTaxa = updatedTaxa;
-                quickFire.items = await firestore.getDefinitions(updatedTaxa);
+                quickFire.items = await getItems(updatedTaxa);
                 quickFire.count = quickFire.items.length;
                 document.querySelectorAll('.js-quick-fire-count').forEach(counter => {
                     counter.innerHTML = quickFire.count;
@@ -145,14 +156,32 @@ const create = async args => {
             question(quickFire);
           });
 
-    const quickFireOptions = document.querySelectorAll('.js-quick-fire-options .btn');
-          quickFireOptions[0].click();
+    const quickFireOptions = document.querySelectorAll('.js-quick-fire-options .btn');          
           Array.from(quickFireOptions).forEach(option => {
               option.addEventListener('click', e => {
                   quickFire.filter.option = {
                       key: e.target.dataset.key,
                       value: e.target.dataset.value
                   };
+              });
+          });
+        quickFireOptions[0].click();
+
+    const branchOptions = document.querySelectorAll('.js-quick-fire-branches label');
+          branchOptions.forEach(branch => {
+              branch.addEventListener('click', e => {
+            setTimeout(async() => {
+                let checkedBranches = Array.from(branchOptions).filter(b => elem.hasClass(b, 'active'));
+                    checkedBranches = checkedBranches.map(b => b.dataset.key);
+                quickFire.items = await getItems(quickFire.filter.iconicTaxa);
+                quickFire.items = quickFire.items.filter(item => R.contains(item.branch, checkedBranches));
+                quickFire.count = quickFire.items.length;
+                document.querySelectorAll('.js-quick-fire-count').forEach(counter => {
+                    counter.innerHTML = quickFire.count;
+                });
+                input.value = quickFire.count;
+                quickFire.poolSize = parseInt(input.value);
+            });
               });
           });
 };
@@ -269,34 +298,34 @@ export const quickFire = {
     headers
 };
 
-function handleKeyAction(event, quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn) {    
-        if (quickFire.filter.option.key === '1') {
-            const isCorrect = quickFireInput.value.toLowerCase() === quickFire.question.term.toLowerCase();
-            quickFire.score.total++;
-            if (isCorrect) {
-                quickFire.score.correct++;
-            }
-            else {
-                quickFire.score.incorrect++;
-            }
-            quickFireMessage.innerHTML = isCorrect
-                ? 'That is correct.'
-                : `That is incorrect. The correct answer is ${quickFire.question.term}.`;
-            timer = setTimeout(() => {
-                continueQuickFireBtn.click();
-            }, 2000);
+const handleKeyAction = (event, quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn) => {    
+    if (quickFire.filter.option.key === '1') {
+        const isCorrect = quickFireInput.value.toLowerCase() === quickFire.question.term.toLowerCase();
+        quickFire.score.total++;
+        if (isCorrect) {
+            quickFire.score.correct++;
         }
+        else {
+            quickFire.score.incorrect++;
+        }
+        quickFireMessage.innerHTML = isCorrect
+            ? 'That is correct.'
+            : `That is incorrect. The correct answer is <span class="uppercase half-margin-left">'${quickFire.question.term.toLowerCase()}'</span>.`;
+        timer = setTimeout(() => {
+            continueQuickFireBtn.click();
+        }, 2000);
+    }
     return timer;
-}
+};
 
-async function init() {
+const init = async () => {
     let taxa = [];
     let iconicTaxaKeys = Object.keys(iconicTaxa).map(key => key.toLowerCase());
     iconicTaxaKeys.push('common');
     iconicTaxaKeys.forEach(taxon => {
         taxa.push(taxon);
     });
-    const items = await firestore.getDefinitions(taxa);
+    const items = await getItems(taxa);
     const args = {
         items,
         type: enums.quickFireType.DEFINITION,
@@ -305,4 +334,10 @@ async function init() {
         }
     };
     return args;
-}
+};
+
+const getItems = async taxa => {
+    allItems = allItems || await firestore.getDefinitions(taxa);
+    return allItems.filter(item => R.contains(item.taxon, taxa));
+};
+

@@ -84,7 +84,7 @@ export const common = [
         definition: 'When a body of water becomes overly enriched with minerals and nutrients that induce excessive growth of plants and algae.'
     },
     {
-        term: 'Eukaryotes',
+        term: 'Eukaryote',
         definition: 'Organism with nucleus enclosed in a membrane.',
         wiki: 'https://en.wikipedia.org/wiki/Eukaryote'
     },
@@ -180,7 +180,7 @@ export const common = [
     },
     {
         term: "Pollen",
-        definition: "A fine to coarse powdery substance comprising pollen grains which are male microgametophytes of seed plants.",
+        definition: "A fine to coarse powdery substance comprising grains which are male microgametophytes of seed plants.",
         wiki: "https://en.wikipedia.org/wiki/Pollen"
     },
     {
