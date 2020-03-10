@@ -1080,7 +1080,6 @@ span.correct {
 .btn-secondary:not(:disabled):not(.disabled).active {
   background-color: var(--snap-text-light);
   color: var(--snap-text-dark);
-  float: left;
 }
 
 .non-taxon .btn-secondary:not(:disabled):not(.disabled).active {
@@ -1731,11 +1730,6 @@ a.collection-disabled {
   margin: 0 .5rem 0 0;
 }
 
-.emphasis {
-  font-weight: bold;
-  letter-spacing: .03rem;
-}
-
 .swap-in-card {
   display: initial;
 }
@@ -2203,7 +2197,7 @@ img[data-has-image="false"] {
   display: none;
 }
 
-.quick-fire input {
+.quick-fire input[type="number"] {
   width: 4rem;
   padding: .5rem;
 }
@@ -2212,9 +2206,49 @@ img[data-has-image="false"] {
   column-count: 2;
 }
 
-.quick-fire-taxa span {
-  vertical-align: sub;
+.quick-fire-taxa label {
+  cursor: pointer;
+}
+
+.quick-fire-taxa span, .quick-fire-branches span {
+  vertical-align: super;
   display: inline-block;
   font-size: .6rem;
   padding: .125rem;
+}
+
+.quick-fire .btn-group {
+  display: initial;
+}
+
+.quick-fire .btn-group >.btn {
+  background-color: var(--snap-success-light);
+  margin: 0 0 .5rem 0;
+  border-radius: .25rem !important;
+  letter-spacing: .03rem;
+  width: fit-content;
+  width: max-content;
+  cursor: pointer !important;  
+}
+
+.quick-fire .quick-fire-branches.btn-group >.btn {
+  background-color: var(--snap-species-header-background);
+}
+
+.quick-fire .quick-fire-options .btn-secondary:not(:disabled):not(.disabled).active {
+  background-color: var(--snap-btn-auxillary);
+  color: var(--snap-text-light);
+}
+
+.quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
+  background-color: var(--snap-species-header-dark-background);
+  color: var(--snap-text-light);
+}
+
+.quick-fire .btn {  
+  cursor: pointer !important;
+}
+
+.quick-fire-text-entry > div{
+  width: 100%;
 }

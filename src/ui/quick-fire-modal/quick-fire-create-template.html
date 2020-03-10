@@ -11,6 +11,25 @@
             <span class="">{{ taxon.count }}</span>
         </li>
     </ul>
+
+    <br>
+
+    <div class="btn-group btn-group-toggle margin-left margin-top quick-fire-options margin-bottom js-quick-fire-options" data-toggle="buttons" data-repeat-option="{{ options }}">
+        <label data-key="{{ option.key }}" class="btn btn-secondary margin-right" data-value="{{ option.value }}">
+          <input type="radio" name="options" id="{{ option.key }}" autocomplete="off" checked> {{ option.value }}
+        </label>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="btn-group btn-group-toggle margin-top quick-fire-branches js-quick-fire-branches" data-toggle="buttons" data-repeat-branch="{{ branches }}">
+        <label data-key="{{ branch.name }}" class="btn btn-secondary margin-left active" data-value="{{ branch.name }}">
+          <input type="checkbox" name="branches" id="{{ branch.name }}" autocomplete="off" checked> {{ branch.name }}
+          <span class="">{{ branch.count }}</span>
+        </label>        
+    </div>
+
     <div class="centred-block double-standard-block">
         <button class="btn btn-light js-create-quick-fire">Start quick-fire review</button>
     </div>

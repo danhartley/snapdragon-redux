@@ -2,11 +2,11 @@
     Question {{ total }} of {{ count }}
 </div>
 
-<div class="centred-block double-standard-block modal-background-relief">
-    <span class="margin-left">{{ question.definition }}</span>
+<div class="centred-block double-standard-block modal-background-relief border-light js-quick-fire-definition">
+    <span class="padding">{{ question.definition }}</span>
 </div>
 
-<div class="strips description js-quick-fire-options" data-repeat-answer="{{ answers }}">
+<div id="0" class="strips description margin-top js-quick-layouts js-quick-fire-options" data-repeat-answer="{{ answers }}">
     <div class="strip" id="{{ answer.term }}">
         <div data-answer-index="{{ answer.index }}">
             <span>{{ answer.term }}</span>
@@ -14,9 +14,16 @@
     </div>
 </div>
 
+<div id="1" class="centred-block margin-top double-standard-block js-quick-layouts quick-fire-text-entry js-quick-fire-text-entry">
+    <div>
+        <input type="text">
+        <div class="margin-left centred-block margin-top standard-block js-quick-fire-message"></div>
+    </div>
+</div>
+
 <div class="standard-block">
     <div class="action-update">
-        <button disabled class="btn btn-light js-continue-quick-fire-btn">Continue lesson</button>
+        <button class="btn btn-light js-continue-quick-fire-btn">Continue lesson</button>
     </div>
 </div>
 

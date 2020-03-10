@@ -62,6 +62,11 @@
     margin-left: .5rem !important;
   }
   
+  
+  .half-margin-left {
+    margin-left: .25rem !important;
+  }
+  
   .padding {
     padding: .5rem;
   }
@@ -168,3 +173,23 @@
   .modal-background-relief {
     background-color: var(--snap-content-background-relief);
   }
+
+  .border-light {
+    border: 1px solid var(--snap-border-light) !important;
+  }
+
+  .border-medium {
+    border: 1px solid var(--snap-border-medium);
+  }
+
+  .vertical-block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .emphasis {
+    font-weight: bold;
+    letter-spacing: .03rem;
+  }
+  
+  

@@ -52,6 +52,7 @@
     --snap-taxon-card-background: rgba(52, 105, 23,.1);
     --snap-species-highlight-background: rgb(249, 248, 238);
     --snap-species-header-background: rgb(226, 222, 180);
+    --snap-species-header-dark-background: rgb(146, 139, 56);
     
     --snap-btn-auxillary: rgb(96, 117, 90);
     --snap-btn-hover: rgb(240, 240, 240);
