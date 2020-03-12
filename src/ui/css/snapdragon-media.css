@@ -136,7 +136,7 @@
 
 @media (min-width: 768px) {
 
-    .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
+    .quick-fire .quick-fire-branches .btn-secondary, .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
         font-size: .9rem;
     }
 

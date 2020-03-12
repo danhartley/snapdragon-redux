@@ -469,14 +469,14 @@ const getRandomSpecies = async number => {
 
 const getDefinition = (term, required) => {
     
-    const dictionary = getGlossary(required);
+    const glossary = getGlossary(required);
 
     const terms = term.split(',');
 
     let definitions = [];
 
     for(let term of terms) {        
-        const definition = dictionary.find(definition => definition.term.toLowerCase() === term.trim().toLowerCase() || definition.alt && definition.alt.toLowerCase() === term.trim().toLowerCase());
+        const definition = glossary.find(definition => definition.term.toLowerCase() === term.trim().toLowerCase() || definition.alt && definition.alt.toLowerCase() === term.trim().toLowerCase());
         definitions.push(definition);
     };
     
@@ -485,16 +485,16 @@ const getDefinition = (term, required) => {
 
 const getDefinitions = required => {
 
-    const dictionary = getGlossary(required);
+    const glossary = getGlossary(required);
 
-    return new Promise(resolve => resolve(dictionary));
+    return new Promise(resolve => resolve(glossary));
 };
 
 const getTraitDefinitions = (required, trait) => {
     
-    const dictionary = getGlossary(required);
+    const glossary = getGlossary(required);
 
-    const traits = dictionary.filter(entry => entry.trait).filter(entry => entry.trait.toLowerCase() === trait.toLowerCase());
+    const traits = glossary.filter(entry => entry.trait).filter(entry => entry.trait.toLowerCase() === trait.toLowerCase());
 
     return new Promise(resolve => resolve(traits));
 };
@@ -656,6 +656,38 @@ const addCollection = async (collection, user) => {
     return docs;
   };
 
+  const addDefinition = async definition => {
+
+    let docRef;
+  
+    try {
+        docRef = await db.collection('glossary').add(definition);
+    } catch(err) {
+        console.error("Error writing document: ", err);
+    }
+  
+    return docRef;
+  };
+  
+  const getDefinitionsWhere = async props => {
+  
+    const { key, operator, value } = props;
+  
+    const collectionRef = key 
+            ? db.collection(`glossary`).where(key, operator, value)
+            : db.collection(`glossary`);
+
+    const querySnapshot = await collectionRef.get();
+    
+    const docs = [];
+  
+    querySnapshot.forEach(doc => {
+      docs.push(doc.data());
+    });
+  
+    return docs;
+  };
+
 export const firestore = {
     getSpecies,
     getSpeciesNames,
@@ -683,6 +715,7 @@ export const firestore = {
     addTaxon,
     addCollection,
     addQuestion,
+    addDefinition,
     
     updateSpecies,
     updateSpeciesNames,
@@ -692,7 +725,8 @@ export const firestore = {
     deleteSpeciesTraitField,
     getDefinitions,
     getTraitDefinitions,
-    getQuestionById
+    getQuestionById,
+    getDefinitionsWhere
 };
 
 const getRandomId = () => {

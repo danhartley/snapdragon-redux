@@ -54,4 +54,10 @@ export const insecta = [
         branch: 'cl',
         technical: 'true'
     },
+    {
+        term: 'Nymph',
+        definition: 'Immature form of some invertebrates, particularly insects, which undergoes gradual metamorphosis (hemimetabolism) before reaching its adult stage.',
+        wiki: 'https://en.wikipedia.org/wiki/Nymph_(biology)',
+        branch: 'morphology'
+    },
 ]

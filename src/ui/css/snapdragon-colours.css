@@ -26,8 +26,6 @@
     --snap-collection-light: rgb(126, 137, 140);
     --snap-non-taxa: rgb(165, 159, 131);
 
-    --snap-lesson: rgb(52, 105, 23);
-    
     --snap-active: rgb(246, 157, 53);
     --snap-alert: rgba(183, 12, 21,.8);
     --snap-alert-light: rgb(241, 229, 225);
@@ -59,12 +57,16 @@
     
     --snap-btn-dropdown: rgb(252, 193, 186);
     --snap-btn-dropdown-options: rgb(254, 240, 229);
+
+    --snap-btn-blue: rgb(72, 77, 82);
+    --snap-btn-light-blue: rgb(213, 215, 207);
+    --snap-btn-green: rgb(92, 135, 67);
+    --snap-btn-light-green: rgb(214, 224, 198);
   
     --snap-border-light: rgb(175,175,175);
     --snap-border-medium: rgb(211, 211, 211);
     --snap-border-lightest: rgb(225,225,225);
 
-    
     --snap-iconic-icon-header: rgb(193, 186, 112);
 
     --snap-inat: rgb(127, 151, 122);

@@ -103,8 +103,8 @@ const create = async args => {
     quickFire.filter.taxa = quickFire.filter.taxa.filter(taxon => taxon.count > 0);
 
     const options = [
-        { key: 0, value: 'multiple choice only' },
-        { key: 1, value: 'text entry only' },
+        { key: 0, value: 'multiple choice' },
+        { key: 1, value: 'text entry' },
         // { key: 2, value: 'multiple choice followed by text entry' },
         // { key: 3, value: 'mixed multiple choice and text entry' },
     ];
@@ -336,7 +336,13 @@ const init = async () => {
 
 const getItems = async (taxa, isSelected = false) => {
     
-    allItems = allItems || await firestore.getDefinitions(taxa);
+    // allItems = allItems || await firestore.getDefinitions(taxa);
+    allItems = allItems || await firestore.getDefinitionsWhere({
+        key: 'taxon',
+        operator: 'in', 
+        value: taxa
+    });
+
     let selectedItems = [];
     isSelected
         ? selectedItems = allItems

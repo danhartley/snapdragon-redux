@@ -2,7 +2,8 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
-import { getGlossary } from 'api/glossary/glossary';
+import { firestore } from 'api/firebase/firestore';
+// import { getGlossary } from 'api/glossary/glossary';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 
 export const getDefinitionTests = itemsInThisRound => {
@@ -18,13 +19,23 @@ export const getDefinitionTests = itemsInThisRound => {
     return tests;
 };
 
-const getDefinitionTest = item => {
+const getDefinitionTest = async item => {
 
     const { config, collection } = store.getState();
 
     const number = config.isPortraitMode ? 4 : 4;
 
-    const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa).value, 'common' ]));
+    const taxon = matchTaxon(item.taxonomy, iconicTaxa).value;
+
+    let definitions = await firestore.getDefinitionsWhere({
+        key: 'taxon',
+        operator: 'in', 
+        value: [ taxon, 'common' ]
+    });
+
+    definitions = utils.shuffleArray(definitions);
+
+    // const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa).value, 'common' ]));
 
     const term = item.terms 
                     ? utils.shuffleArray(item.terms)[0] 
@@ -52,5 +63,4 @@ const getDefinitionTest = item => {
     const help = config.isLandscapeMode ? 'Select the correct answer' : '(Tap on the answer)';
 
     return { question, answers, overrides : { question: definition.term, help, binomial: item.name, vernacularName: item.vernacularName } };
-    // return { question, answers, overrides : { question: definition.term, help, binomial: 'Definition', vernacularName: 'Dictionary' } };
 };

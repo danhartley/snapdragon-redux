@@ -1,12 +1,13 @@
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
-import { getGlossary } from 'api/glossary/glossary';
+// import { getGlossary } from 'api/glossary/glossary';
+import { firestore } from 'api/firebase/firestore';
 import { quickFire } from 'ui/quick-fire-modal/quick-fire';
 import { renderTemplate } from 'ui/helpers/templating';
 
 import glossaryTemplate from 'ui/fixtures/glossary-template.html';
 
-export const renderGlossary = args => {
+export const renderGlossary = async args => {
 
     const { required, definitions } = args;
 
@@ -15,8 +16,15 @@ export const renderGlossary = args => {
 
     DOM.modalText.innerHTML = '';
     DOM.modalTextTitle.innerHTML = 'Glossary';
+
+    const apiDefinitions = await firestore.getDefinitionsWhere({
+      key: 'taxon',
+      operator: 'in', 
+      value: required || [ 'common' ]
+    });
     
-    const glossary = definitions || utils.sortAlphabeticallyBy(getGlossary(required || ['common']), 'term');
+    const glossary = definitions || utils.sortAlphabeticallyBy(apiDefinitions, 'term');
+    // const glossary = definitions || utils.sortAlphabeticallyBy(getGlossary(required || ['common']), 'term');
 
     renderTemplate({ glossary }, template.content, DOM.modalText);
 

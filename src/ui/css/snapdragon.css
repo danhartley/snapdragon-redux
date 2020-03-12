@@ -113,10 +113,6 @@ hr {
   color: var(--snap-text-medium-dark);
 }
 
-.btn-lesson {
-  background-color: var(--snap-lesson);
-}
-
 .btn.btn-non-taxa {
   width: 15rem;
   background-color: var(--snap-non-taxa);
@@ -2143,7 +2139,6 @@ img[data-has-image="false"] {
 
 .score-summary-row > div[data-is-true="true"]:nth-child(1) i:nth-child(1) {
   display: initial;
-  color: var(--snap-lesson);
   color: rgb(52, 105, 23,.5);
   font-size: .8rem;
   font-size: 1.5rem;
@@ -2235,7 +2230,7 @@ img[data-has-image="false"] {
 }
 
 .quick-fire .btn-group >.btn {
-  background-color: var(--snap-success-light);
+  background-color: var(--snap-btn-light-blue);
   margin: 0 0 .5rem 0;
   border-radius: .25rem !important;
   letter-spacing: .03rem;
@@ -2245,17 +2240,21 @@ img[data-has-image="false"] {
 }
 
 .quick-fire .quick-fire-branches.btn-group >.btn {
-  background-color: var(--snap-species-header-background);
+  background-color: var(--snap-btn-light-green);
 }
 
 .quick-fire .quick-fire-options .btn-secondary:not(:disabled):not(.disabled).active {
-  background-color: var(--snap-btn-auxillary);
+  background-color: var(--snap-btn-blue);
   color: var(--snap-text-light);
+}
+
+.quick-fire .quick-fire-branches .btn-secondary {
+  font-size: .6rem;
 }
 
 .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
   font-size: .6rem;
-  background-color: var(--snap-species-header-dark-background);
+  background-color: var(--snap-btn-green);
   color: var(--snap-text-light);
 }
 

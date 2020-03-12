@@ -1,6 +1,6 @@
 <div class="quick-fire">
     
-    <div class="centred-block standard-block">
+    <div class="centred-block standard-block padding-top">
         Answer <input min="1" required class="margin-left margin-right js-input-quick-fire" type="number" value="{{ quickFire.count }}">
         <span class="landscape">questions selected at random from <span class="js-quick-fire-count">{{ quickFire.count }}</span> terms.</span>
         <span class="portrait">from <span class="js-quick-fire-count">{{ quickFire.count }}</span> terms.</span>
@@ -15,20 +15,20 @@
 
     <br>
 
-    <div class="btn-group btn-group-toggle margin-left margin-top quick-fire-options margin-bottom js-quick-fire-options" data-toggle="buttons" data-repeat-option="{{ options }}">
-        <label data-key="{{ option.key }}" class="btn btn-secondary margin-right" data-value="{{ option.value }}">
-          <input type="radio" name="options" id="{{ option.key }}" autocomplete="off" checked> {{ option.value }}
-        </label>
-    </div>
-
-    <br>
-    <br>
-
     <div class="btn-group btn-group-toggle margin-top quick-fire-branches js-quick-fire-branches" data-toggle="buttons" data-repeat-branch="{{ branches }}">
         <label data-key="{{ branch.name }}" class="btn btn-secondary margin-left active" data-value="{{ branch.name }}">
           <input type="checkbox" name="branches" id="{{ branch.name }}" autocomplete="off" checked> {{ branch.name }}
           <span class="">{{ branch.count }}</span>
         </label>        
+    </div>
+
+    <br>
+    <br>
+
+    <div class="btn-group btn-group-toggle margin-left margin-top quick-fire-options margin-bottom js-quick-fire-options" data-toggle="buttons" data-repeat-option="{{ options }}">
+        <label data-key="{{ option.key }}" class="btn btn-secondary margin-right" data-value="{{ option.value }}">
+          <input type="radio" name="options" id="{{ option.key }}" autocomplete="off" checked> {{ option.value }}
+        </label>
     </div>
 
     <div class="margin-left margin-top">
