@@ -18,7 +18,7 @@
     <div class="btn-group btn-group-toggle margin-top quick-fire-branches js-quick-fire-branches" data-toggle="buttons" data-repeat-branch="{{ branches }}">
         <label data-key="{{ branch.name }}" class="btn btn-secondary margin-left active" data-value="{{ branch.name }}">
           <input type="checkbox" name="branches" id="{{ branch.name }}" autocomplete="off" checked> {{ branch.name }}
-          <span class="">{{ branch.count }}</span>
+          <span data-name="{{ branch.name }}">{{ branch.count }}</span>
         </label>        
     </div>
 

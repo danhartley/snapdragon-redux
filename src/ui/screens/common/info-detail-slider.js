@@ -8,7 +8,7 @@ import detailsTemplate from 'ui/screens/common/info-detail-slider-template.html'
 
 export const renderInfoDetails = (item, activeTraitKey, activeTraitValue, description) => {
 
-    const { config, collection } = store.getState();
+    const { config, collection, glossary } = store.getState();
 
     const template = document.createElement('template');
     const parent = document.querySelector('.js-info-box-details');
@@ -30,7 +30,7 @@ export const renderInfoDetails = (item, activeTraitKey, activeTraitValue, descri
         linkedTaxa(item, config, parent, mode, isInCarousel, collection, activeTraitValue);
     } else {
 
-        const details = firestore.getDefinition(activeTraitValue, collection.glossary); // make dependent on a promise
+        const details = firestore.getDefinition(activeTraitValue, glossary, collection.glossary); // make dependent on a promise
 
         if(!parent) return; // hack! taxon info sliders
 

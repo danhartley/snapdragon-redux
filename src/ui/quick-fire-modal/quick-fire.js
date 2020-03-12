@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
@@ -109,13 +110,7 @@ const create = async args => {
         // { key: 3, value: 'mixed multiple choice and text entry' },
     ];
 
-    let branches = [ ...new Set(items.filter(item => item.taxon === 'plantae').map(item => item.branch)) ];
-        branches = branches.map(branch => {
-            return {
-                name: branch,
-                count: items.filter(item => item.branch == branch).length
-            }
-          });
+    const branches = initBranches(items);
 
     renderTemplate({ quickFire, options, branches }, template.content, parent);
 
@@ -142,7 +137,7 @@ const create = async args => {
                 const updatedTaxa = updateArray(filter.iconicTaxa, selectedTaxon);
                 quickFire.filter.iconicTaxa = updatedTaxa;
                 quickFire.items = await getItems(updatedTaxa);
-                updateCounts(quickFire, input);
+                updateTotalCounts(quickFire, input);
               });
           });
 
@@ -166,13 +161,13 @@ const create = async args => {
     const branchOptions = document.querySelectorAll('.js-quick-fire-branches label');
           branchOptions.forEach(branch => {
               branch.addEventListener('click', e => {
-            setTimeout(async() => {
-                let checkedBranches = Array.from(branchOptions).filter(b => elem.hasClass(b, 'active'));
-                    checkedBranches = checkedBranches.map(b => b.dataset.key);
-                quickFire.items = await getItems(quickFire.filter.iconicTaxa);
-                quickFire.items = quickFire.items.filter(item => R.contains(item.branch, checkedBranches));
-                updateCounts(quickFire, input);
-            });
+                setTimeout(async() => {
+                    let checkedBranches = Array.from(branchOptions).filter(b => elem.hasClass(b, 'active'));
+                        checkedBranches = checkedBranches.map(b => b.dataset.key);
+                    quickFire.items = await getItems(quickFire.filter.iconicTaxa);
+                    quickFire.items = quickFire.items.filter(item => R.contains(item.branch, checkedBranches));
+                    updateTotalCounts(quickFire, input);
+                });
               });
           });
 
@@ -180,7 +175,7 @@ const create = async args => {
           technical.addEventListener('change', async e => {
             const isSelected = e.target.checked;
             quickFire.items = await getItems(quickFire.filter.iconicTaxa, isSelected);
-            updateCounts(quickFire, input);
+            updateTotalCounts(quickFire, input);
           });
 };
 
@@ -336,12 +331,11 @@ const init = async () => {
 
 const getItems = async (taxa, isSelected = false) => {
     
-    // allItems = allItems || await firestore.getDefinitions(taxa);
-    allItems = allItems || await firestore.getDefinitionsWhere({
-        key: 'taxon',
-        operator: 'in', 
-        value: taxa
-    });
+    const glossary = store.getState().glossary;
+
+    allItems = allItems || !!glossary
+                ? glossary.filter(definition => R.contains(definition.taxon, taxa))
+                : await firestore.getDefinitionsByTaxa(taxa);
 
     let selectedItems = [];
     isSelected
@@ -351,7 +345,7 @@ const getItems = async (taxa, isSelected = false) => {
     return selectedItems.filter(item => R.contains(item.taxon, taxa));
 };
 
-const updateCounts = (quickFire, input) => {
+const updateTotalCounts = (quickFire, input) => {
 
     quickFire.count = quickFire.items.length;
     document.querySelectorAll('.js-quick-fire-count').forEach(counter => {
@@ -359,4 +353,25 @@ const updateCounts = (quickFire, input) => {
     });
     input.value = quickFire.count;
     quickFire.poolSize = parseInt(input.value);
+
+    updateBranchCounts(quickFire.items);
+};
+
+const initBranches = items => {
+    let branches = [ ...new Set(items.map(item => item.branch)) ];
+        branches = branches.map(branch => {
+            return {
+                name: branch,
+                count: items.filter(item => item.branch == branch).length
+            }
+          });
+    return branches;
+};
+
+const updateBranchCounts = items => {
+
+    const branchOptions = document.querySelectorAll('.js-quick-fire-branches label > span');
+          branchOptions.forEach(branchBadge => {
+            branchBadge.innerHTML = items.filter(item => item.branch === branchBadge.dataset.name).length;
+          });
 };

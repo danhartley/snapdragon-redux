@@ -1,7 +1,5 @@
 import { utils } from 'utils/utils';
 import { enums } from 'admin/api/enums';
-import { store } from 'redux/store';
-import { getGlossary } from 'api/glossary/glossary';
 import { firebaseConfig } from 'api/firebase/credentials';
 import { questions } from 'api/firebase/questions';
 
@@ -10,16 +8,6 @@ firebase.initializeApp(firebaseConfig);
 const storage = firebase.storage();
 
 const db = firebase.firestore();
-
-const getCollection = () => {
-    return store.getState().collection;
-};
-
-const getSpeciesFromCollection = itemName => {
-    const collection = getCollection();
-    if(!collection || !collection.items) return null;
-    return collection.items.find(i => i.name === itemName);
-};
 
 const getSpeciesWhere = async props => {
 
@@ -467,9 +455,7 @@ const getRandomSpecies = async number => {
     return docs;
 };
 
-const getDefinition = (term, required) => {
-    
-    const glossary = getGlossary(required);
+const getDefinition = (term, glossary, required) => {
 
     const terms = term.split(',');
 
@@ -483,17 +469,8 @@ const getDefinition = (term, required) => {
     return definitions.filter(definition => definition);
 };
 
-const getDefinitions = required => {
-
-    const glossary = getGlossary(required);
-
-    return new Promise(resolve => resolve(glossary));
-};
-
-const getTraitDefinitions = (required, trait) => {
+const getTraitDefinitions = (glossary, required, trait) => {
     
-    const glossary = getGlossary(required);
-
     const traits = glossary.filter(entry => entry.trait).filter(entry => entry.trait.toLowerCase() === trait.toLowerCase());
 
     return new Promise(resolve => resolve(traits));
@@ -688,6 +665,14 @@ const addCollection = async (collection, user) => {
     return docs;
   };
 
+  const getDefinitionsByTaxa = taxa => {
+      return getDefinitionsWhere({
+        key: 'taxon',
+        operator: 'in', 
+        value: taxa
+    });
+  };
+
 export const firestore = {
     getSpecies,
     getSpeciesNames,
@@ -723,10 +708,10 @@ export const firestore = {
   
     deleteSpeciesByName,
     deleteSpeciesTraitField,
-    getDefinitions,
     getTraitDefinitions,
     getQuestionById,
-    getDefinitionsWhere
+    getDefinitionsWhere,
+    getDefinitionsByTaxa
 };
 
 const getRandomId = () => {

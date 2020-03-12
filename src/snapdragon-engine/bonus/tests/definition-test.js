@@ -3,7 +3,6 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { firestore } from 'api/firebase/firestore';
-// import { getGlossary } from 'api/glossary/glossary';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 
 export const getDefinitionTests = itemsInThisRound => {
@@ -21,21 +20,15 @@ export const getDefinitionTests = itemsInThisRound => {
 
 const getDefinitionTest = async item => {
 
-    const { config, collection } = store.getState();
+    const { config, collection, glossary } = store.getState();
 
     const number = config.isPortraitMode ? 4 : 4;
 
     const taxon = matchTaxon(item.taxonomy, iconicTaxa).value;
 
-    let definitions = await firestore.getDefinitionsWhere({
-        key: 'taxon',
-        operator: 'in', 
-        value: [ taxon, 'common' ]
-    });
+    let definitions = glossary || await firestore.getDefinitionsByTaxa([ taxon, 'common' ]);
 
     definitions = utils.shuffleArray(definitions);
-
-    // const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa).value, 'common' ]));
 
     const term = item.terms 
                     ? utils.shuffleArray(item.terms)[0] 

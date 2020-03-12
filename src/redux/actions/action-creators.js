@@ -39,6 +39,7 @@ const removeSavedLesson = makeActionCreator(types.REMOVE_LESSON);
 const updateVideoPlayer = makeActionCreator(types.UPDATE_VIDEO_PLAYER);
 const createQuickFire = makeActionCreator(types.CREATE_QUICKFIRE);
 const updateQuickFire = makeActionCreator(types.UPDATE_QUICKFIRE);
+const createGlossary = makeActionCreator(types.CREATE_GLOSSARY);
 
 const boundchangeLessonPlan = data => store.dispatch(changeLessonPlan(data));
 const boundchangeLessonPlans = data => store.dispatch(changeLessonPlans(data));
@@ -77,6 +78,7 @@ const boundRemoveSavedLesson = data => store.dispatch(removeSavedLesson(data));
 const boundUpdateVideoPlayer = data => store.dispatch(updateVideoPlayer(data));
 const boundCreateQuickFire = data => store.dispatch(createQuickFire(data));
 const boundUpdateQuickFire = data => store.dispatch(updateQuickFire(data));
+const boundCreateGlossary = data => store.dispatch(createGlossary(data));
 
 export const actions = {
     boundchangeLessonPlans,
@@ -106,5 +108,6 @@ export const actions = {
     boundUpdateVideoPlayer,
     boundUpdateUser,
     boundCreateQuickFire,
-    boundUpdateQuickFire
+    boundUpdateQuickFire,
+    boundCreateGlossary
 };

@@ -2219,6 +2219,7 @@ img[data-has-image="false"] {
   vertical-align: super;
   display: inline-block;
   padding: .125rem;
+  min-width: 1.5rem;
 }
 
 .quick-fire-branches span {
@@ -2264,4 +2265,8 @@ img[data-has-image="false"] {
 
 .quick-fire-text-entry > div{
   width: 100%;
+}
+
+.quick-fire .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: var(--snap-btn-blue);
 }

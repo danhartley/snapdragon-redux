@@ -26,9 +26,9 @@ import { traitValuesHandler } from 'api/traits/trait-types';
 import { initialiseConfig } from 'ui/helpers/location-helper';
 import { firestore } from 'api/firebase/firestore';
 import { renderLoggedIn } from 'ui/fixtures/login';
-import { quickFire } from 'ui/quick-fire-modal/quick-fire';
 
 const onLoadHandler = () => {
+
     setTimeout( async () => {
 
     let lessonPlan;
@@ -84,6 +84,10 @@ const onLoadHandler = () => {
         if(!config.guide.locationType) {
             updateConfig();
         }
+
+        const glossary = await firestore.getDefinitionsByTaxa(['common', 'plantae', 'aves', 'fungi', 'insecta']);
+        actions.boundCreateGlossary(glossary);
+
     }
     catch(e) {
         console.log('home page error: ', e)
