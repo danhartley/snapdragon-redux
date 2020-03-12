@@ -7,7 +7,7 @@ export const iconicTaxa = {
     PLANTAE: 'Plants',
 
     // phlyum
-    MOLLUSCA: 'Mollusks',
+    // MOLLUSCA: 'Mollusks',
 
     // class
     AVES: 'Birds',
@@ -15,7 +15,7 @@ export const iconicTaxa = {
     REPTILIA: 'Reptilians',
     MAMMALIA: 'Mammals',
     INSECTA: 'Insects',
-    ACTINOPTERYGII: 'Ray-finned fishes',
+    // ACTINOPTERYGII: 'Ray-finned fishes',
     ARACHNIDA: 'Arachnids',
 
     //order

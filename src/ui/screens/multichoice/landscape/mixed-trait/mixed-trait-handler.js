@@ -39,9 +39,11 @@ const getMatchingTrait = (layoutTraits, traitValues) => {
 
 };
 
-const fetchTraits = async (trait, requiredTraitValues, glossary) => {
+const fetchTraits = async (trait, requiredTraitValues, required) => {
 
-    let traits = await firestore.getTraitDefinitions(glossary, trait);
+    // const glossary = store.getState().glossary;
+
+    let traits = await firestore.getTraitDefinitions(glossary, required, trait);
         traits.forEach(t => {
             t.term = t.term.toLowerCase();
             if(t.alt) t.alt = t.alt.toLowerCase();

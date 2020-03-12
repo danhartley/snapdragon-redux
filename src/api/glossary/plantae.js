@@ -104,9 +104,10 @@ export const plantae = [
     },
     {
         term: "Aetherolea",
-        definition: "Aetherolea also known as volatile oils or essential oils are concentrated hydrophobic liquids that contain volatile aroma compounds from plants which evaporate when exposed to air and are thus capable of distillation.",
+        definition: "Also known as volatile or essential oils, are concentrated hydrophobic liquids that contain volatile aroma compounds from plants which evaporate when exposed to air.",
         wiki: "https://en.wikipedia.org/wiki/Essential_oil",
-        branch: 'physiology'
+        branch: 'physiology',
+        technical: 'true'
     },
     {
         term: "Pollination",
@@ -152,7 +153,7 @@ export const plantae = [
     },
     {
         term: 'Gymnosperm',
-        definition: 'Group of plants whose seeds are not enclosed in a ovary.',
+        definition: 'Group of plants whose seeds are not enclosed in an ovary.',
         branch: 'classification'
     },
     {
@@ -167,7 +168,8 @@ export const plantae = [
         definition: 'A hollow, nectar-containing tube that extends part of a flower. An example of coevolution (flower + pollinating insect).',
         wiki: 'https://en.wikipedia.org/wiki/https://en.wikipedia.org/wiki/Nectar_spur',
         examples: ['Hypericum perforatum'],
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term: 'Stamen',
@@ -249,7 +251,8 @@ export const plantae = [
     {
         term: 'Valvate',
         definition: '(Of flowers) twice divided.',
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term: 'Dicotyledon',
@@ -302,7 +305,8 @@ export const plantae = [
         term: 'Pome',
         definition: 'Type of fruit produced by flowering plants in the subtribe Malinae of the family Rosaceae.',
         wiki: 'https://en.wikipedia.org/wiki/Pome',
-        branch: 'morphology'
+        branch: 'morphology',
+        examples: ['Malus domestica'],
     },
     {
         term: 'Loam',
@@ -337,12 +341,14 @@ export const plantae = [
     {
         term: 'Revolute',
         definition: 'Rolled under (downwards or backwards), for example when the edges of leaves are rolled under towards the midrib. Compare involute.',
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term: 'Involute',
         definition: 'Rolled inwards, for example when the margins of a leaf are rolled towards the adaxial (usually upper) surface. Compare revolute.',
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term: 'Drupe',
@@ -361,7 +367,7 @@ export const plantae = [
     },
     {
         term: 'Baccate',
-        definition: 'Plant bearing berries.',
+        definition: 'Bearing berries.',
         branch: 'classification'
     },
     {
@@ -479,19 +485,22 @@ export const plantae = [
         term: 'Clonal colony',
         definition: 'A group of genetically identical individuals, such as plants, fungi, or bacteria, that have grown in a given location, all originating vegetatively, not sexually, from a single ancestor.',
         wiki: 'https://en.wikipedia.org/wiki/Clonal_colony',
-        branch: 'general'
+        branch: 'general',
+        technical: 'true'
     },
     {
         term: 'Pollination syndrome',
         definition: 'Suites of flower traits that have evolved in response to natural selection imposed by different (abiotic or biotic) pollen vectors such as birds, bees, flies, inc. flower shape, size, colour, etc.',
         wiki: 'https://en.wikipedia.org/wiki/Pollination_syndrome',
-        branch: 'ecology'
+        branch: 'ecology',
+        technical: 'true'
     },
     {
         term: 'Sessility',
         definition: 'A characteristic of plant parts that have no stalk. Flowers or leaves are borne directly from the stem or peduncle, and thus lack a petiole or pedicel.',
         wiki: 'https://en.wikipedia.org/wiki/Sessility_(botany)',
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term: 'Sessile',
@@ -515,7 +524,8 @@ export const plantae = [
             author: 'By Amada44 - Own work, Public Domain.',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=3270931',
         },
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term: 'Catkin',
@@ -551,7 +561,8 @@ export const plantae = [
         term: "Aristate",
         definition: "Having a spiny or bristly tip (of leaf).",
         wiki: "https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#aristate",
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term: "Stoma",
@@ -573,17 +584,19 @@ export const plantae = [
     },
     {
         term: "C3 carbon fixation",
-        definition: "C3 plants tend to thrive in areas where sunlight intensity and temperatures are moderate.",
+        definition: "The most common of three metabolic pathways for carbon fixation in photosynthesis.",
         wiki: "https://en.wikipedia.org/wiki/C3_carbon_fixation",
         examples: ['Cirsium arvense'],
-        branch: 'physiology'
+        branch: 'physiology',
+        technical: 'true'
     },
     {
         term: "Crownshaft",
         definition: "An elongated circumferential leaf base formation present on some species of palm.",
         wiki: "https://en.wikipedia.org/wiki/Crownshaft",
         examples: ['Roystonea regia'],
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term: "Ruderal species",
@@ -632,7 +645,8 @@ export const plantae = [
         term: 'Allogamy (cross-fertilisation)',
         definition: 'The fertilisation of an ovum from one individual with the spermatozoa of another.',
         wiki: 'https://en.wikipedia.org/wiki/Allogamy',
-        branch: 'ecology'
+        branch: 'ecology',
+        technical: 'true'
     },
     {
         term: 'Tomentose',
@@ -792,7 +806,8 @@ export const plantae = [
         term : "Phyllotaxis",
         definition : "Arrangement of leaves on a plant stem.",
         wiki: 'https://en.wikipedia.org/wiki/Phyllotaxis',
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term : "Siliceous",
@@ -810,13 +825,15 @@ export const plantae = [
         term : "Aril",
         definition : "Specialised outgrowth from a seed that partly or completely covers the seed.",
         wiki: 'https://en.wikipedia.org/wiki/Aril',
-        branch: 'morphology'
+        branch: 'morphology',
+        examples: ["Taxus baccata "],        
     },
     {
         term : "Epicormic shoot",
         definition : "A shoot growing from an epicormic bud, which lies underneath the bark of a trunk, stem, or branch of a plant.",
         wiki: 'https://en.wikipedia.org/wiki/Epicormic_shoot',
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term : "Deciduous",
@@ -834,7 +851,8 @@ export const plantae = [
         term : "Syconium",
         definition : "Type of inflorescence borne by figs (genus Ficus), formed by an enlarged, fleshy, hollow receptacle with multiple ovaries on the inside surface.",
         wiki: 'https://en.wikipedia.org/wiki/syconium',
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term : "Xeromorphic",
@@ -862,7 +880,8 @@ export const plantae = [
         term : "Achene",
         definition : "Contains a single seed that nearly fills the pericarp, but does not adhere to it. In many species, the 'seed' is an achene, a fruit containing the seed. The seed-like appearance is owed to the hardening of the fruit wall (pericarp), which encloses the solitary seed so closely as to seem like a seed coat.",
         wiki: 'https://en.wikipedia.org/wiki/Achene',
-        branch: 'morphology'
+        branch: 'morphology',
+        examples: ["Fragaria × ananassa"]        
     },
     {
         term : "Bilabiate",
@@ -1009,7 +1028,8 @@ export const plantae = [
             author: 'By Pancrat - Own work, CC BY-SA 4.0.',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=36185851',
         },
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term : "Palmatifid",
@@ -1021,7 +1041,8 @@ export const plantae = [
             author: 'By Pancrat - Own work, CC BY-SA 4.0.',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=36182091',
         },
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term : "Imparipinnate",
@@ -1033,7 +1054,8 @@ export const plantae = [
             author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=6559076',
         },
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term : "Paripinnate",
@@ -1045,7 +1067,8 @@ export const plantae = [
             author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=6559114',
         },
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term : "Alternipinnate",
@@ -1057,7 +1080,8 @@ export const plantae = [
             author: 'By Maksim - File:Leaf morphology odd pinnate.png, CC BY-SA 3.0.',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=17387300',
         },
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term : "Alternipinnate",
@@ -1069,7 +1093,8 @@ export const plantae = [
             author: 'By Maksim - File:Leaf morphology odd pinnate.png, CC BY-SA 3.0.',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=17387300',
         },
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term : "Simple",
@@ -1186,7 +1211,8 @@ export const plantae = [
             author: 'By Maksim - File:Leaf_morphology_no_title.png, CC BY-SA 3.0.',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=6564171'
         },
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term : "Sinuate",
@@ -1288,7 +1314,8 @@ export const plantae = [
             author: 'Wasp32 CC BY-SA 4.0',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=49634194',
         },
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term: 'Bigeminate',
@@ -1299,7 +1326,8 @@ export const plantae = [
             author: 'Wasp32 CC BY-SA 4.0',
             attribution: 'https://commons.wikimedia.org/w/index.php?curid=49634191',
         },
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term: 'Acicular',
@@ -1440,7 +1468,8 @@ export const plantae = [
             url: 'https://upload.wikimedia.org/wikipedia/commons/1/18/Leaf_morphology_arcuate.png'
         },
         wiki: 'https://en.wikipedia.org/wiki/Leaf#Venation',
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term: 'Dichotomous',
@@ -1554,7 +1583,8 @@ export const plantae = [
         term: 'Decussate',
         definition: '(Of opposite leaves) where successive leaf pairs are at right angles.',
         wiki: 'https://en.wikipedia.org/wiki/Decussation',
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term: 'Pyrophytic',
@@ -1578,7 +1608,8 @@ export const plantae = [
         term: 'Prophyll',
         definition: 'The frequently specialised or reduced leaf produced at the first node of a new shoot.',
         wiki: 'https://en.wiktionary.org/wiki/prophyll',
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term: 'Seed',
@@ -1590,7 +1621,8 @@ export const plantae = [
         term: 'Schizocarp',
         definition: 'A dry fruit that, when mature, splits up into mericarps (each with a single seed).',
         wiki: 'https://en.wiktionary.org/wiki/Schizocarp',
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term : "Umbel",
@@ -1623,7 +1655,8 @@ export const plantae = [
         term: 'Resin canal',
         definition: 'Elongated, tube-shaped intercellular space surrounded by epithelial cells which secrete resin into the canal; antiseptic, aromatic and prevents the development of fungi and deters insects.',
         wiki: 'https://en.wikipedia.org/wiki/Resin_canal',
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term: 'Corm',
@@ -1648,13 +1681,15 @@ export const plantae = [
         term: 'Keikis',
         definition: 'Additional offshoot which develops on vegetative stems or flower stalks of several orchids genera e.g. Phalaenopsis.',
         wiki: 'https://en.wikipedia.org/wiki/Vegetative_reproduction#Natural_means',
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term: 'Apomixis',
         definition: 'Process of asexual reproduction through seed, in the absence of meiosis and fertilisation, generating clonal progeny of maternal origin.',
         wiki: 'https://en.wikipedia.org/wiki/Vegetative_reproduction#Natural_means',
-        branch: 'physiology'
+        branch: 'physiology',
+        technical: 'true'
     },
     {
         term: 'Scape',
@@ -1705,12 +1740,6 @@ export const plantae = [
         branch: 'physiology'
     },
     {
-        term: "Marcescence",
-        definition: "The retention of dead plant organs that normally are shed.",
-        wiki: "https://en.wikipedia.org/wiki/Marcescence",
-        branch: 'physiology'
-    },
-    {
         term: "Coriaceous",
         definition: "Leathery; stiff and tough, but flexible.",
         wiki: "https://en.wikipedia.org/wiki/Glossary_of_botanical_terms#coriaceous",
@@ -1720,7 +1749,8 @@ export const plantae = [
         term: "Galbulus",
         definition: "A fleshy cone (megastrobilus); chiefly relating to those borne by junipers and cypresses (often mistakenly called a berry).",
         wiki: "https://en.wikipedia.org/wiki/Galbulus",
-        branch: 'morphology'
+        branch: 'morphology',
+        technical: 'true'
     },
     {
         term: "Strobilus",

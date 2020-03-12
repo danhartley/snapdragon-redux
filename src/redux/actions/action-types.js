@@ -30,8 +30,9 @@ const REMOVE_LESSON = '[REMOVE_LESSON] Remove lesson from saved lessons on resta
 
 const UPDATE_VIDEO_PLAYER = '[UPDATE_VIDEO_PLAYER] Update video player state';
 
-const CREATE_QUICKFIRE = '[CREATE_QUICKFIRE] Add quick-fire';
 const UPDATE_QUICKFIRE = '[UPDATE_QUICKFIRE] Update quick-fire';
+const CREATE_QUICKFIRE = '[CREATE_QUICKFIRE] Add quick-fire';
+const CREATE_GLOSSARY = '[CREATE_GLOSSARY] Add glossary';
 
 export const types = {
     CHANGE_LESSON_PLANS,
@@ -61,5 +62,6 @@ export const types = {
     UPDATE_VIDEO_PLAYER,
     UPDATE_USER,
     CREATE_QUICKFIRE,
-    UPDATE_QUICKFIRE
+    UPDATE_QUICKFIRE,
+    CREATE_GLOSSARY
 };

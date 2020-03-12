@@ -113,10 +113,6 @@ hr {
   color: var(--snap-text-medium-dark);
 }
 
-.btn-lesson {
-  background-color: var(--snap-lesson);
-}
-
 .btn.btn-non-taxa {
   width: 15rem;
   background-color: var(--snap-non-taxa);
@@ -2143,7 +2139,6 @@ img[data-has-image="false"] {
 
 .score-summary-row > div[data-is-true="true"]:nth-child(1) i:nth-child(1) {
   display: initial;
-  color: var(--snap-lesson);
   color: rgb(52, 105, 23,.5);
   font-size: .8rem;
   font-size: 1.5rem;
@@ -2197,6 +2192,15 @@ img[data-has-image="false"] {
   display: none;
 }
 
+.quick-fire {
+  position: relative;
+  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
+}
+
+.quick-fire .strips {
+  height: initial;
+}
+
 .quick-fire input[type="number"] {
   width: 4rem;
   padding: .5rem;
@@ -2206,15 +2210,20 @@ img[data-has-image="false"] {
   column-count: 2;
 }
 
-.quick-fire-taxa label {
+.quick-fire label, .quick-fire-taxa label {
   cursor: pointer;
 }
 
 .quick-fire-taxa span, .quick-fire-branches span {
+  font-size: .6rem;
   vertical-align: super;
   display: inline-block;
-  font-size: .6rem;
   padding: .125rem;
+  min-width: 1.5rem;
+}
+
+.quick-fire-branches span {
+  font-size: .4rem;
 }
 
 .quick-fire .btn-group {
@@ -2222,7 +2231,7 @@ img[data-has-image="false"] {
 }
 
 .quick-fire .btn-group >.btn {
-  background-color: var(--snap-success-light);
+  background-color: var(--snap-btn-light-blue);
   margin: 0 0 .5rem 0;
   border-radius: .25rem !important;
   letter-spacing: .03rem;
@@ -2232,16 +2241,21 @@ img[data-has-image="false"] {
 }
 
 .quick-fire .quick-fire-branches.btn-group >.btn {
-  background-color: var(--snap-species-header-background);
+  background-color: var(--snap-btn-light-green);
 }
 
 .quick-fire .quick-fire-options .btn-secondary:not(:disabled):not(.disabled).active {
-  background-color: var(--snap-btn-auxillary);
+  background-color: var(--snap-btn-blue);
   color: var(--snap-text-light);
 }
 
+.quick-fire .quick-fire-branches .btn-secondary {
+  font-size: .6rem;
+}
+
 .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
-  background-color: var(--snap-species-header-dark-background);
+  font-size: .6rem;
+  background-color: var(--snap-btn-green);
   color: var(--snap-text-light);
 }
 
@@ -2251,4 +2265,8 @@ img[data-has-image="false"] {
 
 .quick-fire-text-entry > div{
   width: 100%;
+}
+
+.quick-fire .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: var(--snap-btn-blue);
 }

@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
@@ -36,6 +37,7 @@ const headers = screen => {
                 renderGlossary({ definitions: quickFire.items });
                 glossaryLink.classList.remove('underline-link');
             });
+            subscription.remove(subscription.getByName('question'));
         break;
 
         case 'QUESTION': 
@@ -102,19 +104,13 @@ const create = async args => {
     quickFire.filter.taxa = quickFire.filter.taxa.filter(taxon => taxon.count > 0);
 
     const options = [
-        { key: 0, value: 'multiple choice only' },
-        { key: 1, value: 'text entry only' },
+        { key: 0, value: 'multiple choice' },
+        { key: 1, value: 'text entry' },
         // { key: 2, value: 'multiple choice followed by text entry' },
         // { key: 3, value: 'mixed multiple choice and text entry' },
     ];
 
-    let branches = [ ...new Set(items.filter(item => item.taxon === 'plantae').map(item => item.branch)) ];
-        branches = branches.map(branch => {
-            return {
-                name: branch,
-                count: items.filter(item => item.branch == branch).length
-            }
-          });
+    const branches = initBranches(items);
 
     renderTemplate({ quickFire, options, branches }, template.content, parent);
 
@@ -141,12 +137,7 @@ const create = async args => {
                 const updatedTaxa = updateArray(filter.iconicTaxa, selectedTaxon);
                 quickFire.filter.iconicTaxa = updatedTaxa;
                 quickFire.items = await getItems(updatedTaxa);
-                quickFire.count = quickFire.items.length;
-                document.querySelectorAll('.js-quick-fire-count').forEach(counter => {
-                    counter.innerHTML = quickFire.count;
-                });
-                input.value = quickFire.count;
-                quickFire.poolSize = parseInt(input.value);
+                updateTotalCounts(quickFire, input);
               });
           });
 
@@ -170,19 +161,21 @@ const create = async args => {
     const branchOptions = document.querySelectorAll('.js-quick-fire-branches label');
           branchOptions.forEach(branch => {
               branch.addEventListener('click', e => {
-            setTimeout(async() => {
-                let checkedBranches = Array.from(branchOptions).filter(b => elem.hasClass(b, 'active'));
-                    checkedBranches = checkedBranches.map(b => b.dataset.key);
-                quickFire.items = await getItems(quickFire.filter.iconicTaxa);
-                quickFire.items = quickFire.items.filter(item => R.contains(item.branch, checkedBranches));
-                quickFire.count = quickFire.items.length;
-                document.querySelectorAll('.js-quick-fire-count').forEach(counter => {
-                    counter.innerHTML = quickFire.count;
+                setTimeout(async() => {
+                    let checkedBranches = Array.from(branchOptions).filter(b => elem.hasClass(b, 'active'));
+                        checkedBranches = checkedBranches.map(b => b.dataset.key);
+                    quickFire.items = await getItems(quickFire.filter.iconicTaxa);
+                    quickFire.items = quickFire.items.filter(item => R.contains(item.branch, checkedBranches));
+                    updateTotalCounts(quickFire, input);
                 });
-                input.value = quickFire.count;
-                quickFire.poolSize = parseInt(input.value);
-            });
               });
+          });
+
+    const technical = document.querySelector('.js-quick-fire-technical');
+          technical.addEventListener('change', async e => {
+            const isSelected = e.target.checked;
+            quickFire.items = await getItems(quickFire.filter.iconicTaxa, isSelected);
+            updateTotalCounts(quickFire, input);
           });
 };
 
@@ -336,8 +329,49 @@ const init = async () => {
     return args;
 };
 
-const getItems = async taxa => {
-    allItems = allItems || await firestore.getDefinitions(taxa);
-    return allItems.filter(item => R.contains(item.taxon, taxa));
+const getItems = async (taxa, isSelected = false) => {
+    
+    const glossary = store.getState().glossary;
+
+    allItems = allItems || !!glossary
+                ? glossary.filter(definition => R.contains(definition.taxon, taxa))
+                : await firestore.getDefinitionsByTaxa(taxa);
+
+    let selectedItems = [];
+    isSelected
+        ? selectedItems = allItems
+        : selectedItems= allItems.filter(item => item.technical !== 'true');
+
+    return selectedItems.filter(item => R.contains(item.taxon, taxa));
 };
 
+const updateTotalCounts = (quickFire, input) => {
+
+    quickFire.count = quickFire.items.length;
+    document.querySelectorAll('.js-quick-fire-count').forEach(counter => {
+        counter.innerHTML = quickFire.count;
+    });
+    input.value = quickFire.count;
+    quickFire.poolSize = parseInt(input.value);
+
+    updateBranchCounts(quickFire.items);
+};
+
+const initBranches = items => {
+    let branches = [ ...new Set(items.map(item => item.branch)) ];
+        branches = branches.map(branch => {
+            return {
+                name: branch,
+                count: items.filter(item => item.branch == branch).length
+            }
+          });
+    return branches;
+};
+
+const updateBranchCounts = items => {
+
+    const branchOptions = document.querySelectorAll('.js-quick-fire-branches label > span');
+          branchOptions.forEach(branchBadge => {
+            branchBadge.innerHTML = items.filter(item => item.branch === branchBadge.dataset.name).length;
+          });
+};

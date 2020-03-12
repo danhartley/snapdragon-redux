@@ -10,3 +10,12 @@ export const quickFire = (state = null, action) => {
             return state;
     }
 }
+
+export const glossary = (state = null, action) => {
+    switch(action.type) {
+        case types.CREATE_GLOSSARY:
+            return action.data;
+        default:
+            return state;
+    }
+}
