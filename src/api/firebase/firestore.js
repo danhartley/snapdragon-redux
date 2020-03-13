@@ -635,15 +635,24 @@ const addCollection = async (collection, user) => {
 
   const addDefinition = async definition => {
 
+    const querySnapshot = await db.collection("glossary").where("term", "==", definition.term).get();
+
     let docRef;
-  
-    try {
-        docRef = await db.collection('glossary').add(definition);
-    } catch(err) {
-        console.error("Error writing document: ", err);
+
+    if(querySnapshot.empty) {
+
+        try {
+            docRef = await db.collection('glossary').add(definition);
+        } catch(err) {
+            console.error("Error writing document: ", err);
+        }
+      
+        return docRef;        
+
+    } else {
+        throw 'That definition already exisits!';
     }
-  
-    return docRef;
+
   };
   
   const getDefinitionsWhere = async props => {
