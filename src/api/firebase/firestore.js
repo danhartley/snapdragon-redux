@@ -673,7 +673,23 @@ const addCollection = async (collection, user) => {
     });
   };
 
+  const updateDefinition = async definition => {
+
+    let docRef;
+
+    const querySnapshot = await db.collection("glossary").where("term", "==", definition.term).get();
+    
+    querySnapshot.forEach(function(doc) {
+        docRef = doc.ref;
+    });
+
+    console.log(docRef);
+
+    return await docRef.update(definition);
+  };
+
 export const firestore = {
+
     getSpecies,
     getSpeciesNames,
     getTaxaNames,
@@ -705,9 +721,11 @@ export const firestore = {
     updateSpecies,
     updateSpeciesNames,
     updateCollection,
+    updateDefinition,
   
     deleteSpeciesByName,
     deleteSpeciesTraitField,
+
     getTraitDefinitions,
     getQuestionById,
     getDefinitionsWhere,

@@ -1,9 +1,26 @@
 <div class="sub container">
-    <div class="row">
+
+    <div>
+        <label>
+          <input id="chk-box-edit" type="checkbox" />
+          <span>Edit mode</span>
+        </label>
+    </div>
+
+    <br>
+
+    <div class="js-add-term row">
         <div class="input-field col s2">
             <input id="input-term" type="text" placeholder="Enter term" spellcheck="false">            
             <label for="input-term" class="active">Term</label>
         </div>
+    </div>
+    <div class="js-edit-term row hide">
+        <div class="input-field col s2">
+            <input id="input-edit-term" type="text" placeholder="Start typing term" spellcheck="false">            
+            <label for="input-edit-term" class="active">Edit term</label>
+        </div>
+        <div class="autocomplete-options-container hide-empty" id="snapdragon-term-autocomplete"></div>
     </div>
     <div class="row">
         <div class="input-field col s2">
@@ -17,8 +34,7 @@
             <label for="input-taxon" class="active">Taxon</label>
         </div>
         <div class="autocomplete-options-container hide-empty" id="snapdragon-taxon-autocomplete"></div>
-    </div>
-    <div class="row">
+
         <div class="input-field col s2">
             <input id="input-branch" type="text" placeholder="Start typing branch" spellcheck="false">            
             <label for="input-branch" class="active">Branch</label>
@@ -26,9 +42,21 @@
         <div class="autocomplete-options-container hide-empty" id="snapdragon-branch-autocomplete"></div>
     </div>
 
+    <div>
+        <label>
+          <input id="chk-box-technical" type="checkbox" />
+          <span>Technical</span>
+        </label>
+    </div>
 
-    <div class="col s4">
+    <br>
+
+    <div class="js-btn-add">
         <button class="btnAddTerm btn">Add term</button>
+    </div>
+
+    <div class="js-btn-edit hide">
+        <button class="btnEditTerm btn">Update term</button>
     </div>
 
     <div class="margin-top hide feedback js-saved">Term saved</div>
