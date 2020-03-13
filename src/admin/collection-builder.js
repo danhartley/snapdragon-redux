@@ -20,6 +20,7 @@ import { addTaxon } from 'admin/screens/add-taxon';
 import { addId } from 'admin/screens/species/add-id';
 import { editCollection } from 'admin/screens/collection/edit-collection';
 import { createQuestion } from 'admin/screens/questions/create-question';
+import { addTerm } from 'admin/screens/add-term';
 
 const auth = firebase.auth();
 
@@ -107,12 +108,14 @@ const editCollectionTab = document.querySelector('#edit-collection');
 const createQuestionTab = document.querySelector('#create-question');
       createQuestionTab.addEventListener('click', createQuestion);
 
+const addTermTab = document.querySelector('#add-term');
+      addTermTab.addEventListener('click', addTerm);
+
 const setupUI = (user) => {
   if (user) {
     loggedInLinks.forEach(item => item.classList.remove('hide'));
     loggedOutLinks.forEach(item => item.classList.add('hide'));
-//     createQuestionTab.click();
-      editCollectionTab.click();
+      addTermTab.click();
 } else {    
     loggedInLinks.forEach(item => item.classList.add('hide'));
     loggedOutLinks.forEach(item => item.classList.remove('hide'));
