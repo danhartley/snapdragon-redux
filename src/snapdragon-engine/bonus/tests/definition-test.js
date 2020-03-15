@@ -26,7 +26,7 @@ const getDefinitionTest = async item => {
 
     const taxon = matchTaxon(item.taxonomy, iconicTaxa).value;
 
-    let definitions = glossary || await firestore.getDefinitionsByTaxa([ taxon, 'common' ]);
+    let definitions = glossary.filter(definition => R.contains(definition.taxon, [ taxon, 'common' ]));
 
     definitions = utils.shuffleArray(definitions);
 

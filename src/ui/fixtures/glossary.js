@@ -1,14 +1,10 @@
 import { DOM } from 'ui/dom';
-import { utils } from 'utils/utils';
-import { firestore } from 'api/firebase/firestore';
 import { quickFire } from 'ui/quick-fire-modal/quick-fire';
 import { renderTemplate } from 'ui/helpers/templating';
 
 import glossaryTemplate from 'ui/fixtures/glossary-template.html';
 
-export const renderGlossary = async args => {
-
-    const { required, definitions, glossary } = args;
+export const renderGlossary = async glossary => {
 
     const template = document.createElement('template');
           template.innerHTML = glossaryTemplate;
@@ -16,11 +12,7 @@ export const renderGlossary = async args => {
     DOM.modalText.innerHTML = '';
     DOM.modalTextTitle.innerHTML = 'Glossary';
 
-    const apiDefinitions = glossary || await firestore.getDefinitionsByTaxa(required || [ 'common' ]);
-    
-    const glossaryDefinitions = definitions || utils.sortAlphabeticallyBy(apiDefinitions, 'term');
-
-    renderTemplate({ glossary: glossaryDefinitions }, template.content, DOM.modalText);
+    renderTemplate({ glossary }, template.content, DOM.modalText);
 
     const headerBlock = document.querySelector('#basicModal .js-modal-header-block');
     const quickFireLink = headerBlock.querySelector(':nth-child(2)');

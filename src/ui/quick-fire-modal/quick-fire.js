@@ -5,7 +5,6 @@ import { utils } from 'utils/utils';
 import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
-import { firestore } from 'api/firebase/firestore';
 import { iconicTaxa  } from 'api/snapdragon/iconic-taxa';
 import { enums } from 'ui/helpers/enum-helper';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -15,46 +14,43 @@ import templateCreateQuickFire from 'ui/quick-fire-modal/quick-fire-create-templ
 import templateQuestionQuickFire from 'ui/quick-fire-modal/quick-fire-question-template.html';
 import templateSummaryQuickFire from 'ui/quick-fire-modal/quick-fire-summary-template.html';
 
-let allItems = null;
+const headers = (screen, definitions) => {
 
-const headers = screen => {
+    const getGlossary = () => definitions;
 
     const glossaryLink = document.querySelector('.js-modal-text-title');
     const quickFireLink = document.querySelector('.js-quick-fire-review');
     const quickFireFilters = document.querySelector('.js-quick-fire-filters');
 
+    const renderGlossaryLink = e => {
+        renderGlossary(getGlossary());
+        glossaryLink.classList.remove('underline-link');
+    };
+
+    glossaryLink.classList.add('underline-link');
+
+    glossaryLink.removeEventListener('click', renderGlossaryLink);
+
     switch(screen) {
-        case 'REVIEW':
-            quickFireFilters.classList.add('hide-important');
-            glossaryLink.classList.add('underline-link');
-        break;
-        
+
         case 'CREATE':
             quickFireLink.classList.remove('hide-important');
             quickFireLink.classList.remove('underline-link');
             quickFireFilters.classList.add('hide-important');
-            glossaryLink.addEventListener('click', e => {
-                renderGlossary({ definitions: quickFire.items });
-                glossaryLink.classList.remove('underline-link');
-            });
+            glossaryLink.addEventListener('click', renderGlossaryLink);
             subscription.remove(subscription.getByName('question'));
         break;
 
         case 'QUESTION': 
             quickFireLink.classList.add('hide-important');
             quickFireFilters.classList.remove('hide-important');
-            glossaryLink.addEventListener('click', e => {
-                renderGlossary({ definitions: quickFire.items });
-                glossaryLink.classList.remove('underline-link');
-            });
+            glossaryLink.addEventListener('click', renderGlossaryLink);
         break;
     }
 };
 
 const review = async () => {
-
-    quickFire.headers('REVIEW');
-
+    
     const args = await init();
 
     create(args);
@@ -63,8 +59,6 @@ const review = async () => {
 
 const create = async args => {
 
-    headers('CREATE');
-
     const template = document.createElement('template');
           template.innerHTML = templateCreateQuickFire;
 
@@ -72,6 +66,8 @@ const create = async args => {
           parent.innerHTML = '';
 
     args = args || await init();
+
+    headers('CREATE', args.items);
 
     let { items, type, filter } = args;
 
@@ -185,7 +181,7 @@ const question = (state = quickFire) => {
 
     if(!quickFire) return;
 
-    headers('QUESTION');
+    headers('QUESTION', quickFire.items);
 
     const parent = document.querySelector('.snapdragon-container');          
           parent.innerHTML = '';
@@ -333,14 +329,12 @@ const getItems = async (taxa, isSelected = false) => {
     
     const glossary = store.getState().glossary;
 
-    allItems = allItems || !!glossary
-                ? glossary.filter(definition => R.contains(definition.taxon, taxa))
-                : await firestore.getDefinitionsByTaxa(taxa);
+    const items = glossary.filter(definition => R.contains(definition.taxon, taxa));
 
     let selectedItems = [];
     isSelected
-        ? selectedItems = allItems
-        : selectedItems= allItems.filter(item => item.technical !== 'true');
+        ? selectedItems = items
+        : selectedItems= items.filter(item => item.technical !== 'true');
 
     return selectedItems.filter(item => R.contains(item.taxon, taxa));
 };

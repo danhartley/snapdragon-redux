@@ -1,4 +1,5 @@
 import autocomplete from 'autocompleter';
+
 import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
 
@@ -75,21 +76,29 @@ export const addTerm = () => {
 
         const inputDefinition = document.querySelector('#input-definition');
 
-        const actionHandler = (e, inputValue, message, action) => {
+        const actionHandler = (e, input, message, action) => {
 
             const definition = {
-                term: inputValue,
+                term: input.value,
                 definition: inputDefinition.value,
                 taxon: inputTaxon.value,
                 branch: inputBranch.value,
                 technical: chkBoxTechnical.checked
             };
 
+            const wiki = document.querySelector('#input-wiki');
+
+            if(wiki.value.length > 0) definition.wiki = wiki.value;
+
             const savedText = document.querySelector('.js-saved');
 
             firestore[action](definition).then(response => {
                 savedText.innerHTML = message;
                 savedText.classList.remove('hide');
+                input.value = '';                
+                input.focus();
+                inputDefinition.value = '';
+                wiki.value = '';
             }).catch(e => {
                 savedText.innerHTML = `Oops, something went wrong, nameley: ${e}`;
                 savedText.classList.remove('hide');
@@ -102,11 +111,11 @@ export const addTerm = () => {
         
         const btnAddTerm = document.querySelector('.btnAddTerm');
               btnAddTerm.addEventListener('click', e => {
-                actionHandler(e, inputTerm.value, 'new term successfully added!', 'addDefinition');
+                actionHandler(e, inputTerm, 'The new term was added successfully!', 'addDefinition');
               });
         const btnEditTerm = document.querySelector('.js-btn-edit');
               btnEditTerm.addEventListener('click', e => {
-                actionHandler(e, inputEditTerm.value, 'existing term successfully updated!', 'updateDefinition');
+                actionHandler(e, inputEditTerm, 'This term was updated successfully!', 'updateDefinition');
               });
 
         const addTerm = document.querySelector('.js-add-term');

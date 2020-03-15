@@ -668,11 +668,53 @@ const addCollection = async (collection, user) => {
     const docs = [];
   
     querySnapshot.forEach(doc => {
-      docs.push(doc.data());
+      docs.push({ ...doc.data(), id: doc.id });
     });
   
     return docs;
   };
+
+  const getDefinitionById = async id => {
+
+    return db.collection('glossary').doc(id).get().then(data => {
+        return data.data().term; 
+    });
+        // data.data().terms.forEach(term => {
+        //         return term;
+        //     });
+        // });
+  };
+
+  const getBatchDefinitionsById = async ids => {
+
+    const terms = [];
+
+    try {
+        const batch = db.batch();
+
+        const readyBatch = async () => {
+            
+            return Promise.all(ids.map(async id => {
+
+                const term = await getDefinitionById(id);
+
+                terms.push(term);
+
+            }));
+        };
+
+        await readyBatch();
+
+        console.log('is batch ready');
+
+        await batch.commit();
+
+        return terms;
+
+    } catch (e) {
+        return e.message;
+    }
+  }
 
   const getDefinitionsByTaxa = taxa => {
       return getDefinitionsWhere({
@@ -738,7 +780,9 @@ export const firestore = {
     getTraitDefinitions,
     getQuestionById,
     getDefinitionsWhere,
-    getDefinitionsByTaxa
+    getDefinitionsByTaxa,
+    getDefinitionById,
+    getBatchDefinitionsById
 };
 
 const getRandomId = () => {

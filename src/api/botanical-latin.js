@@ -701,6 +701,10 @@ export const epithets = [
         "en" : ["little owl"]
     },
     {
+        "latin" : ["epidermis"],
+        "en" : ["over-skin"]
+    },
+    {
         "latin" : ["septem"],
         "en" : ["seven"],
         species: [ 'Coccinella septempunctata' ]      

@@ -448,7 +448,7 @@
   }
 
   .lesson-name {
-    width: calc(100% - 1rem);
+    /* width: calc(100% - 1rem); */
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;

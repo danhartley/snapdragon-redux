@@ -19,6 +19,7 @@ import { addPhotos } from 'admin/screens/species/add-photos';
 import { addTaxon } from 'admin/screens/add-taxon';
 import { addId } from 'admin/screens/species/add-id';
 import { editCollection } from 'admin/screens/collection/edit-collection';
+import { editCollectionTerms } from 'admin/screens/collection/edit-collection-terms';
 import { createQuestion } from 'admin/screens/questions/create-question';
 import { addTerm } from 'admin/screens/add-term';
 
@@ -105,6 +106,9 @@ const addIdTab = document.querySelector('#add-id');
 const editCollectionTab = document.querySelector('#edit-collection');
       editCollectionTab.addEventListener('click', editCollection);
 
+const editCollectionTermsTab = document.querySelector('#edit-collection-terms');
+      editCollectionTermsTab.addEventListener('click', editCollectionTerms);
+
 const createQuestionTab = document.querySelector('#create-question');
       createQuestionTab.addEventListener('click', createQuestion);
 
@@ -115,7 +119,7 @@ const setupUI = (user) => {
   if (user) {
     loggedInLinks.forEach(item => item.classList.remove('hide'));
     loggedOutLinks.forEach(item => item.classList.add('hide'));
-      addTermTab.click();
+      editCollectionTab.click();
 } else {    
     loggedInLinks.forEach(item => item.classList.add('hide'));
     loggedOutLinks.forEach(item => item.classList.remove('hide'));
@@ -131,9 +135,9 @@ const loginForm = document.querySelector('#login-form');
             const password = loginForm['login-password'].value;
 
             auth.signInWithEmailAndPassword(email, password).then((cred) => {
-            const modal = document.querySelector('#modal-login');
-            M.Modal.getInstance(modal).close();
-            loginForm.reset();
+                  const modal = document.querySelector('#modal-login');
+                  M.Modal.getInstance(modal).close();
+                  loginForm.reset();
             });
       });
 
@@ -149,3 +153,6 @@ listenForActiveSpecies(species => {
   activeSpecies.querySelectorAll('span:nth-child(2)').innerHTML = species.name;
   window.snapdragon.species = species;
 });
+
+var elems = document.querySelectorAll('.dropdown-trigger');
+if(elems) M.Dropdown.init(elems, {});

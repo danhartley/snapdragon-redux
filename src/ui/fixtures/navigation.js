@@ -77,7 +77,11 @@ export const renderNavigation = collection => {
                         break;
                     case enums.navigation.GLOSSARY:   
                         toggleIconOnOff(clickedIcon);
-                        renderGlossary({ required: collection.glossary });
+                        const { glossary } = store.getState();
+                        const definitions = !!collection.glossary
+                            ? glossary.filter(definition => R.contains(definition.taxon, collection.glossary))
+                            : glossary;
+                        renderGlossary(definitions);
                         break;
                     case enums.navigation.EMAIL:
                         toggleIconOnOff(clickedIcon);

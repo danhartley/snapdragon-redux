@@ -12,6 +12,7 @@ import 'ui/css/groups/species-list.css';
 import 'ui/css/snapdragon-media.css';
 import 'ui/css/common.css';
 
+import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { nextLesson } from 'ui/setup/next-lesson';
 import { nextLayout } from 'ui/setup/next-layout';
@@ -85,7 +86,8 @@ const onLoadHandler = () => {
             updateConfig();
         }
 
-        const glossary = await firestore.getDefinitionsByTaxa(['common', 'plantae', 'aves', 'fungi', 'insecta']);
+        let glossary = await firestore.getDefinitionsByTaxa(['common', 'plantae', 'aves', 'fungi', 'insecta']);
+            glossary = utils.sortAlphabeticallyBy(glossary, 'term');
         actions.boundCreateGlossary(glossary);
 
     }
