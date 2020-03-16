@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -7,7 +9,7 @@ import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
 import { renderLesson } from 'ui/screens/lists/lesson';
 import { renderCustomLesson } from 'ui/screens/lists/lesson-custom';
 import { renderScoreSummary } from 'ui/screens/progress/score-summary';
-
+import { renderGlossary } from 'ui/fixtures/glossary';
 import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
 
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
@@ -47,19 +49,36 @@ export const renderLessons = () => {
             chevrons.forEach(chevron => lessonListEventHandler.onTitleClickHandler(chevron, lessons, config, false));
 
       const reviews = document.querySelectorAll('.js-review-link');
-            reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink.parentElement.parentElement, lessons));
+            reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink, lessons));
+
+      setTimeout(() => {      
+
+            let termsReviewLinks = document.querySelectorAll('.js-terms-review-link > span');
+                termsReviewLinks.forEach(termsReviewLink => {
+                  termsReviewLink.addEventListener('click', e => {                         
+                        const lesson = lessons.find(lesson => lesson.id === parseInt(termsReviewLink.dataset.lessonId));
+                        if(lesson.terms) {
+                              const { glossary } = store.getState();
+                              const definitions = glossary.filter(definition => R.contains(definition.id, lesson.terms));
+                              renderGlossary(definitions);
+                        }
+                });
+            });
+
+      },1000);
 
       renderCustomLesson(lessons, savedLessons, videoPlayer, score, config);
       
       const summaries = Array.from(document.querySelectorAll('.js-review-summary'));
             summaries.forEach(summary => summary.addEventListener('click', e => {
+                  
                   e.stopPropagation();
 
                   const rows = document.querySelectorAll('.js-lesson-list-carousel-item');
-                        rows.forEach(row => row.classList.remove('review-summary'));
+                        rows.forEach(row => row.classList.remove('highlighted-for-review-row'));
 
                   const row = document.querySelector(`.js-lesson-list-carousel-item[data-lesson-id="${summary.dataset.lessonId}"]`);
-                        if(row) row.classList.add('review-summary');                        
+                        if(row) row.classList.add('highlighted-for-review-row');                        
 
                   renderScoreSummary(summary.dataset.lessonId);
             }));

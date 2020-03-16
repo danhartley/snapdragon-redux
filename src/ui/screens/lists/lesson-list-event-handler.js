@@ -24,6 +24,8 @@ const onLoadLessonViewState = (collection, videoPlayer, score) => {
         ? `${collection.species.length} x 2 Minute Reviews`
         : `${collection.items.length} x 2 Minute Reviews`;
 
+  collection.hasTermsClass = !!collection.terms ? '' : 'hide-important';
+
   return collection;  
 };
 
@@ -155,7 +157,7 @@ const onReviewClickHandler = (reviewLink, lessons) => {
 
     e.stopPropagation();
 
-    const loadingMessage = reviewLink.parentElement.querySelector('.js-loading-review-message');              
+    const loadingMessage = reviewLink.nextElementSibling
           loadingMessage.classList.remove('hide');
 
           setTimeout(() => {

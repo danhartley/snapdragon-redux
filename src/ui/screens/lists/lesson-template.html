@@ -1,4 +1,3 @@
-<div></div>
 <div data-lesson-id="{{ lesson.id }}" class="lesson-list-carousel-item padding-left margin-bottom js-lesson-list-carousel-item">
     <div data-lesson-id="{{ lesson.id }}" class="lesson-list-item js-lesson-list-item" data-has-video="{{ lesson.hasVideo }}">
         <div>
@@ -19,9 +18,15 @@
                     <span class="portrait"><i class="fas fa-sync slow-spin"></i></span>
                 </span>
                 <span data-lesson-id="{{ lesson.id }}" class="js-review"></span>
+
+                <span class="lesson-terms-review js-terms-review-link {{ lesson.hasTermsClass }}" data-toggle="modal" data-target="#basicModal">
+                    <span data-lesson-id="{{ lesson.id }}" class="underline-link" data-toggle="modal" data-target="#basicModal">Terms review</span>
+                <span>
+
+
             </div>
         </div>
-    </div>     
+    </div>
     <div class="lesson-list-action-icons js-lesson-list-action-icons">
         <div>
             <div data-lesson-id="{{ lesson.id }}" data-lesson-is-youtube-icon="true" class="margin-right js-lesson-list-youtube">
