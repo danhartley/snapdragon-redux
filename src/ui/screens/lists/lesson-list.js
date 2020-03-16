@@ -1,15 +1,16 @@
 import * as R from 'ramda';
 
+import { enums } from 'ui/helpers/enum-helper';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
+import { quickFire } from 'ui/quick-fire-modal/quick-fire';
 
 import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
 import { renderLesson } from 'ui/screens/lists/lesson';
 import { renderCustomLesson } from 'ui/screens/lists/lesson-custom';
 import { renderScoreSummary } from 'ui/screens/progress/score-summary';
-import { renderGlossary } from 'ui/fixtures/glossary';
 import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
 
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
@@ -60,7 +61,15 @@ export const renderLessons = () => {
                         if(lesson.terms) {
                               const { glossary } = store.getState();
                               const definitions = glossary.filter(definition => R.contains(definition.id, lesson.terms));
-                              renderGlossary(definitions);
+                              const taxa = [ ...new Set(definitions.map(definition => definition.taxon))];
+                              const filter = {
+                                    iconicTaxa: taxa,
+                                    option: {
+                                          key: "0",
+                                          value: "multiple choice"
+                                    }
+                              };
+                              quickFire.question(quickFire.initQuickFire(definitions, filter, enums.quickFireType.DEFINITION));
                         }
                 });
             });

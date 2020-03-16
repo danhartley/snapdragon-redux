@@ -2255,6 +2255,7 @@ img[data-has-image="false"] {
 
 .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
   font-size: .6rem;
+  padding: .25rem;
   background-color: var(--snap-btn-green);
   color: var(--snap-text-light);
 }

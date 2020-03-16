@@ -42,16 +42,18 @@ const headers = (screen, definitions) => {
         break;
 
         case 'QUESTION': 
-            quickFireLink.classList.add('hide-important');
-            quickFireFilters.classList.remove('hide-important');
+            if(quickFireLink) quickFireLink.classList.add('hide-important');
+            if(quickFireFilters) quickFireFilters.classList.remove('hide-important');
             glossaryLink.addEventListener('click', renderGlossaryLink);
         break;
     }
 };
 
-const review = async () => {
+const review = async filteredGlossary => {
     
     const args = await init();
+
+    args.filteredGlossary = filteredGlossary;
 
     create(args);
 
@@ -62,7 +64,8 @@ const create = async args => {
     const template = document.createElement('template');
           template.innerHTML = templateCreateQuickFire;
 
-    const parent = document.querySelector('.snapdragon-container');
+    const modal = document.querySelector('#glossaryModal');
+    const parent = modal.querySelector('.js-modal-text');
           parent.innerHTML = '';
 
     args = args || await init();
@@ -71,33 +74,7 @@ const create = async args => {
 
     let { items, type, filter } = args;
 
-    const quickFire = {
-        index: 0,
-        isComplete: false,
-        items,
-        count: items.length,
-        filter,
-        type,
-        score: {
-            total: 0,
-            correct: 0,
-            incorrect: 0,
-            isCorrect: null,
-            isIncorrect: null,
-            rounds: [
-            ]
-        },
-    };
-
-    quickFire.filter.taxa = filter.iconicTaxa.map(taxon => {
-        const iconicTaxon = {
-            name: taxon,
-            count: items.filter(item => item.taxon === taxon).length
-        }
-        return iconicTaxon;
-    });
-
-    quickFire.filter.taxa = quickFire.filter.taxa.filter(taxon => taxon.count > 0);
+    const quickFire = initQuickFire(items, filter, type);
 
     const options = [
         { key: 0, value: 'multiple choice' },
@@ -183,7 +160,8 @@ const question = (state = quickFire) => {
 
     headers('QUESTION', quickFire.items);
 
-    const parent = document.querySelector('.snapdragon-container');          
+    const modal = document.querySelector('#glossaryModal');
+    const parent = modal.querySelector('.js-modal-text'); 
           parent.innerHTML = '';
 
     const template = document.createElement('template');
@@ -280,13 +258,6 @@ const question = (state = quickFire) => {
     }
 };
 
-export const quickFire = {
-    review,
-    create,
-    question,
-    headers
-};
-
 const handleKeyAction = (event, quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn) => {    
     if (quickFire.filter.option.key === '1') {
         const isCorrect = quickFireInput.value.toLowerCase() === quickFire.question.term.toLowerCase();
@@ -368,4 +339,45 @@ const updateBranchCounts = items => {
           branchOptions.forEach(branchBadge => {
             branchBadge.innerHTML = items.filter(item => item.branch === branchBadge.dataset.name).length;
           });
+};
+
+const initQuickFire = (items, filter, type) => {
+    
+    const quickFire = {
+        index: 0,
+        isComplete: false,
+        items,
+        count: items.length,
+        filter,
+        type,
+        score: {
+            total: 0,
+            correct: 0,
+            incorrect: 0,
+            isCorrect: null,
+            isIncorrect: null,
+            rounds: []
+        },
+        poolSize: items.length
+    };
+
+    quickFire.filter.taxa = filter.iconicTaxa.map(taxon => {
+        const iconicTaxon = {
+            name: taxon,
+            count: items.filter(item => item.taxon === taxon).length
+        }
+        return iconicTaxon;
+    });
+
+    quickFire.filter.taxa = quickFire.filter.taxa.filter(taxon => taxon.count > 0);
+
+    return quickFire;
+};
+
+export const quickFire = {
+    review,
+    create,
+    question,
+    headers,
+    initQuickFire
 };
