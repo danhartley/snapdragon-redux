@@ -27,6 +27,7 @@ import { traitValuesHandler } from 'api/traits/trait-types';
 import { initialiseConfig } from 'ui/helpers/location-helper';
 import { firestore } from 'api/firebase/firestore';
 import { renderLoggedIn } from 'ui/fixtures/login';
+import { quickFireQuestion } from "ui/quick-fire-modal/quick-fire";
 
 const onLoadHandler = () => {
 
@@ -76,6 +77,7 @@ const onLoadHandler = () => {
         subscription.add(nextLayout, 'counter', 'flow');
         subscription.add(renderScore, 'score', 'flow');
         subscription.add(traitValuesHandler, 'config', 'localisation');
+        subscription.add(quickFireQuestion, 'quickFire', 'modal');
 
         const updateConfig = async () => {
             const initialisedConfig = await initialiseConfig(config);
@@ -88,7 +90,7 @@ const onLoadHandler = () => {
 
         let glossary = await firestore.getDefinitionsByTaxa(['common', 'plantae', 'aves', 'fungi', 'insecta']);
             glossary = utils.sortAlphabeticallyBy(glossary, 'term');
-        actions.boundCreateGlossary(glossary);
+        actions.boundCreateGlossary(glossary);        
 
     }
     catch(e) {

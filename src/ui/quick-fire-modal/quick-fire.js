@@ -38,7 +38,7 @@ const headers = (screen, definitions) => {
             quickFireLink.classList.remove('underline-link');
             quickFireFilters.classList.add('hide-important');
             glossaryLink.addEventListener('click', renderGlossaryLink);
-            subscription.remove(subscription.getByName('question'));
+            // subscription.remove(subscription.getByName('question'));
         break;
 
         case 'QUESTION': 
@@ -116,7 +116,7 @@ const create = async args => {
 
     const createQuickFireBtn = document.querySelector('.js-create-quick-fire');
           createQuickFireBtn.addEventListener('click', e => {
-            subscription.add(question, 'quickFire', 'modal');
+            // subscription.add(question, 'quickFire', 'modal');            
             question(quickFire);
           });
 
@@ -152,9 +152,7 @@ const create = async args => {
           });
 };
 
-const question = (state = quickFire) => {
-
-    const quickFire = R.clone(state);
+const question = quickFire => {
 
     if(!quickFire) return;
 
@@ -237,7 +235,8 @@ const question = (state = quickFire) => {
               continueQuickFireBtn.addEventListener('click', e => {
                     quickFire.items = quickFire.items.filter(item => item.term !== quickFire.question.term);
                     clearTimeout(timer);
-                    actions.boundCreateQuickFire(quickFire); 
+                    actions.boundCreateQuickFire(quickFire);
+                    subscription.add(quickFireQuestion, 'quickFire', 'modal');
               });
 
         quickFireInput.addEventListener('keydown', event => {
@@ -380,4 +379,8 @@ export const quickFire = {
     question,
     headers,
     initQuickFire
+};
+
+export const quickFireQuestion = state => {
+    quickFire.question(state);
 };

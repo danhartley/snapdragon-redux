@@ -36,7 +36,7 @@ export const editCollectionTerms = () => {
 
         let glossary = await firestore.getDefinitionsByTaxa(['common', 'plantae', 'aves', 'fungi', 'insecta']);
 
-        let definitions = glossary.map(definition => { return { name: definition.term, label: definition.term} });
+        let definitions = glossary.map(definition => { return { name: definition.term, label: definition.term } });
 
         autocomplete({
             input: inputTerm,
@@ -73,38 +73,43 @@ export const editCollectionTerms = () => {
                 }
             }
         });
-
+        
         const addTermToCollection = () => {
 
-            const termId = glossary.find(definition => definition.term === inputTerm.value).id;
+            const termToDelete = glossary.find(definition => definition.term === inputTerm.value).id;
                   
             if(collection) {
                 collection.terms = collection.terms || [];
-                collection.terms.push(termId);
+                collection.terms.push(termToDelete);
             }
 
             const savedText = document.querySelector('.js-saved');
 
-            firestore.updateCollection(collection).then(response => {
-                savedText.innerHTML = 'The term was added to collection successfully!';
-                savedText.classList.remove('hide');
-            }).catch(e => {
-                savedText.innerHTML = `Oops, something went wrong, nameley: ${e}`;
-                savedText.classList.remove('hide');
-            });
+            updateCollection(collection, savedText, inputTerm);
 
             setTimeout(() => {
                 savedText.classList.add('hide');
-            }, 3000);
+            }, 2500);
 
-            getCollectionTerms(collection);
+            const definition = glossary.find(definition => definition.term === inputTerm.value);
+
+            const termsList = document.querySelector('.js-terms-list');
+
+            termsList.innerHTML += `<li>
+                <div class="centred-block">
+                    <span>${definition.term}</span>
+                    <i id="${definition.id}" class="margin-left fas fa-trash"></i>
+                </div>
+            </li>`;
+
+            handleDeleteTerm(collection);
         };
 
         const getCollectionTerms = async collection => {
 
-            const termsList = document.querySelector('.js-collection-terms');
+            const collectinTerms = document.querySelector('.js-collection-terms');
 
-            termsList.innerHTML = '';
+            collectinTerms.innerHTML = '';
 
             if(collection) {
 
@@ -113,7 +118,10 @@ export const editCollectionTerms = () => {
                     const definitions = await firestore.getBatchDefinitionsById(collection.terms);
 
                     template.innerHTML = termsTemplate;
+
                     renderTemplate({ definitions }, template.content, document.querySelector('.js-collection-terms'));
+
+                    handleDeleteTerm(collection);
                 }
 
             }
@@ -123,3 +131,28 @@ export const editCollectionTerms = () => {
     init();
 
 };
+
+const updateCollection = (collection, savedText, inputTerm) => {
+
+    firestore.updateCollection(collection).then(response => {
+        savedText.innerHTML = 'The term was added to collection successfully!';
+        savedText.classList.remove('hide');
+        inputTerm.value = '';
+        inputTerm.focus();
+    }).catch(e => {
+        savedText.innerHTML = `Oops, something went wrong, nameley: ${e}`;
+        savedText.classList.remove('hide');
+    });
+}
+function handleDeleteTerm(collection) {
+    const termDeleteIcons = document.querySelectorAll('.js-terms-list li i');
+    termDeleteIcons.forEach(icon => {
+        icon.addEventListener('click', e => {
+            const termToDelete = e.target;
+            collection.terms = collection.terms.filter(term => term !== termToDelete.id);
+            firestore.updateCollection(collection);
+            termToDelete.parentElement.parentElement.style.display = 'none';
+        });
+    });
+}
+

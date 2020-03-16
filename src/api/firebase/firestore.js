@@ -675,14 +675,9 @@ const addCollection = async (collection, user) => {
   };
 
   const getDefinitionById = async id => {
-
     return db.collection('glossary').doc(id).get().then(data => {
-        return data.data().term; 
+        return { ...data.data(), id: data.id };
     });
-        // data.data().terms.forEach(term => {
-        //         return term;
-        //     });
-        // });
   };
 
   const getBatchDefinitionsById = async ids => {
