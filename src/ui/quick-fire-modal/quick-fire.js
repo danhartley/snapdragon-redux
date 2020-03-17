@@ -37,8 +37,7 @@ const headers = (screen, definitions) => {
             quickFireLink.classList.remove('hide-important');
             quickFireLink.classList.remove('underline-link');
             quickFireFilters.classList.add('hide-important');
-            glossaryLink.addEventListener('click', renderGlossaryLink);
-            // subscription.remove(subscription.getByName('question'));
+            glossaryLink.addEventListener('click', renderGlossaryLink);            
         break;
 
         case 'QUESTION': 
@@ -115,8 +114,7 @@ const create = async args => {
           });
 
     const createQuickFireBtn = document.querySelector('.js-create-quick-fire');
-          createQuickFireBtn.addEventListener('click', e => {
-            // subscription.add(question, 'quickFire', 'modal');            
+          createQuickFireBtn.addEventListener('click', e => {      
             question(quickFire);
           });
 
@@ -164,15 +162,22 @@ const question = quickFire => {
 
     const template = document.createElement('template');
 
-    let timer;
+    let timer;    
 
-    if(quickFire.items.length > 0) {        
+    if(quickFire.items.length > 0) {
 
         template.innerHTML = templateQuestionQuickFire;
+
+        quickFire.spareItems = quickFire.spareItems || R.take(4, utils.shuffleArray(quickFire.items));
         
         const items = R.take(quickFire.poolSize, utils.shuffleArray(quickFire.items));
 
         quickFire.question = items[0];
+
+        if(quickFire.items.length < 4) {
+            const itemsToAdd = R.take((4-quickFire.items.length), quickFire.spareItems.filter(sp => !R.contains(sp.term, items.map(i => i.term))));
+                  itemsToAdd.forEach(item => items.push(item));
+        }
 
         let answers = R.take(3, items.splice(1));
             answers.push(quickFire.question);
