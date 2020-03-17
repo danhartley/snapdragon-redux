@@ -1,6 +1,5 @@
 import * as R from 'ramda';
 
-// import { subscription } from 'redux/subscriptions';
 import { enums } from 'ui/helpers/enum-helper';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
@@ -70,7 +69,6 @@ export const renderLessons = () => {
                                           value: "multiple choice"
                                     }
                               };
-                              // subscription.add(quickFire.question, 'quickFire', 'quickFire');
                               quickFire.question(quickFire.initQuickFire(definitions, filter, enums.quickFireType.DEFINITION));
                         }
                 });

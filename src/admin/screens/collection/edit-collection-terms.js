@@ -77,30 +77,34 @@ export const editCollectionTerms = () => {
         const addTermToCollection = () => {
 
             const termToDelete = glossary.find(definition => definition.term === inputTerm.value).id;
+
+            const savedText = document.querySelector('.js-saved');            
                   
             if(collection) {
                 collection.terms = collection.terms || [];
                 collection.terms.push(termToDelete);
+                updateCollection(collection, savedText, inputTerm);
+            } else {
+                savedText.innerHTML = 'You must first select a collection!';
+                savedText.classList.remove('hide');
             }
-
-            const savedText = document.querySelector('.js-saved');
-
-            updateCollection(collection, savedText, inputTerm);
-
+            
             setTimeout(() => {
                 savedText.classList.add('hide');
             }, 2500);
 
             const definition = glossary.find(definition => definition.term === inputTerm.value);
-
+            
             const termsList = document.querySelector('.js-terms-list');
 
-            termsList.innerHTML += `<li>
-                <div class="centred-block">
-                    <span>${definition.term}</span>
-                    <i id="${definition.id}" class="margin-left fas fa-trash"></i>
-                </div>
-            </li>`;
+            if(termsList) {
+                termsList.innerHTML += `<li>
+                    <div class="centred-block">
+                        <span>${definition.term}</span>
+                        <i id="${definition.id}" class="margin-left fas fa-trash"></i>
+                    </div>
+                </li>`;
+            }
 
             handleDeleteTerm(collection);
         };
@@ -135,7 +139,7 @@ export const editCollectionTerms = () => {
 const updateCollection = (collection, savedText, inputTerm) => {
 
     firestore.updateCollection(collection).then(response => {
-        savedText.innerHTML = 'The term was added to collection successfully!';
+        savedText.innerHTML = message || 'The term was added to collection successfully!';
         savedText.classList.remove('hide');
         inputTerm.value = '';
         inputTerm.focus();
@@ -144,7 +148,8 @@ const updateCollection = (collection, savedText, inputTerm) => {
         savedText.classList.remove('hide');
     });
 }
-function handleDeleteTerm(collection) {
+
+const handleDeleteTerm = collection => {
     const termDeleteIcons = document.querySelectorAll('.js-terms-list li i');
     termDeleteIcons.forEach(icon => {
         icon.addEventListener('click', e => {
@@ -154,5 +159,5 @@ function handleDeleteTerm(collection) {
             termToDelete.parentElement.parentElement.style.display = 'none';
         });
     });
-}
+};
 

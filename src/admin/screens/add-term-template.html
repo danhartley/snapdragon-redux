@@ -1,10 +1,25 @@
 <div class="sub container">
 
-    <div>
-        <label>
-          <input id="chk-box-edit" type="checkbox" />
-          <span>Edit mode</span>
-        </label>
+    <div class="row">
+        <div class="input-field col s4">
+            <label>
+                <input id="chk-box-edit" type="checkbox" />
+                <span>Edit mode</span>
+            </label>
+        </div>    
+        <div class="input-field col s8" style="flex-grow:2;">
+
+            <div>
+                <label>
+                    <input id="chk-box-add-to-collection" type="checkbox" />
+                    <span>Add to this collection:</span>
+                </label>
+    
+                <input id="input-collection" class="autocomplete" type="text" placeholder="Start typing a collection name" autofocus spellcheck="false">
+                <label for="input-collection" class="active">Snapdragon collection finder</label>  
+            </div>
+
+        </div>
     </div>
 
     <br>

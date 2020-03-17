@@ -2,6 +2,7 @@ import autocomplete from 'autocompleter';
 
 import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
+import { collectionPicker } from 'admin/screens/collection/collection-picker';
 
 import addTermTemplate from 'admin/screens/add-term-template.html';
 
@@ -55,6 +56,7 @@ export const addTerm = () => {
         ];
 
         const chkBoxTechnical = document.querySelector('#chk-box-technical');
+        const chkBoxAddToCollection = document.querySelector('#chk-box-add-to-collection');
 
         autocomplete({
             input: inputBranch,
@@ -76,6 +78,8 @@ export const addTerm = () => {
 
         const inputDefinition = document.querySelector('#input-definition');
 
+        const savedText = document.querySelector('.js-saved');
+
         const actionHandler = (e, input, message, action) => {
 
             const definition = {
@@ -88,17 +92,16 @@ export const addTerm = () => {
 
             const wiki = document.querySelector('#input-wiki');
 
-            if(wiki.value.length > 0) definition.wiki = wiki.value;
+            if(wiki.value.length > 0) definition.wiki = wiki.value;            
 
-            const savedText = document.querySelector('.js-saved');
-
-            firestore[action](definition).then(response => {
+            firestore[action](definition).then(docRef => {
                 savedText.innerHTML = message;
                 savedText.classList.remove('hide');
                 input.value = '';                
                 input.focus();
                 inputDefinition.value = '';
                 wiki.value = '';
+                addToCollection(docRef);
             }).catch(e => {
                 savedText.innerHTML = `Oops, something went wrong, nameley: ${e}`;
                 savedText.classList.remove('hide');
@@ -166,6 +169,25 @@ export const addTerm = () => {
                   }
               });
 
+        inputTerm.addEventListener('keydown', async event => {
+            if(event.keyCode == 9) {
+                const definitions = await firestore.getDefinitionsWhere({
+                    key: 'term',
+                    operator: '==',
+                    value: inputEditTerm.value
+                });
+                const definition = definitions[0];
+                if(!definition) {
+                    inputTerm.value = '';
+                    savedText.innerHTML = 'That term has already been defined! Try another.';
+                    savedText.classList.remove('hide');
+                    setTimeout(() => {
+                        savedText.classList.add('hide');
+                    }, 3000);
+                }
+            }
+        });
+
         inputEditTerm.addEventListener('keypress', async event => {
             if(event.keyCode == 13) {
                 const definitions = await firestore.getDefinitionsWhere({
@@ -180,6 +202,23 @@ export const addTerm = () => {
                 inputTaxon.value = definition.taxon;
                 chkBoxTechnical.checked = definition.technical;
             }
+        });
+
+        const addToCollection = docRef => {
+            if(collection) {
+                collection.terms.push(docRef.id);
+                firestore.updateCollection(collection).then(response => {
+                    console.log(response);
+                });
+            }
+        };
+
+        let collection;
+
+        const inputCollection = document.querySelector('#input-collection');
+        collectionPicker(inputCollection, async selectedCollection => {
+            collection = selectedCollection;
+            chkBoxAddToCollection.checked = true;
         });
     };
 

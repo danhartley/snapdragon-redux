@@ -650,7 +650,7 @@ const addCollection = async (collection, user) => {
         return docRef;        
 
     } else {
-        throw 'That definition already exisits!';
+        throw 'That definition already exists!';
     }
 
   };
