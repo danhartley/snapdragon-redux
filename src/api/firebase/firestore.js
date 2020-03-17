@@ -635,15 +635,24 @@ const addCollection = async (collection, user) => {
 
   const addDefinition = async definition => {
 
+    const querySnapshot = await db.collection("glossary").where("term", "==", definition.term).get();
+
     let docRef;
-  
-    try {
-        docRef = await db.collection('glossary').add(definition);
-    } catch(err) {
-        console.error("Error writing document: ", err);
+
+    if(querySnapshot.empty) {
+
+        try {
+            docRef = await db.collection('glossary').add(definition);
+        } catch(err) {
+            console.error("Error writing document: ", err);
+        }
+      
+        return docRef;        
+
+    } else {
+        throw 'That definition already exists!';
     }
-  
-    return docRef;
+
   };
   
   const getDefinitionsWhere = async props => {
@@ -659,11 +668,48 @@ const addCollection = async (collection, user) => {
     const docs = [];
   
     querySnapshot.forEach(doc => {
-      docs.push(doc.data());
+      docs.push({ ...doc.data(), id: doc.id });
     });
   
     return docs;
   };
+
+  const getDefinitionById = async id => {
+    return db.collection('glossary').doc(id).get().then(data => {
+        return { ...data.data(), id: data.id };
+    });
+  };
+
+  const getBatchDefinitionsById = async ids => {
+
+    const terms = [];
+
+    try {
+        const batch = db.batch();
+
+        const readyBatch = async () => {
+            
+            return Promise.all(ids.map(async id => {
+
+                const term = await getDefinitionById(id);
+
+                terms.push(term);
+
+            }));
+        };
+
+        await readyBatch();
+
+        console.log('is batch ready');
+
+        await batch.commit();
+
+        return terms;
+
+    } catch (e) {
+        return e.message;
+    }
+  }
 
   const getDefinitionsByTaxa = taxa => {
       return getDefinitionsWhere({
@@ -673,7 +719,23 @@ const addCollection = async (collection, user) => {
     });
   };
 
+  const updateDefinition = async definition => {
+
+    let docRef;
+
+    const querySnapshot = await db.collection("glossary").where("term", "==", definition.term).get();
+    
+    querySnapshot.forEach(function(doc) {
+        docRef = doc.ref;
+    });
+
+    console.log(docRef);
+
+    return await docRef.update(definition);
+  };
+
 export const firestore = {
+
     getSpecies,
     getSpeciesNames,
     getTaxaNames,
@@ -705,13 +767,17 @@ export const firestore = {
     updateSpecies,
     updateSpeciesNames,
     updateCollection,
+    updateDefinition,
   
     deleteSpeciesByName,
     deleteSpeciesTraitField,
+
     getTraitDefinitions,
     getQuestionById,
     getDefinitionsWhere,
-    getDefinitionsByTaxa
+    getDefinitionsByTaxa,
+    getDefinitionById,
+    getBatchDefinitionsById
 };
 
 const getRandomId = () => {

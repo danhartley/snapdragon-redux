@@ -1,35 +1,23 @@
-import { DOM } from 'ui/dom';
-import { utils } from 'utils/utils';
-import { firestore } from 'api/firebase/firestore';
 import { quickFire } from 'ui/quick-fire-modal/quick-fire';
 import { renderTemplate } from 'ui/helpers/templating';
 
 import glossaryTemplate from 'ui/fixtures/glossary-template.html';
 
-export const renderGlossary = async args => {
+export const renderGlossary = async glossary => {
 
-    const { required, definitions, glossary } = args;
+  const template = document.createElement('template');
+        template.innerHTML = glossaryTemplate;
 
-    const template = document.createElement('template');
-          template.innerHTML = glossaryTemplate;
+  const modal = document.querySelector('#glossaryModal');
+        modal.querySelector('.js-modal-text-title').innerHTML = 'Glossary';
 
-    DOM.modalText.innerHTML = '';
-    DOM.modalTextTitle.innerHTML = 'Glossary';
+  const parent = modal.querySelector('.js-modal-text');
+        parent.innerHTML = '';
 
-    const apiDefinitions = glossary || await firestore.getDefinitionsByTaxa(required || [ 'common' ]);
-    
-    const glossaryDefinitions = definitions || utils.sortAlphabeticallyBy(apiDefinitions, 'term');
+  renderTemplate({ glossary }, template.content, parent);
 
-    renderTemplate({ glossary: glossaryDefinitions }, template.content, DOM.modalText);
-
-    const headerBlock = document.querySelector('#basicModal .js-modal-header-block');
-    const quickFireLink = headerBlock.querySelector(':nth-child(2)');
-          quickFireLink.innerHTML = `
-            <div class="uppercase double-margin-right small-text">
-              <span class="hide-important underline-link js-quick-fire-filters">Quick-fire filters</span>
-              <span class="underline-link margin-left js-quick-fire-review">Quick-fire review</span>
-            </div>`;
-          quickFireLink.addEventListener('click', e => {
-            quickFire.review();
-          });
+  const quickFireLink = modal.querySelector('.js-quick-fire');
+        quickFireLink.addEventListener('click', e => {
+          quickFire.review(glossary);
+        });
 };

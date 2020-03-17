@@ -5,7 +5,6 @@ import { utils } from 'utils/utils';
 import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
-import { firestore } from 'api/firebase/firestore';
 import { iconicTaxa  } from 'api/snapdragon/iconic-taxa';
 import { enums } from 'ui/helpers/enum-helper';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -15,47 +14,45 @@ import templateCreateQuickFire from 'ui/quick-fire-modal/quick-fire-create-templ
 import templateQuestionQuickFire from 'ui/quick-fire-modal/quick-fire-question-template.html';
 import templateSummaryQuickFire from 'ui/quick-fire-modal/quick-fire-summary-template.html';
 
-let allItems = null;
+const headers = (screen, definitions) => {
 
-const headers = screen => {
+    const getGlossary = () => definitions;
 
     const glossaryLink = document.querySelector('.js-modal-text-title');
     const quickFireLink = document.querySelector('.js-quick-fire-review');
     const quickFireFilters = document.querySelector('.js-quick-fire-filters');
 
+    const renderGlossaryLink = e => {
+        renderGlossary(getGlossary());
+        glossaryLink.classList.remove('underline-link');
+    };
+
+    glossaryLink.classList.add('underline-link');
+
+    glossaryLink.removeEventListener('click', renderGlossaryLink);
+
     switch(screen) {
-        case 'REVIEW':
-            quickFireFilters.classList.add('hide-important');
-            glossaryLink.classList.add('underline-link');
-        break;
-        
+
         case 'CREATE':
             quickFireLink.classList.remove('hide-important');
             quickFireLink.classList.remove('underline-link');
             quickFireFilters.classList.add('hide-important');
-            glossaryLink.addEventListener('click', e => {
-                renderGlossary({ definitions: quickFire.items });
-                glossaryLink.classList.remove('underline-link');
-            });
-            subscription.remove(subscription.getByName('question'));
+            glossaryLink.addEventListener('click', renderGlossaryLink);            
         break;
 
         case 'QUESTION': 
-            quickFireLink.classList.add('hide-important');
-            quickFireFilters.classList.remove('hide-important');
-            glossaryLink.addEventListener('click', e => {
-                renderGlossary({ definitions: quickFire.items });
-                glossaryLink.classList.remove('underline-link');
-            });
+            if(quickFireLink) quickFireLink.classList.add('hide-important');
+            if(quickFireFilters) quickFireFilters.classList.remove('hide-important');
+            glossaryLink.addEventListener('click', renderGlossaryLink);
         break;
     }
 };
 
-const review = async () => {
-
-    quickFire.headers('REVIEW');
-
+const review = async filteredGlossary => {
+    
     const args = await init();
+
+    args.filteredGlossary = filteredGlossary;
 
     create(args);
 
@@ -63,45 +60,20 @@ const review = async () => {
 
 const create = async args => {
 
-    headers('CREATE');
-
     const template = document.createElement('template');
           template.innerHTML = templateCreateQuickFire;
 
-    const parent = document.querySelector('.snapdragon-container');
+    const modal = document.querySelector('#glossaryModal');
+    const parent = modal.querySelector('.js-modal-text');
           parent.innerHTML = '';
 
     args = args || await init();
 
+    headers('CREATE', args.items);
+
     let { items, type, filter } = args;
 
-    const quickFire = {
-        index: 0,
-        isComplete: false,
-        items,
-        count: items.length,
-        filter,
-        type,
-        score: {
-            total: 0,
-            correct: 0,
-            incorrect: 0,
-            isCorrect: null,
-            isIncorrect: null,
-            rounds: [
-            ]
-        },
-    };
-
-    quickFire.filter.taxa = filter.iconicTaxa.map(taxon => {
-        const iconicTaxon = {
-            name: taxon,
-            count: items.filter(item => item.taxon === taxon).length
-        }
-        return iconicTaxon;
-    });
-
-    quickFire.filter.taxa = quickFire.filter.taxa.filter(taxon => taxon.count > 0);
+    const quickFire = initQuickFire(items, filter, type);
 
     const options = [
         { key: 0, value: 'multiple choice' },
@@ -142,8 +114,7 @@ const create = async args => {
           });
 
     const createQuickFireBtn = document.querySelector('.js-create-quick-fire');
-          createQuickFireBtn.addEventListener('click', e => {
-            subscription.add(question, 'quickFire', 'modal');
+          createQuickFireBtn.addEventListener('click', e => {      
             question(quickFire);
           });
 
@@ -179,28 +150,34 @@ const create = async args => {
           });
 };
 
-const question = (state = quickFire) => {
-
-    const quickFire = R.clone(state);
+const question = quickFire => {
 
     if(!quickFire) return;
 
-    headers('QUESTION');
+    headers('QUESTION', quickFire.items);
 
-    const parent = document.querySelector('.snapdragon-container');          
+    const modal = document.querySelector('#glossaryModal');
+    const parent = modal.querySelector('.js-modal-text'); 
           parent.innerHTML = '';
 
     const template = document.createElement('template');
 
-    let timer;
+    let timer;    
 
-    if(quickFire.items.length > 0) {        
+    if(quickFire.items.length > 0) {
 
         template.innerHTML = templateQuestionQuickFire;
+
+        quickFire.spareItems = quickFire.spareItems || R.take(4, utils.shuffleArray(quickFire.items));
         
         const items = R.take(quickFire.poolSize, utils.shuffleArray(quickFire.items));
 
         quickFire.question = items[0];
+
+        if(quickFire.items.length < 4) {
+            const itemsToAdd = R.take((4-quickFire.items.length), quickFire.spareItems.filter(sp => !R.contains(sp.term, items.map(i => i.term))));
+                  itemsToAdd.forEach(item => items.push(item));
+        }
 
         let answers = R.take(3, items.splice(1));
             answers.push(quickFire.question);
@@ -263,7 +240,8 @@ const question = (state = quickFire) => {
               continueQuickFireBtn.addEventListener('click', e => {
                     quickFire.items = quickFire.items.filter(item => item.term !== quickFire.question.term);
                     clearTimeout(timer);
-                    actions.boundCreateQuickFire(quickFire); 
+                    actions.boundCreateQuickFire(quickFire);
+                    subscription.add(quickFireQuestion, 'quickFire', 'modal');
               });
 
         quickFireInput.addEventListener('keydown', event => {
@@ -284,16 +262,10 @@ const question = (state = quickFire) => {
     }
 };
 
-export const quickFire = {
-    review,
-    create,
-    question,
-    headers
-};
-
 const handleKeyAction = (event, quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn) => {    
     if (quickFire.filter.option.key === '1') {
-        const isCorrect = quickFireInput.value.toLowerCase() === quickFire.question.term.toLowerCase();
+        const acceptableAnswers = quickFire.question.term.split(',').map(answer => answer.toLowerCase());
+        const isCorrect = R.contains(quickFireInput.value.toLowerCase(), acceptableAnswers);
         quickFire.score.total++;
         if (isCorrect) {
             quickFire.score.correct++;
@@ -333,14 +305,12 @@ const getItems = async (taxa, isSelected = false) => {
     
     const glossary = store.getState().glossary;
 
-    allItems = allItems || !!glossary
-                ? glossary.filter(definition => R.contains(definition.taxon, taxa))
-                : await firestore.getDefinitionsByTaxa(taxa);
+    const items = glossary.filter(definition => R.contains(definition.taxon, taxa));
 
     let selectedItems = [];
     isSelected
-        ? selectedItems = allItems
-        : selectedItems= allItems.filter(item => item.technical !== 'true');
+        ? selectedItems = items
+        : selectedItems= items.filter(item => item.technical !== 'true');
 
     return selectedItems.filter(item => R.contains(item.taxon, taxa));
 };
@@ -374,4 +344,49 @@ const updateBranchCounts = items => {
           branchOptions.forEach(branchBadge => {
             branchBadge.innerHTML = items.filter(item => item.branch === branchBadge.dataset.name).length;
           });
+};
+
+const initQuickFire = (items, filter, type) => {
+    
+    const quickFire = {
+        index: 0,
+        isComplete: false,
+        items,
+        count: items.length,
+        filter,
+        type,
+        score: {
+            total: 0,
+            correct: 0,
+            incorrect: 0,
+            isCorrect: null,
+            isIncorrect: null,
+            rounds: []
+        },
+        poolSize: items.length
+    };
+
+    quickFire.filter.taxa = filter.iconicTaxa.map(taxon => {
+        const iconicTaxon = {
+            name: taxon,
+            count: items.filter(item => item.taxon === taxon).length
+        }
+        return iconicTaxon;
+    });
+
+    quickFire.filter.taxa = quickFire.filter.taxa.filter(taxon => taxon.count > 0);
+
+    return quickFire;
+};
+
+export const quickFire = {
+    review,
+    create,
+    question,
+    headers,
+    initQuickFire
+};
+
+export const quickFireQuestion = state => {
+    quickFire.question(state);
 };

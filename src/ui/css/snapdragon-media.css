@@ -60,6 +60,13 @@
     }
 }
 
+@media (min-height: 667px) {
+    .quick-fire .quick-fire-branches .btn-secondary, .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
+        font-size: .9rem;
+        padding: .5rem;
+    }
+}
+
 @media (min-width: 576px) {
 }
 
@@ -138,6 +145,7 @@
 
     .quick-fire .quick-fire-branches .btn-secondary, .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
         font-size: .9rem;
+        padding: .5rem;
     }
 
     .quick-fire-branches span {
@@ -513,7 +521,7 @@
           border: 0;
       }
     
-      #basicModal .modal-body.settings-modal {
+      .basic-modal .modal-body.settings-modal {
           padding: rem;
       }
 

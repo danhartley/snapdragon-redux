@@ -12,6 +12,7 @@ import 'ui/css/groups/species-list.css';
 import 'ui/css/snapdragon-media.css';
 import 'ui/css/common.css';
 
+import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { nextLesson } from 'ui/setup/next-lesson';
 import { nextLayout } from 'ui/setup/next-layout';
@@ -26,6 +27,7 @@ import { traitValuesHandler } from 'api/traits/trait-types';
 import { initialiseConfig } from 'ui/helpers/location-helper';
 import { firestore } from 'api/firebase/firestore';
 import { renderLoggedIn } from 'ui/fixtures/login';
+import { quickFireQuestion } from "ui/quick-fire-modal/quick-fire";
 
 const onLoadHandler = () => {
 
@@ -75,6 +77,7 @@ const onLoadHandler = () => {
         subscription.add(nextLayout, 'counter', 'flow');
         subscription.add(renderScore, 'score', 'flow');
         subscription.add(traitValuesHandler, 'config', 'localisation');
+        subscription.add(quickFireQuestion, 'quickFire', 'modal');
 
         const updateConfig = async () => {
             const initialisedConfig = await initialiseConfig(config);
@@ -85,8 +88,9 @@ const onLoadHandler = () => {
             updateConfig();
         }
 
-        const glossary = await firestore.getDefinitionsByTaxa(['common', 'plantae', 'aves', 'fungi', 'insecta']);
-        actions.boundCreateGlossary(glossary);
+        let glossary = await firestore.getDefinitionsByTaxa(['common', 'plantae', 'aves', 'fungi', 'insecta']);
+            glossary = utils.sortAlphabeticallyBy(glossary, 'term');
+        actions.boundCreateGlossary(glossary);        
 
     }
     catch(e) {

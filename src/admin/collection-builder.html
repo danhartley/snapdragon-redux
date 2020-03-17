@@ -75,15 +75,28 @@
                         </a>
                     </li>
                     <li class="logged-in hide">
-                        <a href="#" class="grey-text" id="edit-collection">
+
+                        <a class='grey-text dropdown-trigger' href='#' data-target='dropdown-collection'>
                             <i class="fas fa-edit"></i>
                             <span>Collection</span> </a>
                         </a>
+
+                        <ul id='dropdown-collection' class='dropdown-content'>
+                            <li><a href="#!" id="edit-collection">Questions</a></li>
+                            <li><a href="#!" id="edit-collection-terms">Terms</a></li>
+                        </ul>
+
                     </li>
                     <li class="logged-in hide">
                         <a href="#" class="grey-text" id="create-question">
                             <i class="fas fa-plus"></i>
                             <span>Question</span> </a>
+                        </a>
+                    </li>
+                    <li class="logged-in hide">
+                        <a href="#" class="grey-text" id="add-term">
+                            <i class="fas fa-plus"></i>
+                            <span>Term</span> </a>
                         </a>
                     </li>
                     <li class="logged-out hide">

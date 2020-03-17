@@ -1,0 +1,31 @@
+<div class="sub container collection-container">
+    <div class="row">
+        <div class="input-field col s2">
+            <input id="input-collection" class="autocomplete" type="text" placeholder="Start typing a collection name" autofocus spellcheck="false">
+            <label for="input-collection" class="active">Snapdragon collection finder</label>            
+        </div>
+    </div>
+
+    <div class="margin-left">
+        <div class="margin-bottom">Terms associated with this collection:</div>
+        <div class="js-collection-terms margin-left"></div>
+    </div>
+
+    <br>
+    <br>    
+
+    <div class="row">
+        <div class="input-field col s2 js-term-picker">
+            <input id="input-term" type="text" placeholder="Start typing term" spellcheck="false">            
+            <label for="input-term" class="active">Find term</label>
+        </div>
+        <div class="autocomplete-options-container hide-empty" id="snapdragon-term-autocomplete"></div>
+    </div>
+
+    <div class="js-btn-add">
+        <button class="btnAddTermToCollection btn">Add term to collection</button>
+    </div>
+
+    <div class="margin-top hide feedback js-saved">Term saved</div>
+
+</div>

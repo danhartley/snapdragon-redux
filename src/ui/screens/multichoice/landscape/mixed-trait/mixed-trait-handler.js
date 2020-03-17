@@ -41,7 +41,7 @@ const getMatchingTrait = (layoutTraits, traitValues) => {
 
 const fetchTraits = async (trait, requiredTraitValues, required) => {
 
-    // const glossary = store.getState().glossary;
+    const glossary = store.getState().glossary;
 
     let traits = await firestore.getTraitDefinitions(glossary, required, trait);
         traits.forEach(t => {

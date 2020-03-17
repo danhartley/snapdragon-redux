@@ -5,7 +5,9 @@
 }
 .input-field {
     margin-top: 0;
-    padding: 0 !important;
+    padding: 0 1rem 0 !important;
+    font-size: .9rem;
+    margin-bottom: .5rem;
 }
 .input {
     border-bottom: 1px solid rgb(99, 133, 95) !important;
@@ -111,10 +113,6 @@
       font-style: italic;
   }
 
-  .input-field {
-      font-size: .9rem;
-  }
-
   .input-field > input {
     font-size: .9rem !important;
   }
@@ -194,10 +192,6 @@
       text-transform: initial;
   }
 
-  .input-field {
-      margin-bottom: .5rem;
-  }
-
   nav ul a {
       padding: 0 .5rem;
   }
@@ -261,8 +255,12 @@
     color: var(--snap-text-light);    
   }
 
+  .dropdown-content {
+    top: 4.5rem !important;
+  }
+
   @media (min-width: 1200px) {
     .container {
-        max-width: 1200px;
+        max-width: 1400px;
     }
   }

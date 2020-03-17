@@ -1829,9 +1829,9 @@ a.collection-disabled {
   pointer-events: none;
 }
 
-.lesson-review {
+.lesson-review, .lesson-terms-review {
   pointer-events: initial;
-  font-size: 1rem;
+  /* font-size: 1rem; */
 }
 
 .lesson-review i {
@@ -2028,11 +2028,11 @@ a.collection-disabled {
   margin-top: .5rem;  
 }
 
-.review-summary {
+.highlighted-for-review-row {
   background-color: var(--snap-content-background) !important;
 }
 
-.review-summary .underline-link {
+.highlighted-for-review-row .underline-link {
   font-size: .7rem;
 }
 
@@ -2255,6 +2255,7 @@ img[data-has-image="false"] {
 
 .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
   font-size: .6rem;
+  padding: .25rem;
   background-color: var(--snap-btn-green);
   color: var(--snap-text-light);
 }

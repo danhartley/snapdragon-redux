@@ -1,0 +1,87 @@
+<div class="sub container">
+
+    <div class="row">
+        <div class="input-field col s4">
+            <label>
+                <input id="chk-box-edit" type="checkbox" />
+                <span>Edit mode</span>
+            </label>
+        </div>    
+        <div class="input-field col s8" style="flex-grow:2;">
+
+            <div>
+                <label>
+                    <input id="chk-box-add-to-collection" type="checkbox" />
+                    <span>Add to this collection:</span>
+                </label>
+    
+                <input id="input-collection" class="autocomplete" type="text" placeholder="Start typing a collection name" autofocus spellcheck="false">
+                <label for="input-collection" class="active">Snapdragon collection finder</label>  
+            </div>
+
+        </div>
+    </div>
+
+    <br>
+
+    <div class="js-add-term row">
+        <div class="input-field col s2">
+            <input id="input-term" class="capitalise" type="text" placeholder="Enter term" spellcheck="false">            
+            <label for="input-term" class="active">Term</label>
+        </div>
+    </div>
+    <div class="js-edit-term row hide">
+        <div class="input-field col s2">
+            <input id="input-edit-term" type="text" placeholder="Start typing term" spellcheck="false">            
+            <label for="input-edit-term" class="active">Edit term</label>
+        </div>
+        <div class="autocomplete-options-container hide-empty" id="snapdragon-term-autocomplete"></div>
+    </div>
+    <div class="row">
+        <div class="input-field col s2">
+            <input id="input-definition" type="text" placeholder="Emter definition" spellcheck="false">            
+            <label for="input-definition" class="active">Definition</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s2">
+            <input id="input-taxon" type="text" placeholder="Start typing taxon" spellcheck="false">            
+            <label for="input-taxon" class="active">Taxon</label>
+        </div>
+        <div class="autocomplete-options-container hide-empty" id="snapdragon-taxon-autocomplete"></div>
+
+        <div class="input-field col s2">
+            <input id="input-branch" type="text" placeholder="Start typing branch" spellcheck="false">            
+            <label for="input-branch" class="active">Branch</label>
+        </div>
+        <div class="autocomplete-options-container hide-empty" id="snapdragon-branch-autocomplete"></div>
+    </div>
+    <div class="row">
+        <div class="input-field col s2">
+            <input id="input-wiki" type="text" placeholder="Emter web link" spellcheck="false">            
+            <label for="input-wiki" class="active">Web link</label>
+        </div>
+    </div>
+
+    <div>
+        <label>
+          <input id="chk-box-technical" type="checkbox" />
+          <span>Technical</span>
+        </label>
+    </div>
+
+    <br>
+
+<div class="row">
+    <div class="js-btn-add">
+        <button class="btnAddTerm btn">Add term</button>
+    </div>
+
+    <div class="js-btn-edit hide">
+        <button class="btnEditTerm btn">Update term</button>
+    </div>
+
+    <div class="margin-top hide feedback js-saved">Term saved</div>
+</div>
+        
+</div>
