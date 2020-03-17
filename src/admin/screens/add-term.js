@@ -177,8 +177,9 @@ export const addTerm = () => {
                     value: inputEditTerm.value
                 });
                 const definition = definitions[0];
-                if(!definition) {
+                if(definition) {
                     inputTerm.value = '';
+                    inputTerm.focus();
                     savedText.innerHTML = 'That term has already been defined! Try another.';
                     savedText.classList.remove('hide');
                     setTimeout(() => {

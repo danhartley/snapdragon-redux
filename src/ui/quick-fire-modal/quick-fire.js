@@ -264,7 +264,8 @@ const question = quickFire => {
 
 const handleKeyAction = (event, quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn) => {    
     if (quickFire.filter.option.key === '1') {
-        const isCorrect = quickFireInput.value.toLowerCase() === quickFire.question.term.toLowerCase();
+        const acceptableAnswers = quickFire.question.term.split(',').map(answer => answer.toLowerCase());
+        const isCorrect = R.contains(quickFireInput.value.toLowerCase(), acceptableAnswers);
         quickFire.score.total++;
         if (isCorrect) {
             quickFire.score.correct++;
