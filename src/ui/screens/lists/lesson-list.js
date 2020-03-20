@@ -60,16 +60,7 @@ export const renderLessons = () => {
                         const lesson = lessons.find(lesson => lesson.id === parseInt(termsReviewLink.dataset.lessonId));
                         if(lesson.terms) {
                               const { glossary } = store.getState();
-                              const definitions = glossary.filter(definition => R.contains(definition.id, lesson.terms));
-                              const taxa = [ ...new Set(definitions.map(definition => definition.taxon))];
-                              const filter = {
-                                    iconicTaxa: taxa,
-                                    option: {
-                                          key: "0",
-                                          value: "multiple choice"
-                                    }
-                              };
-                              quickFire.question(quickFire.initQuickFire(definitions, filter, enums.quickFireType.DEFINITION));
+                              quickFire.questions(quickFire.init(glossary, enums.quickFireType.DEFINITION, lesson), true);
                         }
                 });
             });
