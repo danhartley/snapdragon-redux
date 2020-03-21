@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 
-const getItems = async (taxa, includeTechnicalTerms = false) => {
+const getItems = (taxa, includeTechnicalTerms = false) => {
     
     const glossary = store.getState().glossary;
 
@@ -32,8 +32,12 @@ const getBranches = items => {
 
 const getQuickFire = (glossary, type, collection) => {
 
-    const items = glossary.filter(definition => R.contains(definition.id, collection.terms));
+    const items = collection.terms
+            ? glossary.filter(definition => R.contains(definition.id, collection.terms))
+            : glossary;
+
     const taxa = [ ...new Set(items.map(definition => definition.taxon))];
+
     const filter = {
           iconicTaxa: taxa,
           option: {

@@ -77,7 +77,7 @@ const onLoadHandler = () => {
         subscription.add(nextLayout, 'counter', 'flow');
         subscription.add(renderScore, 'score', 'flow');
         subscription.add(traitValuesHandler, 'config', 'localisation');
-        subscription.add(quickFireQuestion, 'quickFire', 'modal');
+        // subscription.add(quickFireQuestion, 'quickFire', 'modal');
 
         const updateConfig = async () => {
             const initialisedConfig = await initialiseConfig(config);

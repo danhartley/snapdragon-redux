@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
@@ -44,7 +45,7 @@ const filters = async () => {
 
     let { items, type, filter } = args;
 
-    const quickFire = quickFireAPI.getQuickFire(items, filter, type);
+    const quickFire = store.getState().quickFire || quickFireAPI.getQuickFire(items, filter, type);
 
     const options = [
         { key: 0, value: 'multiple choice' },
@@ -54,6 +55,8 @@ const filters = async () => {
     ];
 
     const branches = quickFireAPI.getBranches(items);
+
+    parent.innerHTML = '';
 
     renderTemplate({ quickFire, options, branches }, template.content, parent);
 
@@ -76,23 +79,40 @@ const filters = async () => {
         }
     };
 
+    const getFiltertaxa = () => quickFire.filter.iconicTaxa;
+
     const taxa = document.querySelectorAll('.js-quick-fire-taxa li');
+
           taxa.forEach(taxon => {
+
+              const chkBox = taxon.querySelector('input');
+
+              if(!R.contains(taxon.dataset.name, quickFire.filter.iconicTaxa)) {
+                  chkBox.click();
+              }
+
               taxon.addEventListener('change', async e => {
                 const selectedTaxon = e.target.id;
-                const updatedTaxa = updateArray(filter.iconicTaxa, selectedTaxon);
+                const updatedTaxa = updateArray(getFiltertaxa(), selectedTaxon);
                 quickFire.filter.iconicTaxa = updatedTaxa;
-                quickFire.items = await quickFireAPI.getItems(updatedTaxa);
+                quickFire.items = quickFireAPI.getItems(updatedTaxa);
                 quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters);
               });
           });
+
+    quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters);
 
     const createQuickFireBtn = document.querySelector('.js-create-quick-fire');
           createQuickFireBtn.addEventListener('click', e => {      
             questions(quickFire);
           });
 
-    const quickFireOptions = document.querySelectorAll('.js-quick-fire-options .btn');          
+    const quickFireOptions = document.querySelectorAll('.js-quick-fire-options .btn');
+    
+          quickFire.filter.option.key === "0"
+            ? quickFireOptions[0].click()
+            : quickFireOptions[1].click();
+    
           Array.from(quickFireOptions).forEach(option => {
               option.addEventListener('click', e => {
                   quickFire.filter.option = {
@@ -100,21 +120,31 @@ const filters = async () => {
                       value: e.target.dataset.value
                   };
               });
-          });
-        quickFireOptions[0].click();
+          });        
 
     const branchOptions = document.querySelectorAll('.js-quick-fire-branches label');
-          branchOptions.forEach(branch => {
-              branch.addEventListener('click', e => {
-                setTimeout(async() => {
-                    let checkedBranches = Array.from(branchOptions).filter(b => elem.hasClass(b, 'active'));
-                        checkedBranches = checkedBranches.map(b => b.dataset.key);
-                    quickFire.items = await quickFireAPI.getItems(quickFire.filter.iconicTaxa);
-                    quickFire.items = quickFire.items.filter(item => R.contains(item.branch, checkedBranches));
-                    quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters);
-                });
-              });
-          });
+
+    if(quickFire.filter.branches) {
+
+        branchOptions.forEach(branch => {
+            if(!R.contains(branch.dataset.key, quickFire.filter.branches)) {
+                branch.click();
+            }
+        });    
+    }
+
+    branchOptions.forEach(branch => {
+        branch.addEventListener('click', e => {
+        setTimeout(async() => {
+            let checkedBranches = Array.from(branchOptions).filter(b => elem.hasClass(b, 'active'));
+                checkedBranches = checkedBranches.map(b => b.dataset.key);
+            quickFire.filter.branches = checkedBranches;
+            quickFire.items = await quickFireAPI.getItems(quickFire.filter.iconicTaxa);
+            quickFire.items = quickFire.items.filter(item => R.contains(item.branch, checkedBranches));
+            quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters);
+        });
+        });
+    });
 
     const technical = document.querySelector('.js-quick-fire-technical');
           technical.addEventListener('change', async e => {
@@ -127,6 +157,8 @@ const filters = async () => {
 const questions = (quickFire, linkFromLesson = false) => {
 
     if(!quickFire) return;
+
+    actions.boundCreateQuickFire(quickFire);
 
     headers(enums.quickFireStep.QUESTIONS, quickFire, linkFromLesson, );
 
