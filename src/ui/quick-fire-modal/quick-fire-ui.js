@@ -13,7 +13,7 @@ const updateBranchCounts = (items, branchOptions) => {
 
 const updateTotalCounts = (quickFire, input, counters, branchCounters) => {
 
-    quickFire.count = quickFire.items.length;
+    quickFire.count = quickFire.score.total > 0 ? quickFire.count : quickFire.items.length;
 
     counters.forEach(counter => {
         counter.innerHTML = quickFire.count;

@@ -197,7 +197,7 @@ const questions = (quickFire, linkFromLesson = false) => {
 
         renderTemplate({ question: quickFire.question, 
                 answers, total: quickFire.score.total + 1, 
-                count: quickFire.poolSize, 
+                count: quickFire.poolSize,
                 correct: quickFire.score.correct, 
                 answered: quickFire.score.total 
             }, template.content, parent);
