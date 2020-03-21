@@ -8,57 +8,31 @@ import { subscription } from 'redux/subscriptions';
 import { iconicTaxa  } from 'api/snapdragon/iconic-taxa';
 import { enums } from 'ui/helpers/enum-helper';
 import { renderTemplate } from 'ui/helpers/templating';
-import { renderGlossary } from 'ui/fixtures/glossary';
+import { quickFireAPI } from 'ui/quick-fire-modal/quick-fire-api';
+import { quickFireUI } from 'ui/quick-fire-modal/quick-fire-ui';
 
 import templateCreateQuickFire from 'ui/quick-fire-modal/quick-fire-create-template.html';
 import templateQuestionQuickFire from 'ui/quick-fire-modal/quick-fire-question-template.html';
 import templateSummaryQuickFire from 'ui/quick-fire-modal/quick-fire-summary-template.html';
 
-const headers = (screen, definitions) => {
+const headers = (step, quickFire, linkFromLesson = false) => {
 
-    const getGlossary = () => definitions;
+    const getQuickFire = () => quickFire;
 
-    const glossaryLink = document.querySelector('.js-modal-text-title');
-    const quickFireLink = document.querySelector('.js-quick-fire-review');
-    const quickFireFilters = document.querySelector('.js-quick-fire-filters');
+    const modal = document.querySelector('#glossaryModal');
 
-    const renderGlossaryLink = e => {
-        renderGlossary(getGlossary());
-        glossaryLink.classList.remove('underline-link');
+    const links = { 
+        glossary: modal.querySelector('.js-modal-text-title'),
+        filters: modal.querySelector('.js-quick-fire-filters'),
+        questions: modal.querySelector('.js-quick-fire-questions')
     };
 
-    glossaryLink.classList.add('underline-link');
-
-    glossaryLink.removeEventListener('click', renderGlossaryLink);
-
-    switch(screen) {
-
-        case 'CREATE':
-            quickFireLink.classList.remove('hide-important');
-            quickFireLink.classList.remove('underline-link');
-            quickFireFilters.classList.add('hide-important');
-            glossaryLink.addEventListener('click', renderGlossaryLink);            
-        break;
-
-        case 'QUESTION': 
-            if(quickFireLink) quickFireLink.classList.add('hide-important');
-            if(quickFireFilters) quickFireFilters.classList.remove('hide-important');
-            glossaryLink.addEventListener('click', renderGlossaryLink);
-        break;
-    }
+    quickFireUI.updateHeaders(step, links, getQuickFire, linkFromLesson, );
 };
 
-const review = async filteredGlossary => {
-    
+const filters = async () => {
+
     const args = await init();
-
-    args.filteredGlossary = filteredGlossary;
-
-    create(args);
-
-};
-
-const create = async args => {
 
     const template = document.createElement('template');
           template.innerHTML = templateCreateQuickFire;
@@ -67,13 +41,11 @@ const create = async args => {
     const parent = modal.querySelector('.js-modal-text');
           parent.innerHTML = '';
 
-    args = args || await init();
-
-    headers('CREATE', args.items);
+    headers(enums.quickFireStep.FILTERS, { items: args.items });
 
     let { items, type, filter } = args;
 
-    const quickFire = initQuickFire(items, filter, type);
+    const quickFire = store.getState().quickFire || quickFireAPI.getQuickFire(items, filter, type);
 
     const options = [
         { key: 0, value: 'multiple choice' },
@@ -82,9 +54,14 @@ const create = async args => {
         // { key: 3, value: 'mixed multiple choice and text entry' },
     ];
 
-    const branches = initBranches(items);
+    const branches = quickFireAPI.getBranches(items);
+
+    parent.innerHTML = '';
 
     renderTemplate({ quickFire, options, branches }, template.content, parent);
+
+    const counters = document.querySelectorAll('.js-quick-fire-count');
+    const branchCounters = document.querySelectorAll('.js-quick-fire-branches label > span');
 
     const input = document.querySelector('.js-input-quick-fire');
           input.addEventListener('input', e => {
@@ -102,23 +79,40 @@ const create = async args => {
         }
     };
 
+    const getFiltertaxa = () => quickFire.filter.iconicTaxa;
+
     const taxa = document.querySelectorAll('.js-quick-fire-taxa li');
+
           taxa.forEach(taxon => {
+
+              const chkBox = taxon.querySelector('input');
+
+              if(!R.contains(taxon.dataset.name, quickFire.filter.iconicTaxa)) {
+                  chkBox.click();
+              }
+
               taxon.addEventListener('change', async e => {
                 const selectedTaxon = e.target.id;
-                const updatedTaxa = updateArray(filter.iconicTaxa, selectedTaxon);
+                const updatedTaxa = updateArray(getFiltertaxa(), selectedTaxon);
                 quickFire.filter.iconicTaxa = updatedTaxa;
-                quickFire.items = await getItems(updatedTaxa);
-                updateTotalCounts(quickFire, input);
+                quickFire.items = quickFireAPI.getItems(updatedTaxa);
+                quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters);
               });
           });
 
+    quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters);
+
     const createQuickFireBtn = document.querySelector('.js-create-quick-fire');
           createQuickFireBtn.addEventListener('click', e => {      
-            question(quickFire);
+            questions(quickFire);
           });
 
-    const quickFireOptions = document.querySelectorAll('.js-quick-fire-options .btn');          
+    const quickFireOptions = document.querySelectorAll('.js-quick-fire-options .btn');
+    
+          quickFire.filter.option.key === "0"
+            ? quickFireOptions[0].click()
+            : quickFireOptions[1].click();
+    
           Array.from(quickFireOptions).forEach(option => {
               option.addEventListener('click', e => {
                   quickFire.filter.option = {
@@ -126,35 +120,47 @@ const create = async args => {
                       value: e.target.dataset.value
                   };
               });
-          });
-        quickFireOptions[0].click();
+          });        
 
     const branchOptions = document.querySelectorAll('.js-quick-fire-branches label');
-          branchOptions.forEach(branch => {
-              branch.addEventListener('click', e => {
-                setTimeout(async() => {
-                    let checkedBranches = Array.from(branchOptions).filter(b => elem.hasClass(b, 'active'));
-                        checkedBranches = checkedBranches.map(b => b.dataset.key);
-                    quickFire.items = await getItems(quickFire.filter.iconicTaxa);
-                    quickFire.items = quickFire.items.filter(item => R.contains(item.branch, checkedBranches));
-                    updateTotalCounts(quickFire, input);
-                });
-              });
-          });
+
+    if(quickFire.filter.branches) {
+
+        branchOptions.forEach(branch => {
+            if(!R.contains(branch.dataset.key, quickFire.filter.branches)) {
+                branch.click();
+            }
+        });    
+    }
+
+    branchOptions.forEach(branch => {
+        branch.addEventListener('click', e => {
+        setTimeout(async() => {
+            let checkedBranches = Array.from(branchOptions).filter(b => elem.hasClass(b, 'active'));
+                checkedBranches = checkedBranches.map(b => b.dataset.key);
+            quickFire.filter.branches = checkedBranches;
+            quickFire.items = await quickFireAPI.getItems(quickFire.filter.iconicTaxa);
+            quickFire.items = quickFire.items.filter(item => R.contains(item.branch, checkedBranches));
+            quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters);
+        });
+        });
+    });
 
     const technical = document.querySelector('.js-quick-fire-technical');
           technical.addEventListener('change', async e => {
-            const isSelected = e.target.checked;
-            quickFire.items = await getItems(quickFire.filter.iconicTaxa, isSelected);
-            updateTotalCounts(quickFire, input);
+            const includeTechnicalTerms = e.target.checked;
+            quickFire.items = await quickFireAPI.getItems(quickFire.filter.iconicTaxa, includeTechnicalTerms);
+            quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters);
           });
 };
 
-const question = quickFire => {
+const questions = (quickFire, linkFromLesson = false) => {
 
     if(!quickFire) return;
 
-    headers('QUESTION', quickFire.items);
+    actions.boundCreateQuickFire(quickFire);
+
+    headers(enums.quickFireStep.QUESTIONS, quickFire, linkFromLesson, );
 
     const modal = document.querySelector('#glossaryModal');
     const parent = modal.querySelector('.js-modal-text'); 
@@ -246,13 +252,13 @@ const question = quickFire => {
 
         quickFireInput.addEventListener('keydown', event => {
             if (event.keyCode == 9) {
-              timer = handleKeyAction(event, quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
+              timer = quickFireUI.scoreTest(quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
             }
         });
 
         quickFireInput.addEventListener('keypress', event => {
             if (event.keyCode == 13) {
-              timer = handleKeyAction(event, quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
+              timer = quickFireUI.scoreTest(quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
             }
         });
 
@@ -262,35 +268,17 @@ const question = quickFire => {
     }
 };
 
-const handleKeyAction = (event, quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn) => {    
-    if (quickFire.filter.option.key === '1') {
-        const acceptableAnswers = quickFire.question.term.split(',').map(answer => answer.toLowerCase());
-        const isCorrect = R.contains(quickFireInput.value.toLowerCase(), acceptableAnswers);
-        quickFire.score.total++;
-        if (isCorrect) {
-            quickFire.score.correct++;
-        }
-        else {
-            quickFire.score.incorrect++;
-        }
-        quickFireMessage.innerHTML = isCorrect
-            ? 'That is correct.'
-            : `That is incorrect. The correct answer is <span class="uppercase half-margin-left">'${quickFire.question.term.toLowerCase()}'</span>.`;
-        timer = setTimeout(() => {
-            continueQuickFireBtn.click();
-        }, 2000);
-    }
-    return timer;
-};
-
 const init = async () => {
+
     let taxa = [];
     let iconicTaxaKeys = Object.keys(iconicTaxa).map(key => key.toLowerCase());
-    iconicTaxaKeys.push('common');
-    iconicTaxaKeys.forEach(taxon => {
-        taxa.push(taxon);
-    });
-    const items = await getItems(taxa);
+        iconicTaxaKeys.push('common');
+        iconicTaxaKeys.forEach(taxon => {
+            taxa.push(taxon);
+        });
+
+    const items = await quickFireAPI.getItems(taxa);
+        
     const args = {
         items,
         type: enums.quickFireType.DEFINITION,
@@ -301,92 +289,13 @@ const init = async () => {
     return args;
 };
 
-const getItems = async (taxa, isSelected = false) => {
-    
-    const glossary = store.getState().glossary;
-
-    const items = glossary.filter(definition => R.contains(definition.taxon, taxa));
-
-    let selectedItems = [];
-    isSelected
-        ? selectedItems = items
-        : selectedItems= items.filter(item => item.technical !== 'true');
-
-    return selectedItems.filter(item => R.contains(item.taxon, taxa));
-};
-
-const updateTotalCounts = (quickFire, input) => {
-
-    quickFire.count = quickFire.items.length;
-    document.querySelectorAll('.js-quick-fire-count').forEach(counter => {
-        counter.innerHTML = quickFire.count;
-    });
-    input.value = quickFire.count;
-    quickFire.poolSize = parseInt(input.value);
-
-    updateBranchCounts(quickFire.items);
-};
-
-const initBranches = items => {
-    let branches = [ ...new Set(items.map(item => item.branch)) ];
-        branches = branches.map(branch => {
-            return {
-                name: branch,
-                count: items.filter(item => item.branch == branch).length
-            }
-          });
-    return branches;
-};
-
-const updateBranchCounts = items => {
-
-    const branchOptions = document.querySelectorAll('.js-quick-fire-branches label > span');
-          branchOptions.forEach(branchBadge => {
-            branchBadge.innerHTML = items.filter(item => item.branch === branchBadge.dataset.name).length;
-          });
-};
-
-const initQuickFire = (items, filter, type) => {
-    
-    const quickFire = {
-        index: 0,
-        isComplete: false,
-        items,
-        count: items.length,
-        filter,
-        type,
-        score: {
-            total: 0,
-            correct: 0,
-            incorrect: 0,
-            isCorrect: null,
-            isIncorrect: null,
-            rounds: []
-        },
-        poolSize: items.length
-    };
-
-    quickFire.filter.taxa = filter.iconicTaxa.map(taxon => {
-        const iconicTaxon = {
-            name: taxon,
-            count: items.filter(item => item.taxon === taxon).length
-        }
-        return iconicTaxon;
-    });
-
-    quickFire.filter.taxa = quickFire.filter.taxa.filter(taxon => taxon.count > 0);
-
-    return quickFire;
-};
-
 export const quickFire = {
-    review,
-    create,
-    question,
+    filters,
+    questions,
     headers,
-    initQuickFire
+    init: quickFireAPI.getQuickFire
 };
 
 export const quickFireQuestion = state => {
-    quickFire.question(state);
+    quickFire.questions(state);
 };

@@ -55,11 +55,19 @@ quickFireType.initEnum([
     'TEXT_ENTRY'
 ]);
 
+class quickFireStep extends Enum {};
+quickFireStep.initEnum([
+    'GLOSSARY',
+    'FILTERS',
+    'QUESTIONS'
+]);
+
 export const enums = {
     lessonState,
     navigation,
     taxon,
     guideOption,
     nextStep,
-    quickFireType
+    quickFireType,
+    quickFireStep
 };
