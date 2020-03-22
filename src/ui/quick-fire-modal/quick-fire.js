@@ -11,8 +11,8 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { quickFireAPI } from 'ui/quick-fire-modal/quick-fire-api';
 import { quickFireUI } from 'ui/quick-fire-modal/quick-fire-ui';
 
-import templateCreateQuickFire from 'ui/quick-fire-modal/quick-fire-create-template.html';
-import templateQuestionQuickFire from 'ui/quick-fire-modal/quick-fire-question-template.html';
+import templateCreateQuickFire from 'ui/quick-fire-modal/quick-fire-filters-template.html';
+import templateQuestionQuickFire from 'ui/quick-fire-modal/quick-fire-questions-template.html';
 import templateSummaryQuickFire from 'ui/quick-fire-modal/quick-fire-summary-template.html';
 
 const headers = (step, quickFire, linkFromLesson = false) => {
@@ -103,6 +103,7 @@ const filters = async () => {
     quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters);
 
     const createQuickFireBtn = document.querySelector('.js-create-quick-fire');
+          createQuickFireBtn.innerHTML = quickFire.score.total === 0 ? 'Start quick-fire review' : 'Continue your quick-fire review';
           createQuickFireBtn.addEventListener('click', e => {      
             questions(quickFire);
           });
@@ -151,6 +152,14 @@ const filters = async () => {
             const includeTechnicalTerms = e.target.checked;
             quickFire.items = await quickFireAPI.getItems(quickFire.filter.iconicTaxa, includeTechnicalTerms);
             quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters);
+          });
+
+    const reset = document.querySelector('.js-quick-fire-reset');
+          reset.addEventListener('change', e => {
+              if(e.target.checked) {
+                actions.boundCreateQuickFire(quickFireAPI.getQuickFire(store.getState().glossary, enums.quickFireType.DEFINITION, {}));
+                quickFireFilters();
+              }
           });
 };
 
@@ -298,4 +307,8 @@ export const quickFire = {
 
 export const quickFireQuestion = state => {
     quickFire.questions(state);
+};
+
+const quickFireFilters = () => {
+    quickFire.filters();
 };

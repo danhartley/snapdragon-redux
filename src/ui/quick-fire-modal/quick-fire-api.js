@@ -42,7 +42,7 @@ const getQuickFire = (glossary, type, collection) => {
           iconicTaxa: taxa,
           option: {
                 key: "0",
-                value: "multiple choice"
+                value: "multiple choice" // depends on type???
           }
     };
     
