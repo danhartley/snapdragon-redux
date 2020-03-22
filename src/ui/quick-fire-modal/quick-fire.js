@@ -11,8 +11,8 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { quickFireAPI } from 'ui/quick-fire-modal/quick-fire-api';
 import { quickFireUI } from 'ui/quick-fire-modal/quick-fire-ui';
 
-import templateCreateQuickFire from 'ui/quick-fire-modal/quick-fire-create-template.html';
-import templateQuestionQuickFire from 'ui/quick-fire-modal/quick-fire-question-template.html';
+import templateCreateQuickFire from 'ui/quick-fire-modal/quick-fire-filters-template.html';
+import templateQuestionQuickFire from 'ui/quick-fire-modal/quick-fire-questions-template.html';
 import templateSummaryQuickFire from 'ui/quick-fire-modal/quick-fire-summary-template.html';
 
 const headers = (step, quickFire, linkFromLesson = false) => {
