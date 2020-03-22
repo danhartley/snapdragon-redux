@@ -103,6 +103,7 @@ const filters = async () => {
     quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters);
 
     const createQuickFireBtn = document.querySelector('.js-create-quick-fire');
+          createQuickFireBtn.innerHTML = quickFire.score.total === 0 ? 'Start quick-fire review' : 'Continue your quick-fire review';
           createQuickFireBtn.addEventListener('click', e => {      
             questions(quickFire);
           });
@@ -151,6 +152,14 @@ const filters = async () => {
             const includeTechnicalTerms = e.target.checked;
             quickFire.items = await quickFireAPI.getItems(quickFire.filter.iconicTaxa, includeTechnicalTerms);
             quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters);
+          });
+
+    const reset = document.querySelector('.js-quick-fire-reset');
+          reset.addEventListener('change', e => {
+              if(e.target.checked) {
+                actions.boundCreateQuickFire(quickFireAPI.getQuickFire(store.getState().glossary, enums.quickFireType.DEFINITION, {}));
+                quickFireFilters();
+              }
           });
 };
 
@@ -298,4 +307,8 @@ export const quickFire = {
 
 export const quickFireQuestion = state => {
     quickFire.questions(state);
+};
+
+const quickFireFilters = () => {
+    quickFire.filters();
 };

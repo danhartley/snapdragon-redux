@@ -52,6 +52,12 @@ const scoreTest = (quickFire, quickFireInput, quickFireMessage, timer, continueQ
     return timer;
 };
 
+const initGlossaryHeader = link => {
+
+    link.classList.remove('hide-important');
+
+};
+
 const updateHeaders = (screen, links, getQuickFire, linkFromLesson = false) => {
 
     const { glossary, filters, questions } = links;
@@ -102,6 +108,7 @@ export const quickFireUI = {
 
     updateTotalCounts,
     updateHeaders,
+    initGlossaryHeader,
     scoreTest
 
 };
