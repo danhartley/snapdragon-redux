@@ -1,23 +1,32 @@
 <div class="quick-fire">
 
-    <div class="centred-block margin-all standard-block js-quick-fire-summary">
-        <div>You have answered all of the questions.</div>
+    <div class="justify-space-between centred-block margin-all standard-block js-quick-fire-summary">
+        <div>
+            <span>You have answered all of the questions.</span>
+        </div>
+        <div class="margin-right">
+            <span class="margin-right underline-link small js-quick-review-continue-review">Continue review</span>
+        </div>
     </div>
 
     <div class="standard-block padding-left centred-block modal-background-relief">
         You scored {{ score.correct }} out of {{ score.total }}
     </div>
 
-    <nav class="margin-bottom nav nav-pills nav-fill quick-review-tabs js-quick-review-tabs">
-        <a class="nav-item nav-link" href="#" id="js-quick-review-correct">
-            <span class="landscape">Correct answers</span>
-            <span class="portrait">Correct</span>
-        </a>
-        <a class="nav-item nav-link active" href="#" id="js-quick-review-incorrect">
-            <span class="landscape">Incorrect answers</span>
-            <span class="portrait">Incorrect</span>
-        </a>
-    </nav>
+    <ul class="margin-top nav nav-pills nav-fill quick-review-tabs js-quick-review-tabs mb-3" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="js-quick-review-correct" data-toggle="pill" role="tab">
+                <span class="landscape">Correct answers</span>
+                <span class="portrait">Correct</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#" id="js-quick-review-incorrect" data-toggle="pill" role="tab">
+                <span class="landscape">Incorrect answers</span>
+                <span class="portrait">Incorrect</span>
+            </a>
+        </li>
+      </ul>
 
     <div class="scrollable accordions-container">
 

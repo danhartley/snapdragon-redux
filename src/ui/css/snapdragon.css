@@ -2300,6 +2300,15 @@ img[data-has-image="false"] {
   position: relative;
 }
 
+.quick-fire .nav-link.active.show {
+  display: block;
+}
+
+.quick-fire .nav-item a:hover {
+  color: var(--snap-text-medium-dark);
+  background-color: var(--snap-btn-hover);
+}
+
 .quick-fire .accordions-container {
   height: calc(
      (var(--vh, 1vh) * 100) 

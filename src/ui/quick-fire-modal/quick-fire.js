@@ -281,28 +281,13 @@ const questions = (quickFire, linkFromLesson = false) => {
         }
 
     } else {
-        template.innerHTML = templateSummaryQuickFire;
-        const passes = quickFire.score.passes;
-              passes.forEach((pass, i) => pass.index = i);
-        const fails = quickFire.score.fails;
-              fails.forEach((fail, i) => fail.index = i);
-
-        renderTemplate( { score: quickFire.score, passes, fails }, template.content, parent);
-
-        const answers = document.querySelectorAll('.js-quick-review-answers');
-
-        const tabs = document.querySelectorAll('.js-quick-review-tabs a');
-              tabs.forEach(tab => {
-                  tab.addEventListener('click', e => {
-                      const type = e.target.id;
-                      answers.forEach(t => {
-                        t.dataset.type === type
-                            ? t.classList.remove('hide-important')
-                            : t.classList.add('hide-important');
-                      });                      
-                  });
-              });        
+        summary(quickFire, modal);        
     }
+
+    const review = modal.querySelector('.js-quick-review-progress');
+          review.addEventListener('click', e => {
+            summary(quickFire, modal);
+          });
 };
 
 const init = async () => {
@@ -326,6 +311,51 @@ const init = async () => {
     return args;
 };
 
+const quickFireFilters = () => {
+    quickFire.filters();
+};
+
+const summary = (quickFire, modal) => {
+
+    const parent = modal.querySelector('.js-modal-text');
+          parent.innerHTML = '';
+
+    const template = document.createElement('template');
+          template.innerHTML = templateSummaryQuickFire;
+
+    const passes = quickFire.score.passes;
+          passes.forEach((pass, i) => pass.index = i);
+    const fails = quickFire.score.fails;
+          fails.forEach((fail, i) => fail.index = i);
+
+    renderTemplate({ score: quickFire.score, passes, fails }, template.content, parent);
+
+    const answers = modal.querySelectorAll('.js-quick-review-answers');
+    const tabs = modal.querySelectorAll('.js-quick-review-tabs a');
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', e => {
+            const type = e.target.id;
+            answers.forEach(t => {
+                t.dataset.type === type
+                    ? t.classList.remove('hide-important')
+                    : t.classList.add('hide-important');
+            });
+        });
+    });
+
+    const summaryText = modal.querySelector('.js-quick-fire-summary div:nth-child(1) > span');
+   
+    summaryText.innerText = quickFire.items.length > 0 
+        ? `You have answered ${quickFire.score.total} of ${quickFire.items.length} questions.`
+        : 'You have answered all of the questions.';
+
+    const continueReview = modal.querySelector('.js-quick-review-continue-review');
+          continueReview.addEventListener('click', e => {
+              questions(quickFire);
+          });
+};
+
 export const quickFire = {
     filters,
     questions,
@@ -335,8 +365,4 @@ export const quickFire = {
 
 export const quickFireQuestion = state => {
     quickFire.questions(state);
-};
-
-const quickFireFilters = () => {
-    quickFire.filters();
 };
