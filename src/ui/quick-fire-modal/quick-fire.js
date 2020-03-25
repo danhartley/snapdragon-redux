@@ -190,9 +190,13 @@ const questions = (quickFire, linkFromLesson = false) => {
 
         quickFire.spareItems = quickFire.spareItems || R.take(4, utils.shuffleArray(quickFire.items));
         
-        const items = R.take(quickFire.poolSize, utils.shuffleArray(quickFire.items));
+        let items = utils.shuffleArray(quickFire.items.filter(item => item));
 
         quickFire.question = items[0];
+
+        items = items.filter(item => item.branch === quickFire.question.branch);
+        items = R.take(quickFire.poolSize, utils.shuffleArray(items));
+
 
         if(quickFire.items.length < 4) {
             const itemsToAdd = R.take((4-quickFire.items.length), quickFire.spareItems.filter(sp => !R.contains(sp.term, items.map(i => i.term))));
@@ -366,3 +370,4 @@ export const quickFire = {
 export const quickFireQuestion = state => {
     quickFire.questions(state);
 };
+
