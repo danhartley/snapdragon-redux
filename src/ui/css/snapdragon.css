@@ -2255,7 +2255,6 @@ img[data-has-image="false"] {
 
 .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
   font-size: .6rem;
-  /* padding: .25rem; */
   background-color: var(--snap-btn-green);
   color: var(--snap-text-light);
 }
@@ -2270,4 +2269,47 @@ img[data-has-image="false"] {
 
 .quick-fire .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
   background-color: var(--snap-btn-blue);
+}
+
+.quick-fire-summary-row.card {
+  background-color: var(--snap-row-background);
+  text-align: left;
+  cursor: pointer;
+}
+
+.quick-fire-summary-row .card-header {
+  border-bottom: 0;
+}
+
+.quick-review-tabs span {
+  pointer-events: none;
+}
+
+.nav-link {
+  color: var(--snap-text-medium-dark);
+  letter-spacing: .03rem;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: var(--snap-text-light);
+  background-color: var(--snap-collection-light);  
+}
+
+.nav-pills .nav-link {
+  border-radius: 0;
+  position: relative;
+}
+
+.quick-fire .accordions-container {
+  height: calc(
+     (var(--vh, 1vh) * 100) 
+    - var(--vhFixtures, 15vh)
+    - var(--vhDoubleStandardBlock,20vh)
+    - var(--vhStandardBlock,10vh) 
+    - 1rem
+    );
+    top: calc(
+        var(--vhDoubleStandardBlock,20vh)
+      + var(--vhStandardBlock,10vh) 
+    );
 }

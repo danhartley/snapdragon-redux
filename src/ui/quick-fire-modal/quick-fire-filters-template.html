@@ -9,7 +9,7 @@
         <li class="custom-control custom-checkbox" data-name="{{ taxon.name }}">
             <input type="checkbox" class="custom-control-input" id="{{ taxon.name }}" checked>
             <label class="custom-control-label" for="{{ taxon.name }}">{{ taxon.name }}</label>
-            <span class="">{{ taxon.count }}</span>
+            <span data-taxon="{{ taxon.name }}" class="">{{ taxon.count }}</span>
         </li>
     </ul>
 
@@ -17,7 +17,7 @@
 
     <div class="btn-group btn-group-toggle margin-top quick-fire-branches js-quick-fire-branches" data-toggle="buttons" data-repeat-branch="{{ branches }}">
         <label data-key="{{ branch.name }}" class="btn btn-secondary margin-left active" data-value="{{ branch.name }}">
-          <input type="checkbox" name="branches" id="{{ branch.name }}" autocomplete="off" checked> {{ branch.name }}
+          <input type="checkbox" name="branches" id="{{ branch.name }}" autocomplete="off"> {{ branch.name }}
           <span data-name="{{ branch.name }}">{{ branch.count }}</span>
         </label>        
     </div>
@@ -27,22 +27,20 @@
 
     <div class="btn-group btn-group-toggle margin-left margin-top quick-fire-options margin-bottom js-quick-fire-options" data-toggle="buttons" data-repeat-option="{{ options }}">
         <label data-key="{{ option.key }}" class="btn btn-secondary margin-right" data-value="{{ option.value }}">
-          <input type="radio" name="options" id="{{ option.key }}" autocomplete="off" checked> {{ option.value }}
+          <input type="radio" name="options" id="{{ option.key }}" autocomplete="off"> {{ option.value }}
         </label>
     </div>
 
-    <div class="margin-left margin-top">
-        <li class="custom-control custom-checkbox">
+    <div class="margin-left margin-top quick-fire-custom-controls flex">
+        <div class="margin-right custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input js-quick-fire-technical" id="technical">
-            <label class="custom-control-label" for="technical">technical (advanced)</label>
-        </li>
-    </div>
+            <label class="custom-control-label" for="technical">Technical (advanced)</label>
+        </div>
 
-    <div class="margin-left margin-top">
-        <li class="custom-control custom-checkbox">
+        <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input js-quick-fire-reset" id="reset">
             <label class="custom-control-label" for="reset">Reset filters</label>
-        </li>
+        </div>
     </div>
 
     <div class="centred-block absolute-bottom">

@@ -59,7 +59,9 @@ const getQuickFire = (glossary, type, collection) => {
             incorrect: 0,
             isCorrect: null,
             isIncorrect: null,
-            rounds: []
+            rounds: [],
+            passes: [],
+            fails: []
         },
         poolSize: items.length,
         terms: collection.terms
