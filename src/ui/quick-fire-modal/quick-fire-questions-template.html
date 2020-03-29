@@ -1,7 +1,12 @@
 <div class="quick-fire">
 
-    <div class="margin-left centred-block standard-block">
-        Question {{ total }} of {{ count }}
+    <div class="margin-left centred-block standard-block justify-space-between">
+        <div>
+            <span>Question {{ total }} of {{ count }}</span>
+        </div>
+        <div class="margin-right">
+            <span class="margin-right underline-link small js-quick-review-progress">Review progress</span>
+        </div>
     </div>
 
     <div class="centred-block double-standard-block modal-background-relief border-light js-quick-fire-definition">
@@ -16,11 +21,14 @@
         </div>
     </div>
 
-    <div id="1" class="centred-block margin-top double-standard-block js-quick-layouts quick-fire-text-entry js-quick-fire-text-entry">
-        <div>
+    <div id="1" class="hide-important vertical-block centred-block margin-top js-quick-layouts quick-fire-text-entry js-quick-fire-text-entry">
+        <div class="standard-block">
             <input type="text">
-            <div class="margin-left centred-block margin-top standard-block js-quick-fire-message"></div>
         </div>
+        <div class="hide margin-top margin-bottom centered-block js-quick-fire-hint">
+            <span class="margin-left latin">Hint: </span><span>The answer has two words.</span>
+        </div>
+        <div class="margin-left centred-block margin-top standard-block js-quick-fire-message"></div>
     </div>
 
     <div class="margin-left centred-block standard-block">
@@ -29,7 +37,7 @@
 
     <div class="centred-block  absolute-bottom">
         <div class="action-update">
-            <button class="btn btn-light js-continue-quick-fire-btn">Continue lesson</button>
+            <button disabled class="btn btn-light js-continue-quick-fire-btn">Continue lesson</button>
         </div>
     </div>
 

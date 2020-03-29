@@ -1,11 +1,64 @@
 <div class="quick-fire">
 
-    <div class="centred-block margin-all standard-block js-quick-fire-summary">
-        <div>You have answered all of the questions.</div>
+    <div class="justify-space-between centred-block margin-all standard-block js-quick-fire-summary">
+        <div>
+            <span>You have answered all of the questions.</span>
+        </div>
+        <div class="margin-right">
+            <span class="margin-right underline-link small js-quick-review-continue-review">Continue review</span>
+        </div>
     </div>
 
-    <div class="margin-all centred-block modal-background-relief absolute-bottom">
-        You scored {{ correct }} out of {{ answered }}
+    <div class="standard-block padding-left centred-block modal-background-relief">
+        You scored {{ score.correct }} out of {{ score.total }}
     </div>
 
+    <ul class="margin-top nav nav-pills nav-fill quick-review-tabs js-quick-review-tabs mb-3" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="js-quick-review-correct" data-toggle="pill" role="tab">
+                <span class="landscape">Correct answers</span>
+                <span class="portrait">Correct</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#" id="js-quick-review-incorrect" data-toggle="pill" role="tab">
+                <span class="landscape">Incorrect answers</span>
+                <span class="portrait">Incorrect</span>
+            </a>
+        </li>
+      </ul>
+
+    <div class="scrollable accordions-container">
+
+        <div id="accordion-correct" data-type="js-quick-review-correct" class="hide-important quick-review-answers js-quick-review-answers" data-repeat-pass="{{ passes }}">
+            <div class="card quick-fire-summary-row margin-bottom">
+                <div class="card-header" id="pass_header_{{ pass.index }}">
+                <div data-toggle="collapse" data-target="#pass_target_{{ pass.index }}" aria-expanded="true" aria-controls="pass_target_{{ pass.index }}">
+                    <div>{{ pass.term }}</div>
+                </div>
+                </div>
+            </div>
+            <div id="pass_target_{{ pass.index }}" class="collapse" aria-labelledby="pass_header_{{ pass.index }}" data-parent="#accordion">
+                <div class="card-body">
+                    <div>{{ pass.definition }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="accordion-incorrect" data-type="js-quick-review-incorrect" class="quick-review-answers js-quick-review-answers" data-repeat-fail="{{ fails }}">
+            <div class="card quick-fire-summary-row margin-bottom">
+                <div class="card-header" id="fail_header_{{ fail.index }}">
+                <div data-toggle="collapse" data-target="#fail_target_{{ fail.index }}" aria-expanded="true" aria-controls="fail_target_{{ fail.index }}">
+                    <div>{{ fail.term }}</div>
+                </div>
+                </div>
+            </div>
+            <div id="fail_target_{{ fail.index }}" class="collapse" aria-labelledby="fail_header_{{ fail.index }}" data-parent="#accordion">
+                <div class="card-body">
+                    <div>{{ fail.definition }}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>

@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';
 import { renderGlossary } from 'ui/fixtures/glossary';
 
@@ -8,10 +9,18 @@ const updateBranchCounts = (items, branchOptions) => {
     branchOptions.forEach(branchBadge => {
     branchBadge.innerHTML = items.filter(item => item.branch === branchBadge.dataset.name).length;
     });
-
 };
 
-const updateTotalCounts = (quickFire, input, counters, branchCounters) => {
+const updateTaxonCounters = (items, taxonCounters, includeTechnicalTerms) => {
+
+    taxonCounters.forEach(taxonBadge => {
+        taxonBadge.innerHTML = includeTechnicalTerms
+            ? items.filter(item => item.taxon === taxonBadge.dataset.taxon).length
+            : items.filter(item => item.taxon === taxonBadge.dataset.taxon && !item.technical).length;
+    });
+};
+
+const updateTotalCounts = (quickFire, input, counters, branchCounters, taxonCounters, includeTechnicalTerms = false) => {
 
     quickFire.count = quickFire.score.total > 0 ? quickFire.count : quickFire.items.length;
 
@@ -23,21 +32,57 @@ const updateTotalCounts = (quickFire, input, counters, branchCounters) => {
     quickFire.poolSize = parseInt(input.value);
 
     updateBranchCounts(quickFire.items, branchCounters);
+    updateTaxonCounters(quickFire.items, taxonCounters, includeTechnicalTerms);
 };
 
-const scoreTest = (quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn) => {
+const scoreMultipleChoice = (quickFire, answer) => {
+
+    const isCorrect = answer === quickFire.question.term;
+    
+    quickFire.score.total++;
+
+    if(isCorrect) {
+        quickFire.score.correct++;
+        quickFire.score.isCorrect = true;
+        quickFire.score.isIncorrect = false;
+        quickFire.score.passes.push(quickFire.question);
+    } else {
+        quickFire.score.incorrect++;
+        quickFire.score.isCorrect = false;
+        quickFire.score.isIncorrect = true;
+        quickFire.score.fails.push(quickFire.question);
+    }
+};
+
+const scoreTextEntry = (quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn) => {
 
     if (quickFire.filter.option.key === '1') {
 
-        const acceptableAnswers = quickFire.question.term.split(',').map(answer => answer.toLowerCase());
+        const brackets = /\(.+?\)/;
+
+        const term = quickFire.question.term;
+
+        const acceptableAnswers = term.split(',').map(answer => {
+            
+            let acceptable = answer;
+                acceptable = acceptable.replace(brackets, '');
+                acceptable = acceptable.trim();
+                acceptable = acceptable.toLowerCase();
+
+            return acceptable
+        });
+        
         const isCorrect = R.contains(quickFireInput.value.toLowerCase(), acceptableAnswers);
+        
         quickFire.score.total++;
         
         if (isCorrect) {
             quickFire.score.correct++;
+            quickFire.score.passes.push(quickFire.question);
         }
         else {
             quickFire.score.incorrect++;
+            quickFire.score.fails.push(quickFire.question);
         }
         
         quickFireMessage.innerHTML = isCorrect
@@ -46,7 +91,7 @@ const scoreTest = (quickFire, quickFireInput, quickFireMessage, timer, continueQ
 
         timer = setTimeout(() => {
             continueQuickFireBtn.click();
-        }, 2000);
+        }, store.getState().config.callbackTime + 500);
     }
 
     return timer;
@@ -109,6 +154,6 @@ export const quickFireUI = {
     updateTotalCounts,
     updateHeaders,
     initGlossaryHeader,
-    scoreTest
-
+    scoreMultipleChoice,
+    scoreTextEntry
 };
