@@ -2232,7 +2232,7 @@ img[data-has-image="false"] {
 
 .quick-fire .btn-group >.btn {
   background-color: var(--snap-btn-light-blue);
-  margin: 0 0 .5rem 0;
+  margin: 0 .25rem .5rem 0;
   border-radius: .25rem !important;
   letter-spacing: .03rem;
   width: fit-content;
