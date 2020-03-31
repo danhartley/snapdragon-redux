@@ -18,25 +18,39 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
 
     renderTemplate({selectedSpecies}, template.content, selectedSpeciesDisplay);
 
-    // const species = modal.querySelector('.js-lesson-taxa');
-    //       species.innerHTML = ?? not known at this stage taxon of species added (though could be if import with inat data)
-
+    const getTaxa = (taxa, config, selectedSpecies) => {
+        if(taxa) {           
+            if(config.guide.iconicTaxa) {
+                taxa.innerHTML = config.guide.iconicTaxa.join(', ');
+            } else {
+                taxa.innerHTML = [ ...new Set(selectedSpecies.map(ss => ss.iconicTaxon))].join(', ');
+            }
+        }
+    }
+        
     const speciesCount = modal.querySelector('.js-lesson-taxa-count');
-    if(speciesCount) speciesCount.innerHTML = selectedSpecies.length;
+
+    if(speciesCount) {
+        speciesCount.innerHTML = speciesCount === 1 
+            ? `There is ${selectedSpecies.length} species in this lesson.`
+            : `There are ${selectedSpecies.length} species in this lesson.`;;
+    }
+
+    const taxa = modal.querySelector('.js-lesson-taxa');
+    getTaxa(taxa, config, selectedSpecies);
 
     const input = modal.querySelector("#input-species");
           if(config.isLandscapeMode) input.focus();
 
     const addSpeciesToList = species => {
         
-        if(R.contains(species, selectedSpecies)) return;
+        if(R.contains(species.name, selectedSpecies.map(ss => ss.name))) return;
 
         selectedSpecies.push(species);
 
         config.guide.species = selectedSpecies;
         config.guide.extraSpecies.push(species);
-
-        // config.guide.
+        config.guide.iconicTaxa = [ ...new Set(selectedSpecies.map(ss => ss.iconicTaxon)) ];
 
         createGuide.setConfig(config);
 
@@ -102,10 +116,11 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
             const removedSpecies = event.target.id;
 
             speciesNames.push({ label: removedSpecies, value: removedSpecies});
-            selectedSpecies = selectedSpecies.filter(species => species !== removedSpecies);
+            selectedSpecies = selectedSpecies.filter(species => species.name !== removedSpecies);
             
             config.guide.species = selectedSpecies;
             config.guide.extraSpecies = config.guide.extraSpecies.filter(sp => sp !== removedSpecies);
+            config.guide.iconicTaxa = [ ...new Set(selectedSpecies.map(ss => ss.iconicTaxon)) ];
 
             createGuide.setConfig(config);
             

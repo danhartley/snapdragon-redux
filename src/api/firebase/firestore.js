@@ -543,7 +543,7 @@ const addCollection = async (collection, user) => {
 
     if(!user) return;
     
-    collection.isPrivate = true;
+    // collection.isPrivate = true;
     collection.user = user;
 
     let docRef;

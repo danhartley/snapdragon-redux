@@ -20,7 +20,7 @@ export const renderCustomLesson = (lessons, savedLessons, videoPlayer, score, co
         renderTemplate({ lesson }, template.content, parent);
         
         const title = document.querySelector(`div.js-lesson-title[data-lesson-id="${lesson.id}"]`);
-        lessonListEventHandler.onLessonIconClickHandler(title, lessons, config, true);
+        lessonListEventHandler.onLessonTitleClickHandler(title, lessons);
 
         const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lesson.id}"]`);
         lessonListEventHandler.onReviewClickHandler(reviewLink, lessons);

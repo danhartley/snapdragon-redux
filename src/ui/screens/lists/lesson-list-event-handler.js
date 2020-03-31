@@ -3,7 +3,7 @@ import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';
 
 import { renderLessonIntro } from 'ui/screens/home/home-lesson-intro';
-
+import { renderEditLesson } from 'ui/screens/lists/lesson-edit';
 import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
@@ -25,6 +25,7 @@ const onLoadLessonViewState = (collection, videoPlayer, score) => {
         : `${collection.items.length} x 2 Minute Reviews`;
 
   collection.hasTermsClass = !!collection.terms ? '' : 'hide-important';
+  collection.isCollectionEditableClass = !!collection.isPrivate ? 'underline-link' : '';
 
   return collection;  
 };
@@ -76,6 +77,8 @@ const onTitleClickViewState = (e, lessons) => {
 const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
   
   return icon.addEventListener('click', async e => {      
+
+    e.stopPropagation();
 
     const { icon, lesson, state, speciesList, container, lessonVideoState, row, isYoutubeIcon } = onTitleClickViewState(e, lessons);
 
@@ -151,6 +154,13 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
   });
 };
 
+const onLessonTitleClickHandler = (title, lessons) => {
+    title.addEventListener('click', e => {
+          const lesson = lessons.find(lesson => lesson.id === parseInt(title.dataset.lessonId));
+          renderEditLesson(lesson);
+    });
+};
+
 const onReviewClickHandler = (reviewLink, lessons) => {    
 
   reviewLink.addEventListener('click', async e => {
@@ -188,6 +198,7 @@ export const lessonListEventHandler = {
   onLoadLessonsViewState,
   onLessonIconClickHandler,
   onReviewClickHandler,
+  onLessonTitleClickHandler,
   hideOtherContentAndRevertChevrons
 }
 

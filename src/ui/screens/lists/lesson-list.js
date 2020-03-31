@@ -4,7 +4,6 @@ import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
 import { quickFire } from 'ui/quick-fire-modal/quick-fire';
-
 import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
 import { renderLesson } from 'ui/screens/lists/lesson';
 import { renderCustomLesson } from 'ui/screens/lists/lesson-custom';
@@ -40,6 +39,9 @@ export const renderLessons = () => {
                   lessonListEventHandler.hideOtherContentAndRevertChevrons(upChevrons, 0);
 
             });    
+
+      const lessonTitles = document.querySelectorAll('.js-lesson-title');
+            lessonTitles.forEach(title => lessonListEventHandler.onLessonTitleClickHandler(title, lessons));
 
       const youtubeLessonIcons = document.querySelectorAll('.js-lesson-list-youtube');
             youtubeLessonIcons.forEach(youtube => lessonListEventHandler.onLessonIconClickHandler(youtube, lessons, config, true));

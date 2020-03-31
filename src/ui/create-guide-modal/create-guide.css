@@ -448,20 +448,24 @@
   }
 
   .lesson-name {
-    /* width: calc(100% - 1rem); */
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     line-height: 3;
   }
 
+  .lesson-name .underline-link {
+    text-transform: initial;
+    font-size: .8rem;
+  }
+
   .lesson-taxa span:nth-child(1) {
     margin: 0 .15rem 0 0;
   }
 
-  .lesson-taxa span:nth-child(2) {
+  /* .lesson-taxa span:nth-child(2) {
     font-style: italic;
-  }
+  } */
 
   .btn.btn-secondary.active .lesson-taxa .iconic-taxa-categories-selected svg g {
     fill: white;
@@ -617,7 +621,7 @@
     pointer-events: all;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
   }
 
   .request-feedback .lesson-list-item {

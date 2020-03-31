@@ -221,7 +221,6 @@ const addExtraSpeciesSelection = async (config, collection, species) => {
       score: R.clone(progressState.score)
   };
   actions.boundNewCollection({ lesson });
-  console.log('boundNewCollection');
 };
 
 const clearGuide = () => {

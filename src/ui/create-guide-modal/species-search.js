@@ -91,7 +91,7 @@ export const speciesSearch = createGuide => {
                       selectedSpeciesDisplay.classList.remove('hide-important');
                       selectedSpeciesDisplay.innerHTML = '';
                       editSpecies.classList.add('hide-important');
-                speciesInGuideEditor(config, modal, selectedSpeciesDisplay, createGuide, collection.items.map(i => i.name));
+                speciesInGuideEditor(config, modal, selectedSpeciesDisplay, createGuide, collection.items);
 
                 const collectionName = modal.querySelector('#js-collection-name');
                       collectionName.classList.add('hide-important');
@@ -119,6 +119,8 @@ export const speciesSearch = createGuide => {
         const lesson = await lessonStateHandler.loadLesson(collectionToLoad, config, collections);
         
         const collection = lesson.collection;
+              collection.iconicTaxa = collection.iconicTaxa.filter(taxon => R.contains(taxon.id, config.guide.iconicTaxa));
+              collection.isPrivate = true;
 
         if(collection && collection.items && collection.items.length > 0) {
             renderNewCollectionSummary(collection);
