@@ -73,7 +73,7 @@ const onTitleClickViewState = (e, lessons) => {
   return { icon, lesson, state, speciesList, container, lessonVideoState, reviewLink, row, isYoutubeIcon };
 };
 
-const onTitleClickHandler = (icon, lessons, config, startLesson) => {
+const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
   
   return icon.addEventListener('click', async e => {      
 
@@ -186,7 +186,7 @@ const hideOtherContentAndRevertChevrons = (upChevrons, selectedLessonId) => {
 export const lessonListEventHandler = {
   onLoadLessonViewState,
   onLoadLessonsViewState,
-  onTitleClickHandler,
+  onLessonIconClickHandler,
   onReviewClickHandler,
   hideOtherContentAndRevertChevrons
 }

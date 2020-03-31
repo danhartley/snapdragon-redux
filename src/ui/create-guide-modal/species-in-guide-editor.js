@@ -36,6 +36,8 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
         config.guide.species = selectedSpecies;
         config.guide.extraSpecies.push(species);
 
+        // config.guide.
+
         createGuide.setConfig(config);
 
         speciesNames = speciesNames.filter(name => name.value !== input.value);
@@ -68,9 +70,12 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
                 const suggestions = speciesNames.filter(n => n.value.toLowerCase().startsWith(text) && !R.contains(n.value, config.guide.extraSpecies)); // and exclude from original list too?
                 update(suggestions);
             },
-            onSelect: function(item) {
+            onSelect: async function(item) {
                 input.value = item.label;
-                addSpeciesToList(input.value);
+
+                const species = await firestore.getSpeciesByName(item.label);
+
+                addSpeciesToList(species);
             },
             minLength: 3,
             debounceWaitMs: 200,

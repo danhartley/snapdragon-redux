@@ -42,10 +42,10 @@ export const renderLessons = () => {
             });    
 
       const youtubeLessonIcons = document.querySelectorAll('.js-lesson-list-youtube');
-            youtubeLessonIcons.forEach(youtube => lessonListEventHandler.onTitleClickHandler(youtube, lessons, config, true));
+            youtubeLessonIcons.forEach(youtube => lessonListEventHandler.onLessonIconClickHandler(youtube, lessons, config, true));
 
       const chevrons = document.querySelectorAll('.js-lesson-list-chevron');
-            chevrons.forEach(chevron => lessonListEventHandler.onTitleClickHandler(chevron, lessons, config, false));
+            chevrons.forEach(chevron => lessonListEventHandler.onLessonIconClickHandler(chevron, lessons, config, false));
 
       const reviews = document.querySelectorAll('.js-review-link');
             reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink, lessons));

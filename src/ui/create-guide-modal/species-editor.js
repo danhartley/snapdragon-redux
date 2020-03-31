@@ -1,6 +1,7 @@
 import * as R from 'ramda';
 
 import autocomplete from 'autocompleter';
+
 import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
 

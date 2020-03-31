@@ -64,7 +64,7 @@ export const speciesSearch = createGuide => {
                         // we ignore picker because new picker lesson will be bound in the usual way
 
                         collection.items = collection.items.filter(item => {
-                            return R.contains(item.name, config.guide.species);
+                            return R.contains(item.name, config.guide.species.map(sp => sp.name));
                         });
     
                         const species = config.guide.extraSpecies.map(sp => { return { name: sp }; });              
@@ -175,7 +175,8 @@ export const speciesSearch = createGuide => {
         case enums.guideOption.PICKER.name:
             initLesson({
                 ...collections.find(c => c.guideType === option),
-                species: config.guide.species.map(sp => { return { name: sp } })
+                species: config.guide.species
+                // species: config.guide.species.map(sp => { return { name: sp } })
             });
             break;
     }
