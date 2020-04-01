@@ -137,9 +137,14 @@ class CreateGuide {
         }
     }
 
-    goToNextStep(nextStep, direction, option, next = null) {
+    goToNextStep(nextStep, direction, option = null, next = null) {
 
         this.currentStep = next || this.steps.find(s => s.number === nextStep);
+
+        if(option === enums.guideOption.PICKER.name) {
+            this.currentStep = this.steps[2];
+        }
+
         this.direction = direction;
         this.option = option || this.option;
 
@@ -147,12 +152,10 @@ class CreateGuide {
             this.currentStep = { number: 0 };
         };
 
-        const currentStepProperties = next || this.steps.find(s => s.number === this.currentStep.number);
-
         if(!this.modalTitle) return;
         
-        this.modalTitle.innerText = currentStepProperties.title;
-        this.nextStepActionTxt.innerHTML = currentStepProperties.nextStep;
+        this.modalTitle.innerText = this.currentStep.title;
+        this.nextStepActionTxt.innerHTML = this.currentStep.nextStep;
 
         this.progressSteps.forEach((ps,index) => {
 
@@ -173,18 +176,27 @@ class CreateGuide {
             this.optionsTxt.classList.remove('hide-important');
             this.previousStepActionTxt.classList.add('hide-important');
             this.previousStepActionArrow.classList.add('arrow-wrapper-hidden');
-            this.nextStepActionArrow.classList.add('arrow-wrapper-hidden');
+            this.nextStepActionArrow.classList.add('arrow-wrapper-hidden');            
         } else {
             this.navigationContainer.classList.add('progress-container');
             this.optionsTxt.classList.add('hide-important');
             this.previousStepActionArrow.classList.remove('arrow-wrapper-hidden');
             this.nextStepActionArrow.classList.remove('arrow-wrapper-hidden');
+            this.nextStepActionArrow.dataset.number = this.currentStep.number;
             this.previousStepActionTxt.classList.remove('hide-important');
             this.previousStepIcon.classList.remove('hide-important');
             const previousStepProperties = this.currentStep.prevStep
                                                 ? this.steps.find(s => s.description === this.currentStep.prevStep)
                                                 : this.steps.find(s => s.number === (this.currentStep.number - 1));
-            this.previousStepActionTxt.innerHTML = previousStepProperties.description;
+            
+
+            if(this.getCurrentStep().number === 4) {
+                this.previousStepActionTxt.innerHTML = this.option === enums.guideOption.PICKER.name 
+                    ? this.steps[2].description
+                    : this.steps[3].description;
+            } else {
+                this.previousStepActionTxt.innerHTML = previousStepProperties.description;
+            }
         }
     }
 
@@ -196,11 +208,11 @@ class CreateGuide {
 export const createGuideHandler = step => {
 
     const guide = new CreateGuide(step);
-
-    guide.goToNextStep(step);
+    
+    guide.goToNextStep(step, 'NEXT');
 
     const handleNextStepAction = event => {
-        guide.startLesson = guide.nextStepActionTxt.innerHTML.indexOf('View Guide') > -1; // hack
+        guide.startLesson = parseInt(guide.nextStepActionArrow.dataset.number) === 4;
         if(guide.startLesson) { 
             guide.nextStepActionArrow.setAttribute('data-dismiss','modal');
         } else {
@@ -214,9 +226,35 @@ export const createGuideHandler = step => {
     guide.nextStepActionArrow.addEventListener('click', handleNextStepAction, true);
 
     const handlePreviousStepAction = event => {
-        guide.goToNextStep(guide.getCurrentStep().number - 1, 'PREVIOUS');
+
+        let prevStep;
+        
+        if(guide.getCurrentStep().number === 4) {
+            prevStep = guide.option === enums.guideOption.PICKER.name ? 2 : 3;
+        } else {
+            prevStep = guide.getCurrentStep().number - 1;
+        }
+        
+        guide.goToNextStep(prevStep, 'PREVIOUS', guide.option);
         guide.listeners.push( { element: guide.previousStepActionArrow, handler: handlePreviousStepAction });
     };
 
     guide.previousStepActionArrow.addEventListener('click', handlePreviousStepAction, true);
+
+    guide.callOnCreateCustomListeners = collection => {
+        onCloseModalListeners.forEach(listener => listener(collection));
+        onCloseModalListeners.pop();
+    };
 };
+
+const onCloseModalListeners = [];
+
+export const onCreateCustomLesson = listener => { 
+    onCloseModalListeners.pop();
+    onCloseModalListeners.push(listener);
+};
+
+// export const callOnCreateCustomListeners = () => {
+//     onCloseModalListeners.forEach(listener => listener(collection));
+//     onCloseModalListeners.pop();
+// };

@@ -49,7 +49,6 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
         selectedSpecies.push(species);
 
         config.guide.species = selectedSpecies;
-        config.guide.extraSpecies.push(species);
         config.guide.iconicTaxa = [ ...new Set(selectedSpecies.map(ss => ss.iconicTaxon)) ];
 
         createGuide.setConfig(config);
@@ -81,7 +80,7 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
             input: input,
             fetch: function(text, update) {
                 text = text.toLowerCase();
-                const suggestions = speciesNames.filter(n => n.value.toLowerCase().startsWith(text) && !R.contains(n.value, config.guide.extraSpecies)); // and exclude from original list too?
+                const suggestions = speciesNames.filter(n => n.value.toLowerCase().startsWith(text));
                 update(suggestions);
             },
             onSelect: async function(item) {
@@ -119,7 +118,6 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
             selectedSpecies = selectedSpecies.filter(species => species.name !== removedSpecies);
             
             config.guide.species = selectedSpecies;
-            config.guide.extraSpecies = config.guide.extraSpecies.filter(sp => sp !== removedSpecies);
             config.guide.iconicTaxa = [ ...new Set(selectedSpecies.map(ss => ss.iconicTaxon)) ];
 
             createGuide.setConfig(config);

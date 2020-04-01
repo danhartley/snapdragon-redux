@@ -209,6 +209,7 @@ const purgeLesson = () => {
 
 const addExtraSpeciesSelection = async (config, collection, species) => {
     
+  console.log(species);
   const items = await collectionHandler.getSnapdragonSpeciesData(species);
   const collectionExtension = await collectionHandler.loadCollectionItemProperties({ items }, config);
   collection.items = [...collection.items, ...collectionExtension.items];
@@ -236,8 +237,7 @@ const clearGuide = () => {
       },
       speciesRange: 10,
       inatId: { key: '', type: '', param: 'user_id' },
-      season: {},
-      extraSpecies: []
+      season: {}
   };
   actions.boundUpdateConfig(config);
 };

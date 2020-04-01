@@ -10,13 +10,6 @@ import { speciesInGuideEditor } from 'ui/create-guide-modal/species-in-guide-edi
 import spinnerTemplate from 'ui/create-guide-modal/species-search-template.html';
 import speciesSummaryTemplate from 'ui/create-guide-modal/species-summary-template.html';
 
-const onCloseModalListeners = [];
-
-export const onCreateCustomLesson = listener => { 
-    onCloseModalListeners.pop();
-    onCloseModalListeners.push(listener);
-};
-
 export const speciesSearch = createGuide => {
 
     const { config, modal, option } = createGuide;
@@ -56,26 +49,18 @@ export const speciesSearch = createGuide => {
         const close = modal.querySelector('.js-right .js-arrow-wrapper');
 
         setTimeout(() => {
-            close.addEventListener('click', () => {
+            close.addEventListener('click', e => {
                 setTimeout( async () => {
 
-                    if(config.guide.extraSpecies.length > 0 && collection.guideType !== 'PICKER') {          
+                    collection.items = collection.items.filter(item => {
+                        return R.contains(item.name, config.guide.species.map(sp => sp.name));
+                    });
 
-                        // we ignore picker because new picker lesson will be bound in the usual way
+                    const extraSpecies = config.guide.species.filter(s => !R.contains(s.name, collection.items.map(i => i.name)));
+                    await lessonStateHandler.addExtraSpeciesSelection(config, collection, extraSpecies);                      
 
-                        collection.items = collection.items.filter(item => {
-                            return R.contains(item.name, config.guide.species.map(sp => sp.name));
-                        });
-    
-                        const species = config.guide.extraSpecies.map(sp => { return { name: sp }; });              
-                        await lessonStateHandler.addExtraSpeciesSelection(config, collection, species);
-                        onCloseModalListeners.forEach(listener => listener(collection));
-                        onCloseModalListeners.pop();
-                        lessonStateHandler.clearGuide();
-                        
-                    } else {
-                        onCloseModalListeners.forEach(listener => listener(collection));
-                        onCloseModalListeners.pop();
+                    if(parseInt(close.dataset.number) === 4) {
+                        createGuide.callOnCreateCustomListeners(collection);
                         lessonStateHandler.clearGuide();
                     }
                 });
