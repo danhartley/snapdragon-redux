@@ -36,7 +36,7 @@ const onLoadLessonsViewState = (collections, videoPlayer, score) => {
   });
 };
 
-const onTitleClickViewState = (e, lessons) => {
+const onClickViewState = (e, lessons) => {
 
   const icon = e.currentTarget;
   const row = icon.parentElement.parentElement;
@@ -80,7 +80,7 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
 
     e.stopPropagation();
 
-    const { icon, lesson, state, speciesList, container, lessonVideoState, row, isYoutubeIcon } = onTitleClickViewState(e, lessons);
+    const { icon, lesson, state, speciesList, container, lessonVideoState, row, isYoutubeIcon } = onClickViewState(e, lessons);
 
     const isItemActive = item => {
       if(item.hasOwnProperty('isActive')) {

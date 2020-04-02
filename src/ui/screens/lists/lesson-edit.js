@@ -1,10 +1,7 @@
-import * as R from 'ramda';
-
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import { speciesInGuideEditor } from 'ui/create-guide-modal/species-in-guide-editor';
-import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 
 import lessonEditTemplate from 'ui/screens/lists/lesson-edit-template.html';
 
@@ -35,14 +32,7 @@ const init = async () => {
         }
     };
 
-    let items = collection.items;
-    let species = [];
-    
     speciesInGuideEditor(config, modal, selectedSpeciesDisplay, createGuide, collection.items);
-
-    species = collection.items.filter(item => !R.contains(item.name, items.map(i => i.name))); 
-
-    await lessonStateHandler.addExtraSpeciesSelection(config, collection, species);
 };
 
 init();

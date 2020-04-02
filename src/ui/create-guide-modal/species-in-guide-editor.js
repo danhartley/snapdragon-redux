@@ -1,8 +1,11 @@
 import * as R from 'ramda';
 
 import autocomplete from 'autocompleter';
+
+import { store } from 'redux/store';
 import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
+import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 
 import editorTemplate from 'ui/create-guide-modal/species-in-guide-editor-template.html';
 
@@ -42,7 +45,7 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
     const input = modal.querySelector("#input-species");
           if(config.isLandscapeMode) input.focus();
 
-    const addSpeciesToList = species => {
+    const addSpeciesToList = async species => {
         
         if(R.contains(species.name, selectedSpecies.map(ss => ss.name))) return;
 
@@ -56,9 +59,11 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
         speciesNames = speciesNames.filter(name => name.value !== input.value);
         input.value = '';
 
-        setTimeout(() => {            
-            speciesInGuideEditor(config, modal, selectedSpeciesDisplay, createGuide, selectedSpecies, speciesNames);
-        }, 200);
+        const { collection } = store.getState();
+
+        await lessonStateHandler.addExtraSpeciesSelection(config, collection);
+
+        speciesInGuideEditor(config, modal, selectedSpeciesDisplay, createGuide, selectedSpecies, speciesNames);
     };
 
     let speciesNames = savedSpeciesNames || [];

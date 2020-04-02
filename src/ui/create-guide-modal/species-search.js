@@ -61,8 +61,7 @@ export const speciesSearch = createGuide => {
                         return R.contains(item.name, config.guide.species.map(sp => sp.name));
                     });
 
-                    const extraSpecies = config.guide.species.filter(s => !R.contains(s.name, collection.items.map(i => i.name)));
-                    await lessonStateHandler.addExtraSpeciesSelection(config, collection, extraSpecies);
+                    await lessonStateHandler.addExtraSpeciesSelection(config, collection);
 
                     if(parseInt(close.dataset.number) === 4) {
                         createGuide.callOnCreateCustomListeners(collection);
@@ -178,8 +177,7 @@ export const speciesSearch = createGuide => {
     
                 if(addingExtraSpecies) {
                     collectionToLoad = collection;
-                    const extraSpecies = config.guide.species.filter(s => !R.contains(s.name, collection.items.map(i => i.name)));
-                    await lessonStateHandler.addExtraSpeciesSelection(config, collectionToLoad, extraSpecies);
+                    await lessonStateHandler.addExtraSpeciesSelection(config, collectionToLoad);
                 } else {
                     collectionToLoad = {
                         ...collections.find(c => c.guideType === option),
