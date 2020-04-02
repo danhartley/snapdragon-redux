@@ -192,14 +192,11 @@ const changeState = async (lessonState, collection, config) => {
 };
 
 const purgeLesson = () => {
-
   persistor.purge();
   window.location.reload(true);
 };
 
-const addExtraSpeciesSelection = async (config, collection, species) => {
-    
-  console.log(species);
+const addExtraSpeciesSelection = async (config, collection, species) => {    
   const items = await collectionHandler.getSnapdragonSpeciesData(species);
   const collectionExtension = await collectionHandler.loadCollectionItemProperties({ items }, config);
   collection.items = [...collection.items, ...collectionExtension.items];

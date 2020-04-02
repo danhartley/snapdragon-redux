@@ -80,7 +80,7 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
             input: input,
             fetch: function(text, update) {
                 text = text.toLowerCase();
-                const suggestions = speciesNames.filter(n => n.value.toLowerCase().startsWith(text));
+                const suggestions = speciesNames.filter(n => n.value.toLowerCase().startsWith(text) && !R.contains(n.value, selectedSpecies.map(ss => ss.name)));
                 update(suggestions);
             },
             onSelect: async function(item) {
