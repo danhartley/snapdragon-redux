@@ -15,7 +15,7 @@ export const lessonPlan = (state = null, action) => {
             return action.data || state;
         case types.NEXT_LESSON:
             return action.data.lessonPlan || state;
-        case types.NEW_COLLECTION:
+        case types.SET_ACTIVE_COLLECTION:
             return action.data.lesson.lessonPlan || state;
         default:
             return state;
@@ -35,7 +35,7 @@ export const layout = (state = null, action) => {
             } else {
                 return action.data;
             }
-        case types.NEW_COLLECTION:
+        case types.SET_ACTIVE_COLLECTION:
             return action.data.lesson.layout || state;
         default: 
             return state;

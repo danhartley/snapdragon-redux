@@ -97,22 +97,12 @@ const loadLesson = async (collectionToLoad, config, collections) => {
 
   if(requiresCollection) {
     await collectionHandler.loadCollection(lesson.collection, config, lesson.counter, collections);
-    actions.boundNewCollection({ lesson });
+    actions.boundSetActiveCollection({ lesson });
   } else {
-    actions.boundNewCollection({ lesson });  
+    actions.boundSetActiveCollection({ lesson });  
   }
   
-  const requiresAddingToCollections = !collections.filter(collection => collection.isActive).find(c => c.id === lesson.collection.id);
-
-  console.log('requiresAddingToCollections: ', requiresAddingToCollections);
-
-  if(requiresAddingToCollections) {
-    if(lesson.collection.items.length > 0) {
-      lesson.collection.isActive = true;
-      firestore.addCollection(lesson.collection, user);
-      actions.boundUpdateCollections([lesson.collection]);
-    }
-  }
+  addToOrUpdateCollectionInCollections(lesson, user);
 
   return lesson;
 };
@@ -221,7 +211,7 @@ const addExtraSpeciesSelection = async (config, collection, species) => {
       history: null,
       score: R.clone(progressState.score)
   };
-  actions.boundNewCollection({ lesson });
+  actions.boundSetActiveCollection({ lesson });
 };
 
 const clearGuide = () => {
@@ -246,6 +236,14 @@ const updateCollection = (config, collection) => {
   actions.boundUpdateCollection({config,collection});
 };
 
+const addToOrUpdateCollectionInCollections = (lesson, user) => { 
+    if(lesson.collection.items.length > 0) {
+      lesson.collection.isActive = true;
+      firestore.addCollection(lesson.collection, user);
+      actions.boundUpdateCollections([lesson.collection]);
+    }
+};
+
 export const lessonStateHandler = {
   beginOrResumeLesson,
   renderLessonSpeciesList,
@@ -257,3 +255,4 @@ export const lessonStateHandler = {
   clearGuide,
   updateCollection
 };
+

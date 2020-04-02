@@ -3,7 +3,7 @@ import { config as initialConfig } from 'snapdragon-config/lesson-config';
 
 export const config = (state = initialConfig, action) => {
     switch(action.type) {
-        case types.NEW_COLLECTION:
+        case types.SET_ACTIVE_COLLECTION:
             return { ...state, ...action.data.lesson.config };
         case types.UPDATE_COLLECTION:        
             return { ...action.data.config, ...{ coordinates: state.coordinates }, ...{ place: state.place } };    
@@ -11,7 +11,7 @@ export const config = (state = initialConfig, action) => {
             return { ...state, ...action.data };
         case types.UPDATE_LANGUAGE:
             return { ...state, ...{ language: action.data.lang } };
-        case types.NEW_COLLECTION:
+        case types.SET_ACTIVE_COLLECTION:
             return { ...state, ...action.data.lesson.config };
         default: 
             return state;

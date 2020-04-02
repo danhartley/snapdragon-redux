@@ -15,7 +15,12 @@ export const collections = (state = [], action) => {
             });
             return cols;
         case types.UPDATE_COLLECTIONS: {
-            return state ? [ ...state, ...action.data ] : action.data;
+            const isCollectionUpdate = action.data.length === 1 ? R.contains(action.data[0].id, state.map(collection => collection.id)) : false;
+            if(isCollectionUpdate) {
+                return [ ...state.filter(collection => collection.id !== action.data[0].id), ...action.data ];
+            } else {
+                return state ? [ ...state, ...action.data ] : action.data;
+            }
         }
         case types.UPDATE_COLLECTION: {
 
@@ -85,7 +90,7 @@ export const collection = (state = { id: 0 }, action) => {
             return collection;
         }
 
-        case types.NEW_COLLECTION: {
+        case types.SET_ACTIVE_COLLECTION: {
             return { 
                 ...state, ...action.data.lesson.collection, 
                 nextItem: action.data.lesson.collection.items[action.data.lesson.collection.itemIndex] };
@@ -148,7 +153,7 @@ export const bonusLayout = (state = null, action) => {
             return state;
         }
 
-        case types.NEW_COLLECTION:
+        case types.SET_ACTIVE_COLLECTION:
             return { ...state, ...action.data.lesson.bonusLayout };
 
         default: {

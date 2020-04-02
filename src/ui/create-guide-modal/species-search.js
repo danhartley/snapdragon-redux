@@ -31,7 +31,12 @@ export const speciesSearch = createGuide => {
         }, 3500);
     }, 2000);
 
-    const renderNewCollectionSummary = collection => {
+    const renderLessonSummary = collection => {
+
+        if(collection && collection.items && collection.items.length === 0) {
+            feedback.innerHTML = 'No species were found. Try widening your parameters.';
+            return;
+        }
 
         clearTimeout(timer);
 
@@ -57,7 +62,7 @@ export const speciesSearch = createGuide => {
                     });
 
                     const extraSpecies = config.guide.species.filter(s => !R.contains(s.name, collection.items.map(i => i.name)));
-                    await lessonStateHandler.addExtraSpeciesSelection(config, collection, extraSpecies);                      
+                    await lessonStateHandler.addExtraSpeciesSelection(config, collection, extraSpecies);
 
                     if(parseInt(close.dataset.number) === 4) {
                         createGuide.callOnCreateCustomListeners(collection);
@@ -96,22 +101,16 @@ export const speciesSearch = createGuide => {
     };
 
     const initLesson = async collectionToLoad => {
-
-        collectionToLoad.id = collections.length + 10000, // temp
+        
         config.collection.id = collectionToLoad.id;
-        config.guide.guideType = option;
 
         const lesson = await lessonStateHandler.loadLesson(collectionToLoad, config, collections);
         
         const collection = lesson.collection;
               collection.iconicTaxa = collection.iconicTaxa.filter(taxon => R.contains(taxon.id, config.guide.iconicTaxa));
               collection.isPrivate = true;
-
-        if(collection && collection.items && collection.items.length > 0) {
-            renderNewCollectionSummary(collection);
-        } else {
-            feedback.innerHTML = 'No species were found. Try widening your parameters.';
-        }
+        
+        renderLessonSummary(collection);
 
         const OrdinalSuffixOf = i => {
         var j = i % 10,
@@ -141,7 +140,9 @@ export const speciesSearch = createGuide => {
         unsubscribe = listenToInatRequests(callback);
     };
 
-   switch(option) {
+    config.guide.guideType = option;
+
+    switch(option) {
 
         case enums.guideOption.LOCATION.name:
             initLesson({ 
@@ -149,6 +150,7 @@ export const speciesSearch = createGuide => {
                 name: config.guide.place.name,
                 taxa: config.guide.iconicTaxa.map(i => i.common).join(', '),
                 iconicTaxa: config.guide.iconicTaxa,
+                id: collections.length + 10000,
             });
             break;
         case enums.guideOption.INAT.name:
@@ -157,14 +159,40 @@ export const speciesSearch = createGuide => {
                 name: `${config.guide.inatId.key}'s observations`,
                 taxa: config.guide.iconicTaxa.map(i => i.common).join(', '),
                 iconicTaxa: config.guide.iconicTaxa,
+                id: collections.length + 10000,
             });        
             break;
         case enums.guideOption.PICKER.name:
-            initLesson({
-                ...collections.find(c => c.guideType === option),
-                species: config.guide.species
-                // species: config.guide.species.map(sp => { return { name: sp } })
-            });
+
+            const initPicker = async () => {
+
+                const { collection } = store.getState();
+
+                let addingExtraSpecies = false;
+                
+                if(collection.items) {
+                    addingExtraSpecies = collection.items.map(i => i.name).every(val => config.guide.species.map(s => s.name).includes(val));
+                }
+    
+                let collectionToLoad;
+    
+                if(addingExtraSpecies) {
+                    collectionToLoad = collection;
+                    const extraSpecies = config.guide.species.filter(s => !R.contains(s.name, collection.items.map(i => i.name)));
+                    await lessonStateHandler.addExtraSpeciesSelection(config, collectionToLoad, extraSpecies);
+                } else {
+                    collectionToLoad = {
+                        ...collections.find(c => c.guideType === option),
+                        species: config.guide.species,
+                        id: collections.length + 10000,
+                    };
+                }
+
+                initLesson(collectionToLoad);
+            };
+
+            initPicker();
+
             break;
     }
 
