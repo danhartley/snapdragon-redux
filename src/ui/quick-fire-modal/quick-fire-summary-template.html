@@ -1,6 +1,6 @@
 <div class="quick-fire">
 
-    <div class="justify-space-between centred-block margin-all standard-block js-quick-fire-summary">
+    <div class="justify-space-between centred-block margin-left standard-block js-quick-fire-summary">
         <div>
             <span>You have answered all of the questions.</span>
         </div>
@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div class="standard-block padding-left centred-block modal-background-relief">
+    <div class="border-light standard-block padding-left centred-block modal-background-relief">
         You scored {{ score.correct }} out of {{ score.total }}
     </div>
 
@@ -34,13 +34,14 @@
             <div class="card quick-fire-summary-row margin-bottom">
                 <div class="card-header" id="pass_header_{{ pass.index }}">
                 <div data-toggle="collapse" data-target="#pass_target_{{ pass.index }}" aria-expanded="true" aria-controls="pass_target_{{ pass.index }}">
-                    <div>{{ pass.term }}</div>
+                    <div>{{ pass.term }}</div>                    
                 </div>
                 </div>
             </div>
             <div id="pass_target_{{ pass.index }}" class="collapse" aria-labelledby="pass_header_{{ pass.index }}" data-parent="#accordion">
                 <div class="card-body">
                     <div>{{ pass.definition }}</div>
+                    <div><a class="underline-link extra-small-text" href="{{ pass.wiki }}" target="_blank">wikipedia</a></div>
                 </div>
             </div>
         </div>
@@ -56,6 +57,7 @@
             <div id="fail_target_{{ fail.index }}" class="collapse" aria-labelledby="fail_header_{{ fail.index }}" data-parent="#accordion">
                 <div class="card-body">
                     <div>{{ fail.definition }}</div>
+                    <div><a class="underline-link extra-small-text" href="{{ fail.wiki }}" target="_blank">wikipedia</a></div>
                 </div>
             </div>
         </div>

@@ -198,10 +198,13 @@ const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
   Array.from(icon.parentElement.children).forEach(child => child.dataset.selected = true);
 
   const loadingMessage = icon.parentElement.parentElement.parentElement.querySelector('.js-loading-message');
-  loadingMessage.classList.remove('hide');
+        loadingMessage.classList.remove('hide');
+
   await lessonStateHandler.renderLessonSpeciesList(lesson, container);
-  loadingMessage.classList.add('hide');
-  lessonListScrollHandler.scrollToTitle(lesson.id);
+  
+        loadingMessage.classList.add('hide');
+  
+        lessonListScrollHandler.scrollToTitle(lesson.id);
 };
 
 export const lessonListEventHandler = {

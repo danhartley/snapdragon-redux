@@ -113,7 +113,7 @@ const filters = async () => {
             questions(quickFire);
           });
 
-    const quickFireOptions = document.querySelectorAll('.js-quick-fire-options .btn');
+    const quickFireOptions = document.querySelectorAll('.js-quick-fire-filter-options .btn');
     
           quickFire.filter.option.key === "0"
             ? quickFireOptions[0].click()
@@ -174,7 +174,7 @@ const questions = (quickFire, linkFromLesson = false) => {
 
     actions.boundCreateQuickFire(quickFire);
 
-    headers(enums.quickFireStep.QUESTIONS, quickFire, linkFromLesson, );
+    headers(enums.quickFireStep.QUESTIONS, quickFire, linkFromLesson);
 
     const modal = document.querySelector('#glossaryModal');
     const parent = modal.querySelector('.js-modal-text'); 
@@ -287,7 +287,7 @@ const questions = (quickFire, linkFromLesson = false) => {
     } else {
         summary(quickFire, modal);        
     }
-
+    
     const review = modal.querySelector('.js-quick-review-progress');
           review.addEventListener('click', e => {
             summary(quickFire, modal);
@@ -328,9 +328,15 @@ const summary = (quickFire, modal) => {
           template.innerHTML = templateSummaryQuickFire;
 
     const passes = quickFire.score.passes;
-          passes.forEach((pass, i) => pass.index = i);
+          passes.forEach((pass, i) => {
+            pass.index = i,
+            pass.wiki = pass.wiki || ''
+          });
     const fails = quickFire.score.fails;
-          fails.forEach((fail, i) => fail.index = i);
+          fails.forEach((fail, i) => {
+            fail.index = i,
+            fail.wiki = fail.wiki || ''
+          });
 
     renderTemplate({ score: quickFire.score, passes, fails }, template.content, parent);
 
