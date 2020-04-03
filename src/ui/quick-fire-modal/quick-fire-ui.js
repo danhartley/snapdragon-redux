@@ -100,6 +100,7 @@ const scoreTextEntry = (quickFire, quickFireInput, quickFireMessage, timer, cont
 const initGlossaryHeader = link => {
 
     link.classList.remove('hide-important');
+    link.innerHTML = 'Glossary test';
 
 };
 
@@ -131,19 +132,20 @@ const updateHeaders = (screen, links, getQuickFire, linkFromLesson = false) => {
             glossary.classList.remove(hide);
             glossary.classList.add(underline);
             glossary.addEventListener('click', loadGlossary);            
-            break;
+        break;
             
-            case enums.quickFireStep.QUESTIONS:
-                if(linkFromLesson) {
-                    glossary.classList.remove(hide);
-                    glossary.classList.add(underline);
-                    filters.classList.add(hide);
-                    questions.classList.add(hide);
-                }
-                else {
-                    filters.classList.add(underline);
-                    filters.classList.remove(hide);
+        case enums.quickFireStep.QUESTIONS:
+            if(linkFromLesson) {
+                glossary.classList.remove(hide);
+                glossary.classList.add(underline);
+                filters.classList.add(hide);
+                questions.classList.add(hide);
             }
+            else {
+                filters.classList.add(underline);
+                filters.classList.remove(hide);
+            }
+            filters.innerHTML = 'Test filters';
             glossary.addEventListener('click', loadGlossary);
         break;
     }
