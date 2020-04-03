@@ -87,32 +87,19 @@ const loadLesson = async (collectionToLoad, config, collections) => {
     };
   }
 
-  console.log('collectionToLoad: ', collectionToLoad);
-
   const requiresCollection = 
       (!!collectionToLoad.items && collectionToLoad.items.length === 0) ||
       (!collectionToLoad.items && !!collectionToLoad.species);
 
-  console.log('requiresCollection: ', requiresCollection);
-
   if(requiresCollection) {
     await collectionHandler.loadCollection(lesson.collection, config, lesson.counter, collections);
-    actions.boundNewCollection({ lesson });
-  } else {
-    actions.boundNewCollection({ lesson });  
-  }
+    actions.boundSetActiveCollection({ lesson });
+  } 
+  // else {
+  //   actions.boundSetActiveCollection({ lesson });  
+  // }
   
-  const requiresAddingToCollections = !collections.filter(collection => collection.isActive).find(c => c.id === lesson.collection.id);
-
-  console.log('requiresAddingToCollections: ', requiresAddingToCollections);
-
-  if(requiresAddingToCollections) {
-    if(lesson.collection.items.length > 0) {
-      lesson.collection.isActive = true;
-      firestore.addCollection(lesson.collection, user);
-      actions.boundUpdateCollections([lesson.collection]);
-    }
-  }
+  // addToOrUpdateCollectionInCollections(lesson, user);
 
   return lesson;
 };
@@ -202,16 +189,18 @@ const changeState = async (lessonState, collection, config) => {
 };
 
 const purgeLesson = () => {
-
   persistor.purge();
   window.location.reload(true);
 };
 
-const addExtraSpeciesSelection = async (config, collection, species) => {
-    
-  const items = await collectionHandler.getSnapdragonSpeciesData(species);
+const addExtraSpeciesSelection = async (config, collection) => {
+
+  if(!collection.items) return;
+
+  const extraSpecies = config.guide.species.filter(s => !R.contains(s.name, collection.items.map(i => i.name)));
+  const items = await collectionHandler.getSnapdragonSpeciesData(extraSpecies);
   const collectionExtension = await collectionHandler.loadCollectionItemProperties({ items }, config);
-  collection.items = [...collection.items, ...collectionExtension.items];
+  collection.items = [ ...collection.items, ...collectionExtension.items];
   const lesson = {
       collection,
       counter: { ...store.getState().counter, index: 0 },
@@ -220,8 +209,7 @@ const addExtraSpeciesSelection = async (config, collection, species) => {
       history: null,
       score: R.clone(progressState.score)
   };
-  actions.boundNewCollection({ lesson });
-  console.log('boundNewCollection');
+  actions.boundSetActiveCollection({ lesson });
 };
 
 const clearGuide = () => {
@@ -237,14 +225,21 @@ const clearGuide = () => {
       },
       speciesRange: 10,
       inatId: { key: '', type: '', param: 'user_id' },
-      season: {},
-      extraSpecies: []
+      season: {}
   };
   actions.boundUpdateConfig(config);
 };
 
 const updateCollection = (config, collection) => {
   actions.boundUpdateCollection({config,collection});
+};
+
+const addToOrUpdateCollectionInCollections = (lesson, user) => { 
+    if(lesson.collection.items.length > 0) {
+      lesson.collection.isActive = true;
+      // firestore.addCollection(lesson.collection, user); IMPORTANT FOR LOGGED IN USERS
+      actions.boundUpdateCollections([lesson.collection]);
+    }
 };
 
 export const lessonStateHandler = {
@@ -258,3 +253,4 @@ export const lessonStateHandler = {
   clearGuide,
   updateCollection
 };
+

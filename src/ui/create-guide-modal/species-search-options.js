@@ -36,13 +36,13 @@ export const renderSpeciesSearchOptions = createGuide => {
 
     const handleNextStepAction = event => {
 
-        const optionId = event.currentTarget.dataset.optionId;
+        const option = event.currentTarget.dataset.option;
         const step = createGuide.steps.find(s => s.number === createGuide.getCurrentStep().number);
-        const nextStepName = step.nextSteps.find(step => step.id === optionId).step;
+        const nextStepName = step.nextSteps.find(step => step.id === option).step;
         const nextStep = createGuide.steps.find(s => s.description === nextStepName);
 
         createGuide.startLesson = false;        
-        createGuide.goToNextStep(createGuide.getCurrentStep().number + 1, 'NEXT', optionId, nextStep);
+        createGuide.goToNextStep(createGuide.getCurrentStep().number + 1, 'NEXT', option, nextStep);
         createGuide.listeners = [];
         createGuide.listeners.push( { element: createGuide.nextStepActionArrow, handler: handleNextStepAction });
     };

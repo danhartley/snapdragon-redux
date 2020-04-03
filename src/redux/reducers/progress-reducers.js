@@ -24,7 +24,7 @@ export const counter = (state = null, action) => {
         case types.END_REVISION:
             let i = (state.index + 1) <= action.data.layoutCount ? (state.index + 1) : state.index;
             return { index: i };
-        case types.NEW_COLLECTION:
+        case types.SET_ACTIVE_COLLECTION:
             return { ...state, ...action.data.lesson.counter };
         default:
             return state;
@@ -113,7 +113,7 @@ export const score = (state = R.clone(progressState.score), action) => {
             );
             return { ...state, bonusScores: bonusScores };
         }
-        case types.NEW_COLLECTION:
+        case types.SET_ACTIVE_COLLECTION:
             return action.data.lesson.score;
         case types.NEXT_LESSON: {
             return { ...state, mode: 'learn'};
@@ -151,7 +151,7 @@ export const history = (state = null, action) => {
         }
         case types.SELECT_COLLECTION:
             return null;   
-        case types.NEW_COLLECTION:
+        case types.SET_ACTIVE_COLLECTION:
             return action.data.lesson.history;
         default:
             return state;

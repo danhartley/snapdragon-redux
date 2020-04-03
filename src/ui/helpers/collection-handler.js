@@ -174,8 +174,8 @@ const loadCollectionItemProperties = async (collection, config) => {
     return collection;
 };
 
-const getSnapdragonSpeciesData = species => {
-    return firestore.getSpeciesInParallel(species);
+const getSnapdragonSpeciesData = async species => {
+    return await firestore.getSpeciesInParallel(species);
 }
 
 export const collectionHandler = {

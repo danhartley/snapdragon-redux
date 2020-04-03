@@ -59,8 +59,8 @@ const onLoadHandler = () => {
         actions.boundStopStartLesson(counter);
 
         if(collections && collections.length === 0) {
-            const cloudConnections = await firestore.getCollections();
-            actions.boundUpdateCollections(cloudConnections);
+            const cloudCollections = await firestore.getCollections();
+            actions.boundUpdateCollections(cloudCollections);
         }
 
         subscription.add(renderHeaders, 'collection', 'flow');

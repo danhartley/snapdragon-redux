@@ -1,4 +1,4 @@
-import { onCreateCustomLesson } from 'ui/create-guide-modal/species-search';
+import { onCreateCustomLesson } from 'ui/create-guide-modal/create-guide';
 import { renderTemplate } from 'ui/helpers/templating';
 import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
 
@@ -20,14 +20,14 @@ export const renderCustomLesson = (lessons, savedLessons, videoPlayer, score, co
         renderTemplate({ lesson }, template.content, parent);
         
         const title = document.querySelector(`div.js-lesson-title[data-lesson-id="${lesson.id}"]`);
-        lessonListEventHandler.onTitleClickHandler(title, lessons, config, true);
+        lessonListEventHandler.onLessonTitleClickHandler(title, lessons);
 
         const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lesson.id}"]`);
         lessonListEventHandler.onReviewClickHandler(reviewLink, lessons);
 
         const chevron = document.querySelector(`div.js-lesson-list-chevron[data-lesson-id="${lesson.id}"]`);
               chevron.classList.remove('landscape');
-        lessonListEventHandler.onTitleClickHandler(chevron, lessons, config, false);
+        lessonListEventHandler.onLessonIconClickHandler(chevron, lessons, config, false);
 
         const youtubeLessonIcon = document.querySelector(`div.js-lesson-list-youtube[data-lesson-id="${lesson.id}"]`);
               youtubeLessonIcon.classList.add('hide-important');

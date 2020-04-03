@@ -1,5 +1,6 @@
 import autocomplete from 'autocompleter';
 
+import { utils } from 'utils/utils';
 import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
 import { collectionPicker } from 'admin/screens/collection/collection-picker';
@@ -170,11 +171,14 @@ export const addTerm = () => {
               });
 
         inputTerm.addEventListener('keydown', async event => {
-            if(event.keyCode == 9) {
+            if(event.keyCode == 9) {    
+
+                inputTerm.value = utils.capitaliseFirst(inputTerm.value);
+
                 const definitions = await firestore.getDefinitionsWhere({
                     key: 'term',
                     operator: '==',
-                    value: inputEditTerm.value
+                    value: inputTerm.value
                 });
                 const definition = definitions[0];
                 if(definition) {

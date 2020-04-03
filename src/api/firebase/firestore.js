@@ -106,11 +106,13 @@ const getSpeciesByIconicTaxon = async (item, number = 6) => {
 
 const getSpeciesByName = async (itemName, force = false) => {
 
+    console.log(itemName);
+
     if(!itemName) return '';
 
     const items = await getSpecies({ key:'name', operator:'==', value:itemName });
     
-    // console.log(items);
+    console.log(items);
 
     return items[0];
 };
@@ -543,7 +545,7 @@ const addCollection = async (collection, user) => {
 
     if(!user) return;
     
-    collection.isPrivate = true;
+    // collection.isPrivate = true;
     collection.user = user;
 
     let docRef;

@@ -4,7 +4,6 @@ import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
 import { quickFire } from 'ui/quick-fire-modal/quick-fire';
-
 import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
 import { renderLesson } from 'ui/screens/lists/lesson';
 import { renderCustomLesson } from 'ui/screens/lists/lesson-custom';
@@ -41,11 +40,15 @@ export const renderLessons = () => {
 
             });    
 
+      const lessonTitles = document.querySelectorAll('.js-lesson-title');
+            lessonTitles.forEach(title => lessonListEventHandler.onLessonTitleClickHandler(title, lessons));
+
       const youtubeLessonIcons = document.querySelectorAll('.js-lesson-list-youtube');
-            youtubeLessonIcons.forEach(youtube => lessonListEventHandler.onTitleClickHandler(youtube, lessons, config, true));
+            youtubeLessonIcons.forEach(youtube => lessonListEventHandler.onLessonIconClickHandler(youtube, lessons, config, true));
 
       const chevrons = document.querySelectorAll('.js-lesson-list-chevron');
-            chevrons.forEach(chevron => lessonListEventHandler.onTitleClickHandler(chevron, lessons, config, false));
+            chevrons.forEach(chevron => lessonListEventHandler.onLessonIconClickHandler(chevron, store.getState().collections.filter(c => c.isActive), config, false));
+            // chevrons.forEach(chevron => lessonListEventHandler.onLessonIconClickHandler(chevron, lessons, config, false));
 
       const reviews = document.querySelectorAll('.js-review-link');
             reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink, lessons));

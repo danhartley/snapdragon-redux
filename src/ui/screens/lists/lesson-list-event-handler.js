@@ -3,7 +3,7 @@ import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';
 
 import { renderLessonIntro } from 'ui/screens/home/home-lesson-intro';
-
+import { renderEditLesson } from 'ui/screens/lists/lesson-edit';
 import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
@@ -25,6 +25,7 @@ const onLoadLessonViewState = (collection, videoPlayer, score) => {
         : `${collection.items.length} x 2 Minute Reviews`;
 
   collection.hasTermsClass = !!collection.terms ? '' : 'hide-important';
+  collection.isCollectionEditableClass = !!collection.isPrivate ? 'underline-link' : '';
 
   return collection;  
 };
@@ -35,7 +36,7 @@ const onLoadLessonsViewState = (collections, videoPlayer, score) => {
   });
 };
 
-const onTitleClickViewState = (e, lessons) => {
+const onClickViewState = (e, lessons) => {
 
   const icon = e.currentTarget;
   const row = icon.parentElement.parentElement;
@@ -73,11 +74,13 @@ const onTitleClickViewState = (e, lessons) => {
   return { icon, lesson, state, speciesList, container, lessonVideoState, reviewLink, row, isYoutubeIcon };
 };
 
-const onTitleClickHandler = (icon, lessons, config, startLesson) => {
+const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
   
   return icon.addEventListener('click', async e => {      
 
-    const { icon, lesson, state, speciesList, container, lessonVideoState, row, isYoutubeIcon } = onTitleClickViewState(e, lessons);
+    e.stopPropagation();
+
+    const { icon, lesson, state, speciesList, container, lessonVideoState, row, isYoutubeIcon } = onClickViewState(e, lessons);
 
     const isItemActive = item => {
       if(item.hasOwnProperty('isActive')) {
@@ -151,6 +154,13 @@ const onTitleClickHandler = (icon, lessons, config, startLesson) => {
   });
 };
 
+const onLessonTitleClickHandler = (title, lessons) => {
+    title.addEventListener('click', e => {
+          const lesson = lessons.find(lesson => lesson.id === parseInt(title.dataset.lessonId));
+          renderEditLesson(lesson);
+    });
+};
+
 const onReviewClickHandler = (reviewLink, lessons) => {    
 
   reviewLink.addEventListener('click', async e => {
@@ -186,8 +196,9 @@ const hideOtherContentAndRevertChevrons = (upChevrons, selectedLessonId) => {
 export const lessonListEventHandler = {
   onLoadLessonViewState,
   onLoadLessonsViewState,
-  onTitleClickHandler,
+  onLessonIconClickHandler,
   onReviewClickHandler,
+  onLessonTitleClickHandler,
   hideOtherContentAndRevertChevrons
 }
 

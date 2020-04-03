@@ -10,13 +10,6 @@ import { speciesInGuideEditor } from 'ui/create-guide-modal/species-in-guide-edi
 import spinnerTemplate from 'ui/create-guide-modal/species-search-template.html';
 import speciesSummaryTemplate from 'ui/create-guide-modal/species-summary-template.html';
 
-const onCloseModalListeners = [];
-
-export const onCreateCustomLesson = listener => { 
-    onCloseModalListeners.pop();
-    onCloseModalListeners.push(listener);
-};
-
 export const speciesSearch = createGuide => {
 
     const { config, modal, option } = createGuide;
@@ -38,7 +31,12 @@ export const speciesSearch = createGuide => {
         }, 3500);
     }, 2000);
 
-    const renderNewCollectionSummary = collection => {
+    const renderLessonSummary = collection => {
+
+        if(collection && collection.items && collection.items.length === 0) {
+            feedback.innerHTML = 'No species were found. Try widening your parameters.';
+            return;
+        }
 
         clearTimeout(timer);
 
@@ -56,26 +54,17 @@ export const speciesSearch = createGuide => {
         const close = modal.querySelector('.js-right .js-arrow-wrapper');
 
         setTimeout(() => {
-            close.addEventListener('click', () => {
+            close.addEventListener('click', e => {
                 setTimeout( async () => {
 
-                    if(config.guide.extraSpecies.length > 0 && collection.guideType !== 'PICKER') {          
+                    collection.items = collection.items.filter(item => {
+                        return R.contains(item.name, config.guide.species.map(sp => sp.name));
+                    });
 
-                        // we ignore picker because new picker lesson will be bound in the usual way
+                    await lessonStateHandler.addExtraSpeciesSelection(config, collection);
 
-                        collection.items = collection.items.filter(item => {
-                            return R.contains(item.name, config.guide.species);
-                        });
-    
-                        const species = config.guide.extraSpecies.map(sp => { return { name: sp }; });              
-                        await lessonStateHandler.addExtraSpeciesSelection(config, collection, species);
-                        onCloseModalListeners.forEach(listener => listener(collection));
-                        onCloseModalListeners.pop();
-                        lessonStateHandler.clearGuide();
-                        
-                    } else {
-                        onCloseModalListeners.forEach(listener => listener(collection));
-                        onCloseModalListeners.pop();
+                    if(parseInt(close.dataset.number) === 4) {
+                        createGuide.callOnCreateCustomListeners(collection);
                         lessonStateHandler.clearGuide();
                     }
                 });
@@ -91,7 +80,7 @@ export const speciesSearch = createGuide => {
                       selectedSpeciesDisplay.classList.remove('hide-important');
                       selectedSpeciesDisplay.innerHTML = '';
                       editSpecies.classList.add('hide-important');
-                speciesInGuideEditor(config, modal, selectedSpeciesDisplay, createGuide, collection.items.map(i => i.name));
+                speciesInGuideEditor(config, modal, selectedSpeciesDisplay, createGuide, collection.items);
 
                 const collectionName = modal.querySelector('#js-collection-name');
                       collectionName.classList.add('hide-important');
@@ -111,20 +100,16 @@ export const speciesSearch = createGuide => {
     };
 
     const initLesson = async collectionToLoad => {
-
-        collectionToLoad.id = collections.length + 10000, // temp
+        
         config.collection.id = collectionToLoad.id;
-        config.guide.guideType = option;
 
         const lesson = await lessonStateHandler.loadLesson(collectionToLoad, config, collections);
         
         const collection = lesson.collection;
-
-        if(collection && collection.items && collection.items.length > 0) {
-            renderNewCollectionSummary(collection);
-        } else {
-            feedback.innerHTML = 'No species were found. Try widening your parameters.';
-        }
+              collection.iconicTaxa = collection.iconicTaxa.filter(taxon => R.contains(taxon.id, config.guide.iconicTaxa));
+              collection.isPrivate = true;
+        
+        renderLessonSummary(collection);
 
         const OrdinalSuffixOf = i => {
         var j = i % 10,
@@ -154,7 +139,9 @@ export const speciesSearch = createGuide => {
         unsubscribe = listenToInatRequests(callback);
     };
 
-   switch(option) {
+    config.guide.guideType = option;
+
+    switch(option) {
 
         case enums.guideOption.LOCATION.name:
             initLesson({ 
@@ -162,6 +149,7 @@ export const speciesSearch = createGuide => {
                 name: config.guide.place.name,
                 taxa: config.guide.iconicTaxa.map(i => i.common).join(', '),
                 iconicTaxa: config.guide.iconicTaxa,
+                id: collections.length + 10000,
             });
             break;
         case enums.guideOption.INAT.name:
@@ -170,13 +158,39 @@ export const speciesSearch = createGuide => {
                 name: `${config.guide.inatId.key}'s observations`,
                 taxa: config.guide.iconicTaxa.map(i => i.common).join(', '),
                 iconicTaxa: config.guide.iconicTaxa,
+                id: collections.length + 10000,
             });        
             break;
         case enums.guideOption.PICKER.name:
-            initLesson({
-                ...collections.find(c => c.guideType === option),
-                species: config.guide.species.map(sp => { return { name: sp } })
-            });
+
+            const initPicker = async () => {
+
+                const { collection } = store.getState();
+
+                let addingExtraSpecies = false;
+                
+                if(collection.items) {
+                    addingExtraSpecies = collection.items.map(i => i.name).every(val => config.guide.species.map(s => s.name).includes(val));
+                }
+    
+                let collectionToLoad;
+    
+                if(addingExtraSpecies) {
+                    collectionToLoad = collection;
+                    await lessonStateHandler.addExtraSpeciesSelection(config, collectionToLoad);
+                } else {
+                    collectionToLoad = {
+                        ...collections.find(c => c.guideType === option),
+                        species: config.guide.species,
+                        id: collections.length + 10000,
+                    };
+                }
+
+                initLesson(collectionToLoad);
+            };
+
+            initPicker();
+
             break;
     }
 

@@ -8,7 +8,7 @@ const NEXT_LESSON = '[NEXT_LESSON] Get (new) lesson plan';
 const NEXT_LAYOUT = '[NEXT_LAYOUT] Render next layout';
 const NEXT_ITEM = '[NEXT_ITEM] Get next item';
 
-const NEW_COLLECTION = '[NEW_COLLECTION] New collection';
+const SET_ACTIVE_COLLECTION = '[SET_ACTIVE_COLLECTION] New collection';
 const UPDATE_COLLECTION = '[UPDATE_COLLECTION] Change collection';
 const UPDATE_COLLECTIONS = '[UPDATE_COLLECTIONS] Update collections list';
 const RESET_COLLECTION = '[RESET_COLLECTION] Reset collection to initial state';
@@ -44,7 +44,7 @@ export const types = {
     UPDATE_TRAIT_SCORE,
     END_REVISION,
     UPDATE_HISTORY,
-    NEW_COLLECTION,
+    SET_ACTIVE_COLLECTION,
     UPDATE_COLLECTION,
     UPDATE_COLLECTION_ITEMS,
     UPDATE_COLLECTIONS,
