@@ -46,7 +46,7 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
     if(config.isLandscapeMode) {
         setTimeout(() => {
             input.focus();
-        }, 1000);
+        }, 500);
     }
 
     const addSpeciesToList = async species => {
@@ -65,9 +65,11 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
 
         const { collection } = store.getState();
 
-        await lessonStateHandler.addExtraSpeciesSelection(config, collection);
+        lessonStateHandler.addExtraSpeciesSelection(config, collection);
 
-        speciesInGuideEditor(config, modal, selectedSpeciesDisplay, createGuide, selectedSpecies, speciesNames);
+        setTimeout(() => {            
+            speciesInGuideEditor(config, modal, selectedSpeciesDisplay, createGuide, selectedSpecies, speciesNames);
+        }, 250);
     };
 
     let speciesNames = savedSpeciesNames || [];

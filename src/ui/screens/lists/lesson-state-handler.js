@@ -234,7 +234,7 @@ const updateCollection = (config, collection) => {
 const addToOrUpdateCollectionInCollections = (lesson, user) => { 
     if(lesson.collection.items.length > 0) {
       lesson.collection.isActive = true;
-      // firestore.addCollection(lesson.collection, user); IMPORTANT FOR LOGGED IN USERS
+      // firestore.addCollection(lesson.collection, user); IMPORTANT FOR LOGGED IN USERS: this is the lesson itself, NOT its state
       actions.boundUpdateCollections([lesson.collection]);
     }
 };
