@@ -106,14 +106,10 @@ const getSpeciesByIconicTaxon = async (item, number = 6) => {
 
 const getSpeciesByName = async (itemName, force = false) => {
 
-    console.log(itemName);
-
     if(!itemName) return '';
 
     const items = await getSpecies({ key:'name', operator:'==', value:itemName });
     
-    console.log(items);
-
     return items[0];
 };
 
@@ -731,7 +727,7 @@ const addCollection = async (collection, user) => {
         docRef = doc.ref;
     });
 
-    console.log(docRef);
+    console.log('updateDefinition: ', docRef);
 
     return await docRef.update(definition);
   };

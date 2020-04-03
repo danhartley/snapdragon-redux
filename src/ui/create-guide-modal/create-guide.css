@@ -447,9 +447,23 @@
     pointer-events: none;
   }
 
+  .lesson-name {
+    line-height: initial !important;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /* overflow: hidden; */
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
   .lesson-name .underline-link {
     text-transform: initial;
     font-size: .8rem;
+  }
+
+  .lesson-name input {
+    pointer-events: initial;
   }
 
   .lesson-taxa span:nth-child(1) {
@@ -627,6 +641,7 @@
 
   .selected-species-container > div.scrollable {
     height: 0;
+    margin: .5rem;
   }
 
   .selected-species-container > div.scrollable.open {

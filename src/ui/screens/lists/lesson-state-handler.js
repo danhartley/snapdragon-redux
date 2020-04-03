@@ -1,6 +1,5 @@
 import * as R from 'ramda';
 
-import { firestore } from 'api/firebase/firestore';
 import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
@@ -12,8 +11,6 @@ import { collectionHandler  } from 'ui/helpers/collection-handler';
 const beginOrResumeLesson = async (reviewLessonId, isNextRound)  => {
 
   const { collections, collection: currentCollection, config } = store.getState();
-
-  console.log('currentCollection: ', currentCollection);
 
   if(isNextRound) {
     await changeState(enums.lessonState.NEXT_ROUND, currentCollection, config);

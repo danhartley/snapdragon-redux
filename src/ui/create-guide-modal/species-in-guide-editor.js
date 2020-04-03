@@ -43,7 +43,11 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
     getTaxa(taxa, config, selectedSpecies);
 
     const input = modal.querySelector("#input-species");
-          if(config.isLandscapeMode) input.focus();
+    if(config.isLandscapeMode) {
+        setTimeout(() => {
+            input.focus();
+        }, 1000);
+    }
 
     const addSpeciesToList = async species => {
         
