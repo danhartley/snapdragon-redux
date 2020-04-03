@@ -193,15 +193,6 @@ const hideOtherContentAndRevertChevrons = (upChevrons, selectedLessonId) => {
   });
 };
 
-export const lessonListEventHandler = {
-  onLoadLessonViewState,
-  onLoadLessonsViewState,
-  onLessonIconClickHandler,
-  onReviewClickHandler,
-  onLessonTitleClickHandler,
-  hideOtherContentAndRevertChevrons
-}
-
 const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
 
   Array.from(icon.parentElement.children).forEach(child => child.dataset.selected = true);
@@ -211,4 +202,13 @@ const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
   await lessonStateHandler.renderLessonSpeciesList(lesson, container);
   loadingMessage.classList.add('hide');
   lessonListScrollHandler.scrollToTitle(lesson.id);
-}
+};
+
+export const lessonListEventHandler = {
+  onLoadLessonViewState,
+  onLoadLessonsViewState,
+  onLessonIconClickHandler,
+  onReviewClickHandler,
+  onLessonTitleClickHandler,
+  hideOtherContentAndRevertChevrons
+};

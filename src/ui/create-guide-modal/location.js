@@ -63,8 +63,7 @@ export const renderLocation = (modal, createGuide) => {
 
     const handleLocationPlaceInput =  e => {
         locationPlaceInput.removeEventListener('keypress', handleLocationPlaceInput);
-        // counter++;
-        // console.log(counter);
+        // counter++;        
         autocompleteRef = inatAutocomplete(locationPlaceInput, 'places', 'autocomplete-options-container', 'place');
         // saveLocationBtn.disabled = false;        
         // setTimeout(() => {

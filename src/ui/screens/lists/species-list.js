@@ -12,11 +12,14 @@ import { videoSetup } from 'ui/screens/home/home-lesson-intro-video';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { onSpeciesChangeHandler, openNoteHandler } from 'ui/screens/lists/species-list-definition-insert';
 
-export const renderSpeciesList = (collection, args) => {
+export const renderSpeciesList = (lesson, args) => {
 
     const { readOnlyMode = false, callingParentContainer, isInCarousel = false } = args;
 
-    const { config, history, enums: traitEnums  } = store.getState();
+    const { config, history, enums: traitEnums, collections  } = store.getState();    
+
+    // to ensure we have latest item list if species has been added
+    const collection = collections.find(c => c.id === lesson.id);
 
     const openAccordionHandler = (species, accordion) => {
         

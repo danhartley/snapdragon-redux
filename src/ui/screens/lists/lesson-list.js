@@ -47,8 +47,7 @@ export const renderLessons = () => {
             youtubeLessonIcons.forEach(youtube => lessonListEventHandler.onLessonIconClickHandler(youtube, lessons, config, true));
 
       const chevrons = document.querySelectorAll('.js-lesson-list-chevron');
-            chevrons.forEach(chevron => lessonListEventHandler.onLessonIconClickHandler(chevron, store.getState().collections.filter(c => c.isActive), config, false));
-            // chevrons.forEach(chevron => lessonListEventHandler.onLessonIconClickHandler(chevron, lessons, config, false));
+            chevrons.forEach(chevron => lessonListEventHandler.onLessonIconClickHandler(chevron, lessons, config, false));
 
       const reviews = document.querySelectorAll('.js-review-link');
             reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink, lessons));

@@ -35,7 +35,6 @@ async function getItems(collection, config) {
             }
             else { // INAT
                 const inatSpecies = await getInatSpecies(config);
-                console.log('inatSpecies: ', inatSpecies);
                 return inatSpecies;
             }            
         }
@@ -76,14 +75,13 @@ const loadCollection = async (collection, config) => {
                 itemReadyCollection = await loadCollectionItemProperties(collection, config);
                 
                 try {
-                    console.log('itemReadyCollection: ', itemReadyCollection);
                     return itemReadyCollection;
                 } catch (e) {
-                    console.log(e.message);
+                    console.log('Error for loadCollectionItemProperties: ', e.message);
                 }
 
             } else {
-                console.log('Calling callbackWhenNoResults().');
+                console.log('No results for callbackWhenNoResults');
                 return collection;
             }
     } catch (e) {
