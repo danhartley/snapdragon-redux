@@ -540,11 +540,16 @@ const getQuestionById = (id, name) => {
 const addCollection = async (collection, user) => {
 
     if(!user) return;
+
+    const collectionRef = await updateCollection(collection);
+
+    console.log('update collectionRef: ', collectionRef);
+
+    if(collectionRef) return;
     
-    // collection.isPrivate = true;
     collection.user = user;
 
-    let docRef;
+    let docRef = null;
   
     try {
         console.log('addCollection: ', collection);
@@ -558,7 +563,7 @@ const addCollection = async (collection, user) => {
 
   const updateCollection = async collection => {
 
-    let docRef;
+    let docRef = null;
 
     const querySnapshot = await db.collection("collections").where("name", "==", collection.name).get();
     
@@ -566,9 +571,13 @@ const addCollection = async (collection, user) => {
         docRef = doc.ref;
     });
 
-    console.log(docRef);
+    if(docRef) {
+        return await docRef.update(collection);
+    }
 
-    return await docRef.update(collection);
+    console.log('update collection doc ref: ', docRef);
+
+    return docRef;
 
 };
   
@@ -705,7 +714,7 @@ const addCollection = async (collection, user) => {
         return terms;
 
     } catch (e) {
-        return e.message;
+        return `error in getBatchDefinitionsById; message: ${e.message}`;
     }
   }
 

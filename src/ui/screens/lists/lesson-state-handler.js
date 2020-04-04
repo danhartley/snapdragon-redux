@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { firestore } from 'api/firebase/firestore';
 import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
@@ -31,7 +32,7 @@ const beginOrResumeLesson = async (reviewLessonId, isNextRound)  => {
 
 const renderLessonSpeciesList = async (collectionToLoad, container) => {
 
-  const { config, collections, counter } = store.getState();
+  const { config, collections } = store.getState();
 
   const { collection } = await loadLesson(collectionToLoad, config, collections);
 
@@ -62,7 +63,7 @@ const saveCurrentLesson = async collection => {
 
 const loadLesson = async (collectionToLoad, config, collections) => {
 
-  const { counter, lessons, user } = store.getState();
+  const { counter, lessons } = store.getState();
 
   const restoredLesson = lessons.find(l => l.name === collectionToLoad.name);
 
@@ -90,13 +91,8 @@ const loadLesson = async (collectionToLoad, config, collections) => {
 
   if(requiresCollection) {
     await collectionHandler.loadCollection(lesson.collection, config, lesson.counter, collections);
-    actions.boundSetActiveCollection({ lesson });
+    setActiveCollection(lesson);
   } 
-  // else {
-  //   actions.boundSetActiveCollection({ lesson });  
-  // }
-  
-  // addToOrUpdateCollectionInCollections(lesson, user);
 
   return lesson;
 };
@@ -206,7 +202,7 @@ const addExtraSpeciesSelection = async (config, collection) => {
       history: null,
       score: R.clone(progressState.score)
   };
-  actions.boundSetActiveCollection({ lesson });
+  setActiveCollection(lesson);
 };
 
 const clearGuide = () => {
@@ -228,15 +224,7 @@ const clearGuide = () => {
 };
 
 const updateCollection = (config, collection) => {
-  actions.boundUpdateCollection({config,collection});
-};
-
-const addToOrUpdateCollectionInCollections = (lesson, user) => { 
-    if(lesson.collection.items.length > 0) {
-      lesson.collection.isActive = true;
-      // firestore.addCollection(lesson.collection, user); IMPORTANT FOR LOGGED IN USERS: this is the lesson itself, NOT its state
-      actions.boundUpdateCollections([lesson.collection]);
-    }
+  actions.boundUpdateCollection({ config, collection });
 };
 
 export const lessonStateHandler = {
@@ -251,3 +239,8 @@ export const lessonStateHandler = {
   updateCollection
 };
 
+const setActiveCollection = lesson => {
+  actions.boundSetActiveCollection({ lesson });
+  const { user } = store.getState();
+  firestore.addCollection(lesson.collection, user);
+};

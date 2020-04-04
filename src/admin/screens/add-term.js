@@ -104,7 +104,7 @@ export const addTerm = () => {
                 wiki.value = '';
                 addToCollection(docRef);
             }).catch(e => {
-                savedText.innerHTML = `Oops, something went wrong, nameley: ${e}`;
+                savedText.innerHTML = `Oops, something went wrong, namely: ${e}`;
                 savedText.classList.remove('hide');
             });
 

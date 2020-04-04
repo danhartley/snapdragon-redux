@@ -12,9 +12,13 @@ import taxonTemplate from 'ui/screens/cards/taxon-card-template.html';
 
 let transition;
 
-document.querySelector('#cardModal .carousel').addEventListener('click', event => {    
-    transition = event.target.dataset.transition;
-});
+const modalCarousel = document.querySelector('#cardModal .carousel');
+
+if(modalCarousel) {
+    modalCarousel.addEventListener('click', event => {    
+        transition = event.target.dataset.transition;
+    });
+}
 
 export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.rightBody, speciesTaxon, rank, isInCarousel = true) => {
   

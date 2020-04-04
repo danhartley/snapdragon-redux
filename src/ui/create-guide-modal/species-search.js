@@ -80,6 +80,7 @@ export const speciesSearch = createGuide => {
                       selectedSpeciesDisplay.classList.remove('hide-important');
                       selectedSpeciesDisplay.innerHTML = '';
                       editSpecies.classList.add('hide-important');
+                      
                 speciesInGuideEditor(config, modal, selectedSpeciesDisplay, createGuide, collection.items);
 
                 const collectionName = modal.querySelector('#js-collection-name');
@@ -152,6 +153,7 @@ export const speciesSearch = createGuide => {
                 id: collections.length + 10000,
             });
             break;
+
         case enums.guideOption.INAT.name:
             initLesson({
                 ...collections.find(c => c.guideType === option),  
@@ -161,6 +163,7 @@ export const speciesSearch = createGuide => {
                 id: collections.length + 10000,
             });        
             break;
+
         case enums.guideOption.PICKER.name:
 
             const initPicker = async () => {

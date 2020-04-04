@@ -139,12 +139,12 @@ export const editCollectionTerms = () => {
 const updateCollection = (collection, savedText, inputTerm) => {
 
     firestore.updateCollection(collection).then(response => {
-        savedText.innerHTML = message || 'The term was added to collection successfully!';
+        savedText.innerHTML = 'The term was added to collection successfully!';
         savedText.classList.remove('hide');
         inputTerm.value = '';
         inputTerm.focus();
     }).catch(e => {
-        savedText.innerHTML = `Oops, something went wrong, nameley: ${e}`;
+        savedText.innerHTML = `Oops, something went wrong, namely: ${e}`;
         savedText.classList.remove('hide');
     });
 }
