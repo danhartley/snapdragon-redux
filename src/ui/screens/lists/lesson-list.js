@@ -19,7 +19,12 @@ export const renderLessons = () => {
     const template = document.createElement('template');
           template.innerHTML = lessonListTemplate;
 
-    let lessons = lessonListEventHandler.onLoadLessonsViewState(collections.filter(collection => (collection.isActive === undefined || collection.isActive)), videoPlayer, score);
+    let lessons = lessonListEventHandler.onLoadLessonsViewState(collections.filter(collection => (collection.isActive === undefined || collection.isActive)), videoPlayer, score);        
+        lessons = lessons.sort(function(a,b){
+              const tsa = a.create ? a.create.seconds : 0;
+              const tsb = b.create ? b.create.seconds : 0;
+            return tsb - tsa;
+        });
 
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
         parent.innerHTML = '';
