@@ -77,7 +77,7 @@ const loadLesson = async (collectionToLoad, config, collections) => {
   } else {
     lesson = { 
       collection: collectionToLoad, 
-      counter: { ...counter, index: 0}, 
+      counter: { ...counter, index: 0},
       lesson: { currentRound: 1, rounds: 0, isNextRound: true },
       layout: null,
       history: null,
@@ -92,7 +92,9 @@ const loadLesson = async (collectionToLoad, config, collections) => {
   if(requiresCollection) {
     await collectionHandler.loadCollection(lesson.collection, config, lesson.counter, collections);
     setActiveCollection(lesson);
-  } 
+  } else {
+    setActiveCollection(lesson);
+  }
 
   return lesson;
 };
@@ -240,6 +242,7 @@ export const lessonStateHandler = {
 };
 
 const setActiveCollection = lesson => {
+  lesson.counter = lesson.counter || { };
   actions.boundSetActiveCollection({ lesson });
   const { user } = store.getState();
   firestore.addCollection(lesson.collection, user);

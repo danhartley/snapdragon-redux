@@ -279,7 +279,7 @@ const questions = (quickFire, linkFromLesson = false) => {
             }            
         });
 
-        if(quickFire.question.term.split(' ').length > 1  && quickFire.question.term.indexOf('(') === 0 && quickFire.filter.option.key === '1') {
+        if((quickFire.question.term.split(' ').length > 1 || quickFire.question.term.indexOf('(') === 0) && quickFire.filter.option.key === '1') {
             const hint = modal.querySelector('.js-quick-fire-hint');
                   hint.classList.remove('hide');
         }
