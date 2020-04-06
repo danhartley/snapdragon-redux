@@ -48,42 +48,42 @@ const loadCollection = async (collection, config) => {
     
     try {
 
-        if(collection.items && collection.items.length > 0 && !config.guide.hasChanged) return collection;
+        if(collection.items.length > 0) return collection;
 
         config.collection = { id: collection.id };
 
-            const items = await getItems(collection, config);
-            collection.items = items.filter(item => item.name);
+        const items = await getItems(collection, config);
+        collection.items = items.filter(item => item.name);
 
-            if(collection.nextItem) return; // after refreshing or returning to the page (using rehydrated collection)
+        if(collection.nextItem) return; // after refreshing or returning to the page (using rehydrated collection)
 
-            if(R.contains('lepidoptera', collection.iconicTaxa.map(taxon => taxon.id)) && !R.contains('insecta', collection.iconicTaxa.map(taxon => taxon.id))) {
-                const insecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() === 'insecta');
-                const lepidoptera = insecta.filter(i => i.taxonomy.order.toLowerCase() === 'lepidoptera');
-                const noninsecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() !== 'insecta');
-                collection.items = [ ...lepidoptera, ...noninsecta ];
+        if(R.contains('lepidoptera', collection.iconicTaxa.map(taxon => taxon.id)) && !R.contains('insecta', collection.iconicTaxa.map(taxon => taxon.id))) {
+            const insecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() === 'insecta');
+            const lepidoptera = insecta.filter(i => i.taxonomy.order.toLowerCase() === 'lepidoptera');
+            const noninsecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() !== 'insecta');
+            collection.items = [ ...lepidoptera, ...noninsecta ];
+        }
+
+        if(collection.behaviour === 'dynamic') {                    
+            collection.speciesRange = config.guide.speciesRange;
+        }
+
+        let itemReadyCollection;
+
+        if(collection.items) {
+
+            itemReadyCollection = await loadCollectionItemProperties(collection, config);
+            
+            try {
+                return itemReadyCollection;
+            } catch (e) {
+                console.log('Error for loadCollectionItemProperties: ', e.message);
             }
 
-            if(collection.behaviour === 'dynamic') {                    
-                collection.speciesRange = config.guide.speciesRange;
-            }
-
-            let itemReadyCollection;
-
-            if(collection.items) {
-
-                itemReadyCollection = await loadCollectionItemProperties(collection, config);
-                
-                try {
-                    return itemReadyCollection;
-                } catch (e) {
-                    console.log('Error for loadCollectionItemProperties: ', e.message);
-                }
-
-            } else {
-                console.log('No results for callbackWhenNoResults');
-                return collection;
-            }
+        } else {
+            console.log('No results for callbackWhenNoResults');
+            return collection;
+        }
     } catch (e) {
         console.log('Error for collectionHandler: ', e.message);
     }
@@ -180,5 +180,5 @@ export const collectionHandler = {
     loadCollection,
     loadCollectionItemProperties,
     getSnapdragonSpeciesData
-}
+};
 
