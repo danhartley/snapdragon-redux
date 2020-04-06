@@ -19,12 +19,12 @@ export const renderGlossary = async glossary => {
 
       const quickFireLink = modal.querySelector('.js-quick-fire-filters');
             quickFireLink.addEventListener('click', e => {
-            quickFire.filters();
+            quickFire.filters(false);
             });
 
       const quickFireQuestionsLink = modal.querySelector('.js-quick-fire-questions');   
             quickFireQuestionsLink.addEventListener('click', e => {
-            quickFire.questions(store.getState().quickFire, true);
+            quickFire.questions( { ...store.getState().quickFire, linkFromLesson: false }, true);
             });
 
       const filtersLink = document.querySelector('.js-quick-fire-filters'); 

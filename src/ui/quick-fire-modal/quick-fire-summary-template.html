@@ -32,7 +32,7 @@
 
         <div id="accordion-correct" data-type="js-quick-review-correct" class="hide-important quick-review-answers js-quick-review-answers" data-repeat-pass="{{ passes }}">
             <div class="card quick-fire-summary-row margin-bottom">
-                <div class="card-header" id="pass_header_{{ pass.index }}">
+                <div class="card-header capitalise" id="pass_header_{{ pass.index }}">
                 <div data-toggle="collapse" data-target="#pass_target_{{ pass.index }}" aria-expanded="true" aria-controls="pass_target_{{ pass.index }}">
                     <div>{{ pass.term }}</div>                    
                 </div>
@@ -48,7 +48,7 @@
 
         <div id="accordion-incorrect" data-type="js-quick-review-incorrect" class="quick-review-answers js-quick-review-answers" data-repeat-fail="{{ fails }}">
             <div class="card quick-fire-summary-row margin-bottom">
-                <div class="card-header" id="fail_header_{{ fail.index }}">
+                <div class="card-header capitalise" id="fail_header_{{ fail.index }}">
                 <div data-toggle="collapse" data-target="#fail_target_{{ fail.index }}" aria-expanded="true" aria-controls="fail_target_{{ fail.index }}">
                     <div>{{ fail.term }}</div>
                 </div>
