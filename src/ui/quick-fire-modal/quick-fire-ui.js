@@ -104,7 +104,7 @@ const initGlossaryHeader = link => {
 
 };
 
-const updateHeaders = (screen, links, getQuickFire, linkFromLesson = false) => {
+const updateHeaders = (screen, links, getQuickFire) => {
 
     const { glossary, filters, questions } = links;
 
@@ -113,7 +113,7 @@ const updateHeaders = (screen, links, getQuickFire, linkFromLesson = false) => {
 
     const loadGlossary = e => {
         renderGlossary(getQuickFire().items);
-        if(linkFromLesson) {
+        if(getQuickFire().linkFromLesson) {
             questions.classList.remove(hide);
             filters.classList.add(hide);
         } else {
@@ -135,7 +135,7 @@ const updateHeaders = (screen, links, getQuickFire, linkFromLesson = false) => {
         break;
             
         case enums.quickFireStep.QUESTIONS:
-            if(linkFromLesson) {
+            if(getQuickFire().linkFromLesson) {
                 glossary.classList.remove(hide);
                 glossary.classList.add(underline);
                 filters.classList.add(hide);
@@ -144,8 +144,8 @@ const updateHeaders = (screen, links, getQuickFire, linkFromLesson = false) => {
             else {
                 filters.classList.add(underline);
                 filters.classList.remove(hide);
+                filters.innerHTML = 'Review options';
             }
-            filters.innerHTML = 'Test filters';
             glossary.addEventListener('click', loadGlossary);
         break;
     }

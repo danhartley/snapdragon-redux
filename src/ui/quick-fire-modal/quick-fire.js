@@ -10,12 +10,13 @@ import { enums } from 'ui/helpers/enum-helper';
 import { renderTemplate } from 'ui/helpers/templating';
 import { quickFireAPI } from 'ui/quick-fire-modal/quick-fire-api';
 import { quickFireUI } from 'ui/quick-fire-modal/quick-fire-ui';
+import { quickFireLogic } from 'ui/quick-fire-modal/quick-fire-logic';
 
 import templateCreateQuickFire from 'ui/quick-fire-modal/quick-fire-filters-template.html';
 import templateQuestionQuickFire from 'ui/quick-fire-modal/quick-fire-questions-template.html';
 import templateSummaryQuickFire from 'ui/quick-fire-modal/quick-fire-summary-template.html';
 
-const headers = (step, quickFire, linkFromLesson = false) => {
+const headers = (step, quickFire) => {
 
     const getQuickFire = () => quickFire;
 
@@ -27,10 +28,10 @@ const headers = (step, quickFire, linkFromLesson = false) => {
         questions: modal.querySelector('.js-quick-fire-questions')
     };
 
-    quickFireUI.updateHeaders(step, links, getQuickFire, linkFromLesson, );
+    quickFireUI.updateHeaders(step, links, getQuickFire);
 };
 
-const filters = async () => {
+const filters = async linkFromLesson => {
 
     const args = await init();
 
@@ -46,6 +47,7 @@ const filters = async () => {
     let { items, type, filter } = args;
 
     const quickFire = store.getState().quickFire || quickFireAPI.getQuickFire(items, filter, type);
+          quickFire.linkFromLesson = linkFromLesson;
 
     const options = [
         { key: 0, value: 'multiple choice' },
@@ -163,18 +165,18 @@ const filters = async () => {
           reset.addEventListener('change', e => {
               if(e.target.checked) {
                 actions.boundCreateQuickFire(quickFireAPI.getQuickFire(store.getState().glossary, enums.quickFireType.DEFINITION, {}));
-                quickFireFilters();
+                quickFireFilters(quickFire.linkFromLesson);
               }
           });
 };
 
-const questions = (quickFire, linkFromLesson = false) => {
+const questions = quickFire => {
 
     if(!quickFire) return;
 
     actions.boundCreateQuickFire(quickFire);
 
-    headers(enums.quickFireStep.QUESTIONS, quickFire, linkFromLesson);
+    headers(enums.quickFireStep.QUESTIONS, quickFire);
 
     const modal = document.querySelector('#glossaryModal');
     const parent = modal.querySelector('.js-modal-text'); 
@@ -188,30 +190,7 @@ const questions = (quickFire, linkFromLesson = false) => {
 
         template.innerHTML = templateQuestionQuickFire;
 
-        quickFire.spareItems = quickFire.spareItems || R.take(4, utils.shuffleArray(quickFire.items));
-        
-        let items = utils.shuffleArray(quickFire.items.filter(item => item));
-
-        quickFire.question = items[0];
-
-        items = items.filter(item => item.branch === quickFire.question.branch);
-        items = R.take(quickFire.poolSize, utils.shuffleArray(items));
-
-
-        if(quickFire.items.length < 4) {
-            const itemsToAdd = R.take((4-quickFire.items.length), quickFire.spareItems.filter(sp => !R.contains(sp.term, items.map(i => i.term))));
-                  itemsToAdd.forEach(item => items.push(item));
-        }
-
-        let answers = R.take(3, items.splice(1));
-            answers.push(quickFire.question);
-            answers = utils.shuffleArray(answers);
-            answers = answers.map((item, index) => {
-                return {
-                    term: item.term,
-                    index
-                }
-            });
+        let answers = quickFireLogic.selectAnswers(quickFire, utils.shuffleArray(quickFire.items));
 
         renderTemplate({ question: quickFire.question, 
                 answers, total: quickFire.score.total + 1, 
@@ -315,8 +294,8 @@ const init = async () => {
     return args;
 };
 
-const quickFireFilters = () => {
-    quickFire.filters();
+const quickFireFilters = linkFromLesson => {
+    quickFire.filters(linkFromLesson);
 };
 
 const summary = (quickFire, modal) => {

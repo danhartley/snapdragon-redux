@@ -65,7 +65,7 @@ export const renderLessons = () => {
                         const lesson = lessons.find(lesson => lesson.id === parseInt(termsReviewLink.dataset.lessonId));
                         if(lesson.terms) {
                               const { glossary } = store.getState();
-                              quickFire.questions(quickFire.init(glossary, enums.quickFireType.DEFINITION, lesson), true);
+                              quickFire.questions( { ...quickFire.init(glossary, enums.quickFireType.DEFINITION, lesson), linkFromLesson: true }, true);
                         }
                 });
             });
