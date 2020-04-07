@@ -35,12 +35,7 @@ const filters = async linkFromLesson => {
 
     const args = await init();
 
-    const template = document.createElement('template');
-          template.innerHTML = templateCreateQuickFire;
-
-    const modal = document.querySelector('#glossaryModal');
-    const parent = modal.querySelector('.js-modal-text');
-          parent.innerHTML = '';
+    const { template, modal, parent } = quickFireUI.readyTemplate(templateCreateQuickFire);
 
     headers(enums.quickFireStep.FILTERS, { items: args.items });
 
@@ -57,8 +52,6 @@ const filters = async linkFromLesson => {
     ];
 
     const branches = quickFireAPI.getBranches(items);
-
-    parent.innerHTML = '';
 
     renderTemplate({ quickFire, options, branches }, template.content, parent);
 
@@ -178,17 +171,11 @@ const questions = quickFire => {
 
     headers(enums.quickFireStep.QUESTIONS, quickFire);
 
-    const modal = document.querySelector('#glossaryModal');
-    const parent = modal.querySelector('.js-modal-text'); 
-          parent.innerHTML = '';
-
-    const template = document.createElement('template');
+    const { template, modal, parent } = quickFireUI.readyTemplate(templateQuestionQuickFire);
 
     let timer;    
 
     if(quickFire.items.length > 0) {
-
-        template.innerHTML = templateQuestionQuickFire;
 
         let answers = quickFireLogic.selectAnswers(quickFire, utils.shuffleArray(quickFire.items));
 
@@ -264,13 +251,15 @@ const questions = quickFire => {
         }
 
     } else {
-        summary(quickFire, modal);        
+        summary(quickFire);        
     }
     
     const review = modal.querySelector('.js-quick-review-progress');
+    if(review) {
           review.addEventListener('click', e => {
-            summary(quickFire, modal);
+            summary(quickFire);
           });
+    }
 };
 
 const init = async () => {
@@ -298,13 +287,9 @@ const quickFireFilters = linkFromLesson => {
     quickFire.filters(linkFromLesson);
 };
 
-const summary = (quickFire, modal) => {
+const summary = quickFire => {
 
-    const parent = modal.querySelector('.js-modal-text');
-          parent.innerHTML = '';
-
-    const template = document.createElement('template');
-          template.innerHTML = templateSummaryQuickFire;
+    const { template, modal, parent } = quickFireUI.readyTemplate(templateSummaryQuickFire);
 
     const passes = quickFire.score.passes;
           passes.forEach((pass, i) => {

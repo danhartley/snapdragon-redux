@@ -7,13 +7,7 @@ import glossaryTemplate from 'ui/fixtures/glossary-template.html';
 
 export const renderGlossary = async glossary => {
 
-      const template = document.createElement('template');
-            template.innerHTML = glossaryTemplate;
-
-      const modal = document.querySelector('#glossaryModal');
-
-      const parent = modal.querySelector('.js-modal-text');
-            parent.innerHTML = '';
+      const { template, modal, parent } = quickFireUI.readyTemplate(glossaryTemplate);
 
       renderTemplate({ glossary }, template.content, parent);
 

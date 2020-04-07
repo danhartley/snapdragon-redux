@@ -98,10 +98,20 @@ const scoreTextEntry = (quickFire, quickFireInput, quickFireMessage, timer, cont
 };
 
 const initGlossaryHeader = link => {
-
     link.classList.remove('hide-important');
     link.innerHTML = 'Glossary test';
+};
 
+const readyTemplate = headerTemplate => {
+
+    const template = document.createElement('template');
+          template.innerHTML = headerTemplate;
+
+    const modal = document.querySelector('#glossaryModal');
+    const parent = modal.querySelector('.js-modal-text');
+          parent.innerHTML = '';
+
+    return { template, modal, parent };
 };
 
 const updateHeaders = (screen, links, getQuickFire) => {
@@ -151,10 +161,10 @@ const updateHeaders = (screen, links, getQuickFire) => {
 };
 
 export const quickFireUI = {
-
     updateTotalCounts,
     updateHeaders,
     initGlossaryHeader,
     scoreMultipleChoice,
-    scoreTextEntry
+    scoreTextEntry,
+    readyTemplate
 };
