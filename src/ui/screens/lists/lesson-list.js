@@ -66,7 +66,7 @@ export const renderLessons = () => {
                         if(lesson.terms) {
                               const { glossary } = store.getState();
                               setTimeout(() => {
-                                    quickFire.questions( { ...quickFire.init(glossary, enums.quickFireType.DEFINITION, lesson), linkFromLesson: true }, true);
+                                    quickFire.questions({ ...quickFire.init(glossary, enums.quickFireType.DEFINITION, lesson), linkFromLesson: true });
                               });
                         }
                 });

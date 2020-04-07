@@ -26,6 +26,6 @@ export const renderGlossary = async glossary => {
 
       const filtersLink = document.querySelector('.js-quick-fire-filters'); 
       
-      quickFireUI.initGlossaryHeader(filtersLink);
+      // quickFireUI.initGlossaryHeader(filtersLink);
 
 };

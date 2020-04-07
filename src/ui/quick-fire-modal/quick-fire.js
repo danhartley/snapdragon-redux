@@ -12,6 +12,7 @@ import { quickFireAPI } from 'ui/quick-fire-modal/quick-fire-api';
 import { quickFireUI } from 'ui/quick-fire-modal/quick-fire-ui';
 import { quickFireLogic } from 'ui/quick-fire-modal/quick-fire-logic';
 
+import glossaryTemplate from 'ui/fixtures/glossary-template.html';
 import templateCreateQuickFire from 'ui/quick-fire-modal/quick-fire-filters-template.html';
 import templateQuestionQuickFire from 'ui/quick-fire-modal/quick-fire-questions-template.html';
 import templateSummaryQuickFire from 'ui/quick-fire-modal/quick-fire-summary-template.html';
@@ -28,7 +29,7 @@ const headers = (step, quickFire) => {
         questions: modal.querySelector('.js-quick-fire-questions')
     };
 
-    quickFireUI.updateHeaders(step, links, getQuickFire);
+    quickFireUI.updateHeaders(step, links, getQuickFire, quickFireActions);
 };
 
 const filters = async linkFromLesson => {
@@ -262,6 +263,17 @@ const questions = quickFire => {
     }
 };
 
+const definitions = async glossary => {
+
+    const { template, modal, parent } = quickFireUI.readyTemplate(glossaryTemplate);
+
+    const quickFire = quickFireAPI.getQuickFire(glossary, enums.quickFireType.DEFINITION, { collection: {} });
+
+    headers(enums.quickFireStep.GLOSSARY, quickFire);
+
+    renderTemplate({ glossary }, template.content, parent);
+};
+
 const init = async () => {
 
     let taxa = [];
@@ -285,6 +297,20 @@ const init = async () => {
 
 const quickFireFilters = linkFromLesson => {
     quickFire.filters(linkFromLesson);
+};
+
+const quickFireQuestions = quickFire => {
+    quickFire.questions(quickFire);
+};
+
+const quickFireGlossary = glossary => {
+    quickFire.definitions(glossary);
+};
+
+const quickFireActions = {
+    quickFireFilters,
+    quickFireQuestions,
+    quickFireGlossary
 };
 
 const summary = quickFire => {
@@ -334,7 +360,8 @@ export const quickFire = {
     filters,
     questions,
     headers,
-    init: quickFireAPI.getQuickFire
+    init: quickFireAPI.getQuickFire,
+    definitions
 };
 
 export const quickFireQuestion = state => {

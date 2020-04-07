@@ -2,7 +2,7 @@ import * as R from 'ramda';
 
 import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';
-import { renderGlossary } from 'ui/fixtures/glossary';
+// import { renderGlossary } from 'ui/fixtures/glossary';
 
 const updateBranchCounts = (items, branchOptions) => {
 
@@ -97,10 +97,10 @@ const scoreTextEntry = (quickFire, quickFireInput, quickFireMessage, timer, cont
     return timer;
 };
 
-const initGlossaryHeader = link => {
-    link.classList.remove('hide-important');
-    link.innerHTML = 'Glossary test';
-};
+// const initGlossaryHeader = link => {
+//     link.classList.remove('hide-important');
+//     link.innerHTML = 'Glossary test';
+// };
 
 const readyTemplate = headerTemplate => {
 
@@ -114,7 +114,7 @@ const readyTemplate = headerTemplate => {
     return { template, modal, parent };
 };
 
-const updateHeaders = (screen, links, getQuickFire) => {
+const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
 
     const { glossary, filters, questions } = links;
 
@@ -124,7 +124,7 @@ const updateHeaders = (screen, links, getQuickFire) => {
     const quickFire = getQuickFire();
 
     const loadGlossary = e => {
-        renderGlossary(quickFire.items);
+        quickFireActions.quickFireGlossary(quickFire.items);
         if(quickFire.linkFromLesson) {
             questions.classList.remove(hide);
             filters.classList.add(hide);
@@ -133,7 +133,11 @@ const updateHeaders = (screen, links, getQuickFire) => {
             filters.classList.remove(hide);
             filters.classList.add(underline);
         }
-    };    
+    };
+
+    const loadFilters = e => {
+        quickFireActions.quickFireFilters(quickFire.linkFromLesson);
+    };
     
     switch(screen) {        
         case enums.quickFireStep.FILTERS:
@@ -156,6 +160,14 @@ const updateHeaders = (screen, links, getQuickFire) => {
                 filters.innerHTML = 'Review options';
             }
             glossary.addEventListener('click', loadGlossary, { once: true });
+            filters.addEventListener('click', loadFilters, { once: true });           
+        break;
+
+        case enums.quickFireStep.GLOSSARY:
+            const onClickFiltersLink = e => {
+                quickFireActions.quickFireFilters(false);
+            };
+            links.filters.addEventListener('click', onClickFiltersLink, { once: true });            
         break;
     }
 };
@@ -163,7 +175,7 @@ const updateHeaders = (screen, links, getQuickFire) => {
 export const quickFireUI = {
     updateTotalCounts,
     updateHeaders,
-    initGlossaryHeader,
+    // initGlossaryHeader,
     scoreMultipleChoice,
     scoreTextEntry,
     readyTemplate
