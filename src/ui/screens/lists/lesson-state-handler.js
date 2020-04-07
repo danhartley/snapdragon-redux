@@ -85,16 +85,9 @@ const loadLesson = async (collectionToLoad, config, collections) => {
     };
   }
 
-  const requiresCollection = 
-      (!!collectionToLoad.items && collectionToLoad.items.length === 0) ||
-      (!collectionToLoad.items && !!collectionToLoad.species);
+  const collection = await collectionHandler.loadCollection(lesson.collection, config, lesson.counter, collections);
 
-  if(requiresCollection) {
-    await collectionHandler.loadCollection(lesson.collection, config, lesson.counter, collections);
-    setActiveCollection(lesson);
-  } else {
-    setActiveCollection(lesson);
-  }
+  setActiveCollection(lesson);
 
   return lesson;
 };

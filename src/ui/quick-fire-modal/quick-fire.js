@@ -12,6 +12,7 @@ import { quickFireAPI } from 'ui/quick-fire-modal/quick-fire-api';
 import { quickFireUI } from 'ui/quick-fire-modal/quick-fire-ui';
 import { quickFireLogic } from 'ui/quick-fire-modal/quick-fire-logic';
 
+import glossaryTemplate from 'ui/fixtures/glossary-template.html';
 import templateCreateQuickFire from 'ui/quick-fire-modal/quick-fire-filters-template.html';
 import templateQuestionQuickFire from 'ui/quick-fire-modal/quick-fire-questions-template.html';
 import templateSummaryQuickFire from 'ui/quick-fire-modal/quick-fire-summary-template.html';
@@ -28,26 +29,25 @@ const headers = (step, quickFire) => {
         questions: modal.querySelector('.js-quick-fire-questions')
     };
 
-    quickFireUI.updateHeaders(step, links, getQuickFire);
+    quickFireUI.updateHeaders(step, links, getQuickFire, quickFireActions);
 };
 
 const filters = async linkFromLesson => {
 
     const args = await init();
 
-    const template = document.createElement('template');
-          template.innerHTML = templateCreateQuickFire;
+    const { template, modal, parent } = quickFireUI.readyTemplate(templateCreateQuickFire);
 
-    const modal = document.querySelector('#glossaryModal');
-    const parent = modal.querySelector('.js-modal-text');
-          parent.innerHTML = '';
-
-    headers(enums.quickFireStep.FILTERS, { items: args.items });
+    headers(enums.quickFireStep.FILTERS, { items: args.items, onClickFiltersLinkListeners: [], onClickGlossaryLinkListeners: [] });
 
     let { items, type, filter } = args;
 
     const quickFire = store.getState().quickFire || quickFireAPI.getQuickFire(items, filter, type);
           quickFire.linkFromLesson = linkFromLesson;
+          quickFire.onClickFiltersLinkListeners = [];
+          quickFire.onClickGlossaryLinkListeners = [];
+
+    actions.boundCreateQuickFire(quickFire);
 
     const options = [
         { key: 0, value: 'multiple choice' },
@@ -58,8 +58,6 @@ const filters = async linkFromLesson => {
 
     const branches = quickFireAPI.getBranches(items);
 
-    parent.innerHTML = '';
-
     renderTemplate({ quickFire, options, branches }, template.content, parent);
 
     const counters = document.querySelectorAll('.js-quick-fire-count');
@@ -69,7 +67,7 @@ const filters = async linkFromLesson => {
     const input = document.querySelector('.js-input-quick-fire');
           input.addEventListener('input', e => {
             quickFire.poolSize = parseInt(e.target.value);          
-          });
+          }, { once: true });
 
     quickFire.poolSize = parseInt(input.value);
 
@@ -113,7 +111,7 @@ const filters = async linkFromLesson => {
           createQuickFireBtn.innerHTML = quickFire.score.total === 0 ? 'Start quick-fire review' : 'Continue your quick-fire review';
           createQuickFireBtn.addEventListener('click', e => {      
             questions(quickFire);
-          });
+          }, { once: true });
 
     const quickFireOptions = document.querySelectorAll('.js-quick-fire-filter-options .btn');
     
@@ -144,14 +142,14 @@ const filters = async linkFromLesson => {
     branchOptions.forEach(branch => {
         branch.addEventListener('click', e => {
         setTimeout(async() => {
-            let checkedBranches = Array.from(branchOptions).filter(b => elem.hasClass(b, 'active'));
-                checkedBranches = checkedBranches.map(b => b.dataset.key);
-            quickFire.filter.branches = checkedBranches;
-            quickFire.items = await quickFireAPI.getItems(quickFire.filter.iconicTaxa);
-            quickFire.items = quickFire.items.filter(item => R.contains(item.branch, checkedBranches));
-            quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters, taxonCounters, getIncludeTechnicalTerms());
-        });
-        });
+                let checkedBranches = Array.from(branchOptions).filter(b => elem.hasClass(b, 'active'));
+                    checkedBranches = checkedBranches.map(b => b.dataset.key);
+                quickFire.filter.branches = checkedBranches;
+                quickFire.items = await quickFireAPI.getItems(quickFire.filter.iconicTaxa);
+                quickFire.items = quickFire.items.filter(item => R.contains(item.branch, checkedBranches));
+                quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters, taxonCounters, getIncludeTechnicalTerms());
+            });
+        }, { once: true });
     });
 
     const technical = document.querySelector('.js-quick-fire-technical');
@@ -159,7 +157,7 @@ const filters = async linkFromLesson => {
             includeTechnicalTerms = e.target.checked;
             quickFire.items = await quickFireAPI.getItems(quickFire.filter.iconicTaxa, includeTechnicalTerms);
             quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters, taxonCounters, getIncludeTechnicalTerms());
-          });
+          }, { once: true });
 
     const reset = document.querySelector('.js-quick-fire-reset');
           reset.addEventListener('change', e => {
@@ -167,28 +165,24 @@ const filters = async linkFromLesson => {
                 actions.boundCreateQuickFire(quickFireAPI.getQuickFire(store.getState().glossary, enums.quickFireType.DEFINITION, {}));
                 quickFireFilters(quickFire.linkFromLesson);
               }
-          });
+          }, { once: true });
 };
 
 const questions = quickFire => {
 
     if(!quickFire) return;
 
+    quickFire.onClickGlossaryLinkListeners = [];
+
     actions.boundCreateQuickFire(quickFire);
 
     headers(enums.quickFireStep.QUESTIONS, quickFire);
 
-    const modal = document.querySelector('#glossaryModal');
-    const parent = modal.querySelector('.js-modal-text'); 
-          parent.innerHTML = '';
-
-    const template = document.createElement('template');
+    const { template, modal, parent } = quickFireUI.readyTemplate(templateQuestionQuickFire);
 
     let timer;    
 
     if(quickFire.items.length > 0) {
-
-        template.innerHTML = templateQuestionQuickFire;
 
         let answers = quickFireLogic.selectAnswers(quickFire, utils.shuffleArray(quickFire.items));
 
@@ -223,7 +217,7 @@ const questions = quickFire => {
                     timer = setTimeout(() => {
                         continueQuickFireBtn.click();
                     }, store.getState().config.callbackTime);
-                });
+                }, { once: true });
               });
 
         const quickFireInputContainer = modal.querySelector('.js-quick-fire-text-entry');
@@ -239,24 +233,24 @@ const questions = quickFire => {
         const continueQuickFireBtn = document.querySelector('.js-continue-quick-fire-btn');
               continueQuickFireBtn.addEventListener('click', e => {
                     quickFire.items = quickFire.items.filter(item => item.term !== quickFire.question.term);
-                    clearTimeout(timer);
+                    clearTimeout(timer);                    
                     actions.boundCreateQuickFire(quickFire);
-                    subscription.add(quickFireQuestion, 'quickFire', 'modal');
-              });
+                    subscription.add(quickFireQuestions, 'quickFire', 'modal');
+              }, { once: true });
 
         quickFireInput.addEventListener('keydown', event => {
             if (event.keyCode == 9) {
               timer = quickFireUI.scoreTextEntry(quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
               continueQuickFireBtn.disabled = false;
             }
-        });
+        }, { once: true });
 
         quickFireInput.addEventListener('keypress', event => {
             if (event.keyCode == 13) {
               timer = quickFireUI.scoreTextEntry(quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
               continueQuickFireBtn.disabled = false;
             }            
-        });
+        }, { once: true });
 
         if((quickFire.question.term.split(' ').length > 1 || quickFire.question.term.indexOf('(') === 0) && quickFire.filter.option.key === '1') {
             const hint = modal.querySelector('.js-quick-fire-hint');
@@ -264,13 +258,28 @@ const questions = quickFire => {
         }
 
     } else {
-        summary(quickFire, modal);        
+        summary(quickFire);        
     }
     
     const review = modal.querySelector('.js-quick-review-progress');
+    if(review) {
           review.addEventListener('click', e => {
-            summary(quickFire, modal);
-          });
+            summary(quickFire);
+          }, { once: true });
+    }
+};
+
+const definitions = async glossary => {
+
+    const { template, modal, parent } = quickFireUI.readyTemplate(glossaryTemplate);
+
+    const quickFire = store.getState().quickFire || quickFireAPI.getQuickFire(glossary, enums.quickFireType.DEFINITION, { collection: {} });
+
+    headers(enums.quickFireStep.GLOSSARY, quickFire);
+
+    parent.innerHTML = '';
+
+    renderTemplate({ glossary }, template.content, parent);
 };
 
 const init = async () => {
@@ -294,17 +303,9 @@ const init = async () => {
     return args;
 };
 
-const quickFireFilters = linkFromLesson => {
-    quickFire.filters(linkFromLesson);
-};
+const summary = quickFire => {
 
-const summary = (quickFire, modal) => {
-
-    const parent = modal.querySelector('.js-modal-text');
-          parent.innerHTML = '';
-
-    const template = document.createElement('template');
-          template.innerHTML = templateSummaryQuickFire;
+    const { template, modal, parent } = quickFireUI.readyTemplate(templateSummaryQuickFire);
 
     const passes = quickFire.score.passes;
           passes.forEach((pass, i) => {
@@ -330,7 +331,7 @@ const summary = (quickFire, modal) => {
                     ? t.classList.remove('hide-important')
                     : t.classList.add('hide-important');
             });
-        });
+        }, { once: true });
     });
 
     const summaryText = modal.querySelector('.js-quick-fire-summary div:nth-child(1) > span');
@@ -342,17 +343,31 @@ const summary = (quickFire, modal) => {
     const continueReview = modal.querySelector('.js-quick-review-continue-review');
           continueReview.addEventListener('click', e => {
               questions(quickFire);
-          });
+          }, { once: true });
 };
 
-export const quickFire = {
+export const quickFireHandlers = {
     filters,
     questions,
     headers,
-    init: quickFireAPI.getQuickFire
+    init: quickFireAPI.getQuickFire,
+    definitions
 };
 
-export const quickFireQuestion = state => {
-    quickFire.questions(state);
+const quickFireFilters = linkFromLesson => {
+    quickFireHandlers.filters(linkFromLesson);
 };
 
+const quickFireQuestions = quickFire => {
+    quickFireHandlers.questions(quickFire);
+};
+
+const quickFireGlossary = glossary => {
+    quickFireHandlers.definitions(glossary);
+};
+
+const quickFireActions = {
+    quickFireFilters,
+    quickFireQuestions,
+    quickFireGlossary
+};

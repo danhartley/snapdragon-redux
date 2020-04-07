@@ -43,6 +43,8 @@ export const editCollection = () => {
 
             console.log(items);
 
+            // this should go via lesson-state-handler
+
             if(!items[0].vernacularName) {
                 items = await collectionHandler.getSnapdragonSpeciesData(items);
                 items = items.filter(item => item.taxonomy);

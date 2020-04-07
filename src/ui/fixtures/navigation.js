@@ -11,7 +11,7 @@ import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { settingsHandler } from 'ui/fixtures/settings';
 import { renderLogin } from 'ui/fixtures/login';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
-import { renderGlossary } from 'ui/fixtures/glossary';
+import { quickFireHandlers } from 'ui/quick-fire-modal/quick-fire';
 
 import navigationTemplate from 'ui/fixtures/navigation-template.html';
 
@@ -83,7 +83,7 @@ export const renderNavigation = collection => {
                         const definitions = !!collection.glossary
                             ? glossary.filter(definition => R.contains(definition.taxon, collection.glossary))
                             : glossary;
-                        renderGlossary(definitions);
+                        quickFireHandlers.definitions(definitions);
                         break;
                     case enums.navigation.EMAIL:
                         toggleIconOnOff(clickedIcon);

@@ -64,7 +64,9 @@ const getQuickFire = (glossary, type, collection) => {
             fails: []
         },
         poolSize: items.length,
-        terms: collection.terms
+        terms: collection.terms,
+        onClickFiltersLinkListeners: [],
+        onClickGlossaryLinkListeners: []
     };
 
     quickFire.filter.taxa = filter.iconicTaxa.map(taxon => {
