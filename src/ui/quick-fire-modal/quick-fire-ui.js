@@ -111,9 +111,11 @@ const updateHeaders = (screen, links, getQuickFire) => {
     const underline = 'underline-link';
     const hide = 'hide-important';
 
+    const quickFire = getQuickFire();
+
     const loadGlossary = e => {
-        renderGlossary(getQuickFire().items);
-        if(getQuickFire().linkFromLesson) {
+        renderGlossary(quickFire.items);
+        if(quickFire.linkFromLesson) {
             questions.classList.remove(hide);
             filters.classList.add(hide);
         } else {
@@ -121,24 +123,21 @@ const updateHeaders = (screen, links, getQuickFire) => {
             filters.classList.remove(hide);
             filters.classList.add(underline);
         }
-    };
+    };    
     
-    glossary.removeEventListener('click', loadGlossary);
-    
-    switch(screen) {
-        
+    switch(screen) {        
         case enums.quickFireStep.FILTERS:
             filters.classList.add(hide);
             glossary.classList.remove(hide);
             glossary.classList.add(underline);
-            glossary.addEventListener('click', loadGlossary);            
+            glossary.addEventListener('click', loadGlossary, { once: true });            
         break;
             
         case enums.quickFireStep.QUESTIONS:
-            if(getQuickFire().linkFromLesson) {
+            if(quickFire.linkFromLesson) {
                 glossary.classList.remove(hide);
                 glossary.classList.add(underline);
-                filters.classList.add(hide);
+                filters.innerHTML = 'Review options';
                 questions.classList.add(hide);
             }
             else {
@@ -146,7 +145,7 @@ const updateHeaders = (screen, links, getQuickFire) => {
                 filters.classList.remove(hide);
                 filters.innerHTML = 'Review options';
             }
-            glossary.addEventListener('click', loadGlossary);
+            glossary.addEventListener('click', loadGlossary, { once: true });
         break;
     }
 };

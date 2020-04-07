@@ -17,15 +17,18 @@ export const renderGlossary = async glossary => {
 
       renderTemplate({ glossary }, template.content, parent);
 
-      const quickFireLink = modal.querySelector('.js-quick-fire-filters');
-            quickFireLink.addEventListener('click', e => {
+      const onClickFiltersLink = e => {
             quickFire.filters(false);
-            });
+      };
+      const quickFireLink = modal.querySelector('.js-quick-fire-filters');
+            quickFireLink.addEventListener('click', onClickFiltersLink, { once: true });
 
+      const onClickQuestionsLink = e => {
+            quickFire.questions({ ...store.getState().quickFire, linkFromLesson: false }, true);
+            quickFireQuestionsLink.classList.add('hide-important');
+      };
       const quickFireQuestionsLink = modal.querySelector('.js-quick-fire-questions');   
-            quickFireQuestionsLink.addEventListener('click', e => {
-            quickFire.questions( { ...store.getState().quickFire, linkFromLesson: false }, true);
-            });
+            quickFireQuestionsLink.addEventListener('click', onClickQuestionsLink, { once: true });
 
       const filtersLink = document.querySelector('.js-quick-fire-filters'); 
       
