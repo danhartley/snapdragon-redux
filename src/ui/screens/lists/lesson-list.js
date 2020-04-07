@@ -3,7 +3,7 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
-import { quickFire } from 'ui/quick-fire-modal/quick-fire';
+import { quickFireHandlers } from 'ui/quick-fire-modal/quick-fire';
 import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
 import { renderLesson } from 'ui/screens/lists/lesson';
 import { renderCustomLesson } from 'ui/screens/lists/lesson-custom';
@@ -66,7 +66,7 @@ export const renderLessons = () => {
                         if(lesson.terms) {
                               const { glossary } = store.getState();
                               setTimeout(() => {
-                                    quickFire.questions({ ...quickFire.init(glossary, enums.quickFireType.DEFINITION, lesson), linkFromLesson: true });
+                                    quickFireHandlers.questions({ ...quickFireHandlers.init(glossary, enums.quickFireType.DEFINITION, lesson), linkFromLesson: true });
                               });
                         }
                 });

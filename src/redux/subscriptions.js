@@ -9,6 +9,8 @@ const add = (subscription, domain, role, layout) => {
     const select = store => store[domain];
     const onChange = subscription;    
 
+    // remove?
+
     // console.log('name: ', subscription.name);
 
     const sub = observeStore(store, select, onChange, domain, layout);

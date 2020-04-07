@@ -38,12 +38,16 @@ const filters = async linkFromLesson => {
 
     const { template, modal, parent } = quickFireUI.readyTemplate(templateCreateQuickFire);
 
-    headers(enums.quickFireStep.FILTERS, { items: args.items });
+    headers(enums.quickFireStep.FILTERS, { items: args.items, onClickFiltersLinkListeners: [], onClickGlossaryLinkListeners: [] });
 
     let { items, type, filter } = args;
 
     const quickFire = store.getState().quickFire || quickFireAPI.getQuickFire(items, filter, type);
           quickFire.linkFromLesson = linkFromLesson;
+          quickFire.onClickFiltersLinkListeners = [];
+          quickFire.onClickGlossaryLinkListeners = [];
+
+    actions.boundCreateQuickFire(quickFire);
 
     const options = [
         { key: 0, value: 'multiple choice' },
@@ -63,7 +67,7 @@ const filters = async linkFromLesson => {
     const input = document.querySelector('.js-input-quick-fire');
           input.addEventListener('input', e => {
             quickFire.poolSize = parseInt(e.target.value);          
-          });
+          }, { once: true });
 
     quickFire.poolSize = parseInt(input.value);
 
@@ -107,7 +111,7 @@ const filters = async linkFromLesson => {
           createQuickFireBtn.innerHTML = quickFire.score.total === 0 ? 'Start quick-fire review' : 'Continue your quick-fire review';
           createQuickFireBtn.addEventListener('click', e => {      
             questions(quickFire);
-          });
+          }, { once: true });
 
     const quickFireOptions = document.querySelectorAll('.js-quick-fire-filter-options .btn');
     
@@ -138,14 +142,14 @@ const filters = async linkFromLesson => {
     branchOptions.forEach(branch => {
         branch.addEventListener('click', e => {
         setTimeout(async() => {
-            let checkedBranches = Array.from(branchOptions).filter(b => elem.hasClass(b, 'active'));
-                checkedBranches = checkedBranches.map(b => b.dataset.key);
-            quickFire.filter.branches = checkedBranches;
-            quickFire.items = await quickFireAPI.getItems(quickFire.filter.iconicTaxa);
-            quickFire.items = quickFire.items.filter(item => R.contains(item.branch, checkedBranches));
-            quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters, taxonCounters, getIncludeTechnicalTerms());
-        });
-        });
+                let checkedBranches = Array.from(branchOptions).filter(b => elem.hasClass(b, 'active'));
+                    checkedBranches = checkedBranches.map(b => b.dataset.key);
+                quickFire.filter.branches = checkedBranches;
+                quickFire.items = await quickFireAPI.getItems(quickFire.filter.iconicTaxa);
+                quickFire.items = quickFire.items.filter(item => R.contains(item.branch, checkedBranches));
+                quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters, taxonCounters, getIncludeTechnicalTerms());
+            });
+        }, { once: true });
     });
 
     const technical = document.querySelector('.js-quick-fire-technical');
@@ -153,7 +157,7 @@ const filters = async linkFromLesson => {
             includeTechnicalTerms = e.target.checked;
             quickFire.items = await quickFireAPI.getItems(quickFire.filter.iconicTaxa, includeTechnicalTerms);
             quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters, taxonCounters, getIncludeTechnicalTerms());
-          });
+          }, { once: true });
 
     const reset = document.querySelector('.js-quick-fire-reset');
           reset.addEventListener('change', e => {
@@ -161,12 +165,14 @@ const filters = async linkFromLesson => {
                 actions.boundCreateQuickFire(quickFireAPI.getQuickFire(store.getState().glossary, enums.quickFireType.DEFINITION, {}));
                 quickFireFilters(quickFire.linkFromLesson);
               }
-          });
+          }, { once: true });
 };
 
 const questions = quickFire => {
 
     if(!quickFire) return;
+
+    quickFire.onClickGlossaryLinkListeners = [];
 
     actions.boundCreateQuickFire(quickFire);
 
@@ -211,7 +217,7 @@ const questions = quickFire => {
                     timer = setTimeout(() => {
                         continueQuickFireBtn.click();
                     }, store.getState().config.callbackTime);
-                });
+                }, { once: true });
               });
 
         const quickFireInputContainer = modal.querySelector('.js-quick-fire-text-entry');
@@ -227,24 +233,24 @@ const questions = quickFire => {
         const continueQuickFireBtn = document.querySelector('.js-continue-quick-fire-btn');
               continueQuickFireBtn.addEventListener('click', e => {
                     quickFire.items = quickFire.items.filter(item => item.term !== quickFire.question.term);
-                    clearTimeout(timer);
+                    clearTimeout(timer);                    
                     actions.boundCreateQuickFire(quickFire);
-                    subscription.add(quickFireQuestion, 'quickFire', 'modal');
-              });
+                    subscription.add(quickFireQuestions, 'quickFire', 'modal');
+              }, { once: true });
 
         quickFireInput.addEventListener('keydown', event => {
             if (event.keyCode == 9) {
               timer = quickFireUI.scoreTextEntry(quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
               continueQuickFireBtn.disabled = false;
             }
-        });
+        }, { once: true });
 
         quickFireInput.addEventListener('keypress', event => {
             if (event.keyCode == 13) {
               timer = quickFireUI.scoreTextEntry(quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
               continueQuickFireBtn.disabled = false;
             }            
-        });
+        }, { once: true });
 
         if((quickFire.question.term.split(' ').length > 1 || quickFire.question.term.indexOf('(') === 0) && quickFire.filter.option.key === '1') {
             const hint = modal.querySelector('.js-quick-fire-hint');
@@ -259,7 +265,7 @@ const questions = quickFire => {
     if(review) {
           review.addEventListener('click', e => {
             summary(quickFire);
-          });
+          }, { once: true });
     }
 };
 
@@ -267,9 +273,11 @@ const definitions = async glossary => {
 
     const { template, modal, parent } = quickFireUI.readyTemplate(glossaryTemplate);
 
-    const quickFire = quickFireAPI.getQuickFire(glossary, enums.quickFireType.DEFINITION, { collection: {} });
+    const quickFire = store.getState().quickFire || quickFireAPI.getQuickFire(glossary, enums.quickFireType.DEFINITION, { collection: {} });
 
     headers(enums.quickFireStep.GLOSSARY, quickFire);
+
+    parent.innerHTML = '';
 
     renderTemplate({ glossary }, template.content, parent);
 };
@@ -293,24 +301,6 @@ const init = async () => {
         }
     };
     return args;
-};
-
-const quickFireFilters = linkFromLesson => {
-    quickFire.filters(linkFromLesson);
-};
-
-const quickFireQuestions = quickFire => {
-    quickFire.questions(quickFire);
-};
-
-const quickFireGlossary = glossary => {
-    quickFire.definitions(glossary);
-};
-
-const quickFireActions = {
-    quickFireFilters,
-    quickFireQuestions,
-    quickFireGlossary
 };
 
 const summary = quickFire => {
@@ -341,7 +331,7 @@ const summary = quickFire => {
                     ? t.classList.remove('hide-important')
                     : t.classList.add('hide-important');
             });
-        });
+        }, { once: true });
     });
 
     const summaryText = modal.querySelector('.js-quick-fire-summary div:nth-child(1) > span');
@@ -353,10 +343,10 @@ const summary = quickFire => {
     const continueReview = modal.querySelector('.js-quick-review-continue-review');
           continueReview.addEventListener('click', e => {
               questions(quickFire);
-          });
+          }, { once: true });
 };
 
-export const quickFire = {
+export const quickFireHandlers = {
     filters,
     questions,
     headers,
@@ -364,7 +354,20 @@ export const quickFire = {
     definitions
 };
 
-export const quickFireQuestion = state => {
-    quickFire.questions(state);
+const quickFireFilters = linkFromLesson => {
+    quickFireHandlers.filters(linkFromLesson);
 };
 
+const quickFireQuestions = quickFire => {
+    quickFireHandlers.questions(quickFire);
+};
+
+const quickFireGlossary = glossary => {
+    quickFireHandlers.definitions(glossary);
+};
+
+const quickFireActions = {
+    quickFireFilters,
+    quickFireQuestions,
+    quickFireGlossary
+};

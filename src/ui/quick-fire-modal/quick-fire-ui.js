@@ -2,7 +2,6 @@ import * as R from 'ramda';
 
 import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';
-// import { renderGlossary } from 'ui/fixtures/glossary';
 
 const updateBranchCounts = (items, branchOptions) => {
 
@@ -97,19 +96,15 @@ const scoreTextEntry = (quickFire, quickFireInput, quickFireMessage, timer, cont
     return timer;
 };
 
-// const initGlossaryHeader = link => {
-//     link.classList.remove('hide-important');
-//     link.innerHTML = 'Glossary test';
-// };
-
 const readyTemplate = headerTemplate => {
 
     const template = document.createElement('template');
           template.innerHTML = headerTemplate;
 
     const modal = document.querySelector('#glossaryModal');
+
     const parent = modal.querySelector('.js-modal-text');
-          parent.innerHTML = '';
+            parent.innerHTML = '';   
 
     return { template, modal, parent };
 };
@@ -139,35 +134,44 @@ const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
         quickFireActions.quickFireFilters(quickFire.linkFromLesson);
     };
     
+    console.log('screen: ', screen);
+
+    const handleGlossaryLink = () => {
+        if(quickFire.onClickGlossaryLinkListeners.length < 1) {
+            glossary.addEventListener('click', loadGlossary, { once: true });
+            quickFire.onClickGlossaryLinkListeners.push('filters');
+        }
+    };
+
+    const handleFiltersLink = () => {
+        if(quickFire.onClickFiltersLinkListeners.length < 1) {
+            filters.addEventListener('click', loadFilters, { once: true }, true);
+            quickFire.onClickFiltersLinkListeners.push('filters');
+        }
+    };
+    
     switch(screen) {        
         case enums.quickFireStep.FILTERS:
             filters.classList.add(hide);
             glossary.classList.remove(hide);
             glossary.classList.add(underline);
-            glossary.addEventListener('click', loadGlossary, { once: true });            
+            handleGlossaryLink();
         break;
             
         case enums.quickFireStep.QUESTIONS:
-            if(quickFire.linkFromLesson) {
-                glossary.classList.remove(hide);
-                glossary.classList.add(underline);
-                filters.innerHTML = 'Review options';
-                questions.classList.add(hide);
-            }
-            else {
-                filters.classList.add(underline);
-                filters.classList.remove(hide);
-                filters.innerHTML = 'Review options';
-            }
-            glossary.addEventListener('click', loadGlossary, { once: true });
-            filters.addEventListener('click', loadFilters, { once: true });           
+            filters.classList.add(underline);
+            filters.classList.remove(hide);
+            filters.innerHTML = 'Review options';
+            handleGlossaryLink();
+            handleFiltersLink();
         break;
 
         case enums.quickFireStep.GLOSSARY:
-            const onClickFiltersLink = e => {
-                quickFireActions.quickFireFilters(false);
-            };
-            links.filters.addEventListener('click', onClickFiltersLink, { once: true });            
+            filters.classList.add(underline);
+            filters.classList.remove(hide);
+            filters.innerHTML = 'Review options';
+            questions.classList.add(hide);
+            handleFiltersLink();
         break;
     }
 };
@@ -175,7 +179,6 @@ const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
 export const quickFireUI = {
     updateTotalCounts,
     updateHeaders,
-    // initGlossaryHeader,
     scoreMultipleChoice,
     scoreTextEntry,
     readyTemplate
