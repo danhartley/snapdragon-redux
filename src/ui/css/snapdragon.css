@@ -171,12 +171,6 @@ hr {
   color: var(--snap-alert);
 }
 
-.icon span {
-  font-size: 0.7rem;
-  vertical-align: middle;
-  margin: 0 0 0 0.25rem;
-}
-
 .dropdown-menu {
   margin: 0.15rem 0 0 0;
   padding: 0;
@@ -2321,4 +2315,12 @@ img[data-has-image="false"] {
         var(--vhDoubleStandardBlock,20vh)
       + var(--vhStandardBlock,10vh) 
     );
+}
+
+.correct-answer-color {
+  color: var(--snap-success); 
+}
+
+.incorrect-answer-color {
+  color: var(--snap-alert);
 }

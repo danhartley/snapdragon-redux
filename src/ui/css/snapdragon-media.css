@@ -308,10 +308,6 @@
     .iconic-taxa-categories > div > div:nth-child(1) { 
         margin: 0 0.5rem 0.5rem 0;
     }
-    
-    .text-question span:nth-child(2) {
-        margin: 0 0 0 .25rem;
-    }
 
     .answer-box-success, .answer-box-alert {
         justify-content: left;

@@ -33,7 +33,7 @@ const showResponseToAnswerHandler = response => {
                 <span class="icon"><i class="fas fa-check"></i></span><span>${ response.correct }</span>
                 </div>`
             : `<div class="answer-box-alert">
-                <span class="icon"><i class="fas fa-times"></i></span><span>${response.incorrect}</span>
+                <span class="icon"><i class="fas fa-times"></i></span><span>${response.answer || response.incorrect}</span>
             </div>`;
     }
 }
@@ -109,7 +109,7 @@ const genericScoreHandler = (_score, callback, config) => {
 
     const container = window.matchMedia("(max-height: 568px)").matches ? '.js-check-answer' : '.js-txt-question';
 
-    showResponseToAnswerHandler({ success: score.success, correct, incorrect,  container});
+    showResponseToAnswerHandler({ success: score.success, correct, incorrect,  container, answer: score.question });
 
     score.layoutCount = layoutCount;
 

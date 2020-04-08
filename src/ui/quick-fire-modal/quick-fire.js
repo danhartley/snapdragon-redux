@@ -238,23 +238,30 @@ const questions = quickFire => {
                     subscription.add(quickFireQuestions, 'quickFire', 'modal');
               }, { once: true });
 
+        let check = true;
+
         quickFireInput.addEventListener('keydown', event => {
-            if (event.keyCode == 9) {
-              timer = quickFireUI.scoreTextEntry(quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
-              continueQuickFireBtn.disabled = false;
+            if (event.keyCode == 9 && check) {
+                check = false;
+                timer = quickFireUI.scoreTextEntry(quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
+                continueQuickFireBtn.disabled = false;
             }
         });
 
         quickFireInput.addEventListener('keypress', event => {
-            if (event.keyCode == 13) {
-              timer = quickFireUI.scoreTextEntry(quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
-              continueQuickFireBtn.disabled = false;
+            if (event.keyCode == 13 && check) {
+                check = false;
+                timer = quickFireUI.scoreTextEntry(quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
+                continueQuickFireBtn.disabled = false;
             }            
         });
 
         quickFireInput.addEventListener('focusout', e => {
-            timer = quickFireUI.scoreTextEntry(quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
-            continueQuickFireBtn.disabled = false;
+            if(check) {
+                check = false;
+                timer = quickFireUI.scoreTextEntry(quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
+                continueQuickFireBtn.disabled = false;
+            }
         });
 
         if((quickFire.question.term.split(' ').length > 1 || quickFire.question.term.indexOf('(') === 0) && quickFire.filter.option.key === '1') {
