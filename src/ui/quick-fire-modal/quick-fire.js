@@ -252,6 +252,11 @@ const questions = quickFire => {
             }            
         });
 
+        quickFireInput.addEventListener('focusout', e => {
+            timer = quickFireUI.scoreTextEntry(quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
+            continueQuickFireBtn.disabled = false;
+        });
+
         if((quickFire.question.term.split(' ').length > 1 || quickFire.question.term.indexOf('(') === 0) && quickFire.filter.option.key === '1') {
             const hint = modal.querySelector('.js-quick-fire-hint');
                   hint.classList.remove('hide');
