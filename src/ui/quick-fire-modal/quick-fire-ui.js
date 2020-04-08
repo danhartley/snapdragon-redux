@@ -68,10 +68,10 @@ const scoreTextEntry = (quickFire, quickFireInput, quickFireMessage, timer, cont
                 acceptable = acceptable.trim();
                 acceptable = acceptable.toLowerCase();
 
-            return acceptable
+            return acceptable;
         });
         
-        const isCorrect = R.contains(quickFireInput.value.toLowerCase(), acceptableAnswers);
+        const isCorrect = R.contains(quickFireInput.value.trim().toLowerCase(), acceptableAnswers);
         
         quickFire.score.total++;
         
@@ -85,8 +85,8 @@ const scoreTextEntry = (quickFire, quickFireInput, quickFireMessage, timer, cont
         }
         
         quickFireMessage.innerHTML = isCorrect
-            ? 'That is correct.'
-            : `That is incorrect. The correct answer is <span class="uppercase half-margin-left">'${quickFire.question.term.toLowerCase()}'</span>.`;
+            ? `<span class="centred-block icon"><i class="fas fa-check large-text correct-answer-color margin-right"></i>That is correct.</span>`
+            : `<span class="centred-block icon"><i class="fas fa-times large-text incorrect-answer-color margin-right"></i>The correct answer is <span class="half-margin-left">'${quickFire.question.term.toLowerCase()}'.</span></span>`;
 
         timer = setTimeout(() => {
             continueQuickFireBtn.click();
@@ -134,7 +134,7 @@ const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
         quickFireActions.quickFireFilters(quickFire.linkFromLesson);
     };
     
-    console.log('screen: ', screen);
+    // console.log('screen: ', screen);
 
     const handleGlossaryLink = () => {
         if(quickFire.onClickGlossaryLinkListeners.length < 1) {
