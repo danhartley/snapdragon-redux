@@ -67,12 +67,12 @@ export const renderLessons = () => {
                               const { glossary } = store.getState();
                               setTimeout(() => {
                                     quickFireHandlers.questions({ ...quickFireHandlers.init(glossary, enums.quickFireType.DEFINITION, lesson), linkFromLesson: true });
-                              });
+                              },150);
                         }
                 });
             });
 
-      },1000);
+      },100);
 
       renderCustomLesson(lessons, savedLessons, videoPlayer, score, config);
       
