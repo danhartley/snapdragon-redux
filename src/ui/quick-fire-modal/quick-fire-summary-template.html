@@ -5,7 +5,10 @@
             <span>You have answered all of the questions.</span>
         </div>
         <div class="margin-right">
-            <span class="margin-right underline-link small js-quick-review-continue-review">Continue review</span>
+            <span class="margin-right underline-link small js-quick-review-continue-review">
+                <span class="landscape">Continue review</span>
+                <span class="portrait">Continue</span>
+            </span>
         </div>
     </div>
 
@@ -41,7 +44,7 @@
             <div id="pass_target_{{ pass.index }}" class="collapse" aria-labelledby="pass_header_{{ pass.index }}" data-parent="#accordion">
                 <div class="card-body">
                     <div>{{ pass.definition }}</div>
-                    <div><a class="underline-link extra-small-text" href="{{ pass.wiki }}" target="_blank">wikipedia</a></div>
+                    <div><a class="underline-link extra-small-text {{ pass.showWikiClass }}" href="{{ pass.wiki }}" target="_blank">wikipedia</a></div>
                 </div>
             </div>
         </div>
@@ -57,7 +60,7 @@
             <div id="fail_target_{{ fail.index }}" class="collapse" aria-labelledby="fail_header_{{ fail.index }}" data-parent="#accordion">
                 <div class="card-body">
                     <div>{{ fail.definition }}</div>
-                    <div><a class="underline-link extra-small-text" href="{{ fail.wiki }}" target="_blank">wikipedia</a></div>
+                    <div><a class="underline-link extra-small-text {{ fail.showWikiClass }}" href="{{ fail.wiki }}" target="_blank">wikipedia</a></div>
                 </div>
             </div>
         </div>

@@ -256,8 +256,8 @@ const questions = quickFire => {
             }            
         });
 
-        quickFireInput.addEventListener('focusout', e => {
-            if(check) {
+        quickFireInput.addEventListener('blur', e => {
+            if(check && e.target.value.length > 2) {
                 check = false;
                 timer = quickFireUI.scoreTextEntry(quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
                 continueQuickFireBtn.disabled = false;
@@ -321,13 +321,15 @@ const summary = quickFire => {
 
     const passes = quickFire.score.passes;
           passes.forEach((pass, i) => {
-            pass.index = i,
-            pass.wiki = pass.wiki || ''
+            pass.index = i;
+            pass.wiki = pass.wiki || '';
+            pass.showWikiClass = pass.wiki.length > 0 ? '' : 'hide-important'
           });
     const fails = quickFire.score.fails;
           fails.forEach((fail, i) => {
-            fail.index = i,
-            fail.wiki = fail.wiki || ''
+            fail.index = i;
+            fail.wiki = fail.wiki || '';
+            fail.showWikiClass = fail.wiki.length > 0 ? '' : 'hide-important';
           });
 
     renderTemplate({ score: quickFire.score, passes, fails }, template.content, parent);
@@ -343,7 +345,7 @@ const summary = quickFire => {
                     ? t.classList.remove('hide-important')
                     : t.classList.add('hide-important');
             });
-        }, { once: true });
+        });
     });
 
     const summaryText = modal.querySelector('.js-quick-fire-summary div:nth-child(1) > span');
