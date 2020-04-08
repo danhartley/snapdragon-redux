@@ -243,14 +243,14 @@ const questions = quickFire => {
               timer = quickFireUI.scoreTextEntry(quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
               continueQuickFireBtn.disabled = false;
             }
-        }, { once: true });
+        });
 
         quickFireInput.addEventListener('keypress', event => {
             if (event.keyCode == 13) {
               timer = quickFireUI.scoreTextEntry(quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn);
               continueQuickFireBtn.disabled = false;
             }            
-        }, { once: true });
+        });
 
         if((quickFire.question.term.split(' ').length > 1 || quickFire.question.term.indexOf('(') === 0) && quickFire.filter.option.key === '1') {
             const hint = modal.querySelector('.js-quick-fire-hint');
