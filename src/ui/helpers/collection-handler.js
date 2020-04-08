@@ -47,10 +47,10 @@ async function getItems(collection, config) {
 const loadCollection = async (collection, config) => {
     
     try {
-
-        if(collection.items.length > 0) return collection;
-
+        
         config.collection = { id: collection.id };
+        
+        if(collection.items.length > 0) return collection;
 
         const items = await getItems(collection, config);
         collection.items = items.filter(item => item.name);
