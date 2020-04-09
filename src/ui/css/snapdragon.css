@@ -65,6 +65,7 @@ progress::-webkit-progress-bar {
 }
 progress::-webkit-progress-value {
   background-color: var(--snap-progress-bar);
+  background-color: var(--snap-text-medium-dark);
 }
 progress::-moz-progress-bar {
   background-color: var(--snap-progress-bar);
@@ -103,6 +104,7 @@ hr {
 .btn.btn-light, .btn.btn-light:focus {
   color: var(--snap-text-light) !important;
   background-color: var(--snap-collection) !important;
+  cursor: pointer;
 }
 
 .btn-collection {
@@ -2214,10 +2216,11 @@ img[data-has-image="false"] {
   display: inline-block;
   padding: 0 .125rem;
   min-width: 1.5rem;
+  text-align: left;
 }
 
 .quick-fire-branches span {
-  font-size: .4rem;
+  font-size: .6rem;
 }
 
 .quick-fire .btn-group {
@@ -2237,15 +2240,24 @@ img[data-has-image="false"] {
 
 .quick-fire .quick-fire-branches.btn-group >.btn {
   background-color: var(--snap-btn-filter-off);
+  border: 1px solid var(--snap-border-lightest);
 }
 
 .quick-fire .quick-fire-options .btn-secondary {
-  border: 1px solid var(--snap-btn-blue);
+  border: 1px solid var(--snap-collection-active);
 }
 
 .quick-fire .quick-fire-options .btn-secondary:not(:disabled):not(.disabled).active {
-  background-color: var(--snap-btn-blue);
-  color: var(--snap-text-light);  
+  color: var(--snap-text-light);
+  background-color: var(--snap-tertiary-background);
+  border: none;
+}
+
+.btn.btn-tertiary, .btn.btn-tertiary:focus {
+  color: var(--snap-text-light);
+  background-color: var(--snap-tertiary-background) !important;
+  border: none;
+  cursor: pointer !important;
 }
 
 .quick-fire .quick-fire-branches .btn-secondary {
@@ -2256,6 +2268,7 @@ img[data-has-image="false"] {
   font-size: .7rem;
   background-color: var(--snap-btn-filter-on);
   color: var(--snap-text-dark-medium-dark);
+  border: 1px solid var(--snap-border-light);
 }
 
 .quick-fire .btn {  
@@ -2328,4 +2341,9 @@ img[data-has-image="false"] {
 
 .incorrect-answer-color {
   color: var(--snap-alert);
+}
+
+.low-relief-block {
+  border: 1px solid var(--snap-success-light) !important;
+  background-color: var(--snap-species-highlight-background);
 }
