@@ -37,7 +37,7 @@ export const observeStore = (store, select, onChange, domain, layout) => {
             // break;
         }
 
-        if(nextState.score) {
+        if(nextState.score && nextState.score.total) {
           hasStateSignificantlyChanged = nextState.score.total !== currentState.score.total;
         }
       }
