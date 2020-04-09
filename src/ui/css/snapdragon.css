@@ -2250,13 +2250,13 @@ img[data-has-image="false"] {
 .quick-fire .quick-fire-options .btn-secondary:not(:disabled):not(.disabled).active {
   color: var(--snap-text-light);
   background-color: var(--snap-tertiary-background);
-  border: none;
+  border: 1px solid var(--snap-border-light);
 }
 
 .btn.btn-tertiary, .btn.btn-tertiary:focus {
   color: var(--snap-text-light);
   background-color: var(--snap-tertiary-background) !important;
-  border: none;
+  border: 1px solid var(--snap-border-light);
   cursor: pointer !important;
 }
 
