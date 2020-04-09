@@ -213,7 +213,7 @@
 
   .answer-response {
     margin: 0 0 0 .25rem;
-    font-family: serif;
+    /* font-family: serif;
     letter-spacing: .1rem;
-    text-transform: uppercase;
+    text-transform: uppercase; */
   }

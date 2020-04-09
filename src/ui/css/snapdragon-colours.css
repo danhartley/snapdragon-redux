@@ -22,7 +22,7 @@
     --snap-landscape: rgb(185, 200, 204);
     
     --snap-collection: rgb(87, 97, 99);
-    --snap-collection-active: rgb(95, 125, 89);
+    --snap-collection-active: rgb(95, 125, 89);    
     --snap-collection-light: rgb(126, 137, 140);
     --snap-non-taxa: rgb(165, 159, 131);
 
@@ -60,11 +60,12 @@
 
     --snap-btn-blue: rgb(54, 69, 82);
     --snap-btn-light: rgb(245, 245, 245);
-    --snap-btn-reset: rgb(227, 219, 229);
 
-    --snap-btn-filter-on: rgb(246, 157, 53);
-    --snap-btn-filter-off: rgb(249, 192, 123);
-  
+    --snap-tertiary-background: rgb(95, 125, 89);
+
+    --snap-btn-filter-on: rgb(214, 208, 213);
+    --snap-btn-filter-off: rgb(235, 231, 228);
+
     --snap-border-light: rgb(175,175,175);
     --snap-border-medium: rgb(211, 211, 211);
     --snap-border-lightest: rgb(225,225,225);

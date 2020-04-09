@@ -132,6 +132,11 @@
     color: var(--snap-alert);
 }
 
+.answer-box-success > span:nth-child(2), 
+.answer-box-alert > span:nth-child(2) {
+    margin: 0 0 0 .5rem;
+}
+
 .text-entry-container, .text-complete-container {
     margin: 1rem 0 0 0;
 }
