@@ -2212,7 +2212,7 @@ img[data-has-image="false"] {
   font-size: .6rem;
   vertical-align: super;
   display: inline-block;
-  padding: .125rem;
+  padding: 0 .125rem;
   min-width: 1.5rem;
 }
 
@@ -2221,12 +2221,13 @@ img[data-has-image="false"] {
 }
 
 .quick-fire .btn-group {
-  display: initial;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .quick-fire .btn-group >.btn {
-  background-color: var(--snap-btn-light-blue);
-  margin: 0 .25rem .5rem 0;
+  background-color: var(--snap-btn-light);
+  margin: 0 0 .5rem 0;
   border-radius: .25rem !important;
   letter-spacing: .03rem;
   width: fit-content;
@@ -2235,22 +2236,26 @@ img[data-has-image="false"] {
 }
 
 .quick-fire .quick-fire-branches.btn-group >.btn {
-  background-color: var(--snap-btn-light-green);
+  background-color: var(--snap-btn-filter-off);
+}
+
+.quick-fire .quick-fire-options .btn-secondary {
+  border: 1px solid var(--snap-btn-blue);
 }
 
 .quick-fire .quick-fire-options .btn-secondary:not(:disabled):not(.disabled).active {
   background-color: var(--snap-btn-blue);
-  color: var(--snap-text-light);
+  color: var(--snap-text-light);  
 }
 
 .quick-fire .quick-fire-branches .btn-secondary {
-  font-size: .6rem;
+  font-size: .7rem;
 }
 
 .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
-  font-size: .6rem;
-  background-color: var(--snap-btn-green);
-  color: var(--snap-text-light);
+  font-size: .7rem;
+  background-color: var(--snap-btn-filter-on);
+  color: var(--snap-text-dark-medium-dark);
 }
 
 .quick-fire .btn {  

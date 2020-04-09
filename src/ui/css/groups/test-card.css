@@ -124,13 +124,6 @@
     justify-content: center;
 }
 
-  .text-question span:nth-child(2) {
-    margin: 0 0 0 .25rem;
-    font-family: serif;
-    letter-spacing: .1rem;
-    text-transform: uppercase;
-  }
-
 .answer-box-success > span:nth-child(2) {
     color: var(--snap-success);
 }

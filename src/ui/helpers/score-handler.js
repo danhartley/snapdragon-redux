@@ -30,10 +30,10 @@ const showResponseToAnswerHandler = response => {
     if(questionText) {
           questionText.innerHTML = response.success
             ? `<div class="answer-box-success">
-                <span class="icon"><i class="fas fa-check"></i></span><span>${ response.correct }</span>
+                <span class="icon"><i class="fas fa-check"></i></span><span class="answer-response">${ response.correct }</span>
                 </div>`
             : `<div class="answer-box-alert">
-                <span class="icon"><i class="fas fa-times"></i></span><span>${response.answer || response.incorrect}</span>
+                <span class="icon"><i class="fas fa-times"></i></span><span class="answer-response">${response.answer || response.incorrect}</span>
             </div>`;
     }
 }

@@ -71,6 +71,11 @@
     padding: .5rem;
   }
   
+  
+  .half-padding {
+    padding: .25rem;
+  }
+  
   .padding-top {
     padding-top: .5rem;
   }
@@ -204,4 +209,11 @@
   .absolute-bottom {
     position: absolute;
     bottom: .5rem;
+  }
+
+  .answer-response {
+    margin: 0 0 0 .25rem;
+    font-family: serif;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
   }

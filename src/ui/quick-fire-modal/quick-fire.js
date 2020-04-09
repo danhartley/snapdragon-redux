@@ -149,7 +149,7 @@ const filters = async linkFromLesson => {
                 quickFire.items = quickFire.items.filter(item => R.contains(item.branch, checkedBranches));
                 quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters, taxonCounters, getIncludeTechnicalTerms());
             });
-        }, { once: true });
+        });
     });
 
     const technical = document.querySelector('.js-quick-fire-technical');
@@ -157,15 +157,16 @@ const filters = async linkFromLesson => {
             includeTechnicalTerms = e.target.checked;
             quickFire.items = await quickFireAPI.getItems(quickFire.filter.iconicTaxa, includeTechnicalTerms);
             quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters, taxonCounters, getIncludeTechnicalTerms());
-          }, { once: true });
+          });
 
     const reset = document.querySelector('.js-quick-fire-reset');
-          reset.addEventListener('change', e => {
-              if(e.target.checked) {
+          reset.addEventListener('click', e => {
+        //   reset.addEventListener('change', e => {
+            //   if(e.target.checked) {
                 actions.boundCreateQuickFire(quickFireAPI.getQuickFire(store.getState().glossary, enums.quickFireType.DEFINITION, {}));
                 quickFireFilters(quickFire.linkFromLesson);
-              }
-          }, { once: true });
+            //   }
+          });
 };
 
 const questions = quickFire => {
