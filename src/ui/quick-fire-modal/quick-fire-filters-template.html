@@ -5,7 +5,11 @@
         <span class="landscape">questions selected at random from <span class="js-quick-fire-count">{{ quickFire.count }}</span> terms.</span>
         <span class="portrait">from <span class="js-quick-fire-count">{{ quickFire.count }}</span> terms.</span>
     </div>
-    <ul class="quick-fire-taxa margin-left margin-top margin-bottom js-quick-fire-taxa" data-repeat-taxon="{{ quickFire.filter.taxa }}">
+
+    <div class="landscape half-standard-block"></div>
+    <div class="portrait padding"></div>
+    
+    <ul class="quick-fire-taxa margin-left js-quick-fire-taxa" data-repeat-taxon="{{ quickFire.filter.taxa }}">
         <li class="custom-control custom-checkbox" data-name="{{ taxon.name }}">
             <input type="checkbox" class="custom-control-input" id="{{ taxon.name }}" checked>
             <label class="custom-control-label" for="{{ taxon.name }}">{{ taxon.name }}</label>
@@ -13,33 +17,34 @@
         </li>
     </ul>
 
-    <br>
+    <div class="landscape half-standard-block"></div>
+    <div class="portrait padding"></div>
 
-    <div class="btn-group btn-group-toggle margin-top quick-fire-branches js-quick-fire-branches" data-toggle="buttons" data-repeat-branch="{{ branches }}">
+    <div class="btn-group btn-group-toggle quick-fire-branches js-quick-fire-branches" data-toggle="buttons" data-repeat-branch="{{ branches }}">
         <label data-key="{{ branch.name }}" class="btn btn-secondary margin-left active" data-value="{{ branch.name }}">
           <input type="checkbox" name="branches" id="{{ branch.name }}" autocomplete="off"> {{ branch.name }}
           <span data-name="{{ branch.name }}">{{ branch.count }}</span>
         </label>        
     </div>
 
-    <br>
-    <br>
+    <div class="landscape half-standard-block"></div>
+    <div class="portrait half-padding"></div>
 
-    <div class="btn-group btn-group-toggle margin-left margin-top quick-fire-options margin-bottom js-quick-fire-filter-options" data-toggle="buttons" data-repeat-option="{{ options }}">
+    <div class="btn-group btn-group-toggle margin-left quick-fire-options margin-bottom js-quick-fire-filter-options" data-toggle="buttons" data-repeat-option="{{ options }}">
         <label data-key="{{ option.key }}" class="btn btn-secondary margin-right" data-value="{{ option.value }}">
           <input type="radio" name="options" id="{{ option.key }}" autocomplete="off"> {{ option.value }}
         </label>
     </div>
 
-    <div class="margin-left margin-top quick-fire-custom-controls flex">
-        <div class="margin-right custom-control custom-checkbox">
+    <div class="landscape half-standard-block"></div>
+
+    <div class="standard-block centred-block horizontal-evenly-spaced-block">
+        <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input js-quick-fire-technical" id="technical">
             <label class="custom-control-label" for="technical">Technical (advanced)</label>
         </div>
-
-        <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input js-quick-fire-reset" id="reset">
-            <label class="custom-control-label" for="reset">Reset filters</label>
+        <div>
+            <label class="btn btn-light js-quick-fire-reset">Reset filters</label>
         </div>
     </div>
 
