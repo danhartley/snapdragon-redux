@@ -12,7 +12,7 @@ export const renderHorizontalStrips = collection => {
 
     const item = collection.nextItem || collection.items[collection.itemIndex];
 
-    const binomial = layout.provider.name;
+    const binomial = layout.provider.name || layout.provider.taxon;
     const statement = layout.provider.statement;
     const providerQuestion = layout.provider.question;
 
