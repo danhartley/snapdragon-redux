@@ -12,12 +12,12 @@ export const landscapeCustom = {
             name:'Level 1',
             layouts: [                          
                         L.mixedSpecimenImages, 
-                        // L.latinToCommonMatch, L.commonEntry,
-                        // L.commonToLatinMatch,
-                        // L.textCompleteGenus, L.genusEntry,                        
-                        // L.textCompleteSpecies, L.speciesEntry,
-                        // L.speciesGenusEntry,
-                        // L.familyMatch , L.familyStripsMatch
+                        L.latinToCommonMatch, L.commonEntry,
+                        L.commonToLatinMatch,
+                        L.textCompleteGenus, L.genusEntry,                        
+                        L.textCompleteSpecies, L.speciesEntry,
+                        L.speciesGenusEntry,
+                        L.familyMatch , L.familyStripsMatch
                     ],
             bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'definition' ] } ]
         }
