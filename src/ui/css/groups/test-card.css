@@ -180,8 +180,8 @@ div.text-entry {
   }
 
   .mixed-specimen-container > div > span > span, .request-feedback > span {
-    font-weight: bold;
-    color: var(--snap-btn-auxillary)
+    color: black;
+    letter-spacing: .01rem;
   }
 
   .btn.btn-auxiliary, .btn.btn-auxiliary:focus {

@@ -63,7 +63,7 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
                 providerQuestions = R.flatten(providerQuestions).filter(layout => layout);
 
             let providerLayouts = providerQuestions.map(provider => {
-                return { ...L.providerHorizontalStrip, lessonName:"Lesson 1", levelName:"Level 1", speciesName: provider.name, provider };
+                return { ...L.providerHorizontalStrip, lessonName:"Lesson 1", levelName:"Level 1", speciesName: provider.name || provider.taxon, provider };
             });
 
             if(providerLayouts) {

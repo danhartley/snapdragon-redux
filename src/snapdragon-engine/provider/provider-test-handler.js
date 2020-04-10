@@ -9,11 +9,20 @@ const getItemLayouts = async itemQuestions => {
 
 const getLayouts = async (collection, roundItemNames) => {
     
+    const species = collection.species.filter(sp => R.contains(sp.name, roundItemNames));
+    const speciesQuestions = species.filter(sp => sp.questions);
+
+    console.log('speciesQuestions: ', speciesQuestions);
+
+    if(speciesQuestions.length > 0) {
+        return Promise.all(speciesQuestions.map(sq => sq.questions));
+    }
+
     const itemsQuestions = collection.items.filter(i => R.contains(i.name, roundItemNames)).map(i => { return { name: i.name, questionIds: i.questionIds }});
     
-    if (itemsQuestions) {
+    if(itemsQuestions) {
         const promises = itemsQuestions.map(async (itemQuestions) => {
-            // console.log('itemsQuestions:', itemsQuestions);
+            console.log('itemsQuestions:', itemsQuestions);
             if(itemQuestions.questionIds) return await getItemLayouts(itemQuestions);
         });
         return await Promise.all(promises);
