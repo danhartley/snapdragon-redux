@@ -44,7 +44,7 @@ export const imageMatch = (src1, src2) => {
     return isActiveImage;
 };
 
-export const prepImageForCarousel = (image, index, item, config, useCase) => {
+export const prepImageForCarousel = (image, index, item) => {
     let img = { 
         index: index + 1, 
         ...image,

@@ -33,7 +33,7 @@ const renderItemSpecimenTiles = item => {
     let images, items;
     
     if (R.contains(layout.screens[1].name, familes)) {        
-        images = getImagesFromItemFamily(collectionItems.filter(i => i.family.name.toLowerCase() === item.taxonomy.family.toLowerCase()), item, config);
+        images = R.take(6, utils.shuffleArray(getImagesFromItemFamily(collectionItems.filter(i => i.family.name.toLowerCase() === item.taxonomy.family.toLowerCase()))));
         items = images.map(image => collectionItems.find(item => item.name === image.itemName));
     } else {
         images = R.take(6, utils.shuffleArray(R.clone(item.images)));
@@ -70,17 +70,17 @@ const renderSpecimenImageTiles = (collection, images, item) => {
     modalImagesHandler(document.querySelectorAll('.js-tiles .square'), item, collection, config);
 };
 
-const getImagesFromItemFamily = (family, item, config) => {
+const getImagesFromItemFamily = family => {
 
-    let images, number = 6, items, uniqueItems;
+    let itemImages, items;
 
-    images = R.take(number, R.flatten(family.map(i => {
+    itemImages = R.flatten(family.map(i => {
         return { images: i.images, item: { name: i.name, itemCommon: i.names[0].vernacularName, vernacularName: i.names[0].vernacularName, names: i.names } };
-    })));
+    }));
 
-    if (images.length < number) {
-        let required = number - images.length;
-        let pool = images.map(image => {
+    if (itemImages.length < 6) {
+        
+        let pool = itemImages.map(image => {
             const item = family.find(i => i.name === image.item.name);
             return {
                 images: item.images,
@@ -92,55 +92,47 @@ const getImagesFromItemFamily = (family, item, config) => {
                 }
             };
         });
-        const pooledImages = R.flatten(pool);
-        pooledImages.forEach(pooledImage => {
-            pooledImage.images.forEach(image => {
-                images.push({ images: utils.shuffleArray(pooledImage.images), item: pooledImage.item });
+        let pooledImages = R.flatten(pool);
+            pooledImages.forEach(pooledImage => {
+                pooledImage.images.forEach(image => {
+                    itemImages.push({ images: pooledImage.images, item: pooledImage.item });
+                });
             });
-        });
     }
 
-    items = images.map(image => image.item);
-    
-    uniqueItems = [...new Set(items.map(i => i.name))];
-    
-    switch (uniqueItems.length) {
-        case 1:
-            number = 1;
-            break;
-        case 2:
-            number = 2;
-            break;
-        case 3:
-            number = 3;
-            break;
-        default:
-            number = 6;
-    }
-    
-    images = R.take(number, utils.shuffleArray(images));
-    
-    items = items.filter(i => {
-        const isTrue = R.contains(i.name, uniqueItems);
-        uniqueItems.splice(0, 1);
-        return isTrue;
-    });
+    items = itemImages.map(image => image.item);
     
     items.forEach(i => {
         const itemName = i.name;
         i.images = family.find(i => i.name === itemName).images;
     });
-    
-    if (items.length === 1) {
-        images = images.map((image, index) => {
-            return prepImageForCarousel(image.images[index], index, image.item, config, imageUseCases.SPECIES_CARD);
-        });
-    }
-    else {
-        images = images.map((image, index) => {
-            return prepImageForCarousel(item.images.find(i => i.starred) || image.images[index], index, image.item, config, imageUseCases.SPECIES_CARD);
-        });
-    }
 
-    return images;
+    const uniqueImages = [];
+
+    const getUniqueImage = (image, index, uniqueImages) => {
+        let uniqueImage = image.images.find(i => i.starred);
+            uniqueImage = R.contains(uniqueImage.title, uniqueImages.map(i => i.title)) ? null : uniqueImage;
+        if(uniqueImage) {
+            uniqueImages.push(uniqueImage);
+            return uniqueImage;
+        }
+        else {
+            uniqueImage = image.images[index];
+            if(uniqueImage && !R.contains(uniqueImage.title, uniqueImages.map(i => i.title))) {
+                uniqueImages.push(uniqueImage);
+                return uniqueImage;
+            }
+        }
+    }; 
+
+    const familyImages = [];
+
+    itemImages.forEach((image, index) => {
+        let imageToPrep = getUniqueImage(image, index, uniqueImages);
+        if(imageToPrep) {
+            familyImages.push(prepImageForCarousel(imageToPrep, index, image.item));
+        }
+    });
+
+    return familyImages;
 }
