@@ -111,7 +111,9 @@ const getImagesFromItemFamily = family => {
 
     const getUniqueImage = (image, index, uniqueImages) => {
         let uniqueImage = image.images.find(i => i.starred);
+        if(uniqueImage) {
             uniqueImage = R.contains(uniqueImage.title, uniqueImages.map(i => i.title)) ? null : uniqueImage;
+        }
         if(uniqueImage) {
             uniqueImages.push(uniqueImage);
             return uniqueImage;
