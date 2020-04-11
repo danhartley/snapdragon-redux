@@ -23,3 +23,20 @@ export const landscapeCustom = {
         }
     ]
 };
+
+export const landscapeCustom2 = {
+    id: 2,
+    name:'Lesson 2',
+    portrait: false,
+    default: true,
+    levels: [
+        {   id: 1,
+            name:'Level 1',
+            layouts: [                          
+                        L.mixedSpecimenImages, 
+                        L.familyMatch , L.familyStripsMatch
+                    ],
+            bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'definition' ] } ]
+        }
+    ]
+};

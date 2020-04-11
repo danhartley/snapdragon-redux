@@ -44,11 +44,11 @@ export const imageMatch = (src1, src2) => {
     return isActiveImage;
 };
 
-export const prepImageForCarousel = (image, index, item, config, useCase) => {
+export const prepImageForCarousel = (image, index, item) => {
     let img = { 
         index: index + 1, 
         ...image,
-        url: scaleImage(image, useCase, config).medium,
+        // url: scaleImage(image, useCase, config).medium,
         itemName: item.name,
         itemCommon: item.itemCommon,
         rightsHolder: image.rightsHolder || '',
