@@ -1,5 +1,4 @@
 import { itemProperties } from 'ui/helpers/data-checking';
-import { subscription } from 'redux/subscriptions';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -9,15 +8,17 @@ import { scoreSummaryHandler } from 'ui/screens/progress/score-summary-handler';
 import summaryTemplate from 'ui/screens/progress/score-summary-template.html';
 import summaryRowTemplate from 'ui/screens/progress/score-summary-row-template.html';
 
-export const renderScoreSummary = async (collectionId) => {
+export const renderScoreSummary = async collectionId => {
 
       const { lessons, score } = store.getState();
       
-      const { collection, history, lesson, config, score: savedScore } = lessons.length > 0
+      const { collection, history, config, score: savedScore } = lessons.length > 0
                   ? !!lessons.find(l => l.collection.id === parseInt(collectionId))
                         ? lessons.find(l => l.collection.id === parseInt(collectionId))
                         : store.getState()
                   : store.getState();
+
+      const { lesson } = store.getState();
 
       const template = document.createElement('template');
             template.innerHTML = summaryTemplate;
@@ -31,24 +32,26 @@ export const renderScoreSummary = async (collectionId) => {
 
       scores.forEach(s => renderScoreSummaryRow(s, config));
 
-      const handleBtnClickEvent = async event => {
-            
-            subscription.remove(subscription.getByName('renderSummary'));
-            subscription.remove(subscription.getByName('renderHistory'));      
-    
-            if(lesson.isLessonComplete) {
-                  await lessonStateHandler.purgeLesson();
-            } else {
-                  lessonStateHandler.beginOrResumeLesson(collectionId, store.getState().lesson.isNextRound);
-            }            
-        };
+      const handleContinueLesson = async event => {            
+            lessonStateHandler.beginOrResumeLesson(collectionId, store.getState().lesson.isNextRound);
+      };
 
-        const actionLinks = document.querySelectorAll('.js-continue-link');
+      const handleNewLesson = async event => {                   
+            await lessonStateHandler.purgeLesson();
+      };
 
-        actionLinks.forEach(actionLink => {
-            actionLink.removeEventListener('click', handleBtnClickEvent);
-            actionLink.addEventListener('click', handleBtnClickEvent);
-        });
+      const actionLinks = document.querySelectorAll('.js-continue-link');
+
+      if(lesson.isLessonComplete) {
+            actionLinks.forEach(actionLink => {
+                  actionLink.innerHTML = 'START NEW LESSON';
+                  actionLink.addEventListener('click', handleNewLesson, { once: true });
+            });
+      } else {
+            actionLinks.forEach(actionLink => {
+                  actionLink.addEventListener('click', handleContinueLesson, { once: true });
+            });
+      }
 }
 
 const renderScoreSummaryRow = (score, config) => {

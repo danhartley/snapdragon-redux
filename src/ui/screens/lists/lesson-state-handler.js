@@ -2,6 +2,7 @@ import * as R from 'ramda';
 
 import { firestore } from 'api/firebase/firestore';
 import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
+import { persistor } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';
@@ -13,7 +14,7 @@ const beginOrResumeLesson = async (reviewLessonId, isNextRound)  => {
 
   const { collections, collection: currentCollection, config } = store.getState();
 
-  if(isNextRound) {
+  if(isNextRound && config.collection.id > 0) {
     await changeState(enums.lessonState.NEXT_ROUND, currentCollection, config);
   }
 
@@ -142,7 +143,7 @@ const changeState = async (lessonState, collection, config) => {
                   if(lesson.isLevelComplete) {
                       actions.boundNextLevel({ index: 0, lesson });
                   } else if(lesson.isNextRound) {
-                      actions.boundNextRound({ index: 0, lesson });
+                      actions.boundNextRound({ index: 0, lesson: { ...lesson, currentRound: lesson.currentRound + 1 } });
                   };
                   break;
               }

@@ -3,11 +3,9 @@ import { renderScoreSummary } from 'ui/screens/progress/score-summary';
 
 export const renderSummary = history => {
 
-    const { collection, lesson } = store.getState();
+    const { collection } = store.getState();
 
-    lesson.isLessonComplete
-        ? renderScoreSummary(collection.id)
-        : renderScoreSummary(collection.id);
+    renderScoreSummary(collection.id);
 
     return;
 };

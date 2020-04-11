@@ -15,8 +15,6 @@ export const renderScore = score => {
                         ? score.correct === 1 ? 'correct answer' : 'correct answers'
                         : score.correct === 'correct';
 
-    const currentRound = lesson.currentRound;
-
     template.innerHTML = config.isPortraitMode
             ?   layout 
                     ? ''
@@ -53,7 +51,7 @@ export const renderScore = score => {
             : `<span class="margin-left">${score.correct}/${score.total}</span>`;
     }    
 
-    renderTemplate({ score, history: runningTotal, collection, config, layout, scoreText, currentRound, questionFormat }, template.content, parent);
+    renderTemplate({ score, history: runningTotal, collection, config, layout, scoreText, currentRound: lesson.currentRound, questionFormat }, template.content, parent);
 
     score.mode = config.mode;
 

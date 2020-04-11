@@ -37,7 +37,13 @@ export const observeStore = (store, select, onChange, domain, layout) => {
             // break;
         }
 
-        if(nextState.score && nextState.score.total) {
+        // if(nextState.scores && currentState.scores) {
+        //   hasStateSignificantlyChanged = nextState.scores.length !== currentState.scores.length;
+        //   console.log('has history hasStateSignificantlyChanged:', hasStateSignificantlyChanged);
+        // }
+
+        if(nextState.score && nextState.score.total) { // this never happens! state does not contain the domain
+          console.log('never!')
           hasStateSignificantlyChanged = nextState.score.total !== currentState.score.total;
         }
       }

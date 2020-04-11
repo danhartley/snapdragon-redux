@@ -50,8 +50,7 @@ export const collection = (state = { id: 0 }, action) => {
     const getNextRound = (action, state) => {        
 
         let lesson = action.data.lesson;
-        let currentRound = (lesson.currentRound === lesson.rounds) ? 1 : lesson.currentRound + 1;
-        let itemIndex = (lesson.moduleSize * (currentRound - 1));
+        let itemIndex = (lesson.moduleSize * (lesson.currentRound - 1));
         let nextItem = state.items[itemIndex];
         
         if(lesson.isLevelComplete) {
