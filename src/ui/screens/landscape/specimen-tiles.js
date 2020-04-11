@@ -33,7 +33,8 @@ const renderItemSpecimenTiles = item => {
     let images, items;
     
     if (R.contains(layout.screens[1].name, familes)) {        
-        images = R.take(6, utils.shuffleArray(getImagesFromItemFamily(collectionItems.filter(i => i.family.name.toLowerCase() === item.taxonomy.family.toLowerCase()))));
+        const famiy = collectionItems.filter(i => i.family.name.toLowerCase() === item.taxonomy.family.toLowerCase());
+        images = R.take(6, utils.shuffleArray(getImagesFromItemFamily(family, config, imageUseCases.SPECIES_CARD)));
         items = images.map(image => collectionItems.find(item => item.name === image.itemName));
     } else {
         images = R.take(6, utils.shuffleArray(R.clone(item.images)));
@@ -70,7 +71,7 @@ const renderSpecimenImageTiles = (collection, images, item) => {
     modalImagesHandler(document.querySelectorAll('.js-tiles .square'), item, collection, config);
 };
 
-const getImagesFromItemFamily = family => {
+const getImagesFromItemFamily = (family, config, useCase) => {
 
     let itemImages, items;
 
@@ -132,7 +133,7 @@ const getImagesFromItemFamily = family => {
     itemImages.forEach((image, index) => {
         let imageToPrep = getUniqueImage(image, index, uniqueImages);
         if(imageToPrep) {
-            familyImages.push(prepImageForCarousel(imageToPrep, index, image.item));
+            familyImages.push(prepImageForCarousel(imageToPrep, index, image.item, config, useCase));
         }
     });
 
