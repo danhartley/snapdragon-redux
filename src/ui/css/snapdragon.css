@@ -2020,6 +2020,10 @@ a.collection-disabled {
   padding: .5rem 1.5rem;
 }
 
+.score-summary.scrollable.review-summary {
+  bottom: 1rem;
+}
+
 .continue-link {
   margin-top: .5rem;  
 }

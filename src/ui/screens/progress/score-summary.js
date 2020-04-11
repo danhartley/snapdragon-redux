@@ -1,5 +1,4 @@
 import { itemProperties } from 'ui/helpers/data-checking';
-import { subscription } from 'redux/subscriptions';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -13,11 +12,13 @@ export const renderScoreSummary = async collectionId => {
 
       const { lessons, score } = store.getState();
       
-      const { collection, history, lesson, config, score: savedScore } = lessons.length > 0
+      const { collection, history, config, score: savedScore } = lessons.length > 0
                   ? !!lessons.find(l => l.collection.id === parseInt(collectionId))
                         ? lessons.find(l => l.collection.id === parseInt(collectionId))
                         : store.getState()
                   : store.getState();
+
+      const { lesson } = store.getState();
 
       const template = document.createElement('template');
             template.innerHTML = summaryTemplate;
@@ -31,27 +32,17 @@ export const renderScoreSummary = async collectionId => {
 
       scores.forEach(s => renderScoreSummaryRow(s, config));
 
-      const handleContinueLesson = async event => {
-            
-            subscription.remove(subscription.getByName('renderSummary'));
-            subscription.remove(subscription.getByName('renderHistory'));            
-                   
+      const handleContinueLesson = async event => {            
             lessonStateHandler.beginOrResumeLesson(collectionId, store.getState().lesson.isNextRound);
-        };
+      };
 
-      const handleNewLesson = async event => {
-                        
-            subscription.remove(subscription.getByName('renderSummary'));
-            subscription.remove(subscription.getByName('renderHistory'));            
-                   
+      const handleNewLesson = async event => {                   
             await lessonStateHandler.purgeLesson();
       };
 
-      const isLessonComplete = lesson.rounds === lesson.currentRound;
-
       const actionLinks = document.querySelectorAll('.js-continue-link');
 
-      if(isLessonComplete) {
+      if(lesson.isLessonComplete) {
             actionLinks.forEach(actionLink => {
                   actionLink.innerHTML = 'START NEW LESSON';
                   actionLink.addEventListener('click', handleNewLesson, { once: true });

@@ -31,8 +31,7 @@ export const lesson = (state = initialState, action) => {
             if(state.layoutName && state.layoutName === 'summary') {
                 isNextRound = true;
             }
-            let noLessonSelected = state.rounds === 0;
-            isLevelComplete = noLessonSelected ? false : state.currentRound === state.rounds;
+            isLevelComplete = state.rounds === 0 ? false : state.currentRound === state.rounds;
     
             if(state.level && state.level.id && state.levels) {
                 isLessonComplete = isLevelComplete && (state.levels[state.levels.length -1].id === state.level.id);
@@ -43,11 +42,15 @@ export const lesson = (state = initialState, action) => {
 
         case types.NEXT_ROUND: {
 
+            let currentRound = action.data.lesson.currentRound;
+
+            let isLessonComplete = state.rounds === 0 ? false : currentRound === state.rounds;
+
             let layoutCounter = state.layoutCounter;
 
             let level = state.level;
 
-            return { ...state, currentRound: action.data.lesson.currentRound, layoutCounter, level };
+            return { ...state, currentRound, layoutCounter, level, isLessonComplete };
         }
 
         case types.NEXT_LESSON: {

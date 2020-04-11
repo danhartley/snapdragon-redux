@@ -9,11 +9,15 @@ const add = (subscription, domain, role, layout) => {
     const select = store => store[domain];
     const onChange = subscription;    
 
-    // remove?
-
-    // console.log('name: ', subscription.name);
-
     const sub = observeStore(store, select, onChange, domain, layout);
+
+    const existingSub = getByName(sub.name);
+
+    if(existingSub && existingSub.name === 'renderSummary') {
+        console.log('renderSummary');
+    }
+
+    if(existingSub) return;
 
     subscriptions.push({ ...sub, role});
     // console.log(`%cmy subs: ${subscriptions.map(s=>s.name).join(', ')}`, "color: blue;");

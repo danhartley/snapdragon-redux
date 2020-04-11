@@ -12,7 +12,7 @@ import { collectionHandler  } from 'ui/helpers/collection-handler';
 
 const beginOrResumeLesson = async (reviewLessonId, isNextRound)  => {
 
-  console.log('isNextRound:', isNextRound);
+  // console.log('isNextRound:', isNextRound);
 
   const { collections, collection: currentCollection, config } = store.getState();
 
@@ -24,7 +24,7 @@ const beginOrResumeLesson = async (reviewLessonId, isNextRound)  => {
 
   const collectionToLoad = resumeCurrentLesson ? currentCollection : collections.find(c => c.id === parseInt(reviewLessonId));
 
-  console.log('collectionToLoad: ', collectionToLoad);
+  // console.log('collectionToLoad: ', collectionToLoad);
 
   const { collection, score } = await loadLesson(collectionToLoad, config, collections);
 
