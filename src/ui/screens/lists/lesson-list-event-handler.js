@@ -161,7 +161,7 @@ const onLessonTitleClickHandler = (title, lessons) => {
     });
 };
 
-const onReviewClickHandler = (reviewLink, lessons) => {    
+const onReviewClickHandler = reviewLink => {    
 
   reviewLink.addEventListener('click', async e => {
 
@@ -174,7 +174,9 @@ const onReviewClickHandler = (reviewLink, lessons) => {
             loadingMessage.classList.add('hide');
           }, 10000);
 
-    lessonStateHandler.beginOrResumeLesson(parseInt(reviewLink.dataset.lessonId));   
+    const { lesson } = store.getState();
+
+    lessonStateHandler.beginOrResumeLesson(reviewLink.dataset.lessonId, lesson.isNextRound);
   });
 };
 

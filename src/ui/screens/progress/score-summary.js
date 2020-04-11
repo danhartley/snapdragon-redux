@@ -9,7 +9,7 @@ import { scoreSummaryHandler } from 'ui/screens/progress/score-summary-handler';
 import summaryTemplate from 'ui/screens/progress/score-summary-template.html';
 import summaryRowTemplate from 'ui/screens/progress/score-summary-row-template.html';
 
-export const renderScoreSummary = async (collectionId) => {
+export const renderScoreSummary = async collectionId => {
 
       const { lessons, score } = store.getState();
       
@@ -31,24 +31,36 @@ export const renderScoreSummary = async (collectionId) => {
 
       scores.forEach(s => renderScoreSummaryRow(s, config));
 
-      const handleBtnClickEvent = async event => {
+      const handleContinueLesson = async event => {
             
             subscription.remove(subscription.getByName('renderSummary'));
-            subscription.remove(subscription.getByName('renderHistory'));      
-    
-            if(lesson.isLessonComplete) {
-                  await lessonStateHandler.purgeLesson();
-            } else {
-                  lessonStateHandler.beginOrResumeLesson(collectionId, store.getState().lesson.isNextRound);
-            }            
+            subscription.remove(subscription.getByName('renderHistory'));            
+                   
+            lessonStateHandler.beginOrResumeLesson(collectionId, store.getState().lesson.isNextRound);
         };
 
-        const actionLinks = document.querySelectorAll('.js-continue-link');
+      const handleNewLesson = async event => {
+                        
+            subscription.remove(subscription.getByName('renderSummary'));
+            subscription.remove(subscription.getByName('renderHistory'));            
+                   
+            await lessonStateHandler.purgeLesson();
+      };
 
-        actionLinks.forEach(actionLink => {
-            actionLink.removeEventListener('click', handleBtnClickEvent);
-            actionLink.addEventListener('click', handleBtnClickEvent);
-        });
+      const isLessonComplete = lesson.rounds === lesson.currentRound;
+
+      const actionLinks = document.querySelectorAll('.js-continue-link');
+
+      if(isLessonComplete) {
+            actionLinks.forEach(actionLink => {
+                  actionLink.innerHTML = 'START NEW LESSON';
+                  actionLink.addEventListener('click', handleNewLesson, { once: true });
+            });
+      } else {
+            actionLinks.forEach(actionLink => {
+                  actionLink.addEventListener('click', handleContinueLesson, { once: true });
+            });
+      }
 }
 
 const renderScoreSummaryRow = (score, config) => {

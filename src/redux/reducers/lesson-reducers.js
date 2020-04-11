@@ -43,13 +43,11 @@ export const lesson = (state = initialState, action) => {
 
         case types.NEXT_ROUND: {
 
-            let currentRound = (state.currentRound === state.rounds) ? 1 : state.currentRound + 1;
-
             let layoutCounter = state.layoutCounter;
 
             let level = state.level;
 
-            return { ...state, currentRound, layoutCounter, level };
+            return { ...state, currentRound: action.data.lesson.currentRound, layoutCounter, level };
         }
 
         case types.NEXT_LESSON: {
@@ -71,9 +69,7 @@ export const lesson = (state = initialState, action) => {
             if(action.data.config.mode === 'learn-again') {
                 const isNextRound = true;
                 const isLevelComplete = true;
-                const currentRound = 1;
-
-                return { ...state, currentRound, isNextRound, isLevelComplete, currentRound };
+                return { ...state, currentRound: 1, isNextRound, isLevelComplete };
 
             } else {
                 return state;

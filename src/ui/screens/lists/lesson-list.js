@@ -55,7 +55,7 @@ export const renderLessons = () => {
             chevrons.forEach(chevron => lessonListEventHandler.onLessonIconClickHandler(chevron, lessons, config, false));
 
       const reviews = document.querySelectorAll('.js-review-link');
-            reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink, lessons));
+            reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink));
 
       setTimeout(() => {      
 
