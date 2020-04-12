@@ -548,7 +548,7 @@ a.dropdown-item {
 .strips .strip.snap-success {
   background-color: rgba(41, 108, 44,.4);
   box-shadow: 0 2px 8px rgba(0,0,0,.8);
-  border: none;
+  /* border: none; */
 }
 
 .strips .strip.snap-alert {
@@ -785,8 +785,8 @@ button:focus {
   outline: none;
 }
 
-button:disabled {
-  cursor: not-allowed;
+.btn-light.disabled, .btn-light:disabled {
+  cursor: initial !important;
 }
 
 button.btn-light.focus,
@@ -1018,8 +1018,8 @@ span.correct {
   background-color: var(--snap-block-light);
 }
 
-.btn.btn:not(:disabled):not(.disabled) {
-  cursor: initial;
+button:disabled {
+  cursor: initial !important;
 }
 
 .species-answer {

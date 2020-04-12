@@ -28,7 +28,7 @@ export const renderScoreSummary = async collectionId => {
       
       renderTemplate({ collection }, template.content, parent);
 
-      let scores = scoreSummaryHandler.getLessonScores(history, lesson, score, savedScore);
+      let scores = scoreSummaryHandler.getLessonScores(history, lesson, score, savedScore).reverse();
 
       scores.forEach(s => renderScoreSummaryRow(s, config));
 
