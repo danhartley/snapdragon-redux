@@ -13,7 +13,7 @@ import 'ui/css/snapdragon-media.css';
 import 'ui/css/common.css';
 
 import { utils } from 'utils/utils';
-import { store } from 'redux/store';
+import { store, persistor } from 'redux/store';
 import { nextLesson } from 'ui/setup/next-lesson';
 import { nextLayout } from 'ui/setup/next-layout';
 import { nextItem } from 'ui/setup/next-item';
@@ -27,75 +27,84 @@ import { traitValuesHandler } from 'api/traits/trait-types';
 import { initialiseConfig } from 'ui/helpers/location-helper';
 import { firestore } from 'api/firebase/firestore';
 import { renderLoggedIn } from 'ui/fixtures/login';
+import { cookieHandler } from 'ui/helpers/cookie-handler';
 
 const onLoadHandler = () => {
 
     setTimeout( async () => {
 
-    let lessonPlan;
+        const purgeData = cookieHandler.hasUserBeenAwayTooLong();
 
-    try {
-
-        const auth = firebase.auth();
-
-        const email = 'danhartleybcn@gmail.com';
-        const password = 'sarcarsnap1929';
-
-        // auth.signInWithEmailAndPassword(email, password).then((cred) => {
-        //     console.log('login credentials: ', cred);
-        // });
-
-        const { config, counter: currentCounter, lessonPlan: statePlans, collections } = store.getState();
-
-        lessonPlan = statePlans;
-
-        config.isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
-        config.isLandscapeMode = !config.isPortraitMode;
-
-        const counter = currentCounter ? { ...currentCounter } : { index: null, isLessonPaused: true };
-
-        actions.boundUpdateConfig(config);
-        actions.boundStopStartLesson(counter);
-
-        if(collections && collections.length === 0) {
-            const cloudCollections = await firestore.getCollections();
-            actions.boundUpdateCollections(cloudCollections);
+        if(purgeData) {
+            persistor.purge();
+            window.location.reload(true);
         }
+        const lastVisitedCookie = cookieHandler.setLastVisitedCookie(Date());
 
-        subscription.add(renderHeaders, 'collection', 'flow');
-        renderNavigation();
-        subscription.add(renderNavigation, 'collection', 'flow');
-        renderLoginChanges();
-        subscription.add(renderLoginChanges, 'user', 'flow');
-        subscription.add(renderLoggedIn, 'user', 'flow');
+        let lessonPlan;
 
-        subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
-                
-        subscription.add(nextItem, 'layout', 'flow');
-        subscription.add(nextLesson, 'counter', 'flow');
-        subscription.add(nextLayout, 'counter', 'flow');
-        subscription.add(renderScore, 'score', 'flow');
-        subscription.add(traitValuesHandler, 'config', 'localisation');
+        try {
 
-        const updateConfig = async () => {
-            const initialisedConfig = await initialiseConfig(config);
-            actions.boundUpdateConfig(initialisedConfig);
-        };
+            const auth = firebase.auth();
 
-        if(!config.guide.locationType) {
-            updateConfig();
+            const email = 'danhartleybcn@gmail.com';
+            const password = 'sarcarsnap1929';
+
+            // auth.signInWithEmailAndPassword(email, password).then((cred) => {
+            //     console.log('login credentials: ', cred);
+            // });
+
+            const { config, counter: currentCounter, lessonPlan: statePlans, collections } = store.getState();
+
+            lessonPlan = statePlans;
+
+            config.isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
+            config.isLandscapeMode = !config.isPortraitMode;
+
+            const counter = currentCounter ? { ...currentCounter } : { index: null, isLessonPaused: true };
+
+            actions.boundUpdateConfig(config);
+            actions.boundStopStartLesson(counter);
+
+            if(collections && collections.length === 0) {
+                const cloudCollections = await firestore.getCollections();
+                actions.boundUpdateCollections(cloudCollections);
+            }
+
+            subscription.add(renderHeaders, 'collection', 'flow');
+            renderNavigation();
+            subscription.add(renderNavigation, 'collection', 'flow');
+            renderLoginChanges();
+            subscription.add(renderLoginChanges, 'user', 'flow');
+            subscription.add(renderLoggedIn, 'user', 'flow');
+
+            subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
+                    
+            subscription.add(nextItem, 'layout', 'flow');
+            subscription.add(nextLesson, 'counter', 'flow');
+            subscription.add(nextLayout, 'counter', 'flow');
+            subscription.add(renderScore, 'score', 'flow');
+            subscription.add(traitValuesHandler, 'config', 'localisation');
+
+            const updateConfig = async () => {
+                const initialisedConfig = await initialiseConfig(config);
+                actions.boundUpdateConfig(initialisedConfig);
+            };
+
+            if(!config.guide.locationType) {
+                updateConfig();
+            }
+
+            let glossary = await firestore.getDefinitionsByTaxa(['common', 'plantae', 'aves', 'fungi', 'insecta']);
+                glossary = utils.sortAlphabeticallyBy(glossary, 'term');
+            actions.boundCreateGlossary(glossary);        
+
         }
-
-        let glossary = await firestore.getDefinitionsByTaxa(['common', 'plantae', 'aves', 'fungi', 'insecta']);
-            glossary = utils.sortAlphabeticallyBy(glossary, 'term');
-        actions.boundCreateGlossary(glossary);        
-
-    }
-    catch(e) {
-        console.log('home page error: ', e)
-        // persistor.purge();
-        // window.location.reload(true);        
-    }
+        catch(e) {
+            console.log('home page error: ', e)
+            // persistor.purge();
+            // window.location.reload(true);        
+        }
     });
 };
 
