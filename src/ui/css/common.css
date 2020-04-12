@@ -213,7 +213,24 @@
 
   .answer-response {
     margin: 0 0 0 .25rem;
-    /* font-family: serif;
-    letter-spacing: .1rem;
-    text-transform: uppercase; */
+  }
+
+  .col-count-2 {
+    column-count: 2;
+  }
+
+  .col-count-3 {
+    column-count: 3;
+  }
+
+  .col-count-4 {
+    column-count: 4;
+  }
+
+  .col-count-5 {
+    column-count: 5;
+  }
+
+  .col-count-6 {
+    column-count: 6;
   }

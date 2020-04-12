@@ -88,12 +88,12 @@ export const addTerm = () => {
                 definition: inputDefinition.value,
                 taxon: inputTaxon.value,
                 branch: inputBranch.value,
-                technical: chkBoxTechnical.checked
+                technical: chkBoxTechnical.checked,                
             };
 
             const wiki = document.querySelector('#input-wiki');
 
-            if(wiki.value.length > 0) definition.wiki = wiki.value;            
+            if(wiki.value.length > 0) definition.wiki = wiki.value; 
 
             firestore[action](definition).then(docRef => {
                 savedText.innerHTML = message;
@@ -200,12 +200,16 @@ export const addTerm = () => {
                     operator: '==',
                     value: inputEditTerm.value
                 });
+                
+                const wiki = document.querySelector('#input-wiki');
+
                 const definition = definitions[0];
 
                 inputDefinition.value = definition.definition;
                 inputBranch.value = definition.branch;
                 inputTaxon.value = definition.taxon;
                 chkBoxTechnical.checked = definition.technical;
+                wiki.value = definition.wiki || ''
             }
         });
 
