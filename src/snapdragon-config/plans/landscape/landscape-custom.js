@@ -34,9 +34,9 @@ export const landscapeCustom2 = {
             name:'Level 1',
             layouts: [                          
                         L.mixedSpecimenImages, 
-                        // L.familyMatch , L.familyStripsMatch
+                        L.familyMatch , L.familyStripsMatch
                     ],
-            // bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'definition' ] } ]
+            bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'definition' ] } ]
         }
     ]
 };
