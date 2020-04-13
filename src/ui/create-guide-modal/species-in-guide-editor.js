@@ -24,7 +24,7 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
     const getTaxa = (taxa, config, selectedSpecies) => {
         if(taxa) {           
             if(config.guide.iconicTaxa) {
-                taxa.innerHTML = config.guide.iconicTaxa.join(', ');
+                taxa.innerHTML = config.guide.iconicTaxa.map(i => i.common).join(', ');
             } else {
                 taxa.innerHTML = [ ...new Set(selectedSpecies.map(ss => ss.iconicTaxon))].join(', ');
             }

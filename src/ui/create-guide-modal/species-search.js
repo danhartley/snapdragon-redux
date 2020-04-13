@@ -57,11 +57,14 @@ export const speciesSearch = createGuide => {
             close.addEventListener('click', e => {
                 setTimeout( async () => {
 
-                    collection.items = collection.items.filter(item => {
-                        return R.contains(item.name, config.guide.species.map(sp => sp.name));
-                    });
-
-                    await lessonStateHandler.addExtraSpeciesSelection(config, collection);
+                    if(config.guide.species) {
+                        
+                        collection.items = collection.items.filter(item => {
+                            return R.contains(item.name, config.guide.species.map(sp => sp.name));
+                        });
+    
+                        await lessonStateHandler.addExtraSpeciesSelection(config, collection);
+                    }
 
                     if(parseInt(close.dataset.number) === 4) {
                         createGuide.callOnCreateCustomListeners(collection);
