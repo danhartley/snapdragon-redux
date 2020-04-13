@@ -85,8 +85,8 @@ const scoreTextEntry = (quickFire, quickFireInput, quickFireMessage, timer, cont
         }
         
         quickFireMessage.innerHTML = isCorrect
-            ? `<span class="centred-block icon"><i class="fas fa-check large-text correct-answer-color margin-right"></i>That is correct.</span>`
-            : `<span class="centred-block icon"><i class="fas fa-times large-text incorrect-answer-color margin-right"></i>The correct answer is <span class="answer-response half-margin-left">'${quickFire.question.term.toLowerCase()}'.</span></span>`;
+            ? `<span class="centred-block icon"><i class="fas fa-check extra-large-text correct-answer-color margin-right"></i>That is correct.</span>`
+            : `<span class="centred-block icon"><i class="fas fa-times extra-large-text incorrect-answer-color margin-right"></i>The correct answer is <span class="answer-response half-margin-left">'${quickFire.question.term.toLowerCase()}'.</span></span>`;
 
         timer = setTimeout(() => {
             continueQuickFireBtn.click();

@@ -42,10 +42,16 @@ const filters = async linkFromLesson => {
 
     let { items, type, filter } = args;
 
-    const quickFire = store.getState().quickFire || quickFireAPI.getQuickFire(items, filter, type);
-          quickFire.linkFromLesson = linkFromLesson;
-          quickFire.onClickFiltersLinkListeners = [];
-          quickFire.onClickGlossaryLinkListeners = [];
+    const resetQuickFire = () => {
+        actions.boundCreateQuickFire(quickFireAPI.getQuickFire(store.getState().glossary, enums.quickFireType.DEFINITION, {}));
+        quickFireFilters(quickFire.linkFromLesson);
+    };
+
+    let quickFire = store.getState().quickFire || quickFireAPI.getQuickFire(items, filter, type);
+        quickFire = quickFire.isComplete ? resetQuickFire() : quickFire;
+        quickFire.linkFromLesson = linkFromLesson || false;
+        quickFire.onClickFiltersLinkListeners = [];
+        quickFire.onClickGlossaryLinkListeners = [];
 
     actions.boundCreateQuickFire(quickFire);
 
@@ -67,7 +73,10 @@ const filters = async linkFromLesson => {
     const input = document.querySelector('.js-input-quick-fire');
           input.addEventListener('input', e => {
             quickFire.poolSize = parseInt(e.target.value);          
-          }, { once: true });
+          });
+          setTimeout(() => {
+            input.focus();
+          }, 250);
 
     quickFire.poolSize = parseInt(input.value);
 
@@ -161,11 +170,7 @@ const filters = async linkFromLesson => {
 
     const reset = document.querySelector('.js-quick-fire-reset');
           reset.addEventListener('click', e => {
-        //   reset.addEventListener('change', e => {
-            //   if(e.target.checked) {
-                actions.boundCreateQuickFire(quickFireAPI.getQuickFire(store.getState().glossary, enums.quickFireType.DEFINITION, {}));
-                quickFireFilters(quickFire.linkFromLesson);
-            //   }
+            resetQuickFire();
           });
 };
 
@@ -183,7 +188,7 @@ const questions = quickFire => {
 
     let timer;    
 
-    if(quickFire.items.length > 0) {
+    if(quickFire.poolSize > quickFire.score.total) {
 
         let answers = quickFireLogic.selectAnswers(quickFire, utils.shuffleArray(quickFire.items));
 
@@ -350,15 +355,34 @@ const summary = quickFire => {
     });
 
     const summaryText = modal.querySelector('.js-quick-fire-summary div:nth-child(1) > span');
-   
-    summaryText.innerText = quickFire.items.length > 0 
-        ? `You have answered ${quickFire.score.total} of ${quickFire.items.length} questions.`
-        : 'You have answered all of the questions.';
-
+    const scoreSummary = modal.querySelector('.js-score-text-summary');
     const continueReview = modal.querySelector('.js-quick-review-continue-review');
-          continueReview.addEventListener('click', e => {
-              questions(quickFire);
-          }, { once: true });
+
+    quickFire.isComplete = quickFire.poolSize === quickFire.score.total;
+
+    if(quickFire.isComplete) {
+        summaryText.innerHTML = '<span class="emphasis">You have answered all of the questions correctly.</span>';
+        scoreSummary.classList.add('modal-background-relief-emphasis');
+        scoreSummary.innerHTML = `You scored ${quickFire.score.correct} out of ${quickFire.score.total}.`;        
+        if(quickFire.score.incorrect > 0) {
+            summaryText.innerHTML = `<span class="emphasis">You've answered the questions, but not all correctly.</span>`;
+            continueReview.innerHTML = `<span>Continue review</span>`;            
+            continueReview.addEventListener('click', e => {
+                const quickFireRevision = quickFireAPI.getQuickFire(quickFire.score.fails, enums.quickFireType.DEFINITION, {});
+                quickFireQuestions(quickFireRevision);
+            }, { once: true });            
+        } else {
+            continueReview.classList.add('hide-important');
+            continueReview.addEventListener('click', e => {
+                questions(quickFire);
+            }, { once: true });
+        }
+    } else {
+        summaryText.innerHTML = `<span>You have answered ${quickFire.score.total} of ${quickFire.poolSize} questions.</span>`;
+        continueReview.addEventListener('click', e => {
+            questions(quickFire);
+        }, { once: true });
+    }
 };
 
 export const quickFireHandlers = {

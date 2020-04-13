@@ -42,8 +42,7 @@ export const observeStore = (store, select, onChange, domain, layout) => {
         //   console.log('has history hasStateSignificantlyChanged:', hasStateSignificantlyChanged);
         // }
 
-        if(nextState.score && nextState.score.total) { // this never happens! state does not contain the domain
-          console.log('never!')
+        if(nextState.score && nextState.score.total) {
           hasStateSignificantlyChanged = nextState.score.total !== currentState.score.total;
         }
       }

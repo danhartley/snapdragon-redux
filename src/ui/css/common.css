@@ -6,7 +6,8 @@
  .centred-block {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: -moz-available;
+    width: -webkit-fill-available;
   }
   
   .bottom-aligned {
@@ -169,6 +170,10 @@
   }
 
   .large-text {
+    font-size: 1.2rem;
+  }
+
+  .extra-large-text {
     font-size: 1.5rem;
   }
 
@@ -186,6 +191,10 @@
 
   .modal-background-relief {
     background-color: var(--snap-species-highlight-background);
+  }
+
+  .modal-background-relief-emphasis {
+    border: 1px solid var(--snap-success) !important;
   }
 
   .border-light {
@@ -234,3 +243,8 @@
   .col-count-6 {
     column-count: 6;
   }
+
+  .nowrap {
+    white-space: nowrap;
+  }
+  
