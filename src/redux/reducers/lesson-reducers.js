@@ -55,7 +55,7 @@ export const lesson = (state = initialState, action) => {
 
         case types.NEXT_LESSON: {
 
-            let isNextRound = state.layoutCount ? state.layoutCounter === state.layoutCount : false;
+            let isNextRound = !!state.layoutCount ? state.layoutCounter === state.layoutCount : false;
             let layoutCounter = 0;
             let layoutCount = action.data.lesson.layoutCount;
             
