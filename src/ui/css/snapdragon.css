@@ -1926,7 +1926,6 @@ a.collection-disabled {
   padding: 0;
   padding-top: .4rem;
   border-top: 1px solid var(--snap-border-light);
-
   position: relative;
   height: 0;
   padding-top: 56.25%;
