@@ -4,16 +4,16 @@
         <div>
             <span>You have answered all of the questions.</span>
         </div>
-        <div class="margin-right">
-            <span class="margin-right underline-link small js-quick-review-continue-review">
+        <div class="margin-right padding-left nowrap">
+            <span class="underline-link small js-quick-review-continue-review">
                 <span class="landscape">Continue review</span>
                 <span class="portrait">Continue</span>
             </span>
         </div>
     </div>
 
-    <div class="border-light standard-block padding-left centred-block modal-background-relief">
-        You scored {{ score.correct }} out of {{ score.total }}
+    <div class="border-light standard-block padding-left centred-block modal-background-relief js-score-text-summary">
+        You have scored {{ score.correct }} out of {{ score.total }} so far.
     </div>
 
     <ul class="margin-top nav nav-pills nav-fill quick-review-tabs js-quick-review-tabs mb-3" role="tablist">

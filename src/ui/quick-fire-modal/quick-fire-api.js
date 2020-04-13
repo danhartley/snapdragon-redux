@@ -2,6 +2,7 @@ import * as R from 'ramda';
 
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
+import { renderLessons } from '../screens/lists/lesson-list';
 
 const getItems = (taxa, includeTechnicalTerms = false) => {
     
@@ -66,7 +67,8 @@ const getQuickFire = (glossary, type, collection) => {
         poolSize: items.length,
         terms: collection.terms,
         onClickFiltersLinkListeners: [],
-        onClickGlossaryLinkListeners: []
+        onClickGlossaryLinkListeners: [],
+        lessonId : collection.id
     };
 
     quickFire.filter.taxa = filter.iconicTaxa.map(taxon => {

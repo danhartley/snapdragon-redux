@@ -1,5 +1,6 @@
 import autocomplete from 'autocompleter';
 
+import { utils } from 'utils/utils';
 import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
 import { collectionPicker } from 'admin/screens/collection/collection-picker';
@@ -119,7 +120,8 @@ export const editCollectionTerms = () => {
 
                 if(collection.terms) {
 
-                    const definitions = await firestore.getBatchDefinitionsById(collection.terms);
+                    let definitions = await firestore.getBatchDefinitionsById(collection.terms);
+                        definitions = utils.sortAlphabeticallyBy(definitions, 'term');
 
                     template.innerHTML = termsTemplate;
 

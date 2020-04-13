@@ -66,7 +66,12 @@ export const renderLessons = () => {
                         if(lesson.terms) {
                               const { glossary } = store.getState();
                               setTimeout(() => {
-                                    quickFireHandlers.questions({ ...quickFireHandlers.init(glossary, enums.quickFireType.DEFINITION, lesson), linkFromLesson: true });
+                                    const { quickFire } = store.getState();
+                                    if(quickFire && quickFire.lessonId === lesson.id) {
+                                          quickFireHandlers.questions(quickFire);
+                                    } else {
+                                          quickFireHandlers.questions({ ...quickFireHandlers.init(glossary, enums.quickFireType.DEFINITION, lesson), linkFromLesson: true });
+                                    }
                               },150);
                         }
                 });
