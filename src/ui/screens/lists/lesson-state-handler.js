@@ -12,6 +12,8 @@ import { collectionHandler  } from 'ui/helpers/collection-handler';
 
 const beginOrResumeLesson = async (reviewLessonId, isNextRound)  => {
 
+  console.log('isNextRound: ', isNextRound);
+
   const { collections, collection: currentCollection, config } = store.getState();
 
   if(isNextRound && config.collection.id > 0) {
@@ -134,6 +136,7 @@ const changeState = async (lessonState, collection, config) => {
       }
       case enums.lessonState.NEXT_ROUND: {
           const currentLesson = await saveCurrentLesson(collection);
+          console.log('currentLesson:', currentLesson);
           lesson = currentLesson.lesson;
 
           const mode = 'learn';

@@ -58,7 +58,7 @@ export const speciesSearch = createGuide => {
                 setTimeout( async () => {
 
                     if(config.guide.species) {
-                        
+
                         collection.items = collection.items.filter(item => {
                             return R.contains(item.name, config.guide.species.map(sp => sp.name));
                         });
@@ -105,7 +105,7 @@ export const speciesSearch = createGuide => {
 
     const initLesson = async collectionToLoad => {
         
-        config.collection.id = collectionToLoad.id;
+        // config.collection.id = collectionToLoad.id;
 
         const lesson = await lessonStateHandler.loadLesson(collectionToLoad, config, collections);
         
