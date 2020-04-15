@@ -1,5 +1,3 @@
-import * as R from 'ramda';
-
 import { layouts as L } from 'snapdragon-config/screen-layouts';
 
 export const landscapeStatic = {

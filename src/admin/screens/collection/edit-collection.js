@@ -96,13 +96,10 @@ export const editCollection = () => {
                         selectedSpecies: items.map(item => item.name)
                     }, optionsParent);
                   });
-
-            // const termPicker = document.querySelector('.js-term-picker');
-            //       termPicker.querySelector('input').classList.remove('hide');
-            //       termPicker.querySelector('label').classList.remove('hide');
         });
 
         const addSpeciesClickHandler = (link, optionsParent) => {
+            
             return link.addEventListener('click', async (e) => {
 
                 const speciesName = e.target.getAttribute('name');
@@ -136,28 +133,6 @@ export const editCollection = () => {
         };
 
         addListenerToAddedSpecies(addSpeciesHandler);
-
-        // const inputTerm = document.querySelector('#input-term');
-
-        // const { glossary } = store.getState();
-
-        // let definitions = glossary.map(definition => { return { name: definition.term, label: definition.term} });
-
-        // autocomplete({
-        //     input: inputTerm,
-        //     fetch: function(text, update) {
-        //         text = text.toLowerCase();
-        //         const suggestions = definitions.filter(definition => definition.name.toLowerCase().startsWith(text))
-        //         update(suggestions);
-        //     },
-        //     onSelect: function(item) {
-        //         inputTerm.value = item.label;
-        //     },
-        //     minLength: 0,
-        //     debounceWaitMs: 200,
-        //     className: 'autocomplete-options-container'
-        // });
-
     };
 
     init();

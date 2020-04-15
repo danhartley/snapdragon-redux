@@ -1747,6 +1747,10 @@ a.collection-disabled {
   margin: 1.2rem 2.4rem 0 2.4rem !important;
 }
 
+.snapdragon-intro .youtube-icon {
+  font-size: 1rem;
+}
+
 .lesson-list {
   position: relative;
   background-color: var(--snap-block-light);
@@ -1828,7 +1832,8 @@ a.collection-disabled {
 }
 
 .lesson-review, .lesson-terms-review {
-  pointer-events: initial;
+  pointer-events: initial;  
+  line-height: 3.5;
 }
 
 .lesson-review i {
@@ -1965,7 +1970,6 @@ a.collection-disabled {
 
 .lesson-review > div {
   font-size: .7em;
-  line-height: 3;
 }
 
 .main-header {
@@ -2031,9 +2035,9 @@ a.collection-disabled {
   background-color: var(--snap-content-background) !important;
 }
 
-.highlighted-for-review-row .underline-link {
-  font-size: .7rem;
-}
+/* .highlighted-for-review-row .underline-link {
+  font-size: .7rem;  
+} */
 
 .score-summary-row {
   border-bottom: .3rem solid var(--snap-content-background);
