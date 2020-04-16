@@ -43,7 +43,7 @@ const filters = async linkFromLesson => {
     let { items, type, filter } = args;
 
     const resetQuickFire = () => {
-        actions.boundCreateQuickFire(quickFireAPI.getQuickFire(store.getState().glossary, enums.quickFireType.DEFINITION, {}));
+        actions.boundUpdateQuickFire(quickFireAPI.getQuickFire(store.getState().glossary, enums.quickFireType.DEFINITION, {}));
         quickFireFilters(quickFire.linkFromLesson);
     };
 
@@ -53,7 +53,7 @@ const filters = async linkFromLesson => {
         quickFire.onClickFiltersLinkListeners = [];
         quickFire.onClickGlossaryLinkListeners = [];
 
-    actions.boundCreateQuickFire(quickFire);
+    actions.boundUpdateQuickFire(quickFire);
 
     const options = [
         { key: 0, value: 'multiple choice' },
@@ -117,7 +117,7 @@ const filters = async linkFromLesson => {
     quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters, taxonCounters, getIncludeTechnicalTerms());
 
     const createQuickFireBtn = document.querySelector('.js-create-quick-fire');
-          createQuickFireBtn.innerHTML = quickFire.score.total === 0 ? 'Start quick-fire review' : 'Continue your quick-fire review';
+          createQuickFireBtn.innerHTML = quickFire.termScore.total === 0 ? 'Start quick-fire review' : 'Continue your quick-fire review';
           createQuickFireBtn.addEventListener('click', e => {      
             questions(quickFire);
           }, { once: true });
@@ -174,13 +174,16 @@ const filters = async linkFromLesson => {
           });
 };
 
-const questions = quickFire => {
+const questions = state => {
 
-    if(!quickFire) return;
+    let quickFire;
+
+    if(!state) return;
+    else quickFire = R.clone(state);
 
     quickFire.onClickGlossaryLinkListeners = [];
 
-    actions.boundCreateQuickFire(quickFire);
+    actions.boundUpdateQuickFire(quickFire);
 
     headers(enums.quickFireStep.QUESTIONS, quickFire);
 
@@ -188,15 +191,15 @@ const questions = quickFire => {
 
     let timer;    
 
-    if(quickFire.poolSize > quickFire.score.total) {
+    if(quickFire.poolSize > quickFire.termScore.total) {
 
         let answers = quickFireLogic.selectAnswers(quickFire, utils.shuffleArray(quickFire.items));
 
         renderTemplate({ question: quickFire.question, 
-                answers, total: quickFire.score.total + 1, 
+                answers, total: quickFire.termScore.total + 1, 
                 count: quickFire.poolSize,
-                correct: quickFire.score.correct, 
-                answered: quickFire.score.total 
+                correct: quickFire.termScore.correct, 
+                answered: quickFire.termScore.total 
             }, template.content, parent);
 
         const layouts = document.querySelectorAll('.js-quick-layouts');
@@ -211,7 +214,7 @@ const questions = quickFire => {
                     const answer = e.target.id;
                     quickFireUI.scoreMultipleChoice(quickFire, answer);
                     continueQuickFireBtn.disabled = false;
-                    if(quickFire.score.isIncorrect) {
+                    if(quickFire.termScore.isIncorrect) {
                         option.classList.add('snap-alert');
                     }
                     options.forEach(option => {
@@ -240,7 +243,7 @@ const questions = quickFire => {
               continueQuickFireBtn.addEventListener('click', e => {
                     quickFire.items = quickFire.items.filter(item => item.term !== quickFire.question.term);
                     clearTimeout(timer);                    
-                    actions.boundCreateQuickFire(quickFire);
+                    actions.boundUpdateQuickFire(quickFire);
                     subscription.add(quickFireQuestions, 'quickFire', 'modal');
               }, { once: true });
 
@@ -325,20 +328,20 @@ const summary = quickFire => {
 
     const { template, modal, parent } = quickFireUI.readyTemplate(templateSummaryQuickFire);
 
-    const passes = quickFire.score.passes;
+    const passes = quickFire.termScore.passes;
           passes.forEach((pass, i) => {
             pass.index = i;
             pass.wiki = pass.wiki || '';
             pass.showWikiClass = pass.wiki.length > 0 ? '' : 'hide-important'
           });
-    const fails = quickFire.score.fails;
+    const fails = quickFire.termScore.fails;
           fails.forEach((fail, i) => {
             fail.index = i;
             fail.wiki = fail.wiki || '';
             fail.showWikiClass = fail.wiki.length > 0 ? '' : 'hide-important';
           });
 
-    renderTemplate({ score: quickFire.score, passes, fails }, template.content, parent);
+    renderTemplate({ score: quickFire.termScore, passes, fails }, template.content, parent);
 
     const answers = modal.querySelectorAll('.js-quick-review-answers');
     const tabs = modal.querySelectorAll('.js-quick-review-tabs a');
@@ -358,17 +361,17 @@ const summary = quickFire => {
     const scoreSummary = modal.querySelector('.js-score-text-summary');
     const continueReview = modal.querySelector('.js-quick-review-continue-review');
 
-    quickFire.isComplete = quickFire.poolSize === quickFire.score.total;
+    quickFire.isComplete = quickFire.poolSize === quickFire.termScore.total;
 
     if(quickFire.isComplete) {
         summaryText.innerHTML = '<span class="emphasis">You have answered all of the questions correctly.</span>';
         scoreSummary.classList.add('modal-background-relief-emphasis');
-        scoreSummary.innerHTML = `You scored ${quickFire.score.correct} out of ${quickFire.score.total}.`;        
-        if(quickFire.score.incorrect > 0) {
+        scoreSummary.innerHTML = `You scored ${quickFire.termScore.correct} out of ${quickFire.termScore.total}.`;        
+        if(quickFire.termScore.incorrect > 0) {
             summaryText.innerHTML = `<span class="emphasis">You've answered the questions, but not all correctly.</span>`;
             continueReview.innerHTML = `<span>Continue review</span>`;            
             continueReview.addEventListener('click', e => {
-                const quickFireRevision = quickFireAPI.getQuickFire(quickFire.score.fails, enums.quickFireType.DEFINITION, {});
+                const quickFireRevision = quickFireAPI.getQuickFire(quickFire.termScore.fails, enums.quickFireType.DEFINITION, {});
                 quickFireQuestions(quickFireRevision);
             }, { once: true });            
         } else {
@@ -378,7 +381,7 @@ const summary = quickFire => {
             }, { once: true });
         }
     } else {
-        summaryText.innerHTML = `<span>You have answered ${quickFire.score.total} of ${quickFire.poolSize} questions.</span>`;
+        summaryText.innerHTML = `<span>You have answered ${quickFire.termScore.total} of ${quickFire.poolSize} questions.</span>`;
         continueReview.addEventListener('click', e => {
             questions(quickFire);
         }, { once: true });

@@ -13,6 +13,8 @@ import { lessonPlans, lessonPlan, layout } from 'redux/reducers/layout-reducers'
 import { lesson, lessons } from 'redux/reducers/lesson-reducers';
 import { quickFire, glossary } from 'redux/reducers/quick-fire-reducers';
 
+import hardSet from 'redux-persist/lib/stateReconciler/hardSet'
+
 const reducer = combineReducers({
     counter,
     lessonPlans,
@@ -36,6 +38,7 @@ const reducer = combineReducers({
 const persistConfig = {
   key: 'root',
   storage,
+//   stateReconciler: hardSet
 //   blacklist: ['config']
 }
 

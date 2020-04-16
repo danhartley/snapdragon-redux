@@ -24,7 +24,10 @@ export const editCollection = () => {
         renderTemplate({}, template.content, parent);
 
         const inputCollection = document.querySelector('#input-collection');
-              inputCollection.focus();
+              
+        setTimeout(() => {
+            inputCollection.focus();
+        }, 200);
 
         let collection;
 
@@ -42,8 +45,6 @@ export const editCollection = () => {
             let items = (collection.items && collection.items.length > 0) ? collection.items : collection.species;
 
             console.log(items);
-
-            // this should go via lesson-state-handler
 
             if(!items[0].vernacularName) {
                 items = await collectionHandler.getSnapdragonSpeciesData(items);
@@ -99,14 +100,14 @@ export const editCollection = () => {
         });
 
         const addSpeciesClickHandler = (link, optionsParent) => {
-            
+
             return link.addEventListener('click', async (e) => {
 
                 const speciesName = e.target.getAttribute('name');
 
                 if(!speciesName) return;
 
-                const species = await firestore.getSpeciesByName(speciesName);                
+                const species = await firestore.getSpeciesByName(speciesName);           
                 
                 renderQuestionTabs(collection, species, optionsParent);
                 
@@ -118,11 +119,19 @@ export const editCollection = () => {
             });
         }
 
-        const addSpeciesHandler = async (speciesName) => {
+        const addSpeciesHandler = async speciesName => {
 
             template.innerHTML = speciesItemTemplate;
+            
             parent = document.querySelector('.js-colection-items');
+            
             const species = await firestore.getSpeciesByName(speciesName);
+
+            console.log('species: ', species);
+
+            collection.species.push(species);
+
+            await firestore.updateCollection(collection);
             
             renderTemplate({ species, isActive: collection.isActive }, template.content, parent);
             
@@ -136,4 +145,5 @@ export const editCollection = () => {
     };
 
     init();
+
 };
