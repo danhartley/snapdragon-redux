@@ -37,7 +37,9 @@ const updateTotalCounts = (quickFire, input, counters, branchCounters, taxonCoun
 const scoreMultipleChoice = (quickFire, answer) => {
 
     const isCorrect = answer === quickFire.question.term;
-    
+
+    quickFire.question.answer = answer;
+        
     quickFire.termScore.total++;
 
     if(isCorrect) {
