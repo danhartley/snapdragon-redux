@@ -3,25 +3,36 @@ import * as R from 'ramda';
 import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';
 
-const updateBranchCounts = (items, branchOptions) => {
+const updateBranchCounts = (quickFire, branchOptions) => {
+
+    const items = quickFire.items.filter(item => R.contains(item.id, quickFire.terms));
 
     branchOptions.forEach(branchBadge => {
     branchBadge.innerHTML = items.filter(item => item.branch === branchBadge.dataset.name).length;
     });
 };
 
-const updateTaxonCounters = (items, taxonCounters, includeTechnicalTerms) => {
+const updateTaxonCounters = (quickFire, taxonCounters, includeTechnicalTerms) => {
+
+    const items = quickFire.items.filter(item => R.contains(item.id, quickFire.terms));
 
     taxonCounters.forEach(taxonBadge => {
         taxonBadge.innerHTML = includeTechnicalTerms
             ? items.filter(item => item.taxon === taxonBadge.dataset.taxon).length
             : items.filter(item => item.taxon === taxonBadge.dataset.taxon && !item.technical).length;
     });
+
+    return includeTechnicalTerms
+        ? items
+        : items.filter(item => !item.technical);
 };
 
 const updateTotalCounts = (quickFire, input, counters, branchCounters, taxonCounters, includeTechnicalTerms = false) => {
 
-    quickFire.count = quickFire.termScore.total > 0 ? quickFire.count : quickFire.items.length;
+    updateBranchCounts(quickFire, branchCounters);
+    const terms = updateTaxonCounters(quickFire, taxonCounters, includeTechnicalTerms);
+
+    quickFire.count = terms.length;
 
     counters.forEach(counter => {
         counter.innerHTML = quickFire.count;
@@ -29,9 +40,6 @@ const updateTotalCounts = (quickFire, input, counters, branchCounters, taxonCoun
     
     input.value = quickFire.count;
     quickFire.poolSize = parseInt(input.value);
-
-    updateBranchCounts(quickFire.items, branchCounters);
-    updateTaxonCounters(quickFire.items, taxonCounters, includeTechnicalTerms);
 };
 
 const scoreMultipleChoice = (quickFire, answer) => {

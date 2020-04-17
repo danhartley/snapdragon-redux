@@ -92,7 +92,6 @@ const filters = async linkFromLesson => {
     const getFilterTaxa = () => quickFire.filter.iconicTaxa;
 
     const taxa = document.querySelectorAll('.js-quick-fire-taxa li');
-
           taxa.forEach(taxon => {
 
               const chkBox = taxon.querySelector('input');
@@ -110,7 +109,7 @@ const filters = async linkFromLesson => {
               });
           });
 
-    let includeTechnicalTerms = false;
+    let includeTechnicalTerms = quickFire.lessonId ? true : false;
 
     const getIncludeTechnicalTerms = () => includeTechnicalTerms;
       
@@ -164,9 +163,12 @@ const filters = async linkFromLesson => {
     const technical = document.querySelector('.js-quick-fire-technical');
           technical.addEventListener('change', async e => {
             includeTechnicalTerms = e.target.checked;
+            quickFire.filter.includeTechnicalTerms = includeTechnicalTerms;
             quickFire.items = await quickFireAPI.getItems(quickFire.filter.iconicTaxa, includeTechnicalTerms);
             quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters, taxonCounters, getIncludeTechnicalTerms());
           });
+
+    if(includeTechnicalTerms) technical.click();
 
     const reset = document.querySelector('.js-quick-fire-reset');
           reset.addEventListener('click', e => {
