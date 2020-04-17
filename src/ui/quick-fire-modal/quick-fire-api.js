@@ -2,7 +2,6 @@ import * as R from 'ramda';
 
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
-import { renderLessons } from '../screens/lists/lesson-list';
 
 const getItems = (taxa, includeTechnicalTerms = false) => {
     
@@ -54,7 +53,7 @@ const getQuickFire = (glossary, type, collection) => {
         count: items.length,
         filter,
         type,
-        score: {
+        termScore: {
             total: 0,
             correct: 0,
             incorrect: 0,

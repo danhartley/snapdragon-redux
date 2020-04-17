@@ -233,7 +233,7 @@ const addSpecies = async species => {
         });
     }
 
-    // console.log(species.images);
+    console.log(species.images);
 
     try {
         docRef = await db.collection('species').add(species);

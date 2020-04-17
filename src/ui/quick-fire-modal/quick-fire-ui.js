@@ -3,25 +3,36 @@ import * as R from 'ramda';
 import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';
 
-const updateBranchCounts = (items, branchOptions) => {
+const updateBranchCounts = (quickFire, branchOptions) => {
+
+    const items = quickFire.items.filter(item => R.contains(item.id, quickFire.terms));
 
     branchOptions.forEach(branchBadge => {
     branchBadge.innerHTML = items.filter(item => item.branch === branchBadge.dataset.name).length;
     });
 };
 
-const updateTaxonCounters = (items, taxonCounters, includeTechnicalTerms) => {
+const updateTaxonCounters = (quickFire, taxonCounters, includeTechnicalTerms) => {
+
+    const items = quickFire.items.filter(item => R.contains(item.id, quickFire.terms));
 
     taxonCounters.forEach(taxonBadge => {
         taxonBadge.innerHTML = includeTechnicalTerms
             ? items.filter(item => item.taxon === taxonBadge.dataset.taxon).length
             : items.filter(item => item.taxon === taxonBadge.dataset.taxon && !item.technical).length;
     });
+
+    return includeTechnicalTerms
+        ? items
+        : items.filter(item => !item.technical);
 };
 
 const updateTotalCounts = (quickFire, input, counters, branchCounters, taxonCounters, includeTechnicalTerms = false) => {
 
-    quickFire.count = quickFire.score.total > 0 ? quickFire.count : quickFire.items.length;
+    updateBranchCounts(quickFire, branchCounters);
+    const terms = updateTaxonCounters(quickFire, taxonCounters, includeTechnicalTerms);
+
+    quickFire.count = terms.length;
 
     counters.forEach(counter => {
         counter.innerHTML = quickFire.count;
@@ -29,27 +40,26 @@ const updateTotalCounts = (quickFire, input, counters, branchCounters, taxonCoun
     
     input.value = quickFire.count;
     quickFire.poolSize = parseInt(input.value);
-
-    updateBranchCounts(quickFire.items, branchCounters);
-    updateTaxonCounters(quickFire.items, taxonCounters, includeTechnicalTerms);
 };
 
 const scoreMultipleChoice = (quickFire, answer) => {
 
     const isCorrect = answer === quickFire.question.term;
-    
-    quickFire.score.total++;
+
+    quickFire.question.answer = answer;
+        
+    quickFire.termScore.total++;
 
     if(isCorrect) {
-        quickFire.score.correct++;
-        quickFire.score.isCorrect = true;
-        quickFire.score.isIncorrect = false;
-        quickFire.score.passes.push(quickFire.question);
+        quickFire.termScore.correct++;
+        quickFire.termScore.isCorrect = true;
+        quickFire.termScore.isIncorrect = false;
+        quickFire.termScore.passes.push(quickFire.question);
     } else {
-        quickFire.score.incorrect++;
-        quickFire.score.isCorrect = false;
-        quickFire.score.isIncorrect = true;
-        quickFire.score.fails.push(quickFire.question);
+        quickFire.termScore.incorrect++;
+        quickFire.termScore.isCorrect = false;
+        quickFire.termScore.isIncorrect = true;
+        quickFire.termScore.fails.push(quickFire.question);
     }
 };
 
@@ -73,15 +83,15 @@ const scoreTextEntry = (quickFire, quickFireInput, quickFireMessage, timer, cont
         
         const isCorrect = R.contains(quickFireInput.value.trim().toLowerCase(), acceptableAnswers);
         
-        quickFire.score.total++;
+        quickFire.termScore.total++;
         
         if (isCorrect) {
-            quickFire.score.correct++;
-            quickFire.score.passes.push(quickFire.question);
+            quickFire.termScore.correct++;
+            quickFire.termScore.passes.push(quickFire.question);
         }
         else {
-            quickFire.score.incorrect++;
-            quickFire.score.fails.push(quickFire.question);
+            quickFire.termScore.incorrect++;
+            quickFire.termScore.fails.push(quickFire.question);
         }
         
         quickFireMessage.innerHTML = isCorrect
@@ -137,6 +147,9 @@ const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
     // console.log('screen: ', screen);
 
     const handleGlossaryLink = () => {
+
+        quickFire.onClickGlossaryLinkListeners = quickFire.onClickGlossaryLinkListeners || [];
+
         if(quickFire.onClickGlossaryLinkListeners.length < 1) {
             glossary.addEventListener('click', loadGlossary, { once: true });
             quickFire.onClickGlossaryLinkListeners.push('filters');
@@ -144,6 +157,9 @@ const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
     };
 
     const handleFiltersLink = () => {
+
+        quickFire.onClickFiltersLinkListeners = quickFire.onClickFiltersLinkListeners || [];
+
         if(quickFire.onClickFiltersLinkListeners.length < 1) {
             filters.addEventListener('click', loadFilters, { once: true }, true);
             quickFire.onClickFiltersLinkListeners.push('filters');

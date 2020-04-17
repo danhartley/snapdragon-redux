@@ -119,7 +119,7 @@
         font-size: 1.2rem;
     }
     .youtube-icon {
-        font-size: 2rem !important;
+        font-size: 1.2rem !important;
     }
 }
 
@@ -426,7 +426,7 @@
     .snapdragon-intro {
         height: initial;  
         padding: 2rem;
-      }
+    }
 
     .btn {
         width: fit-content;
