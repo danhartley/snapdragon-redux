@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';
@@ -8,7 +10,7 @@ import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-han
 import { videoHandler } from 'ui/screens/lists/video-handler';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 
-const onLoadLessonViewState = (collection, videoPlayer, score) => {
+const onLoadLessonViewState = (collection, videoPlayer, score, config) => {
 
   const taxa = collection.iconicTaxa ? collection.iconicTaxa.map(taxon => taxon.common).join(', ') : '';
   const isCurrentLessonPaused = (!!score && score.collectionId === collection.id);
@@ -20,13 +22,19 @@ const onLoadLessonViewState = (collection, videoPlayer, score) => {
   collection.hasVideo = collection.video ? true : false;
   collection.showVideoIconClass = collection.hasVideo ? '' : 'hide-important';
   collection.videoState = videoHandler.setVideoState(videoPlayer || [], collection);
+
+
+  const length = collection.species ? collection.species.length : collection.items.length;
+  const plan = config.isLandscapeMode ? collection.lessonPlanLandscape : collection.lessonPlanPortrait;
+  const shortReviews = [2,102];
+
   collection.reviewState = 
     isLessonComplete 
     ? `Lesson complete`
     : isPaused ? 'Resume Review' : 
-      collection.species 
-        ? `${collection.species.length} x 2 Minute Reviews`
-        : `${collection.items.length} x 2 Minute Reviews`;
+      R.contains(plan, shortReviews)
+        ? `${length} x 30 Second Reviews`
+        : `${length} x 2 Minute Reviews`;
 
   collection.hasTermsClass = !!collection.terms ? '' : 'hide-important';
   collection.isCollectionEditableClass = !!collection.isPrivate ? 'underline-link' : '';
@@ -34,9 +42,9 @@ const onLoadLessonViewState = (collection, videoPlayer, score) => {
   return collection;  
 };
 
-const onLoadLessonsViewState = (collections, videoPlayer, score) => {
+const onLoadLessonsViewState = (collections, videoPlayer, score, config) => {
   return collections.map(collection => {
-    return onLoadLessonViewState(collection, videoPlayer, score);
+    return onLoadLessonViewState(collection, videoPlayer, score, config);
   });
 };
 

@@ -20,6 +20,7 @@ const portraitFungi = { ...R.clone(landscapeFungi), id: 103, portrait: true };
 
 const portraitLichens = { ...R.clone(landscapeLichens), id: 104, portrait: true };
 const portraitCustom = { ...R.clone(landscapeCustom), id: 101, portrait: true };
+const portraitCustom2 = { ...R.clone(landscapeCustom2), id: 102, portrait: true };
 
 export const lessonPlans = [
 
@@ -33,6 +34,7 @@ export const lessonPlans = [
     landscapeBirds,
     
     portraitCustom,
+    portraitCustom2,
     portraitStatic,
     portraitStaticTaxonGroup,    
     portraitFungi,    

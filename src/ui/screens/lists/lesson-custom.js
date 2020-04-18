@@ -12,7 +12,7 @@ export const renderCustomLesson = (lessons, savedLessons, videoPlayer, score, co
         const template = document.createElement('template');
               template.innerHTML = lessonTemplate;
         
-        const lesson = lessonListEventHandler.onLoadLessonViewState(collection, savedLessons, videoPlayer, score);
+        const lesson = lessonListEventHandler.onLoadLessonViewState(collection, savedLessons, videoPlayer, score, config);
               lesson.hideVideoClass = '';
         
         lessons.push(lesson);
