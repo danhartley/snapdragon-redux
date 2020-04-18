@@ -2,6 +2,14 @@ import * as R from 'ramda';
 
 import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';
+import { renderScoreHTMLResponse } from 'ui/helpers/score-handler';
+
+const renderResponse = (isCorrect, term) => {
+    return isCorrect
+    ? `<span class="centred-block icon"><i class="fas fa-check extra-large-text correct-answer-color margin-right"></i>That is correct.</span>`
+    : `<span class="centred-block icon"><i class="fas fa-times extra-large-text incorrect-answer-color margin-right"></i>The correct answer is <span class="answer-response half-margin-left">'${term}'.</span></span>`;
+
+};
 
 const updateBranchCounts = (quickFire, branchOptions) => {
 
@@ -42,7 +50,7 @@ const updateTotalCounts = (quickFire, input, counters, branchCounters, taxonCoun
     quickFire.poolSize = parseInt(input.value);
 };
 
-const scoreMultipleChoice = (quickFire, answer) => {
+const scoreMultipleChoice = (quickFire, answer, quickFireMessage) => {
 
     const isCorrect = answer === quickFire.question.term;
 
@@ -61,6 +69,8 @@ const scoreMultipleChoice = (quickFire, answer) => {
         quickFire.termScore.isIncorrect = true;
         quickFire.termScore.fails.push(quickFire.question);
     }
+
+    quickFireMessage.innerHTML = renderResponse(isCorrect, quickFire.question.term.toLowerCase());
 };
 
 const scoreTextEntry = (quickFire, quickFireInput, quickFireMessage, timer, continueQuickFireBtn) => {
@@ -94,9 +104,10 @@ const scoreTextEntry = (quickFire, quickFireInput, quickFireMessage, timer, cont
             quickFire.termScore.fails.push(quickFire.question);
         }
         
-        quickFireMessage.innerHTML = isCorrect
-            ? `<span class="centred-block icon"><i class="fas fa-check extra-large-text correct-answer-color margin-right"></i>That is correct.</span>`
-            : `<span class="centred-block icon"><i class="fas fa-times extra-large-text incorrect-answer-color margin-right"></i>The correct answer is <span class="answer-response half-margin-left">'${quickFire.question.term.toLowerCase()}'.</span></span>`;
+        quickFireMessage.innerHTML = renderResponse(isCorrect, quickFire.question.term.toLowerCase());
+        // quickFireMessage.innerHTML = isCorrect
+        //     ? `<span class="centred-block icon"><i class="fas fa-check extra-large-text correct-answer-color margin-right"></i>That is correct.</span>`
+        //     : `<span class="centred-block icon"><i class="fas fa-times extra-large-text incorrect-answer-color margin-right"></i>The correct answer is <span class="answer-response half-margin-left">'${quickFire.question.term.toLowerCase()}'.</span></span>`;
 
         timer = setTimeout(() => {
             continueQuickFireBtn.click();
@@ -114,7 +125,7 @@ const readyTemplate = headerTemplate => {
     const modal = document.querySelector('#glossaryModal');
 
     const parent = modal.querySelector('.js-modal-text');
-            parent.innerHTML = '';   
+          parent.innerHTML = '';   
 
     return { template, modal, parent };
 };
