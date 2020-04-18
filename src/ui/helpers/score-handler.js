@@ -25,16 +25,21 @@ export const scoreHandler = (type, test, callback, config) => {
     }
 };
 
-const showResponseToAnswerHandler = response => {
-    const questionText = document.querySelector(response.container) || document.querySelector('.js-txt-question');
-    if(questionText) {
-          questionText.innerHTML = response.success
+export const renderScoreHTMLResponse = response => {
+    const html = response.success
             ? `<div class="answer-box-success">
                 <span class="icon"><i class="fas fa-check"></i></span><span class="answer-response">${ response.correct }</span>
                 </div>`
             : `<div class="answer-box-alert">
                 <span class="icon"><i class="fas fa-times"></i></span><span class="answer-response">${response.answer || response.incorrect}</span>
             </div>`;
+    return html;
+};
+
+const showResponseToAnswerHandler = response => {
+    const questionText = document.querySelector(response.container) || document.querySelector('.js-txt-question');
+    if(questionText) {
+          questionText.innerHTML = renderScoreHTMLResponse(response);
     }
 }
 

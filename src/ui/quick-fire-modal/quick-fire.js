@@ -202,7 +202,7 @@ const questions = state => {
                 count: quickFire.poolSize,
                 correct: quickFire.termScore.correct, 
                 answered: quickFire.termScore.total 
-            }, template.content, parent);
+        }, template.content, parent);
 
         const layouts = document.querySelectorAll('.js-quick-layouts');
               layouts.forEach(layout => {
@@ -210,11 +210,13 @@ const questions = state => {
                   if(layout.id === quickFire.filter.option.key) layout.classList.remove('hide');                  
               });
 
+        const quickFireMessage = document.querySelector('.js-quick-fire-message');
+
         const options = Array.from(document.querySelectorAll('.js-quick-fire-options > div'));
               options.forEach(option => {
                 option.addEventListener('click', e => {
                     const answer = e.target.id;
-                    quickFireUI.scoreMultipleChoice(quickFire, answer);
+                    quickFireUI.scoreMultipleChoice(quickFire, answer, quickFireMessage);
                     continueQuickFireBtn.disabled = false;
                     if(quickFire.termScore.isIncorrect) {
                         option.classList.add('snap-alert');
@@ -239,8 +241,6 @@ const questions = state => {
             quickFireInput.focus();
         }
         
-        const quickFireMessage = document.querySelector('.js-quick-fire-message');
-
         const continueQuickFireBtn = document.querySelector('.js-continue-quick-fire-btn');
               continueQuickFireBtn.addEventListener('click', e => {
                     quickFire.items = quickFire.items.filter(item => item.term !== quickFire.question.term);
