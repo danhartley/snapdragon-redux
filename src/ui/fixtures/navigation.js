@@ -57,7 +57,7 @@ export const renderNavigation = collection => {
                 switch(enums.navigation.enumValueOf(clickedIcon.id)) {
                     case enums.navigation.LANDSCAPE_HOME:
                         clickedIcon.classList.add('active-icon');
-                        lesson = await lessonStateHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config);
+                        lesson = await lessonStateHandler.changeLessonState(enums.lessonState.PAUSE_LESSON, collection, config);
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
                         renderLessons();     
                         renderScoreSummary(lesson.collection.id);
@@ -72,7 +72,7 @@ export const renderNavigation = collection => {
                         if(activeInfoIcon) activeInfoIcon.classList.remove('active-icon');
                         clickedIcon.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
-                        lesson = await lessonStateHandler.changeState(enums.lessonState.PAUSE_LESSON, collection, config);
+                        lesson = await lessonStateHandler.changeLessonState(enums.lessonState.PAUSE_LESSON, collection, config);
                         renderLessons();
                         DOM.rightHeaderTxt.innerHTML = 'Learn the planet';
                         DOM.rightHeaderScoreTxt.innerHTML = '';

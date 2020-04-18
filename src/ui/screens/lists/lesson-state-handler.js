@@ -10,27 +10,36 @@ import { initialiseConfig } from 'ui/helpers/location-helper';
 import { renderSpeciesList } from 'ui/screens/lists/species-list';
 import { collectionHandler  } from 'ui/helpers/collection-handler';
 
-const beginOrResumeLesson = async (reviewLessonId, isNextRound)  => {
+const getCollectionToLoad = (collection, collections, config, selectedLessonId)  => {
 
-  console.log('isNextRound: ', isNextRound);
+  const id = parseInt(selectedLessonId);
+
+  const resumeCurrentLesson = collection.id > 0 && collection.id === id && config.collection.id !== 0;
+
+  const collectionToLoad = resumeCurrentLesson ? collection : collections.find(c => c.id === id);
+
+  return collectionToLoad;
+};
+
+const getCurrentLessonState = (isNextRound, config) => {
+  return isNextRound && config.collection.id > 0 ? null : enums.lessonState.NEXT_ROUND;
+};
+
+const beginOrResumeLesson = async (selectedLessonId, isNextRound)  => {
 
   const { collections, collection: currentCollection, config } = store.getState();
 
-  if(isNextRound && config.collection.id > 0) {
-    await changeState(enums.lessonState.NEXT_ROUND, currentCollection, config);
-  }
+  const collectionToLoad = getCollectionToLoad(currentCollection, collections, config, selectedLessonId);
 
-  const resumeCurrentLesson = currentCollection.id > 0 && currentCollection.id === parseInt(reviewLessonId) && config.collection.id !== 0;
-
-  const collectionToLoad = resumeCurrentLesson ? currentCollection : collections.find(c => c.id === parseInt(reviewLessonId));
+  await changeLessonState(getCurrentLessonState(isNextRound, config), currentCollection, config);
 
   const { collection, score } = await loadLesson(collectionToLoad, config, collections);
 
-  const lessonState = (score && score.collectionId) === collection.id 
+  const lessonState = (score && score.collectionId === collection.id) 
           ? enums.lessonState.RESUME_LESSON
           : enums.lessonState.BEGIN_LESSON;
 
-  changeState(lessonState, collection, config); 
+  changeLessonState(lessonState, collection, config); 
 };
 
 const renderLessonSpeciesList = async (collectionToLoad, container) => {
@@ -48,7 +57,12 @@ const saveCurrentLesson = async collection => {
   
   config.collection.id = collection.id;
 
-  if(!layout) return;
+  // console.log('save current lesson, passed in collection: ', collection);
+
+  if(!layout) {
+    // console.log('save current lesson, no layout');
+    return;
+  };
  
   const savedLesson = { 
       name: collection.name,
@@ -57,9 +71,13 @@ const saveCurrentLesson = async collection => {
 
   actions.boundSaveLesson(savedLesson);
 
+  // console.log('save current lesson, saved lesson bound: ', savedLesson);
+
   const initialisedConfig = await initialiseConfig(config);
 
   actions.boundUpdateConfig(initialisedConfig);
+
+  // console.log('save current lesson, lesson returned: ', savedLesson);
 
   return savedLesson;
 };
@@ -113,7 +131,7 @@ const getLatestCounter = collection => {
   return { index };
 };
 
-const changeState = async (lessonState, collection, config) => {    
+const changeLessonState = async (lessonState, collection, config) => {    
 
   let lesson;
 
@@ -136,7 +154,7 @@ const changeState = async (lessonState, collection, config) => {
       }
       case enums.lessonState.NEXT_ROUND: {
           const currentLesson = await saveCurrentLesson(collection);
-          console.log('currentLesson:', currentLesson);
+          // console.log('currentLesson:', currentLesson);
           lesson = currentLesson.lesson;
 
           const mode = 'learn';
@@ -175,6 +193,9 @@ const changeState = async (lessonState, collection, config) => {
               }
           }            
           break;      
+      }
+      default: {
+        return null;
       }
   }
   return lesson;
@@ -231,7 +252,7 @@ export const lessonStateHandler = {
   renderLessonSpeciesList,
   loadLesson,
   getMode,
-  changeState,    
+  changeLessonState,    
   purgeLesson,
   addExtraSpeciesSelection,
   clearGuide,

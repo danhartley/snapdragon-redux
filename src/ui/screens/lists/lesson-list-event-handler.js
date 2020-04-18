@@ -59,6 +59,8 @@ const onClickViewState = (e, lessons) => {
   const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lessonId}"]`);
   const upChevrons = Array.from(document.querySelectorAll('.js-lesson-list-chevron .fa-chevron-up'));
 
+  console.log('onclick view state icon: ', icon);
+
   hideOtherContentAndRevertChevrons(upChevrons, lessonId);
 
   let reviewLinks = document.querySelectorAll('.js-review-link');
@@ -80,6 +82,8 @@ const onClickViewState = (e, lessons) => {
     revealSpeciesList: isSpeciesListAvailable && isSpeciesListHidden,
     hideSpeciesList: isSpeciesListAvailable && !isSpeciesListHidden && iconIsChevron
   };
+
+  console.log('on click state: ', state);
 
   const isYoutubeIcon = elem.hasClass(icon, 'js-lesson-list-youtube');
 
@@ -116,6 +120,7 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
       let siblingChevron;
 
       if(state.requiresSpeciesList) {
+        console.log('state.requiresSpeciesList');
         await loadAndDisplaySpeciesList(icon, lesson, container);
       }
 
