@@ -16,8 +16,8 @@ export const observeStore = (store, select, onChange, domain, layout) => {
             hasStateSignificantlyChanged = !areEqual;
           }
 
-      const { userAction } = store.getState();
-      const startLesson = userAction ? userAction.name === enums.userEvent.START_LESSON.name : false;
+      // const { userAction } = store.getState();
+      // const startLesson = userAction ? userAction.name === enums.userEvent.START_LESSON.name : false;
 
       if(currentState && nextState) {
         // console.log('layout: ', layout);
@@ -32,22 +32,23 @@ export const observeStore = (store, select, onChange, domain, layout) => {
           case 'screen-genus-completion':
           case 'screen-latin-to-common':
           case 'media-match':
-            hasStateSignificantlyChanged = nextState.nextItem.name !== currentState.nextItem.name && !startLesson;
+            hasStateSignificantlyChanged = nextState.nextItem.name !== currentState.nextItem.name;
+            // hasStateSignificantlyChanged = nextState.nextItem.name !== currentState.nextItem.name && !startLesson;
             // console.log('hasStateSignificantlyChanged: ', hasStateSignificantlyChanged);
             break;
         }
 
-        if(nextState.given) { // specifically layout domain state
-          hasStateSignificantlyChanged = 
-                 (nextState.speciesName !== currentState.speciesName) 
-              && (nextState.roundProgressIndex !== currentState.roundProgressIndex);
+        // if(nextState.given) {
+        //   hasStateSignificantlyChanged = 
+        //          (nextState.speciesName !== currentState.speciesName) 
+        //       && (nextState.roundProgressIndex !== currentState.roundProgressIndex);
 
-            hasStateSignificantlyChanged = hasStateSignificantlyChanged && !startLesson;
+        //     hasStateSignificantlyChanged = hasStateSignificantlyChanged && !startLesson;
 
-            if(hasStateSignificantlyChanged) {
-              console.log('state has changed for layout');
-            }              
-        } 
+        //     if(hasStateSignificantlyChanged) {
+        //       console.log('state has changed for layout');
+        //     }              
+        // } 
 
         if(nextState.score && nextState.score.total) {
           hasStateSignificantlyChanged = nextState.score.total !== currentState.score.total;

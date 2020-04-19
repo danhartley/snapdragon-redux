@@ -4,9 +4,7 @@ import { setupHandler } from 'ui/setup/setup-handler';
 
 export const nextLayout = counter => {
 
-    const { layout, lessonPlan, config, lesson, collection, userAction } = store.getState();
-
-    // if(userAction && userAction.name === enums.userEvent.START_LESSON.name) return;
+    const { layout, lessonPlan, config, lesson, collection } = store.getState();
 
     const args = { layout, counter, lessonPlan, config, lesson, collection };
 

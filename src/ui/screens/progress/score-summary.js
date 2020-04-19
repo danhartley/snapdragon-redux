@@ -61,10 +61,10 @@ const renderScoreSummaryRow = (score, config) => {
             template.innerHTML = summaryRowTemplate;
 
       const parent = document.querySelector('.js-score-summary-rows');
+            parent.innerHTML = '';
 
       if(score.total === 0) {
-            template.innerHTML = summaryNoRowTemplate;
-            parent.innerHTML = '';
+            template.innerHTML = summaryNoRowTemplate;            
             renderTemplate({ }, template.content, parent);
             return;
       }

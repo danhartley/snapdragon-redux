@@ -29,9 +29,7 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
 
     let imagesPerItem = noOfImagesPerItem || 1;
 
-    const { config, score, lesson, userAction } = store.getState();
-
-    // if(userAction && userAction.name === enums.userEvent.START_LESSON.name) return;
+    const { config, score, lesson } = store.getState();
 
     const item = R.clone(collection.nextItem);
 

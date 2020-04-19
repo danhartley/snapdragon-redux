@@ -22,7 +22,8 @@ const getCollectionToLoad = (collection, collections, config, selectedLessonId) 
 };
 
 const getCurrentLessonState = (isNextRound, config) => {
-  return isNextRound && config.collection.id > 0 ? null : enums.lessonState.NEXT_ROUND;
+  return enums.lessonState.NEXT_ROUND;
+  // return isNextRound && config.collection.id > 0 ? null : enums.lessonState.NEXT_ROUND;
 };
 
 const beginOrResumeLesson = async (selectedLessonId, isNextRound)  => {
@@ -53,11 +54,9 @@ const renderLessonSpeciesList = async (collectionToLoad, container) => {
 
 const saveCurrentLesson = async collection => {
 
-  const { counter, lessonPlan, lessonPlans, layout, lesson, score, history, bonusLayout, enums, config, lessons } = store.getState();
+  const { counter, lessonPlan, lessonPlans, layout, lesson, score, history, bonusLayout, enums, config } = store.getState();
   
   config.collection.id = collection.id;
-
-  // console.log('save current lesson, passed in collection: ', collection);
 
   const savedLesson = { 
       name: collection.name,
@@ -66,22 +65,18 @@ const saveCurrentLesson = async collection => {
 
   actions.boundSaveLesson(savedLesson);
 
-  // console.log('save current lesson, saved lesson bound: ', savedLesson);
-
   const initialisedConfig = await initialiseConfig(config);
 
   actions.boundUpdateConfig(initialisedConfig);
-
-  // console.log('save current lesson, lesson returned: ', savedLesson);
 
   return savedLesson;
 };
 
 const loadLesson = async (collectionToLoad, config, collections) => {
 
-  const { counter, lessons } = store.getState();
+  const { counter, lessons, lesson: savedLesson } = store.getState();
 
-  const restoredLesson = lessons.find(l => l.name === collectionToLoad.name);
+  let restoredLesson = lessons.find(l => l.name === collectionToLoad.name);
 
   let lesson;
 
@@ -93,8 +88,8 @@ const loadLesson = async (collectionToLoad, config, collections) => {
   } else {
     lesson = { 
       collection: collectionToLoad, 
-      counter: { ...counter, index: 0},
-      lesson: { currentRound: 1, rounds: 0, isNextRound: true },
+      counter: { ...counter, index: 0 },
+      lesson: savedLesson || { currentRound: 1, rounds: 0, isNextRound: true },
       layout: null,
       history: null,
       score: R.clone(progressState.score)
@@ -149,9 +144,10 @@ const changeLessonState = async (lessonState, collection, config) => {
       }
       case enums.lessonState.NEXT_ROUND: {
 
-          if(store.getState().layout) {
+          const isLayoutReady = !!store.getState().layout;
+
+          if(isLayoutReady) {
             const currentLesson = await saveCurrentLesson(collection);
-            console.log('currentLesson:', currentLesson);
             lesson = currentLesson.lesson;
           }
 
