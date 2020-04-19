@@ -1,3 +1,6 @@
+import * as R from 'ramda';
+
+import { enums } from 'ui/helpers/enum-helper';
 import { store } from 'redux/store';
 import { observeStore } from 'redux/observe-store';
 import { funcByName } from 'ui/helpers/function-lookups';
@@ -6,6 +9,8 @@ let subscriptions = [];
 
 const add = (subscription, domain, role, layout) => {
     
+    // console.log('param layout:', layout);
+
     const select = store => store[domain];
     const onChange = subscription;    
 
@@ -69,6 +74,36 @@ const removeSubs = () => {
 
 };
 
+const checkRequired = (store, layout) => {
+
+    let isRequired = true;
+
+    const { userAction } = store.getState();
+
+    const isStartLesson = userAction && userAction.name === enums.userEvent.START_LESSON.name;
+
+    const reviewLayouts = [
+        'screen-species-card',
+        'screen-taxon-card',
+        'screen-non-taxon-card',
+        'species-vernaculars',
+        'mixed-specimen-images',
+        'mixed-specimen-question',
+        'screen-common-to-latin',
+        'screen-genus-completion',
+        'screen-latin-to-common',
+        'media-match'
+    ];
+
+    if(isStartLesson) {
+        isRequired = !R.contains(layout.name, reviewLayouts);        
+    }
+
+    // console.log('isRequired sub: ', isRequired);
+
+    return isRequired;
+};
+
 const addSubs = (layout, config) => {
 
     if(!layout) return;
@@ -77,7 +112,9 @@ const addSubs = (layout, config) => {
 
         const func = funcByName(screen.name);
 
-        if(func) {
+        const isSubscriptionRequired = checkRequired(store, layout);
+
+        if(func && isSubscriptionRequired) {
             if(config.isPortraitMode) {
                 if(index === 1 || screen.name === 'summary') subscription.add(func, screen.domain, 'screen', layout ? layout.name : '');
             } else {

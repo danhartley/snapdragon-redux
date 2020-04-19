@@ -34,6 +34,8 @@ const UPDATE_QUICKFIRE = '[UPDATE_QUICKFIRE] Update quick-fire';
 const CREATE_QUICKFIRE = '[CREATE_QUICKFIRE] Add quick-fire';
 const CREATE_GLOSSARY = '[CREATE_GLOSSARY] Add glossary';
 
+const CLICK_EVENT = '[CLICK_EVENT] User triggered event';
+
 export const types = {
     CHANGE_LESSON_PLANS,
     CHANGE_LESSON_PLAN,
@@ -63,5 +65,6 @@ export const types = {
     UPDATE_USER,
     CREATE_QUICKFIRE,
     UPDATE_QUICKFIRE,
-    CREATE_GLOSSARY
+    CREATE_GLOSSARY,
+    CLICK_EVENT
 };

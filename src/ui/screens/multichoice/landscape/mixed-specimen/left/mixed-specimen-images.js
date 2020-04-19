@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { enums } from 'ui/helpers/enum-helper';
 import { firestore } from 'api/firebase/firestore';
 import { scoreHandler } from 'ui/helpers//score-handler';
 import { store } from 'redux/store';
@@ -28,7 +29,9 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
 
     let imagesPerItem = noOfImagesPerItem || 1;
 
-    const { config, score, lesson } = store.getState();
+    const { config, score, lesson, userAction } = store.getState();
+
+    // if(userAction && userAction.name === enums.userEvent.START_LESSON.name) return;
 
     const item = R.clone(collection.nextItem);
 

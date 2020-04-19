@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { enums } from 'ui/helpers/enum-helper';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { returnIcon } from 'ui/helpers/icon-handler';
@@ -15,7 +16,9 @@ import mixedSpecimenQuestionTemplate from 'ui/screens/multichoice/landscape/mixe
 
 export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
-    const { config, layout } = store.getState();
+    const { config, layout, userAction } = store.getState();
+
+    // if(userAction && userAction.name === enums.userEvent.START_LESSON.name) return;
 
     if(config.isPortraitMode) {
         renderMixedSpecimenImagesAndQuestion(collection);

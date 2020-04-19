@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';
-
+import { enums } from 'ui/helpers/enum-helper';
 import { renderLessonIntro } from 'ui/screens/home/home-lesson-intro';
 import { renderEditLesson } from 'ui/screens/lists/lesson-edit';
 import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
@@ -51,6 +51,7 @@ const onLoadLessonsViewState = (collections, videoPlayer, score, config) => {
 const onClickViewState = (e, lessons) => {
 
   const icon = e.currentTarget;
+  const isYoutubeIcon = elem.hasClass(icon, 'js-lesson-list-youtube');
   const row = icon.parentElement.parentElement;
   const lessonId = parseInt(icon.dataset.lessonId);
   const lesson = lessons.find(l => l.id === lessonId);
@@ -59,7 +60,10 @@ const onClickViewState = (e, lessons) => {
   const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lessonId}"]`);
   const upChevrons = Array.from(document.querySelectorAll('.js-lesson-list-chevron .fa-chevron-up'));
 
-  console.log('onclick view state icon: ', icon);
+  // console.log('onclick view state icon: ', icon);
+
+  const action =  isYoutubeIcon ? enums.userEvent.START_LESSON : enums.userEvent.TOGGLE_SPECIES_LIST;
+  lessonStateHandler.recordUserAction(action);
 
   hideOtherContentAndRevertChevrons(upChevrons, lessonId);
 
@@ -83,9 +87,7 @@ const onClickViewState = (e, lessons) => {
     hideSpeciesList: isSpeciesListAvailable && !isSpeciesListHidden && iconIsChevron
   };
 
-  console.log('on click state: ', state);
-
-  const isYoutubeIcon = elem.hasClass(icon, 'js-lesson-list-youtube');
+  // console.log('on click state: ', state);
 
   return { icon, lesson, state, speciesList, container, lessonVideoState, reviewLink, row, isYoutubeIcon };
 };
@@ -120,7 +122,7 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
       let siblingChevron;
 
       if(state.requiresSpeciesList) {
-        console.log('state.requiresSpeciesList');
+        // console.log('state.requiresSpeciesList');
         await loadAndDisplaySpeciesList(icon, lesson, container);
       }
 
@@ -182,7 +184,7 @@ const onReviewClickHandler = reviewLink => {
 
   reviewLink.addEventListener('click', async e => {
 
-    e.stopPropagation();
+    lessonStateHandler.recordUserAction(enums.userEvent.START_LESSON_REVIEW);
 
     const loadingMessage = reviewLink.nextElementSibling
           loadingMessage.classList.remove('hide');

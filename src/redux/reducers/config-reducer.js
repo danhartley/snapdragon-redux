@@ -25,7 +25,7 @@ export const enums = (state = {}, action) => {
         default:
             return state;
     }
-}
+};
 
 export const user = (state = null, action) => {
     switch(action.type) {
@@ -34,4 +34,13 @@ export const user = (state = null, action) => {
         default:
             return state;
     }
-}
+};
+
+export const userAction = (state = null, action) => {
+    switch(action.type) {
+        case types.CLICK_EVENT:
+            return action.data;
+        default:
+            return state;
+    }
+};

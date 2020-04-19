@@ -57,13 +57,8 @@ const saveCurrentLesson = async collection => {
   
   config.collection.id = collection.id;
 
-  console.log('save current lesson, passed in collection: ', collection);
+  // console.log('save current lesson, passed in collection: ', collection);
 
-  if(!layout) {
-    console.log('save current lesson, no layout');
-    return;
-  };
- 
   const savedLesson = { 
       name: collection.name,
       config, collection, counter, lessonPlan, lessonPlans, layout, lesson, score: R.clone(score), history, bonusLayout, enums
@@ -71,13 +66,13 @@ const saveCurrentLesson = async collection => {
 
   actions.boundSaveLesson(savedLesson);
 
-  console.log('save current lesson, saved lesson bound: ', savedLesson);
+  // console.log('save current lesson, saved lesson bound: ', savedLesson);
 
   const initialisedConfig = await initialiseConfig(config);
 
   actions.boundUpdateConfig(initialisedConfig);
 
-  console.log('save current lesson, lesson returned: ', savedLesson);
+  // console.log('save current lesson, lesson returned: ', savedLesson);
 
   return savedLesson;
 };
@@ -133,7 +128,7 @@ const getLatestCounter = collection => {
 
 const changeLessonState = async (lessonState, collection, config) => {    
 
-  let lesson;
+  let lesson = {};
 
   switch(lessonState) {
       case enums.lessonState.BEGIN_LESSON: {
@@ -153,9 +148,12 @@ const changeLessonState = async (lessonState, collection, config) => {
           break;
       }
       case enums.lessonState.NEXT_ROUND: {
-          const currentLesson = await saveCurrentLesson(collection);
-          console.log('currentLesson:', currentLesson);
-          lesson = currentLesson.lesson;
+
+          if(store.getState().layout) {
+            const currentLesson = await saveCurrentLesson(collection);
+            console.log('currentLesson:', currentLesson);
+            lesson = currentLesson.lesson;
+          }
 
           const mode = 'learn';
 
@@ -247,6 +245,17 @@ const updateCollection = (config, collection) => {
   actions.boundUpdateCollection({ config, collection });
 };
 
+const setActiveCollection = lesson => {
+  lesson.counter = lesson.counter || { };
+  actions.boundSetActiveCollection({ lesson });
+  const { user } = store.getState();
+  firestore.addCollection(lesson.collection, user);
+};
+
+const recordUserAction = action => {
+  actions.boundClickEvent(action);
+};
+
 export const lessonStateHandler = {
   beginOrResumeLesson,
   renderLessonSpeciesList,
@@ -256,12 +265,6 @@ export const lessonStateHandler = {
   purgeLesson,
   addExtraSpeciesSelection,
   clearGuide,
-  updateCollection
-};
-
-const setActiveCollection = lesson => {
-  lesson.counter = lesson.counter || { };
-  actions.boundSetActiveCollection({ lesson });
-  const { user } = store.getState();
-  firestore.addCollection(lesson.collection, user);
+  updateCollection,
+  recordUserAction
 };
