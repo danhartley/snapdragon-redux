@@ -57,10 +57,10 @@ const saveCurrentLesson = async collection => {
   
   config.collection.id = collection.id;
 
-  // console.log('save current lesson, passed in collection: ', collection);
+  console.log('save current lesson, passed in collection: ', collection);
 
   if(!layout) {
-    // console.log('save current lesson, no layout');
+    console.log('save current lesson, no layout');
     return;
   };
  
@@ -71,13 +71,13 @@ const saveCurrentLesson = async collection => {
 
   actions.boundSaveLesson(savedLesson);
 
-  // console.log('save current lesson, saved lesson bound: ', savedLesson);
+  console.log('save current lesson, saved lesson bound: ', savedLesson);
 
   const initialisedConfig = await initialiseConfig(config);
 
   actions.boundUpdateConfig(initialisedConfig);
 
-  // console.log('save current lesson, lesson returned: ', savedLesson);
+  console.log('save current lesson, lesson returned: ', savedLesson);
 
   return savedLesson;
 };
@@ -154,7 +154,7 @@ const changeLessonState = async (lessonState, collection, config) => {
       }
       case enums.lessonState.NEXT_ROUND: {
           const currentLesson = await saveCurrentLesson(collection);
-          // console.log('currentLesson:', currentLesson);
+          console.log('currentLesson:', currentLesson);
           lesson = currentLesson.lesson;
 
           const mode = 'learn';

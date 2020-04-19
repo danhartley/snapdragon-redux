@@ -37,10 +37,14 @@ export const observeStore = (store, select, onChange, domain, layout) => {
             // break;
         }
 
-        if(nextState.itemIndex) { // layout
+        if(nextState.given) { // layout
           hasStateSignificantlyChanged = 
                  (nextState.speciesName !== currentState.speciesName) 
-              && (nextState.roundProgressIndex !== currentState.roundProgressIndex) 
+              && (nextState.roundProgressIndex !== currentState.roundProgressIndex);
+
+            if(hasStateSignificantlyChanged) {
+              console.log('state has changed for layout');
+            }              
         } 
 
         if(nextState.score && nextState.score.total) {

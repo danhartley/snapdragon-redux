@@ -56,11 +56,13 @@ export const renderNavigation = collection => {
 
                 switch(enums.navigation.enumValueOf(clickedIcon.id)) {
                     case enums.navigation.LANDSCAPE_HOME:
-                        clickedIcon.classList.add('active-icon');
-                        lesson = await lessonStateHandler.changeLessonState(enums.lessonState.PAUSE_LESSON, collection, config);
-                        subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
-                        renderLessons();     
-                        renderScoreSummary(lesson.collection.id);
+                        const isIconActive = R.contains('active-icon', clickedIcon.classList);
+                        if(!isIconActive) {
+                            clickedIcon.classList.add('active-icon');
+                            lesson = await lessonStateHandler.changeLessonState(enums.lessonState.PAUSE_LESSON, collection, config);
+                            subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
+                            renderLessons();
+                        }
                         break;
                     case enums.navigation.SETTINGS:
                         toggleIconOnOff(clickedIcon);
