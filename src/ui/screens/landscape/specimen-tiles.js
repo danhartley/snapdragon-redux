@@ -33,7 +33,7 @@ const renderItemSpecimenTiles = item => {
     let images, items;
     
     if (R.contains(layout.screens[1].name, familes)) {        
-        const famiy = collectionItems.filter(i => i.family.name.toLowerCase() === item.taxonomy.family.toLowerCase());
+        const family = collectionItems.filter(i => i.family.name.toLowerCase() === item.taxonomy.family.toLowerCase());
         images = R.take(6, utils.shuffleArray(getImagesFromItemFamily(family, config, imageUseCases.SPECIES_CARD)));
         items = images.map(image => collectionItems.find(item => item.name === image.itemName));
     } else {

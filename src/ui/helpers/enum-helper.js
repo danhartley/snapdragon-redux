@@ -62,6 +62,17 @@ quickFireStep.initEnum([
     'QUESTIONS'
 ]);
 
+class userEvent extends Enum {};
+userEvent.initEnum([
+    'DEFAULT',
+    'START_LESSON',
+    'START_LESSON_REVIEW',
+    'START_TERM_REVIEW',
+    'NAVIGATE_HOME',
+    'EDIT_LESSON',
+    'TOGGLE_SPECIES_LIST'
+]);
+
 export const enums = {
     lessonState,
     navigation,
@@ -69,5 +80,6 @@ export const enums = {
     guideOption,
     nextStep,
     quickFireType,
-    quickFireStep
+    quickFireStep,
+    userEvent
 };

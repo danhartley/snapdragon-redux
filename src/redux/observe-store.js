@@ -1,3 +1,5 @@
+import { enums } from 'ui/helpers/enum-helper';
+
 export const observeStore = (store, select, onChange, domain, layout) => {
     let currentState = null;
   
@@ -14,34 +16,39 @@ export const observeStore = (store, select, onChange, domain, layout) => {
             hasStateSignificantlyChanged = !areEqual;
           }
 
+      // const { userAction } = store.getState();
+      // const startLesson = userAction ? userAction.name === enums.userEvent.START_LESSON.name : false;
+
       if(currentState && nextState) {
+        // console.log('layout: ', layout);
         switch(layout) {
           case 'screen-species-card':
           case 'screen-taxon-card':
           case 'screen-non-taxon-card':
           case 'species-vernaculars':
           case 'mixed-specimen-images':
+          case 'mixed-specimen-question':
           case 'screen-common-to-latin':
           case 'screen-genus-completion':
           case 'screen-latin-to-common':
           case 'media-match':
             hasStateSignificantlyChanged = nextState.nextItem.name !== currentState.nextItem.name;
+            // hasStateSignificantlyChanged = nextState.nextItem.name !== currentState.nextItem.name && !startLesson;
+            // console.log('hasStateSignificantlyChanged: ', hasStateSignificantlyChanged);
             break;
-            // hasStateSignificantlyChanged = currentState.speciesVernacularNames !== nextState.speciesVernacularNames;
-            // break;
-            // hasStateSignificantlyChanged = currentState.speciesNames !== nextState.speciesNames;
-            // break;
-            // hasStateSignificantlyChanged = currentState.itemIndex !== nextState.itemIndex;
-            // break;
-            // hasStateSignificantlyChanged = currentState.speciesNames !== nextState.speciesNames;
-            // break;
         }
 
-        if(nextState.itemIndex) { // layout
-          hasStateSignificantlyChanged = 
-                 (nextState.speciesName !== currentState.speciesName) 
-              && (nextState.roundProgressIndex !== currentState.roundProgressIndex) 
-        } 
+        // if(nextState.given) {
+        //   hasStateSignificantlyChanged = 
+        //          (nextState.speciesName !== currentState.speciesName) 
+        //       && (nextState.roundProgressIndex !== currentState.roundProgressIndex);
+
+        //     hasStateSignificantlyChanged = hasStateSignificantlyChanged && !startLesson;
+
+        //     if(hasStateSignificantlyChanged) {
+        //       console.log('state has changed for layout');
+        //     }              
+        // } 
 
         if(nextState.score && nextState.score.total) {
           hasStateSignificantlyChanged = nextState.score.total !== currentState.score.total;

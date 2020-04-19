@@ -7,6 +7,7 @@ import { scoreSummaryHandler } from 'ui/screens/progress/score-summary-handler';
 
 import summaryTemplate from 'ui/screens/progress/score-summary-template.html';
 import summaryRowTemplate from 'ui/screens/progress/score-summary-row-template.html';
+import summaryNoRowTemplate from 'ui/screens/progress/score-summary-no-row-template.html';
 
 export const renderScoreSummary = async collectionId => {
 
@@ -60,6 +61,13 @@ const renderScoreSummaryRow = (score, config) => {
             template.innerHTML = summaryRowTemplate;
 
       const parent = document.querySelector('.js-score-summary-rows');
+            parent.innerHTML = '';
+
+      if(score.total === 0) {
+            template.innerHTML = summaryNoRowTemplate;            
+            renderTemplate({ }, template.content, parent);
+            return;
+      }
 
       let rows = [ ...score.passes, ...score.fails ];
           rows = scoreSummaryHandler.getSummaryRows(rows);

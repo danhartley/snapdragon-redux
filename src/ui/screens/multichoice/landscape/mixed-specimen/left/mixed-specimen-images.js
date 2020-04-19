@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { enums } from 'ui/helpers/enum-helper';
 import { firestore } from 'api/firebase/firestore';
 import { scoreHandler } from 'ui/helpers//score-handler';
 import { store } from 'redux/store';
