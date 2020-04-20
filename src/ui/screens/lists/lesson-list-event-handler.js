@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { subscription } from 'redux/subscriptions';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';
@@ -86,8 +87,6 @@ const onClickViewState = (e, lessons) => {
     hideSpeciesList: isSpeciesListAvailable && !isSpeciesListHidden && iconIsChevron
   };
 
-  // console.log('on click state: ', state);
-
   return { icon, lesson, state, speciesList, container, lessonVideoState, reviewLink, row, isYoutubeIcon };
 };
 
@@ -121,7 +120,6 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
       let siblingChevron;
 
       if(state.requiresSpeciesList) {
-        // console.log('state.requiresSpeciesList');
         await loadAndDisplaySpeciesList(icon, lesson, container);
       }
 
@@ -217,8 +215,12 @@ const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
 
   Array.from(icon.parentElement.children).forEach(child => child.dataset.selected = true);
 
+  if(!subscription.getIsReviewingLesson(userAction, config)) { return; }
+
   const loadingMessage = icon.parentElement.parentElement.parentElement.querySelector('.js-loading-message');
         loadingMessage.classList.remove('hide');
+
+  const { userAction, config } = store.getState();
 
   await lessonStateHandler.renderLessonSpeciesList(lesson, container);
   

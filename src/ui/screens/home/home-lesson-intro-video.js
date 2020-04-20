@@ -32,7 +32,7 @@ export const videoSetup = (collection, videoPlayer, parent, startTime) => {
 
             checkInt = setInterval(function() {
                const time = Math.floor(player.getCurrentTime());
-               const times = collection.items.filter(sp => sp.time);
+               const times = collection.items ? collection.items.filter(sp => sp.time) : collection.species.filter(sp => sp.time);
                const match = times.find(sp => R.contains(time, sp.time));
                if(match) {
                    videoHandler.onSpeciesTimeMatchListeners.map(listener => listener(collection, match));
