@@ -52,6 +52,7 @@ const onClickViewState = (e, lessons) => {
 
   const icon = e.currentTarget;
   const isYoutubeIcon = elem.hasClass(icon, 'js-lesson-list-youtube');
+  const isChevronIcon = elem.hasClass(icon, 'js-lesson-list-chevron');
   const row = icon.parentElement.parentElement;
   const lessonId = parseInt(icon.dataset.lessonId);
   const lesson = lessons.find(l => l.id === lessonId);
@@ -60,9 +61,7 @@ const onClickViewState = (e, lessons) => {
   const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lessonId}"]`);
   const upChevrons = Array.from(document.querySelectorAll('.js-lesson-list-chevron .fa-chevron-up'));
 
-  // console.log('onclick view state icon: ', icon);
-
-  const action =  isYoutubeIcon ? enums.userEvent.START_LESSON : enums.userEvent.TOGGLE_SPECIES_LIST;
+  let action = isYoutubeIcon ? enums.userEvent.START_LESSON : isChevronIcon ? enums.userEvent.TOGGLE_SPECIES_LIST : enums.userEvent.DEFAULT;
   lessonStateHandler.recordUserAction(action);
 
   hideOtherContentAndRevertChevrons(upChevrons, lessonId);

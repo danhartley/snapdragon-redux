@@ -80,7 +80,9 @@ const checkRequired = (store, layout) => {
 
     const { userAction } = store.getState();
 
-    const isStartLesson = userAction && userAction.name === enums.userEvent.START_LESSON.name;
+    const isNotReviewingLesson = 
+        userAction && 
+        (userAction.name === enums.userEvent.START_LESSON.name || userAction.name === enums.userEvent.TOGGLE_SPECIES_LIST.name);
 
     const reviewLayouts = [
         'screen-species-card',
@@ -95,7 +97,7 @@ const checkRequired = (store, layout) => {
         'media-match'
     ];
 
-    if(isStartLesson) {
+    if(isNotReviewingLesson) {
         isRequired = !R.contains(layout.name, reviewLayouts);        
     }
 
