@@ -215,7 +215,7 @@ const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
 
   Array.from(icon.parentElement.children).forEach(child => child.dataset.selected = true);
 
-  if(!subscription.getIsReviewingLesson(userAction, config)) { return; }
+  if(userAction && userAction.name === enums.userEvent.START_LESSON.name) { return; }
 
   const loadingMessage = icon.parentElement.parentElement.parentElement.querySelector('.js-loading-message');
         loadingMessage.classList.remove('hide');
