@@ -111,13 +111,11 @@ export const renderNavigation = collection => {
             const id = config.isPortraitMode ? enums.navigation.PORTRAIT_HOME.name : enums.navigation.LANDSCAPE_HOME.name;
             let icon = document.getElementById(id);
 
-            if(id === enums.navigation.LANDSCAPE_HOME.name || (id === enums.navigation.PORTRAIT_HOME.name && !cookieHandler.isFirstTimeVisitor())) {
+            const returningUser = !cookieHandler.isFirstTimeVisitor();
+
+            if(id === enums.navigation.LANDSCAPE_HOME.name || (id === enums.navigation.PORTRAIT_HOME.name && returningUser)) {
                 icon.classList.add('active-icon');
-            } 
-            // else if(id === enums.navigation.PORTRAIT_HOME.name && cookieHandler.isFirstTimeVisitor()) {
-            //     icon = document.querySelector('.js-info');
-            //     icon.classList.add('active-icon');
-            // }
+            }
         } else {
             navIcons.forEach(icon => icon.classList.remove('active-icon'));
         }
