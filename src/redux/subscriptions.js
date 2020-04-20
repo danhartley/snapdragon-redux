@@ -74,14 +74,14 @@ const removeSubs = () => {
 
 };
 
-const checkRequired = (store, layout) => {
+const checkRequired = (state, layout) => {
 
-    let isRequired = true;
+    const { userAction, config } = state;
 
-    const { userAction } = store.getState();
+    let isRequired = true, isReviewingLesson = true;
 
-    const isStartLesson = userAction && userAction.name === enums.userEvent.START_LESSON.name;
-
+    isReviewingLesson = getIsReviewingLesson(userAction, config, isReviewingLesson); 
+        
     const reviewLayouts = [
         'screen-species-card',
         'screen-taxon-card',
@@ -95,9 +95,7 @@ const checkRequired = (store, layout) => {
         'media-match'
     ];
 
-    if(isStartLesson) {
-        isRequired = !R.contains(layout.name, reviewLayouts);        
-    }
+    isRequired = isReviewingLesson ? true : !R.contains(layout.name, reviewLayouts);
 
     // console.log('isRequired sub: ', isRequired);
 
@@ -112,7 +110,7 @@ const addSubs = (layout, config) => {
 
         const func = funcByName(screen.name);
 
-        const isSubscriptionRequired = checkRequired(store, layout);
+        const isSubscriptionRequired = checkRequired(store.getState(), layout);
 
         if(func && isSubscriptionRequired) {
             if(config.isPortraitMode) {
@@ -120,11 +118,36 @@ const addSubs = (layout, config) => {
             } else {
                 subscription.add(func, screen.domain, 'screen', layout ? layout.name : '');
             }                           
+        } else {
+            console.clear();
+            subscription.getAll().forEach(sub => {
+                console.log(sub);
+            })
+            subscription.remove(subscription.getByName('nextItem'));
+            subscription.remove(subscription.getByName('traitValuesHandler'));
         }
     });
 
     // layout.screens.forEach(s => console.log(`%c${ 'Subs active: ' + s.name}`, "color:blue"));
 };
+
+const getIsReviewingLesson = (userAction, config) => {
+
+    let isNotReviewingLesson = true;
+
+    if (userAction) {
+        if (config.isLandscapeMode) {
+            isNotReviewingLesson = isNotReviewingLesson && (userAction.name === enums.userEvent.START_LESSON.name || userAction.name === enums.userEvent.TOGGLE_SPECIES_LIST.name);
+        }
+        else {
+            isNotReviewingLesson = isNotReviewingLesson && (userAction.name === enums.userEvent.START_LESSON.name);
+        }
+    }
+
+    console.log('isReviewingLesson: ', !isNotReviewingLesson);
+
+    return !isNotReviewingLesson;
+}
 
 export const subscription = {
     add,
@@ -134,6 +157,7 @@ export const subscription = {
     getByRole,
     getAll,
     removeSubs,
-    addSubs
+    addSubs,
+    getIsReviewingLesson
 };
 

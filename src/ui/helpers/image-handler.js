@@ -49,6 +49,7 @@ export const prepImageForCarousel = (image, index, item, config, useCase) => {
         index: index + 1, 
         ...image,
         url: scaleImage(image, useCase, config).medium,
+        // large: scaleImage({ url:image.src }).large,
         itemName: item.name,
         itemCommon: item.itemCommon,
         rightsHolder: image.rightsHolder || '',
@@ -111,7 +112,7 @@ const handleImageSelectionFromList = (image, item, collection, config, displayNa
     images = denormaliseImages(images);
     const selectedItemImage = selectedItem.images.find(i => imageMatch(i,image.dataset));
     const selectedImage = { dataset: { ...image.dataset, ...selectedItemImage } };
-    imageSlider({ config, images, parent, disableModal: false, image: selectedImage, identifier: selectedImage.dataset.itemName.replace(' ', '_') });
+    imageSlider({ config, images, parent, image: selectedImage, identifier: selectedImage.dataset.itemName.replace(' ', '_') });
     let displayName = '';
     switch(displayNameType) {
         case 'biomial':

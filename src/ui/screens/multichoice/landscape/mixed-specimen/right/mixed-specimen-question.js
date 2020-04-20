@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 
-import { enums } from 'ui/helpers/enum-helper';
+import { subscription } from 'redux/subscriptions';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { returnIcon } from 'ui/helpers/icon-handler';
@@ -18,7 +18,7 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
     const { config, layout, userAction } = store.getState();
 
-    // if(userAction && userAction.name === enums.userEvent.START_LESSON.name) return;
+    if(!subscription.getIsReviewingLesson(userAction, config)) { return; }
 
     if(config.isPortraitMode) {
         renderMixedSpecimenImagesAndQuestion(collection);

@@ -32,14 +32,7 @@ const hasUserBeenAwayTooLong = () => {
 };
 
 const isFirstTimeVisitor = () => {
-    
-    let cookieValue, isFirstVisit = true;
-
-    if (document.cookie !== '') {
-        cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)first_time\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-        isFirstVisit = (cookieValue === 'true');
-    }
-    return isFirstVisit;
+    return readCookie(FIRST_TIME) === null;
 };
 
 const removeFirstTimeVisitorCookie = () => {

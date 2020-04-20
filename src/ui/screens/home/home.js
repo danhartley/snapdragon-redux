@@ -1,3 +1,4 @@
+import { enums } from 'ui/helpers/enum-helper';
 import { subscription } from 'redux/subscriptions';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
@@ -15,9 +16,11 @@ export const renderHome = (counter, forceIntroDisplay = false) => {
 
     if(counter.index > 0 && !counter.isLessonPaused) return;
 
-    let { config } = store.getState();
+    let { config, userAction } = store.getState();
 
-    if(config.isLandscapeMode || !isFirstTimeVisitor && !forceIntroDisplay) {
+    const ignoreRender = userAction ? (userAction.name === enums.userEvent.START_LESSON.name || userAction.name === enums.userEvent.TOGGLE_SPECIES_LIST.name) : false;
+
+    if((config.isLandscapeMode || !isFirstTimeVisitor) && !forceIntroDisplay && !ignoreRender) {
         renderLessons();
     }
 

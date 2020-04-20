@@ -1,7 +1,10 @@
+import { scaleImage } from 'ui/helpers/image-handler';
+
 import { renderTemplate } from 'ui/helpers/templating';
+
 import rightsAttributionTemplate from 'ui/screens/common/rights-attribution-template.html';
 
-export const handleRightsAttribution = (image, disableModal = false, activeItem) => {
+export const handleRightsAttribution = image => {
 
     const template = document.createElement('template');
           template.innerHTML = rightsAttributionTemplate;
@@ -55,12 +58,13 @@ export const handleRightsAttribution = (image, disableModal = false, activeItem)
     const author = image.rightsholder || image.rightsHolder || 'Public domain';
     const source = image.source || '';
     const identifier = `${image.itemName.replace(' ', '_')}`;
+    const large = image.large || scaleImage(image).large;
     
     let parent = document.querySelector(`.js-attribution-layer.${identifier}`);
         parent = parent || document.querySelector(`.js-attribution-layer`);
         parent.innerHTML = '';
 
-    renderTemplate({title,author,source,licence}, template.content, parent);
+    renderTemplate({title,author,source,licence,large}, template.content, parent);
 
     const rightsAttribution = parent.querySelector('.js-rights-attribution .js-copyright');
     const rightsLink = parent.querySelector('.js-rights-link .js-copyright');

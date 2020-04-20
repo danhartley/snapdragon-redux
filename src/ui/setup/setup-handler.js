@@ -1,7 +1,7 @@
+import { store } from 'redux/store';
 import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
 import { enums } from 'ui/helpers/enum-helper';
-
 
 const isRequired = (step, args) => {
 
@@ -35,14 +35,17 @@ const isRequired = (step, args) => {
 const actionUpdate = (step, args) => {
 
     const { layout, config, asyncFunc } = args;
+    const { userAction } = store.getState();    
 
     switch(step) {
         case enums.nextStep.NEXT_ITEM:
             actions.boundNextItem(layout.itemIndex);            
             break;
         case enums.nextStep.NEXT_LAYOUT:
-            actions.boundNextLayout(layout);
-            subscription.addSubs(layout, config);
+            // if(subscription.getIsReviewingLesson(userAction, config)) {
+                actions.boundNextLayout(layout);
+                subscription.addSubs(layout, config);
+            // }
             break;
         case enums.nextStep.NEXT_LESSON:
             actions.boundNextLesson(asyncFunc);

@@ -145,7 +145,7 @@ const renderPortrait = (item, config) => {
 
     const parent = document.querySelector('.js-test-card-container-images');
 
-    imageSlider({ config, images, parent, disableModal: true });
+    imageSlider({ config, images, parent });
 };
 
 const renderLandscape = (item, config, question) => {

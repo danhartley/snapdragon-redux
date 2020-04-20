@@ -24,41 +24,41 @@ const selectActiveImage = (image, parent, config) => {
 
     let img = image.dataset || image;
     img.title = img.title || img.itemName;
-    img = scaleImage(img, imageUseCases.CAROUSEL, config);
-    handleRightsAttribution(img, false);
+    img = scaleImage(img);
+    handleRightsAttribution(img);
 
     return img;
 };
 
-const disableModalPopups = (disableModal, parent, config) => {
-    if(disableModal) {
-        document.querySelectorAll('.carousel-item div').forEach(img => {
-            img.removeAttribute('data-toggle');
-            img.removeAttribute('data-target');
-        });
-    } else {
-        modalImagesHandler(parent.querySelectorAll('.carousel-item > div'), null, config, null);
-    }
-};
+// const disableModalPopups = (disableModal, parent, config) => {
+//     if(disableModal) {
+//         document.querySelectorAll('.carousel-item div').forEach(img => {
+//             img.removeAttribute('data-toggle');
+//             img.removeAttribute('data-target');
+//         });
+//     } else {
+//         modalImagesHandler(parent.querySelectorAll('.carousel-item > div'), null, config, null);
+//     }
+// };
 
 const carouselControlHandler = (event, parentScreen = document, config) => {
 
     setTimeout(() => {
 
-        const activeNode = parentScreen.querySelector(`${event.target.dataset.slider} .carousel-item.active > div`);
+        const activeNode = parentScreen.querySelector(`${event.target.dataset.slider} .carousel-item.active > img`);
         const image = activeNode.dataset;   
         
         handleRightsAttribution(image);
     
-        const originalImageLink = parentScreen.querySelector('.js-carousel-inner');
-              originalImageLink.addEventListener('click', onEnlargeImageHandler(config, parentScreen));
+        // const originalImageLink = parentScreen.querySelector('.js-carousel-inner');
+        //       originalImageLink.addEventListener('click', onEnlargeImageHandler(config, parentScreen));
 
     }, 750);
 };
 
 export const imageSlider = sliderArgs => {
 
-    const { config, images, parent, disableModal, image, parentScreen = document, identifier = '' } = sliderArgs;
+    const { config, images, parent, image, parentScreen = document, identifier = '' } = sliderArgs;
 
     const slider = document.createElement('template');
           slider.innerHTML = imageSliderTemplate;
@@ -71,20 +71,20 @@ export const imageSlider = sliderArgs => {
         img.provider = img.provider || 'eol';
     });
 
-    renderTemplate({ images, identifier, disableModal }, slider.content, parent);
+    renderTemplate({ images, identifier }, slider.content, parent);
     selectActiveImage(image || images[0], parent, config);    
-    disableModalPopups(disableModal, parent, config);
+    // disableModalPopups(parent, config);
 
-    parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
-    parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
+    parentScreen.querySelector(`#imageSlider_${identifier} .carousel-control-prev`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
+    parentScreen.querySelector(`#imageSlider_${identifier} .carousel-control-next`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
 
     let next, prev;
 
     if(config.isPortraitMode) {
-        next = document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next-icon`);
+        next = document.querySelector(`#imageSlider_${identifier} .carousel-control-next-icon`);
         next.classList.add('concealed');
 
-        prev = document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev-icon`);
+        prev = document.querySelector(`#imageSlider_${identifier} .carousel-control-prev-icon`);
         prev.classList.add('concealed');
     }
     
@@ -98,12 +98,12 @@ export const imageSlider = sliderArgs => {
         prev.click();
     });
 
-    const imageLink = `#imageSlider_${ disableModal }_${identifier} .js-expand`;
-    const originalImageLink = parentScreen.querySelector(imageLink);
-          originalImageLink.addEventListener('click', onEnlargeImageHandler(config, parentScreen));
+    // const imageLink = `#imageSlider_${identifier} .js-expand`;
+    // const originalImageLink = parentScreen.querySelector(imageLink);
+    //       originalImageLink.addEventListener('click', onEnlargeImageHandler(config, parentScreen));
 };
 
-export const imageSideBySlider = (slides, parent, disableModal = false, config) => {
+export const imageSideBySlider = (slides, parent, config) => {
 
     const sideBySlider = document.createElement('template');
           sideBySlider.innerHTML = imageSliderTemplate;
@@ -123,23 +123,24 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
         const item = { name: slide.images[0].itemName, itemCommon: slide.images[0].itemCommon, images: slide.images };
         const images = prepImagesForCarousel(item, config, imageUseCases.CAROUSEL);
         
-        renderTemplate({ images, identifier, disableModal }, sideBySlider.content, parent);
+        renderTemplate({ images, identifier }, sideBySlider.content, parent);
         
-        const activeNode = document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-item`);
+        const activeNode = document.querySelector(`#imageSlider_${identifier} .carousel-item`);
               activeNode.classList.add('active');
-        disableModalPopups(disableModal, config);
-        handleRightsAttribution(images[0], disableModal);
+        // disableModalPopups(config);
+        handleRightsAttribution(images[0]);
 
-        const originalImageLink = document.querySelector(`#imageSlider_${disableModal}_${identifier} .js-expand`);
+        const originalImageLink = document.querySelector(`#imageSlider_${identifier} .js-expand`);
         if(originalImageLink) originalImageLink.classList.add('hide-important');
     });
 };
 
-function onEnlargeImageHandler(config, parentScreen) {
-    if(config.isPortraitMode) return;
-    return () => {
-        const image = parentScreen.querySelector('.carousel-item.active > img');
-        const large = scaleImage( { url:image.src }, imageUseCases.ACTUAL_SIZE, config).large;
-        image.src = large;
-    };
-}
+// function onEnlargeImageHandler(config, parentScreen) {
+//     if(config.isPortraitMode) return;
+//     return () => {
+//         const image = parentScreen.querySelector('.carousel-item.active > img');
+//         const large = scaleImage({ url:image.src }).large;
+//         image.src = large;
+//         image.style.width = '600px';
+//     };
+// }
