@@ -257,7 +257,7 @@ a.dropdown-item {
   border-radius: 0.25rem;
 }
 
-.nav-icons .active-icon {
+.nav-icons .active-icon, .active-icon {
   color: white;
 }
 
@@ -1280,7 +1280,7 @@ label.btn.btn-secondary .lesson-icon {
   background-position: center;  
 }
 
-#imageSlider_true_card-card .carousel-item > div, #imageSlider_false_card-card .carousel-item > div {
+#imageSlider_card-card .carousel-item > div, #imageSlider_card-card .carousel-item > div {
   pointer-events: none;
 }
 

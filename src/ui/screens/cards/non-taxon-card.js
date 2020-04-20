@@ -67,7 +67,7 @@ export const renderNonTaxonCard = (mode = 'STAND_ALONE', keyTrait, parent = DOM.
         if(nonTaxon.type) {
             document.querySelector('.js-species-header img').src = `https://content.eol.org/data/media/${nonTaxon.url}`;
         } else {
-            config.isPortraitMode ? imageSlider({ config, images, portraitImagesNode, disableModal: true }) : onChange(images);
+            config.isPortraitMode ? imageSlider({ config, images, portraitImagesNode }) : onChange(images);
         }
 
         const wikiNode = document.querySelector('.js-non-taxon-card-wiki');

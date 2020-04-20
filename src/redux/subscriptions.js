@@ -78,11 +78,19 @@ const checkRequired = (store, layout) => {
 
     let isRequired = true;
 
-    const { userAction } = store.getState();
+    const { userAction, config } = store.getState();
 
-    const isNotReviewingLesson = 
-        userAction && 
-        (userAction.name === enums.userEvent.START_LESSON.name || userAction.name === enums.userEvent.TOGGLE_SPECIES_LIST.name);
+
+    let isNotReviewingLesson = true;
+    
+    if(userAction) {
+       if(config.isLandscapeMode) {
+        isNotReviewingLesson = isNotReviewingLesson && (userAction.name === enums.userEvent.START_LESSON.name || userAction.name === enums.userEvent.TOGGLE_SPECIES_LIST.name);
+       } else {
+        isNotReviewingLesson = isNotReviewingLesson && (userAction.name === enums.userEvent.START_LESSON.name);
+       }
+    } 
+        
 
     const reviewLayouts = [
         'screen-species-card',

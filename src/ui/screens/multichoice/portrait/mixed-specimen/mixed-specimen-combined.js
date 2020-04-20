@@ -49,7 +49,7 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
 
         parent = document.querySelector('.js-test-card-container-images');
 
-        imageSlider({ config, images: utils.shuffleArray(images), parent, disableModal: true, identifier: 'mixed-specimens' });
+        imageSlider({ config, images: utils.shuffleArray(images), parent, identifier: 'mixed-specimens' });
 
         const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
         const boundScore = {};
@@ -60,7 +60,7 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
             answers.push({ value: image.itemName, url: scaleImage({ url:image.url }).small });
         });
 
-        document.querySelectorAll('#imageSlider_true_mixed-specimens .carousel-item img').forEach(img => {
+        document.querySelectorAll('#imageSlider_mixed-specimens .carousel-item img').forEach(img => {
             
             img.addEventListener('click', event => {
 
