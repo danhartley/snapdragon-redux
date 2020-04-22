@@ -20,12 +20,17 @@ export const renderHome = (counter, forceIntroDisplay = false) => {
 
     const ignoreRender = userAction ? (userAction.name === enums.userEvent.START_LESSON.name || userAction.name === enums.userEvent.TOGGLE_SPECIES_LIST.name) : false;
 
-    if((config.isLandscapeMode || !isFirstTimeVisitor) && !forceIntroDisplay && !ignoreRender) {
+    // if((config.isLandscapeMode || !isFirstTimeVisitor) && !forceIntroDisplay && !ignoreRender) {
+    if(config.isLandscapeMode || isFirstTimeVisitor || forceIntroDisplay) {
         renderLessons();
     }
 
     if(config.isLandscapeMode || isFirstTimeVisitor || forceIntroDisplay) {
         renderSnapdragonIntro();
+    }
+
+    if(config.isPortraitMode && !isFirstTimeVisitor) {
+        renderLessons();
     }
 
     // let { config } = store.getState();
