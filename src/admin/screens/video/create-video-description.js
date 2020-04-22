@@ -38,7 +38,7 @@ export const createVideoDescription = (collection, species) => {
         const btnCreateDescription = document.querySelector('.btnCreateDescription');
               btnCreateDescription.addEventListener('click', async e => {
                   species.description = inputDescription.value;
-                  species.time = inputTime.value.trim().split(',');
+                  species.time = inputTime.value.trim().split(',').map(t => parseInt(t));
                   collection.species = [ ...collection.species.filter(s => s.name !== species.name ), species ] ; 
                   const response = await firestore.updateCollection(collection);
                   console.log('Outcome of add or update requst: ', response.success);
