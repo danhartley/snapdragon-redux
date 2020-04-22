@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderCard } from 'ui/screens/cards/card';
@@ -152,6 +153,9 @@ export const renderSpeciesList = (lesson, args) => {
             });
         });
     };    
+
+    collection.species.forEach(sp => sp.firstTime = sp.time[0]);
+    collection.species = utils.sortBy(collection.species, 'firstTime', 'asc');
 
     buildTable(collection, { config, enums: traitEnums, overrideParent: callingParentContainer });
     userClickHandlers();
