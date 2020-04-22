@@ -1,6 +1,5 @@
 import * as R from 'ramda';
 
-import { subscription } from 'redux/subscriptions';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';

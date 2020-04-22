@@ -1,3 +1,5 @@
+// https://github.com/jcgregorio/stamp/wiki
+
 var Stamp = Stamp || {};
 
 (function(ns) {

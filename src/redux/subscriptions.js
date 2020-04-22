@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 
-import { enums } from 'ui/helpers/enum-helper';
+import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { store } from 'redux/store';
 import { observeStore } from 'redux/observe-store';
 import { funcByName } from 'ui/helpers/function-lookups';
@@ -80,7 +80,7 @@ const checkRequired = (state, layout) => {
 
     let isRequired = true, isReviewingLesson = true;
 
-    isReviewingLesson = getIsReviewingLesson(userAction, config, isReviewingLesson); 
+    isReviewingLesson = lessonStateHandler.getIsReviewingLesson(userAction, config, isReviewingLesson); 
         
     const reviewLayouts = [
         'screen-species-card',
@@ -131,23 +131,7 @@ const addSubs = (layout, config) => {
     // layout.screens.forEach(s => console.log(`%c${ 'Subs active: ' + s.name}`, "color:blue"));
 };
 
-const getIsReviewingLesson = (userAction, config) => {
 
-    let isNotReviewingLesson = true;
-
-    if (userAction) {
-        if (config.isLandscapeMode) {
-            isNotReviewingLesson = isNotReviewingLesson && (userAction.name === enums.userEvent.START_LESSON.name || userAction.name === enums.userEvent.TOGGLE_SPECIES_LIST.name);
-        }
-        else {
-            isNotReviewingLesson = isNotReviewingLesson && (userAction.name === enums.userEvent.START_LESSON.name);
-        }
-    }
-
-    console.log('isReviewingLesson: ', !isNotReviewingLesson);
-
-    return !isNotReviewingLesson;
-}
 
 export const subscription = {
     add,
@@ -157,7 +141,6 @@ export const subscription = {
     getByRole,
     getAll,
     removeSubs,
-    addSubs,
-    getIsReviewingLesson
+    addSubs
 };
 

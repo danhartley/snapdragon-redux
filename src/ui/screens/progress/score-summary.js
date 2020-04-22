@@ -11,8 +11,8 @@ import summaryNoRowTemplate from 'ui/screens/progress/score-summary-no-row-templ
 
 export const renderScoreSummary = async collectionId => {
 
-      const { lessons, score } = store.getState();
-      
+      const { lessons, score, userAction } = store.getState();
+
       const { collection, history, config, score: savedScore } = lessons.length > 0
                   ? !!lessons.find(l => l.collection.id === parseInt(collectionId))
                         ? lessons.find(l => l.collection.id === parseInt(collectionId))
@@ -20,6 +20,8 @@ export const renderScoreSummary = async collectionId => {
                   : store.getState();
 
       const { lesson } = store.getState();
+
+      if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
 
       const template = document.createElement('template');
             template.innerHTML = summaryTemplate;

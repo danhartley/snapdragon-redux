@@ -24,7 +24,10 @@ export const speciesEditor = (container, selectedSpeciesDisplay, selectedSpecies
     renderTemplate({addedSpecies}, template.content, selectedSpeciesDisplay);
 
     const input = container.querySelector("#input-species");
-          input.focus();
+          
+    setTimeout(() => {
+        input.focus();
+    }, 500);
 
     const addSpeciesToList = species => {
         

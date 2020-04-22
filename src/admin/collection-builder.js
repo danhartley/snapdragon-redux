@@ -20,6 +20,9 @@ import { addTaxon } from 'admin/screens/add-taxon';
 import { addId } from 'admin/screens/species/add-id';
 import { editCollection } from 'admin/screens/collection/edit-collection';
 import { editCollectionTerms } from 'admin/screens/collection/edit-collection-terms';
+import { editCollectionQuestions } from 'admin/screens/collection/edit-collection-questions';
+import { editCollectionVideo } from 'admin/screens/collection/edit-collection-video';
+
 import { createQuestion } from 'admin/screens/questions/create-question';
 import { addTerm } from 'admin/screens/add-term';
 
@@ -109,6 +112,12 @@ const editCollectionTab = document.querySelector('#edit-collection');
 const editCollectionTermsTab = document.querySelector('#edit-collection-terms');
       editCollectionTermsTab.addEventListener('click', editCollectionTerms);
 
+const editCollectionQuestionsTab = document.querySelector('#edit-collection-questions');
+      editCollectionQuestionsTab.addEventListener('click', editCollectionQuestions);
+
+const editCollectionVideoTab = document.querySelector('#edit-collection-video');
+      editCollectionVideoTab.addEventListener('click', editCollectionVideo);
+
 const createQuestionTab = document.querySelector('#create-question');
       createQuestionTab.addEventListener('click', createQuestion);
 
@@ -119,7 +128,7 @@ const setupUI = (user) => {
   if (user) {
     loggedInLinks.forEach(item => item.classList.remove('hide'));
     loggedOutLinks.forEach(item => item.classList.add('hide'));
-      addTermTab.click();
+    editCollectionVideoTab.click();
 } else {    
     loggedInLinks.forEach(item => item.classList.add('hide'));
     loggedOutLinks.forEach(item => item.classList.remove('hide'));

@@ -1,3 +1,4 @@
+import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { scoreHandler } from 'ui/helpers//score-handler';
@@ -8,7 +9,9 @@ import stripTemplate from 'ui/screens/multichoice/horizontal-strips.html';
 
 export const renderHorizontalStrips = collection => {
 
-    const { config, lesson, layout } = store.getState();
+    const { config, lesson, layout, userAction } = store.getState();
+
+    if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
 
     const item = collection.nextItem || collection.items[collection.itemIndex];
 

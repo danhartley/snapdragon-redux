@@ -3,14 +3,14 @@ import { collectionPicker } from 'admin/screens/collection/collection-picker';
 import { addListenerToAddedSpecies } from 'ui/create-guide-modal/species-editor';
 import { editCollectionHandler } from 'admin/screens/collection/edit-collection-handler';
 
-import editCollectionTemplate from 'admin/screens/collection/edit-collection-template.html';
+import editCollectionQuestionsTemplate from 'admin/screens/collection/edit-collection-questions-template.html';
 
-export const editCollection = () => {
+export const editCollectionQuestions = () => {
 
     const init = async () => {
 
         const template = document.createElement('template');
-              template.innerHTML = editCollectionTemplate;
+              template.innerHTML = editCollectionQuestionsTemplate;
     
         let parent = document.querySelector('#content-container');
             parent.innerHTML = '';
@@ -27,11 +27,11 @@ export const editCollection = () => {
 
         collectionPicker(inputCollection, async selectedCollection => {
             collection = selectedCollection;
-            editCollectionHandler.collectionPickedHandler(selectedCollection, 'SPECIES');
+            editCollectionHandler.collectionPickedHandler(selectedCollection, 'QUESTIONS');
         });
 
         const addSpeciesHandler = async speciesName => {
-            editCollectionHandler.renderAddSpeciesToCollection(collection, speciesName, 'SPECIES');
+            editCollectionHandler.renderAddSpeciesToCollection(collection, speciesName, 'QUESTIONS');
         };
 
         addListenerToAddedSpecies(addSpeciesHandler);

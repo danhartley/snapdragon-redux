@@ -252,6 +252,28 @@ const recordUserAction = action => {
   actions.boundClickEvent(action);
 };
 
+const getIsReviewingLesson = (userAction, config) => {
+
+  let isNotReviewingLesson = true;
+
+  if (userAction) {
+      if (config.isLandscapeMode) {
+          isNotReviewingLesson = isNotReviewingLesson && (userAction.name === enums.userEvent.START_LESSON.name || userAction.name === enums.userEvent.TOGGLE_SPECIES_LIST.name);
+      }
+      else {
+          isNotReviewingLesson = isNotReviewingLesson && (userAction.name === enums.userEvent.START_LESSON.name);
+      }
+  }
+
+  // console.log('isReviewingLesson: ', !isNotReviewingLesson);
+
+  return !isNotReviewingLesson;
+};
+
+const overrideLesson = (userAction, config) => {
+  return !getIsReviewingLesson(userAction, config);
+};
+
 export const lessonStateHandler = {
   beginOrResumeLesson,
   renderLessonSpeciesList,
@@ -262,5 +284,7 @@ export const lessonStateHandler = {
   addExtraSpeciesSelection,
   clearGuide,
   updateCollection,
-  recordUserAction
+  recordUserAction,
+  overrideLesson,
+  getIsReviewingLesson
 };

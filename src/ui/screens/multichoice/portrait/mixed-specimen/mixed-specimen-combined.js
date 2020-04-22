@@ -24,7 +24,7 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
 
         const getPortraitImages = images => {
             const multiImages = utils.flatten(images.map(image => { 
-                const images = image.srcs.filter(i => i.starred) || R.take(1, utils.shuffleArray(image.srcs));
+                const images = image.srcs.filter(i => i.starred).length === 0 ? R.take(1, utils.shuffleArray(image.srcs)) : image.srcs.filter(i => i.starred);
                 const item = { name: image.itemName, images };
                 return prepImagesForCarousel(item, config, imageUseCases.MIXED_SPECIMENS);
             }));
@@ -48,6 +48,10 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
         renderTemplate({}, template.content, parent);
 
         parent = document.querySelector('.js-test-card-container-images');
+
+        if(images.length === 0) {
+            console.log(collection);
+        }    
 
         imageSlider({ config, images: utils.shuffleArray(images), parent, identifier: 'mixed-specimens' });
 

@@ -5,7 +5,7 @@ import { editCollectionHandler } from 'admin/screens/collection/edit-collection-
 
 import editCollectionTemplate from 'admin/screens/collection/edit-collection-template.html';
 
-export const editCollection = () => {
+export const editCollectionVideo = () => {
 
     const init = async () => {
 
@@ -27,11 +27,11 @@ export const editCollection = () => {
 
         collectionPicker(inputCollection, async selectedCollection => {
             collection = selectedCollection;
-            editCollectionHandler.collectionPickedHandler(selectedCollection, 'SPECIES');
+            editCollectionHandler.collectionPickedHandler(selectedCollection, 'VIDEO');
         });
 
         const addSpeciesHandler = async speciesName => {
-            editCollectionHandler.renderAddSpeciesToCollection(collection, speciesName, 'SPECIES');
+            editCollectionHandler.renderAddSpeciesToCollection(collection, speciesName, 'VIDEO');
         };
 
         addListenerToAddedSpecies(addSpeciesHandler);
