@@ -20,19 +20,19 @@
 
 </div>
 
-<ul class="js-colection-items" data-repeat-species="{{ items }}">
-    <li class="custom-control custom-checkbox">
-        <input id="{{ species.name }}" type="checkbox" class="custom-control-input" data-is-active="{{ species.isActive }}">
-        <label class="custom-control-label cursor-pointer" for="{{ species.name }}">{{ species.name }}</label>
-        <i name="{{ species.name }}" class="fas fa-marker margin-left"></i>
-    </li>
-</ul>
-
 <div>
-    <li class="custom-control custom-checkbox">
+    <li class="margin-top margin-bottom custom-control custom-checkbox">
         <a href="#" class="grey-text js-add-species">
             <i class="fas fa-plus" aria-hidden="true"></i>
             <span>Species</span>
         </a>
     </li>
 </div>
+
+<ul class="js-collection-items" data-repeat-species="{{ items }}">
+    <li class="custom-control custom-checkbox">
+        <input id="{{ species.name }}" type="checkbox" class="custom-control-input" data-is-active="{{ species.isActive }}">
+        <label class="custom-control-label cursor-pointer" for="{{ species.name }}">{{ species.name }}</label>
+        <i name="{{ species.name }}" class="{{ ^.hasOptions }} fas fa-marker margin-left"></i>
+    </li>
+</ul>

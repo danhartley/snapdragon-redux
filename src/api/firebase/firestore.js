@@ -563,21 +563,29 @@ const addCollection = async (collection, user) => {
 
   const updateCollection = async collection => {
 
-    let docRef = null;
+    try {
+        collection.items = []; // we don't want to update items as we have the info we need in species; the rest we get at runtime
 
-    const querySnapshot = await db.collection("collections").where("name", "==", collection.name).get();
-    
-    querySnapshot.forEach(function(doc) {
-        docRef = doc.ref;
-    });
+        let docRef = null;
 
-    if(docRef) {
-        return await docRef.update(collection);
+        const querySnapshot = await db.collection("collections").where("name", "==", collection.name).get();
+        
+        querySnapshot.forEach(function(doc) {
+            docRef = doc.ref;
+        });
+
+        if(docRef) {
+            await docRef.update(collection);
+        }
+
+        console.log('update collection doc ref: ', docRef);
+
+        return { message: 'Success', success : true };
+
+    } catch(e) {
+        
+        return { message: 'Failure', details: e.message, success : false };
     }
-
-    console.log('update collection doc ref: ', docRef);
-
-    return docRef;
 
 };
   
