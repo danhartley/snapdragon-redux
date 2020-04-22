@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 
-import { subscription } from 'redux/subscriptions';
+import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { firestore } from 'api/firebase/firestore';
 import { scoreHandler } from 'ui/helpers//score-handler';
 import { store } from 'redux/store';
@@ -31,7 +31,7 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
 
     const { config, score, lesson, userAction } = store.getState();
 
-    if(subscription.overrideLesson(userAction, config)) { return; }
+    if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
 
     const item = R.clone(collection.nextItem);
 

@@ -1,4 +1,4 @@
-import { subscription } from 'redux/subscriptions';
+import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { scoreHandler } from 'ui/helpers//score-handler';
@@ -11,7 +11,7 @@ export const renderHorizontalStrips = collection => {
 
     const { config, lesson, layout, userAction } = store.getState();
 
-    if(subscription.overrideLesson(userAction, config)) { return; }
+    if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
 
     const item = collection.nextItem || collection.items[collection.itemIndex];
 

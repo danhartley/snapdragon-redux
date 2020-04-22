@@ -1,4 +1,3 @@
-import { subscription } from 'redux/subscriptions';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
@@ -22,7 +21,7 @@ export const renderScoreSummary = async collectionId => {
 
       const { lesson } = store.getState();
 
-      if(subscription.overrideLesson(userAction, config)) { return; }
+      if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
 
       const template = document.createElement('template');
             template.innerHTML = summaryTemplate;
