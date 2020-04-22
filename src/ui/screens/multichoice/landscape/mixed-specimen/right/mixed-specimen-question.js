@@ -18,7 +18,7 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
     const { config, layout, userAction } = store.getState();
 
-    if(!subscription.getIsReviewingLesson(userAction, config)) { return; }
+    if(subscription.overrideLesson(userAction, config)) { return; }
 
     if(config.isPortraitMode) {
         renderMixedSpecimenImagesAndQuestion(collection);

@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { subscription } from 'redux/subscriptions';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { epithets } from 'api/botanical-latin';
@@ -20,7 +21,9 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
     try {
 
-        const { config, lesson, layout } = store.getState();
+        const { config, lesson, layout, userAction } = store.getState();
+
+        if(subscription.overrideLesson(userAction, config)) { return; }
 
         const item = collection.nextItem || collection.items[collection.itemIndex];
 

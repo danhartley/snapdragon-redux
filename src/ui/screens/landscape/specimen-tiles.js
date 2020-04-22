@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { subscription } from 'redux/subscriptions';
 import { utils } from 'utils/utils'; 
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
@@ -20,7 +21,9 @@ export const renderSpecimenTiles = collection => {
 
 const renderItemSpecimenTiles = item => {
     
-    const { config, collection, layout } = store.getState();
+    const { config, collection, layout, userAction } = store.getState();
+
+    if(subscription.overrideLesson(userAction, config)) { return; }
 
     const hasTiles = layout.itemIndex === layout.prevItemIndex && !!document.querySelector('.js-tiles');
 

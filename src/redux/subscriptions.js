@@ -144,10 +144,14 @@ const getIsReviewingLesson = (userAction, config) => {
         }
     }
 
-    console.log('isReviewingLesson: ', !isNotReviewingLesson);
+    // console.log('isReviewingLesson: ', !isNotReviewingLesson);
 
     return !isNotReviewingLesson;
-}
+};
+
+const overrideLesson = (userAction, config) => {
+    return !getIsReviewingLesson(userAction, config);
+};
 
 export const subscription = {
     add,
@@ -158,6 +162,7 @@ export const subscription = {
     getAll,
     removeSubs,
     addSubs,
-    getIsReviewingLesson
+    getIsReviewingLesson,
+    overrideLesson
 };
 

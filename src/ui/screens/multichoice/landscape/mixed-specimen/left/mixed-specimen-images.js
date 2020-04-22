@@ -31,7 +31,7 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
 
     const { config, score, lesson, userAction } = store.getState();
 
-    if(!subscription.getIsReviewingLesson(userAction, config)) { return; }
+    if(subscription.overrideLesson(userAction, config)) { return; }
 
     const item = R.clone(collection.nextItem);
 
