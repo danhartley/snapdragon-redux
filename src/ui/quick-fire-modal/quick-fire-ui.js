@@ -13,7 +13,7 @@ const renderResponse = (isCorrect, term) => {
 
 const updateBranchCounts = (quickFire, branchOptions) => {
 
-    const items = quickFire.items.filter(item => R.contains(item.id, quickFire.terms));
+    const items = quickFire.terms ? quickFire.items.filter(item => R.contains(item.id, quickFire.terms)) : quickFire.items;
 
     branchOptions.forEach(branchBadge => {
     branchBadge.innerHTML = items.filter(item => item.branch === branchBadge.dataset.name).length;
@@ -22,7 +22,7 @@ const updateBranchCounts = (quickFire, branchOptions) => {
 
 const updateTaxonCounters = (quickFire, taxonCounters, includeTechnicalTerms) => {
 
-    const items = quickFire.items.filter(item => R.contains(item.id, quickFire.terms));
+    const items = quickFire.terms ? quickFire.items.filter(item => R.contains(item.id, quickFire.terms)) : quickFire.items;
 
     taxonCounters.forEach(taxonBadge => {
         taxonBadge.innerHTML = includeTechnicalTerms
