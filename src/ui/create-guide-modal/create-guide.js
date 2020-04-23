@@ -253,8 +253,3 @@ export const onCreateCustomLesson = listener => {
     onCloseModalListeners.pop();
     onCloseModalListeners.push(listener);
 };
-
-// export const callOnCreateCustomListeners = () => {
-//     onCloseModalListeners.forEach(listener => listener(collection));
-//     onCloseModalListeners.pop();
-// };

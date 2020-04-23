@@ -30,18 +30,39 @@ export const createVideoDescription = (collection, species) => {
                   inputTime.focus();
               }, 250);
 
+        let isTagMode = false;    
+
         const chkBoxTag = document.querySelector('#chk-box-tag');
               chkBoxTag.addEventListener('change', e => {
-                inputName.parentNode.children[1].innerHTML = e.target.checked ? 'Tag' : 'Name';                
+                isTagMode = e.target.checked;
+                inputName.parentNode.children[1].innerHTML = isTagMode ? 'Tag' : 'Name';
+                if(isTagMode) {
+                  inputName.value = '';
+                  inputName.focus();
+                  inputTime.value = '';
+                  inputDescription.value = '';
+                }           
               });
 
         const btnCreateDescription = document.querySelector('.btnCreateDescription');
               btnCreateDescription.addEventListener('click', async e => {
-                  species.description = inputDescription.value;
-                  species.time = inputTime.value.trim().split(',').map(t => parseInt(t));
-                  collection.species = [ ...collection.species.filter(s => s.name !== species.name ), species ] ; 
+
+                  if(isTagMode) {
+                        const note = {
+                              tag: inputName.value.trim(),
+                              time: inputTime.value,
+                              description: inputDescription.value
+                        };
+                        collection.notes = collection.notes || [];
+                        collection.notes = [ ...collection.notes.filter(n => n.tag !== note.tag), note ];
+                  } else {
+                        species.description = inputDescription.value;
+                        species.time = inputTime.value.trim().split(',').map(t => parseInt(t));
+                        collection.species = [ ...collection.species.filter(s => s.name !== species.name ), species ];
+                  }
+
                   const response = await firestore.updateCollection(collection);
-                  console.log('Outcome of add or update requst: ', response.success);
+
                   addOrUpateMessage.classList.remove('hide');
                   setTimeout(() => {
                       addOrUpateMessage.classList.add('hide');

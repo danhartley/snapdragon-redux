@@ -154,16 +154,18 @@ export const renderSpeciesList = (lesson, args) => {
         });
     };    
 
-    collection.species.forEach(sp => sp.firstTime = sp.time[0]);
-    collection.species = utils.sortBy(collection.species, 'firstTime', 'asc');
+    if(!!collection.species.time) {
+        collection.species.forEach(sp => sp.firstTime = sp.time[0]);
+        collection.species = utils.sortBy(collection.species, 'firstTime', 'asc');
+    }
 
     buildTable(collection, { config, enums: traitEnums, overrideParent: callingParentContainer });
     userClickHandlers();
 
     const btnBeginLesson = document.querySelector('.js-btn-current-lesson-begin');
-    btnBeginLesson.addEventListener('click', () => {
-      lessonStateHandler.beginOrResumeLesson(collection.id);
-    });
+          btnBeginLesson.addEventListener('click', () => {
+            lessonStateHandler.beginOrResumeLesson(collection.id);
+          });
 
     const openSpeciesDescriptionHandler = (collection, species, enableScroll = true, activateYoutubeIcon = true) => {
 
