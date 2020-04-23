@@ -292,15 +292,31 @@ const questions = state => {
     }
 };
 
-const definitions = async glossary => {
+const getTermsGlossary = (glossary, terms) => {
+
+    if(!terms || terms.length === 0) return glossary;
+
+    const definitions = [];
+
+    terms.forEach(term => {
+        const definition = glossary.find(def => def.id === term);
+        definitions.push(definition);
+    });
+
+    return definitions.filter(term => term);
+}
+
+const definitions = async terms => {
 
     const { template, modal, parent } = quickFireUI.readyTemplate(glossaryTemplate);
 
-    const quickFire = store.getState().quickFire || quickFireAPI.getQuickFire(glossary, enums.quickFireType.DEFINITION, { collection: {} });
+    const quickFire = store.getState().quickFire || quickFireAPI.getQuickFire(terms, enums.quickFireType.DEFINITION, { collection: {} });
 
     headers(enums.quickFireStep.GLOSSARY, quickFire);
 
     parent.innerHTML = '';
+
+    const glossary = getTermsGlossary(terms, quickFire.terms);
 
     renderTemplate({ glossary }, template.content, parent);
 };
