@@ -154,7 +154,7 @@ export const renderSpeciesList = (lesson, args) => {
         });
     };    
 
-    if(!!collection.species.time) {
+    if(!!collection.species && !!collection.species.time) {
         collection.species.forEach(sp => sp.firstTime = sp.time[0]);
         collection.species = utils.sortBy(collection.species, 'firstTime', 'asc');
     }

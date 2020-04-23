@@ -25,7 +25,7 @@ export const counter = (state = null, action) => {
             let i = (state.index + 1) <= action.data.layoutCount ? (state.index + 1) : state.index;
             return { index: i };
         case types.SET_ACTIVE_COLLECTION:
-            return { ...state, ...action.data.lesson.counter, isLessonPaused: false };
+            return { ...state, ...action.data.lesson.counter, isLessonPaused: !!action.data.lesson.counter.isCustomLessonPausedOverride };
         default:
             return state;
     }

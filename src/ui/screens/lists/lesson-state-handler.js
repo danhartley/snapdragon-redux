@@ -72,9 +72,11 @@ const saveCurrentLesson = async collection => {
   return savedLesson;
 };
 
-const loadLesson = async (collectionToLoad, config, collections) => {
+const loadLesson = async (collectionToLoad, config, collections, newLessonCounter) => {
 
-  const { counter, lessons, lesson: savedLesson } = store.getState();
+  const { counter: stateCounter, lessons, lesson: savedLesson } = store.getState();
+
+  const counter = newLessonCounter || stateCounter;
 
   let restoredLesson = lessons.find(l => l.name === collectionToLoad.name);
 
@@ -99,6 +101,10 @@ const loadLesson = async (collectionToLoad, config, collections) => {
   const collection = await collectionHandler.loadCollection(lesson.collection, config, lesson.counter, collections);
 
   console.log('loadLesson: setActiveCollection');
+
+  if(newLessonCounter) {
+    lesson.counter.isCustomLessonPausedOverride = true;
+  }
 
   setActiveCollection(lesson);
 
@@ -209,7 +215,7 @@ const addExtraSpeciesSelection = async (config, collection) => {
   const extraSpecies = config.guide.species.filter(s => !R.contains(s.name, collection.items.map(i => i.name)));
   console.log('extraSpecies: ', extraSpecies);
 
-  // if(extraSpecies.length === 0) return;
+  if(extraSpecies.length === 0) return;
 
   const items = await collectionHandler.getSnapdragonSpeciesData(extraSpecies);
 
