@@ -167,7 +167,7 @@
         height: calc(var(--vhStandardBlock, 30vh) * 2);
     }
 
-    .autocomplete {
+    .autocomplete-options-container.autocomplete {
         height: 15rem !important;
     }
 

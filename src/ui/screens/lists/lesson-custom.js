@@ -16,9 +16,9 @@ export const renderCustomLesson = (lessons, savedLessons, videoPlayer, score, co
               lesson.hideVideoClass = 'hide-important';
               lesson.hideTextIntroClass = '';
         
-      //   lessons.push(lesson);
+        lessons.push(lesson);
         
-      //   renderTemplate({ lesson }, template.content, parent);
+        renderTemplate({ lesson }, template.content, parent);
         
         const title = document.querySelector(`div.js-lesson-title[data-lesson-id="${lesson.id}"]`);
         lessonListEventHandler.onLessonTitleClickHandler(title, lessons);

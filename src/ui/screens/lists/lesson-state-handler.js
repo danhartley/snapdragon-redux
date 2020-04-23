@@ -215,7 +215,7 @@ const addExtraSpeciesSelection = async (config, collection) => {
   const extraSpecies = config.guide.species.filter(s => !R.contains(s.name, collection.items.map(i => i.name)));
   console.log('extraSpecies: ', extraSpecies);
 
-  if(extraSpecies.length === 0) return;
+  // if(extraSpecies.length === 0) return;
 
   const items = await collectionHandler.getSnapdragonSpeciesData(extraSpecies);
 
