@@ -159,6 +159,12 @@ export const renderSpeciesList = (lesson, args) => {
         collection.species = utils.sortBy(collection.species, 'firstTime', 'asc');
     }
 
+
+    if(!!collection.notes && !!collection.notes.time) {
+        collection.notes.forEach(n => sp.firstTime = n.time[0]);
+        collection.notes = utils.sortBy(collection.notes, 'firstTime', 'asc');
+    }
+
     buildTable(collection, { config, enums: traitEnums, overrideParent: callingParentContainer });
     userClickHandlers();
 
