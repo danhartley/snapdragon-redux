@@ -63,8 +63,6 @@ const addSpeciesClickHandler = (link, collection, optionsParent, origin) => {
 
 const collectionPickedHandler = async (collection, origin) => {
 
-    // collection = selectedCollection;
-          
     const template = document.createElement('template');
           template.innerHTML = speciesCollectionTemplate;
 

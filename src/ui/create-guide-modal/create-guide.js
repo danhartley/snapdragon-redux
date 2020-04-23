@@ -1,5 +1,3 @@
-import 'ui/create-guide-modal/create-guide.css';
-
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -253,8 +251,3 @@ export const onCreateCustomLesson = listener => {
     onCloseModalListeners.pop();
     onCloseModalListeners.push(listener);
 };
-
-// export const callOnCreateCustomListeners = () => {
-//     onCloseModalListeners.forEach(listener => listener(collection));
-//     onCloseModalListeners.pop();
-// };

@@ -97,7 +97,6 @@ export const collection = (state = { id: 0 }, action) => {
 
         case types.SET_ACTIVE_COLLECTION: {
             return { 
-                // ...state, ...action.data.lesson.collection, 
                 ...action.data.lesson.collection, 
                 nextItem: action.data.lesson.collection.items[action.data.lesson.collection.itemIndex] };
         }

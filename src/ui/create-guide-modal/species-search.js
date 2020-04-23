@@ -105,9 +105,12 @@ export const speciesSearch = createGuide => {
 
     const initLesson = async collectionToLoad => {
         
-        // config.collection.id = collectionToLoad.id;
-
-        const lesson = await lessonStateHandler.loadLesson(collectionToLoad, config, collections);
+        const counter = { 
+            index: 0,
+            isLessonPaused: true
+        }
+        
+        const lesson = await lessonStateHandler.loadLesson(collectionToLoad, config, collections, counter);
         
         const collection = lesson.collection;
               collection.iconicTaxa = collection.iconicTaxa.filter(taxon => R.contains(taxon.id, config.guide.iconicTaxa));

@@ -285,6 +285,10 @@
       right: .5rem;
   }
 
+  .autocomplete-options-container.autocomplete {
+    height: 10rem !important;
+  }
+
   .inat-autocomplete-options-container {
     top: calc(
       var(--vhRunningBlock, 7.5vh) + 
@@ -313,8 +317,14 @@
     color: var(--snap-dd-non-taxa-bg-hover);
     background-color: var(--snap-text-medium-dark);
   }
-  
-  .autocomplete-options-container > div:hover:not(.group), .autocomplete-options-container > div.selected {
+
+  .autocomplete-options-container > div:hover:not(.group) {
+    color: var(--snap-dd-non-taxa-bg-hover);
+    background-color: var(--snap-text-medium-dark-hover);
+    cursor: pointer;    
+  }
+
+.autocomplete-options-container > div.selected {
     color: var(--snap-dd-non-taxa-bg-hover);
     background-color: var(--snap-text-medium-dark);
     cursor: pointer;

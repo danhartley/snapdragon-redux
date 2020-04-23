@@ -9,6 +9,7 @@ import 'ui/css/groups/test-card.css';
 import 'ui/css/groups/species-card.css';
 import 'ui/css/groups/modal.css';
 import 'ui/css/groups/species-list.css';
+import 'ui/create-guide-modal/create-guide.css';
 import 'ui/css/snapdragon-media.css';
 import 'ui/css/common.css';
 

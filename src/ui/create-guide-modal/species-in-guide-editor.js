@@ -96,9 +96,7 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
             },
             onSelect: async function(item) {
                 input.value = item.label;
-
                 const species = await firestore.getSpeciesByName(item.label);
-
                 addSpeciesToList(species);
             },
             minLength: 3,
@@ -107,11 +105,12 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
         });
 
         input.addEventListener('change', event => {
-            setTimeout(() => {
+            setTimeout(async() => {
                 const highlightedText = document.querySelector('.selected');
                 if(highlightedText) {
                     input.value = highlightedText.innerText;
-                    addSpeciesToList(input.value);
+                    const species = await firestore.getSpeciesByName(input.value);
+                    addSpeciesToList(species);
                 }
             }, 100);
         });
