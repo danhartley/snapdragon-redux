@@ -47,7 +47,8 @@ const filters = async linkFromLesson => {
         quickFireFilters(quickFire.linkFromLesson);
     };
 
-    let quickFire = store.getState().quickFire || quickFireAPI.getQuickFire(items, filter, type);
+    let state = store.getState().quickFire || quickFireAPI.getQuickFire(items, filter, type);
+    let quickFire = R.clone(state);
         quickFire = quickFire.isComplete ? resetQuickFire() : quickFire;
         quickFire.linkFromLesson = linkFromLesson || false;
         quickFire.onClickFiltersLinkListeners = [];
@@ -117,9 +118,10 @@ const filters = async linkFromLesson => {
 
     const createQuickFireBtn = document.querySelector('.js-create-quick-fire');
           createQuickFireBtn.innerHTML = quickFire.termScore.total === 0 ? 'Start quick-fire review' : 'Continue your quick-fire review';
-          createQuickFireBtn.addEventListener('click', e => {      
+          createQuickFireBtn.addEventListener('click', e => {
             questions(quickFire);
-          }, { once: true });
+          });
+        //   }, { once: true });
 
     const quickFireOptions = document.querySelectorAll('.js-quick-fire-filter-options .btn');
     
@@ -164,7 +166,7 @@ const filters = async linkFromLesson => {
           technical.addEventListener('change', async e => {
             includeTechnicalTerms = e.target.checked;
             quickFire.filter.includeTechnicalTerms = includeTechnicalTerms;
-            quickFire.items = await quickFireAPI.getItems(quickFire.filter.iconicTaxa, includeTechnicalTerms);
+            quickFire.items = quickFire.items || await quickFireAPI.getItems(quickFire.filter.iconicTaxa, includeTechnicalTerms);
             quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters, taxonCounters, getIncludeTechnicalTerms());
           });
 
@@ -330,7 +332,9 @@ const init = async () => {
             taxa.push(taxon);
         });
 
-    const items = await quickFireAPI.getItems(taxa);
+    const { quickFire } = store.getState();
+
+    const items = quickFire.items || await quickFireAPI.getItems(taxa);
         
     const args = {
         items,
