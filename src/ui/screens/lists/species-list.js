@@ -154,11 +154,14 @@ export const renderSpeciesList = (lesson, args) => {
         });
     };    
 
-    if(!!collection.species && !!collection.species.time) {
-        collection.species.forEach(sp => sp.firstTime = sp.time[0]);
-        collection.species = utils.sortBy(collection.species, 'firstTime', 'asc');
+    if(!!collection.items) {
+        collection.items.forEach(sp => {
+            if(sp.time) {
+                sp.firstTime = sp.time[0];
+            }
+        });
+        collection.items = utils.sortBy(collection.items, 'firstTime', 'asc');
     }
-
 
     if(!!collection.notes && !!collection.notes.time) {
         collection.notes.forEach(n => sp.firstTime = n.time[0]);
