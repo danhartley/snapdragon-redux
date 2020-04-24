@@ -2,7 +2,6 @@ import * as R from 'ramda';
 
 import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';
-import { renderScoreHTMLResponse } from 'ui/helpers/score-handler';
 
 const renderResponse = (isCorrect, term) => {
     return isCorrect
@@ -154,8 +153,6 @@ const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
     const loadFilters = e => {
         quickFireActions.quickFireFilters(quickFire.linkFromLesson);
     };
-    
-    // console.log('screen: ', screen);
 
     const handleGlossaryLink = () => {
 
