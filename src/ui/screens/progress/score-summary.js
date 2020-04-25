@@ -69,15 +69,17 @@ const renderScoreSummaryRow = (scores, score, config) => {
             renderTemplate({ }, template.content, parent);
             return;
       }
-
-      if(scores.length === 1) {
-            parent.innerHTML = '';
-      }
-
       let rows = [ ...score.passes, ...score.fails ];
           rows = scoreSummaryHandler.getSummaryRows(rows);          
 
       const vernacularName = score.vernacularName || itemProperties.getVernacularName(score.binomial, config);
 
       renderTemplate({ vernacularName, binomial: score.binomial, rows }, template.content, parent);
+
+      if(scores.length > 0) {
+            const noQuestionsText = parent.querySelector('.js-no-questions');                  
+            if(noQuestionsText) {
+                  noQuestionsText.innerHTML = '';
+            }
+      }
 };
