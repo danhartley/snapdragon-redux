@@ -49,7 +49,9 @@ const renderLessonSpeciesList = async (collectionToLoad, container) => {
 
   const { collection } = await loadLesson(collectionToLoad, config, collections);
 
-  renderSpeciesList(collection, { callingParentContainer: container });
+  setTimeout(() => {
+    renderSpeciesList(collection, { callingParentContainer: container });
+  });
 };
 
 const saveCurrentLesson = async collection => {
