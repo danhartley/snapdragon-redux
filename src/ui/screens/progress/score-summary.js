@@ -32,8 +32,7 @@ export const renderScoreSummary = async collectionId => {
       renderTemplate({ collection }, template.content, parent);
 
       let scores = scoreSummaryHandler.getLessonScores(history, lesson, score, savedScore).reverse();
-
-      scores.forEach(s => renderScoreSummaryRow(s, config));
+          scores.forEach(s => renderScoreSummaryRow(scores, s, config));
 
       const handleContinueLesson = async event => {            
             lessonStateHandler.beginOrResumeLesson(collectionId, store.getState().lesson.isNextRound);
@@ -57,22 +56,26 @@ export const renderScoreSummary = async collectionId => {
       }
 }
 
-const renderScoreSummaryRow = (score, config) => {
+const renderScoreSummaryRow = (scores, score, config) => {
     
       const template = document.createElement('template');
             template.innerHTML = summaryRowTemplate;
 
       const parent = document.querySelector('.js-score-summary-rows');
-            // parent.innerHTML = '';
-
+            
       if(score.total === 0) {
+            parent.innerHTML = '';
             template.innerHTML = summaryNoRowTemplate;            
             renderTemplate({ }, template.content, parent);
             return;
       }
 
+      if(scores.length === 1) {
+            parent.innerHTML = '';
+      }
+
       let rows = [ ...score.passes, ...score.fails ];
-          rows = scoreSummaryHandler.getSummaryRows(rows);
+          rows = scoreSummaryHandler.getSummaryRows(rows);          
 
       const vernacularName = score.vernacularName || itemProperties.getVernacularName(score.binomial, config);
 

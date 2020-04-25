@@ -26,6 +26,8 @@ export const textSetup = (collection, config) => {
 
     let speciesSummary = getSpeciesSummary(iconicTaxa, speciesCount);
 
+    let lessonIntro = collection.intro || '';
+
     const summary = {
         speciesCount,
         iconicTaxa,
@@ -33,7 +35,8 @@ export const textSetup = (collection, config) => {
         language,
         observableMonths,
         season,
-        speciesSummary
+        speciesSummary,
+        lessonIntro
     };
 
     DOM.rightBody.innerHTML = '';
