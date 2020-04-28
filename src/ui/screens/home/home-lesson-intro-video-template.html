@@ -12,19 +12,23 @@
         </iframe>   
     </div>
     <div class="scrollable">
-        <div class="one-and-half-standard-block centred-block padding-left">
-            <div class="margin-right">
-                <img width="48px" height="48px" src="{{ video.src }}" alt="">
+        <div class="one-and-half-standard-block centred-block justify-space-between padding-left">
+            <div class="centred-block">
+                <div class="margin-right">
+                    <img width="48px" height="48px" src="{{ video.src }}" alt="">
+                </div>
+                <div class="vertical-centred-block">
+                    <div><span class="hide margin-right" >Created by:</span><span class="emphasis">{{ video.presenter }}</span></div>
+                    <!-- <div>
+                        <span class="hide margin-right">{{ video.webLabel }}:</span>
+                        <a class="underline-external-link" href="{{ video.webUrl }}" target="_blank">Channel</a>
+                        <span class="names-badge"> <i class="fas fa-external-link-alt"></i></span>
+                    </div> -->
+                    <div><span class="hide margin-right" >Location:</span><span class="font-size-small">{{ video.location }}</span></div>
+                </div>
             </div>
-            <div class="vertical-centred-block">
-                <div><span class="hide margin-right" >Created by:</span><span class="emphasis">{{ video.presenter }}</span></div>
-                <!-- <div>
-                    <span class="hide margin-right">{{ video.webLabel }}:</span>
-                    <a class="underline-external-link" href="{{ video.webUrl }}" target="_blank">Channel</a>
-                    <span class="names-badge"> <i class="fas fa-external-link-alt"></i></span>
-                </div> -->
-                <div><span class="hide margin-right" >Location:</span><span class="font-size-small">{{ video.location }}</span></div>
-            </div>
+            <!-- <div class="centred-block justify-end padding-right js-lesson-links">
+            </div> -->
         </div>        
     </div>
 </div>

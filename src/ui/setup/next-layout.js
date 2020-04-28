@@ -8,7 +8,9 @@ export const nextLayout = counter => {
 
     const args = { layout, counter, lessonPlan, config, lesson, collection };
 
-    if(setupHandler.isRequired(enums.nextStep.NEXT_LAYOUT, args)) {
+    const isRequired = setupHandler.isRequired(enums.nextStep.NEXT_LAYOUT, args);
+
+    if(isRequired) {
         const nextLayout = lessonPlan.layouts[counter.index];
         setupHandler.actionUpdate(enums.nextStep.NEXT_LAYOUT, { layout: nextLayout, config });
     }

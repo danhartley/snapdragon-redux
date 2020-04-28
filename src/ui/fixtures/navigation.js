@@ -6,7 +6,6 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { subscription } from 'redux/subscriptions';
 import { enums } from 'ui/helpers/enum-helper';
 import { renderLessons } from 'ui/screens/lists/lesson-list';
-import { renderScoreSummary } from 'ui/screens/progress/score-summary';
 import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { settingsHandler } from 'ui/fixtures/settings';
 import { renderLogin } from 'ui/fixtures/login';
@@ -59,9 +58,6 @@ export const renderNavigation = collection => {
                         const isIconActive = R.contains('active-icon', clickedIcon.classList);
                         if(!isIconActive) {
                             clickedIcon.classList.add('active-icon');
-                            lesson = await lessonStateHandler.changeLessonState(enums.lessonState.PAUSE_LESSON, collection, config);
-                            subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
-                            renderLessons();
                         }
                         break;
                     case enums.navigation.SETTINGS:
@@ -74,7 +70,7 @@ export const renderNavigation = collection => {
                         if(activeInfoIcon) activeInfoIcon.classList.remove('active-icon');
                         clickedIcon.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
-                        lesson = await lessonStateHandler.changeLessonState(enums.lessonState.PAUSE_LESSON, collection, config);
+                        lesson = await lessonStateHandler.changeRequest({ requestType: enums.lessonState.PAUSE_LESSON });
                         renderLessons();
                         DOM.rightHeaderTxt.innerHTML = 'Learn the planet';
                         DOM.rightHeaderScoreTxt.innerHTML = '';

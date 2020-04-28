@@ -1,4 +1,3 @@
-import { enums } from 'ui/helpers/enum-helper';
 import { subscription } from 'redux/subscriptions';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
@@ -16,11 +15,8 @@ export const renderHome = (counter, forceIntroDisplay = false) => {
 
     if(counter.index > 0 && !counter.isLessonPaused) return;
 
-    let { config, userAction } = store.getState();
+    let { config } = store.getState();
 
-    const ignoreRender = userAction ? (userAction.name === enums.userEvent.START_LESSON.name || userAction.name === enums.userEvent.TOGGLE_SPECIES_LIST.name) : false;
-
-    // if((config.isLandscapeMode || !isFirstTimeVisitor) && !forceIntroDisplay && !ignoreRender) {
     if(config.isLandscapeMode || isFirstTimeVisitor || forceIntroDisplay) {
         renderLessons();
     }
@@ -32,18 +28,6 @@ export const renderHome = (counter, forceIntroDisplay = false) => {
     if(config.isPortraitMode && !isFirstTimeVisitor) {
         renderLessons();
     }
-
-    // let { config } = store.getState();
-
-    // if(counter.index === 0 || counter.isLessonPaused) {
-    //     if(config.isLandscapeMode || !isFirstTimeVisitor && !forceIntroDisplay) {
-    //         renderLessons();
-    //     }
-    
-    //     if(config.isLandscapeMode || isFirstTimeVisitor || forceIntroDisplay) {
-    //         renderSnapdragonIntro();
-    //     }
-    // }
 };
 
 const renderSnapdragonIntro = () => {

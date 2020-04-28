@@ -23,7 +23,7 @@ const functions = [
     { name: 'mixed-specimen-questions', func: renderMixedSpecimenImagesAndQuestion },
     { name: 'non-taxon-specimen-tiles', func: renderNonTaxonCardSpecimenTiles },
     { name: 'text-entry', func: renderTextEntry },
-    { name: 'specimen-images', func: renderSpecimenTiles },
+    // { name: 'specimen-images', func: renderSpecimenTiles },
     { name: 'species-card', func: renderCard },
     { name: 'species-scientifics', func: renderMultiStrips },
     { name: 'species-vernaculars', func: renderMultiStrips },
@@ -45,12 +45,13 @@ const functions = [
     { name: 'symbiotic-property', func: renderMultiStrips },
         
     { name: 'mixed-specimen-question', func: renderMixedSpecimenQuestion },
-    { name: 'mixed-specimen-images', func: renderMixedSpecimenImages },
+    { name: 'mixed-specimen-images', func: renderMixedSpecimenQuestion },
+    // { name: 'mixed-specimen-images', func: renderMixedSpecimenImages },
     
     { name: 'birdsong', func: renderBonusTest },
     { name: 'media-players', func: renderMediaPlayers },    
 
-    { name: 'mixed-trait-images', func: renderMixedTraitImages },
+    // { name: 'mixed-trait-images', func: renderMixedTraitImages },
     { name: 'mixed-trait-question', func: renderMixedTraitQuestion },
     
     { name: 'provider-horizontal-strip-questions', func: renderHorizontalStrips },

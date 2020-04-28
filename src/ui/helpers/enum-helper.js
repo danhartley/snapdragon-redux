@@ -9,7 +9,12 @@ lessonState.initEnum([
     'RESUME_LESSON',
     'NEXT_ROUND',
     'BEGIN_INTRO',
-    'REVIEW_SUMMARY'
+    'REVIEW_SUMMARY',
+    'UPDATE_COLLECTION', // required? use set active collection
+    'GET_LESSON_PROGRESS',
+    'ADD_SPECIES_TO_COLLECTION',
+    'SAVE_LESSON_PROGRESS',
+    'RENDER_SPECIES_LIST',    
 ]);
 
 class navigation extends Enum {};

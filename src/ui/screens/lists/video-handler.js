@@ -131,6 +131,10 @@ const saveVideoState = player => {
     actions.boundUpdateVideoPlayer(player);
 };
 
+const getPlayerTime = () => {
+    return Math.floor(player.getCurrentTime());
+};
+
 export const videoHandler = {
     readyPlayer,
     onSpeciesTimeMatchListeners,
@@ -146,5 +150,6 @@ export const videoHandler = {
     setVideoState,
     destroyPlayer,
     saveVideoState,
-    isVideoPlayerReady
+    isVideoPlayerReady,
+    getPlayerTime
 };

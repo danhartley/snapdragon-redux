@@ -1,11 +1,11 @@
-import { store } from 'redux/store';
 import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
 import { enums } from 'ui/helpers/enum-helper';
+import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 
 const isRequired = (step, args) => {
 
-    const { layout, counter, lessonPlan, config, lesson, collection  } = args;
+    const { layout, counter, lessonPlan, config, lesson, collection } = args;
 
     let required = false;
 
@@ -17,7 +17,8 @@ const isRequired = (step, args) => {
             if(counter.isLessonPaused) {
                 required = false;
             } else {
-                required = (lessonPlan && lessonPlan.layouts && lessonPlan.layouts[counter.index] !== null);
+                required = lessonPlan && lessonPlan.layouts;
+                required = required && lessonPlan.layouts[counter.index] !== null;
             }
             break;
         case enums.nextStep.NEXT_LESSON:
@@ -35,17 +36,17 @@ const isRequired = (step, args) => {
 const actionUpdate = (step, args) => {
 
     const { layout, config, asyncFunc } = args;
-    const { userAction } = store.getState();    
 
     switch(step) {
         case enums.nextStep.NEXT_ITEM:
-            actions.boundNextItem(layout.itemIndex);            
+            actions.boundNextItem(layout.itemIndex);
             break;
         case enums.nextStep.NEXT_LAYOUT:
-            // if(subscription.getIsReviewingLesson(userAction, config)) {
-                actions.boundNextLayout(layout);
-                subscription.addSubs(layout, config);
-            // }
+            actions.boundNextLayout(layout);
+            subscription.addSubs(layout, config);
+            lessonStateHandler.changeRequest({
+                requestType: enums.lessonState.SAVE_LESSON_PROGRESS,
+            });
             break;
         case enums.nextStep.NEXT_LESSON:
             actions.boundNextLesson(asyncFunc);

@@ -13,7 +13,11 @@ export const renderTestCardTemplate = (collection, context) => {
     const template = document.createElement('template');
           template.innerHTML = testCardTemplate;
 
-    const parent = DOM.rightBody;
+    const { config } = store.getState();
+
+    const parent = config.isLandscapeMode 
+                        ? document.querySelector('#lessonModal .js-modal-text')
+                        : DOM.rightBody ;
           parent.innerHTML = '';
 
     context.className = context.className || '';
@@ -24,7 +28,7 @@ export const renderTestCardTemplate = (collection, context) => {
 
     renderTemplate(context, template.content, parent);
 
-    toggleStatementAndQuestion(store.getState().config);
+    toggleStatementAndQuestion(config);
 
     const testCardContainer = document.querySelector('.js-test-card-container');
     const testCard = document.querySelector('.js-test-card-container');
@@ -94,7 +98,7 @@ export const renderTestCardTemplate = (collection, context) => {
 
     renderIcon(item.taxonomy, document);
 
-    const testContentParent = document.querySelector('.js-test-card-content');
+    let testContentParent = document.querySelector('.js-test-card-content');
 
     return testContentParent;
 };

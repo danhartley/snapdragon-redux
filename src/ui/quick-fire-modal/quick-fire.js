@@ -249,7 +249,7 @@ const questions = state => {
                     clearTimeout(timer);                    
                     actions.boundUpdateQuickFire(quickFire);
                     subscription.add(quickFireQuestions, 'quickFire', 'modal');
-              }, { once: true });
+              });
 
         let check = true;
 

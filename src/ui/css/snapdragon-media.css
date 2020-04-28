@@ -177,6 +177,7 @@
 
     .imageSlider .carousel-item {
         height: var(--vhSmallImageCarousel);
+        min-height: var(--vhSmallImageCarousel);
     }
 
     .score-summary-row {
@@ -309,9 +310,9 @@
         margin: 0 0.5rem 0.5rem 0;
     }
 
-    .answer-box-success, .answer-box-alert {
+    /* .answer-box-success, .answer-box-alert {
         justify-content: left;
-    }
+    } */
 
     .traits-names-txt {
         display: grid;
@@ -324,10 +325,10 @@
         font-size: 2rem;
     }
 
-    .question-container {
+    /* .question-container {
         grid-template-columns: 1fr 4fr 1fr;
         display: initial;
-    }
+    } */
 
     .question-container .mushroom-icon-header svg {
         width: 1.8rem;
@@ -335,16 +336,16 @@
         fill: var(--snap-iconic-icon-header);
     }
 
-    .test-card-container .question-header > div {
+    /* .test-card-container .question-header > div {
         flex-direction: column;
         width: initial;
-    }
+    } */
 
-    .question-container {
+    /* .question-container {
         display: grid;
         grid-template-columns: 1fr 4fr 1fr;
         background-color: var(--snap-species-header-background);
-    }
+    } */
 
     .species-header {
         text-align: right;
@@ -357,7 +358,7 @@
         letter-spacing: .05rem;
     }
 
-    .test-card-content {
+    /* .test-card-content {
         padding: 1rem;
         height: calc(
             var(--vh, 1vh) * 100
@@ -366,13 +367,13 @@
           - var(--vhStandardBlock,10vh)
           - var(--vhButtonBlock, 9vh));
         top: calc(var(--vhStandardBlock,10vh) + var(--vhStandardBlock,10vh));
-    }
+    } */
 
-    .test-card button {
+    /* .test-card button {
         width: 12rem;
         width: fit-content;
         margin: 0 0 0 .25rem;
-    }
+    } */
 
     div.text-entry {
         margin: 1rem 0;
@@ -385,9 +386,17 @@
         border: 0.05rem solid var(--snap-border-light);
     }
 
-    .test-card-container .text-question {
+    /* .test-card-container .text-question {
         left: 1.5rem;
-    }
+    } */
+
+    /* .test-card-container {
+        calc(var(--vh, 1vh) * 100
+        - var(--vhFixtures, 15vh)
+        - var(--vhStandardBlock,10vh)
+        - var(--vhStandardBlock,10vh
+        - var(--vhButtonBlock, 9vh))
+    } */
 
     .video {
         top: -2px;
@@ -428,9 +437,9 @@
         padding: 2rem;
     }
 
-    .btn {
+    /* .btn {
         width: fit-content;
-    }
+    } */
 
     .lesson-list-carousel-item > div:nth-child(2) > div {
         display: flex;
@@ -466,8 +475,8 @@
     } */
 
     .strips {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        /* display: grid;
+        grid-template-columns: 1fr 1fr; */
         cursor: pointer;
         width: initial;
         overflow-y: auto;
@@ -512,9 +521,9 @@
           border: 0;
       }
     
-      .basic-modal .modal-body.settings-modal {
+      /* .basic-modal .modal-body.settings-modal {
           padding: rem;
-      }
+      } */
 
       #badgeListModal .modal-dialog {
         width: 30vw;
@@ -601,9 +610,9 @@
         display: none !important;
     }
 
-    button {
+    /* button {
         width: auto;
-    }
+    } */
 
     .grid {
         grid-template-columns: 1fr 1fr;

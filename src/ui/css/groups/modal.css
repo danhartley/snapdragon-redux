@@ -218,6 +218,10 @@
     padding: 0;
   }
 
+  #lessonModal .modal-body {
+    padding: 0;
+  }
+
   #badgeListModal .modal-dialog {
     width: 100%;
     margin: calc(var(--vhRunningBlock) + 5px + var(--vhStandardBlock) + var(--vhSmallImageCarousel) + .5rem) auto auto auto;

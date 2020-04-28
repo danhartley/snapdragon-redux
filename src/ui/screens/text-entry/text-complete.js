@@ -15,7 +15,7 @@ export const renderCompleteText = (collection) => {
 
     const { layout, config, lessonPlan, userAction } = store.getState();
 
-    if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
+    // if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
 
     const screen = layout.screens.filter(el => el.name === 'text-complete')[0];
     

@@ -5,6 +5,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { listenToInatRequests } from 'api/inat/inat';
 import { enums } from 'ui/helpers/enum-helper';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
+import { lessonStateHelper } from 'ui/screens/lists/lesson-state-helper';
 import { speciesInGuideEditor } from 'ui/create-guide-modal/species-in-guide-editor';
 
 import spinnerTemplate from 'ui/create-guide-modal/species-search-template.html';
@@ -63,12 +64,17 @@ export const speciesSearch = createGuide => {
                             return R.contains(item.name, config.guide.species.map(sp => sp.name));
                         });
     
-                        await lessonStateHandler.addExtraSpeciesSelection(config, collection);
+                        await lessonStateHandler.changeRequest({
+                            requestType: enums.lessonState.ADD_SPECIES_TO_COLLECTION,
+                            requestArgs: {
+                                updatedConfig: config, updatedCollection: collection
+                            }
+                        });
                     }
 
                     if(parseInt(close.dataset.number) === 4) {
                         createGuide.callOnCreateCustomListeners(collection);
-                        lessonStateHandler.clearGuide();
+                        lessonStateHelper.clearGuide();
                     }
                 });
             });   
@@ -98,7 +104,8 @@ export const speciesSearch = createGuide => {
                           editableCollectionName.classList.add('hide-important');
                           config.guide.name = name;
                           collection.name =  name;
-                          lessonStateHandler.updateCollection(config, collection);
+                          lessonStateHandler.changeRequest( { requestType: enums.lessonState.UPDATE_COLLECTION, requestArgs: { newCollection: collection, updatedConfig: config } });
+                          
                       });
               });
     };
@@ -110,7 +117,13 @@ export const speciesSearch = createGuide => {
             isLessonPaused: true
         }
         
-        const lesson = await lessonStateHandler.loadLesson(collectionToLoad, config, collections, counter);
+        const lesson = await lessonStateHandler.changeRequest({
+            requestType: enums.lessonState.GET_LESSON_PROGRESS,
+            requestArgs: {
+                collectionToLoad,
+                updatedCounter: counter
+            }
+        });
         
         const collection = lesson.collection;
               collection.iconicTaxa = collection.iconicTaxa.filter(taxon => R.contains(taxon.id, config.guide.iconicTaxa));
@@ -186,7 +199,12 @@ export const speciesSearch = createGuide => {
     
                 if(addingExtraSpecies) {
                     collectionToLoad = collection;
-                    await lessonStateHandler.addExtraSpeciesSelection(config, collectionToLoad);
+                    await lessonStateHandler.changeRequest({
+                        requestType: enums.lessonState.ADD_SPECIES_TO_COLLECTION,
+                        requestArgs: {
+                            updatedConfig: config, updatedCollection: collectionToLoad
+                        }
+                    });
                 } else {
                     collectionToLoad = {
                         ...collections.find(c => c.guideType === option),

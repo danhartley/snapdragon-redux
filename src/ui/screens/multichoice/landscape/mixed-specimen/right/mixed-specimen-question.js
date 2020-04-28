@@ -18,11 +18,11 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
     const { config, layout, userAction } = store.getState();
 
-    if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
+    // if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
 
-    if(config.isPortraitMode) {
-        renderMixedSpecimenImagesAndQuestion(collection);
-    }
+    renderMixedSpecimenImagesAndQuestion(collection);
+    
+    return;
 
     const item = R.clone(collection.nextItem);
 
@@ -90,6 +90,6 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
     document.querySelector('.js-help-txt').addEventListener('click', () => {
         const noOfImagesPerItem = layout.bonus ? 6 / collection.items.length : 1;
         const preselectedItems = layout.bonus ? collection.items : null;
-        renderMixedSpecimenImages(collection, noOfImagesPerItem, preselectedItems, true);
+        // renderMixedSpecimenImages(collection, noOfImagesPerItem, preselectedItems, true);
     });    
 };

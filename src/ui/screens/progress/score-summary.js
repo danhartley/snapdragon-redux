@@ -1,80 +1,96 @@
+import { enums } from 'ui/helpers/enum-helper';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { renderTemplate } from 'ui/helpers/templating';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
+import { lessonStateHelper } from 'ui/screens/lists/lesson-state-helper';
 import { scoreSummaryHandler } from 'ui/screens/progress/score-summary-handler';
 
 import summaryTemplate from 'ui/screens/progress/score-summary-template.html';
 import summaryRowTemplate from 'ui/screens/progress/score-summary-row-template.html';
 import summaryNoRowTemplate from 'ui/screens/progress/score-summary-no-row-template.html';
 
-export const renderScoreSummary = async collectionId => {
+export const renderScoreSummary = lessonId => {
 
-      const { lessons, score, userAction } = store.getState();
+      const init = () => {
 
-      const { collection, history, config, score: savedScore } = lessons.length > 0
-                  ? !!lessons.find(l => l.collection.id === parseInt(collectionId))
-                        ? lessons.find(l => l.collection.id === parseInt(collectionId))
-                        : store.getState()
-                  : store.getState();
+            const { lessons, score: stateScore, userAction } = store.getState();
 
-      const { lesson } = store.getState();
-
-      if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
-
-      const template = document.createElement('template');
-            template.innerHTML = summaryTemplate;
-
-      const parent = DOM.rightBody;
-            parent.innerHTML = '';
+            const { collection, history, config, score: savedScore } = lessons.length > 0
+                        ? !!lessons.find(l => l.collection.id === parseInt(lessonId))
+                              ? lessons.find(l => l.collection.id === parseInt(lessonId))
+                              : store.getState()
+                        : store.getState();
       
-      renderTemplate({ collection }, template.content, parent);
-
-      let scores = scoreSummaryHandler.getLessonScores(history, lesson, score, savedScore).reverse();
-          scores.forEach(s => renderScoreSummaryRow(scores, s, config));
-
-      const handleContinueLesson = async event => {            
-            lessonStateHandler.beginOrResumeLesson(collectionId, store.getState().lesson.isNextRound);
+            const { lesson } = store.getState();
+      
+            if(lessonStateHelper.overrideLesson(userAction, config)) { return; }
+      
+            const template = document.createElement('template');
+                  template.innerHTML = summaryTemplate;
+      
+            const parent = config.isLandscapeMode 
+                        ? document.querySelector('#lessonModal .js-modal-text')
+                        : DOM.rightBody ;
+                  parent.innerHTML = '';
+            
+            renderTemplate({ collection }, template.content, parent);
+      
+            let scores = scoreSummaryHandler.getLessonScores(history, lesson, stateScore, savedScore).reverse();
+                scores.forEach(s => renderScoreSummaryRow(scores, s, config));
+      
+            const handleContinueLesson = async event => {            
+                  console.log('Summary continue lesson request');
+                  lessonStateHandler.changeRequest({
+                        requestType: enums.lessonState.NEXT_ROUND,
+                        requestArgs: {
+                          id: lessonId,
+                          lesson: { ...lesson, isNextRound: true }
+                        }
+                      });
+            };
+      
+            const handleNewLesson = async event => {                   
+                  await lessonStateHelper.purgeLesson();
+            };
+      
+            const actionLinks = document.querySelectorAll('.js-continue-link');
+      
+            if(lesson.isLessonComplete) {
+                  actionLinks.forEach(actionLink => {
+                        actionLink.innerHTML = 'START NEW LESSON';
+                        actionLink.addEventListener('click', handleNewLesson, { once: true });
+                  });
+            } else {
+                  actionLinks.forEach(actionLink => {
+                        actionLink.addEventListener('click', handleContinueLesson, { once: true });
+                  });
+            }
       };
 
-      const handleNewLesson = async event => {                   
-            await lessonStateHandler.purgeLesson();
-      };
-
-      const actionLinks = document.querySelectorAll('.js-continue-link');
-
-      if(lesson.isLessonComplete) {
-            actionLinks.forEach(actionLink => {
-                  actionLink.innerHTML = 'START NEW LESSON';
-                  actionLink.addEventListener('click', handleNewLesson, { once: true });
-            });
-      } else {
-            actionLinks.forEach(actionLink => {
-                  actionLink.addEventListener('click', handleContinueLesson, { once: true });
-            });
-      }
+      init();
 }
 
-const renderScoreSummaryRow = (scores, score, config) => {
+const renderScoreSummaryRow = (scores, s, config) => {
     
       const template = document.createElement('template');
             template.innerHTML = summaryRowTemplate;
 
       const parent = document.querySelector('.js-score-summary-rows');
             
-      if(score.total === 0) {
+      if(s.total === 0) {
             parent.innerHTML = '';
             template.innerHTML = summaryNoRowTemplate;            
             renderTemplate({ }, template.content, parent);
             return;
       }
-      let rows = [ ...score.passes, ...score.fails ];
+      let rows = [ ...s.passes, ...s.fails ];
           rows = scoreSummaryHandler.getSummaryRows(rows);          
 
-      const vernacularName = score.vernacularName || itemProperties.getVernacularName(score.binomial, config);
+      const vernacularName = s.vernacularName || itemProperties.getVernacularName(s.binomial, config);
 
-      renderTemplate({ vernacularName, binomial: score.binomial, rows }, template.content, parent);
+      renderTemplate({ vernacularName, binomial: s.binomial, rows }, template.content, parent);
 
       if(scores.length > 0) {
             const noQuestionsText = parent.querySelector('.js-no-questions');                  

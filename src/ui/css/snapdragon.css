@@ -280,6 +280,10 @@ a.dropdown-item {
   text-align: left;
 }
 
+.score-summary-container {
+  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
+}
+
 .snapdragon-container {
   justify-content: flex-start;
   position: relative;
@@ -514,7 +518,13 @@ a.dropdown-item {
   display: grid;
   grid-template-columns: 1fr 1fr;
   cursor: pointer;
-  height: calc(100% - var(--vhRunningBlock, 7.5vh));  
+  height: calc( (var(--vh, 1vh) * 100) 
+    - var(--vhFixtures, 15vh) 
+    - var(--vhStandardBlock, 10vh)
+    - var(--vhStandardBlock, 10vh)
+    - var(--vhStandardBlock, 10vh)
+    - var(--vhButtonBlock, 9vh)
+    );
 }
 
 .strip {
@@ -1251,10 +1261,7 @@ label.btn.btn-secondary .lesson-icon {
 
 .imageSlider .carousel-item {
   height: var(--vhExtraSmallImageCarousel);
-}
-
-.imageSlider .carousel-item img {
-
+  min-height: var(--vhExtraSmallImageCarousel);
 }
 
 .species-card-images .carousel-item-next, .species-card-images .carousel-item-prev, .species-card-images .carousel-item.active {
@@ -2369,4 +2376,20 @@ img[data-has-image="false"] {
 .low-relief-block {
   border: 1px solid var(--snap-success-light) !important;
   background-color: var(--snap-species-highlight-background);
+}
+
+.horizontal-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: .5rem;
+}
+
+.lesson-spinner {
+  font-size: 5rem;
+  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh)); 
+}
+
+.image-slider-190 img {
+  height: 190px;
+  min-height: 190px;
 }

@@ -29,6 +29,7 @@ import { initialiseConfig } from 'ui/helpers/location-helper';
 import { firestore } from 'api/firebase/firestore';
 import { renderLoggedIn } from 'ui/fixtures/login';
 import { cookieHandler } from 'ui/helpers/cookie-handler';
+import { lessonModalHandler } from 'ui/screens/cards/test-card-modal-handler';
 
 const onLoadHandler = () => {
 
@@ -98,7 +99,9 @@ const onLoadHandler = () => {
 
             let glossary = await firestore.getDefinitionsByTaxa(['common', 'plantae', 'aves', 'fungi', 'insecta']);
                 glossary = utils.sortAlphabeticallyBy(glossary, 'term');
-            actions.boundCreateGlossary(glossary);        
+            actions.boundCreateGlossary(glossary);
+
+            lessonModalHandler.onCloseModal();
 
         }
         catch(e) {
