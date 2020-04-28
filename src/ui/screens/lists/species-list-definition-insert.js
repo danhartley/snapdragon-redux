@@ -21,7 +21,12 @@ export const onSpeciesChangeHandler = species => {
     }
 };
 
-export const openNoteHandler = note => {
+export const openNoteHandler = (note, time) => {
+
+    console.log('note:', note);
+    console.log('player time: ', time)
+
+    if(Math.floor(note.time) !== time) return;
 
     let parent = document.getElementById('insertParent');
 

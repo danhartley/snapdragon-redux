@@ -1,5 +1,5 @@
 import { renderTemplate } from 'ui/helpers/templating';
-import { modalImagesHandler, scaleImage, imageMatch, imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handler';
+import { scaleImage, imageMatch, imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handler';
 import { handleRightsAttribution } from 'ui/screens/common/rights-attribution';
 
 import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
@@ -30,28 +30,14 @@ const selectActiveImage = (image, parent, config) => {
     return img;
 };
 
-// const disableModalPopups = (disableModal, parent, config) => {
-//     if(disableModal) {
-//         document.querySelectorAll('.carousel-item div').forEach(img => {
-//             img.removeAttribute('data-toggle');
-//             img.removeAttribute('data-target');
-//         });
-//     } else {
-//         modalImagesHandler(parent.querySelectorAll('.carousel-item > div'), null, config, null);
-//     }
-// };
-
-const carouselControlHandler = (event, parentScreen = document, config) => {
+const carouselControlHandler = (event, parentScreen = document) => {
 
     setTimeout(() => {
 
         const activeNode = parentScreen.querySelector(`${event.target.dataset.slider} .carousel-item.active > img`);
         const image = activeNode.dataset;   
         
-        handleRightsAttribution(image);
-    
-        // const originalImageLink = parentScreen.querySelector('.js-carousel-inner');
-        //       originalImageLink.addEventListener('click', onEnlargeImageHandler(config, parentScreen));
+        handleRightsAttribution(image);    
 
     }, 750);
 };
@@ -72,8 +58,9 @@ export const imageSlider = sliderArgs => {
     });
 
     renderTemplate({ images, identifier }, slider.content, parent);
-    selectActiveImage(image || images[0], parent, config);    
-    // disableModalPopups(parent, config);
+    setTimeout(() => {
+        selectActiveImage(image || images[0], parent, config);   
+    },250);
 
     parentScreen.querySelector(`#imageSlider_${identifier} .carousel-control-prev`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
     parentScreen.querySelector(`#imageSlider_${identifier} .carousel-control-next`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
@@ -97,10 +84,6 @@ export const imageSlider = sliderArgs => {
         console.log('swiped-right!');        
         prev.click();
     });
-
-    // const imageLink = `#imageSlider_${identifier} .js-expand`;
-    // const originalImageLink = parentScreen.querySelector(imageLink);
-    //       originalImageLink.addEventListener('click', onEnlargeImageHandler(config, parentScreen));
 };
 
 export const imageSideBySlider = (slides, parent, config) => {
@@ -127,20 +110,9 @@ export const imageSideBySlider = (slides, parent, config) => {
         
         const activeNode = document.querySelector(`#imageSlider_${identifier} .carousel-item`);
               activeNode.classList.add('active');
-        // disableModalPopups(config);
         handleRightsAttribution(images[0]);
 
         const originalImageLink = document.querySelector(`#imageSlider_${identifier} .js-expand`);
         if(originalImageLink) originalImageLink.classList.add('hide-important');
     });
 };
-
-// function onEnlargeImageHandler(config, parentScreen) {
-//     if(config.isPortraitMode) return;
-//     return () => {
-//         const image = parentScreen.querySelector('.carousel-item.active > img');
-//         const large = scaleImage({ url:image.src }).large;
-//         image.src = large;
-//         image.style.width = '600px';
-//     };
-// }

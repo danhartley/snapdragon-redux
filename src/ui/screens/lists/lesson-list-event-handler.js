@@ -162,7 +162,10 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
 
       renderLessonIntro(lesson);
       
-      lessonStateHandler.renderLessonSpeciesList(lesson, DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable'));
+      lessonStateHandler.changeRequest({
+        requestType: enums.lessonState.RENDER_SPECIES_LIST,
+        requestArgs: { lesson, container: DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable') }
+      });
     }
 
     row.classList.add('lesson-list-selected-lesson');
@@ -191,7 +194,12 @@ const onReviewClickHandler = reviewLink => {
 
     const { lesson } = store.getState();
 
-    lessonStateHandler.beginOrResumeLesson(reviewLink.dataset.lessonId, lesson.isNextRound);
+    lessonStateHandler.changeRequest({
+      requestType: enums.lessonState.BEGIN_OR_RESUME_LESSON,
+      requestArgs: {
+        id: reviewLink.dataset.lessonId
+      }
+    });
   });
 };
 
@@ -221,11 +229,14 @@ const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
 
   const { userAction, config } = store.getState();
 
-  await lessonStateHandler.renderLessonSpeciesList(lesson, container);
+  await lessonStateHandler.changeRequest({
+    requestType: enums.lessonState.RENDER_SPECIES_LIST,
+    requestArgs: { lesson, container }
+  });
   
-        loadingMessage.classList.add('hide');
-  
-        lessonListScrollHandler.scrollToTitle(lesson.id);
+  loadingMessage.classList.add('hide');
+
+  lessonListScrollHandler.scrollToTitle(lesson.id);
 };
 
 export const lessonListEventHandler = {

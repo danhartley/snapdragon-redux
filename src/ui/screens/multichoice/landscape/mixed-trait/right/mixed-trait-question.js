@@ -21,18 +21,20 @@ export const renderMixedTraitQuestion = collection => {
     
         const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question, help, term: '' });              
 
-        if(config.isPortraitMode) {
-            renderMultiStrips(collection, null, { traits: layout.traits, requiredTraits: layout.requiredTraits, item, question, help });
-            return;
-        }
+        renderMultiStrips(collection, null, { traits: layout.traits, requiredTraits: layout.requiredTraits, item, question, help });
 
-        parent.innerHTML = '';
-        renderTemplate({ traits: Array.from(new Set(layout.traits.flat())), help }, template.content, parent);
-        document.querySelectorAll('.js-traits-names-txt img').forEach(img => {
-            if(img.src.indexOf('png') > -1) {
-                img.classList.add('png');
-            }
-        });
+        // if(config.isPortraitMode) {
+        //     renderMultiStrips(collection, null, { traits: layout.traits, requiredTraits: layout.requiredTraits, item, question, help });
+        //     return;
+        // }
+
+        // parent.innerHTML = '';
+        // renderTemplate({ traits: Array.from(new Set(layout.traits.flat())), help }, template.content, parent);
+        // document.querySelectorAll('.js-traits-names-txt img').forEach(img => {
+        //     if(img.src.indexOf('png') > -1) {
+        //         img.classList.add('png');
+        //     }
+        // });
     };
 
     init();

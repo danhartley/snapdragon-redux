@@ -23,7 +23,7 @@ const renderItemSpecimenTiles = item => {
     
     const { config, collection, layout, userAction } = store.getState();
 
-    if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
+    // if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
 
     const hasTiles = layout.itemIndex === layout.prevItemIndex && !!document.querySelector('.js-tiles');
 

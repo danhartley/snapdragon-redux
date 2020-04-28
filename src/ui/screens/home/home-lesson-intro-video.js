@@ -1,9 +1,12 @@
 import * as R from 'ramda';
 
+import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { videoHandler } from 'ui/screens/lists/video-handler';
+import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
 
 import videoTemplate from 'ui/screens/home/home-lesson-intro-video-template.html';
+import linksTemplate from 'ui/screens/home/home-lesson-links-template.html';
 
 export const videoSetup = (collection, videoPlayer, parent, startTime) => {
 
@@ -68,10 +71,28 @@ export const videoSetup = (collection, videoPlayer, parent, startTime) => {
             }, 1000);
         }
         
+        // xxLessonLogic();
+
     }, timeBeforeVideoPlayerReady);
         
     const video = document.getElementsByTagName('iframe')[0];
     const videoWidth = video.offsetWidth;
           video.height = videoWidth * 9/16;
   
+};
+
+const xxLessonLogic = () => {
+
+    const template = document.createElement('template');
+          template.innerHTML = linksTemplate;
+
+    const parent = document.querySelector('.js-lesson-links');
+          parent.innerHTML = '';
+
+    const { collection } = store.getState();
+
+    renderTemplate({ lesson: collection }, template.content, parent);
+
+    const reviewLink = document.querySelector('.js-review-link');
+    lessonListEventHandler.onReviewClickHandler(reviewLink);
 };

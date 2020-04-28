@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { enums } from 'ui/helpers/enum-helper';
 import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
@@ -15,7 +16,7 @@ import { onSpeciesChangeHandler, openNoteHandler } from 'ui/screens/lists/specie
 
 export const renderSpeciesList = (lesson, args) => {
 
-    const { readOnlyMode = false, callingParentContainer, isInCarousel = false } = args;
+    const { callingParentContainer, isInCarousel = false } = args;
 
     const { config, history, enums: traitEnums, collections  } = store.getState();    
 
@@ -152,16 +153,7 @@ export const renderSpeciesList = (lesson, args) => {
                 }
             });
         });
-    };    
-
-    if(!!collection.items) {
-        collection.items.forEach(sp => {
-            if(sp.time) {
-                sp.firstTime = sp.time[0];
-            }
-        });
-        collection.items = utils.sortBy(collection.items, 'firstTime', 'asc');
-    }
+    };
 
     if(!!collection.notes && !!collection.notes.time) {
         collection.notes.forEach(n => sp.firstTime = n.time[0]);
@@ -173,7 +165,12 @@ export const renderSpeciesList = (lesson, args) => {
 
     const btnBeginLesson = document.querySelector('.js-btn-current-lesson-begin');
           btnBeginLesson.addEventListener('click', () => {
-            lessonStateHandler.beginOrResumeLesson(collection.id);
+            lessonStateHandler.changeRequest({
+                requestType: enums.lessonState.BEGIN_OR_RESUME_LESSON,
+                requestArgs: {
+                  id: collection.id
+                }
+              });
           });
 
     const openSpeciesDescriptionHandler = (collection, species, enableScroll = true, activateYoutubeIcon = true) => {
@@ -245,8 +242,8 @@ export const renderSpeciesList = (lesson, args) => {
         onSpeciesChangeHandler(species);
     });
 
-    videoHandler.onNoteTimeMatch((collection, note) => {
-        openNoteHandler(note);
+    videoHandler.onNoteTimeMatch((collection, note) => {        
+        openNoteHandler(note, videoHandler.getPlayerTime());
     });
 };
 

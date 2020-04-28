@@ -92,7 +92,19 @@ const loadCollection = async (collection, config) => {
 const loadCollectionItemProperties = async (collection, config) => {
 
     collection.items = collection.items.filter(i => i);
-    collection.items = utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc');
+
+    if(collection.behaviour === 'dynamic') {
+        collection.items = utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc');
+    } else {
+        collection.items.forEach(sp => {
+            if(sp.time) {
+                sp.firstTime = sp.time[0];
+            }
+        });
+        collection.items = utils.sortBy(collection.items, 'firstTime', 'asc');
+    }
+
+    // collection.items = utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc');
     const families = [...new Set(collection.items.map(i => i.taxonomy.family))];
     const orders = [...new Set(collection.items.map(i => i.taxonomy.order))];
     const genera = [...new Set(collection.items.map(i => i.taxonomy.genus).filter(g => g))];

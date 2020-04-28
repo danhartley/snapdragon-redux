@@ -26,7 +26,7 @@ export const layout = (state = null, action) => {
     switch(action.type) {
         case types.NEXT_LAYOUT:
             if(state) {
-                if(action.data.screens.length > 1) {
+                if(action.data.screens.length > 1) { // sometimes BUG here
                     const prevItemIndex = state.screens[0].name === action.data.screens[0].name ? state.itemIndex : null;                
                     return { ...action.data, prevItemIndex }
                 } else {

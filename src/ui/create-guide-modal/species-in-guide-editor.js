@@ -2,6 +2,7 @@ import * as R from 'ramda';
 
 import autocomplete from 'autocompleter';
 
+import { enums } from 'ui/helpers/enum-helper';
 import { store } from 'redux/store';
 import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -65,7 +66,12 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
 
         const { collection } = store.getState();
 
-        lessonStateHandler.addExtraSpeciesSelection(config, collection);
+        lessonStateHandler.changeRequest({
+            requestType: enums.lessonState.ADD_SPECIES_TO_COLLECTION,
+            requestArgs: {
+                updatedConfig: config, updatedCollection: collection
+            }
+        });
 
         setTimeout(() => {            
             speciesInGuideEditor(config, modal, selectedSpeciesDisplay, createGuide, selectedSpecies, speciesNames);

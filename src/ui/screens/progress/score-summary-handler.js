@@ -2,19 +2,27 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 
-export const getLessonScores = (history, lesson, score, savedScore) => {
+export const getLessonScores = (history, lesson, stateScore, savedScore) => {
 
-    return history
-          ? lesson.isNextRound
-                ? R.contains(score.binomial, history.scores.map(s => s.binomial))
-                      ? history.scores
-                      : score.total === 0
-                            ? history.scores
-                            : [...history.scores, score]
-                : score.total === 0
-                      ? [...history.scores, savedScore]
-                      : [...history.scores, score]
-          : [savedScore];
+      if(!history) return [ stateScore ];
+
+      const historyIsUpToDate = R.contains(stateScore.binomial, history.scores.map(s => s.binomial));
+
+      let scores = [];
+
+      if(lesson.isNextRound) {
+            scores = historyIsUpToDate
+                  ? history.scores
+                  : stateScore.total === 0
+                        ? history.scores
+                        : [...history.scores, stateScore];
+      } else {
+            scores = historyIsUpToDate
+                  ? history.scores
+                  : [...history.scores, stateScore];
+      }
+      
+      return scores;
 };
 
 const getSummaryRows = (rows) => {

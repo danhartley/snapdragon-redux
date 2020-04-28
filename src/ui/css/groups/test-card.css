@@ -31,6 +31,9 @@
 .test-card-container {
     position: relative;
     background-color: var(--snap-content-background);
+    height: calc( (var(--vh, 1vh) * 100) 
+    - var(--vhFixtures, 15vh)
+    );  
   }
 
   .test-card-question .question-question {

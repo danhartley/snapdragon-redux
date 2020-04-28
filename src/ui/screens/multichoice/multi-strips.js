@@ -23,7 +23,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
         const { config, lesson, layout, userAction } = store.getState();
 
-        if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
+        // if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
 
         const item = collection.nextItem || collection.items[collection.itemIndex];
 

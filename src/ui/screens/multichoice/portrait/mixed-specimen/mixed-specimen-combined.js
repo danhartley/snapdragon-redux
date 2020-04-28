@@ -17,7 +17,7 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
 
     const { config, lesson, layout, score, userAction } = store.getState();
 
-    if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
+    // if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
 
     const item = R.clone(collection.nextItem);
 
@@ -43,10 +43,10 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
         images = getPortraitImages(images);
 
         let parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question: 'Swipe and tap to ID', help: '(Click on the matching photo.)', term: '' });
+            parent.innerHTML = '';
             
         const template = document.createElement('template');
-
-        template.innerHTML = mixedSpecimenTemplate;
+              template.innerHTML = mixedSpecimenTemplate;
         
         renderTemplate({}, template.content, parent);
 
