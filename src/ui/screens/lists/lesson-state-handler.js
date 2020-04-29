@@ -1,4 +1,4 @@
-  import * as R from 'ramda';
+import * as R from 'ramda';
 
 import { firestore } from 'api/firebase/firestore';
 import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
@@ -15,8 +15,8 @@ const changeRequest = async args => {
 
   const { config, collection, collections, counter } = store.getState();
 
-  console.log('requestType: ', requestType);
-  console.log('requestArgs: ', requestArgs);
+  // console.log('requestType: ', requestType);
+  // console.log('requestArgs: ', requestArgs);
 
   switch(requestType) {
 

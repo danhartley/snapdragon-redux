@@ -30,10 +30,6 @@ export const observeStore = (store, select, onChange, domain, layout) => {
             hasStateSignificantlyChanged = (nextState.nextItem && nextState.nextItem.name) !== (currentState.nextItem && currentState.nextItem.name);
             break;
         }
-
-        // if(nextState.score && nextState.score.total) {
-        //   hasStateSignificantlyChanged = nextState.score.total !== currentState.score.total;
-        // }
       }
 
       if(hasStateSignificantlyChanged) {
@@ -44,7 +40,7 @@ export const observeStore = (store, select, onChange, domain, layout) => {
   
     handleChange.domain = domain;
     handleChange.calledBy = onChange.name;
-    console.log('*** NEW LISTENER', `func: ${onChange.name}`, `domain: ${domain}`);
+    // console.log('*** NEW LISTENER', `func: ${onChange.name}`, `domain: ${domain}`);
     let unsubscribe = store.subscribe(handleChange);
     if(hasStateSignificantlyChanged) {
       handleChange();
