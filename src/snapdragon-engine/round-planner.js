@@ -34,6 +34,8 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
 
                     const { requiredTraitValues, trait } = mixedTraitHandler.getMatchingTrait(utils.shuffleArray(layout.screens[1].traits), item.traits);
 
+                    if(!trait) return;
+
                     const { traits, requiredTraits } = await mixedTraitHandler.fetchTraits(trait, requiredTraitValues, collection.glossary);
 
                     if(!requiredTraits || !traits) return;

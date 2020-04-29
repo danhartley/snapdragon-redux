@@ -11,20 +11,19 @@ import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 const onLoadLessonViewState = (collection, videoPlayer, score, config) => {
 
   const taxa = collection.iconicTaxa ? collection.iconicTaxa.map(taxon => taxon.common).join(', ') : '';
-  const isCurrentLessonPaused = (!!score && score.collectionId === collection.id);
-  const isStoredLessonPaused = store.getState().lessons.find(lesson => lesson.collection.id === collection.id);
-  const isPaused = isCurrentLessonPaused || isStoredLessonPaused;
-  const isLessonComplete = store.getState().lesson.isLessonComplete;
+  // const isCurrentLessonPaused = (!!score && score.collectionId === collection.id);
+  // const isStoredLessonPaused = store.getState().lessons.find(lesson => lesson.collection.id === collection.id);
+  // const isPaused = isCurrentLessonPaused || isStoredLessonPaused;
+  // const isLessonComplete = store.getState().lesson.isLessonComplete;
 
   collection.taxa = taxa;
   collection.hasVideo = collection.video ? true : false;
   collection.showVideoIconClass = collection.hasVideo ? '' : 'hide-important';
   collection.videoState = videoHandler.setVideoState(videoPlayer || [], collection);
 
-
-  const length = collection.species ? collection.species.length : collection.items.length;
-  const plan = config.isLandscapeMode ? collection.lessonPlanLandscape : collection.lessonPlanPortrait;
-  const shortReviews = [2,102];
+  // const length = collection.species ? collection.species.length : collection.items.length;
+  // const plan = config.isLandscapeMode ? collection.lessonPlanLandscape : collection.lessonPlanPortrait;
+  // const shortReviews = [2,102];
 
   collection.reviewState = 'Quiz';
 
@@ -59,12 +58,12 @@ const onClickViewState = (e, lessons) => {
   const container = document.querySelector(`.js-species-container[data-container-id="${lessonId}"]`);
   const speciesList = document.querySelector(`#species_list_id_${lessonId}`);
   const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lessonId}"]`);
-  const upChevrons = Array.from(document.querySelectorAll('.js-lesson-list-chevron .fa-chevron-up'));
+  // const upChevrons = Array.from(document.querySelectorAll('.js-lesson-list-chevron .fa-chevron-up'));
 
   let action = isYoutubeIcon ? enums.userEvent.START_LESSON : isChevronIcon ? enums.userEvent.TOGGLE_SPECIES_LIST : enums.userEvent.DEFAULT;
   lessonStateHandler.recordUserAction(action);
 
-  hideOtherContentAndRevertChevrons(upChevrons, lessonId);
+  hideOtherContentAndRevertChevrons(lessonId);
 
   // let reviewLinks = document.querySelectorAll('.js-review-link');
   //     reviewLinks.forEach(link => {
@@ -93,7 +92,7 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
   
   return icon.addEventListener('click', async e => {      
 
-    e.stopPropagation();
+    // e.stopPropagation();
 
     const { icon, lesson, state, speciesList, container, lessonVideoState, row, isYoutubeIcon } = onClickViewState(e, lessons);
 
@@ -114,6 +113,8 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
 
       if(icon.dataset.lessonIsYoutubeIcon) {
         icon.classList.add('youtube-green-fg');
+        const chevron = document.querySelector(`div.js-lesson-list-chevron[data-lesson-id="${icon.dataset.lessonId}"]`);
+              chevron.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
       }
 
       let siblingChevron;
@@ -203,17 +204,24 @@ const onReviewClickHandler = reviewLink => {
   });
 };
 
-const hideOtherContentAndRevertChevrons = (upChevrons, selectedLessonId) => {
+const hideOtherContentAndRevertChevrons = selectedLessonId => {
+
+  const upChevrons = Array.from(document.querySelectorAll('.js-lesson-list-chevron .fa-chevron-up'));
+
+  console.log('new lesson id: ', selectedLessonId)
 
   upChevrons.forEach(chevron => {
     
     const chevronLessonId = parseInt(chevron.dataset.lessonId);
+
+    console.log('previous lesson id: ', chevronLessonId)
     
-    if (chevronLessonId !== selectedLessonId) {
-      chevron.classList.remove('fa-chevron-up');
-      chevron.classList.add('fa-chevron-down');
-      const speciesTableToHide = document.getElementById(`species_list_id_${chevronLessonId}`);
-      speciesTableToHide.classList.add('hide');
+    if(chevronLessonId !== selectedLessonId) {
+      
+      chevron.click();
+        
+      const lesson = document.querySelector(`div.js-lesson-list-carousel-item[data-lesson-id="${chevronLessonId}"]`);
+            lesson.classList.remove('highlighted-for-review-row');
     }
   });
 };

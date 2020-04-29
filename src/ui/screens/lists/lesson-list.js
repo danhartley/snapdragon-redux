@@ -41,8 +41,9 @@ export const renderLessons = () => {
                   createGuideHandler(1);
 
                   // close all open lessons
-                  const upChevrons = Array.from(document.querySelectorAll('.js-lesson-list-chevron .fa-chevron-up'));
-                  lessonListEventHandler.hideOtherContentAndRevertChevrons(upChevrons, 0);
+                  // const upChevrons = Array.from(document.querySelectorAll('.js-lesson-list-chevron .fa-chevron-up'));
+                  // lessonListEventHandler.hideOtherContentAndRevertChevrons(upChevrons, 0);
+                  lessonListEventHandler.hideOtherContentAndRevertChevrons(0);
 
             });    
 
@@ -101,7 +102,7 @@ const highlightActiveLesson = lessons => {
             if (row)
                   row.classList.add('highlighted-for-review-row');
 
-            lessonListScrollHandler.scrollToTitle(lesson.dataset.lessonId);
+            // lessonListScrollHandler.scrollToTitle(lesson.dataset.lessonId);
       }));
 };
 
