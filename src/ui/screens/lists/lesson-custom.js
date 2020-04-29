@@ -18,6 +18,8 @@ export const renderCustomLesson = (lessons, savedLessons, videoPlayer, score, co
         
         lessons.push(lesson);
         
+        lesson.icon = lesson.icon || "https://content.eol.org/data/media/55/9d/2c/509.118977.98x68.jpg";
+
         renderTemplate({ lesson }, template.content, parent);
         
         const title = document.querySelector(`div.js-lesson-title[data-lesson-id="${lesson.id}"]`);

@@ -16,12 +16,13 @@ export const renderLesson = (lesson) => {
       const savedLesson = lessons.find(saved => saved.collection.id === lesson.id);
 
       lesson.isPaused = !!savedLesson || config.collection.id === lesson.id;
+      lesson.icon = lesson.icon || "https://content.eol.org/data/media/55/9d/2c/509.118977.98x68.jpg";
 
       renderTemplate({ lesson }, template.content, document.querySelector('.js-lesson-container'));
 
-      if(savedLesson) {
-            renderReview(savedLesson.layout, savedLesson.collection, null, config);
-      } 
+      // if(savedLesson) {
+      //       renderReview(savedLesson.layout, savedLesson.collection, null, config);
+      // } 
       
       if(config.collection.id === lesson.id) {
 
@@ -37,7 +38,7 @@ export const renderLesson = (lesson) => {
 
             // current lesson whose current state is not yet saved
             if(layout && layout.roundScoreCount) {
-                  renderReview(layout, lesson, 'progress-icon', config);
+                  // renderReview(layout, lesson, 'progress-icon', config);
             }
       }
 }; 

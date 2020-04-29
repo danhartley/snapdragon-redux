@@ -9,6 +9,7 @@ import { renderLesson } from 'ui/screens/lists/lesson';
 import { renderCustomLesson } from 'ui/screens/lists/lesson-custom';
 import { renderScoreSummary } from 'ui/screens/progress/score-summary';
 import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
+import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
 
@@ -50,12 +51,15 @@ export const renderLessons = () => {
 
       const youtubeLessonIcons = document.querySelectorAll('.js-lesson-list-youtube');
             youtubeLessonIcons.forEach(youtube => lessonListEventHandler.onLessonIconClickHandler(youtube, lessons, config, true));
+      highlightActiveLesson(youtubeLessonIcons);
 
       const chevrons = document.querySelectorAll('.js-lesson-list-chevron');
             chevrons.forEach(chevron => lessonListEventHandler.onLessonIconClickHandler(chevron, lessons, config, false));
+      highlightActiveLesson(chevrons);
 
       const reviews = document.querySelectorAll('.js-review-link');
             reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink));
+      highlightActiveLesson(reviews);
 
       setTimeout(() => {      
 
@@ -83,16 +87,21 @@ export const renderLessons = () => {
       
       const summaries = Array.from(document.querySelectorAll('.js-review-summary'));
             summaries.forEach(summary => summary.addEventListener('click', e => {
-                  
-                  e.stopPropagation();
-
-                  const rows = document.querySelectorAll('.js-lesson-list-carousel-item');
-                        rows.forEach(row => row.classList.remove('highlighted-for-review-row'));
-
-                  const row = document.querySelector(`.js-lesson-list-carousel-item[data-lesson-id="${summary.dataset.lessonId}"]`);
-                        if(row) row.classList.add('highlighted-for-review-row');                        
-
-                  renderScoreSummary(summary.dataset.lessonId);
+                  renderScoreSummary(lesson.dataset.lessonId);
             }));
-
+      highlightActiveLesson(summaries);
 };
+
+const highlightActiveLesson = lessons => {
+      lessons.forEach(lesson => lesson.addEventListener('click', e => {
+            
+            const rows = document.querySelectorAll('.js-lesson-list-carousel-item');
+                  rows.forEach(row => row.classList.remove('highlighted-for-review-row'));
+            const row = document.querySelector(`.js-lesson-list-carousel-item[data-lesson-id="${lesson.dataset.lessonId}"]`);
+            if (row)
+                  row.classList.add('highlighted-for-review-row');
+
+            lessonListScrollHandler.scrollToTitle(lesson.dataset.lessonId);
+      }));
+};
+

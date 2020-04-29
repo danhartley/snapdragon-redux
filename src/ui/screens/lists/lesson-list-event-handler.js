@@ -1,5 +1,3 @@
-import * as R from 'ramda';
-
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';
@@ -28,13 +26,15 @@ const onLoadLessonViewState = (collection, videoPlayer, score, config) => {
   const plan = config.isLandscapeMode ? collection.lessonPlanLandscape : collection.lessonPlanPortrait;
   const shortReviews = [2,102];
 
-  collection.reviewState = 
-    isLessonComplete 
-    ? `Lesson complete`
-    : isPaused ? 'Resume Review' : 
-      R.contains(plan, shortReviews)
-        ? `${length} x 30 Second Reviews`
-        : `${length} x 2 Minute Reviews`;
+  collection.reviewState = 'Quiz';
+
+  // collection.reviewState = 
+  //   isLessonComplete 
+  //   ? `Lesson complete`
+  //   : isPaused ? 'Resume Review' :
+  //     R.contains(plan, shortReviews)
+  //       ? `${length} x 30 Second Reviews`
+  //       : `${length} x 2 Minute Reviews`;
 
   collection.hasTermsClass = !!collection.terms ? '' : 'hide-important';
   collection.isCollectionEditableClass = !!collection.isPrivate ? 'underline-link' : '';
@@ -66,13 +66,13 @@ const onClickViewState = (e, lessons) => {
 
   hideOtherContentAndRevertChevrons(upChevrons, lessonId);
 
-  let reviewLinks = document.querySelectorAll('.js-review-link');
-      reviewLinks.forEach(link => {
-        const isPaused = store.getState().lessons.find(lesson => lesson.collection.id === parseInt(link.dataset.lessonId));
-        if(isPaused) {
-          link.innerHTML = 'Resume Review';
-        }
-      });
+  // let reviewLinks = document.querySelectorAll('.js-review-link');
+  //     reviewLinks.forEach(link => {
+  //       const isPaused = store.getState().lessons.find(lesson => lesson.collection.id === parseInt(link.dataset.lessonId));
+  //       if(isPaused) {
+  //         link.innerHTML = 'Resume Review';
+  //       }
+  //     });
 
   const isSpeciesListAvailable = !!speciesList;
   const isSpeciesListHidden = elem.hasClass(speciesList, 'hide');

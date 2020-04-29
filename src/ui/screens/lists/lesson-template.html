@@ -1,6 +1,9 @@
 <div data-lesson-id="{{ lesson.id }}" class="lesson-list-carousel-item padding-left margin-bottom js-lesson-list-carousel-item">
+    <div class="double-centred-block" width="98px" height="68px">
+        <img src="{{ lesson.icon }}" alt="">
+    </div>
     <div data-lesson-id="{{ lesson.id }}" class="lesson-list-item js-lesson-list-item" data-has-video="{{ lesson.hasVideo }}">
-        <div>
+        <div>            
             <div class="lesson-name js-lesson-title" data-lesson-id="{{ lesson.id }}">
                 <span data-toggle="modal" data-target="#basicModal" id="lesson_{{ lesson.id }}" class="lesson-title margin-right {{ lesson.isCollectionEditableClass }}">{{ lesson.name }}</span>
                 <span class="hide js-loading-message">
@@ -21,7 +24,7 @@
                 <span data-lesson-id="{{ lesson.id }}" class="js-review"></span>
 
                 <span class="lesson-terms-review js-terms-review-link {{ lesson.hasTermsClass }}" data-toggle="modal" data-target="#glossaryModal">
-                    <span data-lesson-id="{{ lesson.id }}" class="underline-link" data-toggle="modal" data-target="#glossaryModal">Terms review</span>
+                    <span data-lesson-id="{{ lesson.id }}" class="underline-link" data-toggle="modal" data-target="#glossaryModal">Terms</span>
                 <span>
 
 
