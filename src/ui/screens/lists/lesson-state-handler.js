@@ -135,6 +135,8 @@ const addExtraSpeciesSelection = async requestArgs => {
 
   const { config, collection } = requestArgs;
 
+  if(!collection) return;
+
   if(!collection.items) return;
 
   const extraSpecies = config.guide.species.filter(s => !R.contains(s.name, collection.items.map(i => i.name)));

@@ -1820,13 +1820,16 @@ a.collection-disabled {
 }
 
 .lesson-list-carousel-item {
-  display: flex;
+  /* display: flex;
   width: 100%;
+  justify-content: space-between; */
   align-items: center;
-  justify-content: space-between;
+
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
 }
 
-.lesson-list-carousel-item > div:nth-child(2) {
+.lesson-list-carousel-item > div:nth-child(3) {
   margin: 0 1rem 0 0 !important;
   font-size: 1.3rem;
   cursor: pointer;
@@ -2040,10 +2043,6 @@ a.collection-disabled {
 .highlighted-for-review-row {
   background-color: var(--snap-content-background) !important;
 }
-
-/* .highlighted-for-review-row .underline-link {
-  font-size: .7rem;  
-} */
 
 .score-summary-row {
   border-bottom: .3rem solid var(--snap-content-background);

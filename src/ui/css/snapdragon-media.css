@@ -441,11 +441,11 @@
         width: fit-content;
     } */
 
-    .lesson-list-carousel-item > div:nth-child(2) > div {
+    .lesson-list-carousel-item > div:nth-child(3) > div {
         display: flex;
     }
 
-    .lesson-list-carousel-item > div:nth-child(2) > div > div {
+    .lesson-list-carousel-item > div:nth-child(3) > div > div {
         display: flex;
         align-items: center;
     }

@@ -1,3 +1,4 @@
+import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 import { renderLessons } from 'ui/screens/lists/lesson-list';
 
 const onCloseModal = () => {
@@ -12,6 +13,8 @@ const onCloseModal = () => {
                     </div>
                   `;
             renderLessons();
+            const activeLesson = document.querySelector('.highlighted-for-review-row');
+            lessonListScrollHandler.scrollToTitle(activeLesson.dataset.lessonId);
           });
 
       // remove subscriptions? e.g. renderScoreSummary

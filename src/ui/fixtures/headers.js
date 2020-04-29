@@ -1,13 +1,10 @@
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
-import { enums } from 'ui/helpers/enum-helper';
 
 export const renderHeaders = collection => {
 
-    const { config } = store.getState();
-    
     DOM.leftHeaderTxt.innerHTML = 'Learn the planet';
-    DOM.rightHeaderTxt.innerHTML = config.isLandscapeMode ? 'Save the planet' : 'Learn the planet';
+    DOM.rightHeaderTxt.innerHTML = 'Learn the planet';
 
     setTimeout(() => {
         
