@@ -185,7 +185,7 @@ const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
         case enums.quickFireStep.QUESTIONS:
             filters.classList.add(underline);
             filters.classList.remove(hide);
-            filters.innerHTML = 'Review options';
+            filters.innerHTML = 'Vocab options';
             handleGlossaryLink();
             handleFiltersLink();
         break;
@@ -193,7 +193,7 @@ const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
         case enums.quickFireStep.GLOSSARY:
             filters.classList.add(underline);
             filters.classList.remove(hide);
-            filters.innerHTML = 'Review options';
+            filters.innerHTML = 'Vocab options';
             questions.classList.add(hide);
             handleFiltersLink();
         break;

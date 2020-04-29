@@ -15,10 +15,15 @@ export const renderTestCardTemplate = (collection, context) => {
 
     const { config } = store.getState();
 
+    const modal = document.querySelector('#lessonModal');
+
     const parent = config.isLandscapeMode 
-                        ? document.querySelector('#lessonModal .js-modal-text')
+                        ? modal.querySelector('.js-modal-text')
                         : DOM.rightBody ;
           parent.innerHTML = '';
+
+    const header = modal.querySelector('.js-modal-text-title');
+          header.innerHTML = collection.name;
 
     context.className = context.className || '';
     context.headerClassName = context.headerClassName || '';
