@@ -20,9 +20,9 @@ export const renderLesson = (lesson) => {
 
       renderTemplate({ lesson }, template.content, document.querySelector('.js-lesson-container'));
 
-      // if(savedLesson) {
-      //       renderReview(savedLesson.layout, savedLesson.collection, null, config);
-      // } 
+      if(savedLesson) {
+            renderReview(savedLesson.layout, savedLesson.collection, null, config);
+      } 
       
       if(config.collection.id === lesson.id) {
 
@@ -38,17 +38,20 @@ export const renderLesson = (lesson) => {
 
             // current lesson whose current state is not yet saved
             if(layout && layout.roundScoreCount) {
-                  // renderReview(layout, lesson, 'progress-icon', config);
+                  renderReview(layout, lesson, 'progress-icon', config);
             }
       }
 }; 
 
 const renderReview = (layout, lesson, className, config) => {
-      const text = config.isLandscapeMode ? 'Review summary' : 'Summary';
+      const text = config.isLandscapeMode ? 'Quiz progress' : 'Quiz progress';
       const progressBar = document.querySelector('.js-right-grid progress');
       const value = !!layout.roundProgressIndex ? layout.roundProgressIndex : progressBar ? progressBar.value : 0;
-      const review = `<progress class="margin-right" value="${ value }" max="${layout.roundScoreCount}"></progress>
-                        <span data-lesson-id="${lesson.id}" class="underline-link ${ className } js-review-summary">${ text }</span>`;
+      const review = config.isLandscapeMode 
+                        ? `<progress class="margin-right" value="${ value }" max="${layout.roundScoreCount}"></progress>
+                          <span data-toggle="modal" data-target="#lessonModal" data-lesson-id="${lesson.id}" class="underline-link ${ className } js-review-summary">${ text }</span>`
+                        : `<progress class="margin-right" value="${ value }" max="${layout.roundScoreCount}"></progress>
+                          <span data-lesson-id="${lesson.id}" class="underline-link ${ className } js-review-summary">${ text }</span>`;
       const parent = document.querySelector(`.js-review[data-lesson-id="${lesson.id}"]`);
             parent.innerHTML = review;
 };

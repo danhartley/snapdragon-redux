@@ -1820,19 +1820,18 @@ a.collection-disabled {
 }
 
 .lesson-list-carousel-item {
-  /* display: flex;
+  display: flex;
   width: 100%;
-  justify-content: space-between; */
-  align-items: center;
-
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  justify-content: space-between;
 }
 
 .lesson-list-carousel-item > div:nth-child(3) {
-  margin: 0 1rem 0 0 !important;
+  justify-content: left;
   font-size: 1.3rem;
   cursor: pointer;
+  align-items: center;
+  display: flex;
+  margin-right: .5rem;
 }
 
 .lesson-list-item {
@@ -1842,7 +1841,7 @@ a.collection-disabled {
 
 .lesson-review, .lesson-terms-review {
   pointer-events: initial;  
-  line-height: 3.5;
+  line-height: 3;
 }
 
 .lesson-review i {
@@ -1856,14 +1855,11 @@ a.collection-disabled {
 }
 
 .lesson-taxa {
-  line-height: 2;
   font-size: .8em;
 }
 
 .lesson-list > div > div:nth-child(1) {
   justify-content: space-between;
-  /* position: sticky;
-  position: -webkit-sticky; */
   top: 0;
   z-index: 30;
   width: 100%;

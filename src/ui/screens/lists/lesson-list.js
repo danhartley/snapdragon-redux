@@ -86,7 +86,7 @@ export const renderLessons = () => {
       renderCustomLesson(lessons, savedLessons, videoPlayer, score, config);
       
       const summaries = Array.from(document.querySelectorAll('.js-review-summary'));
-            summaries.forEach(summary => summary.addEventListener('click', e => {
+            summaries.forEach(lesson => lesson.addEventListener('click', e => {
                   renderScoreSummary(lesson.dataset.lessonId);
             }));
       highlightActiveLesson(summaries);

@@ -12,9 +12,9 @@ const onCloseModal = () => {
                         <div class="icon"><i class="fas fa-sun slow-spin"></i></div>
                     </div>
                   `;
-            renderLessons();
-            const activeLesson = document.querySelector('.highlighted-for-review-row');
-            lessonListScrollHandler.scrollToTitle(activeLesson.dataset.lessonId);
+            // renderLessons();
+            // const activeLesson = document.querySelector('.highlighted-for-review-row');
+            // lessonListScrollHandler.scrollToTitle(activeLesson.dataset.lessonId);
           });
 
       // remove subscriptions? e.g. renderScoreSummary

@@ -117,7 +117,7 @@ const filters = async linkFromLesson => {
     quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters, taxonCounters, getIncludeTechnicalTerms());
 
     const createQuickFireBtn = document.querySelector('.js-create-quick-fire');
-          createQuickFireBtn.innerHTML = quickFire.termScore.total === 0 ? 'Start quick-fire review' : 'Continue your quick-fire review';
+          createQuickFireBtn.innerHTML = quickFire.termScore.total === 0 ? 'Start vocab review' : 'Continue your vocab review';
           createQuickFireBtn.addEventListener('click', e => {
             questions(quickFire);
           });
