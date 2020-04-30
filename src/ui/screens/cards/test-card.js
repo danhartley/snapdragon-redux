@@ -5,6 +5,7 @@ import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
 import { renderTemplate } from 'ui/helpers/templating';
+import { renderScoreSummary } from 'ui/screens/progress/score-summary';
 
 import testCardTemplate from 'ui/screens/cards/test-card-template.html';
 
@@ -15,7 +16,7 @@ export const renderTestCardTemplate = (collection, context) => {
 
     const { config } = store.getState();
 
-    const modal = document.querySelector('#lessonModal');
+    const modal = config.isLandscapeMode ? document.querySelector('#lessonModal') : document;
 
     const parent = config.isLandscapeMode 
                         ? modal.querySelector('.js-modal-text')
@@ -33,29 +34,57 @@ export const renderTestCardTemplate = (collection, context) => {
 
     renderTemplate(context, template.content, parent);
 
+    const progressLink = modal.querySelector('.js-review-progress');
+    if(progressLink) {
+        progressLink.addEventListener('click', e => {
+
+          const summaryContainer = modal.querySelector('.js-summary-container');
+
+          const renderSummaryCard = () => {
+
+              renderScoreSummary(collection.id, summaryContainer);
+
+              const toggleScreens = (screenOne, screenTwo) => {
+                  hideCurrentCard(screenOne);
+                  screenTwo.classList.remove('swap-out-card');
+                  progressLink.addEventListener('click', e => {
+                      toggleScreens(screenTwo, screenOne);
+                  }, { once: true });
+              };
+
+              toggleScreens(testCardContainer, summaryContainer);
+          };
+
+          renderSummaryCard();
+
+        }, { once: true });
+    }
+
     toggleStatementAndQuestion(config);
 
-    const testCardContainer = document.querySelector('.js-test-card-container');
-    const testCard = document.querySelector('.js-test-card-container');
+    const testCardContainer = modal.querySelector('.js-test-card-container');
+    const testCard = modal.querySelector('.js-test-card-container');
     const testCardIcon = testCard.querySelector('.js-card-link');
 
     const item = collection.nextItem || collection.items[context.bonus.itemIndex];
 
     const hideCurrentCard = (container, card) => {
 
-        container.classList.remove('swap-in-card');
         container.classList.add('swap-out-card');
+        container.classList.remove('swap-in-card');
 
-        card.classList.add('swap-out-card');
-        card.classList.remove('swap-in-card');
+        if(card) {
+            card.classList.add('swap-out-card');
+            card.classList.remove('swap-in-card');
+        }
     };
 
     const showNextCard = (container, selector) => {
                 
         container.classList.remove('swap-out-card');
-        container.classList.add('swap-in-card');
+        // container.classList.add('swap-in-card');
 
-        const card = document.querySelector(selector);
+        const card = modal.querySelector(selector);
         const icon = card.querySelector('.js-card-link');
               icon.classList.remove('disabled-icon');
 
@@ -64,8 +93,8 @@ export const renderTestCardTemplate = (collection, context) => {
 
     testCardIcon.addEventListener('click', async event => {
         
-        const speciesContainer = document.querySelector('.js-species-container');
-        const taxonContainer = document.querySelector('.js-taxon-container');
+        const speciesContainer = modal.querySelector('.js-species-container');
+        const taxonContainer = modal.querySelector('.js-taxon-container');
 
         const renderSpeciesCard = async () => {
 
@@ -101,9 +130,9 @@ export const renderTestCardTemplate = (collection, context) => {
         await renderSpeciesCard();
     });
 
-    renderIcon(item.taxonomy, document);
+    renderIcon(item.taxonomy, modal);
 
-    let testContentParent = document.querySelector('.js-test-card-content');
+    let testContentParent = modal.querySelector('.js-test-card-content');
 
     return testContentParent;
 };

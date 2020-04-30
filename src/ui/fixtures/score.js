@@ -9,6 +9,16 @@ export const renderScore = score => {
     
     const { history, collection, config, layout, lesson, lessonPlan } = store.getState();
 
+    score.mode = config.mode;
+
+    if(!layout) return;
+
+    if(score.total === layout.roundScoreCount) {
+        actions.boundUpdateHistory(score);
+    }
+
+    return;
+
     const template = document.createElement('template');
 
     const scoreText = config.isLandscape 
@@ -53,11 +63,11 @@ export const renderScore = score => {
 
     renderTemplate({ score, history: runningTotal, collection, config, layout, scoreText, currentRound: lesson.currentRound, questionFormat }, template.content, parent);
 
-    score.mode = config.mode;
+    // score.mode = config.mode;
 
-    if(!layout) return;
+    // if(!layout) return;
 
-    if(score.total === layout.roundScoreCount) {
-        actions.boundUpdateHistory(score);
-    }
+    // if(score.total === layout.roundScoreCount) {
+    //     actions.boundUpdateHistory(score);
+    // }
 };
