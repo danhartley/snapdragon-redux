@@ -44,14 +44,15 @@ export const renderLesson = (lesson) => {
 }; 
 
 const renderReview = (layout, lesson, className, config) => {
-      const text = config.isLandscapeMode ? 'Quiz progress' : 'Quiz progress';
+      // const text = config.isLandscapeMode ? 'Quiz progress' : 'Quiz progress';
       const progressBar = document.querySelector('.js-right-grid progress');
       const value = !!layout.roundProgressIndex ? layout.roundProgressIndex : progressBar ? progressBar.value : 0;
-      const review = config.isLandscapeMode 
-                        ? `<progress class="margin-right" value="${ value }" max="${layout.roundScoreCount}"></progress>
-                          <span data-toggle="modal" data-target="#lessonModal" data-lesson-id="${lesson.id}" class="underline-link ${ className } js-review-summary">${ text }</span>`
-                        : `<progress class="margin-right" value="${ value }" max="${layout.roundScoreCount}"></progress>
-                          <span data-lesson-id="${lesson.id}" class="underline-link ${ className } js-review-summary">${ text }</span>`;
+      const review = `<progress class="margin-right" value="${ value }" max="${layout.roundScoreCount}"></progress>`;
+      // const review = config.isLandscapeMode 
+      //                   ? `<progress class="margin-right" value="${ value }" max="${layout.roundScoreCount}"></progress>
+      //                     <span data-toggle="modal" data-target="#lessonModal" data-lesson-id="${lesson.id}" class="underline-link ${ className } js-review-summary">${ text }</span>`
+      //                   : `<progress class="margin-right" value="${ value }" max="${layout.roundScoreCount}"></progress>
+      //                     <span data-lesson-id="${lesson.id}" class="underline-link ${ className } js-review-summary">${ text }</span>`;
       const parent = document.querySelector(`.js-review[data-lesson-id="${lesson.id}"]`);
             parent.innerHTML = review;
 };

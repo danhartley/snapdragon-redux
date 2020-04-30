@@ -7,9 +7,9 @@ import { quickFireHandlers } from 'ui/quick-fire-modal/quick-fire';
 import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
 import { renderLesson } from 'ui/screens/lists/lesson';
 import { renderCustomLesson } from 'ui/screens/lists/lesson-custom';
-import { renderScoreSummary } from 'ui/screens/progress/score-summary';
+// import { renderScoreSummary } from 'ui/screens/progress/score-summary';
 import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
-import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
+// import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
 
@@ -39,12 +39,7 @@ export const renderLessons = () => {
       const createCustomLessonBtn = parent.querySelector('.js-create-custom-lesson');          
             createCustomLessonBtn.addEventListener('click', e => {
                   createGuideHandler(1);
-
-                  // close all open lessons
-                  // const upChevrons = Array.from(document.querySelectorAll('.js-lesson-list-chevron .fa-chevron-up'));
-                  // lessonListEventHandler.hideOtherContentAndRevertChevrons(upChevrons, 0);
                   lessonListEventHandler.hideOtherContentAndRevertChevrons(0);
-
             });    
 
       const lessonTitles = document.querySelectorAll('.js-lesson-title');
@@ -86,11 +81,11 @@ export const renderLessons = () => {
 
       renderCustomLesson(lessons, savedLessons, videoPlayer, score, config);
       
-      const summaries = Array.from(document.querySelectorAll('.js-review-summary'));
-            summaries.forEach(lesson => lesson.addEventListener('click', e => {
-                  renderScoreSummary(lesson.dataset.lessonId);
-            }));
-      highlightActiveLesson(summaries);
+      // const summaries = Array.from(document.querySelectorAll('.js-review-summary'));
+      //       summaries.forEach(lesson => lesson.addEventListener('click', e => {
+      //             renderScoreSummary(lesson.dataset.lessonId);
+      //       }));
+      // highlightActiveLesson(summaries);
 };
 
 const highlightActiveLesson = lessons => {

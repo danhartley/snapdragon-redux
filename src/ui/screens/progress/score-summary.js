@@ -11,7 +11,7 @@ import summaryTemplate from 'ui/screens/progress/score-summary-template.html';
 import summaryRowTemplate from 'ui/screens/progress/score-summary-row-template.html';
 import summaryNoRowTemplate from 'ui/screens/progress/score-summary-no-row-template.html';
 
-export const renderScoreSummary = lessonId => {
+export const renderScoreSummary = (lessonId, summaryContainer) => {
 
       const init = () => {
 
@@ -30,13 +30,19 @@ export const renderScoreSummary = lessonId => {
             const template = document.createElement('template');
                   template.innerHTML = summaryTemplate;
       
-            const parent = config.isLandscapeMode 
-                        ? document.querySelector('#lessonModal .js-modal-text')
+            const parent = config.isLandscapeMode
+                        ? summaryContainer || document.querySelector('#lessonModal .js-modal-text')
                         : DOM.rightBody ;
                   parent.innerHTML = '';
             
             renderTemplate({ collection }, template.content, parent);
-      
+
+            const actionLinks = document.querySelectorAll('.js-continue-link');
+
+            if(summaryContainer) {
+                  actionLinks.forEach(link => link.classList.add('hide-important'));
+            }
+            
             let scores = scoreSummaryHandler.getLessonScores(history, lesson, stateScore, savedScore).reverse();
                 scores.forEach(s => renderScoreSummaryRow(scores, s, config));
       
@@ -54,8 +60,6 @@ export const renderScoreSummary = lessonId => {
             const handleNewLesson = async event => {                   
                   await lessonStateHelper.purgeLesson();
             };
-      
-            const actionLinks = document.querySelectorAll('.js-continue-link');
       
             if(lesson.isLessonComplete) {
                   actionLinks.forEach(actionLink => {
