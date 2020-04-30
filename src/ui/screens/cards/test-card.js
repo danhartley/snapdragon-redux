@@ -16,7 +16,7 @@ export const renderTestCardTemplate = (collection, context) => {
 
     const { config } = store.getState();
 
-    const modal = document.querySelector('#lessonModal');
+    const modal = config.isLandscapeMode ? document.querySelector('#lessonModal') : document;
 
     const parent = config.isLandscapeMode 
                         ? modal.querySelector('.js-modal-text')
@@ -35,28 +35,30 @@ export const renderTestCardTemplate = (collection, context) => {
     renderTemplate(context, template.content, parent);
 
     const progressLink = modal.querySelector('.js-review-progress');
-          progressLink.addEventListener('click', e => {
+    if(progressLink) {
+        progressLink.addEventListener('click', e => {
 
-            const summaryContainer = modal.querySelector('.js-summary-container');
+          const summaryContainer = modal.querySelector('.js-summary-container');
 
-            const renderSummaryCard = () => {
+          const renderSummaryCard = () => {
 
-                renderScoreSummary(collection.id, summaryContainer);
+              renderScoreSummary(collection.id, summaryContainer);
 
-                const toggleScreens = (screenOne, screenTwo) => {
-                    hideCurrentCard(screenOne);
-                    screenTwo.classList.remove('swap-out-card');
-                    progressLink.addEventListener('click', e => {
-                        toggleScreens(screenTwo, screenOne);
-                    }, { once: true });
-                };
+              const toggleScreens = (screenOne, screenTwo) => {
+                  hideCurrentCard(screenOne);
+                  screenTwo.classList.remove('swap-out-card');
+                  progressLink.addEventListener('click', e => {
+                      toggleScreens(screenTwo, screenOne);
+                  }, { once: true });
+              };
 
-                toggleScreens(testCardContainer, summaryContainer);
-            };
+              toggleScreens(testCardContainer, summaryContainer);
+          };
 
-            renderSummaryCard();
+          renderSummaryCard();
 
-          }, { once: true });
+        }, { once: true });
+    }
 
     toggleStatementAndQuestion(config);
 
@@ -139,8 +141,8 @@ const toggleStatementAndQuestion = config => {
 
     if(config.isLandscapeMode) return;
     
-    const statement = modal.querySelector('.js-statement-para');
-    const question = modal.querySelector('.js-question-para');
+    const statement = document.querySelector('.js-statement-para');
+    const question = document.querySelector('.js-question-para');
 
     question.classList.add('hide');
 
