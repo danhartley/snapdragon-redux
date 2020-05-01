@@ -44,10 +44,14 @@ export const renderTestCardTemplate = (collection, context) => {
 
               renderScoreSummary(collection.id, summaryContainer);
 
+              let count = 1;
+
               const toggleScreens = (screenOne, screenTwo) => {
                   hideCurrentCard(screenOne);
+                  progressLink.innerHTML = count % 2 === 0 ? 'Progress' : 'Quiz';
+                  count++;
                   screenTwo.classList.remove('swap-out-card');
-                  progressLink.addEventListener('click', e => {
+                  progressLink.addEventListener('click', e => {                    
                       toggleScreens(screenTwo, screenOne);
                   }, { once: true });
               };
