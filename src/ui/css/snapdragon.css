@@ -922,10 +922,6 @@ span.correct {
   color: rgb(2, 107, 26);
 }
 
-.snap-inactive {
-  color: var(--snap-inactive);
-}
-
 .btn.btn-light.snap-success {
   color: var(--snap-text-light) !important;
   background-color: var(--snap-success) !important;
@@ -1142,9 +1138,9 @@ button:disabled {
   border: none;  
 }
 
-label.btn.btn-secondary .lesson-icon {
+/* label.btn.btn-secondary .lesson-icon {
   font-size: .8rem;
-}
+} */
 
 .left-grid,
 .species-card-wiki-entry,
@@ -1854,10 +1850,6 @@ a.collection-disabled {
   color: var(--snap-active);
 }
 
-.lesson-taxa {
-  font-size: .8em;
-}
-
 .lesson-list > div > div:nth-child(1) {
   justify-content: space-between;
   top: 0;
@@ -2045,6 +2037,10 @@ a.collection-disabled {
   padding: 1rem 0;
 }
 
+.score-summary-row-title {
+  padding: .5rem 0 0 0;
+}
+
 .score-summary-row.species {
   background-color: var(--snap-header-background);
   border: none;
@@ -2168,7 +2164,6 @@ img[data-has-image="false"] {
 .score-summary-footer {
   justify-content: flex-end;
   align-items: flex-start;
-  padding-top: 1rem;
 }
 
 .concealed {
@@ -2387,4 +2382,10 @@ img[data-has-image="false"] {
 .image-slider-190 img {
   height: 190px;
   min-height: 190px;
+}
+
+.lesson-icon{
+  width: 98px;
+  height: 68px;
+  object-fit: fill;
 }

@@ -124,7 +124,10 @@
         font-size: 1.2rem;
     }
     .youtube-icon {
-        font-size: 1.2rem !important;
+        font-size: 1.8rem !important;
+    }
+    .lesson-name, .lesson-name .underline-link {
+        font-size: 1rem;
     }
 }
 

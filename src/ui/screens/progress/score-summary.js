@@ -40,7 +40,12 @@ export const renderScoreSummary = (lessonId, summaryContainer) => {
             const actionLinks = document.querySelectorAll('.js-continue-link');
 
             if(summaryContainer) {
-                  actionLinks.forEach(link => link.classList.add('hide-important'));
+                  actionLinks.forEach(link => link.classList.add('snap-inactive'));
+            }
+
+            if(lesson.layoutName === 'summary') {
+                  const progressLink = document.querySelector('.js-review-progress');
+                        progressLink.innerHTML = '';
             }
             
             let scores = scoreSummaryHandler.getLessonScores(history, lesson, stateScore, savedScore).reverse();

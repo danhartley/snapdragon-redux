@@ -7,9 +7,7 @@ import { quickFireHandlers } from 'ui/quick-fire-modal/quick-fire';
 import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
 import { renderLesson } from 'ui/screens/lists/lesson';
 import { renderCustomLesson } from 'ui/screens/lists/lesson-custom';
-// import { renderScoreSummary } from 'ui/screens/progress/score-summary';
 import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
-// import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
 
@@ -79,13 +77,7 @@ export const renderLessons = () => {
 
       },100);
 
-      renderCustomLesson(lessons, savedLessons, videoPlayer, score, config);
-      
-      // const summaries = Array.from(document.querySelectorAll('.js-review-summary'));
-      //       summaries.forEach(lesson => lesson.addEventListener('click', e => {
-      //             renderScoreSummary(lesson.dataset.lessonId);
-      //       }));
-      // highlightActiveLesson(summaries);
+      renderCustomLesson(lessons, savedLessons, videoPlayer, score, config);      
 };
 
 const highlightActiveLesson = lessons => {

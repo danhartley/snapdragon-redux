@@ -447,6 +447,7 @@
   .lesson-taxa {
     overflow-wrap: break-word;
     white-space: initial;
+    font-size: .8em;
   }
 
   .locations .btn.btn-secondary > * {

@@ -1,6 +1,5 @@
 import * as R from 'ramda';
 
-import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -13,9 +12,7 @@ export const renderCompleteText = (collection) => {
 
     const item = collection.nextItem;
 
-    const { layout, config, lessonPlan, userAction } = store.getState();
-
-    // if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
+    const { layout, config, lessonPlan } = store.getState();
 
     const screen = layout.screens.filter(el => el.name === 'text-complete')[0];
     

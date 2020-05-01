@@ -1,12 +1,9 @@
-import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { store } from 'redux/store';
 import { renderInput } from 'ui/screens/text-entry/text-entry';
 
 export const renderTextEntry = (collection) => {
 
-    const { layout, userAction, config } = store.getState();
-
-    // if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
+    const { layout } = store.getState();
 
     const screen = layout.screens.filter(el => el.name === 'text-entry')[0];
     const item = collection.nextItem;
