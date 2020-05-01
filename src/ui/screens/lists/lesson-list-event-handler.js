@@ -11,32 +11,16 @@ import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 const onLoadLessonViewState = (collection, videoPlayer, score, config) => {
 
   const taxa = collection.iconicTaxa ? collection.iconicTaxa.map(taxon => taxon.common).join(', ') : '';
-  // const isCurrentLessonPaused = (!!score && score.collectionId === collection.id);
-  // const isStoredLessonPaused = store.getState().lessons.find(lesson => lesson.collection.id === collection.id);
-  // const isPaused = isCurrentLessonPaused || isStoredLessonPaused;
-  // const isLessonComplete = store.getState().lesson.isLessonComplete;
 
   collection.taxa = taxa;
   collection.hasVideo = collection.video ? true : false;
   collection.showVideoIconClass = collection.hasVideo ? '' : 'hide-important';
   collection.videoState = videoHandler.setVideoState(videoPlayer || [], collection);
-
-  // const length = collection.species ? collection.species.length : collection.items.length;
-  // const plan = config.isLandscapeMode ? collection.lessonPlanLandscape : collection.lessonPlanPortrait;
-  // const shortReviews = [2,102];
-
   collection.reviewState = 'Quiz';
 
-  // collection.reviewState = 
-  //   isLessonComplete 
-  //   ? `Lesson complete`
-  //   : isPaused ? 'Resume Review' :
-  //     R.contains(plan, shortReviews)
-  //       ? `${length} x 30 Second Reviews`
-  //       : `${length} x 2 Minute Reviews`;
-
   collection.hasTermsClass = !!collection.terms ? '' : 'hide-important';
-  collection.isCollectionEditableClass = !!collection.isPrivate ? 'underline-link' : '';
+  collection.isCollectionEditableClass = '';
+  // collection.isCollectionEditableClass = !!collection.isPrivate ? 'underline-link' : '';
 
   return collection;  
 };
@@ -58,20 +42,11 @@ const onClickViewState = (e, lessons) => {
   const container = document.querySelector(`.js-species-container[data-container-id="${lessonId}"]`);
   const speciesList = document.querySelector(`#species_list_id_${lessonId}`);
   const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lessonId}"]`);
-  // const upChevrons = Array.from(document.querySelectorAll('.js-lesson-list-chevron .fa-chevron-up'));
 
   let action = isYoutubeIcon ? enums.userEvent.START_LESSON : isChevronIcon ? enums.userEvent.TOGGLE_SPECIES_LIST : enums.userEvent.DEFAULT;
   lessonStateHandler.recordUserAction(action);
 
   hideOtherContentAndRevertChevrons(lessonId);
-
-  // let reviewLinks = document.querySelectorAll('.js-review-link');
-  //     reviewLinks.forEach(link => {
-  //       const isPaused = store.getState().lessons.find(lesson => lesson.collection.id === parseInt(link.dataset.lessonId));
-  //       if(isPaused) {
-  //         link.innerHTML = 'Resume Review';
-  //       }
-  //     });
 
   const isSpeciesListAvailable = !!speciesList;
   const isSpeciesListHidden = elem.hasClass(speciesList, 'hide');
@@ -91,8 +66,6 @@ const onClickViewState = (e, lessons) => {
 const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
   
   return icon.addEventListener('click', async e => {      
-
-    // e.stopPropagation();
 
     const { icon, lesson, state, speciesList, container, lessonVideoState, row, isYoutubeIcon } = onClickViewState(e, lessons);
 
@@ -130,7 +103,7 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
           if(state.hideSpeciesList) {
             siblingChevron.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
           } else if(!state.revealSpeciesList) {
-            siblingChevron.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
+            // siblingChevron.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
           }
         }
       } else {

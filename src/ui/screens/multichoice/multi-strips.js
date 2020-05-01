@@ -1,6 +1,5 @@
 import * as R from 'ramda';
 
-import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { epithets } from 'api/botanical-latin';
@@ -21,9 +20,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
     try {
 
-        const { config, lesson, layout, userAction } = store.getState();
-
-        // if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
+        const { config, lesson, layout } = store.getState();
 
         const item = collection.nextItem || collection.items[collection.itemIndex];
 

@@ -35,7 +35,10 @@ export const renderTestCardTemplate = (collection, context) => {
     renderTemplate(context, template.content, parent);
 
     const progressLink = modal.querySelector('.js-review-progress');
+
     if(progressLink) {
+
+        progressLink.innerHTML = 'Progress';
         progressLink.addEventListener('click', e => {
 
           const summaryContainer = modal.querySelector('.js-summary-container');

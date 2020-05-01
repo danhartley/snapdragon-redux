@@ -1,6 +1,5 @@
 import * as R from 'ramda';
 
-import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { itemProperties } from 'ui/helpers/data-checking';
@@ -15,9 +14,7 @@ import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specime
 
 export const renderMixedSpecimenImagesAndQuestion = collection => {
 
-    const { config, lesson, layout, score, userAction } = store.getState();
-
-    // if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
+    const { config, lesson, layout, score } = store.getState();
 
     const item = R.clone(collection.nextItem);
 

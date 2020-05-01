@@ -1,6 +1,5 @@
 import * as R from 'ramda';
 
-import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { returnIcon } from 'ui/helpers/icon-handler';
@@ -16,9 +15,7 @@ import mixedSpecimenQuestionTemplate from 'ui/screens/multichoice/landscape/mixe
 
 export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
-    const { config, layout, userAction } = store.getState();
-
-    // if(lessonStateHandler.overrideLesson(userAction, config)) { return; }
+    const { config, layout } = store.getState();
 
     renderMixedSpecimenImagesAndQuestion(collection);
     
