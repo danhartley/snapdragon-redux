@@ -35,7 +35,7 @@ export const renderScoreSummary = (lessonId, summaryContainer) => {
                         : DOM.rightBody ;
                   parent.innerHTML = '';
             
-            renderTemplate({ collection }, template.content, parent);
+            renderTemplate({ collection, lesson }, template.content, parent);
 
             const actionLinks = document.querySelectorAll('.js-continue-link');
 
@@ -99,7 +99,7 @@ const renderScoreSummaryRow = (scores, s, config) => {
 
       const vernacularName = s.vernacularName || itemProperties.getVernacularName(s.binomial, config);
 
-      renderTemplate({ vernacularName, binomial: s.binomial, rows }, template.content, parent);
+      renderTemplate({ vernacularName, binomial: s.binomial, rows, score: `${s.correct}/${s.total}` }, template.content, parent);
 
       if(scores.length > 0) {
             const noQuestionsText = parent.querySelector('.js-no-questions');                  
