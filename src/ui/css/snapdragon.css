@@ -1046,7 +1046,7 @@ button:disabled {
 
 .species-card-images,
 .non-taxon-card-images {
-  height: initial;
+  /* height: initial; */
   display: grid;
   grid-template-columns: 1fr;
   cursor: pointer;

@@ -391,7 +391,7 @@ const summary = quickFire => {
         scoreSummary.innerHTML = `You scored ${quickFire.termScore.correct} out of ${quickFire.termScore.total}.`;        
         if(quickFire.termScore.incorrect > 0) {
             summaryText.innerHTML = `<span class="emphasis">You've answered the questions, but not all correctly.</span>`;
-            continueReview.innerHTML = `<span>Continue review</span>`;            
+            continueReview.innerHTML = `<span>Continue</span>`;            
             continueReview.addEventListener('click', e => {
                 const quickFireRevision = quickFireAPI.getQuickFire(quickFire.termScore.fails, enums.quickFireType.DEFINITION, {});
                 quickFireQuestions(quickFireRevision);

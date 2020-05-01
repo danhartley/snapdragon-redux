@@ -12,17 +12,18 @@
             <div class="score-summary-row-title">
                 <div>
                     <div class="double-centred-block">
-                        <span class="uppercase margin-right">{{ collection.name }}</span>
+                        <span class="uppercase">{{ collection.name }}</span>
                     </div>
-                    <div>
+                    <div class="double-centred-block">
+                        <span>Round {{ lesson.currentRound }} of {{ lesson.rounds }}</span>
                     </div>                
                 </div>
             </div>
-            <div class="score-summary-footer standard-block centred-block">
+            <div class="score-summary-footer running-block centred-block">
                 <span class="underline-link js-continue-link">Continue lesson</span>
             </div>
             <div class="js-score-summary-rows"></div>
-            <div class="score-summary-footer standard-block centred-block">
+            <div class="score-summary-footer running-block centred-block">
                 <span class="underline-link js-continue-link">Continue lesson</span>
             </div>
         </div>    
