@@ -5,7 +5,7 @@ export const DOM = {
     leftFooter : document.getElementsByClassName('js-left-footer')[0],
 
     leftHeaderTxt : document.getElementsByClassName('js-left-txt-header')[0],
-    specimenSpeciesTxt : document.getElementsByClassName('js-txt-specimen-species')[0],    
+    // specimenSpeciesTxt : document.getElementsByClassName('js-txt-specimen-species')[0],    
     specimenRptr : document.getElementsByClassName('js-rptr-specimen')[0],
     
     rightGrid : document.getElementsByClassName('js-right-grid')[0],

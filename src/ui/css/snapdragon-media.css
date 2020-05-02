@@ -373,7 +373,7 @@
     }
         
     .right-grid .header, .right-grid .footer {
-        justify-content: flex-end;
+        justify-content: flex-start;
         padding-right: 1rem;
     }
 
@@ -417,11 +417,22 @@
 
     .left-grid {
         width: 458px;
+        grid-area: left;
     }
 
     .right-grid {
         width: 742px;
+        grid-area: right;
     }
+
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "right left";
+    }
+
+    .left-grid {
+        display: grid;
+    }  
 
     .pool {
         max-width: 70%;
@@ -559,23 +570,7 @@
 
     .portrait, .portrait-grid {
         display: none !important;
-    }
-
-    .grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .left-grid {
-        grid-column: 1;
-    }
-
-    .right-grid {
-        grid-column: 2;
-    }
-
-    .left-grid {
-        display: grid;
-    }    
+    }  
 
     .header > div:nth-child(2) {
         max-width: initial;
