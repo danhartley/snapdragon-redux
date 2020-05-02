@@ -18,7 +18,7 @@ export const renderCustomLesson = (lessons, savedLessons, videoPlayer, score, co
         
         lessons.push(lesson);
         
-        lesson.icon = lesson.icon || "https://content.eol.org/data/media/55/9d/2c/509.118977.98x68.jpg";
+        lesson.icon = lesson.icon || "https://static.inaturalist.org/photos/57604885/small.jpeg?1575746307";
 
         renderTemplate({ lesson }, template.content, parent);
         
