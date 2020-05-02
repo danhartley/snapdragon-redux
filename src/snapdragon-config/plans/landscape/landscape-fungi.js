@@ -13,12 +13,12 @@ export const landscapeFungi = {
             layouts: [                          
                         L.mixedSpecimenImages, 
                         L.latinToCommonMatch, L.commonEntry,
-                        // L.commonToLatinMatch,
-                        // L.textCompleteGenus, L.genusEntry,                        
-                        // L.textCompleteSpecies, L.speciesEntry,
-                        // L.propertyTrait(L.mixedTraitImages, ['capShape']),
-                        // L.propertyTrait(L.mixedTraitImages, ['gillAttachment']),
-                        // L.speciesGenusEntry
+                        L.commonToLatinMatch,
+                        L.textCompleteGenus, L.genusEntry,                        
+                        L.textCompleteSpecies, L.speciesEntry,
+                        L.propertyTrait(L.mixedTraitImages, ['capShape']),
+                        L.propertyTrait(L.mixedTraitImages, ['gillAttachment']),
+                        L.speciesGenusEntry
                     ],
             bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'lookalikes', 'definition' ] } ]
         },
