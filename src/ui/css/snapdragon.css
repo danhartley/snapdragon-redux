@@ -431,13 +431,12 @@ a.dropdown-item {
 }
 
 .left-grid .header, .left-grid .footer {
-  background-color: var(--snap-border-light);
   background-color: var(--snap-portrait);
+  justify-content: flex-end;
 }
 
 .right-grid .header, .right-grid .footer {
   justify-content: center;
-  background-color: var(--snap-border-light);
   background-color: var(--snap-landscape);
 }
 
@@ -456,9 +455,9 @@ a.dropdown-item {
   bottom: 0;  
 }
 
-.txt-specimen-species {
+/* .txt-specimen-species {
   margin: 0 0 0 1rem;
-}
+} */
 
 .answer {
   padding: 1rem;
@@ -1138,10 +1137,6 @@ button:disabled {
   border: none;  
 }
 
-/* label.btn.btn-secondary .lesson-icon {
-  font-size: .8rem;
-} */
-
 .left-grid,
 .species-card-wiki-entry,
 .collection-preview,
@@ -1255,7 +1250,7 @@ button:disabled {
   background-color: var(--snap-text-dark-medium-dark);
 }
 
-.imageSlider .carousel-item {
+.imageSlider .carousel-inner > div, .imageSlider .carousel-item {
   height: var(--vhExtraSmallImageCarousel);
   min-height: var(--vhExtraSmallImageCarousel);
 }
@@ -1780,16 +1775,16 @@ a.collection-disabled {
 }
 
 .lesson-list-header > div:nth-child(2) {  
-  width: var(--vhStandardBlock, 10vh);
+  /* width: var(--vhStandardBlock, 10vh); */
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
 
-.lesson-list-header > div:nth-child(2) i {
+/* .lesson-list-header > div:nth-child(2) i {
   font-size: 1.3rem;
-}
+} */
 
 .lesson-list-header > div:nth-child(2) > div {  
   height: calc( var(--vh) * 5);
@@ -1838,6 +1833,10 @@ a.collection-disabled {
 .lesson-review, .lesson-terms-review {
   pointer-events: initial;  
   line-height: 3;
+}
+
+.lesson-review > div { 
+  line-height: 2rem;
 }
 
 .lesson-review i {

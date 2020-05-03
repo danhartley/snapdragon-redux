@@ -10,6 +10,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { firestore } from 'api/firebase/firestore';
+import { lessonStateHelper } from 'ui/screens/lists/lesson-state-helper';
 
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 import stripWithImageTemplate from 'ui/screens/multichoice/multi-strips-with-images.html';
@@ -20,7 +21,9 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
     try {
 
-        const { config, lesson, layout } = store.getState();
+        const { config, lesson, layout, userAction } = store.getState();
+
+        if(lessonStateHelper.overrideLesson(userAction, config)) { return; }
 
         const item = collection.nextItem || collection.items[collection.itemIndex];
 
@@ -28,7 +31,9 @@ export const renderMultiStrips = (collection, bonus, args) => {
     
         const screen = bonus ? bonus.screen || layout.screens[1] : layout.screens[1];
 
-        const defaultQueryLimit = 6, defaultLanguage = 'en';
+        let defaultQueryLimit = 6, defaultLanguage = 'en';
+
+        defaultLanguage = config.language;
 
         const init = async () => {
 
@@ -118,7 +123,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
                         answer = { term: item.vernacularName };   
                         answers = await getPoolItems(collection, 6);
-                        answers = answers.map(a => itemProperties.getVernacularName(a, defaultLanguage));
+                        answers = answers.map(a => itemProperties.getVernacularName(a, config, false, 'vernacularName', defaultLanguage));
                         answers = R.take(5, answers.filter(a => a !== item.vernacularName));
                         answers = utils.shuffleArray([item.vernacularName, ...answers]);
                         answers = answers.map(a => { return { term: a } });

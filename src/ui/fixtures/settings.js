@@ -4,6 +4,7 @@ import { persistor } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import { cookieHandler } from 'ui/helpers/cookie-handler';
+import { languagePicker } from 'ui/screens/common/language-selection';
 
 import settingsTemplate from 'ui/fixtures/settings-template.html';
 
@@ -61,5 +62,9 @@ export const settingsHandler = () => {
                 ? `Delay updated to ${delay} second.`
                 : `Delay updated to ${delay} seconds.`;
         }, 500);        
+    });
+
+    languagePicker(config, document.querySelector('.js-language-selection-container'), (config) => {
+        actions.boundUpdateConfig(config);
     });
 };
