@@ -971,6 +971,7 @@ export const enums = {
   SINGLE: 'Single',
   PANICLE: 'Panicle',
   CYMOSE: 'Cymose',
+  BRANCHED_SPIKE: 'Branched spike',
   },
   umbelType: {
     FLAT: 'Flat',
@@ -1305,6 +1306,7 @@ export const enums = {
     ROUGH: 'Rough',
     SMOOTH: 'Smooth',
     VELVETY: 'Velvety',
+    HAIRY: 'Hairy',
   },
   treeShape: {
     help: "Which descrption is the best match for this tree?",

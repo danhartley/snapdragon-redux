@@ -1250,7 +1250,7 @@ button:disabled {
   background-color: var(--snap-text-dark-medium-dark);
 }
 
-.imageSlider .carousel-item {
+.imageSlider .carousel-inner > div, .imageSlider .carousel-item {
   height: var(--vhExtraSmallImageCarousel);
   min-height: var(--vhExtraSmallImageCarousel);
 }
@@ -1833,6 +1833,10 @@ a.collection-disabled {
 .lesson-review, .lesson-terms-review {
   pointer-events: initial;  
   line-height: 3;
+}
+
+.lesson-review > div { 
+  line-height: 2rem;
 }
 
 .lesson-review i {

@@ -1,5 +1,6 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import { enums } from 'ui/helpers/enum-helper';
+import { languagePicker } from 'ui/screens/common/language-selection';
 
 import speciesTemplate from 'ui/create-guide-modal/species-search-options-template.html';
 
@@ -30,9 +31,7 @@ export const renderSpeciesSearchOptions = createGuide => {
 
     const config = createGuide.getConfig();
 
-    const languages = config.languages;
-
-    renderTemplate({ options, languages }, template.content, parent);
+    renderTemplate({ options }, template.content, parent);
 
     const handleNextStepAction = event => {
 
@@ -49,29 +48,17 @@ export const renderSpeciesSearchOptions = createGuide => {
 
     const lessonOptions = document.querySelectorAll('.custom-lesson-species-list li');
     
-          lessonOptions.forEach((option, index) => {
-            option.addEventListener('click', handleNextStepAction, true);
-        });
+    lessonOptions.forEach((option, index) => {
+        option.addEventListener('click', handleNextStepAction, true);
+    });
 
-        const taxonLanguageBtn = document.querySelector('#taxonLanguageBtn');
-              taxonLanguageBtn.innerHTML = `Taxon language [ ${languages.find(l => l.lang === config.language).name} ] `;
+    languagePicker(config, document.querySelector('.js-language-selection-container'), (config) => {
+        createGuide.setConfig(config);
+    });
 
-        const taxonLanguageTxt = document.querySelector('#taxonLanguageTxt');
-              taxonLanguageTxt.innerHTML = languages.find(l => l.lang === config.language).name;
-
-        document.querySelectorAll('.dropdown-item').forEach(language => {
-            language.addEventListener('click', event => {
-                config.language = languages.find(l => l.lang === event.target.id).lang;
-                createGuide.setConfig(config);
-                const name = languages.find(l => l.lang === event.target.id).name;
-                taxonLanguageBtn.innerHTML = `Taxon language [ ${name} ]`;
-                taxonLanguageTxt.innerHTML = name;
-            });
-        });
-
-        const warning = createGuide.modal.querySelector('.js-persistence-warning');
-              
-        if(createGuide.user) {
-            warning.classList.add('hide-important');
-        }
+    const warning = createGuide.modal.querySelector('.js-persistence-warning');
+            
+    if(createGuide.user) {
+        warning.classList.add('hide-important');
+    }
 };
