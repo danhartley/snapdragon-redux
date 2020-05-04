@@ -24,7 +24,6 @@
     align-items: center;
     justify-content: space-between;
     height: var(--vhRunningBlock,7.5vh);
-    background-color: var(--snap-portrait);
     background-color: var(--snap-landscape);
     border: none;
 }
@@ -224,17 +223,24 @@
 
   #badgeListModal .modal-dialog {
     width: 100%;
-    margin: calc(var(--vhRunningBlock) + 5px + var(--vhStandardBlock) + var(--vhSmallImageCarousel) + .5rem) auto auto auto;
-    
+    margin: calc(var(--vhRunningBlock) + var(--vhStandardBlock)) auto auto auto;    
+  }
+
+  #badgeListModal .modal-content, #badgeListModal .modal-body {
+    background-color: var(--snap-lesson-row-green);
   }
 
   #badgeListModal .modal-header {
     color: var(--snap-text-dark);
-    background-color: var(--snap-species-header-background);
+    background-color: var(--snap-content-background);
+  }
+
+  #badgeListModal .modal-footer.double-centred-block {
+    background-color: var(--snap-content-background);
   }
 
   #badgeListModal .modal-body {
-    height: calc(var(--vhDoubleStandardBlock, 20vh) * 2.6);
+    height: calc(var(--vhDoubleStandardBlock, 20vh) * 3);
     padding: .5rem;
   }
   

@@ -11,8 +11,11 @@ import { settingsHandler } from 'ui/fixtures/settings';
 import { renderLogin } from 'ui/fixtures/login';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { quickFireHandlers } from 'ui/quick-fire-modal/quick-fire';
+import { renderLanguagePicker } from 'ui/fixtures/language';
 
 import navigationTemplate from 'ui/fixtures/navigation-template.html';
+import navigationLeftTemplate from 'ui/fixtures/navigation-left-template.html';
+import navigationRightTemplate from 'ui/fixtures/navigation-right-template.html';
 
 const onLoseFocusListeners = [];
 
@@ -23,16 +26,30 @@ export const onAddLoseFocusListener = listener => {
 
 export const renderNavigation = collection => {
 
-    const { config, counter, user } = store.getState();
+    const { config, counter } = store.getState();
 
     const template = document.createElement('template');
 
     template.innerHTML = navigationTemplate;
 
-    const parent = config.isPortraitMode ? document.querySelector('.js-right-footer .js-nav-icons') : document.querySelector('.js-left-footer .js-nav-icons');
-          parent.innerHTML = '';
-
-    renderTemplate({ }, template.content, parent);
+    // const parent = config.isPortraitMode ? document.querySelector('.js-right-footer .js-nav-icons') : document.querySelector('.js-left-footer .js-nav-icons');
+    
+    let parent;
+    
+    if(config.isPortraitMode) {
+        parent = document.querySelector('.js-right-footer .js-nav-icons');
+        parent.innerHTML = '';
+        renderTemplate({ }, template.content, parent);
+    } else {
+        template.innerHTML = navigationLeftTemplate;
+        parent = document.querySelector('.js-left-footer .js-nav-icons');
+        parent.innerHTML = '';
+        renderTemplate({ }, template.content, parent);
+        template.innerHTML = navigationRightTemplate;
+        parent = document.querySelector('.js-right-footer .js-nav-icons');
+        parent.innerHTML = '';
+        renderTemplate({ }, template.content, parent);
+    }
 
     const navIcons =  document.querySelectorAll('.js-nav-icons .icon');
 
@@ -89,6 +106,8 @@ export const renderNavigation = collection => {
                     case enums.navigation.LOGIN:
                         renderLogin(store.getState().user);
                         break;
+                    case enums.navigation.LANGUAGE:
+                        renderLanguagePicker();
                     default:
                         return;
                 }
@@ -104,13 +123,15 @@ export const renderNavigation = collection => {
 
         if(counter.isLessonPaused) {
 
-            const id = config.isPortraitMode ? enums.navigation.PORTRAIT_HOME.name : enums.navigation.LANDSCAPE_HOME.name;
-            let icon = document.getElementById(id);
+            // const id = config.isPortraitMode ? enums.navigation.PORTRAIT_HOME.name : enums.navigation.LANDSCAPE_HOME.name;
+            if(config.isPortraitMode) {
+                const id = enums.navigation.PORTRAIT_HOME.name;
+                let icon = document.getElementById(id);
+                const returningUser = !cookieHandler.isFirstTimeVisitor();
 
-            const returningUser = !cookieHandler.isFirstTimeVisitor();
-
-            if(id === enums.navigation.LANDSCAPE_HOME.name || (id === enums.navigation.PORTRAIT_HOME.name && returningUser)) {
-                icon.classList.add('active-icon');
+                if(id === enums.navigation.LANDSCAPE_HOME.name || (id === enums.navigation.PORTRAIT_HOME.name && returningUser)) {
+                    icon.classList.add('active-icon');
+                }
             }
         } else {
             navIcons.forEach(icon => icon.classList.remove('active-icon'));
@@ -122,6 +143,6 @@ export const renderNavigation = collection => {
 
 export const renderLoginChanges = user => {
 
-    const login = document.querySelector('.js-login');
-          login.dataset.isLoggedIn = !!user;
+    // const login = document.querySelector('.js-login');
+    //       login.dataset.isLoggedIn = !!user;
 };

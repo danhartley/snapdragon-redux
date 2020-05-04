@@ -377,9 +377,14 @@
         padding-right: 1rem;
     }
 
-    .right-grid .footer {
+    .right-grid .footer > span, .left-grid .footer > span {
+        max-width: 50%;
         text-transform: none;
         justify-content: space-between;
+    }
+
+    .left-grid .footer {
+        justify-content: flex-start;
     }
 
     .snapdragon-intro > div:nth-child(1) {
@@ -490,6 +495,10 @@
       #badgeListModal .modal-dialog {
         width: 30vw;
         margin: calc( var(--vhRunningBlock) + var(--vhStandardBlock) + 5px + .5rem ) auto auto auto;
+      }
+
+      #badgeListModal .modal-body {
+        height: calc(var(--vhDoubleStandardBlock, 20vh) * 2);
       }
 
       #wikiModal .modal-dialog {

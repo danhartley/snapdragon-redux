@@ -596,6 +596,10 @@
     display: none !important;
   }
 
+  .filter-language-option-block {
+    width: 100%;
+  }
+  
   .filter-language-option-block span {
     text-transform: uppercase;
     margin-left: .15rem;

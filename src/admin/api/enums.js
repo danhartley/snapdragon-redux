@@ -448,6 +448,7 @@ export const enums = {
   DARK_RED: 'Dark red',
   DARK_PINK: 'Dark pink',
   ORANGE: 'Orange',
+  SCARLET: 'scarlet',
   BLOOD_RANGE: 'Blood orange',
   RED: 'Red',
   RED_BROWN: 'Red-brown',
@@ -504,6 +505,7 @@ export const enums = {
   BIRDS_NEST: 'Bird\'s nest',
   POISON: 'Poison',
   FODDER: 'Fodder',
+  FORAGE: 'Forage',
   GREEN_MANURE: 'Green manure',
   MEDICINE: 'Medicine',
   FUR: 'Fur',
@@ -957,6 +959,7 @@ export const enums = {
   ARIL: 'Aril',
   SYCONIUM: 'syconium',
   FOLLICLE: 'Follicle',
+  SILIQUE: 'Silique',
   type: 'fruitType',
   name: 'fruit type'
   },
