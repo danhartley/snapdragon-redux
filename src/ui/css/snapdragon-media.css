@@ -492,6 +492,10 @@
         margin: calc( var(--vhRunningBlock) + var(--vhStandardBlock) + 5px + .5rem ) auto auto auto;
       }
 
+      #badgeListModal .modal-body {
+        height: calc(var(--vhDoubleStandardBlock, 20vh) * 2);
+      }
+
       #wikiModal .modal-dialog {
         max-width: 900px;
         margin: auto;

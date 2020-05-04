@@ -64,7 +64,6 @@ progress::-webkit-progress-bar {
   background-color: var(--snap-progress-bg);
 }
 progress::-webkit-progress-value {
-  background-color: var(--snap-progress-bar);
   background-color: var(--snap-text-medium-dark);
 }
 progress::-moz-progress-bar {
@@ -1165,7 +1164,7 @@ button:disabled {
 .badge-list {
   height: 100%;
   padding: 1rem;
-  background-color: var(--snap-dd-collection-bg-active);
+  /* background-color: var(--snap-content-background); */
 }
 
 .question-images {
@@ -1174,13 +1173,6 @@ button:disabled {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 0.5rem;
 }
-
-/* .answer-container {
-  border: .05 solid var(--snap-dd-non-taxa-bg-active);
-  padding: 0.25rem 0.5rem;
-  padding: 0.25rem 0 0.5rem 0;
-  margin: 2rem 0 1rem 0;
-} */
 
 .layer-container {
   cursor: pointer;

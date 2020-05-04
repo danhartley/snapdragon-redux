@@ -1,9 +1,26 @@
 import { renderTemplate } from 'ui/helpers/templating';
+
 import badgeTemplate from 'ui/screens/common/badge-template.html';
 
 export const renderBadge = (badge, item, config) => {
 
-    const names = [ ...new Set(item.names.filter(name => name.language === config.language).map(name => name.vernacularName.toLowerCase())) ];
+    let names = [ ...new Set(item.names.map(name => {
+        return {
+            common: name.vernacularName.toLowerCase(),
+            language: name.language
+        }
+    })) ];
+
+    const languageNames = names.reduce(function (r, a) {
+        r[a.language] = r[a.language] || {};
+        r[a.language].name = config.languages.find(language => language.lang === a.language).name;
+        r[a.language].names = r[a.language].names || [];
+        r[a.language].names.push(a.common);
+        return r;
+    }, Object.create(null));
+
+    console.log(languageNames);
+
     const occurrences = names.length;
 
     const template = document.createElement('template');
@@ -30,7 +47,7 @@ export const renderBadge = (badge, item, config) => {
 
             template.innerHTML = badgeTemplate;
 
-            renderTemplate({ names }, template.content, parent);
+            renderTemplate({ languageNames }, template.content, parent);
         });
     }
 }

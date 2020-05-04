@@ -1,3 +1,8 @@
-<ul data-repeat-name="{{ names }}" class="scrollable badge-list">
-    <li class="capitalise">{{ name }}</li>
+<ul data-repeat-language="{{ languageNames }}" class="scrollable badge-list">
+    <li class="capitalise">
+        <div class="uppercase">{{ language.name }}</div>
+        <ul data-repeat-common="{{ language.names }}">
+            <li>{{ common }}</li>
+        </ul>
+    </li>
 </ul>

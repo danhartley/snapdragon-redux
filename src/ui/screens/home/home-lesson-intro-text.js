@@ -52,23 +52,23 @@ export const textSetup = (collection, config) => {
     }, 1500);
 };
 
-function handleSpeciesUpdate(speciesCount, collection, speciesSummary, iconicTaxa) {
+const handleSpeciesUpdate = (speciesCount, collection, speciesSummary, iconicTaxa) => {
     if (speciesCount === '--') {
         speciesCount = getSpeciesCount(collection);
         document.querySelector('.js-species-summary').innerHTML = speciesSummary = getSpeciesSummary(iconicTaxa, speciesCount);
     }
     return { speciesCount, speciesSummary };
-}
+};
 
-function getSpeciesSummary(iconicTaxa, speciesCount) {
+const getSpeciesSummary = (iconicTaxa, speciesCount) => {
     return iconicTaxa.length === 1
         ? `${speciesCount} species in ${iconicTaxa.length} taxon.`
         : `${speciesCount} species in ${iconicTaxa.length} taxa.`;
-}
+};
 
-function getSpeciesCount(collection) {
+const getSpeciesCount = collection => {
     let count = (collection.itemNames && collection.itemNames.length > 0)
         ? collection.itemNames.length
-        : collection.items.length;
+        : collection.items ? collection.items.length : 0;
     return count === 0 ? '--' : count;
-}
+};
