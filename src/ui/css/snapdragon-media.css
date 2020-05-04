@@ -377,9 +377,14 @@
         padding-right: 1rem;
     }
 
-    .right-grid .footer {
+    .right-grid .footer > span, .left-grid .footer > span {
+        max-width: 50%;
         text-transform: none;
         justify-content: space-between;
+    }
+
+    .left-grid .footer {
+        justify-content: flex-start;
     }
 
     .snapdragon-intro > div:nth-child(1) {

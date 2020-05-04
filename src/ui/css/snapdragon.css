@@ -219,7 +219,7 @@ a.dropdown-item {
   text-transform: uppercase;
 }
 
-.home, .settings, .nav-info, .list, .glossary, .email, .login, .email > a {
+.home, .settings, .nav-info, .list, .glossary, .email, .login, .email > a, .language {
   cursor: pointer;
   color: var(--snap-text-dark);
   font-size: 1.4rem;
@@ -430,8 +430,8 @@ a.dropdown-item {
 }
 
 .left-grid .header, .left-grid .footer {
-  background-color: var(--snap-portrait);
   justify-content: flex-end;
+  background-color: var(--snap-portrait);
 }
 
 .right-grid .header, .right-grid .footer {
