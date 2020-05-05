@@ -396,6 +396,16 @@
         padding: 2rem;
     }
 
+    .lesson-list-item {
+        width: 200px;
+    }
+
+    .lesson-icon {
+        width: 80px;
+        height: 80px;
+        object-fit: none;
+    }
+
     .lesson-list-carousel-item {
         align-items: center;
         display: grid;
