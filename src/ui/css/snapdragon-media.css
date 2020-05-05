@@ -383,9 +383,9 @@
         justify-content: space-between;
     }
 
-    .left-grid .footer {
+    /* .left-grid .footer {
         justify-content: flex-start;
-    }
+    } */
 
     .snapdragon-intro > div:nth-child(1) {
         margin: 0rem 2.4rem 0 2.4rem !important;
