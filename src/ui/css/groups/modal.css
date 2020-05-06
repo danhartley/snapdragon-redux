@@ -227,16 +227,16 @@
   }
 
   #badgeListModal .modal-content, #badgeListModal .modal-body {
-    background-color: var(--snap-lesson-row-green);
+    background-color: var(--snap-progress-bg);
   }
 
   #badgeListModal .modal-header {
     color: var(--snap-text-dark);
-    background-color: var(--snap-content-background);
+    background-color: var(--snap-border-medium);
   }
 
   #badgeListModal .modal-footer.double-centred-block {
-    background-color: var(--snap-content-background);
+    background-color: var(--snap-border-medium);
   }
 
   #badgeListModal .modal-body {
@@ -246,6 +246,7 @@
   
   #badgeListModal li {  
     line-height: 1.5rem;
+    margin: 0;
   }
 
   #badgeListModal .modal-text {  

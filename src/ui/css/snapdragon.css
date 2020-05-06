@@ -1164,7 +1164,7 @@ button:disabled {
 .badge-list {
   height: 100%;
   padding: 1rem;
-  /* background-color: var(--snap-content-background); */
+  background-color: var(--snap-btn-light);
 }
 
 .question-images {
