@@ -1242,7 +1242,7 @@ button:disabled {
   background-color: var(--snap-text-dark-medium-dark);
 }
 
-.imageSlider .carousel-inner > div, .imageSlider .carousel-item {
+.imageSlider .carousel-inner > div:nth-child(1), .imageSlider .carousel-item {
   height: var(--vhExtraSmallImageCarousel);
   min-height: var(--vhExtraSmallImageCarousel);
 }
@@ -1280,7 +1280,6 @@ button:disabled {
 
 .imageSlider .carousel-control-next-icon,
 .imageSlider .carousel-control-prev-icon {
-  /* opacity: 0; */
   width: 1.5rem;
   height: 1.5rem;
 }

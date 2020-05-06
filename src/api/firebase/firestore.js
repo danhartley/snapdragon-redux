@@ -256,10 +256,13 @@ const updateSpecies = async species => {
                 rightsHolder: image.rightsHolder || '',
                 source: image.source || '',
                 title: image.title || '',
-                url: image.url || ''     
+                url: image.url || '',
             };
             if(image.starred) {
                 updatedSpecies.starred = image.starred;
+            }
+            if(image.provider) {
+                updatedSpecies.provider = image.provider;
             }
             return updatedSpecies;
         });
