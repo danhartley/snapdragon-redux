@@ -63,7 +63,9 @@ export const renderSpeciesList = (lesson, args) => {
               accordions.forEach(accordion => {
                   const accordionHandler = event => {
                       const species = collection.items.find(item => item.name === event.currentTarget.dataset.name);
-                    openAccordionHandler(species, accordion);
+                      if(species) {
+                        openAccordionHandler(species, accordion);
+                      }
                   };
                   accordion.addEventListener('click', accordionHandler);
               });
@@ -78,7 +80,8 @@ export const renderSpeciesList = (lesson, args) => {
                           activeIcon.classList.add('youtube-green-fg');
                     const speciesName = activeIcon.dataset.name;
 
-                    const species = collection.items.find(item => item.name == speciesName);   
+                    const species = { ...collection.items.find(item => item.name == speciesName), ...collection.species.find(item => item.name == speciesName) };
+
 
                     openSpeciesDescriptionHandler(collection, species, true);
 
@@ -186,19 +189,24 @@ export const renderSpeciesList = (lesson, args) => {
             
             if(activeAccordion) {
                 activeAccordion.innerHTML = `<i class="fas fa-chevron-up" data-name="${species.name}"></i>`;
+
+                if(activateYoutubeIcon) {
+                  const activeYouTubeIcon = activeAccordion.parentElement.parentElement.querySelector('.js-youtube');
+                        activeYouTubeIcon.classList.add('youtube-green-fg');
+              }
             }
 
-            if(activateYoutubeIcon) {
-                const activeYouTubeIcon = activeAccordion.parentElement.parentElement.querySelector('.js-youtube');
-                      activeYouTubeIcon.classList.add('youtube-green-fg');
-            }
+            // if(activateYoutubeIcon) {
+            //     const activeYouTubeIcon = activeAccordion.parentElement.parentElement.querySelector('.js-youtube');
+            //           activeYouTubeIcon.classList.add('youtube-green-fg');
+            // }
 
             let description = species.description;
                 description = !!description ? description : (species.traits.description && species.traits.description.value) ? species.traits.description.value[0] : '';
 
             if(description) {
 
-                const id = species.id;
+                const id = species.id || species.eolId;
                 const tr = document.querySelector(`#id_${id}`);
                 
                 const td = document.createElement('td');
@@ -233,10 +241,14 @@ export const renderSpeciesList = (lesson, args) => {
                 }
             }
         } catch(e) {
+          console.log('error:', e.message);
         }
     };
 
     videoHandler.onSpeciesTimeMatch((collection, species) => {
+
+      console.log('species time match')
+
         openSpeciesDescriptionHandler(collection, species);
         updateVideoPlayer(collection, species);
         onSpeciesChangeHandler(species);
@@ -307,7 +319,7 @@ const updateVideoPlayer = (collection, species) => {
     };
 
     activeLesson.speciesName = species.name;
-    activeLesson.pausedAt = species.time[0];
+    activeLesson.pausedAt = species.time ? species.time[0] : 0;
 
     videoHandler.saveVideoState(playerRecords);
 };

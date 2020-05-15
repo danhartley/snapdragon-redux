@@ -37,10 +37,10 @@ const changeRequest = async args => {
       const { collectionToLoad, updatedCounter} = requestArgs;
       return await getUserLessonProgressState(collectionToLoad, config, collections, updatedCounter);
     
-      case enums.lessonState.ADD_SPECIES_TO_COLLECTION:
+    case enums.lessonState.ADD_SPECIES_TO_COLLECTION:
       return await addExtraSpeciesSelection(requestArgs);
     
-      case enums.lessonState.RENDER_SPECIES_LIST:
+    case enums.lessonState.RENDER_SPECIES_LIST:
       renderLessonSpeciesList(requestArgs);
     break;
     
