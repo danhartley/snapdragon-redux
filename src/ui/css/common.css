@@ -3,6 +3,10 @@
     display: flex;
   }
 
+  .flexnowrap {
+    flex-wrap: nowrap;
+  }
+
  .centred-block {
     display: flex;
     align-items: center;

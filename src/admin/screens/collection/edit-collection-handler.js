@@ -29,12 +29,14 @@ const renderAddSpeciesToCollection = async (collection, speciesName, origin) => 
     const speciesLinks = document.querySelectorAll('ul > li.custom-control.custom-checkbox');
     const speciesLink = speciesLinks[speciesLinks.length - 1];
 
-    addSpeciesClickHandler(speciesLink, collection, document.querySelector('#js-collection-options'), origin);
+    addSpeciesClickHandler(speciesLink, collection, document.querySelector('#js-collection-options'), origin);    
 };
 
 const addSpeciesClickHandler = (link, collection, optionsParent, origin) => {
 
     return link.addEventListener('click', async (e) => {
+
+      // optionsParent.classList.remove('hide');
 
         const speciesName = e.target.getAttribute('name');
 
@@ -73,8 +75,6 @@ const collectionPickedHandler = async (collection, origin) => {
 
     let items = (collection.items && collection.items.length > 0) ? collection.items : collection.species;
 
-    console.log(items);
-
     if(items.length > 0) {
 
         if(!items[0].vernacularName) {
@@ -100,6 +100,8 @@ const collectionPickedHandler = async (collection, origin) => {
     if(collection.isPrivate) document.querySelector('#isPrivateChkBox').setAttribute('checked', 'checked');
 
     const optionsParent = document.querySelector('#js-collection-options');
+
+    // if(origin == 'SPECIES') optionsParent.classList.remove('hide');
 
     const chkBoxes = document.querySelectorAll('.custom-control-input');
           chkBoxes.forEach(chkBox => {
@@ -134,8 +136,13 @@ const collectionPickedHandler = async (collection, origin) => {
           });
 };
 
+const updateCollection = async collection => {
+    return await firestore.updateCollection(collection);
+};
+
 export const editCollectionHandler = {
     renderAddSpeciesToCollection,
     addSpeciesClickHandler,
-    collectionPickedHandler
+    collectionPickedHandler,
+    updateCollection
 }

@@ -116,7 +116,7 @@ const editCollectionQuestionsTab = document.querySelector('#edit-collection-ques
       editCollectionQuestionsTab.addEventListener('click', editCollectionQuestions);
 
 const editCollectionVideoTab = document.querySelector('#edit-collection-video');
-      editCollectionVideoTab.addEventListener('click', editCollectionVideo);
+      editCollectionVideoTab.addEventListener('click', editCollectionVideo);      
 
 const createQuestionTab = document.querySelector('#create-question');
       createQuestionTab.addEventListener('click', createQuestion);
@@ -128,7 +128,7 @@ const setupUI = (user) => {
   if (user) {
     loggedInLinks.forEach(item => item.classList.remove('hide'));
     loggedOutLinks.forEach(item => item.classList.add('hide'));
-    editCollectionVideoTab.click();
+    editCollectionTab.click();
 } else {    
     loggedInLinks.forEach(item => item.classList.add('hide'));
     loggedOutLinks.forEach(item => item.classList.remove('hide'));

@@ -9,7 +9,7 @@ export const onSpeciesChangeHandler = species => {
 
     try {
 
-        const id = species.id;
+        const id = species.id || species.eolId;
         const tr = document.querySelector(`#id_${id}`);
 
         currentlyActiveRow = tr;

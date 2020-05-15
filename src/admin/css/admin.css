@@ -130,6 +130,7 @@
       height: initial;
       width: initial;
       margin: 1rem 0 0 0;
+      padding: 0 .25rem;
   }
 
   /* Move to common fieldset */
@@ -257,6 +258,11 @@
 
   .dropdown-content {
     top: 4.5rem !important;
+  }
+
+  nav ul li {
+    text-align: center;
+    width: 150px;
   }
 
   @media (min-width: 1200px) {

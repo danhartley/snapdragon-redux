@@ -23,18 +23,27 @@ export const editCollectionVideo = () => {
             inputCollection.focus();
         }, 200);
 
-        let collection;
+        let collection = window.snapdragon.collection;
+
+        if(collection) {
+            editCollectionHandler.collectionPickedHandler(collection, 'VIDEO');
+            setTimeout(() => {
+                inputCollection.value = collection.name;
+            }, 250);
+        }
 
         collectionPicker(inputCollection, async selectedCollection => {
             collection = selectedCollection;
             editCollectionHandler.collectionPickedHandler(selectedCollection, 'VIDEO');
+            window.snapdragon.collection = selectedCollection;
+            console.log(window.snapdragon.collection);            
         });
 
         const addSpeciesHandler = async speciesName => {
             editCollectionHandler.renderAddSpeciesToCollection(collection, speciesName, 'VIDEO');
         };
 
-        addListenerToAddedSpecies(addSpeciesHandler);
+        addListenerToAddedSpecies(addSpeciesHandler);        
     };
 
     init();

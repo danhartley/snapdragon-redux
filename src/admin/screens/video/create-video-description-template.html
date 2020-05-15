@@ -14,10 +14,16 @@
             <input class="has-character-counter validate" minLength="1" maxlength="50" id="input-time" type="text" spellcheck="false" type="text" data-length="150">  
             <label class="active" for="input-time">Time</label>
         </div>
+        <div>
+            <span class="js-audio-metrics"></span>
+        </div>
     </div>
-    <div class="input-field col s12">
-        <textarea name="" id="input-description" spellcheck="true" cols="100" rows="10"></textarea>
-        <label class="active" for="input-description">Description</label>
+    <div class="row flex flexnowrap">
+        <div class="input-field col s8">
+            <textarea name="" id="input-description" spellcheck="true" cols="100" rows="18"></textarea>
+            <label class="active" for="input-description">Description</label>
+        </div>
+        <div class="input-field col s4 margin-top js-tags"></div>
     </div>
 
 </div>

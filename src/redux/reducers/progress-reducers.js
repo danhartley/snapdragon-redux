@@ -31,7 +31,7 @@ export const counter = (state = null, action) => {
     }
 };
 
-export const score = (state = R.clone(progressState.score), action) => {
+export const score = (state = progressState.score, action) => {
     switch(action.type) {
         case types.UPDATE_SCORE: {
         

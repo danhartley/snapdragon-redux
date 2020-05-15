@@ -1,12 +1,9 @@
 import * as R from 'ramda';
 
-import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { videoHandler } from 'ui/screens/lists/video-handler';
-import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
 
 import videoTemplate from 'ui/screens/home/home-lesson-intro-video-template.html';
-import linksTemplate from 'ui/screens/home/home-lesson-links-template.html';
 
 export const videoSetup = (collection, videoPlayer, parent, startTime) => {
 
@@ -34,10 +31,9 @@ export const videoSetup = (collection, videoPlayer, parent, startTime) => {
         const checkCurrentTime = player => {
 
             checkInt = setInterval(function() {
-               const time = Math.floor(player.getCurrentTime());
-               const times = collection.items ? collection.items.filter(sp => sp.time) : collection.species.filter(sp => sp.time);
-               const match = times.find(sp => R.contains(time, sp.time));
-               if(match) {
+               const time = Math.floor(player.getCurrentTime());               
+               const match = matchSpeciesTime(time, collection);
+               if(!!match) {
                    videoHandler.onSpeciesTimeMatchListeners.map(listener => listener(collection, match));
                }
                if(!collection.notes) return;
@@ -52,14 +48,20 @@ export const videoSetup = (collection, videoPlayer, parent, startTime) => {
 
             if(!typeof player.getPlayerState === 'function' || player.getPlayerState === undefined) return;
 
-            switch(player.getPlayerState()) {
-                case videoHandler.states[1].key:
+            const playerState = player.getPlayerState();
+
+            console.log('player.getPlayerState():', playerState);
+
+            switch(playerState) {
+                case videoHandler.states.find(state => state.value === 'playing').key: // 1
                     checkCurrentTime(player);
                     break;
-                case videoHandler.states[2].key:
+                case videoHandler.states.find(state => state.value === 'paused').key: // 2
                     clearInterval(checkInt);
                     checkInt = null;
                     break;
+                default:
+                    checkCurrentTime(player);
             }
         };
 
@@ -69,9 +71,7 @@ export const videoSetup = (collection, videoPlayer, parent, startTime) => {
             setTimeout(() => {
                 videoHandler.playVideoFrom(startTime);
             }, 1000);
-        }
-        
-        // xxLessonLogic();
+        }        
 
     }, timeBeforeVideoPlayerReady);
         
@@ -81,18 +81,8 @@ export const videoSetup = (collection, videoPlayer, parent, startTime) => {
   
 };
 
-const xxLessonLogic = () => {
-
-    const template = document.createElement('template');
-          template.innerHTML = linksTemplate;
-
-    const parent = document.querySelector('.js-lesson-links');
-          parent.innerHTML = '';
-
-    const { collection } = store.getState();
-
-    renderTemplate({ lesson: collection }, template.content, parent);
-
-    const reviewLink = document.querySelector('.js-review-link');
-    lessonListEventHandler.onReviewClickHandler(reviewLink);
-};
+export const matchSpeciesTime = (time, collection) => {
+  const species = collection.items ? collection.items.filter(sp => sp.time) : collection.species.filter(sp => sp.time);
+  const match = species.find(sp => R.contains(time, sp.time));
+  return match;
+}

@@ -27,12 +27,21 @@ export const editCollectionTerms = () => {
 
         const inputTerm = document.querySelector('#input-term');
 
-        let collection;
+        let collection = window.snapdragon.collection;
+
+        if(collection) {
+            getCollectionTerms(collection);
+            setTimeout(() => {
+                inputCollection.value = collection.name;
+            }, 250);
+        }
 
         collectionPicker(inputCollection, async selectedCollection => {
             collection = selectedCollection;
             inputTerm.focus();
             getCollectionTerms(collection);
+            window.snapdragon.collection = selectedCollection;
+            console.log(window.snapdragon.collection);
         });        
 
         let glossary = await firestore.getDefinitionsByTaxa(['common', 'plantae', 'aves', 'fungi', 'insecta']);

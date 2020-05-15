@@ -23,11 +23,20 @@ export const editCollectionQuestions = () => {
             inputCollection.focus();
         }, 200);
 
-        let collection;
+        let collection = window.snapdragon.collection;
+
+        if(collection) {            
+            editCollectionHandler.collectionPickedHandler(collection, 'QUESTIONS');
+            setTimeout(() => {
+                inputCollection.value = collection.name;
+            }, 250);
+        }
 
         collectionPicker(inputCollection, async selectedCollection => {
             collection = selectedCollection;
             editCollectionHandler.collectionPickedHandler(selectedCollection, 'QUESTIONS');
+            window.snapdragon.collection = selectedCollection;
+            console.log(window.snapdragon.collection);
         });
 
         const addSpeciesHandler = async speciesName => {

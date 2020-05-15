@@ -6,6 +6,7 @@ const onNoteTimeMatchListeners = [];
 const onSpeciesTimeMatch = listener => {    
     while(onSpeciesTimeMatchListeners.length > 0) {
         onSpeciesTimeMatchListeners.pop();
+        console.log('onSpeciesTimeMatchListeners length:', onSpeciesTimeMatchListeners.length);
     }
     onSpeciesTimeMatchListeners.push(listener);
 };
@@ -15,6 +16,7 @@ const onNoteTimeMatch = listener => {
         onNoteTimeMatchListeners.pop();
     }
     onNoteTimeMatchListeners.push(listener);
+    console.log('onNoteTimeMatchListeners length:', onNoteTimeMatchListeners.length);
 };
 
 const onSpeciesPlayRequestListeners = [];
@@ -77,7 +79,7 @@ const playVideoFrom = time => {
 //  3 – buffering
 //  5 – video cued
 
-const states = [ { key: -1, value: 'unstarted' }, { key: 1, value: 'playing' }, { key: 2, value: 'paused' } ];
+const states = [ { key: -1, value: 'unstarted' }, { key: 1, value: 'playing' }, { key: 2, value: 'paused' }, { key: 3, value: 'buffering' } ];
 
 const setVideoState = (videoPlayer, lesson) => {
 

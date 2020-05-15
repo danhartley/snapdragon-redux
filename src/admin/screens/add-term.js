@@ -222,12 +222,21 @@ export const addTerm = () => {
             }
         };
 
-        let collection;
+        let collection = window.snapdragon.collection;
+
+        if(collection) {
+            setTimeout(() => {
+                chkBoxAddToCollection.checked = true;
+                inputCollection.value = collection.name;
+            }, 250);
+        }
 
         const inputCollection = document.querySelector('#input-collection');
         collectionPicker(inputCollection, async selectedCollection => {
             collection = selectedCollection;
             chkBoxAddToCollection.checked = true;
+            window.snapdragon.collection = selectedCollection;
+            console.log(window.snapdragon.collection);
         });
     };
 

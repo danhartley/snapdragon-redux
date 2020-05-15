@@ -15,64 +15,39 @@
                     <!-- <li class="logged-in hide">
                     <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
                     </li> -->
-                    <li class="logged-in hide">
+                    <li class="logged-in hide border-left">
                         <a href="#" class="grey-text" id="logout">
                             <i class="fas fa-user"></i>
                         </a>
                     </li>
-                    <li class="logged-in hide border-left">
+                    <li class="logged-in hide border-left border-right">
                         <a href="#" class="grey-text" id="add-species">
                             <i class="fas fa-plus"></i>
                             <span>Species</span>
                         </a>
                     </li>
-                    <li class="logged-in hide border-right">
+                    <li class="logged-in hide">
                         <a href="#" class="grey-text" id="add-taxon">
                             <i class="fas fa-plus"></i>
                             <span>Taxon</span> </a>
                         </a>
                     </li>
-                    <li class="logged-in hide">
-                        <a href="#" class="grey-text" id="add-traits">
-                            <i class="fas fa-plus"></i>
-                            <span>Traits</span>
+                    <li class="logged-in hide border-left border-right">
+
+                        <a class='grey-text dropdown-trigger' href='#' data-target='dropdown-species'>
+                            <i class="fas fa-edit"></i>
+                            <span>Species</span> </a>
                         </a>
-                    </li>
-                    <li class="logged-in hide">
-                        <a href="#" class="grey-text" id="add-relationship">
-                            <i class="fas fa-plus"></i>
-                            <span>Relationship</span>
-                        </a>
-                    </li>
-                    <li class="logged-in hide">
-                        <a href="#" class="grey-text" id="add-lookalike">
-                            <i class="fas fa-plus"></i>
-                            <span>Lookalike</span>
-                        </a>
-                    </li>
-                    <li class="logged-in hide">
-                        <a href="#" class="grey-text" id="add-id">
-                            <i class="fas fa-plus"></i>
-                            <span>Id</span> </a>
-                        </a>
-                    </li>
-                    <li class="logged-in hide">
-                        <a href="#" class="grey-text" id="update-species">
-                            <i class="far fa-edit"></i>
-                            <span>Species</span>
-                        </a>
-                    </li>
-                    <li class="logged-in hide">
-                        <a href="#" class="grey-text" id="update-names">
-                            <i class="far fa-edit"></i>
-                            <span>Names</span>
-                        </a>
-                    </li>
-                    <li class="logged-in hide">
-                        <a href="#" class="grey-text" id="add-photos">
-                            <i class="fas fa-plus"></i>
-                            <span>Photos</span> </a>
-                        </a>
+
+                        <ul id='dropdown-species' class='dropdown-content'>
+                            <li><a href="#!" id="update-species">Update</a></li>
+                            <li><a href="#!" id="add-id">ID</a></li>
+                            <li><a href="#!" id="add-traits">Traits</a></li>
+                            <li><a href="#!" id="add-relationship">Relationships</a></li>
+                            <li><a href="#!" id="add-lookalike">Lookalike</a></li>
+                            <li><a href="#!" id="update-names">Edit names</a></li>
+                            <li><a href="#!" id="add-photos">Edit Photos</a></li>
+                        </ul>
                     </li>
                     <li class="logged-in hide">
 
@@ -82,20 +57,20 @@
                         </a>
 
                         <ul id='dropdown-collection' class='dropdown-content'>
-                            <li><a href="#!" id="edit-collection">Species</a></li>
+                            <li><a href="#!" id="edit-collection">Content</a></li>
                             <li><a href="#!" id="edit-collection-questions">Questions</a></li>
                             <li><a href="#!" id="edit-collection-terms">Terms</a></li>
                             <li><a href="#!" id="edit-collection-video">Video</a></li>
                         </ul>
 
                     </li>
-                    <li class="logged-in hide">
+                    <li class="logged-in hide border-left border-right">
                         <a href="#" class="grey-text" id="create-question">
                             <i class="fas fa-plus"></i>
                             <span>Question</span> </a>
                         </a>
                     </li>
-                    <li class="logged-in hide">
+                    <li class="logged-in hide border-right">
                         <a href="#" class="grey-text" id="add-term">
                             <i class="fas fa-plus"></i>
                             <span>Term</span> </a>
