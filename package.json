@@ -46,9 +46,11 @@
   },
   "homepage": "https://github.com/danhartley/snapdragon-redux#readme",
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
     "babel-core": "^6.26.0",
     "babel-jest": "^23.0.0-alpha.0",
-    "babel-loader": "^7.1.4",
+    "babel-loader": "^7.1.5",
     "babel-plugin-module-resolver": "^3.1.0",
     "babel-plugin-transform-es2015-modules-systemjs": "^6.24.1",
     "babel-plugin-transform-html-import-require-to-string": "0.0.3",
