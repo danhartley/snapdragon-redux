@@ -26,9 +26,9 @@ import { editCollectionVideo } from 'admin/screens/collection/edit-collection-vi
 import { createQuestion } from 'admin/screens/questions/create-question';
 import { addTerm } from 'admin/screens/add-term';
 
-// import { renderActiveTaxa } from 'admin/react/active-taxa';
+import { renderActiveTaxa } from 'admin/react/active-taxa';
 
-// renderActiveTaxa();
+renderActiveTaxa();
 
 const auth = firebase.auth();
 

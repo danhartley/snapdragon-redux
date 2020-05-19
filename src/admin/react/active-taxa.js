@@ -1,35 +1,35 @@
-// export const renderActiveTaxa = () => {
+export const renderActiveTaxa = () => {
 
-//   const e = React.createElement;
+  const e = React.createElement;
 
-//   class LikeButton extends React.Component {
-//     constructor(props) {
-//       super(props);
-//       // this.state = { liked: false };
-//     }
+  class LikeButton extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = { liked: false };
+    }
 
-//     // render() {
-//     //   if (this.state.liked) {
-//     //     return 'You liked this.';
-//     //   }
+    render() {
+      if (this.state.liked) {
+        return 'You liked this.';
+      }
 
-//     //   return e(
-//     //     'button',
-//     //     { onClick: () => this.setState({ liked: true }) },
-//     //     'Like'
-//     //   );
-//     // }
+      return e(
+        'button',
+        { onClick: () => this.setState({ liked: true }) },
+        'Like'
+      );
+    }
 
-//     render () {
-//       return 
-//       <hi>hello mars</hi>
+    // render () {
+    //   return 
+    //   <hi>hello mars</hi>
       
-//     }
-//   }
+    // }
+  }
 
-//   const domContainer = document.querySelector('#activeTaxaContainer');
-//   ReactDOM.render(e(LikeButton), domContainer);
-// };
+  const domContainer = document.querySelector('#activeTaxaContainer');
+  ReactDOM.render(e(LikeButton), domContainer);
+};
 
 /* <div class="margin-top small horizontal-evenly-spaced-block ">
 <div class="js-active-species">
