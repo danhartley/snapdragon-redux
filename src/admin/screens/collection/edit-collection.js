@@ -85,8 +85,6 @@ export const editCollection = () => {
         collectionPicker(inputCollection, async selectedCollection => {
             collection = selectedCollection;
             editCollectionHandler.collectionPickedHandler(selectedCollection, 'SPECIES');
-            window.snapdragon.collection = selectedCollection;
-            console.log(window.snapdragon.collection);
             renderProps(collection);
             template.innerHTML = editCollectionTemplate;
         });

@@ -235,8 +235,6 @@ export const addTerm = () => {
         collectionPicker(inputCollection, async selectedCollection => {
             collection = selectedCollection;
             chkBoxAddToCollection.checked = true;
-            window.snapdragon.collection = selectedCollection;
-            console.log(window.snapdragon.collection);
         });
     };
 

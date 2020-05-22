@@ -35,8 +35,6 @@ export const editCollectionQuestions = () => {
         collectionPicker(inputCollection, async selectedCollection => {
             collection = selectedCollection;
             editCollectionHandler.collectionPickedHandler(selectedCollection, 'QUESTIONS');
-            window.snapdragon.collection = selectedCollection;
-            console.log(window.snapdragon.collection);
         });
 
         const addSpeciesHandler = async speciesName => {

@@ -9,7 +9,6 @@ import 'ui/css/snapdragon-colours.css';
 import 'admin/css/admin.css';
 import 'ui/css/common.css';
 
-import { listenForActiveSpecies } from 'admin/screens/taxa-pickers';
 import { initMaterialize } from 'admin/scripts/materialize';
 import { speciesHandler } from 'admin/screens/species/species-handler';
 import { traitsHandler } from 'admin/screens/traits-handler';
@@ -69,21 +68,6 @@ const addTraitsClickHandler = e => {
   traitsHandler.addTraits();
 };
 
-const activeSpecies = document.querySelector('.js-active-species');
-
-const actions = document.querySelectorAll('li a');
-      actions.forEach(action => action.addEventListener('click', e => {
-
-            // const hideActiveSpecies = e.target.id === 'add-species' || e.target.id === 'add-taxon';
-
-            // if(hideActiveSpecies) {
-            //       activeSpecies.querySelector('span:nth-child(2)').innerHTML = 'N/A';
-            // }
-            // else {
-            //       activeSpecies.querySelector('span:nth-child(2)').innerHTML = window.snapdragon.species ? window.snapdragon.species.name : '--- ---';
-            // }
-      }));
-      
 const updateSpecies = document.querySelector('#update-species');
       updateSpecies.addEventListener('click', updateSpeciesClickHandler);
       
@@ -159,11 +143,6 @@ const logout = document.querySelector('#logout');
       });
 
 initMaterialize();
-
-listenForActiveSpecies(species => {
-  // activeSpecies.querySelectorAll('span:nth-child(2)').innerHTML = species.name;
-  // window.snapdragon.species = species;
-});
 
 var elems = document.querySelectorAll('.dropdown-trigger');
 if(elems) M.Dropdown.init(elems, {});

@@ -19,6 +19,7 @@ export const collectionPicker = async (input, listener) => {
         if(e.keyCode == 13) {
             const props = { key: 'name', operator: '==', value: input.value };
             const collections = await firestore.getCollectionsWhere(props);
+            window.snapdragon.collection = collections[0];
             listener(collections[0]);
         }
     });
