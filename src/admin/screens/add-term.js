@@ -1,5 +1,8 @@
 import autocomplete from 'autocompleter';
 
+import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
+
 import { utils } from 'utils/utils';
 import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -19,8 +22,16 @@ export const addTerm = () => {
 
         renderTemplate({}, template.content, parent);
 
-        const inputTaxon = document.querySelector('#input-taxon');
-        
+        const branches = [
+          { name: 'morphology', label: 'morphology' },
+          { name: 'general', label: 'general' },
+          { name: 'anatomy', label: 'anatomy' },
+          { name: 'classification', label: 'classification' },
+          { name: 'behaviour', label: 'behaviour' },
+          { name: 'ecology', label: 'ecology' },
+          { name: 'physiology', label: 'physiology' },
+        ];
+
         const taxa = [
             { name: 'common', label: 'common' },
             { name: 'fungi', label: 'fungi' },
@@ -28,80 +39,112 @@ export const addTerm = () => {
             { name: 'insecta', label: 'insecta' },
             { name: 'aves', label: 'aves' },
         ];
+        
+        const TermForm = () => {
 
-        autocomplete({
-            input: inputTaxon,
-            fetch: function(text, update) {
-                text = text.toLowerCase();
-                const suggestions = taxa.filter(t => t.name.toLowerCase().startsWith(text))
-                update(suggestions);
-            },
-            onSelect: function(item) {
-                inputTaxon.value = item.label;
-            },
-            minLength: 0,
-            debounceWaitMs: 200,
-            className: 'autocomplete-options-container'
-        });
+          let [ editMode, setEditMode ] = useState(false);
+          let [ addTerm, setAddTerm ] = useState('');
+          let [ editTerm, setEditTerm ] = useState('');
+          let [ definition, setDefinition ] = useState('');
+          let [ branch, setBranch ] = useState('');
+          let [ taxon, setTaxon ] = useState('');
+          let [ wiki, setWiki ] = useState('');
+          let [ isTechnical, setIsTechnical ] = useState(false);
 
-        const inputBranch = document.querySelector('#input-branch');
+          const handleModeChange = e => {
 
-        const branches = [
-            { name: 'morphology', label: 'morphology' },
-            { name: 'general', label: 'general' },
-            { name: 'anatomy', label: 'anatomy' },
-            { name: 'classification', label: 'classification' },
-            { name: 'behaviour', label: 'behaviour' },
-            { name: 'ecology', label: 'ecology' },
-            { name: 'physiology', label: 'physiology' },
-        ];
+            console.log('handleModeChange');
 
-        const chkBoxTechnical = document.querySelector('#chk-box-technical');
-        const chkBoxAddToCollection = document.querySelector('#chk-box-add-to-collection');
+            const isEditMode = e.target.checked;
+            isEditMode ? setEditTerm('') : setAddTerm('');
+            setTimeout(() => {
+              isEditMode ? inputEditTerm.focus() : inputAddTerm.focus();
+            }, 500);
+            setEditMode(isEditMode);
+            setBranch('');
+            setTaxon('');
+            setDefinition('');
+            setWiki('');
+            setIsTechnical(false);
+          };
 
-        autocomplete({
-            input: inputBranch,
-            fetch: function(text, update) {
-                text = text.toLowerCase();
-                const suggestions = branches.filter(t => t.name.toLowerCase().startsWith(text))
-                update(suggestions);
-            },
-            onSelect: function(item) {
-                inputBranch.value = item.label;
-            },
-            minLength: 0,
-            debounceWaitMs: 200,
-            className: 'autocomplete-options-container'
-        });
+          const savedText = document.querySelector('.js-saved'); // temp hack
 
-        const inputTerm = document.querySelector('#input-term');
-              inputTerm.focus();
+          console.log('branch set in re-render, ', branch);
 
-        const inputDefinition = document.querySelector('#input-definition');
+          const handleAddTerm = async event => {
 
-        const savedText = document.querySelector('.js-saved');
+            console.log('handleAddTerm');
 
-        const actionHandler = (e, input, message, action) => {
+            if(event.key === 'Tab') {    
 
-            const definition = {
+              const input = event.target;
+
+              input.value = utils.capitaliseFirst(input.value);
+
+                const definitions = await firestore.getDefinitionsWhere({
+                    key: 'term',
+                    operator: '==',
+                    value: input.value
+                });
+                if(definitions[0]) {
+                    input.value = '';
+                    input.focus();
+                    savedText.innerHTML = 'That term has already been defined! Try another.';
+                    savedText.classList.remove('hide');
+                    setTimeout(() => {
+                        savedText.classList.add('hide');
+                    }, 3000);
+                }
+            }
+          };
+
+          const handleEditTerm = async event => {
+
+            console.log('handleEditTerm');
+
+              if(event.key === 'Enter') {
+
+                const input = event.target;
+                
+                const definitions = await firestore.getDefinitionsWhere({
+                    key: 'term',
+                    operator: '==',
+                    value: input.value
+                });
+
+                const term = definitions[0];
+
+                setEditTerm(term.term);
+                setDefinition(term.definition);
+                setBranch(term.branch);
+                setTaxon(term.taxon);
+                setWiki(term.wiki);
+                isTechnical = term.technical;
+
+                console.log('branch set in edit handler, ', term.branch);
+              }
+          };
+
+          const actionHandler = (e, input, message, action) => {
+
+            const glossaryItem = {
                 term: input.value,
-                definition: inputDefinition.value,
-                taxon: inputTaxon.value,
-                branch: inputBranch.value,
-                technical: chkBoxTechnical.checked,                
+                definition,
+                taxon,
+                branch,
+                technical: isTechnical
             };
 
-            const wiki = document.querySelector('#input-wiki');
+            if(e.target.elements.inputWiki.value.length > 0) glossaryItem.wiki = e.target.elements.inputWiki.value;
 
-            if(wiki.value.length > 0) definition.wiki = wiki.value; 
-
-            firestore[action](definition).then(docRef => {
+            firestore[action](glossaryItem).then(docRef => {
                 savedText.innerHTML = message;
                 savedText.classList.remove('hide');
                 input.value = '';                
                 input.focus();
-                inputDefinition.value = '';
-                wiki.value = '';
+                setDefinition('');
+                setWiki('');
                 addToCollection(docRef);
             }).catch(e => {
                 savedText.innerHTML = `Oops, something went wrong, namely: ${e}`;
@@ -111,21 +154,142 @@ export const addTerm = () => {
             setTimeout(() => {
                 savedText.classList.add('hide');
             }, 3000);
-        };
-        
-        const btnAddTerm = document.querySelector('.btnAddTerm');
-              btnAddTerm.addEventListener('click', e => {
-                actionHandler(e, inputTerm, 'The new term was added successfully!', 'addDefinition');
-              });
-        const btnEditTerm = document.querySelector('.js-btn-edit');
-              btnEditTerm.addEventListener('click', e => {
-                actionHandler(e, inputEditTerm, 'This term was updated successfully!', 'updateDefinition');
-              });
+          };
 
-        const addTerm = document.querySelector('.js-add-term');
-        const editTerm = document.querySelector('.js-edit-term');
+          const handleSubmit = e => {
 
-        const inputEditTerm = document.querySelector('#input-edit-term');
+            e.preventDefault();
+
+            console.log('handleSubmit');
+
+            const form = e.target;
+            const elements = form.elements;
+
+            // hack validation to prevent submission after accepting term to edit
+            if(form.elements.inputDefinition.value.length === 0) return;
+
+            elements.ckhBoxEdit.checked
+              ? actionHandler(e, inputEditTerm, 'This term was updated successfully!', 'updateDefinition')
+              : actionHandler(e, inputAddTerm, 'The new term was added successfully!', 'addDefinition');   
+          };
+
+          useEffect(() => {
+              autocomplete({
+                input: inputBranch,
+                fetch: function(text, update) {
+                    text = text.toLowerCase();
+                    const suggestions = branches.filter(t => t.name.toLowerCase().startsWith(text))
+                    update(suggestions);
+                },
+                onSelect: function(item) {
+                  setBranch(item.label);
+                  inputBranch.value = item.label;
+                },
+                minLength: 0,
+                debounceWaitMs: 200,
+                className: 'autocomplete-options-container'
+            });
+          }, [branch]);
+
+          useEffect(() => {
+            autocomplete({
+                input: inputTaxon,
+                fetch: function(text, update) {
+                    text = text.toLowerCase();
+                    const suggestions = taxa.filter(t => t.name.toLowerCase().startsWith(text))
+                    update(suggestions);
+                },
+                onSelect: function(item) {
+                  setTaxon(item.label);
+                  inputTaxon.value = item.label;
+                },
+                minLength: 0,
+                debounceWaitMs: 200,
+                className: 'autocomplete-options-container'
+            });
+          }, [taxon]);
+
+          return (
+            <form onSubmit={handleSubmit}>
+              <div className="row">
+                <div className="input-field col s4">
+                    <label>
+                        <input id="ckhBoxEdit" type="checkbox" onChange={handleModeChange} />
+                        <span>Edit mode</span>
+                    </label>
+                </div>    
+                <div className="input-field col s8">
+                    <div>
+                        <label>
+                            <input id="chk-box-add-to-collection" type="checkbox" />
+                            <span>Add to this collection:</span>
+                        </label>
+            
+                        <input id="input-collection" className="autocomplete" type="text" placeholder="Start typing a collection name" autoFocus spellCheck="false" />
+                        <label htmlFor="input-collection" className="active">Snapdragon collection finder</label>  
+                    </div>
+                </div>
+            </div>
+
+              <br />
+
+              <div className={`js-add-term row ${editMode ? 'hide' : ''}`}>
+                <div className="input-field col s2">
+                    <input id="inputAddTerm" value={addTerm} onChange={e => setAddTerm(e.target.value)} onKeyDown={handleAddTerm} type="text" placeholder="Enter term" spellCheck="false" />            
+                    <label htmlFor="inputAddTerm" className="active">Term</label>
+                </div>  
+              </div>                      
+              <div className={`js-edit-term row ${editMode ? '' : 'hide'}`}>
+                  <div className="input-field col s2">
+                      <input id="inputEditTerm" onKeyPress={handleEditTerm} type="text" placeholder="Start typing term" spellCheck="false " />
+                      <label htmlFor="inputEditTerm" className="active">Edit term</label>
+                  </div>
+                  <div className="autocomplete-options-container hide-empty" id="snapdragon-term-autocomplete"></div>
+              </div>
+              <div className="row">
+                  <div className="input-field col s2">
+                      <input id="inputDefinition" type="text" placeholder="Enter definition" spellCheck="false" value={definition} onChange={e => setDefinition(e.target.value)} />      
+                      <label htmlFor="inputDefinition" className="active">Definition</label>
+                  </div>
+              </div>
+              <div className="row">
+                  <div className="input-field col s2">
+                      <input id="inputTaxon" defaultValue={taxon} type="text" placeholder="Start typing taxon" spellCheck="false" />
+                      <label htmlFor="inputTaxon" className="active">Taxon</label>
+                  </div>
+                  <div className="autocomplete-options-container hide-empty" id="snapdragon-taxon-autocomplete"></div>      
+                  <div className="input-field col s2">
+                      <input id="inputBranch" defaultValue={branch} type="text" placeholder="Start typing branch" spellCheck="false" />
+                      <label htmlFor="inputBranch" className="active">Branch</label>
+                  </div>
+                  <div className="autocomplete-options-container hide-empty" id="snapdragon-branch-autocomplete"></div>
+              </div>
+              <div className="row">
+                  <div className="input-field col s2">
+                      <input id="inputWiki" defaultValue={wiki} type="text" placeholder="Enter web link" spellCheck="false" />            
+                      <label htmlFor="inputWiki" className="active">Web link</label>
+                  </div>
+              </div>
+              <div>
+                <label>
+                  <input id="chkBoxTechnical" type="checkbox" onChange={e => setIsTechnical(e.target.checked)} />
+                  <span>Technical</span>
+                </label>
+              </div>
+              
+              <br />
+    
+              <div className="row">
+                  <button type="submit" className="btn">{ editMode ? 'Edit term' : 'Add term'}</button>
+                  <div className="margin-top hide feedback js-saved">Term saved</div>
+              </div>
+            </form>
+          )
+        }
+      
+        ReactDOM.render(<TermForm />, document.querySelector('.js-term-form'));  
+
+        const chkBoxAddToCollection = document.querySelector('#chk-box-add-to-collection');
 
         const definitions = await firestore.getDefinitionsWhere({});
               definitions.forEach(definition => {
@@ -146,71 +310,6 @@ export const addTerm = () => {
             minLength: 0,
             debounceWaitMs: 200,
             className: 'autocomplete-options-container'
-        });
-
-        const chkBoxEdit = document.querySelector('#chk-box-edit');
-              chkBoxEdit.addEventListener('change', e => {
-                  if(e.target.checked) {
-                      addTerm.classList.add('hide');
-                      editTerm.classList.remove('hide');
-                      inputEditTerm.focus();
-                      btnEditTerm.classList.remove('hide');
-                      btnAddTerm.classList.add('hide');
-                  } else {
-                    addTerm.classList.remove('hide');
-                    editTerm.classList.add('hide');
-                    inputDefinition.value = '';
-                    inputBranch.value = '';
-                    inputTaxon.value = '';
-                    inputEditTerm.value = '';
-                    chkBoxTechnical.checked = false;
-                    inputTerm.focus();
-                    btnEditTerm.classList.add('hide');
-                    btnAddTerm.classList.remove('hide');
-                  }
-              });
-
-        inputTerm.addEventListener('keydown', async event => {
-            if(event.keyCode == 9) {    
-
-                inputTerm.value = utils.capitaliseFirst(inputTerm.value);
-
-                const definitions = await firestore.getDefinitionsWhere({
-                    key: 'term',
-                    operator: '==',
-                    value: inputTerm.value
-                });
-                const definition = definitions[0];
-                if(definition) {
-                    inputTerm.value = '';
-                    inputTerm.focus();
-                    savedText.innerHTML = 'That term has already been defined! Try another.';
-                    savedText.classList.remove('hide');
-                    setTimeout(() => {
-                        savedText.classList.add('hide');
-                    }, 3000);
-                }
-            }
-        });
-
-        inputEditTerm.addEventListener('keypress', async event => {
-            if(event.keyCode == 13) {
-                const definitions = await firestore.getDefinitionsWhere({
-                    key: 'term',
-                    operator: '==',
-                    value: inputEditTerm.value
-                });
-                
-                const wiki = document.querySelector('#input-wiki');
-
-                const definition = definitions[0];
-
-                inputDefinition.value = definition.definition;
-                inputBranch.value = definition.branch;
-                inputTaxon.value = definition.taxon;
-                chkBoxTechnical.checked = definition.technical;
-                wiki.value = definition.wiki || ''
-            }
         });
 
         const addToCollection = docRef => {

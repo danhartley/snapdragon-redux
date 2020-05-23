@@ -15,7 +15,7 @@ export const renderActiveTaxa = () => {
         : `${species.name} (${itemProperties.getVernacularName(species, { language: 'en'})})`;
   }
 
-  const Active = ({label, children}) => <div><span>{label}:</span><span className="feedback">{children}</span></div>
+  const Active = ({label, children}) => <div><span>{label}:</span><span className="feedback">{children}</span></div>; 
   // const Active = props => <div><span>{props.label}:</span><span className="feedback">{props.children}</span></div>
 
   const ActiveSpecies = () => {
