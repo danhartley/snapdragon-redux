@@ -2,6 +2,7 @@ import autocomplete from 'autocompleter';
 
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
+import {ErrorBoundary} from 'react-error-boundary'
 
 import { utils } from 'utils/utils';
 import { firestore } from 'api/firebase/firestore';
@@ -9,6 +10,17 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { collectionPicker } from 'admin/screens/collection/collection-picker';
 
 import addTermTemplate from 'admin/screens/add-term-template.html';
+
+const ErrorFallback = ({error, componentStack, resetErrorBoundary}) => {
+  return (
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre>{error.message}</pre>
+      <pre>{componentStack}</pre>
+      <button onClick={resetErrorBoundary}>Try again</button>
+    </div>
+  )
+};
 
 export const addTerm = () => {
 
@@ -40,14 +52,13 @@ export const addTerm = () => {
             { name: 'aves', label: 'aves' },
         ];
         
+        // Function component
         const TermForm = () => {
 
           let [ editMode, setEditMode ] = useState(false);
           let [ addTerm, setAddTerm ] = useState('');
           let [ editTerm, setEditTerm ] = useState('');
           let [ definition, setDefinition ] = useState('');
-          let [ branch, setBranch ] = useState('');
-          let [ taxon, setTaxon ] = useState('');
           let [ wiki, setWiki ] = useState('');
           let [ isTechnical, setIsTechnical ] = useState(false);
 
@@ -57,28 +68,29 @@ export const addTerm = () => {
 
             const isEditMode = e.target.checked;
             isEditMode ? setEditTerm('') : setAddTerm('');
+            inputEditTerm.value = '';
+            inputAddTerm.value = '';
             setTimeout(() => {
               isEditMode ? inputEditTerm.focus() : inputAddTerm.focus();
             }, 500);
             setEditMode(isEditMode);
-            setBranch('');
-            setTaxon('');
             setDefinition('');
             setWiki('');
             setIsTechnical(false);
+
+            inputBranch.value = '';
+            inputTaxon.value = '';
           };
 
           const savedText = document.querySelector('.js-saved'); // temp hack
 
-          console.log('branch set in re-render, ', branch);
+          const handleAddTerm = async e => {
 
-          const handleAddTerm = async event => {
+            if(e.key === 'Tab') {    
 
-            console.log('handleAddTerm');
+              console.log('handleAddTerm');
 
-            if(event.key === 'Tab') {    
-
-              const input = event.target;
+              const input = e.target;
 
               input.value = utils.capitaliseFirst(input.value);
 
@@ -99,13 +111,13 @@ export const addTerm = () => {
             }
           };
 
-          const handleEditTerm = async event => {
+          const handleEditTerm = async e => {
 
             console.log('handleEditTerm');
 
-              if(event.key === 'Enter') {
+              if(e.key === 'Enter') {
 
-                const input = event.target;
+                const input = e.target;
                 
                 const definitions = await firestore.getDefinitionsWhere({
                     key: 'term',
@@ -117,30 +129,32 @@ export const addTerm = () => {
 
                 setEditTerm(term.term);
                 setDefinition(term.definition);
-                setBranch(term.branch);
-                setTaxon(term.taxon);
                 setWiki(term.wiki);
                 isTechnical = term.technical;
+                inputBranch.value = term.branch;
+                inputTaxon.value = term.taxon;
 
                 console.log('branch set in edit handler, ', term.branch);
               }
           };
 
-          const actionHandler = (e, input, message, action) => {
+          const addOrEditTermHandler = (e, input, message, action) => {
 
             const glossaryItem = {
                 term: input.value,
                 definition,
-                taxon,
-                branch,
+                taxon: inputTaxon.value,
+                branch: inputBranch.value,
                 technical: isTechnical
             };
 
-            if(e.target.elements.inputWiki.value.length > 0) glossaryItem.wiki = e.target.elements.inputWiki.value;
+            if(inputWiki.value.length > 0) glossaryItem.wiki = inputWiki.value;
 
             firestore[action](glossaryItem).then(docRef => {
                 savedText.innerHTML = message;
                 savedText.classList.remove('hide');
+                setAddTerm('');
+                setEditTerm('');
                 input.value = '';                
                 input.focus();
                 setDefinition('');
@@ -160,20 +174,20 @@ export const addTerm = () => {
 
             e.preventDefault();
 
+            if(e.key == "Enter") event.preventDefault();
+
             console.log('handleSubmit');
 
-            const form = e.target;
-            const elements = form.elements;
-
             // hack validation to prevent submission after accepting term to edit
-            if(form.elements.inputDefinition.value.length === 0) return;
+            if(inputDefinition.value.length === 0) return;
 
-            elements.ckhBoxEdit.checked
-              ? actionHandler(e, inputEditTerm, 'This term was updated successfully!', 'updateDefinition')
-              : actionHandler(e, inputAddTerm, 'The new term was added successfully!', 'addDefinition');   
+            ckhBoxEdit.checked
+              ? addOrEditTermHandler(e, inputEditTerm, 'This term was updated successfully!', 'updateDefinition')
+              : addOrEditTermHandler(e, inputAddTerm, 'The new term was added successfully!', 'addDefinition');   
           };
 
           useEffect(() => {
+            console.log('run branch autocomplete');
               autocomplete({
                 input: inputBranch,
                 fetch: function(text, update) {
@@ -182,16 +196,16 @@ export const addTerm = () => {
                     update(suggestions);
                 },
                 onSelect: function(item) {
-                  setBranch(item.label);
                   inputBranch.value = item.label;
                 },
                 minLength: 0,
                 debounceWaitMs: 200,
                 className: 'autocomplete-options-container'
             });
-          }, [branch]);
+          }, []);
 
           useEffect(() => {
+            console.log('run taxon autocomplete');
             autocomplete({
                 input: inputTaxon,
                 fetch: function(text, update) {
@@ -200,17 +214,16 @@ export const addTerm = () => {
                     update(suggestions);
                 },
                 onSelect: function(item) {
-                  setTaxon(item.label);
                   inputTaxon.value = item.label;
                 },
                 minLength: 0,
                 debounceWaitMs: 200,
                 className: 'autocomplete-options-container'
             });
-          }, [taxon]);
+          }, []);
 
           return (
-            <form onSubmit={handleSubmit}>
+            <form id="addOrEditTermForm">
               <div className="row">
                 <div className="input-field col s4">
                     <label>
@@ -240,10 +253,12 @@ export const addTerm = () => {
                 </div>  
               </div>                      
               <div className={`js-edit-term row ${editMode ? '' : 'hide'}`}>
-                  <div className="input-field col s2">
-                      <input id="inputEditTerm" onKeyPress={handleEditTerm} type="text" placeholder="Start typing term" spellCheck="false " />
-                      <label htmlFor="inputEditTerm" className="active">Edit term</label>
-                  </div>
+                  <ErrorBoundary FallbackComponent={ErrorFallback}>
+                    <div className="input-field col s2">
+                        <input id="inputEditTerm" onKeyPress={handleEditTerm} type="text" placeholder="Start typing term" spellCheck="false " />
+                        <label htmlFor="inputEditTerm" className="active">Edit term</label>
+                    </div>
+                  </ErrorBoundary>
                   <div className="autocomplete-options-container hide-empty" id="snapdragon-term-autocomplete"></div>
               </div>
               <div className="row">
@@ -254,12 +269,12 @@ export const addTerm = () => {
               </div>
               <div className="row">
                   <div className="input-field col s2">
-                      <input id="inputTaxon" defaultValue={taxon} type="text" placeholder="Start typing taxon" spellCheck="false" />
+                      <input id="inputTaxon" type="text" placeholder="Start typing taxon" spellCheck="false" />
                       <label htmlFor="inputTaxon" className="active">Taxon</label>
                   </div>
                   <div className="autocomplete-options-container hide-empty" id="snapdragon-taxon-autocomplete"></div>      
                   <div className="input-field col s2">
-                      <input id="inputBranch" defaultValue={branch} type="text" placeholder="Start typing branch" spellCheck="false" />
+                      <input id="inputBranch" type="text" placeholder="Start typing branch" spellCheck="false" />
                       <label htmlFor="inputBranch" className="active">Branch</label>
                   </div>
                   <div className="autocomplete-options-container hide-empty" id="snapdragon-branch-autocomplete"></div>
@@ -280,14 +295,14 @@ export const addTerm = () => {
               <br />
     
               <div className="row">
-                  <button type="submit" className="btn">{ editMode ? 'Edit term' : 'Add term'}</button>
+                  <button type="button" onClick={handleSubmit} className="btn">{ editMode ? 'Edit term' : 'Add term'}</button>
                   <div className="margin-top hide feedback js-saved">Term saved</div>
               </div>
             </form>
           )
         }
       
-        ReactDOM.render(<TermForm />, document.querySelector('.js-term-form'));  
+        ReactDOM.render(<TermForm />, document.querySelector('.js-term-form'));
 
         const chkBoxAddToCollection = document.querySelector('#chk-box-add-to-collection');
 
