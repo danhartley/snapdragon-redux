@@ -24,6 +24,7 @@ import { editCollectionVideo } from 'admin/screens/collection/edit-collection-vi
 
 import { createQuestion } from 'admin/screens/questions/create-question';
 import { addTerm } from 'admin/screens/add-term';
+import { addVideo } from 'admin/screens/video/add-video';
 
 import { renderActiveTaxa } from 'admin/react/active-taxa';
 
@@ -110,11 +111,14 @@ const createQuestionTab = document.querySelector('#create-question');
 const addTermTab = document.querySelector('#add-term');
       addTermTab.addEventListener('click', addTerm);
 
+const addVideoTab = document.querySelector('#add-video');
+      addVideoTab.addEventListener('click', addVideo);
+
 const setupUI = (user) => {
   if (user) {
     loggedInLinks.forEach(item => item.classList.remove('hide'));
     loggedOutLinks.forEach(item => item.classList.add('hide'));
-    addTermTab.click();
+    addVideoTab.click();
 } else {    
     loggedInLinks.forEach(item => item.classList.add('hide'));
     loggedOutLinks.forEach(item => item.classList.remove('hide'));

@@ -53,7 +53,7 @@ export const addTerm = () => {
         ];
         
         // Function component
-        const TermForm = () => {
+        const TermForm = props => {
 
           let [ editMode, setEditMode ] = useState(false);
           let [ addTerm, setAddTerm ] = useState('');
@@ -192,7 +192,7 @@ export const addTerm = () => {
                 input: inputBranch,
                 fetch: function(text, update) {
                     text = text.toLowerCase();
-                    const suggestions = branches.filter(t => t.name.toLowerCase().startsWith(text))
+                    const suggestions = props.branches.filter(t => t.name.toLowerCase().startsWith(text))
                     update(suggestions);
                 },
                 onSelect: function(item) {
@@ -210,7 +210,7 @@ export const addTerm = () => {
                 input: inputTaxon,
                 fetch: function(text, update) {
                     text = text.toLowerCase();
-                    const suggestions = taxa.filter(t => t.name.toLowerCase().startsWith(text))
+                    const suggestions = props.taxa.filter(t => t.name.toLowerCase().startsWith(text))
                     update(suggestions);
                 },
                 onSelect: function(item) {
@@ -300,9 +300,9 @@ export const addTerm = () => {
               </div>
             </form>
           )
-        }
+        };
       
-        ReactDOM.render(<TermForm />, document.querySelector('.js-term-form'));
+        ReactDOM.render(<TermForm taxa={taxa} branches={branches} />, document.querySelector('.js-term-form'));
 
         const chkBoxAddToCollection = document.querySelector('#chk-box-add-to-collection');
 
