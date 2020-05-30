@@ -1575,7 +1575,6 @@ a.collection-disabled {
 
 .home-container .snapdragon-header {
   text-transform: uppercase;
-  color: var(--snap-collection-active);
   color: var(--snap-text-medium-light);
   font-size: 1.6rem;
   letter-spacing: .25rem;
@@ -1751,7 +1750,6 @@ a.collection-disabled {
 }
 
 .lesson-list-header > div:nth-child(1) {
-  width: 100%;  
   display: flex;
   align-items: center;
 }
@@ -1766,16 +1764,11 @@ a.collection-disabled {
 }
 
 .lesson-list-header > div:nth-child(2) {  
-  /* width: var(--vhStandardBlock, 10vh); */
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
-
-/* .lesson-list-header > div:nth-child(2) i {
-  font-size: 1.3rem;
-} */
 
 .lesson-list-header > div:nth-child(2) > div {  
   height: calc( var(--vh) * 5);
@@ -1870,25 +1863,6 @@ a.collection-disabled {
 
 .youtube-green-fg {
   color: var(--snap-youtube-green);
-}
-
-.standard-block {
-  height: var(--vhStandardBlock, 10vh);
-  margin: 0 !important;
-}
-
-.double-standard-block {
-  height: var(--vhDoubleStandardBlock, 20vh);
-}
-
-.half-standard-block {
-  height: var(--vhHalfStandardBlock, 5vh);
-  margin: 0 !important;
-}
-
-.one-and-half-standard-block {
-  height: var(--vhOneAndHalfStandardBlock, 15vh);
-  margin: 0 !important;
 }
 
 .button-block {

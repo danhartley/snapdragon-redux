@@ -1,79 +1,119 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Profiler } from 'react';
 import ReactDOM from 'react-dom';
-import { Formik, Form, Field, ErrorMessage } from "formik";
-
-import { VideoPicker } from 'admin/screens/video/video-picker';
-
-const SnapRow = props => (
-  <div className={'rows ' + props.className}>
-    {props.children}
-  </div>
-);
-
-const SnapInput = props => {
-  return (
-    <div className="input-field col">
-      <input id={props.id} type="text" placeholder={props.placeholder} spellCheck="false" />            
-      <label className="active capitalise" htmlFor={props.id}>{props.label}</label>
-    </div>);
-}
-
-const SnapButton = props => (
-  <button class="{props.name} btn">{props.value}</button>
-);
-
-const SnapLink = props => (
-  <div className={'underline-link ' + props.className}>{props.value}</div>
-);
+import { Formik, Form, useField } from 'formik';
+import { SnapRow, SnapInput, SnapButton, SnapLink, SnapIconImage, MyTextInput, MyCheckbox, MySelect } from 'admin/react/snap-html-elements';
+import { SnapPicker } from 'admin/screens/video/item-picker';
+import { ThemeProvider } from '@material-ui/core/styles';
+import { theme } from 'admin/react/snap-theme';
+import * as Yup from 'yup';
 
 export const addVideo = () => {
 
-  const VideoForm = () => (
-    <Formik
-    initialValues={{ 
-        title: '',
-        presenter: '',
-    }}
-    validate={values => {
-      const errors = {};
-      if (!values.title) {
-        errors.title = 'Required';
-      }
-      if (!values.presenter) {
-        errors.presenter = 'Required';
-      }
-      return errors;
-    }}
-    onSubmit={(values, { setSubmitting }) => {
-      setTimeout(() => {
-        alert(JSON.stringify(values, null, 2));
-        setSubmitting(false);
-      }, 400);
-    }}
-    >
-        {({ isSubmitting }) => (
+  const items = [
+    {
+      id: 1,
+      presenter: 'dan',
+      value: 'Great video!',
+      owner: 'Snapdragon',
+      ownerUrl: 'www.learn-the-planet.com',
+      src: 'https://media-exp1.licdn.com/dms/image/C4E03AQFAu1DpOa0Ygg/profile-displayphoto-shrink_100_100/0?e=1596067200&v=beta&t=OMuPVka96Cm-QNBGVphv4W9UXQDFahsEkhLkpbYiFVM',
+      location: 'Lisbon',
+      startsAt: 0,
+    }
+    ,{
+      id: 2,
+      presenter: 'dan',
+      value: 'Rubbish!',
+      owner: 'Snapdragon',
+      ownerUrl: 'www.learn-the-planet.com',
+      src: 'https://media-exp1.licdn.com/dms/image/C4E03AQFAu1DpOa0Ygg/profile-displayphoto-shrink_100_100/0?e=1596067200&v=beta&t=OMuPVka96Cm-QNBGVphv4W9UXQDFahsEkhLkpbYiFVM',
+      location: 'Lisbon',
+      startsAt: 0,
+    }
+    ,{
+      id: 3,
+      presenter: 'dan',
+      value: 'Rubbish and some!',
+      owner: 'Snapdragon',
+      ownerUrl: 'www.learn-the-planet.com',
+      src: 'https://media-exp1.licdn.com/dms/image/C4E03AQFAu1DpOa0Ygg/profile-displayphoto-shrink_100_100/0?e=1596067200&v=beta&t=OMuPVka96Cm-QNBGVphv4W9UXQDFahsEkhLkpbYiFVM',
+      location: 'Lisbon',
+      startsAt: 0,
+    }
+  ];
+
+  const validate = values => {
+    const errors = {};
+    if (!values.title) {
+      errors.title = 'Required';
+    }
+    if (!values.presenter) {
+      errors.presenter = 'Required';
+    }
+    return errors;
+  };
+
+  const VideoForm = props => {
+    console.log(props.selectedItem);
+    return (
+      <>
+        <Formik
+          initialValues={{
+            title: props.selectedItem.value,
+            presenter: ''
+          }}
+          enableReinitialize={true}
+          validationSchema={Yup.object({
+            title: Yup.string()
+              .max(5, 'Must be 5 characters or less')
+              .required('Required'),
+            presenter: Yup.string()
+              .max(5, 'Must be 5 characters or less')
+              .required('Required'),            
+          })}
+          onSubmit={(values, { setSubmitting }) => {
+            setTimeout(() => {
+              alert(JSON.stringify(values, null, 2));
+              setSubmitting(false);
+            }, 400);
+          }}
+        >
           <Form>
-            <SnapRow className={"standard-block centred-block justify-space-between"}>
-              <Field type="text" name="title" placeholder="title" id="title" label="title" component={SnapInput} />
-              <ErrorMessage name="title" component="div" />
-              <Field type="text" name="presenter" placeholder="presenter" id="presenter" label="presenter" component={SnapInput} />
-              <ErrorMessage name="presenter" component="div" />
-              <Field type="text" name="videoId" placeholder="Video Id" id="id" label="Video Id" component={SnapInput} />
-              <ErrorMessage name="videoId" component="div" />
-              <Field type="text" name="videoLink" value="View on YouTube" className="extra-small-text" component={SnapLink}></Field>
-              <ErrorMessage name="videoLink" component="div" />
-            </SnapRow>
-            <button type="submit" disabled={isSubmitting}>
-              Create video
-            </button>
+            <MyTextInput
+              label="Title"
+              name="title"
+              type="text"
+              placeholder="Enter title"
+            />
+            <MyTextInput
+              label="Presenter"
+              name="presenter"
+              type="text"
+              placeholder="Enter presenter"
+            />
+            <button type="submit">Submit</button>
           </Form>
-       )}
-    </Formik>
-  );
+        </Formik>
+      </>
+    );
+  };
 
   let container = document.querySelector("#content-container");
 
+  function onRenderSnapPickerCallback(
+    id, // the "id" prop of the Profiler tree that has just committed
+    phase, // either "mount" (if the tree just mounted) or "update" (if it re-rendered)
+    actualDuration, // time spent rendering the committed update
+    baseDuration, // estimated time to render the entire subtree without memoization
+    startTime, // when React began rendering this update
+    commitTime, // when React committed this update
+    interactions // the Set of interactions belonging to this update
+  ) {
+    console.log('actualDuration: ', actualDuration);
+  }
+
   const Video = () => {
+    const [selectedItem, setSelectedItem] = useState({value:''});
     useEffect(()=>{
       let otherTabs = document.querySelectorAll('.non-react');
           otherTabs.forEach(otherTab => {
@@ -83,17 +123,16 @@ export const addVideo = () => {
           });
     });
     return (
-    <div>
-      <div>
-        <VideoPicker></VideoPicker>
+    <ThemeProvider theme={theme}>
+      <div>        
+          <div className="centred-block one-and-half-standard-block">
+            <Profiler id="SnapPicker" onRender={onRenderSnapPickerCallback}>
+              <SnapPicker items={items} onChange={setSelectedItem} label={'Search for video by title'}></SnapPicker>
+            </Profiler>
+          </div>
+          <VideoForm selectedItem={selectedItem}></VideoForm>          
       </div>
-
-      <div>
-        <VideoForm>
-
-        </VideoForm>
-      </div>
-    </div>
+    </ThemeProvider>
   )};
 
   ReactDOM.render(<Video />, container);

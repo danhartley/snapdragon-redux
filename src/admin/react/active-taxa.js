@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
+import { SnapDoubleHeightCentredBlock, SnapRow, SnapInput, SnapButton, SnapLink } from 'admin/react/snap-html-elements';
 
 import { itemProperties } from 'ui/helpers/data-checking';
 
@@ -16,7 +17,6 @@ export const renderActiveTaxa = () => {
   }
 
   const Active = ({label, children}) => <div><span>{label}:</span><span className="feedback">{children}</span></div>; 
-  // const Active = props => <div><span>{props.label}:</span><span className="feedback">{props.children}</span></div>
 
   const ActiveSpecies = () => {
 
@@ -38,8 +38,8 @@ export const renderActiveTaxa = () => {
       });
     }, [species]);
     
-    return (
-      <Active label="Active Species">{displaySpecies(species)}</Active>
+    return (      
+      <Active label="Active Species">{displaySpecies(species)}</Active>      
     );
     
   };

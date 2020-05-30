@@ -30,10 +30,13 @@ import { firestore } from 'api/firebase/firestore';
 import { renderLoggedIn } from 'ui/fixtures/login';
 import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { lessonModalHandler } from 'ui/screens/cards/test-card-modal-handler';
+import { handleWindowResize } from 'media-helper';
 
 const onLoadHandler = () => {
 
     setTimeout( async () => {
+
+      handleWindowResize();
 
         const purgeData = cookieHandler.hasUserBeenAwayTooLong();
 

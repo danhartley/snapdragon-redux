@@ -28,6 +28,10 @@ import { addVideo } from 'admin/screens/video/add-video';
 
 import { renderActiveTaxa } from 'admin/react/active-taxa';
 
+import { handleWindowResize } from 'media-helper';
+
+handleWindowResize();
+
 renderActiveTaxa();
 
 const auth = firebase.auth();
