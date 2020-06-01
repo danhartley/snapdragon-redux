@@ -21,7 +21,9 @@ const getBasePath = config => {
             ? ''
             : config.guide.season.observableMonths.map(month => month.index).join(',');
 
-    const basePath = `https://api.inaturalist.org/v1/observations/species_counts?captive=false&rank=species&per_page=200&month=${month}`;
+    const perPage = config.guide.perPage|| 200;
+
+    const basePath = `https://api.inaturalist.org/v1/observations/species_counts?captive=false&rank=species&per_page=${perPage}&month=${month}`;
 
     return basePath;
 };
@@ -30,12 +32,9 @@ export const getInatSpecies = async config => {
 
     const speciesNames = await firestore.getSpeciesNames();
 
-    log('speciesNames', speciesNames);
+    const snapdragonSpeciesNames = speciesNames[0].value;
 
-    const names = speciesNames[0].value;
-
-    log('names', names);
-    log('iconicTaxa', iconicTaxa);
+    log('snapdragon species', snapdragonSpeciesNames);
 
     const iconicTaxaKeys = Object.keys(iconicTaxa).join(',');
 
@@ -71,16 +70,23 @@ export const getInatSpecies = async config => {
         return id ? parameter : '';
     };
 
-    const getAllInatObservations = async config => {
+    const getAllInatObservations = async (config, snapdragonSpeciesNames) => {
+        let snaps = [];
         let records = [];
         let keepGoing = true;
         let page = 1;
         while (keepGoing) {
           try {
-            let response = await getInatObservations(config, page);
-            await records.push.apply(records, response);
+            let recordsFromThisRequest = await getInatObservations(config, page);
+            await records.push.apply(records, recordsFromThisRequest);
+            let matches = recordsFromThisRequest.filter(record => R.contains(record.taxon.name, snapdragonSpeciesNames));
+            await snaps.push.apply(snaps, matches);
             page = page + 1;
-            if (response.length < 200) {
+            let noMoreRecords = recordsFromThisRequest.length < 200;
+            let recordsCountReached = snaps.length >= config.guide.noOfRecords;
+            log('snaps', snaps);
+            log('records', records);
+            if (noMoreRecords || recordsCountReached) {
                 keepGoing = false;
                 return records;
             }
@@ -140,11 +146,11 @@ export const getInatSpecies = async config => {
 
         log('inat species request url', url);
 
-        const response = await fetch(url);
+        const recordsFromThisRequest = await fetch(url);
 
-        log('inat response', response);
+        log('inat recordsFromThisRequest', recordsFromThisRequest);
 
-        const json = await response.json();
+        const json = await recordsFromThisRequest.json();
         inatListeners.forEach(listener => listener(
             { page: json.page, numberOfRequests: Math.ceil(json.total_results/json.per_page) }
         ));
@@ -158,8 +164,8 @@ export const getInatSpecies = async config => {
     let observations;
 
     try {
-      observations = await getAllInatObservations(config);
-      observations = observations.filter(observation => R.contains(observation.taxon.name, names));
+      observations = await getAllInatObservations(config, snapdragonSpeciesNames);
+      observations = observations.filter(observation => R.contains(observation.taxon.name, snapdragonSpeciesNames));
     } catch(e) {
       logError('getAllInatObservations', e);
     }
@@ -174,8 +180,8 @@ export const getInatSpecies = async config => {
 export async function getInatPlaceId(place) {
     
     const url = `https://api.inaturalist.org/v1/places/autocomplete?q=${place}`;
-    const response = await fetch(url);
-    const json  = await response.json();
+    const recordsFromThisRequest = await fetch(url);
+    const json  = await recordsFromThisRequest.json();
     return json;
 }
 
@@ -184,8 +190,8 @@ export async function getInatTaxonStats(item, config, placeId) {
     const place = placeId || 'any';
     const taxonName = item.name;
     const url = `https://api.inaturalist.org/v1/observations/species_counts?&verifiable=true&taxon_name=${taxonName}&place_id=${place}`;
-    const response = await fetch(url);
-    const json = await response.json();
+    const recordsFromThisRequest = await fetch(url);
+    const json = await recordsFromThisRequest.json();
     return json;
 }
 
@@ -194,8 +200,8 @@ export async function getHistogram(item, placeId) {
     const place = placeId || 'any';
     const taxonName = item.name;
     const url = `https://api.inaturalist.org/v1/observations/histogram?taxon_name=${taxonName}&place_id=${place}`;
-    const response = await fetch(url);
-    const json = await response.json();
+    const recordsFromThisRequest = await fetch(url);
+    const json = await recordsFromThisRequest.json();
     return json;
 }
 
@@ -205,8 +211,8 @@ export async function getAutocompleteBy(q, by) {
     // https://api.inaturalist.org/v1/places/autocomplete?q=O%20Parque%20Natural%20da%20Arr%C3%A1bida
 
     const url = `https://api.inaturalist.org/v1/${by}/autocomplete?q=${q}`;
-    const response = await fetch(url);
-    const json = await response.json();
+    const recordsFromThisRequest = await fetch(url);
+    const json = await recordsFromThisRequest.json();
     return json;
 }
 

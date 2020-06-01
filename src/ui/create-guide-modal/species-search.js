@@ -127,7 +127,8 @@ export const speciesSearch = createGuide => {
             requestType: enums.lessonState.GET_LESSON_PROGRESS,
             requestArgs: {
                 collectionToLoad,
-                updatedCounter: counter
+                updatedCounter: counter,
+                guide: createGuide.getConfig().guide
             }
         });
         
