@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { SnapDoubleHeightCentredBlock, SnapRow, SnapInput, SnapButton, SnapLink } from 'admin/react/snap-html-elements';
 
 import { itemProperties } from 'ui/helpers/data-checking';
 

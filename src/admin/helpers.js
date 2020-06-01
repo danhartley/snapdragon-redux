@@ -58,7 +58,6 @@ const getImagesLayout = (species, imageIds, addPrefix = true) => {
 
     let images = '';
     if(!species.images) {
-        console.log('No images!');
     };
     species.images.forEach((image, index) => {
         let prefix = image.provider === 'inat' ? 'https://static.inaturalist.org/photos/' : 'https://content.eol.org/data/media/';

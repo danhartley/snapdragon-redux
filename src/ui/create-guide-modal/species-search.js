@@ -7,6 +7,7 @@ import { enums } from 'ui/helpers/enum-helper';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { lessonStateHelper } from 'ui/screens/lists/lesson-state-helper';
 import { speciesInGuideEditor } from 'ui/create-guide-modal/species-in-guide-editor';
+import { log, logError, logAPIError } from 'ui/helpers/logging-handler';
 
 import spinnerTemplate from 'ui/create-guide-modal/species-search-template.html';
 import speciesSummaryTemplate from 'ui/create-guide-modal/species-summary-template.html';
@@ -34,6 +35,7 @@ export const speciesSearch = createGuide => {
 
     const renderLessonSummary = collection => {
 
+      try {
         if(collection && collection.items && collection.items.length === 0) {
             feedback.innerHTML = 'No species were found. Try widening your parameters.';
             return;
@@ -108,6 +110,10 @@ export const speciesSearch = createGuide => {
                           
                       });
               });
+
+        } catch(e) {
+          logError(renderLessonSummary, e);
+        }
     };
 
     const initLesson = async collectionToLoad => {
@@ -158,7 +164,7 @@ export const speciesSearch = createGuide => {
 
         unsubscribe = listenToInatRequests(callback);
     };
-
+    
     config.guide.guideType = option;
 
     switch(option) {

@@ -13,6 +13,7 @@ import { videoHandler } from 'ui/screens/lists/video-handler';
 import { videoSetup } from 'ui/screens/home/home-lesson-intro-video';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { onSpeciesChangeHandler, openNoteHandler } from 'ui/screens/lists/species-list-definition-insert';
+import { log, logError } from 'ui/helpers/logging-handler';
 
 export const renderSpeciesList = (lesson, args) => {
 
@@ -241,13 +242,11 @@ export const renderSpeciesList = (lesson, args) => {
                 }
             }
         } catch(e) {
-          console.log('error:', e.message);
+          logError(openSpeciesDescriptionHandler, e);
         }
     };
 
     videoHandler.onSpeciesTimeMatch((collection, species) => {
-
-      console.log('species time match')
 
         openSpeciesDescriptionHandler(collection, species);
         updateVideoPlayer(collection, species);

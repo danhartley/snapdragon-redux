@@ -29,6 +29,7 @@ import { addVideo } from 'admin/screens/video/add-video';
 import { renderActiveTaxa } from 'admin/react/active-taxa';
 
 import { handleWindowResize } from 'media-helper';
+import { log, logError } from 'ui/helpers/logging-handler';
 
 handleWindowResize();
 
@@ -40,9 +41,9 @@ window.snapdragon = {};
 
 auth.onAuthStateChanged(user => {
     if (user) {
-        console.log(user);
+        log('auth.onAuthStateChanged', user);
     } else {
-        console.log('logged out');
+        log('auth.onAuthStateChanged: logged out');
     }
     setupUI(user);
 });

@@ -20,8 +20,6 @@ exports.addSpeciesName = speciesTrigger.onCreate(async(documentSnapshot, context
 
         const name = species.name;
 
-        console.log(name);
-
         let ref;
         const refs = await db.collection('species').where('collection_property', '==', 'names').get();
         refs.forEach(r => ref = r.ref);
@@ -30,7 +28,7 @@ exports.addSpeciesName = speciesTrigger.onCreate(async(documentSnapshot, context
             value: admin.firestore.FieldValue.arrayUnion(name)
         })
         .catch(err => {
-            return  console.log('Error adding new name to the species name list', err);
+            return console.log('Error adding new name to the species name list', err);
         });
 });
 
@@ -60,8 +58,6 @@ exports.addTaxon = taxonTrigger.onCreate(async(documentSnapshot, context) => {
 
     const name = taxon.name;
 
-    console.log(name);
-
     let ref;
     const refs = await db.collection('taxa').where('collection_property', '==', 'names').get();
     refs.forEach(r => ref = r.ref);
@@ -69,8 +65,8 @@ exports.addTaxon = taxonTrigger.onCreate(async(documentSnapshot, context) => {
     return ref.update({
         value: admin.firestore.FieldValue.arrayUnion(name)
     })
-    .catch(err => {
-        return  console.log('Error adding new name to the taxa name list', err);
+    .catch(e => {
+      return console.log('Error adding new name to the taxa name list', e);
     });
 });
 

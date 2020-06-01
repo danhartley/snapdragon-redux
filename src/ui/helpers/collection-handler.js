@@ -6,8 +6,11 @@ import { getInatSpecies } from 'api/inat/inat';
 import { getPlace } from 'geo/geo';
 import { firestore } from 'api/firebase/firestore';
 import { enums } from 'ui/helpers/enum-helper';
+import { log, logError } from 'ui/helpers/logging-handler';
 
 async function getItems(collection, config) {
+
+  try {
 
     if(collection.behaviour === 'dynamic') {
 
@@ -15,7 +18,7 @@ async function getItems(collection, config) {
             collection.items && collection.items.length > 0 && collection.items[0].collectionId === collection.id && 
             collection.speciesRange === config.guide.speciesRange;
 
-        if(collectionIsUnchanged) {
+        if(!!collectionIsUnchanged) {
             return new Promise(resolve => {
                 resolve(collection.items);
             });
@@ -23,25 +26,36 @@ async function getItems(collection, config) {
         } else {
 
             if(config.guide.guideType === 'LOCATION') {
-                
+  
+              try {
                 const place = await getPlace(config, true);
 
                 config.guide.coordinates = {
                     long: place.query[0],
                     lat: place.query[1]
                 };
+              } catch (e) {
+                logError('Error for getPlace: ', e);
+              }
 
+              try {
                 return await getInatSpecies(config);
+              } catch(e) {
+                logErrorg('getInatSpecies in getItems: ', e);
+              }
             }
             else { // INAT
-                const inatSpecies = await getInatSpecies(config);
-                return inatSpecies;
+                return await getInatSpecies(config);
             }            
         }
     }
     else if(collection.behaviour === 'static') { // names only available at this point e.g. 'PICKER';
         return getSnapdragonSpeciesData(collection.species);
     }
+  } catch (e) {
+    logError('Error for getItems: ', e);
+    return [];
+  }
 };
 
 const loadCollection = async (collection, config) => {
@@ -50,9 +64,24 @@ const loadCollection = async (collection, config) => {
         
         config.collection = { id: collection.id };
         
-        if(collection.items.length > 0) return collection;
+        if(collection.items.length > 0) {
+          log(`no collection items in loadCollection, collection: ${collection.name}`);
+          return collection;
+        };
 
-        const items = await getItems(collection, config);
+        let items = [];
+
+        try {
+          items = await getItems(collection, config);
+        } catch(e) {
+          logError('getItems in loadCollection', e);
+        }
+
+        if(!items) {
+          log('no items from getItems in loadCollection to filter');
+          return collection;
+        };
+
         collection.items = items.filter(item => item.name);
 
         if(collection.nextItem) return; // after refreshing or returning to the page (using rehydrated collection)
@@ -77,15 +106,15 @@ const loadCollection = async (collection, config) => {
             try {
                 return itemReadyCollection;
             } catch (e) {
-                console.log('Error for loadCollectionItemProperties: ', e.message);
+              logError('Error for loadCollectionItemProperties: ', e);
             }
 
         } else {
-            console.log('No results for callbackWhenNoResults');
+            log('No results for callbackWhenNoResults');
             return collection;
         }
     } catch (e) {
-        console.log('Error for collectionHandler: ', e.message);
+      logError('Error for loadCollection: ', e);
     }
 };
 
@@ -104,7 +133,6 @@ const loadCollectionItemProperties = async (collection, config) => {
         collection.items = utils.sortBy(collection.items, 'firstTime', 'asc');
     }
 
-    // collection.items = utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc');
     const families = [...new Set(collection.items.map(i => i.taxonomy.family))];
     const orders = [...new Set(collection.items.map(i => i.taxonomy.order))];
     const genera = [...new Set(collection.items.map(i => i.taxonomy.genus).filter(g => g))];

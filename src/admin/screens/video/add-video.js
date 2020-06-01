@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Profiler } from 'react';
 import ReactDOM from 'react-dom';
-import { Formik, Form, useField } from 'formik';
-import { SnapRow, SnapInput, SnapButton, SnapLink, SnapIconImage, MyTextInput, MyCheckbox, MySelect } from 'admin/react/snap-html-elements';
+import { Formik, Form } from 'formik';
+import { SnapInput } from 'admin/react/snap-html-elements';
 import { SnapPicker } from 'admin/screens/video/item-picker';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { theme } from 'admin/react/snap-theme';
@@ -42,25 +42,20 @@ export const addVideo = () => {
     }
   ];
 
-  const validate = values => {
-    const errors = {};
-    if (!values.title) {
-      errors.title = 'Required';
-    }
-    if (!values.presenter) {
-      errors.presenter = 'Required';
-    }
-    return errors;
-  };
-
   const VideoForm = props => {
-    console.log(props.selectedItem);
+    
     return (
       <>
         <Formik
           initialValues={{
-            title: props.selectedItem.value,
-            presenter: ''
+            title: props.selectedItem.value || '',
+            presenter: props.selectedItem.presenter || '',
+            id: props.selectedItem.id || '',
+            owner: props.selectedItem.owner || '',
+            ownerUrl: props.selectedItem.ownerUrl || '',
+            src: props.selectedItem.src || '',
+            location: props.selectedItem.location || '',
+            startsAt: props.selectedItem.startsAt || 0,
           }}
           enableReinitialize={true}
           validationSchema={Yup.object({
@@ -79,18 +74,15 @@ export const addVideo = () => {
           }}
         >
           <Form>
-            <MyTextInput
-              label="Title"
-              name="title"
-              type="text"
-              placeholder="Enter title"
-            />
-            <MyTextInput
-              label="Presenter"
-              name="presenter"
-              type="text"
-              placeholder="Enter presenter"
-            />
+            <SnapInput label="Title" name="title" type="text" placeholder="Enter title" />
+            <SnapInput label="Presenter" name="presenter" type="text" placeholder="Enter presenter"/>
+            <SnapInput label="Video Id" name="id" type="text" placeholder="Enter video Id"/>
+            {/* video link */}
+            <SnapInput label="Owner" name="owner" type="text" placeholder="Enter owner"/>
+            <SnapInput label="Owner URL" name="ownerUrl" type="text" placeholder="Enter owner URL"/>
+            <SnapInput label="Onwer logo" name="src" type="text" placeholder="Enter owner logo URL"/>
+            <SnapInput label="Location" name="location" type="text" placeholder="Enter location"/>
+            <SnapInput label="Lesson starts at" name="startsAt" type="number" placeholder="Enter lesson start time"/>
             <button type="submit">Submit</button>
           </Form>
         </Formik>
@@ -113,7 +105,7 @@ export const addVideo = () => {
   }
 
   const Video = () => {
-    const [selectedItem, setSelectedItem] = useState({value:''});
+    const [selectedItem, setSelectedItem] = useState({});
     useEffect(()=>{
       let otherTabs = document.querySelectorAll('.non-react');
           otherTabs.forEach(otherTab => {

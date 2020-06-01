@@ -5,6 +5,7 @@ import { scoreHandler, bindScore } from 'ui/helpers//score-handler';
 import { firestore } from 'api/firebase/firestore';
 import { utils } from 'utils/utils';
 import { traitsHandler } from 'ui/helpers/traits-handler';
+import { log, logError } from 'ui/helpers/logging-handler';
 
 const onTraitsReadyListeners = [];
 const onTraitsReady = listener => {
@@ -33,8 +34,8 @@ const getMatchingTrait = (layoutTraits, traitValues) => {
     
         return { requiredTraitValues, trait };
     } catch (e) {
-        console.log('getMatchingTrait error: ', e.message);
-        return { requiredTraitValues: [], trait: {}};
+      logError(getMatchingTrait, e);
+      return { requiredTraitValues: [], trait: {}};
     }
 
 };

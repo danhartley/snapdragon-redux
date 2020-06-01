@@ -1,3 +1,5 @@
+import { log, logError } from 'ui/helpers/logging-handler';
+
 export const handleWindowResize = () => {
 
   const setWindowHeight = () => {
@@ -45,10 +47,10 @@ export const handleWindowResize = () => {
   });
 
   if(window.location.origin.indexOf('learn-the-planet') > -1) {
-      console.log('Live site detected.');
+      log('*** Live site detected ***');
       if(window.location.protocol != 'https:') {
           location.href =  location.href.replace("http://", "https://");
-          console.log('Site secured.');
+          log(' *** Site secured ***');
       }
   }
 

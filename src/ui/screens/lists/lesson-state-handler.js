@@ -15,9 +15,6 @@ const changeRequest = async args => {
 
   const { config, collection, collections, counter } = store.getState();
 
-  // console.log('requestType: ', requestType);
-  // console.log('requestArgs: ', requestArgs);
-
   switch(requestType) {
 
     case enums.lessonState.PAUSE_LESSON:

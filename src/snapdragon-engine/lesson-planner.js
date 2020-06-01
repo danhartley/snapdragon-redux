@@ -19,7 +19,6 @@ const createLessonPlan = async (lessonPlan, config, collection, lesson) => {
     const nextRoundLayoutTemplates = getNextRoundLayouts(lessonPlan, config, lesson);
 
     if(lesson.level === undefined) {
-        console.log('end of the lesson');
         return new Promise(resolve => resolve(null));
     }
 

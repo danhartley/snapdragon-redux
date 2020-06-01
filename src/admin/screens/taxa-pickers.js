@@ -56,7 +56,6 @@ export const taxonPicker = async (input, listener) => {
 
     input.addEventListener('keyup', async e => {
         if(e.keyCode == 13) {
-            console.log(input.value);
             const taxon = await firestore.getTaxonByName({},input.value);
             listener(taxon);
         }

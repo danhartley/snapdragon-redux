@@ -119,8 +119,6 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
                     const buildQuestion = async () => {
 
-                        // console.log('calling getPoolItems from renderVernacularQuestions');
-
                         answer = { term: item.vernacularName };   
                         answers = await getPoolItems(collection, 6);
                         answers = answers.map(a => itemProperties.getVernacularName(a, config, false, 'vernacularName', defaultLanguage));
@@ -146,8 +144,6 @@ export const renderMultiStrips = (collection, bonus, args) => {
                     let answer, answers, help;
 
                     const buildQuestion = async () => {
-
-                        console.log('calling getPoolItems from renderIdQuestions');
 
                         answer = { term: item.quickId };   
                         answers = await getPoolItems(collection, 6);

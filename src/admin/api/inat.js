@@ -1,6 +1,6 @@
 import { user } from "firebase-functions/lib/providers/auth";
 
-const getInatSpecies = (collection) => {
+const getInatSpeciesObservations = (collection) => {
     let observations = collection.results;
     return observations;
 };
@@ -9,7 +9,7 @@ const getInatObservationsById = async (userId = 19829) => {
     const collectionUrl = `https://api.inaturalist.org/v1/observations?user_id=${userId}&order=desc&order_by=created_at`;
     const response = await fetch(collectionUrl);
     const json = await response.json();
-    return await getInatSpecies(json);
+    return await getInatSpeciesObservations(json);
 };
 
 const getInatObservations = async () => {

@@ -36,7 +36,6 @@ export const addPhotos = () => {
         sources.forEach(option => {
             option.addEventListener('click', e => {
                 source = e.currentTarget.id;
-                console.log('source: ', source);
                 input.focus();
                 const parent = document.getElementById('photosGallery');
                       parent.innerHTML = '';
@@ -133,9 +132,7 @@ export const addPhotos = () => {
                 delete photo.index;
                 
             });
-            console.log(photos);
             const response = await firestore.addPhotos(name, photos);
-            console.log(response);
             const parent = document.getElementById('photosGallery');
                   parent.innerHTML = '';
         };
@@ -157,7 +154,6 @@ async function loadPhotos(source, renderPhotos, species, name) {
             photos = photos.map((photo, index) => {
                 return { ...photo, url: photo.url.replace('medium', 'small'), index, provider: 'inat' };
             });
-            console.log('inat photos: ', photos);
             renderPhotos(photos, species);
             break;
         case 'eol':
@@ -165,7 +161,6 @@ async function loadPhotos(source, renderPhotos, species, name) {
             photos = photos.map((photo, index) => {
                 return { ...photo, index, provider: 'eol', url: photo.url.replace('.jpg', '.260x190.jpg') };
             });
-            console.log('inat photos: ', photos);
             renderPhotos(photos, species);
             break;
     }

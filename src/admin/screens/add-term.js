@@ -64,8 +64,6 @@ export const addTerm = () => {
 
           const handleModeChange = e => {
 
-            console.log('handleModeChange');
-
             const isEditMode = e.target.checked;
             isEditMode ? setEditTerm('') : setAddTerm('');
             inputEditTerm.value = '';
@@ -87,8 +85,6 @@ export const addTerm = () => {
           const handleAddTerm = async e => {
 
             if(e.key === 'Tab') {    
-
-              console.log('handleAddTerm');
 
               const input = e.target;
 
@@ -113,8 +109,6 @@ export const addTerm = () => {
 
           const handleEditTerm = async e => {
 
-            console.log('handleEditTerm');
-
               if(e.key === 'Enter') {
 
                 const input = e.target;
@@ -133,8 +127,6 @@ export const addTerm = () => {
                 isTechnical = term.technical;
                 inputBranch.value = term.branch;
                 inputTaxon.value = term.taxon;
-
-                console.log('branch set in edit handler, ', term.branch);
               }
           };
 
@@ -176,8 +168,6 @@ export const addTerm = () => {
 
             if(e.key == "Enter") event.preventDefault();
 
-            console.log('handleSubmit');
-
             // hack validation to prevent submission after accepting term to edit
             if(inputDefinition.value.length === 0) return;
 
@@ -187,7 +177,6 @@ export const addTerm = () => {
           };
 
           useEffect(() => {
-            console.log('run branch autocomplete');
               autocomplete({
                 input: inputBranch,
                 fetch: function(text, update) {
@@ -205,7 +194,6 @@ export const addTerm = () => {
           }, []);
 
           useEffect(() => {
-            console.log('run taxon autocomplete');
             autocomplete({
                 input: inputTaxon,
                 fetch: function(text, update) {
@@ -331,7 +319,7 @@ export const addTerm = () => {
             if(collection) {
                 collection.terms.push(docRef.id);
                 firestore.updateCollection(collection).then(response => {
-                    console.log(response);
+
                 });
             }
         };

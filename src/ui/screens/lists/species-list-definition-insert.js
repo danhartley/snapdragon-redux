@@ -1,4 +1,5 @@
 import { renderTemplate } from 'ui/helpers/templating';
+import { log, logError, logAPIError } from 'ui/helpers/logging-handler';
 
 import definitionTemplate from 'ui/screens/lists/species-list-definition-insert.html';
 
@@ -16,15 +17,11 @@ export const onSpeciesChangeHandler = species => {
         currentlyActiveSpecies = species;
         
     } catch(e) {
-        console.log('error in onSpeciesChangeHandler');
-        console.error('error message: ', e.message);
+      logError(onSpeciesChangeHandler, e);
     }
 };
 
 export const openNoteHandler = (note, time) => {
-
-    console.log('note:', note);
-    console.log('player time: ', time)
 
     if(Math.floor(note.time) !== time) return;
 

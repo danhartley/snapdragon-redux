@@ -41,35 +41,33 @@ export const editCollection = () => {
           const presenter = document.querySelector('#input-collection-presenter');
           const src = document.querySelector('#input-collection-src');
 
+          if(collection.video) {                
+              id.value = collection.video.id;    
+              title.value = collection.video.title;                
+              owner.value = collection.video.owner;                
+              intro.value = collection.video.intro;                
+              location.value = collection.video.location;                
+              presenter.value = collection.video.presenter;                
+              src.value = collection.video.src;
+          }
 
-            if(collection.video) {                
-                id.value = collection.video.id;    
-                title.value = collection.video.title;                
-                owner.value = collection.video.owner;                
-                intro.value = collection.video.intro;                
-                location.value = collection.video.location;                
-                presenter.value = collection.video.presenter;                
-                src.value = collection.video.src;
-            }
-
-            const btnUpdateCollection = document.querySelector('.btnUpdateCollection');
-                  btnUpdateCollection.addEventListener('click', e => {
-                        const video = collection.video || {};
-                        const response = editCollectionHandler.updateCollection({
-                                name: collection.name, 
-                                video: {
-                                    ...video
-                                    , id: id.value
-                                    , title: title.value
-                                    , owner: owner.value
-                                    , intro: intro.value
-                                    , location: location.value
-                                    , presenter: presenter.value
-                                    , src: src.value
-                                }
-                            });
-                        console.log(response);
-                  });
+          const btnUpdateCollection = document.querySelector('.btnUpdateCollection');
+                btnUpdateCollection.addEventListener('click', e => {
+                      const video = collection.video || {};
+                      const response = editCollectionHandler.updateCollection({
+                              name: collection.name, 
+                              video: {
+                                  ...video
+                                  , id: id.value
+                                  , title: title.value
+                                  , owner: owner.value
+                                  , intro: intro.value
+                                  , location: location.value
+                                  , presenter: presenter.value
+                                  , src: src.value
+                              }
+                          });
+                });
         };
 
         let collection = window.snapdragon.collection;

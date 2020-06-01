@@ -140,8 +140,6 @@ const updateSpecies = () => {
 
     btnGetPhotos.addEventListener('click', async e => {
 
-        console.log(item);
-
         if(item.images.length === 0) {
             item.images = await eol.getSpeciesPhotos(item.eolId, 'pd|cc-by|cc-by-sa|cc-by-nd');                             
         }
@@ -298,7 +296,6 @@ const addNewSpecies = async item => {
 };
 
 const updateExistingSpecies = async item => {
-    console.log(item);
     const response = await firestore.updateSpecies(item);
 };
 

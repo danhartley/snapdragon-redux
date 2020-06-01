@@ -2,6 +2,7 @@ import * as R from 'ramda';
 
 import { firestore } from 'api/firebase/firestore';
 import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
+import { log, logError } from 'ui/helpers/logging-handler';
 
 let inatListeners = [];
 
@@ -29,24 +30,37 @@ export const getInatSpecies = async config => {
 
     const speciesNames = await firestore.getSpeciesNames();
 
+    log('speciesNames', speciesNames);
+
     const names = speciesNames[0].value;
+
+    log('names', names);
+    log('iconicTaxa', iconicTaxa);
 
     const iconicTaxaKeys = Object.keys(iconicTaxa).join(',');
 
-    const getIconicTaxa = config => {        
-        const iconicTaxa = config.guide.iconicTaxa.map(taxon => taxon.id) || iconicTaxaKeys;
+    const getIconicTaxa = config => {
+      
+      try {
 
-        // Create new taxonic group for reptilia, etc?
+          const iconicTaxa = config.guide.iconicTaxa.map(taxon => taxon.id) || iconicTaxaKeys;
 
-        if(iconicTaxa.find(taxon => taxon === 'mammalia')) {
-            iconicTaxa.push('reptilia');
-        }
+          // Create new taxonic group for reptilia, etc?
 
-        const taxa = iconicTaxa.map(taxon => {
-            if(taxon === 'lepidoptera') taxon = 'insecta';            
-            return taxon;
-        });
-        return taxa;
+          if(iconicTaxa.find(taxon => taxon === 'mammalia')) {
+              iconicTaxa.push('reptilia');
+          }
+
+          const taxa = iconicTaxa.map(taxon => {
+              if(taxon === 'lepidoptera') taxon = 'insecta';            
+              return taxon;
+          });
+
+          return taxa;
+
+      } catch (e) {
+        logError('Error for getIconicTaxa: ', e);
+    }
     };
 
     const getUserOrProjectKeyValuePair = config => {
@@ -57,11 +71,12 @@ export const getInatSpecies = async config => {
         return id ? parameter : '';
     };
 
-    async function getAllInatObservations(config) {
+    const getAllInatObservations = async config => {
         let records = [];
         let keepGoing = true;
         let page = 1;
         while (keepGoing) {
+          try {
             let response = await getInatObservations(config, page);
             await records.push.apply(records, response);
             page = page + 1;
@@ -69,6 +84,10 @@ export const getInatSpecies = async config => {
                 keepGoing = false;
                 return records;
             }
+          } catch(e) {
+            logError('getInatObservations', e);
+            return records;
+          }
         }
     }
 
@@ -84,12 +103,14 @@ export const getInatSpecies = async config => {
                 })                    
             }));
 
-        } catch (error) {
-            console.error(error);
+        } catch (e) {
+          logError('loadSpeciesInParallel: ', e);
         }
     };
 
-    async function getInatObservations(config, page) {
+    const getInatObservations = async (config, page) => {
+
+      try {
 
         let lat = '', lng = '', placeId = '';
 
@@ -117,17 +138,35 @@ export const getInatSpecies = async config => {
         const params = config.guide.guideTpe === 'INAT' ? getUserOrProjectKeyValuePair(config) : '';
         const url = getBasePath(config) + `&page=${page}&iconic_taxa=${iconicTaxa}&place_id=${placeId}&lat=${lat}&lng=${lng}&radius=${radius}${inat}${params}`;
 
+        log('inat species request url', url);
+
         const response = await fetch(url);
+
+        log('inat response', response);
+
         const json = await response.json();
         inatListeners.forEach(listener => listener(
             { page: json.page, numberOfRequests: Math.ceil(json.total_results/json.per_page) }
         ));
-        return await json.results;
+        return json ? await json.results : [];
+      } catch(e) {
+        logError('getInatObservations', e);
+        return [];
+      }
+    }
+    
+    let observations;
+
+    try {
+      observations = await getAllInatObservations(config);
+      observations = observations.filter(observation => R.contains(observation.taxon.name, names));
+    } catch(e) {
+      logError('getAllInatObservations', e);
     }
 
-    let observations = await getAllInatObservations(config);
-        observations = observations.filter(observation => R.contains(observation.taxon.name, names));
-        console.log('inat: observations:', observations);
+    log('observations', observations);
+
+    if(!observations) return [];
 
     return await loadSpeciesInParallel(observations);
 }

@@ -138,8 +138,7 @@ var timer = function timer(sink, delay) {
     id = setInterval(function () {
       sink();
     }, delay);
-  }).onValue(function (element) {
-    console.log('timer: ', element);
+  }).onValue(function (element) {//
   });
   return id;
 };
