@@ -83,5 +83,5 @@ export const renderCategories = (modal, createGuide) => {
 
     createGuide.saveStep('TAXA');
 
-    document.querySelector('.js-arrow-wrapper').innerHTML = '<i class="far fa-arrow-alt-circle-right"></i>';
+    document.querySelector('.js-right .js-arrow-wrapper').innerHTML = '<i class="far fa-arrow-alt-circle-right"></i>';
 };

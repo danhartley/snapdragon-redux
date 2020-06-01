@@ -74237,10 +74237,11 @@ var onLoadHandler = function onLoadHandler() {
             if (purgeData) {
               redux_store__WEBPACK_IMPORTED_MODULE_13__["persistor"].purge();
               window.location.reload(true);
+            } else {
+              lastVisitedCookie = ui_helpers_cookie_handler__WEBPACK_IMPORTED_MODULE_27__["cookieHandler"].setLastVisitedCookie(Date());
             }
 
-            lastVisitedCookie = ui_helpers_cookie_handler__WEBPACK_IMPORTED_MODULE_27__["cookieHandler"].setLastVisitedCookie(Date());
-            _context2.prev = 4;
+            _context2.prev = 3;
             auth = firebase.auth();
             email = 'danhartleybcn@gmail.com';
             password = 'sarcarsnap1929'; // auth.signInWithEmailAndPassword(email, password).then((cred) => {
@@ -74259,18 +74260,18 @@ var onLoadHandler = function onLoadHandler() {
             redux_actions_action_creators__WEBPACK_IMPORTED_MODULE_22__["actions"].boundStopStartLesson(counter);
 
             if (!(collections && collections.length === 0)) {
-              _context2.next = 20;
+              _context2.next = 19;
               break;
             }
 
-            _context2.next = 18;
+            _context2.next = 17;
             return api_firebase_firestore__WEBPACK_IMPORTED_MODULE_25__["firestore"].getCollections();
 
-          case 18:
+          case 17:
             cloudCollections = _context2.sent;
             redux_actions_action_creators__WEBPACK_IMPORTED_MODULE_22__["actions"].boundUpdateCollections(cloudCollections);
 
-          case 20:
+          case 19:
             redux_subscriptions__WEBPACK_IMPORTED_MODULE_21__["subscription"].add(ui_fixtures_headers__WEBPACK_IMPORTED_MODULE_17__["renderHeaders"], 'collection', 'flow');
             Object(ui_fixtures_navigation__WEBPACK_IMPORTED_MODULE_20__["renderNavigation"])();
             redux_subscriptions__WEBPACK_IMPORTED_MODULE_21__["subscription"].add(ui_fixtures_navigation__WEBPACK_IMPORTED_MODULE_20__["renderNavigation"], 'collection', 'flow');
@@ -74316,29 +74317,29 @@ var onLoadHandler = function onLoadHandler() {
               updateConfig();
             }
 
-            _context2.next = 36;
+            _context2.next = 35;
             return api_firebase_firestore__WEBPACK_IMPORTED_MODULE_25__["firestore"].getDefinitionsByTaxa(['common', 'plantae', 'aves', 'fungi', 'insecta']);
 
-          case 36:
+          case 35:
             glossary = _context2.sent;
             glossary = utils_utils__WEBPACK_IMPORTED_MODULE_12__["utils"].sortAlphabeticallyBy(glossary, 'term');
             redux_actions_action_creators__WEBPACK_IMPORTED_MODULE_22__["actions"].boundCreateGlossary(glossary);
             ui_screens_cards_test_card_modal_handler__WEBPACK_IMPORTED_MODULE_28__["lessonModalHandler"].onCloseModal();
-            _context2.next = 45;
+            _context2.next = 44;
             break;
 
-          case 42:
-            _context2.prev = 42;
-            _context2.t0 = _context2["catch"](4);
+          case 41:
+            _context2.prev = 41;
+            _context2.t0 = _context2["catch"](3);
             console.log('home page error: ', _context2.t0); // persistor.purge();
             // window.location.reload(true);        
 
-          case 45:
+          case 44:
           case "end":
             return _context2.stop();
         }
       }
-    }, _callee2, this, [[4, 42]]);
+    }, _callee2, this, [[3, 41]]);
   })));
 };
 
@@ -78674,7 +78675,7 @@ var renderCategories = function renderCategories(modal, createGuide) {
     });
   });
   createGuide.saveStep('TAXA');
-  document.querySelector('.js-arrow-wrapper').innerHTML = '<i class="far fa-arrow-alt-circle-right"></i>';
+  document.querySelector('.js-right .js-arrow-wrapper').innerHTML = '<i class="far fa-arrow-alt-circle-right"></i>';
 };
 
 /***/ }),
@@ -82208,15 +82209,19 @@ var collectionHandler = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cookieHandler", function() { return cookieHandler; });
+// https://github.com/GoogleChromeLabs/samesite-examples/blob/master/javascript.md
 var FIRST_TIME = 'first_time';
 var LAST_VISITED = 'last_visited';
 var TOO_MANY_DAYS = 5;
+var SECURE = 'SameSite=Lax;';
+var cookie;
 
 var setFirstTimeVisitorCookie = function setFirstTimeVisitorCookie() {
   var isFirstVisit = true;
 
   if (document.cookie.indexOf(FIRST_TIME) < 0) {
-    document.cookie = "".concat(FIRST_TIME, "=false;");
+    cookie = "".concat(FIRST_TIME, "=false; ").concat(SECURE);
+    document.cookie = cookie;
   } else {
     isFirstVisit = false;
   }
@@ -82226,7 +82231,8 @@ var setFirstTimeVisitorCookie = function setFirstTimeVisitorCookie() {
 
 var setLastVisitedCookie = function setLastVisitedCookie(date) {
   if (document.cookie.indexOf(LAST_VISITED) < 0) {
-    document.cookie = "".concat(LAST_VISITED, "=").concat(date, ";");
+    cookie = "".concat(LAST_VISITED, "=").concat(date, "; ").concat(SECURE);
+    document.cookie = cookie;
   } else {
     setLastVisited(date);
   }
@@ -82234,6 +82240,7 @@ var setLastVisitedCookie = function setLastVisitedCookie(date) {
 
 var hasUserBeenAwayTooLong = function hasUserBeenAwayTooLong() {
   var lastVisited = readCookie(LAST_VISITED);
+  if (!lastVisited) return false;
   var timeDiff = Math.abs(new Date() - new Date(lastVisited));
   var daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
   var beenGoneTooLong = daysDiff > TOO_MANY_DAYS;
@@ -82250,7 +82257,8 @@ var isFirstTimeVisitor = function isFirstTimeVisitor() {
 };
 
 var removeFirstTimeVisitorCookie = function removeFirstTimeVisitorCookie() {
-  document.cookie = "".concat(FIRST_TIME, "= ; expires = Thu, 01 Jan 1970 00:00:00 GMT;");
+  cookie = "".concat(FIRST_TIME, "= ; expires = Thu, 01 Jan 1970 00:00:00 GMT; ").concat(SECURE);
+  document.cookie = cookie;
 };
 
 var cookieHandler = {
@@ -82281,7 +82289,8 @@ var readCookie = function readCookie(name) {
 var setLastVisited = function setLastVisited(date) {
   var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)last_time\s*\=\s*([^;]*).*$)|^.*$/, "$1");
   var cookieToAdd = cookieValue + "".concat(LAST_VISITED, "=").concat(date, ";");
-  document.cookie = cookieToAdd;
+  cookie = "".concat(cookieToAdd, "; ").concat(SECURE);
+  document.cookie = cookie;
 };
 
 /***/ }),
