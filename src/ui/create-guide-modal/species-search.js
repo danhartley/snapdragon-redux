@@ -47,7 +47,7 @@ export const speciesSearch = createGuide => {
 
         feedback.innerHTML = '';
 
-        collection.taxa = collection.iconicTaxa.map(taxon => taxon.common).join(', ');
+        collection.taxa = collection.guide.iconicTaxa.map(taxon => taxon.common).join(', ');
         
         renderTemplate({ collection }, template.content, feedback);
 
@@ -82,7 +82,7 @@ export const speciesSearch = createGuide => {
             });   
         });
 
-        title.innerHTML = 'New collection species.';
+        title.innerHTML = 'New collection species';
 
         const editSpecies = modal.querySelector('.js-edit-species');
               editSpecies.addEventListener('click', e => {
@@ -133,7 +133,7 @@ export const speciesSearch = createGuide => {
         });
         
         const collection = lesson.collection;
-              collection.iconicTaxa = collection.iconicTaxa.filter(taxon => R.contains(taxon.id, config.guide.iconicTaxa));
+              collection.guide = config.guide;
               collection.isPrivate = true;
         
         renderLessonSummary(collection);
@@ -175,8 +175,9 @@ export const speciesSearch = createGuide => {
                 ...collections.find(c => c.guideType === option),                
                 name: config.guide.place.name,
                 taxa: config.guide.iconicTaxa.map(i => i.common).join(', '),
-                iconicTaxa: config.guide.iconicTaxa,
-                id: collections.length + 10000,
+                guide: config.guide,
+                language: config.language,
+                id: collections.length + 100010, // hack to avoid clashes with existing lessons
             });
             break;
 
@@ -229,5 +230,5 @@ export const speciesSearch = createGuide => {
     }
 
    const title = modal.querySelector('.js-options');
-         title.innerHTML = 'Requesting species images and traits.';
+         title.innerHTML = 'Requesting species images and traits';
 };

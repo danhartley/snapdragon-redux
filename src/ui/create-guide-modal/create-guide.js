@@ -198,8 +198,8 @@ class CreateGuide {
         }
     }
 
-    saveStep(stepDescription) {
-        saveGuide(this.getConfig(), stepDescription)();
+    saveStep(stepDescription, config) {
+        saveGuide(config || this.getConfig(), stepDescription)();
     }
 };
 

@@ -77,7 +77,7 @@ export const renderCategories = (modal, createGuide) => {
             }
 
             createGuide.setConfig(config);
-            createGuide.saveStep('TAXA');            
+            createGuide.saveStep('TAXA', config);            
         });
     });
 
