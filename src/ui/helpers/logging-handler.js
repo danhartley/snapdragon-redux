@@ -11,7 +11,7 @@ export const log = (msg, obj) => {
 };
 
 export const logError = (source, e) => {
-  let css = 'background: #222; color: #f00; padding: 5px; margin-right: 5px;';
+  let css = 'background: #222; color: #fff; padding: 5px; margin-right: 5px;';
   let output;
   if(Array.isArray(source)) source = { source };
   if(source === typeof(object)) {

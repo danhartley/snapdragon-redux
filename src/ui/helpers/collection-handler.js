@@ -120,10 +120,11 @@ const loadCollection = async (collection, config) => {
 
 const loadCollectionItemProperties = async (collection, config) => {
 
-    collection.items = collection.items.filter(i => i);
+    // collection.items = collection.items.filter(i => i);
 
     if(collection.behaviour === 'dynamic') {
-        collection.items = R.take(config.guide.noOfRecords, utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc'));
+        collection.items = utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc');
+        // collection.items = R.take(config.guide.noOfRecords, utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc'));
     } else {
         collection.items.forEach(sp => {
             if(sp.time) {

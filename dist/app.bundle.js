@@ -72499,9 +72499,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getHistogram", function() { return getHistogram; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAutocompleteBy", function() { return getAutocompleteBy; });
 /* harmony import */ var ramda__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ramda */ "./node_modules/ramda/es/index.js");
-/* harmony import */ var api_firebase_firestore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! api/firebase/firestore */ "./src/api/firebase/firestore.js");
-/* harmony import */ var api_snapdragon_iconic_taxa__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! api/snapdragon/iconic-taxa */ "./src/api/snapdragon/iconic-taxa.js");
-/* harmony import */ var ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ui/helpers/logging-handler */ "./src/ui/helpers/logging-handler.js");
+/* harmony import */ var utils_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! utils/utils */ "./src/utils/utils.js");
+/* harmony import */ var api_firebase_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! api/firebase/firestore */ "./src/api/firebase/firestore.js");
+/* harmony import */ var api_snapdragon_iconic_taxa__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! api/snapdragon/iconic-taxa */ "./src/api/snapdragon/iconic-taxa.js");
+/* harmony import */ var ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ui/helpers/logging-handler */ "./src/ui/helpers/logging-handler.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -72516,7 +72517,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
+
 var inatListeners = [];
+var RECORDS_PER_PAGE = 200;
 
 var unsubscribe = function unsubscribe(listener) {
   inatListeners = inatListeners.filter(function (l) {
@@ -72533,7 +72536,7 @@ var getBasePath = function getBasePath(config) {
   var month = config.guide.season.type === 'all_year' ? '' : config.guide.season.observableMonths.map(function (month) {
     return month.index;
   }).join(',');
-  var perPage = config.guide.perPage || 200;
+  var perPage = config.guide.perPage || RECORDS_PER_PAGE;
   var basePath = "https://api.inaturalist.org/v1/observations/species_counts?captive=false&rank=species&per_page=".concat(perPage, "&month=").concat(month);
   return basePath;
 };
@@ -72546,13 +72549,13 @@ var getInatSpecies = /*#__PURE__*/function () {
         switch (_context5.prev = _context5.next) {
           case 0:
             _context5.next = 2;
-            return api_firebase_firestore__WEBPACK_IMPORTED_MODULE_1__["firestore"].getSpeciesNames();
+            return api_firebase_firestore__WEBPACK_IMPORTED_MODULE_2__["firestore"].getSpeciesNames();
 
           case 2:
             speciesNames = _context5.sent;
             snapdragonSpeciesNames = speciesNames[0].value;
-            Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_3__["log"])('snapdragon species', snapdragonSpeciesNames);
-            iconicTaxaKeys = Object.keys(api_snapdragon_iconic_taxa__WEBPACK_IMPORTED_MODULE_2__["iconicTaxa"]).join(',');
+            Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_4__["log"])('snapdragon species', snapdragonSpeciesNames);
+            iconicTaxaKeys = Object.keys(api_snapdragon_iconic_taxa__WEBPACK_IMPORTED_MODULE_3__["iconicTaxa"]).join(',');
 
             getIconicTaxa = function getIconicTaxa(config) {
               try {
@@ -72574,7 +72577,7 @@ var getInatSpecies = /*#__PURE__*/function () {
 
                 return taxa;
               } catch (e) {
-                Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_3__["logError"])('Error for getIconicTaxa: ', e);
+                Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_4__["logError"])('Error for getIconicTaxa: ', e);
               }
             };
 
@@ -72588,12 +72591,12 @@ var getInatSpecies = /*#__PURE__*/function () {
 
             getAllInatObservations = /*#__PURE__*/function () {
               var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(config, snapdragonSpeciesNames) {
-                var snaps, records, keepGoing, page, recordsFromThisRequest, matches, noMoreRecords, recordsCountReached;
+                var snapdragonSpecies, records, keepGoing, page, recordsFromThisRequest, matches, noMoreRecords, recordsCountReached;
                 return regeneratorRuntime.wrap(function _callee$(_context) {
                   while (1) {
                     switch (_context.prev = _context.next) {
                       case 0:
-                        snaps = [];
+                        snapdragonSpecies = [];
                         records = [];
                         keepGoing = true;
                         page = 1;
@@ -72618,14 +72621,14 @@ var getInatSpecies = /*#__PURE__*/function () {
                           return ramda__WEBPACK_IMPORTED_MODULE_0__["contains"](record.taxon.name, snapdragonSpeciesNames);
                         });
                         _context.next = 14;
-                        return snaps.push.apply(snaps, matches);
+                        return snapdragonSpecies.push.apply(snapdragonSpecies, matches);
 
                       case 14:
                         page = page + 1;
-                        noMoreRecords = recordsFromThisRequest.length < 200;
-                        recordsCountReached = snaps.length >= config.guide.noOfRecords;
-                        Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_3__["log"])('snaps', snaps);
-                        Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_3__["log"])('records', records);
+                        noMoreRecords = recordsFromThisRequest.length < RECORDS_PER_PAGE;
+                        recordsCountReached = snapdragonSpecies.length >= config.guide.noOfRecords;
+                        Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_4__["log"])('snapdragonSpecies', snapdragonSpecies);
+                        Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_4__["log"])('records', records);
 
                         if (!(noMoreRecords || recordsCountReached)) {
                           _context.next = 22;
@@ -72633,7 +72636,7 @@ var getInatSpecies = /*#__PURE__*/function () {
                         }
 
                         keepGoing = false;
-                        return _context.abrupt("return", records);
+                        return _context.abrupt("return", snapdragonSpecies);
 
                       case 22:
                         _context.next = 28;
@@ -72642,8 +72645,8 @@ var getInatSpecies = /*#__PURE__*/function () {
                       case 24:
                         _context.prev = 24;
                         _context.t0 = _context["catch"](5);
-                        Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_3__["logError"])('getInatObservations', _context.t0);
-                        return _context.abrupt("return", records);
+                        Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_4__["logError"])('getInatObservations', _context.t0);
+                        return _context.abrupt("return", snapdragonSpecies);
 
                       case 28:
                         _context.next = 4;
@@ -72670,7 +72673,7 @@ var getInatSpecies = /*#__PURE__*/function () {
                       case 0:
                         _context3.prev = 0;
                         return _context3.abrupt("return", Promise.all(observations.map(function (observation) {
-                          return api_firebase_firestore__WEBPACK_IMPORTED_MODULE_1__["firestore"].getSpeciesByName(observation.taxon.name).then( /*#__PURE__*/function () {
+                          return api_firebase_firestore__WEBPACK_IMPORTED_MODULE_2__["firestore"].getSpeciesByName(observation.taxon.name).then( /*#__PURE__*/function () {
                             var _ref4 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(item) {
                               return regeneratorRuntime.wrap(function _callee2$(_context2) {
                                 while (1) {
@@ -72702,7 +72705,7 @@ var getInatSpecies = /*#__PURE__*/function () {
                       case 4:
                         _context3.prev = 4;
                         _context3.t0 = _context3["catch"](0);
-                        Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_3__["logError"])('loadSpeciesInParallel: ', _context3.t0);
+                        Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_4__["logError"])('loadSpeciesInParallel: ', _context3.t0);
 
                       case 7:
                       case "end":
@@ -72754,13 +72757,13 @@ var getInatSpecies = /*#__PURE__*/function () {
                         _iconicTaxa2 = getIconicTaxa(config);
                         params = config.guide.guideTpe === 'INAT' ? getUserOrProjectKeyValuePair(config) : '';
                         url = getBasePath(config) + "&page=".concat(page, "&iconic_taxa=").concat(_iconicTaxa2, "&place_id=").concat(placeId, "&lat=").concat(lat, "&lng=").concat(lng, "&radius=").concat(radius).concat(inat).concat(params);
-                        Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_3__["log"])('inat species request url', url);
+                        Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_4__["log"])('inat species request url', url);
                         _context4.next = 24;
                         return fetch(url);
 
                       case 24:
                         recordsFromThisRequest = _context4.sent;
-                        Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_3__["log"])('inat recordsFromThisRequest', recordsFromThisRequest);
+                        Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_4__["log"])('inat recordsFromThisRequest', recordsFromThisRequest);
                         _context4.next = 28;
                         return recordsFromThisRequest.json();
 
@@ -72769,7 +72772,7 @@ var getInatSpecies = /*#__PURE__*/function () {
                         inatListeners.forEach(function (listener) {
                           return listener({
                             page: json.page,
-                            numberOfRequests: Math.ceil(json.total_results / json.per_page)
+                            numberOfRequests: Math.ceil(json.total_results / json.RECORDS_per_page)
                           });
                         });
 
@@ -72795,7 +72798,7 @@ var getInatSpecies = /*#__PURE__*/function () {
                       case 40:
                         _context4.prev = 40;
                         _context4.t2 = _context4["catch"](0);
-                        Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_3__["logError"])('getInatObservations', _context4.t2);
+                        Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_4__["logError"])('getInatObservations', _context4.t2);
                         return _context4.abrupt("return", []);
 
                       case 44:
@@ -72820,37 +72823,40 @@ var getInatSpecies = /*#__PURE__*/function () {
             observations = observations.filter(function (observation) {
               return ramda__WEBPACK_IMPORTED_MODULE_0__["contains"](observation.taxon.name, snapdragonSpeciesNames);
             });
-            _context5.next = 21;
+            observations = ramda__WEBPACK_IMPORTED_MODULE_0__["take"](config.guide.noOfRecords, utils_utils__WEBPACK_IMPORTED_MODULE_1__["utils"].sortBy(observations.filter(function (item) {
+              return item;
+            }), 'observationCount', 'desc'));
+            _context5.next = 22;
             break;
 
-          case 18:
-            _context5.prev = 18;
+          case 19:
+            _context5.prev = 19;
             _context5.t0 = _context5["catch"](11);
-            Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_3__["logError"])('getAllInatObservations', _context5.t0);
+            Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_4__["logError"])('getAllInatObservations', _context5.t0);
 
-          case 21:
-            Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_3__["log"])('observations', observations);
+          case 22:
+            Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_4__["log"])('observations', observations);
 
             if (observations) {
-              _context5.next = 24;
+              _context5.next = 25;
               break;
             }
 
             return _context5.abrupt("return", []);
 
-          case 24:
-            _context5.next = 26;
+          case 25:
+            _context5.next = 27;
             return loadSpeciesInParallel(observations);
 
-          case 26:
+          case 27:
             return _context5.abrupt("return", _context5.sent);
 
-          case 27:
+          case 28:
           case "end":
             return _context5.stop();
         }
       }
-    }, _callee5, this, [[11, 18]]);
+    }, _callee5, this, [[11, 19]]);
   }));
 
   return function getInatSpecies(_x) {
@@ -81891,14 +81897,11 @@ var loadCollectionItemProperties = /*#__PURE__*/function () {
       while (1) {
         switch (_context10.prev = _context10.next) {
           case 0:
-            collection.items = collection.items.filter(function (i) {
-              return i;
-            });
-
+            // collection.items = collection.items.filter(i => i);
             if (collection.behaviour === 'dynamic') {
-              collection.items = ramda__WEBPACK_IMPORTED_MODULE_0__["take"](config.guide.noOfRecords, utils_utils__WEBPACK_IMPORTED_MODULE_1__["utils"].sortBy(collection.items.filter(function (item) {
+              collection.items = utils_utils__WEBPACK_IMPORTED_MODULE_1__["utils"].sortBy(collection.items.filter(function (item) {
                 return item;
-              }), 'observationCount', 'desc'));
+              }), 'observationCount', 'desc'); // collection.items = R.take(config.guide.noOfRecords, utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc'));
             } else {
               collection.items.forEach(function (sp) {
                 if (sp.time) {
@@ -81920,10 +81923,10 @@ var loadCollectionItemProperties = /*#__PURE__*/function () {
               return g;
             })));
             familyTaxa = [], orderTaxa = [], genusTaxa = [];
-            _context10.next = 8;
+            _context10.next = 7;
             return api_firebase_firestore__WEBPACK_IMPORTED_MODULE_5__["firestore"].getTaxaNames();
 
-          case 8:
+          case 7:
             taxa = _context10.sent;
             taxa = taxa[0].value;
 
@@ -81974,10 +81977,10 @@ var loadCollectionItemProperties = /*#__PURE__*/function () {
               };
             }();
 
-            _context10.next = 13;
+            _context10.next = 12;
             return getGenusTaxa(genera);
 
-          case 13:
+          case 12:
             getFamilyTaxa = /*#__PURE__*/function () {
               var _ref5 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(families) {
                 return regeneratorRuntime.wrap(function _callee5$(_context5) {
@@ -82025,10 +82028,10 @@ var loadCollectionItemProperties = /*#__PURE__*/function () {
               };
             }();
 
-            _context10.next = 16;
+            _context10.next = 15;
             return getFamilyTaxa(families);
 
-          case 16:
+          case 15:
             getOrderTaxa = /*#__PURE__*/function () {
               var _ref7 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7(orders) {
                 return regeneratorRuntime.wrap(function _callee7$(_context7) {
@@ -82076,10 +82079,10 @@ var loadCollectionItemProperties = /*#__PURE__*/function () {
               };
             }();
 
-            _context10.next = 19;
+            _context10.next = 18;
             return getOrderTaxa(orders);
 
-          case 19:
+          case 18:
             getFamilyNames = function getFamilyNames(item) {
               if (item.family && item.family.names) {
                 return item.family.names[0].names ? item.family.names[0].names : item.family.names;
@@ -82165,17 +82168,17 @@ var loadCollectionItemProperties = /*#__PURE__*/function () {
               }()));
             };
 
-            _context10.next = 25;
+            _context10.next = 24;
             return loadTraitsInParallel(collection.items);
 
-          case 25:
+          case 24:
             collection.itemIndex = 0;
             collection.glossary = [].concat(_toConsumableArray(Array.from(new Set(collection.items.map(function (item) {
               return item.iconicTaxon;
             })))), ['common']);
             return _context10.abrupt("return", collection);
 
-          case 28:
+          case 27:
           case "end":
             return _context10.stop();
         }
@@ -83478,7 +83481,7 @@ var log = function log(msg, obj) {
   obj ? console.log("%c".concat(msg, " %o"), css, obj) : console.log("%c".concat(msg), css);
 };
 var logError = function logError(source, e) {
-  var css = 'background: #222; color: #f00; padding: 5px; margin-right: 5px;';
+  var css = 'background: #222; color: #fff; padding: 5px; margin-right: 5px;';
   var output;
   if (Array.isArray(source)) source = {
     source: source

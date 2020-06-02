@@ -1,10 +1,12 @@
 import * as R from 'ramda';
 
+import { utils } from 'utils/utils';
 import { firestore } from 'api/firebase/firestore';
 import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { log, logError } from 'ui/helpers/logging-handler';
 
 let inatListeners = [];
+let RECORDS_PER_PAGE = 200;
 
 const unsubscribe = listener => {
     inatListeners = inatListeners.filter(l => l !== listener);
@@ -21,7 +23,7 @@ const getBasePath = config => {
             ? ''
             : config.guide.season.observableMonths.map(month => month.index).join(',');
 
-    const perPage = config.guide.perPage|| 200;
+    const perPage = config.guide.perPage || RECORDS_PER_PAGE;
 
     const basePath = `https://api.inaturalist.org/v1/observations/species_counts?captive=false&rank=species&per_page=${perPage}&month=${month}`;
 
@@ -71,7 +73,7 @@ export const getInatSpecies = async config => {
     };
 
     const getAllInatObservations = async (config, snapdragonSpeciesNames) => {
-        let snaps = [];
+        let snapdragonSpecies = [];
         let records = [];
         let keepGoing = true;
         let page = 1;
@@ -80,19 +82,19 @@ export const getInatSpecies = async config => {
             let recordsFromThisRequest = await getInatObservations(config, page);
             await records.push.apply(records, recordsFromThisRequest);
             let matches = recordsFromThisRequest.filter(record => R.contains(record.taxon.name, snapdragonSpeciesNames));
-            await snaps.push.apply(snaps, matches);
+            await snapdragonSpecies.push.apply(snapdragonSpecies, matches);
             page = page + 1;
-            let noMoreRecords = recordsFromThisRequest.length < 200;
-            let recordsCountReached = snaps.length >= config.guide.noOfRecords;
-            log('snaps', snaps);
+            let noMoreRecords = recordsFromThisRequest.length < RECORDS_PER_PAGE;
+            let recordsCountReached = snapdragonSpecies.length >= config.guide.noOfRecords;
+            log('snapdragonSpecies', snapdragonSpecies);
             log('records', records);
             if (noMoreRecords || recordsCountReached) {
                 keepGoing = false;
-                return records;
+                return snapdragonSpecies;
             }
           } catch(e) {
             logError('getInatObservations', e);
-            return records;
+            return snapdragonSpecies;
           }
         }
     }
@@ -152,7 +154,7 @@ export const getInatSpecies = async config => {
 
         const json = await recordsFromThisRequest.json();
         inatListeners.forEach(listener => listener(
-            { page: json.page, numberOfRequests: Math.ceil(json.total_results/json.per_page) }
+            { page: json.page, numberOfRequests: Math.ceil(json.total_results/json.RECORDS_per_page) }
         ));
         return json ? await json.results : [];
       } catch(e) {
@@ -166,6 +168,7 @@ export const getInatSpecies = async config => {
     try {
       observations = await getAllInatObservations(config, snapdragonSpeciesNames);
       observations = observations.filter(observation => R.contains(observation.taxon.name, snapdragonSpeciesNames));
+      observations = R.take(config.guide.noOfRecords, utils.sortBy(observations.filter(item => item), 'observationCount', 'desc'));
     } catch(e) {
       logError('getAllInatObservations', e);
     }
