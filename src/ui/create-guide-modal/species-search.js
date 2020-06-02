@@ -35,8 +35,12 @@ export const speciesSearch = createGuide => {
     }, 2000);
 
     const close = modal.querySelector('.js-right .js-arrow-wrapper');
-    const viewGuideIcon =  close.querySelector('i');
+    const viewGuideIcon = close.querySelector('i');
           viewGuideIcon.classList.add('snap-inactive');
+
+    const back = modal.querySelector('.js-left .js-arrow-wrapper');
+    const viewTaxaIcon = back.querySelector('i');
+          viewTaxaIcon.classList.add('snap-inactive');
 
     const renderLessonSummary = collection => {
 
@@ -116,6 +120,7 @@ export const speciesSearch = createGuide => {
               });
 
         viewGuideIcon.classList.remove('snap-inactive');
+        viewTaxaIcon.classList.remove('snap-inactive');
 
         } catch(e) {
           logError(renderLessonSummary, e);

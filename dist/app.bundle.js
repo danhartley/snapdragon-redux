@@ -80228,6 +80228,9 @@ var speciesSearch = function speciesSearch(createGuide) {
   var close = modal.querySelector('.js-right .js-arrow-wrapper');
   var viewGuideIcon = close.querySelector('i');
   viewGuideIcon.classList.add('snap-inactive');
+  var back = modal.querySelector('.js-left .js-arrow-wrapper');
+  var viewTaxaIcon = back.querySelector('i');
+  viewTaxaIcon.classList.add('snap-inactive');
 
   var renderLessonSummary = function renderLessonSummary(collection) {
     try {
@@ -80318,6 +80321,7 @@ var speciesSearch = function speciesSearch(createGuide) {
         });
       });
       viewGuideIcon.classList.remove('snap-inactive');
+      viewTaxaIcon.classList.remove('snap-inactive');
     } catch (e) {
       Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_8__["logError"])(renderLessonSummary, e);
     }
