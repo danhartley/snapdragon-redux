@@ -26,22 +26,28 @@ export const speciesSearch = createGuide => {
 
     const feedback = document.querySelector('.js-request-feedback');
 
-    let timer = setTimeout(() => {
-        feedback.innerHTML = 'Receiving species data…';
-        timer = setTimeout(() => {
-            feedback.innerHTML = 'Still receiving data…';
-        }, 3500);
+    let count = 0;
+
+    const interval = setInterval(() => {
+      count = count === config.guide.iconicTaxa.length ? 0 : count;
+      feedback.innerHTML = `Fetching ${config.guide.iconicTaxa[count].common} from iNaturalist …`;
+      count++;
     }, 2000);
+
+    const close = modal.querySelector('.js-right .js-arrow-wrapper');
+    const viewGuideIcon =  close.querySelector('i');
+          viewGuideIcon.classList.add('snap-inactive');
 
     const renderLessonSummary = collection => {
 
       try {
+
         if(collection && collection.items && collection.items.length === 0) {
             feedback.innerHTML = 'No species were found. Try widening your parameters.';
             return;
         }
 
-        clearTimeout(timer);
+        clearTimeout(interval);
 
         template.innerHTML = speciesSummaryTemplate;
 
@@ -53,8 +59,6 @@ export const speciesSearch = createGuide => {
 
         const icon = modal.querySelector('.icon i');
               icon.classList.remove('slow-spin');
-
-        const close = modal.querySelector('.js-right .js-arrow-wrapper'); // disable till ready
 
         setTimeout(() => {
             close.addEventListener('click', e => {
@@ -110,6 +114,8 @@ export const speciesSearch = createGuide => {
                           
                       });
               });
+
+        viewGuideIcon.classList.remove('snap-inactive');
 
         } catch(e) {
           logError(renderLessonSummary, e);

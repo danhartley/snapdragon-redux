@@ -80219,12 +80219,15 @@ var speciesSearch = function speciesSearch(createGuide) {
   var parent = modal.querySelector('.js-step-action-content');
   Object(ui_helpers_templating__WEBPACK_IMPORTED_MODULE_2__["renderTemplate"])({}, template.content, parent);
   var feedback = document.querySelector('.js-request-feedback');
-  var timer = setTimeout(function () {
-    feedback.innerHTML = 'Receiving species data…';
-    timer = setTimeout(function () {
-      feedback.innerHTML = 'Still receiving data…';
-    }, 3500);
+  var count = 0;
+  var interval = setInterval(function () {
+    count = count === config.guide.iconicTaxa.length ? 0 : count;
+    feedback.innerHTML = "Fetching ".concat(config.guide.iconicTaxa[count].common, " from iNaturalist \u2026");
+    count++;
   }, 2000);
+  var close = modal.querySelector('.js-right .js-arrow-wrapper');
+  var viewGuideIcon = close.querySelector('i');
+  viewGuideIcon.classList.add('snap-inactive');
 
   var renderLessonSummary = function renderLessonSummary(collection) {
     try {
@@ -80233,7 +80236,7 @@ var speciesSearch = function speciesSearch(createGuide) {
         return;
       }
 
-      clearTimeout(timer);
+      clearTimeout(interval);
       template.innerHTML = ui_create_guide_modal_species_summary_template_html__WEBPACK_IMPORTED_MODULE_10___default.a;
       feedback.innerHTML = '';
       collection.taxa = collection.guide.iconicTaxa.map(function (taxon) {
@@ -80244,8 +80247,6 @@ var speciesSearch = function speciesSearch(createGuide) {
       }, template.content, feedback);
       var icon = modal.querySelector('.icon i');
       icon.classList.remove('slow-spin');
-      var close = modal.querySelector('.js-right .js-arrow-wrapper'); // disable till ready
-
       setTimeout(function () {
         close.addEventListener('click', function (e) {
           setTimeout( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
@@ -80316,6 +80317,7 @@ var speciesSearch = function speciesSearch(createGuide) {
           });
         });
       });
+      viewGuideIcon.classList.remove('snap-inactive');
     } catch (e) {
       Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_8__["logError"])(renderLessonSummary, e);
     }
