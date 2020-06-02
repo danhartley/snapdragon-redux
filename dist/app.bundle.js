@@ -15315,7 +15315,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".modal-dialog {\n  margin: 0;\n  max-width: initial;\n}\n\n.modal-content {\n  border: none;\n  border-radius: 0;\n  background-color: inherit;\n}\n\n#cardModal {  \n  z-index: 1049; /* wiki is 1050 */\n}\n\n.modal-header-container {\n  padding-bottom: 4px;\n}\n\n.modal-header {\n    padding: 0;\n    border-radius: 0;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    height: var(--vhRunningBlock,7.5vh);\n    background-color: var(--snap-landscape);\n    border: none;\n}\n\n.modal-footer {\n  height: var(--vhRunningBlock,7.5vh);\n  padding: 0;\n  background-color: var(--snap-landscape);\n  border: none;\n}\n\n.modal-title {\n  color: var(--snap-text-dark);\n  text-transform: uppercase;\n  margin: 0 1rem; \n  height: initial;\n  line-height: 1;\n}\n  \n  .modal-title span {\n    display: block;\n  }\n  \n  .modal-header .close {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin: 0;\n    padding: 0;\n    width: 1rem;\n    display: none;\n  }\n\n  .modal-body button {\n    color: white;\n    background-color: var(--snap-collection);\n    width: 100%;\n  }\n\n  .modal-body button.disabled {\n    color: rgb(150,150,150);\n  }\n\n  .modal-body .language-options button {\n    color: var(--snap-text-dark-medium-dark);\n    width: 100%;\n    margin: 0;\n    background-color: var(--snap-btn-dropdown) !important;\n    display: initial;\n    align-items: center;\n    text-align: left;\n    padding-left: 1rem;\n    padding: 0.75rem 0 0.75rem 1rem;\n    cursor: pointer !important;\n  }\n\n  .dropdown-item:focus, .dropdown-item:hover {\n    columns: var(--snap-text-medium-dark);\n    background-color: var(--snap-alert-light);\n  }\n\n  .modal-body .language-options .dropdown-menu.show{\n    background-color: var(--snap-btn-dropdown-options);\n  }\n\n  .language-options .dropdown-menu.show {\n    width: 100%;\n  }\n  \n  .modal-text hr {\n    margin: .5rem;\n  }\n  \n  .modal-body.glossary-modal {\n    padding: 0;\n  }\n  \n  .modal-body.glossary-modal .modal-text {\n    margin: 0;\n  }\n  \n  .modal-body.settings-modal {\n    padding: 1rem;\n  }\n\n#imageModal .modal-body,\n#imageComparisonModal .modal-body {\n    padding: 0;\n}\n\n#imageModal .imageSlider .carousel-item, #imageComparisonModal .imageSlider .carousel-item {\n  height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) );\n  width: 100%;\n}\n\n#imageComparisonModal .modal-dialog {\n    max-width: 1200px;\n    margin: auto;\n}\n\n#imageComparisonModal .slideBySliderContainer {\n    display: grid;\n    grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );\n    grid-gap: .5rem;\n}\n\n#imageComparisonModal .modal-title {\n    display: flex;\n    width: 100%;\n    justify-content: space-around;\n}\n\n#imageComparisonModal .modal-title span {\n    flex: 1;\n    text-align: center;\n} \n\n#imageComparisonModal .imageSlider.carousel.slide > div:nth-child(2) {\n  padding: 1rem 2rem;\n}\n\n#cardModal .card-link {\n  display: none;\n}\n\n.modal-body {\n  background-color: var(--snap-content-background);\n  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));\n  padding: 0;\n  margin: 0;\n}\n\n#cardModal .card {\n    margin: 0;\n}\n\n#cardModal .modal-content {\n  width: 100%;\n}\n\n#cardModal .carousel-inner {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n#cardModal .prev, #cardModal .next {\n    display: flex;\n    /* padding: 0 .5rem; don't delete, something like this needed when carousel buttons return */\n}\n\n#cardModal .carousel-inner .prev > span,\n#cardModal .carousel-inner .next > span {\n    background-color: rgba(211, 214, 173, 0.2);\n    opacity: 0.8;\n    cursor: pointer;\n}\n\n#cardModal .carousel-inner .prev > span:hover,\n#cardModal .carousel-inner .next > span:hover {\n    opacity: 1;\n}\n\n#cardModal .taxon.card-card .species-header > div:nth-child(2) {\n    display: flex;\n    align-items: center;\n    flex-direction: column;\n    justify-content: center;\n}\n\n  .basic-modal .modal-dialog {\n    max-width: 600px;\n    margin: auto;\n  }\n\n  #cardModal .modal-dialog {\n    max-width: 600px;\n    margin: auto;\n  }\n\n  .basic-modal .modal-content {\n    color: var(--snap-text-dark);\n  }\n\n  .basic-modal .modal-body {\n    color: var(--snap-text-dark);\n    padding: 0 .5rem;\n  }\n  \n  .basic-modal .modal-body.settings-modal {\n    padding: 0;\n  }\n\n  #lessonModal .modal-body {\n    padding: 0;\n  }\n\n  #badgeListModal .modal-dialog {\n    width: 100%;\n    margin: calc(var(--vhRunningBlock) + var(--vhStandardBlock)) auto auto auto;    \n  }\n\n  #badgeListModal .modal-content, #badgeListModal .modal-body {\n    background-color: var(--snap-progress-bg);\n  }\n\n  #badgeListModal .modal-header {\n    color: var(--snap-text-dark);\n    background-color: var(--snap-border-medium);\n  }\n\n  #badgeListModal .modal-footer.double-centred-block {\n    background-color: var(--snap-border-medium);\n  }\n\n  #badgeListModal .modal-body {\n    height: calc(var(--vhDoubleStandardBlock, 20vh) * 3);\n    padding: .5rem;\n  }\n  \n  #badgeListModal li {  \n    line-height: 1.5rem;\n    margin: 0;\n  }\n\n  #badgeListModal .modal-text {  \n    color: var(--snap-text-medium-dark);\n  }\n\n.basic-modal .definition.card {\n    padding: 0 .5rem;\n    border-radius: 0;\n    height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));\n  }\n  \n  .basic-modal .definition.card div > div {\n    margin: 0.15rem 0;\n    padding: 0.25rem;\n  }\n\n  .basic-modal .definition.card span:nth-child(1) {\n    margin: 0 0.25rem 0 0;\n    font-style: italic;\n  }", ""]);
+exports.push([module.i, ".modal-dialog {\n  margin: 0;\n  max-width: initial;\n}\n\n.modal-content {\n  border: none;\n  border-radius: 0;\n  background-color: inherit;\n}\n\n#cardModal {  \n  z-index: 1049; /* wiki is 1050 */\n}\n\n.modal-header-container {\n  padding-bottom: 4px;\n}\n\n.modal-header {\n    padding: 0;\n    border-radius: 0;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    height: var(--vhRunningBlock,7.5vh);\n    background-color: var(--snap-landscape);\n    border: none;\n}\n\n.modal-footer {\n  height: var(--vhRunningBlock,7.5vh);\n  padding: 0;\n  background-color: var(--snap-landscape);\n  border: none;\n}\n\n.modal-title {\n  color: var(--snap-text-dark);\n  text-transform: uppercase;\n  margin: 0 1rem; \n  height: initial;\n  line-height: 1;\n}\n  \n  .modal-title span {\n    display: block;\n  }\n  \n  .modal-header .close {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin: 0;\n    padding: 0;\n    width: 1rem;\n    display: none;\n  }\n\n  .modal-body button {\n    color: white;\n    background-color: var(--snap-collection);\n    width: 100%;\n  }\n\n  .modal-body button.disabled {\n    color: rgb(150,150,150);\n  }\n\n  .modal-body .language-options button {\n    color: var(--snap-text-dark-medium-dark);\n    width: 100%;\n    margin: 0;\n    background-color: var(--snap-btn-dropdown) !important;\n    display: initial;\n    align-items: center;\n    text-align: left;\n    padding-left: 1rem;\n    padding: 0.75rem 0 0.75rem 1rem;\n    cursor: pointer !important;\n  }\n\n  .dropdown-item:focus, .dropdown-item:hover {\n    columns: var(--snap-text-medium-dark);\n    background-color: var(--snap-alert-light);\n  }\n\n  .modal-body .language-options .dropdown-menu.show{\n    background-color: var(--snap-btn-dropdown-options);\n  }\n\n  .language-options .dropdown-menu.show {\n    width: 100%;\n  }\n  \n  .modal-text hr {\n    margin: .5rem;\n  }\n  \n  .modal-body.glossary-modal {\n    padding: 0;\n  }\n  \n  .modal-body.glossary-modal .modal-text {\n    margin: 0;\n  }\n  \n  .modal-body.settings-modal {\n    padding: 1rem;\n  }\n\n#imageModal .modal-body,\n#imageComparisonModal .modal-body {\n    padding: 0;\n}\n\n#imageModal .imageSlider .carousel-item, #imageComparisonModal .imageSlider .carousel-item {\n  height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) );\n  width: 100%;\n}\n\n#imageComparisonModal .modal-dialog {\n    max-width: 1200px;\n    margin: auto;\n}\n\n#imageComparisonModal .slideBySliderContainer {\n    display: grid;\n    grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );\n    grid-gap: .5rem;\n}\n\n#imageComparisonModal .modal-title {\n    display: flex;\n    width: 100%;\n    justify-content: space-around;\n}\n\n#imageComparisonModal .modal-title span {\n    flex: 1;\n    text-align: center;\n} \n\n#imageComparisonModal .imageSlider.carousel.slide > div:nth-child(2) {\n  padding: 1rem 2rem;\n}\n\n#cardModal .card-link {\n  display: none;\n}\n\n.modal-body {\n  background-color: var(--snap-content-background);\n  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));\n  padding: 0;\n  margin: 0;\n}\n\n#cardModal .card {\n    margin: 0;\n}\n\n#cardModal .modal-content {\n  width: 100%;\n}\n\n/* #cardModal .carousel-inner {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n} */\n\n#cardModal .prev, #cardModal .next {\n    display: flex;\n    /* padding: 0 .5rem; don't delete, something like this needed when carousel buttons return */\n}\n\n#cardModal .carousel-inner .prev > span,\n#cardModal .carousel-inner .next > span {\n    background-color: rgba(211, 214, 173, 0.2);\n    opacity: 0.8;\n    cursor: pointer;\n}\n\n#cardModal .carousel-inner .prev > span:hover,\n#cardModal .carousel-inner .next > span:hover {\n    opacity: 1;\n}\n\n#cardModal .taxon.card-card .species-header > div:nth-child(2) {\n    display: flex;\n    align-items: center;\n    flex-direction: column;\n    justify-content: center;\n}\n\n  .basic-modal .modal-dialog {\n    max-width: 600px;\n    margin: auto;\n  }\n\n  #cardModal .modal-dialog {\n    max-width: 600px;\n    margin: auto;\n  }\n\n  .basic-modal .modal-content {\n    color: var(--snap-text-dark);\n  }\n\n  .basic-modal .modal-body {\n    color: var(--snap-text-dark);\n    padding: 0 .5rem;\n  }\n  \n  .basic-modal .modal-body.settings-modal {\n    padding: 0;\n  }\n\n  #lessonModal .modal-body {\n    padding: 0;\n  }\n\n  #badgeListModal .modal-dialog {\n    width: 100%;\n    margin: calc(var(--vhRunningBlock) + var(--vhStandardBlock)) auto auto auto;    \n  }\n\n  #badgeListModal .modal-content, #badgeListModal .modal-body {\n    background-color: var(--snap-progress-bg);\n  }\n\n  #badgeListModal .modal-header {\n    color: var(--snap-text-dark);\n    background-color: var(--snap-border-medium);\n  }\n\n  #badgeListModal .modal-footer.double-centred-block {\n    background-color: var(--snap-border-medium);\n  }\n\n  #badgeListModal .modal-body {\n    height: calc(var(--vhDoubleStandardBlock, 20vh) * 3);\n    padding: .5rem;\n  }\n  \n  #badgeListModal li {  \n    line-height: 1.5rem;\n    margin: 0;\n  }\n\n  #badgeListModal .modal-text {  \n    color: var(--snap-text-medium-dark);\n  }\n\n.basic-modal .definition.card {\n    padding: 0 .5rem;\n    border-radius: 0;\n    height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));\n  }\n  \n  .basic-modal .definition.card div > div {\n    margin: 0.15rem 0;\n    padding: 0.25rem;\n  }\n\n  .basic-modal .definition.card span:nth-child(1) {\n    margin: 0 0.25rem 0 0;\n    font-style: italic;\n  }", ""]);
 // Exports
 module.exports = exports;
 
@@ -85930,7 +85930,7 @@ var renderCommonParts = function renderCommonParts(template, config, item, colle
   Object(ui_screens_common_taxa_box__WEBPACK_IMPORTED_MODULE_12__["renderTaxaBox"])(rootNode.querySelector('.js-taxa-box'), {
     item: item,
     familyName: item.taxonomy.family,
-    familyVernacularName: item.family.vernacularName
+    familyVernacularName: item.family.vernacularName || ''
   });
   Object(ui_screens_common_info_slider__WEBPACK_IMPORTED_MODULE_7__["infoSlider"])(item, rootNode.querySelector('.js-info-box'), mode);
   Object(ui_screens_common_badge__WEBPACK_IMPORTED_MODULE_13__["renderBadge"])(rootNode.querySelector('.js-names-badge'), item, config);
@@ -88627,7 +88627,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 var textSetup = function textSetup(collection, config) {
   var speciesCount = getSpeciesCount(collection);
-  var iconicTaxa = collection.guide.iconicTaxa ? collection.guide.iconicTaxa : _toConsumableArray(new Set(collection.items.map(function (i) {
+  var iconicTaxa = collection.guide ? collection.guide.iconicTaxa : collection.iconicTaxa || _toConsumableArray(new Set(collection.items.map(function (i) {
     return i.iconicTaxon;
   })));
   var language = config.languages.find(function (l) {
@@ -88636,7 +88636,7 @@ var textSetup = function textSetup(collection, config) {
 
   var template = document.createElement('template');
   template.innerHTML = ui_screens_home_home_lesson_intro_text_template_html__WEBPACK_IMPORTED_MODULE_2___default.a;
-  var months = collection.guide.season.observableMonths ? collection.guide.season.observableMonths.map(function (month) {
+  var months = collection.guide ? collection.guide.season.observableMonths.map(function (month) {
     return month.name;
   }) : [];
   var observableMonths = months.length > 0 ? "".concat(months[0], "-").concat(months[months.length - 1]) : '';
@@ -90641,6 +90641,10 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -90657,247 +90661,275 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 var renderSpeciesList = function renderSpeciesList(lesson, args) {
-  var callingParentContainer = args.callingParentContainer,
-      _args$isInCarousel = args.isInCarousel,
-      isInCarousel = _args$isInCarousel === void 0 ? false : _args$isInCarousel;
+  var init = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      var callingParentContainer, _args$isInCarousel, isInCarousel, _store$getState, config, history, traitEnums, collections, collection, openAccordionHandler, userClickHandlers, table, btnBeginLesson, openSpeciesDescriptionHandler;
 
-  var _store$getState = redux_store__WEBPACK_IMPORTED_MODULE_4__["store"].getState(),
-      config = _store$getState.config,
-      history = _store$getState.history,
-      traitEnums = _store$getState.enums,
-      collections = _store$getState.collections; // to ensure we have latest item list if species has been added
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              callingParentContainer = args.callingParentContainer, _args$isInCarousel = args.isInCarousel, isInCarousel = _args$isInCarousel === void 0 ? false : _args$isInCarousel;
+              _store$getState = redux_store__WEBPACK_IMPORTED_MODULE_4__["store"].getState(), config = _store$getState.config, history = _store$getState.history, traitEnums = _store$getState.enums, collections = _store$getState.collections; // to ensure we have latest item list if species has been added
+
+              collection = collections.find(function (c) {
+                return c.id === lesson.id;
+              });
+
+              openAccordionHandler = function openAccordionHandler(species, accordion) {
+                accordion.innerHTML = "<i class=\"fas fa-chevron-up\" data-name=\"".concat(species.name, "\"></i>");
+                openSpeciesDescriptionHandler(collection, species, true, false);
+
+                var closeAccordionHandler = function closeAccordionHandler(event) {
+                  // remove current close accordion handler
+                  accordion.removeEventListener('click', closeAccordionHandler); // change direction of chevron       
+
+                  accordion.innerHTML = "<i class=\"fas fa-chevron-down\" data-name=\"".concat(species.name, "\"></i>"); // attach new open accordion listener
+
+                  accordion.addEventListener('click', function (event) {
+                    openAccordionHandler(species, accordion);
+                  }); // remove the species description - handled in group action
+
+                  var description = document.querySelector('.species-description');
+
+                  if (description) {
+                    description.parentNode.removeChild(description);
+                  }
+                }; // attach close accordion handler
 
 
-  var collection = collections.find(function (c) {
-    return c.id === lesson.id;
-  });
+                accordion.addEventListener('click', closeAccordionHandler);
+              };
 
-  var openAccordionHandler = function openAccordionHandler(species, accordion) {
-    accordion.innerHTML = "<i class=\"fas fa-chevron-up\" data-name=\"".concat(species.name, "\"></i>");
-    openSpeciesDescriptionHandler(collection, species, true, false);
+              userClickHandlers = function userClickHandlers() {
+                var listItemImages = document.querySelectorAll('.table-row img');
+                listItemImages.forEach(function (itemImage) {
+                  var item = collection.items.find(function (item) {
+                    return item.name === itemImage.dataset.itemName;
+                  });
+                  Object(ui_helpers_image_handler__WEBPACK_IMPORTED_MODULE_8__["modalImageHandler"])(itemImage, item, collection, config);
+                });
+                var accordions = document.querySelectorAll('.js-accordion');
+                accordions.forEach(function (accordion) {
+                  var accordionHandler = function accordionHandler(event) {
+                    var species = collection.items.find(function (item) {
+                      return item.name === event.currentTarget.dataset.name;
+                    });
 
-    var closeAccordionHandler = function closeAccordionHandler(event) {
-      // remove current close accordion handler
-      accordion.removeEventListener('click', closeAccordionHandler); // change direction of chevron       
+                    if (species) {
+                      openAccordionHandler(species, accordion);
+                    }
+                  };
 
-      accordion.innerHTML = "<i class=\"fas fa-chevron-down\" data-name=\"".concat(species.name, "\"></i>"); // attach new open accordion listener
+                  accordion.addEventListener('click', accordionHandler);
+                });
+                var youtubeIcons = document.querySelectorAll('.js-youtube');
+                youtubeIcons.forEach(function (icon) {
+                  icon.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                    var activeIcon = event.currentTarget;
+                    activeIcon.classList.add('youtube-green-fg');
+                    var speciesName = activeIcon.dataset.name;
 
-      accordion.addEventListener('click', function (event) {
-        openAccordionHandler(species, accordion);
-      }); // remove the species description - handled in group action
+                    var species = _objectSpread(_objectSpread({}, collection.items.find(function (item) {
+                      return item.name == speciesName;
+                    })), collection.species.find(function (item) {
+                      return item.name == speciesName;
+                    }));
 
-      var description = document.querySelector('.species-description');
+                    openSpeciesDescriptionHandler(collection, species, true);
 
-      if (description) {
-        description.parentNode.removeChild(description);
-      }
-    }; // attach close accordion handler
+                    if (species && species.time) {
+                      ui_screens_lists_video_handler__WEBPACK_IMPORTED_MODULE_10__["videoHandler"].isVideoPlayerReady(collection.video.id) ? ui_screens_lists_video_handler__WEBPACK_IMPORTED_MODULE_10__["videoHandler"].playVideoFrom(species.time[0]) : Object(ui_screens_home_home_lesson_intro_video__WEBPACK_IMPORTED_MODULE_11__["videoSetup"])(collection, redux_store__WEBPACK_IMPORTED_MODULE_4__["store"].getState().videoPlayer || [], ui_dom__WEBPACK_IMPORTED_MODULE_3__["DOM"].rightBody, species.time[0]);
+                    }
+
+                    updateVideoPlayer(collection, species);
+                  });
+                });
+                var cardModal = document.querySelector('#cardModal .js-modal-body');
+                setTimeout(function () {
+                  var speciesCardLinks = document.querySelectorAll('.js-test-card-container-link span');
+                  speciesCardLinks.forEach(function (link, index) {
+                    link.addEventListener('click', function (event) {
+                      var name = event.target.dataset.name;
+                      document.querySelector('#cardModal .prev > span').dataset.card = 'species-card';
+                      Object(ui_screens_cards_card__WEBPACK_IMPORTED_MODULE_5__["renderCard"])(collection, 'MODAL', collection.items.find(function (i) {
+                        return i.name === name;
+                      }), cardModal, isInCarousel);
+                    });
+                  });
+                  var traitCardLinks = document.querySelectorAll('.js-key-trait-link');
+                  traitCardLinks.forEach(function (link) {
+                    link.addEventListener('click', function (event) {
+                      var keyTrait = event.target.dataset.keyTrait;
+                      var url = event.target.dataset.url;
+                      Object(ui_screens_cards_non_taxon_card__WEBPACK_IMPORTED_MODULE_7__["renderNonTaxonCard"])('MODAL', keyTrait, cardModal, url);
+                    });
+                  });
+                  var taxonCardLinks = document.querySelectorAll('.js-taxon-card-link');
+                  taxonCardLinks.forEach(function (link) {
+                    link.addEventListener('click', function (event) {
+                      var taxon = event.target.dataset.family || event.target.dataset.order;
+                      var name = event.target.dataset.name;
+                      var rank = event.target.dataset.rank;
+                      document.querySelector('#cardModal .prev > span').dataset.rank = rank;
+                      document.querySelector('#cardModal .prev > span').dataset.card = 'taxon-card';
+                      document.querySelector('#cardModal .next > span').dataset.rank = rank;
+                      document.querySelector('#cardModal .next > span').dataset.card = 'taxon-card';
+                      Object(ui_screens_cards_taxon_card__WEBPACK_IMPORTED_MODULE_6__["renderTaxonCard"])(collection, 'MODAL', collection.items.find(function (i) {
+                        return i.name === name;
+                      }), cardModal, taxon, rank, isInCarousel);
+                    });
+                  });
+                  document.querySelectorAll('.mushroom-icon').forEach(function (icon) {
+                    icon.innerHTML = '<svg-icon class="si-glyph-mushrooms"><src href="./icons/si-glyph-mushrooms.svg"/></svg>';
+                  });
+                  var nthChild = config.isLandscapeMode ? 5 : 3;
+                  var taxonIcons = document.querySelectorAll(".table-row.js-list-item td:nth-child(".concat(nthChild, ") > span"));
+                  if (!history) return;
+                  var noWrongAnswersForThisSpecies = [];
+                  history.scores.map(function (score) {
+                    return score.failsTotals;
+                  }).forEach(function (totals) {
+                    for (var _i = 0, _Object$entries = Object.entries(totals); _i < _Object$entries.length; _i++) {
+                      var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+                          key = _Object$entries$_i[0],
+                          anyWrongAnwers = _Object$entries$_i[1];
+
+                      if (anyWrongAnwers == false) {
+                        noWrongAnswersForThisSpecies.push(parseInt(key));
+                      }
+                    }
+                  });
+                  taxonIcons.forEach(function (icon) {
+                    if (ramda__WEBPACK_IMPORTED_MODULE_0__["contains"](parseInt(icon.id), noWrongAnswersForThisSpecies)) {
+                      icon.classList.add('correct');
+                    }
+                  });
+                });
+              };
+
+              if (!!collection.notes && !!collection.notes.time) {
+                collection.notes.forEach(function (n) {
+                  return sp.firstTime = n.time[0];
+                });
+                collection.notes = utils_utils__WEBPACK_IMPORTED_MODULE_2__["utils"].sortBy(collection.notes, 'firstTime', 'asc');
+              }
+
+              _context.next = 8;
+              return Object(ui_screens_lists_species_table__WEBPACK_IMPORTED_MODULE_9__["buildTable"])(collection, {
+                config: config,
+                enums: traitEnums,
+                overrideParent: callingParentContainer
+              });
+
+            case 8:
+              table = _context.sent;
+
+              if (table.isReady) {
+                _context.next = 11;
+                break;
+              }
+
+              return _context.abrupt("return");
+
+            case 11:
+              userClickHandlers();
+              btnBeginLesson = callingParentContainer.querySelector('.js-btn-current-lesson-begin');
+              btnBeginLesson.addEventListener('click', function () {
+                ui_screens_lists_lesson_state_handler__WEBPACK_IMPORTED_MODULE_12__["lessonStateHandler"].changeRequest({
+                  requestType: ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_1__["enums"].lessonState.BEGIN_OR_RESUME_LESSON,
+                  requestArgs: {
+                    id: collection.id
+                  }
+                });
+              });
+
+              openSpeciesDescriptionHandler = function openSpeciesDescriptionHandler(collection, species) {
+                var enableScroll = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+                var activateYoutubeIcon = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+
+                try {
+                  var parent = document.getElementById('insertParent');
+                  if (parent) parent.remove();
+
+                  var _closeOpenAccordions = closeOpenAccordions(species.name),
+                      accordions = _closeOpenAccordions.accordions;
+
+                  var activeAccordion = accordions.find(function (accordion) {
+                    return accordion.dataset.name === species.name;
+                  });
+
+                  if (activeAccordion) {
+                    activeAccordion.innerHTML = "<i class=\"fas fa-chevron-up\" data-name=\"".concat(species.name, "\"></i>");
+
+                    if (activateYoutubeIcon) {
+                      var activeYouTubeIcon = activeAccordion.parentElement.parentElement.querySelector('.js-youtube');
+                      activeYouTubeIcon.classList.add('youtube-green-fg');
+                    }
+                  } // if(activateYoutubeIcon) {
+                  //     const activeYouTubeIcon = activeAccordion.parentElement.parentElement.querySelector('.js-youtube');
+                  //           activeYouTubeIcon.classList.add('youtube-green-fg');
+                  // }
 
 
-    accordion.addEventListener('click', closeAccordionHandler);
-  };
+                  var description = species.description;
+                  description = !!description ? description : species.traits.description && species.traits.description.value ? species.traits.description.value[0] : '';
 
-  var userClickHandlers = function userClickHandlers() {
-    var listItemImages = document.querySelectorAll('.table-row img');
-    listItemImages.forEach(function (itemImage) {
-      var item = collection.items.find(function (item) {
-        return item.name === itemImage.dataset.itemName;
-      });
-      Object(ui_helpers_image_handler__WEBPACK_IMPORTED_MODULE_8__["modalImageHandler"])(itemImage, item, collection, config);
-    });
-    var accordions = document.querySelectorAll('.js-accordion');
-    accordions.forEach(function (accordion) {
-      var accordionHandler = function accordionHandler(event) {
-        var species = collection.items.find(function (item) {
-          return item.name === event.currentTarget.dataset.name;
-        });
+                  if (description) {
+                    var id = species.id || species.eolId;
+                    var tr = document.querySelector("#id_".concat(id));
+                    var td = document.createElement('td');
+                    var text = document.createElement('div');
+                    text.classList.add('inserted-td');
+                    text.innerHTML = description.replace(/\r?\n/g, '<br />');
+                    td.appendChild(text);
+                    var insert = document.createElement('div');
+                    insert.classList.add('table-row');
+                    insert.classList.add('species-description');
+                    insert.appendChild(td);
+                    tr.parentElement.insertBefore(insert, tr.nextSibling);
 
-        if (species) {
-          openAccordionHandler(species, accordion);
-        }
-      };
+                    var scrollIntoView = function scrollIntoView(rowHeight, noOfRows) {
+                      var scroll = document.querySelector('.scrollable');
+                      var standardBlock = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhStandardBlock').replace('px', ''));
+                      var unit = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));
+                      var top = standardBlock * 2 + rowHeight * (noOfRows - 1) - 2 * unit;
+                      scroll.scrollTop = top;
+                    };
 
-      accordion.addEventListener('click', accordionHandler);
-    });
-    var youtubeIcons = document.querySelectorAll('.js-youtube');
-    youtubeIcons.forEach(function (icon) {
-      icon.addEventListener('click', function (event) {
-        event.stopPropagation();
-        var activeIcon = event.currentTarget;
-        activeIcon.classList.add('youtube-green-fg');
-        var speciesName = activeIcon.dataset.name;
+                    if (enableScroll) {
+                      config.isLandscapeMode ? tr.previousElementSibling.scrollIntoView() : scrollIntoView(tr.offsetHeight, species.snapIndex);
+                    }
+                  }
+                } catch (e) {
+                  Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_14__["logError"])(openSpeciesDescriptionHandler, e);
+                }
+              };
 
-        var species = _objectSpread(_objectSpread({}, collection.items.find(function (item) {
-          return item.name == speciesName;
-        })), collection.species.find(function (item) {
-          return item.name == speciesName;
-        }));
+              ui_screens_lists_video_handler__WEBPACK_IMPORTED_MODULE_10__["videoHandler"].onSpeciesTimeMatch(function (collection, species) {
+                openSpeciesDescriptionHandler(collection, species);
+                updateVideoPlayer(collection, species);
+                Object(ui_screens_lists_species_list_definition_insert__WEBPACK_IMPORTED_MODULE_13__["onSpeciesChangeHandler"])(species);
+              });
+              ui_screens_lists_video_handler__WEBPACK_IMPORTED_MODULE_10__["videoHandler"].onNoteTimeMatch(function (collection, note) {
+                Object(ui_screens_lists_species_list_definition_insert__WEBPACK_IMPORTED_MODULE_13__["openNoteHandler"])(note, ui_screens_lists_video_handler__WEBPACK_IMPORTED_MODULE_10__["videoHandler"].getPlayerTime());
+              });
 
-        openSpeciesDescriptionHandler(collection, species, true);
-
-        if (species && species.time) {
-          ui_screens_lists_video_handler__WEBPACK_IMPORTED_MODULE_10__["videoHandler"].isVideoPlayerReady(collection.video.id) ? ui_screens_lists_video_handler__WEBPACK_IMPORTED_MODULE_10__["videoHandler"].playVideoFrom(species.time[0]) : Object(ui_screens_home_home_lesson_intro_video__WEBPACK_IMPORTED_MODULE_11__["videoSetup"])(collection, redux_store__WEBPACK_IMPORTED_MODULE_4__["store"].getState().videoPlayer || [], ui_dom__WEBPACK_IMPORTED_MODULE_3__["DOM"].rightBody, species.time[0]);
-        }
-
-        updateVideoPlayer(collection, species);
-      });
-    });
-    var cardModal = document.querySelector('#cardModal .js-modal-body');
-    setTimeout(function () {
-      var speciesCardLinks = document.querySelectorAll('.js-test-card-container-link span');
-      speciesCardLinks.forEach(function (link, index) {
-        link.addEventListener('click', function (event) {
-          var name = event.target.dataset.name;
-          document.querySelector('#cardModal .prev > span').dataset.card = 'species-card';
-          Object(ui_screens_cards_card__WEBPACK_IMPORTED_MODULE_5__["renderCard"])(collection, 'MODAL', collection.items.find(function (i) {
-            return i.name === name;
-          }), cardModal, isInCarousel);
-        });
-      });
-      var traitCardLinks = document.querySelectorAll('.js-key-trait-link');
-      traitCardLinks.forEach(function (link) {
-        link.addEventListener('click', function (event) {
-          var keyTrait = event.target.dataset.keyTrait;
-          var url = event.target.dataset.url;
-          Object(ui_screens_cards_non_taxon_card__WEBPACK_IMPORTED_MODULE_7__["renderNonTaxonCard"])('MODAL', keyTrait, cardModal, url);
-        });
-      });
-      var taxonCardLinks = document.querySelectorAll('.js-taxon-card-link');
-      taxonCardLinks.forEach(function (link) {
-        link.addEventListener('click', function (event) {
-          var taxon = event.target.dataset.family || event.target.dataset.order;
-          var name = event.target.dataset.name;
-          var rank = event.target.dataset.rank;
-          document.querySelector('#cardModal .prev > span').dataset.rank = rank;
-          document.querySelector('#cardModal .prev > span').dataset.card = 'taxon-card';
-          document.querySelector('#cardModal .next > span').dataset.rank = rank;
-          document.querySelector('#cardModal .next > span').dataset.card = 'taxon-card';
-          Object(ui_screens_cards_taxon_card__WEBPACK_IMPORTED_MODULE_6__["renderTaxonCard"])(collection, 'MODAL', collection.items.find(function (i) {
-            return i.name === name;
-          }), cardModal, taxon, rank, isInCarousel);
-        });
-      });
-      document.querySelectorAll('.mushroom-icon').forEach(function (icon) {
-        icon.innerHTML = '<svg-icon class="si-glyph-mushrooms"><src href="./icons/si-glyph-mushrooms.svg"/></svg>';
-      });
-      var nthChild = config.isLandscapeMode ? 5 : 3;
-      var taxonIcons = document.querySelectorAll(".table-row.js-list-item td:nth-child(".concat(nthChild, ") > span"));
-      if (!history) return;
-      var noWrongAnswersForThisSpecies = [];
-      history.scores.map(function (score) {
-        return score.failsTotals;
-      }).forEach(function (totals) {
-        for (var _i = 0, _Object$entries = Object.entries(totals); _i < _Object$entries.length; _i++) {
-          var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
-              key = _Object$entries$_i[0],
-              anyWrongAnwers = _Object$entries$_i[1];
-
-          if (anyWrongAnwers == false) {
-            noWrongAnswersForThisSpecies.push(parseInt(key));
+            case 17:
+            case "end":
+              return _context.stop();
           }
         }
-      });
-      taxonIcons.forEach(function (icon) {
-        if (ramda__WEBPACK_IMPORTED_MODULE_0__["contains"](parseInt(icon.id), noWrongAnswersForThisSpecies)) {
-          icon.classList.add('correct');
-        }
-      });
-    });
-  };
+      }, _callee, this);
+    }));
 
-  if (!!collection.notes && !!collection.notes.time) {
-    collection.notes.forEach(function (n) {
-      return sp.firstTime = n.time[0];
-    });
-    collection.notes = utils_utils__WEBPACK_IMPORTED_MODULE_2__["utils"].sortBy(collection.notes, 'firstTime', 'asc');
-  }
+    return function init() {
+      return _ref.apply(this, arguments);
+    };
+  }();
 
-  Object(ui_screens_lists_species_table__WEBPACK_IMPORTED_MODULE_9__["buildTable"])(collection, {
-    config: config,
-    enums: traitEnums,
-    overrideParent: callingParentContainer
-  });
-  userClickHandlers();
-  var btnBeginLesson = document.querySelector('.js-btn-current-lesson-begin');
-  btnBeginLesson.addEventListener('click', function () {
-    ui_screens_lists_lesson_state_handler__WEBPACK_IMPORTED_MODULE_12__["lessonStateHandler"].changeRequest({
-      requestType: ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_1__["enums"].lessonState.BEGIN_OR_RESUME_LESSON,
-      requestArgs: {
-        id: collection.id
-      }
-    });
-  });
-
-  var openSpeciesDescriptionHandler = function openSpeciesDescriptionHandler(collection, species) {
-    var enableScroll = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
-    var activateYoutubeIcon = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
-
-    try {
-      var parent = document.getElementById('insertParent');
-      if (parent) parent.remove();
-
-      var _closeOpenAccordions = closeOpenAccordions(species.name),
-          accordions = _closeOpenAccordions.accordions;
-
-      var activeAccordion = accordions.find(function (accordion) {
-        return accordion.dataset.name === species.name;
-      });
-
-      if (activeAccordion) {
-        activeAccordion.innerHTML = "<i class=\"fas fa-chevron-up\" data-name=\"".concat(species.name, "\"></i>");
-
-        if (activateYoutubeIcon) {
-          var activeYouTubeIcon = activeAccordion.parentElement.parentElement.querySelector('.js-youtube');
-          activeYouTubeIcon.classList.add('youtube-green-fg');
-        }
-      } // if(activateYoutubeIcon) {
-      //     const activeYouTubeIcon = activeAccordion.parentElement.parentElement.querySelector('.js-youtube');
-      //           activeYouTubeIcon.classList.add('youtube-green-fg');
-      // }
-
-
-      var description = species.description;
-      description = !!description ? description : species.traits.description && species.traits.description.value ? species.traits.description.value[0] : '';
-
-      if (description) {
-        var id = species.id || species.eolId;
-        var tr = document.querySelector("#id_".concat(id));
-        var td = document.createElement('td');
-        var text = document.createElement('div');
-        text.classList.add('inserted-td');
-        text.innerHTML = description.replace(/\r?\n/g, '<br />');
-        td.appendChild(text);
-        var insert = document.createElement('div');
-        insert.classList.add('table-row');
-        insert.classList.add('species-description');
-        insert.appendChild(td);
-        tr.parentElement.insertBefore(insert, tr.nextSibling);
-
-        var scrollIntoView = function scrollIntoView(rowHeight, noOfRows) {
-          var scroll = document.querySelector('.scrollable');
-          var standardBlock = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vhStandardBlock').replace('px', ''));
-          var unit = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vh').replace('px', ''));
-          var top = standardBlock * 2 + rowHeight * (noOfRows - 1) - 2 * unit;
-          scroll.scrollTop = top;
-        };
-
-        if (enableScroll) {
-          config.isLandscapeMode ? tr.previousElementSibling.scrollIntoView() : scrollIntoView(tr.offsetHeight, species.snapIndex);
-        }
-      }
-    } catch (e) {
-      Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_14__["logError"])(openSpeciesDescriptionHandler, e);
-    }
-  };
-
-  ui_screens_lists_video_handler__WEBPACK_IMPORTED_MODULE_10__["videoHandler"].onSpeciesTimeMatch(function (collection, species) {
-    openSpeciesDescriptionHandler(collection, species);
-    updateVideoPlayer(collection, species);
-    Object(ui_screens_lists_species_list_definition_insert__WEBPACK_IMPORTED_MODULE_13__["onSpeciesChangeHandler"])(species);
-  });
-  ui_screens_lists_video_handler__WEBPACK_IMPORTED_MODULE_10__["videoHandler"].onNoteTimeMatch(function (collection, note) {
-    Object(ui_screens_lists_species_list_definition_insert__WEBPACK_IMPORTED_MODULE_13__["openNoteHandler"])(note, ui_screens_lists_video_handler__WEBPACK_IMPORTED_MODULE_10__["videoHandler"].getPlayerTime());
-  });
+  init();
 };
 var currentIndex = 0;
 
@@ -91015,12 +91047,12 @@ module.exports = code;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildTable", function() { return buildTable; });
-/* harmony import */ var ui_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ui/dom */ "./src/ui/dom.js");
-/* harmony import */ var utils_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! utils/utils */ "./src/utils/utils.js");
-/* harmony import */ var ui_helpers_data_checking__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ui/helpers/data-checking */ "./src/ui/helpers/data-checking.js");
-/* harmony import */ var ui_helpers_templating__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ui/helpers/templating */ "./src/ui/helpers/templating.js");
-/* harmony import */ var ui_helpers_image_handler__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ui/helpers/image-handler */ "./src/ui/helpers/image-handler.js");
-/* harmony import */ var api_snapdragon_iconic_taxa__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! api/snapdragon/iconic-taxa */ "./src/api/snapdragon/iconic-taxa.js");
+/* harmony import */ var utils_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! utils/utils */ "./src/utils/utils.js");
+/* harmony import */ var ui_helpers_data_checking__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ui/helpers/data-checking */ "./src/ui/helpers/data-checking.js");
+/* harmony import */ var ui_helpers_templating__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ui/helpers/templating */ "./src/ui/helpers/templating.js");
+/* harmony import */ var ui_helpers_image_handler__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ui/helpers/image-handler */ "./src/ui/helpers/image-handler.js");
+/* harmony import */ var api_snapdragon_iconic_taxa__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! api/snapdragon/iconic-taxa */ "./src/api/snapdragon/iconic-taxa.js");
+/* harmony import */ var ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ui/helpers/logging-handler */ "./src/ui/helpers/logging-handler.js");
 /* harmony import */ var ui_screens_lists_species_table_template_html__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ui/screens/lists/species-table-template.html */ "./src/ui/screens/lists/species-table-template.html");
 /* harmony import */ var ui_screens_lists_species_table_template_html__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(ui_screens_lists_species_table_template_html__WEBPACK_IMPORTED_MODULE_6__);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -91033,195 +91065,210 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 var buildTable = function buildTable(collection, args) {
-  var config = args.config,
-      enums = args.enums,
-      overrideParent = args.overrideParent;
-  var template = document.createElement('template');
-  var wide = window.matchMedia("(min-width: 1024px)").matches;
+  try {
+    var config = args.config,
+        enums = args.enums,
+        overrideParent = args.overrideParent;
+    var template = document.createElement('template');
+    var wide = window.matchMedia("(min-width: 1024px)").matches;
 
-  var getTraitName = function getTraitName(item, enums) {
-    var traitName = '';
-    var keyTratLinkClass = 'capitalise underline-link js-key-trait-link';
-    item.taxonomy.phylum = item.taxonomy.phylum || '';
+    var getTraitName = function getTraitName(item, enums) {
+      var traitName = '';
+      var keyTratLinkClass = 'capitalise underline-link js-key-trait-link';
+      item.taxonomy.phylum = item.taxonomy.phylum || '';
 
-    if (item.taxonomy) {
-      switch (item.taxonomy.phylum.toLowerCase()) {
-        case 'ascomycota':
-          traitName = item.taxonomy.order.toLowerCase() === 'pezizales' ? enums.name.HOW_EDIBLE : enums.name.THALLUS_TYPE;
-          if (item.taxonomy.order.toLowerCase() === 'pezizales') keyTratLinkClass = 'js-key-trait-link';
+      if (item.taxonomy) {
+        switch (item.taxonomy.phylum.toLowerCase()) {
+          case 'ascomycota':
+            traitName = item.taxonomy.order.toLowerCase() === 'pezizales' ? enums.name.HOW_EDIBLE : enums.name.THALLUS_TYPE;
+            if (item.taxonomy.order.toLowerCase() === 'pezizales') keyTratLinkClass = 'js-key-trait-link';
+            break;
+
+          case 'basidiomycota':
+            traitName = enums.name.HOW_EDIBLE;
+            keyTratLinkClass = 'js-key-trait-link';
+            break;
+
+          default:
+            traitName = '-';
+        }
+      } else {
+        keyTratLinkClass = 'js-key-trait-link';
+      }
+
+      return {
+        traitName: traitName,
+        keyTratLinkClass: keyTratLinkClass
+      };
+    };
+
+    var getOrderLinkClass = function getOrderLinkClass(item) {
+      var orderLinkClass;
+
+      if (item.taxonomy && item.taxonomy.order) {
+        orderLinkClass = item.order ? 'capitalise underline-link js-taxon-card-link' : 'js-taxon-card-link no-pointer-events';
+      } else {
+        orderLinkClass = 'js-taxon-card-link';
+      }
+
+      return orderLinkClass;
+    };
+
+    var getIconicTaxonIcon = function getIconicTaxonIcon(item) {
+      var iconicTaxonIcon, hideFungiIcon;
+
+      if (item.iconicTaxon.toLowerCase() === 'fungi') {
+        iconicTaxonIcon = 'hide';
+        hideFungiIcon = '';
+      } else {
+        iconicTaxonIcon = Object(api_snapdragon_iconic_taxa__WEBPACK_IMPORTED_MODULE_4__["matchIcon"])(item.taxonomy, api_snapdragon_iconic_taxa__WEBPACK_IMPORTED_MODULE_4__["iconicTaxa"]);
+        hideFungiIcon = 'hide';
+      }
+
+      return {
+        iconicTaxonIcon: iconicTaxonIcon,
+        hideFungiIcon: hideFungiIcon
+      };
+    };
+
+    var itemImages = collection.items.map(function (item) {
+      var _itemImage;
+
+      var image = item.images.find(function (i) {
+        return i.starred;
+      }) || utils_utils__WEBPACK_IMPORTED_MODULE_0__["utils"].shuffleArray(item.images)[0];
+      image = Object(ui_helpers_image_handler__WEBPACK_IMPORTED_MODULE_3__["scaleImage"])(image, ui_helpers_image_handler__WEBPACK_IMPORTED_MODULE_3__["imageUseCases"].SPECIES_LIST, config);
+
+      var _getTraitName = getTraitName(item, enums),
+          traitName = _getTraitName.traitName,
+          keyTratLinkClass = _getTraitName.keyTratLinkClass;
+
+      var _getIconicTaxonIcon = getIconicTaxonIcon(item),
+          iconicTaxonIcon = _getIconicTaxonIcon.iconicTaxonIcon,
+          hideFungiIcon = _getIconicTaxonIcon.hideFungiIcon;
+
+      var itemImage = (_itemImage = {
+        id: item.id,
+        name: item.name,
+        itemName: item.name,
+        genus: item.taxonomy.genus,
+        species: item.taxonomy.species,
+        genusLinkClass: item.genus ? 'underline-link js-taxon-card-link' : 'js-taxon-card-link no-pointer-events',
+        shortName: ui_helpers_data_checking__WEBPACK_IMPORTED_MODULE_1__["itemProperties"].trimLatinName(item.name),
+        taxonomy: item.taxonomy,
+        iconicTaxon: item.iconicTaxon,
+        vernacularName: item.vernacularName,
+        snapIndex: item.snapIndex,
+        license: image.license,
+        url: image.url,
+        small: image.small,
+        rightsHolder: image.rightsHolder || 'Public domain',
+        source: image.source
+      }, _defineProperty(_itemImage, "shortName", ui_helpers_data_checking__WEBPACK_IMPORTED_MODULE_1__["itemProperties"].trimLatinName(item.name)), _defineProperty(_itemImage, "keyTrait", utils_utils__WEBPACK_IMPORTED_MODULE_0__["utils"].capitaliseFirst(ui_helpers_data_checking__WEBPACK_IMPORTED_MODULE_1__["itemProperties"].getActiveTrait(item, [{
+        name: traitName,
+        formatter: function formatter(trait) {
+          return trait[0];
+        }
+      }])) || ''), _defineProperty(_itemImage, "keyTratLinkClass", keyTratLinkClass), _defineProperty(_itemImage, "familyLinkClass", item.family ? 'capitalise underline-link js-taxon-card-link' : 'js-taxon-card-link no-pointer-events'), _defineProperty(_itemImage, "orderLinkClass", getOrderLinkClass(item)), _defineProperty(_itemImage, "taxonomy", item.taxonomy || {
+        family: '',
+        order: ''
+      }), _defineProperty(_itemImage, "iconicTaxonIcon", iconicTaxonIcon), _defineProperty(_itemImage, "hideFungiIcon", hideFungiIcon), _defineProperty(_itemImage, "hasVideoClassName", !collection.hasVideo ? 'hide-column' : ''), _defineProperty(_itemImage, "hasTaxonClassName", collection.hasVideo ? 'hide-column' : ''), _defineProperty(_itemImage, "provider", image.provider || ''), _itemImage);
+      return itemImage;
+    });
+    template.innerHTML = ui_screens_lists_species_table_template_html__WEBPACK_IMPORTED_MODULE_6___default.a;
+    var parent = config.isPortraitMode ? overrideParent : document.querySelector(".js-species-container[data-container-id=\"".concat(collection.id, "\"]"));
+    parent.innerHTML = '';
+    Object(ui_helpers_templating__WEBPACK_IMPORTED_MODULE_2__["renderTemplate"])({
+      id: collection.id,
+      itemImages: itemImages
+    }, template.content, parent);
+    var table = parent.querySelector("table#species_list_id_".concat(collection.id));
+    var keyTraits = table.querySelectorAll('.js-key-trait-link');
+    keyTraits.forEach(function (vn) {
+      var keyTrait = vn.dataset.keyTrait;
+      var span = document.createElement('span');
+
+      switch (keyTrait) {
+        case enums.howEdible.CHOICE:
+          span.innerHTML = '<span class="icon choice"></span>';
+          vn.append(span);
           break;
 
-        case 'basidiomycota':
-          traitName = enums.name.HOW_EDIBLE;
-          keyTratLinkClass = 'js-key-trait-link';
+        case enums.howEdible.EDIBLE:
+          span.innerHTML = '<span class="icon edible"></span>';
+          vn.append(span);
           break;
 
-        default:
-          traitName = '-';
+        case enums.howEdible.INEDIBLE:
+          span.innerHTML = '<span class="icon inedible"></span>';
+          vn.append(span);
+          break;
+
+        case enums.howEdible.POISONOUS:
+        case enums.howEdible.DEADLY:
+          span.innerHTML = '<span class="icon toxic"></span>';
+          vn.append(span);
+          break;
+      }
+    });
+    var tbody = table.querySelector('.species-table tbody');
+    if (!tbody) return;
+    var headerRow = document.createElement('tr');
+    headerRow.classList.add('table-header');
+    var imageHeader = document.createElement('th');
+    var speciesHeader = document.createElement('th');
+    var familyHeader = document.createElement('th');
+    var traitNameHeader = document.createElement('th');
+    var iconicTaxonHeader = document.createElement('th');
+    var accordionHeader = document.createElement('th');
+    accordionHeader.classList.add('not-sortable');
+    speciesHeader.innerHTML = '<span>Species</span';
+    familyHeader.innerHTML = '<span>Family</span><span>Order</span>';
+    traitNameHeader.innerHTML = '<span></span>';
+    iconicTaxonHeader.innerHTML = '<span><i class="fas fa-sliders-h"></i></span>';
+    imageHeader.innerHTML = overrideParent ? '' : '<span><i class="fas fa-undo"></i></span>';
+
+    if (wide) {
+      headerRow.appendChild(imageHeader);
+      headerRow.appendChild(speciesHeader);
+      headerRow.appendChild(familyHeader);
+
+      if (collection.behaviour === 'dynamic') {
+        headerRow.appendChild(iconicTaxonHeader);
       }
     } else {
-      keyTratLinkClass = 'js-key-trait-link';
-    }
+      headerRow.appendChild(imageHeader);
+      headerRow.appendChild(speciesHeader);
 
-    return {
-      traitName: traitName,
-      keyTratLinkClass: keyTratLinkClass
-    };
-  };
-
-  var getOrderLinkClass = function getOrderLinkClass(item) {
-    var orderLinkClass;
-
-    if (item.taxonomy && item.taxonomy.order) {
-      orderLinkClass = item.order ? 'capitalise underline-link js-taxon-card-link' : 'js-taxon-card-link no-pointer-events';
-    } else {
-      orderLinkClass = 'js-taxon-card-link';
-    }
-
-    return orderLinkClass;
-  };
-
-  var getIconicTaxonIcon = function getIconicTaxonIcon(item) {
-    var iconicTaxonIcon, hideFungiIcon;
-
-    if (item.iconicTaxon.toLowerCase() === 'fungi') {
-      iconicTaxonIcon = 'hide';
-      hideFungiIcon = '';
-    } else {
-      iconicTaxonIcon = Object(api_snapdragon_iconic_taxa__WEBPACK_IMPORTED_MODULE_5__["matchIcon"])(item.taxonomy, api_snapdragon_iconic_taxa__WEBPACK_IMPORTED_MODULE_5__["iconicTaxa"]);
-      hideFungiIcon = 'hide';
-    }
-
-    return {
-      iconicTaxonIcon: iconicTaxonIcon,
-      hideFungiIcon: hideFungiIcon
-    };
-  };
-
-  var itemImages = collection.items.map(function (item) {
-    var _itemImage;
-
-    var image = item.images.find(function (i) {
-      return i.starred;
-    }) || utils_utils__WEBPACK_IMPORTED_MODULE_1__["utils"].shuffleArray(item.images)[0];
-    image = Object(ui_helpers_image_handler__WEBPACK_IMPORTED_MODULE_4__["scaleImage"])(image, ui_helpers_image_handler__WEBPACK_IMPORTED_MODULE_4__["imageUseCases"].SPECIES_LIST, config);
-
-    var _getTraitName = getTraitName(item, enums),
-        traitName = _getTraitName.traitName,
-        keyTratLinkClass = _getTraitName.keyTratLinkClass;
-
-    var _getIconicTaxonIcon = getIconicTaxonIcon(item),
-        iconicTaxonIcon = _getIconicTaxonIcon.iconicTaxonIcon,
-        hideFungiIcon = _getIconicTaxonIcon.hideFungiIcon;
-
-    var itemImage = (_itemImage = {
-      id: item.id,
-      name: item.name,
-      itemName: item.name,
-      genus: item.taxonomy.genus,
-      species: item.taxonomy.species,
-      genusLinkClass: item.genus ? 'underline-link js-taxon-card-link' : 'js-taxon-card-link no-pointer-events',
-      shortName: ui_helpers_data_checking__WEBPACK_IMPORTED_MODULE_2__["itemProperties"].trimLatinName(item.name),
-      taxonomy: item.taxonomy,
-      iconicTaxon: item.iconicTaxon,
-      vernacularName: item.vernacularName,
-      snapIndex: item.snapIndex,
-      license: image.license,
-      url: image.url,
-      small: image.small,
-      rightsHolder: image.rightsHolder || 'Public domain',
-      source: image.source
-    }, _defineProperty(_itemImage, "shortName", ui_helpers_data_checking__WEBPACK_IMPORTED_MODULE_2__["itemProperties"].trimLatinName(item.name)), _defineProperty(_itemImage, "keyTrait", utils_utils__WEBPACK_IMPORTED_MODULE_1__["utils"].capitaliseFirst(ui_helpers_data_checking__WEBPACK_IMPORTED_MODULE_2__["itemProperties"].getActiveTrait(item, [{
-      name: traitName,
-      formatter: function formatter(trait) {
-        return trait[0];
+      if (collection.behaviour === 'dynamic') {
+        headerRow.appendChild(iconicTaxonHeader);
       }
-    }])) || ''), _defineProperty(_itemImage, "keyTratLinkClass", keyTratLinkClass), _defineProperty(_itemImage, "familyLinkClass", item.family ? 'capitalise underline-link js-taxon-card-link' : 'js-taxon-card-link no-pointer-events'), _defineProperty(_itemImage, "orderLinkClass", getOrderLinkClass(item)), _defineProperty(_itemImage, "taxonomy", item.taxonomy || {
-      family: '',
-      order: ''
-    }), _defineProperty(_itemImage, "iconicTaxonIcon", iconicTaxonIcon), _defineProperty(_itemImage, "hideFungiIcon", hideFungiIcon), _defineProperty(_itemImage, "hasVideoClassName", !collection.hasVideo ? 'hide-column' : ''), _defineProperty(_itemImage, "hasTaxonClassName", collection.hasVideo ? 'hide-column' : ''), _defineProperty(_itemImage, "provider", image.provider || ''), _itemImage);
-    return itemImage;
-  });
-  template.innerHTML = ui_screens_lists_species_table_template_html__WEBPACK_IMPORTED_MODULE_6___default.a;
-  var parent = config.isPortraitMode ? overrideParent : document.querySelector(".js-species-container[data-container-id=\"".concat(collection.id, "\"]"));
-  Object(ui_helpers_templating__WEBPACK_IMPORTED_MODULE_3__["renderTemplate"])({
-    id: collection.id,
-    itemImages: itemImages
-  }, template.content, parent);
-  var table = document.getElementById("species_list_id_".concat(collection.id));
-  var keyTraits = table.querySelectorAll('.js-key-trait-link');
-  keyTraits.forEach(function (vn) {
-    var keyTrait = vn.dataset.keyTrait;
-    var span = document.createElement('span');
-
-    switch (keyTrait) {
-      case enums.howEdible.CHOICE:
-        span.innerHTML = '<span class="icon choice"></span>';
-        vn.append(span);
-        break;
-
-      case enums.howEdible.EDIBLE:
-        span.innerHTML = '<span class="icon edible"></span>';
-        vn.append(span);
-        break;
-
-      case enums.howEdible.INEDIBLE:
-        span.innerHTML = '<span class="icon inedible"></span>';
-        vn.append(span);
-        break;
-
-      case enums.howEdible.POISONOUS:
-      case enums.howEdible.DEADLY:
-        span.innerHTML = '<span class="icon toxic"></span>';
-        vn.append(span);
-        break;
     }
-  });
-  var tbody = table.querySelector('.species-table tbody');
-  if (!tbody) return;
-  var headerRow = document.createElement('tr');
-  headerRow.classList.add('table-header');
-  var imageHeader = document.createElement('th');
-  var speciesHeader = document.createElement('th');
-  var familyHeader = document.createElement('th');
-  var traitNameHeader = document.createElement('th');
-  var iconicTaxonHeader = document.createElement('th');
-  var accordionHeader = document.createElement('th');
-  accordionHeader.classList.add('not-sortable');
-  speciesHeader.innerHTML = '<span>Species</span';
-  familyHeader.innerHTML = '<span>Family</span><span>Order</span>';
-  traitNameHeader.innerHTML = '<span></span>';
-  iconicTaxonHeader.innerHTML = '<span><i class="fas fa-sliders-h"></i></span>';
-  imageHeader.innerHTML = overrideParent ? '' : '<span><i class="fas fa-undo"></i></span>';
 
-  if (wide) {
-    headerRow.appendChild(imageHeader);
-    headerRow.appendChild(speciesHeader);
-    headerRow.appendChild(familyHeader);
-
-    if (collection.behaviour === 'dynamic') {
-      headerRow.appendChild(iconicTaxonHeader);
+    if (collection.behaviour === 'static') {
+      headerRow.appendChild(accordionHeader);
     }
-  } else {
-    headerRow.appendChild(imageHeader);
-    headerRow.appendChild(speciesHeader);
 
-    if (collection.behaviour === 'dynamic') {
-      headerRow.appendChild(iconicTaxonHeader);
+    if (!tbody.querySelector('.table-header')) {
+      tbody.insertBefore(headerRow, tbody.children[0]);
     }
+
+    var sortableCalback = function sortableCalback() {};
+
+    utils_utils__WEBPACK_IMPORTED_MODULE_0__["utils"].makeSortable(document, sortableCalback, wide);
+    return new Promise(function (resolve) {
+      return resolve({
+        isReady: true
+      });
+    });
+  } catch (e) {
+    Object(ui_helpers_logging_handler__WEBPACK_IMPORTED_MODULE_5__["logError"])('buildTable', e);
+    return new Promise(function (resolve) {
+      return resolve({
+        isReady: false
+      });
+    });
   }
-
-  if (collection.behaviour === 'static') {
-    headerRow.appendChild(accordionHeader);
-  }
-
-  if (!tbody.querySelector('.table-header')) {
-    tbody.insertBefore(headerRow, tbody.children[0]);
-  }
-
-  var sortableCalback = function sortableCalback() {};
-
-  utils_utils__WEBPACK_IMPORTED_MODULE_1__["utils"].makeSortable(document, sortableCalback, wide);
 };
 
 /***/ }),

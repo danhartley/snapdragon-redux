@@ -7,16 +7,16 @@ export const textSetup = (collection, config) => {
 
     let speciesCount = getSpeciesCount(collection);
 
-    const iconicTaxa = collection.guide.iconicTaxa 
+    const iconicTaxa = collection.guide
                             ? collection.guide.iconicTaxa
-                            : [ ...new Set(collection.items.map(i => i.iconicTaxon)) ];
+                            : collection.iconicTaxa || [ ...new Set(collection.items.map(i => i.iconicTaxon)) ];
 
     const language = config.languages.find(l => l.lang === config.language).name; // place in guide, and copy to collection
 
     const template = document.createElement('template');
           template.innerHTML = textIntroTemplate;
 
-    const months = collection.guide.season.observableMonths ? collection.guide.season.observableMonths.map(month => month.name) : [];
+    const months = collection.guide ? collection.guide.season.observableMonths.map(month => month.name) : [];
     const observableMonths = months.length > 0 ? `${months[0]}-${months[months.length - 1]}` : '';
     const season = months.length === 0
                     ? 'Species observations are drawn from the whole year.'
