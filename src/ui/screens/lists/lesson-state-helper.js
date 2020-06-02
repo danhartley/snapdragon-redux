@@ -4,6 +4,7 @@ import { enums } from 'ui/helpers/enum-helper';
 import { persistor } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
+import { config as initialConfig } from 'snapdragon-config/lesson-config';
 
 const getIsReviewingLesson = (userAction, config) => {
 
@@ -32,19 +33,7 @@ const purgeLesson = () => {
 
 const clearGuide = () => {
     const config = store.getState().config;
-    config.guide = {
-        iconicTaxa: null,
-        locationLongLat: '',
-        locationPlace: '',
-        locationType: null,
-        place: {
-            id: 1,
-            name: ''
-        },
-        speciesRange: 10,
-        inatId: { key: '', type: '', param: 'user_id' },
-        season: {}
-    };
+    config.guide = initialConfig.guide;
     actions.boundUpdateConfig(config);
 };
 

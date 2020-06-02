@@ -80244,7 +80244,8 @@ var speciesSearch = function speciesSearch(createGuide) {
       }, template.content, feedback);
       var icon = modal.querySelector('.icon i');
       icon.classList.remove('slow-spin');
-      var close = modal.querySelector('.js-right .js-arrow-wrapper');
+      var close = modal.querySelector('.js-right .js-arrow-wrapper'); // disable till ready
+
       setTimeout(function () {
         close.addEventListener('click', function (e) {
           setTimeout( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
@@ -90300,11 +90301,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ui/helpers/enum-helper */ "./src/ui/helpers/enum-helper.js");
 /* harmony import */ var redux_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux/store */ "./src/redux/store.js");
 /* harmony import */ var redux_actions_action_creators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! redux/actions/action-creators */ "./src/redux/actions/action-creators.js");
+/* harmony import */ var snapdragon_config_lesson_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! snapdragon-config/lesson-config */ "./src/snapdragon-config/lesson-config.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -90337,23 +90340,7 @@ var purgeLesson = function purgeLesson() {
 
 var clearGuide = function clearGuide() {
   var config = redux_store__WEBPACK_IMPORTED_MODULE_2__["store"].getState().config;
-  config.guide = {
-    iconicTaxa: null,
-    locationLongLat: '',
-    locationPlace: '',
-    locationType: null,
-    place: {
-      id: 1,
-      name: ''
-    },
-    speciesRange: 10,
-    inatId: {
-      key: '',
-      type: '',
-      param: 'user_id'
-    },
-    season: {}
-  };
+  config.guide = snapdragon_config_lesson_config__WEBPACK_IMPORTED_MODULE_4__["config"].guide;
   redux_actions_action_creators__WEBPACK_IMPORTED_MODULE_3__["actions"].boundUpdateConfig(config);
 };
 
