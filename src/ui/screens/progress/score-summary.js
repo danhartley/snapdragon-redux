@@ -52,7 +52,6 @@ export const renderScoreSummary = (lessonId, summaryContainer) => {
                 scores.forEach(s => renderScoreSummaryRow(scores, s, config));
       
             const handleContinueLesson = async event => {            
-                  console.log('Summary continue lesson request');
                   lessonStateHandler.changeRequest({
                         requestType: enums.lessonState.NEXT_ROUND,
                         requestArgs: {

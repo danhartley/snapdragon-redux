@@ -1,18 +1,21 @@
 {
-  "presets": [
-    "es2015",    
-    ["env", {
-      "modules": false,
-      "browsers": ["last 2 versions"]
-    }]
+  "presets": [    
+
+    "@babel/preset-env",
+    "@babel/preset-react"
   ],
-  "sourceMaps": "inline",
+  "sourceMaps": "inline"
+  ,
   "plugins": [
-    "transform-object-rest-spread",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-transform-react-jsx-source",
+    "@babel/plugin-transform-react-jsx-self",
+    "@babel/plugin-proposal-json-strings",
     ["transform-regenerator", {
       "asyncGenerators": true,
       "generators": true,
       "async": true
-    }]  
+    }]
   ]
 }

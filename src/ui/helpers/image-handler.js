@@ -72,7 +72,6 @@ export const prepImagesForCarousel = (item, config, useCase) => {
 export const scaleImage = image => {
 
     if(!image.url) {
-        console.log('scaleImage, missing image url: ', image);
         return image;
     }
 

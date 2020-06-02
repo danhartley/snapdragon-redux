@@ -40,7 +40,6 @@ export const observeStore = (store, select, onChange, domain, layout) => {
   
     handleChange.domain = domain;
     handleChange.calledBy = onChange.name;
-    // console.log('*** NEW LISTENER', `func: ${onChange.name}`, `domain: ${domain}`);
     let unsubscribe = store.subscribe(handleChange);
     if(hasStateSignificantlyChanged) {
       handleChange();

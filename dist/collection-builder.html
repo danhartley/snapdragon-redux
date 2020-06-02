@@ -15,28 +15,28 @@
                     <!-- <li class="logged-in hide">
                     <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
                     </li> -->
-                    <li class="logged-in hide border-left">
+                    <li class="logged-in non-react hide border-left">
                         <a href="#" class="grey-text" id="logout">
                             <i class="fas fa-user"></i>
                         </a>
                     </li>
-                    <li class="logged-in hide border-left border-right">
+                    <li class="logged-in non-react hide border-left border-right">
                         <a href="#" class="grey-text" id="add-species">
                             <i class="fas fa-plus"></i>
                             <span>Species</span>
                         </a>
                     </li>
-                    <li class="logged-in hide">
+                    <li class="logged-in non-react hide">
                         <a href="#" class="grey-text" id="add-taxon">
                             <i class="fas fa-plus"></i>
-                            <span>Taxon</span> </a>
+                            <span>Taxon</span>
                         </a>
                     </li>
-                    <li class="logged-in hide border-left border-right">
+                    <li class="logged-in non-react hide border-left border-right">
 
                         <a class='grey-text dropdown-trigger' href='#' data-target='dropdown-species'>
                             <i class="fas fa-edit"></i>
-                            <span>Species</span> </a>
+                            <span>Species</span>
                         </a>
 
                         <ul id='dropdown-species' class='dropdown-content'>
@@ -49,11 +49,11 @@
                             <li><a href="#!" id="add-photos">Edit Photos</a></li>
                         </ul>
                     </li>
-                    <li class="logged-in hide">
+                    <li class="logged-in non-react hide">
 
                         <a class='grey-text dropdown-trigger' href='#' data-target='dropdown-collection'>
                             <i class="fas fa-edit"></i>
-                            <span>Collection</span> </a>
+                            <span>Collection</span>
                         </a>
 
                         <ul id='dropdown-collection' class='dropdown-content'>
@@ -64,18 +64,35 @@
                         </ul>
 
                     </li>
-                    <li class="logged-in hide border-left border-right">
+                    <li class="logged-in non-react hide border-left border-right">
                         <a href="#" class="grey-text" id="create-question">
                             <i class="fas fa-plus"></i>
                             <span>Question</span> </a>
                         </a>
                     </li>
-                    <li class="logged-in hide border-right">
-                        <a href="#" class="grey-text" id="add-term">
-                            <i class="fas fa-plus"></i>
-                            <span>Term</span> </a>
-                        </a>
+
+                    <li class="logged-in non-react hide border-left border-right">
+                      <a href="#" class="grey-text dropdown-trigger" data-target="dropdown-term">
+                          <i class="fas fa-edit"></i>
+                          <span>Term</span>
+                      </a>
+
+                      <ul id='dropdown-term' class='dropdown-content'>
+                        <li><a href="#!" id="add-term">Add</a></li>
+                      </ul>
                     </li>
+ 
+                    <li class="logged-in hide border-left border-right">
+                      <a href="#" class="grey-text dropdown-trigger" data-target="dropdown-video">
+                          <i class="fas fa-edit"></i>
+                          <span>Video</span>
+                      </a>
+
+                      <ul id='dropdown-video' class='dropdown-content'>
+                        <li><a href="#!" id="add-video">Add</a></li>
+                      </ul>
+                    </li>
+
                     <li class="logged-out hide">
                         <a href="#" class="grey-text modal-trigger" data-target="modal-login">
                             <i class="fas fa-user-slash"></i>
@@ -89,8 +106,9 @@
             </div>
         </nav>
 
-        <div class="active-species hide js-active-species">
-            <span>Active species:</span><span class="feedback">--- ---</span>
+        <div class="margin-top small horizontal-evenly-spaced-block half-standard-block centred-block">
+          <div id="activeSpeciesDisplay"></div>
+          <div id="activeCollectionDisplay"></div>
         </div>
             
          <!-- SIGN UP MODAL -->
@@ -152,6 +170,6 @@
         
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
-        <script type="text/javascript" src="./stamp.js"></script>
-    <script type="text/javascript" src="admin.bundle.js"></script></body>
+        <!-- <script type="text/javascript" src="./stamp.js"></script>  -->
+    <script src="admin.bundle.js"></script></body>
 </html>

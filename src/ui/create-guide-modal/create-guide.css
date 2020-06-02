@@ -22,6 +22,7 @@
 
   .modal-subheader {
     font-size: 1.1em;
+    color: var(--snap-text-black);
   }
 
   .modal-guide-progress .steps {

@@ -1,9 +1,12 @@
 import * as R from 'ramda';
 
+import { utils } from 'utils/utils';
 import { firestore } from 'api/firebase/firestore';
 import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
+import { log, logError } from 'ui/helpers/logging-handler';
 
 let inatListeners = [];
+let RECORDS_PER_PAGE = 200;
 
 const unsubscribe = listener => {
     inatListeners = inatListeners.filter(l => l !== listener);
@@ -20,7 +23,9 @@ const getBasePath = config => {
             ? ''
             : config.guide.season.observableMonths.map(month => month.index).join(',');
 
-    const basePath = `https://api.inaturalist.org/v1/observations/species_counts?captive=false&rank=species&per_page=200&month=${month}`;
+    const perPage = config.guide.perPage || RECORDS_PER_PAGE;
+
+    const basePath = `https://api.inaturalist.org/v1/observations/species_counts?captive=false&rank=species&per_page=${perPage}&month=${month}`;
 
     return basePath;
 };
@@ -29,24 +34,34 @@ export const getInatSpecies = async config => {
 
     const speciesNames = await firestore.getSpeciesNames();
 
-    const names = speciesNames[0].value;
+    const snapdragonSpeciesNames = speciesNames[0].value;
+
+    log('snapdragon species', snapdragonSpeciesNames);
 
     const iconicTaxaKeys = Object.keys(iconicTaxa).join(',');
 
-    const getIconicTaxa = config => {        
-        const iconicTaxa = config.guide.iconicTaxa.map(taxon => taxon.id) || iconicTaxaKeys;
+    const getIconicTaxa = config => {
+      
+      try {
 
-        // Create new taxonic group for reptilia, etc?
+          const iconicTaxa = config.guide.iconicTaxa.map(taxon => taxon.id) || iconicTaxaKeys;
 
-        if(iconicTaxa.find(taxon => taxon === 'mammalia')) {
-            iconicTaxa.push('reptilia');
-        }
+          // Create new taxonic group for reptilia, etc?
 
-        const taxa = iconicTaxa.map(taxon => {
-            if(taxon === 'lepidoptera') taxon = 'insecta';            
-            return taxon;
-        });
-        return taxa;
+          if(iconicTaxa.find(taxon => taxon === 'mammalia')) {
+              iconicTaxa.push('reptilia');
+          }
+
+          const taxa = iconicTaxa.map(taxon => {
+              if(taxon === 'lepidoptera') taxon = 'insecta';            
+              return taxon;
+          });
+
+          return taxa;
+
+      } catch (e) {
+        logError('Error for getIconicTaxa: ', e);
+    }
     };
 
     const getUserOrProjectKeyValuePair = config => {
@@ -57,18 +72,30 @@ export const getInatSpecies = async config => {
         return id ? parameter : '';
     };
 
-    async function getAllInatObservations(config) {
+    const getAllInatObservations = async (config, snapdragonSpeciesNames) => {
+        let snapdragonSpecies = [];
         let records = [];
         let keepGoing = true;
         let page = 1;
         while (keepGoing) {
-            let response = await getInatObservations(config, page);
-            await records.push.apply(records, response);
+          try {
+            let recordsFromThisRequest = await getInatObservations(config, page);
+            await records.push.apply(records, recordsFromThisRequest);
+            let matches = recordsFromThisRequest.filter(record => R.contains(record.taxon.name, snapdragonSpeciesNames));
+            await snapdragonSpecies.push.apply(snapdragonSpecies, matches);
             page = page + 1;
-            if (response.length < 200) {
+            let noMoreRecords = recordsFromThisRequest.length < RECORDS_PER_PAGE;
+            let recordsCountReached = snapdragonSpecies.length >= config.guide.noOfRecords;
+            log('snapdragonSpecies', snapdragonSpecies);
+            log('records', records);
+            if (noMoreRecords || recordsCountReached) {
                 keepGoing = false;
-                return records;
+                return snapdragonSpecies;
             }
+          } catch(e) {
+            logError('getInatObservations', e);
+            return snapdragonSpecies;
+          }
         }
     }
 
@@ -84,12 +111,14 @@ export const getInatSpecies = async config => {
                 })                    
             }));
 
-        } catch (error) {
-            console.error(error);
+        } catch (e) {
+          logError('loadSpeciesInParallel: ', e);
         }
     };
 
-    async function getInatObservations(config, page) {
+    const getInatObservations = async (config, page) => {
+
+      try {
 
         let lat = '', lng = '', placeId = '';
 
@@ -117,17 +146,36 @@ export const getInatSpecies = async config => {
         const params = config.guide.guideTpe === 'INAT' ? getUserOrProjectKeyValuePair(config) : '';
         const url = getBasePath(config) + `&page=${page}&iconic_taxa=${iconicTaxa}&place_id=${placeId}&lat=${lat}&lng=${lng}&radius=${radius}${inat}${params}`;
 
-        const response = await fetch(url);
-        const json = await response.json();
+        log('inat species request url', url);
+
+        const recordsFromThisRequest = await fetch(url);
+
+        log('inat recordsFromThisRequest', recordsFromThisRequest);
+
+        const json = await recordsFromThisRequest.json();
         inatListeners.forEach(listener => listener(
-            { page: json.page, numberOfRequests: Math.ceil(json.total_results/json.per_page) }
+            { page: json.page, numberOfRequests: Math.ceil(json.total_results/json.RECORDS_per_page) }
         ));
-        return await json.results;
+        return json ? await json.results : [];
+      } catch(e) {
+        logError('getInatObservations', e);
+        return [];
+      }
+    }
+    
+    let observations;
+
+    try {
+      observations = await getAllInatObservations(config, snapdragonSpeciesNames);
+      observations = observations.filter(observation => R.contains(observation.taxon.name, snapdragonSpeciesNames));
+      observations = R.take(config.guide.noOfRecords, utils.sortBy(observations.filter(item => item), 'observationCount', 'desc'));
+    } catch(e) {
+      logError('getAllInatObservations', e);
     }
 
-    let observations = await getAllInatObservations(config);
-        observations = observations.filter(observation => R.contains(observation.taxon.name, names));
-        console.log('inat: observations:', observations);
+    log('observations', observations);
+
+    if(!observations) return [];
 
     return await loadSpeciesInParallel(observations);
 }
@@ -135,8 +183,8 @@ export const getInatSpecies = async config => {
 export async function getInatPlaceId(place) {
     
     const url = `https://api.inaturalist.org/v1/places/autocomplete?q=${place}`;
-    const response = await fetch(url);
-    const json  = await response.json();
+    const recordsFromThisRequest = await fetch(url);
+    const json  = await recordsFromThisRequest.json();
     return json;
 }
 
@@ -145,8 +193,8 @@ export async function getInatTaxonStats(item, config, placeId) {
     const place = placeId || 'any';
     const taxonName = item.name;
     const url = `https://api.inaturalist.org/v1/observations/species_counts?&verifiable=true&taxon_name=${taxonName}&place_id=${place}`;
-    const response = await fetch(url);
-    const json = await response.json();
+    const recordsFromThisRequest = await fetch(url);
+    const json = await recordsFromThisRequest.json();
     return json;
 }
 
@@ -155,8 +203,8 @@ export async function getHistogram(item, placeId) {
     const place = placeId || 'any';
     const taxonName = item.name;
     const url = `https://api.inaturalist.org/v1/observations/histogram?taxon_name=${taxonName}&place_id=${place}`;
-    const response = await fetch(url);
-    const json = await response.json();
+    const recordsFromThisRequest = await fetch(url);
+    const json = await recordsFromThisRequest.json();
     return json;
 }
 
@@ -166,8 +214,8 @@ export async function getAutocompleteBy(q, by) {
     // https://api.inaturalist.org/v1/places/autocomplete?q=O%20Parque%20Natural%20da%20Arr%C3%A1bida
 
     const url = `https://api.inaturalist.org/v1/${by}/autocomplete?q=${q}`;
-    const response = await fetch(url);
-    const json = await response.json();
+    const recordsFromThisRequest = await fetch(url);
+    const json = await recordsFromThisRequest.json();
     return json;
 }
 

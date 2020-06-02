@@ -9,7 +9,6 @@ import 'ui/css/snapdragon-colours.css';
 import 'admin/css/admin.css';
 import 'ui/css/common.css';
 
-import { listenForActiveSpecies } from 'admin/screens/taxa-pickers';
 import { initMaterialize } from 'admin/scripts/materialize';
 import { speciesHandler } from 'admin/screens/species/species-handler';
 import { traitsHandler } from 'admin/screens/traits-handler';
@@ -25,6 +24,16 @@ import { editCollectionVideo } from 'admin/screens/collection/edit-collection-vi
 
 import { createQuestion } from 'admin/screens/questions/create-question';
 import { addTerm } from 'admin/screens/add-term';
+import { addVideo } from 'admin/screens/video/add-video';
+
+import { renderActiveTaxa } from 'admin/react/active-taxa';
+
+import { handleWindowResize } from 'media-helper';
+import { log, logError } from 'ui/helpers/logging-handler';
+
+handleWindowResize();
+
+renderActiveTaxa();
 
 const auth = firebase.auth();
 
@@ -32,9 +41,9 @@ window.snapdragon = {};
 
 auth.onAuthStateChanged(user => {
     if (user) {
-        console.log(user);
+        log('auth.onAuthStateChanged', user);
     } else {
-        console.log('logged out');
+        log('auth.onAuthStateChanged: logged out');
     }
     setupUI(user);
 });
@@ -65,23 +74,6 @@ const addTraitsClickHandler = e => {
   traitsHandler.addTraits();
 };
 
-const activeSpecies = document.querySelector('.js-active-species');
-
-const actions = document.querySelectorAll('li a');
-      actions.forEach(action => action.addEventListener('click', e => {
-
-            activeSpecies.classList.remove('hide');
-
-            const hideActiveSpecies = e.target.id === 'add-species' || e.target.id === 'add-taxon';
-
-            if(hideActiveSpecies) {
-                  activeSpecies.querySelector('span:nth-child(2)').innerHTML = 'N/A';
-            }
-            else {
-                  activeSpecies.querySelector('span:nth-child(2)').innerHTML = window.snapdragon.species ? window.snapdragon.species.name : '';
-            }
-      }));
-      
 const updateSpecies = document.querySelector('#update-species');
       updateSpecies.addEventListener('click', updateSpeciesClickHandler);
       
@@ -124,11 +116,14 @@ const createQuestionTab = document.querySelector('#create-question');
 const addTermTab = document.querySelector('#add-term');
       addTermTab.addEventListener('click', addTerm);
 
+const addVideoTab = document.querySelector('#add-video');
+      addVideoTab.addEventListener('click', addVideo);
+
 const setupUI = (user) => {
   if (user) {
     loggedInLinks.forEach(item => item.classList.remove('hide'));
     loggedOutLinks.forEach(item => item.classList.add('hide'));
-    editCollectionTab.click();
+    addVideoTab.click();
 } else {    
     loggedInLinks.forEach(item => item.classList.add('hide'));
     loggedOutLinks.forEach(item => item.classList.remove('hide'));
@@ -157,11 +152,6 @@ const logout = document.querySelector('#logout');
       });
 
 initMaterialize();
-
-listenForActiveSpecies(species => {
-  activeSpecies.querySelectorAll('span:nth-child(2)').innerHTML = species.name;
-  window.snapdragon.species = species;
-});
 
 var elems = document.querySelectorAll('.dropdown-trigger');
 if(elems) M.Dropdown.init(elems, {});

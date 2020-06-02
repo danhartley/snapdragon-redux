@@ -29,6 +29,8 @@ export const config = {
         },
         speciesRange: 10,
         inatId: { key: '', type: '', param: 'user_id' },
-        season: {}
+        season: {},
+        perPage: 200,
+        noOfRecords: 50
     },    
 };

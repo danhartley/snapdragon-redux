@@ -7,6 +7,22 @@
     flex-wrap: nowrap;
   }
 
+  .standard-block {
+    height: var(--vhStandardBlock, 10vh);
+  }
+  
+  .double-standard-block {
+    height: var(--vhDoubleStandardBlock, 20vh);
+  }
+  
+  .half-standard-block {
+    height: var(--vhHalfStandardBlock, 5vh);
+  }
+  
+  .one-and-half-standard-block {
+    height: var(--vhOneAndHalfStandardBlock, 15vh);
+  }
+
  .centred-block {
     display: flex;
     align-items: center;
@@ -55,9 +71,8 @@
     margin-right: .5rem !important;
   }
   
-  
   .half-margin-right {
-    margin-right: .5rem !important;
+    margin-right: .25rem !important;
   }
   
   .double-margin-right {

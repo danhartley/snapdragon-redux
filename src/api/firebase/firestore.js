@@ -2,6 +2,7 @@ import { utils } from 'utils/utils';
 import { enums } from 'admin/api/enums';
 import { firebaseConfig } from 'api/firebase/credentials';
 import { questions } from 'api/firebase/questions';
+import { log, logError, logAPIError } from 'ui/helpers/logging-handler';
 
 firebase.initializeApp(firebaseConfig);
 
@@ -28,8 +29,8 @@ const getSpeciesWhere = async props => {
 
         return await docs;
 
-    } catch(error) {
-        console.error('error for ', props.value, ', error: ', error);
+    } catch(e) {
+      logAPIError(e, 'getSpeciesWhere');
     }
 };
   
@@ -53,8 +54,8 @@ const getSpeciesNames = async () => {
     
         return await docs;
 
-    } catch(error) {
-        console.error('error for species names', ', error: ', error);
+    } catch(e) {
+      logAPIError(e, 'getSpeciesNames');
     }
 };
 
@@ -72,8 +73,8 @@ const getTaxaNames = async () => {
         });
     
         return await docs;
-    } catch(error) {
-        console.error('error for taxa names', ', error: ', error);
+    } catch(e) {
+      logAPIError(e, 'getTaxaNames');
     }
 };
 
@@ -154,9 +155,9 @@ const getTaxonByName = async (config, name) => {
 
         return taxon;
 
-    } catch (error) {
-        console.error('error for: ', name, error);
-        return error;
+    } catch (e) {
+      logAPIError(e, 'getTaxonByName');
+      return e;
     }
 };
 
@@ -170,8 +171,8 @@ const getAsyncTraitsByNameAndCollection = async (name, collection = 'traits_en',
   
     return await traits;
     
-    } catch(error) {
-        console.error('error for ', name, ', error: ', error);
+    } catch(e) {
+      logAPIError(e, 'getAsyncTraitsByNameAndCollection');
     }
 };
 
@@ -233,12 +234,12 @@ const addSpecies = async species => {
         });
     }
 
-    console.log(species.images);
+    log('addSpecies', species.images);
 
     try {
         docRef = await db.collection('species').add(species);
-    } catch(err) {
-        console.error("Error writing document: ", err);
+    } catch(e) {
+      logAPIError(e, 'addSpecies');
     }
 
     return docRef;
@@ -288,7 +289,7 @@ const updateSpeciesNames = async (species, names) => {
         speciesDocRef = doc.ref;
     });
 
-    console.log(speciesDocRef);
+    log('updateSpeciesNames', speciesDocRef);
 
     return await speciesDocRef.update({names}); 
 
@@ -328,17 +329,13 @@ const addTraits = async (name, trait, collection = 'traits_en') => {
                 speciesTraitsRef = doc.ref;
             });
 
-            console.log(trait);
-
             await speciesTraitsRef.update(trait); 
-
-            console.log(speciesTraitsRef);
 
             return 'Update successful';
         }
     } catch(e) {
-        console.log(`Update failed. Error ${e.message}.`);
-        return `Update failed. Error ${e.message}.`;
+      logAPIError(e, 'addTraits');
+      return `Update failed. Error ${e.message}.`;
     }
 };
 
@@ -358,15 +355,11 @@ const addSpeciesRelationship = async (type, traits) => {
                 if(querySnapshot.empty) {
                     trait.name = name;
                     speciesTraitsRef = await db.collection(`traits_en`).add(trait);
-                    console.log(speciesTraitsRef);
                 } else {
                     querySnapshot.forEach(function(doc) {
                         speciesTraitsRef = doc.ref;
-                        console.log(speciesTraitsRef);
                     });
                 }
-
-                console.log(speciesTraitsRef);
 
                 speciesTraitsRef.update({
                     [type]: firebase.firestore.FieldValue.arrayUnion(trait.update)
@@ -376,14 +369,15 @@ const addSpeciesRelationship = async (type, traits) => {
 
         await readyBatch();
 
-        console.log('is batch ready');
+        log('addSpeciesRelationship, batch is ready');
 
         await batch.commit();
 
         return 'Relationship added.';
 
     } catch (e) {
-        return e.message;
+      logAPIError(e, 'addSpeciesRelationship');
+      return e.message;
     }
 
 };
@@ -398,14 +392,13 @@ const addPhotos = async (name, photos) => {
         speciesDocRef = doc.ref;
     });
 
-    console.log(speciesDocRef);
-
     try {
         return speciesDocRef.update({
             images: firebase.firestore.FieldValue.arrayUnion(...photos)
         });
     } catch (e) {
-        return e.message;
+      logAPIError(e, 'addPhotos');
+      return e.message;
     }
 
 };
@@ -420,10 +413,9 @@ const deleteSpeciesTraitField = async (name, field) => {
       
           querySnapshot.forEach(function(doc) {
               speciesTraitsRef = doc.ref;
-            //   console.log(doc.data())
           });
-        } catch(err) {
-            console.error("Error writing document: ", err);
+        } catch(e) {
+          logAPIError(e, 'deleteSpeciesTraitField unable to obtain reference to species trait');
         }
       
         var removeField = speciesTraitsRef.update({
@@ -432,8 +424,8 @@ const deleteSpeciesTraitField = async (name, field) => {
   
         return removeField;
 
-      } catch(err) {
-        console.error("Error writing document: ", err);
+      } catch(e) {
+        logAPIError(e, 'deleteSpeciesTraitField');
     }    
   };
 
@@ -486,8 +478,8 @@ const addTaxon = async props => {
     try {
         docRef = await db.collection(`taxa_en`).add(taxon);
         return 'Taxon saved.';
-    } catch(error) {
-        console.error("Error writing document: ", error);
+    } catch(e) {
+      logAPIError(e, 'addTaxon');
     }
   
     return docRef;
@@ -504,10 +496,8 @@ const getSpeciesInParallel = async species => {
             })                    
         }));
 
-    } catch (error) {
-        console.log(`error calling getSpeciesInParallel for species ${sp.name}.`)
-        console.log(`species object ${item}`)
-        console.error('error message: ', error.message);
+    } catch (e) {
+      logAPIError(e, 'getSpeciesInParallel');
     }
 };
 
@@ -521,9 +511,8 @@ const getSpeciesByNameInParallel = async itemNames => {
             })                    
         }));
 
-    } catch (error) {
-        console.log(`${item} problem!!! For ${name}`)
-        console.error(error);
+    } catch (e) {
+      logAPIError(e, 'getSpeciesByNameInParallel');
     }
 };
 
@@ -546,7 +535,7 @@ const addCollection = async (collection, user) => {
 
     const collectionRef = await updateCollection(collection);
 
-    console.log('update collectionRef: ', collectionRef);
+    log('addCollection collectionRef', collectionRef);
 
     if(collectionRef) return;
     
@@ -555,10 +544,10 @@ const addCollection = async (collection, user) => {
     let docRef = null;
   
     try {
-        console.log('addCollection: ', collection);
+        log('addCollection collection', collection);
         docRef = await db.collection('collections').add(collection);
-    } catch(err) {
-        console.error("Error writing document: ", err);
+    } catch(e) {
+      logAPIError(e, 'addCollection');
     }
   
     return docRef;
@@ -581,13 +570,11 @@ const addCollection = async (collection, user) => {
             await docRef.update(collection);
         }
 
-        console.log('update collection doc ref: ', docRef);
-
         return { message: 'Success', success : true };
 
     } catch(e) {
-        
-        return { message: 'Failure', details: e.message, success : false };
+      logAPIError(e, 'updateCollection');
+      return { message: 'Failure', details: e.message, success : false };
     }
 
 };
@@ -608,7 +595,6 @@ const addCollection = async (collection, user) => {
   
     querySnapshot.forEach(doc => {
       docs.push(doc.data());
-      // console.log(doc.data());
     });
   
     return docs;
@@ -624,8 +610,8 @@ const addCollection = async (collection, user) => {
   
     try {
         docRef = await db.collection('questions').add(question);
-    } catch(err) {
-        console.error("Error writing document: ", err);
+    } catch(e) {
+      logAPIError(e, 'getCollectionsWhere');
     }
   
     return docRef;
@@ -645,7 +631,6 @@ const addCollection = async (collection, user) => {
   
     querySnapshot.forEach(doc => {
       docs.push(doc.data());
-      // console.log(doc.data());
     });
   
     return docs;
@@ -661,8 +646,8 @@ const addCollection = async (collection, user) => {
 
         try {
             docRef = await db.collection('glossary').add(definition);
-        } catch(err) {
-            console.error("Error writing document: ", err);
+        } catch(e) {
+          logAPIError(e, 'getQuestionsWhere');
         }
       
         return docRef;        
@@ -718,14 +703,14 @@ const addCollection = async (collection, user) => {
 
         await readyBatch();
 
-        console.log('is batch ready');
+        log('getBatchDefinitionsById: batch is ready');
 
         await batch.commit();
 
         return terms;
 
     } catch (e) {
-        return `error in getBatchDefinitionsById; message: ${e.message}`;
+      logAPIError(e, 'getBatchDefinitionsById');
     }
   }
 
@@ -746,8 +731,6 @@ const addCollection = async (collection, user) => {
     querySnapshot.forEach(function(doc) {
         docRef = doc.ref;
     });
-
-    console.log('updateDefinition: ', docRef);
 
     return await docRef.update(definition);
   };

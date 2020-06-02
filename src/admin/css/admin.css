@@ -92,14 +92,7 @@
   .relationship-card .cols > div:nth-child(1) {
     margin: 0 1rem 0 0;
   }
-  .active-species {
-    display: flex;
-    width: 100%;
-    justify-content: flex-start;
-    font-size: .9rem;
-    padding: .5rem 0 0 0rem;
-    color: var(--snap-text-medium-light);
-  }
+  
   .alert {
       color: rgba(183, 12, 21,.8);
   }
@@ -149,7 +142,8 @@
   }
   .btn {
     font-size: .9rem;;
-    background-color: rgb(87, 97, 99);
+    color: var(--snap-text-light);
+    background-color: var(--snap-collection);
     text-transform: initial;
   }
   .btn:hover, .btn-large:hover, .btn-small:hover {
@@ -269,4 +263,10 @@
     .container {
         max-width: 1400px;
     }
+  }
+
+  /* clashes between materialise versions */
+  .MuiInput-underline:before, .MuiInput-underline:after {
+    border-bottom: none !important;
+    box-shadow: none !important;
   }

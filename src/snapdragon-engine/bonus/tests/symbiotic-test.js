@@ -28,8 +28,6 @@ export const getSymbioticTest = collection => {
         } else { return null; }
     })[0]).filter(ss => ss);
 
-    console.log('symbioticTraits: ', symbioticTraits);
-
     // Not sure where to go with this yet!
     
 }

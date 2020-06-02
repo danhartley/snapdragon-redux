@@ -26,8 +26,6 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
         async function renderLookalikes() {
 
             const readyLookalikesForRendering = async () => {
-                
-                console.log('lookalikes: ', lookalikes);
 
                 species = [ ...lookalikes.map(lookalike => lookalike.lookalike), { name: item.name, description: lookalikes[0].description } ];
 

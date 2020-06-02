@@ -7,6 +7,7 @@ import { enums } from 'ui/helpers/enum-helper';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { lessonStateHelper } from 'ui/screens/lists/lesson-state-helper';
 import { speciesInGuideEditor } from 'ui/create-guide-modal/species-in-guide-editor';
+import { log, logError, logAPIError } from 'ui/helpers/logging-handler';
 
 import spinnerTemplate from 'ui/create-guide-modal/species-search-template.html';
 import speciesSummaryTemplate from 'ui/create-guide-modal/species-summary-template.html';
@@ -25,34 +26,43 @@ export const speciesSearch = createGuide => {
 
     const feedback = document.querySelector('.js-request-feedback');
 
-    let timer = setTimeout(() => {
-        feedback.innerHTML = 'Receiving species data…';
-        timer = setTimeout(() => {
-            feedback.innerHTML = 'Still receiving data…';
-        }, 3500);
+    let count = 0;
+
+    const interval = setInterval(() => {
+      count = count === config.guide.iconicTaxa.length ? 0 : count;
+      feedback.innerHTML = `Fetching ${config.guide.iconicTaxa[count].common} from iNaturalist …`;
+      count++;
     }, 2000);
 
+    const close = modal.querySelector('.js-right .js-arrow-wrapper');
+    const viewGuideIcon = close.querySelector('i');
+          viewGuideIcon.classList.add('snap-inactive');
+
+    const back = modal.querySelector('.js-left .js-arrow-wrapper');
+    const viewTaxaIcon = back.querySelector('i');
+          viewTaxaIcon.classList.add('snap-inactive');
+
     const renderLessonSummary = collection => {
+
+      try {
 
         if(collection && collection.items && collection.items.length === 0) {
             feedback.innerHTML = 'No species were found. Try widening your parameters.';
             return;
         }
 
-        clearTimeout(timer);
+        clearTimeout(interval);
 
         template.innerHTML = speciesSummaryTemplate;
 
         feedback.innerHTML = '';
 
-        collection.taxa = collection.iconicTaxa.map(taxon => taxon.common).join(', ');
+        collection.taxa = collection.guide.iconicTaxa.map(taxon => taxon.common).join(', ');
         
         renderTemplate({ collection }, template.content, feedback);
 
         const icon = modal.querySelector('.icon i');
               icon.classList.remove('slow-spin');
-
-        const close = modal.querySelector('.js-right .js-arrow-wrapper');
 
         setTimeout(() => {
             close.addEventListener('click', e => {
@@ -80,7 +90,7 @@ export const speciesSearch = createGuide => {
             });   
         });
 
-        title.innerHTML = 'New collection species.';
+        title.innerHTML = 'New collection species';
 
         const editSpecies = modal.querySelector('.js-edit-species');
               editSpecies.addEventListener('click', e => {
@@ -108,6 +118,13 @@ export const speciesSearch = createGuide => {
                           
                       });
               });
+
+        viewGuideIcon.classList.remove('snap-inactive');
+        viewTaxaIcon.classList.remove('snap-inactive');
+
+        } catch(e) {
+          logError(renderLessonSummary, e);
+        }
     };
 
     const initLesson = async collectionToLoad => {
@@ -121,12 +138,13 @@ export const speciesSearch = createGuide => {
             requestType: enums.lessonState.GET_LESSON_PROGRESS,
             requestArgs: {
                 collectionToLoad,
-                updatedCounter: counter
+                updatedCounter: counter,
+                guide: createGuide.getConfig().guide
             }
         });
         
         const collection = lesson.collection;
-              collection.iconicTaxa = collection.iconicTaxa.filter(taxon => R.contains(taxon.id, config.guide.iconicTaxa));
+              collection.guide = config.guide;
               collection.isPrivate = true;
         
         renderLessonSummary(collection);
@@ -158,7 +176,7 @@ export const speciesSearch = createGuide => {
 
         unsubscribe = listenToInatRequests(callback);
     };
-
+    
     config.guide.guideType = option;
 
     switch(option) {
@@ -168,8 +186,9 @@ export const speciesSearch = createGuide => {
                 ...collections.find(c => c.guideType === option),                
                 name: config.guide.place.name,
                 taxa: config.guide.iconicTaxa.map(i => i.common).join(', '),
-                iconicTaxa: config.guide.iconicTaxa,
-                id: collections.length + 10000,
+                guide: config.guide,
+                language: config.language,
+                id: collections.length + 100010, // hack to avoid clashes with existing lessons
             });
             break;
 
@@ -222,5 +241,5 @@ export const speciesSearch = createGuide => {
     }
 
    const title = modal.querySelector('.js-options');
-         title.innerHTML = 'Requesting species images and traits.';
+         title.innerHTML = 'Requesting species images and traits';
 };

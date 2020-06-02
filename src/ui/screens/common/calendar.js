@@ -14,8 +14,6 @@ export const renderCalendar = async (parent, item, config) => {
 
     const place = await getPlace(config);
 
-    console.log('place:', place)
-
     const country = place.country.place_name_en || place.country;
 
     const places = await getInatPlaceId(country);

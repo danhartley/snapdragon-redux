@@ -6,6 +6,7 @@ import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
 import { speciesPicker, taxonPicker } from 'admin/screens/taxa-pickers';
 import { renderAddTrait } from 'admin/screens/add-trait';
+import { log, logError } from 'ui/helpers/logging-handler';
 
 import addTraitsTemplate from 'admin/screens/add-traits-template.html';
 import addTraitsFieldsTemplate from 'admin/screens/add-traits-fields-template.html';
@@ -124,7 +125,7 @@ const addTraits = () => {
 
     const addTraitParent = document.querySelector('.js-add-trait');
 
-    const callback = async pair => {
+    const renderTraitCallback = async pair => {
         
         let trait = {};
               
@@ -151,7 +152,7 @@ const addTraits = () => {
         const log = await firestore.addTraits(item.name, update, collection);
 
         renderTraits(item);
-        renderAddTrait(addTraitParent, callback);
+        renderAddTrait(addTraitParent, renderTraitCallback);
 
         const savedText = document.querySelector('.js-saved');
         savedText.classList.remove('hide');
@@ -164,7 +165,7 @@ const addTraits = () => {
         }, 5000);
     };
 
-    renderAddTrait(addTraitParent, callback);
+    renderAddTrait(addTraitParent, renderTraitCallback);
 
     const inputSpecies = document.querySelector('#input-species-for-traits');
           inputSpecies.focus();
@@ -206,8 +207,7 @@ const addTraits = () => {
                         try {
                             value.push(_obj.toLowerCase());
                         } catch (e) {
-                            console.log("_key", _key);
-                            console.log("_obj", _obj);
+                            logError(renderTraitCallback, e);
                         }
                     }
                 }
@@ -221,7 +221,7 @@ const addTraits = () => {
 
         M.updateTextFields();
 
-        console.log(traits);
+        log('renderTraitCallback traits', traits);
 
         addFieldListeners(traits);
     };

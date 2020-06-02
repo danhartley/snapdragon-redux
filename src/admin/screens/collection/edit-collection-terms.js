@@ -39,9 +39,7 @@ export const editCollectionTerms = () => {
         collectionPicker(inputCollection, async selectedCollection => {
             collection = selectedCollection;
             inputTerm.focus();
-            getCollectionTerms(collection);
-            window.snapdragon.collection = selectedCollection;
-            console.log(window.snapdragon.collection);
+            getCollectionTerms(collection);          
         });        
 
         let glossary = await firestore.getDefinitionsByTaxa(['common', 'plantae', 'aves', 'fungi', 'insecta']);

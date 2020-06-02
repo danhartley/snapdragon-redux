@@ -35,8 +35,6 @@ export const editCollectionVideo = () => {
         collectionPicker(inputCollection, async selectedCollection => {
             collection = selectedCollection;
             editCollectionHandler.collectionPickedHandler(selectedCollection, 'VIDEO');
-            window.snapdragon.collection = selectedCollection;
-            console.log(window.snapdragon.collection);            
         });
 
         const addSpeciesHandler = async speciesName => {

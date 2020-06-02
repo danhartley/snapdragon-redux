@@ -19,8 +19,6 @@ export const renderBadge = (badge, item, config) => {
         return r;
     }, Object.create(null));
 
-    console.log(languageNames);
-
     const occurrences = names.length;
 
     const template = document.createElement('template');

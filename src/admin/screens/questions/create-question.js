@@ -128,10 +128,8 @@ export const createQuestion = (collection, activeSpecies, parent = null) => {
         const btnCreateQuestion = document.querySelector('.btnCreateQuestion');
               btnCreateQuestion.addEventListener('click', async e => {
                 const question = getQuestion();
-                console.log('question: ', question);
                 const questionDocRef = await firestore.addQuestion(question);
                 if(questionDocRef) {
-                    console.log('questionDocRef: ', questionDocRef);                    
                 }   
                 collection.species.forEach(species => {
                     if(species.name === activeSpecies.name) {
@@ -139,7 +137,6 @@ export const createQuestion = (collection, activeSpecies, parent = null) => {
                         species.questions.push(question);
                     }
                 });
-                console.log('collection: ', collection);
                 const collectionDocRef = await firestore.updateCollection(collection);
               });
     };

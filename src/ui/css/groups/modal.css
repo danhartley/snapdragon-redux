@@ -164,11 +164,11 @@
   width: 100%;
 }
 
-#cardModal .carousel-inner {
+/* #cardModal .carousel-inner {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 #cardModal .prev, #cardModal .next {
     display: flex;

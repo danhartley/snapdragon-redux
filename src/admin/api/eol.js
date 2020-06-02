@@ -42,9 +42,7 @@ const getSpecies = async (id, selectedLicence) => {
 }
 
 const getSpeciesPhotos = async (id, selectedLicence) => {
-    console.log('eol: getSpeciesPhotos');
     const item = await helpers.parseSpeciesData(eol.getSpeciesUrl({id}, selectedLicence));
-    console.log('item: ', item);
     return item.images;
 };
 

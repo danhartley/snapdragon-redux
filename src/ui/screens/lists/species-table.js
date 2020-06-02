@@ -1,13 +1,15 @@
-import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handler';
 import { iconicTaxa, matchIcon } from 'api/snapdragon/iconic-taxa';
+import { log, logError } from 'ui/helpers/logging-handler';
 
 import speciesTemplate from 'ui/screens/lists/species-table-template.html';
 
 export const buildTable = (collection, args) => {
+
+  try {
 
     const { config, enums, overrideParent } = args;
 
@@ -112,10 +114,11 @@ export const buildTable = (collection, args) => {
     let parent = config.isPortraitMode
             ? overrideParent
             : document.querySelector(`.js-species-container[data-container-id="${collection.id}"]`);
+        parent.innerHTML = '';
 
     renderTemplate({ id: collection.id, itemImages }, template.content, parent);
 
-    const table = document.getElementById(`species_list_id_${collection.id}`);
+    const table = parent.querySelector(`table#species_list_id_${collection.id}`);
 
     const keyTraits = table.querySelectorAll('.js-key-trait-link');
 
@@ -188,4 +191,11 @@ export const buildTable = (collection, args) => {
     const sortableCalback = () => {};
 
     utils.makeSortable(document, sortableCalback, wide);
+
+    return new Promise(resolve => resolve({isReady: true}));
+
+  } catch(e) {
+    logError('buildTable', e);
+    return new Promise(resolve => resolve({isReady: false}));
+  }
 }

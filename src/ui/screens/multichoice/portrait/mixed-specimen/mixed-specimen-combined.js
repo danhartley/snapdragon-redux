@@ -50,7 +50,7 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
         parent = document.querySelector('.js-test-card-container-images');
 
         if(images.length === 0) {
-            console.log(collection);
+            
         }    
 
         imageSlider({ config, images: utils.shuffleArray(images), parent, identifier: 'mixed-specimens' });

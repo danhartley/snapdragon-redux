@@ -16,11 +16,9 @@
     </div>
 </div>
 
-<div></div>
-
-<div class="filter-options">            
-    <div class="modal-subheader">Find species observed now, or at any time.</div>
-    <div class="season snap-switch margin-top">
+<div class="margin-top filter-options">            
+    <div class="modal-subheader">Species by season</div>
+    <div class="season snap-switch margin-top margin-bottom">
         <div class="embedded-switch">
             <div class="txt-left"><span>{{ observableMonths }}</span></div>
             <div class="snap-switch-slider left js-snap-switch-slider">
@@ -28,5 +26,11 @@
             </div>
             <div class="txt-right"><span>All Year</span></div>
         </div>
-    </div>        
+    </div>    
+    <div class="modal-subheader margin-top">Species by observation count</div>
+    <div class="margin-top margin-bottom">
+      <span>
+        Top <input min="1" max="500" required class="medium half-margin-right js-location-no-of-records" type="number" value="{{ noOfRecords }}"> most observed.
+      </span>
+    </div>
 </div>

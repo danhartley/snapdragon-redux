@@ -152,7 +152,7 @@ const renderCommonParts = (template, config, item, collection, mode, parent, roo
     
     renderTemplate({ name: item.name, vernacularName: item.vernacularName, image, iconicTaxon: item.iconicTaxon }, template.content, parent, clone);
     
-    renderTaxaBox(rootNode.querySelector('.js-taxa-box'), { item, familyName: item.taxonomy.family, familyVernacularName: item.family.vernacularName });
+    renderTaxaBox(rootNode.querySelector('.js-taxa-box'), { item, familyName: item.taxonomy.family, familyVernacularName: item.family.vernacularName || '' });
 
     infoSlider(item, rootNode.querySelector('.js-info-box'), mode);
 

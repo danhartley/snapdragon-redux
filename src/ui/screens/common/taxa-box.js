@@ -10,7 +10,7 @@ export const renderTaxaBox = async (parent, taxaBoxArgs) => {
 
     parent.innerHTML = '';
 
-    const { item, familyName, familyVernacularName } = taxaBoxArgs;
+    let { item, familyName, familyVernacularName } = taxaBoxArgs;
 
     const options = [
         { name: enums.name.RANK, formatter: trait => `UK # ${trait[0]}` },

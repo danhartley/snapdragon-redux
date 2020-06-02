@@ -1,4 +1,5 @@
 import { actions } from 'redux/actions/action-creators';
+import { log, logError } from 'ui/helpers/logging-handler';
 
 const onSpeciesTimeMatchListeners = [];
 const onNoteTimeMatchListeners = [];
@@ -6,7 +7,6 @@ const onNoteTimeMatchListeners = [];
 const onSpeciesTimeMatch = listener => {    
     while(onSpeciesTimeMatchListeners.length > 0) {
         onSpeciesTimeMatchListeners.pop();
-        console.log('onSpeciesTimeMatchListeners length:', onSpeciesTimeMatchListeners.length);
     }
     onSpeciesTimeMatchListeners.push(listener);
 };
@@ -16,7 +16,6 @@ const onNoteTimeMatch = listener => {
         onNoteTimeMatchListeners.pop();
     }
     onNoteTimeMatchListeners.push(listener);
-    console.log('onNoteTimeMatchListeners length:', onNoteTimeMatchListeners.length);
 };
 
 const onSpeciesPlayRequestListeners = [];
@@ -101,8 +100,6 @@ const setVideoState = (videoPlayer, lesson) => {
 
 const isVideoPlayerReady = videoId => {
     if(isPlayerReady) {
-        console.log('video player: ', player);
-        console.log('video url: ', player.getVideoUrl());
         const doIdsMatch = videoId === player.getVideoData().video_id;
         return isPlayerReady && doIdsMatch;
     } else {
@@ -121,7 +118,7 @@ const destroyPlayer = () => {
     }
 
     if (!player) {
-        console.log("Player could not be found.");
+
       } else {
         player.stopVideo();
         player.destroy();

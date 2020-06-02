@@ -181,14 +181,10 @@ const hideOtherContentAndRevertChevrons = selectedLessonId => {
 
   const upChevrons = Array.from(document.querySelectorAll('.js-lesson-list-chevron .fa-chevron-up'));
 
-  console.log('new lesson id: ', selectedLessonId)
-
   upChevrons.forEach(chevron => {
     
     const chevronLessonId = parseInt(chevron.dataset.lessonId);
 
-    console.log('previous lesson id: ', chevronLessonId)
-    
     if(chevronLessonId !== selectedLessonId) {
       
       chevron.click();

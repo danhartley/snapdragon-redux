@@ -1,4 +1,5 @@
 import { utils } from 'utils/utils';
+import { log, logError } from 'ui/helpers/logging-handler';
 
 const getHTML5Location = () => {
 
@@ -7,8 +8,8 @@ const getHTML5Location = () => {
       resolve([position.coords.latitude, position.coords.longitude]);
     }
 
-    function error(err) {
-      console.warn(`ERROR(${err.code}): ${err.message}`);
+    function error(e) {
+      logError('getHTML5Location', e);
       resolve({
         '0': 0,
         '1': 0,
@@ -21,12 +22,12 @@ const getHTML5Location = () => {
 
 export const getLocation = (config) => {
   if(!!config.coordinates && config.coordinates.lat && config.coordinates.long) {
-    console.log('geolocation config: ',config);
+    log('geolocation config',config);
     return new Promise(resolve => {
         resolve(config.coordinates);
     });
   } else {
-    console.log('geolocation config: ', config);
+    log('geolocation config', config);
     return getHTML5Location();
   }  
 };
@@ -76,7 +77,7 @@ export const getPlace = async (config, force = false) => {
     const json = await response;    
     return await json;
   } else {    
-    console.log('get place config: ', config);
+    log('getPlace config', config);
     const coordinates = await getLocation(config);        
     const latitude = coordinates['0'] || coordinates.lat;
     const longitude = coordinates['1'] || coordinates.long;
@@ -108,7 +109,6 @@ const LocationLookup = async ip => {
   const url = `https://api.ipgeolocation.io/ipgeo?apiKey=${ACCESS_KEY}&ip=${ip}&fields=city,state_prov,country_name,latitude,longitude&output=json`;
   const response = await fetch(url);
   const json = await response.json();
-  // console.log('location lookup:', json);
   const { city, state_prov, country_name, latitude, longitude } = await json; 
   return { city, state_prov, country_name, latitude, longitude };
 }
@@ -234,13 +234,11 @@ export const GoogleAutocomplete = (place, callback) => {
   };
 
   if(requireNewSession) {
-    // console.log('new session');
     SESSION_TOKEN = new google.maps.places.AutocompleteSessionToken();
     getPredictions(SESSION_TOKEN);
     current_term = place;
     requireNewSession = false; //or on expires/error, get a new one
   } else {
-    // console.log('place:', place);
     if(place !== current_term) {
       getPredictions(SESSION_TOKEN);
     }

@@ -1,16 +1,6 @@
 import { firestore } from 'api/firebase/firestore';
 import { itemProperties } from 'ui/helpers/data-checking';
 
-const activeSpeciesListeners = [];
-const activeTaxonListeners = [];
-
-export const listenForActiveSpecies = listener => {
-    activeSpeciesListeners.push(listener);
-};
-export const listenForTaxonSelection = listener => {
-    activeTaxonListeners.push(listener);
-};
-
 export const speciesPicker = async (input, listener) => {
 
     let speciesNames = [];
@@ -32,22 +22,20 @@ export const speciesPicker = async (input, listener) => {
         if(e.keyCode == 13) {
             const species = await firestore.getSpeciesByName(input.value);
             listener(species);
-            activeSpeciesListeners.forEach(l => l(species));
-            updateActiveSpecies(species);
-
+            // updateActiveSpecies(species);  
         }
     });
 };
 
-const updateActiveSpecies = species => {
+// const updateActiveSpecies = species => {
 
-    window.snapdragon.species = species;
+//     window.snapdragon.species = species;
     
-    const activeSpecies = document.querySelector('.js-active-species');    
-          activeSpecies.querySelector('span:nth-child(2)').innerHTML = !!species.vernacularName
-            ? `${species.name} (${species.vernacularName})`
-            : `${species.name} (${itemProperties.getVernacularName(species, { language: 'en'})})`;            
-};
+//     const activeSpecies = document.querySelector('.js-active-species');    
+//           activeSpecies.querySelector('span:nth-child(2)').innerHTML = !!species.vernacularName
+//             ? `${species.name} (${species.vernacularName})`
+//             : `${species.name} (${itemProperties.getVernacularName(species, { language: 'en'})})`;            
+// };
 
 export const taxonPicker = async (input, listener) => {
 
@@ -68,10 +56,8 @@ export const taxonPicker = async (input, listener) => {
 
     input.addEventListener('keyup', async e => {
         if(e.keyCode == 13) {
-            console.log(input.value);
             const taxon = await firestore.getTaxonByName({},input.value);
             listener(taxon);
-            activeSpeciesListeners.forEach(l => l(taxon));   
         }
     });
 };

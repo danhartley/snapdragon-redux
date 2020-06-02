@@ -45,8 +45,7 @@ export const addLookalike = () => {
                     const name = e.target.dataset.name;
                     const description = document.getElementById(name).value;
                     const trait = { update: { description, name } };
-                    const log = firestore.addSpeciesRelationship('lookalikes', [ trait ])
-                    console.log('update lookalike feedback: ', log);
+                    const log = firestore.addSpeciesRelationship('lookalikes', [ trait ]);
                 });
             });
         };

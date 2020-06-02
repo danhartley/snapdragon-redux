@@ -13,8 +13,11 @@ import { videoHandler } from 'ui/screens/lists/video-handler';
 import { videoSetup } from 'ui/screens/home/home-lesson-intro-video';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { onSpeciesChangeHandler, openNoteHandler } from 'ui/screens/lists/species-list-definition-insert';
+import { log, logError } from 'ui/helpers/logging-handler';
 
 export const renderSpeciesList = (lesson, args) => {
+
+  const init = async () => {
 
     const { callingParentContainer, isInCarousel = false } = args;
 
@@ -163,10 +166,13 @@ export const renderSpeciesList = (lesson, args) => {
         collection.notes = utils.sortBy(collection.notes, 'firstTime', 'asc');
     }
 
-    buildTable(collection, { config, enums: traitEnums, overrideParent: callingParentContainer });
+    const table = await buildTable(collection, { config, enums: traitEnums, overrideParent: callingParentContainer });
+
+    if(!table.isReady) return;
+
     userClickHandlers();
 
-    const btnBeginLesson = document.querySelector('.js-btn-current-lesson-begin');
+    const btnBeginLesson = callingParentContainer.querySelector('.js-btn-current-lesson-begin');
           btnBeginLesson.addEventListener('click', () => {
             lessonStateHandler.changeRequest({
                 requestType: enums.lessonState.BEGIN_OR_RESUME_LESSON,
@@ -241,13 +247,11 @@ export const renderSpeciesList = (lesson, args) => {
                 }
             }
         } catch(e) {
-          console.log('error:', e.message);
+          logError(openSpeciesDescriptionHandler, e);
         }
     };
 
     videoHandler.onSpeciesTimeMatch((collection, species) => {
-
-      console.log('species time match')
 
         openSpeciesDescriptionHandler(collection, species);
         updateVideoPlayer(collection, species);
@@ -257,6 +261,9 @@ export const renderSpeciesList = (lesson, args) => {
     videoHandler.onNoteTimeMatch((collection, note) => {        
         openNoteHandler(note, videoHandler.getPlayerTime());
     });
+  };
+
+  init();
 };
 
 let currentIndex = 0;
@@ -321,7 +328,7 @@ const updateVideoPlayer = (collection, species) => {
     activeLesson.speciesName = species.name;
     activeLesson.pausedAt = species.time ? species.time[0] : 0;
 
-    videoHandler.saveVideoState(playerRecords);
+    videoHandler.saveVideoState(playerRecords);    
 };
 
 const closeOpenAccordions = speciesName => {

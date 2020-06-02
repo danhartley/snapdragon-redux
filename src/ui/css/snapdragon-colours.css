@@ -75,4 +75,8 @@
     --snap-inat: rgb(127, 151, 122);
 
     --snap-youtube-green: rgb(52, 105, 23);
+
+    --snap-button-light: #576163; 
+    --snap-button-main: #3c4345; 
+    --snap-button-dark: #788082; 
   }

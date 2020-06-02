@@ -5,7 +5,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     devServer: {
-        host: '0.0.0.0',
+        host: 'localhost',
         disableHostCheck: true
     },
     entry: {
@@ -38,11 +38,21 @@ module.exports = {
               'sass-loader',
             ],
           },
-          {
+          {              
               test: /\.js$/,
               exclude: /node_modules/,
               use: {
-                loader: "babel-loader"
+                loader: "babel-loader",
+                options: {
+                  presets: ['@babel/preset-env', '@babel/preset-react'],
+                  plugins: [
+                    "@babel/plugin-proposal-class-properties",
+                    "@babel/plugin-proposal-object-rest-spread",
+                    "@babel/plugin-transform-react-jsx-source",
+                    "@babel/plugin-transform-react-jsx-self",
+                    "@babel/plugin-proposal-json-strings"
+                  ]
+                }
               }
           },
           {
@@ -99,5 +109,5 @@ module.exports = {
           }),
         ],
       },
-    // devtool: "source-map"
+    devtool: "source-map"
 };

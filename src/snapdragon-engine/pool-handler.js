@@ -31,25 +31,18 @@ export const getPoolItems = async (collection, poolSize = 5) => {
   const isException = item.iconicTaxon.toLowerCase() === 'reptilia' || item.iconicTaxon.toLowerCase() === 'amphibia';
   
   if(!speciesPool) {
-    console.log('!speciesPool');
     getPoolItems(collection);
   }
 
   // if not enough, only get the additional necessary number (but duplicates???)
 
   else if(speciesPool.length < poolSize && !isException) {
-    console.log('speciesPool.length < poolSize');
     getPoolItems(collection);
   } 
   else {
 
     const items = R.take(poolSize, speciesPool);
-
-    console.log('poolSize: ', poolSize);
-    console.log('speciesPool: ', speciesPool);
-    console.log('pool items from getPoolItems: ', items);
-    console.log('\x1b[32m', '------------------------------------------');
-  
+    
     items.push(item);
   
     return await items;

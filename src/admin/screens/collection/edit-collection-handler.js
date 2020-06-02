@@ -1,5 +1,4 @@
 import { firestore } from 'api/firebase/firestore';
-import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderQuestionTabs } from 'admin/screens/questions/questions-tabs';
 import { collectionHandler  } from 'ui/helpers/collection-handler';
@@ -36,8 +35,6 @@ const addSpeciesClickHandler = (link, collection, optionsParent, origin) => {
 
     return link.addEventListener('click', async (e) => {
 
-      // optionsParent.classList.remove('hide');
-
         const speciesName = e.target.getAttribute('name');
 
         if(!speciesName) return;
@@ -52,14 +49,8 @@ const addSpeciesClickHandler = (link, collection, optionsParent, origin) => {
                 createVideoDescription(collection, species);
             default:
         }
-        
-        
+                
         window.snapdragon.species = species;
-
-        const activeSpecies = document.querySelector('.js-active-species span:nth-child(2)');
-              activeSpecies.innerHTML = !!species.vernacularName
-                ? `${species.name} (${species.vernacularName})`
-                : `${species.name} (${itemProperties.getVernacularName(species, { language: 'en'})})`;
     });
 };
 

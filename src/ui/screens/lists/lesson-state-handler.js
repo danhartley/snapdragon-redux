@@ -15,9 +15,6 @@ const changeRequest = async args => {
 
   const { config, collection, collections, counter } = store.getState();
 
-  // console.log('requestType: ', requestType);
-  // console.log('requestArgs: ', requestArgs);
-
   switch(requestType) {
 
     case enums.lessonState.PAUSE_LESSON:
@@ -34,8 +31,8 @@ const changeRequest = async args => {
     break;
     
     case enums.lessonState.GET_LESSON_PROGRESS:
-      const { collectionToLoad, updatedCounter} = requestArgs;
-      return await getUserLessonProgressState(collectionToLoad, config, collections, updatedCounter);
+      const { collectionToLoad, updatedCounter, guide } = requestArgs;
+      return await getUserLessonProgressState(collectionToLoad, { ...config, guide }, collections, updatedCounter);
     
     case enums.lessonState.ADD_SPECIES_TO_COLLECTION:
       return await addExtraSpeciesSelection(requestArgs);

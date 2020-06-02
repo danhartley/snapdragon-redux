@@ -50,8 +50,6 @@ export const videoSetup = (collection, videoPlayer, parent, startTime) => {
 
             const playerState = player.getPlayerState();
 
-            console.log('player.getPlayerState():', playerState);
-
             switch(playerState) {
                 case videoHandler.states.find(state => state.value === 'playing').key: // 1
                     checkCurrentTime(player);

@@ -26,10 +26,9 @@ export const renderLocation = (modal, createGuide) => {
 
         const months = config.guide.season.observableMonths.map(month => month.name);
         const observableMonths = `${months[0]}-${months[months.length - 1]}`;
+        const defaultNoOfRecords = config.guide.noOfRecords;
 
-        renderTemplate({ observableMonths }, template.content, parent);
-
-        
+        renderTemplate({ observableMonths, noOfRecords: defaultNoOfRecords }, template.content, parent);
     }
 
     const defaultLocationTxt = 'Use your current location';
@@ -151,6 +150,13 @@ export const renderLocation = (modal, createGuide) => {
     const position = config.guide.season.type === 'months' ? 'left' : 'right';
 
     switchHandler(idSwitch, position, switchCallback);
+
+    const noOfRecords = document.querySelector('.js-location-no-of-records');
+          noOfRecords.addEventListener('change', e => {
+            const config = createGuide.getConfig();
+                  config.guide.noOfRecords = parseInt(noOfRecords.value);
+            createGuide.setConfig(config);
+          });
 }
 
 const saveLocation = (config, locationPlaceInput, locationPlace, createGuide) => {
