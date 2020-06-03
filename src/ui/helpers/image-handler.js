@@ -3,15 +3,21 @@ import * as R from 'ramda';
 import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { imageSlider } from 'ui/screens/common/image-slider';
+import { log, logError } from 'ui/helpers/logging-handler';
 
-const stripImageUrlOfScaleAndPrefix = img => {
+const stripImageUrlOfScaleAndPrefix = img => {  
     const prefix = img.provider === 'inat' ? 'https://static.inaturalist.org/photos/' : 'https://content.eol.org/data/media/';
     if(!img.url || typeof img.url === 'object') return '';
-    let url = img.url.replace('.260x190.jpg', '');
-        url = url.replace('.98x68.jpg', '');
-        url = url.replace('.jpg', '');
-        url = url.replace(prefix, '');
-    return url;
+    let part = img.url.replace('.260x190.jpg', '');
+        part = part.replace('.98x68.jpg', '');
+        part = part.replace('.jpg', '');
+        part = part.replace(prefix, '');
+
+    if(img.provider === 'inat') {
+      part = part.split('?')[0];
+    }
+
+    return part;
 };
 
 export const imageUseCases = {
@@ -75,19 +81,19 @@ export const scaleImage = image => {
         return image;
     }
 
-    image.url = stripImageUrlOfScaleAndPrefix(image);
+    image.part = stripImageUrlOfScaleAndPrefix(image);
 
     if(image.provider === 'inat') {
-        image.small = `https://static.inaturalist.org/photos/${image.url}`;
-        image.medium = image.url.replace('small', 'medium');
-        image.medium = `https://static.inaturalist.org/photos/${image.url}`;
-        image.large = image.url.replace('small', 'large');
+        image.small = `https://static.inaturalist.org/photos/${image.part}`;
+        image.medium = image.part.replace('small', 'medium');
+        image.medium = `https://static.inaturalist.org/photos/${image.medium}`;
+        image.large = image.part.replace('small', 'large');
         image.large = `https://static.inaturalist.org/photos/${image.large}`;
         return image;
     } else {
-        image.small = `https://content.eol.org/data/media/${image.url}.98x68.jpg`;
-        image.medium = `https://content.eol.org/data/media/${image.url}.260x190.jpg`;
-        image.large = `https://content.eol.org/data/media/${image.url}.jpg`;
+        image.small = `https://content.eol.org/data/media/${image.part}.98x68.jpg`;
+        image.medium = `https://content.eol.org/data/media/${image.part}.260x190.jpg`;
+        image.large = `https://content.eol.org/data/media/${image.part}.jpg`;
         return image;
     }
     

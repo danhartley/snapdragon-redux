@@ -9,6 +9,7 @@ import { scoreHandler, bindScore } from 'ui/helpers//score-handler';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handler';
 import { getPoolItems } from 'snapdragon-engine/pool-handler';
+import { log, logError } from 'ui/helpers/logging-handler';
 
 import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-combined-template.html';
 
@@ -48,10 +49,6 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
         renderTemplate({}, template.content, parent);
 
         parent = document.querySelector('.js-test-card-container-images');
-
-        if(images.length === 0) {
-            
-        }    
 
         imageSlider({ config, images: utils.shuffleArray(images), parent, identifier: 'mixed-specimens' });
 
@@ -117,5 +114,9 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
         });
     };
 
-    init();
+    try {
+      init();
+    } catch(e) {
+      logError('renderMixedSpecimenImagesAndQuestion init', e);
+    }
 };
