@@ -5,7 +5,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     devServer: {
-        host: 'localhost',
+        host: '0.0.0.0',
         disableHostCheck: true
     },
     entry: {

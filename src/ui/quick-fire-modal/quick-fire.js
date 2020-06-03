@@ -187,8 +187,6 @@ const questions = state => {
 
     quickFire.onClickGlossaryLinkListeners = [];
 
-    actions.boundUpdateQuickFire(quickFire);
-
     headers(enums.quickFireStep.QUESTIONS, quickFire);
 
     const { template, modal, parent } = quickFireUI.readyTemplate(templateQuestionQuickFire);
@@ -228,7 +226,7 @@ const questions = state => {
                             option.classList.add('snap-success');
                         }
                     });
-                    continueQuickFireBtn.disabled = false;
+                    // continueQuickFireBtn.disabled = false;
                     timer = setTimeout(() => {
                         continueQuickFireBtn.click();
                     }, store.getState().config.callbackTime);

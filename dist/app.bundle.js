@@ -75543,8 +75543,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var cleanAndReturnIncomingState = function cleanAndReturnIncomingState(state) {
   var quickFire = state;
-  delete quickFire.onClickFiltersLinkListeners;
-  delete quickFire.onClickGlossaryLinkListeners;
+  if (quickFire.onClickFiltersLinkListeners) delete quickFire.onClickFiltersLinkListeners;
+  if (quickFire.onClickGlossaryLinkListeners) delete quickFire.onClickGlossaryLinkListeners;
   return quickFire;
 };
 
@@ -80511,7 +80511,7 @@ var speciesSearch = function speciesSearch(createGuide) {
 /***/ (function(module, exports) {
 
 // Module
-var code = "<div class=\"lesson-list-item one-and-half-standard-block vertical-evenly-spaced-block\">\n    <div class=\"lesson-name\" id=\"js-collection-name\">\n        <span>{{ collection.name }}</span>\n    </div>\n    <div class=\"lesson-name hide-important\" id=\"js-input-collection-name\">\n        <input type=\"text\" value=\"{{ collection.name }}\">\n    </div>\n    <div class=\"lesson-taxa\"><span class=\"js-lesson-taxa-count\">{{ collection.items.length }}</span> <span class=\"js-lesson-taxa\">{{ collection.taxa }}</span></div>\n</div>\n<div class=\"edit-species centred-block half-standard-block js-edit-species\">\n    <span class=\"underline-link\">Edit species</span>\n</div>\n\n<div class=\"selected-species-container\">\n    <div class=\"scrollable js-selected-species-container\"></div>\n</div>";
+var code = "<div class=\"lesson-list-item one-and-half-standard-block vertical-evenly-spaced-block\">\n    <div class=\"lesson-name\" id=\"js-collection-name\">\n        <span>{{ collection.name }}</span>\n    </div>\n    <div class=\"lesson-name hide-important\" id=\"js-input-collection-name\">\n        <input type=\"text\" value=\"{{ collection.name }}\">\n    </div>\n    <div class=\"lesson-taxa\"><span class=\"js-lesson-taxa-count\">{{ collection.items.length }}</span> <span class=\"js-lesson-taxa\">{{ collection.taxa }}</span></div>\n</div>\n<div class=\"edit-species centred-block half-standard-block js-edit-species\">\n    <span class=\"underline-link\">Edit lesson</span>\n</div>\n\n<div class=\"selected-species-container\">\n    <div class=\"scrollable js-selected-species-container\"></div>\n</div>";
 // Exports
 module.exports = code;
 
@@ -85236,7 +85236,6 @@ var questions = function questions(state) {
   var quickFire;
   if (!state) return;else quickFire = ramda__WEBPACK_IMPORTED_MODULE_0__["clone"](state);
   quickFire.onClickGlossaryLinkListeners = [];
-  redux_actions_action_creators__WEBPACK_IMPORTED_MODULE_4__["actions"].boundUpdateQuickFire(quickFire);
   headers(ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_7__["enums"].quickFireStep.QUESTIONS, quickFire);
 
   var _quickFireUI$readyTem2 = ui_quick_fire_modal_quick_fire_ui__WEBPACK_IMPORTED_MODULE_10__["quickFireUI"].readyTemplate(ui_quick_fire_modal_quick_fire_questions_template_html__WEBPACK_IMPORTED_MODULE_14___default.a),
@@ -85277,8 +85276,8 @@ var questions = function questions(state) {
           if (option.id === quickFire.question.term) {
             option.classList.add('snap-success');
           }
-        });
-        continueQuickFireBtn.disabled = false;
+        }); // continueQuickFireBtn.disabled = false;
+
         timer = setTimeout(function () {
           continueQuickFireBtn.click();
         }, redux_store__WEBPACK_IMPORTED_MODULE_1__["store"].getState().config.callbackTime);
