@@ -10,6 +10,7 @@ import { DOM } from 'ui/dom';
 import { iconicTaxa, matchIcon } from 'api/snapdragon/iconic-taxa';
 import { renderTemplate } from 'ui/helpers/templating';
 import { getPoolItems } from 'snapdragon-engine/pool-handler';
+import { log, logError } from 'ui/helpers/logging-handler';
 
 import specimensTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images-template.html';
 
@@ -69,6 +70,8 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
 
         parent.innerHTML = '';
 
+        log('renderSpecimenImages', images);
+        
         renderTemplate({ images }, template.content, parent);
 
         setTimeout(() => {

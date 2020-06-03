@@ -3,8 +3,8 @@ import { types } from 'redux/actions/action-types';
 
 const cleanAndReturnIncomingState = state => {
     const quickFire = state;
-    delete quickFire.onClickFiltersLinkListeners;
-    delete quickFire.onClickGlossaryLinkListeners;
+    if(quickFire.onClickFiltersLinkListeners) delete quickFire.onClickFiltersLinkListeners;
+    if(quickFire.onClickGlossaryLinkListeners) delete quickFire.onClickGlossaryLinkListeners;
     return quickFire;
 };
 

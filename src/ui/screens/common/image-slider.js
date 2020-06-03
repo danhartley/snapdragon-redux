@@ -1,6 +1,7 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import { scaleImage, imageMatch, imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handler';
 import { handleRightsAttribution } from 'ui/screens/common/rights-attribution';
+import { log, logError } from 'ui/helpers/logging-handler';
 
 import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
 
@@ -55,9 +56,11 @@ export const imageSlider = sliderArgs => {
         img.index = i;
         img.rightsHolder = img.rightsHolder || 'Public domain';
         img.provider = img.provider || 'eol';
-    });
+        img = scaleImage(img);
+    });    
 
     renderTemplate({ images, identifier }, slider.content, parent);
+
     setTimeout(() => {
         selectActiveImage(image || images[0], parent, config);   
     },250);
