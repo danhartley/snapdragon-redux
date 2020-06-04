@@ -1194,7 +1194,7 @@ button:disabled {
 }
 
 .feature-label {
-  color: var(--snap-green-feature-txt);
+  color: var(--snap-text-green);
 }
 
 .lesson-option-headers {

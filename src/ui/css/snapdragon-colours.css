@@ -14,14 +14,15 @@
     --snap-text-medium-dark-hover: rgb(108, 114, 120);
     --snap-text-medium-light:rgb(73, 80, 87);
     --snap-text-light:rgb(245, 245, 245);
-    --snap-green-feature-txt: rgb(16, 66, 28);
+    --snap-text-green: rgb(16, 66, 28);
     
     --snap-portrait: rgb(179, 197, 174);
     --snap-landscape: rgb(185, 200, 204);
     
     --snap-collection: rgb(87, 97, 99);
     --snap-collection-active: rgb(95, 125, 89);    
-    --snap-collection-light: rgb(126, 137, 140);
+    --snap-collection-light: rgb(117, 126, 126);
+    --snap-collection-faint: rgb(240, 242, 235);
     --snap-non-taxa: rgb(165, 159, 131);
 
     --snap-active: rgb(246, 157, 53);

@@ -22,7 +22,6 @@
 
   .modal-subheader {
     font-size: 1.1em;
-    color: var(--snap-text-black);
   }
 
   .modal-guide-progress .steps {
@@ -53,7 +52,7 @@
     grid-template-columns: 1fr 4fr auto 4fr 1fr;
     margin: 0 .5rem;
     height: var(--vhRunningBlock, 10vh);
-    background-color: var(--snap-species-highlight-background);    
+    border: 1px solid var(--snap-border-light);
   }
 
   .modal-guide-navigation > div {
@@ -70,7 +69,7 @@
     pointer-events: none;
     color: var(--snap-text-light);
     background-color: var(--snap-collection-light);
-    height: var(--vhRunningBlock);
+    height: calc(var(--vhRunningBlock) - 2px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -198,6 +197,10 @@
     cursor: pointer;
     width: 100%;
     margin: 0 .25rem;
+  }
+
+  .set-range-input:focus {
+    outline: none;
   }
   
   .modal-guide-body .range-slider.disabled .set-range-input {
