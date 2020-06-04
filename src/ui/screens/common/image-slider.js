@@ -61,23 +61,25 @@ export const imageSlider = sliderArgs => {
 
     renderTemplate({ images, identifier }, slider.content, parent);
 
+    let next = document.querySelector(`#imageSlider_${identifier} .carousel-control-next-icon`);
+    let prev = document.querySelector(`#imageSlider_${identifier} .carousel-control-prev-icon`);
+
+    if(config.isPortraitMode) {        
+        next.classList.add('concealed');
+        prev.classList.add('concealed');
+    }
+
     setTimeout(() => {
-        selectActiveImage(image || images[0], parent, config);   
+        selectActiveImage(image || images[0], parent, config);        
     },250);
+
+    setTimeout(() => {
+      // next.focus();
+    }, 1000);
 
     parentScreen.querySelector(`#imageSlider_${identifier} .carousel-control-prev`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
     parentScreen.querySelector(`#imageSlider_${identifier} .carousel-control-next`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
 
-    let next, prev;
-
-    if(config.isPortraitMode) {
-        next = document.querySelector(`#imageSlider_${identifier} .carousel-control-next-icon`);
-        next.classList.add('concealed');
-
-        prev = document.querySelector(`#imageSlider_${identifier} .carousel-control-prev-icon`);
-        prev.classList.add('concealed');
-    }
-    
     document.addEventListener('swiped-left', function(e) {
         next.click();
     });

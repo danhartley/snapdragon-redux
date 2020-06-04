@@ -64,6 +64,10 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
                 const strips = document.querySelectorAll('.js-rptr-strips .strip');
 
+                setTimeout(() => {                  
+                  // strips[0].focus();
+                }, 1000);
+
                 if(overrides.italicise) strips.forEach(strip => strip.classList.add('binomial'));
 
                 const taxon = { name: item.taxonomy.family, binomial: item.name, question: answer };

@@ -1257,6 +1257,7 @@ button:disabled {
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: all;
 }
 
 .info-box .carousel-item-next, .info-box .carousel-item-prev, .info-box .carousel-item.active {

@@ -6,26 +6,28 @@
         <div>            
             <div class="lesson-name js-lesson-title" data-lesson-id="{{ lesson.id }}">
                 <span data-toggle="modal" data-target="#basicModal" id="lesson_{{ lesson.id }}" class="lesson-title margin-right {{ lesson.isCollectionEditableClass }}">{{ lesson.name }}</span>
-                <span class="hide js-loading-message">
-                    <span><i class="fas fa-sync slow-spin"></i></span>
-                </span>
             </div>
             <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>
             <div class="latin hide-empty js-lesson-video-state" data-lesson-id="{{ lesson.id }}">{{ lesson.videoState }}</div>         
         </div> 
         <div data-lesson-id="{{ lesson.id }}" class="lesson-review js-lesson-review">
-            <div>
-                <span data-toggle="modal" data-target="#lessonModal" data-lesson-id="{{ lesson.id }}" class="landscape underline-link margin-right js-review-link">{{ lesson.reviewState }}</span>
-                <span data-lesson-id="{{ lesson.id }}" class="portrait underline-link margin-right js-review-link">{{ lesson.reviewState }}</span>
-                <span class="hide margin-right js-loading-review-message">
-                    <span class="landscape">(Loading…)</span>
-                    <span class="portrait"><i class="fas fa-sync slow-spin"></i></span>
-                </span>
-                <span data-lesson-id="{{ lesson.id }}" class="js-review"></span>
-
-                <span class="lesson-terms-review js-terms-review-link {{ lesson.hasTermsClass }}" data-toggle="modal" data-target="#glossaryModal">
-                    <span data-lesson-id="{{ lesson.id }}" class="underline-link" data-toggle="modal" data-target="#glossaryModal">Vocab</span>
-                <span>
+            <div class="flex">
+                <div class="centred-block fit-width">
+                  <span class="lesson-terms-review js-terms-review-link {{ lesson.hasTermsClass }} double-margin-right" data-toggle="modal" data-target="#glossaryModal">
+                      <span data-lesson-id="{{ lesson.id }}" class="underline-link" data-toggle="modal" data-target="#glossaryModal">Vocab</span>
+                  <span>
+                </div>
+                <div class="centred-block">
+                  <span data-toggle="modal" data-target="#lessonModal" data-lesson-id="{{ lesson.id }}" class="landscape underline-link margin-right js-review-link">{{ lesson.reviewState }}</span>
+                  <span data-lesson-id="{{ lesson.id }}" class="portrait underline-link margin-right js-review-link">{{ lesson.reviewState }}</span>
+                  <span data-lesson-id="{{ lesson.id }}" class="js-review">
+                  <span>&nbsp;</span>
+                  </span>
+                  <span class="hide margin-right js-loading-review-message">
+                      <span class="landscape">(Loading…)</span>
+                      <span class="portrait"><i class="fas fa-sync slow-spin"></i></span>
+                  </span>                  
+                </div>
             </div>
         </div>
     </div>

@@ -65,6 +65,7 @@ const loadCollection = async (collection, config) => {
         config.collection = { id: collection.id };
         
         if(collection.items.length > 0) {
+          // this point is often reached…
           log(`no collection items in loadCollection, collection: ${collection.name}`);
           return collection;
         };
