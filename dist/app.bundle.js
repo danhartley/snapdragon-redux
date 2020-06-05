@@ -89351,8 +89351,7 @@ var onLoadLessonViewState = function onLoadLessonViewState(collection, videoPlay
   collection.videoState = ui_screens_lists_video_handler__WEBPACK_IMPORTED_MODULE_7__["videoHandler"].setVideoState(videoPlayer || [], collection);
   collection.reviewState = 'Quiz';
   collection.hasTermsClass = !!collection.terms ? '' : 'hide-important';
-  collection.isCollectionEditableClass = ''; // collection.isCollectionEditableClass = !!collection.isPrivate ? 'underline-link' : '';
-
+  collection.isCollectionEditableClass = '';
   return collection;
 };
 
@@ -89454,7 +89453,6 @@ var onLessonIconClickHandler = function onLessonIconClickHandler(icon, lessons, 
                 if (isYoutubeIcon) {
                   if (state.hideSpeciesList) {
                     siblingChevron.innerHTML = "<i class=\"fas fa-chevron-down\" data-lesson-id=\"".concat(lesson.id, "\"></i>");
-                  } else if (!state.revealSpeciesList) {// siblingChevron.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
                   }
                 }
               } else {
@@ -89533,18 +89531,19 @@ var onLessonTitleClickHandler = function onLessonTitleClickHandler(title, lesson
 var onReviewClickHandler = function onReviewClickHandler(reviewLink) {
   reviewLink.addEventListener('click', /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(e) {
-      var loadingMessage, _store$getState, lesson;
+      var lessonId, loadingMessage, _store$getState, lesson;
 
       return regeneratorRuntime.wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
               ui_screens_lists_lesson_state_handler__WEBPACK_IMPORTED_MODULE_8__["lessonStateHandler"].recordUserAction(ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_3__["enums"].userEvent.START_LESSON_REVIEW);
-              loadingMessage = reviewLink.nextElementSibling;
+              lessonId = reviewLink.dataset.lessonId;
+              loadingMessage = document.querySelector(".js-loading-review-message[data-lesson-id=\"".concat(lessonId, "\"]"));
               loadingMessage.classList.remove('hide');
               setTimeout(function () {
                 loadingMessage.classList.add('hide');
-              }, 10000);
+              }, 2000);
               _store$getState = redux_store__WEBPACK_IMPORTED_MODULE_1__["store"].getState(), lesson = _store$getState.lesson;
               ui_screens_lists_lesson_state_handler__WEBPACK_IMPORTED_MODULE_8__["lessonStateHandler"].changeRequest({
                 requestType: ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_3__["enums"].lessonState.BEGIN_OR_RESUME_LESSON,
@@ -89553,7 +89552,7 @@ var onReviewClickHandler = function onReviewClickHandler(reviewLink) {
                 }
               });
 
-            case 6:
+            case 7:
             case "end":
               return _context2.stop();
           }
@@ -89582,7 +89581,7 @@ var hideOtherContentAndRevertChevrons = function hideOtherContentAndRevertChevro
 
 var loadAndDisplaySpeciesList = /*#__PURE__*/function () {
   var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(icon, lesson, container) {
-    var loadingMessage, _store$getState2, userAction, config;
+    var _store$getState2, userAction, config;
 
     return regeneratorRuntime.wrap(function _callee3$(_context3) {
       while (1) {
@@ -89600,10 +89599,10 @@ var loadAndDisplaySpeciesList = /*#__PURE__*/function () {
             return _context3.abrupt("return");
 
           case 3:
-            loadingMessage = icon.parentElement.parentElement.parentElement.querySelector('.js-loading-message');
-            loadingMessage.classList.remove('hide');
+            // const loadingMessage = icon.parentElement.parentElement.parentElement.querySelector('.js-loading-message');
+            //       loadingMessage.classList.remove('hide');
             _store$getState2 = redux_store__WEBPACK_IMPORTED_MODULE_1__["store"].getState(), userAction = _store$getState2.userAction, config = _store$getState2.config;
-            _context3.next = 8;
+            _context3.next = 6;
             return ui_screens_lists_lesson_state_handler__WEBPACK_IMPORTED_MODULE_8__["lessonStateHandler"].changeRequest({
               requestType: ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_3__["enums"].lessonState.RENDER_SPECIES_LIST,
               requestArgs: {
@@ -89612,11 +89611,11 @@ var loadAndDisplaySpeciesList = /*#__PURE__*/function () {
               }
             });
 
-          case 8:
-            loadingMessage.classList.add('hide');
+          case 6:
+            // loadingMessage.classList.add('hide');
             ui_screens_lists_lesson_list_scroll_handler__WEBPACK_IMPORTED_MODULE_6__["lessonListScrollHandler"].scrollToTitle(lesson.id);
 
-          case 10:
+          case 7:
           case "end":
             return _context3.stop();
         }
@@ -90458,7 +90457,7 @@ var lessonStateHelper = {
 /***/ (function(module, exports) {
 
 // Module
-var code = "<div data-lesson-id=\"{{ lesson.id }}\" class=\"lesson-list-carousel-item padding-left margin-bottom js-lesson-list-carousel-item\">\n    <div class=\"landscape double-centred-block\">\n        <img class=\"lesson-icon\" src=\"{{ lesson.icon }}\" alt=\"{{ lesson.name }}\">\n    </div>\n    <div data-lesson-id=\"{{ lesson.id }}\" class=\"lesson-list-item js-lesson-list-item\" data-has-video=\"{{ lesson.hasVideo }}\">\n        <div>            \n            <div class=\"lesson-name js-lesson-title\" data-lesson-id=\"{{ lesson.id }}\">\n                <span data-toggle=\"modal\" data-target=\"#basicModal\" id=\"lesson_{{ lesson.id }}\" class=\"lesson-title margin-right {{ lesson.isCollectionEditableClass }}\">{{ lesson.name }}</span>\n            </div>\n            <div class=\"lesson-taxa\" data-lesson-id=\"{{ lesson.id }}\">{{ lesson.taxa }}</div>\n            <div class=\"latin hide-empty js-lesson-video-state\" data-lesson-id=\"{{ lesson.id }}\">{{ lesson.videoState }}</div>         \n        </div> \n        <div data-lesson-id=\"{{ lesson.id }}\" class=\"lesson-review js-lesson-review\">\n            <div class=\"flex\">\n                <div class=\"centred-block fit-width\">\n                  <span class=\"lesson-terms-review js-terms-review-link {{ lesson.hasTermsClass }} double-margin-right\" data-toggle=\"modal\" data-target=\"#glossaryModal\">\n                      <span data-lesson-id=\"{{ lesson.id }}\" class=\"underline-link\" data-toggle=\"modal\" data-target=\"#glossaryModal\">Vocab</span>\n                  <span>\n                </div>\n                <div class=\"centred-block\">\n                  <span data-toggle=\"modal\" data-target=\"#lessonModal\" data-lesson-id=\"{{ lesson.id }}\" class=\"landscape underline-link margin-right js-review-link\">{{ lesson.reviewState }}</span>\n                  <span data-lesson-id=\"{{ lesson.id }}\" class=\"portrait underline-link margin-right js-review-link\">{{ lesson.reviewState }}</span>\n                  <span data-lesson-id=\"{{ lesson.id }}\" class=\"js-review\">\n                  <span>&nbsp;</span>\n                  </span>\n                  <span class=\"hide margin-right js-loading-review-message\">\n                      <span class=\"landscape\">(Loading…)</span>\n                      <span class=\"portrait\"><i class=\"fas fa-sync slow-spin\"></i></span>\n                  </span>                  \n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"lesson-list-action-icons js-lesson-list-action-icons\">\n        <div>\n            <div data-lesson-id=\"{{ lesson.id }}\" data-lesson-is-youtube-icon=\"true\" class=\"margin-right js-lesson-list-youtube\">\n                <i class=\"fab fa-youtube youtube-icon {{ lesson.hideVideoClass }}\"></i>\n                <i class=\"fas fa-glasses youtube-icon {{ lesson.hideTextIntroClass }}\"></i>\n            </div>\n            <div data-lesson-id=\"{{ lesson.id }}\" class=\"landscape js-lesson-list-chevron margin-right\">\n                <i class=\"fas fa-chevron-down\"></i>\n            </div>\n        </div>\n    </div>\n</div data-lesson-id=\"{{ lesson.id }}\">\n<div data-container-id=\"{{ lesson.id }}\" class=\"species-container js-species-container\"></div>";
+var code = "<div data-lesson-id=\"{{ lesson.id }}\" class=\"lesson-list-carousel-item padding-left margin-bottom js-lesson-list-carousel-item\">\n    <div class=\"landscape double-centred-block\">\n        <img class=\"lesson-icon\" src=\"{{ lesson.icon }}\" alt=\"{{ lesson.name }}\">\n    </div>\n    <div data-lesson-id=\"{{ lesson.id }}\" class=\"lesson-list-item js-lesson-list-item\" data-has-video=\"{{ lesson.hasVideo }}\">\n        <div>            \n            <div class=\"lesson-name js-lesson-title\" data-lesson-id=\"{{ lesson.id }}\">\n                <span data-toggle=\"modal\" data-target=\"#basicModal\" id=\"lesson_{{ lesson.id }}\" class=\"lesson-title margin-right {{ lesson.isCollectionEditableClass }}\">{{ lesson.name }}</span>\n            </div>\n            <div class=\"lesson-taxa\" data-lesson-id=\"{{ lesson.id }}\">{{ lesson.taxa }}</div>\n            <div class=\"latin hide-empty js-lesson-video-state\" data-lesson-id=\"{{ lesson.id }}\">{{ lesson.videoState }}</div>         \n        </div> \n        <div data-lesson-id=\"{{ lesson.id }}\" class=\"lesson-review js-lesson-review\">\n            <div class=\"flex\">\n                <div class=\"centred-block fit-width\">\n                  <span class=\"lesson-terms-review js-terms-review-link {{ lesson.hasTermsClass }} double-margin-right\" data-toggle=\"modal\" data-target=\"#glossaryModal\">\n                      <span data-lesson-id=\"{{ lesson.id }}\" class=\"underline-link\" data-toggle=\"modal\" data-target=\"#glossaryModal\">Vocab</span>\n                  <span>\n                </div>\n                <div class=\"centred-block\">\n                  <span data-toggle=\"modal\" data-target=\"#lessonModal\" data-lesson-id=\"{{ lesson.id }}\" class=\"landscape underline-link margin-right js-review-link\">{{ lesson.reviewState }}</span>\n                  <span data-lesson-id=\"{{ lesson.id }}\" class=\"portrait underline-link margin-right js-review-link\">{{ lesson.reviewState }}</span>\n                  <span data-lesson-id=\"{{ lesson.id }}\" class=\"js-review\">\n                  <span>&nbsp;</span>\n                  </span>\n                  <span data-lesson-id=\"{{ lesson.id }}\" class=\"hide margin-right js-loading-review-message\">\n                      <span class=\"landscape\">(Loading…)</span>\n                      <span class=\"portrait\"><i class=\"fas fa-sync slow-spin\"></i></span>\n                  </span>                  \n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"lesson-list-action-icons js-lesson-list-action-icons\">\n        <div>\n            <div data-lesson-id=\"{{ lesson.id }}\" data-lesson-is-youtube-icon=\"true\" class=\"margin-right js-lesson-list-youtube\">\n                <i class=\"fab fa-youtube youtube-icon {{ lesson.hideVideoClass }}\"></i>\n                <i class=\"fas fa-glasses youtube-icon {{ lesson.hideTextIntroClass }}\"></i>\n            </div>\n            <div data-lesson-id=\"{{ lesson.id }}\" class=\"landscape js-lesson-list-chevron margin-right\">\n                <i class=\"fas fa-chevron-down\"></i>\n            </div>\n        </div>\n    </div>\n</div data-lesson-id=\"{{ lesson.id }}\">\n<div data-container-id=\"{{ lesson.id }}\" class=\"species-container js-species-container\"></div>";
 // Exports
 module.exports = code;
 
