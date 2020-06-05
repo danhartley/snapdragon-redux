@@ -120,23 +120,22 @@ const filters = async linkFromLesson => {
           createQuickFireBtn.innerHTML = quickFire.termScore.total === 0 ? 'Start vocab review' : 'Continue your vocab review';
           createQuickFireBtn.addEventListener('click', e => {
             questions(quickFire);
-          });
-        //   }, { once: true });
+          }, { once: true });
 
     const quickFireOptions = document.querySelectorAll('.js-quick-fire-filter-options .btn');
     
-          quickFire.filter.option.key === "0"
-            ? quickFireOptions[0].click()
-            : quickFireOptions[1].click();
-    
-          Array.from(quickFireOptions).forEach(option => {
-              option.addEventListener('click', e => {
-                  quickFire.filter.option = {
-                      key: e.target.dataset.key,
-                      value: e.target.dataset.value
-                  };
-              });
-          });        
+    quickFire.filter.option.key === "0"
+      ? quickFireOptions[0].click()
+      : quickFireOptions[1].click();
+
+    Array.from(quickFireOptions).forEach(option => {
+        option.addEventListener('click', e => {
+            quickFire.filter.option = {
+                key: e.target.dataset.key,
+                value: e.target.dataset.value
+            };
+        }, { once: true });
+    });        
 
     const branchOptions = document.querySelectorAll('.js-quick-fire-branches label');
 

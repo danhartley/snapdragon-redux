@@ -20,6 +20,12 @@
     flex-direction: column;
 }
 
+.names-container h2 {
+  margin: 0 !important;
+  font-size: .9rem;
+  display: inline-block;  
+}
+
 .term-header {
     font-style: italic;
 }
