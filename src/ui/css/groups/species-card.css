@@ -104,7 +104,7 @@ td:empty:after{
   margin: 0 .5rem;
 }
 
-.info-details .info_detail div:nth-child(1) { 
+.info-details .info_detail dt { 
   font-style: italic;
   margin: 1rem 0 .5rem 0;
 }

@@ -40,7 +40,9 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
 
         images = getPortraitImages(images);
 
-        let parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question: 'Swipe and tap to ID', help: '(Click on the matching photo.)', term: '' });
+        let question = config.islandscapeMode ? 'Find then click to ID' : 'Swipe and tap to ID';
+
+        let parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question, help: '(Click on the matching photo.)', term: '' });
             parent.innerHTML = '';
             
         const template = document.createElement('template');

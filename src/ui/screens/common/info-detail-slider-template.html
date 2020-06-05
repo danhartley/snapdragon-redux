@@ -1,7 +1,7 @@
 <div data-repeat-detail="{{ details }}">
-    <div class="info_detail">
-        <div>{{ detail.term }}</div>
-        <img class="{{ detail.imgClassName }}" src="{{ detail.img.url }}" alt="">
-        <div>{{ detail.definition }}</div>
-    </div>
+    <dl class="info_detail">
+        <dt>{{ detail.term }}</dt>
+        <dd><img class="{{ detail.imgClassName }}" src="{{ detail.img.url }}" alt=""></dd>
+        <dd>{{ detail.definition }}</dd>
+    </dl>
 </div>

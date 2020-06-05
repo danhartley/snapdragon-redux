@@ -65,9 +65,21 @@ export const renderCompleteText = (collection) => {
     const pool = R.take(numerOfItems, utils.shuffleArray(itemTaxons).filter(utils.onlyUnique).filter(itemTaxon => itemTaxon !== item.taxonomy[givenTaxon])).filter(item => item !== undefined);
     pool.push(item.taxonomy[givenTaxon]);
 
-    const answers = utils.shuffleArray(pool);
+    let answers = utils.shuffleArray(pool);
+
+    answers = answers.map((answer, index) => {
+      return {
+        index,
+        value: answer
+      }
+    });
 
     renderTemplate({ genus, species, answers }, template.content, parent);
+
+    setTimeout(() => {
+      const block = document.querySelectorAll('.pool .block')[0];
+            // block.focus(); 
+    },1000);
 
     const score = { itemId: item.id, binomial: item.name, question: item.taxonomy[givenTaxon], callbackTime: config.callbackTime, layoutCount: lessonPlan.layouts.length, points: layout.points };
 

@@ -8,13 +8,13 @@
                 <div>
                     <div class="names-container {{ headerClassName }}">
                         <div>
-                            <span class="vernacular-name">{{ vernacularName }}</span>
+                            <h2 class="vernacular-name">{{ vernacularName }}</h2>
                             <span class="hide-empty names-badge"></span>
                         </div>
                         <div>
-                            <span class="binomial">{{ binomial }}</span>
+                            <h2 class="binomial">{{ binomial }}</h2>
                             <span class="names-badge traits-count-badge js-traits-count-badge"></span>
-                            <span class="term-header hide-empty js-term-header">{{ term }}</span>
+                            <h2 class="term-header hide-empty js-term-header">{{ term }}</h2>
                         </div>
                     </div>                
                 </div>
@@ -24,19 +24,23 @@
                 <i class="far fa-arrow-alt-circle-right js-card-link"></i>
             </div>
         </div>
-        <div class="test-card-question standard-block centred-block js-test-card-question border-bottom">            
-            <div class="question question-txt {{ className }}">
+        <form action="">
+          <fieldset>
+            <div class="test-card-question standard-block centred-block js-test-card-question border-bottom">            
+                <div class="question question-txt {{ className }}">
                     <div>
-                        <span class="hide-empty question-question js-question-question">{{ question }}</span>
-                        <span class="hide-empty question-help js-question-help">{{ help }}</span>
-                        <span class="hide-empty question-statement js-statement-para">{{ statement }}</span>
-                        <span class="hide-empty margin-top question-provider-question js-question-para">{{ providerQuestion }}</span>
+                      <legend class="hide-empty question-question js-question-question">{{ question }}</legend>
+                      <legend class="hide-empty question-help js-question-help">{{ help }}</legend>
+                      <legend class="hide-empty question-statement js-statement-para">{{ statement }}</legend>
+                      <legend class="hide-empty margin-top question-provider-question js-question-para">{{ providerQuestion }}</legend>
                     </div>
                 </div>
-        </div>
-        <div class="test-card-content js-test-card-content scrollable">
-            <!-- Specific test content goes here -->
-        </div>
+            </div>
+            <div class="test-card-content js-test-card-content scrollable">
+                <!-- Specific test content goes here -->
+            </div>
+          </fieldset>
+      </form>
         <div class="text-question js-txt-question"></div>
         <div class="action-update-container">
             <div class="action-update">

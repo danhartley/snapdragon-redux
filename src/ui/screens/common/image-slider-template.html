@@ -1,18 +1,18 @@
 <div id="imageSlider_{{ identifier }}" class="imageSlider carousel slide" data-ride="carousel" data-interval="false">
-  <div class="carousel-inner js-carousel-inner">
+  <div class="carousel-inner js-carousel-inner no-pointer-events">
       <div data-repeat-image="{{ images }}">
         <div class="carousel-item image-slider-190">
-          <img src="{{ image.medium }}" 
-                data-title="{{ image.itemName }}"
-                data-source="{{ image.source }}"
-                data-license="{{ image.license }}"
-                data-rights-holder="{{ image.rightsHolder }}"
-                data-photographers-name="{{ image.photographersName }}"
-                data-url="{{ image.url }}"
-                data-provider="{{ image.provider }}"
-                data-item-name="{{ image.itemName }}"
-                data-index="{{ image.index }}" 
-          alt="">
+          <img src="{{ image.medium }}"                
+            data-title="{{ image.itemName }}"
+            data-source="{{ image.source }}"
+            data-license="{{ image.license }}"
+            data-rights-holder="{{ image.rightsHolder }}"
+            data-photographers-name="{{ image.photographersName }}"
+            data-url="{{ image.url }}"
+            data-provider="{{ image.provider }}"
+            data-item-name="{{ image.itemName }}"
+            data-index="{{ image.index }}" 
+          alt="{{ image.itemName }}">
         </div>
       </div>
       <div>
@@ -23,12 +23,12 @@
       </div>
   </div>        
   <a class="carousel-control-prev" href="#imageSlider_{{ identifier }}" role="button" data-slide="prev" data-slider="#imageSlider_{{ identifier }}">
-    <span class="carousel-control-prev-icon" aria-hidden="true" data-slider="#imageSlider_{{ identifier }}"></span>
-    <span class="sr-only">Previous</span>
+    <button class="carousel-control-prev-icon" aria-hidden="true" data-slider="#imageSlider_{{ identifier }}"></button>
+    <button class="sr-only">Previous</button>
   </a>
   <a class="carousel-control-next" href="#imageSlider_{{ identifier }}" role="button" data-slide="next" data-slider="#imageSlider_{{ identifier }}">
-    <span class="carousel-control-next-icon" aria-hidden="true" data-slider="#imageSlider_{{ identifier }}"></span>
-    <span class="sr-only">Next</span>
+    <button class="carousel-control-next-icon" aria-hidden="true" data-slider="#imageSlider_{{ identifier }}"></button>
+    <button class="sr-only">Next</button>
   </a>
   <div class="description_{{ identifier }} image-description"></div>
   <div class="double-centred-block"></div>

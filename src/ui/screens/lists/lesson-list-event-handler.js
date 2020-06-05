@@ -20,7 +20,6 @@ const onLoadLessonViewState = (collection, videoPlayer, score, config) => {
 
   collection.hasTermsClass = !!collection.terms ? '' : 'hide-important';
   collection.isCollectionEditableClass = '';
-  // collection.isCollectionEditableClass = !!collection.isPrivate ? 'underline-link' : '';
 
   return collection;  
 };
@@ -102,8 +101,6 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
         if(isYoutubeIcon) {
           if(state.hideSpeciesList) {
             siblingChevron.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
-          } else if(!state.revealSpeciesList) {
-            // siblingChevron.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
           }
         }
       } else {
@@ -159,12 +156,13 @@ const onReviewClickHandler = reviewLink => {
 
     lessonStateHandler.recordUserAction(enums.userEvent.START_LESSON_REVIEW);
 
-    const loadingMessage = reviewLink.nextElementSibling
+    const lessonId = reviewLink.dataset.lessonId;
+    const loadingMessage = document.querySelector(`.js-loading-review-message[data-lesson-id="${lessonId}"]`);
           loadingMessage.classList.remove('hide');
 
           setTimeout(() => {
             loadingMessage.classList.add('hide');
-          }, 10000);
+          }, 2000);
 
     const { lesson } = store.getState();
 
@@ -201,17 +199,12 @@ const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
 
   if(userAction && userAction.name === enums.userEvent.START_LESSON.name) { return; }
 
-  const loadingMessage = icon.parentElement.parentElement.parentElement.querySelector('.js-loading-message');
-        loadingMessage.classList.remove('hide');
-
   const { userAction, config } = store.getState();
 
   await lessonStateHandler.changeRequest({
     requestType: enums.lessonState.RENDER_SPECIES_LIST,
     requestArgs: { lesson, container }
   });
-  
-  loadingMessage.classList.add('hide');
 
   lessonListScrollHandler.scrollToTitle(lesson.id);
 };

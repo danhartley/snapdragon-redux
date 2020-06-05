@@ -1194,7 +1194,7 @@ button:disabled {
 }
 
 .feature-label {
-  color: var(--snap-green-feature-txt);
+  color: var(--snap-text-green);
 }
 
 .lesson-option-headers {
@@ -1233,6 +1233,11 @@ button:disabled {
   opacity: 0.5;
 }
 
+.carousel-control-next button, .carousel-control-prev button {
+  background-color: transparent !important;
+  border: none !important;
+}
+
 .carousel-control-next[disabled="disabled"],
 .carousel-control-prev[disabled="disabled"] {
   pointer-events: none;
@@ -1257,6 +1262,7 @@ button:disabled {
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: all;
 }
 
 .info-box .carousel-item-next, .info-box .carousel-item-prev, .info-box .carousel-item.active {
@@ -1282,6 +1288,8 @@ button:disabled {
 .imageSlider .carousel-control-prev-icon {
   width: 1.5rem;
   height: 1.5rem;
+  background-color: transparent;
+  border: none;
 }
 
 #imageSlider1 {
@@ -1302,7 +1310,7 @@ button:disabled {
   background-color: var(--snap-species-header-background);
 }
 
-.info.carousel.slide .carousel-item div {
+.info.carousel.slide .carousel-item div dt, .info.carousel.slide .carousel-item div dd {
   padding: .25rem 0;
   text-align: center;
   margin: 0 15%;
@@ -1312,11 +1320,11 @@ button:disabled {
   justify-content: center;
 }
 
-.info.carousel.slide .carousel-item div:nth-child(1) {
+.info.carousel.slide .carousel-item div dt, .info.carousel.slide .carousel-item div dd {
   background-color: rgba(128, 128, 128, 0.3);
 }
 
-.info.carousel.slide .carousel-item div:nth-child(2) {
+.info.carousel.slide .carousel-item div dd {
   background-color: rgba(128, 128, 128, 0.1);
   text-transform: lowercase;
 }
@@ -2158,7 +2166,14 @@ img[data-has-image="false"] {
 .quick-fire {
   position: relative;
   height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
+  display: flex;
+  flex-direction: column;
 }
+
+/* .quick-fire .score {
+  bottom: 5rem;
+  position: absolute;
+} */
 
 .quick-fire .strips {
   height: initial;

@@ -120,23 +120,22 @@ const filters = async linkFromLesson => {
           createQuickFireBtn.innerHTML = quickFire.termScore.total === 0 ? 'Start vocab review' : 'Continue your vocab review';
           createQuickFireBtn.addEventListener('click', e => {
             questions(quickFire);
-          });
-        //   }, { once: true });
+          }, { once: true });
 
     const quickFireOptions = document.querySelectorAll('.js-quick-fire-filter-options .btn');
     
-          quickFire.filter.option.key === "0"
-            ? quickFireOptions[0].click()
-            : quickFireOptions[1].click();
-    
-          Array.from(quickFireOptions).forEach(option => {
-              option.addEventListener('click', e => {
-                  quickFire.filter.option = {
-                      key: e.target.dataset.key,
-                      value: e.target.dataset.value
-                  };
-              });
-          });        
+    quickFire.filter.option.key === "0"
+      ? quickFireOptions[0].click()
+      : quickFireOptions[1].click();
+
+    Array.from(quickFireOptions).forEach(option => {
+        option.addEventListener('click', e => {
+            quickFire.filter.option = {
+                key: e.target.dataset.key,
+                value: e.target.dataset.value
+            };
+        }, { once: true });
+    });        
 
     const branchOptions = document.querySelectorAll('.js-quick-fire-branches label');
 
@@ -206,8 +205,8 @@ const questions = state => {
 
         const layouts = document.querySelectorAll('.js-quick-layouts');
               layouts.forEach(layout => {
-                  layout.classList.add('hide');
-                  if(layout.id === quickFire.filter.option.key) layout.classList.remove('hide');                  
+                  layout.classList.add('hide-important');
+                  if(layout.id === quickFire.filter.option.key) layout.classList.remove('hide-important');  
               });
 
         const quickFireMessage = document.querySelector('.js-quick-fire-message');

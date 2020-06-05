@@ -93,10 +93,10 @@ export const addTaxon = () => {
 
           const savedText = document.querySelector('.js-saved');
 
-          const response = firestore.addTaxon({ taxon });
-
-          savedText.innerHTML = response;
-          savedText.classList.remove('hide');
+          const response = firestore.addTaxon({ taxon }).then(resolve => {
+            savedText.innerHTML = resolve;
+            savedText.classList.remove('hide');
+          });          
 
       });
   };

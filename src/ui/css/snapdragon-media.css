@@ -75,7 +75,7 @@
         font-size: 1.4rem;
     }
     .modal-subheader {
-        font-size: 1.3em;
+        font-size: 1.2em;
     }
     .table-header th:nth-child(1) {
         min-width: 105px;
@@ -154,7 +154,7 @@
     .quick-fire-branches span {
         font-size: .6rem;
     }
-
+    
     .autocomplete-options-container{
         top: calc(
             var(--vhRunningBlock, 7.5vh) + 
@@ -383,10 +383,6 @@
         justify-content: space-between;
     }
 
-    /* .left-grid .footer {
-        justify-content: flex-start;
-    } */
-
     .snapdragon-intro > div:nth-child(1) {
         margin: 0rem 2.4rem 0 2.4rem !important;
     }
@@ -395,10 +391,6 @@
         height: initial;  
         padding: 2rem;
     }
-
-    /* .lesson-list-item {
-        width: 200px;
-    } */
 
     .lesson-icon {
         width: 80px;
@@ -551,11 +543,7 @@
         padding: 1rem 4rem;
       }
 
-      .info-details .info_detail img {   
-        max-width: 20%;
-      }
-    
-      .info.carousel.slide .carousel-item div {
+      .info.carousel.slide .carousel-item div dt, .info.carousel.slide .carousel-item div dd {
           padding: .5rem;
       }
 
