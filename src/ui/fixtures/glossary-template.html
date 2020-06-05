@@ -1,8 +1,6 @@
 <div class="snapdragon-container">
-    <div class="definition card scrollable">
-        <div data-repeat-item="{{ glossary }}">
-            <div><span>{{ item.term }}</span><span>{{ item.definition }}</span></div>
-        </div>
-    </div>
+    <dl data-repeat-item="{{ glossary }}" class="definition card scrollable">
+      <dt>{{ item.term }}</dt><dd>{{ item.definition }}</dd>
+    </dl>
 </div>
     

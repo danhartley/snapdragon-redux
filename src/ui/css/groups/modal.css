@@ -259,12 +259,7 @@
     height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
   }
   
-  .basic-modal .definition.card div > div {
-    margin: 0.15rem 0;
-    padding: 0.25rem;
-  }
-
-  .basic-modal .definition.card span:nth-child(1) {
+  .basic-modal .definition.card dt {
     margin: 0 0.25rem 0 0;
     font-style: italic;
   }
