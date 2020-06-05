@@ -2166,7 +2166,14 @@ img[data-has-image="false"] {
 .quick-fire {
   position: relative;
   height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
+  display: flex;
+  flex-direction: column;
 }
+
+/* .quick-fire .score {
+  bottom: 5rem;
+  position: absolute;
+} */
 
 .quick-fire .strips {
   height: initial;

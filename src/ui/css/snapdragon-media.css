@@ -154,7 +154,7 @@
     .quick-fire-branches span {
         font-size: .6rem;
     }
-
+    
     .autocomplete-options-container{
         top: calc(
             var(--vhRunningBlock, 7.5vh) + 
@@ -542,11 +542,7 @@
       .info-details {
         padding: 1rem 4rem;
       }
-/* 
-      .info-details .info_detail dd:nth-child(1) {   
-        max-width: 20%;
-      } */
-    
+
       .info.carousel.slide .carousel-item div dt, .info.carousel.slide .carousel-item div dd {
           padding: .5rem;
       }

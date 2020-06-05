@@ -205,8 +205,8 @@ const questions = state => {
 
         const layouts = document.querySelectorAll('.js-quick-layouts');
               layouts.forEach(layout => {
-                  layout.classList.add('hide');
-                  if(layout.id === quickFire.filter.option.key) layout.classList.remove('hide');                  
+                  layout.classList.add('hide-important');
+                  if(layout.id === quickFire.filter.option.key) layout.classList.remove('hide-important');  
               });
 
         const quickFireMessage = document.querySelector('.js-quick-fire-message');
