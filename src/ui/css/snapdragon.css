@@ -1233,6 +1233,11 @@ button:disabled {
   opacity: 0.5;
 }
 
+.carousel-control-next button, .carousel-control-prev button {
+  background-color: transparent !important;
+  border: none !important;
+}
+
 .carousel-control-next[disabled="disabled"],
 .carousel-control-prev[disabled="disabled"] {
   pointer-events: none;
@@ -1283,6 +1288,8 @@ button:disabled {
 .imageSlider .carousel-control-prev-icon {
   width: 1.5rem;
   height: 1.5rem;
+  background-color: transparent;
+  border: none;
 }
 
 #imageSlider1 {

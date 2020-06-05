@@ -199,17 +199,12 @@ const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
 
   if(userAction && userAction.name === enums.userEvent.START_LESSON.name) { return; }
 
-  // const loadingMessage = icon.parentElement.parentElement.parentElement.querySelector('.js-loading-message');
-  //       loadingMessage.classList.remove('hide');
-
   const { userAction, config } = store.getState();
 
   await lessonStateHandler.changeRequest({
     requestType: enums.lessonState.RENDER_SPECIES_LIST,
     requestArgs: { lesson, container }
   });
-  
-  // loadingMessage.classList.add('hide');
 
   lessonListScrollHandler.scrollToTitle(lesson.id);
 };
