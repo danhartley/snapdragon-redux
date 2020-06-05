@@ -45,8 +45,8 @@ const renderInfoSlider = (item, traits, parent, id) => {
     const changeTraitHandler = event => {
         setTimeout(() => {
             activeTrait = parent.querySelector(`#traitSlider${id} .carousel-item.active`);
-            activeTraitKey = activeTrait.querySelector('div:nth-child(1)').innerHTML;
-            activeTraitValue = activeTrait.querySelector('div:nth-child(3)').innerHTML;
+            activeTraitKey = activeTrait.querySelector('dt').innerHTML;
+            activeTraitValue = activeTrait.querySelector('dd').innerHTML;
             renderInfoDetails(item, activeTraitKey, activeTraitValue, description);
         }, 1000);
     };

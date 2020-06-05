@@ -1,10 +1,12 @@
 <div id="traitSlider{{ id }}" class="info carousel slide" data-ride="false" data-interval="false">
     <div class="carousel-inner" data-repeat-trait="{{ traits }}">
-      <div class="carousel-item">
-          <div><span>{{ trait.name }}</span></div>
-          <div><span>{{ trait.value }}</span><span>{{ trait.unit }}</span></div>
+      <dl class="carousel-item">
+          <div>
+            <dt>{{ trait.name }}</dt>
+            <dd>{{ trait.value }} {{ trait.unit }}</dd>
+          </div>
           <div class="hide-important">{{ trait.description }}</div>
-      </div>
+      </dl>
     </div>
     <a class="carousel-control carousel-control-prev" href="#traitSlider{{ id }}" role="button" data-slide="prev">
       <button class="carousel-control-prev-icon" aria-hidden="true"></button>

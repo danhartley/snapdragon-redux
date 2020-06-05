@@ -1310,7 +1310,7 @@ button:disabled {
   background-color: var(--snap-species-header-background);
 }
 
-.info.carousel.slide .carousel-item div {
+.info.carousel.slide .carousel-item div dt, .info.carousel.slide .carousel-item div dd {
   padding: .25rem 0;
   text-align: center;
   margin: 0 15%;
@@ -1320,11 +1320,11 @@ button:disabled {
   justify-content: center;
 }
 
-.info.carousel.slide .carousel-item div:nth-child(1) {
+.info.carousel.slide .carousel-item div dt, .info.carousel.slide .carousel-item div dd {
   background-color: rgba(128, 128, 128, 0.3);
 }
 
-.info.carousel.slide .carousel-item div:nth-child(2) {
+.info.carousel.slide .carousel-item div dd {
   background-color: rgba(128, 128, 128, 0.1);
   text-transform: lowercase;
 }
