@@ -211,7 +211,7 @@ const questions = state => {
 
         const quickFireMessage = document.querySelector('.js-quick-fire-message');
 
-        const options = Array.from(document.querySelectorAll('.js-quick-fire-options > div'));
+        const options = Array.from(document.querySelectorAll('.js-quick-fire-options > li'));
               options.forEach(option => {
                 option.addEventListener('click', e => {
                     const answer = e.target.id;
@@ -225,7 +225,6 @@ const questions = state => {
                             option.classList.add('snap-success');
                         }
                     });
-                    // continueQuickFireBtn.disabled = false;
                     timer = setTimeout(() => {
                         continueQuickFireBtn.click();
                     }, store.getState().config.callbackTime);

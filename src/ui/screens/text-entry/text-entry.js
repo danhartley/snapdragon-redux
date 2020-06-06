@@ -202,14 +202,16 @@ const renderLandscape = (item, config, question) => {
         let correctBlocks = Array.from(document.querySelectorAll('.correct'));
             correctBlocks.forEach(b => b.classList.remove('correct'));
             correctBlocks.forEach(b => b.classList.add('active'));
-        lastLetter.classList.remove('active');
-        letters.forEach(l => {            
-            if(l.id === lastLetter.id) {
-                const letterIndex = letters.indexOf(l);
-                if(letterIndex > -1)
-                    letters.splice(letterIndex,1);
-            }
-        });        
+        if(lastLetter) {
+          lastLetter.classList.remove('active');
+          letters.forEach(l => {            
+              if(l.id === lastLetter.id) {
+                  const letterIndex = letters.indexOf(l);
+                  if(letterIndex > -1)
+                      letters.splice(letterIndex,1);
+              }
+          });        
+        }
     };
 
     const blocks = document.querySelectorAll('.block');
@@ -233,12 +235,14 @@ const renderLandscape = (item, config, question) => {
         });
     });
 
-    document.querySelector('.js-delete-letter').addEventListener('click', () => {
-        deleteLetter();
+    document.querySelector('.js-delete-letter').addEventListener('click', e => {
+      e.preventDefault();
+      deleteLetter();
     });
 
     const keyboardBtn = document.querySelector('.js-toggle-keyboard');
-          keyboardBtn.addEventListener('click', () =>{
+          keyboardBtn.addEventListener('click', e =>{
+            e.preventDefault();
             const disabled = input.hasAttribute('disabled');
             if(disabled) {
                 keyboardBtn.innerHTML = 'Enable letters';
