@@ -243,9 +243,9 @@ const questions = state => {
         const continueQuickFireBtn = document.querySelector('.js-continue-quick-fire-btn');
               continueQuickFireBtn.addEventListener('click', e => {
                     quickFire.items = quickFire.items.filter(item => item.term !== quickFire.question.term);
-                    clearTimeout(timer);                    
-                    actions.boundUpdateQuickFire(quickFire);
                     subscription.add(quickFireQuestions, 'quickFire', 'modal');
+                    actions.boundUpdateQuickFire(quickFire);
+                    clearTimeout(timer);        
               });
 
         let check = true;
