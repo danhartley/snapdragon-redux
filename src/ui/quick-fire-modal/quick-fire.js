@@ -211,7 +211,7 @@ const questions = state => {
 
         const quickFireMessage = document.querySelector('.js-quick-fire-message');
 
-        const options = Array.from(document.querySelectorAll('.js-quick-fire-options > div'));
+        const options = Array.from(document.querySelectorAll('.js-quick-fire-options > li'));
               options.forEach(option => {
                 option.addEventListener('click', e => {
                     const answer = e.target.id;
@@ -225,7 +225,6 @@ const questions = state => {
                             option.classList.add('snap-success');
                         }
                     });
-                    // continueQuickFireBtn.disabled = false;
                     timer = setTimeout(() => {
                         continueQuickFireBtn.click();
                     }, store.getState().config.callbackTime);
@@ -243,9 +242,9 @@ const questions = state => {
         const continueQuickFireBtn = document.querySelector('.js-continue-quick-fire-btn');
               continueQuickFireBtn.addEventListener('click', e => {
                     quickFire.items = quickFire.items.filter(item => item.term !== quickFire.question.term);
-                    clearTimeout(timer);                    
-                    actions.boundUpdateQuickFire(quickFire);
                     subscription.add(quickFireQuestions, 'quickFire', 'modal');
+                    actions.boundUpdateQuickFire(quickFire);
+                    clearTimeout(timer);        
               });
 
         let check = true;

@@ -13,13 +13,13 @@
         <span class="padding">{{ question.definition }}</span>
     </div>
 
-    <div id="0" class="strips description margin-top js-quick-layouts js-quick-fire-options" data-repeat-answer="{{ answers }}">
-        <div class="strip" id="{{ answer.term }}">
+    <ul id="0" class="strips description margin-top js-quick-layouts js-quick-fire-options" data-repeat-answer="{{ answers }}">
+        <li class="strip" id="{{ answer.term }}">
             <div data-answer-index="{{ answer.index }}">
                 <span>{{ answer.term }}</span>
             </div>
-        </div>
-    </div>
+          </li>
+      </ul>
 
     <div id="1" class="hide vertical-block centred-block margin-top js-quick-layouts quick-fire-text-entry js-quick-fire-text-entry">
         <div class="centred-block standard-block">
