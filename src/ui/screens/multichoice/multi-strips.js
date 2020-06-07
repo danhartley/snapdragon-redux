@@ -11,6 +11,7 @@ import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { firestore } from 'api/firebase/firestore';
 import { lessonStateHelper } from 'ui/screens/lists/lesson-state-helper';
+import { log, logError } from 'ui/helpers/logging-handler';
 
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 import stripWithImageTemplate from 'ui/screens/multichoice/multi-strips-with-images.html';
@@ -63,10 +64,6 @@ export const renderMultiStrips = (collection, bonus, args) => {
                 renderTemplate({ answers }, template.content, parent);
 
                 const strips = document.querySelectorAll('.js-rptr-strips .strip');
-
-                // setTimeout(() => {                  
-                //   strips[0].focus();
-                // }, 1000);
 
                 if(overrides.italicise) strips.forEach(strip => strip.classList.add('binomial'));
 

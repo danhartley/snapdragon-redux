@@ -65,6 +65,8 @@ export const renderTestCardTemplate = (collection, context) => {
           renderSummaryCard();
 
         }, { once: true });
+
+        progressLink.focus();
     }
 
     toggleStatementAndQuestion(config);
