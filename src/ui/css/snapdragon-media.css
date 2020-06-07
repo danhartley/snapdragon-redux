@@ -377,7 +377,7 @@
         padding-right: 1rem;
     }
 
-    .right-grid .footer > span, .left-grid .footer > span {
+    .right-grid .footer > ul, .left-grid .footer > ul {
         max-width: 50%;
         text-transform: none;
         justify-content: space-between;
@@ -413,10 +413,10 @@
         display: flex;
     }
 
-    .lesson-list-carousel-item > div:nth-child(3) > div > div {
+    /* .lesson-list-carousel-item > div:nth-child(3) > div > div {
         display: flex;
         align-items: center;
-    }
+    } */
 
     body {
         max-width: 1200px;

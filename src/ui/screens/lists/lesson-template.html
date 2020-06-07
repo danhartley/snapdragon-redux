@@ -14,11 +14,11 @@
             <div class="flex">
                 <div class="centred-block fit-width">
                   <span class="lesson-terms-review js-terms-review-link {{ lesson.hasTermsClass }} double-margin-right" data-toggle="modal" data-target="#glossaryModal">
-                      <span data-lesson-id="{{ lesson.id }}" class="underline-link" data-toggle="modal" data-target="#glossaryModal">Vocab</span>
+                      <a href="#" data-lesson-id="{{ lesson.id }}" class="underline-link" data-toggle="modal" data-target="#glossaryModal">Vocab</a>
                   <span>
                 </div>
                 <div class="centred-block">
-                  <span data-toggle="modal" data-target="#lessonModal" data-lesson-id="{{ lesson.id }}" class="landscape underline-link margin-right js-review-link">{{ lesson.reviewState }}</span>
+                  <a href="#" data-toggle="modal" data-target="#lessonModal" data-lesson-id="{{ lesson.id }}" class="landscape underline-link margin-right js-review-link">{{ lesson.reviewState }}</a>
                   <span data-lesson-id="{{ lesson.id }}" class="portrait underline-link margin-right js-review-link">{{ lesson.reviewState }}</span>
                   <span data-lesson-id="{{ lesson.id }}" class="js-review">
                   <span>&nbsp;</span>
@@ -33,13 +33,13 @@
     </div>
     <div class="lesson-list-action-icons js-lesson-list-action-icons">
         <div>
-            <div data-lesson-id="{{ lesson.id }}" data-lesson-is-youtube-icon="true" class="margin-right js-lesson-list-youtube">
+            <a href="#" data-lesson-id="{{ lesson.id }}" data-lesson-is-youtube-icon="true" class="margin-right js-lesson-list-youtube">
                 <i class="fab fa-youtube youtube-icon {{ lesson.hideVideoClass }}"></i>
                 <i class="fas fa-glasses youtube-icon {{ lesson.hideTextIntroClass }}"></i>
-            </div>
-            <div data-lesson-id="{{ lesson.id }}" class="landscape js-lesson-list-chevron margin-right">
+            </a>
+            <a href="#" data-lesson-id="{{ lesson.id }}" class="landscape js-lesson-list-chevron margin-right">
                 <i class="fas fa-chevron-down"></i>
-            </div>
+            </a>
         </div>
     </div>
 </div data-lesson-id="{{ lesson.id }}">

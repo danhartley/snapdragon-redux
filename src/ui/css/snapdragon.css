@@ -225,6 +225,10 @@ a.dropdown-item {
   font-size: 1.4rem;
 }
 
+a.icon:hover {
+  color: var(--snap-text-light);
+}
+
 .email span {
   font-size: .8rem;
 }
@@ -424,6 +428,10 @@ a.dropdown-item {
   justify-content: space-evenly;
 }
 
+.left-grid .footer .nav-icons li, .right-grid .footer .nav-icons li {
+  margin: 0 !important;
+}
+
 .footer-round, .footer-score span {
   color: var(--snap-text-medium-dark);
   padding: 0.75rem;
@@ -442,7 +450,6 @@ a.dropdown-item {
 .header-text {
   color: var(--snap-text-dark-medium-dark);
 }
-
 
 .scrollable {
   overflow-y: auto;
@@ -1589,6 +1596,10 @@ a.collection-disabled {
   border-bottom: 1px solid var(--snap-border-lightest);
 }
 
+.home-container .snapdragon-header a, .home-container .snapdragon-header a:visited {
+  color: var(--snap-text-medium-light);
+}
+
 .home-container .snapdragon-tag, .home-container .summary-scores, .trait-card-summary-container .summary-scores {
   justify-content: center;
   font-style: italic;
@@ -1736,7 +1747,7 @@ a.collection-disabled {
   top: calc(var(--vhStandardBlock));  
 }
 
-.snapdragon-intro > div {
+.snapdragon-intro > div, .snapdragon-intro > h3 {
   line-height: 2;
   font-size: 1rem;
   margin: 1.2rem 2.4rem 0 2.4rem !important;
@@ -1944,7 +1955,7 @@ a.collection-disabled {
 .main-header {
   font-size: 1.4rem;
   text-transform: uppercase;
-  letter-spacing: .1rem;
+  letter-spacing: .25rem;
 }
 
 .fa, .fab, .fal, .far, .fas {

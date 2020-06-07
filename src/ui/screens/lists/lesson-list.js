@@ -57,7 +57,7 @@ export const renderLessons = () => {
 
       setTimeout(() => {      
 
-            let termsReviewLinks = document.querySelectorAll('.js-terms-review-link > span');
+            let termsReviewLinks = document.querySelectorAll('.js-terms-review-link > a');
                 termsReviewLinks.forEach(termsReviewLink => {
                   termsReviewLink.addEventListener('click', e => {                         
                         const lesson = lessons.find(lesson => lesson.id === parseInt(termsReviewLink.dataset.lessonId));

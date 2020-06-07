@@ -167,8 +167,7 @@ div.species-description {
   width: 100%;
 }
 
-.lesson-list-action-icons {
-  color: var(--snap-collection);
+.lesson-list-action-icons a {
   color: var(--snap-text-medium-dark);
 }
  

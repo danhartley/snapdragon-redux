@@ -2,22 +2,24 @@ import { eolAutocomplete } from 'admin/api/eol-autocomplete';
 import { gbif } from 'admin/api/gbif';
 import { helpers } from 'admin/helpers';
 
+const CACHE_SECONDS = 3600;
+
 const getSpeciesUrl = (species, selectedLicence) => {
-    const speciesUrl = `https://eol.org/api/pages/1.0/${species.id}.json?details=true&images_per_page=200&licenses=${selectedLicence}&common_names=true`;
+    const speciesUrl = `https://eol.org/api/pages/1.0/${species.id}.json?details=true&images_per_page=200&licenses=${selectedLicence}&common_names=true&cache_ttl=${CACHE_SECONDS}`;
     const speciesCors = `https://cors-anywhere.herokuapp.com/${speciesUrl}`;
     species.detailsUrl = speciesCors;
     return species;
 };
 
 const getSpeciesByName = async query => {
-    const search = `https://eol.org/api/search/1.0.json?q=${query}`;
+    const search = `https://eol.org/api/search/1.0.json?q=${query}&cache_ttl=${CACHE_SECONDS}`;
     const corsSearch = `https://cors-anywhere.herokuapp.com/${search}`;
     const result = await fetch(corsSearch);
     return await result.json();
 };
 
 const searchEOLByProvider = async (hierarchyId, Id) => {
-    const url = `http://eol.org/api/search_by_provider/1.0.json?batch=false&id=${Id}&hierarchy_id=${hierarchyId}&cache_ttl=`;
+    const url = `http://eol.org/api/search_by_provider/1.0.json?batch=false&id=${Id}&hierarchy_id=${hierarchyId}&cache_ttl=${CACHE_SECONDS}`;
     const result = await fetch(url);
     return await result.json();
 };
