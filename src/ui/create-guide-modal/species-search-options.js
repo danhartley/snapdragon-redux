@@ -6,7 +6,7 @@ import speciesTemplate from 'ui/create-guide-modal/species-search-options-templa
 
 export const renderSpeciesSearchOptions = createGuide => {
 
-    const header = createGuide.modal.querySelector('.js-modal-title > div');
+    const header = createGuide.modal.querySelector('.js-modal-title > header');
           header.innerHTML = 'Create your own lesson';
 
     const options = [
@@ -46,7 +46,7 @@ export const renderSpeciesSearchOptions = createGuide => {
         createGuide.listeners.push( { element: createGuide.nextStepActionArrow, handler: handleNextStepAction });
     };
 
-    const lessonOptions = document.querySelectorAll('.custom-lesson-species-list li');
+    const lessonOptions = document.querySelectorAll('.custom-lesson-menu-options li');
     
     lessonOptions.forEach((option, index) => {
         option.addEventListener('click', handleNextStepAction, true);

@@ -49,15 +49,19 @@
   
   .modal-guide-navigation {
     display: grid;
-    grid-template-columns: 1fr 4fr auto 4fr 1fr;
+    grid-template-columns: 4fr auto 4fr;
     margin: 0 .5rem;
     height: var(--vhRunningBlock, 10vh);
     border: 1px solid var(--snap-border-light);
   }
 
-  .modal-guide-navigation > div {
+  .modal-guide-navigation > button {
     display: flex;
     align-items: center;        
+  }
+
+  .custom-lesson-menu-options .snap-icon-btn:hover, .modal-guide-navigation .snap-icon-btn:hover {
+    color: var(--snap-collection-active);
   }
 
   .right-justify {
@@ -66,18 +70,15 @@
 
   .arrow-wrapper {
     font-size: 1.6rem;
-    pointer-events: none;
-    color: var(--snap-text-light);
-    background-color: var(--snap-collection-light);
     height: calc(var(--vhRunningBlock) - 2px);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     padding: .5rem;
   }
   
   .arrow-wrapper-hidden {
-    background-color: var(--snap-species-highlight-background);
+    display: none;
   }
 
   .arrow-wrapper i {
@@ -609,14 +610,14 @@
     margin-left: .15rem;
   }
 
-  .custom-lesson-species-list {
+  .custom-lesson-menu-options {
     display: flex;
     flex-direction: column;
     pointer-events: initial;
     cursor: pointer;
   }
 
-  .custom-lesson-species-list li {
+  .custom-lesson-menu-options li {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -625,7 +626,7 @@
     margin-bottom: 1rem;
   }
 
-  .custom-lesson-species-list li span {
+  .custom-lesson-menu-options li span {
     padding: .5rem;
   }
 

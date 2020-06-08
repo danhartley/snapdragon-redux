@@ -240,6 +240,6 @@ export const speciesSearch = createGuide => {
             break;
     }
 
-   const title = modal.querySelector('.js-options');
+   const title = modal.querySelector('.js-options > h1');
          title.innerHTML = 'Requesting species images and traits';
 };

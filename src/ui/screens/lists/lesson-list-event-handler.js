@@ -16,7 +16,7 @@ const onLoadLessonViewState = (collection, videoPlayer, score, config) => {
   collection.hasVideo = collection.video ? true : false;
   collection.showVideoIconClass = collection.hasVideo ? '' : 'hide-important';
   collection.videoState = videoHandler.setVideoState(videoPlayer || [], collection);
-  collection.reviewState = 'Quiz';
+  collection.reviewState = 'Lesson Quiz';
 
   collection.hasTermsClass = !!collection.terms ? '' : 'hide-important';
   collection.isCollectionEditableClass = '';

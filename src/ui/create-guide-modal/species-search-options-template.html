@@ -1,8 +1,10 @@
-<ul class="custom-lesson-species-list" data-repeat-option="{{ options }}">
+<menu>
+  <ul class="custom-lesson-menu-options" data-repeat-option="{{ options }}">
     <li data-option="{{ option.id }}">
-        <span>{{ option.text }}</span><span class="arrow-wrapper"><i class="far fa-arrow-alt-circle-right"></i></span>
+        <button class="icon snap-icon-btn arrow-wrapper"><span class="small-text">{{ option.text }}</span><i class="far fa-arrow-alt-circle-right"></i></button>
     </li>
-</ul>
+  </ul>
+</menu>
 
 <div class="js-language-selection-container"></div>
 

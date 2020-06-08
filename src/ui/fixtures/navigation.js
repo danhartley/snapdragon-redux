@@ -123,7 +123,6 @@ export const renderNavigation = collection => {
 
         if(counter.isLessonPaused) {
 
-            // const id = config.isPortraitMode ? enums.navigation.PORTRAIT_HOME.name : enums.navigation.LANDSCAPE_HOME.name;
             if(config.isPortraitMode) {
                 const id = enums.navigation.PORTRAIT_HOME.name;
                 let icon = document.getElementById(id);
@@ -142,7 +141,4 @@ export const renderNavigation = collection => {
 };
 
 export const renderLoginChanges = user => {
-
-    // const login = document.querySelector('.js-login');
-    //       login.dataset.isLoggedIn = !!user;
 };

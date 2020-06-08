@@ -57,7 +57,7 @@
     display: none;
   }
 
-  .modal-body button {
+  /* .modal-body button {
     color: white;
     background-color: var(--snap-collection);
     width: 100%;
@@ -65,7 +65,7 @@
 
   .modal-body button.disabled {
     color: rgb(150,150,150);
-  }
+  } */
 
   .modal-body .language-options button {
     color: var(--snap-text-dark-medium-dark);

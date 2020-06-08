@@ -182,7 +182,7 @@
                   <div class="modal-header-container">
                       <div class="modal-header">
                           <div class="centred-block justify-space-between js-modal-header-block">
-                            <div class="modal-title small-text js-modal-text-title"><h1></h1></div>
+                            <div class="modal-title small-text js-modal-text-title"><header></header></div>
                             <div></div>
                           </div>
                       </div>
@@ -191,9 +191,7 @@
                       <div class="modal-text js-modal-text"></div>
                   </div>       
                   <div class="modal-footer double-centred-block js-modal-footer" data-dismiss="modal" aria-label="Close">
-                      <div>
-                          <span aria-hidden="true">Close</span>
-                      </div>
+                    <button class="btn snap-btn fit-width">Close</button>
                   </div>             
               </div>
           </div>
@@ -205,9 +203,9 @@
                   <div class="modal-header-container">
                       <div class="modal-header">
                           <div class="centred-block justify-space-between js-modal-header-block">
-                              <div class="modal-title small-text js-modal-text-title"><h1>Glossary</h1></div>
-                              <div class="underline-link uppercase double-margin-right small-text js-quick-fire-filters">Glossary test</div>
-                              <div class="hide-important underline-link uppercase double-margin-right small-text js-quick-fire-questions">Quick-fire questions</div>
+                              <div class="modal-title small-text js-modal-text-title"><header>Glossary</header></div>
+                              <button class="fit-width btn snap-btn double-margin-right small-text js-quick-fire-filters">Glossary</button>
+                              <button class="hide-important fit-width btn snap-btn double-margin-right small-text js-quick-fire-questions">Quick-fire questions</button>
                           </div>
                       </div>
                   </div>
@@ -215,9 +213,7 @@
                       <div class="modal-text js-modal-text"></div>
                   </div>       
                   <div class="modal-footer double-centred-block js-modal-footer" data-dismiss="modal" aria-label="Close">
-                      <div>
-                          <span aria-hidden="true">Close</span>
-                      </div>
+                    <button class="btn snap-btn fit-width">Close</button>
                   </div>             
               </div>
           </div>
@@ -282,13 +278,15 @@
               <div class="modal-header-container">
                   <div class="modal-header">
                       <div class="modal-title js-modal-title">
-                          <div class="header"></div>
+                          <header class="header"></header>
                       </div>
                   </div>
               </div>
               <div class="modal-body modal-guide-body">
                   <div class="modal-guide-progress standard-block js-modal-guide-progress">
-                      <div class="modal-subheader js-options">Select species:</div>
+                      <div class="modal-subheader js-options">
+                        <h1>Select species</h1>
+                      </div>
                       <div class="hide-important steps js-steps">
                           <div class="completed">Step 1</div>
                           <div>Step 2</div>
@@ -297,19 +295,22 @@
                   </div>
                   <div class="step-action-content js-step-action-content">Step action</div>
                   <div class="modal-guide-navigation js-modal-guide-navigation">
-                      <div class="js-left"><span class="arrow-wrapper js-arrow-wrapper"><i class="far fa-arrow-alt-circle-left"></i></span></div>
-                      <div class="js-left"><span class="title"></span></div>
-                      <div class="js-centre"><span class="title">Provenance</span></div>
-                      <div class="right-justify js-right"><span class="title"></span></div>
-                      <div class="right-justify js-right">
-                          <span class="arrow-wrapper js-arrow-wrapper"><i class="far fa-arrow-alt-circle-right"></i></span>
-                      </div>                        
+                      
+                    <button class="snap-icon-btn js-left">
+                      <span class="arrow-wrapper js-arrow-wrapper"><i class="far fa-arrow-alt-circle-left"></i></span>
+                      <span class="title"></span>
+                    </button>
+
+                      <div class="centred-block js-centre"><span class="title">Provenance</span></div>
+                    
+                      <button class="snap-icon-btn right-justify js-right">
+                        <span class="title"></span>
+                        <span class="arrow-wrapper js-arrow-wrapper"><i class="far fa-arrow-alt-circle-right"></i></span>
+                      </button>                        
                   </div>
               </div>
               <div class="modal-footer double-centred-block js-create-guide-close-btn" data-dismiss="modal" aria-label="Close">
-                  <div>
-                      <span aria-hidden="true">Close</span>
-                  </div>
+                <button class="btn snap-btn fit-width">Close</button>
               </div>
           </div>
           </div>
@@ -323,7 +324,7 @@
                   <div class="modal-header-container">
                       <div class="modal-header">
                           <div class="centred-block justify-space-between js-modal-header-block margin-right">
-                            <div class="modal-title small-text js-modal-text-title"><h1></h1></div>
+                            <div class="modal-title small-text js-modal-text-title"><header></header></div>
                             <a href="#" class="small-text underline-link margin-right js-review-progress">Progress</a>
                           </div>
                       </div>
@@ -336,9 +337,7 @@
                       </div>
                   </div>       
                   <div class="modal-footer double-centred-block js-modal-footer" data-dismiss="modal" aria-label="Close">
-                      <div>
-                          <span aria-hidden="true">Close</span>
-                      </div>
+                    <button class="btn snap-btn fit-width">Close</button>
                   </div>             
               </div>
           </div>

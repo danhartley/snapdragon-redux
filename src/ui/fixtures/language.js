@@ -9,7 +9,7 @@ export const renderLanguagePicker = () => {
 
     const { config } = store.getState();
 
-    const parent = DOM.modalText;
+    const parent = DOM.basicModalText;
           parent.innerHTML = '';
 
     const template = document.createElement('template');    
@@ -17,7 +17,7 @@ export const renderLanguagePicker = () => {
 
     renderTemplate({ }, template.content, parent);
 
-    DOM.modalTextTitle.innerHTML = 'Vernacular language';
+    DOM.basicModalTextTitle.innerHTML = 'Vernacular language';
 
     languagePicker(config, document.querySelector('.js-language-selection-container'), (config) => {
         actions.boundUpdateConfig(config);

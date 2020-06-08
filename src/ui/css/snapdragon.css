@@ -100,11 +100,25 @@ hr {
   background-color: var(--snap-progress-bg);
 }
 
-.btn.btn-light, .btn.btn-light:focus {
-  color: var(--snap-text-light) !important;
-  background-color: var(--snap-collection) !important;
+.btn-light {
+  background-color: var(--snap-tertiary-background);
+  color: var(--snap-lesson-row-green);
+  letter-spacing: .05rem;
+  border: 1px solid var(--snap-non-taxa) !important;
+  padding: .25rem .75rem;
+  text-transform: uppercase;
+}
+
+/* .btn.btn-light {
+  background-color: var(--snap-text-light) !important;
+  color: var(--snap-collection) !important;
   cursor: pointer;
 }
+
+.btn.btn-light:hover {
+  color: var(--snap-text-light) !important;
+  background-color: var(--snap-collection) !important;
+} */
 
 .btn-collection {
   background-color: var(--snap-portrait);
@@ -817,6 +831,24 @@ button.btn-light:focus,
   font-size: inherit;
   padding: .5rem;
   border: none;
+}
+
+.snap-btn {
+  background-color: var(--snap-text-light);
+  color: var(--snap-text-black);
+  letter-spacing: .05rem;
+  border: 1px solid var(--snap-non-taxa);
+  padding: .25rem .75rem;
+  text-transform: uppercase;
+}
+
+.snap-icon-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.snap-icon-btn:hover {
+  color: var(--snap-text-light);
 }
 
 .btn.focus, .btn:focus {
@@ -1838,10 +1870,6 @@ a.collection-disabled {
   line-height: 3;
 }
 
-.lesson-review > div { 
-  line-height: 2rem;
-}
-
 .lesson-review i {
   font-size: .9rem;
   color: var(--snap-collection);
@@ -1948,9 +1976,9 @@ a.collection-disabled {
   cursor: pointer;
 }
 
-.lesson-review > div {
+/* .lesson-review > div {
   font-size: .7em;
-}
+} */
 
 .main-header {
   font-size: 1.4rem;

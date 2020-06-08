@@ -13,13 +13,15 @@
         <div data-lesson-id="{{ lesson.id }}" class="lesson-review js-lesson-review">
             <div class="flex">
                 <div class="centred-block fit-width">
-                  <span class="lesson-terms-review js-terms-review-link {{ lesson.hasTermsClass }} double-margin-right" data-toggle="modal" data-target="#glossaryModal">
-                      <a href="#" data-lesson-id="{{ lesson.id }}" class="underline-link" data-toggle="modal" data-target="#glossaryModal">Vocab</a>
+                  <span class="lesson-terms-review {{ lesson.hasTermsClass }} margin-right fit-width js-terms-review-link" data-toggle="modal" data-target="#glossaryModal">
+                      <button data-lesson-id="{{ lesson.id }}" class="btn snap-btn extra-small-text" data-toggle="modal" data-target="#glossaryModal">Vocab test</button>
                   <span>
                 </div>
                 <div class="centred-block">
-                  <a href="#" data-toggle="modal" data-target="#lessonModal" data-lesson-id="{{ lesson.id }}" class="landscape underline-link margin-right js-review-link">{{ lesson.reviewState }}</a>
-                  <span data-lesson-id="{{ lesson.id }}" class="portrait underline-link margin-right js-review-link">{{ lesson.reviewState }}</span>
+                  <span>
+                    <button data-toggle="modal" data-target="#lessonModal" data-lesson-id="{{ lesson.id }}" class="landscape btn snap-btn extra-small-text margin-right fit-width js-review-link">{{ lesson.reviewState }}</button>
+                    <button data-lesson-id="{{ lesson.id }}" class="portrait btn snap-btn extra-small-text margin-right fit-width js-review-link">{{ lesson.reviewState }}</button>
+                  </span>
                   <span data-lesson-id="{{ lesson.id }}" class="js-review">
                   <span>&nbsp;</span>
                   </span>

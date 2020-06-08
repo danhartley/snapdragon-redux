@@ -109,9 +109,6 @@
     .test-card-question .question-statement, .test-card-question .question-provider-question {
         font-size: 1rem;
     }
-    .lesson-review > div {
-        font-size: .9em;
-    }
     body {
         font-size: 1.2em;
     }
@@ -145,6 +142,10 @@
 }
 
 @media (min-width: 768px) {
+
+  .modal h1 {
+    font-size: 1.1rem;
+  }
 
     .quick-fire .quick-fire-branches .btn-secondary, .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
         font-size: .9rem;

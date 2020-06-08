@@ -5,7 +5,6 @@ export const DOM = {
     leftFooter : document.getElementsByClassName('js-left-footer')[0],
 
     leftHeaderTxt : document.getElementsByClassName('js-left-txt-header')[0],
-    // specimenSpeciesTxt : document.getElementsByClassName('js-txt-specimen-species')[0],    
     specimenRptr : document.getElementsByClassName('js-rptr-specimen')[0],
     
     rightGrid : document.getElementsByClassName('js-right-grid')[0],
@@ -17,13 +16,11 @@ export const DOM = {
     rightBodyBottom : document.getElementsByClassName('js-right-body-bottom')[0],
     rightFooter : document.getElementsByClassName('js-right-footer')[0],
     
-    totalTxt : document.getElementsByClassName('js-txt-total')[0],
-    correctTxt : document.getElementsByClassName('js-txt-correct')[0],
-    stateChangeAlertTxt: document.getElementsByClassName('js-state-change-alert')[0],
+    // totalTxt : document.getElementsByClassName('js-txt-total')[0],
+    // correctTxt : document.getElementsByClassName('js-txt-correct')[0],
+    // stateChangeAlertTxt: document.getElementsByClassName('js-state-change-alert')[0],
 
-    modalImageTitle: document.querySelector('.js-modal-image-title span:nth-child(1)'),
-    modalImageRightsAttribution: document.querySelector('.js-modal-rights-attribution'),
-    modalTextTitle: document.getElementsByClassName('js-modal-text-title')[0],
-    modalText: document.getElementsByClassName('js-modal-text')[0],
-    modalImage: document.getElementsByClassName('js-modal-image')[0]
+    basicModalImageTitle: document.querySelector('#basicModal .js-modal-image-title span:nth-child(1)'),
+    basicModalTextTitle: document.querySelector('#basicModal .js-modal-text-title header'),
+    basicModalText: document.querySelector('#basicModal .js-modal-text')
 };

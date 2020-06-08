@@ -9,7 +9,7 @@ export const renderLogin = user => {
 
     const auth = firebase.auth();
     
-    DOM.modalText.innerHTML = '';
+    DOM.basicModalText.innerHTML = '';
 
     const template = document.createElement('template');
         
@@ -17,9 +17,9 @@ export const renderLogin = user => {
 
         template.innerHTML = logoutTemplate
 
-        renderTemplate({ email: user.email }, template.content, DOM.modalText);
+        renderTemplate({ email: user.email }, template.content, DOM.basicModalText);
 
-        DOM.modalTextTitle.innerHTML = 'Snapdragon logout';
+        DOM.basicModalTextTitle.innerHTML = 'Snapdragon logout';
 
         const footer = document.querySelector('.js-modal-footer');
 
@@ -50,9 +50,9 @@ export const renderLogin = user => {
 
         template.innerHTML = loginTemplate;
 
-        renderTemplate({ }, template.content, DOM.modalText);
+        renderTemplate({ }, template.content, DOM.basicModalText);
 
-        DOM.modalTextTitle.innerHTML = 'Snapdragon login';
+        DOM.basicModalTextTitle.innerHTML = 'Snapdragon login';
 
         const footer = document.querySelector('.js-modal-footer');
 
