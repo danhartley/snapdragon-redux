@@ -181,7 +181,6 @@ class CreateGuide {
             this.nextStepActionArrow.classList.remove('arrow-wrapper-hidden');
             this.nextStepActionArrow.dataset.number = this.currentStep.number;
             this.previousStepActionTxt.classList.remove('hide-important');
-            // this.previousStepIcon.classList.remove('hide-important');
             const previousStepProperties = this.currentStep.prevStep
                                                 ? this.steps.find(s => s.description === this.currentStep.prevStep)
                                                 : this.steps.find(s => s.number === (this.currentStep.number - 1));

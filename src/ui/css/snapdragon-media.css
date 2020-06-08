@@ -305,15 +305,11 @@
         grid-template-columns: 1fr .25rem 1fr;
     }
 
-    .iconic-taxa-categories {     
-    display: grid; 
-    grid-template-columns: 1fr 1fr;      
+    .location-filter-options {
+      padding: 2rem;
+      grid-template-columns: 1fr 1fr;
     }
-
-    .iconic-taxa-categories > div > div:nth-child(1) { 
-        margin: 0 0.5rem 0.5rem 0;
-    }
-
+    
     .traits-names-txt {
         display: grid;
         grid-template-columns: 1fr 1fr;

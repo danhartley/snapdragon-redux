@@ -241,11 +241,12 @@ const questions = state => {
         
         const continueQuickFireBtn = document.querySelector('.js-continue-quick-fire-btn');
               continueQuickFireBtn.addEventListener('click', e => {
-                    quickFire.items = quickFire.items.filter(item => item.term !== quickFire.question.term);
-                    subscription.add(quickFireQuestions, 'quickFire', 'modal');
-                    actions.boundUpdateQuickFire(quickFire);
-                    clearTimeout(timer);        
-              });
+                continueQuickFireBtn.setAttribute("disabled", true);
+                quickFire.items = quickFire.items.filter(item => item.term !== quickFire.question.term);
+                subscription.add(quickFireQuestions, 'quickFire', 'modal');
+                actions.boundUpdateQuickFire(quickFire);
+                clearTimeout(timer);        
+              }, { once: true });
 
         let check = true;
 

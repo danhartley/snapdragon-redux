@@ -27,6 +27,11 @@ button {
   letter-spacing: .03rem;
 }
 
+button[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 input[type="text"] {
   padding: .5rem;
   width: 100%;
@@ -100,25 +105,18 @@ hr {
   background-color: var(--snap-progress-bg);
 }
 
-.btn-light {
+.snap-action-btn {
   background-color: var(--snap-tertiary-background);
-  color: var(--snap-lesson-row-green);
+  color: var(--snap-text-light);
   letter-spacing: .05rem;
   border: 1px solid var(--snap-non-taxa) !important;
   padding: .25rem .75rem;
   text-transform: uppercase;
 }
 
-/* .btn.btn-light {
-  background-color: var(--snap-text-light) !important;
-  color: var(--snap-collection) !important;
-  cursor: pointer;
+.snap-action-btn:disabled {
+  pointer-events: none;
 }
-
-.btn.btn-light:hover {
-  color: var(--snap-text-light) !important;
-  background-color: var(--snap-collection) !important;
-} */
 
 .btn-collection {
   background-color: var(--snap-portrait);
@@ -813,17 +811,17 @@ button:focus {
   outline: none;
 }
 
-.btn-light.disabled, .btn-light:disabled {
+.snap-action-btn.disabled, .snap-action-btn:disabled {
   cursor: initial !important;
 }
 
-button.btn-light.focus,
+button.snap-action-btn.focus,
 button.btn:focus,
-button.btn-light:focus,
-.show > .btn-light.dropdown-toggle,
-.btn-light:not(:disabled):not(.disabled).active:focus,
-.btn-light:not(:disabled):not(.disabled):active:focus,
-.show > .btn-light.dropdown-toggle:focus {
+button.snap-action-btn:focus,
+.show > .snap-action-btn.dropdown-toggle,
+.snap-action-btn:not(:disabled):not(.disabled).active:focus,
+.snap-action-btn:not(:disabled):not(.disabled):active:focus,
+.show > .snap-action-btn.dropdown-toggle:focus {
   box-shadow: 0 0 0 0;
 }
 
@@ -834,12 +832,31 @@ button.btn-light:focus,
 }
 
 .snap-btn {
-  background-color: var(--snap-text-light);
+  background-color: var(--snap-list-header-background);
   color: var(--snap-text-black);
   letter-spacing: .05rem;
-  border: 1px solid var(--snap-non-taxa);
+  border: 1px solid var(--snap-portrait);
   padding: .25rem .75rem;
   text-transform: uppercase;
+}
+
+.snap-btn:hover {
+  color: red !important;
+}
+.snap-btn:active {
+  color: green !important;
+}
+/* .snap-btn:focus {
+  color: blue !important;
+  outline: none;
+  border: 1px solid blue;
+} */
+
+.snap-btn:focus:not(:focus-visible) {
+  /* focus still works with keyboard events, but not when clicked */
+  color: blue !important;
+  outline: none;
+  border: 1px solid blue;
 }
 
 .snap-icon-btn {
@@ -959,7 +976,7 @@ span.correct {
   color: rgb(2, 107, 26);
 }
 
-.btn.btn-light.snap-success {
+.btn.snap-action-btn.snap-success {
   color: var(--snap-text-light) !important;
   background-color: var(--snap-success) !important;
   border: 0.05rem solid var(--snap-success);
@@ -979,7 +996,7 @@ span.correct {
   color: var(--snap-alert);
 }
 
-.btn.btn-light.snap-alert {
+.btn.snap-action-btn.snap-alert {
   color: var(--snap-text-light) !important;
   background-color: var(--snap-alert) !important;
   border: 0.05rem solid var(--snap-alert);
@@ -1203,7 +1220,7 @@ button:disabled {
 .badge-list {
   height: 100%;
   padding: 1rem;
-  background-color: var(--snap-btn-light);
+  background-color: var(--snap-snap-action-btn);
 }
 
 .question-images {
@@ -2256,7 +2273,7 @@ input[type="number"].medium {
 }
 
 .quick-fire .btn-group >.btn {
-  background-color: var(--snap-btn-light);
+  background-color: var(--snap-snap-action-btn);
   margin: 0 0 .5rem 0;
   border-radius: .25rem !important;
   letter-spacing: .03rem;
@@ -2412,4 +2429,10 @@ input[type="number"].medium {
   width: 98px;
   height: 68px;
   object-fit: none;
+}
+
+.location-filter-options {
+  padding: .5rem;
+  grid-template-rows: 1fr 1fr;
+  display: grid;
 }

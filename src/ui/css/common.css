@@ -19,6 +19,10 @@
     margin: 0 !important;
   }
 
+  label {
+    margin: 0;
+  }
+
   legend{
     margin-bottom: 0 !important;  
   }
@@ -186,6 +190,17 @@
     display: inline-block;
     line-height: 1.8;
     pointer-events: initial;
+  }
+
+  .underline-link:hover {
+    color: red !important;
+  }
+  .underline-link:active {
+    color: green !important;
+  }
+  .underline-link:focus {
+    color: blue !important;
+    outline: none; /* must put something back! */
   }
 
   .cursor-pointer {

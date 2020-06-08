@@ -70,14 +70,13 @@
 
   .arrow-wrapper {
     font-size: 1.6rem;
-    height: calc(var(--vhRunningBlock) - 2px);
+    padding: .25rem .5rem;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding: .5rem;
+    justify-content: flex-end;    
   }
   
-  .arrow-wrapper-hidden {
+  .arrow-wrapper-hidden > span {
     display: none;
   }
 
@@ -343,21 +342,18 @@
 
   .iconic-taxa-categories {
     display: grid;
+    grid-template-columns: 1fr 1fr;
     height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhDoubleStandardBlock,20vh) - var(--vhHalfStandardBlock) );
     padding: 0 1rem 1rem 1rem;
   }
 
   .iconic-taxa-categories > div > div {
-    display: flex;
-    align-items: center;
     cursor: pointer;
   }
   
   /* Icon categories list, icon container and size */
 
-  .iconic-taxa-categories > div > div > div:nth-child(1) {    
-    padding: .25rem;
-    margin: 0 .5rem 0 0;
+  .iconic-taxa-categories > div > div > div:nth-child(1), .iconic-taxa-categories button {    
     display: flex;
     align-items: center;
     justify-content: center;  
@@ -397,7 +393,7 @@
     white-space: nowrap;
     display: inline-block;
     width: inherit;
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
   }
 
   /* Mushroom icon sizes */
@@ -622,8 +618,6 @@
     align-items: center;
     justify-content: space-between;
     border: 1px solid var(--snap-border-light);
-    height: var(--vhRunningBlock);
-    margin-bottom: 1rem;
   }
 
   .custom-lesson-menu-options li span {
@@ -698,8 +692,8 @@
 @media (min-height: 667px) {
 
   .iconic-taxa-categories > div > div > div:nth-child(1) svg, .iconic-taxa-categories i {
-    width: 1.4rem;
-    font-size: 1.4rem;
+    width: 1.6rem;
+    font-size: 1.6rem;
   }
 
   .taxa-actions svg-icon.si-glyph-mushrooms svg {

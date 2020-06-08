@@ -2,6 +2,9 @@
     <tbody data-repeat-item="{{ itemImages }}">
         <tr class="table-row master js-list-item" id="id_{{ item.id }}">
             <td id="{{ item.name }}" data-snap-index="{{ item.snapIndex }}">
+
+              <!-- require wrapping a tag -->
+
                 <img 
                     id="{{ item.name }}" 
                     src="{{ item.small }}" 
@@ -48,4 +51,4 @@
         </tr>
     </tbody>
 </table>
-<button class="btn btn-light portrait btn-current-lesson-begin js-btn-current-lesson-begin">Quiz</button>
+<button class="btn snap-action-btn portrait btn-current-lesson-begin js-btn-current-lesson-begin">Quiz</button>
