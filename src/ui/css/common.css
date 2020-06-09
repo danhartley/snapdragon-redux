@@ -23,13 +23,18 @@
     margin: 0;
   }
 
-  legend{
-    margin-bottom: 0 !important;  
+  legend {
+    margin-bottom: 0 !important;
+    width: initial !important;
   }
 
   caption {
     padding: 0;
     height: 0;
+  }
+
+  dt {
+    font-weight: 500;
   }
 
   .flex {
