@@ -80491,15 +80491,17 @@ var speciesSearch = function speciesSearch(createGuide) {
                     return c.guideType === option;
                   })), {}, {
                     species: config.guide.species,
-                    id: collections.length + 10010
+                    id: collections.length + 10010,
+                    name: 'Your new lesson',
+                    hasVideo: false,
+                    video: {},
+                    terms: []
                   });
 
                 case 10:
-                  collectionToLoad.hasVideo = false;
-                  collectionToLoad.video = {};
                   initLesson(collectionToLoad);
 
-                case 13:
+                case 11:
                 case "end":
                   return _context3.stop();
               }
@@ -89376,7 +89378,7 @@ var onLoadLessonViewState = function onLoadLessonViewState(collection, videoPlay
   collection.showVideoIconClass = collection.hasVideo ? '' : 'hide-important';
   collection.videoState = ui_screens_lists_video_handler__WEBPACK_IMPORTED_MODULE_8__["videoHandler"].setVideoState(videoPlayer || [], collection);
   collection.reviewState = 'Lesson Quiz';
-  collection.hasTermsClass = !!collection.terms ? '' : 'hide-important';
+  collection.hasTermsClass = collection.terms && Array.isArray(collection.terms) && collection.terms.length > 0 ? '' : 'hide-important';
   collection.isCollectionEditableClass = '';
   return collection;
 };

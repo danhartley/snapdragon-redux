@@ -229,11 +229,12 @@ export const speciesSearch = createGuide => {
                         ...collections.find(c => c.guideType === option),
                         species: config.guide.species,
                         id: collections.length + 10010,
+                        name: 'Your new lesson',
+                        hasVideo: false,
+                        video: {},
+                        terms: []
                     };
                 }
-
-                collectionToLoad.hasVideo = false;
-                collectionToLoad.video = {};
 
                 initLesson(collectionToLoad);
             };

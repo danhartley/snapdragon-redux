@@ -20,7 +20,7 @@ const onLoadLessonViewState = (collection, videoPlayer, score, config) => {
   collection.videoState = videoHandler.setVideoState(videoPlayer || [], collection);
   collection.reviewState = 'Lesson Quiz';
 
-  collection.hasTermsClass = !!collection.terms ? '' : 'hide-important';
+  collection.hasTermsClass = collection.terms && Array.isArray(collection.terms) && collection.terms.length > 0 ? '' : 'hide-important';
   collection.isCollectionEditableClass = '';
 
   return collection;  
