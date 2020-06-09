@@ -73401,18 +73401,22 @@ var getNonTaxa = function getNonTaxa(enums) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traitValuesHandler", function() { return traitValuesHandler; });
-/* harmony import */ var redux_actions_action_creators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux/actions/action-creators */ "./src/redux/actions/action-creators.js");
-/* harmony import */ var api_firebase_firestore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! api/firebase/firestore */ "./src/api/firebase/firestore.js");
+/* harmony import */ var ramda__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ramda */ "./node_modules/ramda/es/index.js");
+/* harmony import */ var redux_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux/store */ "./src/redux/store.js");
+/* harmony import */ var redux_actions_action_creators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux/actions/action-creators */ "./src/redux/actions/action-creators.js");
+/* harmony import */ var api_firebase_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! api/firebase/firestore */ "./src/api/firebase/firestore.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
 
+
+
 var language;
 var traitValuesHandler = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(config) {
-    var prop, enums;
+    var enums;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -73427,19 +73431,22 @@ var traitValuesHandler = /*#__PURE__*/function () {
           case 2:
             language = config.language;
 
-            for (prop in enums) {
-              enums[prop].type = prop;
-              enums[prop].name = prop.split(/(?=[A-Z])/).join(' ').toLowerCase();
+            if (ramda__WEBPACK_IMPORTED_MODULE_0__["isEmpty"](redux_store__WEBPACK_IMPORTED_MODULE_1__["store"].getState().enums)) {
+              _context.next = 5;
+              break;
             }
 
-            _context.next = 6;
-            return api_firebase_firestore__WEBPACK_IMPORTED_MODULE_1__["firestore"].getTraitValues();
+            return _context.abrupt("return");
 
-          case 6:
+          case 5:
+            _context.next = 7;
+            return api_firebase_firestore__WEBPACK_IMPORTED_MODULE_3__["firestore"].getTraitValues();
+
+          case 7:
             enums = _context.sent;
-            redux_actions_action_creators__WEBPACK_IMPORTED_MODULE_0__["actions"].boundUpdateEnums(enums);
+            redux_actions_action_creators__WEBPACK_IMPORTED_MODULE_2__["actions"].boundUpdateEnums(enums);
 
-          case 8:
+          case 9:
           case "end":
             return _context.stop();
         }
@@ -79083,7 +79090,7 @@ var CreateGuide = /*#__PURE__*/function () {
         return s.number === nextStep;
       });
 
-      if (option === ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_10__["enums"].guideOption.PICKER.name) {
+      if (option === ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_10__["enums"].guideOption.PICKER.name && direction === 'NEXT') {
         this.currentStep = this.steps[2];
       }
 
@@ -79180,7 +79187,7 @@ var createGuideHandler = function createGuideHandler(step) {
   var handlePreviousStepAction = function handlePreviousStepAction(event) {
     var prevStep;
 
-    if (guide.getCurrentStep().number === 4) {
+    if (guide.getCurrentStep() && guide.getCurrentStep().number === 4) {
       prevStep = guide.option === ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_10__["enums"].guideOption.PICKER.name ? 2 : 3;
     } else {
       prevStep = guide.getCurrentStep().number - 1;
@@ -80166,7 +80173,7 @@ var renderSpeciesSearchOptions = function renderSpeciesSearchOptions(createGuide
 /***/ (function(module, exports) {
 
 // Module
-var code = "<div>\n    <div class=\"species-search js-species-search\">\n        <div><div class=\"icon\"><i class=\"fas fa-sun slow-spin\"></i></div></div>\n        <div class=\"standard-block\">This search is based on observations recorded by the public on <a class=\"underline-link\" target=\"_blank\" href=\"https://www.inaturalist.org/\">iNaturalist</a>.</div>\n    </div>\n    <div>\n        <div class=\"hide-empty request-feedback js-request-feedback\">Contacting iNaturalist…</div>\n    </div>\n</div>";
+var code = "<div>\n    <div class=\"species-search js-species-search\">\n        <div><div class=\"icon\"><i class=\"fas fa-sun slow-spin\"></i></div></div>\n        <h2 class=\"standard-block\">This search is based on observations recorded by the public on <a class=\"underline-link\" target=\"_blank\" href=\"https://www.inaturalist.org/\">iNaturalist</a>.</h2>\n    </div>\n    <div>\n        <div class=\"hide-empty request-feedback js-request-feedback\">Contacting iNaturalist…</div>\n    </div>\n</div>";
 // Exports
 module.exports = code;
 
@@ -80235,8 +80242,8 @@ var speciesSearch = function speciesSearch(createGuide) {
     feedback.innerHTML = "Fetching ".concat(config.guide.iconicTaxa[count].common, " from iNaturalist \u2026");
     count++;
   }, 2000);
-  var close = modal.querySelector('.js-right .js-arrow-wrapper');
-  var viewGuideIcon = close.querySelector('i');
+  var nextStepActionArrow = modal.querySelector('.js-right');
+  var viewGuideIcon = nextStepActionArrow.querySelector('i');
   viewGuideIcon.classList.add('snap-inactive');
   var back = modal.querySelector('.js-left .js-arrow-wrapper');
   var viewTaxaIcon = back.querySelector('i');
@@ -80261,7 +80268,7 @@ var speciesSearch = function speciesSearch(createGuide) {
       var icon = modal.querySelector('.icon i');
       icon.classList.remove('slow-spin');
       setTimeout(function () {
-        close.addEventListener('click', function (e) {
+        nextStepActionArrow.addEventListener('click', function (e) {
           setTimeout( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
             return regeneratorRuntime.wrap(function _callee$(_context) {
               while (1) {
@@ -80287,7 +80294,7 @@ var speciesSearch = function speciesSearch(createGuide) {
                     });
 
                   case 4:
-                    if (parseInt(close.dataset.number) === 4) {
+                    if (parseInt(nextStepActionArrow.dataset.number) === 4) {
                       createGuide.callOnCreateCustomListeners(collection);
                       ui_screens_lists_lesson_state_helper__WEBPACK_IMPORTED_MODULE_6__["lessonStateHelper"].clearGuide();
                     }
@@ -80309,23 +80316,23 @@ var speciesSearch = function speciesSearch(createGuide) {
         selectedSpeciesDisplay.classList.remove('hide-important');
         selectedSpeciesDisplay.innerHTML = '';
         editSpecies.classList.add('hide-important');
-        Object(ui_create_guide_modal_species_in_guide_editor__WEBPACK_IMPORTED_MODULE_7__["speciesInGuideEditor"])(config, modal, selectedSpeciesDisplay, createGuide, collection.items);
-        var collectionName = modal.querySelector('#js-collection-name');
-        collectionName.classList.add('hide-important');
+        Object(ui_create_guide_modal_species_in_guide_editor__WEBPACK_IMPORTED_MODULE_7__["speciesInGuideEditor"])(config, modal, selectedSpeciesDisplay, createGuide, collection.items); // const collectionName = modal.querySelector('#js-collection-name');
+        //       collectionName.classList.add('hide-important');
+
         var editableCollectionName = modal.querySelector('#js-input-collection-name');
         editableCollectionName.classList.remove('hide-important');
         editableCollectionName.addEventListener('focusout', function (e) {
-          var name = e.target.value;
-          collectionName.innerHTML = name;
-          collectionName.classList.remove('hide-important');
-          editableCollectionName.classList.add('hide-important');
+          var name = e.target.value; // collectionName.innerHTML = name;
+          // collectionName.classList.remove('hide-important');
+          // editableCollectionName.classList.add('hide-important');
+
           config.guide.name = name;
           collection.name = name;
           ui_screens_lists_lesson_state_handler__WEBPACK_IMPORTED_MODULE_5__["lessonStateHandler"].changeRequest({
             requestType: ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_4__["enums"].lessonState.UPDATE_COLLECTION,
             requestArgs: {
-              newCollection: collection,
-              updatedConfig: config
+              collection: collection,
+              config: config
             }
           });
         });
@@ -80484,13 +80491,15 @@ var speciesSearch = function speciesSearch(createGuide) {
                     return c.guideType === option;
                   })), {}, {
                     species: config.guide.species,
-                    id: collections.length + 10000
+                    id: collections.length + 10010
                   });
 
                 case 10:
+                  collectionToLoad.hasVideo = false;
+                  collectionToLoad.video = {};
                   initLesson(collectionToLoad);
 
-                case 11:
+                case 13:
                 case "end":
                   return _context3.stop();
               }
@@ -80521,7 +80530,7 @@ var speciesSearch = function speciesSearch(createGuide) {
 /***/ (function(module, exports) {
 
 // Module
-var code = "<div class=\"lesson-list-item one-and-half-standard-block vertical-evenly-spaced-block\">\n    <div class=\"lesson-name\" id=\"js-collection-name\">\n        <span>{{ collection.name }}</span>\n    </div>\n    <div class=\"lesson-name hide-important\" id=\"js-input-collection-name\">\n        <input type=\"text\" value=\"{{ collection.name }}\">\n    </div>\n    <div class=\"lesson-taxa\"><span class=\"js-lesson-taxa-count\">{{ collection.items.length }}</span> <span class=\"js-lesson-taxa\">{{ collection.taxa }}</span></div>\n</div>\n<div class=\"edit-species centred-block half-standard-block js-edit-species\">\n    <span class=\"underline-link\">Edit lesson</span>\n</div>\n\n<div class=\"selected-species-container\">\n    <div class=\"scrollable js-selected-species-container\"></div>\n</div>";
+var code = "<div class=\"lesson-list-item one-and-half-standard-block vertical-evenly-spaced-block\">\n    <!-- <div class=\"lesson-name\" id=\"js-collection-name\">\n        <span>{{ collection.name }}</span>\n    </div> -->\n    <div class=\"lesson-name hide-important\" id=\"js-input-collection-name\">\n      <label for=\"#new-collection-name\" class=\"extra-small-text\">lesson name</label>\n      <input id=\"new-collection-name\" type=\"text\" value=\"{{ collection.name }}\">\n    </div>\n    <div class=\"lesson-taxa\"><span class=\"js-lesson-taxa-count\">{{ collection.items.length }}</span> <span class=\"js-lesson-taxa\">{{ collection.taxa }}</span></div>\n</div>\n<div class=\"edit-species centred-block half-standard-block js-edit-species\">\n    <button class=\"snap-btn fit-width\">Edit lesson</button>\n</div>\n\n<div class=\"selected-species-container\">\n    <div class=\"scrollable js-selected-species-container\"></div>\n</div>";
 // Exports
 module.exports = code;
 
@@ -89209,15 +89218,23 @@ var renderCustomLesson = function renderCustomLesson(lessons, savedLessons, vide
     Object(ui_helpers_templating__WEBPACK_IMPORTED_MODULE_1__["renderTemplate"])({
       lesson: lesson
     }, template.content, parent);
-    var title = document.querySelector("div.js-lesson-title[data-lesson-id=\"".concat(lesson.id, "\"]"));
+    var title = document.querySelector(".js-lesson-title[data-lesson-id=\"".concat(lesson.id, "\"]"));
     ui_screens_lists_lesson_list_event_handler__WEBPACK_IMPORTED_MODULE_2__["lessonListEventHandler"].onLessonTitleClickHandler(title, lessons);
     var reviewLink = document.querySelector(".js-review-link[data-lesson-id=\"".concat(lesson.id, "\"]"));
     ui_screens_lists_lesson_list_event_handler__WEBPACK_IMPORTED_MODULE_2__["lessonListEventHandler"].onReviewClickHandler(reviewLink, lessons);
-    var chevron = document.querySelector("div.js-lesson-list-chevron[data-lesson-id=\"".concat(lesson.id, "\"]"));
-    chevron.classList.remove('landscape');
-    ui_screens_lists_lesson_list_event_handler__WEBPACK_IMPORTED_MODULE_2__["lessonListEventHandler"].onLessonIconClickHandler(chevron, lessons, config, false);
+    var chevron = document.querySelector(".js-lesson-list-chevron[data-lesson-id=\"".concat(lesson.id, "\"]"));
+
+    if (chevron) {
+      chevron.classList.remove('landscape');
+      ui_screens_lists_lesson_list_event_handler__WEBPACK_IMPORTED_MODULE_2__["lessonListEventHandler"].onLessonIconClickHandler(chevron, lessons, config, false);
+    }
+
     var youtubeLessonIcon = document.querySelector("div.js-lesson-list-youtube[data-lesson-id=\"".concat(lesson.id, "\"]"));
-    youtubeLessonIcon.classList.add('hide-important');
+
+    if (youtubeLessonIcon) {
+      youtubeLessonIcon.classList.add('hide-important');
+    }
+
     var scrollOptions = {
       left: 0,
       top: 1000,
@@ -89325,18 +89342,20 @@ var renderEditLesson = function renderEditLesson(collection) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lessonListEventHandler", function() { return lessonListEventHandler; });
-/* harmony import */ var ui_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ui/dom */ "./src/ui/dom.js");
-/* harmony import */ var redux_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux/store */ "./src/redux/store.js");
-/* harmony import */ var ui_helpers_class_behaviour__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ui/helpers/class-behaviour */ "./src/ui/helpers/class-behaviour.js");
-/* harmony import */ var ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ui/helpers/enum-helper */ "./src/ui/helpers/enum-helper.js");
-/* harmony import */ var ui_screens_home_home_lesson_intro__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ui/screens/home/home-lesson-intro */ "./src/ui/screens/home/home-lesson-intro.js");
-/* harmony import */ var ui_screens_lists_lesson_edit__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ui/screens/lists/lesson-edit */ "./src/ui/screens/lists/lesson-edit.js");
-/* harmony import */ var ui_screens_lists_lesson_list_scroll_handler__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ui/screens/lists/lesson-list-scroll-handler */ "./src/ui/screens/lists/lesson-list-scroll-handler.js");
-/* harmony import */ var ui_screens_lists_video_handler__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ui/screens/lists/video-handler */ "./src/ui/screens/lists/video-handler.js");
-/* harmony import */ var ui_screens_lists_lesson_state_handler__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ui/screens/lists/lesson-state-handler */ "./src/ui/screens/lists/lesson-state-handler.js");
+/* harmony import */ var ramda__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ramda */ "./node_modules/ramda/es/index.js");
+/* harmony import */ var ui_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ui/dom */ "./src/ui/dom.js");
+/* harmony import */ var redux_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux/store */ "./src/redux/store.js");
+/* harmony import */ var ui_helpers_class_behaviour__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ui/helpers/class-behaviour */ "./src/ui/helpers/class-behaviour.js");
+/* harmony import */ var ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ui/helpers/enum-helper */ "./src/ui/helpers/enum-helper.js");
+/* harmony import */ var ui_screens_home_home_lesson_intro__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ui/screens/home/home-lesson-intro */ "./src/ui/screens/home/home-lesson-intro.js");
+/* harmony import */ var ui_screens_lists_lesson_edit__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ui/screens/lists/lesson-edit */ "./src/ui/screens/lists/lesson-edit.js");
+/* harmony import */ var ui_screens_lists_lesson_list_scroll_handler__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ui/screens/lists/lesson-list-scroll-handler */ "./src/ui/screens/lists/lesson-list-scroll-handler.js");
+/* harmony import */ var ui_screens_lists_video_handler__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ui/screens/lists/video-handler */ "./src/ui/screens/lists/video-handler.js");
+/* harmony import */ var ui_screens_lists_lesson_state_handler__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ui/screens/lists/lesson-state-handler */ "./src/ui/screens/lists/lesson-state-handler.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -89353,9 +89372,9 @@ var onLoadLessonViewState = function onLoadLessonViewState(collection, videoPlay
     return taxon.common;
   }).join(', ') : '';
   collection.taxa = taxa;
-  collection.hasVideo = collection.video ? true : false;
+  collection.hasVideo = collection.video && !ramda__WEBPACK_IMPORTED_MODULE_0__["isEmpty"](collection.video) ? true : false;
   collection.showVideoIconClass = collection.hasVideo ? '' : 'hide-important';
-  collection.videoState = ui_screens_lists_video_handler__WEBPACK_IMPORTED_MODULE_7__["videoHandler"].setVideoState(videoPlayer || [], collection);
+  collection.videoState = ui_screens_lists_video_handler__WEBPACK_IMPORTED_MODULE_8__["videoHandler"].setVideoState(videoPlayer || [], collection);
   collection.reviewState = 'Lesson Quiz';
   collection.hasTermsClass = !!collection.terms ? '' : 'hide-important';
   collection.isCollectionEditableClass = '';
@@ -89370,8 +89389,8 @@ var onLoadLessonsViewState = function onLoadLessonsViewState(collections, videoP
 
 var onClickViewState = function onClickViewState(e, lessons) {
   var icon = e.currentTarget;
-  var isYoutubeIcon = ui_helpers_class_behaviour__WEBPACK_IMPORTED_MODULE_2__["elem"].hasClass(icon, 'js-lesson-list-youtube');
-  var isChevronIcon = ui_helpers_class_behaviour__WEBPACK_IMPORTED_MODULE_2__["elem"].hasClass(icon, 'js-lesson-list-chevron');
+  var isYoutubeIcon = ui_helpers_class_behaviour__WEBPACK_IMPORTED_MODULE_3__["elem"].hasClass(icon, 'js-lesson-list-youtube');
+  var isChevronIcon = ui_helpers_class_behaviour__WEBPACK_IMPORTED_MODULE_3__["elem"].hasClass(icon, 'js-lesson-list-chevron');
   var row = icon.parentElement.parentElement;
   var lessonId = parseInt(icon.dataset.lessonId);
   var lesson = lessons.find(function (l) {
@@ -89380,11 +89399,11 @@ var onClickViewState = function onClickViewState(e, lessons) {
   var container = document.querySelector(".js-species-container[data-container-id=\"".concat(lessonId, "\"]"));
   var speciesList = document.querySelector("#species_list_id_".concat(lessonId));
   var reviewLink = document.querySelector(".js-review-link[data-lesson-id=\"".concat(lessonId, "\"]"));
-  var action = isYoutubeIcon ? ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_3__["enums"].userEvent.START_LESSON : isChevronIcon ? ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_3__["enums"].userEvent.TOGGLE_SPECIES_LIST : ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_3__["enums"].userEvent.DEFAULT;
-  ui_screens_lists_lesson_state_handler__WEBPACK_IMPORTED_MODULE_8__["lessonStateHandler"].recordUserAction(action);
+  var action = isYoutubeIcon ? ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_4__["enums"].userEvent.START_LESSON : isChevronIcon ? ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_4__["enums"].userEvent.TOGGLE_SPECIES_LIST : ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_4__["enums"].userEvent.DEFAULT;
+  ui_screens_lists_lesson_state_handler__WEBPACK_IMPORTED_MODULE_9__["lessonStateHandler"].recordUserAction(action);
   hideOtherContentAndRevertChevrons(lessonId);
   var isSpeciesListAvailable = !!speciesList;
-  var isSpeciesListHidden = ui_helpers_class_behaviour__WEBPACK_IMPORTED_MODULE_2__["elem"].hasClass(speciesList, 'hide');
+  var isSpeciesListHidden = ui_helpers_class_behaviour__WEBPACK_IMPORTED_MODULE_3__["elem"].hasClass(speciesList, 'hide');
   var lessonVideoState = document.querySelector(".js-lesson-video-state[data-lesson-id=\"".concat(lessonId, "\"]"));
   var iconIsChevron = !icon.dataset.lessonIsYoutubeIcon;
   var state = {
@@ -89440,7 +89459,7 @@ var onLessonIconClickHandler = function onLessonIconClickHandler(icon, lessons, 
 
               if (icon.dataset.lessonIsYoutubeIcon) {
                 icon.classList.add('youtube-green-fg');
-                chevron = document.querySelector("div.js-lesson-list-chevron[data-lesson-id=\"".concat(icon.dataset.lessonId, "\"]"));
+                chevron = document.querySelector(".js-lesson-list-chevron[data-lesson-id=\"".concat(icon.dataset.lessonId, "\"]"));
                 chevron.innerHTML = "<i class=\"fas fa-chevron-up\" data-lesson-id=\"".concat(lesson.id, "\"></i>");
               }
 
@@ -89454,7 +89473,7 @@ var onLessonIconClickHandler = function onLessonIconClickHandler(icon, lessons, 
 
             case 10:
               if (startLesson) {
-                Object(ui_screens_home_home_lesson_intro__WEBPACK_IMPORTED_MODULE_4__["renderLessonIntro"])(lesson);
+                Object(ui_screens_home_home_lesson_intro__WEBPACK_IMPORTED_MODULE_5__["renderLessonIntro"])(lesson);
                 siblingChevron = icon.parentElement.parentElement.parentElement.children[1].children[0].children[1];
 
                 if (isYoutubeIcon) {
@@ -89482,7 +89501,7 @@ var onLessonIconClickHandler = function onLessonIconClickHandler(icon, lessons, 
 
               if (state.hideSpeciesList) {
                 speciesList.classList.add('hide');
-                lessonVideoState.innerHTML = ui_screens_lists_video_handler__WEBPACK_IMPORTED_MODULE_7__["videoHandler"].setVideoState(redux_store__WEBPACK_IMPORTED_MODULE_1__["store"].getState().videoPlayer || [], lesson);
+                lessonVideoState.innerHTML = ui_screens_lists_video_handler__WEBPACK_IMPORTED_MODULE_8__["videoHandler"].setVideoState(redux_store__WEBPACK_IMPORTED_MODULE_2__["store"].getState().videoPlayer || [], lesson);
               }
 
             case 13:
@@ -89500,12 +89519,12 @@ var onLessonIconClickHandler = function onLessonIconClickHandler(icon, lessons, 
               return loadAndDisplaySpeciesList(icon, lesson, container);
 
             case 17:
-              Object(ui_screens_home_home_lesson_intro__WEBPACK_IMPORTED_MODULE_4__["renderLessonIntro"])(lesson);
-              ui_screens_lists_lesson_state_handler__WEBPACK_IMPORTED_MODULE_8__["lessonStateHandler"].changeRequest({
-                requestType: ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_3__["enums"].lessonState.RENDER_SPECIES_LIST,
+              Object(ui_screens_home_home_lesson_intro__WEBPACK_IMPORTED_MODULE_5__["renderLessonIntro"])(lesson);
+              ui_screens_lists_lesson_state_handler__WEBPACK_IMPORTED_MODULE_9__["lessonStateHandler"].changeRequest({
+                requestType: ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_4__["enums"].lessonState.RENDER_SPECIES_LIST,
                 requestArgs: {
                   lesson: lesson,
-                  container: ui_dom__WEBPACK_IMPORTED_MODULE_0__["DOM"].rightBody.querySelector('.js-home-scrolling-container .scrollable')
+                  container: ui_dom__WEBPACK_IMPORTED_MODULE_1__["DOM"].rightBody.querySelector('.js-home-scrolling-container .scrollable')
                 }
               });
 
@@ -89531,7 +89550,7 @@ var onLessonTitleClickHandler = function onLessonTitleClickHandler(title, lesson
     var lesson = lessons.find(function (lesson) {
       return lesson.id === parseInt(title.dataset.lessonId);
     });
-    Object(ui_screens_lists_lesson_edit__WEBPACK_IMPORTED_MODULE_5__["renderEditLesson"])(lesson);
+    Object(ui_screens_lists_lesson_edit__WEBPACK_IMPORTED_MODULE_6__["renderEditLesson"])(lesson);
   });
 };
 
@@ -89544,16 +89563,16 @@ var onReviewClickHandler = function onReviewClickHandler(reviewLink) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              ui_screens_lists_lesson_state_handler__WEBPACK_IMPORTED_MODULE_8__["lessonStateHandler"].recordUserAction(ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_3__["enums"].userEvent.START_LESSON_REVIEW);
+              ui_screens_lists_lesson_state_handler__WEBPACK_IMPORTED_MODULE_9__["lessonStateHandler"].recordUserAction(ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_4__["enums"].userEvent.START_LESSON_REVIEW);
               lessonId = reviewLink.dataset.lessonId;
               loadingMessage = document.querySelector(".js-loading-review-message[data-lesson-id=\"".concat(lessonId, "\"]"));
               loadingMessage.classList.remove('hide');
               setTimeout(function () {
                 loadingMessage.classList.add('hide');
               }, 2000);
-              _store$getState = redux_store__WEBPACK_IMPORTED_MODULE_1__["store"].getState(), lesson = _store$getState.lesson;
-              ui_screens_lists_lesson_state_handler__WEBPACK_IMPORTED_MODULE_8__["lessonStateHandler"].changeRequest({
-                requestType: ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_3__["enums"].lessonState.BEGIN_OR_RESUME_LESSON,
+              _store$getState = redux_store__WEBPACK_IMPORTED_MODULE_2__["store"].getState(), lesson = _store$getState.lesson;
+              ui_screens_lists_lesson_state_handler__WEBPACK_IMPORTED_MODULE_9__["lessonStateHandler"].changeRequest({
+                requestType: ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_4__["enums"].lessonState.BEGIN_OR_RESUME_LESSON,
                 requestArgs: {
                   id: reviewLink.dataset.lessonId
                 }
@@ -89580,7 +89599,7 @@ var hideOtherContentAndRevertChevrons = function hideOtherContentAndRevertChevro
 
     if (chevronLessonId !== selectedLessonId) {
       chevron.click();
-      var lesson = document.querySelector("div.js-lesson-list-carousel-item[data-lesson-id=\"".concat(chevronLessonId, "\"]"));
+      var lesson = document.querySelector(".js-lesson-list-carousel-item[data-lesson-id=\"".concat(chevronLessonId, "\"]"));
       lesson.classList.remove('highlighted-for-review-row');
     }
   });
@@ -89598,7 +89617,7 @@ var loadAndDisplaySpeciesList = /*#__PURE__*/function () {
               return child.dataset.selected = true;
             });
 
-            if (!(userAction && userAction.name === ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_3__["enums"].userEvent.START_LESSON.name)) {
+            if (!(userAction && userAction.name === ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_4__["enums"].userEvent.START_LESSON.name)) {
               _context3.next = 3;
               break;
             }
@@ -89606,10 +89625,10 @@ var loadAndDisplaySpeciesList = /*#__PURE__*/function () {
             return _context3.abrupt("return");
 
           case 3:
-            _store$getState2 = redux_store__WEBPACK_IMPORTED_MODULE_1__["store"].getState(), userAction = _store$getState2.userAction, config = _store$getState2.config;
+            _store$getState2 = redux_store__WEBPACK_IMPORTED_MODULE_2__["store"].getState(), userAction = _store$getState2.userAction, config = _store$getState2.config;
             _context3.next = 6;
-            return ui_screens_lists_lesson_state_handler__WEBPACK_IMPORTED_MODULE_8__["lessonStateHandler"].changeRequest({
-              requestType: ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_3__["enums"].lessonState.RENDER_SPECIES_LIST,
+            return ui_screens_lists_lesson_state_handler__WEBPACK_IMPORTED_MODULE_9__["lessonStateHandler"].changeRequest({
+              requestType: ui_helpers_enum_helper__WEBPACK_IMPORTED_MODULE_4__["enums"].lessonState.RENDER_SPECIES_LIST,
               requestArgs: {
                 lesson: lesson,
                 container: container
@@ -89617,7 +89636,7 @@ var loadAndDisplaySpeciesList = /*#__PURE__*/function () {
             });
 
           case 6:
-            ui_screens_lists_lesson_list_scroll_handler__WEBPACK_IMPORTED_MODULE_6__["lessonListScrollHandler"].scrollToTitle(lesson.id);
+            ui_screens_lists_lesson_list_scroll_handler__WEBPACK_IMPORTED_MODULE_7__["lessonListScrollHandler"].scrollToTitle(lesson.id);
 
           case 7:
           case "end":

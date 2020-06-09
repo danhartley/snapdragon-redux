@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';
@@ -13,7 +15,7 @@ const onLoadLessonViewState = (collection, videoPlayer, score, config) => {
   const taxa = collection.iconicTaxa ? collection.iconicTaxa.map(taxon => taxon.common).join(', ') : '';
 
   collection.taxa = taxa;
-  collection.hasVideo = collection.video ? true : false;
+  collection.hasVideo = collection.video && !R.isEmpty(collection.video) ? true : false;
   collection.showVideoIconClass = collection.hasVideo ? '' : 'hide-important';
   collection.videoState = videoHandler.setVideoState(videoPlayer || [], collection);
   collection.reviewState = 'Lesson Quiz';
@@ -85,7 +87,7 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
 
       if(icon.dataset.lessonIsYoutubeIcon) {
         icon.classList.add('youtube-green-fg');
-        const chevron = document.querySelector(`div.js-lesson-list-chevron[data-lesson-id="${icon.dataset.lessonId}"]`);
+        const chevron = document.querySelector(`.js-lesson-list-chevron[data-lesson-id="${icon.dataset.lessonId}"]`);
               chevron.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
       }
 
@@ -187,7 +189,7 @@ const hideOtherContentAndRevertChevrons = selectedLessonId => {
       
       chevron.click();
         
-      const lesson = document.querySelector(`div.js-lesson-list-carousel-item[data-lesson-id="${chevronLessonId}"]`);
+      const lesson = document.querySelector(`.js-lesson-list-carousel-item[data-lesson-id="${chevronLessonId}"]`);
             lesson.classList.remove('highlighted-for-review-row');
     }
   });

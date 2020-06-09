@@ -34,8 +34,8 @@ export const speciesSearch = createGuide => {
       count++;
     }, 2000);
 
-    const close = modal.querySelector('.js-right .js-arrow-wrapper');
-    const viewGuideIcon = close.querySelector('i');
+    const nextStepActionArrow = modal.querySelector('.js-right');
+    const viewGuideIcon = nextStepActionArrow.querySelector('i');
           viewGuideIcon.classList.add('snap-inactive');
 
     const back = modal.querySelector('.js-left .js-arrow-wrapper');
@@ -65,7 +65,7 @@ export const speciesSearch = createGuide => {
               icon.classList.remove('slow-spin');
 
         setTimeout(() => {
-            close.addEventListener('click', e => {
+          nextStepActionArrow.addEventListener('click', e => {
                 setTimeout( async () => {
 
                     if(config.guide.species) {
@@ -82,7 +82,7 @@ export const speciesSearch = createGuide => {
                         });
                     }
 
-                    if(parseInt(close.dataset.number) === 4) {
+                    if(parseInt(nextStepActionArrow.dataset.number) === 4) {
                         createGuide.callOnCreateCustomListeners(collection);
                         lessonStateHelper.clearGuide();
                     }
@@ -102,19 +102,19 @@ export const speciesSearch = createGuide => {
                       
                 speciesInGuideEditor(config, modal, selectedSpeciesDisplay, createGuide, collection.items);
 
-                const collectionName = modal.querySelector('#js-collection-name');
-                      collectionName.classList.add('hide-important');
+                // const collectionName = modal.querySelector('#js-collection-name');
+                //       collectionName.classList.add('hide-important');
 
                 const editableCollectionName = modal.querySelector('#js-input-collection-name');
                       editableCollectionName.classList.remove('hide-important');
                       editableCollectionName.addEventListener('focusout', e => {      
                           const name = e.target.value;                    
-                          collectionName.innerHTML = name;
-                          collectionName.classList.remove('hide-important');
-                          editableCollectionName.classList.add('hide-important');
+                          // collectionName.innerHTML = name;
+                          // collectionName.classList.remove('hide-important');
+                          // editableCollectionName.classList.add('hide-important');
                           config.guide.name = name;
                           collection.name =  name;
-                          lessonStateHandler.changeRequest( { requestType: enums.lessonState.UPDATE_COLLECTION, requestArgs: { newCollection: collection, updatedConfig: config } });
+                          lessonStateHandler.changeRequest( { requestType: enums.lessonState.UPDATE_COLLECTION, requestArgs: { collection, config } });
                           
                       });
               });
@@ -228,9 +228,12 @@ export const speciesSearch = createGuide => {
                     collectionToLoad = {
                         ...collections.find(c => c.guideType === option),
                         species: config.guide.species,
-                        id: collections.length + 10000,
+                        id: collections.length + 10010,
                     };
                 }
+
+                collectionToLoad.hasVideo = false;
+                collectionToLoad.video = {};
 
                 initLesson(collectionToLoad);
             };

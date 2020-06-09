@@ -46,7 +46,7 @@ class CreateGuide {
         
         this.optionsTxt = this.modal.querySelector('.js-centre .title');
         
-        this.nextStepActionArrow = this.modal.querySelector('.js-right');        
+        this.nextStepActionArrow = this.modal.querySelector('.js-right');
         this.nextStepActionTxt = this.modal.querySelector('.js-right .title');
 
         this.progressSteps.forEach((ps,index) => {
@@ -138,7 +138,7 @@ class CreateGuide {
 
         this.currentStep = next || this.steps.find(s => s.number === nextStep);
 
-        if(option === enums.guideOption.PICKER.name) {
+        if(option === enums.guideOption.PICKER.name && direction === 'NEXT') {
             this.currentStep = this.steps[2];
         }
 
@@ -225,7 +225,7 @@ export const createGuideHandler = step => {
 
         let prevStep;
         
-        if(guide.getCurrentStep().number === 4) {
+        if(guide.getCurrentStep() && guide.getCurrentStep().number === 4) {
             prevStep = guide.option === enums.guideOption.PICKER.name ? 2 : 3;
         } else {
             prevStep = guide.getCurrentStep().number - 1;
