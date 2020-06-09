@@ -37,17 +37,16 @@ class CreateGuide {
 
         if(!this.modal) return;
 
-        this.modalTitle = this.modal.querySelector('.js-modal-title div:nth-child(1)');
+        this.modalTitle = this.modal.querySelector('.js-modal-title header');
         this.navigationContainer = this.modal.querySelector('.js-modal-guide-navigation');
         this.progressSteps = this.modal.querySelectorAll('.js-modal-guide-progress > div > div');
         
-        this.previousStepActionArrow = this.modal.querySelector('.js-left .js-arrow-wrapper');
+        this.previousStepActionArrow = this.modal.querySelector('.js-left');
         this.previousStepActionTxt = this.modal.querySelector('.js-left .title');
-        this.previousStepIcon = this.modal.querySelector('.js-left .js-arrow-wrapper i');
-
+        
         this.optionsTxt = this.modal.querySelector('.js-centre .title');
         
-        this.nextStepActionArrow = this.modal.querySelector('.js-right .js-arrow-wrapper');        
+        this.nextStepActionArrow = this.modal.querySelector('.js-right');
         this.nextStepActionTxt = this.modal.querySelector('.js-right .title');
 
         this.progressSteps.forEach((ps,index) => {
@@ -93,11 +92,11 @@ class CreateGuide {
 
         renderTemplate({ className: nextStep.className }, template.content, parent);
 
-        const options = this.modal.querySelector('.js-options');
+        const options = this.modal.querySelector('.js-options > h1');
 
         switch(description) {
             case 'Provenance':
-                options.innerHTML = 'Select the species you want to study.';
+                options.innerHTML = 'How do you want to select your species?';
                 renderSpeciesSearchOptions(this);
                 break;
             case 'Location':                                
@@ -118,7 +117,7 @@ class CreateGuide {
                             config: this.config,
                             setConfig: this.setConfig
                         }, this.modal.querySelector('.js-actions'));
-                        const title = this.modal.querySelector('.js-options');
+                        const title = this.modal.querySelector('.js-options > h1');
                               title.innerHTML = 'Add species by name.';            
                         break;
                 }
@@ -139,7 +138,7 @@ class CreateGuide {
 
         this.currentStep = next || this.steps.find(s => s.number === nextStep);
 
-        if(option === enums.guideOption.PICKER.name) {
+        if(option === enums.guideOption.PICKER.name && direction === 'NEXT') {
             this.currentStep = this.steps[2];
         }
 
@@ -182,7 +181,6 @@ class CreateGuide {
             this.nextStepActionArrow.classList.remove('arrow-wrapper-hidden');
             this.nextStepActionArrow.dataset.number = this.currentStep.number;
             this.previousStepActionTxt.classList.remove('hide-important');
-            this.previousStepIcon.classList.remove('hide-important');
             const previousStepProperties = this.currentStep.prevStep
                                                 ? this.steps.find(s => s.description === this.currentStep.prevStep)
                                                 : this.steps.find(s => s.number === (this.currentStep.number - 1));
@@ -227,7 +225,7 @@ export const createGuideHandler = step => {
 
         let prevStep;
         
-        if(guide.getCurrentStep().number === 4) {
+        if(guide.getCurrentStep() && guide.getCurrentStep().number === 4) {
             prevStep = guide.option === enums.guideOption.PICKER.name ? 2 : 3;
         } else {
             prevStep = guide.getCurrentStep().number - 1;

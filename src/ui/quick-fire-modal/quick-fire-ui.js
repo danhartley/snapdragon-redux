@@ -133,7 +133,7 @@ const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
 
     const { glossary, filters, questions } = links;
 
-    const underline = 'underline-link';
+    // const underline = 'underline-link';
     const hide = 'hide-important';
 
     const quickFire = getQuickFire();
@@ -144,9 +144,9 @@ const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
             questions.classList.remove(hide);
             filters.classList.add(hide);
         } else {
-            glossary.classList.remove(underline);
+            // glossary.classList.remove(underline);
             filters.classList.remove(hide);
-            filters.classList.add(underline);
+            // filters.classList.add(underline);
         }
     };
 
@@ -178,12 +178,12 @@ const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
         case enums.quickFireStep.FILTERS:
             filters.classList.add(hide);
             glossary.classList.remove(hide);
-            glossary.classList.add(underline);
+            // glossary.classList.add(underline);
             handleGlossaryLink();
         break;
             
         case enums.quickFireStep.QUESTIONS:
-            filters.classList.add(underline);
+            // filters.classList.add(underline);
             filters.classList.remove(hide);
             filters.innerHTML = 'Vocab filter';
             handleGlossaryLink();
@@ -191,7 +191,7 @@ const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
         break;
 
         case enums.quickFireStep.GLOSSARY:
-            filters.classList.add(underline);
+            // filters.classList.add(underline);
             filters.classList.remove(hide);
             filters.innerHTML = 'Vocab filter';
             questions.classList.add(hide);

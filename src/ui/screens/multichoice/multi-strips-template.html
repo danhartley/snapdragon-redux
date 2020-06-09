@@ -1,7 +1,9 @@
+<form id="scoreForm" action="">
 <ul class="strips description js-rptr-strips" data-repeat-answer="{{ answers }}">
-  <li class="strip">
+  <li tabindex="0" class="strip">
       <div data-answer-index="{{ answer.index }}" data-name="{{ answer.name }}" data-names="{{ answer.names }}">
           <span>{{ answer.term }}</span>
       </div>
     </li>
 </ul>
+</form>

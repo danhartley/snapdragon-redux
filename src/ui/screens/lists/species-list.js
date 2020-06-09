@@ -103,7 +103,7 @@ export const renderSpeciesList = (lesson, args) => {
 
         setTimeout(() => {
             
-            const speciesCardLinks = document.querySelectorAll('.js-test-card-container-link span');
+            const speciesCardLinks = document.querySelectorAll('.js-test-card-container-link');
                   speciesCardLinks.forEach((link, index) => {                
                       link.addEventListener('click', event => {                    
                         const name = event.target.dataset.name;

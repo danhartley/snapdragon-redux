@@ -109,9 +109,6 @@
     .test-card-question .question-statement, .test-card-question .question-provider-question {
         font-size: 1rem;
     }
-    .lesson-review > div {
-        font-size: .9em;
-    }
     body {
         font-size: 1.2em;
     }
@@ -145,6 +142,14 @@
 }
 
 @media (min-width: 768px) {
+
+  .modal h1 {
+    font-size: 1rem;
+  }
+
+  .modal h2 {
+    font-size: 1rem;
+  }
 
     .quick-fire .quick-fire-branches .btn-secondary, .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
         font-size: .9rem;
@@ -304,15 +309,11 @@
         grid-template-columns: 1fr .25rem 1fr;
     }
 
-    .iconic-taxa-categories {     
-    display: grid; 
-    grid-template-columns: 1fr 1fr;      
+    .location-filter-options {
+      padding: 2rem;
+      grid-template-columns: 1fr 1fr;
     }
-
-    .iconic-taxa-categories > div > div:nth-child(1) { 
-        margin: 0 0.5rem 0.5rem 0;
-    }
-
+    
     .traits-names-txt {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -377,7 +378,7 @@
         padding-right: 1rem;
     }
 
-    .right-grid .footer > span, .left-grid .footer > span {
+    .right-grid .footer > ul, .left-grid .footer > ul {
         max-width: 50%;
         text-transform: none;
         justify-content: space-between;
@@ -413,10 +414,10 @@
         display: flex;
     }
 
-    .lesson-list-carousel-item > div:nth-child(3) > div > div {
+    /* .lesson-list-carousel-item > div:nth-child(3) > div > div {
         display: flex;
         align-items: center;
-    }
+    } */
 
     body {
         max-width: 1200px;

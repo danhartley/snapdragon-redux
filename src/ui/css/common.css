@@ -1,5 +1,40 @@
-  legend{
-    margin-bottom: 0 !important;  
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .modal h1 {
+    font-size: .9rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  h1, h2, h3 {
+    font-weight: unset;
+    margin: 0 !important;
+  }
+
+  label {
+    margin: 0;
+  }
+
+  legend {
+    margin-bottom: 0 !important;
+    width: initial !important;
+  }
+
+  caption {
+    padding: 0;
+    height: 0;
+  }
+
+  dt {
+    font-weight: 500;
   }
 
   .flex {
@@ -150,6 +185,10 @@
   .hide-important {
     display: none !important;
   }
+
+  .hide-visually {
+    visibility: hidden;
+  }
   
   .underline-link {
     color: var(--snap-link) !important;
@@ -161,6 +200,21 @@
     display: inline-block;
     line-height: 1.8;
     pointer-events: initial;
+  }
+
+  .underline-link:hover {
+    color: red !important;
+  }
+  .underline-link:active {
+    color: green !important;
+  }
+  .underline-link:focus {
+    color: blue !important;
+    outline: none; /* must put something back! */
+  }
+
+  .full-width {
+    width: 100%;
   }
 
   .cursor-pointer {
@@ -193,6 +247,10 @@
 
   .small-text {
     font-size: .8rem !important;
+  }
+
+  .smaller-text {
+    font-size: .7rem !important;
   }
 
   .extra-small-text {

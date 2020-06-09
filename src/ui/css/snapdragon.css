@@ -27,6 +27,11 @@ button {
   letter-spacing: .03rem;
 }
 
+button[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 input[type="text"] {
   padding: .5rem;
   width: 100%;
@@ -100,10 +105,17 @@ hr {
   background-color: var(--snap-progress-bg);
 }
 
-.btn.btn-light, .btn.btn-light:focus {
-  color: var(--snap-text-light) !important;
-  background-color: var(--snap-collection) !important;
-  cursor: pointer;
+.snap-action-btn {
+  background-color: var(--snap-tertiary-background);
+  color: var(--snap-text-light);
+  letter-spacing: .05rem;
+  border: 1px solid var(--snap-non-taxa) !important;
+  padding: .25rem .75rem;
+  text-transform: uppercase;
+}
+
+.snap-action-btn:disabled {
+  pointer-events: none;
 }
 
 .btn-collection {
@@ -223,6 +235,10 @@ a.dropdown-item {
   cursor: pointer;
   color: var(--snap-text-dark);
   font-size: 1.4rem;
+}
+
+a.icon:hover {
+  color: var(--snap-text-light);
 }
 
 .email span {
@@ -424,6 +440,10 @@ a.dropdown-item {
   justify-content: space-evenly;
 }
 
+.left-grid .footer .nav-icons li, .right-grid .footer .nav-icons li {
+  margin: 0 !important;
+}
+
 .footer-round, .footer-score span {
   color: var(--snap-text-medium-dark);
   padding: 0.75rem;
@@ -442,7 +462,6 @@ a.dropdown-item {
 .header-text {
   color: var(--snap-text-dark-medium-dark);
 }
-
 
 .scrollable {
   overflow-y: auto;
@@ -788,21 +807,21 @@ a.dropdown-item {
   cursor: pointer;
 }
 
-button:focus {
+/* button:focus {
   outline: none;
-}
+} */
 
-.btn-light.disabled, .btn-light:disabled {
+.snap-action-btn.disabled, .snap-action-btn:disabled {
   cursor: initial !important;
 }
 
-button.btn-light.focus,
+button.snap-action-btn.focus,
 button.btn:focus,
-button.btn-light:focus,
-.show > .btn-light.dropdown-toggle,
-.btn-light:not(:disabled):not(.disabled).active:focus,
-.btn-light:not(:disabled):not(.disabled):active:focus,
-.show > .btn-light.dropdown-toggle:focus {
+button.snap-action-btn:focus,
+.show > .snap-action-btn.dropdown-toggle,
+.snap-action-btn:not(:disabled):not(.disabled).active:focus,
+.snap-action-btn:not(:disabled):not(.disabled):active:focus,
+.show > .snap-action-btn.dropdown-toggle:focus {
   box-shadow: 0 0 0 0;
 }
 
@@ -810,6 +829,58 @@ button.btn-light:focus,
   font-size: inherit;
   padding: .5rem;
   border: none;
+}
+
+.snap-btn {
+  background-color: var(--snap-list-header-background);
+  color: var(--snap-text-black);
+  letter-spacing: .05rem;
+  border: 1px solid var(--snap-portrait);
+  padding: .25rem .75rem;
+  text-transform: uppercase;
+}
+
+.snap-btn:hover {
+  color: red !important;
+}
+.snap-btn:active {
+  color: green !important;
+}
+/* .snap-btn:focus {
+  color: blue !important;
+  outline: none;
+  border: 1px solid blue;
+} */
+
+.snap-btn:focus:not(:focus-visible), .snap-icon-btn:focus:not(:focus-visible) {
+  /* focus still works with keyboard events, but not when clicked */
+  color: blue !important;
+  outline: none;
+  border: 1px solid blue;
+}
+
+.snap-icon-btn {
+  color: var(--snap-text-dark);
+  background-color: transparent;
+  border: none;
+}
+
+.snap-icon-btn:hover {
+  color: var(--snap-text-light);
+}
+
+.snap-link-btn, .snap-no-link-btn {
+  color: var(--snap-text-dark);
+  background-color: transparent;
+  border: none;
+  font-size: .7rem;
+  width: intrinsic;           /* Safari/WebKit uses a non-standard name */
+  width: -moz-max-content;    /* Firefox/Gecko */
+  width: -webkit-max-content; /* Chrome */
+}
+
+.snap-no-link-btn {
+  pointer-events: none;
 }
 
 .btn.focus, .btn:focus {
@@ -920,7 +991,7 @@ span.correct {
   color: rgb(2, 107, 26);
 }
 
-.btn.btn-light.snap-success {
+.btn.snap-action-btn.snap-success {
   color: var(--snap-text-light) !important;
   background-color: var(--snap-success) !important;
   border: 0.05rem solid var(--snap-success);
@@ -940,7 +1011,7 @@ span.correct {
   color: var(--snap-alert);
 }
 
-.btn.btn-light.snap-alert {
+.btn.snap-action-btn.snap-alert {
   color: var(--snap-text-light) !important;
   background-color: var(--snap-alert) !important;
   border: 0.05rem solid var(--snap-alert);
@@ -1164,7 +1235,7 @@ button:disabled {
 .badge-list {
   height: 100%;
   padding: 1rem;
-  background-color: var(--snap-btn-light);
+  background-color: var(--snap-snap-action-btn);
 }
 
 .question-images {
@@ -1589,6 +1660,10 @@ a.collection-disabled {
   border-bottom: 1px solid var(--snap-border-lightest);
 }
 
+.home-container .snapdragon-header a, .home-container .snapdragon-header a:visited {
+  color: var(--snap-text-medium-light);
+}
+
 .home-container .snapdragon-tag, .home-container .summary-scores, .trait-card-summary-container .summary-scores {
   justify-content: center;
   font-style: italic;
@@ -1736,7 +1811,7 @@ a.collection-disabled {
   top: calc(var(--vhStandardBlock));  
 }
 
-.snapdragon-intro > div {
+.snapdragon-intro > h3, .snapdragon-intro > h4, .snapdragon-intro > h5 {
   line-height: 2;
   font-size: 1rem;
   margin: 1.2rem 2.4rem 0 2.4rem !important;
@@ -1825,10 +1900,6 @@ a.collection-disabled {
 .lesson-review, .lesson-terms-review {
   pointer-events: initial;  
   line-height: 3;
-}
-
-.lesson-review > div { 
-  line-height: 2rem;
 }
 
 .lesson-review i {
@@ -1937,14 +2008,14 @@ a.collection-disabled {
   cursor: pointer;
 }
 
-.lesson-review > div {
+/* .lesson-review > div {
   font-size: .7em;
-}
+} */
 
 .main-header {
   font-size: 1.4rem;
   text-transform: uppercase;
-  letter-spacing: .1rem;
+  letter-spacing: .25rem;
 }
 
 .fa, .fab, .fal, .far, .fas {
@@ -2217,7 +2288,7 @@ input[type="number"].medium {
 }
 
 .quick-fire .btn-group >.btn {
-  background-color: var(--snap-btn-light);
+  background-color: var(--snap-snap-action-btn);
   margin: 0 0 .5rem 0;
   border-radius: .25rem !important;
   letter-spacing: .03rem;
@@ -2373,4 +2444,10 @@ input[type="number"].medium {
   width: 98px;
   height: 68px;
   object-fit: none;
+}
+
+.location-filter-options {
+  padding: .5rem;
+  grid-template-rows: 1fr 1fr;
+  display: grid;
 }

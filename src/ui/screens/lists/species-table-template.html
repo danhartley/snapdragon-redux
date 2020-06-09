@@ -2,6 +2,9 @@
     <tbody data-repeat-item="{{ itemImages }}">
         <tr class="table-row master js-list-item" id="id_{{ item.id }}">
             <td id="{{ item.name }}" data-snap-index="{{ item.snapIndex }}">
+
+              <!-- require wrapping a tag -->
+
                 <img 
                     id="{{ item.name }}" 
                     src="{{ item.small }}" 
@@ -18,20 +21,14 @@
                     data-provider="{{ item.provider }}">
             </td>
             <td>
-                <span class="js-test-card-container-link">
-                    <span data-toggle="modal" data-name="{{ item.name }}" data-id="{{ item.id }}" data-type="speciesCardLink" data-target="#cardModal" class="capitalise underline-link">{{ item.vernacularName }}</span>
-                </span>
+                <button data-toggle="modal" data-name="{{ item.name }}" data-id="{{ item.id }}" data-type="speciesCardLink" data-target="#cardModal" class="snap-link-btn underline-link js-test-card-container-link">{{ item.vernacularName }}</button>
                 <span class="latin-name">
-                    <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="genus" data-genus="{{ item.genus }}" data-target="#cardModal" class="{{ item.genusLinkClass }}">{{ item.genus }}</span> <span>{{ item.species }}</span>
+                    <button data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="genus" data-genus="{{ item.genus }}" data-target="#cardModal" class="{{ item.genusLinkClass }}">{{ item.genus }}</button> <span>{{ item.species }}</span>
                 </span>
-                <!-- <span id="{{ item.id }}" name="{{ item.name }}"><i class="{{ item.iconicTaxonIcon }}"></i></span> -->
-                <!-- <span class="mushroom-icon {{ item.hideFungiIcon }}"></span> -->
-                <!-- <span style="font-size: .7rem;" data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="family" data-family="{{ item.taxonomy.family }}" data-target="#cardModal" class="{{ item.familyLinkClass }}">{{ item.taxonomy.family }}</span> -->
             </td>
             <td class="wide-screen">
-                <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="family" data-family="{{ item.taxonomy.family }}" data-target="#cardModal" class="{{ item.familyLinkClass }}">{{ item.taxonomy.family }}</span>
-                <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="order" data-order="{{ item.taxonomy.order }}" data-target="#cardModal" class="{{ item.orderLinkClass }} js-order-link">{{ item.taxonomy.order }}</span>                
-                <!-- <span data-toggle="modal" data-url="{{ item.url }}" data-target="#cardModal" data-key-trait="{{ item.keyTrait }}" class="{{ item.keyTratLinkClass }}">{{ item.keyTrait }}</span> -->
+                <button data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="family" data-family="{{ item.taxonomy.family }}" data-target="#cardModal" class="{{ item.familyLinkClass }}">{{ item.taxonomy.family }}</button>
+                <button data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="order" data-order="{{ item.taxonomy.order }}" data-target="#cardModal" class="{{ item.orderLinkClass }} js-order-link">{{ item.taxonomy.order }}</button>
             </td>
             <td class="{{ item.iconicTaxon }} {{ item.hasTaxonClassName }}">
                 <span id="{{ item.id }}" name="{{ item.name }}"><i class="{{ item.iconicTaxonIcon }}"></i></span>
@@ -48,4 +45,4 @@
         </tr>
     </tbody>
 </table>
-<button class="btn btn-light portrait btn-current-lesson-begin js-btn-current-lesson-begin">Quiz</button>
+<button class="btn snap-action-btn portrait btn-current-lesson-begin js-btn-current-lesson-begin">Quiz</button>

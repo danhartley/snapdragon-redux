@@ -1,46 +1,50 @@
-<div data-lesson-id="{{ lesson.id }}" class="lesson-list-carousel-item padding-left margin-bottom js-lesson-list-carousel-item">
-    <div class="landscape double-centred-block">
-        <img class="lesson-icon" src="{{ lesson.icon }}" alt="{{ lesson.name }}">
-    </div>
-    <div data-lesson-id="{{ lesson.id }}" class="lesson-list-item js-lesson-list-item" data-has-video="{{ lesson.hasVideo }}">
-        <div>            
-            <div class="lesson-name js-lesson-title" data-lesson-id="{{ lesson.id }}">
-                <span data-toggle="modal" data-target="#basicModal" id="lesson_{{ lesson.id }}" class="lesson-title margin-right {{ lesson.isCollectionEditableClass }}">{{ lesson.name }}</span>
-            </div>
-            <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>
-            <div class="latin hide-empty js-lesson-video-state" data-lesson-id="{{ lesson.id }}">{{ lesson.videoState }}</div>         
-        </div> 
-        <div data-lesson-id="{{ lesson.id }}" class="lesson-review js-lesson-review">
-            <div class="flex">
-                <div class="centred-block fit-width">
-                  <span class="lesson-terms-review js-terms-review-link {{ lesson.hasTermsClass }} double-margin-right" data-toggle="modal" data-target="#glossaryModal">
-                      <span data-lesson-id="{{ lesson.id }}" class="underline-link" data-toggle="modal" data-target="#glossaryModal">Vocab</span>
-                  <span>
-                </div>
-                <div class="centred-block">
-                  <span data-toggle="modal" data-target="#lessonModal" data-lesson-id="{{ lesson.id }}" class="landscape underline-link margin-right js-review-link">{{ lesson.reviewState }}</span>
-                  <span data-lesson-id="{{ lesson.id }}" class="portrait underline-link margin-right js-review-link">{{ lesson.reviewState }}</span>
-                  <span data-lesson-id="{{ lesson.id }}" class="js-review">
-                  <span>&nbsp;</span>
-                  </span>
-                  <span data-lesson-id="{{ lesson.id }}" class="hide margin-right js-loading-review-message">
-                      <span class="landscape">(Loading…)</span>
-                      <span class="portrait"><i class="fas fa-sync slow-spin"></i></span>
-                  </span>                  
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="lesson-list-action-icons js-lesson-list-action-icons">
-        <div>
-            <div data-lesson-id="{{ lesson.id }}" data-lesson-is-youtube-icon="true" class="margin-right js-lesson-list-youtube">
+<li>
+  <div data-lesson-id="{{ lesson.id }}" class="lesson-list-carousel-item padding-left margin-bottom js-lesson-list-carousel-item">
+      <h3 class="landscape double-centred-block">
+          <img class="lesson-icon" src="{{ lesson.icon }}" alt="{{ lesson.name }}">
+      </h3>
+      <div data-lesson-id="{{ lesson.id }}" class="lesson-list-item js-lesson-list-item" data-has-video="{{ lesson.hasVideo }}">
+          <div>            
+              <div class="lesson-name js-lesson-title" data-lesson-id="{{ lesson.id }}">
+                  <span data-toggle="modal" data-target="#basicModal" id="lesson_{{ lesson.id }}" class="lesson-title margin-right {{ lesson.isCollectionEditableClass }}">{{ lesson.name }}</span>
+              </div>
+              <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>
+              <div class="latin hide-empty js-lesson-video-state" data-lesson-id="{{ lesson.id }}">{{ lesson.videoState }}</div>         
+          </div> 
+          <div data-lesson-id="{{ lesson.id }}" class="lesson-review js-lesson-review">
+              <div class="flex">
+                  <div class="centred-block fit-width">
+                    <span class="lesson-terms-review {{ lesson.hasTermsClass }} margin-right fit-width js-terms-review-link" data-toggle="modal" data-target="#glossaryModal">
+                        <button data-lesson-id="{{ lesson.id }}" class="btn snap-btn extra-small-text" data-toggle="modal" data-target="#glossaryModal">Vocab test</button>
+                    <span>
+                  </div>
+                  <div class="centred-block">
+                    <span>
+                      <button data-toggle="modal" data-target="#lessonModal" data-lesson-id="{{ lesson.id }}" class="landscape btn snap-btn extra-small-text margin-right fit-width js-review-link">{{ lesson.reviewState }}</button>
+                      <button data-lesson-id="{{ lesson.id }}" class="portrait btn snap-btn extra-small-text margin-right fit-width js-review-link">{{ lesson.reviewState }}</button>
+                    </span>
+                    <span data-lesson-id="{{ lesson.id }}" class="js-review">
+                    <span>&nbsp;</span>
+                    </span>
+                    <span data-lesson-id="{{ lesson.id }}" class="hide margin-right js-loading-review-message">
+                        <span class="landscape">(Loading…)</span>
+                        <span class="portrait"><i class="fas fa-sync slow-spin"></i></span>
+                    </span>                  
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="lesson-list-action-icons js-lesson-list-action-icons">
+          <div>
+              <button data-lesson-id="{{ lesson.id }}" data-lesson-is-youtube-icon="true" class="snap-icon-btn fit-width margin-right js-lesson-list-youtube">
                 <i class="fab fa-youtube youtube-icon {{ lesson.hideVideoClass }}"></i>
                 <i class="fas fa-glasses youtube-icon {{ lesson.hideTextIntroClass }}"></i>
-            </div>
-            <div data-lesson-id="{{ lesson.id }}" class="landscape js-lesson-list-chevron margin-right">
+              </button>
+              <button data-lesson-id="{{ lesson.id }}" class="landscape snap-icon-btn fit-width js-lesson-list-chevron margin-right" style="margin-top: 2px;">
                 <i class="fas fa-chevron-down"></i>
-            </div>
-        </div>
-    </div>
-</div data-lesson-id="{{ lesson.id }}">
-<div data-container-id="{{ lesson.id }}" class="species-container js-species-container"></div>
+              </button>
+          </div>
+      </div>
+  </div>
+  <div data-container-id="{{ lesson.id }}" class="species-container js-species-container"></div>
+</li>

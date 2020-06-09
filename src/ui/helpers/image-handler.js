@@ -132,7 +132,7 @@ const handleImageSelectionFromList = (image, item, collection, config, displayNa
         default:
             displayName = `<span>${selectedItem.vernacularName}</span> <span class="latin-name">${selectedItem.name}</span>`;
     }
-    DOM.modalImageTitle.innerHTML = displayName;
+    DOM.basicModalImageTitle.innerHTML = displayName;
 };
 
 export const modalImageHandler = (image, item, collection, config, displayNameType = 'binomial') => {

@@ -46,9 +46,9 @@ export const buildTable = (collection, args) => {
         let orderLinkClass;
         if(item.taxonomy && item.taxonomy.order) {
             orderLinkClass = item.order
-                ? 'capitalise underline-link js-taxon-card-link' 
-                : 'js-taxon-card-link no-pointer-events';
-        } else { orderLinkClass = 'js-taxon-card-link'; }
+                ? 'snap-link-btn underline-link js-taxon-card-link' 
+                : 'snap-no-link-btn js-taxon-card-link';
+        } else { orderLinkClass = 'snap-no-link-btn js-taxon-card-link'; }
         return orderLinkClass;
     };
 
@@ -79,8 +79,8 @@ export const buildTable = (collection, args) => {
             genus: item.taxonomy.genus,
             species: item.taxonomy.species,
             genusLinkClass: item.genus
-                ? 'underline-link js-taxon-card-link' 
-                : 'js-taxon-card-link no-pointer-events',
+                ? 'snap-link-btn underline-link js-taxon-card-link' 
+                : 'snap-no-link-btn js-taxon-card-link',
             shortName: itemProperties.trimLatinName(item.name),
             taxonomy: item.taxonomy,
             iconicTaxon: item.iconicTaxon,
@@ -95,8 +95,8 @@ export const buildTable = (collection, args) => {
             keyTrait: utils.capitaliseFirst(itemProperties.getActiveTrait(item, [{ name: traitName, formatter: trait => trait[0] }])) || '',
             keyTratLinkClass: keyTratLinkClass,
             familyLinkClass: item.family
-                                ? 'capitalise underline-link js-taxon-card-link' 
-                                : 'js-taxon-card-link no-pointer-events',
+                                ? 'snap-link-btn underline-link js-taxon-card-link' 
+                                : 'snap-no-link-btn js-taxon-card-link',
             orderLinkClass: getOrderLinkClass(item),
             taxonomy: item.taxonomy || { family: '', order: ''},
             iconicTaxonIcon,
@@ -150,6 +150,15 @@ export const buildTable = (collection, args) => {
 
     if(!tbody) return;
     
+    const caption = document.createElement('caption');
+          caption.innerHTML = `Species in ${collection.name}`;
+          caption.classList.add('hide-visually');
+
+    const thead = document.createElement('thead');
+
+    table.insertBefore(thead, tbody);
+    table.insertBefore(caption, thead);
+
     const headerRow = document.createElement('tr');
           headerRow.classList.add('table-header');
     const imageHeader = document.createElement('th');
@@ -185,7 +194,7 @@ export const buildTable = (collection, args) => {
     }
 
     if(!tbody.querySelector('.table-header')) {
-        tbody.insertBefore(headerRow, tbody.children[0]);
+        thead.appendChild(headerRow);
     }
 
     const sortableCalback = () => {};

@@ -10,8 +10,8 @@ import 'ui/css/groups/species-card.css';
 import 'ui/css/groups/modal.css';
 import 'ui/css/groups/species-list.css';
 import 'ui/create-guide-modal/create-guide.css';
-import 'ui/css/snapdragon-media.css';
 import 'ui/css/common.css';
+import 'ui/css/snapdragon-media.css';
 
 import { utils } from 'utils/utils';
 import { store, persistor } from 'redux/store';

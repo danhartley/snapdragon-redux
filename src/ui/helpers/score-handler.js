@@ -3,6 +3,7 @@ import { actions } from 'redux/actions/action-creators';
 import { elem } from 'ui/helpers/class-behaviour';
 import { markTest} from 'ui/helpers/test-handler';
 import { subscription } from 'redux/subscriptions';
+import { log, logError } from 'ui/helpers/logging-handler';
 
 export const scoreHandler = (type, test, callback, config) => {
     
@@ -150,77 +151,83 @@ const stripScoreHandler = (test, callback, config) => {
 
     const { items, taxon } = test;
 
-    items.forEach(selected => {
-        
-        selected.addEventListener('click', event => {
+    const handleClickEvent = e => {
+      
+        const target = e.target;
+
+        if(elem.hasClass(target, 'disabled')) return;
+
+        const answerNode = target.querySelector('div:nth-child(1)');
+        const answer = answerNode.innerText.trim();
+        const answerIndex = answerNode.dataset.answerIndex;
+        const name = answerNode.dataset.name;
+        const vernacular = target.dataset.vernacular;
+
+        test.taxon = 'name';
+        test.vernacular = vernacular;
+        test.question = taxon.question;
+        test.answer = (name && name !== '') ? { term: answer, name } : answer;
             
-            const target = event.target;
+        const score = markTest({...test, answeredIndex: answerIndex, answers: [] });
 
-            if(elem.hasClass(target, 'disabled')) return;
+        target.classList.add(score.colour);
 
-            const answerNode = target.querySelector('div:nth-child(1)');
-            const answer = answerNode.innerText.trim();
-            const answerIndex = answerNode.dataset.answerIndex;
-            const name = answerNode.dataset.name;
-            const vernacular = target.dataset.vernacular;
-
-            test.taxon = 'name';
-            test.vernacular = vernacular;
-            test.question = taxon.question;
-            test.answer = (name && name !== '') ? { term: answer, name } : answer;
-                
-            const score = markTest({...test, answeredIndex: answerIndex, answers: [] });
-
-            target.classList.add(score.colour);
-
-            items.forEach(strip => {   
-                const stripAnswer = strip.querySelector('div:nth-child(1)');
-                const stripAnswerIndex = parseInt(stripAnswer.dataset.answerIndex);
-                const stripAnswerName = stripAnswer.dataset.name || '';
-                
-                stripAnswer === '' 
-                    ? score.answers.push(stripAnswer.innerText) 
-                    : score.answers.push({
-                        term: stripAnswer.innerText,
-                        name: stripAnswerName
-                    });
-                
-                if(stripAnswerIndex === test.answerIndex) {
-                    strip.classList.add('snap-success');
-                }
-            });     
+        items.forEach(strip => {   
+            const stripAnswer = strip.querySelector('div:nth-child(1)');
+            const stripAnswerIndex = parseInt(stripAnswer.dataset.answerIndex);
+            const stripAnswerName = stripAnswer.dataset.name || '';
             
-            if(callback) {
-                callback(score);
-            } else {
-                const _callback = (score) => {
-
-                    const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
-
-                    const scoreUpdateTimer = setTimeout(()=>{
-                        subscription.removeSubs();
-                        bindScore(score);
-                    }, delay);
-                
-                    continueLessonHandler(document.querySelector('.js-continue-lesson-btn'), score, scoreUpdateTimer);
-
-                    // screen is always null
-                    if(screen.name === 'family-strips') {
-                        document.querySelector('.js-question-question').innerHTML = item.taxonomy.family;
-                        document.querySelector('.js-question-help').classList.add('hide');
-                    }
-                };
-                _callback(score);
+            stripAnswer === '' 
+                ? score.answers.push(stripAnswer.innerText) 
+                : score.answers.push({
+                    term: stripAnswer.innerText,
+                    name: stripAnswerName
+                });
+            
+            if(stripAnswerIndex === test.answerIndex) {
+                strip.classList.add('snap-success');
             }
-                
+        });     
+        
+        if(callback) {
+            callback(score);
+        } else {
+            const _callback = (score) => {
 
-            let correct = `Correct`;
-            let incorrect = `Incorrect`;
+                const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
-            showResponseToAnswerHandler({ success: score.success, correct, incorrect });
+                const scoreUpdateTimer = setTimeout(()=>{
+                    subscription.removeSubs();
+                    bindScore(score);
+                }, delay);
+            
+                continueLessonHandler(document.querySelector('.js-continue-lesson-btn'), score, scoreUpdateTimer);
 
-            items.forEach(item => item.classList.add('disabled'));
-        });
+                // screen is always null
+                if(screen.name === 'family-strips') {
+                    document.querySelector('.js-question-question').innerHTML = item.taxonomy.family;
+                    document.querySelector('.js-question-help').classList.add('hide');
+                }
+            };
+            _callback(score);
+        }
+            
+        let correct = `Correct`;
+        let incorrect = `Incorrect`;
+
+        showResponseToAnswerHandler({ success: score.success, correct, incorrect });
+
+        items.forEach(item => item.classList.add('disabled'));
+    };
+
+    items.forEach(selected => {        
+        selected.addEventListener('click', handleClickEvent);
+    });
+
+    window.addEventListener('keydown', e => {
+      if(e.key === 'Enter') {
+        handleClickEvent(e);
+      }                  
     });
 };
 
