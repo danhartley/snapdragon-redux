@@ -35,7 +35,7 @@ export const renderCustomLesson = (lessons, savedLessons, videoPlayer, score, co
           lessonListEventHandler.onLessonIconClickHandler(chevron, lessons, config, false);
         }
 
-        const youtubeLessonIcon = document.querySelector(`div.js-lesson-list-youtube[data-lesson-id="${lesson.id}"]`);
+        const youtubeLessonIcon = document.querySelector(`.js-lesson-list-youtube[data-lesson-id="${lesson.id}"]`);
         if(youtubeLessonIcon) {
           youtubeLessonIcon.classList.add('hide-important');
         }

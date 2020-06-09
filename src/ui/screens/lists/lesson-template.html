@@ -36,13 +36,13 @@
       </div>
       <div class="lesson-list-action-icons js-lesson-list-action-icons">
           <div>
-              <a href="#" data-lesson-id="{{ lesson.id }}" data-lesson-is-youtube-icon="true" class="margin-right js-lesson-list-youtube">
-                  <i class="fab fa-youtube youtube-icon {{ lesson.hideVideoClass }}"></i>
-                  <i class="fas fa-glasses youtube-icon {{ lesson.hideTextIntroClass }}"></i>
-              </a>
-              <a href="#" data-lesson-id="{{ lesson.id }}" class="landscape js-lesson-list-chevron margin-right" style="margin-top: 1px;">
-                  <i class="fas fa-chevron-down"></i>
-              </a>
+              <button data-lesson-id="{{ lesson.id }}" data-lesson-is-youtube-icon="true" class="snap-icon-btn fit-width margin-right js-lesson-list-youtube">
+                <i class="fab fa-youtube youtube-icon {{ lesson.hideVideoClass }}"></i>
+                <i class="fas fa-glasses youtube-icon {{ lesson.hideTextIntroClass }}"></i>
+              </button>
+              <button data-lesson-id="{{ lesson.id }}" class="landscape snap-icon-btn fit-width js-lesson-list-chevron margin-right" style="margin-top: 2px;">
+                <i class="fas fa-chevron-down"></i>
+              </button>
           </div>
       </div>
   </div>

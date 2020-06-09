@@ -27,6 +27,11 @@
     margin-bottom: 0 !important;  
   }
 
+  caption {
+    padding: 0;
+    height: 0;
+  }
+
   .flex {
     display: flex;
   }
@@ -237,6 +242,10 @@
 
   .small-text {
     font-size: .8rem !important;
+  }
+
+  .smaller-text {
+    font-size: .7rem !important;
   }
 
   .extra-small-text {

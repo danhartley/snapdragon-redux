@@ -15,8 +15,8 @@ export const linkedTaxa = (item, config, parent, mode, isInCarousel, collection,
         
         if(!isInCarousel) {            
             const speciesCardLinks = mode === 'MODAL'
-                    ? document.querySelectorAll('#cardModal .js-test-card-container-link span')
-                    : document.querySelectorAll('.js-test-card-container-link span');
+                    ? document.querySelectorAll('#cardModal .js-test-card-container-link')
+                    : document.querySelectorAll('.js-test-card-container-link');
             
             speciesCardLinks.forEach(async link => {
                 link.addEventListener('click', async event => {
