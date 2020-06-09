@@ -860,6 +860,7 @@ button.snap-action-btn:focus,
 }
 
 .snap-icon-btn {
+  color: var(--snap-text-dark);
   background-color: transparent;
   border: none;
 }
@@ -1796,7 +1797,7 @@ a.collection-disabled {
   top: calc(var(--vhStandardBlock));  
 }
 
-.snapdragon-intro > div, .snapdragon-intro > h3 {
+.snapdragon-intro > h3, .snapdragon-intro > h4, .snapdragon-intro > h5 {
   line-height: 2;
   font-size: 1rem;
   margin: 1.2rem 2.4rem 0 2.4rem !important;

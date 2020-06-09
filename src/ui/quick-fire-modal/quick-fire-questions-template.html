@@ -1,9 +1,9 @@
 <div class="quick-fire">
 
     <div class="margin-left centred-block standard-block justify-space-between">
-        <div>
+        <h2>
             <span>Question {{ total }} of {{ count }}</span>
-        </div>
+        </h2>
         <div class="margin-right">
             <button class="btn snap-btn small-text js-quick-review-progress">Progress</button>
         </div>
@@ -14,10 +14,10 @@
     </div>
 
     <ul id="0" class="strips description margin-top js-quick-layouts js-quick-fire-options" data-repeat-answer="{{ answers }}">
-        <li class="strip" id="{{ answer.term }}">
-            <div data-answer-index="{{ answer.index }}">
+        <li class="strip" id="{{ answer.term }}" role="group" aria-label="answers to the question">
+            <button class="snap-icon-btn" data-answer-index="{{ answer.index }}">
                 <span>{{ answer.term }}</span>
-            </div>
+            </button>
           </li>
       </ul>
 

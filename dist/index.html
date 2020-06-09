@@ -63,6 +63,8 @@
         
     </head>
     <body>
+      <noscript><div>Javascript must be enabled for the correct page display</div></noscript> 
+      <!-- <a class="accessibility" href="#main" aria-hidden="false">Skip to Content</a> -->
       <script>
 
           var tag = document.createElement('script');
@@ -90,11 +92,19 @@
               </div>
               <progress style="margin: 1000px 0 0 0" value="0" max="6"></progress>
               <div class="right-body js-right-body"></div>
-              <div class="footer js-right-footer">
-                  <ul class="nav-icons centred-block js-nav-icons"></ul>
+              <footer class="landscape footer js-right-footer">
+                  <nav id="left-navigation" aria-label="navigation for settings, login and contact" class="full-width">
+                    <ul class="nav-icons centred-block js-nav-icons"></ul>
+                  </nav>
                   <span class="footer-score js-footer-score"></span>
-              </div>
-          </div>  
+              </footer>
+              <footer class="portrait footer js-main-footer">
+                  <nav id="main-navigation" aria-label="navigation for home, settings, login and glossary" class="full-width">
+                    <ul class="nav-icons centred-block js-nav-icons"></ul>
+                  </nav>
+                  <span class="footer-score js-footer-score"></span>
+              </footer>
+          </div>
           <div class="left-grid js-left-grid">                    
                   <header class="header js-left-header">
                       <div class="header-text js-left-txt-header">learn the planet</div>
@@ -102,9 +112,11 @@
                   </header>       
                   <div class="no-progress"></div>             
                   <div class="left-body js-left-body"></div>
-                  <div class="footer js-left-footer">
+                  <footer id="right-navigation" class="footer js-left-footer">
+                    <nav aria-label="navigation for glossary and language settings" class="full-width">
                       <ul class="nav-icons centred-block js-nav-icons"></ul>
-                  </div>
+                    </nav>
+                  </footer>
           </div>
       </div>
 
@@ -190,9 +202,9 @@
                   <div class="modal-body">
                       <div class="modal-text js-modal-text"></div>
                   </div>       
-                  <div class="modal-footer double-centred-block js-modal-footer" data-dismiss="modal" aria-label="Close">
+                  <footer class="modal-footer double-centred-block js-modal-footer" data-dismiss="modal" aria-label="Close">
                     <button class="btn snap-btn fit-width">Close</button>
-                  </div>             
+                  </footer>             
               </div>
           </div>
       </div>
@@ -200,21 +212,21 @@
       <div class="modal fade basic-modal" id="glossaryModal" tabindex="-1" role="dialog" aria-labelledby="glossaryModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
               <div class="modal-content">
-                  <div class="modal-header-container">
+                  <header class="modal-header-container">
                       <div class="modal-header">
                           <div class="centred-block justify-space-between js-modal-header-block">
-                              <div class="modal-title small-text js-modal-text-title"><header>Glossary</header></div>
+                              <div class="modal-title small-text js-modal-text-title"><h1>Glossary</h1></div>
                               <button class="fit-width btn snap-btn double-margin-right small-text js-quick-fire-filters">Glossary</button>
                               <button class="hide-important fit-width btn snap-btn double-margin-right small-text js-quick-fire-questions">Quick-fire questions</button>
                           </div>
                       </div>
-                  </div>
+                    </header>
                   <div class="modal-body">
                       <div class="modal-text js-modal-text"></div>
                   </div>       
-                  <div class="modal-footer double-centred-block js-modal-footer" data-dismiss="modal" aria-label="Close">
+                  <footer class="modal-footer double-centred-block js-modal-footer" data-dismiss="modal" aria-label="Close">
                     <button class="btn snap-btn fit-width">Close</button>
-                  </div>             
+                  </footer>             
               </div>
           </div>
       </div>
@@ -294,7 +306,7 @@
                       </div>
                   </div>
                   <div class="step-action-content js-step-action-content">Step action</div>
-                  <div class="modal-guide-navigation js-modal-guide-navigation">
+                  <nav aria-label="navigation for creating new lesson" class="modal-guide-navigation js-modal-guide-navigation">
                       
                     <button class="snap-icon-btn js-left">
                       <span class="arrow-wrapper js-arrow-wrapper"><i class="far fa-arrow-alt-circle-left"></i></span>
@@ -307,7 +319,7 @@
                         <span class="title"></span>
                         <span class="arrow-wrapper js-arrow-wrapper"><i class="far fa-arrow-alt-circle-right"></i></span>
                       </button>                        
-                  </div>
+                    </nav>
               </div>
               <div class="modal-footer double-centred-block js-create-guide-close-btn" data-dismiss="modal" aria-label="Close">
                 <button class="btn snap-btn fit-width">Close</button>
@@ -336,9 +348,9 @@
                           </div>
                       </div>
                   </div>       
-                  <div class="modal-footer double-centred-block js-modal-footer" data-dismiss="modal" aria-label="Close">
+                  <footer class="modal-footer double-centred-block js-modal-footer" data-dismiss="modal" aria-label="Close">
                     <button class="btn snap-btn fit-width">Close</button>
-                  </div>             
+                  </footer>             
               </div>
           </div>
       </div>

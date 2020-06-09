@@ -203,6 +203,10 @@
     outline: none; /* must put something back! */
   }
 
+  .full-width {
+    width: 100%;
+  }
+
   .cursor-pointer {
     cursor: pointer;
   }
