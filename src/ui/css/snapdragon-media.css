@@ -35,14 +35,14 @@
     }
 }
 
-@media (min-width:414px) {
+/* @media (min-width:414px) {
     .youtube-icon, .accordion-icon {
         font-size: 1.4rem;
     }
     .species-table .youtube-icon, .accordion-icon {
         font-size: 1.2rem;
     }
-}
+} */
 
 /* iPHONE 6,7,8 PLUS, iPHONE X, GALAXY S9/S9+ */
 
@@ -143,12 +143,28 @@
 
 @media (min-width: 768px) {
 
-  .modal h1 {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
     font-size: 1rem;
   }
 
-  .modal h2 {
+  .modal h1 {
+    font-size: 1.2rem;
+  }
+
+  h2 {
     font-size: 1rem;
+  }
+
+  h3 {
+    font-size: .8rem;
   }
 
     .quick-fire .quick-fire-branches .btn-secondary, .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {

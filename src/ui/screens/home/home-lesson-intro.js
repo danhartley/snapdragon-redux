@@ -9,6 +9,6 @@ export const renderLessonIntro = collection => {
 
     collection = { ...collection, items: lesson.items };
 
-    collection.video ? videoSetup(collection, videoPlayer || [], DOM.rightBody) : textSetup(collection, config);
+    collection.hasVideo ? videoSetup(collection, videoPlayer || [], DOM.rightBody) : textSetup(collection, config);
     
 }

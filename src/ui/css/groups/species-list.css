@@ -158,7 +158,11 @@ div.species-description {
 }
 
 .youtube-icon, .accordion-icon {
+  font-size: 1.8rem;
   cursor: pointer;
+}
+
+table .youtube-icon, .accordion-icon {
   font-size: 1.2rem;
 }
 
@@ -167,8 +171,9 @@ div.species-description {
   width: 100%;
 }
 
-.lesson-list-action-icons a {
-  color: var(--snap-text-medium-dark);
+.lesson-list-action-icons {
+  right: .5rem;
+  bottom: 1.5rem;
 }
  
 .species-table .underline-link {
