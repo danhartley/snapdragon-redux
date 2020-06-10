@@ -7,14 +7,15 @@ import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
 
 const selectActiveImage = (image, parent, config) => {
     parent.querySelectorAll('.carousel-item').forEach(i => {
-        const elemSrc = i.lastElementChild.dataset || i.lastElementChild;
+        const elemSrc = i.querySelector('img').dataset;
+        // const elemSrc = i.lastElementChild.dataset || i.lastElementChild;
         if(imageMatch(elemSrc, image.dataset || image)) {
             i.classList.add('active');
             return;
         }
     });    
     
-    const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active > img'); 
+    const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active img'); 
     
     const indicators = document.querySelectorAll('.carousel-indicators li');
           indicators.forEach(i => {
@@ -35,7 +36,7 @@ const carouselControlHandler = (event, parentScreen = document) => {
 
     setTimeout(() => {
 
-        const activeNode = parentScreen.querySelector(`${event.target.dataset.slider} .carousel-item.active > img`);
+        const activeNode = parentScreen.querySelector(`${event.target.dataset.slider} .carousel-item.active img`);
         const image = activeNode.dataset;   
         
         handleRightsAttribution(image);    
