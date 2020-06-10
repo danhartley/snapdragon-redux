@@ -114,7 +114,6 @@ hr {
   letter-spacing: .05rem;
   border: 1px solid var(--snap-non-taxa) !important;
   padding: .25rem .75rem;
-  text-transform: uppercase;
 }
 
 .snap-action-btn:disabled {
@@ -840,7 +839,7 @@ button.snap-action-btn:focus,
   letter-spacing: .05rem;
   border: 1px solid var(--snap-portrait);
   padding: .25rem .75rem;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .snap-btn:hover {
@@ -849,11 +848,6 @@ button.snap-action-btn:focus,
 .snap-btn:active {
   color: green !important;
 }
-/* .snap-btn:focus {
-  color: blue !important;
-  outline: none;
-  border: 1px solid blue;
-} */
 
 .snap-btn:focus:not(:focus-visible), .snap-icon-btn:focus:not(:focus-visible) {
   /* focus still works with keyboard events, but not when clicked */
