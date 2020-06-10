@@ -159,12 +159,12 @@ const onReviewClickHandler = reviewLink => {
     lessonStateHandler.recordUserAction(enums.userEvent.START_LESSON_REVIEW);
 
     const lessonId = reviewLink.dataset.lessonId;
-    const loadingMessage = document.querySelector(`.js-loading-review-message[data-lesson-id="${lessonId}"]`);
-          loadingMessage.classList.remove('hide');
+    // const loadingMessage = document.querySelector(`.js-loading-review-message[data-lesson-id="${lessonId}"]`);
+    //       loadingMessage.classList.remove('hide');
 
-          setTimeout(() => {
-            loadingMessage.classList.add('hide');
-          }, 2000);
+    //       setTimeout(() => {
+    //         loadingMessage.classList.add('hide');
+    //       }, 2000);
 
     const { lesson } = store.getState();
 

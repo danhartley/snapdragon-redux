@@ -1,6 +1,4 @@
 .table-header {
-  background-color: var(--snap-header-background);
-  color: var(--snap-text-dark);
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -8,9 +6,11 @@
   height: var(--vhRunningBlock,7.5vh);
   z-index: 10;
   align-items: center;
-  text-transform: uppercase;
   top: 0;
-  font-size: .9em;
+  background-color: var(--snap-btn-auxillary);
+  color: var(--snap-text-light);
+  font-size: 1.1em;
+  letter-spacing: .01rem;
 }
 
 .table-header th {

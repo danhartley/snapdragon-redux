@@ -41,7 +41,14 @@
             <div id="pass_target_{{ pass.index }}" class="collapse" aria-labelledby="pass_header_{{ pass.index }}" data-parent="#accordion-correct">
                 <div class="card-body">
                     <div>{{ pass.definition }}</div>
-                    <div><a class="underline-link extra-small-text {{ pass.showWikiClass }}" href="{{ pass.wiki }}" target="_blank">wikipedia</a></div>
+                    <div>
+                      <span class="sr-only">Opens in new window</span>
+                      <a class="extra-small-text {{ pass.showWikiClass }}" href="{{ pass.wiki }}" target="_blank">
+                        <span class="sr-only">Opens in new window</span>
+                        <span class="underline-link">wikipedia</span>
+                        <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+                      </a>                      
+                    </div>
                 </div>
             </div>
         </div>
@@ -57,7 +64,13 @@
             <div id="fail_target_{{ fail.index }}" class="collapse" aria-labelledby="fail_header_{{ fail.index }}" data-parent="#accordion-incorrect">
                 <div class="card-body">
                     <div>{{ fail.definition }}</div>
-                    <div><a class="underline-link extra-small-text {{ fail.showWikiClass }}" href="{{ fail.wiki }}" target="_blank">wikipedia</a></div>
+                    <div>
+                      <a class="extra-small-text {{ fail.showWikiClass }}" href="{{ fail.wiki }}" target="_blank">
+                        <span class="sr-only">Opens in new window</span>
+                        <span class="underline-link">wikipedia</span>
+                        <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+                      </a>
+                    </div>
                     <div class="small-text margin-top"><span>You answered: </span><span>{{ fail.answer }}</span></div>
                 </div>
             </div>
