@@ -41,6 +41,14 @@
     flex-wrap: nowrap;
   }
 
+  .relative {
+    position: relative;
+  }
+
+  .absolute {
+    position: absolute;
+  }
+
   .standard-block {
     height: var(--vhStandardBlock, 10vh);
   }

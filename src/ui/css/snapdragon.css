@@ -84,8 +84,11 @@ progress::-moz-progress-bar {
   background-color: var(--snap-progress-bg);
 }
 
-.lesson-list-carousel-item progress {
-  width: 50px;
+.inline-progress-container progress {
+  width: 95px;
+  height: 3px;
+  left: 0;
+  top: 2.5rem;
 }
 
 hr {
