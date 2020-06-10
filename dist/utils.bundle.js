@@ -1,2 +1,448 @@
-!function(e){var t={};function __webpack_require__(n){if(t[n])return t[n].exports;var o=t[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,__webpack_require__),o.l=!0,o.exports}__webpack_require__.m=e,__webpack_require__.c=t,__webpack_require__.d=function(e,t,n){__webpack_require__.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},__webpack_require__.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},__webpack_require__.t=function(e,t){if(1&t&&(e=__webpack_require__(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(__webpack_require__.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)__webpack_require__.d(n,o,function(t){return e[t]}.bind(null,o));return n},__webpack_require__.n=function(e){var t=e&&e.__esModule?function getDefault(){return e.default}:function getModuleExports(){return e};return __webpack_require__.d(t,"a",t),t},__webpack_require__.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},__webpack_require__.p="",__webpack_require__(__webpack_require__.s=5)}({5:function(e,t,n){"use strict";function _typeof(e){return(_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function _typeof(e){return typeof e}:function _typeof(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function _toConsumableArray(e){return function _arrayWithoutHoles(e){if(Array.isArray(e))return _arrayLikeToArray(e)}(e)||function _iterableToArray(e){if("undefined"!=typeof Symbol&&Symbol.iterator in Object(e))return Array.from(e)}(e)||function _unsupportedIterableToArray(e,t){if(!e)return;if("string"==typeof e)return _arrayLikeToArray(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return _arrayLikeToArray(e,t)}(e)||function _nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function _arrayLikeToArray(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,o=new Array(t);n<t;n++)o[n]=e[n];return o}n.r(t),n.d(t,"utils",(function(){return i})),Array.prototype.concatAll=function(){var e=[];return this.forEach((function(t){t.forEach((function(t){e.push(t)}))})),e};var o=function timer(e,t){var n=null;return Bacon.fromBinder((function(){n=setInterval((function(){e()}),t)})).onValue((function(e){})),n};var a=function shuffleArray(e){if(e&&0!==e.length){for(var t,n,o=e.length;0!==o;)n=Math.floor(Math.random()*o),t=e[o-=1],e[o]=e[n],e[n]=t;return _toConsumableArray(e)}},u=function getCellValue(e,t,n,o){var a=e.children;return o||(a=_toConsumableArray(e.children).filter((function(e){return-1===_toConsumableArray(e.classList).join("").indexOf("wide-screen")}))),a[t].dataset.snapIndex||a[t].children[n].innerText||a[t].innerText||a[t].classList[0]||a[t].textContent};var i={log:function log(e){return function(e){return e}},encodeQuery:function encodeQuery(e){return void 0===e||Number.isInteger(e)?e:encodeURIComponent(e.trim())},timer:o,intervalTimer:function intervalTimer(e,t){var n;return this.pause=function(){window.clearInterval(n)},this.resume=function(){window.clearInterval(n),n=o(e,t)},this.getId=function(){return n},this.resume(),this},shuffleArray:a,randomiseSelection:function randomiseSelection(e,t){var n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],o=function r(o){var u=a(e);return(o=o.concat(u.map((function(e,a){if(a+o.length<t)return n?--e:e}))).filter((function(e){return void 0!==e}))).length<t?r(o):o};return o([])},insertObjectBetweenItems:function insertObjectBetweenItems(e,t){return e.reduce((function(e,n,o){return e.concat([t,n])}),[])},doubledItemsInArray:function doubledItemsInArray(e){return e.reduce((function(e,t,n){return e.concat([t,t])}),[])},onlyUnique:function onlyUnique(e,t,n){return n.indexOf(e)===t},sortBy:function sortBy(e,t){var n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:"asc";return"asc"===n?e.sort((function(e,n){return parseFloat(e[t])-parseFloat(n[t])})):e.sort((function(e,n){return parseFloat(n[t])-parseFloat(e[t])}))},sortAlphabeticallyBy:function sortAlphabeticallyBy(e,t){return e.sort((function(e,n){return e[t]<n[t]?-1:e[t]>n[t]?1:0})),e},calcItemIndex:function calcItemIndex(e,t,n){return(e+n)%t==0?e:e+(e+n)%t},capitaliseFirst:function capitaliseFirst(e){return e.substr(0,1).toUpperCase()+e.substr(1).toLowerCase()},capitaliseAll:function capitaliseAll(e){return e.toLowerCase().split(" ").map((function(e){return e.charAt(0).toUpperCase()+e.substring(1)})).join(" ")},makeSortable:function makeSortable(e,t,n){Array.from(e.querySelectorAll("th > span")).forEach((function(e){e.addEventListener("click",(function(){var e="ORDER"===this.innerText.toUpperCase()?1:0,o=[],a=this.parentElement;if("not-sortable"!==a.classList[0]){var i=a.closest("table"),c=i.querySelector("tbody"),l=i.querySelector("tfoot");Array.from(i.querySelectorAll("tr:nth-child(n+2)")).sort(function comparer(e,t,n,o){return function(a,i){return c=u(t?a:i,e,n,o),l=u(t?i:a,e,n,o),""===c||""===l||isNaN(c)||isNaN(l)?c.toString().localeCompare(l):c-l;var c,l}}(Array.from(a.parentNode.children).indexOf(a),this.asc=!this.asc,e,n)).forEach((function(e){e!==l&&(c.appendChild(e),o.push(e.cells[0].id))})),t(o)}}))}))},itemCountReducer:function itemCountReducer(e,t){return e[t.toString()]=e[t.toString()]||0,e[t.toString()]++,e},flatten:function flatten(e){return e.reduce((function(e,t){return e.concat(t)}),[])},getObservableMonths:function getObservableMonths(e){var t=function daysAway(t,n){var o=e,a="future"===t?1:-1;return o.setDate(o.getDate()+a*n),o},n=t("past",30).getMonth(),o=e.getMonth()+1,a=t("future",30).getMonth()+1,u=function getMonthName(e){return new Date(2e3,e,1).toLocaleString("en-uk",{month:"long"})},i=[{index:n,name:u(n)},{index:o,name:u(o)},{index:a,name:u(a)}];return i},getRandomInt:function getRandomInt(e){return Math.floor(Math.random()*Math.floor(e))},createSessionToken:function createSessionToken(){return"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,(function(e){var t=16*Math.random()|0;return("x"==e?t:3&t|8).toString(16)}))},debounce:function debounce(e,t,n){var o;return function(){var a=this,u=arguments,i=function later(){o=null,n||e.apply(a,u)},c=n&&!o;clearTimeout(o),o=setTimeout(i,t),c&&e.apply(a,u)}},getRandomObjectProperty:function getRandomObjectProperty(e){if(0===Object.keys(e).length&&e.constructor===Object)return{};var t=Object.keys(e),n=t[Math.floor(Math.random()*t.length)];return{key:n,value:e[n]}},toCamelCase:function toCamelCase(e){if(void 0===e)return"";var t="";return e.split(" ").forEach((function(e,n){var o=e.toLowerCase();t+=0===n?o:o[0].toUpperCase()+o.slice(1)})),t},fromCamelCase:function fromCamelCase(e){return void 0===e?"":e.replace(/([a-z])([A-Z])/g,"$1 $2").toLowerCase()},parseToLowerCase:function parseToLowerCase(e){return null==e?"":"object"===_typeof(e)?e:e?e.toLowerCase():""}}}});
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/utils/utils.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/utils/utils.js":
+/*!****************************!*\
+  !*** ./src/utils/utils.js ***!
+  \****************************/
+/*! exports provided: utils */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "utils", function() { return utils; });
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+Array.prototype.concatAll = function () {
+  var results = [];
+  this.forEach(function (subArray) {
+    subArray.forEach(function (element) {
+      results.push(element);
+    });
+  });
+  return results;
+};
+
+var log = function log(msg) {
+  return function (array) {
+    return array;
+  };
+};
+
+var encodeQuery = function encodeQuery(q) {
+  if (q === undefined) return q;
+  if (Number.isInteger(q)) return q;
+  return encodeURIComponent(q.trim());
+};
+
+var timer = function timer(sink, delay) {
+  var id = null;
+  Bacon.fromBinder(function () {
+    id = setInterval(function () {
+      sink();
+    }, delay);
+  }).onValue(function (element) {//
+  });
+  return id;
+};
+
+function intervalTimer(sink, delay) {
+  var timerId;
+
+  this.pause = function () {
+    window.clearInterval(timerId);
+  };
+
+  this.resume = function () {
+    window.clearInterval(timerId);
+    timerId = timer(sink, delay);
+  };
+
+  this.getId = function () {
+    return timerId;
+  };
+
+  this.resume();
+  return this;
+}
+
+;
+
+var shuffleArray = function shuffleArray(array) {
+  // Check against https://bost.ocks.org/mike/shuffle/ Fisher–Yates Shuffle
+  if (!array || array.length === 0) return;
+  var currentIndex = array.length,
+      temporaryValue,
+      randomIndex; // While there remain elements to shuffle...
+
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1; // And swap it with the current element.
+
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return _toConsumableArray(array); // return (arr
+  //   .map(a => [Math.random(), a])
+  //   .sort((a, b) => a[0] - b[0])
+  //   .map(a => a[1]))
+};
+
+var randomiseSelection = function randomiseSelection(source, required) {
+  var zeroBased = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+  var r = function r(selection) {
+    var arr = shuffleArray(source);
+    selection = selection.concat(arr.map(function (item, index) {
+      if (index + selection.length < required) {
+        return zeroBased ? --item : item;
+      }
+    })).filter(function (item) {
+      return item !== undefined;
+    });
+    return selection.length < required ? r(selection) : selection;
+  };
+
+  return r([]);
+};
+
+var insertObjectBetweenItems = function insertObjectBetweenItems(array, insert) {
+  var insertedIntoArray = array.reduce(function (acc, curr, currIndex) {
+    return acc.concat([insert, curr]);
+  }, []);
+  return insertedIntoArray;
+};
+
+var doubledItemsInArray = function doubledItemsInArray(array) {
+  var doubledArray = array.reduce(function (acc, curr, currIndex) {
+    return acc.concat([curr, curr]);
+  }, []);
+  return doubledArray;
+};
+
+var onlyUnique = function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+};
+
+var sortBy = function sortBy(arr, prop) {
+  var dir = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'asc';
+  return dir === 'asc' ? arr.sort(function (a, b) {
+    return parseFloat(a[prop]) - parseFloat(b[prop]);
+  }) : arr.sort(function (a, b) {
+    return parseFloat(b[prop]) - parseFloat(a[prop]);
+  });
+};
+
+var sortAlphabeticallyBy = function sortAlphabeticallyBy(arr, prop) {
+  arr.sort(function (a, b) {
+    if (a[prop] < b[prop]) return -1;
+    if (a[prop] > b[prop]) return 1;
+    return 0;
+  });
+  return arr;
+};
+
+var calcItemIndex = function calcItemIndex(offSet, moduleSize, index) {
+  var itemIndex = (offSet + index) % moduleSize === 0 ? offSet : offSet + (offSet + index) % moduleSize;
+  return itemIndex;
+};
+
+var capitaliseFirst = function capitaliseFirst(str) {
+  var text = str.substr(0, 1).toUpperCase() + str.substr(1).toLowerCase();
+  return text;
+};
+
+var capitaliseAll = function capitaliseAll(str) {
+  var text = str.toLowerCase().split(' ').map(function (s) {
+    return s.charAt(0).toUpperCase() + s.substring(1);
+  }).join(' ');
+  return text;
+};
+
+var getCellValue = function getCellValue(tr, idx, headerSortIndex, wide) {
+  var children = tr.children;
+
+  if (!wide) {
+    children = _toConsumableArray(tr.children).filter(function (child) {
+      return _toConsumableArray(child.classList).join('').indexOf('wide-screen') === -1;
+    });
+  }
+
+  var valueToSortOn = children[idx].dataset.snapIndex || children[idx].children[headerSortIndex].innerText || children[idx].innerText || children[idx].classList[0] || children[idx].textContent;
+  return valueToSortOn;
+};
+
+var comparer = function comparer(idx, asc, headerSortIndex, wide) {
+  return function (a, b) {
+    return function (v1, v2) {
+      return v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2);
+    }(getCellValue(asc ? a : b, idx, headerSortIndex, wide), getCellValue(asc ? b : a, idx, headerSortIndex, wide));
+  };
+};
+
+var makeSortable = function makeSortable(document, callback, wide) {
+  Array.from(document.querySelectorAll('th > span')).forEach(function (sp) {
+    sp.addEventListener('click', function () {
+      var headerSortIndex = this.innerText.toUpperCase() === 'ORDER' ? 1 : 0;
+      var names = [];
+      var th = this.parentElement;
+      if (th.classList[0] === 'not-sortable') return;
+      var table = th.closest('table');
+      var body = table.querySelector('tbody');
+      var footer = table.querySelector('tfoot');
+      Array.from(table.querySelectorAll('tr:nth-child(n+2)')).sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc, headerSortIndex, wide)).forEach(function (tr) {
+        if (tr !== footer) {
+          body.appendChild(tr);
+          names.push(tr.cells[0].id);
+        }
+      });
+      callback(names);
+    });
+  });
+};
+
+var itemCountReducer = function itemCountReducer(acc, curr) {
+  acc[curr.toString()] = acc[curr.toString()] || 0;
+  acc[curr.toString()]++;
+  return acc;
+};
+
+var flatten = function flatten(array) {
+  var flattenedArray = array.reduce(function (accumulator, currentValue) {
+    return accumulator.concat(currentValue);
+  }, []);
+  return flattenedArray;
+};
+
+var getObservableMonths = function getObservableMonths(date) {
+  var span = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 3;
+
+  var daysAway = function daysAway(when, days) {
+    var dateFromDays = date;
+    var direction = when === 'future' ? 1 : -1;
+    dateFromDays.setDate(dateFromDays.getDate() + direction * days);
+    return dateFromDays;
+  };
+
+  var startMonth = daysAway('past', 30).getMonth();
+  var thisMonth = date.getMonth() + 1;
+  var endMonth = daysAway('future', 30).getMonth() + 1;
+
+  var getMonthName = function getMonthName(month) {
+    var exampleDate = new Date(2000, month, 1);
+    var name = exampleDate.toLocaleString('en-uk', {
+      month: 'long'
+    });
+    return name;
+  };
+
+  var months = [{
+    index: startMonth,
+    name: getMonthName(startMonth)
+  }, {
+    index: thisMonth,
+    name: getMonthName(thisMonth)
+  }, {
+    index: endMonth,
+    name: getMonthName(endMonth)
+  }];
+  return months;
+};
+
+var getRandomInt = function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+};
+
+var createSessionToken = function createSessionToken() {
+  // uuidv4
+  // https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript#answer-2117523
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+    var r = Math.random() * 16 | 0,
+        v = c == 'x' ? r : r & 0x3 | 0x8;
+    return v.toString(16);
+  });
+}; // https://davidwalsh.name/javascript-debounce-function
+
+
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function () {
+    var context = this,
+        args = arguments;
+
+    var later = function later() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
+
+;
+
+var getRandomObjectProperty = function getRandomObjectProperty(obj) {
+  if (Object.keys(obj).length === 0 && obj.constructor === Object) return {};
+  var keys = Object.keys(obj);
+  var index = Math.floor(Math.random() * keys.length);
+  var key = keys[index];
+  return {
+    key: key,
+    value: obj[key]
+  };
+};
+
+var toCamelCase = function toCamelCase(sentenceCase) {
+  if (sentenceCase === undefined) return '';
+  var out = "";
+  sentenceCase.split(" ").forEach(function (el, idx) {
+    var add = el.toLowerCase();
+    out += idx === 0 ? add : add[0].toUpperCase() + add.slice(1);
+  });
+  return out;
+};
+
+var fromCamelCase = function fromCamelCase(str) {
+  if (str === undefined) return '';
+  return str.replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase();
+};
+
+var parseToLowerCase = function parseToLowerCase(value) {
+  if (value === undefined || value === null) return '';else if (_typeof(value) === 'object') return value;else return !!value ? value.toLowerCase() : '';
+};
+
+var utils = {
+  log: log,
+  encodeQuery: encodeQuery,
+  timer: timer,
+  intervalTimer: intervalTimer,
+  shuffleArray: shuffleArray,
+  randomiseSelection: randomiseSelection,
+  insertObjectBetweenItems: insertObjectBetweenItems,
+  doubledItemsInArray: doubledItemsInArray,
+  onlyUnique: onlyUnique,
+  sortBy: sortBy,
+  sortAlphabeticallyBy: sortAlphabeticallyBy,
+  calcItemIndex: calcItemIndex,
+  capitaliseFirst: capitaliseFirst,
+  capitaliseAll: capitaliseAll,
+  makeSortable: makeSortable,
+  itemCountReducer: itemCountReducer,
+  flatten: flatten,
+  getObservableMonths: getObservableMonths,
+  getRandomInt: getRandomInt,
+  createSessionToken: createSessionToken,
+  debounce: debounce,
+  getRandomObjectProperty: getRandomObjectProperty,
+  toCamelCase: toCamelCase,
+  fromCamelCase: fromCamelCase,
+  parseToLowerCase: parseToLowerCase
+};
+
+/***/ })
+
+/******/ });
 //# sourceMappingURL=utils.bundle.js.map

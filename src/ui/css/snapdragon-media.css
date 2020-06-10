@@ -143,12 +143,28 @@
 
 @media (min-width: 768px) {
 
-  .modal h1 {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
     font-size: 1rem;
   }
 
-  .modal h2 {
+  .modal h1 {
+    font-size: 1.2rem;
+  }
+
+  h2 {
     font-size: 1rem;
+  }
+
+  h3 {
+    font-size: .8rem;
   }
 
     .quick-fire .quick-fire-branches .btn-secondary, .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
