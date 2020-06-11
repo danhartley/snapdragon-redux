@@ -1,3 +1,8 @@
+
+  a {
+    color: var(--snap-youtube-green);
+  }
+
   h1 {
     font-size: .9rem;
   }
@@ -195,25 +200,35 @@
   }
   
   .underline-link {
-    color: var(--snap-link) !important;
-    text-decoration: none;
-    border-bottom: solid .05rem !important;
-    color: inherit;
+    color: var(--snap-youtube-green);
+    border-bottom: solid .05rem transparent;
     cursor: pointer;
-    text-transform: uppercase;
     display: inline-block;
     line-height: 1.8;
+    padding: 0 .25rem;
     pointer-events: initial;
+    border-top: .05rem solid transparent;
+    border-left: .05rem solid transparent;
+    border-right: .05rem solid transparent;
   }
 
-  .underline-link:hover {
-    color: red !important;
+  .no-underline-link {
+    padding: 0 0 0 .15rem;
+  }
+
+  .underline-link:hover {    
+    color: var(--snap-youtube-green) !important;
+    border: .05rem solid var(--snap-youtube-green);
+    /* border-top: .05rem solid var(--snap-youtube-green);
+    border-right: .05rem solid var(--snap-youtube-green);
+    border-bottom: .05rem solid var(--snap-youtube-green);
+    border-left: .05rem solid var(--snap-youtube-green); */
   }
   .underline-link:active {
-    color: green !important;
+    color: var(--snap-youtube-green) !important;
   }
   .underline-link:focus {
-    color: blue !important;
+    color: var(--snap-youtube-green) !important;
     outline: none; /* must put something back! */
   }
 

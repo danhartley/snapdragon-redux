@@ -47,8 +47,8 @@ export const buildTable = (collection, args) => {
         if(item.taxonomy && item.taxonomy.order) {
             orderLinkClass = item.order
                 ? 'snap-link-btn underline-link js-taxon-card-link' 
-                : 'snap-no-link-btn js-taxon-card-link';
-        } else { orderLinkClass = 'snap-no-link-btn js-taxon-card-link'; }
+                : 'snap-no-link-btn no-underline-link js-taxon-card-link';
+        } else { orderLinkClass = 'snap-no-link-btn no-underline-link js-taxon-card-link'; }
         return orderLinkClass;
     };
 
@@ -80,7 +80,7 @@ export const buildTable = (collection, args) => {
             species: item.taxonomy.species,
             genusLinkClass: item.genus
                 ? 'snap-link-btn underline-link js-taxon-card-link' 
-                : 'snap-no-link-btn js-taxon-card-link',
+                : 'snap-no-link-btn no-underline-link js-taxon-card-link',
             shortName: itemProperties.trimLatinName(item.name),
             taxonomy: item.taxonomy,
             iconicTaxon: item.iconicTaxon,
@@ -96,7 +96,7 @@ export const buildTable = (collection, args) => {
             keyTratLinkClass: keyTratLinkClass,
             familyLinkClass: item.family
                                 ? 'snap-link-btn underline-link js-taxon-card-link' 
-                                : 'snap-no-link-btn js-taxon-card-link',
+                                : 'snap-no-link-btn no-underline-link js-taxon-card-link',
             orderLinkClass: getOrderLinkClass(item),
             taxonomy: item.taxonomy || { family: '', order: ''},
             iconicTaxonIcon,

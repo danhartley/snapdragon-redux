@@ -1,3 +1,9 @@
+.species-table {
+  border-right: 1px solid var(--snap-btn-auxillary);
+  border-left: 1px solid var(--snap-btn-auxillary);
+  border-bottom: 1px solid var(--snap-btn-auxillary);
+}
+
 .table-header {
   cursor: pointer;
   display: flex;
@@ -44,6 +50,15 @@
     height: 64px;
     object-fit: none;
     padding: .5rem;
+  }
+
+  .table-row img:hover {
+    opacity: .8;
+  }
+  
+
+  .table-row img:focus {
+    border: 1px solid black;
   }
   
   .table-row .lp-level {

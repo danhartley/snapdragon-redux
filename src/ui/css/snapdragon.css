@@ -28,7 +28,7 @@ button {
 }
 
 button[disabled] {
-  opacity: 0.5;
+  opacity: .38; /* why  38%? google material design */
   pointer-events: none;
 }
 
@@ -114,6 +114,11 @@ hr {
   letter-spacing: .05rem;
   border: 1px solid var(--snap-non-taxa) !important;
   padding: .25rem .75rem;
+}
+
+.snap-action-btn:hover {
+  opacity: .8;
+  color: var(--snap-text-light);
 }
 
 .snap-action-btn:disabled {
@@ -289,7 +294,7 @@ a.icon:hover {
 
 .disabled-icon {
   cursor: initial;
-  opacity: .5;
+  opacity: .38; /* why  38%? google material design */
   pointer-events: none;
 }
 
@@ -809,10 +814,6 @@ a.icon:hover {
   cursor: pointer;
 }
 
-/* button:focus {
-  outline: none;
-} */
-
 .snap-action-btn.disabled, .snap-action-btn:disabled {
   cursor: initial !important;
 }
@@ -839,11 +840,10 @@ button.snap-action-btn:focus,
   letter-spacing: .05rem;
   border: 1px solid var(--snap-portrait);
   padding: .25rem .75rem;
-  /* text-transform: uppercase; */
 }
 
 .snap-btn:hover {
-  color: red !important;
+  opacity: .8;
 }
 .snap-btn:active {
   color: green !important;
@@ -851,19 +851,26 @@ button.snap-action-btn:focus,
 
 .snap-btn:focus:not(:focus-visible), .snap-icon-btn:focus:not(:focus-visible) {
   /* focus still works with keyboard events, but not when clicked */
-  color: blue !important;
+  color: var(--snap-youtube-green) !important;
   outline: none;
-  border: 1px solid blue;
+  border: 1px solid var(--snap-youtube-green);
 }
 
 .snap-icon-btn {
   color: var(--snap-text-dark);
   background-color: transparent;
-  border: none;
+  border: 1px solid transparent;
+  padding: 0 .5rem;
 }
 
 .snap-icon-btn:hover {
-  color: var(--snap-text-light);
+  opacity: .8;
+}
+
+.snap-icon-btn:focus, .snap-icon-btn:hover {
+  color: var(--snap-youtube-green);
+  outline: none;
+  border: 1px solid var(--snap-youtube-green) !important;
 }
 
 .snap-link-btn, .snap-no-link-btn {
@@ -1335,6 +1342,10 @@ button:disabled {
 
 .info-box .carousel-item-next, .info-box .carousel-item-prev, .info-box .carousel-item.active {
   display: grid;
+}
+
+.carousel-item.active button {
+  width: initial;
 }
 
 .imageSlider .carousel-item > div {
@@ -2070,6 +2081,10 @@ a.collection-disabled {
 
 .highlighted-for-review-row {
   background-color: var(--snap-content-background) !important;
+  border-top: 1px solid var(--snap-btn-auxillary);
+  border-right: 1px solid var(--snap-btn-auxillary);
+  border-bottom: 1px solid var(--snap-btn-auxillary);
+  border-left: 1px solid var(--snap-btn-auxillary);
 }
 
 .score-summary-row {

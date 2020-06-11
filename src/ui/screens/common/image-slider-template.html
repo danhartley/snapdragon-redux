@@ -2,17 +2,19 @@
   <div class="carousel-inner js-carousel-inner no-pointer-events">
       <div data-repeat-image="{{ images }}">
         <div class="carousel-item image-slider-190">
-          <img src="{{ image.medium }}" 
-            data-title="{{ image.itemName }}"
-            data-source="{{ image.source }}"
-            data-license="{{ image.license }}"
-            data-rights-holder="{{ image.rightsHolder }}"
-            data-photographers-name="{{ image.photographersName }}"
-            data-url="{{ image.url }}"
-            data-provider="{{ image.provider }}"
-            data-item-name="{{ image.itemName }}"
-            data-index="{{ image.index }}" 
-          alt="{{ image.itemName }}">
+          <button class="btn snap-icon-btn">
+            <img src="{{ image.medium }}" role="button"
+              data-title="{{ image.itemName }}"
+              data-source="{{ image.source }}"
+              data-license="{{ image.license }}"
+              data-rights-holder="{{ image.rightsHolder }}"
+              data-photographers-name="{{ image.photographersName }}"
+              data-url="{{ image.url }}"
+              data-provider="{{ image.provider }}"
+              data-item-name="{{ image.itemName }}"
+              data-index="{{ image.index }}" 
+              alt="Give {{ image.itemName }} as your answer">
+            </button>
         </div>
       </div>
       <div>
@@ -23,11 +25,11 @@
       </div>
   </div>        
   <a class="carousel-control-prev" href="#imageSlider_{{ identifier }}" role="button" data-slide="prev" data-slider="#imageSlider_{{ identifier }}">
-    <button class="carousel-control-prev-icon" aria-hidden="true" data-slider="#imageSlider_{{ identifier }}"></button>
+    <button class="btn snap-icon-btn carousel-control-prev-icon" data-slider="#imageSlider_{{ identifier }}"></button>
     <button class="sr-only">Previous</button>
   </a>
   <div class="carousel-control-next" href="#imageSlider_{{ identifier }}" role="button" data-slide="next" data-slider="#imageSlider_{{ identifier }}">
-    <button class="carousel-control-next-icon" aria-hidden="true" data-slider="#imageSlider_{{ identifier }}"></button>
+    <button class="btn snap-icon-btn carousel-control-next-icon" data-slider="#imageSlider_{{ identifier }}"></button>
     <button class="sr-only">Next</button>
   </div>
   <div class="description_{{ identifier }} image-description"></div>

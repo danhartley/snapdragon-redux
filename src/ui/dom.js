@@ -20,7 +20,8 @@ export const DOM = {
     // correctTxt : document.getElementsByClassName('js-txt-correct')[0],
     // stateChangeAlertTxt: document.getElementsByClassName('js-state-change-alert')[0],
 
-    basicModalImageTitle: document.querySelector('#basicModal .js-modal-image-title span:nth-child(1)'),
+    // basicModalImageTitle: document.querySelector('#imageModal .js-modal-image-title span:nth-child(1)'),
+    
     basicModalTextTitle: document.querySelector('#basicModal .js-modal-text-title header'),
     basicModalText: document.querySelector('#basicModal .js-modal-text')
 };
