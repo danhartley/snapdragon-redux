@@ -1,12 +1,17 @@
 <div class="centred-block standard-block">
-    <span class="block given genus">{{ genus }}</span> <span class="block species">{{ species }}</span>
+    <button class="btn snap-icon-btn block">
+      <span class="given genus">{{ genus }}</span>
+    </button>
+    <button class="btn snap-icon-btn block">
+      <span class="species">{{ species }}</span>
+    </button>
 </div>
 <div class="text-complete-container">
     <div class="margin-bottom landscape">Click to select the correct name:</div>
     <div class="margin-bottom portrait">Tap to select the correct name:</div>
-    <div class="pool" data-repeat-answer="{{ answers }}">    
-        <div tabindex="{{ answer.index }}" class="block">
+    <div class="pool js-pool" data-repeat-answer="{{ answers }}">    
+        <button type="submit" class="btn snap-icon-btn block">
             <span>{{ answer.value }}</span>
-        </div>
+        </button>
     </div>
 </div>
