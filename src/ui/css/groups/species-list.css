@@ -51,6 +51,15 @@
     object-fit: none;
     padding: .5rem;
   }
+
+  .table-row img:hover {
+    opacity: .8;
+  }
+  
+
+  .table-row img:focus {
+    border: 1px solid black;
+  }
   
   .table-row .lp-level {
     padding: 0 0 0 0.5rem;
