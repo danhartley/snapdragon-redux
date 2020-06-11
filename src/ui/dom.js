@@ -1,4 +1,5 @@
 export const DOM = {
+  
     leftGrid : document.getElementsByClassName('js-left-grid')[0],
     leftHeader : document.getElementsByClassName('js-left-header')[0],
     leftBody : document.getElementsByClassName('js-left-body')[0],
@@ -15,12 +16,6 @@ export const DOM = {
     rightRptrSummary : document.getElementsByClassName('js-summary')[0],
     rightBodyBottom : document.getElementsByClassName('js-right-body-bottom')[0],
     rightFooter : document.getElementsByClassName('js-right-footer')[0],
-    
-    // totalTxt : document.getElementsByClassName('js-txt-total')[0],
-    // correctTxt : document.getElementsByClassName('js-txt-correct')[0],
-    // stateChangeAlertTxt: document.getElementsByClassName('js-state-change-alert')[0],
-
-    // basicModalImageTitle: document.querySelector('#imageModal .js-modal-image-title span:nth-child(1)'),
     
     basicModalTextTitle: document.querySelector('#basicModal .js-modal-text-title header'),
     basicModalText: document.querySelector('#basicModal .js-modal-text')

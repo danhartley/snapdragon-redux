@@ -219,10 +219,6 @@
   .underline-link:hover {    
     color: var(--snap-youtube-green) !important;
     border: .05rem solid var(--snap-youtube-green);
-    /* border-top: .05rem solid var(--snap-youtube-green);
-    border-right: .05rem solid var(--snap-youtube-green);
-    border-bottom: .05rem solid var(--snap-youtube-green);
-    border-left: .05rem solid var(--snap-youtube-green); */
   }
   .underline-link:active {
     color: var(--snap-youtube-green) !important;
@@ -230,6 +226,10 @@
   .underline-link:focus {
     color: var(--snap-youtube-green) !important;
     outline: none; /* must put something back! */
+  }
+
+  .underline-link-left-margin {
+    margin-left: -.25rem;
   }
 
   .full-width {
