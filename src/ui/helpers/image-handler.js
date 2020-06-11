@@ -132,7 +132,7 @@ const handleImageSelectionFromList = (image, item, collection, config, displayNa
         default:
             displayName = `<span>${selectedItem.vernacularName}</span> <span class="latin-name">${selectedItem.name}</span>`;
     }
-    //DOM.basicModalImageTitle.innerHTML = displayName;
+
     document.querySelector('#imageModal .js-modal-image-title span:nth-child(1)').innerHTML = displayName;
 };
 

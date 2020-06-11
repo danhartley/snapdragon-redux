@@ -2,9 +2,7 @@
     <tbody data-repeat-item="{{ itemImages }}">
         <tr class="table-row master js-list-item" id="id_{{ item.id }}">
             <td id="{{ item.name }}" data-snap-index="{{ item.snapIndex }}">
-
-              <!-- require wrapping a tag -->
-
+              <button class="btn snap-icon-btn double-centred-block">
                 <img 
                     id="{{ item.name }}" 
                     src="{{ item.small }}" 
@@ -19,6 +17,7 @@
                     data-license="{{ item.license }}"                                
                     data-source="{{ item.source }}"
                     data-provider="{{ item.provider }}">
+              </button>
             </td>
             <td>
                 <button data-toggle="modal" data-name="{{ item.name }}" data-id="{{ item.id }}" data-type="speciesCardLink" data-target="#cardModal" class="snap-link-btn underline-link js-test-card-container-link">{{ item.vernacularName }}</button>
