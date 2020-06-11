@@ -36,11 +36,11 @@
       </div>
       <div class="absolute lesson-list-action-icons js-lesson-list-action-icons">
           <div>
-              <button data-lesson-id="{{ lesson.id }}" data-lesson-is-youtube-icon="true" class="snap-icon-btn fit-width js-lesson-list-youtube">
+              <button data-lesson-id="{{ lesson.id }}" data-lesson-is-youtube-icon="true" class="snap-icon-btn fit-width js-lesson-list-youtube" aria-label="play video for {{ lesson.name }}">
                 <i class="fab fa-youtube youtube-icon {{ lesson.hideVideoClass }}"></i>
                 <i class="fas fa-glasses youtube-icon {{ lesson.hideTextIntroClass }}"></i>
               </button>
-              <button data-lesson-id="{{ lesson.id }}" class="landscape snap-icon-btn fit-width js-lesson-list-chevron" style="margin-top: 2px;">
+              <button data-lesson-id="{{ lesson.id }}" class="landscape snap-icon-btn fit-width js-lesson-list-chevron" style="margin-top: 2px;" aria-label="view species for {{ lesson.name }}">
                 <i class="fas fa-chevron-down"></i>
               </button>
           </div>

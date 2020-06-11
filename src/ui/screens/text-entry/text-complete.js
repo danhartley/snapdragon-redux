@@ -76,10 +76,10 @@ export const renderCompleteText = (collection) => {
 
     renderTemplate({ genus, species, answers }, template.content, parent);
 
-    setTimeout(() => {
-      const block = document.querySelectorAll('.pool .block')[0];
-            // block.focus(); 
-    },1000);
+    // setTimeout(() => {
+    //   const block = document.querySelectorAll('.pool .block')[0];
+    //         block.focus(); 
+    // },1000);
 
     const score = { itemId: item.id, binomial: item.name, question: item.taxonomy[givenTaxon], callbackTime: config.callbackTime, layoutCount: lessonPlan.layouts.length, points: layout.points };
 
@@ -109,18 +109,20 @@ export const renderCompleteText = (collection) => {
         continueLessonHandler(document.querySelector('.js-continue-lesson-btn'), score, scoreUpdateTimer);
     };
 
-    document.querySelectorAll('.pool .block span').forEach(answer => {
-        answer.addEventListener('click', event => {
-            const answer = event.target.innerHTML;
-            if(question === item.taxonomy.species) {
-                document.querySelector('.species').innerHTML = answer;                
-            } else {
-                document.querySelector('.genus').innerHTML = answer;
-            }
-            score.answer = answer;
-            score.answers = answers;
-            score.questionText = questionTxt;
-            scoreHandler('block', score, callback, config);
+    document.querySelectorAll('.js-pool button').forEach(answer => {
+        answer.addEventListener('click', e => {
+          e.preventDefault();
+          const button = e.target;
+          const answer = button.querySelector('span').innerText;
+          if(question === item.taxonomy.species) {
+              document.querySelector('.species').innerText = answer;                
+          } else {
+              document.querySelector('.genus').innerText = answer;
+          }
+          score.answer = answer;
+          score.answers = answers;
+          score.questionText = questionTxt;
+          scoreHandler('block', score, callback, config);
         });
     });    
 };

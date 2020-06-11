@@ -108,22 +108,7 @@ hr {
   background-color: var(--snap-progress-bg);
 }
 
-.snap-action-btn {
-  background-color: var(--snap-tertiary-background);
-  color: var(--snap-text-light);
-  letter-spacing: .05rem;
-  border: 1px solid var(--snap-non-taxa) !important;
-  padding: .25rem .75rem;
-}
 
-.snap-action-btn:hover {
-  opacity: .8;
-  color: var(--snap-text-light);
-}
-
-.snap-action-btn:disabled {
-  pointer-events: none;
-}
 
 .btn-collection {
   background-color: var(--snap-portrait);
@@ -814,24 +799,26 @@ a.icon:hover {
   cursor: pointer;
 }
 
-.snap-action-btn.disabled, .snap-action-btn:disabled {
-  cursor: initial !important;
-}
-
-button.snap-action-btn.focus,
-button.btn:focus,
-button.snap-action-btn:focus,
-.show > .snap-action-btn.dropdown-toggle,
-.snap-action-btn:not(:disabled):not(.disabled).active:focus,
-.snap-action-btn:not(:disabled):not(.disabled):active:focus,
-.show > .snap-action-btn.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0;
-}
-
 .btn {
   font-size: inherit;
   padding: .5rem;
   border: none;
+}
+
+.btn:hover {
+  opacity: .8;  
+}
+
+.btn.focus, .btn:focus {
+  box-shadow: none;
+}
+
+btn:disabled {
+  pointer-events: none;
+}
+
+.btn-placeholder.btn {
+  color: var(--snap-text-dark);
 }
 
 .snap-btn {
@@ -842,15 +829,11 @@ button.snap-action-btn:focus,
   padding: .25rem .75rem;
 }
 
-.snap-btn:hover {
-  opacity: .8;
-}
 .snap-btn:active {
   color: green !important;
 }
 
 .snap-btn:focus:not(:focus-visible), .snap-icon-btn:focus:not(:focus-visible) {
-  /* focus still works with keyboard events, but not when clicked */
   color: var(--snap-youtube-green) !important;
   outline: none;
   border: 1px solid var(--snap-youtube-green);
@@ -861,10 +844,6 @@ button.snap-action-btn:focus,
   background-color: transparent;
   border: 1px solid transparent;
   padding: 0 .5rem;
-}
-
-.snap-icon-btn:hover {
-  opacity: .8;
 }
 
 .snap-icon-btn:focus, .snap-icon-btn:hover {
@@ -887,17 +866,46 @@ button.snap-action-btn:focus,
   pointer-events: none;
 }
 
-.btn.focus, .btn:focus {
-  box-shadow: none;
+.snap-action-btn {
+  background-color: var(--snap-tertiary-background);
+  color: var(--snap-text-light);
+  letter-spacing: .05rem;
+  border: 1px solid var(--snap-non-taxa) !important;
+  padding: .25rem .75rem;
+}
+
+.snap-action-btn:focus {
+  outline: none;
+  color: var(--snap-text-black);
+}
+
+.snap-action-btn.snap-success {
+  color: var(--snap-text-light) !important;
+  background-color: var(--snap-success) !important;
+  border: 0.05rem solid var(--snap-success);
+}
+
+.snap-action-btn.snap-alert {
+  color: var(--snap-text-light) !important;
+  background-color: var(--snap-alert) !important;
+  border: 0.05rem solid var(--snap-alert);
+}
+
+.btn-tertiary {
+  color: var(--snap-text-light);
+  background-color: var(--snap-tertiary-background) !important;
+  border: 1px solid var(--snap-border-light);
+  cursor: pointer !important;
+}
+
+.btn-tertiary:focus {
+  outline: none;
+  color: var(--snap-text-black);
 }
 
 .dropdown-toggle::after {
   vertical-align: 0.2rem;
   margin-left: 0.2rem;
-}
-
-.btn-placeholder.btn {
-  color: var(--snap-text-dark);
 }
 
 .course-description {
@@ -995,12 +1003,6 @@ span.correct {
   color: rgb(2, 107, 26);
 }
 
-.btn.snap-action-btn.snap-success {
-  color: var(--snap-text-light) !important;
-  background-color: var(--snap-success) !important;
-  border: 0.05rem solid var(--snap-success);
-}
-
 .block.snap-success, .block.snap-alert {
   color: var(--snap-text-light) !important;
   background-color: var(--snap-success) !important;
@@ -1013,12 +1015,6 @@ span.correct {
 
 .snap-alert-fg {
   color: var(--snap-alert);
-}
-
-.btn.snap-action-btn.snap-alert {
-  color: var(--snap-text-light) !important;
-  background-color: var(--snap-alert) !important;
-  border: 0.05rem solid var(--snap-alert);
 }
 
 .btn.snap-alert {
@@ -2322,13 +2318,6 @@ input[type="number"].medium {
   color: var(--snap-text-light);
   background-color: var(--snap-tertiary-background);
   border: 1px solid var(--snap-border-light);
-}
-
-.btn.btn-tertiary, .btn.btn-tertiary:focus {
-  color: var(--snap-text-light);
-  background-color: var(--snap-tertiary-background) !important;
-  border: 1px solid var(--snap-border-light);
-  cursor: pointer !important;
 }
 
 .quick-fire .quick-fire-branches .btn-secondary {

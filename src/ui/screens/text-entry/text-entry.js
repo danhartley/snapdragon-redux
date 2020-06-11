@@ -240,7 +240,7 @@ const renderLandscape = (item, config, question) => {
       deleteLetter();
     });
 
-    const keyboardBtn = document.querySelector('.js-toggle-keyboard');
+    const keyboardBtn = document.querySelector('.js-toggle-keyboard');          
           keyboardBtn.addEventListener('click', e =>{
             e.preventDefault();
             const disabled = input.hasAttribute('disabled');
@@ -253,6 +253,10 @@ const renderLandscape = (item, config, question) => {
                 input.setAttribute('disabled', 'disabled');
             }
           });
+
+    setTimeout(() => {
+      keyboardBtn.focus();
+    }, 500);
 
     const blockArray = [ ...blocks ];    
     const entries = [];
