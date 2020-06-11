@@ -1,3 +1,9 @@
+.species-table {
+  border-right: 1px solid var(--snap-btn-auxillary);
+  border-left: 1px solid var(--snap-btn-auxillary);
+  border-bottom: 1px solid var(--snap-btn-auxillary);
+}
+
 .table-header {
   cursor: pointer;
   display: flex;

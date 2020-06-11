@@ -2081,6 +2081,10 @@ a.collection-disabled {
 
 .highlighted-for-review-row {
   background-color: var(--snap-content-background) !important;
+  border-top: 1px solid var(--snap-btn-auxillary);
+  border-right: 1px solid var(--snap-btn-auxillary);
+  border-bottom: 1px solid var(--snap-btn-auxillary);
+  border-left: 1px solid var(--snap-btn-auxillary);
 }
 
 .score-summary-row {
