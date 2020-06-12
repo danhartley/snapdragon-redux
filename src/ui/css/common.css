@@ -220,9 +220,11 @@
     color: var(--snap-youtube-green) !important;
     border: .05rem solid var(--snap-youtube-green);
   }
+
   .underline-link:active {
     color: var(--snap-youtube-green) !important;
   }
+
   .underline-link:focus {
     color: var(--snap-youtube-green) !important;
     outline: none; /* must put something back! */
@@ -230,6 +232,15 @@
 
   .underline-link-left-margin {
     margin-left: -.25rem;
+  }
+
+  a.underline-link, a.underline-link:hover, a.underline-link:active, a.underline-link:focus {
+    color: var(--blue) !important;
+    border-color: transparent;
+  }
+
+  a.underline-link:hover, a.underline-link:active, a.underline-link:focus {
+    border-color: var(--blue) !important;
   }
 
   .full-width {
@@ -379,6 +390,11 @@
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+  }  
+
+  .super {
+    vertical-align: super;
+    font-size: .8em;
   }  
 
 /* https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/ */
