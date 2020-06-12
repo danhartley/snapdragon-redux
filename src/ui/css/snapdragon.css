@@ -871,7 +871,7 @@ btn:disabled {
   color: var(--snap-text-light);
   letter-spacing: .05rem;
   border: 1px solid var(--snap-non-taxa) !important;
-  padding: .25rem .75rem;
+  padding: .5rem .75rem;
 }
 
 .snap-action-btn:focus {
@@ -1885,6 +1885,7 @@ a.collection-disabled {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin: .25rem 0;
 }
 
 .lesson-list-carousel-item > div:nth-child(3) {

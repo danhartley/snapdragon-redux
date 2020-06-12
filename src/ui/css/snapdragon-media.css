@@ -430,11 +430,6 @@
         display: flex;
     }
 
-    /* .lesson-list-carousel-item > div:nth-child(3) > div > div {
-        display: flex;
-        align-items: center;
-    } */
-
     body {
         max-width: 1200px;
     }
