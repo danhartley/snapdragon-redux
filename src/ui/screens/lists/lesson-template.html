@@ -1,5 +1,5 @@
 <li>
-  <div data-lesson-id="{{ lesson.id }}" class="relative lesson-list-carousel-item padding-left js-lesson-list-carousel-item">
+  <div data-lesson-id="{{ lesson.id }}" class="relative lesson-list-carousel-item js-lesson-list-carousel-item">
       <div class="landscape double-centred-block">
           <img class="lesson-icon" src="{{ lesson.icon }}" alt="{{ lesson.name }}">
       </div>
@@ -14,7 +14,7 @@
           <div data-lesson-id="{{ lesson.id }}" class="lesson-review js-lesson-review">
               <div class="flex">
                   <div class="centred-block fit-width">
-                    <span class="lesson-terms-review {{ lesson.hasTermsClass }} margin-right fit-width js-terms-review-link" data-toggle="modal" data-target="#glossaryModal">
+                    <span class="lesson-terms-review {{ lesson.hasTermsClass }} margin-right fit-width js-terms-review-link" data-toggle="modal" data-target="#glossaryModal" data-lesson-id="{{ lesson.id }}">
                         <button data-lesson-id="{{ lesson.id }}" aria-label="vocab test for {{ lesson.name }} lesson" class="btn snap-btn extra-small-text" data-toggle="modal" data-target="#glossaryModal">Vocab test</button>
                     <span>
                   </div>
