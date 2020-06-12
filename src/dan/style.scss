@@ -1,0 +1,54 @@
+$padding: .25rem;
+$margin: .5rem;
+$hbase: 1.5rem;
+
+h1 {
+  font-size: $hbase;
+}
+
+h2 {
+  font-size: $hbase - .1;
+}
+
+h3 {
+  font-size: $hbase - .2;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: auto;
+  max-width: 800px;
+}
+
+li {
+  list-style-type: none;
+  margin: (2 * $margin) 0;
+  span {
+    padding: $padding (2 * $padding);
+  }  
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section {
+  color: white;
+  background-color: black;
+  padding: $padding;
+  margin: $margin 0;
+}
+
+.love {
+  color: black;
+  background-color: white;
+}
+
+
+@media (min-width: 768px) { }
+
+@media (min-width: 1024px) { }
+
+@media (min-width: 1200px) { }

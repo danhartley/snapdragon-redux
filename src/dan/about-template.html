@@ -1,0 +1,26 @@
+
+<nav>
+
+</nav>
+
+<header>
+  <h1>
+    Hello and welcome. ¡Venga, vamos!*
+  </h1>
+</header>
+
+
+<div data-repeat-section="{{ sections }}">
+  <section>
+    <h2>{{ section.header }}</h2>
+    <ul data-repeat-skill="{{ section.skills }}">
+      <li>
+        <span class="{{ skill.class }}">{{ skill.name }}</span><span>{{ skill.link }}</span>
+      </li>
+    </ul>
+  </section>
+</div>
+
+<footer>
+  <span>* Come on, let's go! This is the name of my company.</span>
+</footer>

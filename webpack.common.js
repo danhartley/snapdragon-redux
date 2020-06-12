@@ -12,7 +12,8 @@ module.exports = {
       app: './src/index.js',
       utils: './src/utils/utils.js',      
       wiki: './src/wikipedia/wiki.js',
-      admin: './src/admin/collection-builder.js'
+      admin: './src/admin/collection-builder.js',
+      dan: './src/dan/dan.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -66,6 +67,11 @@ module.exports = {
             use: {loader: 'html-loader'}
           },
           {
+            test: /dan.html$/,
+            exclude: [ /node_modules/, path.resolve(__dirname, 'src/dan/dan.html')],
+            use: {loader: 'html-loader'}
+          },
+          {
             test: /\.(png|svg|jpg|gif)$/,
             use: [{
               loader: 'file-loader',
@@ -91,6 +97,12 @@ module.exports = {
         filename: 'collection-builder.html',
         template: './src/admin/collection-builder.html',
         chunks: ['admin'],
+        inject: true
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'dan.html',
+        template: './src/dan/dan.html',
+        chunks: ['dan'],
         inject: true
       }),
     ],
