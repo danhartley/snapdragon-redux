@@ -34,12 +34,14 @@
                 <span class="mushroom-icon {{ item.hideFungiIcon }}"></span>
             </td>
             <td class="{{ item.hasVideoClassName }}">
-                <span data-name="{{ item.name }}" class="js-youtube">
+                <button data-name="{{ item.name }}" class="snap-icon-btn fit-width js-youtube" aria-label="start video from the species {{ item.name }}">
                     <i class="fab fa-youtube youtube-icon" data-name="{{ item.name }}"></i>
-                </span>
+                </button>
             </td>
             <td class="{{ item.hasVideoClassName }}">
-                <span data-name="{{ item.name }}" class="accordion-icon js-accordion"><i data-name="{{ item.name }}" class="fas fa-chevron-down"></i></span>
+                <button data-name="{{ item.name }}" class="snap-icon-btn fit-width accordion-icon js-accordion" aria-label="video commentary for the species {{ item.name }}">
+                  <i data-name="{{ item.name }}" class="fas fa-chevron-down"></i>
+                </button>
             </td>
         </tr>
     </tbody>

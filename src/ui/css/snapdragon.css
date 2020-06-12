@@ -1638,7 +1638,7 @@ a.collection-disabled {
 }
 
 .most-observations {
-  color: var(--snap-success);
+  color: var(--orange);
 }
 
 .current-month {

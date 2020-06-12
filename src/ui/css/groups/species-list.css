@@ -4,6 +4,10 @@
   border-bottom: 1px solid var(--snap-btn-auxillary);
 }
 
+.species-table td:last-child {
+  margin-right: .5rem;
+}
+
 .table-header {
   cursor: pointer;
   display: flex;

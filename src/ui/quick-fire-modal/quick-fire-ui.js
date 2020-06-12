@@ -104,9 +104,6 @@ const scoreTextEntry = (quickFire, quickFireInput, quickFireMessage, timer, cont
         }
         
         quickFireMessage.innerHTML = renderResponse(isCorrect, quickFire.question.term.toLowerCase());
-        // quickFireMessage.innerHTML = isCorrect
-        //     ? `<span class="centred-block icon"><i class="fas fa-check extra-large-text correct-answer-color margin-right"></i>That is correct.</span>`
-        //     : `<span class="centred-block icon"><i class="fas fa-times extra-large-text incorrect-answer-color margin-right"></i>The correct answer is <span class="answer-response half-margin-left">'${quickFire.question.term.toLowerCase()}'.</span></span>`;
 
         timer = setTimeout(() => {
             continueQuickFireBtn.click();
@@ -133,7 +130,6 @@ const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
 
     const { glossary, filters, questions } = links;
 
-    // const underline = 'underline-link';
     const hide = 'hide-important';
 
     const quickFire = getQuickFire();
@@ -144,9 +140,7 @@ const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
             questions.classList.remove(hide);
             filters.classList.add(hide);
         } else {
-            // glossary.classList.remove(underline);
             filters.classList.remove(hide);
-            // filters.classList.add(underline);
         }
     };
 
@@ -178,12 +172,10 @@ const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
         case enums.quickFireStep.FILTERS:
             filters.classList.add(hide);
             glossary.classList.remove(hide);
-            // glossary.classList.add(underline);
             handleGlossaryLink();
         break;
             
         case enums.quickFireStep.QUESTIONS:
-            // filters.classList.add(underline);
             filters.classList.remove(hide);
             filters.innerHTML = 'Vocab filter';
             handleGlossaryLink();
@@ -191,7 +183,6 @@ const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
         break;
 
         case enums.quickFireStep.GLOSSARY:
-            // filters.classList.add(underline);
             filters.classList.remove(hide);
             filters.innerHTML = 'Vocab filter';
             questions.classList.add(hide);
