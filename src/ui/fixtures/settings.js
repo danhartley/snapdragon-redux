@@ -10,13 +10,13 @@ import settingsTemplate from 'ui/fixtures/settings-template.html';
 
 export const settingsHandler = () => {
     
-    DOM.basicModalText.innerHTML = '';
+  document.querySelector('#basicModal .js-modal-text').innerHTML = '';
 
     const template = document.createElement('template');
     
     template.innerHTML = settingsTemplate;
     
-    DOM.basicModalTextTitle.innerHTML = 'Snapdragon settings';
+    document.querySelector('#basicModal .js-modal-text-title header').innerHTML = 'Snapdragon settings';
 
     const { config } = store.getState();
 
@@ -24,7 +24,7 @@ export const settingsHandler = () => {
 
     const languages = config.languages;
 
-    renderTemplate({ delay, languages }, template.content, DOM.basicModalText);
+    renderTemplate({ delay, languages }, template.content, document.querySelector('#basicModal .js-modal-text'));
     
     const clearCacheBtn = document.querySelector('.js-clear-cache-btn');
     const setDelayBtn = document.querySelector('.js-set-delay-btn');

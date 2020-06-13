@@ -8,7 +8,6 @@ import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
 const selectActiveImage = (image, parent, config) => {
     parent.querySelectorAll('.carousel-item').forEach(i => {
         const elemSrc = i.querySelector('img').dataset;
-        // const elemSrc = i.lastElementChild.dataset || i.lastElementChild;
         if(imageMatch(elemSrc, image.dataset || image)) {
             i.classList.add('active');
             return;
@@ -19,7 +18,7 @@ const selectActiveImage = (image, parent, config) => {
     
     const indicators = document.querySelectorAll('.carousel-indicators li');
           indicators.forEach(i => {
-              if(i.dataset && activeNode.dataset && i.slideTo === activeNode.dataset.index) {
+              if(i.dataset && activeNode.dataset && i.dataset.slideTo === activeNode.dataset.index) {
                   i.classList.add('active');
               }
           });

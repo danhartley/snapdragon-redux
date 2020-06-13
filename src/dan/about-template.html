@@ -1,26 +1,42 @@
 
-<nav>
-
-</nav>
-
 <header>
+
+  <nav>
+    <ul data-repeat-section="{{ sections }}">
+      <li>
+        <a href="#{{ section.header }}">{{ section.header }}</a>
+      </li>
+    </ul>
+  </nav>
+  
+</header>
+
+<main>
+
   <h1>
     Hello and welcome. ¡Venga, vamos!*
   </h1>
-</header>
 
+  <div data-repeat-section="{{ sections }}">
+    <section>
+      <h2>{{ section.header }}</h2>
+      <ul data-repeat-tool="{{ section.tools }}">
+        <li>
+          <span>{{ tool.name }}</span><span><a href="{{ tool.link }}">{{ tool.about }}</a></span>
+        </li>
+      </ul>
+    </section>
+  </div>
 
-<div data-repeat-section="{{ sections }}">
-  <section>
-    <h2>{{ section.header }}</h2>
-    <ul data-repeat-skill="{{ section.skills }}">
-      <li>
-        <span class="{{ skill.class }}">{{ skill.name }}</span><span>{{ skill.link }}</span>
-      </li>
-    </ul>
-  </section>
-</div>
+  <div data-repeat-section="{{ sections }}">
+    <section id="{{ section.header }}" style="height: 100px;">
+      some content....
+    </section>
+  </div>
+
+</main>
 
 <footer>
-  <span>* Come on, let's go! This is the name of my company.</span>
+  <span>* Translation: "Come on, let's go!" This is the name of my company.</span>
 </footer>
+

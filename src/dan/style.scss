@@ -1,4 +1,5 @@
-$padding: .25rem;
+$maxwidth: 800px;
+$padding: .5rem;
 $margin: .5rem;
 $hbase: 1.5rem;
 
@@ -17,7 +18,7 @@ h3 {
 body {
   font-family: 'Open Sans', sans-serif;
   margin: auto;
-  max-width: 800px;
+  max-width: $maxwidth;
 }
 
 li {
@@ -28,6 +29,10 @@ li {
   }  
 }
 
+a:empty {
+  display: none;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -35,17 +40,9 @@ header {
 }
 
 section {
-  color: white;
-  background-color: black;
   padding: $padding;
   margin: $margin 0;
 }
-
-.love {
-  color: black;
-  background-color: white;
-}
-
 
 @media (min-width: 768px) { }
 

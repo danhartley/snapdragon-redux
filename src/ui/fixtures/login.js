@@ -9,7 +9,7 @@ export const renderLogin = user => {
 
     const auth = firebase.auth();
     
-    DOM.basicModalText.innerHTML = '';
+    document.querySelector('#basicModal .js-modal-text').innerHTML = '';
 
     const template = document.createElement('template');
         
@@ -17,9 +17,9 @@ export const renderLogin = user => {
 
         template.innerHTML = logoutTemplate
 
-        renderTemplate({ email: user.email }, template.content, DOM.basicModalText);
+        renderTemplate({ email: user.email }, template.content, document.querySelector('#basicModal .js-modal-text'));
 
-        DOM.basicModalTextTitle.innerHTML = 'Snapdragon logout';
+        document.querySelector('#basicModal .js-modal-text-title header').innerHTML = 'Snapdragon logout';
 
         const footer = document.querySelector('.js-modal-footer');
 
@@ -50,9 +50,9 @@ export const renderLogin = user => {
 
         template.innerHTML = loginTemplate;
 
-        renderTemplate({ }, template.content, DOM.basicModalText);
+        renderTemplate({ }, template.content, document.querySelector('#basicModal .js-modal-text'));
 
-        DOM.basicModalTextTitle.innerHTML = 'Snapdragon login';
+        document.querySelector('#basicModal .js-modal-text-title header').innerHTML = 'Snapdragon login';
 
         const footer = document.querySelector('.js-modal-footer');
 

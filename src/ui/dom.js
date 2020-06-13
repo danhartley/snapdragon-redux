@@ -15,8 +15,5 @@ export const DOM = {
     rightBody : document.getElementsByClassName('js-right-body')[0],
     rightRptrSummary : document.getElementsByClassName('js-summary')[0],
     rightBodyBottom : document.getElementsByClassName('js-right-body-bottom')[0],
-    rightFooter : document.getElementsByClassName('js-right-footer')[0],
-    
-    basicModalTextTitle: document.querySelector('#basicModal .js-modal-text-title header'),
-    basicModalText: document.querySelector('#basicModal .js-modal-text')
+    rightFooter : document.getElementsByClassName('js-right-footer')[0]    
 };

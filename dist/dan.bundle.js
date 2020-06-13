@@ -10397,7 +10397,7 @@ module.exports = __webpack_require__(/*! ./modules/_core */ "./node_modules/core
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "h1 {\n  font-size: 1.5rem; }\n\nh2 {\n  font-size: 1.4rem; }\n\nh3 {\n  font-size: 1.3rem; }\n\nbody {\n  font-family: 'Open Sans', sans-serif;\n  margin: auto;\n  max-width: 800px; }\n\nli {\n  list-style-type: none;\n  margin: 1rem 0; }\n  li span {\n    padding: 0.25rem 0.5rem; }\n\nheader {\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\nsection {\n  color: white;\n  background-color: black;\n  padding: 0.25rem;\n  margin: 0.5rem 0; }\n\n.love {\n  color: black;\n  background-color: white; }\n", ""]);
+exports.push([module.i, "h1 {\n  font-size: 1.5rem; }\n\nh2 {\n  font-size: 1.4rem; }\n\nh3 {\n  font-size: 1.3rem; }\n\nbody {\n  font-family: 'Open Sans', sans-serif;\n  margin: auto;\n  max-width: 800px; }\n\nli {\n  list-style-type: none;\n  margin: 1rem 0; }\n  li span {\n    padding: 0.5rem 1rem; }\n\na:empty {\n  display: none; }\n\nheader {\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\nsection {\n  padding: 0.5rem;\n  margin: 0.5rem 0; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -11773,7 +11773,7 @@ module.exports = g;
 /***/ (function(module, exports) {
 
 // Module
-var code = "\n<nav>\n\n</nav>\n\n<header>\n  <h1>\n    Hello and welcome. ¡Venga, vamos!*\n  </h1>\n</header>\n\n\n<div data-repeat-section=\"{{ sections }}\">\n  <section>\n    <h2>{{ section.header }}</h2>\n    <ul data-repeat-skill=\"{{ section.skills }}\">\n      <li>\n        <span class=\"{{ skill.class }}\">{{ skill.name }}</span><span>{{ skill.link }}</span>\n      </li>\n    </ul>\n  </section>\n</div>\n\n<footer>\n  <span>* Come on, let's go! This is the name of my company.</span>\n</footer>";
+var code = "\n<header>\n\n  <nav>\n    <ul data-repeat-section=\"{{ sections }}\">\n      <li>\n        <a href=\"#{{ section.header }}\">{{ section.header }}</a>\n      </li>\n    </ul>\n  </nav>\n  \n</header>\n\n<main>\n\n  <h1>\n    Hello and welcome. ¡Venga, vamos!*\n  </h1>\n\n  <div data-repeat-section=\"{{ sections }}\">\n    <section>\n      <h2>{{ section.header }}</h2>\n      <ul data-repeat-tool=\"{{ section.tools }}\">\n        <li>\n          <span>{{ tool.name }}</span><span><a href=\"{{ tool.link }}\">{{ tool.about }}</a></span>\n        </li>\n      </ul>\n    </section>\n  </div>\n\n  <div data-repeat-section=\"{{ sections }}\">\n    <section id=\"{{ section.header }}\" style=\"height: 100px;\">\n      some content....\n    </section>\n  </div>\n\n</main>\n\n<footer>\n  <span>* Translation: \"Come on, let's go!\" This is the name of my company.</span>\n</footer>\n\n";
 // Exports
 module.exports = code;
 
@@ -11798,57 +11798,48 @@ var about = function about() {
   var template = document.createElement('template');
   template.innerHTML = dan_about_template_html__WEBPACK_IMPORTED_MODULE_1___default.a;
   parent = document.querySelector('body');
-  var sections = [{
-    header: 'Front end fundamentals',
-    skills: [{
-      name: 'HTML5',
-      "class": 'love'
+  var development = [{
+    header: 'Early testing',
+    tools: [{
+      name: 'Lighthouse',
+      link: 'https://developers.google.com/web/tools/lighthouse/',
+      about: 'Automated tool for testing performance, etc.'
     }, {
-      name: 'Modern JS',
-      "class": 'love',
-      link: 'More on this…'
-    }, {
-      name: 'CSS3'
-    }, {
-      name: 'SASS'
-    }]
-  }, {
-    header: 'DevOps',
-    skills: [{
-      name: 'Webpack'
-    }, {
-      name: 'Babel'
-    }, {
-      name: 'Git'
-    }, {
-      name: 'GitHub'
-    }, {
-      name: 'Freedcamp'
-    }]
-  }, {
-    header: 'Back end',
-    skills: [{
-      name: 'Firestore'
-    }, {
-      name: 'Babel'
-    }, {
-      name: 'Git'
-    }, {
-      name: 'GitHub'
-    }, {
-      name: 'Freedcamp'
+      name: 'Google\'s Impact Calculator',
+      link: 'https://www.thinkwithgoogle.com/feature/testmysite/',
+      about: 'Enter your domain to test your mobile speed'
     }]
   }];
-  sections.forEach(function (se) {
-    return se.skills.map(function (sk) {
-      sk["class"] = sk["class"] || '';
+  development.forEach(function (se) {
+    return se.tools.map(function (sk) {
       sk.link = sk.link || '';
+      sk.about = sk.about || '';
     });
   });
+  var sections = [].concat(development);
   Object(ui_helpers_templating__WEBPACK_IMPORTED_MODULE_0__["renderTemplate"])({
     sections: sections
   }, template.content, parent);
-};
+}; // let development = [
+//   {
+//     header: 'Front end fundamentals',
+//     skills: [
+//       { name: 'HTML5', class: 'love' }, { name: 'Modern JS', class: 'love', link: 'More on this…' }, { name: 'CSS3' }, { name: 'SASS' }
+//     ]
+//   },
+//   {
+//     header: 'DevOps',
+//     skills: [
+//       { name: 'Webpack' }, { name: 'Babel' }, { name: 'Git' }, { name: 'GitHub' }, { name: 'Freedcamp' }
+//     ]
+//   },
+//   {
+//     header: 'Back end',
+//     skills: [
+//       { name: 'Firestore' }, { name: 'Babel' }, { name: 'Git' }, { name: 'GitHub' }, { name: 'Freedcamp' }
+//     ]
+//   }
+// ];
 
 /***/ }),
 

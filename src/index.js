@@ -1,7 +1,9 @@
 import "babel-polyfill";
 
-import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/js/dist/carousel';
+import 'bootstrap/js/dist/modal';
+// import 'bootstrap';
 
 import 'ui/css/snapdragon-colours.css';
 import 'ui/css/snapdragon.css';
@@ -30,13 +32,14 @@ import { firestore } from 'api/firebase/firestore';
 import { renderLoggedIn } from 'ui/fixtures/login';
 import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { lessonModalHandler } from 'ui/screens/cards/test-card-modal-handler';
-import { handleWindowResize } from 'media-helper';
+import { handleWindowResize, loadModalHTML } from 'media-helper';
 
 const onLoadHandler = () => {
 
     setTimeout( async () => {
 
       handleWindowResize();
+      loadModalHTML();
 
         const purgeData = cookieHandler.hasUserBeenAwayTooLong();
 
