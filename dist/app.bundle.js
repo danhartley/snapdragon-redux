@@ -91220,7 +91220,7 @@ module.exports = code;
 /***/ (function(module, exports) {
 
 // Module
-var code = "<div class=\"snapdragon-container score-summary-container js-test-card-container\">\n    <div class=\"js-summary-card\">\n        <div class=\"test-card-question standard-block centred-block js-test-card-question\">            \n            <div class=\"question question-txt \">\n                    <div>\n                        <span class=\"hide-empty question-question js-question-question\">Quiz progress</span>\n                        <span class=\"hide-empty question-statement\"></span>\n                    </div>\n                </div>\n        </div>\n        <div id=\"accordion\" class=\"score-summary scrollable review-summary\">\n            <div class=\"score-summary-row-title\">\n                <div>\n                    <div class=\"double-centred-block\">\n                        <span class=\"uppercase\">{{ collection.name }}</span>\n                    </div>\n                    <div class=\"double-centred-block\">\n                        <span>Round {{ lesson.currentRound }} of {{ lesson.rounds }}</span>\n                    </div>                \n                </div>\n            </div>\n            <div class=\"score-summary-footer running-block centred-block\">\n                <span class=\"underline-link js-continue-link\">Continue lesson</span>\n            </div>\n            <div class=\"js-score-summary-rows\"></div>\n            <div class=\"score-summary-footer running-block centred-block\">\n                <span class=\"underline-link js-continue-link\">Continue lesson</span>\n            </div>\n        </div>    \n    </div>\n</div>\n";
+var code = "<div class=\"snapdragon-container score-summary-container js-test-card-container\">\n    <div class=\"js-summary-card\">\n        <div class=\"test-card-question standard-block centred-block js-test-card-question\">            \n            <div class=\"question question-txt \">\n                    <div>\n                        <span class=\"hide-empty question-question js-question-question\">Quiz progress</span>\n                        <span class=\"hide-empty question-statement\"></span>\n                    </div>\n                </div>\n        </div>\n        <div id=\"accordion\" class=\"score-summary scrollable review-summary\">\n            <div class=\"score-summary-row-title\">\n                <div>\n                    <div class=\"double-centred-block\">\n                        <span class=\"uppercase\">{{ collection.name }}</span>\n                    </div>\n                    <div class=\"double-centred-block\">\n                        <span>Round {{ lesson.currentRound }} of {{ lesson.rounds }}</span>\n                    </div>                \n                </div>\n            </div>\n            <div class=\"score-summary-footer running-block centred-block\">\n                <button class=\"btn snap-btn fit-width js-continue-link\">Continue lesson</button>\n            </div>\n            <div class=\"js-score-summary-rows\"></div>\n            <div class=\"score-summary-footer running-block centred-block\">\n                <button class=\"btn snap-btn fit-width js-continue-link\">Continue lesson</button>\n            </div>\n        </div>    \n    </div>\n</div>\n";
 // Exports
 module.exports = code;
 
@@ -91316,6 +91316,9 @@ var renderScoreSummary = function renderScoreSummary(lessonId, summaryContainer)
       lesson: lesson
     }, template.content, parent);
     var actionLinks = document.querySelectorAll('.js-continue-link');
+    setTimeout(function () {
+      actionLinks[0].focus();
+    }, 250);
 
     if (summaryContainer) {
       actionLinks.forEach(function (link) {
