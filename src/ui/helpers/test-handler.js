@@ -6,6 +6,7 @@ export const cleanText = text => {
 
 export const isAnswerEqualToQuestion = (question, answer) => {
 
+
     const eqValues = R.compose(R.isEmpty, R.symmetricDifference);
 
     return eqValues(cleanText(question), cleanText(answer));

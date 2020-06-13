@@ -157,7 +157,7 @@ const stripScoreHandler = (test, callback, config) => {
 
         if(elem.hasClass(target, 'disabled')) return;
 
-        const answerNode = target.querySelector('div:nth-child(1)');
+        const answerNode = target;
         const answer = answerNode.innerText.trim();
         const answerIndex = answerNode.dataset.answerIndex;
         const name = answerNode.dataset.name;
@@ -228,7 +228,7 @@ const stripScoreHandler = (test, callback, config) => {
       if(e.key === 'Enter') {
         handleClickEvent(e);
       }                  
-    });
+    }, { once: true });
 };
 
 const imageScoreHandler = (test, callback, config) => {
