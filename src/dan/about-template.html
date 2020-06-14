@@ -39,6 +39,17 @@
     </ul>
   </section>
 
+<h2>Concepts</h2>
+
+  <section>
+    <h3>{{ conceptList.header }}</h3>
+      <ul data-repeat-concept="{{ conceptList.concepts }}">
+        <li>
+          <dt><a href="#" class="task icon"><i class="fas fa-check" aria-hidden="true"></i><span>{{ concept.name }}</span></a></dt><dd>{{ concept.value }}</dd>
+        </li>
+      </ul>
+  </section>
+
   <section id="{{ toollist.header }}" style="height: 100px;">
     some content....
   </section>

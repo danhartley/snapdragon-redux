@@ -13,7 +13,8 @@ export const about = () => {
   renderTemplate({
     navigation: api.sections.map(section => section.header),
     toollist: api.toollist,
-    checklist: api.checklist
+    checklist: api.checklist,
+    conceptList: api.conceptList
   }, template.content, parent);
 
   Array.from(document.querySelectorAll('.task')).forEach(task => {
