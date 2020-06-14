@@ -67,7 +67,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
                 if(overrides.italicise) strips.forEach(strip => strip.classList.add('binomial'));
 
-                const taxon = { name: item.taxonomy.family, binomial: item.name, question: answer };
+                const taxon = { name: item.taxonomy.family, binomial: item.name, question: answer.term };
 
                 const test = { 
                     itemId: item.id, 

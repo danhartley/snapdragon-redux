@@ -76,10 +76,10 @@ export const renderCompleteText = (collection) => {
 
     renderTemplate({ genus, species, answers }, template.content, parent);
 
-    // setTimeout(() => {
-    //   const block = document.querySelectorAll('.pool .block')[0];
-    //         block.focus(); 
-    // },1000);
+    setTimeout(() => {
+      const block = document.querySelectorAll('.pool .block')[0];
+            block.focus(); 
+    },1000);
 
     const score = { itemId: item.id, binomial: item.name, question: item.taxonomy[givenTaxon], callbackTime: config.callbackTime, layoutCount: lessonPlan.layouts.length, points: layout.points };
 
@@ -96,12 +96,12 @@ export const renderCompleteText = (collection) => {
         document.querySelector('.js-txt-question').innerHTML = `<div class="${iconColour}"><span>${answerIcon}</span><span>${ response }</span</div>`;        
 
         document.querySelectorAll('.block span').forEach(block => {
-            if(block.innerHTML === score.answer) {
+            if(block.innerText === score.answer) {
                 score.success
                     ? block.parentElement.classList.add('snap-success')
                     : block.parentElement.classList.add('snap-alert');
             }
-            if(block.innerHTML === score.question) {
+            if(block.innerText === score.question) {
                 block.parentElement.classList.add('snap-success');
             }
         });
@@ -113,7 +113,7 @@ export const renderCompleteText = (collection) => {
         answer.addEventListener('click', e => {
           e.preventDefault();
           const button = e.target;
-          const answer = button.querySelector('span').innerText;
+          const answer = button.innerText;
           if(question === item.taxonomy.species) {
               document.querySelector('.species').innerText = answer;                
           } else {

@@ -10,7 +10,8 @@ export const landscapeCustom = {
             name:'Level 1',
             layouts: [                          
                         L.mixedSpecimenImages, 
-                        L.latinToCommonMatch, L.commonEntry,
+                        L.latinToCommonMatch, 
+                        L.commonEntry,
                         L.commonToLatinMatch,
                         L.textCompleteGenus, L.genusEntry,                        
                         L.textCompleteSpecies, L.speciesEntry,

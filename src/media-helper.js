@@ -1,4 +1,7 @@
+import { renderTemplate } from 'ui/helpers/templating';
 import { log, logError } from 'ui/helpers/logging-handler';
+
+import modalsTemplate from 'modals.html';
 
 export const handleWindowResize = () => {
 
@@ -54,4 +57,14 @@ export const handleWindowResize = () => {
       }
   }
 
+};
+
+export const loadModalHTML = () => {
+
+  const template = document.createElement('template');
+        template.innerHTML = modalsTemplate;
+
+  const parent = document.querySelector('body');
+
+  renderTemplate({}, template.content, parent);
 };

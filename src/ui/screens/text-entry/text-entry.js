@@ -81,14 +81,14 @@ export const renderInput = (screen, question) => {
 
     const callback = (score, scoreUpdateTimer) => {        
         boundScore.scoreUpdateTimer = scoreUpdateTimer;
-        boundScore.score = score;        
-        if(answerBtn) answerBtn.removeEventListener('click', scoreEventHandler);
+        boundScore.score = score;
     };
 
-    const scoreEventHandler = event => {
+    const scoreEventHandler = e => {
+        e.preventDefault();
         const answer = document.querySelector('.js-txt-input').value;
         const score = { 
-            itemId: item.id, question, answer, target: event.target, 
+            itemId: item.id, question, answer, target: e.target, 
             layoutCount: lessonPlan.layouts.length, points: layout.points, 
             names: item.vernacularNames, questionText: questionTxt, 
             answers: [question.question, answer]
@@ -103,7 +103,7 @@ export const renderInput = (screen, question) => {
         document.removeEventListener('focusout', loseFocusMobileHandler);
         const answer = document.querySelector('.js-txt-input').value;
         const score = { 
-            itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, 
+            itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: e.target, 
             layoutCount: lessonPlan.layouts.length, points: layout.points, 
             names: item.vernacularNames, questionText: questionTxt,
             answers: [question.question, answer]
@@ -113,21 +113,16 @@ export const renderInput = (screen, question) => {
     };
 
     if(config.isLandscapeMode) {
-        answerBtn.addEventListener('click', scoreEventHandler);
-    } else {
-        document.addEventListener('focusout', loseFocusMobileHandler);
-        onAddLoseFocusListener(()=>{
-            document.removeEventListener('focusout', loseFocusMobileHandler);
-        });
+        answerBtn.addEventListener('click', scoreEventHandler, { once: true });
     }
     
     if(config.isPortraitMode) renderPortrait(item, config);
     else renderLandscape(item, config, question);
 
-    document.querySelector('.js-continue-lesson-btn').addEventListener('click', event => {
+    document.querySelector('.js-continue-lesson-btn').addEventListener('click', e => {
         window.clearTimeout(boundScore.scoreUpdateTimer);
         bindScore(boundScore.score);
-    });
+    }, { once: true });
 
     if(config.isPortraitMode) {
 
@@ -217,21 +212,22 @@ const renderLandscape = (item, config, question) => {
     const blocks = document.querySelectorAll('.block');
 
     blocks.forEach(block => {
-        block.addEventListener('click', event => {
-            const letter = event.target;
-            if(letter.classList.contains('active')) {
-                deleteLetter(letter);
-            } else {
-                letter.classList.add('active');
-                letters.push(letter);
-                if(letter.innerHTML === '&nbsp;')
-                    input.value += ' ';
-                else
-                    input.value += letter.innerHTML;
-            }
-            if(input.value === answer.toLowerCase()) {
-                blocks.forEach(block => block.classList.add('correct'));
-            }
+        block.addEventListener('click', e => {
+          e.preventDefault();
+          const letter = e.target;
+          if(letter.classList.contains('active')) {
+              deleteLetter(letter);
+          } else {
+              letter.classList.add('active');
+              letters.push(letter);
+              if(letter.innerHTML === '&nbsp;')
+                  input.value += ' ';
+              else
+                  input.value += letter.innerHTML;
+          }
+          if(input.value === answer.toLowerCase()) {
+              blocks.forEach(block => block.classList.add('correct'));
+          }
         });
     });
 
@@ -262,9 +258,10 @@ const renderLandscape = (item, config, question) => {
     const entries = [];
     let selectedBlock;
 
-    input.addEventListener('input', event => {
-        if(!event.data) return;
-        let entry = event.data.toLowerCase();
+    input.addEventListener('input', e => {
+        e.preventDefault();
+        if(!e.data) return;
+        let entry = e.data.toLowerCase();
         entry = entry === ' ' ? '&nbsp;' : entry;
         entries.push(entry);
         selectedBlock = blockArray.find(block => block.innerHTML === entry);
@@ -274,11 +271,12 @@ const renderLandscape = (item, config, question) => {
         }
     });
 
-    input.addEventListener('keyup', event => {
-          if(event.keyCode === 8) {
-            const entry = entries.pop();
-            selectedBlock = blockArray.find(block => block.innerHTML === entry);
-            if(selectedBlock) selectedBlock.classList.remove('active');
-          }            
+    input.addEventListener('keyup', e => {
+        e.preventDefault();
+        if(e.keyCode === 8) { // Backspace
+          const entry = entries.pop();
+          selectedBlock = blockArray.find(block => block.innerHTML === entry);
+          if(selectedBlock) selectedBlock.classList.remove('active');
+        }            
     });
 };

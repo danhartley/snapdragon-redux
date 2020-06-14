@@ -36,13 +36,13 @@ export const renderHorizontalStrips = collection => {
     document.querySelector('.js-test-card-question').classList.remove('standard-block');
 
     const strips = document.querySelectorAll('.js-rptr-strips .strip');
-    const taxon = { name: item.taxonomy.family, binomial: item.name, question: layout.provider.answer };
+    const taxon = { name: item.taxonomy.family, binomial: item.name, question: layout.provider.answer.term };
 
     const test = { itemId: item.id, items: strips, taxon, binomial: item.name, 
         questionCount: lesson.questionCount, vernacularName: item.vernacularName,
         layoutCount: lesson.layoutCount, points: layout.points, clue: '', 
         answerIndex: answers.findIndex(a => a.term === layout.provider.answer), answers, 
-        questionText: providerQuestion, statement };  
+        questionText: providerQuestion, statement };
 
     scoreHandler('strip', test, null, config);
 };

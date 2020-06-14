@@ -1,7 +1,8 @@
 import "babel-polyfill";
 
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/js/dist/carousel';
+import 'bootstrap/js/dist/modal';
+import 'bootstrap/js/dist/dropdown';
 
 import 'ui/css/snapdragon-colours.css';
 import 'ui/css/snapdragon.css';
@@ -30,90 +31,91 @@ import { firestore } from 'api/firebase/firestore';
 import { renderLoggedIn } from 'ui/fixtures/login';
 import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { lessonModalHandler } from 'ui/screens/cards/test-card-modal-handler';
-import { handleWindowResize } from 'media-helper';
+import { handleWindowResize, loadModalHTML } from 'media-helper';
 
 const onLoadHandler = () => {
 
     setTimeout( async () => {
 
-      handleWindowResize();
+      handleWindowResize();      
 
-        const purgeData = cookieHandler.hasUserBeenAwayTooLong();
+      const purgeData = cookieHandler.hasUserBeenAwayTooLong();
 
-        if(purgeData) {
-            persistor.purge();
-            window.location.reload(true);
-        } else {
-          const lastVisitedCookie = cookieHandler.setLastVisitedCookie(Date());
-        }
+      if(purgeData) {
+          persistor.purge();
+          window.location.reload(true);
+      } else {
+        const lastVisitedCookie = cookieHandler.setLastVisitedCookie(Date());
+      }
 
 
-        let lessonPlan;
+      let lessonPlan;
 
-        try {
+      try {
 
-            const auth = firebase.auth();
+          const auth = firebase.auth();
 
-            const email = 'danhartleybcn@gmail.com';
-            const password = 'sarcarsnap1929';
+          const email = 'danhartleybcn@gmail.com';
+          const password = 'sarcarsnap1929';
 
-            // auth.signInWithEmailAndPassword(email, password).then((cred) => {
-            //     console.log('login credentials: ', cred);
-            // });
+          // auth.signInWithEmailAndPassword(email, password).then((cred) => {
+          //     console.log('login credentials: ', cred);
+          // });
 
-            const { config, counter: currentCounter, lessonPlan: statePlans, collections } = store.getState();
+          const { config, counter: currentCounter, lessonPlan: statePlans, collections } = store.getState();
 
-            lessonPlan = statePlans;
+          lessonPlan = statePlans;
 
-            config.isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
-            config.isLandscapeMode = !config.isPortraitMode;
+          config.isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
+          config.isLandscapeMode = !config.isPortraitMode;
 
-            const counter = currentCounter ? { ...currentCounter } : { index: null, isLessonPaused: true };
+          const counter = currentCounter ? { ...currentCounter } : { index: null, isLessonPaused: true };
 
-            actions.boundUpdateConfig(config);
-            actions.boundStopStartLesson(counter);
+          actions.boundUpdateConfig(config);
+          actions.boundStopStartLesson(counter);
 
-            if(collections && collections.length === 0) {
-                const cloudCollections = await firestore.getCollections();
-                actions.boundUpdateCollections(cloudCollections);
-            }
+          if(collections && collections.length === 0) {
+              const cloudCollections = await firestore.getCollections();
+              actions.boundUpdateCollections(cloudCollections);
+          }
 
-            subscription.add(renderHeaders, 'collection', 'flow');
-            renderNavigation();
-            subscription.add(renderNavigation, 'collection', 'flow');
-            renderLoginChanges();
-            subscription.add(renderLoginChanges, 'user', 'flow');
-            subscription.add(renderLoggedIn, 'user', 'flow');
+          subscription.add(renderHeaders, 'collection', 'flow');
+          renderNavigation();
+          subscription.add(renderNavigation, 'collection', 'flow');
+          renderLoginChanges();
+          subscription.add(renderLoginChanges, 'user', 'flow');
+          subscription.add(renderLoggedIn, 'user', 'flow');
 
-            subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
-                    
-            subscription.add(nextItem, 'layout', 'flow');
-            subscription.add(nextLesson, 'counter', 'flow');
-            subscription.add(nextLayout, 'counter', 'flow');
-            subscription.add(renderScore, 'score', 'flow');
-            subscription.add(traitValuesHandler, 'config', 'localisation');
+          subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
+                  
+          subscription.add(nextItem, 'layout', 'flow');
+          subscription.add(nextLesson, 'counter', 'flow');
+          subscription.add(nextLayout, 'counter', 'flow');
+          subscription.add(renderScore, 'score', 'flow');
+          subscription.add(traitValuesHandler, 'config', 'localisation');
 
-            const updateConfig = async () => {
-                const initialisedConfig = await initialiseConfig(config);
-                actions.boundUpdateConfig(initialisedConfig);
-            };
+          const updateConfig = async () => {
+              const initialisedConfig = await initialiseConfig(config);
+              actions.boundUpdateConfig(initialisedConfig);
+          };
 
-            if(!config.guide.locationType) {
-                updateConfig();
-            }
+          if(!config.guide.locationType) {
+              updateConfig();
+          }
 
-            let glossary = await firestore.getDefinitionsByTaxa(['common', 'plantae', 'aves', 'fungi', 'insecta']);
-                glossary = utils.sortAlphabeticallyBy(glossary, 'term');
-            actions.boundCreateGlossary(glossary);
+          let glossary = await firestore.getDefinitionsByTaxa(['common', 'plantae', 'aves', 'fungi', 'insecta']);
+              glossary = utils.sortAlphabeticallyBy(glossary, 'term');
+          actions.boundCreateGlossary(glossary);
 
-            lessonModalHandler.onCloseModal();
+          loadModalHTML();
+          lessonModalHandler.onCloseModal();
 
-        }
-        catch(e) {
-            console.log('home page error: ', e)
-            // persistor.purge();
-            // window.location.reload(true);        
-        }
+      }
+      catch(e) {
+          console.log('home page error: ', e)
+          // persistor.purge();
+          // window.location.reload(true);        
+      }
     });
 };
 

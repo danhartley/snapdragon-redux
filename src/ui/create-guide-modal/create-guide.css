@@ -676,7 +676,8 @@
   }
 
   .selected-species-container ul {
-    column-count: 2;
+    columns: 2 200px;
+    column-gap: 2rem;
   }
   
   #locationForm, #inatForm {

@@ -39,6 +39,10 @@ export const renderScoreSummary = (lessonId, summaryContainer) => {
 
             const actionLinks = document.querySelectorAll('.js-continue-link');
 
+            setTimeout(() => {
+              actionLinks[0].focus();
+            }, 250);
+
             if(summaryContainer) {
                   actionLinks.forEach(link => link.classList.add('snap-inactive'));
             }

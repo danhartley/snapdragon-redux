@@ -1,0 +1,86 @@
+$maxwidth: 800px;
+$padding: .5rem;
+$margin: .5rem;
+$hbase: 1.5rem;
+
+h1 {
+  font-size: $hbase;
+}
+
+h2 {
+  font-size: $hbase - .25;
+}
+
+h3 {
+  font-size: $hbase - .5;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: auto;
+  padding: 2 * $padding;
+  max-width: $maxwidth;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+nav ul {
+  columns: 6 100px
+}
+
+main ul {
+  columns: 2 200px;
+}
+
+li {
+  list-style-type: none;
+  // margin: (2 * $margin) 0;
+  span {
+    // padding: $padding (2 * $padding);
+  }  
+}
+
+a:empty {
+  display: none;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section {
+  padding: $padding;
+  margin: $margin 0;
+}
+
+button {
+  padding: $padding;
+}
+
+.icon {
+  min-width: 1rem;
+  i {
+    color: white;
+    min-width: 2 * $padding;
+    margin-right: $padding
+  }
+}
+
+.icon.completed i {
+  color: black;
+}
+
+@media (max-width: 768px) { 
+  article {
+
+  }
+}
+
+@media (min-width: 769px) {
+
+}

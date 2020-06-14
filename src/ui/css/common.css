@@ -15,6 +15,11 @@
     font-size: .7rem;
   }
 
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
   h1, h2, h3 {
     font-weight: unset;
     margin: 0 !important;
