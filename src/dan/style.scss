@@ -8,24 +8,38 @@ h1 {
 }
 
 h2 {
-  font-size: $hbase - .1;
+  font-size: $hbase - .25;
 }
 
 h3 {
-  font-size: $hbase - .2;
+  font-size: $hbase - .5;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
   margin: auto;
+  padding: 2 * $padding;
   max-width: $maxwidth;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+nav ul {
+  columns: 6 100px
+}
+
+main ul {
+  columns: 2 200px;
 }
 
 li {
   list-style-type: none;
-  margin: (2 * $margin) 0;
+  // margin: (2 * $margin) 0;
   span {
-    padding: $padding (2 * $padding);
+    // padding: $padding (2 * $padding);
   }  
 }
 
@@ -44,8 +58,29 @@ section {
   margin: $margin 0;
 }
 
-@media (min-width: 768px) { }
+button {
+  padding: $padding;
+}
 
-@media (min-width: 1024px) { }
+.icon {
+  min-width: 1rem;
+  i {
+    color: white;
+    min-width: 2 * $padding;
+    margin-right: $padding
+  }
+}
 
-@media (min-width: 1200px) { }
+.icon.completed i {
+  color: black;
+}
+
+@media (max-width: 768px) { 
+  article {
+
+  }
+}
+
+@media (min-width: 769px) {
+
+}

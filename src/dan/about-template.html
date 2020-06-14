@@ -2,9 +2,9 @@
 <header>
 
   <nav>
-    <ul data-repeat-section="{{ sections }}">
+    <ul data-repeat-link="{{ navigation }}">
       <li>
-        <a href="#{{ section.header }}">{{ section.header }}</a>
+        <a href="#{{ link }}">{{ link }}</a>
       </li>
     </ul>
   </nav>
@@ -14,29 +14,38 @@
 <main>
 
   <h1>
-    Welcome to this website checklist
+    Welcome to site optimisation
   </h1>
 
-  <div data-repeat-section="{{ sections }}">
-    <section>
-      <h2>{{ section.header }}</h2>
-      <ul data-repeat-tool="{{ section.tools }}">
-        <li>
-          <span>{{ tool.name }}</span><span><a href="{{ tool.link }}">{{ tool.about }}</a></span>
-        </li>
-      </ul>
-    </section>
-  </div>
+  <h2>Checklist</h2>
 
-  <div data-repeat-section="{{ sections }}">
-    <section id="{{ section.header }}" style="height: 100px;">
-      some content....
-    </section>
-  </div>
+  <section>
+    <h3>{{ checklist.header }}</h3>
+    <ul data-repeat-check="{{ checklist.checks }}">
+      <li>
+        <dt><a href="#" class="task icon"><i class="fas fa-check" aria-hidden="true"></i><span>{{ check.name }}</span></a></dt><dd>{{ check.value }}</dd>
+      </li>
+    </ul>
+  </section>
+
+  <h2>Tools</h2>
+
+  <section>
+    <h3>{{ toollist.header }}</h3>
+    <ul data-repeat-tool="{{ toollist.tools }}">
+      <li>
+        <span>{{ tool.name }}</span><span><a href="{{ tool.link }}">{{ tool.title }}</a></span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="{{ toollist.header }}" style="height: 100px;">
+    some content....
+  </section>
 
 </main>
 
 <footer>
-  
+  <button class="clear">Clear history</button>
 </footer>
 
