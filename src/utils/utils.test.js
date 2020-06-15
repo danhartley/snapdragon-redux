@@ -53,20 +53,20 @@ const layouts = [
     expect(randoms.length).toEqual(num)
   }); 
 
-  test('insertObjectBetweenItems for even items in 4 item array should return array length 8', () =>{
-    const items = [{id:1},{id:2},{id:3},{id:4}];
-    const insert = {id:0};
-    const insertedIntoArray = utils.insertObjectBetweenItems(items, insert);
-    expect(insertedIntoArray.length).toEqual(items.length*2);
-  });
+  // test('insertObjectBetweenItems for even items in 4 item array should return array length 8', () =>{
+  //   const items = [{id:1},{id:2},{id:3},{id:4}];
+  //   const insert = {id:0};
+  //   const insertedIntoArray = utils.insertObjectBetweenItems(items, insert);
+  //   expect(insertedIntoArray.length).toEqual(items.length*2);
+  // });
   
-  test('doubledItemsInArray for even items in 4 item array should return array length 8', () =>{
-    const items = [{id:1},{id:2},{id:3},{id:4}];
-    const doubledArray = utils.doubledItemsInArray(items);
-    const doubledItems = [{id:1},{id:1},{id:2},{id:2},{id:3},{id:3},{id:4},{id:4}];
-    expect(doubledArray.length).toEqual(items.length*2);
-    expect(doubledArray).toEqual(doubledItems);
-  });
+  // test('doubledItemsInArray for even items in 4 item array should return array length 8', () =>{
+  //   const items = [{id:1},{id:2},{id:3},{id:4}];
+  //   const doubledArray = utils.doubledItemsInArray(items);
+  //   const doubledItems = [{id:1},{id:1},{id:2},{id:2},{id:3},{id:3},{id:4},{id:4}];
+  //   expect(doubledArray.length).toEqual(items.length*2);
+  //   expect(doubledArray).toEqual(doubledItems);
+  // });
 
   test('onlyUnique should ony return unique values from an array', () => {
     const array = ['a', 1, 'a', 2, '1'];
@@ -149,11 +149,11 @@ const layouts = [
     expect(itemIndex).toBe(3);
   });
 
-  test('should tally up pass or fail counts by item id', () => {
-    const arr = [ 1,2,2,3,3,3,7 ];
-    const ids = arr.reduce(utils.itemCountReducer, {});
-    expect(ids).toEqual({1:1,2:2,3:3,7:1});
-  });
+  // test('should tally up pass or fail counts by item id', () => {
+  //   const arr = [ 1,2,2,3,3,3,7 ];
+  //   const ids = arr.reduce(utils.itemCountReducer, {});
+  //   expect(ids).toEqual({1:1,2:2,3:3,7:1});
+  // });
 
   test('should capitalise all words', () => {
     const str = 'the small black dog jumped over the lazy moon';
