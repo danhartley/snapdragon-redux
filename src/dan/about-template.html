@@ -21,11 +21,14 @@
 
   <section>
     <h3>{{ checklist.header }}</h3>
-    <ul data-repeat-check="{{ checklist.checks }}">
-      <li>
-        <dt><a href="#" class="task icon"><i class="fas fa-check" aria-hidden="true"></i><span>{{ check.name }}</span></a></dt><dd>{{ check.value }}</dd>
-      </li>
-    </ul>
+    <dl data-repeat-check="{{ checklist.checks }}">
+      <dt>
+        <a href="#" class="task icon">
+          <span>{{ check.term }}</span>
+        </a>
+      </dt>
+      <dd data-repeat-description="{{ check.descriptions }}"><div>{{ description }}</div></dd>
+    </dl>
   </section>
 
   <h2>Tools</h2>
@@ -37,6 +40,20 @@
         <span>{{ tool.name }}</span><span><a href="{{ tool.link }}">{{ tool.title }}</a></span>
       </li>
     </ul>
+  </section>
+
+<h2>Concepts</h2>
+
+  <section>
+    <h3>{{ conceptList.header }}</h3>
+      <dl data-repeat-concept="{{ conceptList.concepts }}">
+        <dt>
+          <a href="#" class="task icon">
+            <span>{{ concept.name }}</span>
+          </a>
+        </dt>
+        <dd>{{ concept.value }}</dd>
+      </dl>
   </section>
 
   <section id="{{ toollist.header }}" style="height: 100px;">
