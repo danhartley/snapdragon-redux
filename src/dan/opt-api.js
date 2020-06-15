@@ -28,12 +28,26 @@ let sections = [
     header: 'Checklist',
     checks: [
       {
-        name: 'media queries',
-        value: 'Design the content to fit on a small screen size first, then expand the screen until a breakpoint becomes necessary.'
+        term: 'media queries',
+        descriptions: ['Design the content to fit on a small screen size first, then expand the screen until a breakpoint becomes necessary.']
       }
       ,{
-        name: 'page size',
-        value: 'Chrome DevTools: Select Network, disable cache, reload, and check bytes transferred at the bottom of the screen.'  
+        term: 'page size',
+        descriptions: ['Chrome DevTools: Select Network, disable cache, reload, and check bytes transferred at the bottom of the screen.']
+      }
+      ,{
+        term: 'Google fonts',
+        descriptions: ['Customise your request by family and variants e.g. \'Open Sans\'.',
+            'Default variants includes only \'regular 400\'. Combine fonts into a single request.',
+            'Append \'display=swap\' to request, or \'font-display: swap;\', this will allow text to load with fallback font until the Google Font is available.',
+            'Use DNS prefetching.',
+            'Use preconnect.']
+      }
+      , {
+        term: 'JavaScript',
+        descriptions: [
+          [ 'Add the \'defer\' attribute to script tag where possible.']
+        ] 
       }
     ]
   },

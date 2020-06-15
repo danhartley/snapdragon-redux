@@ -64,14 +64,16 @@ button {
 
 .icon {
   min-width: 1rem;
-  i {
+  span:before {
+    content:'\2713';
+    display:inline-block;
     color: white;
     min-width: 2 * $padding;
     margin-right: $padding
   }
 }
 
-.icon.completed i {
+.icon.completed span:before {
   color: black;
 }
 

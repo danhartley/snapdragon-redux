@@ -21,12 +21,12 @@ export const about = () => {
     let tasksKey = 'checkedTasks';
     let state = localStorage.getItem(tasksKey) ? JSON.parse(localStorage.getItem(tasksKey))  : { keys: [] };
     state.keys.forEach(key => {
-      if(key === task.querySelector('span').innerHTML) {
+      if(task.querySelector('span') && key === task.querySelector('span').innerText) {
         task.classList.add('completed');
       }
     });
     task.addEventListener('click', e => {
-      state.keys.push(e.target.innerHTML);
+      state.keys.push(e.target.innerText);
       localStorage.setItem(tasksKey, JSON.stringify(state));
       task.classList.add('completed');
     });
