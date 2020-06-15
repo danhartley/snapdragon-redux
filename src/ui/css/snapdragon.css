@@ -849,7 +849,6 @@ btn:disabled {
 .snap-icon-btn:focus, .snap-icon-btn:hover {
   color: var(--snap-youtube-green);
   outline: none;
-  border: 1px solid var(--snap-youtube-green) !important;
 }
 
 .snap-link-btn, .snap-no-link-btn {
@@ -2452,4 +2451,18 @@ input[type="number"].medium {
   padding: .5rem;
   grid-template-rows: 1fr 1fr;
   display: grid;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000000;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
 }
