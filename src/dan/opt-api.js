@@ -28,11 +28,11 @@ let sections = [
     header: 'Checklist',
     checks: [
       {
-        term: 'media queries',
+        term: 'Media queries',
         descriptions: ['Design the content to fit on a small screen size first, then expand the screen until a breakpoint becomes necessary.']
       }
       ,{
-        term: 'page size',
+        term: 'Page size',
         descriptions: ['Chrome DevTools: Select Network, disable cache, reload, and check bytes transferred at the bottom of the screen.']
       }
       ,{
@@ -43,10 +43,16 @@ let sections = [
             'Use DNS prefetching.',
             'Use preconnect.']
       }
-      , {
+      ,{
         term: 'JavaScript',
         descriptions: [
-          [ 'Add the \'defer\' attribute to script tag where possible.']
+          [ 'Remove unused code', 'Add the \'defer\' attribute to script tag where possible.']
+        ] 
+      }
+      ,{
+        term: 'Accessibility',
+        descriptions: [
+          [ 'Add skip link.', 'Check for landmark elements.']
         ] 
       }
     ]

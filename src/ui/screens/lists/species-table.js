@@ -152,7 +152,7 @@ export const buildTable = (collection, args) => {
     
     const caption = document.createElement('caption');
           caption.innerHTML = `Species in ${collection.name}`;
-          caption.classList.add('hide-visually');
+          caption.classList.add('visually-hidden');
 
     const thead = document.createElement('thead');
 

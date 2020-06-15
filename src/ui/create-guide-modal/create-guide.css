@@ -57,7 +57,7 @@
 
   .modal-guide-navigation > button {
     display: flex;
-    align-items: center;        
+    align-items: center;
   }
 
   .custom-lesson-menu-options .snap-icon-btn:hover, .modal-guide-navigation .snap-icon-btn:hover {
