@@ -21,6 +21,7 @@ let sections = [
         , about: 'Enter your domain to test your mobile speed' 
       }
       , { name: 'Chrome DevTools', link: 'https://www.google.com/chrome/', about: '' }
+      , { name: 'loadCSS', link: 'https://github.com/filamentgroup/loadCSS/blob/master/README.md', about: 'Load CSS asynchronosuly' }
     ]
   },
   {
@@ -53,6 +54,12 @@ let sections = [
         term: 'Accessibility',
         descriptions: [
           [ 'Add skip link.', 'Check for landmark elements.']
+        ] 
+      }
+      ,{
+        term: 'CSS',
+        descriptions: [
+          [ 'Rmove unused styles.', 'Copy CSS files and use loadCSS pattern to affect non-blocking request.']
         ] 
       }
     ]

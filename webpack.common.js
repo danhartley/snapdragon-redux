@@ -1,7 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-// const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+var csso = require('csso');
+  // const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     devServer: {
@@ -84,9 +86,7 @@ module.exports = {
           }
         ],
     },
-    plugins: [
-      
-      // new CleanWebpackPlugin(['dist/index.html', 'dist/*.bundle.js']),      
+    plugins: [          
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: './src/index.html',
@@ -104,6 +104,13 @@ module.exports = {
         template: './src/dan/dan.html',
         chunks: ['dan'],
         inject: true
+      }),
+      
+      new CopyPlugin({
+        patterns: [
+          { from: './src/ui/css/groups', to: 'css', transform(content) { return csso.minify(content).css; } },
+          { from: './src/ui/create-guide-modal/create-guide.css', to: 'css', transform(content) { return csso.minify(content).css; } },
+        ],
       }),
     ],
     resolve: {

@@ -1,0 +1,12 @@
+<div class="guide-text-container hide-empty">
+    <input id="input-species" type="text" placeholder="Start typing a latin species name" autofocus>            
+</div>
+
+<div class="autocomplete-options-container hide-important" id="snapdragon-species-autocomplete" style="width:unset;"></div>
+
+<ul class="selected-species js-selected-species" data-repeat-species="{{ selectedSpecies }}">
+    <li class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="{{ species.name }}" checked>
+        <label class="custom-control-label" for="{{ species.name }}">{{ species.name }}</label>
+    </li>
+</ul>
