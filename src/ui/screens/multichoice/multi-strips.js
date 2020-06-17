@@ -43,7 +43,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
                 const vernacularName = (overrides && overrides.vernacularName !== undefined) ? overrides.vernacularName : item.vernacularName;
                 const binomial = (overrides && overrides.binomial !== undefined) ? overrides.binomial : item.name;
                 const question = (overrides && overrides.question) ? overrides.question : 'Match the name';
-                const helpDefault = config.isLandscapeMode ? '(Click on the name below.)' : '(Tap on the name below.)';
+                const helpDefault = config.isLandscapeMode ? '(Select the name below.)' : '(Tap on the name below.)';
                 const help = (overrides && overrides.help !== undefined) ? overrides.help : helpDefault;
                 const term = (overrides && overrides.term !== undefined) ? overrides.term : '';
                 const className = (overrides && overrides.className !== undefined) ? overrides.className : '';
@@ -101,7 +101,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
                         answers = answers.map(a => { return { term: a } });
                         answers = utils.shuffleArray(answers);
                         
-                        help = config.isLandscapeMode ? '(Click on the answer)' : '(Tap on the answer)';
+                        help = config.isLandscapeMode ? '(Select the answer)' : '(Tap on the answer)';
                     }
 
                     await buildQuestion();
@@ -127,7 +127,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
                         answers = utils.shuffleArray([item.vernacularName, ...answers]);
                         answers = answers.map(a => { return { term: a } });
                 
-                        help = config.isLandscapeMode ? '(Click on the answer)' : '(Tap on the answer)';
+                        help = config.isLandscapeMode ? '(Select the answer)' : '(Tap on the answer)';
                     };
 
                     await buildQuestion();
@@ -153,7 +153,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
                         answers = utils.shuffleArray([item.quickId, ...answers]);
                         answers = answers.map(a => { return { term: a } });
                 
-                        help = config.isLandscapeMode ? '(Click on the answer)' : '(Tap on the answer)';
+                        help = config.isLandscapeMode ? '(Select the answer)' : '(Tap on the answer)';
                     };
 
                     await buildQuestion();
@@ -179,7 +179,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
                     alternatives = alternatives.map(a => { return { term: a.type, name: a.name, names: a.names } });
                 let answers = utils.shuffleArray([answer, ...alternatives]);                    
                 
-                const help = config.isLandscapeMode ? '(Click on the description below.)' : '(Tap on the description.)';
+                const help = config.isLandscapeMode ? '(Select the description below.)' : '(Tap on the description.)';
 
                 render(answer, answers, { question: 'Match species family', help, clue: item.taxonomy.family });
             }
