@@ -49,10 +49,10 @@
       <dl data-repeat-concept="{{ conceptList.concepts }}">
         <dt>
           <a href="#" class="task icon">
-            <span>{{ concept.name }}</span>
+            <span>{{ concept.term }}</span>
           </a>
         </dt>
-        <dd>{{ concept.value }}</dd>
+        <dd data-repeat-description="{{ concept.descriptions }}"><div>{{ description }}</div></dd>
       </dl>
   </section>
 

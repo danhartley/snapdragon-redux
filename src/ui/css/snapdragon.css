@@ -9,10 +9,10 @@ html {
 }
 
 body {
-  width: var(--vwGrid, 100vh);
-  max-width: var(--vwGrid, 100vh);
+  /* width: var(--vwGrid, 100vh);
+  max-width: var(--vwGrid, 100vh); */
   height: var(--vhGrid, 100vh);
-  font-size: .8em;
+  /* font-size: .8em; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -393,6 +393,7 @@ a.icon:hover {
   grid-auto-flow: column;
   width: 100%;
   height: var(--vhGrid, 100vh);
+  font-size: .8rem;
 }
 
 .left-grid, .right-grid {
@@ -1882,8 +1883,8 @@ a.collection-disabled {
 
 .lesson-list-carousel-item {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
+  /* width: 100%; */
+  /* justify-content: space-between; */
   margin: .25rem 0;
 }
 
@@ -1899,6 +1900,7 @@ a.collection-disabled {
 .lesson-list-item {
   padding: 1rem .5rem;
   pointer-events: none;
+  flex-grow: 2;
 }
 
 .lesson-review, .lesson-terms-review {
@@ -1918,9 +1920,9 @@ a.collection-disabled {
 
 .lesson-list > div > div:nth-child(1) {
   justify-content: space-between;
-  top: 0;
-  z-index: 30;
-  width: 100%;
+  /* top: 0; */
+  /* z-index: 30;
+  width: 100%; */
 }
 
 .lesson-list div.lesson-list-carousel-item:nth-of-type(2n) {
@@ -2049,9 +2051,9 @@ a.collection-disabled {
   border-bottom: .03rem solid var(--snap-border-medium);
 }
 
-.title {
+/* .title {
   padding: 0 .5rem;
-}
+} */
 
 .lesson-companion {
   display: flex;

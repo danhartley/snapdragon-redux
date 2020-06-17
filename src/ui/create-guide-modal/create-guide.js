@@ -26,9 +26,9 @@ class CreateGuide {
                     { id: enums.guideOption.PICKER.name, step: 'Picker'},
                 ] },
             { number: 2, title: 'Species Picker', description: 'Location', nextStep: 'Taxa', prevStep: 'Provenance', disabled: true, className:'location-actions' },
-            { number: 2, title: 'Species Picker', description: 'Picker', nextStep: 'Fetch Species', prevStep: 'Provenance', disabled: true, className:'location-actions' },
-            { number: 3, title: 'Species Picker', description: 'Taxa', nextStep: 'Fetch Species', disabled: true, className:'taxa-actions' },
-            { number: 4, title: 'Species Picker', description: 'Fetch Species', nextStep: 'View Guide', disabled: true, className:'filter-actions' }
+            { number: 2, title: 'Species Picker', description: 'Picker', nextStep: 'Species', prevStep: 'Provenance', disabled: true, className:'location-actions' },
+            { number: 3, title: 'Species Picker', description: 'Taxa', nextStep: 'Species', disabled: true, className:'taxa-actions' },
+            { number: 4, title: 'Species Picker', description: 'Species', nextStep: 'View Guide', disabled: true, className:'filter-actions' }
         ];
 
         this.currentStep = this.steps.find(s => s.number == step);
@@ -126,7 +126,7 @@ class CreateGuide {
                 options.innerHTML = 'Filter species by taxa.'
                 renderCategories(this.modal, this);
                 break;
-            case 'Fetch Species':
+            case 'Species':
                 setTimeout(() => {
                     speciesSearch(this);
                 });

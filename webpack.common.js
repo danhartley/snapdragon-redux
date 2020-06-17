@@ -104,12 +104,10 @@ module.exports = {
         template: './src/dan/dan.html',
         chunks: ['dan'],
         inject: true
-      }),
-      
+      }),      
       new CopyPlugin({
         patterns: [
-          { from: './src/ui/css/groups', to: 'css', transform(content) { return csso.minify(content).css; } },
-          { from: './src/ui/create-guide-modal/create-guide.css', to: 'css', transform(content) { return csso.minify(content).css; } },
+          { from: './src/ui/css/groups', to: 'css', transform(content) { return csso.minify(content).css; } }
         ],
       }),
     ],

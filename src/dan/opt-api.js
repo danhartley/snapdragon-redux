@@ -47,19 +47,20 @@ let sections = [
       ,{
         term: 'JavaScript',
         descriptions: [
-          [ 'Remove unused code', 'Add the \'defer\' attribute to script tag where possible.']
+          'Remove unused code', 
+          'Add the \'defer\' attribute to script tag where possible.'
         ] 
       }
       ,{
         term: 'Accessibility',
         descriptions: [
-          [ 'Add skip link.', 'Check for landmark elements.']
+          'Add skip link.', 'Check for landmark elements.'
         ] 
       }
       ,{
         term: 'CSS',
         descriptions: [
-          [ 'Rmove unused styles.', 'Copy CSS files and use loadCSS pattern to affect non-blocking request.']
+          'Remove unused styles.', 'Copy CSS files and use loadCSS pattern to affect non-blocking request.'
         ] 
       }
     ]
@@ -69,12 +70,32 @@ let sections = [
     header: 'Concepts',
     concepts: [
       {
-        name: 'CRP performance',
-        value: 'Critical Rendering Path.'
+        term: 'CRP performance',
+        descriptions: ['Critical Rendering Path.']
       }
       , {
-      name: 'Real user monitoring',
-      value: 'A passive monitoring technology that records all user interaction with a website or client interacting with a server or cloud-based application. The Navigation Timing API can be used to measure real-world CRP performance. AKA Field Data.'
+        term: 'Real user monitoring',
+        descriptions: ['A passive monitoring technology that records all user interaction with a website or client interacting with a server or cloud-based application. The Navigation Timing API can be used to measure real-world CRP performance. AKA Field Data.'],
+        link: 'https://developers.google.com/web/fundamentals/performance/critical-rendering-path'
+      }
+      , {
+        term: 'Critical CSS',
+        descriptions: ['A technique that extracts the CSS for above-the-fold content in order to render content to the user as fast as possible.'],
+        link: 'https://web.dev/extract-critical-css/'
+      }
+      , {
+        term: 'RAIL',
+        descriptions: ['A user-centric performance model that breaks down the user\'s experience into key actions: Response, Animation , Idle, Load'],
+        more: [
+          {
+            link: 'https://developers.google.com/web/fundamentals/performance/rail#ux',
+            title: 'RAIL performance'
+          },
+          {
+            link: 'https://www.udacity.com/course/website-performance-optimization--ud884',
+            title: 'Udemy: Performance optimisation course'
+          },
+      ]
       }
   ]
   }
