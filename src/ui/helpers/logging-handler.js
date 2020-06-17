@@ -2,7 +2,7 @@
 
 import { object } from "firebase-functions/lib/providers/storage";
 
-export const log = (msg, obj) => {
+export const snapLog = (msg, obj) => {
   let css = 'background: #222; color: #bada55; padding: 5px; margin-right: 5px;';
   if(Array.isArray(obj)) obj = { obj };
   obj 

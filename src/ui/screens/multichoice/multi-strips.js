@@ -11,7 +11,7 @@ import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { firestore } from 'api/firebase/firestore';
 import { lessonStateHelper } from 'ui/screens/lists/lesson-state-helper';
-import { log, logError } from 'ui/helpers/logging-handler';
+import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 import stripWithImageTemplate from 'ui/screens/multichoice/multi-strips-with-images.html';

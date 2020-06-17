@@ -6,7 +6,7 @@ import { getInatSpecies } from 'api/inat/inat';
 import { getPlace } from 'geo/geo';
 import { firestore } from 'api/firebase/firestore';
 import { enums } from 'ui/helpers/enum-helper';
-import { log, logError } from 'ui/helpers/logging-handler';
+import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 async function getItems(collection, config) {
 
@@ -66,7 +66,7 @@ const loadCollection = async (collection, config) => {
         
         if(collection.items.length > 0) {
           // this point is often reached…
-          log(`no collection items in loadCollection, collection: ${collection.name}`);
+         snapLog(`no collection items in loadCollection, collection: ${collection.name}`);
           return collection;
         };
 
@@ -79,7 +79,7 @@ const loadCollection = async (collection, config) => {
         }
 
         if(!items) {
-          log('no items from getItems in loadCollection to filter');
+         snapLog('no items from getItems in loadCollection to filter');
           return collection;
         };
 
@@ -111,7 +111,7 @@ const loadCollection = async (collection, config) => {
             }
 
         } else {
-            log('No results for callbackWhenNoResults');
+           snapLog('No results for callbackWhenNoResults');
             return collection;
         }
     } catch (e) {

@@ -1,5 +1,5 @@
 import { utils } from 'utils/utils';
-import { log, logError } from 'ui/helpers/logging-handler';
+import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 const getHTML5Location = () => {
 
@@ -22,12 +22,12 @@ const getHTML5Location = () => {
 
 export const getLocation = (config) => {
   if(!!config.coordinates && config.coordinates.lat && config.coordinates.long) {
-    log('geolocation config',config);
+   snapLog('geolocation config',config);
     return new Promise(resolve => {
         resolve(config.coordinates);
     });
   } else {
-    log('geolocation config', config);
+   snapLog('geolocation config', config);
     return getHTML5Location();
   }  
 };
@@ -77,7 +77,7 @@ export const getPlace = async (config, force = false) => {
     const json = await response;    
     return await json;
   } else {    
-    log('getPlace config', config);
+   snapLog('getPlace config', config);
     const coordinates = await getLocation(config);        
     const latitude = coordinates['0'] || coordinates.lat;
     const longitude = coordinates['1'] || coordinates.long;

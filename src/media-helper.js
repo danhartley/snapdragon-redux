@@ -1,5 +1,5 @@
 import { renderTemplate } from 'ui/helpers/templating';
-import { log, logError } from 'ui/helpers/logging-handler';
+import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 import modalsTemplate from 'modals.html';
 
@@ -50,10 +50,10 @@ export const handleWindowResize = () => {
   });
 
   if(window.location.origin.indexOf('learn-the-planet') > -1) {
-      log('*** Live site detected ***');
+     snapLog('*** Live site detected ***');
       if(window.location.protocol != 'https:') {
           location.href =  location.href.replace("http://", "https://");
-          log(' *** Site secured ***');
+         snapLog(' *** Site secured ***');
       }
   }
 

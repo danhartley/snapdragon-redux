@@ -1,7 +1,7 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import { scaleImage, imageMatch, imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handler';
 import { handleRightsAttribution } from 'ui/screens/common/rights-attribution';
-import { log, logError } from 'ui/helpers/logging-handler';
+import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
 
@@ -57,7 +57,9 @@ export const imageSlider = sliderArgs => {
         img.rightsHolder = img.rightsHolder || 'Public domain';
         img.provider = img.provider || 'eol';
         img = scaleImage(img);
-    });    
+    });
+
+    snapLog('imageSlider, image medium values:', images.map(i => i.medium));
 
     renderTemplate({ images, identifier }, slider.content, parent);
 
@@ -109,6 +111,8 @@ export const imageSideBySlider = (slides, parent, config) => {
         const item = { name: slide.images[0].itemName, itemCommon: slide.images[0].itemCommon, images: slide.images };
         const images = prepImagesForCarousel(item, config, imageUseCases.CAROUSEL);
         
+        snapLog('imageSideBySlider, image medium values:', images.map(i => i.medium));
+
         renderTemplate({ images, identifier }, sideBySlider.content, parent);
         
         const activeNode = document.querySelector(`#imageSlider_${identifier} .carousel-item`);

@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { findRankByIconicTaxon } from 'api/snapdragon/iconic-taxa';
 import { firestore } from 'api/firebase/firestore';
-import { log, logError } from 'ui/helpers/logging-handler';
+import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 export const getPoolItems = async (collection, poolSize = 5) => {
   
