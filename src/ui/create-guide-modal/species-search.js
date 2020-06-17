@@ -7,7 +7,7 @@ import { enums } from 'ui/helpers/enum-helper';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { lessonStateHelper } from 'ui/screens/lists/lesson-state-helper';
 import { speciesInGuideEditor } from 'ui/create-guide-modal/species-in-guide-editor';
-import { log, logError, logAPIError } from 'ui/helpers/logging-handler';
+import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
 
 import spinnerTemplate from 'ui/create-guide-modal/species-search-template.html';
 import speciesSummaryTemplate from 'ui/create-guide-modal/species-summary-template.html';

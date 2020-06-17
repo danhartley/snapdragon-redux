@@ -3,7 +3,7 @@ import { actions } from 'redux/actions/action-creators';
 import { elem } from 'ui/helpers/class-behaviour';
 import { markTest} from 'ui/helpers/test-handler';
 import { subscription } from 'redux/subscriptions';
-import { log, logError } from 'ui/helpers/logging-handler';
+import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 export const scoreHandler = (type, test, callback, config) => {
     

@@ -5,7 +5,7 @@ import { scoreHandler, bindScore } from 'ui/helpers//score-handler';
 import { firestore } from 'api/firebase/firestore';
 import { utils } from 'utils/utils';
 import { traitsHandler } from 'ui/helpers/traits-handler';
-import { log, logError } from 'ui/helpers/logging-handler';
+import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 const onTraitsReadyListeners = [];
 const onTraitsReady = listener => {

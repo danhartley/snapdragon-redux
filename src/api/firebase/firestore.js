@@ -2,7 +2,7 @@ import { utils } from 'utils/utils';
 import { enums } from 'admin/api/enums';
 import { firebaseConfig } from 'api/firebase/credentials';
 import { questions } from 'api/firebase/questions';
-import { log, logError, logAPIError } from 'ui/helpers/logging-handler';
+import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
 
 firebase.initializeApp(firebaseConfig);
 
@@ -234,7 +234,7 @@ const addSpecies = async species => {
         });
     }
 
-    log('addSpecies', species.images);
+   snapLog('addSpecies', species.images);
 
     try {
         docRef = await db.collection('species').add(species);
@@ -289,7 +289,7 @@ const updateSpeciesNames = async (species, names) => {
         speciesDocRef = doc.ref;
     });
 
-    log('updateSpeciesNames', speciesDocRef);
+   snapLog('updateSpeciesNames', speciesDocRef);
 
     return await speciesDocRef.update({names}); 
 
@@ -369,7 +369,7 @@ const addSpeciesRelationship = async (type, traits) => {
 
         await readyBatch();
 
-        log('addSpeciesRelationship, batch is ready');
+       snapLog('addSpeciesRelationship, batch is ready');
 
         await batch.commit();
 
@@ -535,7 +535,7 @@ const addCollection = async (collection, user) => {
 
     const collectionRef = await updateCollection(collection);
 
-    log('addCollection collectionRef', collectionRef);
+   snapLog('addCollection collectionRef', collectionRef);
 
     if(collectionRef) return;
     
@@ -544,7 +544,7 @@ const addCollection = async (collection, user) => {
     let docRef = null;
   
     try {
-        log('addCollection collection', collection);
+       snapLog('addCollection collection', collection);
         docRef = await db.collection('collections').add(collection);
     } catch(e) {
       logAPIError(e, 'addCollection');
@@ -703,7 +703,7 @@ const addCollection = async (collection, user) => {
 
         await readyBatch();
 
-        log('getBatchDefinitionsById: batch is ready');
+       snapLog('getBatchDefinitionsById: batch is ready');
 
         await batch.commit();
 

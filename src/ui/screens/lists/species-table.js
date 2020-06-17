@@ -3,7 +3,7 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handler';
 import { iconicTaxa, matchIcon } from 'api/snapdragon/iconic-taxa';
-import { log, logError } from 'ui/helpers/logging-handler';
+import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 import speciesTemplate from 'ui/screens/lists/species-table-template.html';
 

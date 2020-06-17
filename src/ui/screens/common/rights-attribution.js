@@ -1,5 +1,5 @@
 import { scaleImage } from 'ui/helpers/image-handler';
-import { log, logError } from 'ui/helpers/logging-handler';
+import { snapLog, logError } from 'ui/helpers/logging-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 
 import rightsAttributionTemplate from 'ui/screens/common/rights-attribution-template.html';

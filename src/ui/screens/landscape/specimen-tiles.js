@@ -6,6 +6,7 @@ import { DOM } from 'ui/dom';
 import { renderTemplate } from 'ui/helpers/templating';
 import { modalImagesHandler } from 'ui/helpers/image-handler';
 import { imageUseCases, prepImagesForCarousel, prepImageForCarousel, scaleImage } from 'ui/helpers/image-handler';
+import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 import specimensTemplate from 'ui/screens/landscape/specimen-tiles-template.html';
 
@@ -65,6 +66,8 @@ const renderSpecimenImageTiles = (collection, images, item) => {
 
     const parent = DOM.leftBody;
           parent.innerHTML = '';
+
+    snapLog('renderSpecimenImageTiles, image medium values:', images.map(i => i.medium));
 
     renderTemplate({ images }, template.content, parent);
 

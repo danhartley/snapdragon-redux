@@ -1,5 +1,5 @@
 import { renderTemplate } from 'ui/helpers/templating';
-import { log, logError, logAPIError } from 'ui/helpers/logging-handler';
+import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
 
 import definitionTemplate from 'ui/screens/lists/species-list-definition-insert.html';
 

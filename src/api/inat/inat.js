@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { firestore } from 'api/firebase/firestore';
 import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
-import { log, logError } from 'ui/helpers/logging-handler';
+import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 let inatListeners = [];
 let RECORDS_PER_PAGE = 200;
@@ -36,7 +36,7 @@ export const getInatSpecies = async config => {
 
     const snapdragonSpeciesNames = speciesNames[0].value;
 
-    log('snapdragon species', snapdragonSpeciesNames);
+   snapLog('snapdragon species', snapdragonSpeciesNames);
 
     const iconicTaxaKeys = Object.keys(iconicTaxa).join(',');
 
@@ -86,8 +86,8 @@ export const getInatSpecies = async config => {
             page = page + 1;
             let noMoreRecords = recordsFromThisRequest.length < RECORDS_PER_PAGE;
             let recordsCountReached = snapdragonSpecies.length >= config.guide.noOfRecords;
-            log('snapdragonSpecies', snapdragonSpecies);
-            log('records', records);
+           snapLog('snapdragonSpecies', snapdragonSpecies);
+           snapLog('records', records);
             if (noMoreRecords || recordsCountReached) {
                 keepGoing = false;
                 return snapdragonSpecies;
@@ -146,11 +146,11 @@ export const getInatSpecies = async config => {
         const params = config.guide.guideTpe === 'INAT' ? getUserOrProjectKeyValuePair(config) : '';
         const url = getBasePath(config) + `&page=${page}&iconic_taxa=${iconicTaxa}&place_id=${placeId}&lat=${lat}&lng=${lng}&radius=${radius}${inat}${params}`;
 
-        log('inat species request url', url);
+       snapLog('inat species request url', url);
 
         const recordsFromThisRequest = await fetch(url);
 
-        log('inat recordsFromThisRequest', recordsFromThisRequest);
+       snapLog('inat recordsFromThisRequest', recordsFromThisRequest);
 
         const json = await recordsFromThisRequest.json();
         inatListeners.forEach(listener => listener(
@@ -173,7 +173,7 @@ export const getInatSpecies = async config => {
       logError('getAllInatObservations', e);
     }
 
-    log('observations', observations);
+   snapLog('observations', observations);
 
     if(!observations) return [];
 
