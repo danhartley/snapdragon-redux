@@ -1,11 +1,11 @@
-import * as R from 'ramda';
+import { clone } from 'ramda';
 
 import { utils } from 'utils/utils';
 import { getIPLocation } from 'geo/geo';
 
 export const initialiseConfig = async originalConfig => {
 
-    const config = R.clone(originalConfig);
+    const config = clone(originalConfig);
 
     const observableMonths = utils.getObservableMonths(new Date(), 3);
 

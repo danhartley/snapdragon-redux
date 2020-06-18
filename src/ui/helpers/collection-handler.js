@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { contains } from 'ramda';
 
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
@@ -87,7 +87,7 @@ const loadCollection = async (collection, config) => {
 
         if(collection.nextItem) return; // after refreshing or returning to the page (using rehydrated collection)
 
-        if(R.contains('lepidoptera', collection.iconicTaxa.map(taxon => taxon.id)) && !R.contains('insecta', collection.iconicTaxa.map(taxon => taxon.id))) {
+        if(contains('lepidoptera', collection.iconicTaxa.map(taxon => taxon.id)) && !contains('insecta', collection.iconicTaxa.map(taxon => taxon.id))) {
             const insecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() === 'insecta');
             const lepidoptera = insecta.filter(i => i.taxonomy.order.toLowerCase() === 'lepidoptera');
             const noninsecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() !== 'insecta');
@@ -125,7 +125,6 @@ const loadCollectionItemProperties = async (collection, config) => {
 
     if(collection.behaviour === 'dynamic') {
         collection.items = utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc');
-        // collection.items = R.take(config.guide.noOfRecords, utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc'));
     } else {
         collection.items.forEach(sp => {
             if(sp.time) {

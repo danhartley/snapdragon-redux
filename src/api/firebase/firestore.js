@@ -2,7 +2,7 @@ import { utils } from 'utils/utils';
 import { enums } from 'admin/api/enums';
 import { firebaseConfig } from 'api/firebase/credentials';
 import { questions } from 'api/firebase/questions';
-import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
+// import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
 
 firebase.initializeApp(firebaseConfig);
 
@@ -30,7 +30,7 @@ const getSpeciesWhere = async props => {
         return await docs;
 
     } catch(e) {
-      logAPIError(e, 'getSpeciesWhere');
+      // logAPIError(e, 'getSpeciesWhere');
     }
 };
   
@@ -55,7 +55,7 @@ const getSpeciesNames = async () => {
         return await docs;
 
     } catch(e) {
-      logAPIError(e, 'getSpeciesNames');
+      // logAPIError(e, 'getSpeciesNames');
     }
 };
 
@@ -74,7 +74,7 @@ const getTaxaNames = async () => {
     
         return await docs;
     } catch(e) {
-      logAPIError(e, 'getTaxaNames');
+      // logAPIError(e, 'getTaxaNames');
     }
 };
 
@@ -156,7 +156,7 @@ const getTaxonByName = async (config, name) => {
         return taxon;
 
     } catch (e) {
-      logAPIError(e, 'getTaxonByName');
+      // logAPIError(e, 'getTaxonByName');
       return e;
     }
 };
@@ -172,7 +172,7 @@ const getAsyncTraitsByNameAndCollection = async (name, collection = 'traits_en',
     return await traits;
     
     } catch(e) {
-      logAPIError(e, 'getAsyncTraitsByNameAndCollection');
+      // logAPIError(e, 'getAsyncTraitsByNameAndCollection');
     }
 };
 
@@ -234,12 +234,10 @@ const addSpecies = async species => {
         });
     }
 
-   snapLog('addSpecies', species.images);
-
     try {
         docRef = await db.collection('species').add(species);
     } catch(e) {
-      logAPIError(e, 'addSpecies');
+      // logAPIError(e, 'addSpecies');
     }
 
     return docRef;
@@ -289,8 +287,6 @@ const updateSpeciesNames = async (species, names) => {
         speciesDocRef = doc.ref;
     });
 
-   snapLog('updateSpeciesNames', speciesDocRef);
-
     return await speciesDocRef.update({names}); 
 
 };
@@ -334,7 +330,7 @@ const addTraits = async (name, trait, collection = 'traits_en') => {
             return 'Update successful';
         }
     } catch(e) {
-      logAPIError(e, 'addTraits');
+      // logAPIError(e, 'addTraits');
       return `Update failed. Error ${e.message}.`;
     }
 };
@@ -369,14 +365,12 @@ const addSpeciesRelationship = async (type, traits) => {
 
         await readyBatch();
 
-       snapLog('addSpeciesRelationship, batch is ready');
-
         await batch.commit();
 
         return 'Relationship added.';
 
     } catch (e) {
-      logAPIError(e, 'addSpeciesRelationship');
+      // logAPIError(e, 'addSpeciesRelationship');
       return e.message;
     }
 
@@ -397,7 +391,7 @@ const addPhotos = async (name, photos) => {
             images: firebase.firestore.FieldValue.arrayUnion(...photos)
         });
     } catch (e) {
-      logAPIError(e, 'addPhotos');
+      // logAPIError(e, 'addPhotos');
       return e.message;
     }
 
@@ -415,7 +409,7 @@ const deleteSpeciesTraitField = async (name, field) => {
               speciesTraitsRef = doc.ref;
           });
         } catch(e) {
-          logAPIError(e, 'deleteSpeciesTraitField unable to obtain reference to species trait');
+          // logAPIError(e, 'deleteSpeciesTraitField unable to obtain reference to species trait');
         }
       
         var removeField = speciesTraitsRef.update({
@@ -425,7 +419,7 @@ const deleteSpeciesTraitField = async (name, field) => {
         return removeField;
 
       } catch(e) {
-        logAPIError(e, 'deleteSpeciesTraitField');
+        // logAPIError(e, 'deleteSpeciesTraitField');
     }    
   };
 
@@ -479,7 +473,7 @@ const addTaxon = async props => {
         docRef = await db.collection(`taxa_en`).add(taxon);
         return 'Taxon saved.';
     } catch(e) {
-      logAPIError(e, 'addTaxon');
+      // logAPIError(e, 'addTaxon');
     }
   
     return docRef;
@@ -497,7 +491,7 @@ const getSpeciesInParallel = async species => {
         }));
 
     } catch (e) {
-      logAPIError(e, 'getSpeciesInParallel');
+      // logAPIError(e, 'getSpeciesInParallel');
     }
 };
 
@@ -512,7 +506,7 @@ const getSpeciesByNameInParallel = async itemNames => {
         }));
 
     } catch (e) {
-      logAPIError(e, 'getSpeciesByNameInParallel');
+      // logAPIError(e, 'getSpeciesByNameInParallel');
     }
 };
 
@@ -535,8 +529,6 @@ const addCollection = async (collection, user) => {
 
     const collectionRef = await updateCollection(collection);
 
-   snapLog('addCollection collectionRef', collectionRef);
-
     if(collectionRef) return;
     
     collection.user = user;
@@ -544,10 +536,9 @@ const addCollection = async (collection, user) => {
     let docRef = null;
   
     try {
-       snapLog('addCollection collection', collection);
         docRef = await db.collection('collections').add(collection);
     } catch(e) {
-      logAPIError(e, 'addCollection');
+      // logAPIError(e, 'addCollection');
     }
   
     return docRef;
@@ -573,7 +564,7 @@ const addCollection = async (collection, user) => {
         return { message: 'Success', success : true };
 
     } catch(e) {
-      logAPIError(e, 'updateCollection');
+      // logAPIError(e, 'updateCollection');
       return { message: 'Failure', details: e.message, success : false };
     }
 
@@ -611,7 +602,7 @@ const addCollection = async (collection, user) => {
     try {
         docRef = await db.collection('questions').add(question);
     } catch(e) {
-      logAPIError(e, 'getCollectionsWhere');
+      // logAPIError(e, 'getCollectionsWhere');
     }
   
     return docRef;
@@ -647,7 +638,7 @@ const addCollection = async (collection, user) => {
         try {
             docRef = await db.collection('glossary').add(definition);
         } catch(e) {
-          logAPIError(e, 'getQuestionsWhere');
+          // logAPIError(e, 'getQuestionsWhere');
         }
       
         return docRef;        
@@ -703,14 +694,12 @@ const addCollection = async (collection, user) => {
 
         await readyBatch();
 
-       snapLog('getBatchDefinitionsById: batch is ready');
-
         await batch.commit();
 
         return terms;
 
     } catch (e) {
-      logAPIError(e, 'getBatchDefinitionsById');
+      // logAPIError(e, 'getBatchDefinitionsById');
     }
   }
 

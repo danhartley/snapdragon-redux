@@ -8,6 +8,7 @@ import { snapLog, logError } from 'ui/helpers/logging-handler';
 export const getPoolItems = async (collection, poolSize = 5) => {
   
   try {
+    
     const item = collection.nextItem;
 
     if(collection.behaviour === 'static') {

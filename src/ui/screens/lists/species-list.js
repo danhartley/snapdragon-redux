@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { contains } from 'ramda';
 
 import { enums } from 'ui/helpers/enum-helper';
 import { utils } from 'utils/utils';
@@ -154,7 +154,7 @@ export const renderSpeciesList = (lesson, args) => {
             });
 
             taxonIcons.forEach(icon => {
-                if(R.contains(parseInt(icon.id), noWrongAnswersForThisSpecies)) {
+                if(contains(parseInt(icon.id), noWrongAnswersForThisSpecies)) {
                     icon.classList.add('correct');
                 }
             });

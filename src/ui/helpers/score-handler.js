@@ -153,6 +153,8 @@ const stripScoreHandler = (test, callback, config) => {
 
     const handleClickEvent = e => {
       
+        e.preventDefault();
+
         const target = e.target;
 
         if(elem.hasClass(target, 'disabled')) return;
@@ -168,12 +170,12 @@ const stripScoreHandler = (test, callback, config) => {
         test.question = taxon.question;
         test.answer = (name && name !== '') ? { term: answer, name } : answer;
             
-        const score = markTest({...test, answeredIndex: answerIndex, answers: [] });
+        const score = markTest({...test, answeredIndex: parseInt(answerIndex), answers: [] });
 
         target.classList.add(score.colour);
 
         items.forEach(strip => {   
-            const stripAnswer = strip.querySelector('div:nth-child(1)');
+            const stripAnswer = strip.querySelector('button');
             const stripAnswerIndex = parseInt(stripAnswer.dataset.answerIndex);
             const stripAnswerName = stripAnswer.dataset.name || '';
             
@@ -184,8 +186,10 @@ const stripScoreHandler = (test, callback, config) => {
                     name: stripAnswerName
                 });
             
-            if(stripAnswerIndex === test.answerIndex) {
+            if(stripAnswerIndex === score.answerIndex) {
                 strip.classList.add('snap-success');
+            } else if(stripAnswerIndex === score.answeredIndex) {
+              strip.classList.add('snap-alert');
             }
         });     
         

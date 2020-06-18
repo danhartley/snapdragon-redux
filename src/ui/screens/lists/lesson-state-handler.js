@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { contains, clone } from 'ramda';
 
 import { firestore } from 'api/firebase/firestore';
 import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
@@ -136,7 +136,7 @@ const addExtraSpeciesSelection = async requestArgs => {
 
   if(!collection.items) return;
 
-  const extraSpecies = config.guide.species.filter(s => !R.contains(s.name, collection.items.map(i => i.name)));
+  const extraSpecies = config.guide.species.filter(s => !contains(s.name, collection.items.map(i => i.name)));
 
   const items = await collectionHandler.getSnapdragonSpeciesData(extraSpecies);
 
@@ -148,7 +148,7 @@ const addExtraSpeciesSelection = async requestArgs => {
       lesson: { currentRound: 1, rounds: 0, isNextRound: true },
       layout: null,
       history: null,
-      score: R.clone(progressState.score)
+      score: clone(progressState.score)
   };
 
   setActiveCollection(lesson);
@@ -178,7 +178,7 @@ const saveCurrentLesson = async collection => {
 
   const savedLesson = { 
       name: collection.name,
-      config, collection, counter, lessonPlan, lessonPlans, layout, lesson, score: R.clone(score), history, bonusLayout, enums
+      config, collection, counter, lessonPlan, lessonPlans, layout, lesson, score: clone(score), history, bonusLayout, enums
   };
 
   actions.boundSaveLesson(savedLesson);
