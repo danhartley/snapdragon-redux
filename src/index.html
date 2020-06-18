@@ -66,19 +66,6 @@
     <body>
       <noscript><div>Javascript must be enabled for the correct page display</div></noscript> 
       <!-- <a class="accessibility" href="#main" aria-hidden="false">Skip to Content</a> -->
-      <script>
-
-          var tag = document.createElement('script');
-
-          tag.src = "https://www.youtube.com/iframe_api";
-          var firstScriptTag = document.getElementsByTagName('script')[0];
-          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  
-          window.onYouTubeIframeAPIReady = function() {
-              window.YT = YT;
-          }
-          
-      </script>
       <a class="skip-link" href="#main">Skip to main</a>
       <div class="grid">
           <div class="right-grid js-right-grid">
@@ -137,5 +124,18 @@
       <!-- <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script> -->
 
       <!-- <script src="/__/firebase/init.js"></script> -->
+      <script defer type="text/javascript">
+
+        var tag = document.createElement('script');
+
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        window.onYouTubeIframeAPIReady = function() {
+            window.YT = YT;
+        }
+        
+      </script>
     </body>    
   </html>

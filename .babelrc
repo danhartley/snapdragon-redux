@@ -1,11 +1,16 @@
-{
-  "presets": [    
 
-    "@babel/preset-env",
-    "@babel/preset-react"
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      // "@babel/preset-react",
+      {
+        "debug": true,
+        "targets": ">0.25%"
+      }
+    ]
   ],
-  "sourceMaps": "inline"
-  ,
+  "sourceMaps": "inline",
   "plugins": [
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-proposal-object-rest-spread",
