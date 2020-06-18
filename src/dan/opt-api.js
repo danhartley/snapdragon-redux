@@ -84,6 +84,11 @@ let sections = [
         link: 'https://web.dev/extract-critical-css/'
       }
       , {
+        term: 'Bundle splitting and code splitting',
+        descriptions: ['Def…'],
+        link: 'https://medium.com/hackernoon/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758'
+      }
+      , {
         term: 'RAIL',
         descriptions: ['A user-centric performance model that breaks down the user\'s experience into key actions: Response, Animation , Idle, Load'],
         more: [

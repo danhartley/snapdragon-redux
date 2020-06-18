@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { contains } from 'ramda';
 import autocomplete from 'autocompleter';
 
 import { utils } from 'utils/utils';
@@ -6,7 +6,7 @@ import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
 import { speciesPicker, taxonPicker } from 'admin/screens/taxa-pickers';
 import { renderAddTrait } from 'admin/screens/add-trait';
-import { log, logError } from 'ui/helpers/logging-handler';
+import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 import addTraitsTemplate from 'admin/screens/add-traits-template.html';
 import addTraitsFieldsTemplate from 'admin/screens/add-traits-fields-template.html';
@@ -46,7 +46,7 @@ const addTraits = () => {
 
             for (let [key, obj] of Object.entries(item.traits)) {
 
-                if(!R.contains(key, traitsToIgnore)) {
+                if(!contains(key, traitsToIgnore)) {
                     const value = obj.value ? obj.value.join(', ') : '';
                     const unit = obj.unit || '';
                     fields.push({key,value, unit});
@@ -194,14 +194,14 @@ const addTraits = () => {
 
         for (let [key, obj] of Object.entries(traitValues)) {
 
-            if(!R.contains(key['name', 'units'])) {
+            if(!contains(key['name', 'units'])) {
 
                 const value = [];
                 
                 const trait = {};
 
                 for(let [_key, _obj] of Object.entries(obj)) {
-                    if(R.contains(_key, meta)) {
+                    if(contains(_key, meta)) {
                         trait[_key.toLowerCase()] = _obj.toLowerCase();
                     } else {
                         try {
@@ -221,7 +221,7 @@ const addTraits = () => {
 
         M.updateTextFields();
 
-        log('renderTraitCallback traits', traits);
+        snapLog('renderTraitCallback traits', traits);
 
         addFieldListeners(traits);
     };

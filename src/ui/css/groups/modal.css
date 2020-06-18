@@ -57,21 +57,10 @@
     display: none;
   }
 
-  /* .modal-body button {
-    color: white;
-    background-color: var(--snap-collection);
-    width: 100%;
-  }
-
-  .modal-body button.disabled {
-    color: rgb(150,150,150);
-  } */
-
   .modal-body .language-options button {
     color: var(--snap-text-black);
     width: 100%;
     margin: 0;
-    /* background-color: var(--snap-btn-dropdown) !important; */
     display: initial;
     align-items: center;
     text-align: left;
@@ -113,11 +102,6 @@
 #imageComparisonModal .modal-body {
     padding: 0;
 }
-
-/* #imageModal .imageSlider .carousel-item, #imageComparisonModal .imageSlider .carousel-item {
-  height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) );
-  width: 100%;
-} */
 
 #imageComparisonModal .modal-dialog {
     max-width: 1200px;
@@ -164,15 +148,8 @@
   width: 100%;
 }
 
-/* #cardModal .carousel-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
 #cardModal .prev, #cardModal .next {
     display: flex;
-    /* padding: 0 .5rem; don't delete, something like this needed when carousel buttons return */
 }
 
 #cardModal .carousel-inner .prev > span,

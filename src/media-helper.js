@@ -1,5 +1,5 @@
 import { renderTemplate } from 'ui/helpers/templating';
-import { snapLog, logError } from 'ui/helpers/logging-handler';
+// import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 import modalsTemplate from 'modals.html';
 
