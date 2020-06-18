@@ -69,7 +69,7 @@ progress::-webkit-progress-bar {
   background-color: var(--snap-progress-bg);
 }
 progress::-webkit-progress-value {
-  background-color: var(--snap-text-medium-dark);
+  background-color: var(--snap-text-black);
 }
 progress::-moz-progress-bar {
   background-color: var(--snap-progress-bar);
@@ -539,7 +539,7 @@ a.icon:hover {
 
 .strip {
   background: #fff;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0,0,0,.2);
   margin: .5rem .25rem;

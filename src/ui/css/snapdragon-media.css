@@ -570,8 +570,13 @@
         justify-content: flex-end;
     }
 
-    .strip:hover {
-        box-shadow: 0 2px 8px rgba(0,0,0,.8);
+    .strip:hover, .strip:focus, .strip:focus-within {
+        box-shadow: 0 2px 8px transparent;
+        border: 1px solid var(--snap-border-light);
+    }
+
+    .strip:hover button, .strip:focus button, .strip:focus-within button {
+      color: var(--snap-text-medium-dark);
     }
 
     .strip {

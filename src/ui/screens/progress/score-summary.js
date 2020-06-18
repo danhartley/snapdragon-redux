@@ -55,14 +55,15 @@ export const renderScoreSummary = (lessonId, summaryContainer) => {
             let scores = scoreSummaryHandler.getLessonScores(history, lesson, stateScore, savedScore).reverse();
                 scores.forEach(s => renderScoreSummaryRow(scores, s, config));
       
-            const handleContinueLesson = async event => {            
-                  lessonStateHandler.changeRequest({
-                        requestType: enums.lessonState.NEXT_ROUND,
-                        requestArgs: {
-                          id: lessonId,
-                          lesson: { ...lesson, isNextRound: true }
-                        }
-                      });
+            const handleContinueLesson = async e => {
+                e.preventDefault();
+                lessonStateHandler.changeRequest({
+                      requestType: enums.lessonState.NEXT_ROUND,
+                      requestArgs: {
+                        id: lessonId,
+                        lesson: { ...lesson, isNextRound: true }
+                      }
+                    });
             };
       
             const handleNewLesson = async event => {                   
@@ -79,6 +80,12 @@ export const renderScoreSummary = (lessonId, summaryContainer) => {
                         actionLink.addEventListener('click', handleContinueLesson, { once: true });
                   });
             }
+
+            window.addEventListener('keydown', e => {
+              if(e.key === 'Enter') {
+                handleContinueLesson(e);
+              }                  
+            }, { once: true });
       };
 
       init();
