@@ -1,4 +1,4 @@
-/*! exports provided: utils */
+/*! no static exports found */
 
 /*!****************************!*\
   !*** ./src/utils/utils.js ***!

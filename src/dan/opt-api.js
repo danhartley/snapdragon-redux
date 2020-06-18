@@ -89,6 +89,11 @@ let sections = [
         link: 'https://medium.com/hackernoon/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758'
       }
       , {
+        term: 'Tree shaking',
+        descriptions: ['A form of dead code elimination.'],
+        link: 'https://developers.google.com/web/fundamentals/performance/optimizing-javascript/tree-shaking'
+      }
+      , {
         term: 'RAIL',
         descriptions: ['A user-centric performance model that breaks down the user\'s experience into key actions: Response, Animation , Idle, Load'],
         more: [

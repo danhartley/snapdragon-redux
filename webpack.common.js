@@ -14,8 +14,8 @@ module.exports = {
       app: './src/index.js',
       utils: './src/utils/utils.js',      
       wiki: './src/wikipedia/wiki.js',
-      admin: './src/admin/collection-builder.js',
-      dan: './src/dan/dan.js'
+      // admin: './src/admin/collection-builder.js',
+      // dan: './src/dan/dan.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -54,8 +54,8 @@ module.exports = {
                     "@babel/plugin-transform-react-jsx-source",
                     "@babel/plugin-transform-react-jsx-self",
                     "@babel/plugin-proposal-json-strings"
-                  ]
-                }
+                  ]          
+                }                
               }
           },
           {
@@ -127,8 +127,8 @@ module.exports = {
           }),
         ],
         splitChunks: {
-      chunks: 'all',
-    },
+          chunks: 'all',
+        },
       },
     devtool: "source-map"
 };
