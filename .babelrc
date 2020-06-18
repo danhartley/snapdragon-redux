@@ -5,7 +5,7 @@
       "@babel/preset-env",
       // "@babel/preset-react",
       {
-        "debug": true,
+        // "debug": true,
         "targets": ">0.25%"
       }
     ]

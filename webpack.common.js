@@ -13,9 +13,7 @@ module.exports = {
     entry: {
       app: './src/index.js',
       utils: './src/utils/utils.js',      
-      wiki: './src/wikipedia/wiki.js',
-      // admin: './src/admin/collection-builder.js',
-      // dan: './src/dan/dan.js'
+      wiki: './src/wikipedia/wiki.js'
     },
     output: {
       filename: '[name].bundle.js',
