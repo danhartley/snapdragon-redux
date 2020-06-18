@@ -17,13 +17,13 @@ export const renderHome = (counter, forceIntroDisplay = false) => {
 
     let { config } = store.getState();
 
-    if(config.isLandscapeMode || isFirstTimeVisitor || forceIntroDisplay) {
+    if(config.isLandscapeMode || forceIntroDisplay) {
         renderLessons();
     }
 
-    if(config.isLandscapeMode || isFirstTimeVisitor || forceIntroDisplay) {
-        renderSnapdragonIntro();
-    }
+    // if(config.isLandscapeMode || isFirstTimeVisitor || forceIntroDisplay) {
+    //     renderSnapdragonIntro();
+    // }
 
     if(config.isPortraitMode && !isFirstTimeVisitor) {
         renderLessons();

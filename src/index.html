@@ -62,6 +62,7 @@
         <link rel="manifest" href="/manifest.json">
         <script defer type="text/javascript" src="./iconwc.js"></script>        
         <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1osYKD1sRb5Bzqq-OzJ6PgXqLtDt9YvU&libraries=places"></script>        
+
     </head>
     <body>
       <noscript><div>Javascript must be enabled for the correct page display</div></noscript> 
@@ -80,7 +81,56 @@
                   </div>
               </div>
               <progress style="margin: 1000px 0 0 0" value="0" max="6"></progress>
-              <div class="right-body js-right-body"></div>
+              <div class="right-body js-right-body">
+                <div class="home-container landscape js-home-container">  
+                  <div class="snapdragon-header double-centred-block">
+                      <h1>
+                        <a href="">Welcome</a>
+                      </h1>
+                  </div>    
+                  <main id="main" class="snapdragon-intro scrollable js-snapdragon-intro">
+              
+                      <h3>Learn The Planet is a collection of a video lessons about the natural world.</h3>
+              
+                      <h4 class="centred-block landscape">
+                          <i class="margin-left extra-large-text fab fa-youtube youtube-icon"></i><span class="margin-left">Click to watch a lesson video.</span>
+                      </h4>
+              
+                      <h4 class="centred-block landscape">
+                          <i class="margin-left extra-large-text fas fa-glasses youtube-icon "></i><span class="margin-left">Click to see lesson species.</span>            
+                      </h4>
+              
+                      <h4 class="landscape">
+                          <button class="btn snap-btn extra-small-text fit-width" disabled style="opacity: 1;">Vocab test</button>
+                          <span class="margin-left">Brush up on terms and definitions.</span>
+                      </h4>
+              
+                      <h4 class="landscape">
+                          <button class="btn snap-btn extra-small-text fit-width" disabled style="opacity: 1;">Lesson Quiz</button>
+                          <span class="margin-left">Test yourself on the contents of a lesson.</span>
+                      </h4>
+              
+                      <br class="landscape">
+                      <br class="landscape">
+              
+                      <h4 class="portrait">
+                          Tap on the home icon <span><i class="fas fa-chalkboard"></i></span> below to get started, then select an <span><i class="fab fa-youtube youtube-icon"></i></span> icon to begin a lesson.
+                      </h4>
+              
+                      <h5>These lessons took time and effort to make; Learn The Planet would like to thank the people who created them.</h5>
+              
+                  </main>
+                </div>
+                <script>
+                  {
+                    let container = document.querySelector('.js-home-container');
+                    if (document.cookie.indexOf('first_time') > 0) {
+                    } else {
+                      container.classList.remove('landscape');
+                    }
+                  }
+                </script>
+              </div>
               <footer class="landscape footer js-right-footer">
                   <nav id="left-navigation" aria-label="navigation for settings, login and contact" class="full-width">
                     <ul class="nav-icons centred-block js-nav-icons"></ul>
@@ -94,7 +144,7 @@
                   <span class="footer-score js-footer-score"></span>
               </footer>
           </div>
-          <div class="left-grid js-left-grid">                    
+          <div class="left-grid js-left-grid">
                   <header class="header js-left-header">
                       <div class="header-text js-left-txt-header">learn the planet</div>
                       <div class="header-text"></div>                         
