@@ -7,7 +7,7 @@ export const snapLog = (msg, obj) => {
   if(Array.isArray(obj)) obj = { obj };
   obj 
     ? console.log(`%c${msg} %o`, css, obj)
-    : console.log(`%c${msg}`, css)
+    : console.log(`%c${msg}: ${obj}`, css)
 };
 
 export const logError = (source, e) => {

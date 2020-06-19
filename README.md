@@ -9,7 +9,7 @@ The website depends on 3 APIs inc. http://eol.org/api/. The API is in the proces
 
 ## Chrome support
 
-Requires latest version of Chrome
+Requires recent version of Chrome
 
 ## Firefox support
 
@@ -27,8 +27,6 @@ https://webpack.js.org/guides/getting-started/
 [build and run the app]: npm run start:dev
 
 [run the tests]: npm run watch
-
-https://facebook.github.io/jest/docs/en/webpack.html Using with webpack 2
 
 NB: require babel-plugin-transform-object-rest-spread for the spread operator
 
