@@ -44,6 +44,10 @@
   .table-row img, table input {
     cursor: pointer;
   }
+
+  .table-row td button i {
+    min-width: 2.5rem;
+  }
   
   .table-row img {
     width: 64px;

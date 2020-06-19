@@ -156,6 +156,8 @@ const comparer = function(idx, asc, headerSortIndex, wide) { return function(a, 
     }(getCellValue(asc ? a : b, idx, headerSortIndex, wide), getCellValue(asc ? b : a, idx, headerSortIndex, wide));
 }};
 
+// https://stackoverflow.com/questions/14267781/sorting-html-table-with-javascript/14268260
+
 const makeSortable = (document, callback, wide) => {
 
   Array.from(document.querySelectorAll('th > span')).forEach(function(sp) { sp.addEventListener('click', function() {

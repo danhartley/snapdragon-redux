@@ -213,33 +213,18 @@
   
   .underline-link {
     color: var(--snap-youtube-green);
-    border-bottom: solid .05rem transparent;
     cursor: pointer;
     display: inline-block;
     line-height: 1.8;
-    padding: 0 .15rem;
     pointer-events: initial;
-    border-top: .05rem solid transparent;
-    border-left: .05rem solid transparent;
-    border-right: .05rem solid transparent;
   }
 
-  .no-underline-link {
-    padding: 0 0 0 .15rem;
-  }
-
-  .underline-link:hover {    
-    color: var(--snap-youtube-green) !important;
-    border: .05rem solid var(--snap-youtube-green);
-  }
-
-  .underline-link:active {
-    color: var(--snap-youtube-green) !important;
+  .underline-link:hover, .underline-link:focus {
+    color: var(--snap-text-black);
   }
 
   .underline-link:focus {
-    color: var(--snap-youtube-green) !important;
-    outline: none; /* must put something back! */
+    outline: 1px solid var(--snap-border-medium); /* must put something back! */
   }
 
   .underline-link-left-margin {

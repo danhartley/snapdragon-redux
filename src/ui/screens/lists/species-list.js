@@ -131,7 +131,7 @@ export const renderSpeciesList = (lesson, args) => {
                         document.querySelector('#cardModal .prev > span').dataset.card = 'taxon-card';
                         document.querySelector('#cardModal .next > span').dataset.rank = rank;
                         document.querySelector('#cardModal .next > span').dataset.card = 'taxon-card';
-                        renderTaxonCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal, taxon, rank, isInCarousel);
+                        renderTaxonCard(collection, 'MODAL', collection.items.find(i => i.taxonomy[rank] === name), cardModal, taxon, rank, isInCarousel);
                     });
                   });
 
