@@ -217,6 +217,13 @@ const getBirdsong = async xcID => {
     return url;
 };
 
+const getImage = async image => {
+
+  const storageRef = storage.ref();
+  const url = await storageRef.child(`images/${image}`).getDownloadURL();
+  return url;
+};
+
 const addSpecies = async species => {
 
     let docRef;
@@ -736,6 +743,7 @@ export const firestore = {
     getTraitsBySpeciesName,
     getTraitsByTaxonName,
     getBirdsong,
+    getImage,
     getTraitValues,
     getRandomSpecies,
     getDefinition,

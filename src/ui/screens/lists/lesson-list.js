@@ -1,3 +1,4 @@
+import { contains } from 'ramda';
 import { enums } from 'ui/helpers/enum-helper';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
@@ -8,6 +9,7 @@ import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
 import { renderLesson } from 'ui/screens/lists/lesson';
 import { renderCustomLesson } from 'ui/screens/lists/lesson-custom';
 import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
+import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
 
@@ -19,11 +21,20 @@ export const renderLessons = () => {
           template.innerHTML = lessonListTemplate;
 
     let lessons = lessonListEventHandler.onLoadLessonsViewState(collections.filter(collection => (collection.isActive === undefined || collection.isActive)), videoPlayer, score, config);
-        lessons = lessons.sort(function(a,b){
-              const tsa = a.create ? a.create.seconds : 0;
-              const tsb = b.create ? b.create.seconds : 0;
-            return tsb - tsa;
-        });
+
+    lessons.forEach(lesson => {
+      if(contains(lesson.icon, 'storage')) {
+        return;
+      }
+      const icon = lesson.icon.replace('./images/', '');
+      lesson.icon = `https://storage.cloud.google.com/snapdragon-222014.appspot.com/dist/${icon}?folder&organizationId`;
+    });
+
+    lessons = lessons.sort(function(a,b){
+          const tsa = a.create ? a.create.seconds : 0;
+          const tsb = b.create ? b.create.seconds : 0;
+        return tsb - tsa;
+    });
 
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
         parent.innerHTML = '';
