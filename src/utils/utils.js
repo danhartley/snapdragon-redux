@@ -1,3 +1,5 @@
+import { snapLog, logError } from 'ui/helpers/logging-handler';
+
 Array.prototype.concatAll = function() {
     const results = [];
   
@@ -9,12 +11,6 @@ Array.prototype.concatAll = function() {
   
     return results;
   };
-  
-  const log = msg => { 
-      return array => {
-        return array; 
-      }
-    };
   
   const encodeQuery = q => { 
     if(q === undefined) return q;
@@ -98,20 +94,6 @@ Array.prototype.concatAll = function() {
     return r([]);
   };
 
-  const insertObjectBetweenItems = (array, insert) => {
-    const insertedIntoArray = array.reduce( (acc, curr, currIndex) => {        
-        return acc.concat([insert, curr]);
-    }, []);
-    return insertedIntoArray;
-  };
-
-  const doubledItemsInArray = (array) => {
-      const doubledArray = array.reduce( (acc, curr, currIndex) => {        
-          return acc.concat([curr, curr]);
-      }, []);
-      return doubledArray;
-  };
-
  const onlyUnique = (value, index, self) => { 
     return self.indexOf(value) === index;
 };
@@ -152,14 +134,16 @@ const capitaliseAll = str => {
   return text;
 };
 
-const getCellValue = function(tr, idx, headerSortIndex, wide){ 
+const getCellValue = function(tr, idx, headerSortIndex, wide){
   let children = tr.children;
   if(!wide) {
     children = [...tr.children].filter(child => [...child.classList].join('').indexOf('wide-screen') === -1);
   }
   const valueToSortOn = 
     children[idx].dataset.snapIndex ||
-    children[idx].children[headerSortIndex].innerText || 
+    (children[idx].querySelector('button') && children[idx].querySelector('button').dataset.vernacularName) ||
+    (children[idx].querySelector('button') && children[idx].querySelector('button').dataset.name) ||
+    children[idx].children[headerSortIndex].innerText ||
     children[idx].innerText || 
     children[idx].classList[0] || 
     children[idx].textContent;
@@ -167,9 +151,12 @@ const getCellValue = function(tr, idx, headerSortIndex, wide){
 }
 
 const comparer = function(idx, asc, headerSortIndex, wide) { return function(a, b) { return function(v1, v2) {
-        return v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2);
+      const isNumericallyComparible = v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2);
+      return isNumericallyComparible ? v1 - v2 : v1.toString().localeCompare(v2.toString());
     }(getCellValue(asc ? a : b, idx, headerSortIndex, wide), getCellValue(asc ? b : a, idx, headerSortIndex, wide));
 }};
+
+// https://stackoverflow.com/questions/14267781/sorting-html-table-with-javascript/14268260
 
 const makeSortable = (document, callback, wide) => {
 
@@ -181,14 +168,16 @@ const makeSortable = (document, callback, wide) => {
           var th = this.parentElement;
           if(th.classList[0] === 'not-sortable') return;
           var table = th.closest('table');
-          var body = table.querySelector('tbody');
+          var tbody = table.querySelector('tbody');
           var footer = table.querySelector('tfoot');          
 
-          Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
+          snapLog('Array.from(tbody.querySelectorAll("tr")): ', Array.from(tbody.querySelectorAll('tr')));
+
+          Array.from(tbody.querySelectorAll('tr'))
               .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc, headerSortIndex, wide))
               .forEach(function(tr) { 
                 if(tr !== footer) {
-                  body.appendChild(tr);
+                  tbody.appendChild(tr);
                   names.push(tr.cells[0].id);
                 }
               });        
@@ -196,12 +185,6 @@ const makeSortable = (document, callback, wide) => {
             callback(names);
       })
   });
-};
-
-const itemCountReducer = (acc, curr) => {
-  acc[curr.toString()] = acc[curr.toString()] || 0;
-  acc[curr.toString()]++;
-  return acc;
 };
 
 const flatten = array => {
@@ -258,23 +241,6 @@ const createSessionToken = () => {
   });
 }
 
-// https://davidwalsh.name/javascript-debounce-function
-
-function debounce(func, wait, immediate) {
-	var timeout;
-	return function() {
-		var context = this, args = arguments;
-		var later = function() {
-			timeout = null;
-			if (!immediate) func.apply(context, args);
-		};
-		var callNow = immediate && !timeout;
-		clearTimeout(timeout);
-		timeout = setTimeout(later, wait);
-		if (callNow) func.apply(context, args);
-	};
-};
-
 const getRandomObjectProperty = obj => {
   if(Object.keys(obj).length === 0 && obj.constructor === Object) return {};
   const keys = Object.keys(obj);
@@ -305,14 +271,10 @@ const parseToLowerCase = value => {
 };
 
 export const utils = {
-  // log,
   encodeQuery,
   timer, 
-  // intervalTimer,
   shuffleArray,
   randomiseSelection,
-  // insertObjectBetweenItems,
-  // doubledItemsInArray,
   onlyUnique,
   sortBy,
   sortAlphabeticallyBy,
@@ -320,12 +282,10 @@ export const utils = {
   capitaliseFirst,
   capitaliseAll,
   makeSortable,
-  // itemCountReducer,
   flatten,
   getObservableMonths,
   getRandomInt,
   createSessionToken,
-  // debounce,
   getRandomObjectProperty,
   toCamelCase,
   fromCamelCase,

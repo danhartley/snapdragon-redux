@@ -127,14 +127,31 @@ const filters = async linkFromLesson => {
     quickFire.filter.option.key === "0"
       ? quickFireOptions[0].click()
       : quickFireOptions[1].click();
+    
+    quickFireOptions[parseInt(quickFire.filter.option.key)].classList.add('active');
 
-    Array.from(quickFireOptions).forEach(option => {
-        option.addEventListener('click', e => {
-            quickFire.filter.option = {
-                key: e.target.dataset.key,
-                value: e.target.dataset.value
-            };
-        }, { once: true });
+    quickFireOptions[0].addEventListener('click', e => {
+      e.preventDefault();
+      if(!elem.hasClass(e.target, 'active')) {
+        e.target.classList.add('active');
+        quickFire.filter.option = {
+            key: e.target.dataset.key,
+            value: e.target.dataset.value
+        };
+        quickFireOptions[1].classList.remove('active');
+      }
+    });        
+
+    quickFireOptions[1].addEventListener('click', e => {
+      e.preventDefault();
+      if(!elem.hasClass(e.target, 'active')) {
+        e.target.classList.add('active');
+        quickFire.filter.option = {
+            key: e.target.dataset.key,
+            value: e.target.dataset.value
+        };
+        quickFireOptions[0].classList.remove('active');
+      }
     });        
 
     const branchOptions = document.querySelectorAll('.js-quick-fire-branches label');
@@ -214,7 +231,9 @@ const questions = state => {
         const options = Array.from(document.querySelectorAll('.js-quick-fire-options > li'));
               options.forEach(option => {
                 option.addEventListener('click', e => {
-                    const answer = e.target.id;
+                    const button = e.target;
+                    const term = button.querySelector('span').innerHTML;
+                    const answer = term;
                     quickFireUI.scoreMultipleChoice(quickFire, answer, quickFireMessage);
                     continueQuickFireBtn.disabled = false;
                     if(quickFire.termScore.isIncorrect) {
@@ -230,6 +249,9 @@ const questions = state => {
                     }, store.getState().config.callbackTime);
                 }, { once: true });
               });
+              setTimeout(() => {
+                options[0].querySelector('button').focus();
+              }, 500);
 
         const quickFireInputContainer = modal.querySelector('.js-quick-fire-text-entry');
         const quickFireInput = modal.querySelector('.js-quick-fire-text-entry input');

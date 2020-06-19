@@ -1,8 +1,14 @@
 /*! exports provided: formatUrl, formatWiki, renderWiki */
 
+/*! exports provided: utils */
+
 /*! ramda */
 
 /*! utils/utils */
+
+/*!****************************!*\
+  !*** ./src/utils/utils.js ***!
+  \****************************/
 
 /*!*******************************!*\
   !*** ./src/wikipedia/wiki.js ***!

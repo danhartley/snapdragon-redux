@@ -4,10 +4,6 @@
   border-bottom: 1px solid var(--snap-btn-auxillary);
 }
 
-.species-table td:last-child {
-  margin-right: .5rem;
-}
-
 .table-header {
   cursor: pointer;
   display: flex;
@@ -48,6 +44,10 @@
   .table-row img, table input {
     cursor: pointer;
   }
+
+  .table-row td button i {
+    min-width: 2.5rem;
+  }
   
   .table-row img {
     width: 64px;
@@ -60,7 +60,6 @@
     opacity: .8;
   }
   
-
   .table-row img:focus {
     border: 1px solid black;
   }
@@ -131,10 +130,7 @@
     justify-content: center;
   }
 
-  .table-header th:nth-child(3),
-  .table-row td:nth-child(3),
-  .table-header th:nth-child(4),
-  .table-row td:nth-child(4) {
+  .table-header th:nth-child(3), .table-row td:nth-child(3), .table-header th:nth-child(4), .table-row td:nth-child(4) {
     flex: 1;
     display: flex;
     align-items: center;
@@ -150,6 +146,16 @@
       flex: 1;
       display: flex;
       align-items: center;
+  }
+
+  .table-header th:nth-child(5), .table-row td:nth-child(5) button {
+    position: absolute;
+    right: 2.5rem;
+  }
+
+  .table-header th:nth-child(6), .table-row td:nth-child(6) button {
+    position: absolute;
+    right: .5rem;
   }
 
   .hide-column {
