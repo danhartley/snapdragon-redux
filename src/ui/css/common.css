@@ -217,7 +217,7 @@
     cursor: pointer;
     display: inline-block;
     line-height: 1.8;
-    padding: 0 .25rem;
+    padding: 0 .15rem;
     pointer-events: initial;
     border-top: .05rem solid transparent;
     border-left: .05rem solid transparent;
