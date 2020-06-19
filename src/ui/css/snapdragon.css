@@ -1883,24 +1883,21 @@ a.collection-disabled {
 
 .lesson-list-carousel-item {
   display: flex;
-  /* width: 100%; */
-  /* justify-content: space-between; */
   margin: .25rem 0;
 }
 
 .lesson-list-carousel-item > div:nth-child(3) {
-  justify-content: left;
   font-size: 1.3rem;
   cursor: pointer;
   align-items: center;
   display: flex;
-  margin-right: .5rem;
+  position: absolute;
+  right: .5rem;
 }
 
 .lesson-list-item {
   padding: 1rem .5rem;
   pointer-events: none;
-  flex-grow: 2;
 }
 
 .lesson-review, .lesson-terms-review {
@@ -2305,6 +2302,11 @@ input[type="number"].medium {
   width: fit-content;
   width: max-content;
   cursor: pointer !important;  
+}
+
+.quick-fire .btn-group >.btn.active {
+  background-color: var(--snap-text-medium-dark-hover);
+  color: var(--snap-text-light);
 }
 
 .quick-fire .quick-fire-branches.btn-group >.btn {
