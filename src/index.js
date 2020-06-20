@@ -34,10 +34,13 @@ import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { lessonModalHandler } from 'ui/screens/cards/test-card-modal-handler';
 import { handleWindowResize, loadModalHTML } from 'media-helper';
 import { snapLog, logError } from 'ui/helpers/logging-handler';
+import * as Sentry from '@sentry/browser';
 
 const onLoadHandler = () => {
 
     setTimeout( async () => {
+
+      Sentry.init({ dsn: 'https://9d9d8654a6a345a3af09df89cb615bde@o136894.ingest.sentry.io/302756' });
 
       handleWindowResize();      
 

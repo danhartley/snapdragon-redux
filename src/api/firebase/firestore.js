@@ -2,7 +2,6 @@ import { utils } from 'utils/utils';
 import { enums } from 'admin/api/enums';
 import { firebaseConfig } from 'api/firebase/credentials';
 import { questions } from 'api/firebase/questions';
-// import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
 
 firebase.initializeApp(firebaseConfig);
 
@@ -517,17 +516,17 @@ const getSpeciesByNameInParallel = async itemNames => {
     }
 };
 
-const getQuestionById = (id, name) => {
+// const getQuestionById = (id, name) => {
 
-    return new Promise(resolve => resolve(questions.map(q => {
-        if(parseInt(q.id) === parseInt(id)) {
-            return {
-                ...q,
-                name: name
-            }
-        }
-    })));
-};
+//     return new Promise(resolve => resolve(questions.map(q => {
+//         if(parseInt(q.id) === parseInt(id)) {
+//             return {
+//                 ...q,
+//                 name: name
+//             }
+//         }
+//     })));
+// };
 
 
 const addCollection = async (collection, user) => {
@@ -771,7 +770,7 @@ export const firestore = {
     deleteSpeciesTraitField,
 
     getTraitDefinitions,
-    getQuestionById,
+    // getQuestionById,
     getDefinitionsWhere,
     getDefinitionsByTaxa,
     getDefinitionById,

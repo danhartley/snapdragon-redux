@@ -70,7 +70,7 @@ export const renderAddTrait = (parent, callback) => {
 
         let values = [];
     
-        const exclude = [ 'help', 'name', 'type', 'units' ];;
+        const exclude = [ 'help', 'name', 'type', 'units' ];
 
         let traitKeyValues = traitValues[utils.toCamelCase(traitKey)];
 

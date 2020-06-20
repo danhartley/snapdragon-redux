@@ -8,6 +8,8 @@
 
 /*! ../../../node_modules/style-loader/lib/addStyles.js */
 
+/*! @sentry/browser */
+
 /*! api/botanical-latin */
 
 /*! api/firebase/firestore */

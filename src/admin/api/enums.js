@@ -9,7 +9,7 @@ export const enums = {
   CAP_WIDTH: 'cap width',
   CAP_HEIGHT: 'cap height',
   SHELF_WIDTH: 'shelf width',
-  SHELF_THICKNESS: 'shelf tHickness',
+  SHELF_THICKNESS: 'shelf thickness',
   ECO_TYPE: 'ecological type',
   HOW_EDIBLE: 'how edible',
   HYMENIUM_TYPE: 'hymenium type',
@@ -432,7 +432,6 @@ export const enums = {
   name: 'ph level'
   },
   colour: {
-  // help: 'Which colour best describes this species?',
   LILAC: 'Lilac',
   BUFF: 'Buff',
   WHITE: 'White',
@@ -1474,5 +1473,3 @@ export const enums = {
     { maleWeight: [ 'g']},
   ],
 };
-
-//Kuo, M. (2007, January). Key to major groups of mushrooms. Retrieved from the MushroomExpert.Com Web site: http://www.mushroomexpert.com/major_groups.html
