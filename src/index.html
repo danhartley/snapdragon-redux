@@ -9,17 +9,12 @@
         <meta name="description" content="A collection of videos and lessons about the natural world">
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
-        <script defer src="./pure-swipe.js"></script>
+        <meta name="theme-color" content="#ffffff">        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <script>
 
         // https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 
-        </script>
-        <script src="https://cdn.ravenjs.com/3.24.2/raven.min.js" crossorigin="anonymous"></script>
-        <script>
-            Raven.config('https://9d9d8654a6a345a3af09df89cb615bde@sentry.io/302756').install();
         </script>
         <script>
                 // Check that service workers are registered
@@ -60,9 +55,6 @@
         <link rel="apple-touch-startup-image" href="images/splash/launch-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
 
         <link rel="manifest" href="/manifest.json">
-        <script defer type="text/javascript" src="./iconwc.js"></script>        
-        <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1osYKD1sRb5Bzqq-OzJ6PgXqLtDt9YvU&libraries=places"></script>        
-
     </head>
     <body>
       <noscript><div>Javascript must be enabled for the correct page display</div></noscript> 
@@ -188,5 +180,16 @@
         
       </script>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+      <script defer type="text/javascript" src="./iconwc.js"></script>      
+      <script defer src="./pure-swipe.js"></script>  
+      <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1osYKD1sRb5Bzqq-OzJ6PgXqLtDt9YvU&libraries=places"></script>
+      <script src="https://browser.sentry-cdn.com/5.17.0/bundle.min.js" integrity="sha384-lowBFC6YTkvMIWPORr7+TERnCkZdo5ab00oH5NkFLeQUAmBTLGwJpFjF6djuxJ/5" crossorigin="anonymous"></script>
+      <script src="text/javascript">
+        Sentry.init({ dsn: 'https://9d9d8654a6a345a3af09df89cb615bde@o136894.ingest.sentry.io/302756' });
+      </script>
+      <!-- <script src="https://cdn.ravenjs.com/3.24.2/raven.min.js" crossorigin="anonymous"></script>
+      <script>
+          Raven.config('https://9d9d8654a6a345a3af09df89cb615bde@sentry.io/302756').install();
+      </script> -->
     </body>    
   </html>

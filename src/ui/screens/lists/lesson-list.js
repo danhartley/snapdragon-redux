@@ -22,14 +22,6 @@ export const renderLessons = () => {
 
     let lessons = lessonListEventHandler.onLoadLessonsViewState(collections.filter(collection => (collection.isActive === undefined || collection.isActive)), videoPlayer, score, config);
 
-    lessons.forEach(lesson => {
-      if(contains(lesson.icon, 'storage')) {
-        return;
-      }
-      const icon = lesson.icon.replace('./images/', '');
-      lesson.icon = `https://storage.cloud.google.com/snapdragon-222014.appspot.com/dist/${icon}?folder&organizationId`;
-    });
-
     lessons = lessons.sort(function(a,b){
           const tsa = a.create ? a.create.seconds : 0;
           const tsb = b.create ? b.create.seconds : 0;
