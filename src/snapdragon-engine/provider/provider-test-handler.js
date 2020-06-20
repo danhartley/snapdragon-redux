@@ -4,7 +4,7 @@ import { firestore } from 'api/firebase/firestore';
 
 const getItemLayouts = async itemQuestions => {
     if(!itemQuestions.questionIds) return new Promise(resolve => resolve(null));
-    return Promise.all(itemQuestions.questionIds.map(async id => await firestore.getQuestionById(id, itemQuestions.name)));
+    // return Promise.all(itemQuestions.questionIds.map(async id => await firestore.getQuestionById(id, itemQuestions.name)));
 };
 
 const getLayouts = async (collection, roundItemNames) => {

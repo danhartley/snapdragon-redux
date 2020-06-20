@@ -3,7 +3,6 @@ import * as R from 'ramda';
 import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { imageSlider } from 'ui/screens/common/image-slider';
-import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 const stripImageUrlOfScaleAndPrefix = img => {  
     const prefix = img.provider === 'inat' ? 'https://static.inaturalist.org/photos/' : 'https://content.eol.org/data/media/';

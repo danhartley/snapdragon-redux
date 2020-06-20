@@ -6,7 +6,6 @@ import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
 import { speciesPicker, taxonPicker } from 'admin/screens/taxa-pickers';
 import { renderAddTrait } from 'admin/screens/add-trait';
-import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 import addTraitsTemplate from 'admin/screens/add-traits-template.html';
 import addTraitsFieldsTemplate from 'admin/screens/add-traits-fields-template.html';

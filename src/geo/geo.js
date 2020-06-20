@@ -1,5 +1,4 @@
 import { utils } from 'utils/utils';
-import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 const getHTML5Location = () => {
 

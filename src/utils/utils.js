@@ -1,5 +1,3 @@
-import { snapLog, logError } from 'ui/helpers/logging-handler';
-
 Array.prototype.concatAll = function() {
     const results = [];
   

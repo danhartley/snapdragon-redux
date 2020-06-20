@@ -244,8 +244,6 @@
 
 /*! ui/helpers/data-checking */
 
-/*! ui/helpers/logging-handler */
-
 /*! ui/helpers/templating */
 
 /*! utils/utils */

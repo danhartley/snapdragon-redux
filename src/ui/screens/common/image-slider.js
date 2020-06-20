@@ -1,7 +1,6 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import { scaleImage, imageMatch, imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handler';
 import { handleRightsAttribution } from 'ui/screens/common/rights-attribution';
-import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
 

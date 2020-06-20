@@ -1,13 +1,5 @@
-/*! exports provided: snapLog, logError, logAPIError */
-
 /*! exports provided: utils */
-
-/*! ui/helpers/logging-handler */
 
 /*!****************************!*\
   !*** ./src/utils/utils.js ***!
   \****************************/
-
-/*!*******************************************!*\
-  !*** ./src/ui/helpers/logging-handler.js ***!
-  \*******************************************/
