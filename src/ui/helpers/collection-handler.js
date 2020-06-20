@@ -6,7 +6,6 @@ import { getInatSpecies } from 'api/inat/inat';
 import { getPlace } from 'geo/geo';
 import { firestore } from 'api/firebase/firestore';
 import { enums } from 'ui/helpers/enum-helper';
-import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 async function getItems(collection, config) {
 

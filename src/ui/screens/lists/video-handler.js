@@ -1,5 +1,4 @@
 import { actions } from 'redux/actions/action-creators';
-import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 const onSpeciesTimeMatchListeners = [];
 const onNoteTimeMatchListeners = [];

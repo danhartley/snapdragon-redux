@@ -1,3 +1,4 @@
+const Dotenv = require('dotenv-webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -108,6 +109,15 @@ module.exports = {
           { from: './src/ui/css/groups', to: 'css', transform(content) { return csso.minify(content).css; } }
         ],
       }),
+      new Dotenv({
+        // path: './some.other.env', // load this now instead of the ones in '.env'
+        // safe: true, // load '.env.example' to verify the '.env' variables are all set. Can also be a string to a different file.
+        // allowEmptyValues: true, // allow empty variables (e.g. `FOO=`) (treat it as empty string, rather than missing)
+        // systemvars: true, // load all the predefined 'process.env' variables which will trump anything local per dotenv specs.
+        // silent: true, // hide any errors
+        // defaults: false // load '.env.defaults' as the default values if empty.
+      })
+      //https://www.npmjs.com/package/dotenv-webpack
     ],
     resolve: {
         modules: [

@@ -73,6 +73,8 @@
     "copy-webpack-plugin": "^6.0.2",
     "css-loader": "^3.5.3",
     "csso": "^4.0.3",
+    "dotenv": "^8.2.0",
+    "dotenv-webpack": "^1.8.0",
     "downshift": "^5.4.2",
     "enumify": "^1.0.4",
     "eslint": "^7.1.0",

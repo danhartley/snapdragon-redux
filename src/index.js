@@ -33,6 +33,7 @@ import { renderLoggedIn } from 'ui/fixtures/login';
 import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { lessonModalHandler } from 'ui/screens/cards/test-card-modal-handler';
 import { handleWindowResize, loadModalHTML } from 'media-helper';
+import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 const onLoadHandler = () => {
 
@@ -117,6 +118,9 @@ const onLoadHandler = () => {
           // window.location.reload(true);        
       }
     });
+
+    window.snapLog = snapLog;
+    window.logError = logError;
 };
 
 onLoadHandler();

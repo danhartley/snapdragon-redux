@@ -1,5 +1,4 @@
 import { renderTemplate } from 'ui/helpers/templating';
-import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 import modalsTemplate from 'modals.html';
 
@@ -48,6 +47,8 @@ export const handleWindowResize = () => {
   window.addEventListener('resize', () => {
       setWindowHeight();
   });
+
+  snapLog('*** Global test ***');
 
   if(window.location.origin.indexOf('learn-the-planet') > -1) {
      snapLog('*** Live site detected ***');

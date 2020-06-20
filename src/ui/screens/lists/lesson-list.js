@@ -9,7 +9,6 @@ import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
 import { renderLesson } from 'ui/screens/lists/lesson';
 import { renderCustomLesson } from 'ui/screens/lists/lesson-custom';
 import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
-import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
 

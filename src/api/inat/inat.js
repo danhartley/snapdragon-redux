@@ -3,7 +3,6 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { firestore } from 'api/firebase/firestore';
 import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
-import { snapLog, logError } from 'ui/helpers/logging-handler';
 
 let inatListeners = [];
 let RECORDS_PER_PAGE = 200;
