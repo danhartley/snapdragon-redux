@@ -25,6 +25,10 @@
     margin: 0 !important;
   }
 
+  fieldset {
+    border: none;
+  }
+
   label {
     margin: 0;
   }
@@ -224,7 +228,7 @@
   }
 
   .underline-link:focus {
-    outline: 1px solid var(--snap-border-medium); /* must put something back! */
+    outline: 1px solid var(--snap-border-medium)
   }
 
   .underline-link-left-margin {

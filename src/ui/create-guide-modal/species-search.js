@@ -7,7 +7,6 @@ import { enums } from 'ui/helpers/enum-helper';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { lessonStateHelper } from 'ui/screens/lists/lesson-state-helper';
 import { speciesInGuideEditor } from 'ui/create-guide-modal/species-in-guide-editor';
-import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
 
 import spinnerTemplate from 'ui/create-guide-modal/species-search-template.html';
 import speciesSummaryTemplate from 'ui/create-guide-modal/species-summary-template.html';
@@ -102,16 +101,10 @@ export const speciesSearch = createGuide => {
                       
                 speciesInGuideEditor(config, modal, selectedSpeciesDisplay, createGuide, collection.items);
 
-                // const collectionName = modal.querySelector('#js-collection-name');
-                //       collectionName.classList.add('hide-important');
-
                 const editableCollectionName = modal.querySelector('#js-input-collection-name');
                       editableCollectionName.classList.remove('hide-important');
                       editableCollectionName.addEventListener('focusout', e => {      
-                          const name = e.target.value;                    
-                          // collectionName.innerHTML = name;
-                          // collectionName.classList.remove('hide-important');
-                          // editableCollectionName.classList.add('hide-important');
+                          const name = e.target.value;
                           config.guide.name = name;
                           collection.name =  name;
                           lessonStateHandler.changeRequest( { requestType: enums.lessonState.UPDATE_COLLECTION, requestArgs: { collection, config } });

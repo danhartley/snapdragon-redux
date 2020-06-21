@@ -59,7 +59,7 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
         const answers = [];
 
         images.forEach(image => {
-            answers.push({ value: image.itemName, url: scaleImage({ url:image.url }).small });
+            answers.push({ value: image.itemName, url: scaleImage(image).small });
         });
 
         document.querySelectorAll('#imageSlider_mixed-specimens .carousel-item img').forEach(img => {

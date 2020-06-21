@@ -313,7 +313,6 @@ const leafEntry = {
     screens: [
         { ...leaf },
         { ...leafName }
-        // { ...leafName, template: 'js-text-entry-template' }
     ]
 };
 
@@ -342,7 +341,6 @@ const commonEntry = {
     screens: [
         { ...specimenImages },
         { ...text, taxon: 'vernacular'  }
-        // { ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Enter the common name', short: 'Enter the common name'}}
     ]
 };
 
@@ -413,7 +411,6 @@ const mediaMatch = {
     requirement: 'Select species',
     screens: [
         { ...specimenImages },
-        // { ...mediaPlayers },
         { ...birdsong }
     ]
 };

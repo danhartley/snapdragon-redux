@@ -4,26 +4,15 @@ var Stamp = Stamp || {};
 
 (function(ns) {
 
-  // Utilty object to capture the document context of the script
-  // tag that instantiated the Context. Useful for getting access to
-  // assetts in HTML Imports.
   ns.Context = function() {
-    //this.doc = (document.currentScript||document._currentScript).ownerDocument;
   };
 
-  // Import the element 'id' from the HTML Import into the current docuemnt.
   ns.Context.prototype.import = function(id) {
     return document.importNode(this.doc.querySelector('#'+id).content, true);
   };
 
-  // Regex to grab double moustache'd content.
   var re = /{{\s([\w\.\^]+)\s}}/g;
 
-  // Returns 'state' after applying address, where address is an array of
-  // string.
-  //
-  // I.e. if the state is {a: {b: [9, 8, 7]}} then the address of ["a", "b",
-  // 0] would return 9.
   function filterState(address, state) {
     var mystate = state;
     for (var i = 0, len = address.length; i < len; i++) {
@@ -39,13 +28,10 @@ var Stamp = Stamp || {};
     return mystate;
   }
 
-  // Replace the content in 'str' from [index, index+count) with 'add'.
   function ssplice(str, index, count, add) {
     return str.slice(0, index) + add + str.slice(index + count);
   }
 
-  // Extracts an address path, i.e. ["a", "b", "0"] from the input string 's',
-  // such as from "{{a.b.0}}".
   let match;
   function addressOf(s) {
     if ((match = re.exec(s)) != null) {
@@ -55,16 +41,10 @@ var Stamp = Stamp || {};
     }
   }
 
-  // Keeps expanding double moustache in the text content until there no more
-  // double moustache instances. Returns null if no templates were found,
-  // otherwise returns the expanded string.
   function expandString(s, state) {
     var match;
     var matches = [];
-
-    // Flush re's cache of the last string it was parsing.
     re.exec("");
-    // Find all the matches in s.
     while ((match = re.exec(s)) != null) {
       matches.push(match);
     }
@@ -81,13 +61,10 @@ var Stamp = Stamp || {};
     return null;
   }
 
-  // Takes an array of nodes and returns an array of cloned nodes in the same
-  // order.
   function cloneAllNodes(a) {
     var clones = [];
     for (var i = 0, len = a.length; i < len; i++) {
       if (a[i].nodeName == "TEMPLATE") {
-        // Template nodes have their contents hoisted up to this level for expansion.
         clones.push(a[i].content.cloneNode(true));
       } else {
         clones.push(a[i].cloneNode(true));
@@ -96,31 +73,21 @@ var Stamp = Stamp || {};
     return clones;
   }
 
-  // Append all the elements in 'nodes' as children of 'ele'.
   function appendChildren(ele, nodes) {
     for (var i = 0, len = nodes.length; i < len; i++) {
       ele.appendChild(nodes[i]);
     }
   }
 
-  // Removes all the children of 'ele'.
   function removeChildren(ele) {
     ele.innerHTML = "";
   }
 
-  // Removes all the children of 'ele' and then adds 'nodes' as ele's
-  // children.
   function replaceChildren(ele, nodes) {
     ele.innerHTML = "";
     appendChildren(ele, nodes);
   }
 
-  // Expand all the double moustaches found in the node
-  // 'ele' and all its children against the data in 'state'.
-  //
-  // When descending into nested templates, i.e. a data-repeat- template then
-  // '^' is added to the child state as a way to access the data in the
-  // parent's scope.
   function expand(ele, state) {
     if (ele.nodeName === "#text") {
       m = expandString(ele.textContent, state);
@@ -188,15 +155,11 @@ var Stamp = Stamp || {};
                   appendChildren(e, cl);
                 }
               }
-              // Remove the data-repeat-* attribute.
               e.removeAttribute(attr.name);
             } else {
               m = expandString(attr.value, state);
               if (m != null) {
                 var name = attr.name;
-                // Strip trailing "-" from attribute names. This allows
-                // setting attributes like src on an img where you would't
-                // want the unexpanded value to be used by the browser.
                 if (name.charAt(name.length-1) == "-") {
                   e.removeAttribute(attr.name);
                   e.setAttribute(attr.name.slice(0, -1), m);
@@ -213,14 +176,10 @@ var Stamp = Stamp || {};
         while (childEle != null) {
           var nextSibling = childEle.nextSibling;
           if (childEle.nodeName == "TEMPLATE") {
-            // If this is a template we need to expand the content of the
-            // template node, then replace the template node with the expanded
-            // content.
             var replacement = expand(childEle.content.cloneNode(true), state);
             while (replacement[0].childNodes.length > 0) {
               e.insertBefore(replacement[0].firstChild, childEle);
             }
-            // Finally remove the original element.
             e.removeChild(childEle);
           } else {
             expand(childEle, state);
@@ -232,8 +191,6 @@ var Stamp = Stamp || {};
     return ele;
   };
 
-  // Expand the template 'ele' with 'state' and then replace all the children
-  // of 'target' with the expanded content.
   function expandInto(target, ele, state) {
     replaceChildren(target, expand(ele, state));
   }
@@ -249,5 +206,3 @@ export const renderTemplate = (context, content, parent, clone) => {
     var expanded = Stamp.expand(contentClone, context);
     Stamp.appendChildren(parent, expanded);
 };
-
-//https://github.com/jcgregorio/stamp/wiki

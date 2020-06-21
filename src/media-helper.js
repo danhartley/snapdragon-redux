@@ -48,8 +48,6 @@ export const handleWindowResize = () => {
       setWindowHeight();
   });
 
-  snapLog('*** Global test ***');
-
   if(window.location.origin.indexOf('learn-the-planet') > -1) {
      snapLog('*** Live site detected ***');
       if(window.location.protocol != 'https:') {
@@ -57,7 +55,6 @@ export const handleWindowResize = () => {
          snapLog(' *** Site secured ***');
       }
   }
-
 };
 
 export const loadModalHTML = () => {

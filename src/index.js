@@ -1,5 +1,9 @@
 import "babel-polyfill";
 
+import 'ui/css/groups/bootstrap.css';
+
+
+
 import 'bootstrap/js/dist/carousel';
 import 'bootstrap/js/dist/modal';
 import 'bootstrap/js/dist/dropdown';
@@ -10,10 +14,6 @@ import 'ui/css/snapdragon.css';
 import 'ui/css/common.css';
 import 'ui/css/species-list.css';
 import 'ui/css/snapdragon-media.css';
-// import 'ui/css/groups/modal.css';
-// import 'ui/css/groups/create-guide.css';
-// import 'ui/css/groups/test-card.css';
-// import 'ui/css/groups/species-card.css';
 
 import { utils } from 'utils/utils';
 import { store, persistor } from 'redux/store';
@@ -33,7 +33,7 @@ import { renderLoggedIn } from 'ui/fixtures/login';
 import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { lessonModalHandler } from 'ui/screens/cards/test-card-modal-handler';
 import { handleWindowResize, loadModalHTML } from 'media-helper';
-import { snapLog, logError } from 'ui/helpers/logging-handler';
+import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
 import * as Sentry from '@sentry/browser';
 
 const onLoadHandler = () => {
@@ -124,6 +124,7 @@ const onLoadHandler = () => {
 
     window.snapLog = snapLog;
     window.logError = logError;
+    window.logAPIError = logAPIError;
 };
 
 onLoadHandler();

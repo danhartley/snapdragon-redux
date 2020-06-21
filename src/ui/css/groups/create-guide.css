@@ -156,12 +156,10 @@
   }
 
   #inat-place, #input-species, #inat-identity {
-    /* width: calc(var(--vwGrid) - 1rem) !important; */
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    width: 100%; 
-    /* margin: 1rem 0 .5rem 0; */
+    width: 100%;
   }
 
   #inat-place::placeholder {
@@ -200,7 +198,7 @@
   }
 
   .set-range-input:focus {
-    outline: none;
+    outline: 1px solid var(--snap-border-medium);
   }
   
   .modal-guide-body .range-slider.disabled .set-range-input {

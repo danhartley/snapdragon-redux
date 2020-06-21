@@ -12,7 +12,7 @@
 
     <div data-repeat-row="{{ rows }}">
 
-    <div class="collapsed score-summary-row header" data-toggle="collapse" data-target="#{{ row.id }}" aria-expanded="false" aria-controls="{{ row.id }}">  
+    <button class="btn snap-icon-btn collapsed score-summary-row header" type="button" data-toggle="collapse" data-target="#{{ row.id }}" aria-expanded="false" aria-controls="{{ row.id }}">  
         <div data-is-true="{{ row.success }}">
             <i class="fas fa-check"></i>
             <i class="fas fa-times"></i>
@@ -24,7 +24,7 @@
         <div>
             <i class="fas fa-chevron-down"></i>
         </div>
-    </div>
+    </button>
     
     <div id="{{ row.id }}" class="collapse score-summary-row in-columns" data-repeat-answer="{{ row.answers }}" data-parent="#accordion">  
         <div data-question="{{ ^.row.question }}">

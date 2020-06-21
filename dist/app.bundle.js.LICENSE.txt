@@ -1,8 +1,20 @@
+/*! !../../../../node_modules/css-loader/dist/cjs.js!./bootstrap.css */
+
+/*! !../../../../node_modules/css-loader/dist/cjs.js!./create-guide.css */
+
+/*! !../../../node_modules/css-loader/dist/cjs.js!./common.css */
+
+/*! !../../../node_modules/css-loader/dist/cjs.js!./snapdragon-colours.css */
+
 /*! !../../../node_modules/css-loader/dist/cjs.js!./snapdragon-media.css */
 
 /*! !../../../node_modules/css-loader/dist/cjs.js!./snapdragon.css */
 
 /*! !../../../node_modules/css-loader/dist/cjs.js!./species-list.css */
+
+/*! ../../../../node_modules/css-loader/dist/runtime/api.js */
+
+/*! ../../../../node_modules/style-loader/lib/addStyles.js */
 
 /*! ../../../node_modules/css-loader/dist/runtime/api.js */
 
@@ -10,13 +22,25 @@
 
 /*! @sentry/browser */
 
+/*! admin/api/enums */
+
 /*! api/botanical-latin */
 
+/*! api/firebase/credentials */
+
 /*! api/firebase/firestore */
+
+/*! api/firebase/questions */
+
+/*! api/glossary/lichen */
 
 /*! api/inat/inat */
 
 /*! api/snapdragon/iconic-taxa */
+
+/*! api/snapdragon/infraspecifics */
+
+/*! api/snapdragon/non-taxa */
 
 /*! api/traits/trait-types */
 
@@ -34,11 +58,31 @@
 
 /*! bootstrap/js/dist/modal */
 
+/*! enumify */
+
+/*! exports provided: DOM */
+
+/*! exports provided: actions */
+
+/*! exports provided: addListenerToAddedSpecies, speciesEditor */
+
 /*! exports provided: bonusHandler */
+
+/*! exports provided: buildTable */
 
 /*! exports provided: cleanText, isAnswerEqualToQuestion, markTest */
 
+/*! exports provided: collectionHandler */
+
+/*! exports provided: collections, collection, bonusLayout */
+
+/*! exports provided: config */
+
+/*! exports provided: config, enums, user, userAction */
+
 /*! exports provided: cookieHandler */
+
+/*! exports provided: counter, score, history, videoPlayer */
 
 /*! exports provided: createGuideHandler, onCreateCustomLesson */
 
@@ -48,13 +92,27 @@
 
 /*! exports provided: elem */
 
+/*! exports provided: enums */
+
+/*! exports provided: epithets */
+
+/*! exports provided: firebaseConfig */
+
+/*! exports provided: firestore */
+
+/*! exports provided: formatUrl, formatWiki, renderWiki */
+
 /*! exports provided: funcByName */
+
+/*! exports provided: getBirdSong */
 
 /*! exports provided: getBirdsongTests */
 
 /*! exports provided: getDefinitionTests */
 
 /*! exports provided: getLessonScores, scoreSummaryHandler */
+
+/*! exports provided: getLocation, getPlace, listenToPlaceChange, getIPLocation, GoogleFindPlace, GoogleAutocompleteServerSide, GoogleAutocomplete_Original, GoogleAutocomplete, GooglePlaceDetails */
 
 /*! exports provided: getLookalikeTests, getItemLookalikes */
 
@@ -66,11 +124,25 @@
 
 /*! exports provided: getTraitsForTests */
 
+/*! exports provided: handleRightsAttribution */
+
+/*! exports provided: handleWindowResize, loadModalHTML */
+
 /*! exports provided: iconicTaxa */
+
+/*! exports provided: iconicTaxa, matchTaxonKey, matchTaxon, findRankByIconicTaxon, matchIcon, matchRank */
+
+/*! exports provided: imageSlider, imageSideBySlider */
+
+/*! exports provided: imageUseCases, denormaliseImages, imageMatch, prepImageForCarousel, prepImagesForCarousel, scaleImage, modalImagesHandler, modalImageHandler */
 
 /*! exports provided: inatAutocomplete */
 
+/*! exports provided: infraspecifics */
+
 /*! exports provided: initialiseConfig */
+
+/*! exports provided: itemProperties */
 
 /*! exports provided: landscapeCustom, landscapeCustom2 */
 
@@ -82,6 +154,8 @@
 
 /*! exports provided: layouts */
 
+/*! exports provided: lesson, lessons */
+
 /*! exports provided: lessonListEventHandler */
 
 /*! exports provided: lessonListScrollHandler */
@@ -92,7 +166,23 @@
 
 /*! exports provided: lessonPlans */
 
+/*! exports provided: lessonPlans, lessonPlan, layout */
+
+/*! exports provided: lessonStateHandler */
+
+/*! exports provided: lessonStateHelper */
+
+/*! exports provided: lichen */
+
+/*! exports provided: linkedTaxa */
+
+/*! exports provided: listenToInatRequests, getInatSpecies, getInatPlaceId, getInatTaxonStats, getHistogram, getAutocompleteBy */
+
 /*! exports provided: listenToUserAnswer, listenToImageSelection, renderMixedSpecimenImages */
+
+/*! exports provided: logger */
+
+/*! exports provided: lookalikeSpecies */
 
 /*! exports provided: mixedTraitHandler */
 
@@ -102,15 +192,25 @@
 
 /*! exports provided: nextLesson */
 
+/*! exports provided: nonTaxaGroup, getNonTaxa */
+
 /*! exports provided: observeStore */
 
 /*! exports provided: onAddLoseFocusListener, renderNavigation, renderLoginChanges */
+
+/*! exports provided: onSpeciesChangeHandler, openNoteHandler */
 
 /*! exports provided: panels */
 
 /*! exports provided: portraitStatic, portraitStaticTaxonGroup */
 
+/*! exports provided: progressState */
+
 /*! exports provided: providerHandler */
+
+/*! exports provided: questions */
+
+/*! exports provided: quickFire, glossary */
 
 /*! exports provided: quickFireAPI */
 
@@ -120,9 +220,15 @@
 
 /*! exports provided: quickFireUI */
 
+/*! exports provided: renderBadge */
+
 /*! exports provided: renderBonusSpecimenTiles */
 
 /*! exports provided: renderBonusTest */
+
+/*! exports provided: renderCalendar */
+
+/*! exports provided: renderCard */
 
 /*! exports provided: renderCategories */
 
@@ -142,7 +248,13 @@
 
 /*! exports provided: renderHorizontalStrips */
 
+/*! exports provided: renderIcon, returnIcon, returnTaxonIcon */
+
+/*! exports provided: renderInatDataBox */
+
 /*! exports provided: renderInatUser */
+
+/*! exports provided: renderInfoDetails */
 
 /*! exports provided: renderInput */
 
@@ -166,8 +278,6 @@
 
 /*! exports provided: renderMixedSpecimenQuestion */
 
-/*! exports provided: renderMixedTraitImages */
-
 /*! exports provided: renderMixedTraitQuestion */
 
 /*! exports provided: renderMultiStrips */
@@ -178,15 +288,27 @@
 
 /*! exports provided: renderScoreSummary */
 
+/*! exports provided: renderSpeciesList */
+
+/*! exports provided: renderSpeciesPicker */
+
 /*! exports provided: renderSpeciesSearchOptions */
 
 /*! exports provided: renderSpecimenTiles */
 
 /*! exports provided: renderSummary */
 
+/*! exports provided: renderTaxaBox */
+
+/*! exports provided: renderTaxonCard */
+
+/*! exports provided: renderTemplate */
+
 /*! exports provided: renderTestCardTemplate */
 
 /*! exports provided: renderTextEntry */
+
+/*! exports provided: renderWikiModal */
 
 /*! exports provided: roundHandler */
 
@@ -198,13 +320,35 @@
 
 /*! exports provided: setupHandler */
 
+/*! exports provided: snapLog, logError, logAPIError */
+
+/*! exports provided: speciesInGuideEditor */
+
 /*! exports provided: speciesSearch */
+
+/*! exports provided: store, persistor, rootReducer */
+
+/*! exports provided: subscribeToNonTaxaSelection, renderNonTaxonCard */
 
 /*! exports provided: subscription */
 
 /*! exports provided: switchHandler */
 
+/*! exports provided: taxonInfoSlider, infoSlider */
+
 /*! exports provided: textSetup */
+
+/*! exports provided: timeoutScheduler */
+
+/*! exports provided: traitValuesHandler */
+
+/*! exports provided: traitsHandler */
+
+/*! exports provided: types */
+
+/*! exports provided: videoHandler */
+
+/*! exports provided: videoSetup, matchSpeciesTime */
 
 /*! geo/geo */
 
@@ -212,19 +356,53 @@
 
 /*! media-helper */
 
+/*! modals.html */
+
 /*! no exports provided */
 
 /*! no static exports found */
 
 /*! ramda */
 
+/*! redux */
+
+/*! redux-persist */
+
+/*! redux-persist/lib/stateReconciler/hardSet */
+
+/*! redux-persist/lib/storage */
+
+/*! redux-thunk */
+
 /*! redux/actions/action-creators */
 
+/*! redux/actions/action-types */
+
+/*! redux/middleware/logger */
+
+/*! redux/middleware/timeoutScheduler */
+
 /*! redux/observe-store */
+
+/*! redux/reducers/config-reducer */
+
+/*! redux/reducers/initial-state/initial-progress-state */
+
+/*! redux/reducers/layout-reducers */
+
+/*! redux/reducers/lesson-reducers */
+
+/*! redux/reducers/progress-reducers */
+
+/*! redux/reducers/quick-fire-reducers */
+
+/*! redux/reducers/species-reducers */
 
 /*! redux/store */
 
 /*! redux/subscriptions */
+
+/*! snapdragon-config/lesson-config */
 
 /*! snapdragon-config/lesson-plans */
 
@@ -284,9 +462,17 @@
 
 /*! ui/create-guide-modal/location-template.html */
 
+/*! ui/create-guide-modal/species-editor */
+
+/*! ui/create-guide-modal/species-editor-template.html */
+
 /*! ui/create-guide-modal/species-in-guide-editor */
 
+/*! ui/create-guide-modal/species-in-guide-editor-template.html */
+
 /*! ui/create-guide-modal/species-picker */
+
+/*! ui/create-guide-modal/species-picker-template.html */
 
 /*! ui/create-guide-modal/species-search */
 
@@ -299,6 +485,10 @@
 /*! ui/create-guide-modal/species-summary-template.html */
 
 /*! ui/css/common.css */
+
+/*! ui/css/groups/bootstrap.css */
+
+/*! ui/css/groups/create-guide.css */
 
 /*! ui/css/snapdragon-colours.css */
 
@@ -334,8 +524,6 @@
 
 /*! ui/fixtures/score */
 
-/*! ui/fixtures/score-template.html */
-
 /*! ui/fixtures/settings */
 
 /*! ui/fixtures/settings-template.html */
@@ -343,6 +531,8 @@
 /*! ui/helpers//score-handler */
 
 /*! ui/helpers/class-behaviour */
+
+/*! ui/helpers/collection-handler */
 
 /*! ui/helpers/cookie-handler */
 
@@ -388,6 +578,8 @@
 
 /*! ui/screens/cards/card */
 
+/*! ui/screens/cards/card-template.html */
+
 /*! ui/screens/cards/cultivar-card */
 
 /*! ui/screens/cards/cultivar-card-template.html */
@@ -396,7 +588,11 @@
 
 /*! ui/screens/cards/non-taxon-card-specimen-tiles */
 
+/*! ui/screens/cards/non-taxon-card-template.html */
+
 /*! ui/screens/cards/taxon-card */
+
+/*! ui/screens/cards/taxon-card-template.html */
 
 /*! ui/screens/cards/test-card */
 
@@ -406,11 +602,53 @@
 
 /*! ui/screens/common/audio-media-template.html */
 
+/*! ui/screens/common/badge */
+
+/*! ui/screens/common/badge-template.html */
+
+/*! ui/screens/common/calendar */
+
+/*! ui/screens/common/calendar-template.html */
+
+/*! ui/screens/common/id-box-template.html */
+
 /*! ui/screens/common/image-slider */
+
+/*! ui/screens/common/image-slider-template.html */
+
+/*! ui/screens/common/inat-box */
+
+/*! ui/screens/common/inat-box-template.html */
+
+/*! ui/screens/common/info-detail-slider */
+
+/*! ui/screens/common/info-detail-slider-template.html */
+
+/*! ui/screens/common/info-slider */
+
+/*! ui/screens/common/info-slider-template.html */
 
 /*! ui/screens/common/language-selection */
 
 /*! ui/screens/common/language-selection-template.html */
+
+/*! ui/screens/common/linked-taxa */
+
+/*! ui/screens/common/linked-taxa-lookalike-template.html */
+
+/*! ui/screens/common/linked-taxa-relationship-template.html */
+
+/*! ui/screens/common/look-alikes */
+
+/*! ui/screens/common/look-alikes-link-template.html */
+
+/*! ui/screens/common/rights-attribution */
+
+/*! ui/screens/common/rights-attribution-template.html */
+
+/*! ui/screens/common/taxa-box */
+
+/*! ui/screens/common/taxa-box-template.html */
 
 /*! ui/screens/home/home */
 
@@ -421,6 +659,8 @@
 /*! ui/screens/home/home-lesson-intro-text-template.html */
 
 /*! ui/screens/home/home-lesson-intro-video */
+
+/*! ui/screens/home/home-lesson-intro-video-template.html */
 
 /*! ui/screens/home/home-template.html */
 
@@ -454,6 +694,16 @@
 
 /*! ui/screens/lists/lesson-template.html */
 
+/*! ui/screens/lists/species-list */
+
+/*! ui/screens/lists/species-list-definition-insert */
+
+/*! ui/screens/lists/species-list-definition-insert.html */
+
+/*! ui/screens/lists/species-table */
+
+/*! ui/screens/lists/species-table-template.html */
+
 /*! ui/screens/lists/video-handler */
 
 /*! ui/screens/media/landscape/media-players */
@@ -469,10 +719,6 @@
 /*! ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question */
 
 /*! ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question-template.html */
-
-/*! ui/screens/multichoice/landscape/mixed-trait/left/mixed-trait-images */
-
-/*! ui/screens/multichoice/landscape/mixed-trait/left/mixed-trait-images-template.html */
 
 /*! ui/screens/multichoice/landscape/mixed-trait/mixed-trait-handler */
 
@@ -526,9 +772,51 @@
 
 /*! utils/utils */
 
+/*! wikipedia/wiki */
+
+/*! wikipedia/wiki-modal */
+
+/*! xeno-canto/birdsong */
+
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
+
+/*!***********************!*\
+  !*** ./src/ui/dom.js ***!
+  \***********************/
+
+/*!************************!*\
+  !*** ./src/geo/geo.js ***!
+  \************************/
+
+/*!*************************!*\
+  !*** ./src/modals.html ***!
+  \*************************/
+
+/*!****************************!*\
+  !*** ./src/redux/store.js ***!
+  \****************************/
+
+/*!*****************************!*\
+  !*** ./src/media-helper.js ***!
+  \*****************************/
+
+/*!******************************!*\
+  !*** ./src/api/inat/inat.js ***!
+  \******************************/
+
+/*!*******************************!*\
+  !*** ./src/ui/css/common.css ***!
+  \*******************************/
+
+/*!*******************************!*\
+  !*** ./src/wikipedia/wiki.js ***!
+  \*******************************/
+
+/*!********************************!*\
+  !*** ./src/admin/api/enums.js ***!
+  \********************************/
 
 /*!**********************************!*\
   !*** ./src/ui/fixtures/login.js ***!
@@ -547,6 +835,14 @@
   \***********************************/
 
 /*!************************************!*\
+  !*** ./src/api/botanical-latin.js ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./src/api/glossary/lichen.js ***!
+  \************************************/
+
+/*!************************************!*\
   !*** ./src/redux/observe-store.js ***!
   \************************************/
 
@@ -556,6 +852,10 @@
 
 /*!************************************!*\
   !*** ./src/ui/fixtures/headers.js ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./src/xeno-canto/birdsong.js ***!
   \************************************/
 
 /*!*************************************!*\
@@ -582,8 +882,36 @@
   !*** ./src/ui/setup/next-lesson.js ***!
   \*************************************/
 
+/*!*************************************!*\
+  !*** ./src/wikipedia/wiki-modal.js ***!
+  \*************************************/
+
+/*!**************************************!*\
+  !*** ./src/ui/helpers/templating.js ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./src/ui/screens/cards/card.js ***!
+  \**************************************/
+
+/*!***************************************!*\
+  !*** ./src/api/firebase/firestore.js ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/api/firebase/questions.js ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/api/traits/trait-types.js ***!
+  \***************************************/
+
 /*!***************************************!*\
   !*** ./src/ui/fixtures/navigation.js ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/ui/helpers/enum-helper.js ***!
   \***************************************/
 
 /*!***************************************!*\
@@ -591,7 +919,23 @@
   \***************************************/
 
 /*!****************************************!*\
+  !*** ./src/api/snapdragon/non-taxa.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/redux/middleware/logger.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/ui/helpers/icon-handler.js ***!
+  \****************************************/
+
+/*!****************************************!*\
   !*** ./src/ui/helpers/test-handler.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/ui/screens/common/badge.js ***!
   \****************************************/
 
 /*!****************************************!*\
@@ -599,7 +943,23 @@
   \****************************************/
 
 /*!*****************************************!*\
+  !*** ./src/api/firebase/credentials.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/ui/css/groups/bootstrap.css ***!
+  \*****************************************/
+
+/*!*****************************************!*\
   !*** ./src/ui/css/snapdragon-media.css ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/ui/helpers/data-checking.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./src/ui/helpers/image-handler.js ***!
   \*****************************************/
 
 /*!*****************************************!*\
@@ -610,6 +970,22 @@
   !*** ./src/ui/helpers/cookie-handler.js ***!
   \******************************************/
 
+/*!******************************************!*\
+  !*** ./src/ui/helpers/traits-handler.js ***!
+  \******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/api/snapdragon/iconic-taxa.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/redux/actions/action-types.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/ui/css/snapdragon-colours.css ***!
+  \*******************************************/
+
 /*!*******************************************!*\
   !*** ./src/ui/helpers/class-behaviour.js ***!
   \*******************************************/
@@ -619,11 +995,31 @@
   \*******************************************/
 
 /*!*******************************************!*\
+  !*** ./src/ui/helpers/logging-handler.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
   !*** ./src/ui/screens/cards/test-card.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/ui/screens/common/calendar.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/ui/screens/common/inat-box.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/ui/screens/common/taxa-box.js ***!
   \*******************************************/
 
 /*!********************************************!*\
   !*** ./src/api/traits/traits-for-tests.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/ui/css/groups/create-guide.css ***!
   \********************************************/
 
 /*!********************************************!*\
@@ -632,6 +1028,10 @@
 
 /*!********************************************!*\
   !*** ./src/ui/screens/bonus/bonus-test.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/ui/screens/cards/taxon-card.js ***!
   \********************************************/
 
 /*!********************************************!*\
@@ -647,10 +1047,6 @@
   \*********************************************/
 
 /*!*********************************************!*\
-  !*** ./src/ui/fixtures/score-template.html ***!
-  \*********************************************/
-
-/*!*********************************************!*\
   !*** ./src/ui/helpers/inat-autocomplete.js ***!
   \*********************************************/
 
@@ -663,8 +1059,48 @@
   \*********************************************/
 
 /*!**********************************************!*\
+  !*** ./src/api/snapdragon/infraspecifics.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/redux/actions/action-creators.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/redux/reducers/config-reducer.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
   !*** ./src/ui/fixtures/logout-template.html ***!
   \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/ui/helpers/collection-handler.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/ui/screens/common/info-slider.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/ui/screens/common/linked-taxa.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/ui/screens/common/look-alikes.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/ui/screens/lists/species-list.js ***!
+  \**********************************************/
+
+/*!***********************************************!*\
+  !*** ./src/redux/reducers/layout-reducers.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./src/redux/reducers/lesson-reducers.js ***!
+  \***********************************************/
 
 /*!***********************************************!*\
   !*** ./src/snapdragon-config/lesson-plans.js ***!
@@ -687,8 +1123,28 @@
   \***********************************************/
 
 /*!***********************************************!*\
+  !*** ./src/ui/screens/common/image-slider.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
   !*** ./src/ui/screens/lists/lesson-custom.js ***!
   \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./src/ui/screens/lists/species-table.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./src/ui/screens/lists/video-handler.js ***!
+  \***********************************************/
+
+/*!************************************************!*\
+  !*** ./src/redux/reducers/species-reducers.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ./src/snapdragon-config/lesson-config.js ***!
+  \************************************************/
 
 /*!************************************************!*\
   !*** ./src/snapdragon-config/screen-panels.js ***!
@@ -715,8 +1171,16 @@
   \************************************************/
 
 /*!************************************************!*\
+  !*** ./src/ui/screens/cards/non-taxon-card.js ***!
+  \************************************************/
+
+/*!************************************************!*\
   !*** ./src/ui/screens/home/home-template.html ***!
   \************************************************/
+
+/*!*************************************************!*\
+  !*** ./src/redux/reducers/progress-reducers.js ***!
+  \*************************************************/
 
 /*!*************************************************!*\
   !*** ./src/snapdragon-config/screen-layouts.js ***!
@@ -731,8 +1195,16 @@
   \*************************************************/
 
 /*!*************************************************!*\
+  !*** ./src/ui/screens/cards/card-template.html ***!
+  \*************************************************/
+
+/*!*************************************************!*\
   !*** ./src/ui/screens/text-entry/text-entry.js ***!
   \*************************************************/
+
+/*!**************************************************!*\
+  !*** ./src/redux/middleware/timeoutScheduler.js ***!
+  \**************************************************/
 
 /*!**************************************************!*\
   !*** ./src/ui/quick-fire-modal/quick-fire-ui.js ***!
@@ -747,6 +1219,10 @@
   \**************************************************/
 
 /*!***************************************************!*\
+  !*** ./src/redux/reducers/quick-fire-reducers.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
   !*** ./src/ui/create-guide-modal/create-guide.js ***!
   \***************************************************/
 
@@ -755,8 +1231,16 @@
   \***************************************************/
 
 /*!***************************************************!*\
+  !*** ./src/ui/screens/common/badge-template.html ***!
+  \***************************************************/
+
+/*!***************************************************!*\
   !*** ./src/ui/screens/lists/lesson-template.html ***!
   \***************************************************/
+
+/*!****************************************************!*\
+  !*** ./src/ui/screens/common/id-box-template.html ***!
+  \****************************************************/
 
 /*!****************************************************!*\
   !*** ./src/ui/screens/landscape/specimen-tiles.js ***!
@@ -783,6 +1267,14 @@
   \*****************************************************/
 
 /*!*****************************************************!*\
+  !*** ./src/ui/create-guide-modal/species-editor.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./src/ui/create-guide-modal/species-picker.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
   !*** ./src/ui/create-guide-modal/species-search.js ***!
   \*****************************************************/
 
@@ -791,7 +1283,19 @@
   \*****************************************************/
 
 /*!*****************************************************!*\
+  !*** ./src/ui/screens/common/info-detail-slider.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
   !*** ./src/ui/screens/common/language-selection.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./src/ui/screens/common/rights-attribution.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./src/ui/screens/lists/lesson-state-helper.js ***!
   \*****************************************************/
 
 /*!******************************************************!*\
@@ -806,8 +1310,28 @@
   !*** ./src/ui/screens/cards/test-card-template.html ***!
   \******************************************************/
 
+/*!******************************************************!*\
+  !*** ./src/ui/screens/common/calendar-template.html ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/ui/screens/common/inat-box-template.html ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/ui/screens/common/taxa-box-template.html ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/ui/screens/lists/lesson-state-handler.js ***!
+  \******************************************************/
+
 /*!*******************************************************!*\
   !*** ./src/ui/fixtures/navigation-left-template.html ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./src/ui/screens/cards/taxon-card-template.html ***!
   \*******************************************************/
 
 /*!*******************************************************!*\
@@ -820,6 +1344,10 @@
 
 /*!********************************************************!*\
   !*** ./src/ui/fixtures/navigation-right-template.html ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./src/ui/screens/home/home-lesson-intro-video.js ***!
   \********************************************************/
 
 /*!********************************************************!*\
@@ -843,6 +1371,14 @@
   \*********************************************************/
 
 /*!*********************************************************!*\
+  !*** ./src/ui/screens/common/audio-media-template.html ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./src/ui/screens/common/info-slider-template.html ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
   !*** ./src/ui/screens/media/landscape/media-players.js ***!
   \*********************************************************/
 
@@ -863,6 +1399,14 @@
   \**********************************************************/
 
 /*!**********************************************************!*\
+  !*** ./src/ui/screens/common/image-slider-template.html ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/ui/screens/lists/species-table-template.html ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
   !*** ./src/ui/screens/progress/score-summary-handler.js ***!
   \**********************************************************/
 
@@ -876,6 +1420,10 @@
 
 /*!***********************************************************!*\
   !*** ./src/ui/fixtures/navigation-portrait-template.html ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./src/ui/screens/cards/non-taxon-card-template.html ***!
   \***********************************************************/
 
 /*!***********************************************************!*\
@@ -918,6 +1466,14 @@
   !*** ./src/snapdragon-engine/bonus/tests/definition-test.js ***!
   \**************************************************************/
 
+/*!**************************************************************!*\
+  !*** ./src/ui/create-guide-modal/species-in-guide-editor.js ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./src/ui/screens/common/look-alikes-link-template.html ***!
+  \**************************************************************/
+
 /*!***************************************************************!*\
   !*** ./src/ui/create-guide-modal/common/snapdragon-switch.js ***!
   \***************************************************************/
@@ -947,11 +1503,31 @@
   \****************************************************************/
 
 /*!****************************************************************!*\
+  !*** ./src/ui/create-guide-modal/species-editor-template.html ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./src/ui/create-guide-modal/species-picker-template.html ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
   !*** ./src/ui/create-guide-modal/species-search-template.html ***!
   \****************************************************************/
 
 /*!****************************************************************!*\
+  !*** ./src/ui/screens/common/info-detail-slider-template.html ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
   !*** ./src/ui/screens/common/language-selection-template.html ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./src/ui/screens/common/rights-attribution-template.html ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./src/ui/screens/lists/species-list-definition-insert.js ***!
   \****************************************************************/
 
 /*!*****************************************************************!*\
@@ -987,6 +1563,10 @@
   \******************************************************************/
 
 /*!******************************************************************!*\
+  !*** ./src/ui/screens/lists/species-list-definition-insert.html ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
   !*** ./src/ui/screens/multichoice/multi-strips-with-images.html ***!
   \******************************************************************/
 
@@ -998,6 +1578,18 @@
   !*** ./src/snapdragon-config/plans/landscape/landscape-static.js ***!
   \*******************************************************************/
 
+/*!*******************************************************************!*\
+  !*** ./src/ui/screens/common/linked-taxa-lookalike-template.html ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./src/ui/screens/home/home-lesson-intro-video-template.html ***!
+  \*******************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./src/redux/reducers/initial-state/initial-progress-state.js ***!
+  \********************************************************************/
+
 /*!********************************************************************!*\
   !*** ./src/ui/quick-fire-modal/quick-fire-questions-template.html ***!
   \********************************************************************/
@@ -1005,6 +1597,14 @@
 /*!********************************************************************!*\
   !*** ./src/ui/screens/progress/score-summary-no-row-template.html ***!
   \********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/ui/css/common.css ***!
+  \*********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./src/ui/screens/common/linked-taxa-relationship-template.html ***!
+  \**********************************************************************/
 
 /*!**********************************************************************!*\
   !*** ./src/ui/screens/text-entry/text-entry-portrait-templates.html ***!
@@ -1018,21 +1618,33 @@
   !*** ./node_modules/css-loader/dist/cjs.js!./src/ui/css/snapdragon.css ***!
   \*************************************************************************/
 
+/*!*************************************************************************!*\
+  !*** ./src/ui/create-guide-modal/species-in-guide-editor-template.html ***!
+  \*************************************************************************/
+
 /*!***************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/ui/css/species-list.css ***!
   \***************************************************************************/
+
+/*!*******************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/ui/css/groups/bootstrap.css ***!
+  \*******************************************************************************/
 
 /*!*******************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/ui/css/snapdragon-media.css ***!
   \*******************************************************************************/
 
 /*!*********************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/ui/css/snapdragon-colours.css ***!
+  \*********************************************************************************/
+
+/*!*********************************************************************************!*\
   !*** ./src/ui/screens/multichoice/landscape/mixed-trait/mixed-trait-handler.js ***!
   \*********************************************************************************/
 
-/*!*************************************************************************************!*\
-  !*** ./src/ui/screens/multichoice/landscape/mixed-trait/left/mixed-trait-images.js ***!
-  \*************************************************************************************/
+/*!**********************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/ui/css/groups/create-guide.css ***!
+  \**********************************************************************************/
 
 /*!***************************************************************************************!*\
   !*** ./src/ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-combined.js ***!
@@ -1049,10 +1661,6 @@
 /*!**********************************************************************************************!*\
   !*** ./src/ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question.js ***!
   \**********************************************************************************************/
-
-/*!************************************************************************************************!*\
-  !*** ./src/ui/screens/multichoice/landscape/mixed-trait/left/mixed-trait-images-template.html ***!
-  \************************************************************************************************/
 
 /*!**************************************************************************************************!*\
   !*** ./src/ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-combined-template.html ***!

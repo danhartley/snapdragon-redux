@@ -10,7 +10,7 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">        
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
         <script>
 
         // https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
@@ -72,7 +72,7 @@
                       <span class="js-right-txt-score"></span>
                   </div>
               </div>
-              <progress style="margin: 1000px 0 0 0" value="0" max="6"></progress>
+              <progress aria-label="lesson quiz progress" title="lesson quiz progress" style="margin: 1000px 0 0 0" value="0" max="6"></progress>
               <div class="right-body js-right-body">
                 <div class="home-container landscape js-home-container">  
                   <div class="snapdragon-header double-centred-block">
@@ -93,12 +93,12 @@
                       </h4>
               
                       <h4 class="landscape">
-                          <button class="btn snap-btn extra-small-text fit-width" disabled style="opacity: 1;">Vocab test</button>
+                          <button class="btn snap-btn smaller-text fit-width" disabled style="opacity: 1;">Vocab test</button>
                           <span class="margin-left">Brush up on terms and definitions.</span>
                       </h4>
               
                       <h4 class="landscape">
-                          <button class="btn snap-btn extra-small-text fit-width" disabled style="opacity: 1;">Lesson Quiz</button>
+                          <button class="btn snap-btn smaller-text fit-width" disabled style="opacity: 1;">Lesson Quiz</button>
                           <span class="margin-left">Test yourself on the contents of a lesson.</span>
                       </h4>
               
@@ -151,11 +151,7 @@
           </div>
       </div>
 
-      <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"> -->
-
-      <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md -->
       <link rel="stylesheet" href="./css/modal.css" media="print" onload="this.media='all'">
-      <link rel="stylesheet" href="./css/create-guide.css" media="print" onload="this.media='all'">
       <link rel="stylesheet" href="./css/test-card.css" media="print" onload="this.media='all'">
       <link rel="stylesheet" href="./css/species-card.css" media="print" onload="this.media='all'">
 
@@ -163,9 +159,7 @@
       <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
       <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-storage.js"></script>
       <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
-      <!-- <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script> -->
 
-      <!-- <script src="/__/firebase/init.js"></script> -->
       <script defer type="text/javascript">
 
         var tag = document.createElement('script');
@@ -179,7 +173,7 @@
         }
         
       </script>
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"  media="print" onload="this.media='all'">
       <script defer type="text/javascript" src="https://storage.googleapis.com/snapdragon-222014.appspot.com/dist/iconwc.js"></script>      
       <script defer src="https://storage.googleapis.com/snapdragon-222014.appspot.com/dist/pure-swipe.js"></script>  
       <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1osYKD1sRb5Bzqq-OzJ6PgXqLtDt9YvU&libraries=places"></script>

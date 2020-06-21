@@ -28,7 +28,7 @@ export const getLessonScores = (history, lesson, stateScore, savedScore) => {
 const getSummaryRows = (rows) => {
       rows = rows.map((r, i) => {
             const _r = {
-                  ...r, id: `${i}${utils.toCamelCase(r.binomial)}`, question: r.question.term ? r.question.term : r.question, 
+                  ...r, id: `${utils.toCamelCase(r.binomial)}_${i}`, question: r.question.term ? r.question.term : r.question, 
                         answers: r.answers.map(a => { return getAnswer(a, r); })
             };
             return _r;

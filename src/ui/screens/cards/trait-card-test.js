@@ -35,13 +35,6 @@ export const renderTraitCardTest = item => {
         document.querySelector('.js-test-card-content').classList.add('trait-line');            
         document.querySelector('.js-question-question').innerHTML = 'Trait questions';
         document.querySelector('.js-question-help').innerHTML = '(Answer at will.)';
-        
-        // const returnLink = document.querySelector('.js-traits-link');
-        // const returnTxt = returnLink.querySelector('span:nth-child(1)');
-        //       returnTxt.innerHTML = 'Main';
-    
-        // const returnTxt2 = returnLink.querySelector('span:nth-child(2)');
-        //       returnTxt2.innerHTML = 'lesson';
 
         const feedback = document.querySelector('.js-txt-question');
         const continueBtn = document.querySelector('.js-continue-lesson-btn');

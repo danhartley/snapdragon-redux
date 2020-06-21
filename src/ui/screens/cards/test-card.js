@@ -91,7 +91,6 @@ export const renderTestCardTemplate = (collection, context) => {
     const showNextCard = (container, selector) => {
                 
         container.classList.remove('swap-out-card');
-        // container.classList.add('swap-in-card');
 
         const card = modal.querySelector(selector);
         const icon = card.querySelector('.js-card-link');

@@ -6,23 +6,20 @@
       <div data-lesson-id="{{ lesson.id }}" class="lesson-list-item js-lesson-list-item" data-has-video="{{ lesson.hasVideo }}">
           <div>            
               <div class="lesson-name js-lesson-title" data-lesson-id="{{ lesson.id }}">
-                  <span data-toggle="modal" data-target="#basicModal" id="lesson_{{ lesson.id }}" class="lesson-title margin-right {{ lesson.isCollectionEditableClass }}">{{ lesson.name }}</span>
+                  <span id="lesson_{{ lesson.id }}" class="lesson-title margin-right {{ lesson.isCollectionEditableClass }}">{{ lesson.name }}</span>
+                  <!-- <span data-toggle="modal" data-target="#basicModal" id="lesson_{{ lesson.id }}" class="lesson-title margin-right {{ lesson.isCollectionEditableClass }}">{{ lesson.name }}</span> -->
               </div>
               <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>
               <div class="latin hide-empty js-lesson-video-state" data-lesson-id="{{ lesson.id }}">{{ lesson.videoState }}</div>         
           </div> 
           <div data-lesson-id="{{ lesson.id }}" class="lesson-review js-lesson-review">
               <div class="flex">
-                  <div class="centred-block fit-width">
-                    <span class="lesson-terms-review {{ lesson.hasTermsClass }} margin-right fit-width js-terms-review-link" data-toggle="modal" data-target="#glossaryModal" data-lesson-id="{{ lesson.id }}">
-                        <button data-lesson-id="{{ lesson.id }}" aria-label="vocab test for {{ lesson.name }} lesson" class="btn snap-btn extra-small-text" data-toggle="modal" data-target="#glossaryModal">Vocab test</button>
-                    <span>
+                  <div class="centred-block fit-width margin-top">
+                      <button data-toggle="modal" data-target="#glossaryModal" data-lesson-id="{{ lesson.id }}" data-lesson-id="{{ lesson.id }}" aria-label="vocab test for {{ lesson.name }} lesson" class="lesson-terms-review {{ lesson.hasTermsClass }} margin-right fit-width js-terms-review-link btn snap-btn smaller-text" data-toggle="modal" data-target="#glossaryModal">Vocab test</button>
                   </div>
-                  <div class="vertical-centred-block relative">
-                    <span class="">
-                      <button data-toggle="modal" data-target="#lessonModal" data-lesson-id="{{ lesson.id }}" aria-label="{{ lesson.name }} lesson quiz" class="landscape btn snap-btn extra-small-text margin-right fit-width js-review-link">{{ lesson.reviewState }}</button>
-                      <button data-lesson-id="{{ lesson.id }}" aria-label="{{ lesson.name }} lesson quiz" class="portrait btn snap-btn extra-small-text margin-right fit-width js-review-link">{{ lesson.reviewState }}</button>
-                    </span>
+                  <div class="vertical-centred-block relative margin-top">
+                      <button data-toggle="modal" data-target="#lessonModal" data-lesson-id="{{ lesson.id }}" aria-label="{{ lesson.name }} lesson quiz" class="landscape btn snap-btn smaller-text margin-right fit-width js-review-link">{{ lesson.reviewState }}</button>
+                      <button data-lesson-id="{{ lesson.id }}" aria-label="{{ lesson.name }} lesson quiz" class="portrait btn snap-btn smaller-text margin-right fit-width js-review-link">{{ lesson.reviewState }}</button>
                     <span data-lesson-id="{{ lesson.id }}" class="hide-important inline-progress-container js-review">
                     <span class="absolute">&nbsp;</span>
                     </span>

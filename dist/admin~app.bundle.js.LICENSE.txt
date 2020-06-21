@@ -130,8 +130,6 @@
 
 /*! exports provided: renderWikiModal */
 
-/*! exports provided: snapLog, logError, logAPIError */
-
 /*! exports provided: speciesInGuideEditor */
 
 /*! exports provided: store, persistor, rootReducer */
@@ -217,8 +215,6 @@
 /*! ui/helpers/icon-handler */
 
 /*! ui/helpers/image-handler */
-
-/*! ui/helpers/logging-handler */
 
 /*! ui/helpers/templating */
 
@@ -428,10 +424,6 @@
 
 /*!*******************************************!*\
   !*** ./src/ui/css/snapdragon-colours.css ***!
-  \*******************************************/
-
-/*!*******************************************!*\
-  !*** ./src/ui/helpers/logging-handler.js ***!
   \*******************************************/
 
 /*!*******************************************!*\
