@@ -78,10 +78,6 @@
     background-color: var(--snap-species-highlight-background);
   }
 
-  .language-options .dropdown-menu.show {
-    width: 100%;
-  }
-  
   .modal-text hr {
     margin: .5rem;
   }
