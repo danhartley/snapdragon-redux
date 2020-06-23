@@ -135,7 +135,7 @@ export const renderSpeciesList = (lesson, args) => {
                   });
 
             document.querySelectorAll('.mushroom-icon').forEach(icon => {
-                icon.innerHTML = '<svg-icon class="si-glyph-mushrooms"><src href="./icons/si-glyph-mushrooms.svg"/></svg>';
+                icon.innerHTML = '<svg-icon class="si-glyph-mushrooms"><src href="./static/icons/si-glyph-mushrooms.svg"/></svg>';
             });
 
             const nthChild = config.isLandscapeMode ? 5 : 3;

@@ -74,7 +74,7 @@ export const matchRank = rank => {
             icon = 'fas fa-bug';
             break;
         case 'fungi':
-            icon = './icons/mushroom.svg';
+            icon = './static/icons/mushroom.svg';
             break;
         case 'plantae':
             icon = 'fas fa-leaf';

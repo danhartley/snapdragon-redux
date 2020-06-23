@@ -2235,11 +2235,11 @@ img[data-has-image="false"] {
   color: var(--snap-text-light);
 }
 
-.login.icon[data-is-logged-in="true"] > i:nth-child(1) {
+.login.icon[data-is-logged-in="true"] > .fa-user-slash {
   display: none;
 }
 
-.login.icon[data-is-logged-in="false"] > i:nth-child(2) {
+.login.icon[data-is-logged-in="false"] > .fa-user-check {
   display: none;
 }
 
@@ -2249,11 +2249,6 @@ img[data-has-image="false"] {
   display: flex;
   flex-direction: column;
 }
-
-/* .quick-fire .score {
-  bottom: 5rem;
-  position: absolute;
-} */
 
 .quick-fire .strips {
   height: initial;

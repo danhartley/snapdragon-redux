@@ -399,6 +399,7 @@
   .iconic-taxa-categories svg, .iconic-taxa-categories-selected svg {
     width: 1rem;
     height: 1rem;
+    font-size: 1rem;
   }
 
   .selected-text svg, .selected-text i, .iconic-taxa-selected i {
@@ -690,9 +691,9 @@
 
 @media (min-height: 667px) {
 
-  .iconic-taxa-categories > div > div > div:nth-child(1) svg, .iconic-taxa-categories i {
-    width: 1.6rem;
+  .iconic-taxa-categories svg, .iconic-taxa-categories i {
     font-size: 1.6rem;
+    height: 1.6rem;
   }
 
   .taxa-actions svg-icon.si-glyph-mushrooms svg {

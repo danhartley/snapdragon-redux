@@ -1,15 +1,13 @@
-const Dotenv = require('dotenv-webpack');
+const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 var csso = require('csso');
-  // const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     devServer: {
-        host: '0.0.0.0',
-        disableHostCheck: true
+      host: '0.0.0.0',
+      disableHostCheck: true
     },
     entry: {
       app: './src/index.js',
@@ -18,7 +16,8 @@ module.exports = {
     },
     output: {
       filename: '[name].bundle.js',
-      path: path.resolve(__dirname, 'dist')
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: '/',
     },    
     module: {
         rules: [
@@ -85,7 +84,8 @@ module.exports = {
           }
         ],
     },
-    plugins: [          
+    plugins: [     
+      new webpack.ProgressPlugin(),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: './src/index.html',
@@ -106,37 +106,15 @@ module.exports = {
       }),      
       new CopyPlugin({
         patterns: [
-          { from: './src/ui/css/groups', to: 'css', transform(content) { return csso.minify(content).css; } }
+          { from: './src/ui/css/groups', to: 'css', transform(content) { return csso.minify(content).css; } },
+          { from: './src/static', to: 'static'}
         ],
       }),
-      new Dotenv({
-        // path: './some.other.env', // load this now instead of the ones in '.env'
-        // safe: true, // load '.env.example' to verify the '.env' variables are all set. Can also be a string to a different file.
-        // allowEmptyValues: true, // allow empty variables (e.g. `FOO=`) (treat it as empty string, rather than missing)
-        // systemvars: true, // load all the predefined 'process.env' variables which will trump anything local per dotenv specs.
-        // silent: true, // hide any errors
-        // defaults: false // load '.env.defaults' as the default values if empty.
-      })
-      //https://www.npmjs.com/package/dotenv-webpack
     ],
     resolve: {
         modules: [
           path.resolve('./src'),
           path.resolve('./node_modules')
         ]
-      },
-      optimization: {
-        minimize: true,
-        minimizer: [
-          new TerserPlugin({
-            terserOptions: {
-              keep_fnames: true,
-            },
-          }),
-        ],
-        splitChunks: {
-          chunks: 'all',
-        },
-      },
-    devtool: "source-map"
+    },
 };

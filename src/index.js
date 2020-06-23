@@ -1,5 +1,6 @@
 import "babel-polyfill";
-import 'ui/css/groups/bootstrap.css';
+// import 'ui/css/groups/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import 'bootstrap/js/dist/carousel';
 import 'bootstrap/js/dist/modal';
@@ -29,7 +30,7 @@ import { firestore } from 'api/firebase/firestore';
 import { renderLoggedIn } from 'ui/fixtures/login';
 import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { lessonModalHandler } from 'ui/screens/cards/test-card-modal-handler';
-import { handleWindowResize, loadModalHTML } from 'media-helper';
+import { handleWindowResize, loadModalHTML, configureFontAwesome } from 'media-helper';
 import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
 import * as Sentry from '@sentry/browser';
 
@@ -122,6 +123,8 @@ const onLoadHandler = () => {
     window.snapLog = snapLog;
     window.logError = logError;
     window.logAPIError = logAPIError;
+
+    // snapLog('hello dolly');
 };
 
 onLoadHandler();
