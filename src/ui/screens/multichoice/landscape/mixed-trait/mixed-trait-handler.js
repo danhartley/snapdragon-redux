@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ take, contains } from 'ramda';
 
 import { store } from 'redux/store';
 import { scoreHandler, bindScore } from 'ui/helpers//score-handler';
@@ -58,9 +58,9 @@ const fetchTraits = async (trait, requiredTraitValues, required) => {
             return !traitsHandler.doArraysHaveSameValues(multiple, requiredTraitValues);
         });
         
-        let requiredTraits = traits.filter(t => R.contains(t.term, requiredTraitValues));
+        let requiredTraits = traits.filter(t => contains(t.term, requiredTraitValues));
         
-        multiples = utils.shuffleArray([ ...R.take(5, multiples), requiredTraitValues ]);
+        multiples = utils.shuffleArray([ ...take(5, multiples), requiredTraitValues ]);
 
         traits = multiples.map(multiple => {
             return multiple.map(term => traits.find(trait => trait.term === term));

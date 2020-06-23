@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ contains } from 'ramda';
 
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -70,7 +70,7 @@ export const speciesSearch = createGuide => {
                     if(config.guide.species) {
 
                         collection.items = collection.items.filter(item => {
-                            return R.contains(item.name, config.guide.species.map(sp => sp.name));
+                            return contains(item.name, config.guide.species.map(sp => sp.name));
                         });
     
                         await lessonStateHandler.changeRequest({

@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ contains } from 'ramda';
 
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
@@ -69,7 +69,7 @@ export const renderNavigation = collection => {
 
                 switch(enums.navigation.enumValueOf(clickedIcon.id)) {
                     case enums.navigation.LANDSCAPE_HOME:
-                        const isIconActive = R.contains('active-icon', clickedIcon.classList);
+                        const isIconActive = contains('active-icon', clickedIcon.classList);
                         if(!isIconActive) {
                             clickedIcon.classList.add('active-icon');
                         }
@@ -93,7 +93,7 @@ export const renderNavigation = collection => {
                         toggleIconOnOff(clickedIcon);
                         const { glossary } = store.getState();
                         const definitions = !!collection.glossary
-                            ? glossary.filter(definition => R.contains(definition.taxon, collection.glossary))
+                            ? glossary.filter(definition => contains(definition.taxon, collection.glossary))
                             : glossary;
                         quickFireHandlers.definitions(definitions);
                         break;

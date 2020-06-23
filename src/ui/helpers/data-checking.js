@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { take } from 'ramda';
 
 import { utils } from 'utils/utils';
 import { epithets } from 'api/botanical-latin';
@@ -149,7 +149,7 @@ const getVernacularNames = (item, config) => {
 };
 
 const answersFromList = (list, toInclude, number) => {
-    const answers = R.take(number - 1, list.filter(item => item !== toInclude));
+    const answers = take(number - 1, list.filter(item => item !== toInclude));
     answers.push(toInclude);
     return utils.shuffleArray(answers);
 };

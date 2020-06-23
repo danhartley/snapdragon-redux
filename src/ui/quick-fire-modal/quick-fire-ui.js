@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ contains } from 'ramda';
 
 import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';
@@ -12,7 +12,7 @@ const renderResponse = (isCorrect, term) => {
 
 const updateBranchCounts = (quickFire, branchOptions) => {
 
-    const items = quickFire.terms ? quickFire.items.filter(item => R.contains(item.id, quickFire.terms)) : quickFire.items;
+    const items = quickFire.terms ? quickFire.items.filter(item => contains(item.id, quickFire.terms)) : quickFire.items;
 
     branchOptions.forEach(branchBadge => {
     branchBadge.innerHTML = items.filter(item => item.branch === branchBadge.dataset.name).length;
@@ -21,7 +21,7 @@ const updateBranchCounts = (quickFire, branchOptions) => {
 
 const updateTaxonCounters = (quickFire, taxonCounters, includeTechnicalTerms) => {
 
-    const items = quickFire.terms ? quickFire.items.filter(item => R.contains(item.id, quickFire.terms)) : quickFire.items;
+    const items = quickFire.terms ? quickFire.items.filter(item => contains(item.id, quickFire.terms)) : quickFire.items;
 
     taxonCounters.forEach(taxonBadge => {
         taxonBadge.innerHTML = includeTechnicalTerms
@@ -90,7 +90,7 @@ const scoreTextEntry = (quickFire, quickFireInput, quickFireMessage, timer, cont
             return acceptable;
         });
         
-        const isCorrect = R.contains(quickFireInput.value.trim().toLowerCase(), acceptableAnswers);
+        const isCorrect = contains(quickFireInput.value.trim().toLowerCase(), acceptableAnswers);
         
         quickFire.termScore.total++;
         

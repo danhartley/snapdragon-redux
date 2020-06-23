@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ take } from 'ramda';
 
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
@@ -62,7 +62,7 @@ export const renderCompleteText = (collection) => {
                 return item.name;
         }
     });
-    const pool = R.take(numerOfItems, utils.shuffleArray(itemTaxons).filter(utils.onlyUnique).filter(itemTaxon => itemTaxon !== item.taxonomy[givenTaxon])).filter(item => item !== undefined);
+    const pool = take(numerOfItems, utils.shuffleArray(itemTaxons).filter(utils.onlyUnique).filter(itemTaxon => itemTaxon !== item.taxonomy[givenTaxon])).filter(item => item !== undefined);
     pool.push(item.taxonomy[givenTaxon]);
 
     let answers = utils.shuffleArray(pool);

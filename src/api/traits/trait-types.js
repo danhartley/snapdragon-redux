@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { isEmpty } from 'ramda';
 
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
@@ -12,7 +12,7 @@ export const traitValuesHandler = async config => {
 
     language = config.language;
 
-    if(!R.isEmpty(store.getState().enums)) return;
+    if(!isEmpty(store.getState().enums)) return;
 
     const enums = await firestore.getTraitValues();
 

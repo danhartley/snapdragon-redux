@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ take } from 'ramda';
 
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
@@ -95,7 +95,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
             wiki: taxon.wiki ? taxon.wiki.replace('en', config.language) : '',
             occurrences: occurrences,
             toxic: taxon.toxic ? `Toxic species: ${taxon.toxic.members.join(', ')}` : '',
-            notableMembers: taxon.members ? R.take(2, taxon.members).join(', ') : ''
+            notableMembers: taxon.members ? take(2, taxon.members).join(', ') : ''
         }
 
         renderTemplate(context, template.content, parent, clone);

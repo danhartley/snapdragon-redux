@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ contains, clone } from 'ramda';
 
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
@@ -48,7 +48,7 @@ const filters = async linkFromLesson => {
     };
 
     let state = store.getState().quickFire || quickFireAPI.getQuickFire(items, filter, type);
-    let quickFire = R.clone(state);
+    let quickFire = clone(state);
         quickFire = quickFire.isComplete ? resetQuickFire() : quickFire;
         quickFire.linkFromLesson = linkFromLesson || false;
         quickFire.onClickFiltersLinkListeners = [];
@@ -97,7 +97,7 @@ const filters = async linkFromLesson => {
 
               const chkBox = taxon.querySelector('input');
 
-              if(!R.contains(taxon.dataset.name, quickFire.filter.iconicTaxa)) {
+              if(!contains(taxon.dataset.name, quickFire.filter.iconicTaxa)) {
                   chkBox.click();
               }
 
@@ -159,7 +159,7 @@ const filters = async linkFromLesson => {
     if(quickFire.filter.branches) {
 
         branchOptions.forEach(branch => {
-            if(!R.contains(branch.dataset.key, quickFire.filter.branches)) {
+            if(!contains(branch.dataset.key, quickFire.filter.branches)) {
                 branch.click();
             }
         });    
@@ -172,7 +172,7 @@ const filters = async linkFromLesson => {
                     checkedBranches = checkedBranches.map(b => b.dataset.key);
                 quickFire.filter.branches = checkedBranches;
                 quickFire.items = await quickFireAPI.getItems(quickFire.filter.iconicTaxa);
-                quickFire.items = quickFire.items.filter(item => R.contains(item.branch, checkedBranches));
+                quickFire.items = quickFire.items.filter(item => contains(item.branch, checkedBranches));
                 quickFireUI.updateTotalCounts(quickFire, input, counters, branchCounters, taxonCounters, getIncludeTechnicalTerms());
             });
         });
@@ -199,7 +199,7 @@ const questions = state => {
     let quickFire;
 
     if(!state) return;
-    else quickFire = R.clone(state);
+    else quickFire = clone(state);
 
     quickFire.onClickGlossaryLinkListeners = [];
 

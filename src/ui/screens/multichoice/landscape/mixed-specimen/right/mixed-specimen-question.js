@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ clone } from 'ramda'
 
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
@@ -21,7 +21,7 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
     
     return;
 
-    const item = R.clone(collection.nextItem);
+    const item = clone(collection.nextItem);
 
     let question = config.isPortraitMode ? 'Slide to ID this species' : 'Identify this species';
     let help = '(Click on the matching photo.)';

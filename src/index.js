@@ -30,7 +30,7 @@ import { firestore } from 'api/firebase/firestore';
 import { renderLoggedIn } from 'ui/fixtures/login';
 import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { lessonModalHandler } from 'ui/screens/cards/test-card-modal-handler';
-import { handleWindowResize, loadModalHTML, configureFontAwesome } from 'media-helper';
+import { handleWindowResize, loadModalHTML } from 'media-helper';
 import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
 import * as Sentry from '@sentry/browser';
 
@@ -54,15 +54,6 @@ const onLoadHandler = () => {
       let lessonPlan;
 
       try {
-
-          const auth = firebase.auth();
-
-          const email = 'danhartleybcn@gmail.com';
-          const password = 'sarcarsnap1929';
-
-          // auth.signInWithEmailAndPassword(email, password).then((cred) => {
-          //     console.log('login credentials: ', cred);
-          // });
 
           const { config, counter: currentCounter, lessonPlan: statePlans, collections } = store.getState();
 
@@ -124,7 +115,7 @@ const onLoadHandler = () => {
     window.logError = logError;
     window.logAPIError = logAPIError;
 
-    snapLog('prod rebuild!!!', {});
+    snapLog('port', {});
 };
 
 onLoadHandler();

@@ -1,4 +1,3 @@
-import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 
@@ -7,8 +6,8 @@ import logoutTemplate from 'ui/fixtures/logout-template.html';
 
 export const renderLogin = user => {
 
-    const auth = firebase.auth();
-    
+  const init = () => {
+
     document.querySelector('#basicModal .js-modal-text').innerHTML = '';
 
     const template = document.createElement('template');
@@ -22,6 +21,8 @@ export const renderLogin = user => {
         document.querySelector('#basicModal .js-modal-text-title header').innerHTML = 'Snapdragon logout';
 
         const footer = document.querySelector('.js-modal-footer');
+
+        const auth = firebase.auth();
 
         setTimeout(() => {
             
@@ -55,6 +56,8 @@ export const renderLogin = user => {
         document.querySelector('#basicModal .js-modal-text-title header').innerHTML = 'Snapdragon login';
 
         const footer = document.querySelector('.js-modal-footer');
+
+        const auth = firebase.auth();
 
         setTimeout(() => {
 
@@ -92,6 +95,9 @@ export const renderLogin = user => {
         }, 500);
 
     }
+  };
+
+  init();
 };
 
 export const renderLoggedIn = user => {

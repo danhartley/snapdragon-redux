@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { contains, take } from 'ramda';
 
 import { utils } from 'utils/utils';
 import { firestore } from 'api/firebase/firestore';
@@ -80,7 +80,7 @@ export const getInatSpecies = async config => {
           try {
             let recordsFromThisRequest = await getInatObservations(config, page);
             await records.push.apply(records, recordsFromThisRequest);
-            let matches = recordsFromThisRequest.filter(record => R.contains(record.taxon.name, snapdragonSpeciesNames));
+            let matches = recordsFromThisRequest.filter(record => contains(record.taxon.name, snapdragonSpeciesNames));
             await snapdragonSpecies.push.apply(snapdragonSpecies, matches);
             page = page + 1;
             let noMoreRecords = recordsFromThisRequest.length < RECORDS_PER_PAGE;
@@ -166,8 +166,8 @@ export const getInatSpecies = async config => {
 
     try {
       observations = await getAllInatObservations(config, snapdragonSpeciesNames);
-      observations = observations.filter(observation => R.contains(observation.taxon.name, snapdragonSpeciesNames));
-      observations = R.take(config.guide.noOfRecords, utils.sortBy(observations.filter(item => item), 'observationCount', 'desc'));
+      observations = observations.filter(observation => contains(observation.taxon.name, snapdragonSpeciesNames));
+      observations = take(config.guide.noOfRecords, utils.sortBy(observations.filter(item => item), 'observationCount', 'desc'));
     } catch(e) {
       logError('getAllInatObservations', e);
     }

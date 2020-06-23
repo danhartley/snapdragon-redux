@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ clone } from 'ramda';
 
 import { enums } from 'ui/helpers/enum-helper';
 import { persistor } from 'redux/store';
@@ -70,7 +70,7 @@ const getUserLessonState = (lessons, collectionToLoad, progressState, counter, s
     if(restoredLesson) {
       lesson = restoredLesson;
       if(lesson.lesson.isNextRound) {
-        lesson.score = R.clone(progressState.score);
+        lesson.score = clone(progressState.score);
       }
     } else {
       lesson = { 
@@ -79,7 +79,7 @@ const getUserLessonState = (lessons, collectionToLoad, progressState, counter, s
         lesson: savedLesson || { currentRound: 1, rounds: 0, isNextRound: true },
         layout: null,
         history: null,
-        score: R.clone(progressState.score)
+        score: clone(progressState.score)
       };
     }
 

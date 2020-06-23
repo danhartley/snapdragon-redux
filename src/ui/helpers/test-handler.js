@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ isEmpty, compose, symmetricDifference, contains, clone } from 'ramda';
 
 export const cleanText = text => {
     return text.term ? text.term.toLowerCase() : text.toLowerCase().replace(/ /g,'');
@@ -7,7 +7,7 @@ export const cleanText = text => {
 export const isAnswerEqualToQuestion = (question, answer) => {
 
 
-    const eqValues = R.compose(R.isEmpty, R.symmetricDifference);
+    const eqValues = compose(isEmpty, symmetricDifference);
 
     return eqValues(cleanText(question), cleanText(answer));
 };
@@ -32,7 +32,7 @@ const isAnswerCorrect = score => {
         case 'vernacular':
             score.names = score.names.map(name => name.toLowerCase());
             if(score.names && score.names.length > 0) {
-                const alternativeIsCorrect = R.contains(score.answer, score.names);                
+                const alternativeIsCorrect = contains(score.answer, score.names);                
                 if(!isCorrect && alternativeIsCorrect) score.alternativeAccepted = true;
                 isCorrect = isCorrect || alternativeIsCorrect;
             }
@@ -42,13 +42,13 @@ const isAnswerCorrect = score => {
 };
 
 const isTraitAnswerCorrect = score => {
-    const doArraysHaveSameValues = R.compose(R.isEmpty, R.symmetricDifference);
+    const doArraysHaveSameValues = compose(isEmpty, symmetricDifference);
     return doArraysHaveSameValues(score.answer, score.question);
 };
 
 export const markTest = test => {
 
-    const score = R.clone(test);
+    const score = clone(test);
 
     score.success = score.trait ? isTraitAnswerCorrect(score) : isAnswerCorrect(score);
     score.colour  = score.success ? 'snap-success' : 'snap-alert';

@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ contains, flatten } from 'ramda';
 import { utils } from 'utils/utils';
 
 let root = '';
@@ -29,7 +29,7 @@ async function fetchWiki(name, missingMessage) {
     try { 
         const response = await fetch(url, config);
         const data = await response.json();        
-        return R.flatten(data);        
+        return flatten(data);        
     } catch (e) {
         const errorPromise = new Promise((resolve, reject) => {
             resolve(missingMessage)
@@ -57,7 +57,7 @@ const formatWiki = (entry) => {
 
     const exceptions = ['Tarragon', 'Apple'];
 
-    if(R.contains(entry[0], exceptions)) {
+    if(contains(entry[0], exceptions)) {
         return `<li class="species-card-wiki-entry">'${cleanEntry(entry[2])}'</li>`;
     }
 
@@ -85,7 +85,7 @@ async function renderWiki(wikiNode, item, language) {
                             : binomial);
     root = `https://${language}.m.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&limit=1&search=`;
     const exceptions = [ 'Artemisia dracunculus', 'Malus domestica', 'Zingiber officinale'];
-    if(R.contains(item.name, exceptions)) {
+    if(contains(item.name, exceptions)) {
         root = `https://${language}.m.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&limit=2&redirects=resolve&search=`;
     }    
     wikiNode.innerHTML = "";

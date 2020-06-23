@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ contains } from 'ramda';
 
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
@@ -7,7 +7,7 @@ const getItems = (taxa, includeTechnicalTerms = false) => {
     
     const glossary = store.getState().glossary;
 
-    const items = glossary.filter(definition => R.contains(definition.taxon, taxa));
+    const items = glossary.filter(definition => contains(definition.taxon, taxa));
 
     let selectedItems = [];
 
@@ -15,7 +15,7 @@ const getItems = (taxa, includeTechnicalTerms = false) => {
         ? selectedItems = items
         : selectedItems = items.filter(item => item.technical !== 'true');
 
-    return selectedItems.filter(item => R.contains(item.taxon, taxa));
+    return selectedItems.filter(item => contains(item.taxon, taxa));
 };
 
 const getBranches = items => {
@@ -33,7 +33,7 @@ const getBranches = items => {
 const getQuickFire = (glossary, type, collection) => {
 
     const items = collection.terms
-            ? glossary.filter(definition => R.contains(definition.id, collection.terms))
+            ? glossary.filter(definition => contains(definition.id, collection.terms))
             : glossary;
 
     const taxa = [ ...new Set(items.map(definition => definition.taxon))];

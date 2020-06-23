@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ contains } from 'ramda';
 
 const show = (elem) => {
     if(!elem) return;
@@ -18,7 +18,7 @@ const toggle = (elem) => {
 const hasClass = (elem, className) => {
     if(!elem) return false;
     const classArray = [ ...elem.classList ];
-    return R.contains(className, classArray);
+    return contains(className, classArray);
 };
 
 const removeClass = (elem, className) => {

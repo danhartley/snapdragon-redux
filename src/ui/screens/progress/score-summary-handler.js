@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ contains } from 'ramda';
 
 import { utils } from 'utils/utils';
 
@@ -6,7 +6,7 @@ export const getLessonScores = (history, lesson, stateScore, savedScore) => {
 
       if(!history) return [ stateScore ];
 
-      const historyIsUpToDate = R.contains(stateScore.binomial, history.scores.map(s => s.binomial));
+      const historyIsUpToDate = contains(stateScore.binomial, history.scores.map(s => s.binomial));
 
       let scores = [];
 
@@ -52,7 +52,7 @@ function getAnswer(a, r) {
       const isTrue = 
                   value !== "" && 
                           (utils.parseToLowerCase(value) === utils.parseToLowerCase(question))
-                        // || R.contains(value, r.answer))
+                        // || contains(value, r.answer))
 
       const isWrongAnswer = !isTrue && utils.parseToLowerCase(value) === utils.parseToLowerCase(r.answer);
       const name = isObj ? a.name || '' : '';

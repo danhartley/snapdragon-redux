@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ contains } from 'ramda';
 
 import { firestore } from 'api/firebase/firestore';
 
@@ -11,14 +11,14 @@ const getLayouts = async (collection, roundItemNames) => {
 
     if(collection.species) {
     
-        const species = collection.species.filter(sp => R.contains(sp.name, roundItemNames));
+        const species = collection.species.filter(sp => contains(sp.name, roundItemNames));
         const speciesQuestions = species.filter(sp => sp.questions);
 
         if(speciesQuestions.length > 0) {
             return Promise.all(speciesQuestions.map(sq => sq.questions));
         }
 
-        const itemsQuestions = collection.items.filter(i => R.contains(i.name, roundItemNames)).map(i => { return { name: i.name, questionIds: i.questionIds }});
+        const itemsQuestions = collection.items.filter(i => contains(i.name, roundItemNames)).map(i => { return { name: i.name, questionIds: i.questionIds }});
         
         if(itemsQuestions) {
             const promises = itemsQuestions.map(async (itemQuestions) => {

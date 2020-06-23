@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ contains } from 'ramda';
 
 import autocomplete from 'autocompleter';
 
@@ -19,7 +19,7 @@ export const renderTraitCardTest = item => {
         const traits = item.traits;
         
         for (let [key, obj] of Object.entries(traits)) {
-            if(R.contains(key, traitstoExclude)) {
+            if(contains(key, traitstoExclude)) {
                 delete traits[key];
             }
         }
@@ -110,7 +110,7 @@ export const renderTraitCardTest = item => {
             }
 
             for (let [key, obj] of Object.entries(traitKeyValues)) {
-                if(!R.contains(key, ['name', 'help', 'type'])) {
+                if(!contains(key, ['name', 'help', 'type'])) {
                     answerSet.push({label: obj.toLowerCase(), value: obj.toLowerCase()});
                 }                
             }
