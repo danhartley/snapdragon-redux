@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest-webpack",
-    "start:dev": "webpack-dev-server --config ./webpack.dev.js --open-page 'dist/index.html'",
+    "start:dev": "webpack-dev-server --config ./webpack.dev.js --open-page 'dist/index.html'  & jest --watchAll",
     "start:prod": "webpack-dev-server --config ./webpack.prod.js --open-page 'dist/index.html'",
     "dev": "webpack --config ./webpack.dev.js",
     "prod": "webpack --config ./webpack.prod.js",

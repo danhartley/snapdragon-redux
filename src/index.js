@@ -124,7 +124,7 @@ const onLoadHandler = () => {
     window.logError = logError;
     window.logAPIError = logAPIError;
 
-    // snapLog('hello dolly');
+    snapLog('prod rebuild!!!', {});
 };
 
 onLoadHandler();

@@ -25,7 +25,7 @@ module.exports = merge(common, {
   },
   devtool: "source-map",
   plugins: [
-    // new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(),
     new Dotenv({
       // path: './some.other.env', // load this now instead of the ones in '.env'
       // safe: true, // load '.env.example' to verify the '.env' variables are all set. Can also be a string to a different file.

@@ -7,7 +7,8 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
     devServer: {
       host: '0.0.0.0',
-      disableHostCheck: true
+      disableHostCheck: true,
+      writeToDisk: true
     },
     entry: {
       app: './src/index.js',
