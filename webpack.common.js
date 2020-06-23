@@ -1,6 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
 var csso = require('csso');
+
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
@@ -111,6 +113,7 @@ module.exports = {
           { from: './src/static', to: 'static'}
         ],
       }),
+      new BundleAnalyzerPlugin()
     ],
     resolve: {
         modules: [
