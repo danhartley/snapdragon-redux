@@ -1,5 +1,5 @@
 import "babel-polyfill";
-// import 'ui/css/groups/bootstrap.css';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import 'bootstrap/js/dist/carousel';

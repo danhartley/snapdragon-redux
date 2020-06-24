@@ -8951,9 +8951,9 @@ module.exports = /*#__PURE__*/function (_BaseClient) {
 
 /***/ }),
 
-/***/ "./node_modules/webpack-dev-server/client/index.js?http://0.0.0.0:8083":
+/***/ "./node_modules/webpack-dev-server/client/index.js?http://0.0.0.0:8080":
 /*!*******************************************************!*\
-  !*** (webpack)-dev-server/client?http://0.0.0.0:8083 ***!
+  !*** (webpack)-dev-server/client?http://0.0.0.0:8080 ***!
   \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -9135,7 +9135,7 @@ var onSocketMessage = {
   }
 };
 socket(socketUrl, onSocketMessage);
-/* WEBPACK VAR INJECTION */}.call(this, "?http://0.0.0.0:8083"))
+/* WEBPACK VAR INJECTION */}.call(this, "?http://0.0.0.0:8080"))
 
 /***/ }),
 
@@ -10107,12 +10107,12 @@ var utils = {
 
 /***/ 1:
 /*!**********************************************************************************!*\
-  !*** multi (webpack)-dev-server/client?http://0.0.0.0:8083 ./src/utils/utils.js ***!
+  !*** multi (webpack)-dev-server/client?http://0.0.0.0:8080 ./src/utils/utils.js ***!
   \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/danminimac/code/snapdragon-redux/node_modules/webpack-dev-server/client/index.js?http://0.0.0.0:8083 */"./node_modules/webpack-dev-server/client/index.js?http://0.0.0.0:8083");
+__webpack_require__(/*! /Users/danminimac/code/snapdragon-redux/node_modules/webpack-dev-server/client/index.js?http://0.0.0.0:8080 */"./node_modules/webpack-dev-server/client/index.js?http://0.0.0.0:8080");
 module.exports = __webpack_require__(/*! ./src/utils/utils.js */"./src/utils/utils.js");
 
 

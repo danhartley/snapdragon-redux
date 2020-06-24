@@ -80,7 +80,7 @@
     display: none;
   }
 
-  .arrow-wrapper i {
+  .arrow-wrapper svg {
     pointer-events: initial;
     cursor: pointer;
   }
@@ -366,7 +366,7 @@
     fill: var(--snap-collection);
   }
 
-  .iconic-taxa-categories i {
+  .iconic-taxa-categories svg {
     font-size: 1rem;
     color: var(--snap-collection);
   }
@@ -402,7 +402,7 @@
     font-size: 1rem;
   }
 
-  .selected-text svg, .selected-text i, .iconic-taxa-selected i {
+  .selected-text svg, .selected-text i, .iconic-taxa-selected svg {
     color: var(--snap-collection-active);
   }
 
@@ -691,7 +691,7 @@
 
 @media (min-height: 667px) {
 
-  .iconic-taxa-categories svg, .iconic-taxa-categories i {
+  .iconic-taxa-categories svg, .iconic-taxa-categories svg {
     font-size: 1.6rem;
     height: 1.6rem;
   }

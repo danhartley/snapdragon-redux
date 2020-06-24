@@ -60,12 +60,12 @@
     }
 }
 
-@media (min-height: 667px) {
+/* @media (min-height: 667px) {
     .quick-fire .quick-fire-branches .btn-secondary, .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
         font-size: .9rem;
         padding: .5rem;
     }
-}
+} */
 
 @media (min-width: 576px) {
 }
@@ -88,6 +88,11 @@
     .table-row img {
         width: 98px;
         height: 69px;
+    }
+
+    .list-group-item {
+      font-size: 1rem;
+      padding: .5rem 1rem;
     }
 }
 
@@ -166,11 +171,6 @@
   h3 {
     font-size: .8rem;
   }
-
-    .quick-fire .quick-fire-branches .btn-secondary, .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
-        font-size: .9rem;
-        padding: .5rem;
-    }
 
     .quick-fire-branches span {
         font-size: .6rem;
@@ -266,10 +266,6 @@
     .iconic-taxa-categories-selected svg {
         height: 1rem;
         font-size: 1rem;
-    }
-
-    .iconic-taxa-categories i {
-        font-size: 1.5rem;
     }
 
     .inat.snap-switch .inat-entry {

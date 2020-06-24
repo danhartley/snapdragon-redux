@@ -8,40 +8,39 @@
 
     <div class="landscape half-standard-block"></div>
     <div class="portrait padding"></div>
-    
-    <ul class="quick-fire-taxa margin-left js-quick-fire-taxa" data-repeat-taxon="{{ quickFire.filter.taxa }}">
-        <li class="custom-control custom-checkbox" data-name="{{ taxon.name }}">
-            <input type="checkbox" class="custom-control-input" id="{{ taxon.name }}" checked>
-            <label class="custom-control-label" for="{{ taxon.name }}">{{ taxon.name }}</label>
-            <span data-taxon="{{ taxon.name }}" class="">{{ taxon.count }}</span>
-        </li>
+
+    <ul class="margin-left quick-fire-taxa list-group js-quick-fire-taxa" data-repeat-taxon="{{ quickFire.filter.taxa }}">
+      <li class="list-group-item fit-width margin-right">
+        <input id="{{ taxon.name }}" class="form-check-input mr-1" type="checkbox" value="" aria-label="...">
+        {{ taxon.name }}<span data-taxon="{{ taxon.name }}" class="">{{ taxon.count }}</span>
+      </li>
     </ul>
 
     <div class="landscape half-standard-block"></div>
     <div class="portrait padding"></div>
 
-    <div class="btn-group btn-group-toggle quick-fire-branches js-quick-fire-branches" data-toggle="buttons" data-repeat-branch="{{ branches }}">
-        <label data-key="{{ branch.name }}" class="btn btn-secondary margin-left active" data-value="{{ branch.name }}">
-          <input type="checkbox" name="branches" id="{{ branch.name }}" autocomplete="off"> {{ branch.name }}
-          <span data-name="{{ branch.name }}">{{ branch.count }}</span>
-        </label>        
-    </div>
+    <ul class="margin-left list-group quick-fire-branches js-quick-fire-branches" data-toggle="buttons" data-repeat-branch="{{ branches }}">
+      <li class="list-group-item fit-width margin-right" data-key="{{ branch.name }}" data-value="{{ branch.name }}">
+        <input class="form-check-input mr-1" type="checkbox" value="" aria-label="{{ branch.name }}" checked>
+        {{ branch.name }}<span data-name="{{ branch.name }}">{{ branch.count }}</span>
+      </li>
+    </ul>
 
     <div class="landscape half-standard-block"></div>
     <div class="portrait half-padding"></div>
 
-    <div class="btn-group btn-group-toggle margin-left quick-fire-options margin-bottom js-quick-fire-filter-options" data-toggle="buttons" data-repeat-option="{{ options }}">
-        <label data-key="{{ option.key }}" class="btn btn-secondary margin-right" data-value="{{ option.value }}">
-          <input type="radio" name="options" id="{{ option.key }}" autocomplete="off"> {{ option.value }}
-        </label>
+    <div role="group" class="btn-group margin-left quick-fire-options margin-bottom js-quick-fire-filter-options" data-toggle="buttons" data-repeat-option="{{ options }}" arai-lable="Vocab question type: multiple choice or text entry">
+        <button id="{{ option.key }}" type="button" data-key="{{ option.key }}" class="btn btn-secondary margin-right" data-value="{{ option.value }}">
+          {{ option.value }}
+        </button>
     </div>
 
     <div class="landscape half-standard-block"></div>
 
     <div class="low-relief-block standard-block centred-block horizontal-evenly-spaced-block">
-        <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input js-quick-fire-technical" id="technical">
-            <label class="custom-control-label" for="technical">Include technical (advanced)</label>
+        <div class="centred-block fit-width">
+            <input type="checkbox" class="js-quick-fire-technical half-margin-right" id="technical">
+            <label for="technical">Include technical</label>
         </div>
         <div>
             <div class="btn snap-action-btn js-quick-fire-reset">Reset filters</div>

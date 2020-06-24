@@ -68,7 +68,7 @@ const filters = async linkFromLesson => {
     renderTemplate({ quickFire, options, branches }, template.content, parent);
 
     const counters = document.querySelectorAll('.js-quick-fire-count');
-    const branchCounters = document.querySelectorAll('.js-quick-fire-branches label > span');
+    const branchCounters = document.querySelectorAll('.js-quick-fire-branches li input');
     const taxonCounters = document.querySelectorAll('.js-quick-fire-taxa li > span');
 
     const input = document.querySelector('.js-input-quick-fire');
@@ -122,7 +122,7 @@ const filters = async linkFromLesson => {
             questions(quickFire);
           }, { once: true });
 
-    const quickFireOptions = document.querySelectorAll('.js-quick-fire-filter-options .btn');
+    const quickFireOptions = document.querySelectorAll('.js-quick-fire-filter-options button');
     
     quickFire.filter.option.key === "0"
       ? quickFireOptions[0].click()
@@ -154,7 +154,7 @@ const filters = async linkFromLesson => {
       }
     });        
 
-    const branchOptions = document.querySelectorAll('.js-quick-fire-branches label');
+    const branchOptions = document.querySelectorAll('.js-quick-fire-branches li');
 
     if(quickFire.filter.branches) {
 

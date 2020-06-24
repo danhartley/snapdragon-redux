@@ -1,9 +1,10 @@
 {
-    "short_name": "Snapdragon",
-    "name": "Snapdragon: species recognition and recall",
-    "start_url": ".",
-    "display": "standalone",
+    "short_name": "Learn The Planet",
+    "name": "Learn The Planet: species recognition and recall",
+    "start_url": "/",
+    "display": "minimal-ui",
     "orientation": "portrait",
+    "theme_color": "#b3c5ae",
     "icons": [{
       "src": "./static/favicons/72x72.png",
       "sizes": "72x72",
