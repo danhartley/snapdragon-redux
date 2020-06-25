@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ clone } from 'ramda';
 
 import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';
@@ -108,7 +108,7 @@ const handleImageSelectionFromList = (image, item, collection, config, displayNa
 
     const parent = document.querySelector('#imageModal .js-modal-image');
     const selectedItem = item || collection.items.find(item => item.name === image.dataset.itemName);
-    let images = R.clone(selectedItem.images.map((image, index) => {
+    let images = clone(selectedItem.images.map((image, index) => {
         selectedItem.vernacularName = itemProperties.getVernacularName(selectedItem, config);
         image = scaleImage(image, imageUseCases.CAROUSEL, config);
         return { ...image, itemName: selectedItem.name, itemCommon: selectedItem.vernacularName };

@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ take, contains, flatten } from 'ramda';
 
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
@@ -94,8 +94,8 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
                         answer = { term: item.name };
                         answers = await getPoolItems(collection, 6);
-                        answers = R.take(8, answers).filter(s => s.name.toLowerCase() !== item.name.toLowerCase()).map(s => s.name);
-                        answers = R.take(5, answers);
+                        answers = take(8, answers).filter(s => s.name.toLowerCase() !== item.name.toLowerCase()).map(s => s.name);
+                        answers = take(5, answers);
                         answers.push(item.name);
                         answers = answers.map(a => { return { term: a } });
                         answers = utils.shuffleArray(answers);
@@ -122,7 +122,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
                         answer = { term: item.vernacularName };   
                         answers = await getPoolItems(collection, 6);
                         answers = answers.map(a => itemProperties.getVernacularName(a, config, false, 'vernacularName', defaultLanguage));
-                        answers = R.take(5, answers.filter(a => a !== item.vernacularName));
+                        answers = take(5, answers.filter(a => a !== item.vernacularName));
                         answers = utils.shuffleArray([item.vernacularName, ...answers]);
                         answers = answers.map(a => { return { term: a } });
                 
@@ -148,7 +148,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
                         answer = { term: item.quickId };   
                         answers = await getPoolItems(collection, 6);
                         answers = answers.map(a => a.quickId);
-                        answers = R.take(5, answers.filter(a => a !== item.quickId));
+                        answers = take(5, answers.filter(a => a !== item.quickId));
                         answers = utils.shuffleArray([item.quickId, ...answers]);
                         answers = answers.map(a => { return { term: a } });
                 
@@ -173,7 +173,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
                 const families = await firestore.getFamiliesByIconicTaxon(taxon.rank, taxon.value, item.lichen, config);
                 const answer = { term: item.family[type], name: item.family.name } || { type: { term: `Missing ${type}`}, name: item.family.name };
-                const alternativeFamilies = R.take(number-1, R.take(number, utils.shuffleArray(families))).filter(f => f.name.toLowerCase() !== item.taxonomy.family.toLowerCase());
+                const alternativeFamilies = take(number-1, take(number, utils.shuffleArray(families))).filter(f => f.name.toLowerCase() !== item.taxonomy.family.toLowerCase());
                 let alternatives = alternativeFamilies.filter(f => f[type] && f[type] !== undefined && f[type] !== '').map(f => { return { type: f[type], name: f.name, names: f.names } });
                     alternatives = alternatives.map(a => { return { term: a.type, name: a.name, names: a.names } });
                 let answers = utils.shuffleArray([answer, ...alternatives]);                    
@@ -188,7 +188,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
                 const epithet = layout.epithet.latin.join(', ');
                 const number = config.isPortraitMode ? 6 : 6;
                 
-                let alternatives = R.take(number-1, utils.shuffleArray(epithets)).filter(e => !R.contains(e.latin, epithet));
+                let alternatives = take(number-1, utils.shuffleArray(epithets)).filter(e => !contains(e.latin, epithet));
                     alternatives = alternatives.map(e => e.en.join(', '));
                     alternatives = alternatives.map(a => { return { term: a } });
                 let answer = epithets.find(e => e.latin.join(', ').toUpperCase() === epithet.toUpperCase());
@@ -214,7 +214,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
                 let families = await firestore.getFamiliesByIconicTaxon(taxon.rank, taxon.value, item.lichen, config);
                 let family = item.taxonomy.family;
-                let otherFamilies = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(family => family.name.toLowerCase() !== item.taxonomy.family.toLowerCase()));
+                let otherFamilies = take(indices[0], take(indices[1], utils.shuffleArray(families)).filter(family => family.name.toLowerCase() !== item.taxonomy.family.toLowerCase()));
                 let otherFamiliesLatinNames = otherFamilies.map(family => family.name);
                 let otherFamiliesCommonNames = otherFamilies.map(of => of.names[0]);
                 
@@ -278,7 +278,7 @@ export const renderMultiStrips = (collection, bonus, args) => {
 
                 const { traits, requiredTraits, item, question, help } = args;
 
-                const answers = R.flatten(traits);
+                const answers = flatten(traits);
                 const answer = requiredTraits[0];
 
                 render(answer, answers, { binomial: item.name, question, help, italicise: true});

@@ -80,7 +80,7 @@
     display: none;
   }
 
-  .arrow-wrapper i {
+  .arrow-wrapper svg {
     pointer-events: initial;
     cursor: pointer;
   }
@@ -156,12 +156,10 @@
   }
 
   #inat-place, #input-species, #inat-identity {
-    /* width: calc(var(--vwGrid) - 1rem) !important; */
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    width: 100%; 
-    /* margin: 1rem 0 .5rem 0; */
+    width: 100%;
   }
 
   #inat-place::placeholder {
@@ -200,7 +198,7 @@
   }
 
   .set-range-input:focus {
-    outline: none;
+    outline: 1px solid var(--snap-border-medium);
   }
   
   .modal-guide-body .range-slider.disabled .set-range-input {
@@ -368,7 +366,7 @@
     fill: var(--snap-collection);
   }
 
-  .iconic-taxa-categories i {
+  .iconic-taxa-categories svg {
     font-size: 1rem;
     color: var(--snap-collection);
   }
@@ -401,9 +399,10 @@
   .iconic-taxa-categories svg, .iconic-taxa-categories-selected svg {
     width: 1rem;
     height: 1rem;
+    font-size: 1rem;
   }
 
-  .selected-text svg, .selected-text i, .iconic-taxa-selected i {
+  .selected-text svg, .selected-text i, .iconic-taxa-selected svg {
     color: var(--snap-collection-active);
   }
 
@@ -692,9 +691,9 @@
 
 @media (min-height: 667px) {
 
-  .iconic-taxa-categories > div > div > div:nth-child(1) svg, .iconic-taxa-categories i {
-    width: 1.6rem;
+  .iconic-taxa-categories svg, .iconic-taxa-categories svg {
     font-size: 1.6rem;
+    height: 1.6rem;
   }
 
   .taxa-actions svg-icon.si-glyph-mushrooms svg {

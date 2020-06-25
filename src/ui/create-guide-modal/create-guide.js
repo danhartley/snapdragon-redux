@@ -1,3 +1,5 @@
+import 'ui/css/groups/create-guide.css';
+
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -73,11 +75,6 @@ class CreateGuide {
         }
 
         this.user = store.getState().user;
-
-        // prevent user rescaling which is caused by autocomplete
-
-        // const viewport = document.querySelector("meta[name=viewport]");
-        //       viewport.setAttribute('content', 'width=device-width, initial-scale=1, user-scalable=no');
     }
 
     addStepActions(nextStep) {

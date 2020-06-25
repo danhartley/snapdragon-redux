@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ take, clone } from 'ramda';
 
 import { firestore } from 'api/firebase/firestore';
 import { scoreHandler } from 'ui/helpers//score-handler';
@@ -30,7 +30,7 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
 
     const { config, score, lesson } = store.getState();
 
-    const item = R.clone(collection.nextItem);
+    const item = clone(collection.nextItem);
 
     if(!item) return;
 
@@ -52,7 +52,7 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
 
             // add more images to starred image, if there is one (when the count will always be 1)
             if(itemImages.length < imagesPerItem) {
-                itemImages = [ ...itemImages, ...R.take(imagesPerItem -itemImages.length, utils.shuffleArray(item.images).filter(i => !i.starred)) ];
+                itemImages = [ ...itemImages, ...take(imagesPerItem -itemImages.length, utils.shuffleArray(item.images).filter(i => !i.starred)) ];
             }
             
 

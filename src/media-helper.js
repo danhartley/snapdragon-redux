@@ -2,6 +2,22 @@ import { renderTemplate } from 'ui/helpers/templating';
 
 import modalsTemplate from 'modals.html';
 
+import { library, dom } from '@fortawesome/fontawesome-svg-core'
+
+import { faBookOpen, faLanguage, faEnvelope, faUserSlash, faUserCheck, faCog, faChevronDown, faGlasses, faDove, faFrog, faPaw, faBug, faLeaf, faBarcode, faSun, faRegistered, faChevronUp, faChalkboard, faTimes, faTimesCircle, faCheck, faExternalLinkAlt, faExclamation, faClone, faCopyright, faSlidersH, faUndo } from '@fortawesome/free-solid-svg-icons'; // fas
+import { faArrowAltCircleLeft, faArrowAltCircleRight, faRegistered as faRegisteredFar } from '@fortawesome/free-regular-svg-icons'; // far
+import { faYoutube } from '@fortawesome/free-brands-svg-icons'; // fab
+
+// https://fontawesome.com/v5.9.0/how-to-use/with-the-api/setup/library/
+
+library.add(
+  faBookOpen, faLanguage, faEnvelope, faUserSlash, faUserCheck, faCog, faChevronDown, faGlasses, faDove, faFrog, faPaw, faBug, faLeaf, faRegistered, faBarcode, faSun, faChevronUp, faChalkboard, faTimes, faTimesCircle, faCheck, faExternalLinkAlt, faExclamation, faClone, faCopyright, faSlidersH, faUndo,
+  faArrowAltCircleLeft, faArrowAltCircleRight, faRegisteredFar,
+  faYoutube
+)
+
+dom.watch();
+
 export const handleWindowResize = () => {
 
   const setWindowHeight = () => {
@@ -48,8 +64,6 @@ export const handleWindowResize = () => {
       setWindowHeight();
   });
 
-  snapLog('*** Global test ***');
-
   if(window.location.origin.indexOf('learn-the-planet') > -1) {
      snapLog('*** Live site detected ***');
       if(window.location.protocol != 'https:') {
@@ -57,7 +71,6 @@ export const handleWindowResize = () => {
          snapLog(' *** Site secured ***');
       }
   }
-
 };
 
 export const loadModalHTML = () => {

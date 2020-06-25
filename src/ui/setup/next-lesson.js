@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ clone } from 'ramda';
 
 import { store } from 'redux/store';
 import { lessonPlanner } from 'snapdragon-engine/lesson-planner';
@@ -16,7 +16,7 @@ export const nextLesson = counter => {
     if(setupHandler.isRequired(enums.nextStep.NEXT_LESSON, args)) {
 
         const planId = config.isPortraitMode ? collection.lessonPlanPortrait : collection.lessonPlanLandscape;    
-        const lessonPlan = R.clone(lessonPlans.find(plan => plan.id === planId && plan.portrait === config.isPortraitMode));
+        const lessonPlan = clone(lessonPlans.find(plan => plan.id === planId && plan.portrait === config.isPortraitMode));
 
         args.lessonPlan = lessonPlan;
 
@@ -24,7 +24,7 @@ export const nextLesson = counter => {
 
             // asyncFunc will return collection, lessonPlan and lesson
 
-            const asyncFunc = lessonPlanner.createLessonPlan(lessonPlan, config, R.clone(collection), R.clone(lesson)).then(props => {
+            const asyncFunc = lessonPlanner.createLessonPlan(lessonPlan, config, clone(collection), clone(lesson)).then(props => {
                 if(!props) return;
                 return { lessonPlan: props.updatedLessonPlan, collection: props.updatedCollection, lesson: props.updatedLesson };
             });

@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { contains, flatten } from 'ramda';
 
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
@@ -45,7 +45,7 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
                     layout.requiredTraits = requiredTraits;
 
                     const traitsToIgnore = [ 'n/a', 'none' ];
-                    const addLayout = !!requiredTraits.find(t => !R.contains(t.term.toLowerCase(), traitsToIgnore));
+                    const addLayout = !!requiredTraits.find(t => !contains(t.term.toLowerCase(), traitsToIgnore));
 
                     if(addLayout) {
                         lessonPlan.layouts.push({...layout, lessonName, levelName, speciesName: roundItemNames[itemIndex] });
@@ -62,7 +62,7 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
 
         if(lesson.level.id === 1) {
             let providerQuestions = await providerHandler.getLayouts(collection, roundItemNames);
-                providerQuestions = R.flatten(providerQuestions).filter(layout => layout);
+                providerQuestions = flatten(providerQuestions).filter(layout => layout);
 
             let providerLayouts = providerQuestions.map(provider => {
                 return { ...L.providerHorizontalStrip, lessonName:"Lesson 1", levelName:"Level 1", speciesName: provider.name || provider.taxon, provider };

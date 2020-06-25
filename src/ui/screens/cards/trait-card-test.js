@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ contains } from 'ramda';
 
 import autocomplete from 'autocompleter';
 
@@ -19,7 +19,7 @@ export const renderTraitCardTest = item => {
         const traits = item.traits;
         
         for (let [key, obj] of Object.entries(traits)) {
-            if(R.contains(key, traitstoExclude)) {
+            if(contains(key, traitstoExclude)) {
                 delete traits[key];
             }
         }
@@ -35,13 +35,6 @@ export const renderTraitCardTest = item => {
         document.querySelector('.js-test-card-content').classList.add('trait-line');            
         document.querySelector('.js-question-question').innerHTML = 'Trait questions';
         document.querySelector('.js-question-help').innerHTML = '(Answer at will.)';
-        
-        // const returnLink = document.querySelector('.js-traits-link');
-        // const returnTxt = returnLink.querySelector('span:nth-child(1)');
-        //       returnTxt.innerHTML = 'Main';
-    
-        // const returnTxt2 = returnLink.querySelector('span:nth-child(2)');
-        //       returnTxt2.innerHTML = 'lesson';
 
         const feedback = document.querySelector('.js-txt-question');
         const continueBtn = document.querySelector('.js-continue-lesson-btn');
@@ -117,7 +110,7 @@ export const renderTraitCardTest = item => {
             }
 
             for (let [key, obj] of Object.entries(traitKeyValues)) {
-                if(!R.contains(key, ['name', 'help', 'type'])) {
+                if(!contains(key, ['name', 'help', 'type'])) {
                     answerSet.push({label: obj.toLowerCase(), value: obj.toLowerCase()});
                 }                
             }

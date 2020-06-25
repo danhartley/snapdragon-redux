@@ -1,8 +1,8 @@
-import * as R from 'ramda';
+import { clone } from 'ramda';
 
 const getItemScoreStats = (collection, history) => {
 
-    const collectionItems  = R.clone(collection.items);
+    const collectionItems  = clone(collection.items);
 
     const reducer = (acc, curr) => {        
         if (Object.keys(acc).length === 0 && acc.constructor === Object) return curr;
@@ -26,8 +26,8 @@ const getItemScoreStats = (collection, history) => {
     const passesTotals = history.scores.map(score => score.passesTotals).filter(p=>p);
     const failsTotals = history.scores.map(score => score.failsTotals).filter(p=>p);
 
-    const passes = R.clone(passesTotals).reduce(reducer, {});
-    const fails = R.clone(failsTotals).reduce(reducer, {});
+    const passes = clone(passesTotals).reduce(reducer, {});
+    const fails = clone(failsTotals).reduce(reducer, {});
 
     if(!passes) return collectionItems;
 

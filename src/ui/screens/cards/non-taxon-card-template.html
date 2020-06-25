@@ -1,5 +1,3 @@
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"> -->
-
 <div class="snapdragon-container test-card-container js-test-card-container">    
     <div class="portrait-grid non-taxon-card-images carousel js-non-taxon-card-images"></div>    
     <div class="card-card card non-taxon js-non-taxon-card">
@@ -29,7 +27,7 @@
 
         </div>  
         <div class="non-taxa js-non-taxa">                
-            <div class="btn-group btn-group-toggle" data-toggle="buttons" data-repeat-taxon="{{ group }}">
+            <div role="group" class="btn-group" data-toggle="buttons" data-repeat-taxon="{{ group }}">
                 <label class="btn btn-secondary" id="{{ taxon.id }}">
                     <input type="radio" name="options" id="{{ taxon.id }}" autocomplete="off" checked> {{ taxon.id }}
                 </label>

@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ contains } from 'ramda';
 
 import autocomplete from 'autocompleter';
 
@@ -52,7 +52,7 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
 
     const addSpeciesToList = async species => {
         
-        if(R.contains(species.name, selectedSpecies.map(ss => ss.name))) return;
+        if(contains(species.name, selectedSpecies.map(ss => ss.name))) return;
 
         selectedSpecies.push(species);
 
@@ -97,7 +97,7 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
             input: input,
             fetch: function(text, update) {
                 text = text.toLowerCase();
-                const suggestions = speciesNames.filter(n => n.value.toLowerCase().startsWith(text) && !R.contains(n.value, selectedSpecies.map(ss => ss.name)));
+                const suggestions = speciesNames.filter(n => n.value.toLowerCase().startsWith(text) && !contains(n.value, selectedSpecies.map(ss => ss.name)));
                 update(suggestions);
             },
             onSelect: async function(item) {

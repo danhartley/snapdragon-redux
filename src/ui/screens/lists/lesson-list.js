@@ -42,8 +42,8 @@ export const renderLessons = () => {
                   lessonListEventHandler.hideOtherContentAndRevertChevrons(0);
             });    
 
-      const lessonTitles = document.querySelectorAll('.js-lesson-title');
-            lessonTitles.forEach(title => lessonListEventHandler.onLessonTitleClickHandler(title, lessons));
+      // const lessonTitles = document.querySelectorAll('.js-lesson-title');
+      //       lessonTitles.forEach(title => lessonListEventHandler.onLessonTitleClickHandler(title, lessons));
 
       const youtubeLessonIcons = document.querySelectorAll('.js-lesson-list-youtube');
             youtubeLessonIcons.forEach(youtube => lessonListEventHandler.onLessonIconClickHandler(youtube, lessons, config, true));
@@ -61,9 +61,8 @@ export const renderLessons = () => {
 
             let terms = document.querySelectorAll('.js-terms-review-link');
                 terms.forEach(term => {
-                  let termsReviewLink = term.querySelector('button');
-                  termsReviewLink.addEventListener('click', e => {                         
-                        const lesson = lessons.find(lesson => lesson.id === parseInt(termsReviewLink.dataset.lessonId));
+                  term.addEventListener('click', e => {                         
+                        const lesson = lessons.find(lesson => lesson.id === parseInt(term.dataset.lessonId));
                         if(lesson.terms) {
                               const { glossary } = store.getState();
                               setTimeout(() => {

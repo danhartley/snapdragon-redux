@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ contains } from 'ramda';
 
 import { elem } from 'ui/helpers/class-behaviour';
 import { iconicTaxa } from 'snapdragon-config/snapdragon-iconic-taxa';
@@ -26,7 +26,7 @@ export const renderCategories = (modal, createGuide) => {
     if(config.guide.iconicTaxa) {
         icons.forEach(icon => {
             const filterId = icon.parentElement.id;
-            if(R.contains(filterId, config.guide.iconicTaxa.map(taxon => taxon.id))) {
+            if(contains(filterId, config.guide.iconicTaxa.map(taxon => taxon.id))) {
                 icon.classList.add(filterSelectedClass);
             }
         });

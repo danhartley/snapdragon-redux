@@ -16,7 +16,9 @@ export const settingsHandler = () => {
     
     template.innerHTML = settingsTemplate;
     
-    document.querySelector('#basicModal .js-modal-text-title header').innerHTML = 'Snapdragon settings';
+    const title = document.querySelector('#basicModal .js-modal-text-title');
+
+    title.innerHTML = '<header>Snapdragon settings</header>';
 
     const { config } = store.getState();
 

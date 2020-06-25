@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { clone } from 'ramda';
 
 import { layouts as L } from 'snapdragon-config/screen-layouts';
 
@@ -25,7 +25,7 @@ export const landscapeFungi = {
     ]
 };
 
-export const landscapeLichens = { ...R.clone(landscapeFungi), id: 4 };
+export const landscapeLichens = { ...clone(landscapeFungi), id: 4 };
 landscapeLichens.levels[0] = { 
     id: 1,
     name:'Level 1',

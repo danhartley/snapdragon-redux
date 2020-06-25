@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ clone, contains, take, flatten } from 'ramda';
 
 import { utils } from 'utils/utils'; 
 import { store } from 'redux/store';
@@ -32,12 +32,12 @@ const renderItemSpecimenTiles = item => {
 
     let images, items;
     
-    if (R.contains(layout.screens[1].name, familes)) {        
+    if (contains(layout.screens[1].name, familes)) {        
         const family = collectionItems.filter(i => i.family.name.toLowerCase() === item.taxonomy.family.toLowerCase());
-        images = R.take(6, utils.shuffleArray(getImagesFromItemFamily(family, config, imageUseCases.SPECIES_CARD)));
+        images = take(6, utils.shuffleArray(getImagesFromItemFamily(family, config, imageUseCases.SPECIES_CARD)));
         items = images.map(image => collectionItems.find(item => item.name === image.itemName));
     } else {
-        images = R.take(6, utils.shuffleArray(R.clone(item.images)));
+        images = take(6, utils.shuffleArray(clone(item.images)));
         images = prepImagesForCarousel({ name: item.name, itemCommon: item.itemCommon, images }, config, imageUseCases.SPECIES_CARD);
         items = [item];
     }
@@ -55,7 +55,7 @@ const renderSpecimenImageTiles = (collection, images, item) => {
 
     const acceptableScreens = [ 'specimen-images', 'trait-images' ]; // lookalike options?
 
-    let screen = layout.screens.find(screen => R.contains(screen.name, acceptableScreens));
+    let screen = layout.screens.find(screen => contains(screen.name, acceptableScreens));
 
     if(!screen) return;
 
@@ -77,7 +77,7 @@ const getImagesFromItemFamily = (family, config, useCase) => {
 
     let itemImages, items;
 
-    itemImages = R.flatten(family.map(i => {
+    itemImages = flatten(family.map(i => {
         return { images: i.images, item: { name: i.name, itemCommon: i.names[0].vernacularName, vernacularName: i.names[0].vernacularName, names: i.names } };
     }));
 
@@ -95,7 +95,7 @@ const getImagesFromItemFamily = (family, config, useCase) => {
                 }
             };
         });
-        let pooledImages = R.flatten(pool);
+        let pooledImages = flatten(pool);
             pooledImages.forEach(pooledImage => {
                 pooledImage.images.forEach(image => {
                     itemImages.push({ images: pooledImage.images, item: pooledImage.item });
@@ -115,7 +115,7 @@ const getImagesFromItemFamily = (family, config, useCase) => {
     const getUniqueImage = (image, index, uniqueImages) => {
         let uniqueImage = image.images.find(i => i.starred);
         if(uniqueImage) {
-            uniqueImage = R.contains(uniqueImage.title, uniqueImages.map(i => i.title)) ? null : uniqueImage;
+            uniqueImage = contains(uniqueImage.title, uniqueImages.map(i => i.title)) ? null : uniqueImage;
         }
         if(uniqueImage) {
             uniqueImages.push(uniqueImage);
@@ -123,7 +123,7 @@ const getImagesFromItemFamily = (family, config, useCase) => {
         }
         else {
             uniqueImage = image.images[index];
-            if(uniqueImage && !R.contains(uniqueImage.title, uniqueImages.map(i => i.title))) {
+            if(uniqueImage && !contains(uniqueImage.title, uniqueImages.map(i => i.title))) {
                 uniqueImages.push(uniqueImage);
                 return uniqueImage;
             }

@@ -3,6 +3,11 @@ import { enums } from 'admin/api/enums';
 import { firebaseConfig } from 'api/firebase/credentials';
 import { questions } from 'api/firebase/questions';
 
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/storage';
+import 'firebase/firestore';
+
 firebase.initializeApp(firebaseConfig);
 
 const storage = firebase.storage();
@@ -216,12 +221,12 @@ const getBirdsong = async xcID => {
     return url;
 };
 
-const getImage = async image => {
+// const getImage = async image => {
 
-  const storageRef = storage.ref();
-  const url = await storageRef.child(`images/${image}`).getDownloadURL();
-  return url;
-};
+//   const storageRef = storage.ref();
+//   const url = await storageRef.child(`images/${image}`).getDownloadURL();
+//   return url;
+// };
 
 const addSpecies = async species => {
 
@@ -742,7 +747,7 @@ export const firestore = {
     getTraitsBySpeciesName,
     getTraitsByTaxonName,
     getBirdsong,
-    getImage,
+    // getImage,
     getTraitValues,
     getRandomSpecies,
     getDefinition,

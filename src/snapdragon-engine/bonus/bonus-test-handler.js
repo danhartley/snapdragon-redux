@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { contains, flatten } from 'ramda';
 
 import { getTraitTests } from 'snapdragon-engine/bonus/tests/trait-test';
 import { getBirdsongTests } from 'snapdragon-engine/bonus/tests/birdsong-test';
@@ -8,7 +8,7 @@ import { getDefinitionTests } from 'snapdragon-engine/bonus/tests/definition-tes
 const getTests = async (collection, itemIndices, bonusLayouts, lessonName, levelName) => {
 
     const itemsInThisRound = collection.items.map((item, index) => {
-        if(R.contains(index, itemIndices)) {
+        if(contains(index, itemIndices)) {
             return { ...item, itemIndex: index }
         } else return null;        
     }).filter(item => item);
@@ -80,7 +80,7 @@ const getTests = async (collection, itemIndices, bonusLayouts, lessonName, level
         }
     }
 
-    return R.flatten(traitTests);
+    return flatten(traitTests);
 };
 
 export const bonusHandler = {

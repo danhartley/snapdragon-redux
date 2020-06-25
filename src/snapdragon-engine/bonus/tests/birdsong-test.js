@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { take } from 'ramda';
 
 import { utils } from 'utils/utils';
 
@@ -34,7 +34,7 @@ const getBirdsongTest = (item, itemsInThisRound, collection) => {
     
     // require other birds, which may not be in this collection…
 
-    let birds = R.take(3, collection.items.filter(bird => bird.name.toLowerCase() !== item.name.toLowerCase()));
+    let birds = take(3, collection.items.filter(bird => bird.name.toLowerCase() !== item.name.toLowerCase()));
         birds.push(item);
 
     const birdNames = utils.shuffleArray(birds.map(bird => bird.name));

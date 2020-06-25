@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ take } from 'ramda';
 
 import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
@@ -61,7 +61,7 @@ export const renderBirdsong = collection => {
 
             await getTraits(birds);
 
-            let xcIDs = R.take(3, traits.filter(bird => bird.name !== item.name));
+            let xcIDs = take(3, traits.filter(bird => bird.name !== item.name));
                 xcIDs = xcIDs.map(xcID => xcID.traits.find(trait => trait.name === 'song').value);
                 
                 xcIDs.push(xcID)

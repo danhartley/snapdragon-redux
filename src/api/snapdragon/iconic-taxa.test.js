@@ -21,7 +21,7 @@ test('given iconic taxon return appropriate icon class', () => {
     item = { taxonomy: { class: 'insecta' } }; 
     expect(matchIcon(item.taxonomy, iconicTaxa)).toEqual('fas fa-bug');
     item = { taxonomy: { kingdom: 'fungi' } }; 
-    expect(matchIcon(item.taxonomy, iconicTaxa)).toEqual('./icons/mushroom.svg');
+    expect(matchIcon(item.taxonomy, iconicTaxa)).toEqual('./static/icons/mushroom.svg');
     item = { taxonomy: { kingdom: 'plantae' } }; 
     expect(matchIcon(item.taxonomy, iconicTaxa)).toEqual('fas fa-leaf');
 });

@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ take, clone } from 'ramda';
 
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
@@ -16,7 +16,7 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
 
     const { config, lesson, layout, score } = store.getState();
 
-    const item = R.clone(collection.nextItem);
+    const item = clone(collection.nextItem);
 
     if(!item) return;
 
@@ -24,7 +24,7 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
 
         const getPortraitImages = images => {
             const multiImages = utils.flatten(images.map(image => { 
-                const images = image.srcs.filter(i => i.starred).length === 0 ? R.take(1, utils.shuffleArray(image.srcs)) : image.srcs.filter(i => i.starred);
+                const images = image.srcs.filter(i => i.starred).length === 0 ? take(1, utils.shuffleArray(image.srcs)) : image.srcs.filter(i => i.starred);
                 const item = { name: image.itemName, images };
                 return prepImagesForCarousel(item, config, imageUseCases.MIXED_SPECIMENS);
             }));
@@ -59,7 +59,7 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
         const answers = [];
 
         images.forEach(image => {
-            answers.push({ value: image.itemName, url: scaleImage({ url:image.url }).small });
+            answers.push({ value: image.itemName, url: scaleImage(image).small });
         });
 
         document.querySelectorAll('#imageSlider_mixed-specimens .carousel-item img').forEach(img => {

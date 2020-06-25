@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ take } from 'ramda';
 
 import { utils } from 'utils/utils';
 import { firestore } from 'api/firebase/firestore';
@@ -50,7 +50,7 @@ export const renderNonTaxonCard = (mode = 'STAND_ALONE', keyTrait, parent = DOM.
             return prepImagesForCarousel(item, config, imageUseCases.NON_TAXON_CARD);
         });
         const itemImages = utils.shuffleArray([].concat(...itemImagesArray));
-        return R.take(9, itemImages);
+        return take(9, itemImages);
     };
 
     const callback = async id => {

@@ -1,14 +1,16 @@
-import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 
 import loginTemplate from 'ui/fixtures/login-template.html';
 import logoutTemplate from 'ui/fixtures/logout-template.html';
 
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
 export const renderLogin = user => {
 
-    const auth = firebase.auth();
-    
+  const init = () => {
+
     document.querySelector('#basicModal .js-modal-text').innerHTML = '';
 
     const template = document.createElement('template');
@@ -22,6 +24,8 @@ export const renderLogin = user => {
         document.querySelector('#basicModal .js-modal-text-title header').innerHTML = 'Snapdragon logout';
 
         const footer = document.querySelector('.js-modal-footer');
+
+        const auth = firebase.auth();
 
         setTimeout(() => {
             
@@ -55,6 +59,8 @@ export const renderLogin = user => {
         document.querySelector('#basicModal .js-modal-text-title header').innerHTML = 'Snapdragon login';
 
         const footer = document.querySelector('.js-modal-footer');
+
+        const auth = firebase.auth();
 
         setTimeout(() => {
 
@@ -92,17 +98,20 @@ export const renderLogin = user => {
         }, 500);
 
     }
+  };
+
+  init();
 };
 
 export const renderLoggedIn = user => {
 
     if(user) {
         const loggedIn = document.querySelector('.js-logged-in');
-              if(loggedIn) loggedIn.classList.remove('hide-important');
+        if(loggedIn) loggedIn.classList.remove('hide-important');
     } else {
         const notLoggedIn = document.querySelector('.js-not-logged-in');
-              if(notLoggedIn) notLoggedIn.classList.remove('hide-important');
+        if(notLoggedIn) notLoggedIn.classList.remove('hide-important');
         const loggedOut = document.querySelector('.js-logged-out');
-              if(loggedOut) loggedOut.classList.remove('hide-important');
+        if(loggedOut) loggedOut.classList.remove('hide-important');
     }
 };

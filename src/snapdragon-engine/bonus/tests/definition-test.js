@@ -1,8 +1,7 @@
-import * as R from 'ramda';
+import { contains, take } from 'ramda';
 
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
-import { firestore } from 'api/firebase/firestore';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 
 export const getDefinitionTests = itemsInThisRound => {
@@ -26,7 +25,7 @@ const getDefinitionTest = async item => {
 
     const taxon = matchTaxon(item.taxonomy, iconicTaxa).value;
 
-    let definitions = glossary.filter(definition => R.contains(definition.taxon, [ taxon, 'common' ]));
+    let definitions = glossary.filter(definition => contains(definition.taxon, [ taxon, 'common' ]));
 
     definitions = utils.shuffleArray(definitions);
 
@@ -49,7 +48,7 @@ const getDefinitionTest = async item => {
         ? definitions.find(definition => definition.term.toLowerCase() === term.toLowerCase())
         : definitions[0];
 
-    const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(definitions)).filter(d => d.term.toLowerCase() !== definition.term.toLowerCase())).map(d => utils.capitaliseFirst(d.definition));
+    const alternatives = take(number-1, take(number, utils.shuffleArray(definitions)).filter(d => d.term.toLowerCase() !== definition.term.toLowerCase())).map(d => utils.capitaliseFirst(d.definition));
     
     const question = definition.definition;
     const answers = utils.shuffleArray([question, ...alternatives]);

@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ contains, take } from 'ramda';
 import { traitsHandler } from 'ui/helpers/traits-handler';
 
 const fox = {
@@ -205,7 +205,7 @@ const traitsToExclude = traitsHandler.getTraitsToExclude();
 
 test('should exclude specified traits', () => {  
   const trait = traitsHandler.getRandomTrait(fox, traitsToExclude);
-  expect(!R.contains(trait.key, traitsToExclude)).toBe(true);
+  expect(!contains(trait.key, traitsToExclude)).toBe(true);
 });
 
 test('should return null when there are no allowed traits', () => {  

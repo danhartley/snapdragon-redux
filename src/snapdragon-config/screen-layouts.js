@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { clone } from 'ramda';
 
 import { panels } from 'snapdragon-config/screen-panels';
 
@@ -313,7 +313,6 @@ const leafEntry = {
     screens: [
         { ...leaf },
         { ...leafName }
-        // { ...leafName, template: 'js-text-entry-template' }
     ]
 };
 
@@ -342,7 +341,6 @@ const commonEntry = {
     screens: [
         { ...specimenImages },
         { ...text, taxon: 'vernacular'  }
-        // { ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Enter the common name', short: 'Enter the common name'}}
     ]
 };
 
@@ -413,7 +411,6 @@ const mediaMatch = {
     requirement: 'Select species',
     screens: [
         { ...specimenImages },
-        // { ...mediaPlayers },
         { ...birdsong }
     ]
 };
@@ -443,7 +440,7 @@ const providerHorizontalStrip = {
 };
 
 const propertyTrait = (traitPropertyMatch, traits) => {
-    const layout = R.clone(traitPropertyMatch);
+    const layout = clone(traitPropertyMatch);
     layout.screens[0].traits = traits;
     layout.screens[1].traits = traits;
     return layout;

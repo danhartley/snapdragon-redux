@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { take, flatten } from 'ramda';
 
 import { syndromes } from 'api/snapdragon/syndromes';
 
@@ -11,7 +11,7 @@ export const getPollinatorTest = (collection, config) => {
         traits.forEach(trait => {
             const _trait = collection.items.map( (item, i) => {                
                 return {
-                    traits: R.flatten(syndromes.traits.map(trait => {
+                    traits: flatten(syndromes.traits.map(trait => {
                         const t = trait.keys.find(key => key.key === trait);
                         return { trait: trait.name, value: t.value, description: t.description || '' };
                     })),
@@ -30,12 +30,11 @@ export const getPollinatorTest = (collection, config) => {
     
     const number = config.isPortraitMode ? 2 : 2;
     
-    const pollinators = R.take(number, utils.shuffleArray(['beetle', 'bird', 'butterfly', 'fly', 'moth', 'wind']));
+    const pollinators = take(number, utils.shuffleArray(['beetle', 'bird', 'butterfly', 'fly', 'moth', 'wind']));
     
     const traits = getTraits(pollinators);
     const question = getTraits(['bee'])[0];
     
-    // const questionText = `Which set of traits best fits the ${item.family}?`;
     const answers = utils.shuffleArray([question, ...traits]);
 
     return answers;

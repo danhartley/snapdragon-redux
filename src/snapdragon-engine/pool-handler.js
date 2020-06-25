@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { take } from 'ramda';
 
 import { utils } from 'utils/utils';
 import { findRankByIconicTaxon } from 'api/snapdragon/iconic-taxa';
@@ -43,7 +43,7 @@ export const getPoolItems = async (collection, poolSize = 5) => {
     } 
     else {
 
-      const items = R.take(poolSize, speciesPool);
+      const items = take(poolSize, speciesPool);
       
       items.push(item);
     
@@ -55,6 +55,6 @@ export const getPoolItems = async (collection, poolSize = 5) => {
 };
 
   const getItemsFromCollection = (otherItems, item, poolSize) => {
-    const items = R.take(poolSize, utils.shuffleArray(otherItems));
+    const items = take(poolSize, utils.shuffleArray(otherItems));
     return utils.shuffleArray([ ...items, item]);
   };

@@ -63,6 +63,12 @@ let sections = [
           'Remove unused styles.', 'Copy CSS files and use loadCSS pattern to affect non-blocking request.'
         ] 
       }
+      ,{
+        term: 'JavaScript: PRPL',
+        descriptions: [
+          'Push (preload), Render, Pre-cache, Lazy-load'
+        ] 
+      }
     ]
   },
   {
@@ -92,6 +98,11 @@ let sections = [
         term: 'Tree shaking',
         descriptions: ['A form of dead code elimination.'],
         link: 'https://developers.google.com/web/fundamentals/performance/optimizing-javascript/tree-shaking'
+      }
+      , {
+        term: 'Time to Interactive',
+        descriptions: ['How long it takes a page to become fully interactive.'],
+        link: 'https://web.dev/interactive'
       }
       , {
         term: 'RAIL',

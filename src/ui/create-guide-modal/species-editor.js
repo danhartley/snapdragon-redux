@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ contains } from 'ramda';
 
 import autocomplete from 'autocompleter';
 
@@ -31,7 +31,7 @@ export const speciesEditor = (container, selectedSpeciesDisplay, selectedSpecies
 
     const addSpeciesToList = species => {
         
-        if(R.contains(species, selectedSpecies)) return;
+        if(contains(species, selectedSpecies)) return;
 
         selectedSpecies.push(species);
         addedSpecies.push(species);
@@ -65,7 +65,7 @@ export const speciesEditor = (container, selectedSpeciesDisplay, selectedSpecies
             input: input,
             fetch: function(text, update) {
                 text = text.toLowerCase();
-                const suggestions = speciesNames.filter(n => n.value.toLowerCase().startsWith(text) && !R.contains(n.value, selectedSpecies));
+                const suggestions = speciesNames.filter(n => n.value.toLowerCase().startsWith(text) && !contains(n.value, selectedSpecies));
                 update(suggestions);
             },
             onSelect: function(item) {

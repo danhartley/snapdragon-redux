@@ -74,10 +74,6 @@ export const imageSlider = sliderArgs => {
         selectActiveImage(image || images[0], parent, config);        
     },250);
 
-    setTimeout(() => {
-      // next.focus();
-    }, 1000);
-
     parentScreen.querySelector(`#imageSlider_${identifier} .carousel-control-prev`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
     parentScreen.querySelector(`#imageSlider_${identifier} .carousel-control-next`).addEventListener('click', e => carouselControlHandler(e,parentScreen, config));
 

@@ -1,12 +1,12 @@
-import * as R from 'ramda';
+import{ clone } from 'ramda';
 
 import { store } from 'redux/store';
 import { renderSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
-import { renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
+// import { renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
 
 export const renderBonusSpecimenTiles = bonusLayout => {
 
-    const collection = R.clone(store.getState().collection);
+    const collection = clone(store.getState().collection);
           collection.nextItem = bonusLayout.item;
           collection.nextItem = collection.nextItem || collection.items[collection.itemIndex];
     

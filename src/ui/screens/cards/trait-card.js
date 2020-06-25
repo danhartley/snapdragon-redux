@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ clone } from 'ramda';
 
 import { renderTemplate } from 'ui/helpers/templating';
 import { store } from 'redux/store';
@@ -23,7 +23,7 @@ export const renderTraitCard = item => {
  
         const alreadyTestedTraits = [];
 
-        const collection = R.clone(store.getState().collection);
+        const collection = clone(store.getState().collection);
 
         const guid = new Date().getTime();
 

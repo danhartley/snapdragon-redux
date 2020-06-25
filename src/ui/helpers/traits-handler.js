@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ isEmpty, compose, symmetricDifference, contains, take } from 'ramda';
 
 import { itemProperties } from 'ui/helpers/data-checking';
 import { utils } from 'utils/utils';
@@ -8,7 +8,7 @@ const getRandomTrait = (traits, traitsToIgnore) => {
     const allowedTraits = {};
 
     for (let [key, obj] of Object.entries(traits)) {
-        if(!R.contains(key.toLowerCase(), traitsToIgnore)) {
+        if(!contains(key.toLowerCase(), traitsToIgnore)) {
             allowedTraits[key] = obj.unit ? [`${obj.value}${obj.unit}`] : obj.value;
         }
     }
@@ -68,7 +68,7 @@ const getTraitsPool = (trait, traits) => {
 
     if(traitValues) {        
         for (let [key, obj] of Object.entries(traitValues)) {
-            if(!R.contains(key, [ 'type', 'name', 'help'])) {
+            if(!contains(key, [ 'type', 'name', 'help'])) {
                 if(key !== trait.key) {
                     traitsPool.push(obj);
                 }
@@ -91,13 +91,13 @@ const getSetOfTraitAnswers = (pool, trait) => {
 
     // take maximum of 2 values from the trait values array
 
-    let traitValues = R.take(2, traitSet);
+    let traitValues = take(2, traitSet);
 
     let sets = [];
   
     if(traitValues.length === 1) {
         
-        sets = [ ...R.take(5, pool.filter(value => value !== trait.value[0])), trait.value[0] ];
+        sets = [ ...take(5, pool.filter(value => value !== trait.value[0])), trait.value[0] ];
 
     } else {
 
@@ -114,7 +114,7 @@ const getSetOfTraitAnswers = (pool, trait) => {
             })
         });
 
-        sets = R.take(6, utils.shuffleArray(sets));
+        sets = take(6, utils.shuffleArray(sets));
 
         // remove any combination that matches the trait value set (in either order) 
 
@@ -124,7 +124,7 @@ const getSetOfTraitAnswers = (pool, trait) => {
             }
         }).filter(s => s);
 
-        sets = R.take(5, sets);
+        sets = take(5, sets);
         sets = [ ...sets, traitSet ];
 
         if(sets.length === 0) {
@@ -206,7 +206,7 @@ const convertTraitsToNameValuePairsArray = (traits, traitsToExclude, item) => {
     const includedTraits = [];
 
     for (let [key, obj] of Object.entries(traits)) {
-        if(!R.contains(key, traitsToExclude)) {
+        if(!contains(key, traitsToExclude)) {
             if(key === 'lookalikes') {
                 obj.forEach(species => {
                     includedTraits.push({
@@ -257,7 +257,7 @@ const getNMultiplesFromArray = (arra, arra_size) => {
     return result_set.filter(set => set.length === arra_size);
 };
 
-const doArraysHaveSameValues = R.compose(R.isEmpty, R.symmetricDifference);
+const doArraysHaveSameValues = compose(isEmpty, symmetricDifference);
 
 export const traitsHandler = {
     getRandomTrait,

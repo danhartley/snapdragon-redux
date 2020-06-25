@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ contains } from 'ramda';
 
 import { store } from 'redux/store';
 
@@ -18,7 +18,7 @@ export const getSymbioticTest = collection => {
         roles.push(enumeratedRoles[key]);
     }
 
-    const symbioticTraits = speciesTraits.filter(st => R.contains(st.name, roles));
+    const symbioticTraits = speciesTraits.filter(st => contains(st.name, roles));
     const symbioticSpecies = symbioticTraits.map(st => st.value.split(',').map(value => {
         if(value.indexOf(' ') > 0) {
             return {

@@ -45,7 +45,7 @@
     cursor: pointer;
   }
 
-  .table-row td button i {
+  .table-row td button svg {
     min-width: 2.5rem;
   }
   

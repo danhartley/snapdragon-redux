@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import{ contains } from 'ramda';
 
 import { renderTemplate } from 'ui/helpers/templating';
 import { videoHandler } from 'ui/screens/lists/video-handler';
@@ -37,7 +37,7 @@ export const videoSetup = (collection, videoPlayer, parent, startTime) => {
                    videoHandler.onSpeciesTimeMatchListeners.map(listener => listener(collection, match));
                }
                if(!collection.notes) return;
-               const noteMatch = collection.notes.find(note => R.contains(time, note.time));
+               const noteMatch = collection.notes.find(note => contains(time, note.time));
                if(noteMatch) {
                    videoHandler.onNoteTimeMatchListeners.map(listener => listener(collection, noteMatch));
                }
@@ -81,6 +81,6 @@ export const videoSetup = (collection, videoPlayer, parent, startTime) => {
 
 export const matchSpeciesTime = (time, collection) => {
   const species = collection.items ? collection.items.filter(sp => sp.time) : collection.species.filter(sp => sp.time);
-  const match = species.find(sp => R.contains(time, sp.time));
+  const match = species.find(sp => contains(time, sp.time));
   return match;
 }
