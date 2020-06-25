@@ -15,7 +15,8 @@ module.exports = {
     entry: {
       app: './src/index.js',
       utils: './src/utils/utils.js',      
-      wiki: './src/wikipedia/wiki.js'
+      wiki: './src/wikipedia/wiki.js',
+      // guide: './src/ui/create-guide-modal/create-guide.js',
     },
     output: {
       filename: '[name].bundle.js',
@@ -114,7 +115,7 @@ module.exports = {
           { from: './src/static/root', to: ''}
         ],
       }),
-      new BundleAnalyzerPlugin()
+      // new BundleAnalyzerPlugin()
     ],
     resolve: {
         modules: [

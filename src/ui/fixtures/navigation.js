@@ -132,10 +132,15 @@ export const renderNavigation = collection => {
         } else {
             navIcons.forEach(icon => icon.classList.remove('active-icon'));
         }
+
+        const loginIcon = document.querySelector('.js-login');
+              loginIcon.dataset.isLoggedIn = !!store.getState().user;
     };
 
     onLoadState(config, counter);
 };
 
 export const renderLoginChanges = user => {
+  const loginIcon = document.querySelector('.js-login');
+  loginIcon.dataset.isLoggedIn = !user ? "false" : "true";
 };

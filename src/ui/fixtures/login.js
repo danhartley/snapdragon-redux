@@ -4,6 +4,9 @@ import { renderTemplate } from 'ui/helpers/templating';
 import loginTemplate from 'ui/fixtures/login-template.html';
 import logoutTemplate from 'ui/fixtures/logout-template.html';
 
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
 export const renderLogin = user => {
 
   const init = () => {
@@ -104,11 +107,11 @@ export const renderLoggedIn = user => {
 
     if(user) {
         const loggedIn = document.querySelector('.js-logged-in');
-              if(loggedIn) loggedIn.classList.remove('hide-important');
+        if(loggedIn) loggedIn.classList.remove('hide-important');
     } else {
         const notLoggedIn = document.querySelector('.js-not-logged-in');
-              if(notLoggedIn) notLoggedIn.classList.remove('hide-important');
+        if(notLoggedIn) notLoggedIn.classList.remove('hide-important');
         const loggedOut = document.querySelector('.js-logged-out');
-              if(loggedOut) loggedOut.classList.remove('hide-important');
+        if(loggedOut) loggedOut.classList.remove('hide-important');
     }
 };

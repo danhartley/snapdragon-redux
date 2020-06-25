@@ -2214,15 +2214,15 @@ img[data-has-image="false"] {
   position: absolute !important;
 }
 
-.login.icon > i:nth-child(2) {
+.login.icon > svg:nth-child(2) {
   color: var(--snap-text-light);
 }
 
-.login.icon[data-is-logged-in="true"] > .fa-user-slash {
+.login.icon[data-is-logged-in="true"] .fa-user-slash {
   display: none;
 }
 
-.login.icon[data-is-logged-in="false"] > .fa-user-check {
+.login.icon[data-is-logged-in="false"] .fa-user-check {
   display: none;
 }
 

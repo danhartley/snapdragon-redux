@@ -3,6 +3,11 @@ import { enums } from 'admin/api/enums';
 import { firebaseConfig } from 'api/firebase/credentials';
 import { questions } from 'api/firebase/questions';
 
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/storage';
+import 'firebase/firestore';
+
 firebase.initializeApp(firebaseConfig);
 
 const storage = firebase.storage();
