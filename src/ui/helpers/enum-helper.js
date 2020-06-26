@@ -11,7 +11,7 @@ lessonState.initEnum([
     'BEGIN_INTRO',
     'REVIEW_SUMMARY',
     'UPDATE_COLLECTION', // required? use set active collection
-    'GET_LESSON_PROGRESS',
+    'GET_LESSON_STATE',
     'ADD_SPECIES_TO_COLLECTION',
     'SAVE_LESSON_PROGRESS',
     'RENDER_SPECIES_LIST',    
@@ -39,11 +39,17 @@ taxon.initEnum([
     'SPECIES',
 ]);
 
-class guideOption extends Enum {};
-guideOption.initEnum([
+class guideType extends Enum {};
+guideType.initEnum([
     'LOCATION',
     'INAT',
     'PICKER'
+]);
+
+class guideMode extends Enum {};
+guideMode.initEnum([
+    'STATIC',
+    'DYNAMIC'
 ]);
 
 class nextStep extends Enum {};
@@ -83,7 +89,8 @@ export const enums = {
     lessonState,
     navigation,
     taxon,
-    guideOption,
+    guideType,
+    guideMode,
     nextStep,
     quickFireType,
     quickFireStep,

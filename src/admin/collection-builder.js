@@ -34,6 +34,11 @@ import { addVideo } from 'admin/screens/video/add-video';
 import { renderActiveTaxa } from 'admin/react/active-taxa';
 
 import { handleWindowResize } from 'media-helper';
+import { imports } from 'admin/fontawesome-icons';
+import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
+
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 handleWindowResize();
 
@@ -159,3 +164,7 @@ initMaterialize();
 
 var elems = document.querySelectorAll('.dropdown-trigger');
 if(elems) M.Dropdown.init(elems, {});
+
+window.snapLog = snapLog;
+window.logError = logError;
+window.logAPIError = logAPIError;

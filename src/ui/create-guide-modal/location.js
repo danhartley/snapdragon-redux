@@ -2,6 +2,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { getPlace, GooglePlaceDetails } from 'geo/geo';
 import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
+import { enums } from 'ui/helpers/enum-helper';
 
 import locationTemplate from 'ui/create-guide-modal/location-template.html';
 import googleLogoImg from 'img/powered_by_google_on_white_hdpi.png';
@@ -21,6 +22,7 @@ export const renderLocation = (modal, createGuide) => {
           parent.innerHTML = '';
 
     config.guide.season.observableMonths = config.guide.season.observableMonths || config.season.observableMonths;
+    config.guide.guideMode = enums.guideMode.DYNAMIC.name;
 
     if(config.guide.season.observableMonths) {
 
@@ -41,7 +43,7 @@ export const renderLocation = (modal, createGuide) => {
         event.stopPropagation();
         setLocationLongLatBtn.innerHTML = 'Updating location…'
         const place = await getPlace(config, true);
-        config.guide.locationType = 'longLat';
+        config.guide.locationType = 'longLat';        
         config.place = place;
         config.guide.locationLongLat = place.longLocation;
         setLocationLongLatBtn.innerHTML = defaultLocationTxt;
@@ -169,7 +171,7 @@ const saveLocation = (config, locationPlaceInput, locationPlace, createGuide) =>
     config.guide.locationLongLat = selectedText;
 
     config.guide.locationType = 'longLat';
-    config.guide.locationLongLat = selectedText;
+    config.guide.locationLongLat = selectedText;    
 
     const callback = geocoderResult => {
         if(geocoderResult && geocoderResult.length > 0) {

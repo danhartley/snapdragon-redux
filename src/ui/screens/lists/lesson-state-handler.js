@@ -13,13 +13,14 @@ const changeRequest = async args => {
 
   const { requestType, requestArgs } = args;
 
-  const { config, collection, collections, counter } = store.getState();
+  const { collection } = store.getState();
 
   switch(requestType) {
 
-    case enums.lessonState.PAUSE_LESSON:
-      if(config.isLandcapeMode) return;      
-      changeLessonState(requestType, collection, config);
+    case enums.lessonState.PAUSE_LESSON:      
+      snapLog('config', store.getState().config);
+      if(store.getState().config.isLandscapeMode) return;      
+      changeLessonState(requestType, collection, store.getState().config);
     break;
     
     case enums.lessonState.UPDATE_COLLECTION:
@@ -30,9 +31,9 @@ const changeRequest = async args => {
       saveCurrentLesson(collection);
     break;
     
-    case enums.lessonState.GET_LESSON_PROGRESS:
-      const { collectionToLoad, updatedCounter, guide } = requestArgs;
-      return await getUserLessonProgressState(collectionToLoad, { ...config, guide }, collections, updatedCounter);
+    case enums.lessonState.GET_LESSON_STATE:
+      const { collectionToLoad, updatedCounter, config } = requestArgs;
+      return await getLessonState(collectionToLoad, config, updatedCounter);      
     
     case enums.lessonState.ADD_SPECIES_TO_COLLECTION:
       return await addExtraSpeciesSelection(requestArgs);
@@ -59,7 +60,7 @@ const beginOrResumeLesson = async (selectedLessonCollectionId, requestedlessonSt
 
   const collectionToLoad = lessonStateHelper.getCollectionToLoad(currentCollection, collections, selectedLessonCollectionId);
 
-  const { collection, score, lesson } = await getUserLessonProgressState(collectionToLoad, config, collections);
+  const { collection, score, lesson } = await getLessonState(collectionToLoad, config);
 
   const lessonState = !!requestedlessonState ? requestedlessonState : (score && score.collectionId === collection.id) 
           ? enums.lessonState.RESUME_LESSON
@@ -72,16 +73,16 @@ const renderLessonSpeciesList = async requestArgs => {
 
   const { lesson: collectionToLoad, container } = requestArgs;
 
-  const { config, collections } = store.getState();
+  const { config } = store.getState();
 
-  const { collection } = await getUserLessonProgressState(collectionToLoad, config, collections);
+  const { collection } = await getLessonState(collectionToLoad, config);
 
   setTimeout(() => {
     renderSpeciesList(collection, { callingParentContainer: container });
   });
 };
 
-const getUserLessonProgressState = async (collectionToLoad, config, collections, newLessonCounter) => {
+const getLessonState = async (collectionToLoad, config, newLessonCounter) => {
 
   const { counter: stateCounter, lessons, lesson: savedLesson } = store.getState();
 
@@ -89,7 +90,7 @@ const getUserLessonProgressState = async (collectionToLoad, config, collections,
 
   const userLessonState = lessonStateHelper.getUserLessonState(lessons, collectionToLoad, progressState, counter, savedLesson, newLessonCounter);
 
-  await collectionHandler.loadCollection(userLessonState.collection, config, userLessonState.counter, collections);
+  userLessonState.collection = await collectionHandler.loadCollection(userLessonState.collection, config);
 
   setActiveCollection(userLessonState);
 
@@ -138,7 +139,7 @@ const addExtraSpeciesSelection = async requestArgs => {
 
   const extraSpecies = config.guide.species.filter(s => !contains(s.name, collection.items.map(i => i.name)));
 
-  const items = await collectionHandler.getSnapdragonSpeciesData(extraSpecies);
+  const items = await collectionHandler.getSpeciesDetailsInParallel(extraSpecies);
 
   const collectionExtension = await collectionHandler.loadCollectionItemProperties({ items }, config);
   collection.items = [ ...collection.items, ...collectionExtension.items];

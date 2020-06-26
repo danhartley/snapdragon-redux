@@ -115,7 +115,6 @@ const onLoadHandler = () => {
     window.logError = logError;
     window.logAPIError = logAPIError;
 
-    snapLog('port', {});
 };
 
 onLoadHandler();

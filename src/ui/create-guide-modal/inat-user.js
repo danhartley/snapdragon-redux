@@ -1,6 +1,7 @@
 import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
 import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 import { renderTemplate } from 'ui/helpers/templating';
+import { enums } from 'ui/helpers/enum-helper';
 
 import inatTemplate from 'ui/create-guide-modal/inat-user-template.html';
 
@@ -12,6 +13,7 @@ export const renderInatUser = (modal, createGuide) => {
 
     template.innerHTML = inatTemplate;
 
+    config.guide.guideMode = enums.guideMode.DYNAMIC.name;
     if(config.guide.inatId.key !== '-----') {
         if(config.guide.locationType !== 'inat') {
             config.guide.locationType = 'inat';
@@ -89,6 +91,7 @@ export const renderInatUser = (modal, createGuide) => {
 };
 
 const saveInatId = (parent, config, createGuide, autocompleteRef) => {
+
     const input = parent.querySelector('#inat-identity');
     if (config.isLandsapeMode) {
         input.value = '';
@@ -98,6 +101,7 @@ const saveInatId = (parent, config, createGuide, autocompleteRef) => {
     const id = input.name;
     config.guide.inatId.key = key;
     config.guide.inatId.id = id;
+
     if (key !== '') {
         config.guide.locationType = 'inat';
         createGuide.setConfig(config);

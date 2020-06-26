@@ -22,16 +22,14 @@ export const speciesPicker = async (input, listener) => {
         if(e.keyCode == 13) {
             const species = await firestore.getSpeciesByName(input.value);
             listener(species);
-            // updateActiveSpecies(species);  
+            window.snapdragon.species = species;
         }
     });
 };
 
 // const updateActiveSpecies = species => {
 
-//     window.snapdragon.species = species;
-    
-//     const activeSpecies = document.querySelector('.js-active-species');    
+//     const activeSpecies = document.querySelector('#activeSpeciesDisplay .feedback');    
 //           activeSpecies.querySelector('span:nth-child(2)').innerHTML = !!species.vernacularName
 //             ? `${species.name} (${species.vernacularName})`
 //             : `${species.name} (${itemProperties.getVernacularName(species, { language: 'en'})})`;            

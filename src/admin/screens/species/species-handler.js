@@ -59,7 +59,9 @@ const addSpecies = () => {
     document.getElementById('licences').value = noneExcludedFromCommercialUse;
     
     const inputSearch = document.querySelector('#input-search');
-          inputSearch.focus();
+          setTimeout(() => {
+            inputSearch.focus();
+          }, 250);
     const asyncProgress = document.querySelector('.async-progress');
 
     const searchEOLCallback = (species, ref) => {
@@ -218,10 +220,10 @@ const updateSpeciesNames = () => {
         renderTemplate({names: item.names}, template.content, vernacularNames);
         M.updateTextFields();
 
-        const deleteIcons = document.querySelectorAll('i');
+        const deleteIcons = document.querySelectorAll('button');
         deleteIcons.forEach(icon => {
             icon.addEventListener('click', async e => {
-                e.target.classList.add('alert');
+                e.target.querySelector('svg').classList.add('alert');
                 const name = e.target.id;                
                 item.names = item.names.filter(n => n.vernacularName !== name);
                 await firestore.updateSpeciesNames(item, item.names);

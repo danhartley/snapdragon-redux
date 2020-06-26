@@ -21,11 +21,12 @@ class CreateGuide {
         this.listeners = [];
 
         this.steps = [
+            { number: 0, title: 'Create your own lesson' },
             { number: 1, title: 'Species Picker', description: 'Provenance', nextStep: '', disabled: true, className:'species-actions',
                 nextSteps: [
-                    { id: enums.guideOption.LOCATION.name, step: 'Location' },
-                    { id: enums.guideOption.INAT.name, step: 'Location'},
-                    { id: enums.guideOption.PICKER.name, step: 'Picker'},
+                    { id: enums.guideType.LOCATION.name, step: 'Location' },
+                    { id: enums.guideType.INAT.name, step: 'Location'},
+                    { id: enums.guideType.PICKER.name, step: 'Picker'},
                 ] },
             { number: 2, title: 'Species Picker', description: 'Location', nextStep: 'Taxa', prevStep: 'Provenance', disabled: true, className:'location-actions' },
             { number: 2, title: 'Species Picker', description: 'Picker', nextStep: 'Species', prevStep: 'Provenance', disabled: true, className:'location-actions' },
@@ -99,13 +100,13 @@ class CreateGuide {
             case 'Location':                                
                 options.innerHTML = 'Filter species by location and season.'
                 switch(this.option) {
-                    case enums.guideOption.LOCATION.name:
+                    case enums.guideType.LOCATION.name:
                         renderLocation(this.modal, this);
                         break;
-                    case enums.guideOption.INAT.name:
+                    case enums.guideType.INAT.name:
                         renderInatUser(this.modal, this);
                         break;
-                    case enums.guideOption.PICKER.name:
+                    case enums.guideType.PICKER.name:
                         const chosenOnes = this.modal.querySelector('.js-chosen');
                               chosenOnes.classList.add('hide-important');
                         document.querySelector('.js-step-action-content .location-actions').classList.add('species-picker-actions');
@@ -135,7 +136,7 @@ class CreateGuide {
 
         this.currentStep = next || this.steps.find(s => s.number === nextStep);
 
-        if(option === enums.guideOption.PICKER.name && direction === 'NEXT') {
+        if(option === enums.guideType.PICKER.name) {
             this.currentStep = this.steps[2];
         }
 
@@ -184,7 +185,7 @@ class CreateGuide {
             
 
             if(this.getCurrentStep().number === 4) {
-                this.previousStepActionTxt.innerHTML = this.option === enums.guideOption.PICKER.name 
+                this.previousStepActionTxt.innerHTML = this.option === enums.guideType.PICKER.name 
                     ? this.steps[2].description
                     : this.steps[3].description;
             } else {
@@ -204,7 +205,8 @@ export const createGuideHandler = step => {
     
     guide.goToNextStep(step, 'NEXT');
 
-    const handleNextStepAction = event => {
+    const handleNextStepAction = e => {
+
         guide.startLesson = parseInt(guide.nextStepActionArrow.dataset.number) === 4;
         if(guide.startLesson) { 
             guide.nextStepActionArrow.setAttribute('data-dismiss','modal');
@@ -218,12 +220,12 @@ export const createGuideHandler = step => {
 
     guide.nextStepActionArrow.addEventListener('click', handleNextStepAction, true);
 
-    const handlePreviousStepAction = event => {
+    const handlePreviousStepAction = e => {
 
         let prevStep;
         
         if(guide.getCurrentStep() && guide.getCurrentStep().number === 4) {
-            prevStep = guide.option === enums.guideOption.PICKER.name ? 2 : 3;
+            prevStep = guide.option === enums.guideType.PICKER.name ? 2 : 3;
         } else {
             prevStep = guide.getCurrentStep().number - 1;
         }

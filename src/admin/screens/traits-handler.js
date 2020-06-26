@@ -77,10 +77,10 @@ const addTraits = () => {
 
         document.getElementById('input-trait-key').focus();
 
-        const deleteIcons = document.querySelectorAll('i');
+        const deleteIcons = document.querySelectorAll('button');
         deleteIcons.forEach(icon => {
             icon.addEventListener('click', async e => {
-                e.target.classList.add('alert');
+                e.target.querySelector('svg').classList.add('alert');
                 const field = e.target.id;
                 const response = await firestore.deleteSpeciesTraitField(item.name, field);         
                 renderTraits(item);
@@ -220,7 +220,7 @@ const addTraits = () => {
 
         M.updateTextFields();
 
-        snapLog('renderTraitCallback traits', traits);
+        // snapLog('renderTraitCallback traits', traits);
 
         addFieldListeners(traits);
     };

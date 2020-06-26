@@ -60,6 +60,10 @@
     align-items: center;
   }
 
+  .modal-guide-navigation > button > span, .modal-guide-navigation > button svg {
+    pointer-events: none;
+  }
+
   .custom-lesson-menu-options .snap-icon-btn:hover, .modal-guide-navigation .snap-icon-btn:hover {
     color: var(--snap-collection-active);
   }
