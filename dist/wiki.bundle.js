@@ -26524,9 +26524,9 @@ module.exports = /*#__PURE__*/function (_BaseClient) {
 
 /***/ }),
 
-/***/ "./node_modules/webpack-dev-server/client/index.js?http://0.0.0.0:8081":
+/***/ "./node_modules/webpack-dev-server/client/index.js?http://0.0.0.0:8080":
 /*!*******************************************************!*\
-  !*** (webpack)-dev-server/client?http://0.0.0.0:8081 ***!
+  !*** (webpack)-dev-server/client?http://0.0.0.0:8080 ***!
   \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -26708,7 +26708,7 @@ var onSocketMessage = {
   }
 };
 socket(socketUrl, onSocketMessage);
-/* WEBPACK VAR INJECTION */}.call(this, "?http://0.0.0.0:8081"))
+/* WEBPACK VAR INJECTION */}.call(this, "?http://0.0.0.0:8080"))
 
 /***/ }),
 
@@ -27884,12 +27884,12 @@ function _renderWiki() {
 
 /***/ 2:
 /*!*************************************************************************************!*\
-  !*** multi (webpack)-dev-server/client?http://0.0.0.0:8081 ./src/wikipedia/wiki.js ***!
+  !*** multi (webpack)-dev-server/client?http://0.0.0.0:8080 ./src/wikipedia/wiki.js ***!
   \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/danminimac/code/snapdragon-redux/node_modules/webpack-dev-server/client/index.js?http://0.0.0.0:8081 */"./node_modules/webpack-dev-server/client/index.js?http://0.0.0.0:8081");
+__webpack_require__(/*! /Users/danminimac/code/snapdragon-redux/node_modules/webpack-dev-server/client/index.js?http://0.0.0.0:8080 */"./node_modules/webpack-dev-server/client/index.js?http://0.0.0.0:8080");
 module.exports = __webpack_require__(/*! ./src/wikipedia/wiki.js */"./src/wikipedia/wiki.js");
 
 

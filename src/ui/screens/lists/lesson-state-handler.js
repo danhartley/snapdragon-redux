@@ -13,13 +13,14 @@ const changeRequest = async args => {
 
   const { requestType, requestArgs } = args;
 
-  const { config, collection, collections, counter } = store.getState();
+  const { collection } = store.getState();
 
   switch(requestType) {
 
-    case enums.lessonState.PAUSE_LESSON:
-      if(config.isLandcapeMode) return;      
-      changeLessonState(requestType, collection, config);
+    case enums.lessonState.PAUSE_LESSON:      
+      snapLog('config', store.getState().config);
+      if(store.getState().config.isLandscapeMode) return;      
+      changeLessonState(requestType, collection, store.getState().config);
     break;
     
     case enums.lessonState.UPDATE_COLLECTION:
