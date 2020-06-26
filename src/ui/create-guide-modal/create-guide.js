@@ -21,6 +21,7 @@ class CreateGuide {
         this.listeners = [];
 
         this.steps = [
+            { number: 0, title: 'Create your own lesson' },
             { number: 1, title: 'Species Picker', description: 'Provenance', nextStep: '', disabled: true, className:'species-actions',
                 nextSteps: [
                     { id: enums.guideType.LOCATION.name, step: 'Location' },
