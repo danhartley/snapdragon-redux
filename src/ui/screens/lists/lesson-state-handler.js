@@ -88,13 +88,13 @@ const getLessonState = async (collectionToLoad, config, newLessonCounter) => {
 
   const counter = newLessonCounter || stateCounter;
 
-  const userLessonState = lessonStateHelper.getUserLessonState(lessons, collectionToLoad, progressState, counter, savedLesson, newLessonCounter);
+  const lessonState = lessonStateHelper.getUserLessonState(lessons, collectionToLoad, progressState, counter, savedLesson, newLessonCounter);
 
-  userLessonState.collection = await collectionHandler.loadCollection(userLessonState.collection, config);
+  lessonState.collection = await collectionHandler.loadCollection(lessonState.collection, config);
 
-  setActiveCollection(userLessonState);
+  setActiveCollection(lessonState);
 
-  return userLessonState;
+  return lessonState;
 };
 
 const changeLessonState = async (lessonState, collection, lesson) => {    
@@ -164,7 +164,7 @@ const setActiveCollection = lesson => {
   lesson.counter = lesson.counter || { };
   actions.boundSetActiveCollection({ lesson });
   const { user } = store.getState();
-  firestore.addCollection(lesson.collection, user);
+  firestore.addCollection(clone(lesson.collection), user);
 };
 
 const recordUserAction = action => {
