@@ -34,11 +34,11 @@ export const speciesSearch = createGuide => {
     }, 2000);
 
     const nextStepActionArrow = modal.querySelector('.js-right');
-    const viewGuideIcon = nextStepActionArrow.querySelector('i');
+    const viewGuideIcon = nextStepActionArrow.querySelector('svg');
           viewGuideIcon.classList.add('snap-inactive');
 
     const back = modal.querySelector('.js-left .js-arrow-wrapper');
-    const viewTaxaIcon = back.querySelector('i');
+    const viewTaxaIcon = back.querySelector('svg');
           viewTaxaIcon.classList.add('snap-inactive');
 
     const renderLessonSummary = collection => {
@@ -60,31 +60,33 @@ export const speciesSearch = createGuide => {
         
         renderTemplate({ collection }, template.content, feedback);
 
-        const icon = modal.querySelector('.icon i');
+        const icon = modal.querySelector('.icon svg');
               icon.classList.remove('slow-spin');
 
         setTimeout(() => {
           nextStepActionArrow.addEventListener('click', e => {
                 setTimeout( async () => {
 
-                    if(config.guide.species) {
+                  snapLog('config.guide.species', config.guide.species)
 
-                        collection.items = collection.items.filter(item => {
-                            return contains(item.name, config.guide.species.map(sp => sp.name));
-                        });
-    
-                        await lessonStateHandler.changeRequest({
-                            requestType: enums.lessonState.ADD_SPECIES_TO_COLLECTION,
-                            requestArgs: {
-                                updatedConfig: config, updatedCollection: collection
-                            }
-                        });
-                    }
+                  if(config.guide.species) {
 
-                    if(parseInt(nextStepActionArrow.dataset.number) === 4) {
-                        createGuide.callOnCreateCustomListeners(collection);
-                        lessonStateHelper.clearGuide();
-                    }
+                      collection.items = collection.items.filter(item => {
+                          return contains(item.name, config.guide.species.map(sp => sp.name));
+                      });
+  
+                      await lessonStateHandler.changeRequest({
+                          requestType: enums.lessonState.ADD_SPECIES_TO_COLLECTION,
+                          requestArgs: {
+                              updatedConfig: config, updatedCollection: collection
+                          }
+                      });
+                  }
+
+                  if(parseInt(nextStepActionArrow.dataset.number) === 4) {
+                      createGuide.callOnCreateCustomListeners(collection);
+                      lessonStateHelper.clearGuide();
+                  }
                 });
             });   
         });
@@ -128,13 +130,15 @@ export const speciesSearch = createGuide => {
         }
         
         const lesson = await lessonStateHandler.changeRequest({
-            requestType: enums.lessonState.GET_LESSON_PROGRESS,
+            requestType: enums.lessonState.GET_LESSON_STATE,
             requestArgs: {
                 collectionToLoad,
                 updatedCounter: counter,
-                guide: createGuide.getConfig().guide
+                config: createGuide.getConfig()
             }
         });
+
+        snapLog('lesson', lesson);
         
         const collection = lesson.collection;
               collection.guide = config.guide;
@@ -174,7 +178,7 @@ export const speciesSearch = createGuide => {
 
     switch(option) {
 
-        case enums.guideOption.LOCATION.name:
+        case enums.guideType.LOCATION.name:
             initLesson({ 
                 ...collections.find(c => c.guideType === option),                
                 name: config.guide.place.name,
@@ -185,7 +189,7 @@ export const speciesSearch = createGuide => {
             });
             break;
 
-        case enums.guideOption.INAT.name:
+        case enums.guideType.INAT.name:
             initLesson({
                 ...collections.find(c => c.guideType === option),  
                 name: `${config.guide.inatId.key}'s observations`,
@@ -195,7 +199,7 @@ export const speciesSearch = createGuide => {
             });        
             break;
 
-        case enums.guideOption.PICKER.name:
+        case enums.guideType.PICKER.name:
 
             const initPicker = async () => {
 

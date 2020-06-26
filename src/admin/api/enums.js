@@ -977,6 +977,7 @@ export const enums = {
   PANICLE: 'Panicle',
   CYMOSE: 'Cymose',
   BRANCHED_SPIKE: 'Branched spike',
+  AXILLARY_CLUSTERS: 'Axillary clusters'
   },
   umbelType: {
     FLAT: 'Flat',

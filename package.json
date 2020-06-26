@@ -7,8 +7,10 @@
     "test": "jest-webpack",
     "start:dev": "webpack-dev-server --config ./webpack.dev.js --open-page 'dist/index.html'  & jest --watchAll",
     "start:prod": "webpack-dev-server --config ./webpack.prod.js --open-page 'dist/index.html'",
+    "start:admin": "webpack-dev-server --config ./webpack.admin.js --open-page 'dist/collection-builder.html'",
     "dev": "webpack --config ./webpack.dev.js",
     "prod": "webpack --config ./webpack.prod.js",
+    "admin": "webpack --config ./webpack.admin.js",
     "watch": "webpack --watch --config ./webpack.dev.js & jest --watchAll"
   },
   "jest": {

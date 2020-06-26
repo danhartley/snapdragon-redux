@@ -1,6 +1,7 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import { speciesInGuideEditor } from 'ui/create-guide-modal/species-in-guide-editor';
 import { speciesEditor } from 'ui/create-guide-modal/species-editor';
+import { enums } from 'ui/helpers/enum-helper';
 
 import speciesPickerTemplate from 'ui/create-guide-modal/species-picker-template.html';
 
@@ -17,6 +18,8 @@ export const renderSpeciesPicker = (props, parent) => {
 
       const selectedSpeciesDisplay = parent.querySelector('.js-selected-species-container');
             selectedSpeciesDisplay.innerHTML = '';
+
+      config.guide.guideMode = enums.guideMode.STATIC.name;
 
       if(config) {
             speciesInGuideEditor(config, container, selectedSpeciesDisplay, props, config.guide.species || []);

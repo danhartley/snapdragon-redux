@@ -82,11 +82,7 @@ const getUserLessonState = (lessons, collectionToLoad, progressState, counter, s
         score: clone(progressState.score)
       };
     }
-
-    if(newLessonCounter) {
-        lesson.counter.isCustomLessonPausedOverride = true;
-    }
-
+    
     return lesson;
 };
   

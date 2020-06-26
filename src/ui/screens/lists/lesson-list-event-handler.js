@@ -187,7 +187,7 @@ const hideOtherContentAndRevertChevrons = selectedLessonId => {
 
     if(chevronLessonId !== selectedLessonId) {
       
-      chevron.click();
+      chevron.parentElement.click();
         
       const lesson = document.querySelector(`.js-lesson-list-carousel-item[data-lesson-id="${chevronLessonId}"]`);
             lesson.classList.remove('highlighted-for-review-row');

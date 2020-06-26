@@ -70,9 +70,11 @@
   input[type=text]:not(.browser-default)[readonly="readonly"] {
       border: none;      
   }
-  i {
-      cursor: pointer;
+  
+  svg {
+      pointer-events: none;
   }
+  
   .chkSafety, .chkStar {
       margin: 0 0 0 1rem;
   }
@@ -92,9 +94,14 @@
   .relationship-card .cols > div:nth-child(1) {
     margin: 0 1rem 0 0;
   }
-  
+
+  button svg {
+    font-size: .8rem;
+  }
+
   .alert {
       color: rgba(183, 12, 21,.8);
+      font-size: .8rem;
   }
   .row-centered {
     display: flex !important;
@@ -137,7 +144,7 @@
       margin-left: .5rem;
   }
 
-  li i {
+  li svg {
       font-size: .8rem;
   }
   .btn {
@@ -245,7 +252,7 @@
       height: 0;
   }
 
-  .disabled i {
+  .disabled svg {
     pointer-events: none;
     color: var(--snap-text-light);    
   }

@@ -12,7 +12,7 @@ export const renderIcon = (taxonomy, rootNode) => {
 
     } else {
 
-        const iconicIcon = rootNode.querySelector('.js-iconic-icon i');
+        const iconicIcon = rootNode.querySelector('.js-iconic-icon svg');
 
         const classes = matchIcon(taxonomy, iconicTaxa).split(' ');
 
@@ -35,10 +35,12 @@ export const returnIcon = item => {
 
 export const returnTaxonIcon = taxon => {
 
-    if(taxon.toLowerCase() === 'fungi') {
-        return `<span class="iconic-taxa-categories-selected">${mushroomIcon}</span>`;
+  if(!taxon) return;
 
-    } else {
-        return `<span><i class="small-icon ${matchRank(taxon)}"></i></span>`;
-    }
+  if(taxon.toLowerCase() === 'fungi') {
+      return `<span class="iconic-taxa-categories-selected">${mushroomIcon}</span>`;
+
+  } else {
+      return `<span><i class="small-icon ${matchRank(taxon)}"></i></span>`;
+  }
 };

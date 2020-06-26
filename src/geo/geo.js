@@ -75,8 +75,7 @@ export const getPlace = async (config, force = false) => {
     });
     const json = await response;    
     return await json;
-  } else {    
-   snapLog('getPlace config', config);
+  } else {       
     const coordinates = await getLocation(config);        
     const latitude = coordinates['0'] || coordinates.lat;
     const longitude = coordinates['1'] || coordinates.long;

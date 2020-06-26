@@ -12,15 +12,15 @@ export const renderSpeciesSearchOptions = createGuide => {
     const options = [
         {
             text: 'By location and season',
-            id: enums.guideOption.LOCATION.name
+            id: enums.guideType.LOCATION.name
         },
         {
             text: 'From iNaturalist observations',
-            id: enums.guideOption.INAT.name
+            id: enums.guideType.INAT.name
         },
         {
             text: 'Using a name-based search',
-            id: enums.guideOption.PICKER.name
+            id: enums.guideType.PICKER.name
         }
     ];
 

@@ -1,3 +1,5 @@
+import { enums } from 'ui/helpers/enum-helper';
+
 export const config = {
     language: 'en',
     moduleSize: 4,
@@ -31,6 +33,7 @@ export const config = {
         inatId: { key: '', type: '', param: 'user_id' },
         season: {},
         perPage: 200,
-        noOfRecords: 50
+        noOfRecords: 50,
+        guideMode: enums.guideMode.STATIC.name
     },    
 };

@@ -2,8 +2,8 @@
     <li>
         <div class="input-field">
             <input type="text" class='trait-value' value="{{ field.value }}" data-field="{{ field.key }}" readonly="readonly" />
-            <label class='trait-key'>{{ field.key }} {{ field.unit }}</label>
-            <i id="{{ field.key }}" class="fas fa-trash"></i>
+            <label class='trait-key'>{{ field.key }} {{ field.unit }}</label>            
+            <button class="snap-icon-btn" id="{{ field.key }}"><i class="fas fa-trash"></i></button>
         </div>
     </li>    
 </ul>

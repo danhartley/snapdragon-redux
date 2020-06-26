@@ -48,6 +48,10 @@
     font-weight: 500;
   }
 
+  svg {
+    pointer-events: none;
+  }
+
   .flex {
     display: flex;
   }
@@ -388,3 +392,78 @@
     font-size: .8rem;
     padding: .25rem .5rem;
   }
+
+  .snap-btn {
+    background-color: var(--snap-list-header-background);
+    color: var(--snap-text-black);
+    letter-spacing: .05rem;
+    border: 1px solid var(--snap-border-light);
+    padding: .25rem .75rem;
+  }
+  
+  .snap-btn:hover, .snap-btn:focus {
+    opacity: 1;
+    border: 1px solid var(--snap-youtube-green);
+    outline: none;
+  }
+  
+  .snap-btn:focus:not(:focus-visible), .snap-icon-btn:focus:not(:focus-visible) {
+    border: 1px solid var(--snap-active);
+    outline: none;
+  }
+  
+  .dropdown .snap-btn:hover, .dropdown .snap-btn:focus {
+    border: 1px solid var(--snap-border-light);
+  }
+  
+  .snap-icon-btn {
+    color: var(--snap-text-dark);
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0 .5rem;
+  }
+  
+  .snap-icon-btn:focus, .snap-icon-btn:hover {
+    color: var(--snap-youtube-green);
+    outline: 1px solid var(--snap-border-medium);
+    opacity: 1;
+  }
+  
+  .snap-link-btn, .snap-no-link-btn {
+    color: var(--snap-text-dark);
+    background-color: transparent;
+    border: none;
+    font-size: .7rem;
+    width: intrinsic;           /* Safari/WebKit uses a non-standard name */
+    width: -moz-max-content;    /* Firefox/Gecko */
+    width: -webkit-max-content; /* Chrome */
+  }
+  
+  .snap-no-link-btn {
+    pointer-events: none;
+  }
+  
+  .snap-action-btn {
+    background-color: var(--snap-tertiary-background);
+    color: var(--snap-text-light);
+    letter-spacing: .05rem;
+    border: 1px solid var(--snap-non-taxa) !important;
+    padding: .5rem .75rem;
+  }
+  
+  .snap-action-btn:focus {
+    outline: 1px solid var(--snap-border-medium);
+    color: var(--snap-text-black);
+  }
+  
+  .snap-action-btn.snap-success {
+    color: var(--snap-text-light) !important;
+    background-color: var(--snap-success) !important;
+    border: 0.05rem solid var(--snap-success);
+  }
+  
+  .snap-action-btn.snap-alert {
+    color: var(--snap-text-light) !important;
+    background-color: var(--snap-alert) !important;
+    border: 0.05rem solid var(--snap-alert);
+  }  
