@@ -144,7 +144,7 @@ export const speciesSearch = createGuide => {
             }
         });
 
-        snapLog('lesson', lesson);
+        snapLog('initLesson', lesson);
         
         const collection = lesson.collection;
               collection.guide = config.guide;

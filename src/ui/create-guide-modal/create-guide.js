@@ -137,7 +137,7 @@ class CreateGuide {
         this.currentStep = next || this.steps.find(s => s.number === nextStep);
 
         if(option === enums.guideType.PICKER.name) {
-            this.currentStep = this.steps[2];
+            this.currentStep = this.steps[3];
         }
 
         this.direction = direction;
@@ -186,8 +186,8 @@ class CreateGuide {
 
             if(this.getCurrentStep().number === 4) {
                 this.previousStepActionTxt.innerHTML = this.option === enums.guideType.PICKER.name 
-                    ? this.steps[2].description
-                    : this.steps[3].description;
+                    ? this.steps[3].description
+                    : this.steps[4].description;
             } else {
                 this.previousStepActionTxt.innerHTML = previousStepProperties.description;
             }

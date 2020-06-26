@@ -541,7 +541,7 @@ const addCollection = async (collection, user) => {
     const collectionRef = await updateCollection(collection);
 
     if(collectionRef) return;
-    
+
     collection.user = user;
 
     let docRef = null;
@@ -550,6 +550,7 @@ const addCollection = async (collection, user) => {
         docRef = await db.collection('collections').add(collection);
     } catch(e) {
       // logAPIError(e, 'addCollection');
+      console.log('addCollection:', e);
     }
   
     return docRef;
@@ -569,10 +570,10 @@ const addCollection = async (collection, user) => {
         });
 
         if(docRef) {
-            await docRef.update(collection);
+            await docRef.update(collection);            
         }
 
-        return { message: 'Success', success : true };
+        return docRef;
 
     } catch(e) {
       // logAPIError(e, 'updateCollection');
