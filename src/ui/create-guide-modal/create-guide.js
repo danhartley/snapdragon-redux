@@ -135,7 +135,7 @@ class CreateGuide {
 
         this.currentStep = next || this.steps.find(s => s.number === nextStep);
 
-        if(option === enums.guideType.PICKER.name && direction === 'NEXT') {
+        if(option === enums.guideType.PICKER.name) {
             this.currentStep = this.steps[2];
         }
 
@@ -204,7 +204,8 @@ export const createGuideHandler = step => {
     
     guide.goToNextStep(step, 'NEXT');
 
-    const handleNextStepAction = event => {
+    const handleNextStepAction = e => {
+
         guide.startLesson = parseInt(guide.nextStepActionArrow.dataset.number) === 4;
         if(guide.startLesson) { 
             guide.nextStepActionArrow.setAttribute('data-dismiss','modal');
@@ -218,7 +219,7 @@ export const createGuideHandler = step => {
 
     guide.nextStepActionArrow.addEventListener('click', handleNextStepAction, true);
 
-    const handlePreviousStepAction = event => {
+    const handlePreviousStepAction = e => {
 
         let prevStep;
         

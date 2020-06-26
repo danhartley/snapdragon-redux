@@ -28,7 +28,6 @@ const getItems = async (collection, config) => {
       break;
     case enums.guideMode.STATIC.name:
       items = await getSpeciesDetailsInParallel(collection.species);
-      snapLog('static items', items);
       break;
   }
 

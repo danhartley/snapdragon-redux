@@ -1,3 +1,5 @@
+import { Modal } from 'bootstrap';
+
 import{ contains } from 'ramda';
 
 import { store } from 'redux/store';
@@ -65,6 +67,7 @@ export const speciesSearch = createGuide => {
 
         setTimeout(() => {
           nextStepActionArrow.addEventListener('click', e => {
+
                 setTimeout( async () => {
 
                   snapLog('config.guide.species', config.guide.species)
@@ -86,6 +89,9 @@ export const speciesSearch = createGuide => {
                   if(parseInt(nextStepActionArrow.dataset.number) === 4) {
                       createGuide.callOnCreateCustomListeners(collection);
                       lessonStateHelper.clearGuide();
+                      var createGuideModal = Modal.getInstance(document.getElementById('createGuide'));
+                      createGuideModal.hide();
+                      document.querySelector('.modal-backdrop.show.fade').style.display = 'none';
                   }
                 });
             });   

@@ -91,11 +91,7 @@ const getLessonState = async (collectionToLoad, config, newLessonCounter) => {
 
   userLessonState.collection = await collectionHandler.loadCollection(userLessonState.collection, config);
 
-  snapLog('before userLessonState.collection', userLessonState.collection);
-
   setActiveCollection(userLessonState);
-
-  snapLog('after userLessonState.collection', userLessonState.collection);
 
   return userLessonState;
 };
