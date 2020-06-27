@@ -23,7 +23,6 @@ const getItems = async (collection, config) => {
           items = await getInatSpecies(config);
         case enums.guideType.INAT.name:
           items = await getInatSpecies(config);
-          snapLog('inat items', items);
       }      
       break;
     case enums.guideMode.STATIC.name:
@@ -40,13 +39,15 @@ const loadCollection = async (collection, config) => {
 
     config.collection = { id: collection.id };
     
-    // const collectionIsUnchanged = 
-    //   collection.items && collection.items.length > 0 && collection.items[0].collectionId === collection.id && 
-    //   collection.speciesRange === config.guide.speciesRange;
+    const collectionIsUnchanged = 
+      collection.items && collection.items.length > 0 && config.collection.id === collection.id && 
+      (!collection.speciesRange || collection.speciesRange === config.guide.speciesRange);
   
-    // if(!!collectionIsUnchanged) {
-    //   return collection;
-    // }
+    snapLog('collectionIsUnchanged: ', collectionIsUnchanged);
+
+    if(!!collectionIsUnchanged) {
+      return collection;
+    }
 
     collection.items = await getItems(collection, config);
 

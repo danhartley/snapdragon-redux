@@ -199,14 +199,6 @@ a.dropdown-item {
   background-color: var(--snap-dd-non-taxa-bg-hover);
 }
 
-.underline-external-link {
-  color: var(--snap-link) !important;
-  text-decoration: none;
-  border-bottom: solid .05rem !important;
-  color: inherit;
-  cursor: pointer;
-}
-
 .lesson-title {
   line-height: 1.6;
 }
@@ -892,7 +884,12 @@ a.icon:hover {
   padding: .25rem .5rem;
   letter-spacing: .1rem;
   border-radius: .2rem;
+  border: .05rem solid var(--snap-text-dark);  
+}
+
+.block.snap-icon-btn {
   border: .05rem solid var(--snap-text-dark);
+  padding: .25rem .5rem;
 }
 
 .pool .block {

@@ -34,7 +34,8 @@
     --snap-success-medium: rgb(169, 196, 163);
     --snap-success-light: rgb(216, 225, 208);
     
-    --snap-link: rgb(54, 69, 82);
+    --snap-link-hover: rgb(54, 69, 82);
+    --snap-link: rgb(20, 125, 156);
 
     --snap-progress-bg: rgb(168, 168, 168);
     --snap-progress-bar: rgb(255, 255, 255);

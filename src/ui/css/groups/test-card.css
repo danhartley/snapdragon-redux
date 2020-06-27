@@ -7,6 +7,7 @@
 }
 
 .test-card-container .question-header > div {
+    font-size: .8rem;
     align-items: center;
     display: flex;    
     flex-direction: row;
