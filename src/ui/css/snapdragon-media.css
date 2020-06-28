@@ -622,6 +622,10 @@
         padding-bottom: 4px;
         border-bottom: 1px solid var(--snap-border-light);
     }
+
+    .test-card-container .question-header > div {
+      font-size: 1rem;
+    }
 }
 
 @media (min-width: 1024px) {

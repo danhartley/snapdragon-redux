@@ -205,32 +205,19 @@
 }
   
   .underline-link {
-    color: var(--snap-youtube-green);
+    color: var(--snap-link);
     cursor: pointer;
     display: inline-block;
     line-height: 1.8;
-    pointer-events: initial;
+    border-bottom: 1px solid var(--snap-link);
   }
 
   .underline-link:hover, .underline-link:focus {
-    color: var(--snap-text-black);
+    color: var(--snap-link-hover);
   }
 
   .underline-link:focus {
     outline: 1px solid var(--snap-border-medium)
-  }
-
-  .underline-link-left-margin {
-    margin-left: -.25rem;
-  }
-
-  a.underline-link, a.underline-link:hover, a.underline-link:active, a.underline-link:focus {
-    color: var(--blue) !important;
-    border-color: transparent;
-  }
-
-  a.underline-link:hover, a.underline-link:active, a.underline-link:focus {
-    border-color: var(--blue) !important;
   }
 
   .full-width {

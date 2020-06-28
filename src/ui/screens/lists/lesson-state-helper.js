@@ -69,6 +69,7 @@ const getUserLessonState = (lessons, collectionToLoad, progressState, counter, s
   
     if(restoredLesson) {
       lesson = restoredLesson;
+      lesson.collection = collectionToLoad;
       if(lesson.lesson.isNextRound) {
         lesson.score = clone(progressState.score);
       }

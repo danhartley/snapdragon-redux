@@ -12,7 +12,7 @@ export const renderIcon = (taxonomy, rootNode) => {
 
     } else {
 
-        const iconicIcon = rootNode.querySelector('.js-iconic-icon svg');
+        const iconicIcon = rootNode.querySelector('.js-iconic-icon i');
 
         const classes = matchIcon(taxonomy, iconicTaxa).split(' ');
 
