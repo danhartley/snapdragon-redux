@@ -1,4 +1,4 @@
-import{ take, contains, flatten } from 'ramda';
+import { take, contains, flatten } from 'ramda';
 
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';

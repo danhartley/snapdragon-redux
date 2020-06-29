@@ -5,6 +5,7 @@
 export const snapLog = (msg, obj) => {
 
   // console.log('SECRET_KEY: ', process.env.SECRET_KEY);
+  console.log('process.env.NODE_ENV: ', process.env.NODE_ENV);
 
   let css = 'background: #222; color: #bada55; padding: 5px; margin-right: 5px;';
   if(Array.isArray(obj)) obj = { obj };

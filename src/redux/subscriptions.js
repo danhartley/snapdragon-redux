@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { contains } from 'ramda';
 
 import { lessonStateHelper } from 'ui/screens/lists/lesson-state-helper';
 import { store } from 'redux/store';
@@ -79,7 +79,7 @@ const checkRequired = (state, layout) => {
         'media-match'
     ];
 
-    isRequired = isReviewingLesson ? true : !R.contains(layout.name, reviewLayouts);
+    isRequired = isReviewingLesson ? true : !contains(layout.name, reviewLayouts);
 
     return isRequired;
 };

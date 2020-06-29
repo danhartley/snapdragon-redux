@@ -1,4 +1,4 @@
-import{ contains } from 'ramda';
+import { contains } from 'ramda';
 
 import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';

@@ -1,20 +1,20 @@
-import * as R from 'ramda';
+// import { contains } from 'ramda';
 
-import { infraspecifics } from 'api/snapdragon/infraspecifics';
+// import { infraspecifics } from 'api/snapdragon/infraspecifics';
 
-export const getSpeciesCultivars = items => {
+// export const getSpeciesCultivars = items => {
     
-    const names = infraspecifics.map(species => species.name);
+//     const names = infraspecifics.map(species => species.name);
 
-    const cultivars = items.map( (item, i) => {
-        if(R.contains(item.name, names)) {
-            return {
-                item: item,
-                cultivars: infraspecifics.find(i => i.name === item.name),
-                index: i
-            };
-        }
-    }).filter(c => c);
+//     const cultivars = items.map( (item, i) => {
+//         if(contains(item.name, names)) {
+//             return {
+//                 item: item,
+//                 cultivars: infraspecifics.find(i => i.name === item.name),
+//                 index: i
+//             };
+//         }
+//     }).filter(c => c);
 
-    return cultivars;
-};
+//     return cultivars;
+// };

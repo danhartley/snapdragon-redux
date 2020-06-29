@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { contains } from 'ramda';
 
 import autocomplete from 'autocompleter';
 
@@ -85,7 +85,7 @@ export const renderAddTrait = (parent, callback) => {
         if(traitKeyValues) {
         
             for (let [key, obj] of Object.entries(traitKeyValues)) {
-                if(!R.contains(key, exclude)) {
+                if(!contains(key, exclude)) {
                     values.push({label: obj.trim().toLowerCase(), value: obj.trim().toLowerCase()});
                 }
             }

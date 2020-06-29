@@ -1,5 +1,4 @@
-import * as R from 'ramda';
-
+import { contains } from 'ramda';
 
 import autocomplete from 'autocompleter';
 
@@ -325,7 +324,7 @@ const addOrUpdateSpeciesToFirestore = (item, imageIds, action) => {
             const imageUrls = images.map(i => i.url);
             if(setStarredImage) {
                 item.images.forEach(image => {
-                    if(R.contains(image.url, imageUrls)) {
+                    if(contains(image.url, imageUrls)) {
                         image.starred = true;
                     } else {
                         if(image.hasOwnProperty('starred')) {
@@ -335,7 +334,7 @@ const addOrUpdateSpeciesToFirestore = (item, imageIds, action) => {
                 });
             } else {                
                 item.images = item.images.map(image => {
-                    if(R.contains(image.url, imageUrls)) {
+                    if(contains(image.url, imageUrls)) {
                         const index = imageUrls.indexOf(image.url);
                         if(index !== -1) imageUrls.splice(index, 1);
                     }

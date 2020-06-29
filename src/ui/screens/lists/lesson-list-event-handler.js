@@ -1,4 +1,4 @@
-import{ clone, contains, take, isEmpty } from 'ramda';
+import { clone, contains, take, isEmpty } from 'ramda';
 
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';

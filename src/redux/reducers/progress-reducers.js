@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { clone } from 'ramda';
 
 import { types } from 'redux/actions/action-types';
 import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
@@ -78,8 +78,8 @@ export const score = (state = progressState.score, action) => {
             }
             score.questionTotal = score.passes.length + score.fails.length;
             
-            score.passesTotals = R.clone(state.passesTotals) || {};
-            score.failsTotals = R.clone(state.failsTotals) || {};
+            score.passesTotals = clone(state.passesTotals) || {};
+            score.failsTotals = clone(state.failsTotals) || {};
 
             if(score.success) {
                 score.passesTotals[score.itemId] = score.passesTotals[score.itemId] ? score.passesTotals[score.itemId] + 1 : 1;
@@ -96,7 +96,7 @@ export const score = (state = progressState.score, action) => {
             return { ...state, ...score};
         }
         case types.SELECT_COLLECTION:
-            return R.clone(progressState.score);
+            return clone(progressState.score);
         case types.NEXT_ROUND:
         case types.NEXT_LEVEL:
         case types.UPDATE_COLLECTION:

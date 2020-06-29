@@ -1,4 +1,4 @@
-import{ contains } from 'ramda';
+import { contains } from 'ramda';
 
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';

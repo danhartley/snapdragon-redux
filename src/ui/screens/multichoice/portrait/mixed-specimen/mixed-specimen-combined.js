@@ -1,4 +1,4 @@
-import{ take, clone } from 'ramda';
+import { take, clone } from 'ramda';
 
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
@@ -21,6 +21,8 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
     if(!item) return;
 
     const init = async () => {
+
+        snapLog('renderMixedSpecimenImagesAndQuestion runs twice, once from renderMixedSpecimenQuestion, both triggered by same collection change');
 
         const getPortraitImages = images => {
             const multiImages = utils.flatten(images.map(image => { 

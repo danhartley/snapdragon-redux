@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { contains, clone } from 'ramda';
 
 import { types } from 'redux/actions/action-types';
 
@@ -33,7 +33,7 @@ export const collections = (state = [], action) => {
 
             action.data.lesson.collection.isActive = true;
 
-            const isCollectionUpdate = R.contains(action.data.lesson.collection.id, state.map(collection => collection.id));
+            const isCollectionUpdate = contains(action.data.lesson.collection.id, state.map(collection => collection.id));
             if(isCollectionUpdate) {
                 return [ ...state.filter(collection => collection.id !== action.data.lesson.collection.id), action.data.lesson.collection ];
             } else {
@@ -90,7 +90,7 @@ export const collection = (state = { id: 0 }, action) => {
             return action.data;
         }
         case types.UPDATE_COLLECTION_ITEMS: {
-            const collection = R.clone(state);
+            const collection = clone(state);
             collection.items = action.data.filter(item => !item.isDeselected);
             return collection;
         }

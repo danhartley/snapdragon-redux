@@ -1,4 +1,4 @@
-import{ isEmpty, compose, symmetricDifference, contains, take } from 'ramda';
+import { isEmpty, compose, symmetricDifference, contains, take } from 'ramda';
 
 import { itemProperties } from 'ui/helpers/data-checking';
 import { utils } from 'utils/utils';

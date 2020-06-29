@@ -23,6 +23,8 @@ module.exports = merge(common, {
       chunks: 'all',
     },
   },
+  // You should configure your server to disallow access to the Source Map file for normal users!
+  // https://webpack.js.org/configuration/devtool/
   devtool: "source-map",
   plugins: [
     new CleanWebpackPlugin(),

@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { contains } from 'ramda';
 
 import { types } from 'redux/actions/action-types';
 
@@ -93,7 +93,7 @@ export const lessons = (state = [], action) => {
     switch(action.type) {
         case types.SAVE_LESSON:
             const savedLessonNames = state.map(lesson => lesson.name);
-            if(R.contains(action.data.collection.name, savedLessonNames)) {
+            if(contains(action.data.collection.name, savedLessonNames)) {
                 const lessons = state.filter(lesson => lesson.name !== action.data.collection.name);
                       lessons.push(action.data);
                 return lessons;

@@ -7,11 +7,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    devServer: {
-      host: '0.0.0.0',
-      disableHostCheck: true,
-      writeToDisk: true
-    },
     entry: {
       app: './src/index.js',
       utils: './src/utils/utils.js',      
@@ -35,11 +30,8 @@ module.exports = {
           {
             test: /\.s[ac]ss$/i,
             use: [
-              // Creates `style` nodes from JS strings
               'style-loader',
-              // Translates CSS into CommonJS
               'css-loader',
-              // Compiles Sass to CSS
               'sass-loader',
             ],
           },
@@ -120,7 +112,14 @@ module.exports = {
     resolve: {
         modules: [
           path.resolve('./src'),
-          path.resolve('./node_modules')
-        ]
+          path.resolve('./node_modules'),
+        ],
+        // https://webpack.js.org/configuration/resolve/#resolvemodules
     },
+    devServer: {
+      host: '0.0.0.0',
+      disableHostCheck: true,
+      writeToDisk: true
+    },
+    // watch: true watched by default in webpack-dev-server
 };

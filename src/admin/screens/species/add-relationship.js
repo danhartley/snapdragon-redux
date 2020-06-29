@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { contains } from 'ramda';
 import { utils } from 'utils/utils';
 
 import { helpers } from 'admin/helpers';
@@ -118,7 +118,7 @@ export const addRelationship = () => {
 
                 const speciesNames = await firestore.getSpeciesNames();
 
-                const isSpeciesBInSnapdragon = R.contains(speciesBName, speciesNames[0].value);
+                const isSpeciesBInSnapdragon = contains(speciesBName, speciesNames[0].value);
 
                 if(isSpeciesBInSnapdragon) {
 

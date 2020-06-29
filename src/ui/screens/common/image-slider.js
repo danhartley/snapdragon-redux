@@ -58,7 +58,7 @@ export const imageSlider = sliderArgs => {
         img = scaleImage(img);
     });
 
-    snapLog('imageSlider, image medium values:', images.map(i => i.medium));
+    // snapLog('imageSlider, image medium values:', images.map(i => i.medium));
 
     renderTemplate({ images, identifier }, slider.content, parent);
 

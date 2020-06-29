@@ -1,4 +1,4 @@
-import{ isEmpty, compose, symmetricDifference, contains, clone } from 'ramda';
+import { isEmpty, compose, symmetricDifference, contains, clone } from 'ramda';
 
 export const cleanText = text => {
     return text.term ? text.term.toLowerCase() : text.toLowerCase().replace(/ /g,'');

@@ -1,4 +1,4 @@
-import{ clone } from 'ramda';
+import { clone } from 'ramda';
 
 import { enums } from 'ui/helpers/enum-helper';
 import { persistor } from 'redux/store';
