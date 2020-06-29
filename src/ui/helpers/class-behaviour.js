@@ -1,4 +1,4 @@
-import{ contains } from 'ramda';
+import { contains } from 'ramda';
 
 const show = (elem) => {
     if(!elem) return;

@@ -1,4 +1,4 @@
-import{ take, clone } from 'ramda';
+import { take, clone } from 'ramda';
 
 import { firestore } from 'api/firebase/firestore';
 import { scoreHandler } from 'ui/helpers//score-handler';

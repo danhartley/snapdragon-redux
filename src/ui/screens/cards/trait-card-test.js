@@ -1,4 +1,4 @@
-import{ contains } from 'ramda';
+import { contains } from 'ramda';
 
 import autocomplete from 'autocompleter';
 

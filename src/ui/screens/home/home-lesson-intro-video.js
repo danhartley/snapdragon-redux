@@ -1,4 +1,4 @@
-import{ contains } from 'ramda';
+import { contains } from 'ramda';
 
 import { renderTemplate } from 'ui/helpers/templating';
 import { videoHandler } from 'ui/screens/lists/video-handler';

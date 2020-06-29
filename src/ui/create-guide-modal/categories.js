@@ -1,4 +1,4 @@
-import{ contains } from 'ramda';
+import { contains } from 'ramda';
 
 import { elem } from 'ui/helpers/class-behaviour';
 import { iconicTaxa } from 'snapdragon-config/snapdragon-iconic-taxa';

@@ -1,4 +1,4 @@
-import{ take, contains } from 'ramda';
+import { take, contains } from 'ramda';
 
 import { store } from 'redux/store';
 import { scoreHandler, bindScore } from 'ui/helpers//score-handler';

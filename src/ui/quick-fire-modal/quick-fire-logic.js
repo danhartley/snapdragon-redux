@@ -1,4 +1,4 @@
-import{ contains, take } from 'ramda';
+import { contains, take } from 'ramda';
 
 import { utils } from 'utils/utils';
 

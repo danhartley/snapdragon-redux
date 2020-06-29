@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { contains } from 'ramda';
 
 import { eol } from 'admin/api/eol';
 import { firestore } from 'api/firebase/firestore';
@@ -56,7 +56,7 @@ export const addPhotos = () => {
 
             document.querySelectorAll('img').forEach(image => {
                 const url = image.src.replace(inatPrefix, '').replace(eolPrefix, '').replace('260x190.jpg', 'jpg');
-                if(R.contains(url, currentPhotoUrls)) {
+                if(contains(url, currentPhotoUrls)) {
                     image.style.filter = 'saturate(10%)';
                     image.style.opacity = .3;
                 }

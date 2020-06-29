@@ -1,4 +1,4 @@
-import{ contains } from 'ramda';
+import { contains } from 'ramda';
 
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';

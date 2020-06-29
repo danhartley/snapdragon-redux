@@ -1,6 +1,6 @@
 import { Modal } from 'bootstrap';
 
-import{ contains } from 'ramda';
+import { contains } from 'ramda';
 
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';

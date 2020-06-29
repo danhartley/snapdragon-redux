@@ -1,4 +1,4 @@
-import{ contains, flatten } from 'ramda';
+import { contains, flatten } from 'ramda';
 import { utils } from 'utils/utils';
 
 let root = '';

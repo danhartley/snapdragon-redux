@@ -1,4 +1,4 @@
-import{ take } from 'ramda';
+import { take } from 'ramda';
 
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';

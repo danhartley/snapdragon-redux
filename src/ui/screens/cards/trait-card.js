@@ -1,4 +1,4 @@
-import{ clone } from 'ramda';
+import { clone } from 'ramda';
 
 import { renderTemplate } from 'ui/helpers/templating';
 import { store } from 'redux/store';

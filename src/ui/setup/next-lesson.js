@@ -1,4 +1,4 @@
-import{ clone } from 'ramda';
+import { clone } from 'ramda';
 
 import { store } from 'redux/store';
 import { lessonPlanner } from 'snapdragon-engine/lesson-planner';

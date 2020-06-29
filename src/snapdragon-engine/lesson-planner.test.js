@@ -1,11 +1,11 @@
-import { clone } from 'ramda';
+import * as R from 'ramda';
 
 // import { lessonPlanner } from 'snapdragon-engine/lesson-planner';
 import { extendedCollection as _collection } from 'test/test-collection';
 import { lessonPlans } from 'snapdragon-config/lesson-plans';
 import { config } from 'test/test-config';
 
-let lessonPlan = clone(lessonPlans.find(plan => plan.id === 1 && plan.portrait === false));
+let lessonPlan = R.clone(lessonPlans.find(plan => plan.id === 1 && plan.portrait === false));
 const collection = _collection; // for debugging purposes, do not change.
 const lesson = {
   name: 'Lesson 1',

@@ -1,4 +1,4 @@
-import{ clone } from 'ramda';
+import { clone } from 'ramda';
 
 import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';

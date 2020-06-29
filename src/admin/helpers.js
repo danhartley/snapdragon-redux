@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { contains } from 'ramda';
 
 import { utils } from 'utils/utils';
 
@@ -6,7 +6,7 @@ const parseNames = (names, languages) => {
     
     if(!names) return [];
     
-    let parsedNames = names.filter(item => R.contains(item.language, languages));
+    let parsedNames = names.filter(item => contains(item.language, languages));
     parsedNames = parsedNames.map(name => {
         return {
             language: name.language,

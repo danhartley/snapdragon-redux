@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { contains } from 'ramda';
 
 import { helpers } from 'admin/helpers';
 import { firestore } from 'api/firebase/firestore';
@@ -106,7 +106,7 @@ export const addLookalike = () => {
 
                 const speciesNames = await firestore.getSpeciesNames();
 
-                const isSpeciesBInSnapdragon = R.contains(speciesBName, speciesNames[0].value);
+                const isSpeciesBInSnapdragon = contains(speciesBName, speciesNames[0].value);
 
                 if(isSpeciesBInSnapdragon) {
 
