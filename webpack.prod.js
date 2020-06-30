@@ -28,7 +28,7 @@ module.exports = merge(common, {
   },
   // You should configure your server to disallow access to the Source Map file for normal users!
   // https://webpack.js.org/configuration/devtool/
-  devtool: "source-map",
+  // devtool: "source-map",
   plugins: [
     new CleanWebpackPlugin(),
     new Dotenv({
