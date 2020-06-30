@@ -1,13 +1,6 @@
 
 {
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "targets": ">0.25%"
-      }
-    ]
-  ],
+  "presets": ["@babel/preset-env"],
   "sourceMaps": "inline",
   "plugins": [
     "@babel/plugin-proposal-class-properties",

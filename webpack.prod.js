@@ -10,6 +10,9 @@ const PurgecssPlugin = require('purgecss-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
+  output: {
+    filename: '[name].[chunkhash].js',
+  },
   optimization: {
     minimize: true,
     minimizer: [
@@ -29,6 +32,7 @@ module.exports = merge(common, {
   plugins: [
     new CleanWebpackPlugin(),
     new Dotenv({
+      // is this necssary? process.env.NODE_ENV ready out of the boc
       // path: './some.other.env', // load this now instead of the ones in '.env'
       // safe: true, // load '.env.example' to verify the '.env' variables are all set. Can also be a string to a different file.
       // allowEmptyValues: true, // allow empty variables (e.g. `FOO=`) (treat it as empty string, rather than missing)
