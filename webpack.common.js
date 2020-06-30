@@ -95,7 +95,7 @@ module.exports = {
       new CopyPlugin({
         patterns: [
           { from: './src/ui/css/groups', to: 'css', transform(content) { return csso.minify(content).css; } },
-          { from: './src/static/assets', to: 'static' },
+          { from: './src/static/assets', to: 'static' },          
           { from: './src/static/root', to: ''}
         ],
       }),
