@@ -2,8 +2,6 @@ import { enums } from 'ui/helpers/enum-helper';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
-import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
-import { quickFireHandlers } from 'ui/quick-fire-modal/quick-fire';
 import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
 import { renderLesson } from 'ui/screens/lists/lesson';
 import { renderCustomLesson } from 'ui/screens/lists/lesson-custom';
@@ -37,8 +35,10 @@ export const renderLessons = () => {
 
       const createCustomLessonBtn = parent.querySelector('.js-create-custom-lesson');          
             createCustomLessonBtn.addEventListener('click', e => {
-                  createGuideHandler(1);
-                  lessonListEventHandler.hideOtherContentAndRevertChevrons(0);
+              import('ui/create-guide-modal/create-guide').then(module => {
+                module.createGuideHandler(1);
+              });
+              lessonListEventHandler.hideOtherContentAndRevertChevrons(0);
             });    
 
       // const lessonTitles = document.querySelectorAll('.js-lesson-title');
@@ -67,9 +67,14 @@ export const renderLessons = () => {
                               setTimeout(() => {
                                     const { quickFire } = store.getState();
                                     if(quickFire && quickFire.lessonId === lesson.id) {
-                                          quickFireHandlers.questions(quickFire);
+                                          import('ui/quick-fire-modal/quick-fire').then(module => {
+                                            module.quickFireHandlers.questions(quickFire);
+                                          });
                                     } else {
-                                          quickFireHandlers.questions({ ...quickFireHandlers.init(glossary, enums.quickFireType.DEFINITION, lesson), linkFromLesson: true });
+                                          import('ui/quick-fire-modal/quick-fire').then(module => {
+                                            const quickFireState = { ...module.quickFireHandlers.init(glossary, enums.quickFireType.DEFINITION, lesson), linkFromLesson: true }
+                                            module.quickFireHandlers.questions(quickFireState);
+                                          });
                                     }
                               },150);
                         }
