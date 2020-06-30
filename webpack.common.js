@@ -37,11 +37,11 @@ module.exports = {
           },
           {              
               test: /\.js$/,
+              include: path.resolve(__dirname, 'src'),
               exclude: /node_modules/,
               use: {
                 loader: "babel-loader",
                 options: {
-                  // presets: ['@babel/preset-env', '@babel/preset-react'],
                   presets: [
                     ["@babel/preset-env",{
                     "targets": ">0.25%",
@@ -124,7 +124,8 @@ module.exports = {
     devServer: {
       host: '0.0.0.0',
       disableHostCheck: true,
-      writeToDisk: true
+      writeToDisk: true,
+      compress: true
     },
     // watch: true watched by default in webpack-dev-server
 };
