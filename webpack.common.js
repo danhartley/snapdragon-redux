@@ -9,8 +9,8 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
     entry: {
       app: './src/index.js',
-      utils: './src/utils/utils.js',      
-      wiki: './src/wikipedia/wiki.js',
+      // utils: './src/utils/utils.js',      
+      // wiki: './src/wikipedia/wiki.js',
       // guide: './src/ui/create-guide-modal/create-guide.js',
     },
     output: {
@@ -27,17 +27,8 @@ module.exports = {
               'css-loader',
             ]
           },
-          {
-            test: /\.s[ac]ss$/i,
-            use: [
-              'style-loader',
-              'css-loader',
-              'sass-loader',
-            ],
-          },
           {              
               test: /\.js$/,
-              include: path.resolve(__dirname, 'src'),
               exclude: /node_modules/,
               use: {
                 loader: "babel-loader",
@@ -49,10 +40,7 @@ module.exports = {
                   }]],
                   plugins: [
                     "@babel/plugin-proposal-class-properties",
-                    "@babel/plugin-proposal-object-rest-spread",
-                    "@babel/plugin-transform-react-jsx-source",
-                    "@babel/plugin-transform-react-jsx-self",
-                    "@babel/plugin-proposal-json-strings"
+                    "@babel/plugin-proposal-object-rest-spread"
                   ]          
                 }                
               }

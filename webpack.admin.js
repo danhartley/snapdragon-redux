@@ -1,3 +1,4 @@
+const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
@@ -20,10 +21,23 @@ module.exports = merge(common, {
             options: {                  
               presets: [
                 ["@babel/preset-react"]
+            ],
+            plugins: [
+              "@babel/plugin-transform-react-jsx-source",
+              "@babel/plugin-transform-react-jsx-self",
+              "@babel/plugin-proposal-json-strings"
             ]
           }
         }
-      }
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      },
     ]
   }
 });
