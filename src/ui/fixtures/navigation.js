@@ -10,7 +10,6 @@ import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { settingsHandler } from 'ui/fixtures/settings';
 import { renderLogin } from 'ui/fixtures/login';
 import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
-import { quickFireHandlers } from 'ui/quick-fire-modal/quick-fire';
 import { renderLanguagePicker } from 'ui/fixtures/language';
 
 import navigationPortraitTemplate from 'ui/fixtures/navigation-portrait-template.html';
@@ -95,7 +94,9 @@ export const renderNavigation = collection => {
                         const definitions = !!collection.glossary
                             ? glossary.filter(definition => contains(definition.taxon, collection.glossary))
                             : glossary;
-                        quickFireHandlers.definitions(definitions);
+                        import('ui/quick-fire-modal/quick-fire').then(module => {
+                          module.quickFireHandlers.definitions(definitions);
+                        });
                         break;
                     case enums.navigation.EMAIL:
                         toggleIconOnOff(clickedIcon);
