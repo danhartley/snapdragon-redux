@@ -65,10 +65,8 @@ export const handleWindowResize = () => {
   });
 
   if(window.location.origin.indexOf('learn-the-planet') > -1) {
-     snapLog('*** Live site detected ***');
       if(window.location.protocol != 'https:') {
           location.href =  location.href.replace("http://", "https://");
-         snapLog(' *** Site secured ***');
       }
   }
 };
