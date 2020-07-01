@@ -48,9 +48,11 @@
         <!-- <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>  
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> -->
-        <!-- <link href="https://storage.googleapis.com/snapdragon-222014.appspot.com/dist/fonts/open-sans-v17-latin-regular.woff" as="font">
-        <link rel="preload" href="https://storage.googleapis.com/snapdragon-222014.appspot.com/dist/fonts/open-sans-v17-latin-regular.woff2" as="font"> -->
-        <!-- <link rel="preload" href="./static/fonts/open-sans-v17-latin-regular.woff2" as="font"> -->
+        <!-- <link rel="preload" href="https://storage.googleapis.com/snapdragon-222014.appspot.com/dist/fonts/open-sans-v17-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+        <link href="https://storage.googleapis.com/snapdragon-222014.appspot.com/dist/fonts/open-sans-v17-latin-regular.woff" as="font" type="font/woff2" crossorigin> -->
+        <link rel="preload" href="./static/fonts/open-sans-v17-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+        <link href="./static/fonts/open-sans-v17-latin-regular.woff" as="font" type="font/woff2" crossorigin>
+        
         <style>
           @font-face {
             /* consider caching using service worker  */
@@ -165,8 +167,16 @@
       <link rel="stylesheet" href="./css/test-card.css" media="print" onload="this.media='all'">
       <link rel="stylesheet" href="./css/species-card.css" media="print" onload="this.media='all'">
 
+      <script>
+        const isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
+        if(isPortraitMode) {
+          const script = document.createElement('script');
+                script.src = 'https://storage.googleapis.com/snapdragon-222014.appspot.com/dist/pure-swipe.js';
+          document.body.appendChild(script);
+        }
+      </script>
+
       <script defer type="text/javascript" src="https://storage.googleapis.com/snapdragon-222014.appspot.com/dist/iconwc.min.js"></script>      
-      <script defer src="https://storage.googleapis.com/snapdragon-222014.appspot.com/dist/pure-swipe.js"></script>  
       <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1osYKD1sRb5Bzqq-OzJ6PgXqLtDt9YvU&libraries=places"></script>
     </body>    
   </html>

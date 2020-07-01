@@ -114,8 +114,6 @@ const onLoadHandler = () => {
     window.snapLog = snapLog;
     window.logError = logError;
     window.logAPIError = logAPIError;
-
-    snapLog('hash:', '5de05c2e30204991a6b9');
 };
 
 onLoadHandler();
