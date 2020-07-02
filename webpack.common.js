@@ -8,7 +8,9 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
-      app: './src/index.js'
+      app: './src/index.js',
+      // app: { import: './src/index.js', dependOn: 'shared' },
+      shared: './src/utils/utils.js',
     },
     output: {
       filename: '[name].bundle.js',
@@ -74,7 +76,7 @@ module.exports = {
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: './src/index.html',
-        chunks: ['app'],
+        chunks: ['app', 'shared'],
         inject: true
       }),
       new HtmlWebpackPlugin({

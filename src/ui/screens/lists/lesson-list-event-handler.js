@@ -8,7 +8,7 @@ import { renderLessonIntro } from 'ui/screens/home/home-lesson-intro';
 import { renderEditLesson } from 'ui/screens/lists/lesson-edit';
 import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 import { videoHandler } from 'ui/screens/lists/video-handler';
-import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
+// import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 
 const onLoadLessonViewState = (collection, videoPlayer, score, config) => {
 
@@ -45,7 +45,11 @@ const onClickViewState = (e, lessons) => {
   const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lessonId}"]`);
 
   let action = isYoutubeIcon ? enums.userEvent.START_LESSON : isChevronIcon ? enums.userEvent.TOGGLE_SPECIES_LIST : enums.userEvent.DEFAULT;
-  lessonStateHandler.recordUserAction(action);
+  // lessonStateHandler.recordUserAction(action);
+
+  import('ui/screens/lists/lesson-state-handler').then(module => {
+    module.lessonStateHandler.recordUserAction(action);
+  });
 
   hideOtherContentAndRevertChevrons(lessonId);
 
@@ -135,9 +139,16 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
 
       renderLessonIntro(lesson);
       
-      lessonStateHandler.changeRequest({
-        requestType: enums.lessonState.RENDER_SPECIES_LIST,
-        requestArgs: { lesson, container: DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable') }
+      // lessonStateHandler.changeRequest({
+      //   requestType: enums.lessonState.RENDER_SPECIES_LIST,
+      //   requestArgs: { lesson, container: DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable') }
+      // });
+
+      import('ui/screens/lists/lesson-state-handler').then(module => {
+        module.lessonStateHandler.changeRequest({
+          requestType: enums.lessonState.RENDER_SPECIES_LIST,
+          requestArgs: { lesson, container: DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable') }
+        });
       });
     }
 
@@ -156,7 +167,11 @@ const onReviewClickHandler = reviewLink => {
 
   reviewLink.addEventListener('click', async e => {
 
-    lessonStateHandler.recordUserAction(enums.userEvent.START_LESSON_REVIEW);
+    // lessonStateHandler.recordUserAction(enums.userEvent.START_LESSON_REVIEW);
+
+    import('ui/screens/lists/lesson-state-handler').then(module => {
+      module.lessonStateHandler.recordUserAction(enums.userEvent.START_LESSON_REVIEW);
+    });
 
     const lessonId = reviewLink.dataset.lessonId;
     // const loadingMessage = document.querySelector(`.js-loading-review-message[data-lesson-id="${lessonId}"]`);
@@ -168,11 +183,20 @@ const onReviewClickHandler = reviewLink => {
 
     const { lesson } = store.getState();
 
-    lessonStateHandler.changeRequest({
-      requestType: enums.lessonState.BEGIN_OR_RESUME_LESSON,
-      requestArgs: {
-        id: reviewLink.dataset.lessonId
-      }
+    // lessonStateHandler.changeRequest({
+    //   requestType: enums.lessonState.BEGIN_OR_RESUME_LESSON,
+    //   requestArgs: {
+    //     id: reviewLink.dataset.lessonId
+    //   }
+    // });
+
+    import('ui/screens/lists/lesson-state-handler').then(module => {
+      module.lessonStateHandler.changeRequest({
+        requestType: enums.lessonState.BEGIN_OR_RESUME_LESSON,
+        requestArgs: {
+          id: reviewLink.dataset.lessonId
+        }
+      });
     });
   });
 };
@@ -203,10 +227,18 @@ const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
 
   const { userAction, config } = store.getState();
 
-  await lessonStateHandler.changeRequest({
-    requestType: enums.lessonState.RENDER_SPECIES_LIST,
-    requestArgs: { lesson, container }
+  // await lessonStateHandler.changeRequest({
+  //   requestType: enums.lessonState.RENDER_SPECIES_LIST,
+  //   requestArgs: { lesson, container }
+  // });
+
+  await import('ui/screens/lists/lesson-state-handler').then(module => {
+    module.lessonStateHandler.changeRequest({
+      requestType: enums.lessonState.RENDER_SPECIES_LIST,
+      requestArgs: { lesson, container }
+    });
   });
+
 
   lessonListScrollHandler.scrollToTitle(lesson.id);
 };
