@@ -21,7 +21,7 @@ let sections = [
         , about: 'Enter your domain to test your mobile speed' 
       }
       , { name: 'Chrome DevTools', link: 'https://www.google.com/chrome/', about: '' }
-      , { name: 'loadCSS', link: 'https://github.com/filamentgroup/loadCSS/blob/master/README.md', about: 'Load CSS asynchronosuly' }
+      , { name: 'loadCSS', link: 'https://github.com/filamentgroup/loadCSS/blob/master/README.md', about: 'Load CSS asynchronosuly' }      
     ]
   },
   {
@@ -118,6 +118,7 @@ let sections = [
           },
       ]
       }
+      , { term: 'Performance', link: 'https://developer.mozilla.org/en-US/docs/Web/API/Performance', descriptions: ['The Performance interface provides access to performance-related information for the current page.'] }
   ]
   }
 ];

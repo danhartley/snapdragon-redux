@@ -8,10 +8,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
-      app: './src/index.js',
-      // utils: './src/utils/utils.js',      
-      // wiki: './src/wikipedia/wiki.js',
-      // guide: './src/ui/create-guide-modal/create-guide.js',
+      app: './src/index.js'
     },
     output: {
       filename: '[name].bundle.js',
