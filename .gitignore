@@ -5,3 +5,5 @@
 .env.testing
 
 **/dist
+**/sitespeed-result
+**/lighthouse

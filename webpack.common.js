@@ -8,10 +8,8 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
-      app: './src/index.js',
-      // utils: './src/utils/utils.js',      
-      // wiki: './src/wikipedia/wiki.js',
-      // guide: './src/ui/create-guide-modal/create-guide.js',
+      app: { import: './src/index.js', dependOn: 'shared' },
+      shared: './src/utils/utils.js',
     },
     output: {
       filename: '[name].bundle.js',
@@ -34,7 +32,7 @@ module.exports = {
                 options: {
                   presets: [
                     ["@babel/preset-env",{
-                    "targets": ">0.25%",
+                    "targets": ">.25%",
                     "modules": false
                   }]],
                   plugins: [
@@ -77,7 +75,7 @@ module.exports = {
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: './src/index.html',
-        chunks: ['app'],
+        chunks: ['app', 'shared'],
         inject: true
       }),
       new HtmlWebpackPlugin({
@@ -99,7 +97,7 @@ module.exports = {
           { from: './src/static/root', to: ''}
         ],
       }),
-      // new BundleAnalyzerPlugin()
+      new BundleAnalyzerPlugin()
     ],
     resolve: {
         modules: [

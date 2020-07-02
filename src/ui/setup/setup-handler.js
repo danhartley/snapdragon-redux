@@ -1,7 +1,6 @@
 import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
 import { enums } from 'ui/helpers/enum-helper';
-import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 
 const isRequired = (step, args) => {
 
@@ -44,8 +43,10 @@ const actionUpdate = (step, args) => {
         case enums.nextStep.NEXT_LAYOUT:
             actions.boundNextLayout(layout);
             subscription.addSubs(layout, config);
-            lessonStateHandler.changeRequest({
-                requestType: enums.lessonState.SAVE_LESSON_PROGRESS,
+            import('ui/screens/lists/lesson-state-handler').then(module => {
+              module.lessonStateHandler.changeRequest({
+                  requestType: enums.lessonState.SAVE_LESSON_PROGRESS,
+              });
             });
             break;
         case enums.nextStep.NEXT_LESSON:

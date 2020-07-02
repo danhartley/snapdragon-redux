@@ -42,5 +42,3 @@ workbox.routing.registerRoute(
   );
 
   workbox.precaching.precacheAndRoute([]);
-
-  console.log(workbox.core.logLevel);
