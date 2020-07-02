@@ -8,8 +8,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
-      app: './src/index.js',
-      // app: { import: './src/index.js', dependOn: 'shared' },
+      app: { import: './src/index.js', dependOn: 'shared' },
       shared: './src/utils/utils.js',
     },
     output: {
@@ -33,7 +32,7 @@ module.exports = {
                 options: {
                   presets: [
                     ["@babel/preset-env",{
-                    "targets": ">0.25%",
+                    "targets": ">.25%",
                     "modules": false
                   }]],
                   plugins: [
@@ -98,7 +97,7 @@ module.exports = {
           { from: './src/static/root', to: ''}
         ],
       }),
-      // new BundleAnalyzerPlugin()
+      new BundleAnalyzerPlugin()
     ],
     resolve: {
         modules: [

@@ -8,7 +8,6 @@ import { renderLessonIntro } from 'ui/screens/home/home-lesson-intro';
 import { renderEditLesson } from 'ui/screens/lists/lesson-edit';
 import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 import { videoHandler } from 'ui/screens/lists/video-handler';
-// import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 
 const onLoadLessonViewState = (collection, videoPlayer, score, config) => {
 
@@ -45,7 +44,6 @@ const onClickViewState = (e, lessons) => {
   const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lessonId}"]`);
 
   let action = isYoutubeIcon ? enums.userEvent.START_LESSON : isChevronIcon ? enums.userEvent.TOGGLE_SPECIES_LIST : enums.userEvent.DEFAULT;
-  // lessonStateHandler.recordUserAction(action);
 
   import('ui/screens/lists/lesson-state-handler').then(module => {
     module.lessonStateHandler.recordUserAction(action);

@@ -3,7 +3,6 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { renderTemplate } from 'ui/helpers/templating';
-// import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { lessonStateHelper } from 'ui/screens/lists/lesson-state-helper';
 import { scoreSummaryHandler } from 'ui/screens/progress/score-summary-handler';
 
@@ -57,23 +56,15 @@ export const renderScoreSummary = (lessonId, summaryContainer) => {
       
             const handleContinueLesson = async e => {
                 e.preventDefault();
-                // lessonStateHandler.changeRequest({
-                //       requestType: enums.lessonState.NEXT_ROUND,
-                //       requestArgs: {
-                //         id: lessonId,
-                //         lesson: { ...lesson, isNextRound: true }
-                //       }
-                //     });
-
-                    import('ui/screens/lists/lesson-state-handler').then(module => {
-                      module.lessonStateHandler.changeRequest({
-                        requestType: enums.lessonState.NEXT_ROUND,
-                        requestArgs: {
-                          id: lessonId,
-                          lesson: { ...lesson, isNextRound: true }
-                        }
-                      });
-                    });
+                import('ui/screens/lists/lesson-state-handler').then(module => {
+                  module.lessonStateHandler.changeRequest({
+                    requestType: enums.lessonState.NEXT_ROUND,
+                    requestArgs: {
+                      id: lessonId,
+                      lesson: { ...lesson, isNextRound: true }
+                    }
+                  });
+                });
             };
       
             const handleNewLesson = async event => {                   

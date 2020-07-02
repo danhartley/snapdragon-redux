@@ -9,7 +9,6 @@ import { renderLessons } from 'ui/screens/lists/lesson-list';
 import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { settingsHandler } from 'ui/fixtures/settings';
 import { renderLogin } from 'ui/fixtures/login';
-// import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { renderLanguagePicker } from 'ui/fixtures/language';
 
 import navigationPortraitTemplate from 'ui/fixtures/navigation-portrait-template.html';
@@ -83,14 +82,9 @@ export const renderNavigation = collection => {
                         if(activeInfoIcon) activeInfoIcon.classList.remove('active-icon');
                         clickedIcon.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
-
-                        // lesson = await lessonStateHandler.changeRequest({ requestType: enums.lessonState.PAUSE_LESSON });
-
-
                         lesson = await import('ui/screens/lists/lesson-state-handler').then(module => {
                           module.lessonStateHandler.changeRequest({ requestType: enums.lessonState.PAUSE_LESSON });
                         });
-
                         renderLessons();
                         DOM.rightHeaderTxt.innerHTML = 'Learn the planet';
                         DOM.rightHeaderScoreTxt.innerHTML = '';

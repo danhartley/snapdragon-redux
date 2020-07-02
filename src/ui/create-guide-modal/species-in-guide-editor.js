@@ -6,7 +6,6 @@ import { enums } from 'ui/helpers/enum-helper';
 import { store } from 'redux/store';
 import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
-// import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 
 import editorTemplate from 'ui/create-guide-modal/species-in-guide-editor-template.html';
 
@@ -65,13 +64,6 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
         input.value = '';
 
         const { collection } = store.getState();
-
-        // lessonStateHandler.changeRequest({
-        //     requestType: enums.lessonState.ADD_SPECIES_TO_COLLECTION,
-        //     requestArgs: {
-        //         updatedConfig: config, updatedCollection: collection
-        //     }
-        // });
 
         import('ui/screens/lists/lesson-state-handler').then(module => {
           module.lessonStateHandler.changeRequest({
