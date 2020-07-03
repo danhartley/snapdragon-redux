@@ -1,6 +1,6 @@
 import { contains } from 'ramda';
 
-import { elem } from 'ui/helpers/class-behaviour';
+import { utils } from 'utils/utils';
 import { iconicTaxa } from 'snapdragon-config/snapdragon-iconic-taxa';
 import { renderTemplate } from 'ui/helpers/templating';
 
@@ -35,7 +35,7 @@ export const renderCategories = (modal, createGuide) => {
     setTimeout(() => {
         const fungiIcon = modal.querySelector('#fungi > div');
         if(!fungiIcon) return;
-        if(elem.hasClass(fungiIcon, 'iconic-taxa-selected')) {
+        if(utils.hasClass(fungiIcon, 'iconic-taxa-selected')) {
             fungiIcon.querySelector('g g').classList.add('svg-icon-selected');
         }   
     },250);

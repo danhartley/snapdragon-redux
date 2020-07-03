@@ -2,7 +2,7 @@ import { isEmpty } from 'ramda';
 
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { elem } from 'ui/helpers/class-behaviour';
+import { utils } from 'utils/utils';
 import { enums } from 'ui/helpers/enum-helper';
 import { renderLessonIntro } from 'ui/screens/home/home-lesson-intro';
 import { renderEditLesson } from 'ui/screens/lists/lesson-edit';
@@ -34,8 +34,8 @@ const onLoadLessonsViewState = (collections, videoPlayer, score, config) => {
 const onClickViewState = (e, lessons) => {
 
   const icon = e.currentTarget;
-  const isYoutubeIcon = elem.hasClass(icon, 'js-lesson-list-youtube');
-  const isChevronIcon = elem.hasClass(icon, 'js-lesson-list-chevron');
+  const isYoutubeIcon = utils.hasClass(icon, 'js-lesson-list-youtube');
+  const isChevronIcon = utils.hasClass(icon, 'js-lesson-list-chevron');
   const row = icon.parentElement.parentElement;
   const lessonId = parseInt(icon.dataset.lessonId);
   const lesson = lessons.find(l => l.id === lessonId);
@@ -52,7 +52,7 @@ const onClickViewState = (e, lessons) => {
   hideOtherContentAndRevertChevrons(lessonId);
 
   const isSpeciesListAvailable = !!speciesList;
-  const isSpeciesListHidden = elem.hasClass(speciesList, 'hide');
+  const isSpeciesListHidden = utils.hasClass(speciesList, 'hide');
 
   const lessonVideoState = document.querySelector(`.js-lesson-video-state[data-lesson-id="${lessonId}"]`);
   const iconIsChevron = !icon.dataset.lessonIsYoutubeIcon;
@@ -209,7 +209,7 @@ const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
   });
 
 
-  lessonListScrollHandler.scrollToTitle(lesson.id);
+  // lessonListScrollHandler.scrollToTitle(lesson.id);
 };
 
 export const lessonListEventHandler = {
