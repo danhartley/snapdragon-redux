@@ -284,7 +284,8 @@ a.icon:hover {
   position: relative;
 }
 
-.test-card-question.standard-block, .lesson-list-header.centred-block {
+/* , .lesson-list-header.centred-block */
+.test-card-question.standard-block {
   border-bottom: .03rem solid var(--snap-border-medium);
 }
 
@@ -1753,7 +1754,7 @@ a.collection-disabled {
 
 .lesson-list-header {
   padding: 0 !important;
-  background-color: var(--snap-list-header-background);
+  background-color: rgb(231, 235, 235);
   justify-content: space-between;
 }
 
@@ -2121,11 +2122,6 @@ img[data-has-image="false"] {
   color: rgba(183, 12, 21,.5);
   font-size: 1.5rem;
 }
-
-/* .score-summary-row img {
-  width: 98px;
-  height: 68px;
-} */
 
 .score-summary-row.title > span {
   display: flex;

@@ -15,16 +15,18 @@
 
 <div class="home-scrolling-container js-home-scrolling-container">
     <div class="title standard-block double-centred-block">{{ video.title }}</div>
-    <div class="video">
-        <div style="min-height: 1px;"></div>
-        <iframe
-            type="text/html"
-            id="embedded-video"
-            width="100%"
-            src="https://www.youtube.com/embed/{{ video.id }}?enablejsapi=1&playsinline=1&start={{ video.playAt }}"
-            frameborder="0"
-            allowfullscreen>
-        </iframe>   
+    <div class="margin-left margin-right">
+      <div class="video">
+          <div style="min-height: 1px;"></div>
+          <iframe
+              type="text/html"
+              id="embedded-video"
+              width="100%"
+              src="https://www.youtube.com/embed/{{ video.id }}?enablejsapi=1&playsinline=1&start={{ video.playAt }}"
+              frameborder="0"
+              allowfullscreen>
+          </iframe>   
+      </div>
     </div>
     <div class="scrollable">
         <div class="one-and-half-standard-block centred-block justify-space-between padding-left">
