@@ -36,6 +36,10 @@ input[type="text"] {
   border-style: solid;
 }
 
+input[type="text"]:focus {
+  outline: 1px solid var(--snap-text-medium-dark-hover);
+}
+
 figure {
   margin: .5rem 0 0;
 }
@@ -922,7 +926,6 @@ span.correct {
 .block.snap-success, .block.snap-alert {
   color: var(--snap-text-light) !important;
   background-color: var(--snap-success) !important;
-  border: none;
 }
 
 .block.snap-alert {
@@ -1224,6 +1227,10 @@ button:disabled {
   border: none !important;
 }
 
+.carousel-control-next, .carousel-control-prev {
+  pointer-events: all;
+}
+
 .carousel-control-next[disabled="disabled"],
 .carousel-control-prev[disabled="disabled"] {
   pointer-events: none;
@@ -1370,8 +1377,7 @@ iframe#birdsong {
   display: none;
 }
 
-div.hide-empty:empty,
-span.hide-empty:empty {
+.hide-empty:empty {
   display: none !important;
 }
 
@@ -1797,8 +1803,16 @@ a.collection-disabled {
 }
 
 .lesson-list-carousel-item {
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
   display: flex;
   margin: .25rem 0;
+}
+
+.highlighted-for-review-row {
+  border-top: 3px solid var(--snap-border-lightest);
+  border-bottom: 3px solid var(--snap-border-lightest);
+  background-color: var(--snap-content-background) !important;
 }
 
 .lesson-list-carousel-item > div:nth-child(3) {
@@ -1838,7 +1852,7 @@ a.collection-disabled {
 }
 
 .lesson-list div.lesson-list-carousel-item:nth-of-type(2n+1) {
-  background-color: var(--snap-lesson-row-green);
+  background-color: var(--snap-lesson-row-green);  
 }
 
 .lesson-list .scrollable {
@@ -1981,14 +1995,6 @@ a.collection-disabled {
   margin-top: .5rem;  
 }
 
-.highlighted-for-review-row {
-  background-color: var(--snap-content-background) !important;
-  border-top: 1px solid var(--snap-btn-auxillary);
-  border-right: 1px solid var(--snap-btn-auxillary);
-  border-bottom: 1px solid var(--snap-btn-auxillary);
-  border-left: 1px solid var(--snap-btn-auxillary);
-}
-
 .score-summary-row {
   border-bottom: .3rem solid var(--snap-content-background);
   padding: 1rem 0;
@@ -2037,6 +2043,7 @@ button.score-summary-row {
   flex: auto;
   align-items: flex-start;
   max-width: 100%;
+  text-align: left;
 }
 
 .score-summary-row.in-columns {
@@ -2074,20 +2081,23 @@ button.score-summary-row {
 
 .score-summary-row.in-columns > div > div:nth-child(2) > div:nth-child(1) {
   padding: .5rem;
+  min-width: calc(1rem + 98px);
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--snap-border-lightest);
+  margin-right: .5rem;
 }
 
 .score-summary-row.in-columns div[data-is-true="true"] > div:nth-child(2) {
   color: var(--snap-success);
 }
 
-/* .score-summary-row.in-columns div[data-is-true="true"] > div:nth-child(2) {
-  border: solid 1px var(--snap-progress-bar);
-  padding: .3rem;
-  display: inline-block;
-} */
-
 .score-summary-row.in-columns div[data-is-wrong-answer="true"] {
   color: var(--snap-alert); 
+}
+
+div[data-show-image="false"] {
+  display: none !important;
 }
 
 img[data-has-image="false"] {
@@ -2112,10 +2122,10 @@ img[data-has-image="false"] {
   font-size: 1.5rem;
 }
 
-.score-summary-row img {
+/* .score-summary-row img {
   width: 98px;
   height: 68px;
-}
+} */
 
 .score-summary-row.title > span {
   display: flex;

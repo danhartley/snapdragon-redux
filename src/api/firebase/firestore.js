@@ -1,7 +1,6 @@
 import { utils } from 'utils/utils';
 import { enums } from 'admin/api/enums';
 import { firebaseConfig } from 'api/firebase/credentials';
-import { questions } from 'api/firebase/questions';
 
 import firebase from 'firebase/app';
 import 'firebase/auth';
@@ -9,8 +8,6 @@ import 'firebase/storage';
 import 'firebase/firestore';
 
 firebase.initializeApp(firebaseConfig);
-
-const storage = firebase.storage();
 
 const db = firebase.firestore();
 
@@ -216,17 +213,12 @@ const getTraitsByTaxonName = async (name, language = 'en') => {
 
 const getBirdsong = async xcID => {
 
-    const storageRef = storage.ref();
-    const url = await storageRef.child(`birdsong/${xcID}.mp3`).getDownloadURL();
-    return url;
+  const storage = firebase.storage();
+  const storageRef = storage.ref();
+  const url = await storageRef.child(`birdsong/${xcID}.mp3`).getDownloadURL();
+  return url;
+
 };
-
-// const getImage = async image => {
-
-//   const storageRef = storage.ref();
-//   const url = await storageRef.child(`images/${image}`).getDownloadURL();
-//   return url;
-// };
 
 const addSpecies = async species => {
 

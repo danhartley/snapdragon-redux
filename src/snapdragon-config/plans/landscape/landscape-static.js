@@ -16,8 +16,9 @@ export const landscapeStatic = {
                         L.textCompleteGenus, L.genusEntry,                        
                         L.textCompleteSpecies, L.speciesEntry,
                         L.propertyTrait(L.mixedTraitImages, ['capShape', 'gillAttachment', 'leafShape', 'leafDivision', 'inflorescence', 'leafMargin']),
+                        L.familyMatch,
                         L.speciesGenusEntry,
-                        L.familyMatch , L.familyStripsMatch
+                        L.familyStripsMatch
                     ],
             bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'lookalikes', 'definition' ] } ]
         }

@@ -15,8 +15,9 @@ export const landscapeCustom = {
                         L.commonToLatinMatch,
                         L.textCompleteGenus, L.genusEntry,                        
                         L.textCompleteSpecies, L.speciesEntry,
+                        L.familyMatch,
                         L.speciesGenusEntry,
-                        L.familyMatch , L.familyStripsMatch
+                        L.familyStripsMatch
                     ],
             bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'definition' ] } ]
         }

@@ -18,7 +18,6 @@ const changeRequest = async args => {
   switch(requestType) {
 
     case enums.lessonState.PAUSE_LESSON:      
-      snapLog('config', store.getState().config);
       if(store.getState().config.isLandscapeMode) return;      
       changeLessonState(requestType, collection, store.getState().config);
     break;
@@ -91,7 +90,7 @@ const getLessonState = async (collectionToLoad, config, newLessonCounter) => {
   const lessonState = lessonStateHelper.getUserLessonState(lessons, collectionToLoad, progressState, counter, savedLesson, newLessonCounter);
 
   lessonState.collection = await collectionHandler.loadCollection(lessonState.collection, config);
-
+  
   setActiveCollection(lessonState);
 
   return lessonState;

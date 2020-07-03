@@ -1,4 +1,4 @@
-import { clone, contains, take, isEmpty } from 'ramda';
+import { isEmpty } from 'ramda';
 
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
@@ -136,11 +136,6 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
       }
 
       renderLessonIntro(lesson);
-      
-      // lessonStateHandler.changeRequest({
-      //   requestType: enums.lessonState.RENDER_SPECIES_LIST,
-      //   requestArgs: { lesson, container: DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable') }
-      // });
 
       import('ui/screens/lists/lesson-state-handler').then(module => {
         module.lessonStateHandler.changeRequest({
@@ -165,28 +160,9 @@ const onReviewClickHandler = reviewLink => {
 
   reviewLink.addEventListener('click', async e => {
 
-    // lessonStateHandler.recordUserAction(enums.userEvent.START_LESSON_REVIEW);
-
     import('ui/screens/lists/lesson-state-handler').then(module => {
       module.lessonStateHandler.recordUserAction(enums.userEvent.START_LESSON_REVIEW);
     });
-
-    const lessonId = reviewLink.dataset.lessonId;
-    // const loadingMessage = document.querySelector(`.js-loading-review-message[data-lesson-id="${lessonId}"]`);
-    //       loadingMessage.classList.remove('hide');
-
-    //       setTimeout(() => {
-    //         loadingMessage.classList.add('hide');
-    //       }, 2000);
-
-    const { lesson } = store.getState();
-
-    // lessonStateHandler.changeRequest({
-    //   requestType: enums.lessonState.BEGIN_OR_RESUME_LESSON,
-    //   requestArgs: {
-    //     id: reviewLink.dataset.lessonId
-    //   }
-    // });
 
     import('ui/screens/lists/lesson-state-handler').then(module => {
       module.lessonStateHandler.changeRequest({
@@ -224,11 +200,6 @@ const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
   if(userAction && userAction.name === enums.userEvent.START_LESSON.name) { return; }
 
   const { userAction, config } = store.getState();
-
-  // await lessonStateHandler.changeRequest({
-  //   requestType: enums.lessonState.RENDER_SPECIES_LIST,
-  //   requestArgs: { lesson, container }
-  // });
 
   await import('ui/screens/lists/lesson-state-handler').then(module => {
     module.lessonStateHandler.changeRequest({

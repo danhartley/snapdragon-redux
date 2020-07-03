@@ -50,6 +50,7 @@ const loadCollection = async (collection, config) => {
     }
 
     collection.items = await getItems(collection, config);
+    collection.items = utils.shuffleArray(collection.items);
 
     if(collection.nextItem) return; // after refreshing or returning to the page (using rehydrated collection)
 

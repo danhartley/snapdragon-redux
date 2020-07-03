@@ -31,7 +31,7 @@
             <div>                    
             </div>
             <div data-is-true="{{ answer.isTrue }}" data-is-wrong-answer="{{ answer.isWrongAnswer }}">
-                <div>
+                <div data-show-image="{{ answer.hasImage }}">
                     <img data-has-image="{{ answer.hasImage }}" src="{{ answer.url }}" alt="{{ answer.value }}">
                 </div>
                 <div>

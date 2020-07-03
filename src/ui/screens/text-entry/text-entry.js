@@ -6,8 +6,6 @@ import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handler';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 
-import { onAddLoseFocusListener } from 'ui/fixtures/navigation';
-
 import textEntryTemplate from 'ui/screens/text-entry/text-entry-templates.html';
 import textEntryPortraitTemplate from 'ui/screens/text-entry/text-entry-portrait-templates.html';
 
@@ -100,7 +98,6 @@ export const renderInput = (screen, question) => {
     };
 
     const loseFocusMobileHandler = e => {
-        document.removeEventListener('focusout', loseFocusMobileHandler);
         const answer = document.querySelector('.js-txt-input').value;
         const score = { 
             itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: e.target, 
@@ -114,6 +111,8 @@ export const renderInput = (screen, question) => {
 
     if(config.isLandscapeMode) {
         answerBtn.addEventListener('click', scoreEventHandler, { once: true });
+    } else {	
+        document.addEventListener('focusout', loseFocusMobileHandler, { once: true });
     }
     
     if(config.isPortraitMode) renderPortrait(item, config);
