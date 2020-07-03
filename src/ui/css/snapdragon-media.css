@@ -632,6 +632,10 @@
     .test-card-container .question-header > div {
       font-size: 1rem;
     }
+
+    .table-header th:nth-child(6), .table-row td:nth-child(6) button {
+      position: initial;
+    }
 }
 
 @media (min-width: 1024px) {

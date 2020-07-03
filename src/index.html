@@ -176,5 +176,18 @@
 
       <script defer type="text/javascript" src="https://storage.googleapis.com/snapdragon-222014.appspot.com/dist/iconwc.min.js"></script>      
       <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1osYKD1sRb5Bzqq-OzJ6PgXqLtDt9YvU&libraries=places"></script>
+      <script defer type="text/javascript">
+
+        var tag = document.createElement('script');
+      
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      
+        window.onYouTubeIframeAPIReady = function() {
+            window.YT = YT;
+        }
+        
+      </script>
     </body>    
   </html>
