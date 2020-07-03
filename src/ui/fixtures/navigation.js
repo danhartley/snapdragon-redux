@@ -15,13 +15,6 @@ import navigationPortraitTemplate from 'ui/fixtures/navigation-portrait-template
 import navigationLeftTemplate from 'ui/fixtures/navigation-left-template.html';
 import navigationRightTemplate from 'ui/fixtures/navigation-right-template.html';
 
-const onLoseFocusListeners = [];
-
-export const onAddLoseFocusListener = listener => {
-    onLoseFocusListeners.pop();
-    onLoseFocusListeners.push(listener);
-}
-
 export const renderNavigation = collection => {
 
     const { config, counter } = store.getState();
@@ -77,7 +70,6 @@ export const renderNavigation = collection => {
                         settingsHandler();
                         break;
                     case enums.navigation.PORTRAIT_HOME:
-                        onLoseFocusListeners.forEach(listener => listener());
                         const activeInfoIcon = document.querySelector('.js-info.active-icon');
                         if(activeInfoIcon) activeInfoIcon.classList.remove('active-icon');
                         clickedIcon.classList.add('active-icon');

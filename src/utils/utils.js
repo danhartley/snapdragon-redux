@@ -1,3 +1,5 @@
+import { contains } from 'ramda';
+
 Array.prototype.concatAll = function() {
     const results = [];
   
@@ -268,6 +270,22 @@ const parseToLowerCase = value => {
   else return !!value ? value.toLowerCase() : '';
 };
 
+const hasClass = (elem, className) => {
+  if(!elem) return false;
+  const classArray = [ ...elem.classList ];
+  return contains(className, classArray);
+};
+
+const removeClass = (elem, className) => {
+  if(hasClass(elem, className)) {
+      elem.classList.forEach(c => {
+          if(c === className) {
+              elem.classList.remove(c);
+          }
+      });
+  }
+};
+
 export const utils = {
   encodeQuery,
   timer, 
@@ -287,5 +305,7 @@ export const utils = {
   getRandomObjectProperty,
   toCamelCase,
   fromCamelCase,
-  parseToLowerCase
+  parseToLowerCase,
+  hasClass,
+  removeClass
 };

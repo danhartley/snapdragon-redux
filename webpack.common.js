@@ -9,7 +9,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
     entry: {
       app: { import: './src/index.js', dependOn: 'shared' },
-      shared: './src/utils/utils.js',
+      shared: [ './src/utils/utils.js' ]
     },
     output: {
       filename: '[name].bundle.js',
@@ -97,7 +97,7 @@ module.exports = {
           { from: './src/static/root', to: ''}
         ],
       }),
-      new BundleAnalyzerPlugin()
+      // new BundleAnalyzerPlugin()
     ],
     resolve: {
         modules: [

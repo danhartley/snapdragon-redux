@@ -209,24 +209,25 @@
     }
 
     #imageModal .imageSlider .carousel-item, #imageComparisonModal .imageSlider .carousel-item {        
-        height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - 300px ); /* see below (hack) */
+        /* height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - 300px ); see below (hack) */
+        height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
     }
 
     .image-description {
         padding: 1rem 4rem;
-        margin-top: -300px; /* see above (hack) */
+        /* margin-top: -300px; see above (hack) */
         color: black; /* to compensate for layer above (hack) */
     }
 
-    .imageSlider .carousel-control-next, .imageSlider .carousel-control-prev {
+    /* .imageSlider .carousel-control-next, .imageSlider .carousel-control-prev {
         top: 15%;
         top: calc(
             (var(--vh, 1vh) * 75 * .5) -
             (var(--vh, 1vh) * 7.5) -
             .5rem
-            - 100px /* see above (hack) */
+            - 100px
         );
-    }
+    } */
 
     .modal-image .carousel-inner > div:nth-child(1) {
         height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhRunningBlock));
@@ -412,9 +413,14 @@
     }
 
     .lesson-list-carousel-item {
-        align-items: center;
-        display: grid;
-        grid-template-columns: 1fr 3fr 1fr;
+      border: 3px solid transparent;
+      align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+    }
+
+    .highlighted-for-review-row {
+      border: 3px solid var(--snap-border-lightest);
     }
 
     .lesson-list-carousel-item > div:nth-child(3) {

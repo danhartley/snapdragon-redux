@@ -1,6 +1,6 @@
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-import { elem } from 'ui/helpers/class-behaviour';
+import { utils } from 'utils/utils';
 import { markTest} from 'ui/helpers/test-handler';
 import { subscription } from 'redux/subscriptions';
 
@@ -156,7 +156,7 @@ const stripScoreHandler = (test, callback, config) => {
 
         const target = e.target;
 
-        if(elem.hasClass(target, 'disabled')) return;
+        if(utils.hasClass(target, 'disabled')) return;
 
         const answerNode = target;
         const answer = answerNode.innerText.trim();

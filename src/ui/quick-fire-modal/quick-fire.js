@@ -2,7 +2,6 @@ import { contains, clone } from 'ramda';
 
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
-import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
 import { iconicTaxa  } from 'api/snapdragon/iconic-taxa';
@@ -132,7 +131,7 @@ const filters = async linkFromLesson => {
 
     quickFireOptions[0].addEventListener('click', e => {
       e.preventDefault();
-      if(!elem.hasClass(e.target, 'active')) {
+      if(!utils.hasClass(e.target, 'active')) {
         e.target.classList.add('active');
         quickFire.filter.option = {
             key: e.target.dataset.key,
@@ -144,7 +143,7 @@ const filters = async linkFromLesson => {
 
     quickFireOptions[1].addEventListener('click', e => {
       e.preventDefault();
-      if(!elem.hasClass(e.target, 'active')) {
+      if(!utils.hasClass(e.target, 'active')) {
         e.target.classList.add('active');
         quickFire.filter.option = {
             key: e.target.dataset.key,

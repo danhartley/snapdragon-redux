@@ -1,7 +1,9 @@
-const functions = require('firebase-functions');
+import firebase from 'firebase/app';
+import 'firebase/admin';
+import 'firebase/functions';
 
-const admin = require('firebase-admin');
-
+const functions = firebase.functions();
+const admin = firebase.admin();
 const serviceAccount = require('./credentials.json');
 
 admin.initializeApp({

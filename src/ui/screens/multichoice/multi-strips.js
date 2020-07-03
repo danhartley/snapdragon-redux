@@ -172,7 +172,8 @@ export const renderMultiStrips = (collection, bonus, args) => {
                 const number = config.isPortraitMode ? 4 : 4;
 
                 const families = await firestore.getFamiliesByIconicTaxon(taxon.rank, taxon.value, item.lichen, config);
-                const answer = { term: item.family[type], name: item.family.name } || { type: { term: `Missing ${type}`}, name: item.family.name };
+                const term = item.family[type] || item.family.descriptions[0][type];
+                const answer = { term, name: item.family.name } || { type: { term: `Missing ${type}`}, name: item.family.name };
                 const alternativeFamilies = take(number-1, take(number, utils.shuffleArray(families))).filter(f => f.name.toLowerCase() !== item.taxonomy.family.toLowerCase());
                 let alternatives = alternativeFamilies.filter(f => f[type] && f[type] !== undefined && f[type] !== '').map(f => { return { type: f[type], name: f.name, names: f.names } });
                     alternatives = alternatives.map(a => { return { term: a.type, name: a.name, names: a.names } });

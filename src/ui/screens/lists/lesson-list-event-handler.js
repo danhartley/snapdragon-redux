@@ -1,8 +1,8 @@
-import { clone, contains, take, isEmpty } from 'ramda';
+import { isEmpty } from 'ramda';
 
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { elem } from 'ui/helpers/class-behaviour';
+import { utils } from 'utils/utils';
 import { enums } from 'ui/helpers/enum-helper';
 import { renderLessonIntro } from 'ui/screens/home/home-lesson-intro';
 import { renderEditLesson } from 'ui/screens/lists/lesson-edit';
@@ -34,8 +34,8 @@ const onLoadLessonsViewState = (collections, videoPlayer, score, config) => {
 const onClickViewState = (e, lessons) => {
 
   const icon = e.currentTarget;
-  const isYoutubeIcon = elem.hasClass(icon, 'js-lesson-list-youtube');
-  const isChevronIcon = elem.hasClass(icon, 'js-lesson-list-chevron');
+  const isYoutubeIcon = utils.hasClass(icon, 'js-lesson-list-youtube');
+  const isChevronIcon = utils.hasClass(icon, 'js-lesson-list-chevron');
   const row = icon.parentElement.parentElement;
   const lessonId = parseInt(icon.dataset.lessonId);
   const lesson = lessons.find(l => l.id === lessonId);
@@ -52,7 +52,7 @@ const onClickViewState = (e, lessons) => {
   hideOtherContentAndRevertChevrons(lessonId);
 
   const isSpeciesListAvailable = !!speciesList;
-  const isSpeciesListHidden = elem.hasClass(speciesList, 'hide');
+  const isSpeciesListHidden = utils.hasClass(speciesList, 'hide');
 
   const lessonVideoState = document.querySelector(`.js-lesson-video-state[data-lesson-id="${lessonId}"]`);
   const iconIsChevron = !icon.dataset.lessonIsYoutubeIcon;
@@ -136,11 +136,6 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
       }
 
       renderLessonIntro(lesson);
-      
-      // lessonStateHandler.changeRequest({
-      //   requestType: enums.lessonState.RENDER_SPECIES_LIST,
-      //   requestArgs: { lesson, container: DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable') }
-      // });
 
       import('ui/screens/lists/lesson-state-handler').then(module => {
         module.lessonStateHandler.changeRequest({
@@ -165,28 +160,9 @@ const onReviewClickHandler = reviewLink => {
 
   reviewLink.addEventListener('click', async e => {
 
-    // lessonStateHandler.recordUserAction(enums.userEvent.START_LESSON_REVIEW);
-
     import('ui/screens/lists/lesson-state-handler').then(module => {
       module.lessonStateHandler.recordUserAction(enums.userEvent.START_LESSON_REVIEW);
     });
-
-    const lessonId = reviewLink.dataset.lessonId;
-    // const loadingMessage = document.querySelector(`.js-loading-review-message[data-lesson-id="${lessonId}"]`);
-    //       loadingMessage.classList.remove('hide');
-
-    //       setTimeout(() => {
-    //         loadingMessage.classList.add('hide');
-    //       }, 2000);
-
-    const { lesson } = store.getState();
-
-    // lessonStateHandler.changeRequest({
-    //   requestType: enums.lessonState.BEGIN_OR_RESUME_LESSON,
-    //   requestArgs: {
-    //     id: reviewLink.dataset.lessonId
-    //   }
-    // });
 
     import('ui/screens/lists/lesson-state-handler').then(module => {
       module.lessonStateHandler.changeRequest({
@@ -225,11 +201,6 @@ const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
 
   const { userAction, config } = store.getState();
 
-  // await lessonStateHandler.changeRequest({
-  //   requestType: enums.lessonState.RENDER_SPECIES_LIST,
-  //   requestArgs: { lesson, container }
-  // });
-
   await import('ui/screens/lists/lesson-state-handler').then(module => {
     module.lessonStateHandler.changeRequest({
       requestType: enums.lessonState.RENDER_SPECIES_LIST,
@@ -238,7 +209,7 @@ const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
   });
 
 
-  lessonListScrollHandler.scrollToTitle(lesson.id);
+  // lessonListScrollHandler.scrollToTitle(lesson.id);
 };
 
 export const lessonListEventHandler = {
