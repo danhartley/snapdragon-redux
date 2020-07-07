@@ -1,3 +1,4 @@
+import { enums } from 'ui/helpers/enum-helper';
 import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderQuestionTabs } from 'admin/screens/questions/questions-tabs';
@@ -69,9 +70,9 @@ const collectionPickedHandler = async (collection, origin) => {
     if(items.length > 0) {
 
         if(!items[0].vernacularName) {
-            items = await collectionHandler.getSnapdragonSpeciesData(items);
+            items = await collectionHandler.getSpeciesDetailsInParallel(items);
             items = items.filter(item => item.taxonomy);
-            const collection = await collectionHandler.loadCollectionItemProperties({ items }, { language: 'en' });
+            const collection = await collectionHandler.loadCollectionItemProperties({ items }, { language: 'en', guide: { guideMode: enums.guideMode.STATIC.name } });
             if(collection) items = collection.items;
         }
 

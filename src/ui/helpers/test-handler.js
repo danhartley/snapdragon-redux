@@ -20,6 +20,7 @@ const isAnswerCorrect = score => {
         return parseInt(score.answeredIndex) === score.answerIndex;
     }
 
+    score.answer = score.answer.term || score.answer;
     score.answer = score.answer.trim();
 
     isCorrect = isAnswerEqualToQuestion(score.question, score.answer);

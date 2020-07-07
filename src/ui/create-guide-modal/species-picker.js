@@ -19,11 +19,10 @@ export const renderSpeciesPicker = (props, parent) => {
       const selectedSpeciesDisplay = parent.querySelector('.js-selected-species-container');
             selectedSpeciesDisplay.innerHTML = '';
 
-      config.guide.guideMode = enums.guideMode.STATIC.name;
-
       if(config) {
-            speciesInGuideEditor(config, container, selectedSpeciesDisplay, props, config.guide.species || []);
+          config.guide.guideMode = enums.guideMode.STATIC.name;
+          speciesInGuideEditor(config, container, selectedSpeciesDisplay, props, config.guide.species || []);
       } else {
-            speciesEditor(parent, selectedSpeciesDisplay, selectedSpecies, [], []);
+          speciesEditor(parent, selectedSpeciesDisplay, selectedSpecies, [], []);
       }
 };

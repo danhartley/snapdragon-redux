@@ -37,9 +37,8 @@ export const renderTestCardTemplate = (collection, context) => {
     const progressLink = modal.querySelector('.js-review-progress');
 
     if(progressLink) {
-
-        progressLink.innerHTML = 'Progress';
-        progressLink.addEventListener('click', e => {
+      
+        const progressLinkClickHandler = () => {
 
           const summaryContainer = modal.querySelector('.js-summary-container');
 
@@ -64,7 +63,11 @@ export const renderTestCardTemplate = (collection, context) => {
 
           renderSummaryCard();
 
-        }, { once: true });
+        };
+
+        progressLink.innerHTML = 'Progress';
+        progressLink.removeEventListener('click', progressLinkClickHandler, { once: true });
+        progressLink.addEventListener('click', progressLinkClickHandler, { once: true });
 
         progressLink.focus();
     }
