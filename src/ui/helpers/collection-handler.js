@@ -38,6 +38,7 @@ const getItems = async (collection, config) => {
 const loadCollection = async (collection, config) => {
 
     config.collection = { id: collection.id };
+    config.language = collection.language || 'en';
     
     const collectionIsUnchanged = 
       collection.items && collection.items.length > 0 && config.collection.id === collection.id && 

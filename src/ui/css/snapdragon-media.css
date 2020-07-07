@@ -509,7 +509,7 @@
       }
 
       #badgeListModal .modal-dialog {
-        width: 30vw;
+        max-width: 30vw;
         margin: calc( var(--vhRunningBlock) + var(--vhStandardBlock) + 5px + .5rem ) auto auto auto;
       }
 
