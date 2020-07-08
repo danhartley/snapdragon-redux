@@ -30,7 +30,7 @@ const getItems = async (collection, config) => {
       break;
   }
 
-  snapLog('getItems request type: ', { guideType: config.guide.guideType, guideMode: config.guide.guideMode, items: items });
+  // snapLog('getItems request type: ', { guideType: config.guide.guideType, guideMode: config.guide.guideMode, items: items });
 
   return items;
 };
@@ -44,7 +44,7 @@ const loadCollection = async (collection, config) => {
       collection.items && collection.items.length > 0 && config.collection.id === collection.id && 
       (!collection.speciesRange || collection.speciesRange === config.guide.speciesRange);
   
-    snapLog('collectionIsUnchanged: ', collectionIsUnchanged);
+    // snapLog('collectionIsUnchanged: ', collectionIsUnchanged);
 
     if(!!collectionIsUnchanged) {
       return collection;

@@ -1,5 +1,6 @@
 import { contains, clone } from 'ramda';
 
+import { subscription } from 'redux/subscriptions';
 import { firestore } from 'api/firebase/firestore';
 import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
 import { actions } from 'redux/actions/action-creators';
@@ -14,6 +15,8 @@ const changeRequest = async args => {
   const { requestType, requestArgs } = args;
 
   const { collection } = store.getState();
+
+  snapLog('changeRequest', requestType);
 
   switch(requestType) {
 
@@ -167,6 +170,8 @@ const setActiveCollection = lesson => {
 };
 
 const recordUserAction = action => {
+  snapLog('action', action);
+  subscription.removeSubs();
   actions.boundClickEvent(action);
 };
 

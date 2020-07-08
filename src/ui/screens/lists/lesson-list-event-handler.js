@@ -82,60 +82,51 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
 
     lesson.items = lesson.items.filter(item => isItemActive(item));
 
-    if(config.isLandscapeMode) {
+    const lessonYoutubeIcons = document.querySelectorAll('.lesson-list-selected-lesson .youtube-icon');
+          lessonYoutubeIcons.forEach(icon => icon.parentElement.classList.remove('youtube-green-fg'));
 
-      const lessonYoutubeIcons = document.querySelectorAll('.lesson-list-selected-lesson .youtube-icon');
-            lessonYoutubeIcons.forEach(icon => icon.parentElement.classList.remove('youtube-green-fg'));
+    if(icon.dataset.lessonIsYoutubeIcon) {
+      icon.classList.add('youtube-green-fg');
+      const chevron = document.querySelector(`.js-lesson-list-chevron[data-lesson-id="${icon.dataset.lessonId}"]`);
+            chevron.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
+    }
 
-      if(icon.dataset.lessonIsYoutubeIcon) {
-        icon.classList.add('youtube-green-fg');
-        const chevron = document.querySelector(`.js-lesson-list-chevron[data-lesson-id="${icon.dataset.lessonId}"]`);
-              chevron.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
-      }
+    let siblingChevron;
 
-      let siblingChevron;
+    if(state.requiresSpeciesList) {
+      await loadAndDisplaySpeciesList(icon, lesson, container);
+    }
 
-      if(state.requiresSpeciesList) {
-        await loadAndDisplaySpeciesList(icon, lesson, container);
-      }
-
-      if(startLesson) {
-        renderLessonIntro(lesson);
-        siblingChevron = icon.parentElement.parentElement.parentElement.children[1].children[0].children[1];
-        if(isYoutubeIcon) {
-          if(state.hideSpeciesList) {
-            siblingChevron.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
-          }
-        }
-      } else {
-        if(!isYoutubeIcon) {
-          if(state.hideSpeciesList) {
-            icon.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
-          } else if(!state.revealSpeciesList) {
-            icon.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
-          }
+    if(startLesson) {
+      renderLessonIntro(lesson);
+      siblingChevron = icon.parentElement.parentElement.parentElement.children[1].children[0].children[1];
+      if(isYoutubeIcon) {
+        if(state.hideSpeciesList) {
+          siblingChevron.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
         }
       }
-
-      if(state.revealSpeciesList) {        
-        speciesList.classList.remove('hide');
-        if(!isYoutubeIcon) {
+    } else {
+      if(!isYoutubeIcon) {
+        if(state.hideSpeciesList) {
+          icon.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
+        } else if(!state.revealSpeciesList) {
           icon.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
         }
       }
-      if(state.hideSpeciesList) {
-        speciesList.classList.add('hide');
-        lessonVideoState.innerHTML = videoHandler.setVideoState(store.getState().videoPlayer || [], lesson);
+    }
+
+    if(state.revealSpeciesList) {        
+      speciesList.classList.remove('hide');
+      if(!isYoutubeIcon) {
+        icon.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
       }
+    }
+    if(state.hideSpeciesList) {
+      speciesList.classList.add('hide');
+      lessonVideoState.innerHTML = videoHandler.setVideoState(store.getState().videoPlayer || [], lesson);
     }
 
     if(config.isPortraitMode) {
-
-      if(state.requiresSpeciesList) {
-        await loadAndDisplaySpeciesList(icon, lesson, container);
-      }
-
-      renderLessonIntro(lesson);
 
       import('ui/screens/lists/lesson-state-handler').then(module => {
         module.lessonStateHandler.changeRequest({
@@ -162,10 +153,7 @@ const onReviewClickHandler = reviewLink => {
 
     import('ui/screens/lists/lesson-state-handler').then(module => {
       module.lessonStateHandler.recordUserAction(enums.userEvent.START_LESSON_REVIEW);
-    });
-
-    import('ui/screens/lists/lesson-state-handler').then(module => {
-      module.lessonStateHandler.changeRequest({
+      module.lessonStateHandler.changeRequest({        
         requestType: enums.lessonState.BEGIN_OR_RESUME_LESSON,
         requestArgs: {
           id: reviewLink.dataset.lessonId

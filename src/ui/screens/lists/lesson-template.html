@@ -31,12 +31,20 @@
           </div>
       </div>
       <div class="lesson-list-action-icons">
-          <div class="">
+          <div class="landscape">
               <button data-lesson-id="{{ lesson.id }}" data-lesson-is-youtube-icon="true" class="snap-icon-btn fit-width js-lesson-list-youtube" aria-label="play video for the lesson {{ lesson.name }}">
                 <i class="fab fa-youtube youtube-icon {{ lesson.hideVideoClass }}"></i>
-                <i class="fas fa-glasses youtube-icon {{ lesson.hideTextIntroClass }}"></i>
+                <i class="fas fa-align-left youtube-icon {{ lesson.hideTextIntroClass }}"></i>
               </button>
-              <button data-lesson-id="{{ lesson.id }}" class="landscape snap-icon-btn fit-width js-lesson-list-chevron" aria-label="species list for the lesson {{ lesson.name }}">
+              <button data-lesson-id="{{ lesson.id }}" class="snap-icon-btn fit-width js-lesson-list-chevron" aria-label="species list for the lesson {{ lesson.name }}">
+                <i class="fas fa-chevron-down"></i>                
+              </button>
+          </div>
+          <div class="portrait">
+              <button data-lesson-id="{{ lesson.id }}" data-lesson-is-youtube-icon="true" class="snap-icon-btn js-lesson-list-youtube {{ lesson.hideVideoClass }}" aria-label="play video for the lesson {{ lesson.name }}">
+                <i class="fab fa-youtube youtube-icon"></i>
+              </button>
+              <button data-lesson-id="{{ lesson.id }}" class="chevron-icon snap-icon-btn js-lesson-list-chevron {{ lesson.hideTextIntroClass }}" aria-label="species list for the lesson {{ lesson.name }}">
                 <i class="fas fa-chevron-down"></i>
               </button>
           </div>

@@ -45,90 +45,106 @@ export const renderNavigation = collection => {
 
         icon.addEventListener('click', async event => {
             
-                const clickedIcon = event.currentTarget;
-                
-                const { collection, config } = store.getState();
+          const clickedIcon = event.currentTarget;
+          
+          const { collection, config } = store.getState();
 
-                const toggleIconOnOff = clickedIcon => {
-                    clickedIcon.classList.add('active-icon');
-                    setTimeout(() => {
-                        clickedIcon.classList.remove('active-icon');
-                    }, 1000);
-                };
+          const toggleIconOnOff = clickedIcon => {
+              clickedIcon.classList.add('active-icon');
+              setTimeout(() => {
+                  clickedIcon.classList.remove('active-icon');
+              }, 1000);
+          };
 
-                let lesson;
+          let lesson;
 
-                switch(enums.navigation.enumValueOf(clickedIcon.id)) {
-                    case enums.navigation.LANDSCAPE_HOME:
-                        const isIconActive = contains('active-icon', clickedIcon.classList);
-                        if(!isIconActive) {
-                            clickedIcon.classList.add('active-icon');
-                        }
-                        break;
-                    case enums.navigation.SETTINGS:
-                        toggleIconOnOff(clickedIcon);
-                        settingsHandler();
-                        break;
-                    case enums.navigation.PORTRAIT_HOME:
-                        const activeInfoIcon = document.querySelector('.js-info.active-icon');
-                        if(activeInfoIcon) activeInfoIcon.classList.remove('active-icon');
-                        clickedIcon.classList.add('active-icon');
-                        subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
-                        lesson = await import('ui/screens/lists/lesson-state-handler').then(module => {
-                          module.lessonStateHandler.changeRequest({ requestType: enums.lessonState.PAUSE_LESSON });
-                        });
-                        renderLessons();
-                        DOM.rightHeaderTxt.innerHTML = 'Learn the planet';
-                        DOM.rightHeaderScoreTxt.innerHTML = '';
-                        break;
-                    case enums.navigation.GLOSSARY:   
-                        toggleIconOnOff(clickedIcon);
-                        const { glossary } = store.getState();
-                        const definitions = !!collection.glossary
-                            ? glossary.filter(definition => contains(definition.taxon, collection.glossary))
-                            : glossary;
-                        import('ui/quick-fire-modal/quick-fire').then(module => {
-                          module.quickFireHandlers.definitions(definitions);
-                        });
-                        break;
-                    case enums.navigation.EMAIL:
-                        toggleIconOnOff(clickedIcon);
-                        break;
-                    case enums.navigation.LOGIN:
-                        renderLogin(store.getState().user);
-                        break;
-                    case enums.navigation.LANGUAGE:
-                        renderLanguagePicker();
-                    default:
-                        return;
-                }
+          navIcons.forEach(icon => icon.classList.remove('active-icon'));
+          const isIconActive = contains('active-icon', clickedIcon.classList);
+          if(!isIconActive) {
+              clickedIcon.classList.add('active-icon');
+          }
+
+          switch(enums.navigation.enumValueOf(clickedIcon.id)) {
+              case enums.navigation.LANDSCAPE_HOME:
+                  break;
+              case enums.navigation.SETTINGS:
+                  toggleIconOnOff(clickedIcon);
+                  settingsHandler();
+                  break;
+              case enums.navigation.LESSONS:
+                  renderLessons();
+                break;                    
+              case enums.navigation.LESSON:
+                  lesson = await import('ui/screens/lists/lesson-state-handler').then(module => {
+                    module.lessonStateHandler.changeRequest({ requestType: enums.lessonState.PAUSE_LESSON });
+                  });
+                  
+                  DOM.rightHeaderTxt.innerHTML = 'Learn the planet';
+                  DOM.rightHeaderScoreTxt.innerHTML = '';
+                  break;
+              case enums.navigation.GLOSSARY:   
+                  toggleIconOnOff(clickedIcon);
+                  const { glossary } = store.getState();
+                  const definitions = !!collection.glossary
+                      ? glossary.filter(definition => contains(definition.taxon, collection.glossary))
+                      : glossary;
+                  import('ui/quick-fire-modal/quick-fire').then(module => {
+                    module.quickFireHandlers.definitions(definitions);
+                  });
+                  break;
+              case enums.navigation.EMAIL:
+                  toggleIconOnOff(clickedIcon);
+                  break;
+              case enums.navigation.LOGIN:
+                  renderLogin(store.getState().user);
+                  break;
+              case enums.navigation.LANGUAGE:
+                  renderLanguagePicker();
+              default:
+                  return;
+          }
         });        
     });
 
     const onLoadState = (config, counter) => {
+
+      if(config.isLandscapeMode) return;
+
+      navIcons.forEach(icon => icon.classList.remove('active-icon'));
+
+      if(counter.isLessonPaused) {
         
-        if(config.isPortraitMode && config.collection.id !== 0 && !counter.isLessonRehydrated) {
-            navIcons.forEach(icon => icon.classList.remove('active-icon'));
-            return;
-        }
+      }
 
-        if(counter.isLessonPaused) {
+        // if(config.isPortraitMode && config.collection.id !== 0 && !counter.isLessonRehydrated) {
+        //     navIcons.forEach(icon => icon.classList.remove('active-icon'));
+        //     return;
+        // } else {
+        //   if(config.isPortraitMode) {
+        //     let lessonIcon = document.querySelector('.js-lesson');
+        //         lessonIcon.classList.add('active-icon');
+        //     return;
+        //   }
+        // }
 
-            if(config.isPortraitMode) {
-                const id = enums.navigation.PORTRAIT_HOME.name;
-                let icon = document.getElementById(id);
-                const returningUser = !cookieHandler.isFirstTimeVisitor();
+        // if(counter.isLessonPaused) {
 
-                if(id === enums.navigation.LANDSCAPE_HOME.name || (id === enums.navigation.PORTRAIT_HOME.name && returningUser)) {
-                    icon.classList.add('active-icon');
-                }
-            }
-        } else {
-            navIcons.forEach(icon => icon.classList.remove('active-icon'));
-        }
+        //     if(config.isPortraitMode) {
+        //         const id = enums.navigation.LESSONS.name;
+        //         let icon = document.getElementById(id);
+        //         const returningUser = !cookieHandler.isFirstTimeVisitor();
+
+        //         if(id === enums.navigation.LANDSCAPE_HOME.name || (id === enums.navigation.LESSONS.name && returningUser)) {
+        //             icon.classList.add('active-icon');
+        //         }
+        //     }
+        // } else {
+        //     navIcons.forEach(icon => icon.classList.remove('active-icon'));
+        // }
 
         const loginIcon = document.querySelector('.js-login');
-              loginIcon.dataset.isLoggedIn = !!store.getState().user;
+        if(loginIcon)
+          loginIcon.dataset.isLoggedIn = !!store.getState().user;
     };
 
     onLoadState(config, counter);
@@ -136,5 +152,6 @@ export const renderNavigation = collection => {
 
 export const renderLoginChanges = user => {
   const loginIcon = document.querySelector('.js-login');
-  loginIcon.dataset.isLoggedIn = !user ? "false" : "true";
+  if(loginIcon)
+    loginIcon.dataset.isLoggedIn = !user ? "false" : "true";
 };

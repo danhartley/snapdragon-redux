@@ -24,6 +24,14 @@ button {
   letter-spacing: .03rem;
 }
 
+button:focus {
+  outline: 1px solid var(--snap-border-lightest);
+}
+
+button.active-icon:focus {
+  outline: none;
+}
+
 button[disabled] {
   opacity: .38; /* why  38%? google material design */
   pointer-events: none;
@@ -211,7 +219,7 @@ a.dropdown-item {
   text-transform: uppercase;
 }
 
-.home, .settings, .nav-info, .list, .glossary, .email, .login, .email > a, .language {
+.lessons, .settings, .nav-info, .lesson, .glossary, .email, .login, .email > a, .language {
   cursor: pointer;
   color: var(--snap-text-dark);
   font-size: 1.4rem;
@@ -1735,12 +1743,16 @@ a.collection-disabled {
 .snapdragon-intro {
   height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhStandardBlock,20vh) - var(--vhRunningBlock));
   top: calc(var(--vhStandardBlock));  
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .snapdragon-intro > h3, .snapdragon-intro > h4, .snapdragon-intro > h5 {
   line-height: 2;
   font-size: 1rem;
-  margin: 1.2rem 2.4rem 0 2.4rem !important;
+  /* margin: 1.2rem 2.4rem 0 2.4rem !important; */
 }
 
 .snapdragon-intro .youtube-icon {
@@ -1822,7 +1834,7 @@ a.collection-disabled {
   align-items: center;
   display: flex;
   position: absolute;
-  right: .5rem;
+  /* right: .5rem; */
 }
 
 .lesson-list-item {

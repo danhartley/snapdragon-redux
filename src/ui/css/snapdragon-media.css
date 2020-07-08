@@ -397,10 +397,6 @@
         justify-content: space-between;
     }
 
-    .snapdragon-intro > div:nth-child(1) {
-        margin: 0rem 2.4rem 0 2.4rem !important;
-    }
-
     .snapdragon-intro {
         height: initial;  
         padding: 2rem;
