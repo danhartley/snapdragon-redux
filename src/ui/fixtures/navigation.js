@@ -70,15 +70,17 @@ export const renderNavigation = collection => {
                   settingsHandler();
                   break;
               case enums.navigation.LESSONS:
-                  renderLessons();
+                  import('ui/screens/lists/lesson-state-handler').then(module => {
+                    module.lessonStateHandler.recordUserAction(enums.userEvent.RETURN_LESSONS);
+                    renderLessons();
+                  });
                 break;                    
               case enums.navigation.LESSON:
                   lesson = await import('ui/screens/lists/lesson-state-handler').then(module => {
                     module.lessonStateHandler.changeRequest({ requestType: enums.lessonState.PAUSE_LESSON });
-                  });
-                  
-                  DOM.rightHeaderTxt.innerHTML = 'Learn the planet';
-                  DOM.rightHeaderScoreTxt.innerHTML = '';
+                    DOM.rightHeaderTxt.innerHTML = 'Learn the planet';
+                    DOM.rightHeaderScoreTxt.innerHTML = '';
+                  });                  
                   break;
               case enums.navigation.GLOSSARY:   
                   toggleIconOnOff(clickedIcon);

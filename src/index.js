@@ -73,13 +73,13 @@ const onLoadHandler = () => {
           renderLoginChanges();
           subscription.add(renderLoginChanges, 'user', 'flow');
           subscription.add(renderLoggedIn, 'user', 'flow');
-
           subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
-                  
-          subscription.add(nextItem, 'layout', 'flow');
-          subscription.add(nextLesson, 'counter', 'flow');
-          subscription.add(nextLayout, 'counter', 'flow');
           subscription.add(renderScore, 'score', 'flow');
+                  
+          subscription.add(nextItem, 'layout', 'quiz');
+          subscription.add(nextLesson, 'counter', 'quiz');
+          subscription.add(nextLayout, 'counter', 'quiz');
+          
           subscription.add(traitValuesHandler, 'config', 'localisation');
 
           const updateConfig = async () => {

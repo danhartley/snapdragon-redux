@@ -31,7 +31,7 @@ export const nextLesson = counter => {
 
             if(asyncFunc === null) return;
 
-            setupHandler.actionUpdate(enums.nextStep.NEXT_LESSON, { asyncFunc });
+            setupHandler.actionUpdate(enums.nextStep.NEXT_LESSON, { config, asyncFunc });
         }
     }
 };

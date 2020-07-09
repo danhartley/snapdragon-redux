@@ -398,7 +398,7 @@
     }
 
     .snapdragon-intro {
-        height: initial;  
+        /* height: initial;   */
         padding: 2rem;
     }
 

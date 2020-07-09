@@ -89,7 +89,7 @@ const loadCollectionItemProperties = async (collection, config) => {
         break;
     }
 
-    snapLog('loadCollectionItemProperties', collection);
+    // snapLog('loadCollectionItemProperties', collection);
 
     const families = [...new Set(collection.items.map(i => i.taxonomy.family))];
     const orders = [...new Set(collection.items.map(i => i.taxonomy.order))];

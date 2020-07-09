@@ -10,7 +10,7 @@ const isRequired = (step, args) => {
 
     if(userAction === undefined || !!userAction && userAction.name === enums.userEvent.START_LESSON_REVIEW.name) {
 
-      snapLog('userAction', userAction);
+      // snapLog('userAction', userAction);
       
       switch(step) {
           case enums.nextStep.NEXT_ITEM:
@@ -55,7 +55,17 @@ const actionUpdate = (step, args) => {
             });
             break;
         case enums.nextStep.NEXT_LESSON:
-            actions.boundNextLesson(asyncFunc);
+
+            // if(config.isPortraitMode) {
+              const awaitPromise = async () => {
+                const response = await asyncFunc;
+                actions.boundNextLesson(response);  
+              };
+  
+              awaitPromise();
+            // } else {
+            //   actions.boundAsyncNextLesson(asyncFunc);
+            // }
             break;
     }
 }

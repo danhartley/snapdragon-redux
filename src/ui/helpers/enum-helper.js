@@ -81,9 +81,9 @@ userEvent.initEnum([
     'START_LESSON',
     'START_LESSON_REVIEW',
     'START_TERM_REVIEW',
-    'NAVIGATE_HOME',
     'EDIT_LESSON',
-    'TOGGLE_SPECIES_LIST'
+    'TOGGLE_SPECIES_LIST',
+    'RETURN_LESSONS'
 ]);
 
 export const enums = {

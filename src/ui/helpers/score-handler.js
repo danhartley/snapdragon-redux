@@ -51,7 +51,7 @@ export const continueLessonHandler = (btn, score, timer) => {
     btn.addEventListener('click', event => {
         btn.disabled = true;
         window.clearTimeout(timer);
-        subscription.removeSubs();
+        subscription.removeAllQuizScreenSubs();
         bindScore(score);
     });
 };
@@ -62,7 +62,7 @@ const simpleScoreHandler = (test, callback, config) => {
 
     const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
-    subscription.removeSubs();
+    subscription.removeAllQuizScreenSubs();
 
     const scoreUpdateTimer = setTimeout(()=>{
         bindScore(score);      
@@ -120,7 +120,7 @@ const genericScoreHandler = (_score, callback, config) => {
 
     const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
-    subscription.removeSubs(); 
+    subscription.removeAllQuizScreenSubs(); 
 
     const scoreUpdateTimer = setTimeout(()=>{
         bindScore(score);               
@@ -137,7 +137,7 @@ const blockScoreHander = (test, callback, config) => {
 
     const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
-    subscription.removeSubs();
+    subscription.removeAllQuizScreenSubs();
 
     const scoreUpdateTimer = setTimeout(()=>{
         bindScore(score);        
@@ -200,7 +200,7 @@ const stripScoreHandler = (test, callback, config) => {
                 const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
                 const scoreUpdateTimer = setTimeout(()=>{
-                    subscription.removeSubs();
+                    subscription.removeAllQuizScreenSubs();
                     bindScore(score);
                 }, delay);
             
@@ -266,7 +266,7 @@ const imageScoreHandler = (test, callback, config) => {
 
             const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
-            subscription.removeSubs();
+            subscription.removeAllQuizScreenSubs();
 
             const scoreUpdateTimer = setTimeout(() => {
                 bindScore(score);

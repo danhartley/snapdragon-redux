@@ -170,7 +170,30 @@ const setActiveCollection = lesson => {
 };
 
 const recordUserAction = action => {
-  actions.boundClickEvent(action);
+
+  snapLog('action', action);
+
+  switch(action) {
+    case enums.userEvent.START_LESSON_REVIEW:
+      subscription.addAllQuizSubs();
+      // subscription.printAllSubs();
+      break;      
+    case enums.userEvent.START_LESSON: // video
+    case enums.userEvent.TOGGLE_SPECIES_LIST: // show/hide species (chevron)
+    subscription.removeAllQuizScreenSubs();
+    subscription.removeAllQuizLayoutSubs();
+    // subscription.printAllSubs();
+      break;
+    case enums.userEvent.RETURN_LESSONS: // portrait return to lessons click
+      subscription.removeAllQuizScreenSubs();
+      break;
+    default:
+      break;
+  }
+
+  setTimeout(() => {
+    actions.boundClickEvent(action);  
+  });
 };
 
 const saveCurrentLesson = async collection => {

@@ -1,5 +1,8 @@
 import { contains } from 'ramda';
 
+import { nextLesson } from 'ui/setup/next-lesson';
+import { nextLayout } from 'ui/setup/next-layout';
+import { nextItem } from 'ui/setup/next-item';
 import { lessonStateHelper } from 'ui/screens/lists/lesson-state-helper';
 import { store } from 'redux/store';
 import { observeStore } from 'redux/observe-store';
@@ -25,7 +28,7 @@ const add = (subscription, domain, role, layout) => {
 const remove = subscription => {
 
     if(subscription) {
-
+        // snapLog('subscription removed', subscription.name, subscription.role);
         subscription.unsubscribe();
         subscriptions = subscriptions.filter(sub => sub.name !== subscription.name);
     }
@@ -51,13 +54,28 @@ const getAll = () => {
     return subscriptions;
 };
 
-const removeSubs = () => {
+const removeAllQuizScreenSubs = () => {
 
     let screens = getByRole('screen');
 
     screens.forEach(sub => {
       subscription.remove(sub)
     });
+};
+
+const removeAllQuizLayoutSubs = () => {
+
+    let screens = getByRole('quiz');
+
+    screens.forEach(sub => {
+      subscription.remove(sub);
+    });
+};
+
+const addAllQuizSubs = () => {
+  add(nextItem, 'layout', 'quiz');
+  add(nextLesson, 'counter', 'quiz');
+  add(nextLayout, 'counter', 'quiz');
 };
 
 const checkRequired = (state, layout) => {
@@ -97,14 +115,15 @@ const addSubs = (layout, config) => {
         const isSubscriptionRequired = checkRequired(store.getState(), layout);
 
         if(func && isSubscriptionRequired) {
+            // snapLog('layout subscribed', layout);
             if(config.isPortraitMode) {
-                if(index === 1 || screen.name === 'summary') subscription.add(func, screen.domain, 'screen', layout ? layout.name : '');
+                if(index === 1 || screen.name === 'summary') add(func, screen.domain, 'screen', layout ? layout.name : '');
             } else {
-                subscription.add(func, screen.domain, 'screen', layout ? layout.name : '');
+                add(func, screen.domain, 'screen', layout ? layout.name : '');
             }                           
         } else {
-            subscription.remove(subscription.getByName('nextItem'));
-            subscription.remove(subscription.getByName('traitValuesHandler'));
+            remove(getByName('nextItem'));
+            remove(getByName('traitValuesHandler'));
         }
     });
 };
@@ -122,8 +141,10 @@ export const subscription = {
     getByName,
     getByRole,
     getAll,
-    removeSubs,
+    removeAllQuizScreenSubs,
+    removeAllQuizLayoutSubs,
     addSubs,
+    addAllQuizSubs,
     printAllSubs
 };
 
