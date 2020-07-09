@@ -160,26 +160,16 @@ export const renderSpeciesList = (lesson, args) => {
         });
     };
 
-    if(!!collection.notes && !!collection.notes.time) {
-        collection.notes.forEach(n => sp.firstTime = n.time[0]);
-        collection.notes = utils.sortBy(collection.notes, 'firstTime', 'asc');
-    }
+    // if(!!collection.notes) {
+    //     collection.notes.forEach(n => sp.firstTime = n.time[0]);
+    //     collection.notes = utils.sortBy(collection.notes, 'firstTime', 'asc');
+    // }
 
     const table = await buildTable(collection, { config, enums: traitEnums, overrideParent: callingParentContainer });
 
     if(!table.isReady) return;
 
     userClickHandlers();
-
-    const btnBeginLesson = callingParentContainer.querySelector('.js-btn-current-lesson-begin');
-          btnBeginLesson.addEventListener('click', () => {
-            lessonStateHandler.changeRequest({
-                requestType: enums.lessonState.BEGIN_OR_RESUME_LESSON,
-                requestArgs: {
-                  id: collection.id
-                }
-              });
-          });
 
     const openSpeciesDescriptionHandler = (collection, species, enableScroll = true, activateYoutubeIcon = true) => {
 
@@ -327,7 +317,7 @@ const updateVideoPlayer = (collection, species) => {
     activeLesson.speciesName = species.name;
     activeLesson.pausedAt = species.time ? species.time[0] : 0;
 
-    videoHandler.saveVideoState(playerRecords);    
+    videoHandler.saveVideoState(playerRecords);  
 };
 
 const closeOpenAccordions = speciesName => {

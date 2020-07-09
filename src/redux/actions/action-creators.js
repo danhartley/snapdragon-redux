@@ -44,9 +44,10 @@ const clickEvent = makeActionCreator(types.CLICK_EVENT);
 
 const boundchangeLessonPlan = data => store.dispatch(changeLessonPlan(data));
 const boundchangeLessonPlans = data => store.dispatch(changeLessonPlans(data));
-const boundNextLesson = data => store.dispatch(boundAsyncNextLesson(data));
+const boundNextLesson = data => store.dispatch(nextLesson(data));
+const boundAsyncNextLesson = data => store.dispatch(asyncNextLesson(data));
 
-const boundAsyncNextLesson = func => {
+const asyncNextLesson = func => {
   return function(dispatch) {
     return func.then(response => {
       return dispatch(nextLesson(response));
@@ -85,6 +86,7 @@ const boundClickEvent = data => store.dispatch(clickEvent(data));
 export const actions = {
     boundchangeLessonPlans,
     boundchangeLessonPlan,
+    boundAsyncNextLesson,
     boundNextLesson,
     boundUpdateScore,
     boundUpdateTraitScore,

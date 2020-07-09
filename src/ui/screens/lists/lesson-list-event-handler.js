@@ -82,67 +82,48 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
 
     lesson.items = lesson.items.filter(item => isItemActive(item));
 
-    if(config.isLandscapeMode) {
+    const lessonYoutubeIcons = document.querySelectorAll('.lesson-list-selected-lesson .youtube-icon');
+          lessonYoutubeIcons.forEach(icon => icon.parentElement.classList.remove('youtube-green-fg'));
 
-      const lessonYoutubeIcons = document.querySelectorAll('.lesson-list-selected-lesson .youtube-icon');
-            lessonYoutubeIcons.forEach(icon => icon.parentElement.classList.remove('youtube-green-fg'));
+    if(icon.dataset.lessonIsYoutubeIcon) {
+      icon.classList.add('youtube-green-fg');
+      const chevron = document.querySelector(`.js-lesson-list-chevron[data-lesson-id="${icon.dataset.lessonId}"]`);
+            chevron.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
+    }
 
-      if(icon.dataset.lessonIsYoutubeIcon) {
-        icon.classList.add('youtube-green-fg');
-        const chevron = document.querySelector(`.js-lesson-list-chevron[data-lesson-id="${icon.dataset.lessonId}"]`);
-              chevron.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
-      }
+    let siblingChevron;
 
-      let siblingChevron;
-
-      if(state.requiresSpeciesList) {
-        await loadAndDisplaySpeciesList(icon, lesson, container);
-      }
-
-      if(startLesson) {
-        renderLessonIntro(lesson);
-        siblingChevron = icon.parentElement.parentElement.parentElement.children[1].children[0].children[1];
-        if(isYoutubeIcon) {
-          if(state.hideSpeciesList) {
-            siblingChevron.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
-          }
-        }
-      } else {
-        if(!isYoutubeIcon) {
-          if(state.hideSpeciesList) {
-            icon.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
-          } else if(!state.revealSpeciesList) {
-            icon.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
-          }
+    if(startLesson) {
+      renderLessonIntro(lesson);
+      siblingChevron = icon.parentElement.parentElement.parentElement.children[1].children[0].children[1];
+      if(isYoutubeIcon) {
+        if(state.hideSpeciesList) {
+          siblingChevron.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
         }
       }
-
-      if(state.revealSpeciesList) {        
-        speciesList.classList.remove('hide');
-        if(!isYoutubeIcon) {
+    } else {
+      if(!isYoutubeIcon) {
+        if(state.hideSpeciesList) {
+          icon.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
+        } else if(!state.revealSpeciesList) {
           icon.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
         }
       }
-      if(state.hideSpeciesList) {
-        speciesList.classList.add('hide');
-        lessonVideoState.innerHTML = videoHandler.setVideoState(store.getState().videoPlayer || [], lesson);
-      }
     }
 
-    if(config.isPortraitMode) {
-
-      if(state.requiresSpeciesList) {
-        await loadAndDisplaySpeciesList(icon, lesson, container);
+    if(state.revealSpeciesList) {        
+      speciesList.classList.remove('hide');
+      if(!isYoutubeIcon) {
+        icon.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
       }
+    }
+    if(state.hideSpeciesList) {
+      speciesList.classList.add('hide');
+      lessonVideoState.innerHTML = videoHandler.setVideoState(store.getState().videoPlayer || [], lesson);
+    }
 
-      renderLessonIntro(lesson);
-
-      import('ui/screens/lists/lesson-state-handler').then(module => {
-        module.lessonStateHandler.changeRequest({
-          requestType: enums.lessonState.RENDER_SPECIES_LIST,
-          requestArgs: { lesson, container: DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable') }
-        });
-      });
+    if(state.requiresSpeciesList) {
+      await loadAndDisplaySpeciesList(icon, lesson, (config.isPortraitMode && isYoutubeIcon) ? DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable') : container);
     }
 
     row.classList.add('lesson-list-selected-lesson');
@@ -158,21 +139,26 @@ const onLessonTitleClickHandler = (title, lessons) => {
 
 const onReviewClickHandler = reviewLink => {    
 
-  reviewLink.addEventListener('click', async e => {
+  const reviewLinkHandler = async e => {
+
+    const spinner = document.querySelector(`.review-spinner[data-lesson-id="${reviewLink.dataset.lessonId}"]`);
+    if(spinner) spinner.classList.remove('hide');
+    setTimeout(() => {
+      if(spinner) spinner.classList.add('hide');
+    }, 2000);
 
     import('ui/screens/lists/lesson-state-handler').then(module => {
       module.lessonStateHandler.recordUserAction(enums.userEvent.START_LESSON_REVIEW);
-    });
-
-    import('ui/screens/lists/lesson-state-handler').then(module => {
-      module.lessonStateHandler.changeRequest({
+      module.lessonStateHandler.changeRequest({        
         requestType: enums.lessonState.BEGIN_OR_RESUME_LESSON,
         requestArgs: {
           id: reviewLink.dataset.lessonId
         }
       });
     });
-  });
+  }
+
+  reviewLink.addEventListener('click', reviewLinkHandler);
 };
 
 const hideOtherContentAndRevertChevrons = selectedLessonId => {
@@ -197,17 +183,13 @@ const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
 
   Array.from(icon.parentElement.children).forEach(child => child.dataset.selected = true);
 
-  if(userAction && userAction.name === enums.userEvent.START_LESSON.name) { return; }
-
-  const { userAction, config } = store.getState();
-
+  
   await import('ui/screens/lists/lesson-state-handler').then(module => {
     module.lessonStateHandler.changeRequest({
       requestType: enums.lessonState.RENDER_SPECIES_LIST,
       requestArgs: { lesson, container }
     });
   });
-
 
   // lessonListScrollHandler.scrollToTitle(lesson.id);
 };

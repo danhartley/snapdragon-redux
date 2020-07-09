@@ -304,7 +304,7 @@ test('intial state of the app should be consistent', () => {
 //     };
 
 //     actions.boundUpdateCollection({config, collection});
-//     actions.boundNextLesson({ lessonPlan: _lessonPlan, collection : _collection, lesson: _lesson});
+//     actions.boundAsyncNextLesson({ lessonPlan: _lessonPlan, collection : _collection, lesson: _lesson});
 
 //     expect(store.getState().counter).toEqual( {"isLessonRehydrated": false});
 

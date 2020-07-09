@@ -85,12 +85,19 @@
               <progress aria-label="lesson quiz progress" title="lesson quiz progress" style="margin: 1000px 0 0 0" value="0" max="6"></progress>
               <div class="right-body js-right-body">
                 <div class="home-container landscape js-home-container">  
-                  <div class="snapdragon-header double-centred-block">
+                  <div class="snapdragon-header">
+                    <div class="standard-block double-centred-block">
                       <h1>
                         <a href="">Welcome</a>
                       </h1>
+                    </div>                      
                   </div>    
-                  <main id="main" class="snapdragon-intro scrollable js-snapdragon-intro">
+                  <main id="main" class="snapdragon-intro scrollable js-snapdragon-intro" 
+                    style="margin: 0 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    top: var(--vhStandardBlock, 10vh)">
               
                       <h3>Learn The Planet is a collection of a video lessons about the natural world.</h3>
               
@@ -99,7 +106,7 @@
                       </h4>
               
                       <h4 class="centred-block landscape">
-                          <i class="margin-left extra-large-text fas fa-glasses youtube-icon "></i><span class="margin-left">Click to see lesson species.</span>            
+                          <i class="margin-left extra-large-text fas fa-align-left youtube-icon "></i><span class="margin-left">Click to read lesson introduction.</span>
                       </h4>
               
                       <h4 class="landscape">
@@ -116,7 +123,7 @@
                       <br class="landscape">
               
                       <h4 class="portrait">
-                          Tap on the home icon <span><i class="fas fa-chalkboard"></i></span> below to get started, then select an <span><i class="fab fa-youtube youtube-icon"></i></span> icon to begin a lesson.
+                          Tap on the lessons icon <span><i class="fas fa-bars"></i></span> below to get started, then select an <span><i class="fab fa-youtube youtube-icon"></i></span> icon to begin a lesson.
                       </h4>
               
                       <h5>These lessons took time and effort to make; Learn The Planet would like to thank the people who created them.</h5>
@@ -176,5 +183,18 @@
 
       <script defer type="text/javascript" src="https://storage.googleapis.com/snapdragon-222014.appspot.com/dist/iconwc.min.js"></script>      
       <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1osYKD1sRb5Bzqq-OzJ6PgXqLtDt9YvU&libraries=places"></script>
+      <script defer type="text/javascript">
+
+        var tag = document.createElement('script');
+      
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      
+        window.onYouTubeIframeAPIReady = function() {
+            window.YT = YT;
+        }
+        
+      </script>
     </body>    
   </html>

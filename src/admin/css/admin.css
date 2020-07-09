@@ -196,6 +196,7 @@
 
   nav ul a {
       padding: 0 .5rem;
+      display: initial;
   }
 
   #nav-mobile {
@@ -219,6 +220,7 @@
 
   .admin.container .modal {
       bottom: initial;
+      width: 400px;
   }
 
   .selected-species-container > input {

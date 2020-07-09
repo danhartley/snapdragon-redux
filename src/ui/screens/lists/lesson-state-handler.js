@@ -1,5 +1,6 @@
 import { contains, clone } from 'ramda';
 
+import { subscription } from 'redux/subscriptions';
 import { firestore } from 'api/firebase/firestore';
 import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
 import { actions } from 'redux/actions/action-creators';
@@ -14,6 +15,8 @@ const changeRequest = async args => {
   const { requestType, requestArgs } = args;
 
   const { collection } = store.getState();
+
+  // snapLog('changeRequest', requestType);
 
   switch(requestType) {
 
@@ -100,7 +103,7 @@ const changeLessonState = async (lessonState, collection, lesson) => {
 
   switch(lessonState) {
       case enums.lessonState.BEGIN_LESSON: {
-            actions.boundStopStartLesson({ index: 0, isLessonPaused: false });
+            actions.boundStopStartLesson({ index: 0, isLessonPaused: false, log: { collection: collection.id  } });
           break;
       }
       case enums.lessonState.PAUSE_LESSON: {
@@ -113,7 +116,7 @@ const changeLessonState = async (lessonState, collection, lesson) => {
         break;
       }
       case enums.lessonState.RESUME_LESSON: {
-          actions.boundStopStartLesson({ ...lessonStateHelper.getLatestCounter(collection), isLessonPaused: false });
+          actions.boundStopStartLesson({ ...lessonStateHelper.getLatestCounter(collection), isLessonPaused: false, log: { collection: collection.id  } });
           break;
       }
       case enums.lessonState.NEXT_ROUND: {
@@ -160,14 +163,49 @@ const updateCollection = requestArgs => {
 };
 
 const setActiveCollection = lesson => {
+  const { user, userAction, config } = store.getState();
   lesson.counter = lesson.counter || { };
-  actions.boundSetActiveCollection({ lesson });
-  const { user } = store.getState();
+
+  actions.boundSetActiveCollection({ lesson, userAction });
+  
+  switch(userAction) {
+    case enums.userEvent.START_LESSON_REVIEW:
+      if(config.isLandscapeMode) subscription.addAllQuizLayoutSubs();
+      break;
+    default:
+      break;
+  }
+  
   firestore.addCollection(clone(lesson.collection), user);
 };
 
 const recordUserAction = action => {
-  actions.boundClickEvent(action);
+
+  snapLog('action', action);
+
+  if(store.getState().config.isPortraitMode) subscription.addAllQuizLayoutSubs();
+  
+  subscription.removeAllQuizScreenSubs();
+  subscription.removeAllQuizLayoutSubs();
+
+  switch(action) {
+    case enums.userEvent.START_LESSON_REVIEW:
+      // subscription.addAllQuizLayoutSubs();
+      break;      
+    case enums.userEvent.START_LESSON: // video
+    case enums.userEvent.TOGGLE_SPECIES_LIST: // show/hide species (chevron)
+      break;
+    case enums.userEvent.RETURN_LESSONS: // portrait return to lessons click
+
+      break;
+    default:
+      break;
+  }
+
+  setTimeout(() => {
+    // subscription.printAllSubs();
+    actions.boundClickEvent(action);  
+  });
 };
 
 const saveCurrentLesson = async collection => {

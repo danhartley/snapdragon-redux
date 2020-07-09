@@ -30,7 +30,7 @@ const getItems = async (collection, config) => {
       break;
   }
 
-  snapLog('getItems request type: ', { guideType: config.guide.guideType, guideMode: config.guide.guideMode, items: items });
+  // snapLog('getItems request type: ', { guideType: config.guide.guideType, guideMode: config.guide.guideMode, items: items });
 
   return items;
 };
@@ -38,19 +38,20 @@ const getItems = async (collection, config) => {
 const loadCollection = async (collection, config) => {
 
     config.collection = { id: collection.id };
+    config.language = collection.language || 'en';
     
     const collectionIsUnchanged = 
       collection.items && collection.items.length > 0 && config.collection.id === collection.id && 
       (!collection.speciesRange || collection.speciesRange === config.guide.speciesRange);
   
-    snapLog('collectionIsUnchanged: ', collectionIsUnchanged);
+    // snapLog('collectionIsUnchanged: ', collectionIsUnchanged);
 
     if(!!collectionIsUnchanged) {
       return collection;
     }
 
     collection.items = await getItems(collection, config);
-    collection.items = utils.shuffleArray(collection.items);
+    collection.items = utils.shuffleArray(collection.items.filter(item => item.taxonomy));
 
     if(collection.nextItem) return; // after refreshing or returning to the page (using rehydrated collection)
 
@@ -74,19 +75,22 @@ const loadCollection = async (collection, config) => {
 
 const loadCollectionItemProperties = async (collection, config) => {
 
-  switch(config.guide.guideMode) {
-    case enums.guideMode.DYNAMIC.name:
-      collection.items = utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc');
-      break;
-    case enums.guideMode.STATIC.name:
-      collection.items.forEach(sp => {
-          if(sp.time) {
-              sp.firstTime = sp.time[0];
-          }
-      });
-      collection.items = utils.sortBy(collection.items, 'firstTime', 'asc');
-      break;
-  }
+    switch(config.guide.guideMode) {
+      case enums.guideMode.DYNAMIC.name:
+        collection.items = utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc');
+        break;
+      case enums.guideMode.STATIC.name:
+        collection.items.forEach(sp => {
+            if(sp.time) {
+                sp.firstTime = sp.time[0];
+            }
+        });
+        collection.items = utils.sortBy(collection.items, 'firstTime', 'asc');
+        break;
+    }
+
+    // snapLog('loadCollectionItemProperties', collection);
+
     const families = [...new Set(collection.items.map(i => i.taxonomy.family))];
     const orders = [...new Set(collection.items.map(i => i.taxonomy.order))];
     const genera = [...new Set(collection.items.map(i => i.taxonomy.genus).filter(g => g))];

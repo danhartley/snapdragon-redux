@@ -411,13 +411,13 @@
     color: var(--snap-text-dark);
     background-color: transparent;
     border: 1px solid transparent;
-    padding: 0 .5rem;
+    margin: 0 .5rem;
+    padding: 0 1px;
   }
   
-  .snap-icon-btn:focus, .snap-icon-btn:hover {
-    /* color: var(--snap-youtube-green);
-    opacity: 1; */
-    outline: 1px solid var(--snap-border-medium);
+  .block.snap-icon-btn:focus, .block.snap-icon-btn:hover {
+    background-color: var(--snap-btn-hover);
+    outline: 1px solid var(--snap-border-lightest);
   }
   
   .strip:focus-within {

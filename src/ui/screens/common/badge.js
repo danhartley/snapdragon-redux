@@ -13,7 +13,7 @@ export const renderBadge = (badge, item, config) => {
 
     const languageNames = names.reduce(function (r, a) {
         r[a.language] = r[a.language] || {};
-        r[a.language].name = config.languages.find(language => language.lang === a.language).name;
+        r[a.language].name = config.languages.find(language => language.lang === a.language.trim()).name;
         r[a.language].names = r[a.language].names || [];
         r[a.language].names.push(a.common);
         return r;

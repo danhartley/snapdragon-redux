@@ -4,14 +4,21 @@ import { setupHandler } from 'ui/setup/setup-handler';
 
 export const nextLayout = counter => {
 
-    const { layout, lessonPlan, config, lesson, collection } = store.getState();
+  const init = () => {
 
-    const args = { layout, counter, lessonPlan, config, lesson, collection };
+    const { layout, lessonPlan, config, lesson, collection, userAction } = store.getState();
+
+    const args = { layout, counter, lessonPlan, config, lesson, collection, userAction };
 
     const isRequired = setupHandler.isRequired(enums.nextStep.NEXT_LAYOUT, args);
-
+    
     if(isRequired) {
-        const nextLayout = lessonPlan.layouts[counter.index];
+      if(collection.nextItem) {
+        const nextLayout = { ...lessonPlan.layouts[counter.index], speciesName: collection.nextItem ? collection.nextItem.name : collection.items[0].name };
         setupHandler.actionUpdate(enums.nextStep.NEXT_LAYOUT, { layout: nextLayout, config });
+      }
     }
+  };
+
+  init();
 };
