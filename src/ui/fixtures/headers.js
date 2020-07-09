@@ -11,7 +11,7 @@ export const renderHeaders = collection => {
         const { layout, lessonPlan } = store.getState();
         const progressBar = document.querySelector('.js-right-grid progress');
 
-        if(lessonPlan) {
+        if(lessonPlan && layout) {
 
             const questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
         

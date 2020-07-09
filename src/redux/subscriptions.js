@@ -55,7 +55,9 @@ const removeSubs = () => {
 
     let screens = getByRole('screen');
 
-    screens.forEach(sub => subscription.remove(sub));
+    screens.forEach(sub => {
+      subscription.remove(sub)
+    });
 };
 
 const checkRequired = (state, layout) => {
@@ -107,7 +109,11 @@ const addSubs = (layout, config) => {
     });
 };
 
-
+const printAllSubs = () => {
+  getAll().forEach(sub => {
+    snapLog('sub', sub);
+  });
+};
 
 export const subscription = {
     add,
@@ -117,6 +123,7 @@ export const subscription = {
     getByRole,
     getAll,
     removeSubs,
-    addSubs
+    addSubs,
+    printAllSubs
 };
 

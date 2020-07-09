@@ -4,9 +4,11 @@ import { setupHandler } from 'ui/setup/setup-handler';
 
 export const nextLayout = counter => {
 
-    const { layout, lessonPlan, config, lesson, collection } = store.getState();
+  const init = () => {
 
-    const args = { layout, counter, lessonPlan, config, lesson, collection };
+    const { layout, lessonPlan, config, lesson, collection, userAction } = store.getState();
+
+    const args = { layout, counter, lessonPlan, config, lesson, collection, userAction };
 
     const isRequired = setupHandler.isRequired(enums.nextStep.NEXT_LAYOUT, args);
 
@@ -14,4 +16,9 @@ export const nextLayout = counter => {
         const nextLayout = lessonPlan.layouts[counter.index];
         setupHandler.actionUpdate(enums.nextStep.NEXT_LAYOUT, { layout: nextLayout, config });
     }
+  };
+
+  setTimeout(() => {
+   init(); // to sure ensure in a race, nextLesson wins 
+  });
 };

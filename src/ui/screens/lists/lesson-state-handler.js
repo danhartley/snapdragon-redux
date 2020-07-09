@@ -16,7 +16,7 @@ const changeRequest = async args => {
 
   const { collection } = store.getState();
 
-  snapLog('changeRequest', requestType);
+  // snapLog('changeRequest', requestType);
 
   switch(requestType) {
 
@@ -103,7 +103,7 @@ const changeLessonState = async (lessonState, collection, lesson) => {
 
   switch(lessonState) {
       case enums.lessonState.BEGIN_LESSON: {
-            actions.boundStopStartLesson({ index: 0, isLessonPaused: false });
+            actions.boundStopStartLesson({ index: 0, isLessonPaused: false, log: { collection: collection.id  } });
           break;
       }
       case enums.lessonState.PAUSE_LESSON: {
@@ -116,7 +116,7 @@ const changeLessonState = async (lessonState, collection, lesson) => {
         break;
       }
       case enums.lessonState.RESUME_LESSON: {
-          actions.boundStopStartLesson({ ...lessonStateHelper.getLatestCounter(collection), isLessonPaused: false });
+          actions.boundStopStartLesson({ ...lessonStateHelper.getLatestCounter(collection), isLessonPaused: false, log: { collection: collection.id  } });
           break;
       }
       case enums.lessonState.NEXT_ROUND: {
@@ -163,15 +163,13 @@ const updateCollection = requestArgs => {
 };
 
 const setActiveCollection = lesson => {
+  const { user, userAction } = store.getState();
   lesson.counter = lesson.counter || { };
-  actions.boundSetActiveCollection({ lesson });
-  const { user } = store.getState();
+  actions.boundSetActiveCollection({ lesson, userAction });
   firestore.addCollection(clone(lesson.collection), user);
 };
 
 const recordUserAction = action => {
-  snapLog('action', action);
-  subscription.removeSubs();
   actions.boundClickEvent(action);
 };
 

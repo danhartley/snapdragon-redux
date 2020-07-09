@@ -93,10 +93,6 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
 
     let siblingChevron;
 
-    if(state.requiresSpeciesList) {
-      await loadAndDisplaySpeciesList(icon, lesson, container);
-    }
-
     if(startLesson) {
       renderLessonIntro(lesson);
       siblingChevron = icon.parentElement.parentElement.parentElement.children[1].children[0].children[1];
@@ -126,14 +122,8 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
       lessonVideoState.innerHTML = videoHandler.setVideoState(store.getState().videoPlayer || [], lesson);
     }
 
-    if(config.isPortraitMode) {
-
-      import('ui/screens/lists/lesson-state-handler').then(module => {
-        module.lessonStateHandler.changeRequest({
-          requestType: enums.lessonState.RENDER_SPECIES_LIST,
-          requestArgs: { lesson, container: DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable') }
-        });
-      });
+    if(state.requiresSpeciesList) {
+      await loadAndDisplaySpeciesList(icon, lesson, (config.isPortraitMode && isYoutubeIcon) ? DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable') : container);
     }
 
     row.classList.add('lesson-list-selected-lesson');
@@ -185,17 +175,13 @@ const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
 
   Array.from(icon.parentElement.children).forEach(child => child.dataset.selected = true);
 
-  if(userAction && userAction.name === enums.userEvent.START_LESSON.name) { return; }
-
-  const { userAction, config } = store.getState();
-
+  
   await import('ui/screens/lists/lesson-state-handler').then(module => {
     module.lessonStateHandler.changeRequest({
       requestType: enums.lessonState.RENDER_SPECIES_LIST,
       requestArgs: { lesson, container }
     });
   });
-
 
   // lessonListScrollHandler.scrollToTitle(lesson.id);
 };

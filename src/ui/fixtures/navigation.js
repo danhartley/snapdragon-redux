@@ -3,10 +3,8 @@ import { contains } from 'ramda';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
-import { subscription } from 'redux/subscriptions';
 import { enums } from 'ui/helpers/enum-helper';
 import { renderLessons } from 'ui/screens/lists/lesson-list';
-import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { settingsHandler } from 'ui/fixtures/settings';
 import { renderLogin } from 'ui/fixtures/login';
 import { renderLanguagePicker } from 'ui/fixtures/language';
@@ -17,7 +15,7 @@ import navigationRightTemplate from 'ui/fixtures/navigation-right-template.html'
 
 export const renderNavigation = collection => {
 
-    const { config, counter } = store.getState();
+    const { config, userAction } = store.getState();
 
     const template = document.createElement('template');
 
@@ -106,48 +104,29 @@ export const renderNavigation = collection => {
         });        
     });
 
-    const onLoadState = (config, counter) => {
+    const onLoadState = (config, userAction) => {
 
       if(config.isLandscapeMode) return;
 
       navIcons.forEach(icon => icon.classList.remove('active-icon'));
 
-      if(counter.isLessonPaused) {
-        
-      }
+      const loginIcon = document.querySelector('.js-login');
+      if(loginIcon)
+        loginIcon.dataset.isLoggedIn = !!store.getState().user;
 
-        // if(config.isPortraitMode && config.collection.id !== 0 && !counter.isLessonRehydrated) {
-        //     navIcons.forEach(icon => icon.classList.remove('active-icon'));
-        //     return;
-        // } else {
-        //   if(config.isPortraitMode) {
-        //     let lessonIcon = document.querySelector('.js-lesson');
-        //         lessonIcon.classList.add('active-icon');
-        //     return;
-        //   }
-        // }
+        switch(userAction &&userAction.name) {
+          case enums.userEvent.START_LESSON_REVIEW.name: // quiz
+          case enums.userEvent.START_LESSON.name: // video
+            const lessonIcon = document.querySelector('.js-lesson');
+                  lessonIcon.classList.add('active-icon');
+            const lessonsIcon = document.querySelector('.js-lessons');
+                  lessonsIcon.classList.remove('active-icon');
+            break;
+            
+        }
+  };
 
-        // if(counter.isLessonPaused) {
-
-        //     if(config.isPortraitMode) {
-        //         const id = enums.navigation.LESSONS.name;
-        //         let icon = document.getElementById(id);
-        //         const returningUser = !cookieHandler.isFirstTimeVisitor();
-
-        //         if(id === enums.navigation.LANDSCAPE_HOME.name || (id === enums.navigation.LESSONS.name && returningUser)) {
-        //             icon.classList.add('active-icon');
-        //         }
-        //     }
-        // } else {
-        //     navIcons.forEach(icon => icon.classList.remove('active-icon'));
-        // }
-
-        const loginIcon = document.querySelector('.js-login');
-        if(loginIcon)
-          loginIcon.dataset.isLoggedIn = !!store.getState().user;
-    };
-
-    onLoadState(config, counter);
+    onLoadState(config, userAction);
 };
 
 export const renderLoginChanges = user => {
