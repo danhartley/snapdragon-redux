@@ -2,7 +2,7 @@ import { renderMixedSpecimenImagesAndQuestion } from 'ui/screens/multichoice/por
 
 export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
-    snapLog('renderMixedSpecimenQuestion', true);
+    snapLog('renderMixedSpecimenQuestion', collection.name);
 
     renderMixedSpecimenImagesAndQuestion(collection);
   };

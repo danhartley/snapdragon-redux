@@ -163,9 +163,19 @@ const updateCollection = requestArgs => {
 };
 
 const setActiveCollection = lesson => {
-  const { user, userAction } = store.getState();
+  const { user, userAction, config } = store.getState();
   lesson.counter = lesson.counter || { };
+
   actions.boundSetActiveCollection({ lesson, userAction });
+  
+  switch(userAction) {
+    case enums.userEvent.START_LESSON_REVIEW:
+      if(config.isLandscapeMode) subscription.addAllQuizLayoutSubs();
+      break;
+    default:
+      break;
+  }
+  
   firestore.addCollection(clone(lesson.collection), user);
 };
 
@@ -173,25 +183,27 @@ const recordUserAction = action => {
 
   snapLog('action', action);
 
+  if(store.getState().config.isPortraitMode) subscription.addAllQuizLayoutSubs();
+  
+  subscription.removeAllQuizScreenSubs();
+  subscription.removeAllQuizLayoutSubs();
+
   switch(action) {
     case enums.userEvent.START_LESSON_REVIEW:
-      subscription.addAllQuizSubs();
-      // subscription.printAllSubs();
+      // subscription.addAllQuizLayoutSubs();
       break;      
     case enums.userEvent.START_LESSON: // video
     case enums.userEvent.TOGGLE_SPECIES_LIST: // show/hide species (chevron)
-    subscription.removeAllQuizScreenSubs();
-    subscription.removeAllQuizLayoutSubs();
-    // subscription.printAllSubs();
       break;
     case enums.userEvent.RETURN_LESSONS: // portrait return to lessons click
-      subscription.removeAllQuizScreenSubs();
+
       break;
     default:
       break;
   }
 
   setTimeout(() => {
+    // subscription.printAllSubs();
     actions.boundClickEvent(action);  
   });
 };

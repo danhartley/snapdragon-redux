@@ -13,14 +13,12 @@ export const nextLayout = counter => {
     const isRequired = setupHandler.isRequired(enums.nextStep.NEXT_LAYOUT, args);
     
     if(isRequired) {
-      const nextLayout = { ...lessonPlan.layouts[counter.index], speciesName: collection.nextItem ? collection.nextItem.name : collection.items[0].name };
-      const isEqual = !!layout && layout.name === nextLayout.name && layout.speciesName === nextLayout.speciesName;
-      if(isEqual) return;
-      setupHandler.actionUpdate(enums.nextStep.NEXT_LAYOUT, { layout: nextLayout, config });
+      if(collection.nextItem) {
+        const nextLayout = { ...lessonPlan.layouts[counter.index], speciesName: collection.nextItem ? collection.nextItem.name : collection.items[0].name };
+        setupHandler.actionUpdate(enums.nextStep.NEXT_LAYOUT, { layout: nextLayout, config });
+      }
     }
   };
 
-  // setTimeout(() => {
-   init(); // to sure ensure in a race, nextLesson wins 
-  // });
+  init();
 };

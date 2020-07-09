@@ -1,5 +1,3 @@
-import { subscription } from 'redux/subscriptions';
-
 const onCloseModal = () => {
 
     const modal = document.querySelector('#lessonModal');

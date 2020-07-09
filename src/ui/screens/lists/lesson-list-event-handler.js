@@ -139,7 +139,13 @@ const onLessonTitleClickHandler = (title, lessons) => {
 
 const onReviewClickHandler = reviewLink => {    
 
-  reviewLink.addEventListener('click', async e => {
+  const reviewLinkHandler = async e => {
+
+    const spinner = document.querySelector(`.review-spinner[data-lesson-id="${reviewLink.dataset.lessonId}"]`);
+    if(spinner) spinner.classList.remove('hide');
+    setTimeout(() => {
+      if(spinner) spinner.classList.add('hide');
+    }, 2000);
 
     import('ui/screens/lists/lesson-state-handler').then(module => {
       module.lessonStateHandler.recordUserAction(enums.userEvent.START_LESSON_REVIEW);
@@ -150,7 +156,9 @@ const onReviewClickHandler = reviewLink => {
         }
       });
     });
-  });
+  }
+
+  reviewLink.addEventListener('click', reviewLinkHandler);
 };
 
 const hideOtherContentAndRevertChevrons = selectedLessonId => {

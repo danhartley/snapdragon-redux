@@ -72,7 +72,7 @@ const removeAllQuizLayoutSubs = () => {
     });
 };
 
-const addAllQuizSubs = () => {
+const addAllQuizLayoutSubs = () => {
   add(nextItem, 'layout', 'quiz');
   add(nextLesson, 'counter', 'quiz');
   add(nextLayout, 'counter', 'quiz');
@@ -144,7 +144,7 @@ export const subscription = {
     removeAllQuizScreenSubs,
     removeAllQuizLayoutSubs,
     addSubs,
-    addAllQuizSubs,
+    addAllQuizLayoutSubs,
     printAllSubs
 };
 

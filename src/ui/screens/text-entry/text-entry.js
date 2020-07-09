@@ -84,7 +84,9 @@ export const renderInput = (screen, question) => {
 
     const scoreEventHandler = e => {
         e.preventDefault();
-        const answer = document.querySelector('.js-txt-input').value;
+        const input = document.querySelector('.js-txt-input');
+        if(!input) return;
+        const answer = input.value;
         const score = { 
             itemId: item.id, question, answer, target: e.target, 
             layoutCount: lessonPlan.layouts.length, points: layout.points, 
@@ -98,7 +100,9 @@ export const renderInput = (screen, question) => {
     };
 
     const loseFocusMobileHandler = e => {
-        const answer = document.querySelector('.js-txt-input').value;
+        const input = document.querySelector('.js-txt-input');
+        if(!input) return;
+        const answer = input.value;
         const score = { 
             itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: e.target, 
             layoutCount: lessonPlan.layouts.length, points: layout.points, 
