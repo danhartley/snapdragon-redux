@@ -79,7 +79,7 @@ export const lesson = (state = initialState, action) => {
             }
         }
 
-        case types.SET_ACTIVE_COLLECTION:
+        case types.SAVE_USER_PROGRESS:
             return { ...state, ...action.data.lesson.lesson, isNextRound: true };
 
         default: {

@@ -14,74 +14,66 @@ const changeRequest = async args => {
 
   const { requestType, requestArgs } = args;
 
-  const { collection } = store.getState();
-
-  // snapLog('changeRequest', requestType);
+  let { config, collections, collection, counter, lessonPlan, lessonPlans, layout, lesson, score, history, bonusLayout, traits = enums } = store.getState();
+  let userProgressState;
 
   switch(requestType) {
 
-    case enums.lessonState.PAUSE_LESSON:      
-      if(store.getState().config.isLandscapeMode) return;      
-      changeLessonState(requestType, collection, store.getState().config);
+    case enums.lessonState.PAUSE_LESSON:
+      changeLessonState(requestType, collection, config);
     break;
     
     case enums.lessonState.UPDATE_COLLECTION:
-      updateCollection(requestArgs);
+      actions.boundUpdateCollection({ config: requestArgs.config, collection: requestArgs.collection });
     break;
     
     case enums.lessonState.SAVE_LESSON_PROGRESS:
-      saveCurrentLesson(collection);
+      
+      config.collection.id = collection.id; // hack
+    
+      const savedLesson = { 
+          name: collection.name,
+          config, collection, counter, lessonPlan, lessonPlans, layout, lesson, score: clone(score), history, bonusLayout, enums: traits
+      };
+    
+      actions.boundSaveLesson(savedLesson);
+
     break;
     
     case enums.lessonState.GET_LESSON_STATE:
-      const { collectionToLoad, updatedCounter, config } = requestArgs;
-      return await getLessonState(collectionToLoad, config, updatedCounter);      
+      userProgressState = await getLessonState(requestArgs.collectionToLoad, requestArgs.config, requestArgs.updatedCounter);
+      saveUserProgressState(userProgressState);
+      return userProgressState;
     
     case enums.lessonState.ADD_SPECIES_TO_COLLECTION:
-      return await addExtraSpeciesSelection(requestArgs);
+      userProgressState = await addExtraSpeciesSelection(requestArgs);
+      saveUserProgressState(userProgressState);
     
-    case enums.lessonState.RENDER_SPECIES_LIST:
-      renderLessonSpeciesList(requestArgs);
+    case enums.lessonState.RENDER_SPECIES_LIST:      
+      userProgressState = await getLessonState(requestArgs.lesson, config);
+      saveUserProgressState(userProgressState);
+      setTimeout(() => {
+        renderSpeciesList(userProgressState.collection, { callingParentContainer: requestArgs.container });
+      });
     break;
     
     case enums.lessonState.BEGIN_OR_RESUME_LESSON:
-      const { id } = requestArgs;
-      beginOrResumeLesson(id);
+      const collectionToLoad = lessonStateHelper.getCollectionToLoad(collection, collections, requestArgs.id);
+      userProgressState = await getLessonState(collectionToLoad, config);
+      const _lessonState = userProgressState.score && userProgressState.score.collectionId === userProgressState.collection.id
+              ? enums.lessonState.RESUME_LESSON
+              : enums.lessonState.BEGIN_LESSON;
+      saveUserProgressState(userProgressState);
+      subscription.addAllQuizLayoutSubs();
+      setTimeout(() => {
+        changeLessonState(_lessonState, userProgressState.collection, userProgressState.lesson); 
+      });
     break;
 
     case enums.lessonState.NEXT_ROUND:
-      const { lesson } = requestArgs; 
-      changeLessonState(enums.lessonState.NEXT_ROUND, collection, lesson);
+      changeLessonState(enums.lessonState.NEXT_ROUND, collection, requestArgs.lesson);
     break;
   }
-};
-
-const beginOrResumeLesson = async (selectedLessonCollectionId, requestedlessonState)  => {
-
-  const { collections, collection: currentCollection, config } = store.getState();
-
-  const collectionToLoad = lessonStateHelper.getCollectionToLoad(currentCollection, collections, selectedLessonCollectionId);
-
-  const { collection, score, lesson } = await getLessonState(collectionToLoad, config);
-
-  const lessonState = !!requestedlessonState ? requestedlessonState : (score && score.collectionId === collection.id) 
-          ? enums.lessonState.RESUME_LESSON
-          : enums.lessonState.BEGIN_LESSON;
-
-  changeLessonState(lessonState, collection, lesson); 
-};
-
-const renderLessonSpeciesList = async requestArgs => {
-
-  const { lesson: collectionToLoad, container } = requestArgs;
-
-  const { config } = store.getState();
-
-  const { collection } = await getLessonState(collectionToLoad, config);
-
-  setTimeout(() => {
-    renderSpeciesList(collection, { callingParentContainer: container });
-  });
 };
 
 const getLessonState = async (collectionToLoad, config, newLessonCounter) => {
@@ -90,18 +82,16 @@ const getLessonState = async (collectionToLoad, config, newLessonCounter) => {
 
   const counter = newLessonCounter || stateCounter;
 
-  const lessonState = lessonStateHelper.getUserLessonState(lessons, collectionToLoad, progressState, counter, savedLesson, newLessonCounter);
+  const userProgressState = lessonStateHelper.getUserLessonState(lessons, collectionToLoad, progressState, counter, savedLesson, newLessonCounter);
 
-  lessonState.collection = await collectionHandler.loadCollection(lessonState.collection, config);
+  userProgressState.collection = await collectionHandler.loadCollection(userProgressState.collection, config);
   
-  setActiveCollection(lessonState);
-
-  return lessonState;
+  return userProgressState;
 };
 
-const changeLessonState = async (lessonState, collection, lesson) => {    
+const changeLessonState = async (userProgressState, collection, lesson) => {    
 
-  switch(lessonState) {
+  switch(userProgressState) {
       case enums.lessonState.BEGIN_LESSON: {
             actions.boundStopStartLesson({ index: 0, isLessonPaused: false, log: { collection: collection.id  } });
           break;
@@ -154,74 +144,28 @@ const addExtraSpeciesSelection = async requestArgs => {
       score: clone(progressState.score)
   };
 
-  setActiveCollection(lesson);
+  return await lesson;
 };
 
-const updateCollection = requestArgs => {
-  const { config, collection } = requestArgs;
-  actions.boundUpdateCollection({ config, collection }); // or use setActive-Collection?
-};
+const saveUserProgressState = userProgressState => {
 
-const setActiveCollection = lesson => {
-  const { user, userAction, config } = store.getState();
-  lesson.counter = lesson.counter || { };
+  const { user, userAction } = store.getState();
 
-  actions.boundSetActiveCollection({ lesson, userAction });
+  userProgressState.counter = userProgressState.counter || { };
+
+  actions.boundSaveUserProgress({ lesson: userProgressState, userAction });
   
-  switch(userAction) {
-    case enums.userEvent.START_LESSON_REVIEW:
-      if(config.isLandscapeMode) subscription.addAllQuizLayoutSubs();
-      break;
-    default:
-      break;
-  }
-  
-  firestore.addCollection(clone(lesson.collection), user);
+  firestore.addCollection(clone(userProgressState.collection), user);
 };
 
 const recordUserAction = action => {
 
-  snapLog('action', action);
-
-  if(store.getState().config.isPortraitMode) subscription.addAllQuizLayoutSubs();
-  
   subscription.removeAllQuizScreenSubs();
   subscription.removeAllQuizLayoutSubs();
 
-  switch(action) {
-    case enums.userEvent.START_LESSON_REVIEW:
-      // subscription.addAllQuizLayoutSubs();
-      break;      
-    case enums.userEvent.START_LESSON: // video
-    case enums.userEvent.TOGGLE_SPECIES_LIST: // show/hide species (chevron)
-      break;
-    case enums.userEvent.RETURN_LESSONS: // portrait return to lessons click
-
-      break;
-    default:
-      break;
-  }
-
   setTimeout(() => {
-    // subscription.printAllSubs();
     actions.boundClickEvent(action);  
   });
-};
-
-const saveCurrentLesson = async collection => {
-
-  const { counter, lessonPlan, lessonPlans, layout, lesson, score, history, bonusLayout, enums, config } = store.getState();
-  
-  config.collection.id = collection.id;
-
-  const savedLesson = { 
-      name: collection.name,
-      config, collection, counter, lessonPlan, lessonPlans, layout, lesson, score: clone(score), history, bonusLayout, enums
-  };
-
-  actions.boundSaveLesson(savedLesson);
-
-  return savedLesson;
 };
 
 export const lessonStateHandler = {

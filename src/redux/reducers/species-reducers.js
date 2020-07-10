@@ -29,7 +29,7 @@ export const collections = (state = [], action) => {
 
             return collections;
         }
-        case types.SET_ACTIVE_COLLECTION: {
+        case types.SAVE_USER_PROGRESS: {
 
             action.data.lesson.collection.isActive = true;
 
@@ -95,7 +95,7 @@ export const collection = (state = { id: 0 }, action) => {
             return collection;
         }
 
-        case types.SET_ACTIVE_COLLECTION: {
+        case types.SAVE_USER_PROGRESS: {
             return { 
                 ...action.data.lesson.collection, 
                 nextItem: action.data.lesson.collection.items[action.data.lesson.collection.itemIndex] };
@@ -158,7 +158,7 @@ export const bonusLayout = (state = null, action) => {
             return state;
         }
 
-        case types.SET_ACTIVE_COLLECTION:
+        case types.SAVE_USER_PROGRESS:
             return { ...state, ...action.data.lesson.bonusLayout };
 
         default: {

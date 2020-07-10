@@ -43,11 +43,11 @@ const onClickViewState = (e, lessons) => {
   const speciesList = document.querySelector(`#species_list_id_${lessonId}`);
   const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lessonId}"]`);
 
-  let action = isYoutubeIcon ? enums.userEvent.START_LESSON : isChevronIcon ? enums.userEvent.TOGGLE_SPECIES_LIST : enums.userEvent.DEFAULT;
+  // let action = isYoutubeIcon ? enums.userEvent.START_LESSON : isChevronIcon ? enums.userEvent.TOGGLE_SPECIES_LIST : enums.userEvent.DEFAULT;
 
-  import('ui/screens/lists/lesson-state-handler').then(module => {
-    module.lessonStateHandler.recordUserAction(action);
-  });
+  // import('ui/screens/lists/lesson-state-handler').then(module => {
+  //   module.lessonStateHandler.recordUserAction(action);
+  // });
 
   hideOtherContentAndRevertChevrons(lessonId);
 
@@ -183,8 +183,8 @@ const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
 
   Array.from(icon.parentElement.children).forEach(child => child.dataset.selected = true);
 
-  
   await import('ui/screens/lists/lesson-state-handler').then(module => {
+    module.lessonStateHandler.recordUserAction(enums.userEvent.TOGGLE_SPECIES_LIST);
     module.lessonStateHandler.changeRequest({
       requestType: enums.lessonState.RENDER_SPECIES_LIST,
       requestArgs: { lesson, container }

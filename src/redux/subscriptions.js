@@ -130,7 +130,7 @@ const addSubs = (layout, config) => {
 
 const printAllSubs = () => {
   getAll().forEach(sub => {
-    snapLog('sub', sub);
+    snapLog('subscribed', sub.name);
   });
 };
 

@@ -20,7 +20,7 @@ const nextLayout = makeActionCreator(types.NEXT_LAYOUT);
 const nexItem = makeActionCreator(types.NEXT_ITEM);
 const endRevision = makeActionCreator(types.END_REVISION);
 const updateHistory = makeActionCreator(types.UPDATE_HISTORY)
-const newCollection = makeActionCreator(types.SET_ACTIVE_COLLECTION);
+const userProgress = makeActionCreator(types.SAVE_USER_PROGRESS);
 const updateCollection = makeActionCreator(types.UPDATE_COLLECTION);
 const resetCollection = makeActionCreator(types.RESET_COLLECTION);
 const updateCollections = makeActionCreator(types.UPDATE_COLLECTIONS);
@@ -61,7 +61,7 @@ const boundNextLayout = data => store.dispatch(nextLayout(data));
 const boundNextItem = data => store.dispatch(nexItem(data,{delay:500}));
 const boundEndRevision = data => store.dispatch(endRevision(data));
 const boundUpdateHistory = data => store.dispatch(updateHistory(data));
-const boundSetActiveCollection = data => store.dispatch(newCollection(data));
+const boundSaveUserProgress = data => store.dispatch(userProgress(data));
 const boundUpdateCollection = data => store.dispatch(updateCollection(data));
 const boundResetCollection = data => store.dispatch(resetCollection(data));
 const boundUpdateCollections = data => store.dispatch(updateCollections(data));
@@ -94,7 +94,7 @@ export const actions = {
     boundNextLayout,
     boundEndRevision,
     boundUpdateHistory,
-    boundSetActiveCollection,
+    boundSaveUserProgress,
     boundUpdateCollection,
     boundResetCollection,
     boundUpdateCollections,
