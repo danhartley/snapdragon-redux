@@ -64,7 +64,10 @@ const changeRequest = async args => {
               ? enums.lessonState.RESUME_LESSON
               : enums.lessonState.BEGIN_LESSON;
       saveUserProgressState(userProgressState);
-      changeLessonState(_lessonState, userProgressState.collection, userProgressState.lesson);
+      subscription.addAllQuizLayoutSubs();
+      setTimeout(() => {
+        changeLessonState(_lessonState, userProgressState.collection, userProgressState.lesson); 
+      });
     break;
 
     case enums.lessonState.NEXT_ROUND:
@@ -157,19 +160,8 @@ const saveUserProgressState = userProgressState => {
 
 const recordUserAction = action => {
 
-  switch(action) {
-    case enums.userEvent.START_LESSON_REVIEW:
-      resetSubscriptions();
-      break;      
-    case enums.userEvent.START_LESSON: // video
-    case enums.userEvent.TOGGLE_SPECIES_LIST: // show/hide species (chevron)
-      break;
-    case enums.userEvent.RETURN_LESSONS: // portrait return to lessons click
-
-      break;
-    default:
-      break;
-  }
+  subscription.removeAllQuizScreenSubs();
+  subscription.removeAllQuizLayoutSubs();
 
   setTimeout(() => {
     actions.boundClickEvent(action);  
@@ -179,11 +171,4 @@ const recordUserAction = action => {
 export const lessonStateHandler = {
   changeRequest,
   recordUserAction
-};
-
-const resetSubscriptions = () => {
-  subscription.removeAllQuizScreenSubs();
-  subscription.removeAllQuizLayoutSubs();
-  subscription.addAllQuizLayoutSubs();
-  subscription.printAllSubs();
 };
