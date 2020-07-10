@@ -76,11 +76,11 @@ export const renderNavigation = collection => {
                   });
                 break;                    
               case enums.navigation.LESSON:
-                  lesson = await import('ui/screens/lists/lesson-state-handler').then(module => {
-                    module.lessonStateHandler.changeRequest({ requestType: enums.lessonState.PAUSE_LESSON });
-                    DOM.rightHeaderTxt.innerHTML = 'Learn the planet';
-                    DOM.rightHeaderScoreTxt.innerHTML = '';
-                  });                  
+                  // lesson = await import('ui/screens/lists/lesson-state-handler').then(module => {
+                  //   module.lessonStateHandler.changeRequest({ requestType: enums.lessonState.PAUSE_LESSON });
+                  //   DOM.rightHeaderTxt.innerHTML = 'Learn the planet';
+                  //   DOM.rightHeaderScoreTxt.innerHTML = '';
+                  // });                  
                   break;
               case enums.navigation.GLOSSARY:   
                   toggleIconOnOff(clickedIcon);
