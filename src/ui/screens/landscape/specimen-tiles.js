@@ -22,10 +22,6 @@ const renderItemSpecimenTiles = item => {
     
     const { config, collection, layout } = store.getState();
 
-    // const hasTiles = layout.itemIndex === layout.prevItemIndex && !!document.querySelector('.js-tiles');
-
-    // if(hasTiles) return;
-
     const familes = [ 'family-strips', 'family', 'taxon-card' ];
 
     const collectionItems = collection.allItems || collection.items;

@@ -1,3 +1,5 @@
+import { clone } from 'ramda';
+
 import { actions } from 'redux/actions/action-creators';
 
 const onSpeciesTimeMatchListeners = [];
@@ -87,7 +89,11 @@ const setVideoState = (videoPlayer, lesson) => {
     
     if(activeLesson) {
         if(lesson.id === activeLesson.collectionId) {
-        state = activeLesson.pausedAt ? `Video paused at ${activeLesson.speciesName}` : ''; 
+        state = activeLesson.pausedAt 
+                  ? activeLesson.speciesName !== ''
+                    ? `Video paused at ${activeLesson.speciesName}`
+                    : 'Video paused'
+                  : ''; 
         }
     } else {
         state = '';
@@ -125,8 +131,31 @@ const destroyPlayer = () => {
       }
 };
 
-const saveVideoState = player => {
-    actions.boundUpdateVideoPlayer(player);
+const updateVideoPlayer = (videoPlayer, collection, species) => {
+
+  const newPlayerTime = Math.floor(player.getCurrentTime());
+        
+  const playerRecords = clone(videoPlayer) || [];
+  
+  let activeLesson = playerRecords.find(p => p.collectionId === collection.id); 
+  
+    if(activeLesson) {        
+      if(activeLesson.pausedAt === newPlayerTime) return; // user pauses lesson, and then resumes
+      // user jumps to another point in the lesson
+      activeLesson.speciesName = species ? species.name : activeLesson.speciesName || '';
+      activeLesson.pausedAt = species && species.time ? species.time[0] : newPlayerTime;
+      activeLesson.playAt = newPlayerTime;
+    } else {
+      activeLesson = { 
+        collectionId: collection.id,
+        speciesName: '',
+        pausedAt: newPlayerTime,
+        playerRecords: newPlayerTime,
+      };
+      playerRecords.push(activeLesson);
+  } 
+
+  actions.boundUpdateVideoPlayer(playerRecords);
 };
 
 const getPlayerTime = () => {
@@ -147,7 +176,7 @@ export const videoHandler = {
     states,
     setVideoState,
     destroyPlayer,
-    saveVideoState,
     isVideoPlayerReady,
-    getPlayerTime
+    getPlayerTime,
+    updateVideoPlayer
 };
