@@ -94,7 +94,7 @@ export const renderSpeciesList = (lesson, args) => {
                             : videoSetup(collection, store.getState().videoPlayer || [], DOM.rightBody, species.time[0]);
                     }
 
-                    updateVideoPlayer(collection, species);
+                   videoHandler.updateVideoPlayer(store.getState().videoPlayer, collection, species);
                   });
               });
 
@@ -243,7 +243,7 @@ export const renderSpeciesList = (lesson, args) => {
     videoHandler.onSpeciesTimeMatch((collection, species) => {
 
         openSpeciesDescriptionHandler(collection, species);
-        updateVideoPlayer(collection, species);
+        videoHandler.updateVideoPlayer(store.getState().videoPlayer, collection, species);
         onSpeciesChangeHandler(species);
     });
 
@@ -302,23 +302,6 @@ const nextTaxon = document.querySelector('#cardModal .js-next');
 
 if(prevTaxon) prevTaxon.addEventListener('click', carouselControlHandler);
 if(nextTaxon) nextTaxon.addEventListener('click', carouselControlHandler);
-
-const updateVideoPlayer = (collection, species) => {
-        
-    const playerRecords = store.getState().videoPlayer || [];
-    
-    let activeLesson = playerRecords.find(p => p.collectionId === collection.id); 
-    
-    if(!activeLesson) {
-        activeLesson = { collectionId: collection.id };
-        playerRecords.push(activeLesson);
-    };
-
-    activeLesson.speciesName = species.name;
-    activeLesson.pausedAt = species.time ? species.time[0] : 0;
-
-    videoHandler.saveVideoState(playerRecords);  
-};
 
 const closeOpenAccordions = speciesName => {
 

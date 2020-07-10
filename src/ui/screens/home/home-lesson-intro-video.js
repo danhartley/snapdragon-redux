@@ -49,32 +49,9 @@ export const videoSetup = (collection, videoPlayer, parent, startTime) => {
 
             if(!typeof player.getPlayerState === 'function' || player.getPlayerState === undefined) return;
 
-            const resetVideoPlayerOnUserAction = () => {
-
-              let playerRecords = store.getState().videoPlayer || [];
-              let activeLesson = playerRecords.find(p => p.collectionId === collection.id); 
-              let newPlayerTime = Math.floor(player.getCurrentTime());                            
-              if(activeLesson) {        
-                if(activeLesson.pausedAt === newPlayerTime) return; // user pauses lesson, and then resumes
-                // user jumps to another point in the lesson
-                activeLesson.speciesName = '';
-                activeLesson.pausedAt = newPlayerTime;
-                activeLesson.playAt = newPlayerTime;
-              } else {
-                activeLesson = {
-                  speciesName: '',
-                  pausedAt: newPlayerTime,
-                  playerRecords: newPlayerTime,
-                }
-                playerRecords = [ activeLesson];
-              }
-
-              videoHandler.saveVideoState(playerRecords);
-            };
-
             const playerState = player.getPlayerState();
 
-            resetVideoPlayerOnUserAction();
+            videoHandler.updateVideoPlayer(store.getState().videoPlayer, collection, activeLesson.speciesName);
 
             switch(playerState) {
                 case videoHandler.states.find(state => state.value === 'playing').key: // 1
