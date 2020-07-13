@@ -9,7 +9,7 @@ import { renderEditLesson } from 'ui/screens/lists/lesson-edit';
 import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 
-const onLoadLessonViewState = (collection, videoPlayer, score, config) => {
+const onLoadLessonViewState = (collection, videoPlayer) => {
 
   const taxa = collection.iconicTaxa ? collection.iconicTaxa.map(taxon => taxon.common).join(', ') : '';
 
@@ -25,9 +25,9 @@ const onLoadLessonViewState = (collection, videoPlayer, score, config) => {
   return collection;  
 };
 
-const onLoadLessonsViewState = (collections, videoPlayer, score, config) => {
+const onLoadLessonsViewState = (collections, videoPlayer) => {
   return collections.map(collection => {
-    return onLoadLessonViewState(collection, videoPlayer, score, config);
+    return onLoadLessonViewState(collection, videoPlayer);
   });
 };
 
@@ -43,11 +43,7 @@ const onClickViewState = (e, lessons) => {
   const speciesList = document.querySelector(`#species_list_id_${lessonId}`);
   const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lessonId}"]`);
 
-  // let action = isYoutubeIcon ? enums.userEvent.START_LESSON : isChevronIcon ? enums.userEvent.TOGGLE_SPECIES_LIST : enums.userEvent.DEFAULT;
-
-  // import('ui/screens/lists/lesson-state-handler').then(module => {
-  //   module.lessonStateHandler.recordUserAction(action);
-  // });
+  snapLog('onClickViewState', {});
 
   hideOtherContentAndRevertChevrons(lessonId);
 
@@ -71,6 +67,8 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
   return icon.addEventListener('click', async e => {      
 
     const { icon, lesson, state, speciesList, container, lessonVideoState, row, isYoutubeIcon } = onClickViewState(e, lessons);
+
+    snapLog('onLessonIconClickHandler', {});
 
     const isItemActive = item => {
       if(item.hasOwnProperty('isActive')) {
@@ -123,7 +121,7 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
     }
 
     if(state.requiresSpeciesList) {
-      await loadAndDisplaySpeciesList(icon, lesson, (config.isPortraitMode && isYoutubeIcon) ? DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable') : container);
+      await loadAndDisplaySpeciesList(config, icon, lesson, (config.isPortraitMode && isYoutubeIcon) ? DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable') : container);
     }
 
     row.classList.add('lesson-list-selected-lesson');
@@ -179,7 +177,7 @@ const hideOtherContentAndRevertChevrons = selectedLessonId => {
   });
 };
 
-const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
+const loadAndDisplaySpeciesList = async(config, icon, lesson, container) => {
 
   Array.from(icon.parentElement.children).forEach(child => child.dataset.selected = true);
 
@@ -191,7 +189,16 @@ const loadAndDisplaySpeciesList = async(icon, lesson, container) => {
     });
   });
 
-  // lessonListScrollHandler.scrollToTitle(lesson.id);
+  // if(config.isPortraitMode) lessonListScrollHandler.scrollToTitle(lesson.id);
+};
+
+const highlightActiveLesson = lessonId => {
+  const rows = document.querySelectorAll('.js-lesson-list-carousel-item');
+  rows.forEach(row => row.classList.remove('highlighted-for-review-row'));
+  const row = document.querySelector(`.js-lesson-list-carousel-item[data-lesson-id="${lessonId}"]`);
+  if (row)
+    row.classList.add('highlighted-for-review-row');
+  // lessonListScrollHandler.scrollToTitle(lesson.dataset.lessonId);
 };
 
 export const lessonListEventHandler = {
@@ -200,5 +207,6 @@ export const lessonListEventHandler = {
   onLessonIconClickHandler,
   onReviewClickHandler,
   onLessonTitleClickHandler,
-  hideOtherContentAndRevertChevrons
+  hideOtherContentAndRevertChevrons,
+  highlightActiveLesson
 };

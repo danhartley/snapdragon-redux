@@ -10,7 +10,7 @@ import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { lessonStateHelper } from 'ui/screens/lists/lesson-state-helper';
 import { speciesInGuideEditor } from 'ui/create-guide-modal/species-in-guide-editor';
 
-import spinnerTemplate from 'ui/create-guide-modal/species-search-template.html';
+import initialiseLessonSpinnerTemplate from 'ui/create-guide-modal/initialise-lesson-template.html';
 import speciesSummaryTemplate from 'ui/create-guide-modal/species-summary-template.html';
 
 export const initialiseLesson = createGuide => {
@@ -19,7 +19,7 @@ export const initialiseLesson = createGuide => {
     const { collections } = store.getState();
 
     const template = document.createElement('template');
-          template.innerHTML = spinnerTemplate;
+          template.innerHTML = initialiseLessonSpinnerTemplate;
 
     const parent = modal.querySelector('.js-step-action-content');
 
@@ -70,7 +70,7 @@ export const initialiseLesson = createGuide => {
 
                 setTimeout( async () => {
 
-                  snapLog('config.guide.species', config.guide.species)
+                  // snapLog('config.guide.species', config.guide.species)
 
                   if(config.guide.species) {
 
@@ -142,7 +142,7 @@ export const initialiseLesson = createGuide => {
             }
         });
 
-        snapLog('initLesson', lesson);
+        // snapLog('initLesson', lesson);
         
         const collection = lesson.collection;
               collection.guide = config.guide;
