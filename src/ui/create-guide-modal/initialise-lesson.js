@@ -13,7 +13,7 @@ import { speciesInGuideEditor } from 'ui/create-guide-modal/species-in-guide-edi
 import spinnerTemplate from 'ui/create-guide-modal/species-search-template.html';
 import speciesSummaryTemplate from 'ui/create-guide-modal/species-summary-template.html';
 
-export const speciesSearch = createGuide => {
+export const initialiseLesson = createGuide => {
 
     const { config, modal, option } = createGuide;
     const { collections } = store.getState();
