@@ -6,7 +6,7 @@ import storage from 'redux-persist/lib/storage'; // defaults to localStorage for
 import { logger } from 'redux/middleware/logger';
 import { timeoutScheduler } from 'redux/middleware/timeoutScheduler';
 
-import { config, enums, user, userAction } from 'redux/reducers/config-reducer';
+import { config, units, user, userAction } from 'redux/reducers/config-reducer';
 import { collections, collection, bonusLayout } from 'redux/reducers/species-reducers';
 import { counter, score, history, videoPlayer } from 'redux/reducers/progress-reducers';
 import { lessonPlans, lessonPlan, layout } from 'redux/reducers/layout-reducers';
@@ -28,7 +28,7 @@ const reducer = combineReducers({
     collections,
     history, 
     videoPlayer,
-    enums,
+    units,
     bonusLayout,
     user,
     quickFire,

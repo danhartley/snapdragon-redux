@@ -25,7 +25,7 @@ export const addRelationship = () => {
 
         renderTemplate({}, template.content, parent);
 
-        let traitValues = await firestore.getTraitValues();
+        let traitValues = await firestore.getUnits();
 
         // relationship type (symbiosis)
 

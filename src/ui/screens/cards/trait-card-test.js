@@ -45,7 +45,7 @@ export const renderTraitCardTest = item => {
         const inputQuestion = document.getElementById('input-trait-question');
         const inputAnswer = document.getElementById('input-trait-answer');
 
-        const traitValues = await firestore.getTraitValues();
+        const traitValues = await getUnits();
 
         const initKeyAutocomplete = (inputQuestion, traits) => {
 

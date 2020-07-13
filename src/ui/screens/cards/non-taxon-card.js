@@ -29,9 +29,9 @@ export const renderNonTaxonCard = (mode = 'STAND_ALONE', keyTrait, parent = DOM.
     if(next) isInCarousel ? next.classList.remove('hide-important') : next.classList.add('hide-important');
     
 
-    const { enums, config } = store.getState();
+    const { units, config } = store.getState();
 
-    const nonTaxa = group.getNonTaxa(enums).filter(nt => nt.group === group.nonTaxaGroup[0].LICHEN_FORM);
+    const nonTaxa = group.getNonTaxa(units).filter(nt => nt.group === group.nonTaxaGroup[0].LICHEN_FORM);
 
     nonTaxa.forEach(nt => {
         nt.name = itemProperties.getVernacularName(nt, config, false, 'name');

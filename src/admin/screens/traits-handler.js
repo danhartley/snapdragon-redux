@@ -185,7 +185,7 @@ const addTraits = () => {
         speciesPicker(inputSpecies, listenForSpeciesSelection);
         taxonPicker(inputTaxon, listenForTaxonSelection);
 
-        let traitValues = await firestore.getTraitValues();
+        let traitValues = await firestore.getUnits();
 
         const traits = [];
 

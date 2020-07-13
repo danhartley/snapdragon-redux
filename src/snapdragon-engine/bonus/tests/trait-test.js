@@ -7,9 +7,9 @@ export const getTraitTests = itemsInThisRound => {
 
     const tests = itemsInThisRound.map(item => {
 
-        const { enums } = store.getState();
+        const { units } = store.getState();
 
-        const { question, answers, overrides } = getTraitsForTests(enums, item);
+        const { question, answers, overrides } = getTraitsForTests(units, item);
 
         if(!question) return {};
 

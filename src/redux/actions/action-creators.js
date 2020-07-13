@@ -31,7 +31,7 @@ const updateConfig = makeActionCreator(types.UPDATE_CONFIG);
 const stopStartLesson = makeActionCreator(types.STOP_START_LESSON);
 const selectCollection = makeActionCreator(types.SELECT_COLLECTION);
 const traitValuesHandler = makeActionCreator(types.UPDATE_LANGUAGE);
-const updateEnums = makeActionCreator(types.UPDATE_ENUMS);
+const updateUnits = makeActionCreator(types.UPDATE_UNITS);
 const updateUser = makeActionCreator(types.UPDATE_USER);
 const updateLesson = makeActionCreator(types.UPDATE_LESSON);
 const saveLesson = makeActionCreator(types.SAVE_LESSON);
@@ -72,7 +72,7 @@ const boundUpdateConfig = data => store.dispatch(updateConfig(data));
 const boundStopStartLesson = data => store.dispatch(stopStartLesson(data));
 const boundSelectCollection = data => store.dispatch(selectCollection(data));
 const boundUpdateLanguage = data => store.dispatch(traitValuesHandler(data));
-const boundUpdateEnums = data => store.dispatch(updateEnums(data));
+const boundUpdateUnits = data => store.dispatch(updateUnits(data));
 const boundUpdateUser = data => store.dispatch(updateUser(data));
 const boundUpdateLesson = data => store.dispatch(updateLesson(data));
 const boundSaveLesson = data => store.dispatch(saveLesson(data));
@@ -105,7 +105,7 @@ export const actions = {
     boundStopStartLesson,
     boundSelectCollection,
     boundUpdateLanguage,
-    boundUpdateEnums,
+    boundUpdateUnits,
     boundUpdateLesson,
     boundSaveLesson,
     boundRemoveSavedLesson,

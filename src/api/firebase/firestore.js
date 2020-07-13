@@ -1,5 +1,4 @@
 import { utils } from 'utils/utils';
-import { enums } from 'admin/api/enums';
 import { firebaseConfig } from 'api/firebase/credentials';
 
 import firebase from 'firebase/app';
@@ -292,13 +291,6 @@ const updateSpeciesNames = async (species, names) => {
 
     return await speciesDocRef.update({names}); 
 
-};
-
-const getTraitValues = async () => {
-
-    const traits = enums;
-
-    return new Promise(resolve => resolve(enums));
 };
 
 const deleteSpeciesByName = async name => {
@@ -715,7 +707,7 @@ const addCollection = async (collection, user) => {
     return await docRef.update(definition);
   };
 
-  const getUnits = async props => {
+  const getUnits = async (props = { langage: 'en '}) => {
 
     const { language = 'en', key, operator, value } = props;
 
@@ -726,7 +718,6 @@ const addCollection = async (collection, user) => {
     const docs = [];
   
     querySnapshot.forEach(doc => {
-      console.log(doc.data());
       docs.push(doc.data());
     });
   
@@ -745,7 +736,6 @@ export const firestore = {
     getTraitsBySpeciesName,
     getTraitsByTaxonName,
     getBirdsong,
-    getTraitValues,
     getRandomSpecies,
     getDefinition,
     getSpeciesInParallel,

@@ -6,11 +6,11 @@ export const getSymbioticTest = collection => {
 
     // See trait-tests for how to do this, not in use
 
-    const { enums } = store.getState();
+    const { units } = store.getState();
 
     const speciesTraits = item.traits;
 
-    const enumeratedRoles = SD.enums.role;
+    const enumeratedRoles = SD.units.role;
 
     const roles = [];
 

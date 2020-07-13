@@ -16,7 +16,7 @@ export const renderBirdsong = collection => {
 
     const init = async () => {
 
-        const { config, enums } = store.getState();
+        const { config } = store.getState();
 
         const item = collection.nextItem;
 
