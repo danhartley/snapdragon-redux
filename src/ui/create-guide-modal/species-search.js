@@ -80,9 +80,7 @@ export const speciesSearch = createGuide => {
   
                       await lessonStateHandler.changeRequest({
                           requestType: enums.lessonState.ADD_SPECIES_TO_COLLECTION,
-                          requestArgs: {
-                              updatedConfig: config, updatedCollection: collection
-                          }
+                          requestArgs: { config, collection }
                       });
                   }
 
