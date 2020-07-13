@@ -513,19 +513,6 @@ const getSpeciesByNameInParallel = async itemNames => {
     }
 };
 
-// const getQuestionById = (id, name) => {
-
-//     return new Promise(resolve => resolve(questions.map(q => {
-//         if(parseInt(q.id) === parseInt(id)) {
-//             return {
-//                 ...q,
-//                 name: name
-//             }
-//         }
-//     })));
-// };
-
-
 const addCollection = async (collection, user) => {
 
     if(!user) return;
@@ -728,6 +715,24 @@ const addCollection = async (collection, user) => {
     return await docRef.update(definition);
   };
 
+  const getUnits = async props => {
+
+    const { language = 'en', key, operator, value } = props;
+
+    const unitsRef = db.collection(`units_${language}`);
+  
+    const querySnapshot = await unitsRef.get();
+  
+    const docs = [];
+  
+    querySnapshot.forEach(doc => {
+      console.log(doc.data());
+      docs.push(doc.data());
+    });
+  
+    return await docs;
+  };
+
 export const firestore = {
 
     getSpecies,
@@ -740,7 +745,6 @@ export const firestore = {
     getTraitsBySpeciesName,
     getTraitsByTaxonName,
     getBirdsong,
-    // getImage,
     getTraitValues,
     getRandomSpecies,
     getDefinition,
@@ -768,11 +772,11 @@ export const firestore = {
     deleteSpeciesTraitField,
 
     getTraitDefinitions,
-    // getQuestionById,
     getDefinitionsWhere,
     getDefinitionsByTaxa,
     getDefinitionById,
-    getBatchDefinitionsById
+    getBatchDefinitionsById,
+    getUnits
 };
 
 const getRandomId = () => {

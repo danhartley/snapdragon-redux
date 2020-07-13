@@ -3,7 +3,7 @@ import { constants } from 'dan/opt-constants';
 let sections = [
   {
     type: constants.TOOLS,
-    header: 'Early testing',
+    header: 'Tools',
     tools: [
         {
           name: 'Google\`s PageSpeed Insights',

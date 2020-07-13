@@ -97,7 +97,7 @@ module.exports = {
           { from: './src/static/root', to: ''}
         ],
       }),
-      // new BundleAnalyzerPlugin()
+      new BundleAnalyzerPlugin()
     ],
     resolve: {
         modules: [
