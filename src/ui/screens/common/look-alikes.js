@@ -6,6 +6,7 @@ import { firestore } from 'api/firebase/firestore';
 
 import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
 import visualComparisonTemplate from 'ui/screens/common/look-alikes-link-template.html';
+import { isArray } from 'jquery';
 
 export const lookalikeSpecies = (item, config, rootNode = document) => {
     
@@ -26,6 +27,8 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
         async function renderLookalikes() {
 
             const readyLookalikesForRendering = async () => {
+
+                if(!isArray(lookalikes)) return;
 
                 species = [ ...lookalikes.map(lookalike => lookalike.lookalike), { name: item.name, description: lookalikes[0].description } ];
 

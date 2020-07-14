@@ -35,7 +35,7 @@ export const getInatSpecies = async config => {
 
     const snapdragonSpeciesNames = speciesNames[0].value;
 
-   snapLog('snapdragon species', snapdragonSpeciesNames);
+  //  snapLog('snapdragon species', snapdragonSpeciesNames);
 
     const iconicTaxaKeys = Object.keys(iconicTaxa).join(',');
 

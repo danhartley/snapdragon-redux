@@ -11,12 +11,12 @@ import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
 
 export const renderLessons = () => {
 
-    let { config, collections, lessons: savedLessons, videoPlayer, score } = store.getState();
+    let { config, collections, videoPlayer } = store.getState();
 
     const template = document.createElement('template');
           template.innerHTML = lessonListTemplate;
 
-    let lessons = lessonListEventHandler.onLoadLessonsViewState(collections.filter(collection => (collection.isActive === undefined || collection.isActive)), videoPlayer, score, config);
+    let lessons = lessonListEventHandler.onLoadLessonsViewState(collections.filter(collection => (collection.isActive === undefined || collection.isActive)), videoPlayer);
 
     lessons = lessons.sort(function(a,b){
           const tsa = a.create ? a.create.seconds : 0;
@@ -46,15 +46,15 @@ export const renderLessons = () => {
 
       const youtubeLessonIcons = document.querySelectorAll('.js-lesson-list-youtube');
             youtubeLessonIcons.forEach(youtube => lessonListEventHandler.onLessonIconClickHandler(youtube, lessons, config, true));
-      highlightActiveLesson(youtubeLessonIcons);
+      highlightActiveLessonHandler(youtubeLessonIcons);
 
       const chevrons = document.querySelectorAll('.js-lesson-list-chevron');
             chevrons.forEach(chevron => lessonListEventHandler.onLessonIconClickHandler(chevron, lessons, config, false));
-      highlightActiveLesson(chevrons);
+      highlightActiveLessonHandler(chevrons);
 
       const reviews = document.querySelectorAll('.js-review-link');
             reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink));
-      highlightActiveLesson(reviews);
+      highlightActiveLessonHandler(reviews);
 
       setTimeout(() => {      
 
@@ -80,23 +80,15 @@ export const renderLessons = () => {
                         }
                 });
             });
-            highlightActiveLesson(terms);
+            highlightActiveLessonHandler(terms);
 
       },100);
 
-      renderCustomLesson(lessons, savedLessons, videoPlayer, score, config);      
+      renderCustomLesson(lessons, videoPlayer, config);      
 };
 
-const highlightActiveLesson = lessons => {
-      lessons.forEach(lesson => lesson.addEventListener('click', e => {
-            
-            const rows = document.querySelectorAll('.js-lesson-list-carousel-item');
-                  rows.forEach(row => row.classList.remove('highlighted-for-review-row'));
-            const row = document.querySelector(`.js-lesson-list-carousel-item[data-lesson-id="${lesson.dataset.lessonId}"]`);
-            if (row)
-                  row.classList.add('highlighted-for-review-row');
-
-            // lessonListScrollHandler.scrollToTitle(lesson.dataset.lessonId);
+const highlightActiveLessonHandler = lessons => {
+      lessons.forEach(lesson => lesson.addEventListener('click', e => {            
+          lessonListEventHandler.highlightActiveLesson(lesson.dataset.lessonId);
       }));
 };
-

@@ -4,7 +4,7 @@ import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handl
 
 import lessonTemplate from 'ui/screens/lists/lesson-template.html';
 
-export const renderCustomLesson = (lessons, savedLessons, videoPlayer, score, config) => {
+export const renderCustomLesson = (lessons, videoPlayer, config) => {
 
     onCreateCustomLesson(collection => {
 
@@ -12,7 +12,7 @@ export const renderCustomLesson = (lessons, savedLessons, videoPlayer, score, co
         const template = document.createElement('template');
               template.innerHTML = lessonTemplate;
         
-        const lesson = lessonListEventHandler.onLoadLessonViewState(collection, savedLessons, videoPlayer, score, config);
+        const lesson = lessonListEventHandler.onLoadLessonViewState(collection, videoPlayer);
               lesson.hideVideoClass = 'hide-important';
               lesson.hideTextIntroClass = '';
         
@@ -22,30 +22,37 @@ export const renderCustomLesson = (lessons, savedLessons, videoPlayer, score, co
 
         renderTemplate({ lesson }, template.content, parent);
         
-        // const title = document.querySelector(`.js-lesson-title[data-lesson-id="${lesson.id}"]`);
-        // lessonListEventHandler.onLessonTitleClickHandler(title, lessons);
-
-        const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lesson.id}"]`);
-        lessonListEventHandler.onReviewClickHandler(reviewLink, lessons);
-
-        const chevron = document.querySelector(`.js-lesson-list-chevron[data-lesson-id="${lesson.id}"]`);
-
-        if(chevron) {
-          chevron.classList.remove('landscape');
-          lessonListEventHandler.onLessonIconClickHandler(chevron, lessons, config, false);
-        }
-
-        const youtubeLessonIcon = document.querySelector(`.js-lesson-list-youtube[data-lesson-id="${lesson.id}"]`);
-        if(youtubeLessonIcon) {
-          youtubeLessonIcon.classList.add('hide-important');
-        }
-
         const scrollOptions = {
           left: 0,
           top: 1000,
           behavior: 'smooth'
         }
-            
-        // document.querySelector('.js-lesson-container').scrollTo(scrollOptions);
+        
+        // const title = document.querySelector(`.js-lesson-title[data-lesson-id="${lesson.id}"]`);
+        // lessonListEventHandler.onLessonTitleClickHandler(title, lessons);
+
+        setTimeout(() => {
+
+          document.querySelector('.js-lesson-container').scrollTo(scrollOptions);
+
+          const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lesson.id}"]`);
+          lessonListEventHandler.onReviewClickHandler(reviewLink, lessons);
+  
+          const chevron = config.isLandscapeMode 
+              ? document.querySelector(`.js-lesson-list-chevron[data-lesson-id="${lesson.id}"]`)
+              : document.querySelectorAll(`.js-lesson-list-chevron[data-lesson-id="${lesson.id}"]`)[1];
+
+          if(chevron) {
+            lessonListEventHandler.onLessonIconClickHandler(chevron, lessons, config, false);          
+          }
+  
+          const youtubeLessonIcon = document.querySelector(`.js-lesson-list-youtube[data-lesson-id="${lesson.id}"]`);
+          if(youtubeLessonIcon) {
+            youtubeLessonIcon.classList.add('hide-important');
+          } 
+
+          lessonListEventHandler.highlightActiveLesson(lesson.id);
+
+        }, 250);
     });
 };

@@ -50,7 +50,7 @@ const changeRequest = async args => {
       saveUserProgressState(userProgressState);
     
     case enums.lessonState.RENDER_SPECIES_LIST:      
-      userProgressState = await getLessonState(requestArgs.lesson, config);
+      userProgressState = await getLessonState(requestArgs.lesson || requestArgs.collection, config);
       saveUserProgressState(userProgressState);
       setTimeout(() => {
         renderSpeciesList(userProgressState.collection, { callingParentContainer: requestArgs.container });
@@ -124,10 +124,6 @@ const changeLessonState = async (userProgressState, collection, lesson) => {
 const addExtraSpeciesSelection = async requestArgs => {
 
   const { config, collection } = requestArgs;
-
-  if(!collection) return;
-
-  if(!collection.items) return;
 
   const extraSpecies = config.guide.species.filter(s => !contains(s.name, collection.items.map(i => i.name)));
 

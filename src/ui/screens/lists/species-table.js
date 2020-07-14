@@ -10,13 +10,13 @@ export const buildTable = (collection, args) => {
 
   try {
 
-    const { config, enums, overrideParent } = args;
+    const { config, units, overrideParent } = args;
 
     const template = document.createElement('template');
 
     const wide = window.matchMedia("(min-width: 1024px)").matches;
 
-    const getTraitName = (item, enums) => {
+    const getTraitName = (item, units) => {
         let traitName = '';        
         let keyTratLinkClass = 'capitalise underline-link js-key-trait-link';
         item.taxonomy.phylum = item.taxonomy.phylum || '';
@@ -24,12 +24,12 @@ export const buildTable = (collection, args) => {
             switch(item.taxonomy.phylum.toLowerCase()) {
                 case 'ascomycota':
                     traitName = item.taxonomy.order.toLowerCase() === 'pezizales'
-                        ? enums.name.HOW_EDIBLE
-                        : enums.name.THALLUS_TYPE;
+                        ? 'how edible'
+                        : 'thallus type';
                     if(item.taxonomy.order.toLowerCase() === 'pezizales') keyTratLinkClass = 'js-key-trait-link';
                     break;
                 case 'basidiomycota':
-                    traitName = enums.name.HOW_EDIBLE;
+                    traitName = 'how edible';
                     keyTratLinkClass = 'js-key-trait-link';
                     break;
                 default:
@@ -68,7 +68,7 @@ export const buildTable = (collection, args) => {
         let image = item.images.find(i => i.starred) || utils.shuffleArray(item.images)[0];
             image = scaleImage(image, imageUseCases.SPECIES_LIST, config);
 
-        const { traitName, keyTratLinkClass } = getTraitName(item, enums);
+        const { traitName, keyTratLinkClass } = getTraitName(item, units);
         const { iconicTaxonIcon, hideFungiIcon } = getIconicTaxonIcon(item);
 
         const itemImage = {
@@ -125,20 +125,20 @@ export const buildTable = (collection, args) => {
         const keyTrait = vn.dataset.keyTrait;
         const span = document.createElement('span');
         switch(keyTrait) {                
-            case enums.howEdible.CHOICE:
+            case units.howEdible.CHOICE:
                 span.innerHTML = '<span class="icon choice"></span>';
                 vn.append(span);
                 break;
-            case enums.howEdible.EDIBLE:
+            case units.howEdible.EDIBLE:
                 span.innerHTML = '<span class="icon edible"></span>';
                 vn.append(span);
                 break;
-            case enums.howEdible.INEDIBLE:
+            case units.howEdible.INEDIBLE:
                 span.innerHTML = '<span class="icon inedible"></span>';
                 vn.append(span);
                 break;
-            case enums.howEdible.POISONOUS:
-            case enums.howEdible.DEADLY:
+            case units.howEdible.POISONOUS:
+            case units.howEdible.DEADLY:
                 span.innerHTML = '<span class="icon toxic"></span>';
                 vn.append(span);
                 break;

@@ -1,7 +1,7 @@
 import { utils } from 'utils/utils';
 import { traitsHandler } from 'ui/helpers/traits-handler';
 
-export const getTraitsForTests = (enums, item, alreadyTestedTraits = []) => {
+export const getTraitsForTests = (units, item, alreadyTestedTraits = []) => {
 
     if(item.traits === undefined || (Object.keys(item.traits).length === 0 && item.traits.constructor === Object)) return {};
 
@@ -16,7 +16,7 @@ export const getTraitsForTests = (enums, item, alreadyTestedTraits = []) => {
             ? traitsHandler.getTraitsPoolForUnits(trait)
             : trait.role
                 ? traitsHandler.getTraitsPoolForRoles(trait)
-                : traitsHandler.getTraitsPool(trait, enums);
+                : traitsHandler.getTraitsPool(trait, units);
 
     const question = trait.unit
                         ? trait.value.join('-')

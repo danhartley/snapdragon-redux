@@ -21,7 +21,7 @@ const UPDATE_COLLECTION_ITEMS = '[UPDATE_COLLECTION_ITEMS] Change collection ite
 const NEXT_LEVEL = '[NEXT_LEVEL] Go to next level';
 const UPDATE_LANGUAGE = '[UPDATE_LANGUAGE] Update the current language';
 
-const UPDATE_ENUMS = '[UPDATE_ENUMS] Update enums by config language';
+const UPDATE_UNITS = '[UPDATE_UNITS] Update units by config language';
 const UPDATE_USER = '[UPDATE_USER] Update user';
 const UPDATE_LESSON = '[UPDATE_LESSON] Create new lesson';
 
@@ -57,7 +57,7 @@ export const types = {
     STOP_START_LESSON,
     SELECT_COLLECTION,
     UPDATE_LANGUAGE,
-    UPDATE_ENUMS,
+    UPDATE_UNITS,
     UPDATE_LESSON,
     SAVE_LESSON,
     REMOVE_LESSON,

@@ -12,9 +12,18 @@ export const traitValuesHandler = async config => {
 
     language = config.language;
 
-    if(!isEmpty(store.getState().enums)) return;
+    if(!isEmpty(store.getState().units)) return;
 
-    const enums = await firestore.getTraitValues();
+    const unitsArray = await firestore.getUnits();
 
-    actions.boundUpdateEnums(enums);
+    const unitObjects = {};
+
+    unitsArray.forEach(unit => {
+        const key = Object.keys(unit)[0];
+        unitObjects[key] = unit[key];      
+      });
+
+    var units = { ...unitObjects };
+
+    actions.boundUpdateUnits(units);
 };

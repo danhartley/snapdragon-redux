@@ -10,9 +10,9 @@ import summaryTemplate from 'ui/screens/cards/trait-card-summary-template.html';
 
 export const getBonusQuestion = (item, alreadyTestedTraits) => {
 
-    const enums = store.getState().enums;
+    const units = store.getState().units;
 
-    let bonus = getTraitsForTests(enums, item, alreadyTestedTraits);
+    let bonus = getTraitsForTests(units, item, alreadyTestedTraits);
 
     return bonus;
 };

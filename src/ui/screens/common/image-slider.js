@@ -106,7 +106,7 @@ export const imageSideBySlider = (slides, parent, config) => {
         const item = { name: slide.images[0].itemName, itemCommon: slide.images[0].itemCommon, images: slide.images };
         const images = prepImagesForCarousel(item, config, imageUseCases.CAROUSEL);
         
-        snapLog('imageSideBySlider, image medium values:', images.map(i => i.medium));
+        // snapLog('imageSideBySlider, image medium values:', images.map(i => i.medium));
 
         renderTemplate({ images, identifier }, sideBySlider.content, parent);
         

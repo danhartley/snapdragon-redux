@@ -21,12 +21,12 @@ const getHTML5Location = () => {
 
 export const getLocation = (config) => {
   if(!!config.coordinates && config.coordinates.lat && config.coordinates.long) {
-   snapLog('geolocation config',config);
+  //  snapLog('geolocation config',config);
     return new Promise(resolve => {
         resolve(config.coordinates);
     });
   } else {
-   snapLog('geolocation config', config);
+  //  snapLog('geolocation config', config);
     return getHTML5Location();
   }  
 };

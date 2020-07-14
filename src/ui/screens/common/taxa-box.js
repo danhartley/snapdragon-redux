@@ -6,15 +6,15 @@ import taxaBoxTemplate from 'ui/screens/common/taxa-box-template.html';
 
 export const renderTaxaBox = async (parent, taxaBoxArgs) => {
 
-    const enums = store.getState().enums;
+    const units = store.getState().units;
 
     parent.innerHTML = '';
 
     let { item, familyName, familyVernacularName } = taxaBoxArgs;
 
     const options = [
-        { name: enums.name.RANK, formatter: trait => `UK # ${trait[0]}` },
-        { name: enums.name.HOW_EDIBLE, formatter: trait => trait[0] }
+        { name: 'uk rank', formatter: trait => `UK # ${trait[0]}` },
+        { name: 'how edible', formatter: trait => trait[0] }
     ];
 
     let trait = itemProperties.getActiveTrait(item, options);

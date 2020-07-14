@@ -64,17 +64,16 @@ export const speciesInGuideEditor = (config, modal, selectedSpeciesDisplay, crea
         input.value = '';
 
         const { collection } = store.getState();
-
-        import('ui/screens/lists/lesson-state-handler').then(module => {
-          module.lessonStateHandler.changeRequest({
-              requestType: enums.lessonState.ADD_SPECIES_TO_COLLECTION,
-              requestArgs: {
-                  updatedConfig: config, updatedCollection: collection
-              }
+        
+        if(collection.items) { // existing collection, to which we want to add species
+          import('ui/screens/lists/lesson-state-handler').then(module => {
+            module.lessonStateHandler.changeRequest({
+                requestType: enums.lessonState.ADD_SPECIES_TO_COLLECTION,
+                requestArgs: { config, collection }
+            });
           });
-        });
+        }
       
-
         setTimeout(() => {            
             speciesInGuideEditor(config, modal, selectedSpeciesDisplay, createGuide, selectedSpecies, speciesNames);
         }, 250);

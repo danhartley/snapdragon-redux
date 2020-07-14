@@ -1,5 +1,4 @@
 import { utils } from 'utils/utils';
-import { enums } from 'admin/api/enums';
 import { firebaseConfig } from 'api/firebase/credentials';
 
 import firebase from 'firebase/app';
@@ -294,13 +293,6 @@ const updateSpeciesNames = async (species, names) => {
 
 };
 
-const getTraitValues = async () => {
-
-    const traits = enums;
-
-    return new Promise(resolve => resolve(enums));
-};
-
 const deleteSpeciesByName = async name => {
 
     const speciesRef = db.collection(`species`).where('name', '==', name);
@@ -513,19 +505,6 @@ const getSpeciesByNameInParallel = async itemNames => {
     }
 };
 
-// const getQuestionById = (id, name) => {
-
-//     return new Promise(resolve => resolve(questions.map(q => {
-//         if(parseInt(q.id) === parseInt(id)) {
-//             return {
-//                 ...q,
-//                 name: name
-//             }
-//         }
-//     })));
-// };
-
-
 const addCollection = async (collection, user) => {
 
     if(!user) return;
@@ -728,6 +707,23 @@ const addCollection = async (collection, user) => {
     return await docRef.update(definition);
   };
 
+  const getUnits = async (props = { langage: 'en '}) => {
+
+    const { language = 'en', key, operator, value } = props;
+
+    const unitsRef = db.collection(`units_${language}`);
+  
+    const querySnapshot = await unitsRef.get();
+  
+    const docs = [];
+  
+    querySnapshot.forEach(doc => {
+      docs.push(doc.data());
+    });
+  
+    return await docs;
+  };
+
 export const firestore = {
 
     getSpecies,
@@ -740,8 +736,6 @@ export const firestore = {
     getTraitsBySpeciesName,
     getTraitsByTaxonName,
     getBirdsong,
-    // getImage,
-    getTraitValues,
     getRandomSpecies,
     getDefinition,
     getSpeciesInParallel,
@@ -768,11 +762,11 @@ export const firestore = {
     deleteSpeciesTraitField,
 
     getTraitDefinitions,
-    // getQuestionById,
     getDefinitionsWhere,
     getDefinitionsByTaxa,
     getDefinitionById,
-    getBatchDefinitionsById
+    getBatchDefinitionsById,
+    getUnits
 };
 
 const getRandomId = () => {

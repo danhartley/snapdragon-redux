@@ -7,7 +7,7 @@ import { renderInatUser } from 'ui/create-guide-modal/inat-user';
 import { renderCategories } from 'ui/create-guide-modal/categories';
 import { renderSpeciesPicker } from 'ui/create-guide-modal/species-picker';
 import { saveGuide } from 'ui/create-guide-modal/common/save-guide';
-import { speciesSearch } from 'ui/create-guide-modal/species-search';
+import { initialiseLesson } from 'ui/create-guide-modal/initialise-lesson';
 import { enums } from 'ui/helpers/enum-helper';
 
 import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
@@ -124,7 +124,7 @@ export class CreateGuide {
               break;
           case 'Species':
               setTimeout(() => {
-                  speciesSearch(this);
+                initialiseLesson(this);
               });
               break;
       }

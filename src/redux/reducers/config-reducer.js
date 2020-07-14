@@ -16,9 +16,9 @@ export const config = (state = initialConfig, action) => {
     }
 };
 
-export const enums = (state = {}, action) => {
+export const units = (state = {}, action) => {
     switch(action.type) {
-        case types.UPDATE_ENUMS:
+        case types.UPDATE_UNITS:
             return action.data;
         default:
             return state;

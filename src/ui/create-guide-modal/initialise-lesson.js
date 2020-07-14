@@ -10,16 +10,16 @@ import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { lessonStateHelper } from 'ui/screens/lists/lesson-state-helper';
 import { speciesInGuideEditor } from 'ui/create-guide-modal/species-in-guide-editor';
 
-import spinnerTemplate from 'ui/create-guide-modal/species-search-template.html';
+import initialiseLessonSpinnerTemplate from 'ui/create-guide-modal/initialise-lesson-template.html';
 import speciesSummaryTemplate from 'ui/create-guide-modal/species-summary-template.html';
 
-export const speciesSearch = createGuide => {
+export const initialiseLesson = createGuide => {
 
     const { config, modal, option } = createGuide;
     const { collections } = store.getState();
 
     const template = document.createElement('template');
-          template.innerHTML = spinnerTemplate;
+          template.innerHTML = initialiseLessonSpinnerTemplate;
 
     const parent = modal.querySelector('.js-step-action-content');
 
@@ -70,7 +70,7 @@ export const speciesSearch = createGuide => {
 
                 setTimeout( async () => {
 
-                  snapLog('config.guide.species', config.guide.species)
+                  // snapLog('config.guide.species', config.guide.species)
 
                   if(config.guide.species) {
 
@@ -80,9 +80,7 @@ export const speciesSearch = createGuide => {
   
                       await lessonStateHandler.changeRequest({
                           requestType: enums.lessonState.ADD_SPECIES_TO_COLLECTION,
-                          requestArgs: {
-                              updatedConfig: config, updatedCollection: collection
-                          }
+                          requestArgs: { config, collection }
                       });
                   }
 
@@ -144,7 +142,7 @@ export const speciesSearch = createGuide => {
             }
         });
 
-        snapLog('initLesson', lesson);
+        // snapLog('initLesson', lesson);
         
         const collection = lesson.collection;
               collection.guide = config.guide;

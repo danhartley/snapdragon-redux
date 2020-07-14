@@ -101,7 +101,7 @@ export const renderInput = (screen, question) => {
 
     const loseFocusMobileHandler = e => {
         const input = document.querySelector('.js-txt-input');
-        if(!input) return;
+        if(!input || input.value === '') return;
         const answer = input.value;
         const score = { 
             itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: e.target, 
@@ -111,12 +111,13 @@ export const renderInput = (screen, question) => {
         };
         scoreHandler('text', score, callback, config);
         document.querySelector('.js-continue-lesson-btn').disabled = false;
+        document.removeEventListener('focusout', loseFocusMobileHandler);
     };
 
     if(config.isLandscapeMode) {
         answerBtn.addEventListener('click', scoreEventHandler, { once: true });
-    } else {	
-        document.addEventListener('focusout', loseFocusMobileHandler, { once: true });
+    } else {        
+        document.addEventListener('focusout', loseFocusMobileHandler);
     }
     
     if(config.isPortraitMode) renderPortrait(item, config);

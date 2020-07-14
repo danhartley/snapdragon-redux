@@ -1,13 +1,12 @@
-import * as traitEnums from 'api/traits/trait-types';
 import { lichen } from 'api/glossary/lichen';
 
 export const nonTaxaGroup = [
     { LICHEN_FORM: 'Lichen Form' }     
 ];
 
-export const getNonTaxa = (enums) => {
-    // const SD = Object.keys(enums).length ? enums : traitEnums.enums;
-    const SD = enums;
+export const getNonTaxa = units => {
+    
+    const SD = units;
     return [
         {
             group: nonTaxaGroup[0].LICHEN_FORM,

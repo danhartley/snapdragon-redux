@@ -136,7 +136,7 @@ export const renderAddTrait = (parent, callback) => {
 
         inputKey = document.querySelector('#input-trait-key');
 
-        traitValues = await firestore.getTraitValues();
+        traitValues = await firestore.getUnits();
 
         let keys = [];
 

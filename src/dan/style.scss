@@ -1,4 +1,4 @@
-$maxwidth: 800px;
+$maxwidth: 1200px;
 $padding: .5rem;
 $margin: .5rem;
 $hbase: 1.5rem;
@@ -40,11 +40,20 @@ li {
   // margin: (2 * $margin) 0;
   span {
     // padding: $padding (2 * $padding);
-  }  
+    &.goto {
+      &::before {
+        margin: 0 0 0 .25rem;
+        content: 'go to: ';
+      }
+    }
+  }
 }
 
-a:empty {
-  display: none;
+a {
+  margin: 0 .25rem;  
+  &:empty {
+    display: none;
+  }
 }
 
 header {
