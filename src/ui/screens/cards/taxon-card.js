@@ -36,7 +36,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
 
         switch(mode) {
             case 'STAND_ALONE':
-                rootNode = document.querySelector('.right-body');
+                rootNode = document.querySelector('.main-lesson-body');
                 break;
             case 'SWAP_OUT':
                 rootNode = document.querySelector('.js-taxon-container');

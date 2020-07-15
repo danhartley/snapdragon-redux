@@ -391,21 +391,21 @@ a.icon:hover {
 }
 
 .grid {
-  display: grid;
+  display: grid !important;
   grid-auto-flow: column;
   width: 100%;
   height: var(--vhGrid, 100vh);
   font-size: .8rem;
 }
 
-.left-grid, .right-grid {
+.side-lesson-list, .main-lesson-grid {
   display: grid;
   grid-template-columns: 100%;
   grid-auto-flow: column;
   grid-template-rows: var(--vhRunningBlock, 7.5vh) 5px auto var(--vhRunningBlock, 7.5vh);
 }
 
-.left-body, .right-body {
+.side-lesson-list-body, .main-lesson-body {
   display: grid;
   grid-auto-flow: row;
   height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));  
@@ -432,12 +432,12 @@ a.icon:hover {
   bottom: 0;
 }
 
-.left-grid .footer .nav-icons, .right-grid .footer .nav-icons {
+.side-lesson-list .footer .nav-icons, .main-lesson-grid .footer .nav-icons {
   flex: auto;
   justify-content: space-evenly;
 }
 
-.left-grid .footer .nav-icons li, .right-grid .footer .nav-icons li {
+.side-lesson-list .footer .nav-icons li, .main-lesson-grid .footer .nav-icons li {
   margin: 0 !important;
 }
 
@@ -446,12 +446,12 @@ a.icon:hover {
   padding: 0.75rem;
 }
 
-.left-grid .header, .left-grid .footer {
+.side-lesson-list .header, .side-lesson-list .footer {
   justify-content: flex-end;
   background-color: var(--snap-portrait);
 }
 
-.right-grid .header, .right-grid .footer {
+.main-lesson-grid .header, .main-lesson-grid .footer {
   justify-content: center;
   background-color: var(--snap-landscape);
 }
@@ -1141,7 +1141,7 @@ button:disabled {
   border: none;  
 }
 
-.left-grid,
+.side-lesson-list,
 .species-card-wiki-entry,
 .collection-preview,
 .collection button,
@@ -1747,13 +1747,6 @@ a.collection-disabled {
 .no-pointer-events {
   pointer-events: none;
 }
-
-/* .snapdragon-intro {
-  margin: 4rem 2rem 0 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-} */
 
 .snapdragon-intro > h3, .snapdragon-intro > h4, .snapdragon-intro > h5 {
   line-height: 2;
@@ -2375,7 +2368,7 @@ input[type="number"].medium {
   display: grid;
 }
 
-.skip-link {
+/* .skip-link {
   position: absolute;
   top: -40px;
   left: 0;
@@ -2383,7 +2376,7 @@ input[type="number"].medium {
   color: white;
   padding: 8px;
   z-index: 100;
-}
+} */
 
 .skip-link:focus {
   top: 0;

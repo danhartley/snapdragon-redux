@@ -93,7 +93,7 @@ export const renderNonTaxonCard = (mode = 'STAND_ALONE', keyTrait, parent = DOM.
 
     switch(mode) {
         case 'STAND_ALONE':
-            rootNode = document.querySelector('.right-body');
+            rootNode = document.querySelector('.main-lesson-body');
             break;
         case 'SWAP_OUT':
             rootNode = document.querySelector('.js-taxon-container');

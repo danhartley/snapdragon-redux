@@ -1,19 +1,19 @@
 export const DOM = {
   
-    leftGrid : document.getElementsByClassName('js-left-grid')[0],
-    leftHeader : document.getElementsByClassName('js-left-header')[0],
-    leftBody : document.getElementsByClassName('js-left-body')[0],
-    leftFooter : document.getElementsByClassName('js-left-footer')[0],
+    leftGrid : document.getElementsByClassName('js-side-lesson-list')[0],
+    leftHeader : document.getElementsByClassName('js-side-lesson-list-header')[0],
+    leftBody : document.getElementsByClassName('js-side-lesson-list-body')[0],
+    leftFooter : document.getElementsByClassName('js-side-lesson-list-footer')[0],
 
-    leftHeaderTxt : document.getElementsByClassName('js-left-txt-header')[0],
+    leftHeaderTxt : document.getElementsByClassName('js-side-lesson-list-header-txt')[0],
     specimenRptr : document.getElementsByClassName('js-rptr-specimen')[0],
     
-    rightGrid : document.getElementsByClassName('js-right-grid')[0],
-    rightHeader : document.getElementsByClassName('js-right-header')[0],
-    rightHeaderTxt : document.getElementsByClassName('js-right-txt-header')[0],
-    rightHeaderScoreTxt : document.getElementsByClassName('js-right-txt-score')[0],
-    rightBody : document.getElementsByClassName('js-right-body')[0],
+    rightGrid : document.getElementsByClassName('js-main-lesson-grid')[0],
+    rightHeader : document.getElementsByClassName('js-main-lesson-header')[0],
+    rightHeaderTxt : document.getElementsByClassName('js-main-lesson-txt-header')[0],
+    rightHeaderScoreTxt : document.getElementsByClassName('js-main-lesson-txt-score')[0],
+    rightBody : document.getElementsByClassName('js-main-lesson-body')[0],
     rightRptrSummary : document.getElementsByClassName('js-summary')[0],
-    rightBodyBottom : document.getElementsByClassName('js-right-body-bottom')[0],
-    rightFooter : document.getElementsByClassName('js-right-footer')[0]    
+    rightBodyBottom : document.getElementsByClassName('js-main-lesson-body-bottom')[0],
+    rightFooter : document.getElementsByClassName('js-main-lesson-footer')[0]    
 };

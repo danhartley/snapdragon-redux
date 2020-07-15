@@ -46,6 +46,7 @@ module.exports = merge(common, {
     new PurgecssPlugin({
       paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`,  { nodir: true }),
     }),
+    new MiniCssExtractPlugin()
   ],
   module: {
     rules: [
