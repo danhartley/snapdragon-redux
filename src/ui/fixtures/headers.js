@@ -9,7 +9,7 @@ export const renderHeaders = collection => {
     setTimeout(() => {
         
         const { layout, lessonPlan } = store.getState();
-        const progressBar = document.querySelector('.js-right-grid progress');
+        const progressBar = document.querySelector('.js-main-lesson-grid progress');
 
         if(lessonPlan && layout) {
 

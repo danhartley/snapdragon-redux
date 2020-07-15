@@ -45,9 +45,6 @@
         <link rel="apple-touch-startup-image" href="./static/images/splash/launch-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
         <link rel="apple-touch-startup-image" href="./static/images/splash/launch-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
         <link rel="manifest" href="/manifest.json">
-        <!-- <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>  
-        <link rel="dns-prefetch" href="//fonts.googleapis.com">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> -->
         <link rel="preload" href="./static/fonts/open-sans-v17-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
         <link href="./static/fonts/open-sans-v17-latin-regular.woff" as="font" type="font/woff2" crossorigin>
         
@@ -64,26 +61,33 @@
             unicode-range: U+000-5FF; /* Latin glyphs */
           }
 
+          .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000000;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+          }
         </style>
     </head>
     <body>
       <noscript><div>Javascript must be enabled for the correct page display</div></noscript> 
       <!-- <a class="accessibility" href="#main" aria-hidden="false">Skip to Content</a> -->
       <a class="skip-link" href="#main">Skip to main</a>
-      <div class="grid">
-          <div class="right-grid js-right-grid">
-              <div class="header js-right-header">
+      <div class="grid" style="display: none;">
+          <div class="main-lesson-grid js-main-lesson-grid">
+              <div class="header js-main-lesson-header">
                   <header class="header-text">
-                      <span class="js-right-txt-header">
-                          learn the planet
-                      </span>                        
+                      <span class="js-main-lesson-txt-header">learn the planet</span>
                   </header> 
                   <div>
-                      <span class="js-right-txt-score"></span>
+                      <span class="js-main-lesson-txt-score"></span>
                   </div>
               </div>
               <progress aria-label="lesson quiz progress" title="lesson quiz progress" style="margin: 1000px 0 0 0" value="0" max="6"></progress>
-              <div class="right-body js-right-body">
+              <div class="main-lesson-body js-main-lesson-body">
                 <div class="home-container landscape js-home-container">  
                   <div class="snapdragon-header">
                     <div class="standard-block double-centred-block">
@@ -106,7 +110,7 @@
                       </h4>
               
                       <h4 class="centred-block landscape">
-                          <i class="margin-left extra-large-text fas fa-align-left youtube-icon "></i><span class="margin-left">Click to read lesson introduction.</span>
+                          <i class="margin-left extra-large-text fas fa-align-left youtube-icon"></i><span class="margin-left">Click to read lesson introduction.</span>
                       </h4>
               
                       <h4 class="landscape">
@@ -140,8 +144,8 @@
                   }
                 </script>
               </div>
-              <footer class="landscape footer js-right-footer">
-                  <nav id="left-navigation" aria-label="navigation for settings, login and contact" class="full-width">
+              <footer class="landscape footer js-main-lesson-footer">
+                  <nav aria-label="navigation for settings, login and contact" class="full-width">
                     <ul class="nav-icons centred-block js-nav-icons"></ul>
                   </nav>
                   <span class="footer-score js-footer-score"></span>
@@ -153,14 +157,14 @@
                   <span class="footer-score js-footer-score"></span>
               </footer>
           </div>
-          <div class="left-grid js-left-grid">
-                  <header class="header js-left-header">
-                      <div class="header-text js-left-txt-header">learn the planet</div>
+          <div class="side-lesson-list js-side-lesson-list">
+                  <header class="header js-side-lesson-list-header">
+                      <div class="header-text js-side-lesson-list-header-txt">learn the planet</div>
                       <div class="header-text"></div>                         
                   </header>       
                   <div class="no-progress"></div>             
-                  <div class="left-body js-left-body"></div>
-                  <footer id="right-navigation" class="footer js-left-footer">
+                  <div class="side-lesson-list-body js-side-lesson-list-body"></div>
+                  <footer class="footer js-side-lesson-list-footer">
                     <nav aria-label="navigation for glossary and language settings" class="full-width">
                       <ul class="nav-icons centred-block js-nav-icons"></ul>
                     </nav>

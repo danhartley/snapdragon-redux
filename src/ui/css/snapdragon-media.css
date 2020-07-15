@@ -385,21 +385,20 @@
         bottom: 0;
         top: 0;      
     }
-        
-    .right-grid .header, .right-grid .footer {
-        justify-content: flex-start;
-        padding-right: 1rem;
-    }
-
-    .right-grid .footer > ul, .left-grid .footer > ul {
+ 
+    .main-lesson-grid .footer > ul, .side-lesson-list .footer > ul {
         max-width: 50%;
         text-transform: none;
         justify-content: space-between;
     }
 
     .snapdragon-intro {
-        /* height: initial;   */
         padding: 2rem;
+    }
+
+    .snapdragon-intro h4 .fa-youtube, .snapdragon-intro h4 .fa-align-left {
+      min-width: 1.75rem;
+      max-width: 1.75rem;
     }
 
     .lesson-icon {
@@ -432,12 +431,12 @@
         max-width: 1200px;
     }
 
-    .left-grid {
+    .side-lesson-list {
         width: 458px;
         grid-area: left;
     }
 
-    .right-grid {
+    .main-lesson-grid {
         width: 742px;
         grid-area: right;
     }
@@ -447,7 +446,7 @@
         grid-template-areas: "right left";
     }
 
-    .left-grid {
+    .side-lesson-list {
         display: grid;
     }  
 
@@ -636,11 +635,11 @@
 
 @media (min-width: 1024px) {
 
-    .left-grid {
+    .side-lesson-list {
         width: 391px;
     }
 
-    .right-grid {
+    .main-lesson-grid {
         width: 633px;
     }
 
@@ -736,7 +735,7 @@
 
 @media (min-width: 1112px) {
 
-    .left-grid, .tiles-container {
+    .side-lesson-list, .tiles-container {
         width: 450px;
     }
 
@@ -753,18 +752,18 @@
         padding: .5rem;
     }
 
-    .right-grid {
+    .main-lesson-grid {
         width: 662px;
     }
 }
 
 @media (min-width: 1200px) {
     
-    .left-grid, .tiles-container {
+    .side-lesson-list, .tiles-container {
         width: 458px;
     }
 
-    .right-grid {
+    .main-lesson-grid {
         width: 742px;
     }
 

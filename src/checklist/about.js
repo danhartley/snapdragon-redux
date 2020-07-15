@@ -1,7 +1,7 @@
 import { renderTemplate } from 'ui/helpers/templating';
-import { api } from 'dan/opt-api';
+import { api } from 'checklist/opt-api';
 
-import aboutTemplate from 'dan/about-template.html';
+import aboutTemplate from 'checklist/about-template.html';
 
 export const about = () => {
 

@@ -60,7 +60,7 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
     
         switch(mode) {
             case 'STAND_ALONE':
-                rootNode = config.isLandscapeMode ? modal.querySelector('.js-modal-text') : document.querySelector('.right-body');
+                rootNode = config.isLandscapeMode ? modal.querySelector('.js-modal-text') : document.querySelector('.main-lesson-body');
                 break;
             case 'SWAP_OUT':
                 rootNode = config.isLandscapeMode ? parent : document.querySelector('.js-species-container');

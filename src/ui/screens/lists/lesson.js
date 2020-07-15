@@ -44,7 +44,7 @@ export const renderLesson = (lesson) => {
 }; 
 
 const renderReview = (layout, lesson, className, config) => {
-      const progressBar = document.querySelector('.js-right-grid progress');
+      const progressBar = document.querySelector('.js-main-lesson-grid progress');
       const value = !!layout.roundProgressIndex ? layout.roundProgressIndex : progressBar ? progressBar.value : 0;
       const review = `<progress aria-label="lesson quiz progress" title="lesson quiz progress" class="absolute" value="${ value }" max="${layout.roundScoreCount}"></progress>`;
       const parent = document.querySelector(`.js-review[data-lesson-id="${lesson.id}"]`);

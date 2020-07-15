@@ -5,4 +5,15 @@ module.exports = merge(common, {
   mode: 'development',
   // devtool: "eval-source-map", // eval-cheap-module-source-map
   devtool: "source-map",
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+        ]
+      },
+    ]
+  }
 });

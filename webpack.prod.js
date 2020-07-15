@@ -7,6 +7,8 @@ const Dotenv = require('dotenv-webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -21,6 +23,7 @@ module.exports = merge(common, {
           keep_fnames: true,
         },
       }),
+      new OptimizeCSSAssetsPlugin({})
     ],
     splitChunks: {
       chunks: 'all',
@@ -43,5 +46,17 @@ module.exports = merge(common, {
     new PurgecssPlugin({
       paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`,  { nodir: true }),
     }),
-  ]
+    new MiniCssExtractPlugin()
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+        ]
+      },
+    ]
+  }
 });

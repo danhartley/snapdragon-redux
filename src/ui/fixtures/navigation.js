@@ -28,11 +28,11 @@ export const renderNavigation = collection => {
         renderTemplate({ }, template.content, parent);
     } else {
         template.innerHTML = navigationLeftTemplate;
-        parent = document.querySelector('.js-left-footer .js-nav-icons');
+        parent = document.querySelector('.js-side-lesson-list-footer .js-nav-icons');
         parent.innerHTML = '';
         renderTemplate({ }, template.content, parent);
         template.innerHTML = navigationRightTemplate;
-        parent = document.querySelector('.js-right-footer .js-nav-icons');
+        parent = document.querySelector('.js-main-lesson-footer .js-nav-icons');
         parent.innerHTML = '';
         renderTemplate({ }, template.content, parent);
     }
