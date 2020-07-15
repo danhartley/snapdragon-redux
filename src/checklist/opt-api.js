@@ -1,4 +1,4 @@
-import { constants } from 'dan/opt-constants';
+import { constants } from 'checklist/opt-constants';
 
 let sections = [
   {
@@ -21,7 +21,9 @@ let sections = [
         , about: 'Enter your domain to test your mobile speed' 
       }
       , { name: 'Chrome DevTools', link: 'https://www.google.com/chrome/', about: '' }
-      , { name: 'loadCSS', link: 'https://github.com/filamentgroup/loadCSS/blob/master/README.md', about: 'Load CSS asynchronosuly' }      
+      , { name: 'loadCSS', link: 'https://github.com/filamentgroup/loadCSS/blob/master/README.md', about: 'Load CSS asynchronosuly' }
+      , { name: 'Workspaces', link: 'https://developers.google.com/web/tools/chrome-devtools/workspaces/?utm_source=devtools', about: 'Save DevTool changes to file' }
+      , { name: 'Local Overrides', link: 'https://developers.google.com/web/updates/2018/01/devtools#overrides', about: 'Have DevTool changes persist across page loads' }      
     ]
   },
   {
@@ -119,6 +121,7 @@ let sections = [
       ]
       }
       , { term: 'Performance', link: 'https://developer.mozilla.org/en-US/docs/Web/API/Performance', descriptions: ['The Performance interface provides access to performance-related information for the current page.'] }
+      , { term: 'Critical CSS', link: 'https://web.dev/extract-critical-css/', descriptions: ['The CSS required for above-the-fold content.'] }
   ]
   }
 ];

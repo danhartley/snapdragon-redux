@@ -419,6 +419,8 @@ a.icon:hover {
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   color: var(--snap-text-medium-dark);
+  min-height: var(--vhRunningBlock, 7.5vh);
+  max-height: var(--vhRunningBlock, 7.5vh);
 }
 
 .header > div:nth-child(2) {

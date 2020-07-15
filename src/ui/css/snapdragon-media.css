@@ -386,10 +386,10 @@
         top: 0;      
     }
         
-    .right-grid .header, .right-grid .footer {
+    /* .right-grid .header, .right-grid .footer {
         justify-content: flex-start;
         padding-right: 1rem;
-    }
+    } */
 
     .right-grid .footer > ul, .left-grid .footer > ul {
         max-width: 50%;

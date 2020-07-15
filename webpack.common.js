@@ -53,8 +53,8 @@ module.exports = {
             use: {loader: 'html-loader'}
           },
           {
-            test: /dan.html$/,
-            exclude: [ /node_modules/, path.resolve(__dirname, 'src/dan/dan.html')],
+            test: /checklist.html$/,
+            exclude: [ /node_modules/, path.resolve(__dirname, 'src/checklist/checklist.html')],
             use: {loader: 'html-loader'}
           },
           {
@@ -78,18 +78,6 @@ module.exports = {
         chunks: ['app', 'shared'],
         inject: true
       }),
-      new HtmlWebpackPlugin({
-        filename: 'collection-builder.html',
-        template: './src/admin/collection-builder.html',
-        chunks: ['admin'],
-        inject: true
-      }),
-      new HtmlWebpackPlugin({
-        filename: 'dan.html',
-        template: './src/dan/dan.html',
-        chunks: ['dan'],
-        inject: true
-      }),      
       new CopyPlugin({
         patterns: [
           { from: './src/ui/css/groups', to: 'css', transform(content) { return csso.minify(content).css; } },
