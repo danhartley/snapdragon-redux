@@ -1,6 +1,5 @@
 import { utils } from 'utils/utils';
 import { firebaseConfig } from 'api/firebase/credentials';
-
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/storage';
@@ -724,6 +723,24 @@ const addCollection = async (collection, user) => {
     return await docs;
   };
 
+  const getEpithets = async props => {
+
+    const { language = 'en', key, operator, value } = props;
+
+    const epithetssRef = db.collection(`epithets_${language}`);
+  
+    const querySnapshot = await epithetssRef.get();
+  
+    const docs = [];
+  
+    querySnapshot.forEach(doc => {
+      console.log(doc.data());
+      docs.push(doc.data());
+    });
+  
+    return await docs;
+  };
+
 export const firestore = {
 
     getSpecies,
@@ -766,7 +783,8 @@ export const firestore = {
     getDefinitionsByTaxa,
     getDefinitionById,
     getBatchDefinitionsById,
-    getUnits
+    getUnits,
+    getEpithets
 };
 
 const getRandomId = () => {

@@ -2,7 +2,6 @@ import { take, contains, flatten } from 'ramda';
 
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
-import { epithets } from 'api/botanical-latin';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { getPoolItems } from 'snapdragon-engine/pool-handler';
 import { scoreHandler } from 'ui/helpers//score-handler';
@@ -189,6 +188,8 @@ export const renderMultiStrips = (collection, bonus, args) => {
                 const epithet = layout.epithet.latin.join(', ');
                 const number = config.isPortraitMode ? 6 : 6;
                 
+                const epithets = await firestore.getEpithets();
+
                 let alternatives = take(number-1, utils.shuffleArray(epithets)).filter(e => !contains(e.latin, epithet));
                     alternatives = alternatives.map(e => e.en.join(', '));
                     alternatives = alternatives.map(a => { return { term: a } });

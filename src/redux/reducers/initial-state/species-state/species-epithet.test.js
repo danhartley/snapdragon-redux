@@ -1,6 +1,8 @@
-import { getSpeciesEpithets } from 'redux/reducers/initial-state/species-state/species-epithets';
+import "babel-polyfill";
+import { epithets } from 'api/botanical-latin';
+import { getSpeciesEpithets, getMatchingEpithets } from 'redux/reducers/initial-state/species-state/species-epithets';
 
-test('should return multiple epithet matches', () => {
+test('should return multiple epithet matches', async () => {
 
     const items = [ { index: 1, name: 'Foeniculum vulgare'}, { index: 2, name: 'Rosmarinus officinalis'}, { index: 3, name: 'No latin epithet'} ];
 
@@ -46,12 +48,13 @@ test('should return multiple epithet matches', () => {
       }
     ]
 
-    const epithets = getSpeciesEpithets(items);
+    const latin = await getSpeciesEpithets(epithets, items);
 
-    expect(epithets).toEqual(expected);
+    expect(latin).toEqual(expected);
 });
 
-test('index values should match when more than one species has the same epithet in its name', () => {
+test('index values should match when more than one species has the same epithet in its name', async () => {
+  
   const items = [ { index: 1, name: 'Allium sativum'}, { index: 2, name: 'Coriandrum sativum'} ];
 
   const expected = [
@@ -89,7 +92,23 @@ test('index values should match when more than one species has the same epithet 
     }
   ]
 
-  const epithets = getSpeciesEpithets(items);
+  const latin = await getSpeciesEpithets(epithets, items);
 
-  expect(epithets).toEqual(expected);
+  expect(latin).toEqual(expected);
+});
+
+test('should return a translation object where this is a matching latin name', async () => {
+  const species = 'nucifer';
+  const expected = {
+      "latin" : ["nucifer"],
+      "en" : ["bearing nuts"]
+  };
+  const epithet = await getMatchingEpithets(epithets, species);
+  expect(epithet).toEqual(expected);
+});
+
+test('should not return a translation object where this is no a matching latin name', async () => {
+  const species = 'schoenoprasum';
+  const epithet = await getMatchingEpithets(epithets, species);
+  expect(epithet).toEqual("");
 });

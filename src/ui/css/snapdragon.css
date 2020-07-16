@@ -1749,7 +1749,7 @@ a.collection-disabled {
 }
 
 .snapdragon-intro > h3, .snapdragon-intro > h4, .snapdragon-intro > h5 {
-  line-height: 2;
+  /* line-height: 2; */
   font-size: 1rem;
 }
 

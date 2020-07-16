@@ -11,13 +11,13 @@
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <script>
-                // Check that service workers are registered
-                if ('serviceWorker' in navigator) {
-                  // Use the window load event to keep the page load performant
-                  window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('./sw.js');
-                  });
-                }
+          // Check that service workers are supported
+          if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js');
+            });
+          }
         </script>
         <link rel="apple-touch-icon" sizes="57x57" href="./static/favicons/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="./static/favicons/apple-icon-60x60.png">

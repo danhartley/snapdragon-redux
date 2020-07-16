@@ -1,30 +1,41 @@
 import { itemProperties } from 'ui/helpers/data-checking';
 
-export const getSpeciesEpithets = items => {
-    
-    const epithets = [];
+export const getMatchingEpithets = async (epithets, species) => {
+  
+  let epithet = epithets.find(e => {        
+      const match = e.latin.find(part => part.toUpperCase() === species.toUpperCase());
+      return match || '';
+  });
+  return epithet ? { ...epithet } : '';
+};
 
-    const addToArray = (obj) => {
+export const getSpeciesEpithets = async (epithets, items) => {
+    
+    const addToArray = async obj => {
 
         const parts = [];
 
-        let latin = itemProperties.latin(itemProperties.getGenusName(obj.name));
+        let latin = await getMatchingEpithets(epithets, itemProperties.getGenusName(obj.name));
         if(latin) { parts.push(latin) };
 
-        latin = itemProperties.latin(itemProperties.getSpeciesName(obj.name));
+        latin = await getMatchingEpithets(epithets, itemProperties.getSpeciesName(obj.name));
         if(latin) { parts.push(latin) };
 
         parts.forEach(part => { part.name = obj.name, part.index = obj.index });
 
         if(parts.length > 0) {
-            epithets.push({ parts: parts, index: obj.index });
-        }        
+            return { parts: parts, index: obj.index };
+        } else {
+          return undefined;
+        }
     }
 
-    items.forEach( (item, index) => {        
+    let latinEpithets = await Promise.all(items.map( async (item, index) => { 
         let i = Object.assign({}, { name: item.name, index: index } );
-        addToArray(i)
-    });
+        return await addToArray(i);
+    }));
 
-    return epithets;
+    latinEpithets = latinEpithets.filter(e => e);
+
+    return await latinEpithets;
 };
