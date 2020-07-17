@@ -109,6 +109,22 @@ const onLoadHandler = () => {
     window.snapLog = snapLog;
     window.logError = logError;
     window.logAPIError = logAPIError;
+
+    // Check that service workers are supported
+  
+    // if ('serviceWorker' in navigator) {
+    //   // Use the window load event to keep the page load performant
+    //   console.log(window.navigator);
+    //   window.addEventListener('load', () => {
+    //     navigator.serviceWorker.register('./sw.js').then(()=>{
+    //       console.log('service worker registered')
+    //     }, (err) => {
+    //       console.error('ServiceWorker registration failed: 😠', err);
+    //     });
+    //   });
+    // } else {
+    //   console.log('no service worker: ', window.navigator);
+    // }
 };
 
 onLoadHandler();

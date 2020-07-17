@@ -5,6 +5,7 @@ var csso = require('csso');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -78,7 +79,12 @@ module.exports = {
           { from: './src/static/root', to: ''}
         ],
       }),
-      // new BundleAnalyzerPlugin()
+      // new BundleAnalyzerPlugin(),
+      // new WorkboxPlugin.InjectManifest({
+      //   swSrc: path.resolve(__dirname, 'src/sw.js'),
+      //   mode: 'production',
+      //   exclude: [/\.map$/, /asset-manifest\.json$/],
+      // })
     ],
     resolve: {
         modules: [

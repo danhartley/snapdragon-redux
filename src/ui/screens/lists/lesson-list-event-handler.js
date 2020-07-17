@@ -43,7 +43,7 @@ const onClickViewState = (e, lessons) => {
   const speciesList = document.querySelector(`#species_list_id_${lessonId}`);
   const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lessonId}"]`);
 
-  snapLog('onClickViewState', {});
+  // snapLog('onClickViewState', {});
 
   hideOtherContentAndRevertChevrons(lessonId);
 
@@ -68,7 +68,7 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
 
     const { icon, lesson, state, speciesList, container, lessonVideoState, row, isYoutubeIcon } = onClickViewState(e, lessons);
 
-    snapLog('onLessonIconClickHandler', {});
+    // snapLog('onLessonIconClickHandler', {});
 
     const isItemActive = item => {
       if(item.hasOwnProperty('isActive')) {
