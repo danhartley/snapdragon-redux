@@ -1,0 +1,8 @@
+figure {
+  margin: .5rem 0 0;
+}
+
+.desaturate {
+  opacity: .6;
+  filter: grayscale(80%);
+}

@@ -423,10 +423,10 @@
     height: 1rem;
   }
   
-  .home-guide .iconic-taxa-categories-selected svg {
+  /* .home-guide .iconic-taxa-categories-selected svg {
     width: 2rem;
     height: 2rem;
-  }
+  } */
 
   .iconic-taxa-categories-selected svg g {
     fill: var(--snap-collection-active);

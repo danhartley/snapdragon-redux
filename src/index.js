@@ -7,6 +7,7 @@ import 'ui/css/snapdragon.css';
 import 'ui/css/common.css';
 import 'ui/css/species-list.css';
 import 'ui/css/snapdragon-media.css';
+import 'ui/css/non-main.css';
 
 import { utils } from 'utils/utils';
 import { store, persistor } from 'redux/store';

@@ -1,13 +1,8 @@
 import { contains } from 'ramda';
 
-import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { enums } from 'ui/helpers/enum-helper';
-import { renderLessons } from 'ui/screens/lists/lesson-list';
-import { settingsHandler } from 'ui/fixtures/settings';
-import { renderLogin } from 'ui/fixtures/login';
-import { renderLanguagePicker } from 'ui/fixtures/language';
 
 import navigationPortraitTemplate from 'ui/fixtures/navigation-portrait-template.html';
 import navigationLeftTemplate from 'ui/fixtures/navigation-left-template.html';
@@ -67,20 +62,19 @@ export const renderNavigation = collection => {
                   break;
               case enums.navigation.SETTINGS:
                   toggleIconOnOff(clickedIcon);
-                  settingsHandler();
+                  import('ui/fixtures/settings').then(module => {
+                    module.settingsHandler();
+                  });                  
                   break;
               case enums.navigation.LESSONS:
                   import('ui/screens/lists/lesson-state-handler').then(module => {
                     module.lessonStateHandler.recordUserAction(enums.userEvent.RETURN_LESSONS);
-                    renderLessons();
+                  });
+                  import('ui/screens/lists/lesson-list').then(module => {
+                    module.renderLessons();
                   });
                 break;                    
               case enums.navigation.LESSON:
-                  // lesson = await import('ui/screens/lists/lesson-state-handler').then(module => {
-                  //   module.lessonStateHandler.changeRequest({ requestType: enums.lessonState.PAUSE_LESSON });
-                  //   DOM.rightHeaderTxt.innerHTML = 'Learn the planet';
-                  //   DOM.rightHeaderScoreTxt.innerHTML = '';
-                  // });                  
                   break;
               case enums.navigation.GLOSSARY:   
                   toggleIconOnOff(clickedIcon);
@@ -95,11 +89,15 @@ export const renderNavigation = collection => {
               case enums.navigation.EMAIL:
                   toggleIconOnOff(clickedIcon);
                   break;
-              case enums.navigation.LOGIN:
-                  renderLogin(store.getState().user);
+              case enums.navigation.LOGIN:                  
+                  import('ui/fixtures/login').then(module => {
+                    module.renderLogin(store.getState().user);
+                  });
                   break;
               case enums.navigation.LANGUAGE:
-                  renderLanguagePicker();
+                import('ui/fixtures/language').then(module => {
+                  module.renderLanguagePicker();
+                });                  
               default:
                   return;
           }

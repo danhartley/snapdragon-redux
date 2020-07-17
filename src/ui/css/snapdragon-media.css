@@ -543,10 +543,10 @@
           display: inline;
       }
     
-      #cardModal .feature-types {
+      /* #cardModal .feature-types {
           width: 100%;
           margin: 0;
-      }
+      } */
 
       .info-details {
         padding: 1rem 4rem;
