@@ -5,6 +5,7 @@
     "display": "standalone",
     "orientation": "portrait",
     "theme_color": "#b3c5ae",
+    "background_color": "#b3c5ae",
     "icons": [{
       "src": "./static/favicons/72x72.png",
       "sizes": "72x72",
