@@ -64,7 +64,7 @@ export const renderNavigation = collection => {
                   toggleIconOnOff(clickedIcon);
                   import('ui/fixtures/settings').then(module => {
                     module.settingsHandler();
-                  });                  
+                  });
                   break;
               case enums.navigation.LESSONS:
                   import('ui/screens/lists/lesson-state-handler').then(module => {

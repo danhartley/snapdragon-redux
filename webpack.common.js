@@ -100,4 +100,9 @@ module.exports = {
       compress: true
     },
     // watch: true watched by default in webpack-dev-server
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+      },
+    },
 };

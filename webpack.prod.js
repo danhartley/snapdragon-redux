@@ -25,9 +25,6 @@ module.exports = merge(common, {
       }),
       new OptimizeCSSAssetsPlugin({})
     ],
-    splitChunks: {
-      chunks: 'all',
-    },
   },
   // You should configure your server to disallow access to the Source Map file for normal users!
   // https://webpack.js.org/configuration/devtool/

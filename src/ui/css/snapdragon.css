@@ -109,31 +109,9 @@ hr {
   font-size: .7rem;
 }
 
-/* .desaturate {
-  opacity: .6;
-  filter: grayscale(80%);
-} */
-
 .no-progress {
   background-color: var(--snap-progress-bg);
 }
-
-/* .btn-collection {
-  background-color: var(--snap-portrait);
-  color: var(--snap-text-dark);
-}
-
-.btn-language {
-  background-color: var(--snap-landscape);
-  color: var(--snap-text-medium-dark);
-}
-
-.btn.btn-non-taxa {
-  width: 15rem;
-  background-color: var(--snap-non-taxa);
-  float: left;
-} */
-
 
 .icon::after
 {
@@ -192,10 +170,6 @@ hr {
   line-height: 1.6;
 }
 
-/* .toUpperCase {
-  text-transform: uppercase;
-} */
-
 .lessons, .settings, .nav-info, .lesson, .glossary, .email, .login, .email > a, .language {
   cursor: pointer;
   color: var(--snap-text-dark);
@@ -230,13 +204,6 @@ a.icon:hover {
   padding: 0 0.5rem;
 }
 
-/* .hover-box {
-  border: .05rem solid rgba(48, 94, 37,.8);
-  padding: .25rem;
-  margin: 0 0 0 -.25rem;
-  border-radius: 0.25rem;
-} */
-
 .nav-icons .active-icon, .active-icon {
   color: white;
 }
@@ -246,10 +213,6 @@ a.icon:hover {
   opacity: .38; /* why  38%? google material design */
   pointer-events: none;
 }
-
-/* .scrollable.card {
-  text-align: left;
-} */
 
 .test-card-question.standard-block {
   border-bottom: .03rem solid var(--snap-border-medium);
@@ -261,10 +224,6 @@ a.icon:hover {
   grid-template-rows: var(--vhStandardBlock) auto;
 }
 
-/* .feature-types {
-  background-color: var(--snap-content-background);
-} */
-
 .species.card {
   margin: 0;
 }
@@ -272,22 +231,6 @@ a.icon:hover {
 .species.card-small {
   padding: 0.5rem;
 }
-
-/* .card.radio-buttons-container {
-  margin: 0 0 0.5rem 0;
-} */
-
-/* .lesson-plans .table-row.species-background:nth-child(n) {
-  background-color: var(--snap-species-highlight-background);
-}
-
-.lesson-plans .table-row.taxon-background:nth-child(n) {
-  background-color: var(--snap-taxon-card-background);
-} */
-
-/* .snapdragon-options {
-  padding: 0 .5rem;
-} */
 
 .grid {
   display: grid !important;
@@ -372,10 +315,6 @@ a.icon:hover {
   .pointer-events-none {
     pointer-events: none !important;
   }
-  
-  /* .pointer-events-initial {
-    pointer-events: initial !important;
-  } */
 
 .align-left {
   text-align: left;
@@ -407,13 +346,6 @@ a.icon:hover {
   text-transform: capitalize;
 }
 
-/* .taxon-header {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: left;
-} */
-
 .card-link-container {
   display: flex;
   align-items: center;
@@ -429,16 +361,6 @@ a.icon:hover {
 .card-link-container svg:hover {
   color: var(--snap-text-medium-light);
 }
-
-/* .block-container {
-  position: relative;
-  justify-content: flex-start;
-} */
-
-/* .species-common-name {  
-  text-transform: capitalize;
-} */
-
 
 .taxon.card-card .data-box-container {
   grid-template-columns: 1fr 2fr;
@@ -492,21 +414,9 @@ a.icon:hover {
   font-style: italic;
 }
 
-/* .family-img {
-  filter: grayscale(80%);
-} */
-
-/* .family-name {
-  text-transform: uppercase;
-} */
-
 .history div {
   margin: 0 0 1rem 0;
 }
-
-/* .clickable {
-  cursor: pointer;
-} */
 
 .btn {
   font-size: inherit;
@@ -547,23 +457,6 @@ a.icon:hover {
   margin-left: 0.2rem;
 }
 
-/* .course-description {
-  margin: 1rem 0;
-}
-
-.course-description span {
-  margin: 0 0 0.5rem 0;
-}
-
-.course-description span:nth-child(1) {
-  background-color: lightblue;
-  padding: 0.25rem;
-}
-
-.course-description .snap-alert {
-  width: 50%;
-} */
-
 .mixed-content-container {
   top: calc(
       var(--vhStandardBlock, 10vh)
@@ -576,14 +469,6 @@ a.icon:hover {
       - .5rem);
 }
 
-/* .species-count {
-  vertical-align: super;
-} */
-
-/* .clear-lesson button {
-  float: left;
-} */
-
 .collection span {
   padding: 0 0.5rem;
   cursor: pointer;
@@ -592,26 +477,6 @@ a.icon:hover {
 .dropdown div {
   white-space: nowrap;
 }
-
-/* .single-tile {
-  display: flex;
-  flex-direction: column;
-  margin: 2rem 1rem;
-} */
-
-/* .image-border {
-  text-align: center;
-  margin: 0 0 2rem 0;
-  border: .05rem solid;
-  border-radius: .2rem;
-  padding: 1rem;
-} */
-
-
-/* .snap-alert-fg {
-  color: var(--snap-alert);
-} */
-
 
 .delay-slider {
   margin: 1rem 0;
@@ -640,18 +505,6 @@ a.icon:hover {
   width: 100%;
 }
 
-/* .answer-container .icon-container {
-  position: relative;
-  display: inline-block;
-}
-
-.answer-container .icon {
-  font-size: 1.5rem;
-  position: absolute;
-  top: -0.9rem;
-} */
-
-
 button:disabled {
   cursor: initial !important;
 }
@@ -665,16 +518,6 @@ button:disabled {
   width: 75%;
   text-align: left;
 }
-
-/* .toggle-content,
-.toggle-content * {
-  display: none;
-}
-
-.toggle-content.is-visible,
-.toggle-content.is-visible * {
-  display: initial;
-} */
 
 .btn-secondary:not(:disabled):not(.disabled).active {
   background-color: var(--snap-text-light);
@@ -769,49 +612,9 @@ button:disabled {
   background-color: var(--snap-snap-action-btn);
 }
 
-/* .question-images {
-  display: grid;
-  height: 8rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 0.5rem;
-} */
-
-/* .layer-container {
-  cursor: pointer;
-  background-size: cover;
-  background-position: center;
-} */
-
-/* .layer {
-  height: 100%;
-  width: 100%;
-  color: rgb(101, 132, 37, 0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.layer > div {
-  text-align: center;
-} */
-
 .feature-label {
   color: var(--snap-text-green);
 }
-
-/* .lesson-option-headers {
-    height: 2.5rem;
-    display: flex;
-    align-items: center;
-    color: var(--snap-text-dark);
-    letter-spacing: 0.03rem;
-    padding: 0;
-    width: fit-content;
-} */
-
-/* .faded {
-  color: var(--snap-border-lightest);
-} */
 
 .compare-species-link {
   cursor: pointer;
@@ -985,33 +788,9 @@ iframe#birdsong {
   color: rgb(100,100,100);
 }
 
-/* .visual-match .description div:empty,
-.visual-match .description span:empty {
-  display: none;
-} */
-
 .hide-empty:empty {
   display: none !important;
 }
-
-/* .visual-match .description {
-  background-color: rgb(200, 197, 172);
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem;
-}
-
-.visual-match .description span {
-  flex: 1;
-  padding: 0.5rem;
-} */
-
-/* .comparison-description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 0.5rem;
-} */
 
 .species-search .icon {
   font-size: 2.5rem;
@@ -1041,19 +820,9 @@ a.collection-disabled {
   pointer-events: none;
 }
 
-
-/* .greek {
-  vertical-align: super;
-} */
-
 .dropdown.collections {
   display: flex;
 }
-
-/* .range-slider-control {
-  display: flex;
-  justify-content: space-between;
-} */
 
 .carousel-indicators {
   height: var(--vhRunningBlock);
@@ -1095,17 +864,6 @@ a.collection-disabled {
   border: 0.05rem solid rgba(108, 117, 125,.8);
 }
 
-/* .floating-card > span:nth-child(1) {
-  background: #fff;
-  border: none;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.2);
-  display: inline-block;
-  font-weight: 300;
-  margin: .5rem;
-  padding: .8rem 1.1rem;
-} */
-
 .home-container .snapdragon-header {
   top: 0;
   text-transform: uppercase;
@@ -1133,14 +891,6 @@ a.collection-disabled {
 .trait-card-summary-container .summary-scores {
   padding: 0 1rem;
 }
-
-/* .home-guide .taxa {
-  color: var(--snap-collection-active);
-}
-
-.home-guide .taxa > span {
-  margin-right: .25rem;
-} */
 
 .trait-line {
   margin-top: 2rem;
@@ -1345,11 +1095,6 @@ a.collection-disabled {
   color: var(--snap-youtube-green);
 }
 
-/* .button-block {
-  height: var(--vhButtonBlock, 9vh);
-  margin: 0 !important;
-} */
-
 .running-block {
   height: var(--vhRunningBlock, 9vh);
 }
@@ -1393,12 +1138,6 @@ a.collection-disabled {
 .home-scrolling-container .scrollable {
   top: calc( var(--vhScrollingTop));
 }
-
-/* .form-check {
-  pointer-events: initial !important;
-  display: flex;
-  align-items: center;
-} */
 
 .form-check-input {
   margin-top: 0;
@@ -1463,10 +1202,6 @@ a.collection-disabled {
 .score-summary.scrollable.review-summary {
   bottom: 1rem;
 }
-
-/* .continue-link {
-  margin-top: .5rem;  
-} */
 
 .review-summary .snap-icon-btn {
   margin: 0;

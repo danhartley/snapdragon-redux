@@ -9,7 +9,7 @@ import { renderEditLesson } from 'ui/screens/lists/lesson-edit';
 import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 
-const onLoadLessonViewState = (collection, videoPlayer) => {
+export const onLoadLessonViewState = (collection, videoPlayer) => {
 
   const taxa = collection.iconicTaxa ? collection.iconicTaxa.map(taxon => taxon.common).join(', ') : '';
 
@@ -25,7 +25,7 @@ const onLoadLessonViewState = (collection, videoPlayer) => {
   return collection;  
 };
 
-const onLoadLessonsViewState = (collections, videoPlayer) => {
+export const onLoadLessonsViewState = (collections, videoPlayer) => {
   return collections.map(collection => {
     return onLoadLessonViewState(collection, videoPlayer);
   });
