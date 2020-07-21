@@ -16,7 +16,7 @@
             // Use the window load event to keep the page load performant
             window.addEventListener('load', () => {
               navigator.serviceWorker.register('./sw.js').then(()=>{
-                console.log('service worker registered')
+                console.log('service worker registered');
               });
             });
           }
@@ -187,9 +187,9 @@
         }
       </script>
 
-      <script defer type="text/javascript" src="https://storage.googleapis.com/snapdragon-222014.appspot.com/dist/iconwc.min.js"></script>      
+      <script defer src="https://storage.googleapis.com/snapdragon-222014.appspot.com/dist/iconwc.min.js"></script>      
       <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1osYKD1sRb5Bzqq-OzJ6PgXqLtDt9YvU&libraries=places"></script>
-      <script defer type="text/javascript">
+      <script>
 
         var tag = document.createElement('script');
       

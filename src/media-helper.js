@@ -64,11 +64,11 @@ export const handleWindowResize = () => {
       setWindowHeight();
   });
 
-  if(window.location.origin.indexOf('learn-the-planet') > -1) {
-      if(window.location.protocol != 'https:') {
-          location.href =  location.href.replace("http://", "https://");
-      }
-  }
+  // if(window.location.origin.indexOf('learn-the-planet') > -1) {
+  //     if(window.location.protocol != 'https:') {
+  //         location.href =  location.href.replace("http://", "https://");
+  //     }
+  // }
 };
 
 export const loadModalHTML = () => {
