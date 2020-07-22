@@ -96,8 +96,17 @@ module.exports = {
     },
     // watch: true watched by default in webpack-dev-server
     optimization: {
+      moduleIds: 'hashed',
+      runtimeChunk: 'single',
       splitChunks: {
-        chunks: 'all',
+        // chunks: 'all',        
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+          },
+        },
       },
     },
 };
