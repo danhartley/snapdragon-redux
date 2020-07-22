@@ -1307,10 +1307,15 @@ input[type="number"].medium {
   min-height: 190px;
 }
 
-.lesson-icon{
+.lesson-icon {
   width: 98px;
   height: 68px;
   object-fit: none;
+}
+
+.lesson-icon img {
+  object-fit: none;
+  height: 100%;
 }
 
 .location-filter-options {
