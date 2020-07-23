@@ -5,6 +5,7 @@
     "display": "standalone",
     "orientation": "portrait",
     "theme_color": "#b3c5ae",
+    "background_color": "#b3c5ae",
     "icons": [{
       "src": "./static/favicons/72x72.png",
       "sizes": "72x72",
@@ -25,11 +26,19 @@
       "src": "./static/favicons/152x152.png",
       "sizes": "152x152",
       "type": "image/png"
-    },{
+    },
+    {
       "src": "./static/favicons/192x192.png",
       "sizes": "192x192",
       "type": "image/png"
-    },{
+    },
+    {
+      "src": "./static/favicons/maskable_icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
       "src": "./static/favicons/384x384.png",
       "sizes": "384x384",
       "type": "image/png"

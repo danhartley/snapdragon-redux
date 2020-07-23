@@ -1,8 +1,25 @@
 module.exports = {
   "globDirectory": "dist/",
   "globPatterns": [
-    "**/*.{js,jpg,png,xml,ico,json,html}"
+    '**/*.{html,json,js,css}'
   ],
-  "swDest": "dist/snapdragon-sw.js",
-  "swSrc": "dist/sw.js"
+  "swDest": "dist/sw.js",
+    // Define runtime caching rules.
+    runtimeCaching: [{
+      // Match any request that ends with .png, .jpg, .jpeg or .svg.
+      urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+  
+      // Apply a cache-first strategy.
+      handler: 'CacheFirst',
+  
+      options: {
+        // Use a custom cache name.
+        cacheName: 'images',
+  
+        // Only cache 10 images.
+        expiration: {
+          maxEntries: 10,
+        },
+      },
+    }],
 };

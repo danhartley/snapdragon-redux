@@ -16,8 +16,17 @@ export const renderHome = (counter, forceIntroDisplay = false) => {
     if(config.isLandscapeMode || forceIntroDisplay) {
         renderLessons();
     }
+    
+    const introduction = document.querySelector('.js-home-container');
+
+    if(config.isPortraitMode && isFirstTimeVisitor) {
+      introduction.classList.add('display-grid');
+      introduction.classList.remove('display-none');
+    }
 
     if(config.isPortraitMode && !isFirstTimeVisitor) {
-        renderLessons();
+      introduction.classList.add('display-none');
+      introduction.classList.remove('display-grid');
+      renderLessons();
     }
 };

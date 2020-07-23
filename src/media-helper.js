@@ -63,12 +63,6 @@ export const handleWindowResize = () => {
   window.addEventListener('resize', () => {
       setWindowHeight();
   });
-
-  if(window.location.origin.indexOf('learn-the-planet') > -1) {
-      if(window.location.protocol != 'https:') {
-          location.href =  location.href.replace("http://", "https://");
-      }
-  }
 };
 
 export const loadModalHTML = () => {

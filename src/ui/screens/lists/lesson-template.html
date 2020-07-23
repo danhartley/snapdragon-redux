@@ -1,13 +1,18 @@
 <li>
   <div data-lesson-id="{{ lesson.id }}" class="relative lesson-list-carousel-item js-lesson-list-carousel-item">
       <div class="landscape double-centred-block">
-          <img class="lesson-icon" src="{{ lesson.icon }}" alt="{{ lesson.name }}">
+        <div class="lesson-icon">
+          <picture>
+            <source srcset="https://storage.googleapis.com/snapdragon-222014.appspot.com/dist/1x1-transparent-pixel.png 1w"
+                    media="(max-width: 767px)">
+            <img src="{{ lesson.icon }}" alt="{{ lesson.name }}" />
+          </picture>
+        </div>
       </div>
       <div data-lesson-id="{{ lesson.id }}" class="lesson-list-item js-lesson-list-item" data-has-video="{{ lesson.hasVideo }}">
           <div>            
               <div class="lesson-name js-lesson-title" data-lesson-id="{{ lesson.id }}">
                   <span id="lesson_{{ lesson.id }}" class="lesson-title margin-right {{ lesson.isCollectionEditableClass }}">{{ lesson.name }}</span>
-                  <!-- <span data-toggle="modal" data-target="#basicModal" id="lesson_{{ lesson.id }}" class="lesson-title margin-right {{ lesson.isCollectionEditableClass }}">{{ lesson.name }}</span> -->
               </div>
               <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>
               <div class="latin hide-empty js-lesson-video-state" data-lesson-id="{{ lesson.id }}">{{ lesson.videoState }}</div>         

@@ -69,7 +69,8 @@
       align-items: center;      
   } */
 
-.test-card-question .question-help, .block-container .question > span:nth-child(2) {
+/* .block-container .question > span:nth-child(2), */
+.test-card-question .question-help{
     vertical-align: super;
     text-transform: initial;
     margin: 0 .5rem;

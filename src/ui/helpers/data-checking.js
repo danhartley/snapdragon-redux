@@ -1,7 +1,6 @@
 import { take } from 'ramda';
 
 import { utils } from 'utils/utils';
-import { epithets } from 'api/botanical-latin';
 
 const getVernacularName = (item, config, useShortForm = false, namePart = 'vernacularName') => {
     try {
@@ -38,14 +37,6 @@ const getGenusName = binomial => {
 
 const getSpeciesName = binomial => {
     return binomial.split(' ')[1];
-};
-
-const latin = species => {
-    let epithet = epithets.find(e => {        
-        const match = e.latin.find(part => part.toUpperCase() === species.toUpperCase());
-        return match || '';
-    });
-    return epithet ? { ...epithet } : '';
 };
 
 const getTaxonProp = (taxon, language, prop) => {
@@ -220,7 +211,6 @@ export const itemProperties = {
     getVernacularName,
     getGenusName,
     getSpeciesName,
-    latin,
     getTaxonProp,
     getNestedTaxonProp,
     trimLatinName,

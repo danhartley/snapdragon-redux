@@ -9,7 +9,7 @@ import { renderEditLesson } from 'ui/screens/lists/lesson-edit';
 import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 
-const onLoadLessonViewState = (collection, videoPlayer) => {
+export const onLoadLessonViewState = (collection, videoPlayer) => {
 
   const taxa = collection.iconicTaxa ? collection.iconicTaxa.map(taxon => taxon.common).join(', ') : '';
 
@@ -25,7 +25,7 @@ const onLoadLessonViewState = (collection, videoPlayer) => {
   return collection;  
 };
 
-const onLoadLessonsViewState = (collections, videoPlayer) => {
+export const onLoadLessonsViewState = (collections, videoPlayer) => {
   return collections.map(collection => {
     return onLoadLessonViewState(collection, videoPlayer);
   });
@@ -43,7 +43,7 @@ const onClickViewState = (e, lessons) => {
   const speciesList = document.querySelector(`#species_list_id_${lessonId}`);
   const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lessonId}"]`);
 
-  snapLog('onClickViewState', {});
+  // snapLog('onClickViewState', {});
 
   hideOtherContentAndRevertChevrons(lessonId);
 
@@ -68,7 +68,7 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
 
     const { icon, lesson, state, speciesList, container, lessonVideoState, row, isYoutubeIcon } = onClickViewState(e, lessons);
 
-    snapLog('onLessonIconClickHandler', {});
+    // snapLog('onLessonIconClickHandler', {});
 
     const isItemActive = item => {
       if(item.hasOwnProperty('isActive')) {
@@ -87,6 +87,10 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
       icon.classList.add('youtube-green-fg');
       const chevron = document.querySelector(`.js-lesson-list-chevron[data-lesson-id="${icon.dataset.lessonId}"]`);
             chevron.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
+      if(config.isPortraitMode) {
+        const lessonsIcon = document.querySelector('.js-lessons');
+              lessonsIcon.classList.remove('active-icon');
+      }
     }
 
     let siblingChevron;
@@ -121,7 +125,7 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
     }
 
     if(state.requiresSpeciesList) {
-      await loadAndDisplaySpeciesList(config, icon, lesson, (config.isPortraitMode && isYoutubeIcon) ? DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable') : container);
+      await loadAndDisplaySpeciesList(config, icon, lesson, (config.isPortraitMode && isYoutubeIcon) ? DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable') : container, isYoutubeIcon);
     }
 
     row.classList.add('lesson-list-selected-lesson');
@@ -135,7 +139,7 @@ const onLessonTitleClickHandler = (title, lessons) => {
     });
 };
 
-const onReviewClickHandler = reviewLink => {    
+const onReviewClickHandler = (reviewLink, config) => {    
 
   const reviewLinkHandler = async e => {
 
@@ -143,7 +147,7 @@ const onReviewClickHandler = reviewLink => {
     if(spinner) spinner.classList.remove('hide');
     setTimeout(() => {
       if(spinner) spinner.classList.add('hide');
-    }, 2000);
+    }, config.isPortraitMode ? 5000 : 2500);
 
     import('ui/screens/lists/lesson-state-handler').then(module => {
       module.lessonStateHandler.recordUserAction(enums.userEvent.START_LESSON_REVIEW);
@@ -177,12 +181,12 @@ const hideOtherContentAndRevertChevrons = selectedLessonId => {
   });
 };
 
-const loadAndDisplaySpeciesList = async(config, icon, lesson, container) => {
+const loadAndDisplaySpeciesList = async(config, icon, lesson, container, isYoutubeIcon) => {
 
   Array.from(icon.parentElement.children).forEach(child => child.dataset.selected = true);
 
   await import('ui/screens/lists/lesson-state-handler').then(module => {
-    module.lessonStateHandler.recordUserAction(enums.userEvent.TOGGLE_SPECIES_LIST);
+    module.lessonStateHandler.recordUserAction(isYoutubeIcon ? enums.userEvent.PLAY_LESSON_VIDEO : enums.userEvent.TOGGLE_SPECIES_LIST);
     module.lessonStateHandler.changeRequest({
       requestType: enums.lessonState.RENDER_SPECIES_LIST,
       requestArgs: { lesson, container }

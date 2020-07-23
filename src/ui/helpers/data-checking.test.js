@@ -70,22 +70,6 @@ test('should return empty string when no match found for either english default 
     expect(es).toEqual('Unknown');
 });
 
-test('should return a translation object where this is a matching latin name', () => {
-  const species = 'nucifer';
-  const expected = {
-      "latin" : ["nucifer"],
-      "en" : ["bearing nuts"]
-  };
-  const epithet = itemProperties.latin(species);
-  expect(epithet).toEqual(expected);
-});
-
-test('should not return a translation object where this is no a matching latin name', () => {
-  const species = 'schoenoprasum';
-  const epithet = itemProperties.latin(species);
-  expect(epithet).toEqual("");
-});
-
 test('should trim latin name', () => {
   const name = 'Allium schoenoprasum';
   const trimmedName = itemProperties.trimLatinName(name);

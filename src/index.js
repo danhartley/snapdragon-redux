@@ -7,6 +7,7 @@ import 'ui/css/snapdragon.css';
 import 'ui/css/common.css';
 import 'ui/css/species-list.css';
 import 'ui/css/snapdragon-media.css';
+import 'ui/css/non-main.css';
 
 import { utils } from 'utils/utils';
 import { store, persistor } from 'redux/store';
@@ -37,14 +38,16 @@ const onLoadHandler = () => {
 
       handleWindowResize();      
 
-      const purgeData = cookieHandler.hasUserBeenAwayTooLong();
+      // const purgeData = cookieHandler.hasUserBeenAwayTooLong();
 
-      if(purgeData) {
-          persistor.purge();
-          window.location.reload(true);
-      } else {
-        const lastVisitedCookie = cookieHandler.setLastVisitedCookie(Date());
-      }
+      // if(purgeData) {
+      //     persistor.purge();
+      //     window.location.reload(true);
+      // } else {
+      //   const lastVisitedCookie = cookieHandler.setLastVisitedCookie(Date());
+      // }
+
+      const lastVisitedCookie = cookieHandler.setLastVisitedCookie(Date());
 
       let lessonPlan;
 
@@ -109,6 +112,10 @@ const onLoadHandler = () => {
     window.snapLog = snapLog;
     window.logError = logError;
     window.logAPIError = logAPIError;
+
+    const script = document.createElement('script');
+          script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_API_MAPS_KEY}&libraries=places`;
+    document.body.appendChild(script);
 };
 
 onLoadHandler();

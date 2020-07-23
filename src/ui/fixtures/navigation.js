@@ -1,13 +1,9 @@
 import { contains } from 'ramda';
 
-import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { enums } from 'ui/helpers/enum-helper';
-import { renderLessons } from 'ui/screens/lists/lesson-list';
-import { settingsHandler } from 'ui/fixtures/settings';
-import { renderLogin } from 'ui/fixtures/login';
-import { renderLanguagePicker } from 'ui/fixtures/language';
+import { cookieHandler } from 'ui/helpers/cookie-handler';
 
 import navigationPortraitTemplate from 'ui/fixtures/navigation-portrait-template.html';
 import navigationLeftTemplate from 'ui/fixtures/navigation-left-template.html';
@@ -15,7 +11,7 @@ import navigationRightTemplate from 'ui/fixtures/navigation-right-template.html'
 
 export const renderNavigation = collection => {
 
-    const { config, userAction } = store.getState();
+    const { config } = store.getState();
 
     const template = document.createElement('template');
 
@@ -67,21 +63,18 @@ export const renderNavigation = collection => {
                   break;
               case enums.navigation.SETTINGS:
                   toggleIconOnOff(clickedIcon);
-                  settingsHandler();
+                  import('ui/fixtures/settings').then(module => {
+                    module.settingsHandler();
+                  });
                   break;
               case enums.navigation.LESSONS:
                   import('ui/screens/lists/lesson-state-handler').then(module => {
                     module.lessonStateHandler.recordUserAction(enums.userEvent.RETURN_LESSONS);
-                    renderLessons();
                   });
-                break;                    
-              case enums.navigation.LESSON:
-                  // lesson = await import('ui/screens/lists/lesson-state-handler').then(module => {
-                  //   module.lessonStateHandler.changeRequest({ requestType: enums.lessonState.PAUSE_LESSON });
-                  //   DOM.rightHeaderTxt.innerHTML = 'Learn the planet';
-                  //   DOM.rightHeaderScoreTxt.innerHTML = '';
-                  // });                  
-                  break;
+                  import('ui/screens/lists/lesson-list').then(module => {
+                    module.renderLessons();
+                  });
+                break;
               case enums.navigation.GLOSSARY:   
                   toggleIconOnOff(clickedIcon);
                   const { glossary } = store.getState();
@@ -95,40 +88,38 @@ export const renderNavigation = collection => {
               case enums.navigation.EMAIL:
                   toggleIconOnOff(clickedIcon);
                   break;
-              case enums.navigation.LOGIN:
-                  renderLogin(store.getState().user);
+              case enums.navigation.LOGIN:                  
+                  import('ui/fixtures/login').then(module => {
+                    module.renderLogin(store.getState().user);
+                  });
                   break;
               case enums.navigation.LANGUAGE:
-                  renderLanguagePicker();
+                import('ui/fixtures/language').then(module => {
+                  module.renderLanguagePicker();
+                });                  
               default:
                   return;
           }
         });        
     });
 
-    const onLoadState = (config, userAction) => {
+    const onLoadState = () => {
+
+      const { config, userAction } = store.getState();
 
       if(config.isLandscapeMode) return;
 
-      navIcons.forEach(icon => icon.classList.remove('active-icon'));
-
-      const loginIcon = document.querySelector('.js-login');
-      if(loginIcon)
-        loginIcon.dataset.isLoggedIn = !!store.getState().user;
-
-        switch(userAction &&userAction.name) {
-          case enums.userEvent.START_LESSON_REVIEW.name: // quiz
-          case enums.userEvent.START_LESSON.name: // video
-            const lessonIcon = document.querySelector('.js-lesson');
-                  lessonIcon.classList.add('active-icon');
-            const lessonsIcon = document.querySelector('.js-lessons');
-                  lessonsIcon.classList.remove('active-icon');
-            break;
-            
-        }
+      if(!cookieHandler.isFirstTimeVisitor()) {
+        console.log(userAction);
+        const lessonsIcon = document.querySelector('.js-lessons');
+        const newScreenActions = [ enums.userEvent.PLAY_LESSON_VIDEO.name, enums.userEvent.START_LESSON_REVIEW.name, enums.userEvent.START_TERM_REVIEW.name ];
+        (userAction && contains(userAction.name, newScreenActions))
+          ? lessonsIcon.classList.remove('active-icon')
+          : lessonsIcon.classList.add('active-icon');
+      }
   };
 
-    onLoadState(config, userAction);
+    onLoadState();
 };
 
 export const renderLoginChanges = user => {

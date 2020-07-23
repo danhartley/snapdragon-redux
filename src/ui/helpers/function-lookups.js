@@ -6,8 +6,7 @@ import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
 import { renderSummary } from 'ui/screens/progress/summary';
 import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
 import { renderCompleteText } from 'ui/screens/text-entry/text-complete';
-import { renderCultivarCard } from 'ui/screens/cards/cultivar-card';
-// import { renderMixedSpecimenImagesAndQuestion } from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-combined';
+// import { renderCultivarCard } from 'ui/screens/cards/cultivar-card';
 import { renderNonTaxonCardSpecimenTiles } from 'ui/screens/cards/non-taxon-card-specimen-tiles';
 import { renderMixedSpecimenQuestion } from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question';
 import { renderMediaPlayers } from 'ui/screens/media/landscape/media-players';
@@ -17,7 +16,6 @@ import { renderMixedTraitQuestion } from 'ui/screens/multichoice/landscape/mixed
 import { renderHorizontalStrips } from 'ui/screens/multichoice/horizontal-strips.js';
 
 const functions = [
-    // { name: 'mixed-specimen-questions', func: renderMixedSpecimenImagesAndQuestion },
     { name: 'non-taxon-specimen-tiles', func: renderNonTaxonCardSpecimenTiles },
     { name: 'text-entry', func: renderTextEntry },
     { name: 'species-card', func: renderCard },
@@ -33,14 +31,13 @@ const functions = [
     { name: 'taxon-card', func: renderTaxonCard },
     { name: 'non-taxon-card', func: renderNonTaxonCard },
     { name: 'text-complete', func: renderCompleteText },
-    { name: 'cultivar-card', func: renderCultivarCard },
+    // { name: 'cultivar-card', func: renderCultivarCard },
     { name: 'visual-match', func: renderMultiStrips },
     { name: 'trait-images', func: renderBonusSpecimenTiles },
     { name: 'trait-property', func: renderBonusTest },
     { name: 'lookalike-property', func: renderBonusTest },
     { name: 'symbiotic-property', func: renderMultiStrips },
     { name: 'mixed-specimen-question', func: renderMixedSpecimenQuestion }, // landscape triggers both ?
-    // { name: 'mixed-specimen-images', func: renderMixedSpecimenQuestion },// portrait ?
     { name: 'birdsong', func: renderBonusTest },
     { name: 'media-players', func: renderMediaPlayers },    
     { name: 'mixed-trait-question', func: renderMixedTraitQuestion },

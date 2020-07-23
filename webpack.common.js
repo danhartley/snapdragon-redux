@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
-var csso = require('csso');
-
+const csso = require('csso');
+const Dotenv = require('dotenv-webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -78,7 +78,8 @@ module.exports = {
           { from: './src/static/root', to: ''}
         ],
       }),
-      // new BundleAnalyzerPlugin()
+      // new BundleAnalyzerPlugin(),
+      new Dotenv({})
     ],
     resolve: {
         modules: [
@@ -88,10 +89,24 @@ module.exports = {
         // https://webpack.js.org/configuration/resolve/#resolvemodules
     },
     devServer: {
-      host: '0.0.0.0',
+      host: 'localhost',// necessary for service worker to be recognised      
       disableHostCheck: true,
       writeToDisk: true,
       compress: true
     },
     // watch: true watched by default in webpack-dev-server
+    optimization: {
+      moduleIds: 'hashed',
+      runtimeChunk: 'single',
+      splitChunks: {
+        // chunks: 'all',        
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+          },
+        },
+      },
+    },
 };

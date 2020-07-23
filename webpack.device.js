@@ -4,14 +4,10 @@ const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   mode: 'development',
-  // devtool: "eval-source-map", // eval-cheap-module-source-map
-  // devtool: "source-map",
   devtool: false,
-  plugins: [
-    new webpack.SourceMapDevToolPlugin({
-      exclude: 'sw.js'
-    })
-  ],
+  devServer: {
+    host: '0.0.0.0' // necessary for running on real device
+  },
   module: {
     rules: [
       {

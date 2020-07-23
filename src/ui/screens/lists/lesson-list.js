@@ -5,7 +5,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { renderLessonListHeader } from 'ui/screens/lists/lesson-list-header';
 import { renderLesson } from 'ui/screens/lists/lesson';
 import { renderCustomLesson } from 'ui/screens/lists/lesson-custom';
-import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
+import { onLoadLessonsViewState } from 'ui/screens/lists/lesson-list-event-handler';
 
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
 
@@ -16,7 +16,7 @@ export const renderLessons = () => {
     const template = document.createElement('template');
           template.innerHTML = lessonListTemplate;
 
-    let lessons = lessonListEventHandler.onLoadLessonsViewState(collections.filter(collection => (collection.isActive === undefined || collection.isActive)), videoPlayer);
+    let lessons = onLoadLessonsViewState(collections.filter(collection => (collection.isActive === undefined || collection.isActive)), videoPlayer);
 
     lessons = lessons.sort(function(a,b){
           const tsa = a.create ? a.create.seconds : 0;
@@ -38,22 +38,33 @@ export const renderLessons = () => {
               import('ui/create-guide-modal/create-guide').then(module => {
                 module.createGuideHandler(1);
               });
-              lessonListEventHandler.hideOtherContentAndRevertChevrons(0);
+              import('ui/screens/lists/lesson-list-event-handler').then(module => {
+                module.lessonListEventHandler.hideOtherContentAndRevertChevrons(0);
+              });              
             });    
 
-      // const lessonTitles = document.querySelectorAll('.js-lesson-title');
-      //       lessonTitles.forEach(title => lessonListEventHandler.onLessonTitleClickHandler(title, lessons));
-
-      const youtubeLessonIcons = document.querySelectorAll('.js-lesson-list-youtube');
-            youtubeLessonIcons.forEach(youtube => lessonListEventHandler.onLessonIconClickHandler(youtube, lessons, config, true));
+      const youtubeLessonIcons = document.querySelectorAll('.js-lesson-list-youtube');      
+            youtubeLessonIcons.forEach(youtube => {
+              import('ui/screens/lists/lesson-list-event-handler').then(module => {
+                module.lessonListEventHandler.onLessonIconClickHandler(youtube, lessons, config, true);
+              });
+            });
       highlightActiveLessonHandler(youtubeLessonIcons);
 
       const chevrons = document.querySelectorAll('.js-lesson-list-chevron');
-            chevrons.forEach(chevron => lessonListEventHandler.onLessonIconClickHandler(chevron, lessons, config, false));
+            chevrons.forEach(chevron => {
+              import('ui/screens/lists/lesson-list-event-handler').then(module => {
+                module.lessonListEventHandler.onLessonIconClickHandler(chevron, lessons, config, false);
+              });              
+            });
       highlightActiveLessonHandler(chevrons);
 
       const reviews = document.querySelectorAll('.js-review-link');
-            reviews.forEach(reviewLink => lessonListEventHandler.onReviewClickHandler(reviewLink));
+            reviews.forEach(reviewLink => {
+              import('ui/screens/lists/lesson-list-event-handler').then(module => {
+                module.lessonListEventHandler.onReviewClickHandler(reviewLink, config);
+              });
+            });
       highlightActiveLessonHandler(reviews);
 
       setTimeout(() => {      
@@ -89,6 +100,8 @@ export const renderLessons = () => {
 
 const highlightActiveLessonHandler = lessons => {
       lessons.forEach(lesson => lesson.addEventListener('click', e => {            
-          lessonListEventHandler.highlightActiveLesson(lesson.dataset.lessonId);
+        import('ui/screens/lists/lesson-list-event-handler').then(module => {
+          module.lessonListEventHandler.highlightActiveLesson(lesson.dataset.lessonId);
+        });          
       }));
 };

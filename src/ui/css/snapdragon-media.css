@@ -446,6 +446,10 @@
         grid-template-areas: "right left";
     }
 
+    .home-container {
+      display: grid !important;
+    }
+
     .side-lesson-list {
         display: grid;
     }  
@@ -543,10 +547,10 @@
           display: inline;
       }
     
-      #cardModal .feature-types {
+      /* #cardModal .feature-types {
           width: 100%;
           margin: 0;
-      }
+      } */
 
       .info-details {
         padding: 1rem 4rem;

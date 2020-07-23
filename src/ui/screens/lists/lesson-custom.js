@@ -1,6 +1,6 @@
 import { onCreateCustomLesson } from 'ui/create-guide-modal/create-guide';
 import { renderTemplate } from 'ui/helpers/templating';
-import { lessonListEventHandler } from 'ui/screens/lists/lesson-list-event-handler';
+import { onLoadLessonViewState } from 'ui/screens/lists/lesson-list-event-handler';
 
 import lessonTemplate from 'ui/screens/lists/lesson-template.html';
 
@@ -12,7 +12,7 @@ export const renderCustomLesson = (lessons, videoPlayer, config) => {
         const template = document.createElement('template');
               template.innerHTML = lessonTemplate;
         
-        const lesson = lessonListEventHandler.onLoadLessonViewState(collection, videoPlayer);
+        const lesson = onLoadLessonViewState(collection, videoPlayer);
               lesson.hideVideoClass = 'hide-important';
               lesson.hideTextIntroClass = '';
         
@@ -27,31 +27,35 @@ export const renderCustomLesson = (lessons, videoPlayer, config) => {
           top: 1000,
           behavior: 'smooth'
         }
-        
-        // const title = document.querySelector(`.js-lesson-title[data-lesson-id="${lesson.id}"]`);
-        // lessonListEventHandler.onLessonTitleClickHandler(title, lessons);
 
         setTimeout(() => {
 
           document.querySelector('.js-lesson-container').scrollTo(scrollOptions);
 
           const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lesson.id}"]`);
-          lessonListEventHandler.onReviewClickHandler(reviewLink, lessons);
+
+          import('ui/screens/lists/lesson-list-event-handler').then(module => {
+            module.lessonListEventHandler.onReviewClickHandler(reviewLink, config);
+          });
   
           const chevron = config.isLandscapeMode 
               ? document.querySelector(`.js-lesson-list-chevron[data-lesson-id="${lesson.id}"]`)
               : document.querySelectorAll(`.js-lesson-list-chevron[data-lesson-id="${lesson.id}"]`)[1];
 
-          if(chevron) {
-            lessonListEventHandler.onLessonIconClickHandler(chevron, lessons, config, false);          
+          if(chevron) {            
+            import('ui/screens/lists/lesson-list-event-handler').then(module => {
+              module.lessonListEventHandler.onLessonIconClickHandler(chevron, lessons, config, false); 
+            });         
           }
   
           const youtubeLessonIcon = document.querySelector(`.js-lesson-list-youtube[data-lesson-id="${lesson.id}"]`);
           if(youtubeLessonIcon) {
             youtubeLessonIcon.classList.add('hide-important');
           } 
-
-          lessonListEventHandler.highlightActiveLesson(lesson.id);
+          
+          import('ui/screens/lists/lesson-list-event-handler').then(module => {
+            module.lessonListEventHandler.highlightActiveLesson(lesson.id);
+          });
 
         }, 250);
     });
