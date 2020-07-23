@@ -90,7 +90,7 @@
               </div>
               <progress aria-label="lesson quiz progress" title="lesson quiz progress" style="margin: 1000px 0 0 0" value="0" max="6"></progress>
               <div class="main-lesson-body js-main-lesson-body">
-                <div class="home-container landscape js-home-container">  
+                <div class="home-container js-home-container" style="display: none;">
                   <div class="snapdragon-header">
                     <div class="standard-block double-centred-block">
                       <h1>
@@ -136,15 +136,6 @@
               
                   </main>
                 </div>
-                <script>
-                  {
-                    let container = document.querySelector('.js-home-container');
-                    if (document.cookie.indexOf('first_time') > 0) { 
-                    } else {
-                      container.classList.remove('landscape');
-                    }
-                  }
-                </script>
               </div>
               <footer class="landscape footer js-main-lesson-footer">
                   <nav aria-label="navigation for settings, login and contact" class="full-width">

@@ -83,6 +83,7 @@ userEvent.initEnum([
     'START_TERM_REVIEW',
     'EDIT_LESSON',
     'TOGGLE_SPECIES_LIST',
+    'PLAY_LESSON_VIDEO',
     'RETURN_LESSONS'
 ]);
 

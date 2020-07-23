@@ -446,6 +446,10 @@
         grid-template-areas: "right left";
     }
 
+    .home-container {
+      display: grid !important;
+    }
+
     .side-lesson-list {
         display: grid;
     }  

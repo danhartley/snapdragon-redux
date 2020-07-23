@@ -38,14 +38,16 @@ const onLoadHandler = () => {
 
       handleWindowResize();      
 
-      const purgeData = cookieHandler.hasUserBeenAwayTooLong();
+      // const purgeData = cookieHandler.hasUserBeenAwayTooLong();
 
-      if(purgeData) {
-          persistor.purge();
-          window.location.reload(true);
-      } else {
-        const lastVisitedCookie = cookieHandler.setLastVisitedCookie(Date());
-      }
+      // if(purgeData) {
+      //     persistor.purge();
+      //     window.location.reload(true);
+      // } else {
+      //   const lastVisitedCookie = cookieHandler.setLastVisitedCookie(Date());
+      // }
+
+      const lastVisitedCookie = cookieHandler.setLastVisitedCookie(Date());
 
       let lessonPlan;
 

@@ -176,6 +176,10 @@ hr {
   font-size: 1.4rem;
 }
 
+.icon.lesson {
+  color: var(--snap-text-light);
+}
+
 a.icon:hover {
   color: var(--snap-text-light);
 }
