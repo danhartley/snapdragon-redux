@@ -35,7 +35,7 @@ export const renderCustomLesson = (lessons, videoPlayer, config) => {
           const reviewLink = document.querySelector(`.js-review-link[data-lesson-id="${lesson.id}"]`);
 
           import('ui/screens/lists/lesson-list-event-handler').then(module => {
-            module.lessonListEventHandler.onReviewClickHandler(reviewLink);
+            module.lessonListEventHandler.onReviewClickHandler(reviewLink, config);
           });
   
           const chevron = config.isLandscapeMode 

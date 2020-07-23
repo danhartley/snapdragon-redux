@@ -62,7 +62,7 @@ export const renderLessons = () => {
       const reviews = document.querySelectorAll('.js-review-link');
             reviews.forEach(reviewLink => {
               import('ui/screens/lists/lesson-list-event-handler').then(module => {
-                module.lessonListEventHandler.onReviewClickHandler(reviewLink);
+                module.lessonListEventHandler.onReviewClickHandler(reviewLink, config);
               });
             });
       highlightActiveLessonHandler(reviews);

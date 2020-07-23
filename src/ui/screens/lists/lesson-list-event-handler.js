@@ -139,7 +139,7 @@ const onLessonTitleClickHandler = (title, lessons) => {
     });
 };
 
-const onReviewClickHandler = reviewLink => {    
+const onReviewClickHandler = (reviewLink, config) => {    
 
   const reviewLinkHandler = async e => {
 
@@ -147,7 +147,7 @@ const onReviewClickHandler = reviewLink => {
     if(spinner) spinner.classList.remove('hide');
     setTimeout(() => {
       if(spinner) spinner.classList.add('hide');
-    }, 2000);
+    }, config.isPortraitMode ? 5000 : 2500);
 
     import('ui/screens/lists/lesson-state-handler').then(module => {
       module.lessonStateHandler.recordUserAction(enums.userEvent.START_LESSON_REVIEW);
