@@ -112,6 +112,10 @@ const onLoadHandler = () => {
     window.snapLog = snapLog;
     window.logError = logError;
     window.logAPIError = logAPIError;
+
+    const script = document.createElement('script');
+          script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_API_MAPS_KEY}&libraries=places`;
+    document.body.appendChild(script);
 };
 
 onLoadHandler();

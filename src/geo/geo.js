@@ -1,5 +1,7 @@
 import { utils } from 'utils/utils';
 
+const GOOGLE_ACCESS_KEY = process.env.GOOGLE_API_MAPS_KEY;
+
 const getHTML5Location = () => {
 
   return new Promise(function (resolve, reject) {
@@ -138,9 +140,7 @@ export async function GoogleFindPlace(place) {
 
   // https://developers.google.com/places/web-service/search
 
-  const ACCESS_KEY = 'AIzaSyBOfPqa7imxqZ11enFBvH952B4a0oq5HOY';
-
-  const url = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${place}&inputtype=textquery&key=${ACCESS_KEY}&fields=name`;
+  const url = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${place}&inputtype=textquery&key=${GOOGLE_ACCESS_KEY}&fields=name`;
 
   const response = await fetch(url);
   const json = await response.json();
@@ -158,9 +158,7 @@ export async function GoogleAutocompleteServerSide(place) {
 
   // https://developers.google.com/places/web-service/search
 
-  const ACCESS_KEY = 'AIzaSyBOfPqa7imxqZ11enFBvH952B4a0oq5HOY';
-
-  const url = `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${place}&inputtype=textquery&key=${ACCESS_KEY}&fields=name`;
+  const url = `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${place}&inputtype=textquery&key=${GOOGLE_ACCESS_KEY}&fields=name`;
 
   const response = await fetch(url);
   const json = await response.json();
@@ -202,10 +200,10 @@ export const GoogleAutocomplete_Original = (place, callback) => {
   };
 
   if(requireNewSession) {
-    const ACCESS_KEY = 'AIzaSyBOfPqa7imxqZ11enFBvH952B4a0oq5HOY';
+    
     const SESSION_TOKEN = utils.createSessionToken();
 
-    const src = `https://maps.googleapis.com/maps/api/js?key=${ACCESS_KEY}&sessiontoken=${SESSION_TOKEN}&libraries=places`;
+    const src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_ACCESS_KEY}&sessiontoken=${SESSION_TOKEN}&libraries=places`;
 
     createScriptRequest(src, () => {
       getPredictions();
