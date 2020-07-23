@@ -112,7 +112,8 @@ export const renderNavigation = collection => {
       if(!cookieHandler.isFirstTimeVisitor()) {
         console.log(userAction);
         const lessonsIcon = document.querySelector('.js-lessons');
-        userAction.name === enums.userEvent.PLAY_LESSON_VIDEO.name
+        const newScreenActions = [ enums.userEvent.PLAY_LESSON_VIDEO.name, enums.userEvent.START_LESSON_REVIEW.name, enums.userEvent.START_TERM_REVIEW.name ];
+        (userAction && contains(userAction.name, newScreenActions))
           ? lessonsIcon.classList.remove('active-icon')
           : lessonsIcon.classList.add('active-icon');
       }

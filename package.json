@@ -6,10 +6,11 @@
   "scripts": {
     "test": "jest-webpack",
     "start:dev": "webpack-dev-server --config ./webpack.dev.js --open-page 'dist/index.html'  & jest --watchAll",
-    "start:no-tests": "webpack-dev-server --config ./webpack.dev.js --open-page 'dist/index.html'",
+    "start:device": "webpack-dev-server --config ./webpack.device.js --open-page 'dist/index.html'",
     "start:prod": "webpack-dev-server --config ./webpack.prod.js --open-page 'dist/index.html'",
     "start:admin": "webpack-dev-server --config ./webpack.admin.js --open-page 'dist/collection-builder.html'",
     "dev": "webpack --config ./webpack.dev.js && workbox generateSW workbox-config.js",
+    "device": "webpack --config ./webpack.device.js",
     "dev:analyse": "webpack --config ./webpack.dev.js -- --env.addons=bundleanalyzer",
     "prod": "webpack --config ./webpack.prod.js && workbox generateSW workbox-config.js",
     "admin": "webpack --config ./webpack.admin.js",

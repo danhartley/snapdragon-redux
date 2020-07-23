@@ -20,11 +20,13 @@ export const renderHome = (counter, forceIntroDisplay = false) => {
     const introduction = document.querySelector('.js-home-container');
 
     if(config.isPortraitMode && isFirstTimeVisitor) {
-      introduction.style.display = 'grid';
+      introduction.classList.add('display-grid');
+      introduction.classList.remove('display-none');
     }
 
     if(config.isPortraitMode && !isFirstTimeVisitor) {
-      introduction.style.display = 'none';
+      introduction.classList.add('display-none');
+      introduction.classList.remove('display-grid');
       renderLessons();
     }
 };
