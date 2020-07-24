@@ -1342,6 +1342,6 @@ input[type="number"].medium {
   display: none !important;
 }
 
-.svg-inline--fa.fa-book-open {
+#GLOSSARY .fa-book-open {
   vertical-align: -.2rem;
 }

@@ -1,4 +1,4 @@
-import { renderTemplate } from 'ui/helpers/templating';
+import { renderTemplate } from 'checklist/templating';
 import { api } from 'checklist/opt-api';
 
 import aboutTemplate from 'checklist/about-template.html';
@@ -14,7 +14,7 @@ export const about = () => {
     navigation: api.sections.map(section => section.header),
     toollist: api.toollist,
     checklist: api.checklist,
-    conceptList: api.conceptList
+    termList: api.termList
   }, template.content, parent);
 
   Array.from(document.querySelectorAll('.task')).forEach(task => {

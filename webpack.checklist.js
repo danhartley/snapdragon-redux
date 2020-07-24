@@ -1,15 +1,11 @@
-const webpack = require('webpack');
 const path = require('path');
-const csso = require('csso');
-const Dotenv = require('dotenv-webpack');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const WebpackLighthousePlugin = require('webpack-lighthouse-plugin'); 
 
 module.exports = {
     entry: {
-      app: { import: './src/index.js', dependOn: 'shared' },
-      shared: [ './src/utils/utils.js' ]
+      checklist: './src/checklist/checklist.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -41,60 +37,49 @@ module.exports = {
             use: {loader: 'html-loader'}
           },
           {
-            test: /collection-builder.html$/,
-            exclude: [ /node_modules/, path.resolve(__dirname, 'src/admin/collection-builder.html')],
-            use: {loader: 'html-loader'}
-          },
-          {
             test: /checklist.html$/,
             exclude: [ /node_modules/, path.resolve(__dirname, 'src/checklist/checklist.html')],
             use: {loader: 'html-loader'}
           },
           {
-            test: /\.(png|svg|jpg|gif)$/,
-            use: [{
-              loader: 'file-loader',
-              options: {
-                name: '[name].[ext]',
-                ouputPath: 'img/',
-                publicPath: 'img/'
-              }
-            }]
-          }
+            test: /\.(sa|sc|c)ss$/,
+            use: [
+              'style-loader',
+              'css-loader',
+              'sass-loader',
+            ],
+          },
         ],
     },
-    plugins: [     
-      new webpack.ProgressPlugin(),
+    plugins: [
       new HtmlWebpackPlugin({
-        filename: 'index.html',
-        template: './src/index.html',
-        chunks: ['app', 'shared'],
+        filename: 'checklist.html',
+        template: './src/checklist/checklist.html',
+        chunks: ['checklist'],
         inject: true
       }),
       new CopyPlugin({
         patterns: [
-          { from: './src/ui/css/groups', to: 'css', transform(content) { return csso.minify(content).css; } },
-          { from: './src/static/assets', to: 'static' },          
-          { from: './src/static/root', to: ''}
+          { from: './src/checklist/static/fonts', to: 'fonts'}
         ],
       }),
-      // new BundleAnalyzerPlugin(),
-      new Dotenv({})
+      // better used for code that is production ready, e.g. on a staging/testing server
+      // new WebpackLighthousePlugin({
+      //   url: 'http://localhost:8080/dist/checklist.html'
+      // })
     ],
     resolve: {
         modules: [
           path.resolve('./src'),
           path.resolve('./node_modules'),
-        ],
-        // https://webpack.js.org/configuration/resolve/#resolvemodules
+        ]
     },
     devServer: {
-      host: 'localhost',// necessary for service worker to be recognised      
+      host: 'localhost',
       disableHostCheck: true,
       writeToDisk: true,
       compress: true
     },
-    // watch: true watched by default in webpack-dev-server
     optimization: {
       moduleIds: 'hashed',
       runtimeChunk: 'single',

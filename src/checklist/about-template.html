@@ -14,8 +14,15 @@
 <main id="main">
 
   <h1>
-    Welcome to site optimisation
+    Site optimisation
   </h1>
+
+  <section>
+    <ul>
+      <li>Content first</li>
+      <li>Semantic markup</li>
+    </ul>
+  </section>
 
   <section>
     <h2 id="{{ checklist.header }}">{{ checklist.header }}</h2>
@@ -31,22 +38,23 @@
 
   <section>
     <h2 id="{{ toollist.header }}">{{ toollist.header }}</h2>
-    <ul data-repeat-tool="{{ toollist.tools }}">
-      <li>
+    <dl data-repeat-tool="{{ toollist.tools }}">
+      <dt>
         <span>{{ tool.name }}</span><span class="goto"><a href="{{ tool.link }}">{{ tool.title }}</a></span>
-      </li>
-    </ul>
+      </dt>
+      <dd></dd>
+    </dl>
   </section>
 
   <section>
-    <h2 id="{{ conceptList.header }}">{{ conceptList.header }}</h2>
-      <dl data-repeat-concept="{{ conceptList.concepts }}">
+    <h2 id="{{ termList.header }}">{{ termList.header }}</h2>
+      <dl data-repeat-term="{{ termList.terms }}">
         <dt>
           <a href="#" class="task icon">
-            <span>{{ concept.term }}</span>
+            <span>{{ term.term }}</span>
           </a>
         </dt>
-        <dd data-repeat-description="{{ concept.descriptions }}"><div>{{ description }}</div></dd>
+        <dd data-repeat-description="{{ term.descriptions }}"><div>{{ description }}</div></dd>
       </dl>
   </section>
 

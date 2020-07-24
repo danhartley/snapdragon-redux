@@ -1,9 +1,9 @@
 const TOOLS = 'tools';
 const CHECKS = 'checks';
-const CONCEPTS = 'concepts';
+const TERMS = 'terms';
 
 export const constants = {
   TOOLS,
   CHECKS,
-  CONCEPTS
+  TERMS
 };

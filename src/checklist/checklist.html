@@ -4,10 +4,23 @@
       <meta http-equiv="content-type" content="text/html;charset=utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
       <meta name="description" content="Checklist of optimsation steps and techniques">
-      <title>Dan</title>      
-      <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-      <link rel="dns-prefetch" href="//fonts.googleapis.com">
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+      <title>Optimisation checklist</title>
+      <link rel="preload" href="./fonts/open-sans-v17-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+      <link href="./fonts/open-sans-v17-latin-regular.woff" as="font" type="font/woff2" crossorigin>
+      
+      <style>
+        @font-face {
+          /* consider caching using service worker  */
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap; /* or block, auto (probably block), fallback, optional */
+          src: local('Open Sans Regular'), local('OpenSans-Regular'),
+              url('./fonts/open-sans-v17-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+              url('./fonts/open-sans-v17-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+          unicode-range: U+000-5FF; /* Latin glyphs */
+        }
+      </style>
     </head>
     <body>
       

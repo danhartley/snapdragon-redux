@@ -74,15 +74,15 @@ let sections = [
     ]
   },
   {
-    type: constants.CONCEPTS,
-    header: 'Concepts',
-    concepts: [
+    type: constants.TERMS,
+    header: 'Terms',
+    terms: [
       {
         term: 'CRP performance',
         descriptions: ['Critical Rendering Path.']
       }
       , {
-        term: 'Real user monitoring',
+        term: 'RUM Real user monitoring',
         descriptions: ['A passive monitoring technology that records all user interaction with a website or client interacting with a server or cloud-based application. The Navigation Timing API can be used to measure real-world CRP performance. AKA Field Data.'],
         link: 'https://developers.google.com/web/fundamentals/performance/critical-rendering-path'
       }
@@ -128,7 +128,7 @@ let sections = [
 
 let toollist = sections.find(section => section.type === constants.TOOLS);
 let checklist = sections.find(section => section.type === constants.CHECKS);
-let conceptList = sections.find(section => section.type === constants.CONCEPTS);
+let termList = sections.find(section => section.type === constants.TERMS);
 
 toollist.tools.forEach(sk => {
   sk.link = sk.link || '';
@@ -140,5 +140,5 @@ export const api = {
   sections,
   toollist,
   checklist,
-  conceptList
+  termList
 }
