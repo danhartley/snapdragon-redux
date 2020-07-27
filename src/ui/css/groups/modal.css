@@ -679,8 +679,8 @@
 }
 
 .rights-link {
-  height: var(--vhRunningBlock);
   grid-template-columns: 2rem auto 2rem;
+  height: var(--vhRunningBlock);
   background-color: rgb(166, 177, 155);
   display: grid;
 }

@@ -122,6 +122,10 @@ let sections = [
       }
       , { term: 'Performance', link: 'https://developer.mozilla.org/en-US/docs/Web/API/Performance', descriptions: ['The Performance interface provides access to performance-related information for the current page.'] }
       , { term: 'Critical CSS', link: 'https://web.dev/extract-critical-css/', descriptions: ['The CSS required for above-the-fold content.'] }
+      , { term: 'JAMstack', link: 'https://jamstack.org/', descriptions: ['Web development architecture based on client-side JavaScript, reusable APIs, and prebuilt Markup.'] }
+      , { term: 'JAMstack', link: 'https://jamstack.wtf/', descriptions: ['Web development architecture based on client-side JavaScript, reusable APIs, and prebuilt Markup.'] }
+      , { term: 'SSR Server side rendering', link: '', descriptions: [''] }
+      , { term: 'ISSR Isomorphic server side rendering', link: '', descriptions: [''] }
   ]
   }
 ];

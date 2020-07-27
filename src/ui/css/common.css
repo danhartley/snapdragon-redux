@@ -438,6 +438,10 @@
     width: -moz-max-content;    /* Firefox/Gecko */
     width: -webkit-max-content; /* Chrome */
   }
+
+  .snap-link-btn {
+    color: var(--snap-collection-active);
+  }
   
   .snap-no-link-btn {
     pointer-events: none;

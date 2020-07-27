@@ -15,7 +15,7 @@
         font-size: 1.2rem;
     }
     .rights-link, .rights-attribution {
-        grid-template-columns: 4rem auto 4rem;
+        grid-template-columns: 4rem auto 4rem !important;
     }
 }
 
@@ -396,7 +396,7 @@
         padding: 2rem;
     }
 
-    .snapdragon-intro h4 .fa-youtube, .snapdragon-intro h4 .fa-align-left {
+    .snapdragon-intro h4 .fa-youtube, .snapdragon-intro h4 .fa-align-left, .snapdragon-intro h4 .fa-chevron-down {
       min-width: 1.75rem;
       max-width: 1.75rem;
     }
@@ -546,11 +546,6 @@
       #iNatWidgetModal .modal-header {
           display: inline;
       }
-    
-      /* #cardModal .feature-types {
-          width: 100%;
-          margin: 0;
-      } */
 
       .info-details {
         padding: 1rem 4rem;

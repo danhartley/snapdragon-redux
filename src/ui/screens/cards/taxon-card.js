@@ -92,7 +92,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
             identification,
             summary,
             eol: taxon.eol ? taxon.eol.replace('en', config.language) : '',
-            wiki: taxon.wiki ? taxon.wiki.replace('en', config.language) : '',
+            wiki: taxon.wiki ? taxon.wiki.replace('en', config.language) : `https://en.wikipedia.org/wiki/${taxon.name}`,
             occurrences: occurrences,
             toxic: taxon.toxic ? `Toxic species: ${taxon.toxic.members.join(', ')}` : '',
             notableMembers: taxon.members ? take(2, taxon.members).join(', ') : ''
