@@ -1,0 +1,52 @@
+$unit: .5rem;
+
+body {
+  width: calc(160 * #{$unit});
+  margin: calc(10 * #{$unit}) auto;
+  font-family: 'Open Sans', sans-serif;
+  border: 1px solid lightgray;
+  padding: calc(2 * #{$unit});
+}
+
+#card {
+  position: relative;
+  height: calc(30 * #{$unit});
+}
+
+#front, #back {
+  position: absolute;
+  left: $unit;
+  right: $unit;
+  border-radius: $unit;
+  border: 5px solid lightgray;
+  height: calc(20 * #{$unit});
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(3 * #{$unit});
+  white-space: pre-line;
+}
+
+button, input {
+  padding: $unit;  
+}
+
+input {
+  min-width: calc(80 * #{$unit});
+}
+
+button {
+  cursor: pointer;
+  min-width: calc(20 * #{$unit});
+}
+
+form {
+  div {
+    margin: calc(2 * #{$unit});
+  }
+  label {
+    min-width: calc(15 * 0.5rem);
+    text-align: right;
+    display: inline-block;
+  }
+}

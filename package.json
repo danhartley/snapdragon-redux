@@ -10,12 +10,14 @@
     "start:prod": "webpack-dev-server --config ./webpack.prod.js --open-page 'dist/index.html'",
     "start:admin": "webpack-dev-server --config ./webpack.admin.js --open-page 'dist/collection-builder.html'",
     "start:checklist": "webpack-dev-server --config ./webpack.checklist.js --open-page 'dist/checklist.html'",
+    "start:flashcards": "webpack-dev-server --config ./webpack.flashcards.js --open-page 'dist/flashcards.html'",
     "dev": "webpack --config ./webpack.dev.js && workbox generateSW workbox-config.js",
     "device": "webpack --config ./webpack.device.js",
     "dev:analyse": "webpack --config ./webpack.dev.js -- --env.addons=bundleanalyzer",
     "prod": "webpack --config ./webpack.prod.js && workbox generateSW workbox-config.js",
     "admin": "webpack --config ./webpack.admin.js",
     "checklist": "webpack --config ./webpack.checklist.js",
+    "flashcards": "webpack --config ./webpack.flashcards.js",
     "watch": "webpack --watch --config ./webpack.dev.js & jest --watchAll"
   },
   "jest": {
