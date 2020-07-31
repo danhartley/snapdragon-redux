@@ -12,6 +12,10 @@ export const flashcardsLogic = () => {
 
   const parent = document.querySelector('body');
 
+  let myCards = [ ...set.cards ];
+  
+  let cardIndex = 0;
+
   renderTemplate({ title: set.title }, template.content, parent);
 
   const prev = document.getElementById("prev");
@@ -19,6 +23,7 @@ export const flashcardsLogic = () => {
   const front = document.getElementById("front");
   const back = document.getElementById("back");
   const flip = document.getElementById("flip");
+  const shuffle = document.getElementById("shuffle");
   const newDef = document.getElementById("newDef");
   const newTerm = document.getElementById("newTerm");
   const cardForm = document.getElementById("cardForm");
@@ -26,9 +31,7 @@ export const flashcardsLogic = () => {
   const submit = document.getElementById("submit");
   const clearDeck = document.getElementById("clearDeck");
 
-  const newDeck = [];
-  
-  let formFront, formBack, newCard;
+  let newCard;
 
   const nextCard = () => {
     cardIndex = (cardIndex + 1) % myCards.length;
@@ -115,9 +118,30 @@ export const flashcardsLogic = () => {
     }
   };
 
+  const shuffleDeck = array => {
+
+    if(!array || array.length === 0) return;
+
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return [ ...array ];
+  };
+
   prev.addEventListener('click', prevCard);
   next.addEventListener('click', nextCard);
   flip.addEventListener('click', flash);
+  shuffle.addEventListener('click', e => {
+    myCards = shuffleDeck(myCards);
+    openDeck();
+  });
   clearDeck.addEventListener('click', clearDeck);
 
 
@@ -131,13 +155,13 @@ export const flashcardsLogic = () => {
     cardAdd(newTerm, newDef);
   });
 
-  const myCards = [ ...set.cards ];
-  
-  let cardIndex = 0;
+  const openDeck = () => {
+    front.innerHTML = myCards[0].term;
+    back.innerHTML = myCards[0].definition;
+    back.style.visibility = "hidden";
+  };
 
-  front.innerHTML = myCards[0].term;
-  back.innerHTML = myCards[0].definition;
-  back.style.visibility = "hidden";
+  openDeck();
 
   document.addEventListener("keyup", function(event) {
       event.preventDefault();

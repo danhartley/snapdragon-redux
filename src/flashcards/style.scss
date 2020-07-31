@@ -2,7 +2,7 @@ $unit: .5rem;
 
 body {
   width: calc(160 * #{$unit});
-  margin: calc(10 * #{$unit}) auto;
+  margin: calc(5 * #{$unit}) auto;
   font-family: 'Open Sans', sans-serif;
   border: 1px solid lightgray;
   padding: calc(2 * #{$unit});
@@ -10,7 +10,7 @@ body {
 
 #card {
   position: relative;
-  height: calc(30 * #{$unit});
+  height: calc(25 * #{$unit});
 }
 
 #front, #back {
@@ -25,6 +25,7 @@ body {
   justify-content: center;
   font-size: calc(3 * #{$unit});
   white-space: pre-line;
+  padding: 0 calc(2 * #{$unit});
 }
 
 button, input {
