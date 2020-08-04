@@ -1,19 +1,185 @@
-import { Card } from 'flashcards/flashcard-card';
+const scienceCards = [
+  {
+    term: 'What is the perihelion?',
+    definition: 'The point in the orbit of a planet, asteroid or comet that is nearest to the sun.'
+  },
+  {
+    term: 'What is the current tilt of the earth\'s axis?',
+    definition: '23.4°'
+  },
+  {
+    term: 'What is the range of tilt of the earth\'s axis?',
+    definition: '22.1°-24.5°'
+  },
+  {
+    term: 'What is the period from one point on the range of tilt of the earth\'s axis back the same point?',
+    definition: '41,000 years'
+  },
+  {
+    term: 'What is obliquity?',
+    definition: 'The angle between an object\'s rotational axis and its orbital axis (also axial tilt).'
+  },
+  {
+    term: 'What is the aphelion?',
+    definition: 'The point in the orbit of a planet, asteroid or comet that is furthest from the sun.'
+  },
+  {
+    term: 'Which gas is found at concentrations between 0 and 3% of a volume of air and has the largest effect on surface temperature?',
+    definition: 'Water vapour'
+  },
+  {
+    term: 'What are the two processes by which water is exchanged between the atmosphere and the earth’s surface?',
+    definition: 'Evaporation and precipitation'
+  },
+  {
+    term: 'How long, on average, does a molecule of water resides in the atmosphere?',
+    definition: 'About two weeks'
+  },
+  {
+    term: 'Warmer air supports more or less water vapour?',
+    definition: 'More'
+  },
+  {
+    term: 'What do we call the ratio between the amount of moisture in the air and its upper limit?',
+    definition: 'Relative humidity'
+  },
+  {
+    term: 'Why is there is often less water vapour in the air than there could be?',
+    definition: 'Rain and snow remove water from the air.'
+  },
+  {
+    term: 'Explain positive feedback in relation to water vapour?',
+    definition: 'Rising water vapour leads to more back-radiation to the surface, which causes higher temperatures.'
+  },
+  {
+    term: 'What is a convergent boundary?',
+    definition: 'A place in the earth\'s mantle where one tectonic plate slides beneath another.'
+  },
+  {
+    term: 'Earth\'s orbit around the sun varies cyclically from more to less circular every how many years?',
+    definition: '100,000'
+  },
+  {
+    term: 'Earth\'s tilt with respect to the plane in which it orbits the sun wobbles over a cycle of how many years?',
+    definition: '41,000'
+  },
+  {
+    term: 'Earth\'s rotation axis precesses with periods of how many years?',
+    definition: '19,000 to 23,000'
+  },
+  {
+    term: 'Which three factors affect the way sunlight is distributed around the world?',
+    definition: 'The planet’s tilt, wobble (axial precession), and orbit (of the sun)'
+  },
+  {
+    term: 'Which factor did Milanković calculate (partly) controls the timing of ice ages?',
+    definition: 'The amount of sunlight received by the Arctic region during summer (as a result of orbit and rotation).'
+  },
+  {
+    term: 'Why are we certain the increase in CO₂ concentrations in the atmosphere was caused by human activities?',
+    definition: 'The isotopes of carbon in ice show that it comes from fossil fuel burning and the clearing of forests.'
+  },
+  {
+    term: 'Which natural feature is considered the main source of uncertainty in climate projections?',
+    definition: 'Clouds (reflecting sunlight, thereby cooling the planet; reradiating infrared radiation, thereby warming it).'
+  },  
+  {
+    term: 'What is radiative forcing?',
+    definition: 'A direct measure of the amount that the earth’s energy budget is out of balance in comparison to a preindustrial baseline, e.g. RCP 6'
+  },
+  {
+    term: 'Explain what RCP 6.0 equates to.',
+    definition: 'A radiative forcing of 6 watts per square meter by the year 2100.'
+  },
+];
 
-const card1 = new Card(
-  "How is risk calculated?",
-  "The product of the likelihood and consequence of an outcome"
-);
-const card2 = new Card(
-  "When was the IPCC founded?",
-  "1988"
-);
-const card3 = new Card(
-  "What new range was described by the WCRP in July 2020 for climate sensitivity?",
-  "2.6°C to 3.9°C likely i.e. 66%"
-);
+const landCards = [
+  {
+    term: 'What percentage of a tree\'s biomass is carbon?',
+    definition: '40-50%'
+  }
+];
 
-const jsonCards = [
+const waterCards = [
+  {
+    term: 'The global ocean contains what percentage of the Earth’s water?',
+    definition: '97%'
+  },
+  {
+    term: 'The global ocean covers what percentage of the Earth’s surface?',
+    definition: '71%'
+  },
+  {
+    term: 'What percentage of Earth’s land area is covered by glaciers or ice sheets?',
+    definition: '10%'
+  },
+  {
+    term: 'Where was the sea level in relation to today 22,000 years ago?',
+    definition: '130 metres lower.'
+  },
+  {
+    term: 'Name two causes of sea level rises.',
+    definition: 'Thermal expansion and runoff from melting ice in Greenland and West Antarctica.'
+  },
+  {
+    term: 'What does GMSL stand for?',
+    definition: 'Global Mean Sea Level'
+  },
+  {
+    term: 'What does SLRC stand for?',
+    definition: 'Sea Level Rise Commitment'
+  },
+  {
+    term: 'What is SLRC?',
+    definition: 'A given surface warming commits to centuries of sea level rise from thermal expansion of the ocean.'
+  },
+  {
+    term: 'The human body cannot transmit heat to the surrounding air fast enough to compensate for its internal production of heat above what temperature?',
+    definition: '35°C e.g. 46°C + 50% humidity'
+  },
+  {
+    term: 'Explain the effect of rising ocean acidity.',
+    definition: 'Organisms that build shells (mollusks, corals, plankton), begin to suffer declining ability to build and maintain their shells.'
+  },
+  {
+    term: 'What is El Niño?',
+    definition: 'A flow of unusually warm surface waters along the Western coast of South America that disrupts normal weather patterns and contributes to extreme weather events like intense storms and droughts. It occurs irregularly every 2-7 years.'
+  },
+  {
+    term: 'What percentage of the Earth’s total warming can be attributed to urbanisation?',
+    definition: '2-4%'
+  },
+  {
+    term: 'In polar ice cores less heavy oxygen in the frozen water means what?',
+    definition: 'That temperatures were cooler at that time.'
+  },
+  {
+    term: 'What is a paleothermometer?',
+    definition: 'A proxy thermometer e.g. mreasuremnts of isotope ratios.'
+  },
+  {
+    term: 'Temperature is cyclic on a 100,000 year scale. Are we in the great ice age phase or the interglacial period of the current cycle?',
+    definition: 'The interglacial period'
+  },
+  {
+    term: 'How long do interglacial periods typically last?',
+    definition: '10,000 years'
+  },
+  {
+    term: 'What is the name of the current interglacial?',
+    definition: 'The Holocene'
+  },  
+  {
+    term: 'How long does heat take to penetrate the region between 20 and 150 metres?',
+    definition: '~2 years'
+  },
+  {
+    term: 'How long does heat take to penetrate the deepest ocean?',
+    definition: '~1000 years'
+  },
+];
+
+const climateChangeCards = [
   {
     term: 'What 3 lines of evidence were chosen by the WCRP for their 2020 report?',
     definition: `Trends indicated by contemporary warming
@@ -21,8 +187,20 @@ const jsonCards = [
     Understanding of the feedback effects`
   },
   {
+    term: 'How is risk calculated?',
+    definition: "The product of the likelihood and consequence of an outcome"
+  },
+  {
     term: 'Which line of evidence was not used in its own right in the 2020 WCRP report?',
     definition: 'Climate models'
+  },
+  {
+    term: 'When was the IPCC founded?',
+    definition: '1988'
+  },
+  {
+    term: 'What new range was described by the WCRP in July 2020 for climate sensitivity?',
+    definition: '2.6°C to 3.9°C likely i.e. 66%'
   },
   {
     term: 'What is permafrost?',
@@ -46,7 +224,7 @@ const jsonCards = [
   },
   {
     term: 'How does thawing permafrost release CO₂ or methane?',
-    definition: '(Newly activiated) microbes in the soil break down organic matter.'
+    definition: '(The newly activated) microbes in the soil break down organic matter.'
   },
   {
     term: 'How much land in Canada, Siberia, Greenland and Alaska is underlain by permafrost?',
@@ -65,7 +243,7 @@ const jsonCards = [
     definition: 'Methane hydrates, methane \'ice\' that forms at low temperatures and high pressures in continental margin marine sediments or within and beneath permafrost.'
   },
   {
-    term: 'How long does it take methane in the atmosphere to oixidise to CO₂?',
+    term: 'How long does it take methane in the atmosphere to oxidise to CO₂?',
     definition: 'About a decade.'
   },
   {
@@ -75,10 +253,6 @@ const jsonCards = [
   {
     term: 'Given current CO₂ emissions when would we reach 560 ppm?',
     definition: '2060'
-  },
-  {
-    term: 'What does WCRP stand for?',
-    definition: 'World Climate Research Programme'
   },
   {
     term: 'What does IPCC stand for?',
@@ -93,7 +267,7 @@ const jsonCards = [
     definition: '1.1°C'
   },
   {
-    term: 'What percentage of global manmade greenhouse gas emissions does the energy account for?',
+    term: 'What percentage of global manmade greenhouse gas emissions does the energy sector account for?',
     definition: '72%'
   },
   {
@@ -195,7 +369,7 @@ const jsonCards = [
     definition: 'Yes'
   },
   {
-    term: 'What does EES stand for? ',
+    term: 'What does ESS stand for? ',
     definition: 'Earth System Sensitivity (sensitivity incl. feedbacks)'
   },
   {
@@ -215,6 +389,50 @@ const jsonCards = [
     definition: '2.25 TWh, or 2250 Gigawatts'
   },
   {
+    term: 'What does GMST stand for?',
+    definition: 'Global Mean Surface Temperature'
+  },
+  {
+    term: 'What is standard deviation?',
+    definition: 'A measure of the amount of variation of a set of values (the extent to which a distribution is stretched or squeezed).'
+  },
+  {
+    term: 'What does a low standard deviation indicate?',
+    definition: 'That the values tend to be close to the mean (or expected value) of the set.'
+  },
+  {
+    term: 'What does a high standard deviation indicate?',
+    definition: 'That the values of the set are spread out over a wide range.'
+  },
+  {
+    term: 'How are IPCC confidence levels derived?',
+    definition: 'They are the product of evidence (robust, medium and limited), and the degree of scientific agreement (high, medium and low).'
+  },
+  {
+    term: 'Name some forcing factors.',
+    definition: 'Solar input, albedo, greenhouse gases, grading of earth\'s axis, particles (aerosols), Milankovich cycles.'
+  },
+  {
+    term: 'How does the IPCC defined \'pre-industrial\'?',
+    definition: 'The multi-century period prior to the onset of large-scale industrial activity ~1750. The reference period 1850–1900 is used to approximate pre-industrial GMST.'
+  },
+  {
+    term: 'How does the IPCC defined \'global warming\'?',
+    definition: 'The estimated increase in GMST averaged over a 30-year period, or the 30-year period centred on a particular year or decade, expressed relative to pre-industrial levels.'
+  },
+  {
+    term: 'How does the IPCC defined \'Net zero CO₂ emissions\'?',
+    definition: 'Net zero CO₂ emissions are achieved when anthropogenic CO₂ emissions are balanced globally by anthropogenic CO₂ removals over a specified period.'
+  },
+  {
+    term: 'What is radiative forcing?',
+    definition: 'The difference between insolation (sunlight) absorbed by the earth and energy radiated back to space.'
+  },
+  {
+    term: 'When does positive radiative forcing occur?',
+    definition: 'When the earth receives more incoming energy from sunlight than it radiates to space.'
+  },
+  {
     term: 'What % of human-caused CO₂ emissions are absorbed by trees and other plants?',
     definition: '~1/3'
   },
@@ -225,6 +443,62 @@ const jsonCards = [
   {
     term: 'With what percentage of deforestation might the Amazon change from a carbon sink to carbon source?',
     definition: '20-25% deforestation'
+  },
+  {
+    term: 'What does SROCC stand for?',
+    definition: 'Special Report on the Ocean and Cryosphere in a Changing Climate'
+  },
+  {
+    term: 'NOAA stand for?',
+    definition: 'National Oceanic and Atmospheric Administration'
+  },
+  {
+    term: 'What range of global mean sea levels does the SROCC predict (think likely) by the end of this century?',
+    definition: '0.95 feet (0.29m) to 3.61 feet (1.1m)'
+  },
+  {
+    term: 'What range of global mean sea levels does the NOAA predict (think likely) by the end of this century?',
+    definition: '1 foot (0.3m) to 4.27 feet (1.3m)'
+  },
+  {
+    term: 'According to NASA\'s MODIS data record by how much did the earth green (increase in leaf area) between 2000 and 2020?',
+    definition: '5%'
+  },
+  {
+    term: 'What does NASA\'s MODIS stand for?',
+    definition: 'Moderate Resolution Imaging Spectroradiometer'
+  },
+  {
+    term: 'What does NASA stand for?',
+    definition: 'National Aeronautics and Space Administration'
+  },
+  {
+    term: 'What does GEDI stand for?',
+    definition: 'Global Ecosystem Dynamics Investigation'
+  },
+  {
+    term: 'What does \'lidar\' stand for?',
+    definition: 'light detection and ranging'
+  },
+  {
+    term: 'What coverage does MODI data provide?',
+    definition: '1-4 shots of every place on Earth, every day, between 2000 and 2020.'
+  },
+  {
+    term: 'What were the two main drivers of greening in India and China between 2000 and 2020?',
+    definition: 'Conservation and forest expansion, and intensive cultivation of food crops.'
+  },
+  {
+    term: 'The earth greened by 5% from 2000 to 2020. What percentage is this is attributed to India and China?',
+    definition: '1/3'
+  },
+  {
+    term: 'For every centimeter rise in global sea level how many people are displaced?',
+    definition: '~6 million'
+  },
+  {
+    term: 'SROCC predicts that more intense and frequent extreme sea level events will be how many orders of magnitude higher in 2100 than today?',
+    definition: '2-3'
   },
   {
     term: 'How many tons of carbon does the world\'s permafrost contain?',
@@ -271,21 +545,106 @@ const jsonCards = [
     definition: '3.7 tonnes'
   },
   {
-    term: '',
-    definition: ''
+    term: 'What percentage of the population committed to non-violet protest can effect change according to Erica Chenoweth?',
+    definition: '3.5'
   },
   {
-    term: '',
-    definition: ''
+    term: 'According to Chenoweth and Maria Stephan how often are non-violent campaigns successful?',
+    definition: '53%'
+  },
+  {
+    term: 'According to Chenoweth and Maria Stephan how often are violent campaigns successful?',
+    definition: '26%'
+  },
+  {
+    term: 'Who said, \'We know through painful experience that freedom is never given by the oppressor; it must be demanded by the oppressed.\'',
+    definition: 'Martin Luther King Jr'
+  },
+  {
+    term: 'What is 3.5% of the UK population?',
+    definition: '2.3 million people'
+  },
+  {
+    term: 'The chance of high impact hot summers in Europe has increased in recent years from 1 in 50, to 1 in how many years?',
+    definition: '5'
+  },
+  {
+    term: 'How does Jared Diamond approach risk in everyday acts?',
+    definition: 'With \'constructive paranoia\''
+  },
+  {
+    term: 'The inherent intermittency of solar and wind power is likely to limit their share of the energy market to how much?',
+    definition: '30-40%'
+  },
+  {
+    term: 'What are the safest forms of energy?',
+    definition: 'Nuclear, wind and solar.'
+  },
+  {
+    term: 'How might consilience work in practice?',
+    definition: 'Convergence of evidence, or multiple lines of evidence.'
+  },
+  {
+    term: 'What is consilience?',
+    definition: 'The principle that evidence from independent, unrelated sources can "converge" on strong conclusions.'
+  },
+  {
+    term: 'What is the Suess effect?',
+    definition: 'A change in the ratio of the atmospheric concentrations of heavy isotopes of carbon (13C and 14C) by the admixture of large amounts of fossil-fuel derived CO₂, which is depleted in 13C and contains no 14C.'
+  },
+  {
+    term: 'What is the estimated annual release of CO₂ from volcanoes?',
+    definition: '0.15 to 0.26 gigatons per year.'
+  },
+  {
+    term: 'What percentage of the air is made up of greenhouse gases?',
+    definition: '1%'
+  },
+  {
+    term: 'Without greenhouse gases, what would our planet be like?',
+    definition: 'Completely frozen, and uninhabitable for humans.'
+  },
+  {
+    term: 'How long does CO₂ persist in the atmosphere?',
+    definition: '50% for 100 years, the rest over thousands of years.'
+  },
+  {
+    term: 'For how long has the climate been stable?',
+    definition: '7-8,000 years.'
+  },
+  {
+    term: 'Temperature on Earth is cyclical (moving in and out of ice ages) over what period?',
+    definition: '100,000 years.'
+  },
+  {
+    term: '3 million years ago, CO₂ concentrations were the same as today. How much higher was the sea level then?',
+    definition: '80 feet'
+  },
+  {
+    term: 'How many different organisations are working on climate models?',
+    definition: '~40'
+  },
+  {
+    term: 'What is an RCP?',
+    definition: 'Representative Concentration Pathway'
   },
 ];
 
-export const set = {
-  title: 'Climate change',
-  cards: [
-    card1,
-    card2,
-    card3,
-    ...jsonCards.filter(card => card.term !== '')
-  ]
-};
+export const sets = [
+  {
+    title: 'Climate change',
+    cards: climateChangeCards
+  },
+  {
+    title: 'Land',
+    cards: landCards
+  },
+  {
+    title: 'Water',
+    cards: waterCards
+  },
+  {
+    title: 'Science',
+    cards: scienceCards
+  },
+];

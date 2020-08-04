@@ -1,7 +1,7 @@
 import { renderTemplate } from 'checklist/templating';
 
 import { Card } from 'flashcards/flashcard-card';
-import { set } from 'flashcards/flashcards-api';
+import { sets } from 'flashcards/flashcards-api';
 
 import flashcardTemplate from 'flashcards/flashcards-template.html';
 
@@ -12,11 +12,12 @@ export const flashcardsLogic = () => {
 
   const parent = document.querySelector('body');
 
-  let myCards = [ ...set.cards ];
+  let set = sets.find(set => set.title === 'Climate change');
+  let currentDeck = [ ...set.cards ];
   
   let cardIndex = 0;
 
-  renderTemplate({ title: set.title }, template.content, parent);
+  renderTemplate({ title: set.title, sets }, template.content, parent);
 
   const prev = document.getElementById("prev");
   const next = document.getElementById("next");
@@ -34,17 +35,17 @@ export const flashcardsLogic = () => {
   let newCard;
 
   const nextCard = () => {
-    cardIndex = (cardIndex + 1) % myCards.length;
-    front.innerHTML = myCards[cardIndex].term;
-    back.innerHTML = myCards[cardIndex].definition;
+    cardIndex = (cardIndex + 1) % currentDeck.length;
+    front.innerHTML = currentDeck[cardIndex].term;
+    back.innerHTML = currentDeck[cardIndex].definition;
   };
 
   const prevCard = () => {
     if (cardIndex > 0)
       cardIndex = (cardIndex - 1);
-    else if (cardIndex == 0) cardIndex = myCards.length-1;
-    front.innerHTML = myCards[cardIndex].term;
-    back.innerHTML = myCards[cardIndex].definition;
+    else if (cardIndex == 0) cardIndex = currentDeck.length-1;
+    front.innerHTML = currentDeck[cardIndex].term;
+    back.innerHTML = currentDeck[cardIndex].definition;
   };
 
   const cardAdd = (formFront, formBack) => {
@@ -70,12 +71,12 @@ export const flashcardsLogic = () => {
       var newCard = new Card();
       newCard.term = formFront.value;
       newCard.definition = formBack.value;
-      myCards.push(newCard);
-      cardIndex = myCards.length - 1;
+      currentDeck.push(newCard);
+      cardIndex = currentDeck.length - 1;
       clearForm();
       updatePlaceholder();
-      front.innerHTML = myCards[cardIndex].term;
-      back.innerHTML = myCards[cardIndex].definition;
+      front.innerHTML = currentDeck[cardIndex].term;
+      back.innerHTML = currentDeck[cardIndex].definition;
     } else if (formFront.value == formBack.value) {
       alert('Both sides are the same, Dan!');
     } else if (
@@ -93,7 +94,7 @@ export const flashcardsLogic = () => {
   const emptyDeck = () => {
     var confirmation = confirm("Are you sure you want to delete this entire deck?");
     if (confirmation) {
-    myCards.splice(0, myCards.length);
+    currentDeck.splice(0, currentDeck.length);
     cardIndex = 0;
     front.innerHTML = "&nbsp;";
     back.innerHTML = "&nbsp;";
@@ -139,7 +140,7 @@ export const flashcardsLogic = () => {
   next.addEventListener('click', nextCard);
   flip.addEventListener('click', flash);
   shuffle.addEventListener('click', e => {
-    myCards = shuffleDeck(myCards);
+    currentDeck = shuffleDeck(currentDeck);
     openDeck();
   });
   clearDeck.addEventListener('click', clearDeck);
@@ -156,8 +157,8 @@ export const flashcardsLogic = () => {
   });
 
   const openDeck = () => {
-    front.innerHTML = myCards[0].term;
-    back.innerHTML = myCards[0].definition;
+    front.innerHTML = currentDeck[0].term;
+    back.innerHTML = currentDeck[0].definition;
     back.style.visibility = "hidden";
   };
 
@@ -180,5 +181,13 @@ export const flashcardsLogic = () => {
         emptyDeck();
       }
   });
+
+  const optionSet = document.querySelector('#sets');
+        optionSet.addEventListener('change', e => {
+          const title = e.target.value;
+          const newDeck = sets.find(set => set.title === title);
+          currentDeck = shuffleDeck(newDeck.cards);
+          openDeck();
+        });
   
 };

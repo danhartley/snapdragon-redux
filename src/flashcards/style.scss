@@ -28,7 +28,7 @@ body {
   padding: 0 calc(2 * #{$unit});
 }
 
-button, input {
+button, input, select {
   padding: $unit;  
 }
 
