@@ -188,6 +188,7 @@ export const flashcardsLogic = () => {
           const newDeck = sets.find(set => set.title === title);
           currentDeck = shuffleDeck(newDeck.cards);
           openDeck();
+          optionSet.blur();
         });
   
 };

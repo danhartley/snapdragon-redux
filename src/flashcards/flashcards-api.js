@@ -1,7 +1,7 @@
 const scienceCards = [
   {
     term: 'What is the perihelion?',
-    definition: 'The point in the orbit of a planet, asteroid or comet that is nearest to the sun.'
+    definition: 'The point in the orbit of a planet, asteroid or comet when it is nearest to the sun.'
   },
   {
     term: 'What is the current tilt of the earth\'s axis?',
@@ -12,12 +12,24 @@ const scienceCards = [
     definition: '22.1°-24.5°'
   },
   {
-    term: 'What is the period from one point on the range of tilt of the earth\'s axis back the same point?',
+    term: 'Earth\'s obliquity oscillates between what two measurements every 41,000 years?',
+    definition: '22.1°-24.5°'
+  },
+  {
+    term: 'What is the angular radius of earth\'s axial precession?',
+    definition: '23.5°'
+  },
+  {
+    term: 'What is the period from one point on the range of tilt of the earth\'s axis back to the same point?',
     definition: '41,000 years'
   },
   {
     term: 'What is obliquity?',
     definition: 'The angle between an object\'s rotational axis and its orbital axis (also axial tilt).'
+  },
+  {
+    term: 'What is orbital eccentricity?',
+    definition: 'A dimensionless parameter that determines the amount by which its orbit around another body deviates from a perfect circle.'
   },
   {
     term: 'What is the aphelion?',
@@ -32,7 +44,7 @@ const scienceCards = [
     definition: 'Evaporation and precipitation'
   },
   {
-    term: 'How long, on average, does a molecule of water resides in the atmosphere?',
+    term: 'How long, on average, does a molecule of water reside in the atmosphere?',
     definition: 'About two weeks'
   },
   {
@@ -65,11 +77,11 @@ const scienceCards = [
   },
   {
     term: 'Earth\'s rotation axis precesses with periods of how many years?',
-    definition: '19,000 to 23,000'
+    definition: '26,000 years, or 1° every 72 years (26,000 years / 360°)'
   },
   {
     term: 'Which three factors affect the way sunlight is distributed around the world?',
-    definition: 'The planet’s tilt, wobble (axial precession), and orbit (of the sun)'
+    definition: 'The planet’s tilt (obliquity), wobble (axial precession), and orbit (of the sun)'
   },
   {
     term: 'Which factor did Milanković calculate (partly) controls the timing of ice ages?',
@@ -91,13 +103,85 @@ const scienceCards = [
     term: 'Explain what RCP 6.0 equates to.',
     definition: 'A radiative forcing of 6 watts per square meter by the year 2100.'
   },
+  {
+    term: 'What is atomic weight of carbon and carbon dioxide?',
+    definition: 'The atomic weight of carbon is 12 atomic mass units, while the weight of carbon dioxide is 44 (16*2 + 120).'
+  },
+  {
+    term: 'One ton of carbon equals how many tons of carbon dioxide?',
+    definition: 'One ton of carbon equals 44/12 = 11/3 = 3.67 tons of carbon dioxide.'
+  },
+  {
+    term: 'The carbon cycle removes roughly how much of human caused CO₂ emissions from the atmosphere each year?',
+    definition: 'Half.'
+  },
+  {
+    term: 'The carbon cycle aded and removed roughly how much carbon (C) from the earth each year?',
+    definition: '120 GtC.'
+  },
+  {
+    term: 'What are the annual total emissions from volcanoes (in C)?',
+    definition: 'Between 0.04 and 0.07 gigatonnes of carbon per year.'
+  },
+  {
+    term: 'What are the annual total emissions from human causes (in C)?',
+    definition: 'About 12 gigatonnes of carbon per year.'
+  },
+  {
+    term: 'How many gigatonnes of carbon do both the sea and land (forests) absorb annually?',
+    definition: 'About 2 gigatonnes of carbon per year.'
+  },
+  {
+    term: 'Are the oceans and forests carbon sinks or sources?',
+    definition: 'Sinks.'
+  },
+  {
+    term: 'Who wrote, \'The atmosphere admits of the entrance of the solar heat, but checks its exit; and the result is a tendency to accumulate heat at the surface of the planet.\'?',
+    definition: 'John Tyndall (1859)'
+  },
+  {
+    term: 'When was the most recent glacial period?',
+    definition: 'Between about 120,000 and 11,500 years ago.'
+  },
 ];
 
-const landCards = [
+const natureCards = [
   {
     term: 'What percentage of a tree\'s biomass is carbon?',
     definition: '40-50%'
-  }
+  },
+  {
+    term: 'To what does the Younger Dryas (around 12,900 to 11,700 years) owe its name?',
+    definition: 'The indicator genus, Dryas, of the alpine-tundra wildflower Dryas octopetala.'
+  },
+  {
+    term: 'What is speciation?',
+    definition: 'The evolutionary process by which populations evolve to become distinct species.'
+  },
+  {
+    term: 'What is cladogenesis?',
+    definition: 'An evolutionary splitting of a parent species into two distinct species, forming a clade.'
+  },
+  {
+    term: 'What is a clade?',
+    definition: 'A group of organisms that are monophyletic — composed of a common ancestor and all its lineal descendants.'
+  },
+  {
+    term: 'Define extinction',
+    definition: 'The termination of a kind of organism or of a group of kinds (taxon), usually a species.'
+  },
+  {
+    term: 'Define biome',
+    definition: 'A community of plants and animals that have common characteristics for the environment they exist in.'
+  },
+  {
+    term: 'What is phenotypic plasticity?',
+    definition: 'Some of the changes in an organism\'s behavior, morphology and physiology in response to a unique environment.'
+  },
+  {
+    term: 'What is phenology?',
+    definition: 'The study of periodic plant and animal life cycle events and how these are influenced by seasonal and interannual variations in climate, as well as habitat factors (such as elevation).'
+  },
 ];
 
 const waterCards = [
@@ -166,8 +250,20 @@ const waterCards = [
     definition: '10,000 years'
   },
   {
-    term: 'What is the name of the current interglacial?',
+    term: 'What is the name of the current interglacial (geological epoch)?',
     definition: 'The Holocene'
+  },  
+  {
+    term: 'The Holocene and Pleistocene epochs together form which period?',
+    definition: 'The Quaternary'
+  },  
+  {
+    term: 'What was the Medieval Warm Period (MWP)?',
+    definition: 'A time of warm climate in the North Atlantic region lasting from c. 950 to c. 1250.'
+  },  
+  {
+    term: 'What was the Little Ice Age (LIA)?',
+    definition: 'A period extending from the 16th to the 19th centuries, consisting of  largely independent regional climate changes rather than a globally synchronous increased glaciation (IPCC).'
   },  
   {
     term: 'How long does heat take to penetrate the region between 20 and 150 metres?',
@@ -637,7 +733,7 @@ export const sets = [
   },
   {
     title: 'Land',
-    cards: landCards
+    cards: natureCards
   },
   {
     title: 'Water',
