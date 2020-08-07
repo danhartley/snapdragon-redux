@@ -1,14 +1,23 @@
-$maxwidth: 1200px;
+$maxwidth: 1000px;
 $padding: .5rem;
 $margin: .5rem;
 $hbase: 1.5rem;
+$darkgray: rgb(20, 20, 20);
+$gray: rgb(50, 50, 50);
+$lightgray: rgb(250, 250, 250);
+$active: rgb(255, 0, 0);
 
 h1 {
-  font-size: $hbase;
+  font-size: $hbase + .5;
+  font-family: windsor,Georgia,serif;
+  font-weight: normal;
 }
 
 h2 {
-  font-size: $hbase - .25;
+  font-size: $hbase;
+  letter-spacing: .1em;
+  font-family: windsor,Georgia,serif;
+  font-weight: normal;
 }
 
 h3 {
@@ -20,6 +29,7 @@ body {
   margin: auto;
   padding: 2 * $padding;
   max-width: $maxwidth;
+  color: $gray;
 }
 
 img {
@@ -31,15 +41,9 @@ nav ul {
   columns: 6 100px
 }
 
-// main ul {
-//   columns: 2 200px;
-// }
-
 li {
   list-style-type: none;
-  // margin: (2 * $margin) 0;
   span {
-    // padding: $padding (2 * $padding);
     &.goto {
       &::before {
         margin: 0 0 0 .25rem;
@@ -69,21 +73,74 @@ section {
 
 button {
   padding: $padding;
-}
-
-.icon {
-  min-width: 1rem;
-  span:before {
-    content:'\2713';
-    display:inline-block;
-    color: white;
-    min-width: 2 * $padding;
-    margin-right: $padding
+  &:focus {
+    outline: none;
   }
 }
 
-.icon.completed span:before {
-  color: black;
+dd {
+  white-space: pre-line;
+}
+
+.checklist {
+  dt {
+    display: grid;
+    grid-template-columns: auto (6 * $padding);
+    cursor: pointer;  
+  }
+  dt:nth-child(4n + 1) {
+    background-color: $lightgray;
+  }
+  dd {
+    padding: $padding (3 * $padding);
+  }
+}
+
+.process {
+  dt {
+    display: grid;
+    grid-template-columns: auto (6 * $padding);
+    cursor: pointer;  
+  }
+  dd {
+    margin: $padding 0 2*$padding $padding;
+    line-height: 1.8;
+  }
+}
+
+.task {
+  button {
+    background-color: transparent;
+    border: none;
+    width: fit-content;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: $gray;
+    span {
+      color: $gray;
+    }
+  }
+  padding: $padding;
+  button:first-child:before, button:nth-child(2):before {
+    display:inline-block;
+    border: 1px solid lightgray;
+    padding: $padding / 2 $padding;
+    margin-right: $padding
+  }
+  button:first-child:before {
+    content:'\2713';
+    color: transparent;
+  }
+  button:nth-child(2):before {
+    content:'\25bc';
+    color: $gray;
+    font-size: 1.5 * $padding;
+    border: none;
+  }
+}
+
+.task button.completed:before {
+  color: $darkgray;
 }
 
 .skip-link {
@@ -94,6 +151,23 @@ button {
   color: white;
   padding: 8px;
   z-index: 100;
+}
+
+//sr-only
+.hide {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+.active {
+  color: $active;
 }
 
 .skip-link:focus {

@@ -12,7 +12,7 @@ const scienceCards = [
     definition: '22.1°-24.5°'
   },
   {
-    term: 'Earth\'s obliquity oscillates between what two measurements every 41,000 years?',
+    term: 'Earth\'s obliquity oscillates between which two measurements every 41,000 years?',
     definition: '22.1°-24.5°'
   },
   {
@@ -20,12 +20,12 @@ const scienceCards = [
     definition: '23.5°'
   },
   {
-    term: 'What is the period from one point on the range of tilt of the earth\'s axis back to the same point?',
-    definition: '41,000 years'
-  },
-  {
     term: 'What is obliquity?',
     definition: 'The angle between an object\'s rotational axis and its orbital axis (also axial tilt).'
+  },
+  {
+    term: 'Define orbital forcing',
+    definition: 'The effect on climate of slow changes in the tilt of the earth\'s axis and shape of the earth\'s orbit around the sun.'
   },
   {
     term: 'What is orbital eccentricity?',
@@ -72,8 +72,8 @@ const scienceCards = [
     definition: '100,000'
   },
   {
-    term: 'Earth\'s tilt with respect to the plane in which it orbits the sun wobbles over a cycle of how many years?',
-    definition: '41,000'
+    term: 'Earth\'s axial tilt, or obliquity, oscillates between 22.1°-24.5 how frequently?',
+    definition: 'Every 41,000 years'
   },
   {
     term: 'Earth\'s rotation axis precesses with periods of how many years?',
@@ -94,10 +94,6 @@ const scienceCards = [
   {
     term: 'Which natural feature is considered the main source of uncertainty in climate projections?',
     definition: 'Clouds (reflecting sunlight, thereby cooling the planet; reradiating infrared radiation, thereby warming it).'
-  },  
-  {
-    term: 'What is radiative forcing?',
-    definition: 'A direct measure of the amount that the earth’s energy budget is out of balance in comparison to a preindustrial baseline, e.g. RCP 6'
   },
   {
     term: 'Explain what RCP 6.0 equates to.',
@@ -105,18 +101,18 @@ const scienceCards = [
   },
   {
     term: 'What is atomic weight of carbon and carbon dioxide?',
-    definition: 'The atomic weight of carbon is 12 atomic mass units, while the weight of carbon dioxide is 44 (16*2 + 120).'
+    definition: 'The atomic weight of carbon is 12 atomic mass units, while the weight of carbon dioxide is 44 (16*2 + 12).'
   },
   {
     term: 'One ton of carbon equals how many tons of carbon dioxide?',
-    definition: 'One ton of carbon equals 44/12 = 11/3 = 3.67 tons of carbon dioxide.'
+    definition: 'One ton of carbon equals 44/12 = 3.67 tons of carbon dioxide.'
   },
   {
     term: 'The carbon cycle removes roughly how much of human caused CO₂ emissions from the atmosphere each year?',
     definition: 'Half.'
   },
   {
-    term: 'The carbon cycle aded and removed roughly how much carbon (C) from the earth each year?',
+    term: 'The carbon cycle adds and removes roughly how much carbon (C) from the earth each year?',
     definition: '120 GtC.'
   },
   {
@@ -181,6 +177,22 @@ const natureCards = [
   {
     term: 'What is phenology?',
     definition: 'The study of periodic plant and animal life cycle events and how these are influenced by seasonal and interannual variations in climate, as well as habitat factors (such as elevation).'
+  },
+  {
+    term: 'Name three contributions made by soil organic matter to the soil.',
+    definition: 'Water-retention, structure, and fertility.'
+  },
+  {
+    term: 'What is the main component of soil organic matter?',
+    definition: 'Carbon'
+  },
+  {
+    term: 'What is glomalin?',
+    definition: 'A glycoprotein produced abundantly on hyphae and spores of arbuscular mycorrhizal fungi in soil and in roots.'
+  },
+  {
+    term: 'Grasslands hold what percentage of the earth\'s carbon?',
+    definition: '~20%'
   },
 ];
 
@@ -601,8 +613,16 @@ const climateChangeCards = [
     definition: '1.5 trillion tons'
   },
   {
+    term: 'How many tons of carbon does the world\'s soils contain?',
+    definition: '2.5 trillion tons'
+  },
+  {
     term: 'How many tons of carbon does the atmosphere contain?',
     definition: '.75 trillion tons'
+  },
+  {
+    term: 'How many tons of carbon do plants and animals contain?',
+    definition: '.56 trillion tons'
   },
   {
     term: 'What does SPM stand for?',
@@ -721,8 +741,12 @@ const climateChangeCards = [
     definition: '~40'
   },
   {
-    term: 'What is an RCP?',
+    term: 'What does RCP stand for?',
     definition: 'Representative Concentration Pathway'
+  },
+  {
+    term: 'What is an RCP?',
+    definition: 'A greenhouse gas concentration trajectory adopted by the IPCC.'
   },
 ];
 
@@ -732,7 +756,7 @@ export const sets = [
     cards: climateChangeCards
   },
   {
-    title: 'Land',
+    title: 'Nature',
     cards: natureCards
   },
   {

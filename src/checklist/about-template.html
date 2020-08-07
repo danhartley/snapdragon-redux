@@ -1,43 +1,39 @@
-
 <header>
 
-  <nav>
+  <h1>
+    Site optimisation for SPAs and PWAs
+  </h1>
+  
+  <!-- <nav>
     <ul data-repeat-link="{{ navigation }}">
       <li>
         <a href="#{{ link }}">{{ link }}</a>
       </li>
     </ul>
-  </nav>
+  </nav> -->
   
 </header>
 
 <main id="main">
 
-  <h1>
-    Site optimisation
-  </h1>
+<section class="process">
+  <h2 id="{{ processList.header }}"></h2>
+  <dl data-repeat-step="{{ processList.steps }}">
+    <dt data-target="{{ step.name }}">{{ step.name }}</dt>
+    <dd class="hide" id="{{ step.name }}">{{ step.description }}</dd>
+  </dl>
+</section>
 
-  <section>
-    <ul>
-      <li>Content first</li>
-      <li>Semantic markup</li>
-      <li>Fewer moving parts</li>
-      <li>Smaller units</li>
-      <li>More decoupling</li>
-      <li>Distributed backend engineering</li>
-      <li>More levers</li>
-    </ul>
-  </section>
-
-  <section>
+  <section class="checklist">
     <h2 id="{{ checklist.header }}">{{ checklist.header }}</h2>
     <dl data-repeat-check="{{ checklist.checks }}">
-      <dt>
-        <a href="#" class="task icon">
-          <span>{{ check.term }}</span>
-        </a>
+      <dt class="task icon" data-target="{{ check.term }}">
+          <button aria-label="Toggle whether or not {{ check.term }} task has been completed">
+            <span>{{ check.term }}</span>
+          </button>
+          <button aria-label="Toggle visibility of {{ check.term }} details" data-target="{{ check.term }}"></button>
       </dt>
-      <dd data-repeat-description="{{ check.descriptions }}"><div>{{ description }}</div></dd>
+      <dd class="hide" id="{{ check.term }}" data-repeat-description="{{ check.descriptions }}"><div>{{ description }}</div></dd>
     </dl>
   </section>
 

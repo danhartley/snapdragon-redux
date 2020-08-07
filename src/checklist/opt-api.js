@@ -2,6 +2,26 @@ import { constants } from 'checklist/opt-constants';
 
 let sections = [
   {
+    type: constants.PROCESS,
+    header: 'Process',
+    steps: [
+      {
+        name: 'A working wireframe that covers major features and use cases',
+        description: `Create the simplest version of the site using few or no colours, but with intended layouts, standard padding, margins, grids, etc.
+        Include all media breakpoints.
+        Include all dependencies that will be needed whether or not they are immediately required e.g. firebase authentication.
+        The site should be semantically correct. If possible have someone familiar with using screen readers use the site.
+        Set up a Lighthouse budget and testing framework preferably on a dedicated machine.
+        Create a Lighthouse dashboard accessible to and understood by everyone.
+        Use realistic data that has been agreed by everyone. Avoid lorem ipsum.` 
+      },
+      {
+        name: 'Performance budgets and code sizes for new features.',
+        description: `Share responsibility for performance.`
+      }
+    ]    
+  },
+  {
     type: constants.TOOLS,
     header: 'Tools',
     tools: [
@@ -32,11 +52,16 @@ let sections = [
     checks: [
       {
         term: 'Media queries',
-        descriptions: ['Design the content to fit on a small screen size first, then expand the screen until a breakpoint becomes necessary.']
-      }
-      ,{
-        term: 'Page size',
-        descriptions: ['Chrome DevTools: Select Network, disable cache, reload, and check bytes transferred at the bottom of the screen.']
+        descriptions: [`Design the content to fit on a small screen size first, then expand the screen until a breakpoint becomes necessary.`]
+      },
+      {
+        term: 'Set up tooling and testing',
+        descriptions: [`Make full use of browser tooling such as Chrome DevTools.
+        Have sufficient screen space to show development tool dashboards and graphics.
+        Use a variety of web browsers.
+        Test against a range of real devices.
+        Have a staging environment that replicates the live site.
+        Test in adverse, but common, scenarios such as on a slow network, low memory, and offline.`]
       }
       ,{
         term: 'Google fonts',
@@ -45,8 +70,8 @@ let sections = [
             'Append \'display=swap\' to request, or \'font-display: swap;\', this will allow text to load with fallback font until the Google Font is available.',
             'Use DNS prefetching.',
             'Use preconnect.']
-      }
-      ,{
+      },
+      {
         term: 'JavaScript',
         descriptions: [
           'Remove unused code', 
@@ -133,6 +158,7 @@ let sections = [
 let toollist = sections.find(section => section.type === constants.TOOLS);
 let checklist = sections.find(section => section.type === constants.CHECKS);
 let termList = sections.find(section => section.type === constants.TERMS);
+let processList = sections.find(section => section.type === constants.PROCESS);
 
 toollist.tools.forEach(sk => {
   sk.link = sk.link || '';
@@ -144,5 +170,6 @@ export const api = {
   sections,
   toollist,
   checklist,
-  termList
+  termList,
+  processList
 }
