@@ -1,0 +1,32 @@
+<header>
+  <span>header</span>
+</header>
+
+<main>
+
+  <section><h1>{{ deck.name }}</h1></section>
+
+  <section><img src="{{ card.answer.src }}" alt="{{ card.answer.name }}"></section>
+
+  <section>
+    <div class="answers" data-repeat-answer="{{ card.answers }}">
+      <button>{{ answer }}</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="start js-start">
+      <button>Begin</button>
+    </div>
+    <div class="score-card hide js-score-card">
+      <div class="clock js-clock">5:00</div>
+      <div class="score">score</div>
+    </div>
+  </section>
+
+
+</main>
+
+<footer>
+  <span>footer</span>
+</footer>

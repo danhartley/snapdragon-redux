@@ -1,0 +1,57 @@
+$space: .5rem;
+
+@mixin  double-centre() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  display: grid;
+  grid-template-rows: 100px auto 100px;
+}
+
+header, footer {
+  @include double-centre();
+}
+
+main {
+  max-width: 600px;
+  margin: auto;
+  border: 1px solid lightgray;
+}
+
+section {
+  @include double-centre(); 
+  img {
+    object-fit: cover;
+    width: 200px;
+  }
+  .answers {
+      column-count: 3;
+      margin: 2 * $space;
+      button {
+        width: 100% / 3;
+        padding: 2 * $space;
+        margin: 2 * $space;
+      }
+    .score-card {
+      .clock, .score {
+        column-count: 4;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.hide {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
