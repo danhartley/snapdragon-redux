@@ -27,14 +27,11 @@ section {
     object-fit: cover;
     width: 200px;
   }
+  .strips {
+    grid-template-columns: 1fr 1fr 1fr;
+    height: auto;
+  }
   .answers {
-      column-count: 3;
-      margin: 2 * $space;
-      button {
-        width: 100% / 3;
-        padding: 2 * $space;
-        margin: 2 * $space;
-      }
     .score-card {
       .clock, .score {
         column-count: 4;

@@ -1,12 +1,8 @@
 import { contains } from 'ramda';
 
-import { nextLesson } from 'ui/setup/next-lesson';
-import { nextLayout } from 'ui/setup/next-layout';
-import { nextItem } from 'ui/setup/next-item';
 import { lessonStateHelper } from 'ui/screens/lists/lesson-state-helper';
 import { store } from 'redux/store';
 import { observeStore } from 'redux/observe-store';
-import { funcByName } from 'ui/helpers/function-lookups';
 
 let subscriptions = [];
 
@@ -28,7 +24,6 @@ const add = (subscription, domain, role, layout) => {
 const remove = subscription => {
 
     if(subscription) {
-        // snapLog('subscription removed', subscription.name, subscription.role);
         subscription.unsubscribe();
         subscriptions = subscriptions.filter(sub => sub.name !== subscription.name);
     }
@@ -72,12 +67,6 @@ const removeAllQuizLayoutSubs = () => {
     });
 };
 
-const addAllQuizLayoutSubs = () => {
-  add(nextItem, 'layout', 'quiz');
-  add(nextLesson, 'counter', 'quiz');
-  add(nextLayout, 'counter', 'quiz');
-};
-
 const checkRequired = (state, layout) => {
 
     const { userAction, config } = state;
@@ -104,7 +93,7 @@ const checkRequired = (state, layout) => {
     return isRequired;
 };
 
-const addSubs = (layout, config) => {
+const addSubs = (layout, config, funcByName) => {
 
     if(!layout) return;
     
@@ -115,7 +104,6 @@ const addSubs = (layout, config) => {
         const isSubscriptionRequired = checkRequired(store.getState(), layout);
 
         if(func && isSubscriptionRequired) {
-            // snapLog('layout subscribed', layout);
             if(config.isPortraitMode) {
                 if(index === 1 || screen.name === 'summary') add(func, screen.domain, 'screen', layout ? layout.name : '');
             } else {
@@ -144,7 +132,6 @@ export const subscription = {
     removeAllQuizScreenSubs,
     removeAllQuizLayoutSubs,
     addSubs,
-    addAllQuizLayoutSubs,
     printAllSubs
 };
 

@@ -35,6 +35,10 @@ const CREATE_QUICKFIRE = '[CREATE_QUICKFIRE] Add quick-fire';
 const CREATE_GLOSSARY = '[CREATE_GLOSSARY] Add glossary';
 
 const CLICK_EVENT = '[CLICK_EVENT] User triggered event';
+const UPDATE_DECK = '[UPDATE_DECK] Update deck';
+const UPDATE_DECKS = '[UPDATE_DECKS] Update decks';
+const NEXT_DECK = '[NEXT_DECK] Get next deck';
+const NEXT_CARD = '[NEXT_CARD] Get next card';
 
 export const types = {
     CHANGE_LESSON_PLANS,
@@ -66,5 +70,9 @@ export const types = {
     CREATE_QUICKFIRE,
     UPDATE_QUICKFIRE,
     CREATE_GLOSSARY,
-    CLICK_EVENT
+    CLICK_EVENT,
+    UPDATE_DECKS,
+    UPDATE_DECK,
+    NEXT_DECK,
+    NEXT_CARD
 };

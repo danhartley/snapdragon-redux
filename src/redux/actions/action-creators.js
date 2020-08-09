@@ -41,6 +41,10 @@ const createQuickFire = makeActionCreator(types.CREATE_QUICKFIRE);
 const updateQuickFire = makeActionCreator(types.UPDATE_QUICKFIRE);
 const createGlossary = makeActionCreator(types.CREATE_GLOSSARY);
 const clickEvent = makeActionCreator(types.CLICK_EVENT);
+const updateDecks = makeActionCreator(types.UPDATE_DECKS);
+const updateDeck = makeActionCreator(types.UPDATE_DECK);
+const nextDeck = makeActionCreator(types.NEXT_DECK);
+const nextCard = makeActionCreator(types.NEXT_CARD);
 
 const boundchangeLessonPlan = data => store.dispatch(changeLessonPlan(data));
 const boundchangeLessonPlans = data => store.dispatch(changeLessonPlans(data));
@@ -82,6 +86,10 @@ const boundCreateQuickFire = data => store.dispatch(createQuickFire(data));
 const boundUpdateQuickFire = data => store.dispatch(updateQuickFire(data));
 const boundCreateGlossary = data => store.dispatch(createGlossary(data));
 const boundClickEvent = data => store.dispatch(clickEvent(data));
+const boundUpdateDecks = data => store.dispatch(updateDecks(data));
+const boundUpdateDeck = data => store.dispatch(updateDeck(data));
+const boundNextDeck = data => store.dispatch(nextDeck(data));
+const boundNextCard = data => store.dispatch(nextCard(data));
 
 export const actions = {
     boundchangeLessonPlans,
@@ -114,5 +122,9 @@ export const actions = {
     boundCreateQuickFire,
     boundUpdateQuickFire,
     boundCreateGlossary,
-    boundClickEvent
+    boundClickEvent,
+    boundUpdateDecks,
+    boundUpdateDeck,
+    boundNextDeck,
+    boundNextCard
 };

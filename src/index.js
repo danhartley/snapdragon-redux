@@ -36,7 +36,7 @@ const onLoadHandler = () => {
 
       Sentry.init({ dsn: 'https://9d9d8654a6a345a3af09df89cb615bde@o136894.ingest.sentry.io/302756' });
 
-      handleWindowResize();      
+      handleWindowResize(); 
 
       // const purgeData = cookieHandler.hasUserBeenAwayTooLong();
 

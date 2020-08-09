@@ -100,7 +100,7 @@ const scienceCards = [
     definition: 'A radiative forcing of 6 watts per square meter by the year 2100.'
   },
   {
-    term: 'What is atomic weight of carbon and carbon dioxide?',
+    term: 'What is the atomic weight of carbon and carbon dioxide?',
     definition: 'The atomic weight of carbon is 12 atomic mass units, while the weight of carbon dioxide is 44 (16*2 + 12).'
   },
   {
@@ -376,11 +376,13 @@ const climateChangeCards = [
   },
   {
     term: 'What percentage of global manmade greenhouse gas emissions does the energy sector account for?',
-    definition: '72%'
+    definition: '72%',
+    source: 'https://www.c2es.org/content/international-emissions/'
   },
   {
     term: 'What percentage of global manmade greenhouse gas emissions does transport account for?',
-    definition: '15%'
+    definition: '15%',
+    source: 'https://www.c2es.org/content/international-emissions/'
   },
   {
     term: 'What percentage of global manmade greenhouse gas emissions does flying account for?',
@@ -400,7 +402,8 @@ const climateChangeCards = [
   },
   {
     term: '70% of UK flights were taken by what percentage of the population?',
-    definition: '15%'
+    definition: '15%',
+    source: 'https://www.c2es.org/content/international-emissions/'
   },
   {
     term: 'London-New York uses 986kg of CO₂ per passenger. That equates to more than the average CO₂ emission in how many countries?',
@@ -408,7 +411,8 @@ const climateChangeCards = [
   },
   {
     term: 'What percentage of global manmade greenhouse gas emissions does agriculture account for?',
-    definition: '11%'
+    definition: '11%',
+    source: 'https://www.c2es.org/content/international-emissions/'
   },
   {
     term: 'What value does \'likely\' equate to as a statistical probability?',
@@ -444,7 +448,7 @@ const climateChangeCards = [
   },
   {
     term: 'What is the Atlantic Meridional Overturning Circulation (AMOC)?',
-    definition: 'A system of surface and deep currents encompassing all ocean basins. It transports large amounts of water, heat, salt, carbon, nutrients and other substances around the globe, and connects the surface ocean and atmosphere with the huge reservoir of the deep sea.'
+    definition: 'It is (characterised by) a northward flow of warm, salty water in the upper layers of the Atlantic, and a southward flow of colder water in the deep Atlantic.'
   },
   {
     term: 'In 2016, what headed the World Economic Forum survey of most impactful risks?',
@@ -634,7 +638,7 @@ const climateChangeCards = [
   },
   {
     term: 'What is Thermohaline Circulation (THC)?',
-    definition: 'A system of currents that brings warm, salty water in the upper layers of the ocean up from the Gulf of Mexico into the North Atlantic.'
+    definition: 'One part of the ocean circulation which is driven by density differences (dependent on salinity and temperature, hence the name).'
   },
   {
     term: 'What are other terms for the Thermohaline Circulation (THC)?',

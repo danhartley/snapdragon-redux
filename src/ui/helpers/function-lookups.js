@@ -6,7 +6,6 @@ import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
 import { renderSummary } from 'ui/screens/progress/summary';
 import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
 import { renderCompleteText } from 'ui/screens/text-entry/text-complete';
-// import { renderCultivarCard } from 'ui/screens/cards/cultivar-card';
 import { renderNonTaxonCardSpecimenTiles } from 'ui/screens/cards/non-taxon-card-specimen-tiles';
 import { renderMixedSpecimenQuestion } from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question';
 import { renderMediaPlayers } from 'ui/screens/media/landscape/media-players';
@@ -31,7 +30,6 @@ const functions = [
     { name: 'taxon-card', func: renderTaxonCard },
     { name: 'non-taxon-card', func: renderNonTaxonCard },
     { name: 'text-complete', func: renderCompleteText },
-    // { name: 'cultivar-card', func: renderCultivarCard },
     { name: 'visual-match', func: renderMultiStrips },
     { name: 'trait-images', func: renderBonusSpecimenTiles },
     { name: 'trait-property', func: renderBonusTest },

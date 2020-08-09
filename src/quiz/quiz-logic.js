@@ -1,6 +1,22 @@
 import "babel-polyfill";
 
+import { subscription } from 'redux/subscriptions'; 
 import { api } from 'quiz/quiz-api';
+import { actions } from 'redux/actions/action-creators';
+
+const getDecks = async () => {
+  return await api.getDecks();
+};
+
+const getDeck = async name => {
+  const decks = await api.getDecks(name);
+  const deck = { ...decks[0], isCurrent: true };
+  return deck;
+};
+
+const getDeckNames = async () => {
+  return await api.getDeckNames();
+};
 
 const getNextDeck = async () => {
   const decks = await api.getDecks();
@@ -23,7 +39,7 @@ const getTimeRemaining = endtime => {
   };
 };
 
-const initializeClock = (clock, endtime) => {  
+const initialiseClock = (clock, endtime) => {  
   const timeinterval = setInterval(() => {
     const t = getTimeRemaining(endtime);
     clock.innerHTML = `${t.minutes}:${t.seconds}`;
@@ -33,7 +49,28 @@ const initializeClock = (clock, endtime) => {
   },1000);
 };
 
+const markResponse = (response, cardIndex = 0, cardCount) => {
+  const score = {
+    success: response.question.name === response.answer.name || response.question.vernacularName === response.answer.vernacularName
+  };
+
+  const index = ++cardIndex;
+
+  if(index === cardCount) {
+    // end of deck
+  } else {
+    subscription.printAllSubs();
+    actions.boundNextCard(index);
+  }
+
+  return score;
+};
+
 export const logic = {
+  getDecks,
+  getDeck,
+  getDeckNames,
   getNextDeck,
-  initializeClock
+  initialiseClock,
+  markResponse
 };
