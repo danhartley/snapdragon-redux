@@ -45,6 +45,8 @@ const updateDecks = makeActionCreator(types.UPDATE_DECKS);
 const updateDeck = makeActionCreator(types.UPDATE_DECK);
 const nextDeck = makeActionCreator(types.NEXT_DECK);
 const nextCard = makeActionCreator(types.NEXT_CARD);
+const updateDeckState = makeActionCreator(types.UPDATE_DECK_STATE);
+const updateDeckScore = makeActionCreator(types.UPDATE_DECK_SCORE);
 
 const boundchangeLessonPlan = data => store.dispatch(changeLessonPlan(data));
 const boundchangeLessonPlans = data => store.dispatch(changeLessonPlans(data));
@@ -90,6 +92,8 @@ const boundUpdateDecks = data => store.dispatch(updateDecks(data));
 const boundUpdateDeck = data => store.dispatch(updateDeck(data));
 const boundNextDeck = data => store.dispatch(nextDeck(data));
 const boundNextCard = data => store.dispatch(nextCard(data));
+const boundUpdateDeckState = data => store.dispatch(updateDeckState(data));
+const boundUpdateDeckScore = data => store.dispatch(updateDeckScore(data));
 
 export const actions = {
     boundchangeLessonPlans,
@@ -126,5 +130,7 @@ export const actions = {
     boundUpdateDecks,
     boundUpdateDeck,
     boundNextDeck,
-    boundNextCard
+    boundNextCard,
+    boundUpdateDeckState,
+    boundUpdateDeckScore
 };

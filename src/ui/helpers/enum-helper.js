@@ -87,6 +87,13 @@ userEvent.initEnum([
     'RETURN_LESSONS'
 ]);
 
+class deckState extends Enum {};
+deckState.initEnum([
+    'BEGIN',
+    'SCORE',
+    'END'
+]);
+
 export const enums = {
     lessonState,
     navigation,
@@ -96,5 +103,6 @@ export const enums = {
     nextStep,
     quickFireType,
     quickFireStep,
-    userEvent
+    userEvent,
+    deckState
 };

@@ -6,49 +6,115 @@ $space: .5rem;
   justify-content: center;
 }
 
-.modal {
+.quiz {
+
   display: grid;
-  grid-template-rows: 100px auto 100px;
-}
+  grid-template-rows: var(--vhRunningBlock,7.5vh) calc(var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) var(--vhRunningBlock,7.5vh);
 
-header, footer {
-  @include double-centre();
-}
+  header, footer {
+    @include double-centre();    
+  }
 
-main {
-  max-width: 600px;
-  margin: auto;
-  border: 1px solid lightgray;
-}
+  footer {
+    opacity: 0;
+  }
 
-section {
-  @include double-centre(); 
-  img {
+  main {
+    margin: 0 $space;
+    border: 1px solid lightgray;
+  }
+
+  section {
+    @include double-centre(); 
+  }
+
+  button {
+    &.snap-begin-btn {
+      width: fit-content;
+      width: max-content;
+      background-color: var(--snap-btn-auxillary);
+      color: var(--snap-block-light);
+      letter-spacing: .05rem;
+      border: 1px solid transparent !important;
+      padding: .5rem .75rem;
+      border-radius: .2rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+  }
+
+  img {    
+    max-height: 210px;
     object-fit: cover;
-    width: 200px;
   }
-  .strips {
-    grid-template-columns: 1fr 1fr 1fr;
-    height: auto;
-  }
-  .answers {
-    .score-card {
-      .clock, .score {
-        column-count: 4;
-        margin: 0 auto;
+
+  ul {
+    &.disabled {
+      cursor: initial;
+      li {
+        opacity: .38;
+        pointer-events: none;
       }
     }
   }
-}
 
-.hide {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap; /* added line */
-  border: 0;
+  .strips {
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+  }
+
+  .snap-icon-btn {
+    margin: 0;
+    padding: 0;;
+  }
+
+  .answers {
+    button {
+      span:first-child {
+        font-size: 1.1rem;
+      }
+    }    
+  }
+
+  .score-card {
+    .clock {
+      font-size: 4rem;
+    }
+    .score {
+      font-size: 2rem;
+    }
+  }
+
+  .hide {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+  }
+
+  @media (min-height: 569px) {
+    img {
+      min-height: 270px;
+      max-height: 270px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    main {
+      max-width: 600px;
+      min-width: 600px;
+    }
+    img {
+      width: calc(500px / 2);
+      height: calc(375px / 2)
+    }
+    .strips {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
 }

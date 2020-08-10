@@ -36,10 +36,10 @@ button.active-icon:focus {
   outline: none;
 }
 
-button[disabled] {
-  opacity: .38; /* why  38%? google material design */
+/* button[disabled] {
+  opacity: .38;
   pointer-events: none;
-}
+} */
 
 input[type="text"] {
   font-size: 1rem;
@@ -511,6 +511,8 @@ a.icon:hover {
 
 button:disabled {
   cursor: initial !important;
+  opacity: .38; /* why  38%? google material design */
+  pointer-events: none;
 }
 
 .trait.card li span:nth-child(1) {

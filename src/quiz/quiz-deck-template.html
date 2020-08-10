@@ -1,26 +1,14 @@
-<section><h1>{{ deck.name }}</h1></section>
-
-<section><img src="{{ card.answer.src }}" alt="{{ card.answer.name }}"></section>
-
-<section>
-  <ul class="answers strips" data-repeat-answer="{{ card.answers }}">
-    <li class="strip js-strip" data-name="{{ answer.name }}" data-vernacular-name="{{ answer.vernacularName }}">
-      <button class="snap-icon-btn">
-        <span>{{ answer.vernacularName }}</span>
-        <span>{{ answer.name }}</span>
-      </button>
-    </li>
-  </ul>
-</section>
-
-<section>
-  <div class="start js-start">
-    <button class="snap-action-btn">Begin</button>
-  </div>
-  <div class="score-card hide js-score-card">
-    <div class="clock js-clock">5:00</div>
-    <div class="score">score</div>
-  </div>
-</section>
-
-
+<div class="js-deck-container">
+  <section><img src="{{ card.answer.src }}" alt="{{ card.answer.name }}" /></section>
+  <section>
+    <ul class="answers strips" data-repeat-answer="{{ card.answers }}">
+      <li class="strip js-strip" data-name="{{ answer.name }}" data-vernacular-name="{{ answer.vernacularName }}">
+        <button class="snap-icon-btn">
+          <span>{{ answer.vernacularName }}</span>
+          <span>{{ answer.name }}</span>
+        </button>
+      </li>
+    </ul>
+  </section>
+</div>
+<div class="js-state-container"></div>

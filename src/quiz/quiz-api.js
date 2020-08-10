@@ -1,94 +1,50 @@
 const decks = [
   {
     name: 'Plants',
-    cards: [
+    species: [
       {
-        answer: {
-          vernacularName: 'Rock rosemary',
-          name: 'Phagnalon saxatile',
-          src: 'https://static.inaturalist.org/photos/71465098/medium.jpeg'
-        },
-        answers: [
-          {
-            vernacularName: 'Rock rosemary',
-            name: 'Phagnalon saxatile',
-          },
-          {
-            vernacularName: 'Scarlet Pimpernel',
-            name: 'Lysimachia arvensis',
-          },
-          {
-            vernacularName: 'Hare\'s Tail Grass',
-            name: 'Lagurus ovatus',
-          },
-          {
-            vernacularName: 'Bear\'s Breeches',
-            name: 'Acanthus mollis',
-          },
-          {
-            vernacularName: 'Garland Daisy',
-            name: 'Glebionis coronaria',
-          },
-          {
-            vernacularName: 'Small-Flowered Catchfly',
-            name: 'Silene gallica'
-          },
-        ]
+        vernacularName: 'Rock rosemary',
+        name: 'Phagnalon saxatile',
+        src: 'https://static.inaturalist.org/photos/71465098/medium.jpeg'
       },
       {
-        answer: {
-          vernacularName: 'Scarlet Pimpernel',
-          name: 'Lysimachia arvensis',
-          src: 'https://static.inaturalist.org/photos/71480419/medium.jpeg'
-        },
-        answers: [
-          {
-            vernacularName: 'Rock rosemary',
-            name: 'Phagnalon saxatile',
-          },
-          {
-            vernacularName: 'Scarlet Pimpernel',
-            name: 'Lysimachia arvensis',
-          },
-          {
-            vernacularName: 'Hare\'s Tail Grass',
-            name: 'Lagurus ovatus',
-          },
-          {
-            vernacularName: 'Bear\'s Breeches',
-            name: 'Acanthus mollis',
-          },
-          {
-            vernacularName: 'Garland Daisy',
-            name: 'Glebionis coronaria',
-          },
-          {
-            vernacularName: 'Small-Flowered Catchfly',
-            name: 'Silene gallica'
-          },
-        ]
+        vernacularName: 'Scarlet Pimpernel',
+        name: 'Lysimachia arvensis',
+        src: 'https://static.inaturalist.org/photos/71480419/medium.jpeg'
       },
-    ]
+      {
+        vernacularName: 'Hare\'s Tail Grass',
+        name: 'Lagurus ovatus',
+        src: 'https://content.eol.org/data/media/58/29/e8/509.24331002.98x68.jpg  '
+      },
+      {
+        vernacularName: 'Bear\'s Breeches',
+        name: 'Acanthus mollis',
+        src: 'https://content.eol.org/data/media/56/61/ed/509.15808252.98x68.jpg'
+      },
+      {
+        vernacularName: 'Garland Daisy',
+        name: 'Glebionis coronaria',
+        src: 'https://static.inaturalist.org/photos/72450517/small.jpeg'
+      },
+      {
+        vernacularName: 'Small-Flowered Catchfly',
+        name: 'Silene gallica',
+        src: 'https://content.eol.org/data/media/60/5e/33/509.40475711.98x68.jpg'
+      },
+    ],
   },
   {
-    name: 'Birds',      
-    cards: [
-      {          
-        answer: {
-          name: 'Passer domescticus',
-          src: ''
-        },
-        answers: [ 
-          {
-            vernacularName: 'Common sparrow',
-            name: 'Passer domescticus',
-          },
-          {
-            vernacularName: 'Carrion crow',
-            name: 'Corvus corone',
-          },            
-        ]
-      }
+    name: 'Birds',
+    species: [ 
+      {
+        vernacularName: 'Common sparrow',
+        name: 'Passer domescticus',
+      },
+      {
+        vernacularName: 'Carrion crow',
+        name: 'Corvus corone',
+      },            
     ]
   },
 ];

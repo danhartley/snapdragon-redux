@@ -1,3 +1,5 @@
+import "babel-polyfill";
+
 import { logic } from 'quiz/quiz-logic.js';
 
 test('check for valid deck', async () => {  
@@ -21,7 +23,7 @@ test('check response is marked correctly', () => {
       name: 'Phagnalon saxatile',
     },
   };
-  let score = logic.markResponse(response, 0, 1);
+  let score = logic.markAnswer(response, 0, 1);
   expect(score.success).toBe(true);
   
   response = {
@@ -34,6 +36,6 @@ test('check response is marked correctly', () => {
       name: 'Lysimachia arvensis',
     },
   };
-  score = logic.markResponse(response, 0, 1);
+  score = logic.markAnswer(response, 0, 1);
   expect(score.success).toBe(false);
 });

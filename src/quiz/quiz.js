@@ -7,22 +7,33 @@ import 'ui/css/groups/modal.css';
 import 'ui/css/snapdragon-media.css';
 import 'quiz/style.scss';
 
+import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
 import { handleWindowResize } from 'media-helper';
 import { logic } from 'quiz/quiz-logic';
-import { quizStart } from 'quiz/quiz-start';
+import { quizDecks } from 'quiz/quiz-decks';
 import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
 
-const init = async () => {
+const init = () => {
 
-  window.snapLog = snapLog;
+  setTimeout( async () => {
+    
+    window.snapLog = snapLog;
 
-  handleWindowResize();
-  
-  subscription.add(quizStart, 'decks', 'modal');
+    handleWindowResize();
+    
+    subscription.add(quizDecks, 'decks', 'modal');
+    
+    actions.boundUpdateDecks(await logic.getDeckNames());
 
-  actions.boundUpdateDecks(await logic.getDeckNames());
+    const { config } = store.getState();
+
+    config.isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
+    config.isLandscapeMode = !config.isPortraitMode;
+
+    actions.boundUpdateConfig(config);
+  });
   
 };
 
