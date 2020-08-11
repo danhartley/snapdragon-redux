@@ -13,7 +13,7 @@ export const quizDecks = decks => {
 
   const parent = document.querySelector('.quiz-decks');
         parent.innerHTML = '';
-
+  
   renderTemplate({ decks }, template.content, parent);
 
   const loadIDTemplate = () => {
@@ -31,5 +31,4 @@ export const quizDecks = decks => {
   document.querySelectorAll('.js-decks').forEach(deck => {
     deck.addEventListener('click', handleDeckSelector, { once: true });
   });
-
 };

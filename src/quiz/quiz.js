@@ -13,6 +13,7 @@ import { subscription } from 'redux/subscriptions';
 import { handleWindowResize } from 'media-helper';
 import { logic } from 'quiz/quiz-logic';
 import { quizDecks } from 'quiz/quiz-decks';
+import { quizSettings } from 'quiz/quiz-settings';
 import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
 
 const init = () => {
@@ -24,6 +25,7 @@ const init = () => {
     handleWindowResize();
     
     subscription.add(quizDecks, 'decks', 'modal');
+    subscription.add(quizSettings, 'decks', 'modal');
     
     actions.boundUpdateDecks(await logic.getDeckSummaries());
 

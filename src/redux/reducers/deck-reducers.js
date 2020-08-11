@@ -62,3 +62,12 @@ export const deckScore = (state = {}, action) => {
       return state;
   }
 };
+
+export const deckSettings = (state = { names: 'vernacular' }, action) => {
+  switch(action.type) {
+    case types.UPDATE_DECK_SETTINGS:
+      return { names: action.data };
+    default:
+      return state;
+  }
+};

@@ -41,6 +41,7 @@ const NEXT_DECK = '[NEXT_DECK] Get next deck';
 const NEXT_CARD = '[NEXT_CARD] Get next card';
 const UPDATE_DECK_STATE = '[UPDATE_DECK_STATE] Update deck state';
 const UPDATE_DECK_SCORE = '[UPDATE_DECK_SCORE] Update deck score';
+const UPDATE_DECK_SETTINGS = '[UPDATE_DECK_SETTINGS] Update deck settings';
 
 export const types = {
     CHANGE_LESSON_PLANS,
@@ -78,5 +79,6 @@ export const types = {
     NEXT_DECK,
     NEXT_CARD,
     UPDATE_DECK_STATE,
-    UPDATE_DECK_SCORE
+    UPDATE_DECK_SCORE,
+    UPDATE_DECK_SETTINGS
 };

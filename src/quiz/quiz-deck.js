@@ -1,9 +1,12 @@
 import { renderTemplate } from 'quiz/templating';
+import { store } from 'redux/store';
 import { logic } from 'quiz/quiz-logic';
 
 import quizDeckTemplate from 'quiz/quiz-deck-template.html';
 
 export const quizDeck = async deck => {
+
+  const { deckSettings } = store.getState();
 
   const template = document.createElement('template');
         template.innerHTML = quizDeckTemplate;
@@ -12,6 +15,11 @@ export const quizDeck = async deck => {
         parent.innerHTML = '';
 
   const card = deck.cards.find(card => card.isCurrent) || deck.cards[0];
+
+  card.answers.forEach(answer => {
+    answer.name1 = deckSettings.names === 'vernacular' ? answer.vernacularName : answer.name;
+    answer.name2 = deckSettings.names === 'latin' ? answer.vernacularName : answer.name;
+  });
 
   renderTemplate({ deck, card }, template.content, parent);
 

@@ -126,4 +126,46 @@ $space: .5rem;
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
+
+  .quiz-settings {
+
+    flex-direction: column;
+
+    h2 {
+      font-size: 1.4rem;
+    }
+
+    label {
+      margin-right: $space;
+      line-height: 2 * $space;
+      cursor: pointer;
+    }
+    
+    input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    
+      border-radius: 50%;
+      width: $space;
+      height: 2 * $space;
+    
+      border: (2 * $space) solid var(--snap-btn-filter-off);
+      transition: 0.2s all linear;
+      margin-right: 5px;
+    
+      position: relative;
+
+      cursor: pointer;
+    }
+    
+    input:checked {
+      border: (2 * $space) solid var(--snap-collection-active);
+    }
+
+    input:focus {
+      outline: none;
+    }
+  }
+  
 }
