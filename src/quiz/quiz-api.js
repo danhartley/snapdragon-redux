@@ -1,6 +1,8 @@
 const decks = [
   {
-    name: 'Plants',
+    name: 'Common Weeds',
+    count: 7,
+    time: 3,
     species: [
       {
         vernacularName: 'Rock rosemary',
@@ -15,12 +17,12 @@ const decks = [
       {
         vernacularName: 'Hare\'s Tail Grass',
         name: 'Lagurus ovatus',
-        src: 'https://content.eol.org/data/media/58/29/e8/509.24331002.98x68.jpg  '
+        src: 'https://content.eol.org/data/media/58/29/e8/509.24331002.260x190.jpg  '
       },
       {
         vernacularName: 'Bear\'s Breeches',
         name: 'Acanthus mollis',
-        src: 'https://content.eol.org/data/media/56/61/ed/509.15808252.98x68.jpg'
+        src: 'https://content.eol.org/data/media/56/61/ed/509.15808252.260x190.jpg'
       },
       {
         vernacularName: 'Garland Daisy',
@@ -30,12 +32,19 @@ const decks = [
       {
         vernacularName: 'Small-Flowered Catchfly',
         name: 'Silene gallica',
-        src: 'https://content.eol.org/data/media/60/5e/33/509.40475711.98x68.jpg'
+        src: 'https://content.eol.org/data/media/60/5e/33/509.40475711.260x190.jpg'
+      },
+      {
+        vernacularName: 'Small Bellflower',
+        name: 'Campanula erinus',
+        src: 'https://static.inaturalist.org/photos/72451058/small.jpeg'
       },
     ],
   },
   {
-    name: 'Birds',
+    name: 'Common birds',
+    count: 2,
+    time: 1,
     species: [ 
       {
         vernacularName: 'Common sparrow',
@@ -49,8 +58,8 @@ const decks = [
   },
 ];
 
-const getDeckNames = () => {
-  return new Promise(resolve => resolve(decks.map(deck => deck.name)));
+const getDeckSummaries = () => {
+  return new Promise(resolve => resolve(decks.map(deck => { return { name: deck.name, count: deck.count } })));
 };
 
 const getDecks = name => {
@@ -60,6 +69,6 @@ const getDecks = name => {
 };
 
 export const api = {
-  getDeckNames,
+  getDeckSummaries,
   getDecks
 };

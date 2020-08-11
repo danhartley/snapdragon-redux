@@ -25,7 +25,7 @@ const init = () => {
     
     subscription.add(quizDecks, 'decks', 'modal');
     
-    actions.boundUpdateDecks(await logic.getDeckNames());
+    actions.boundUpdateDecks(await logic.getDeckSummaries());
 
     const { config } = store.getState();
 

@@ -1,10 +1,10 @@
- <section>
-	<h1>Select a deck</h1>
-</section>
-<section>
-	<ul class="strips" data-repeat-deck="{{ decks }}">
-		<li class="strip js-decks" data-name="{{ deck }}">
-			<button class="snap-icon-btn">{{ deck }}</button>
-		</li>
-	</ul>
-</section>
+<section><h1>Pick an area of study</h1></section>
+
+<ul class="strips" data-repeat-deck="{{ decks }}">
+  <li class="strip js-decks" data-name="{{ deck.name }}">
+    <button class="snap-icon-btn">
+      <span>{{ deck.name }}</span>
+      <span>{{ deck.count }}</span>
+    </button>
+  </li>
+</ul>

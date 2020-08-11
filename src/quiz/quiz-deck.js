@@ -8,7 +8,7 @@ export const quizDeck = async deck => {
   const template = document.createElement('template');
         template.innerHTML = quizDeckTemplate;
 
-  const parent = document.querySelector('.js-deck-container') || document.querySelector('main');
+  const parent = document.querySelector('.js-deck-container');
         parent.innerHTML = '';
 
   const card = deck.cards.find(card => card.isCurrent) || deck.cards[0];
@@ -27,7 +27,7 @@ export const quizDeck = async deck => {
       }
     };
     const cardIndex = deck.cards.findIndex(c => c.isCurrent);
-    logic.markAnswer(answer, cardIndex === -1 ? 0 : cardIndex, deck.cards.length);    
+    logic.markAnswer(answer, cardIndex === -1 ? 0 : cardIndex, deck.cards.length);
   };
 
   const options = document.querySelectorAll('.js-strip');

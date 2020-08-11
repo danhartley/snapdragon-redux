@@ -1,6 +1,6 @@
 import "babel-polyfill";
 
-import { take } from 'ramda';
+import { take, contains } from 'ramda';
 
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
@@ -16,27 +16,26 @@ const getDecks = async () => {
 };
 
 const getDeck = async name => {
+
+  const { config } = store.getState();
+
+  const alternatives = config.isLandscapeMode ? 5 : 3;
   
   const decks = await api.getDecks(name);
   const deck = { ...decks[0], isCurrent: true };
         deck.cards = [];
+        deck.answered = [];
+
         deck.species.forEach(sp => {
+          const answer = deck.species.filter(sp => !contains(sp.name, deck.answered))[0];
           const card = {
-            answers: utils.shuffleArray(deck.species),
-            answer: deck.species[0]
+            answers: utils.shuffleArray([ ...take(alternatives, deck.species.filter(sp => sp.name !== answer.name)), answer ]),
+            answer
           };
+          deck.answered.push(answer.name);
           deck.cards.push(card);
         });
-        
-
-  const { config } = store.getState();
-
-  if(config.isPortraitMode) {
-    deck.cards = deck.cards.map(card => {
-      return { ...card, answers: take(4, card.answers)}
-    });
-  }
-
+  
   subscription.add(quizDeck, 'deck', 'modal');
   subscription.add(quizState, 'deckState', 'modal');
   subscription.add(quizScore, 'deckScore', 'modal');
@@ -44,8 +43,8 @@ const getDeck = async name => {
   return deck;
 };
 
-const getDeckNames = async () => {
-  return await api.getDeckNames();
+const getDeckSummaries = async () => {
+  return await api.getDeckSummaries();
 };
 
 const getNextDeck = async () => {
@@ -69,32 +68,41 @@ const getTimeRemaining = endtime => {
   };
 };
 
+let timeinterval, currentClockTime;
+
+const resetClock = () => {
+  clearInterval(timeinterval);
+};
+
 const initialiseClock = (clock, endtime) => {  
-  const timeinterval = setInterval(() => {
-    const t = getTimeRemaining(endtime);
-    clock.innerHTML = `${t.minutes}:${t.seconds}`;
-    if (t.total <= 0) {
-      clearInterval(timeinterval);
-    }
+  timeinterval = setInterval(() => {
+      const t = getTimeRemaining(endtime);
+      clock.innerHTML = `${t.minutes}:${t.seconds}`;
+      if (t.total <= 0) {
+        resetClock();
+      }
+      currentClockTime = `${t.minutes}:${t.seconds}`;
   },1000);
+};
+
+const checkClock = () => {
+  return currentClockTime;
 };
 
 const markAnswer = (response, cardIndex = 0, cardCount) => {
 
+  const index = ++cardIndex;
+
+  const lastCard = index === cardCount;
+
+  actions.boundNextCard({ index, lastCard });
+
   const score = {
     question: response.question,
     answer: response.answer,    
-    success: response.question.name === response.answer.name || response.question.vernacularName === response.answer.vernacularName
+    success: response.question.name === response.answer.name || response.question.vernacularName === response.answer.vernacularName,
+    lastCard
   };
-
-  const index = ++cardIndex;
-
-  if(index === cardCount) {
-    // end of deck
-  } else {
-    
-    actions.boundNextCard(index);
-  }
 
   actions.boundUpdateDeckScore(score);
 };
@@ -102,8 +110,10 @@ const markAnswer = (response, cardIndex = 0, cardCount) => {
 export const logic = {
   getDecks,
   getDeck,
-  getDeckNames,
+  getDeckSummaries,
   getNextDeck,
   initialiseClock,
+  resetClock,
+  checkClock,
   markAnswer
 };

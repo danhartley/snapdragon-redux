@@ -43,7 +43,11 @@ $space: .5rem;
     }
   }
 
-  img {    
+  .quiz-decks {
+    flex-direction: column;
+  }
+
+  .image-container {    
     max-height: 210px;
     object-fit: cover;
   }
@@ -65,7 +69,12 @@ $space: .5rem;
 
   .snap-icon-btn {
     margin: 0;
-    padding: 0;;
+    padding: 0;
+    span:nth-child(2) {
+      vertical-align: super;
+      font-size: .7rem;
+      display: inline-block;
+    }
   }
 
   .answers {
@@ -98,7 +107,7 @@ $space: .5rem;
   }
 
   @media (min-height: 569px) {
-    img {
+    .image-container {
       min-height: 270px;
       max-height: 270px;
     }
@@ -109,7 +118,7 @@ $space: .5rem;
       max-width: 600px;
       min-width: 600px;
     }
-    img {
+    .image-container {
       width: calc(500px / 2);
       height: calc(375px / 2)
     }
