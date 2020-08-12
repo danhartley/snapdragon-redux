@@ -35,7 +35,9 @@ export const quizDeck = async deck => {
       }
     };
     const cardIndex = deck.cards.findIndex(c => c.isCurrent);
-    logic.scoreResponseAndSetNextCard(answer, cardIndex === -1 ? 0 : cardIndex, deck.cards.length);
+    const score = logic.scoreResponseAndSetNextCard(answer, cardIndex === -1 ? 0 : cardIndex, deck.cards.length);
+
+    score.success ? e.target.classList.add('snap-success') : e.target.classList.add('snap-alert');
   };
 
   const options = document.querySelectorAll('.js-strip');

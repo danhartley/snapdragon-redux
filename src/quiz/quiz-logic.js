@@ -13,13 +13,13 @@ const getDecks = async () => {
   return await api.getDecks();
 };
 
-const getDeck = async name => {
+const getQuizDeck = async (name, numberOfCardsPerSpecies = 1) => {
 
   const { config } = store.getState();
-  const numberOfAlternatives = config.isLandscapeMode ? 5 : 3;
+  const NUMBER_OF_ALTERNATIVE_ANSWERS = config.isLandscapeMode ? 5 : 3;
 
   const decks = await api.getDecks(name);
-  const deck = quizLogicHandler.getDeck({ ...decks[0], isCurrent: true }, numberOfAlternatives);
+  const deck = quizLogicHandler.getDeck({ ...decks[0], isCurrent: true }, NUMBER_OF_ALTERNATIVE_ANSWERS, numberOfCardsPerSpecies);
 
   subscription.add(quizDeck, 'deck', 'modal');
   subscription.add(quizState, 'deckState', 'modal');
@@ -77,16 +77,20 @@ export const scoreResponseAndSetNextCard = (response, cardIndex = 0, cardCount) 
 
   const isLastCard = index === cardCount;
 
-  actions.boundNextCard({ index, isLastCard });
+  setTimeout(() => {
+    actions.boundNextCard({ index, isLastCard });
+  }, 500);
 
   const score = quizLogicHandler.getScore(response, isLastCard);
 
   actions.boundUpdateDeckScore(score);
+  
+  return score;
 };
 
 export const logic = {
   getDecks,
-  getDeck,
+  getQuizDeck,
   getDeckSummaries,
   getNextDeck,
   initialiseClock,

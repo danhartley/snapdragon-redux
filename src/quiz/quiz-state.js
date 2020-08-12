@@ -56,6 +56,4 @@ export const quizScore = deckScore => {
   if(!score) return;
 
   score.innerHTML = `${deckScore.correct}/${deckScore.total}`;
-
-  console.log(deckScore)
 };

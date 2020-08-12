@@ -25,7 +25,7 @@ export const quizDecks = decks => {
 
   const handleDeckSelector = async e => {
     loadIDTemplate();
-    actions.boundUpdateDeck(await logic.getDeck(e.target.dataset.name));
+    actions.boundUpdateDeck(await logic.getQuizDeck(e.target.dataset.name, 2));
     actions.boundUpdateDeckState(enums.deckState.BEGIN);
   };
 
