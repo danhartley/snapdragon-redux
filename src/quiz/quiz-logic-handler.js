@@ -2,15 +2,15 @@ import { take, contains } from 'ramda';
 
 import { utils } from 'utils/utils';
 
-const getDeck = (deck, alternatives) => {
+const getDeck = (deck, numberOfAlternatives) => {
 
   deck.cards = [];
   deck.answered = [];
 
   deck.species.forEach(sp => {
-    const answer = deck.species.filter(sp => !contains(sp.name, deck.answered))[0];
+    const answer = utils.shuffleArray(deck.species.filter(sp => !contains(sp.name, deck.answered)))[0];
     const card = {
-      answers: utils.shuffleArray([ ...take(alternatives, deck.species.filter(sp => sp.name !== answer.name)), answer ]),
+      answers: utils.shuffleArray([ ...take(numberOfAlternatives, deck.species.filter(sp => sp.name !== answer.name)), answer ]),
       answer
     };
     deck.answered.push(answer.name);

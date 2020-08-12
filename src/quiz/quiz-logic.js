@@ -16,10 +16,10 @@ const getDecks = async () => {
 const getDeck = async name => {
 
   const { config } = store.getState();
-  const alternatives = config.isLandscapeMode ? 5 : 3;
+  const numberOfAlternatives = config.isLandscapeMode ? 5 : 3;
 
   const decks = await api.getDecks(name);
-  const deck = quizLogicHandler.getDeck({ ...decks[0], isCurrent: true }, alternatives);
+  const deck = quizLogicHandler.getDeck({ ...decks[0], isCurrent: true }, numberOfAlternatives);
 
   subscription.add(quizDeck, 'deck', 'modal');
   subscription.add(quizState, 'deckState', 'modal');

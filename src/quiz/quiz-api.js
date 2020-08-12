@@ -1,8 +1,6 @@
 const decks = [
   {
     name: 'Common Weeds',
-    count: 7,
-    time: 3,
     species: [
       {
         vernacularName: 'Rock rosemary',
@@ -43,8 +41,6 @@ const decks = [
   },
   {
     name: 'Common birds',
-    count: 2,
-    time: 1,
     species: [ 
       {
         vernacularName: 'Common sparrow',
@@ -60,8 +56,6 @@ const decks = [
   },
   {
     name: 'Wild UK flowers',
-    count: 25,
-    time: 5,
     species: [      
         {
           name: "Trifolium repens",

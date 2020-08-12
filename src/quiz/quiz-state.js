@@ -10,7 +10,9 @@ export const quizState = deckState => {
 
   const { deck } = store.getState();
 
-  const MINUTES = (deck.time || 5) * 60000;
+  const TIME_PER_QUESTION = 5;
+
+  const milliseconds = TIME_PER_QUESTION * deck.cards.length * 1000;
 
   const template = document.createElement('template');
 
@@ -36,8 +38,8 @@ export const quizState = deckState => {
     case enums.deckState.BEGIN.name:   
       break;
     case enums.deckState.SCORE.name:
-      const endTime = new Date(Date.now() + MINUTES);
-      logic.initialiseClock(clock, endTime);      
+      const endTime = new Date(Date.now() + milliseconds);
+      logic.initialiseClock(clock, endTime);
       break;
     case enums.deckState.END.name:
       clock.innerHTML = logic.resetClock();
