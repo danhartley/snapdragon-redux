@@ -21,7 +21,7 @@ $space: .5rem;
 
   main {
     margin: 0 $space;
-    background-color: var(--snap-dd-non-taxa-bg-intial);
+    background-color: var(--snap-dd-non-taxa-bg-active);
   }
 
   section {
@@ -74,6 +74,7 @@ $space: .5rem;
 
   .strip {
     box-shadow: 0 2px 8px rgba(0, 0, 0, .8);
+    background-color: var(--snap-dd-non-taxa-bg-active);
   }
 
   .snap-icon-btn {
@@ -94,12 +95,36 @@ $space: .5rem;
     }    
   }
 
+  .image-block-container {
+    background: var(--snap-text-dark);
+  }
+
+  .strips-container {
+    background: var(--snap-collection);
+  }
+
+  .state-container {
+    background-color: var(--snap-dd-non-taxa-bg-active);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    div:nth-child(1) {
+      font-size: 6 * $space;
+    }
+
+    div:nth-child(3) {
+      font-size: 4 * $space;
+      color: var(--snap-species-highlight-background);
+    }
+  }
+
   .score-card {
     .clock {
-      font-size: 4rem;
+      font-size: 8 * $space;
+      color: var(--snap-active);
     }
     .score {
-      font-size: 2rem;
+      font-size: 4 * $space;
     }
   }
 

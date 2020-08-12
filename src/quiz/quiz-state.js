@@ -51,9 +51,13 @@ export const quizState = deckState => {
 
 export const quizScore = deckScore => {
 
+  const { deck } = store.getState();
+
   const score = document.querySelector('.js-deck-score');
+  const remaining = document.querySelector('.js-deck-remaining');
 
   if(!score) return;
 
   score.innerHTML = `${deckScore.correct}/${deckScore.total}`;
+  remaining.innerHTML = deck.cards.length - deckScore.total;
 };

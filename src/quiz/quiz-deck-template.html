@@ -1,9 +1,9 @@
-<section>
-  <div class="double-centred-block image-container">
+<section class="image-block-container">
+  <div class="image-container double-centred-block">
     <img src="{{ card.answer.src }}" alt="{{ card.answer.name }}" />
   </div>
 </section>
-<section>
+<section class="strips-container">
   <ul class="answers strips" data-repeat-answer="{{ card.answers }}">
     <li class="strip js-strip" data-name="{{ answer.name }}" data-vernacular-name="{{ answer.vernacularName }}">
       <button class="snap-icon-btn">
