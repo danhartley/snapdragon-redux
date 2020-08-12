@@ -8,16 +8,17 @@ import quizIdTemplate from 'quiz/quiz-id-template.html';
 
 export const quizDecks = decks => {
 
-  const template = document.createElement('template');
-        template.innerHTML = quizDecksTemplate;
+  let template = document.createElement('template');
+      template.innerHTML = quizDecksTemplate;
 
-  const parent = document.querySelector('.quiz-decks');
-        parent.innerHTML = '';
+  let parent = document.querySelector('.js-quiz-decks');
+      parent.innerHTML = '';
   
   renderTemplate({ decks }, template.content, parent);
 
   const loadIDTemplate = () => {
     template.innerHTML = quizIdTemplate;
+    parent = document.querySelector('main');
     parent.innerHTML = '';
     renderTemplate({}, template.content, parent);
   };

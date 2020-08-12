@@ -21,11 +21,16 @@ $space: .5rem;
 
   main {
     margin: 0 $space;
-    border: 1px solid lightgray;
+    // background-color: var(--snap-dd-non-taxa-bg-intial);
   }
 
   section {
     @include double-centre(); 
+  }
+
+  img {
+    box-shadow: 0 2px 8px 0 rgb(0, 0, 0);
+    border: 1px solid var(--snap-button-dark);
   }
 
   button {
@@ -65,6 +70,10 @@ $space: .5rem;
   .strips {
     grid-template-columns: 1fr 1fr;
     height: auto;
+  }
+
+  .strip {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .8);
   }
 
   .snap-icon-btn {
@@ -110,6 +119,9 @@ $space: .5rem;
     .image-container {
       min-height: 270px;
       max-height: 270px;
+    }
+    .strip {
+      min-height: 12 * $space;
     }
   }
 

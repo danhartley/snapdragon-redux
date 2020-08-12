@@ -21,7 +21,7 @@ export const deck = (state = {}, action) => {
       const deck = clone(state);
       const currentCard = deck.cards.find(c => c.isCurrent);
       if(currentCard) delete currentCard.isCurrent;
-      if(!action.data.lastCard)
+      if(!action.data.isLastCard)
         deck.cards[action.data.index].isCurrent = true;
       return deck;
     default: 
@@ -37,7 +37,7 @@ export const deckState = (state = enums.deckState.BEGIN, action) => {
     case types.UPDATE_DECK_STATE:
       return action.data;
     case types.NEXT_CARD:
-      return action.data.lastCard ? enums.deckState.END : enums.deckState.SCORE;
+      return action.data.isLastCard ? enums.deckState.END : enums.deckState.SCORE;
     default:
       return state;
   }

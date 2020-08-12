@@ -1,13 +1,11 @@
 import "babel-polyfill";
 
-import { take, contains } from 'ramda';
-
-import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { subscription } from 'redux/subscriptions';
 import { api } from 'quiz/quiz-api';
 import { actions } from 'redux/actions/action-creators';
 
+import { quizLogicHandler } from 'quiz/quiz-logic-handler';
 import { quizDeck } from 'quiz/quiz-deck';
 import { quizState, quizScore } from 'quiz/quiz-state';
 
@@ -18,24 +16,11 @@ const getDecks = async () => {
 const getDeck = async name => {
 
   const { config } = store.getState();
-
   const alternatives = config.isLandscapeMode ? 5 : 3;
-  
-  const decks = await api.getDecks(name);
-  const deck = { ...decks[0], isCurrent: true };
-        deck.cards = [];
-        deck.answered = [];
 
-        deck.species.forEach(sp => {
-          const answer = deck.species.filter(sp => !contains(sp.name, deck.answered))[0];
-          const card = {
-            answers: utils.shuffleArray([ ...take(alternatives, deck.species.filter(sp => sp.name !== answer.name)), answer ]),
-            answer
-          };
-          deck.answered.push(answer.name);
-          deck.cards.push(card);
-        });
-  
+  const decks = await api.getDecks(name);
+  const deck = quizLogicHandler.getDeck({ ...decks[0], isCurrent: true }, alternatives);
+
   subscription.add(quizDeck, 'deck', 'modal');
   subscription.add(quizState, 'deckState', 'modal');
   subscription.add(quizScore, 'deckScore', 'modal');
@@ -72,6 +57,7 @@ let timeinterval, currentClockTime;
 
 const resetClock = () => {
   clearInterval(timeinterval);
+  return currentClockTime;
 };
 
 const initialiseClock = (clock, endtime) => {  
@@ -85,24 +71,15 @@ const initialiseClock = (clock, endtime) => {
   },1000);
 };
 
-const checkClock = () => {
-  return currentClockTime;
-};
-
-const markAnswer = (response, cardIndex = 0, cardCount) => {
+export const scoreResponseAndSetNextCard = (response, cardIndex = 0, cardCount) => {
 
   const index = ++cardIndex;
 
-  const lastCard = index === cardCount;
+  const isLastCard = index === cardCount;
 
-  actions.boundNextCard({ index, lastCard });
+  actions.boundNextCard({ index, isLastCard });
 
-  const score = {
-    question: response.question,
-    answer: response.answer,    
-    success: response.question.name === response.answer.name || response.question.vernacularName === response.answer.vernacularName,
-    lastCard
-  };
+  const score = quizLogicHandler.getScore(response, isLastCard);
 
   actions.boundUpdateDeckScore(score);
 };
@@ -114,6 +91,5 @@ export const logic = {
   getNextDeck,
   initialiseClock,
   resetClock,
-  checkClock,
-  markAnswer
+  scoreResponseAndSetNextCard
 };

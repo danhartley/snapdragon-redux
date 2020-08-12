@@ -40,8 +40,7 @@ export const quizState = deckState => {
       logic.initialiseClock(clock, endTime);      
       break;
     case enums.deckState.END.name:
-      logic.resetClock();
-      clock.innerHTML = logic.checkClock();
+      clock.innerHTML = logic.resetClock();
       break;
   }
   

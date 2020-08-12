@@ -35,7 +35,7 @@ export const quizDeck = async deck => {
       }
     };
     const cardIndex = deck.cards.findIndex(c => c.isCurrent);
-    logic.markAnswer(answer, cardIndex === -1 ? 0 : cardIndex, deck.cards.length);
+    logic.scoreResponseAndSetNextCard(answer, cardIndex === -1 ? 0 : cardIndex, deck.cards.length);
   };
 
   const options = document.querySelectorAll('.js-strip');

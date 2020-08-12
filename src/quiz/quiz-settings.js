@@ -11,7 +11,7 @@ export const quizSettings = decks => {
   const template = document.createElement('template');
         template.innerHTML = quizSettingsTemplate;
 
-  const parent = document.querySelector('.quiz-settings');
+  const parent = document.querySelector('.js-quiz-settings');
         parent.innerHTML = '';
 
   renderTemplate({}, template.content, parent);
