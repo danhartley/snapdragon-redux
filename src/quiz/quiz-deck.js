@@ -6,6 +6,8 @@ import quizDeckTemplate from 'quiz/quiz-deck-template.html';
 
 export const quizDeck = async deck => {
 
+  document.querySelector('.quiz h1').innerHTML = deck.name;
+
   const { deckSettings } = store.getState();
 
   const template = document.createElement('template');
@@ -17,8 +19,8 @@ export const quizDeck = async deck => {
   const card = deck.cards.find(card => card.isCurrent) || deck.cards[0];
 
   card.answers.forEach(answer => {
-    answer.name1 = deckSettings.names === 'vernacular' ? answer.vernacularName : answer.name;
-    answer.name2 = deckSettings.names === 'latin' ? answer.vernacularName : answer.name;
+    answer.name1 = deckSettings.name === 'vernacular' ? answer.vernacularName : answer.name;
+    answer.name2 = deckSettings.name === 'latin' ? answer.vernacularName : answer.name;
   });
 
   renderTemplate({ deck, card }, template.content, parent);

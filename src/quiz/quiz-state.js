@@ -1,4 +1,5 @@
 import { store } from 'redux/store';
+import { actions } from 'redux/actions/action-creators';
 import { logic } from 'quiz/quiz-logic';
 import { enums } from 'ui/helpers/enum-helper';
 import { renderTemplate } from 'quiz/templating';
@@ -8,7 +9,7 @@ import scoreTemplate from 'quiz/quiz-state-score.html';
 
 export const quizState = deckState => {
 
-  const { deck } = store.getState();
+  const { decks, deck } = store.getState();
 
   const TIME_PER_QUESTION = 5;
 
@@ -30,7 +31,7 @@ export const quizState = deckState => {
   const parent = document.querySelector('.js-state-container');
         parent.innerHTML = '';
 
-  renderTemplate({ time: `${deck.time || 5}:00` }, template.content, parent);
+  renderTemplate({ time: `${deck.time || 5}:00`, remaining: deck.cards.length }, template.content, parent);
 
   const clock = document.querySelector('.js-clock');
 
@@ -46,6 +47,10 @@ export const quizState = deckState => {
       break;
   }
   
+  document.querySelector('.js-quiz-back').addEventListener('click', e => {
+    // need to update decks to trigger decks, settings, perhaps summary…
+    actions.boundUpdateDecks({ ...decks, timestamp: new Date().getTime() })
+  });
 
 };
 

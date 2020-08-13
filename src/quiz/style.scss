@@ -8,6 +8,7 @@ $space: .5rem;
 
 .quiz {
 
+  width: 100%;
   display: grid;
   grid-template-rows: var(--vhRunningBlock,7.5vh) calc(var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) var(--vhRunningBlock,7.5vh);
 
@@ -26,6 +27,10 @@ $space: .5rem;
 
   section {
     @include double-centre(); 
+  }
+
+  .image-block-container {
+    padding: (2 * $space) 0;
   }
 
   img {
@@ -52,7 +57,8 @@ $space: .5rem;
     flex-direction: column;
   }
 
-  .image-container {    
+  .image-container, img {    
+    min-height: 210px;
     max-height: 210px;
     object-fit: cover;
   }
@@ -73,6 +79,8 @@ $space: .5rem;
   }
 
   .strip {
+    width: calc( (var(--vwGrid) - 2rem) / 2 );
+    min-height: 8 * $space;
     box-shadow: 0 2px 8px rgba(0, 0, 0, .8);
     background-color: var(--snap-dd-non-taxa-bg-active);
   }
@@ -82,8 +90,7 @@ $space: .5rem;
     padding: 0;
     span:nth-child(2) {
       vertical-align: super;
-      font-size: .7rem;
-      display: inline-block;
+      font-size: .7rem;      
     }
   }
 
@@ -92,15 +99,10 @@ $space: .5rem;
       span:first-child {
         font-size: 1.1rem;
       }
+      span:nth-child(2) {
+        display: block;
+      }
     }    
-  }
-
-  .image-block-container {
-    background: var(--snap-text-dark);
-  }
-
-  .strips-container {
-    background: var(--snap-collection);
   }
 
   .state-container {
@@ -114,7 +116,11 @@ $space: .5rem;
 
     div:nth-child(3) {
       font-size: 4 * $space;
-      color: var(--snap-species-highlight-background);
+      color: var(--snap-border-light);
+    }
+
+    .quiz-back {
+      cursor: pointer;
     }
   }
 
@@ -125,6 +131,8 @@ $space: .5rem;
     }
     .score {
       font-size: 4 * $space;
+      color: var(--snap-text-dark);
+      margin-right: $space;
     }
   }
 
@@ -140,33 +148,11 @@ $space: .5rem;
     border: 0;
   }
 
-  @media (min-height: 569px) {
-    .image-container {
-      min-height: 270px;
-      max-height: 270px;
-    }
-    .strip {
-      min-height: 12 * $space;
-    }
-  }
-
-  @media (min-width: 768px) {
-    main {
-      max-width: 600px;
-      min-width: 600px;
-    }
-    .image-container {
-      width: calc(500px / 2);
-      height: calc(375px / 2)
-    }
-    .strips {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-
   .quiz-settings {
 
-    flex-direction: column;
+    grid-template-rows: 2fr 3fr;
+    background-color: rgba(197, 193, 175,.5);
+    display: grid;
 
     h2 {
       font-size: 1.4rem;
@@ -189,7 +175,7 @@ $space: .5rem;
     
       border: (2 * $space) solid var(--snap-btn-filter-off);
       transition: 0.2s all linear;
-      margin-right: 5px;
+      margin-right: $space;
     
       position: relative;
 
@@ -203,6 +189,87 @@ $space: .5rem;
     input:focus {
       outline: none;
     }
-  }
+
+    .names {
+      font-size: .7rem;
+      display: grid;
+      gap: 1rem;
+      margin: 0rem;
+      padding: 1rem;
+      background-color: rgba(197, 193, 175,.5);
+      background-color: rgba(229, 227, 220,.3);
+      div {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .languages {
+      grid-template-columns: 1fr 1fr;
+      display: grid;
+      row-gap: 2 * $space;
+      column-gap: 4 * $space;
+      font-size: .7rem;
+      div {
+        display: flex;
+        align-items: center;
+      }
+      input:checked {
+        border: (2 * $space) solid var(--snap-collection);
+      }
   
+    }
+  }
+ 
+  @media (min-height: 569px) {
+
+    .image-container {
+      min-height: 270px;
+      max-height: 270px;
+    }
+    .strip {
+      min-height: 12 * $space;      
+    }
+  }
+
+  @media (min-width: 768px) {
+
+    width: initial;
+
+    main {
+      max-width: 600px;
+      min-width: 600px;
+    }
+    .image-block-container {
+      background: var(--snap-text-dark);
+    }
+    .strips-container {
+      background: var(--snap-collection);
+    }
+    .image-container {
+      width: calc(500px / 2);
+      height: calc(375px / 2)
+    }
+    .strips {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .strip {
+      width: initial;
+    }
+    .quiz-settings {
+      grid-template-columns: 1fr 1fr;
+      .names {
+        font-size: 1rem;
+        display: initial;
+        margin: 1rem;
+        div {
+          margin-bottom: .5rem;
+        }
+      }
+    }
+    .languages {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+    }
+  }
 }

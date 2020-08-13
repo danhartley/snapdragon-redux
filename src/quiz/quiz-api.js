@@ -116,7 +116,7 @@ export const decks = [
     ]
   },
   {
-    name: 'Wild UK flowers',
+    name: 'Wild flowers',
     species: [      
         {
           name: 'Trifolium repens',

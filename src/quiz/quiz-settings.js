@@ -16,10 +16,17 @@ export const quizSettings = decks => {
 
   renderTemplate({}, template.content, parent);
 
-  document.querySelectorAll('input').forEach(r => {
-    if(r.id === deckSettings.names) r.checked = true;
+  document.querySelectorAll('.names input').forEach(r => {
+    if(r.id === deckSettings.name) r.checked = true;
     r.addEventListener('click', e => {
-      actions.boundUpdateDeckSettings(e.target.id);
+      actions.boundUpdateDeckSettings({ name: e.target.id } );
+    });
+  });
+
+  document.querySelectorAll('.languages input').forEach(r => {
+    if(r.id === deckSettings.language) r.checked = true;
+    r.addEventListener('click', e => {
+      actions.boundUpdateDeckSettings({ language: e.target.id });
     });
   });
 
