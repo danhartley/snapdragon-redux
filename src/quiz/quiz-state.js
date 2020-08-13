@@ -28,7 +28,7 @@ export const quizState = deckState => {
       template.innerHTML = scoreTemplate;
   }
 
-  const parent = document.querySelector('.js-state-container');
+  const parent = document.querySelector('.js-quiz-bottom');
         parent.innerHTML = '';
 
   renderTemplate({ time: `${deck.time || 5}:00`, remaining: deck.cards.length }, template.content, parent);
@@ -48,8 +48,7 @@ export const quizState = deckState => {
   }
   
   document.querySelector('.js-quiz-back').addEventListener('click', e => {
-    // need to update decks to trigger decks, settings, perhaps summary…
-    actions.boundUpdateDecks({ ...decks, timestamp: new Date().getTime() })
+    actions.boundUpdateDecks([ ...decks.filter(deck => deck.count > 0), { name: `${new Date().getTime()}`, count: 0 } ]);
   });
 
 };

@@ -2,7 +2,7 @@ import { enums } from 'ui/helpers/enum-helper';
 import { clone } from 'ramda';
 import { types } from 'redux/actions/action-types';
 
-export const decks = (state = [], action) => {
+export const decks = (state = [{name:'random change', count: 0}], action) => {
   switch(action.type) {
     case types.UPDATE_DECKS:
       return action.data;

@@ -1,15 +1,17 @@
-<section class="image-block-container">
-  <div class="image-container double-centred-block">
-    <img src="{{ card.answer.src }}" alt="{{ card.answer.name }}" />
-  </div>
-</section>
-<section class="strips-container">
-  <ul class="answers strips" data-repeat-answer="{{ card.answers }}">
-    <li class="strip js-strip" data-name="{{ answer.name }}" data-vernacular-name="{{ answer.vernacularName }}">
-      <button class="snap-icon-btn">
-        <span>{{ answer.name1 }}</span>
-        <span>{{ answer.name2 }}</span>
-      </button>
-    </li>
-  </ul>
-</section>
+<div class="deck-container">
+  <section class="image-block-container">
+    <div class="image-container double-centred-block">
+      <img src="{{ card.answer.src }}" alt="{{ card.answer.name }}" />
+    </div>
+  </section>
+  <section class="strips-container">
+    <ul class="answers strips" data-repeat-answer="{{ card.answers }}">
+      <li class="strip js-strip" data-name="{{ answer.name }}" data-vernacular-name="{{ answer.vernacularName }}">
+        <button class="snap-icon-btn">
+          <span>{{ answer.name1 }}</span>
+          <span>{{ answer.name2 }}</span>
+        </button>
+      </li>
+    </ul>
+  </section>
+</div>

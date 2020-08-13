@@ -13,7 +13,7 @@ export const quizDeck = async deck => {
   const template = document.createElement('template');
         template.innerHTML = quizDeckTemplate;
 
-  const parent = document.querySelector('.js-deck-container');
+  const parent = document.querySelector('.js-quiz-top');
         parent.innerHTML = '';
 
   const card = deck.cards.find(card => card.isCurrent) || deck.cards[0];

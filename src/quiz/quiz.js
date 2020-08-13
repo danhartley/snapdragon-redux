@@ -27,7 +27,8 @@ const init = () => {
     subscription.add(quizDecks, 'decks', 'modal');
     subscription.add(quizSettings, 'decks', 'modal');
     
-    actions.boundUpdateDecks(await logic.getDeckSummaries());
+    const decks = await logic.getDeckSummaries();
+    actions.boundUpdateDecks([ ...decks.filter(deck => deck.count > 0), { name: `${new Date().getTime()}`, count: 0 } ]);
 
     const { config } = store.getState();
 

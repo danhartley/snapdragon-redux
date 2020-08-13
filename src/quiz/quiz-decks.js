@@ -1,31 +1,26 @@
 import { renderTemplate } from 'quiz/templating';
+import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';
 import { actions } from 'redux/actions/action-creators';
 import { logic } from 'quiz/quiz-logic';
 
 import quizDecksTemplate from 'quiz/quiz-decks-template.html';
-import quizIdTemplate from 'quiz/quiz-id-template.html';
 
 export const quizDecks = decks => {
 
   let template = document.createElement('template');
       template.innerHTML = quizDecksTemplate;
 
-  let parent = document.querySelector('.js-quiz-decks');
+  let parent = document.querySelector('.js-quiz-top');
       parent.innerHTML = '';
   
-  renderTemplate({ decks }, template.content, parent);
-
-  const loadIDTemplate = () => {
-    template.innerHTML = quizIdTemplate;
-    parent = document.querySelector('main');
-    parent.innerHTML = '';
-    renderTemplate({}, template.content, parent);
-  };
+  renderTemplate({ decks: decks.filter(deck => deck.count > 0) }, template.content, parent);
 
   const handleDeckSelector = async e => {
-    loadIDTemplate();
-    actions.boundUpdateDeck(await logic.getQuizDeck(e.target.dataset.name, 2));
+
+    const { deckSettings } = store.getState();
+
+    actions.boundUpdateDeck(await logic.getQuizDeck(e.target.dataset.name, 2, deckSettings.language));
     actions.boundUpdateDeckState(enums.deckState.BEGIN);
   };
 

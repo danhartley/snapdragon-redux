@@ -83,6 +83,7 @@ $space: .5rem;
     min-height: 8 * $space;
     box-shadow: 0 2px 8px rgba(0, 0, 0, .8);
     background-color: var(--snap-dd-non-taxa-bg-active);
+    margin: (.5 * $space) (.5 * $space);
   }
 
   .snap-icon-btn {
@@ -109,6 +110,7 @@ $space: .5rem;
     background-color: var(--snap-dd-non-taxa-bg-active);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
 
     div:nth-child(1) {
       font-size: 6 * $space;
@@ -129,11 +131,15 @@ $space: .5rem;
       font-size: 8 * $space;
       color: var(--snap-active);
     }
-    .score {
-      font-size: 4 * $space;
-      color: var(--snap-text-dark);
-      margin-right: $space;
-    }
+  }
+  .score {
+    font-size: 4 * $space;
+    color: var(--snap-text-dark);
+    margin-right: $space;
+    font-size: 1.5rem;
+  }
+  .deck-remaining {
+    
   }
 
   .hide {
@@ -150,9 +156,10 @@ $space: .5rem;
 
   .quiz-settings {
 
-    grid-template-rows: 2fr 3fr;
+    grid-template-rows: 1fr 1fr;
     background-color: rgba(197, 193, 175,.5);
     display: grid;
+    width: 100%;
 
     h2 {
       font-size: 1.4rem;
@@ -193,7 +200,8 @@ $space: .5rem;
     .names {
       font-size: .7rem;
       display: grid;
-      gap: 1rem;
+      row-gap: 2 * $space;
+      column-gap: 0;
       margin: 0rem;
       padding: 1rem;
       background-color: rgba(197, 193, 175,.5);
@@ -205,10 +213,9 @@ $space: .5rem;
     }
 
     .languages {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       display: grid;
-      row-gap: 2 * $space;
-      column-gap: 4 * $space;
+      gap: 0;
       font-size: .7rem;
       div {
         display: flex;
@@ -254,10 +261,11 @@ $space: .5rem;
       grid-template-columns: 1fr 1fr 1fr;
     }
     .strip {
-      width: initial;
+      width: initial;      
     }
     .quiz-settings {
       grid-template-columns: 1fr 1fr;
+      grid-template-rows: none;
       .names {
         font-size: 1rem;
         display: initial;
@@ -266,10 +274,6 @@ $space: .5rem;
           margin-bottom: .5rem;
         }
       }
-    }
-    .languages {
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 0;
     }
   }
 }

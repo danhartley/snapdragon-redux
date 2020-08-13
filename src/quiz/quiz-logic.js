@@ -13,19 +13,24 @@ const getDecks = async () => {
   return await api.getDecks();
 };
 
-const getQuizDeck = async (name, numberOfCardsPerSpecies = 1) => {
+const getQuizDeck = async (name, numberOfCardsPerSpecies = 1, language = 'en') => {
 
   const { config } = store.getState();
   const NUMBER_OF_ALTERNATIVE_ANSWERS = config.isLandscapeMode ? 5 : 3;
 
   const decks = await api.getDecks(name);
-  const deck = quizLogicHandler.getDeck({ ...decks[0], isCurrent: true }, NUMBER_OF_ALTERNATIVE_ANSWERS, numberOfCardsPerSpecies);
+  const deck = decks[0];
+        deck.species.forEach(s => {
+          const names = s.names.filter(name => name.language === language);
+          s.vernacularName = names.length > 0 ? names[0].vernacularName : '';
+        });
+  const _deck = quizLogicHandler.getDeck({ ...deck, isCurrent: true }, NUMBER_OF_ALTERNATIVE_ANSWERS, numberOfCardsPerSpecies);
 
   subscription.add(quizDeck, 'deck', 'modal');
   subscription.add(quizState, 'deckState', 'modal');
   subscription.add(quizScore, 'deckScore', 'modal');
 
-  return deck;
+  return _deck;
 };
 
 const getDeckSummaries = async () => {
