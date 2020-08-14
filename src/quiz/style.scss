@@ -140,9 +140,6 @@ $space: .5rem;
     margin-right: $space;
     font-size: 1.5rem;
   }
-  .deck-remaining {
-    
-  }
 
   .hide {
     position: absolute;
@@ -230,7 +227,10 @@ $space: .5rem;
       input:checked {
         border: (2 * $space) solid var(--snap-collection);
       }
-  
+    }
+    .quiz-builder-link {
+      color: rgb(131, 129, 117);
+      width: 100%;
     }
   }
  
