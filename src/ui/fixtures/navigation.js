@@ -97,8 +97,13 @@ export const renderNavigation = collection => {
                 import('ui/fixtures/language').then(module => {
                   module.renderLanguagePicker();
                 });                  
+              case enums.navigation.QUIZ:
+                import('quiz/quiz-modal').then(module => {
+                  module.openQuiz();
+                });
+                break;
               default:
-                  return;
+                return;
           }
         });        
     });

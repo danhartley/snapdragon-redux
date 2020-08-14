@@ -165,7 +165,7 @@ hr {
   line-height: 1.6;
 }
 
-.lessons, .settings, .nav-info, .lesson, .glossary, .email, .login, .email > a, .language {
+.lessons, .settings, .nav-info, .lesson, .glossary, .email, .login, .email > a, .language, .quiz-icon {
   cursor: pointer;
   color: var(--snap-text-dark);
   font-size: 1.4rem;
