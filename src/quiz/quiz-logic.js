@@ -68,29 +68,54 @@ const resetClock = () => {
 const initialiseClock = (clock, endtime) => {  
   timeinterval = setInterval(() => {
       const t = getTimeRemaining(endtime);
-      clock.innerHTML = `${t.minutes}:${t.seconds}`;
+      const seconds = (t.minutes * 60) + t.seconds;
+      clock.innerHTML = convertSecondsToClockTime(seconds);
       if (t.total <= 0) {
+        //actions.boundUpdateDeckScoreHistory(score);
         resetClock();
       }
-      currentClockTime = `${t.minutes}:${t.seconds}`;
+      currentClockTime = convertSecondsToClockTime(seconds);
   },1000);
 };
 
-export const scoreResponseAndSetNextCard = (response, cardIndex = 0, cardCount) => {
+export const scoreResponseAndSetNextCard = (response, cardIndex = 0, cardCount, deckScore) => {
 
   const index = ++cardIndex;
 
   const isLastCard = index === cardCount;
+  const isSecondLastCard = index === (cardCount - 1);
+
+  const score = quizLogicHandler.getScore(response, isLastCard, deckScore);
 
   setTimeout(() => {
-    actions.boundNextCard({ index, isLastCard });
+
+    // delay to allow the card to change red or green, indicating incorrect or correct
+
+    if(!isLastCard) {
+      actions.boundNextCard({ index, isLastCard, isSecondLastCard });
+    }
+
+    actions.boundUpdateDeckScore(score);
+
+    if(isLastCard) {
+      actions.boundUpdateDeckScoreHistory(score);
+      document.querySelector('.js-strips').classList.add('no-pointer-events');
+    }
   }, 500);
 
-  const score = quizLogicHandler.getScore(response, isLastCard);
-
-  actions.boundUpdateDeckScore(score);
-  
   return score;
+
+};
+
+const convertSecondsToClockTime = timeInSeconds => {
+  var pad = function(num, size) { return ('000' + num).slice(size * -1); },
+  time = parseFloat(timeInSeconds).toFixed(3),
+  hours = Math.floor(time / 60 / 60),
+  minutes = Math.floor(time / 60) % 60,
+  seconds = Math.floor(time - minutes * 60),
+  milliseconds = time.slice(-3);
+
+  return pad(minutes, 2) + ':' + pad(seconds, 2);
 };
 
 export const logic = {
@@ -100,5 +125,6 @@ export const logic = {
   getNextDeck,
   initialiseClock,
   resetClock,
-  scoreResponseAndSetNextCard
+  scoreResponseAndSetNextCard,
+  convertSecondsToClockTime
 };

@@ -6,14 +6,14 @@ import { renderTemplate } from 'quiz/templating';
 
 import beginTemplate from 'quiz/quiz-state-begin.html';
 import scoreTemplate from 'quiz/quiz-state-score.html';
+import { quizConfig } from 'quiz/quiz-config';
 
 export const quizState = deckState => {
 
   const { decks, deck } = store.getState();
 
-  const TIME_PER_QUESTION = 5;
-
-  const milliseconds = TIME_PER_QUESTION * deck.cards.length * 1000;
+  const seconds = quizConfig.TIME_PER_QUESTION * deck.cards.length * quizConfig.QUESTIONS_PER_CARD;
+  const milliseconds = seconds * 1000;
 
   const template = document.createElement('template');
 
@@ -31,7 +31,7 @@ export const quizState = deckState => {
   const parent = document.querySelector('.js-quiz-bottom');
         parent.innerHTML = '';
 
-  renderTemplate({ time: `${deck.time || 5}:00`, remaining: deck.cards.length }, template.content, parent);
+  renderTemplate({ time: logic.convertSecondsToClockTime(seconds), remaining: deck.cards.length }, template.content, parent);
 
   const clock = document.querySelector('.js-clock');
 
@@ -48,6 +48,7 @@ export const quizState = deckState => {
   }
   
   document.querySelector('.js-quiz-back').addEventListener('click', e => {
+    actions.boundUpdateDeckState(enums.deckState.BEGIN);
     actions.boundUpdateDecks([ ...decks.filter(deck => deck.count > 0), { name: `${new Date().getTime()}`, count: 0 } ]);
   });
 

@@ -33,7 +33,8 @@ test('getScore returns the correct score', () => {
       name: 'Phagnalon saxatile',
     },
   };
-  let score = quizLogicHandler.getScore(response, false);
+  const deckScore = { total: 0, correct: 0, incorrect: 0 };
+  let score = quizLogicHandler.getScore(response, false, deckScore);
   expect(score.success).toBe(true);
   
   response = {
@@ -46,6 +47,6 @@ test('getScore returns the correct score', () => {
       name: 'Lysimachia arvensis',
     },
   };
-  score = quizLogicHandler.getScore(response, false);
+  score = quizLogicHandler.getScore(response, false, deckScore);
   expect(score.success).toBe(false);
 });

@@ -3,6 +3,7 @@ import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';
 import { actions } from 'redux/actions/action-creators';
 import { logic } from 'quiz/quiz-logic';
+import { quizConfig } from 'quiz/quiz-config';
 
 import quizDecksTemplate from 'quiz/quiz-decks-template.html';
 
@@ -20,7 +21,7 @@ export const quizDecks = decks => {
 
     const { deckSettings } = store.getState();
 
-    actions.boundUpdateDeck(await logic.getQuizDeck(e.target.dataset.name, 2, deckSettings.language));
+    actions.boundUpdateDeck(await logic.getQuizDeck(e.target.dataset.name, quizConfig.QUESTIONS_PER_CARD, deckSettings.language));
     actions.boundUpdateDeckState(enums.deckState.BEGIN);
   };
 

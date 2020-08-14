@@ -6,9 +6,12 @@ export const decks = [
         vernacularName: 'Common sparrow',
         name: 'Passer domescticus',
         srcs: [
-              'https://content.eol.org/data/media/48/e0/ff/18.https___www_inaturalist_org_photos_6500927.260x190.jpg'
-            , 'https://content.eol.org/data/media/4b/16/8d/18.https___www_inaturalist_org_photos_6868358.260x190.jpg'
-          ]
+            'https://content.eol.org/data/media/48/e0/ff/18.https___www_inaturalist_org_photos_6500927.260x190.jpg'
+          , 'https://content.eol.org/data/media/4b/16/8d/18.https___www_inaturalist_org_photos_6868358.260x190.jpg'
+        ],
+        names: [
+          { language: 'en', vernacularName: 'Common sparrow' },
+        ]
       },
       {
         vernacularName: 'Carrion crow',
@@ -16,9 +19,12 @@ export const decks = [
         srcs: [
             'https://content.eol.org/data/media/55/ea/32/509.13190079.260x190.jpg'
           , 'https://content.eol.org/data/media/56/48/0e/509.15383497.260x190.jpg'
+        ],
+        names: [
+          { language: 'en', vernacularName: 'Carrion crow' },
         ]
       },            
-    ]
+    ],    
   },
   {
     name: 'Common Weeds',

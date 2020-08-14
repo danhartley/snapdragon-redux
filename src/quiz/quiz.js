@@ -14,6 +14,7 @@ import { handleWindowResize } from 'media-helper';
 import { logic } from 'quiz/quiz-logic';
 import { quizDecks } from 'quiz/quiz-decks';
 import { quizSettings } from 'quiz/quiz-settings';
+import { quizSummary } from 'quiz/quiz-summary';
 import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
 
 const init = () => {
@@ -26,6 +27,7 @@ const init = () => {
     
     subscription.add(quizDecks, 'decks', 'modal');
     subscription.add(quizSettings, 'decks', 'modal');
+    subscription.add(quizSummary, 'decks', 'modal');
     
     const decks = await logic.getDeckSummaries();
     actions.boundUpdateDecks([ ...decks.filter(deck => deck.count > 0), { name: `${new Date().getTime()}`, count: 0 } ]);

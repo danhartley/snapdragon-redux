@@ -12,7 +12,7 @@ import { counter, score, history, videoPlayer } from 'redux/reducers/progress-re
 import { lessonPlans, lessonPlan, layout } from 'redux/reducers/layout-reducers';
 import { lesson, lessons } from 'redux/reducers/lesson-reducers';
 import { quickFire, glossary } from 'redux/reducers/quick-fire-reducers';
-import { decks, deck, deckState, deckScore, deckSettings } from 'redux/reducers/deck-reducers';
+import { decks, deck, deckState, deckScore, deckSettings, deckScoreHistory } from 'redux/reducers/deck-reducers';
 
 import hardSet from 'redux-persist/lib/stateReconciler/hardSet'
 
@@ -39,7 +39,8 @@ const reducer = combineReducers({
     deck,
     deckState,
     deckScore,
-    deckSettings
+    deckSettings,
+    deckScoreHistory
 });
 
 const persistConfig = {

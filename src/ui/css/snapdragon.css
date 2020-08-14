@@ -36,11 +36,6 @@ button.active-icon:focus {
   outline: none;
 }
 
-/* button[disabled] {
-  opacity: .38;
-  pointer-events: none;
-} */
-
 input[type="text"] {
   font-size: 1rem;
   padding: .5rem;
@@ -224,7 +219,6 @@ a.icon:hover {
 
 .home-container {
   position: relative;
-  /* display: grid; */
   grid-template-rows: var(--vhStandardBlock) auto;
 }
 
@@ -436,9 +430,9 @@ a.icon:hover {
   box-shadow: none;
 }
 
-.btn:disabled {
+/* .btn:disabled {
   pointer-events: none;
-}
+} */
 
 .btn-placeholder.btn {
   color: var(--snap-text-dark);
@@ -821,11 +815,6 @@ iframe#birdsong {
   animation: fa-spin 6s infinite linear;
 }
 
-a.collection-disabled {
-  color: grey;
-  pointer-events: none;
-}
-
 .dropdown.collections {
   display: flex;
 }
@@ -941,18 +930,6 @@ a.collection-disabled {
   height: 1rem;
   vertical-align: text-bottom;
 }
-
-/* .home-container .snapdragon-tag > div .underline-link {
-  text-transform: initial;
-}
-
-.home-container .snapdragon-tag > div .super-text {
-  display: inline-block;
-  margin: .5rem 0 0 .25rem;
-  vertical-align: top;
-  color: var(--secondary);
-  font-style: italic;
-} */
 
 .edit-guide-link, .save-guide-link, .margin-right {
   margin: 0 .5rem 0 0;

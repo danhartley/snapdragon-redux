@@ -13,7 +13,8 @@ $space: .5rem;
   grid-template-rows: var(--vhRunningBlock,7.5vh) calc(var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) var(--vhRunningBlock,7.5vh);
 
   header, footer {
-    @include double-centre();    
+    @include double-centre();
+    height: var(--vhRunningBlock,7.5vh);
   }
 
   footer {
@@ -36,6 +37,7 @@ $space: .5rem;
   img {
     box-shadow: 0 2px 8px 0 rgb(0, 0, 0);
     border: 1px solid var(--snap-button-dark);
+    width: inherit;
   }
 
   button {
@@ -156,10 +158,11 @@ $space: .5rem;
 
   .quiz-settings {
 
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
     background-color: rgba(197, 193, 175,.5);
     display: grid;
     width: 100%;
+    height: 224px;
 
     h2 {
       font-size: 1.4rem;
@@ -206,9 +209,11 @@ $space: .5rem;
       padding: 1rem;
       background-color: rgba(197, 193, 175,.5);
       background-color: rgba(229, 227, 220,.3);
+      grid-template-columns: 1fr 1fr;
       div {
         display: flex;
         align-items: center;
+        justify-content: center;
       }
     }
 
@@ -220,6 +225,7 @@ $space: .5rem;
       div {
         display: flex;
         align-items: center;
+        justify-content: center;
       }
       input:checked {
         border: (2 * $space) solid var(--snap-collection);
@@ -239,23 +245,36 @@ $space: .5rem;
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 600px) {
 
     width: initial;
+
+    .quiz-top {
+      height: 270px + 32px;
+      // height: calc((375px / 2) + (2 * 2rem));
+    }
+
+    .quiz-bottom {
+      margin: 0 $space;
+      // height: calc(var(--vh, 1vh)*100 - var(--vhFixtures, 15vh) - 302px);      
+    }
 
     main {
       max-width: 600px;
       min-width: 600px;
     }
     .image-block-container {
+      width: 100%;
       background: var(--snap-text-dark);
     }
     .strips-container {
       background: var(--snap-collection);
+      height: 224px;
+      width: 100%;
     }
     .image-container {
       width: calc(500px / 2);
-      height: calc(375px / 2)
+      // height: calc(375px / 2)
     }
     .strips {
       grid-template-columns: 1fr 1fr 1fr;
@@ -272,6 +291,12 @@ $space: .5rem;
         margin: 1rem;
         div {
           margin-bottom: .5rem;
+          justify-content: initial;
+        }
+      }
+      .languages {
+        div {
+          justify-content: initial;
         }
       }
     }

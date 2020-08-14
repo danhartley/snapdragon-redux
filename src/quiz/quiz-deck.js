@@ -2,7 +2,8 @@ import { renderTemplate } from 'quiz/templating';
 import { store } from 'redux/store';
 import { logic } from 'quiz/quiz-logic';
 
-import quizDeckTemplate from 'quiz/quiz-deck-template.html';
+import quizDeckTemplate from 'quiz/quiz-deck-image-template.html';
+import quizDeckAnswersTemplate from 'quiz/quiz-deck-answers-template.html';
 
 export const quizDeck = async deck => {
 
@@ -13,8 +14,8 @@ export const quizDeck = async deck => {
   const template = document.createElement('template');
         template.innerHTML = quizDeckTemplate;
 
-  const parent = document.querySelector('.js-quiz-top');
-        parent.innerHTML = '';
+  let parent = document.querySelector('.js-quiz-top');
+      parent.innerHTML = '';
 
   const card = deck.cards.find(card => card.isCurrent) || deck.cards[0];
 
@@ -23,9 +24,19 @@ export const quizDeck = async deck => {
     answer.name2 = deckSettings.name === 'latin' ? answer.vernacularName : answer.name;
   });
 
-  renderTemplate({ deck, card }, template.content, parent);
+  renderTemplate({ card }, template.content, parent);
+
+  template.innerHTML = quizDeckAnswersTemplate;
+
+  parent = document.querySelector('.js-quiz-middle');
+  parent.innerHTML = '';
+
+  renderTemplate({ card }, template.content, parent);
 
   const handleAnswer = e => {
+
+    const { deckScore } = store.getState();
+    
     const answer = {
       question: {
        name: card.answer.name,
@@ -36,8 +47,11 @@ export const quizDeck = async deck => {
         vernacularName: e.target.dataset.vernacularName
       }
     };
+
     const cardIndex = deck.cards.findIndex(c => c.isCurrent);
-    const score = logic.scoreResponseAndSetNextCard(answer, cardIndex === -1 ? 0 : cardIndex, deck.cards.length);
+    const score = logic.scoreResponseAndSetNextCard(answer, cardIndex === -1 ? 0 : cardIndex, deck.cards.length, deckScore);
+
+    console.log(score.success)
 
     score.success ? e.target.classList.add('snap-success') : e.target.classList.add('snap-alert');
   };

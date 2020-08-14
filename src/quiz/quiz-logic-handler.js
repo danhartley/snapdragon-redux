@@ -39,7 +39,9 @@ const _getDeck = (deck, numberOfAlternativeAnswers, index) => {
   return deck;
 };
 
-const getScore = (response, isLastCard) => {
+const getScore = (response, isLastCard, deckScore) => {
+
+  console.log(deckScore.total);
 
   const score = {
     question: response.question,
@@ -48,7 +50,15 @@ const getScore = (response, isLastCard) => {
     isLastCard
   };
 
-  return score;
+  let total = ++deckScore.total;
+  let correct = deckScore.correct;
+  let incorrect = deckScore.incorrect;
+  return { 
+    ...score
+    , total
+    , correct: score.success ? ++correct : correct
+    , incorrect: !score.success ? ++incorrect : incorrect
+  };
 };
 
 export const quizLogicHandler = {
