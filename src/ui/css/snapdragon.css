@@ -222,6 +222,10 @@ a.icon:hover {
   grid-template-rows: var(--vhStandardBlock) auto;
 }
 
+.scrollable.card {
+  text-align: left;
+}
+
 .species.card {
   margin: 0;
 }

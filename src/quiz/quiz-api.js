@@ -342,6 +342,10 @@ export const decks = [
           {
             vernacularName: 'campânula',
             language: 'es'
+          },
+          {
+            vernacularName: 'campaínhas',
+            language: 'pt'
           }
         ]
       },{

@@ -21,7 +21,7 @@ export const quizDecks = decks => {
 
     const { deckSettings } = store.getState();
 
-    actions.boundUpdateDeck(await logic.getQuizDeck(e.target.dataset.name, quizConfig.QUESTIONS_PER_CARD, deckSettings.language));
+    actions.boundUpdateDeck(await logic.getQuizDeck(e.target.dataset.name, quizConfig.QUESTIONS_PER_SPECIES, deckSettings.language));
     actions.boundUpdateDeckState(enums.deckState.BEGIN);
   };
 

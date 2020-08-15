@@ -7,7 +7,7 @@ import quizDeckAnswersTemplate from 'quiz/quiz-deck-answers-template.html';
 
 export const quizDeck = async deck => {
 
-  document.querySelector('.quiz h1').innerHTML = deck.name;
+  document.querySelector('.quiz .js-quiz-header').innerText = deck.name;
 
   const { deckSettings } = store.getState();
 

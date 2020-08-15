@@ -12,7 +12,7 @@ export const quizState = deckState => {
 
   const { decks, deck } = store.getState();
 
-  const seconds = quizConfig.TIME_PER_QUESTION * deck.cards.length * quizConfig.QUESTIONS_PER_CARD;
+  const seconds = quizConfig.TIME_PER_QUESTION * deck.cards.length * quizConfig.QUESTIONS_PER_SPECIES;
   const milliseconds = seconds * 1000;
 
   const template = document.createElement('template');
