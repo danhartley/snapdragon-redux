@@ -1102,7 +1102,7 @@ export const decks = [
     ]
   },
   {
-    name: 'Common Mushrooms',
+    name: 'Mushrooms',
     species: [
         {
           "name": "Morchella angusticeps"

@@ -51,9 +51,15 @@ export const quizDeck = async deck => {
     const cardIndex = deck.cards.findIndex(c => c.isCurrent);
     const score = logic.scoreResponseAndSetNextCard(answer, cardIndex === -1 ? 0 : cardIndex, deck.cards.length, deckScore);
 
-    console.log(score.success)
-
     score.success ? e.target.classList.add('snap-success') : e.target.classList.add('snap-alert');
+
+    if(!score.success) {
+      document.querySelectorAll('.js-strip').forEach(strip => {
+        if(strip.dataset.name === score.question.name) {
+          strip.classList.add('snap-success');
+        }
+      });
+    }
   };
 
   const options = document.querySelectorAll('.js-strip');
