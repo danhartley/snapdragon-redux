@@ -27,7 +27,7 @@ export const decks = [
     ],    
   },
   {
-    name: 'Common Weeds',
+    name: 'Wild Portugal',
     species: [
       {
         vernacularName: 'Rock rosemary',
@@ -661,7 +661,7 @@ export const decks = [
     ]
   },
   {
-    name: 'Wild flowers',
+    name: 'Wild England',
     species: [
       {
         name: 'Lysimachia arvensis',

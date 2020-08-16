@@ -292,6 +292,11 @@ const removeClass = (elem, className) => {
   }
 };
 
+const convertTraitKeyToUnitKey = traitKey => {
+  let conversion = traitKey.replace('_', ' ');
+  return toCamelCase(conversion);
+};
+
 export const utils = {
   encodeQuery,
   timer, 
@@ -314,5 +319,6 @@ export const utils = {
   parseToLowerCase,
   hasClass,
   removeClass,
-  toggleClass
+  toggleClass,
+  convertTraitKeyToUnitKey
 };
