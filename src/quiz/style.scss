@@ -23,8 +23,7 @@ $strips: calc( ((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 1rem );
 
   .quiz-middle {
     height: $middle;
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
+    background-color: rgb(213, 210, 198);
   }
   
   .quiz-bottom {
@@ -33,6 +32,10 @@ $strips: calc( ((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 1rem );
 
   header, footer {
     @include double-centre();    
+  }
+
+  .modal-content {
+    background-color: var(--snap-border-light);
   }
 
   .modal-footer, .modal-header {
@@ -201,10 +204,17 @@ $strips: calc( ((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 1rem );
 
   .quiz-settings {
 
+    padding: $space;
     grid-template-rows: 1fr 2fr;
-    background-color: rgba(197, 193, 175,.5);
     display: grid;
     width: 100%;
+
+    div {      
+      justify-content: flex-start;
+    }
+    div:first-child > span {
+      margin-left: 4 * $space;
+    }
 
     h2 {
       font-size: 1.4rem;
@@ -225,7 +235,7 @@ $strips: calc( ((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 1rem );
       width: $space;
       height: 2 * $space;
     
-      border: (2 * $space) solid var(--snap-btn-filter-off);
+      border: (2 * $space) solid var(--snap-list-header-background);
       transition: 0.2s all linear;
       margin-right: $space;
     
