@@ -260,7 +260,7 @@ $strips: calc( ((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 1rem );
       margin: 0rem;
       padding: 1rem;
       background-color: rgba(229, 227, 220,.3);
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;      
       div {
         display: flex;
         align-items: center;
@@ -273,6 +273,7 @@ $strips: calc( ((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 1rem );
       display: grid;
       gap: 0;
       font-size: .7rem;
+      padding: 0 ($space);
       div {
         display: flex;
         align-items: center;
@@ -318,6 +319,7 @@ $strips: calc( ((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 1rem );
         font-size: 1rem;
         display: initial;
         margin: 1rem;
+        border: 1px solid var(--snap-dd-non-taxa-bg-active);
         div {
           margin-bottom: .5rem;
           justify-content: initial;
