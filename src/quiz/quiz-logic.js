@@ -24,7 +24,7 @@ const getQuizDeck = async (name, numberOfCardsPerSpecies = 1, language = 'en') =
           const names = s.names.filter(name => name.language === language);
           s.vernacularName = names.length > 0 ? names[0].vernacularName : '';
         });
-  const _deck = quizLogicHandler.getDeck({ ...deck, isCurrent: true }, NUMBER_OF_ALTERNATIVE_ANSWERS, numberOfCardsPerSpecies);
+  const _deck = quizLogicHandler.getDeck({ ...deck, isCurrent: true }, NUMBER_OF_ALTERNATIVE_ANSWERS, numberOfCardsPerSpecies);        
 
   subscription.add(quizDeck, 'deck', 'modal');
   subscription.add(quizState, 'deckState', 'modal');

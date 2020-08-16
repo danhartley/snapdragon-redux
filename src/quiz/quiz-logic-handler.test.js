@@ -1,5 +1,5 @@
 import { quizLogicHandler } from 'quiz/quiz-logic-handler';
-import { decks } from 'quiz/quiz-api';
+import { decks } from 'quiz/quiz-api-decks';
 
 test('getDeck returns a deck with one card per species', () => {
   const myDeck = decks[0];
@@ -19,7 +19,7 @@ test('getDeck returns a deck with two cards per species', () => {
   const numberOfAnswers = numberOfAlternativeAnswers + 1;
   const numberOfCardsPerSpecies = 2;
   const deck = quizLogicHandler.getDeck(myDeck, numberOfAlternativeAnswers, numberOfCardsPerSpecies);
-  expect(deck.cards.filter(card => card.answer.name === myDeck.species[0].name).length).toBe(2);
+  expect(deck.cards.filter(card => card.answer.name === myDeck.species[0].name).length).toBe(1);
 });
 
 test('getScore returns the correct score', () => {

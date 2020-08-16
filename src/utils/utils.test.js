@@ -1,5 +1,4 @@
 import { utils } from 'utils/utils';
-import { test } from 'ramda';
 
 test('shuffleArray should return an non-equal array of the same size', () => {
     const source = [ 1,2,3,4,5,6,7,8,9,10 ];

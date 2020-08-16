@@ -106,6 +106,8 @@ const getSpeciesByIconicTaxon = async (item, number = 6) => {
 
 const getSpeciesByName = async (itemName, force = false) => {
 
+    console.log(itemName);
+
     if(!itemName) return '';
 
     const items = await getSpecies({ key:'name', operator:'==', value:itemName });
@@ -478,14 +480,14 @@ const getSpeciesInParallel = async species => {
     try {
         return Promise.all(species.map(sp => {                    
             return firestore.getSpeciesByName(sp.name).then(async item => {
-                return await {                         
-                    ...item, description: sp.description || '', time: sp.time || 0, questionIds: sp.questionIds, quickId: sp.quickId || ''
+                return await {
+                    ...item, description: sp.description || '', time: sp.time || 0, questionIds: sp.questionIds || [], quickId: sp.quickId || ''
                 }
             })                    
         }));
 
     } catch (e) {
-      // logAPIError(e, 'getSpeciesInParallel');
+      logAPIError(e, 'getSpeciesInParallel');
     }
 };
 
