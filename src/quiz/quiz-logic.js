@@ -65,13 +65,19 @@ const resetClock = () => {
   return currentClockTime;
 };
 
+const disableAnswers = () => {
+  const answers = document.querySelector('.js-strips.answers');
+  if(answers) answers.classList.add('no-pointer-events');
+};
+
 const initialiseClock = (clock, endtime) => {  
   timeinterval = setInterval(() => {
       const t = getTimeRemaining(endtime);
       const seconds = (t.minutes * 60) + t.seconds;
       clock.innerHTML = convertSecondsToClockTime(seconds);
-      if (t.total <= 0) {
-        //actions.boundUpdateDeckScoreHistory(score);
+      if (t.total < 0) {
+        actions.boundUpdateDeckScoreHistory(store.getState().deckScore);
+        disableAnswers();
         resetClock();
       }
       currentClockTime = convertSecondsToClockTime(seconds);
@@ -99,7 +105,7 @@ export const scoreResponseAndSetNextCard = (response, cardIndex = 0, cardCount, 
 
     if(isLastCard) {
       actions.boundUpdateDeckScoreHistory(score);
-      document.querySelector('.js-strips').classList.add('no-pointer-events');
+      disableAnswers();
     }
   }, 500);
 

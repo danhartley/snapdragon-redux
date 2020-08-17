@@ -9,6 +9,8 @@ import quizDecksTemplate from 'quiz/quiz-decks-template.html';
 
 export const quizDecks = decks => {
 
+  document.querySelector('.quiz .js-quiz-header').innerText = 'Species recognition';
+
   let template = document.createElement('template');
       template.innerHTML = quizDecksTemplate;
 

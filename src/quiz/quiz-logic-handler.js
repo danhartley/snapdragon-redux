@@ -41,8 +41,6 @@ const _getDeck = (deck, numberOfAlternativeAnswers, index) => {
 
 const getScore = (response, isLastCard, deckScore) => {
 
-  console.log(deckScore.total);
-
   const score = {
     question: response.question,
     answer: response.answer,    

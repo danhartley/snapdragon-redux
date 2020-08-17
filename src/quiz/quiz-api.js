@@ -1,5 +1,3 @@
-import { contains } from "ramda";
-
 import { firestore } from 'api/firebase/firestore';
 import { decks } from 'quiz/quiz-api-decks';
 import { scaleImage } from 'ui/helpers/image-handler';
@@ -13,7 +11,7 @@ const getSpeciesDetailsInParallel = async species => {
 };
 
 const getDecks = async name => {
-  console.log(name);
+  
   const species = decks.find(deck => deck.name === name).species;
     const items = await getSpeciesDetailsInParallel(species.map(s => { return { name: s } } ));
     const deck = {

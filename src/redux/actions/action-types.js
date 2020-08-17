@@ -43,6 +43,7 @@ const UPDATE_DECK_STATE = '[UPDATE_DECK_STATE] Update deck state';
 const UPDATE_DECK_SCORE = '[UPDATE_DECK_SCORE] Update deck score';
 const UPDATE_DECK_SCORE_HISTORY = '[UPDATE_DECK_SCORE_HISTORY] Update deck score history';
 const UPDATE_DECK_SETTINGS = '[UPDATE_DECK_SETTINGS] Update deck settings';
+const CLEAR_DECK_SCORE_HISTORY = '[CLEAR_DECK_SCORE_HISTORY] clear deck score history';
 
 export const types = {
     CHANGE_LESSON_PLANS,
@@ -82,5 +83,6 @@ export const types = {
     UPDATE_DECK_STATE,
     UPDATE_DECK_SCORE,
     UPDATE_DECK_SCORE_HISTORY,
-    UPDATE_DECK_SETTINGS
+    UPDATE_DECK_SETTINGS,
+    CLEAR_DECK_SCORE_HISTORY
 };

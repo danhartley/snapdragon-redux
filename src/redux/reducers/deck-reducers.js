@@ -49,6 +49,8 @@ export const deckScore = (state = { total: 0, correct: 0, incorrect: 0 }, action
     case types.UPDATE_DECK_SCORE:
       return action.data;
     case types.UPDATE_DECK_STATE:
+      console.log(action.data);
+      //enums.deckState.BEGIN
       return { total: 0, correct: 0, incorrect: 0 };
     default:
       return state;
@@ -58,15 +60,14 @@ export const deckScore = (state = { total: 0, correct: 0, incorrect: 0 }, action
 export const deckScoreHistory = (state = { total: 0, correct: 0, incorrect: 0 }, action) => {
   switch(action.type) {
     case types.UPDATE_DECK_SCORE_HISTORY:
-
       const score = action.data;
-
       return {
         total: state.total + score.total,
         correct: state.correct + score.correct,
         incorrect: state.incorrect + score.incorrect
       };
-
+    case types.CLEAR_DECK_SCORE_HISTORY:
+      return { total: 0, correct: 0, incorrect: 0 };
   default:
     return state;
   }

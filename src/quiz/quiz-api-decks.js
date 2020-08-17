@@ -8,7 +8,10 @@ export const decks = [
       "Silene gallica",
       "Lagurus ovatus",
       "Acanthus mollis",
-      "Glebionis coronaria"
+      "Glebionis coronaria",
+      "Galactites tomentosa",
+      "Geranium purpureum",
+      "Taraxacum officinale"
     ]
   },
   {
@@ -34,13 +37,23 @@ export const decks = [
       "Borago officinalis",
       "Oxalis pes-caprae",
       "Lantana camara",
-      "Trifolium repens"
+      "Trifolium repens",
+      "Urtica dioica",
+      "Lythrum salicaria",
+      "Echium vulgare",
+      "Dactylis glomerata"
     ]
   },
   {
     name: 'Wild England III',
     species: [
-      'Epilobium angustifolium'
+      'Epilobium angustifolium',
+      'Cardamine hirsuta',
+      'Conium maculatum',
+      'Borago officinalis',
+      'Briza maxima',
+      'Brassica nigra',
+      'Malva multiflora'
     ]
   },
   {

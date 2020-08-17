@@ -106,8 +106,6 @@ const getSpeciesByIconicTaxon = async (item, number = 6) => {
 
 const getSpeciesByName = async (itemName, force = false) => {
 
-    console.log(itemName);
-
     if(!itemName) return '';
 
     const items = await getSpecies({ key:'name', operator:'==', value:itemName });

@@ -49,6 +49,7 @@ const updateDeckState = makeActionCreator(types.UPDATE_DECK_STATE);
 const updateDeckScore = makeActionCreator(types.UPDATE_DECK_SCORE);
 const updateDeckScoreHistory = makeActionCreator(types.UPDATE_DECK_SCORE_HISTORY);
 const updateDeckSettings = makeActionCreator(types.UPDATE_DECK_SETTINGS);
+const clearDeckScoreHistory = makeActionCreator(types.CLEAR_DECK_SCORE_HISTORY);
 
 const boundchangeLessonPlan = data => store.dispatch(changeLessonPlan(data));
 const boundchangeLessonPlans = data => store.dispatch(changeLessonPlans(data));
@@ -98,6 +99,7 @@ const boundUpdateDeckState = data => store.dispatch(updateDeckState(data));
 const boundUpdateDeckScore = data => store.dispatch(updateDeckScore(data));
 const boundUpdateDeckScoreHistory = data => store.dispatch(updateDeckScoreHistory(data));
 const boundUpdateDeckSettings = data => store.dispatch(updateDeckSettings(data));
+const boundClearDeckScoreHistory = data => store.dispatch(clearDeckScoreHistory(data));
 
 export const actions = {
     boundchangeLessonPlans,
@@ -138,5 +140,6 @@ export const actions = {
     boundUpdateDeckState,
     boundUpdateDeckScore,
     boundUpdateDeckScoreHistory,
-    boundUpdateDeckSettings
+    boundUpdateDeckSettings,
+    boundClearDeckScoreHistory
 };

@@ -5,7 +5,7 @@ import quizSummaryTemplate from 'quiz/quiz-summary-template.html';
 
 export const quizSummary = decks => {
 
-  const { deckScoreHistory } = store.getState();
+  const { deckScore, deckScoreHistory } = store.getState();
 
   const template = document.createElement('template');
         template.innerHTML = quizSummaryTemplate;
@@ -13,5 +13,5 @@ export const quizSummary = decks => {
   const parent = document.querySelector('.js-quiz-bottom');
         parent.innerHTML = '';
 
-  renderTemplate({deckScoreHistory}, template.content, parent);
+  renderTemplate({deckScoreHistory, deckScore}, template.content, parent);
 };

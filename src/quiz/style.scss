@@ -8,6 +8,7 @@ $bottom: calc( (var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .175);
 
 $image: calc( ((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 1rem );
 $strips: calc( ((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 1rem );
+$strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 );
 
 @mixin  double-centre() {
   display: flex;
@@ -130,7 +131,11 @@ $strips: calc( ((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 1rem );
     width: calc( (var(--vwGrid) - 2rem) / 2 );
     box-shadow: 0 2px 8px rgba(0, 0, 0, .8);
     background-color: var(--snap-dd-non-taxa-bg-active);
-    margin: (.5 * $space) (.5 * $space);
+    margin: (.5 * $space) (.5 * $space);    
+  }
+
+  .answers .strip {
+    height: $strip;
   }
 
   .snap-icon-btn {
@@ -309,8 +314,11 @@ $strips: calc( ((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 1rem );
       grid-template-columns: 1fr 1fr 1fr;
     }
     .strip {
-      width: initial;
+      width: initial;      
       font-size: .9rem;  
+    }
+    .answers .strip {
+      width: calc( (600px - 3rem) / 3 );
     }
     .quiz-settings {
       grid-template-columns: 1fr 1fr;

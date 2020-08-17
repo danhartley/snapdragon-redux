@@ -1,6 +1,7 @@
 import { contains } from 'ramda';
 
 import { store } from 'redux/store';
+import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import { enums } from 'ui/helpers/enum-helper';
 import { cookieHandler } from 'ui/helpers/cookie-handler';
@@ -105,6 +106,7 @@ export const renderNavigation = collection => {
                   module.openQuiz();
                   document.getElementById('quizModal').addEventListener('hide.bs.modal', e => {
                     document.querySelector('.js-nav-icons .quiz-icon').classList.remove('active-icon');
+                    actions.boundClearDeckScoreHistory();
                   });
                 });
                 break;
