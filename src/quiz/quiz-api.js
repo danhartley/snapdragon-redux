@@ -13,16 +13,14 @@ const getSpeciesDetailsInParallel = async species => {
 };
 
 const getDecks = async name => {
-
-  const lookups = [ 'Mushrooms'];
-
-  if(contains(name, lookups)) {
-    const species = await getSpeciesDetailsInParallel(decks.find(deck => deck.name === name).species);
+  console.log(name);
+  const species = decks.find(deck => deck.name === name).species;
+    const items = await getSpeciesDetailsInParallel(species.map(s => { return { name: s } } ));
     const deck = {
       name,
-      species
+      species: items
     };
-    console.log(deck);
+    
     return [{
       name: deck.name,
       species: deck.species.map(sp => {
@@ -34,11 +32,6 @@ const getDecks = async name => {
         }
       })
     }];
-  } else {
-    return !!name 
-    ? new Promise(resolve => resolve(decks.filter(deck => deck.name === name)))
-    : new Promise(resolve => resolve(decks));
-  }
 };
 
 export const api = {
