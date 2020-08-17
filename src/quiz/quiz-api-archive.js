@@ -1278,3 +1278,9 @@ const archive = [
     // ]
 
 ];
+
+//"Laetiporus cincinnatus",
+//"Morchella americana"
+//"Morchella angusticeps",
+//"Omphalotus illudens",  
+//"Hypholoma fasciculare",

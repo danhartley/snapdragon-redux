@@ -96,10 +96,16 @@ export const renderNavigation = collection => {
               case enums.navigation.LANGUAGE:
                 import('ui/fixtures/language').then(module => {
                   module.renderLanguagePicker();
+                  document.getElementById('basicModal').addEventListener('hide.bs.modal', e => {
+                    document.querySelector('.js-nav-icons .language').classList.remove('active-icon');
+                  });
                 });                  
               case enums.navigation.QUIZ:
                 import('quiz/quiz-modal').then(module => {
                   module.openQuiz();
+                  document.getElementById('quizModal').addEventListener('hide.bs.modal', e => {
+                    document.querySelector('.js-nav-icons .quiz-icon').classList.remove('active-icon');
+                  });
                 });
                 break;
               default:

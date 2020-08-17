@@ -33,90 +33,91 @@ import * as Sentry from '@sentry/browser';
 
 const onLoadHandler = () => {
 
-    setTimeout( async () => {
+  loadModalHTML();
 
-      Sentry.init({ dsn: 'https://9d9d8654a6a345a3af09df89cb615bde@o136894.ingest.sentry.io/302756' });
+  setTimeout( async () => {
 
-      handleWindowResize(); 
+    Sentry.init({ dsn: 'https://9d9d8654a6a345a3af09df89cb615bde@o136894.ingest.sentry.io/302756' });
 
-      // const purgeData = cookieHandler.hasUserBeenAwayTooLong();
+    handleWindowResize(); 
 
-      // if(purgeData) {
-      //     persistor.purge();
-      //     window.location.reload(true);
-      // } else {
-      //   const lastVisitedCookie = cookieHandler.setLastVisitedCookie(Date());
-      // }
+    // const purgeData = cookieHandler.hasUserBeenAwayTooLong();
 
-      const lastVisitedCookie = cookieHandler.setLastVisitedCookie(Date());
+    // if(purgeData) {
+    //     persistor.purge();
+    //     window.location.reload(true);
+    // } else {
+    //   const lastVisitedCookie = cookieHandler.setLastVisitedCookie(Date());
+    // }
 
-      let lessonPlan;
+    const lastVisitedCookie = cookieHandler.setLastVisitedCookie(Date());
 
-      try {
+    let lessonPlan;
 
-          const { config, counter: currentCounter, lessonPlan: statePlans, collections } = store.getState();
+    try {
 
-          lessonPlan = statePlans;
+        const { config, counter: currentCounter, lessonPlan: statePlans, collections } = store.getState();
 
-          config.isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
-          config.isLandscapeMode = !config.isPortraitMode;
+        lessonPlan = statePlans;
 
-          const counter = currentCounter ? { ...currentCounter } : { index: null, isLessonPaused: true };
+        config.isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
+        config.isLandscapeMode = !config.isPortraitMode;
 
-          actions.boundUpdateConfig(config);
-          actions.boundStopStartLesson(counter);
+        const counter = currentCounter ? { ...currentCounter } : { index: null, isLessonPaused: true };
 
-          if(collections && collections.length === 0) {
-              const cloudCollections = await firestore.getCollections();
-              actions.boundUpdateCollections(cloudCollections);
-          }
+        actions.boundUpdateConfig(config);
+        actions.boundStopStartLesson(counter);
 
-          subscription.add(renderHeaders, 'collection', 'flow');
-          renderNavigation();
-          subscription.add(renderNavigation, 'collection', 'flow');
-          renderLoginChanges();
-          subscription.add(renderLoginChanges, 'user', 'flow');
-          subscription.add(renderLoggedIn, 'user', 'flow');
-          subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
-          subscription.add(renderScore, 'score', 'flow');
-                  
-          subscription.add(nextItem, 'layout', 'quiz');
-          subscription.add(nextLesson, 'counter', 'quiz');
-          subscription.add(nextLayout, 'counter', 'quiz');
-          
-          subscription.add(traitValuesHandler, 'config', 'localisation');
+        if(collections && collections.length === 0) {
+            const cloudCollections = await firestore.getCollections();
+            actions.boundUpdateCollections(cloudCollections);
+        }
 
-          const updateConfig = async () => {
-              const initialisedConfig = await initialiseConfig(config);
-              actions.boundUpdateConfig(initialisedConfig);
-          };
+        subscription.add(renderHeaders, 'collection', 'flow');
+        renderNavigation();
+        subscription.add(renderNavigation, 'collection', 'flow');
+        renderLoginChanges();
+        subscription.add(renderLoginChanges, 'user', 'flow');
+        subscription.add(renderLoggedIn, 'user', 'flow');
+        subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
+        subscription.add(renderScore, 'score', 'flow');
+                
+        subscription.add(nextItem, 'layout', 'quiz');
+        subscription.add(nextLesson, 'counter', 'quiz');
+        subscription.add(nextLayout, 'counter', 'quiz');
+        
+        subscription.add(traitValuesHandler, 'config', 'localisation');
 
-          if(!config.guide.locationType) {
-              updateConfig();
-          }
+        const updateConfig = async () => {
+            const initialisedConfig = await initialiseConfig(config);
+            actions.boundUpdateConfig(initialisedConfig);
+        };
 
-          let glossary = await firestore.getDefinitionsByTaxa(['common', 'plantae', 'aves', 'fungi', 'insecta']);
-              glossary = utils.sortAlphabeticallyBy(glossary, 'term');
-          actions.boundCreateGlossary(glossary);
+        if(!config.guide.locationType) {
+            updateConfig();
+        }
 
-          loadModalHTML();
-          lessonModalHandler.onCloseModal();
+        let glossary = await firestore.getDefinitionsByTaxa(['common', 'plantae', 'aves', 'fungi', 'insecta']);
+            glossary = utils.sortAlphabeticallyBy(glossary, 'term');
+        actions.boundCreateGlossary(glossary);
+        
+        lessonModalHandler.onCloseModal();
 
-      }
-      catch(e) {
-          console.log('home page error: ', e)
-          // persistor.purge();
-          // window.location.reload(true);        
-      }
-    });
+    }
+    catch(e) {
+        console.log('home page error: ', e)
+        // persistor.purge();
+        // window.location.reload(true);        
+    }
+  });
 
-    window.snapLog = snapLog;
-    window.logError = logError;
-    window.logAPIError = logAPIError;
+  window.snapLog = snapLog;
+  window.logError = logError;
+  window.logAPIError = logAPIError;
 
-    const script = document.createElement('script');
-          script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_API_MAPS_KEY}&libraries=places`;
-    document.body.appendChild(script);
+  const script = document.createElement('script');
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_API_MAPS_KEY}&libraries=places`;
+  document.body.appendChild(script);
 };
 
 onLoadHandler();

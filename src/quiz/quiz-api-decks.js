@@ -12,6 +12,21 @@ export const decks = [
     ]
   },
   {
+    name: 'Wild England I',
+    species: [
+      "Lysimachia arvensis",
+      "Cymbalaria muralis",
+      "Daucus carota",
+      "Parietaria judaica",
+      "Foeniculum vulgare",
+      "Convolvulus arvensis",    
+      "Capsella bursa-pastoris",
+      "Bellis perennis",
+      "Geranium molle",
+      "Glebionis coronaria",
+    ]
+  },
+  {
     name: 'Wild England II',
     species: [
       "Acanthus mollis",
@@ -23,38 +38,24 @@ export const decks = [
     ]
   },
   {
-    name: 'Wild England I',
+    name: 'Wild England III',
     species: [
-      "Lysimachia arvensis",
-      "Cymbalaria muralis",
-      "Daucus carota",
-      "Parietaria judaica",
-      "Foeniculum vulgare",
-      "Convolvulus arvensis",
-      "Glebionis coronaria",
-      "Capsella bursa-pastoris",
-      "Bellis perennis",
-      "Geranium molle"
+      'Epilobium angustifolium'
     ]
-    },
+  },
   {
     name: 'Mushrooms',
-    species: [
-      "Morchella angusticeps",
+    species: [      
       "Cantharellus lateritius",
       "Hericium erinaceus",
       "Pleurotus ostreatus",
       "Craterellus fallax",
-      "Laetiporus sulphureus",
-      "Laetiporus cincinnatus",
+      "Laetiporus sulphureus",      
       "Calvatia gigantea",
       "Amanita bisporigera",
       "Galerina marginata",
-      "Chlorophyllum molybdites",
-      "Omphalotus illudens",
-      "Hypholoma fasciculare",
-      "Grifola frondosa",
-      "Morchella americana"
+      "Chlorophyllum molybdites",      
+      "Grifola frondosa",      
     ]
   }
 ];
