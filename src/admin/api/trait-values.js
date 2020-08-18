@@ -128,6 +128,9 @@ export const traitValues = {
   FLOWER_LENGTH: 'Flower length',
   FLOWER_COLOUR: 'Flower colour',
   FLOWER_SHAPE: 'Flower shape',
+  FLORET_COUNT: 'Floret count',
+  RAY_FLORET_COUNT: 'Ray floret count',
+  DISC_FLORET_COUNT: 'Disc floret count',
   PETAL_COUNT: 'Petal count',
   LEAFLET_COUNT: 'Leaflet count',
   PETAL_LENGTH: 'Petal length',
@@ -675,7 +678,7 @@ export const traitValues = {
   leafArrangement: {
   ALTERNATE: 'Alternate',
   BASAL: 'Basal',
-  CAULINE: 'Rosulate',
+  CAULINE: 'Cauline',
   OPPOSITE: 'Opposite',
   WHORLED: 'Whorled',
   ROWS: 'Rows',
@@ -1147,6 +1150,7 @@ export const traitValues = {
   HERBACEOUS: 'Herbaceous',
   DIOECIOUS: 'Dioecious',
   MONOECIOUS: 'Monoecious',
+  GYNODIOECIOUS: 'Gynodioecious',
   SYNOECIOUS: 'Synoecious',
   PERFECT: 'Perfect',
   COMPLETE: 'Complete',
@@ -1267,8 +1271,7 @@ export const traitValues = {
     PLANTLETS: 'Plantlets',
     KEIKIS: 'Keikis',
     APOMIXIS: 'Apomixis',
-    type: 'propagation',
-    name: 'propagation'
+    ROOTS: 'Roots'
   },
   seedDispersal: {
     AUTOCHORY: 'autochory',
@@ -1313,6 +1316,7 @@ export const traitValues = {
     VELVETY: 'Velvety',
     HAIRY: 'Hairy',
     PUBESCENT: 'Pubescent',
+    FEATHERY: 'Feathery',
   },
   treeShape: {
     help: "Which descrption is the best match for this tree?",

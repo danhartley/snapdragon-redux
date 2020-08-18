@@ -72,7 +72,7 @@ section {
 }
 
 button {
-  padding: $padding;
+  font-family: 'Open Sans', sans-serif;
   &:focus {
     outline: none;
   }
@@ -82,7 +82,7 @@ dd {
   white-space: pre-line;
 }
 
-.checklist {
+.checklist, .process {
   dt {
     display: grid;
     grid-template-columns: auto (6 * $padding);
@@ -113,7 +113,7 @@ dd {
     background-color: transparent;
     border: none;
     width: fit-content;
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
     color: $gray;
     span {
@@ -157,7 +157,7 @@ dd {
 .hide {
   position: absolute;
   width: 1px;
-  height: 1px;
+  height: 0px;
   padding: 0;
   margin: -1px;
   overflow: hidden;

@@ -3,21 +3,21 @@ import { constants } from 'checklist/opt-constants';
 let sections = [
   {
     type: constants.PROCESS,
-    header: 'Process',
+    header: 'Process checklist',
     steps: [
       {
-        name: 'A working wireframe that covers major features and use cases',
-        description: `Create the simplest version of the site using few or no colours, but with intended layouts, standard padding, margins, grids, etc.
+        term: 'A working wireframe that covers major features and use cases',
+        descriptions: [`Create the simplest version of the site using few or no colours,  with intended layouts, standard padding, margins, grids, etc.
         Include all media breakpoints.
         Include all dependencies that will be needed whether or not they are immediately required e.g. firebase authentication.
         The site should be semantically correct. If possible have someone familiar with using screen readers use the site.
         Set up a Lighthouse budget and testing framework preferably on a dedicated machine.
         Create a Lighthouse dashboard accessible to and understood by everyone.
-        Use realistic data that has been agreed by everyone. Avoid lorem ipsum.` 
+        Use realistic data that has been agreed by everyone. Avoid lorem ipsum.`]
       },
       {
-        name: 'Performance budgets and code sizes for new features.',
-        description: `Share responsibility for performance.`
+        term: 'Performance budgets and code sizes for new features.',
+        descriptions: [`Share responsibility for performance.`]
       }
     ]    
   },
@@ -48,8 +48,12 @@ let sections = [
   },
   {
     type: constants.CHECKS,
-    header: 'Checklist',
+    header: 'Project checklist',
     checks: [
+      {
+        term: 'Intention',
+        descriptions: [``]
+      },
       {
         term: 'Media queries',
         descriptions: [`Design the content to fit on a small screen size first, then expand the screen until a breakpoint becomes necessary.`]
@@ -95,6 +99,34 @@ let sections = [
         descriptions: [
           'Push (preload), Render, Pre-cache, Lazy-load'
         ] 
+      }
+    ]
+  },
+  {
+    type: constants.CHECKS,
+    header: 'Feature checklist',
+    checks: [
+      {
+        term: 'Set up local environment so that the new feature can be created and tested in isolation',
+        descriptions: ['e.g. webpack and package configurations, index.html page, etc.']
+      },
+      {
+        term: 'Create README.md file',
+        descriptions: [`List files used only during initial development and testing, and to support stand-alone deployment.
+        Include instructions on how to run the feature in isolation.`]
+      },
+      {
+        term: 'Create tests',
+        descriptions: [`Test only pure functions.
+        Functions that do not (yet) have tests should be pure.
+        Create local data that can be used before live data is available, and for tests.`]
+      },
+      {
+        term: 'Minimise moving parts',
+        descriptions: [`Keep to a miniumum places where there is logic that is likely to change.
+        List active files (moving parts) in the READ.md.
+        Use a config file for parameters controlled outside of the feature.
+        List files that interact with the DOM, but in a local and temporary way. This code may need to be refactored.`]
       }
     ]
   },
@@ -156,7 +188,8 @@ let sections = [
 ];
 
 let toollist = sections.find(section => section.type === constants.TOOLS);
-let checklist = sections.find(section => section.type === constants.CHECKS);
+let projectChecklist = sections.find(section => section.type === constants.CHECKS && section.header === 'Project checklist');
+let featureChecklist = sections.find(section => section.type === constants.CHECKS && section.header === 'Feature checklist');
 let termList = sections.find(section => section.type === constants.TERMS);
 let processList = sections.find(section => section.type === constants.PROCESS);
 
@@ -169,7 +202,7 @@ toollist.tools.forEach(sk => {
 export const api = {
   sections,
   toollist,
-  checklist,
-  termList,
+  projectChecklist,
+  featureChecklist,
   processList
 }

@@ -13,7 +13,8 @@ export const about = () => {
   renderTemplate({
     navigation: api.sections.map(section => section.header),
     toollist: api.toollist,
-    checklist: api.checklist,
+    projectChecklist: api.projectChecklist,
+    featureChecklist: api.featureChecklist,
     termList: api.termList,
     processList: api.processList
   }, template.content, parent);

@@ -1,7 +1,7 @@
 import { contains } from 'ramda';
 
 import autocomplete from 'autocompleter';
-
+  
 import { itemProperties } from 'ui/helpers/data-checking';
 import { utils } from 'utils/utils';
 import { firestore } from 'api/firebase/firestore';
@@ -23,46 +23,46 @@ export const renderAddTrait = (parent, callback) => {
 
         let units = _units.map(unit => {
             for (let [key, obj] of Object.entries(unit)) {
-                if(key === traitKey) {
+                if(key === utils.toCamelCase(traitKey)) {
                     return obj;
                 }
             }
         });
+            
+        if(units.filter(u => u).length > 0) {
+            
+          let unit = units.find(u => u);
+          unit = unit.map(u => {
+            return {
+              label: u,
+              value: u
+            }
+          });
 
-        let unit = units.find(u => u);
-            unit = unit.map(u => {
-              return {
-                label: u,
-                value: u
+          inputUnit.parentElement.classList.remove('hide');
+
+          initAutocomplete(inputUnit, unit);
+
+          const saveTrait = async () => {
+              const trait = { key: traitKey, value: inputValue.value, unit: inputUnit.value };
+              callback(trait);
+          };
+      
+          inputUnit.addEventListener('keypress', event => {
+              if(event.keyCode == 13) {
+                  saveTrait();
               }
-            });
-            
-        if(unit) {
-            
-            inputUnit.parentElement.classList.remove('hide');
-
-            initAutocomplete(inputUnit, unit);
-
-            const saveTrait = async () => {
-                const trait = { key: traitKey, value: inputValue.value, unit: inputUnit.value };
-                callback(trait);
-            };
-        
-            inputUnit.addEventListener('keypress', event => {
-                if(event.keyCode == 13) {
-                    saveTrait();
-                }
-            });
-            
-            inputUnit.addEventListener('keydown', event => {
-                if(event.keyCode == 9) {
-                    const highlightedText = document.querySelector('.selected');
-                    if(highlightedText) {
-                        inputUnit.value = highlightedText.innerText;
-                        saveTrait();
-                    }
-                }
-            });
+          });
+          
+          inputUnit.addEventListener('keydown', event => {
+              if(event.keyCode == 9) {
+                  const highlightedText = document.querySelector('.selected');
+                  if(highlightedText) {
+                      inputUnit.value = highlightedText.innerText;
+                      saveTrait();
+                  }
+              }
+          });
 
         } else {
 

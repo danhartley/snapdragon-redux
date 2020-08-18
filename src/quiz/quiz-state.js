@@ -49,7 +49,6 @@ export const quizState = deckState => {
   
   document.querySelector('.js-quiz-back').addEventListener('click', e => {
     logic.resetClock();
-    // actions.boundUpdateDeckState(enums.deckState.BEGIN);
     actions.boundUpdateDecks([ ...decks.filter(deck => deck.count > 0), { name: `${new Date().getTime()}`, count: 0 } ]);
   });
 

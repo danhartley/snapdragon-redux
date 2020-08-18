@@ -53,7 +53,10 @@ export const decks = [
       'Borago officinalis',
       'Briza maxima',
       'Brassica nigra',
-      'Malva multiflora'
+      'Malva multiflora',
+      'Achillea millefolium',
+      'Pulicaria dysenterica',
+      'Succisa pratensis'
     ]
   },
   {

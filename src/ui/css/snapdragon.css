@@ -951,6 +951,14 @@ iframe#birdsong {
   pointer-events: none;
 }
 
+.snapdragon-intro {
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  top: var(--vhStandardBlock, 10vh);
+}
+
 .snapdragon-intro > h3, .snapdragon-intro > h4, .snapdragon-intro > h5 {
   font-size: 1rem;
 }

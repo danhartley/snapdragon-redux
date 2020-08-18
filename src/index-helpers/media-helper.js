@@ -1,6 +1,6 @@
 import { renderTemplate } from 'ui/helpers/templating';
 
-import modalsTemplate from 'modals.html';
+import modalsTemplate from 'index-helpers/modals.html';
 
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
 

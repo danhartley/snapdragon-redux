@@ -27,12 +27,13 @@ import { firestore } from 'api/firebase/firestore';
 import { renderLoggedIn } from 'ui/fixtures/login';
 import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { lessonModalHandler } from 'ui/screens/cards/test-card-modal-handler';
-import { handleWindowResize, loadModalHTML } from 'media-helper';
+import { loadMainHTML, handleWindowResize, loadModalHTML } from 'index-helpers/media-helper';
 import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
 import * as Sentry from '@sentry/browser';
 
 const onLoadHandler = () => {
 
+  // loadMainHTML();
   loadModalHTML();
 
   setTimeout( async () => {

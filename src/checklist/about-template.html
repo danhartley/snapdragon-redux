@@ -16,17 +16,30 @@
 
 <main id="main">
 
-<section class="process">
+<!-- <section class="process">
   <h2 id="{{ processList.header }}"></h2>
   <dl data-repeat-step="{{ processList.steps }}">
     <dt data-target="{{ step.name }}">{{ step.name }}</dt>
     <dd class="hide" id="{{ step.name }}">{{ step.description }}</dd>
   </dl>
+</section> -->
+
+<section class="process">
+  <h2 id="{{ processList.header }}">{{ processList.header }}</h2>
+  <dl data-repeat-step="{{ processList.steps }}">
+    <dt class="task icon" data-target="{{ step.term }}">
+        <button aria-label="Toggle whether or not {{ step.term }} task has been completed">
+          <span>{{ step.term }}</span>
+        </button>
+        <button aria-label="Toggle visibility of {{ step.term }} details" data-target="{{ step.term }}"></button>
+    </dt>
+    <dd class="hide" id="{{ step.term }}" data-repeat-description="{{ step.descriptions }}"><div>{{ description }}</div></dd>
+  </dl>
 </section>
 
   <section class="checklist">
-    <h2 id="{{ checklist.header }}">{{ checklist.header }}</h2>
-    <dl data-repeat-check="{{ checklist.checks }}">
+    <h2 id="{{ featureChecklist.header }}">{{ featureChecklist.header }}</h2>
+    <dl data-repeat-check="{{ featureChecklist.checks }}">
       <dt class="task icon" data-target="{{ check.term }}">
           <button aria-label="Toggle whether or not {{ check.term }} task has been completed">
             <span>{{ check.term }}</span>
@@ -37,7 +50,20 @@
     </dl>
   </section>
 
-  <section>
+  <section class="checklist">
+    <h2 id="{{ projectChecklist.header }}">{{ projectChecklist.header }}</h2>
+    <dl data-repeat-check="{{ projectChecklist.checks }}">
+      <dt class="task icon" data-target="{{ check.term }}">
+          <button aria-label="Toggle whether or not {{ check.term }} task has been completed">
+            <span>{{ check.term }}</span>
+          </button>
+          <button aria-label="Toggle visibility of {{ check.term }} details" data-target="{{ check.term }}"></button>
+      </dt>
+      <dd class="hide" id="{{ check.term }}" data-repeat-description="{{ check.descriptions }}"><div>{{ description }}</div></dd>
+    </dl>
+  </section>
+
+  <!-- <section>
     <h2 id="{{ toollist.header }}">{{ toollist.header }}</h2>
     <dl data-repeat-tool="{{ toollist.tools }}">
       <dt>
@@ -61,7 +87,7 @@
 
   <section id="{{ toollist.header }}" style="height: 100px;">
     some content....
-  </section>
+  </section> -->
 
 </main>
 
