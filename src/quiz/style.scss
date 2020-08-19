@@ -32,7 +32,7 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
   }
 
   header, footer {
-    @include double-centre();    
+    @include double-centre();
   }
 
   .modal-content {

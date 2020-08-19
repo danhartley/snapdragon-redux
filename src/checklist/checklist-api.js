@@ -1,4 +1,4 @@
-import { constants } from 'checklist/opt-constants';
+import { constants } from 'checklist/checklist-constants';
 
 let sections = [
   {

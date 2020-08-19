@@ -1,14 +1,14 @@
 import { renderTemplate } from 'checklist/templating';
-import { api } from 'checklist/opt-api';
+import { api } from 'checklist/checklist-api';
 
-import aboutTemplate from 'checklist/about-template.html';
+import checklistsTemplate from 'checklist/checklists-template.html';
 
-export const about = () => {
+export const checklists = () => {
 
   const template = document.createElement('template');
-        template.innerHTML = aboutTemplate;
+        template.innerHTML = checklistsTemplate;
 
-  const parent = document.querySelector('body');
+  const parent = document.querySelector('#main');
 
   renderTemplate({
     navigation: api.sections.map(section => section.header),
