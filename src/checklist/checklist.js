@@ -3,22 +3,39 @@ import "babel-polyfill";
 import 'checklist/style.scss';
 
 import { checklists } from 'checklist/checklists';
+import { toollist } from 'checklist/checklist.tools';
+import { about } from 'checklist/checklist-about';
 
-Array.from(document.querySelectorAll('.js-menu button')).forEach(option => option.addEventListener('click', e => {
-  console.log(e.target.id);
+const menuButtons = Array.from(document.querySelectorAll('.js-menu button'));
 
-  switch(e.target.id) {
-    case 'tools':
-      break;
-    case 'about':
-      break;
-    case 'checklists':
-      checklists();
-      break;
-    default:
-      checklists();
-  }
-}));
+menuButtons.forEach(option => {
 
-document.querySelector('#checklists').focus();
-document.querySelector('#checklists').click();
+  option.addEventListener('click', e => {
+    
+    optionDefaults(e.target.id);
+
+    switch(e.target.id) {
+      case 'tools':
+        toollist();
+        break;
+      case 'about':
+        about();
+        break;
+      case 'checklists':
+        checklists();
+        break;
+      default:
+        checklists();
+      }
+    })
+  });
+
+const optionDefaults = id => {
+  document.querySelector('footer button').style.display = id === 'about' ? 'none' : 'inline-block';
+  document.querySelector('header h1').innerHTML = id === 'about' ? 'Dan Hartley' : 'Checklists';
+  menuButtons.forEach(button => button.classList.remove('active'));
+  document.querySelector(`#${id}`).classList.add('active');
+};
+        
+document.querySelector('#about').focus();
+document.querySelector('#about').click();

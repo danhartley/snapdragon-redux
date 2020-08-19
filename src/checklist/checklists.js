@@ -9,10 +9,10 @@ export const checklists = () => {
         template.innerHTML = checklistsTemplate;
 
   const parent = document.querySelector('#main');
+        parent.innerHTML = '';
 
-  renderTemplate({
+  renderTemplate({    
     navigation: api.sections.map(section => section.header),
-    toollist: api.toollist,
     projectChecklist: api.projectChecklist,
     featureChecklist: api.featureChecklist,
     termList: api.termList,
@@ -21,14 +21,21 @@ export const checklists = () => {
 
   Array.from(document.querySelectorAll('.task button:first-child')).forEach(task => {
     let tasksKey = 'checkedTasks';
-    let state = localStorage.getItem(tasksKey) ? JSON.parse(localStorage.getItem(tasksKey))  : { keys: [] };
-    state.keys.forEach(key => {
-      if(task.querySelector('span') && key === task.querySelector('span').innerText) {
-        task.classList.add('completed');
-      }
-    });
+    let currentState = localStorage.getItem(tasksKey) ? JSON.parse(localStorage.getItem(tasksKey))  : { keys: [] };
+        currentState.keys.forEach(key => {
+          const span = task.querySelector('span');
+          if(span && key === span.innerText) {
+            task.classList.add('completed');
+          }
+        });
     task.addEventListener('click', e => {
-      state.keys.push(e.target.innerText);
+      let state = localStorage.getItem(tasksKey) ? JSON.parse(localStorage.getItem(tasksKey))  : { keys: [] };
+      let taskToAdd = e.target.innerText.trim();
+      if(state.keys.find(key => key === taskToAdd)) {
+        state.keys = state.keys.filter(key => key !== taskToAdd);
+      } else {
+        state.keys.push(taskToAdd);
+      }
       localStorage.setItem(tasksKey, JSON.stringify(state));
       toggleClass(task, 'completed');
     });
