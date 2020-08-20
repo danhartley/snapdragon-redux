@@ -33,7 +33,7 @@ import { addVideo } from 'admin/screens/video/add-video';
 
 import { renderActiveTaxa } from 'admin/react/active-taxa';
 
-import { handleWindowResize } from 'media-helper';
+import { handleWindowResize } from 'index-helpers/media-helper';
 import { imports } from 'admin/fontawesome-icons';
 import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
 
