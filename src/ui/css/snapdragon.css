@@ -36,11 +36,6 @@ button.active-icon:focus {
   outline: none;
 }
 
-button[disabled] {
-  opacity: .38; /* why  38%? google material design */
-  pointer-events: none;
-}
-
 input[type="text"] {
   font-size: 1rem;
   padding: .5rem;
@@ -170,7 +165,7 @@ hr {
   line-height: 1.6;
 }
 
-.lessons, .settings, .nav-info, .lesson, .glossary, .email, .login, .email > a, .language {
+.lessons, .settings, .nav-info, .lesson, .glossary, .email, .login, .email > a, .language, .quiz-icon {
   cursor: pointer;
   color: var(--snap-text-dark);
   font-size: 1.4rem;
@@ -224,8 +219,11 @@ a.icon:hover {
 
 .home-container {
   position: relative;
-  /* display: grid; */
   grid-template-rows: var(--vhStandardBlock) auto;
+}
+
+.scrollable.card {
+  text-align: left;
 }
 
 .species.card {
@@ -436,9 +434,9 @@ a.icon:hover {
   box-shadow: none;
 }
 
-.btn:disabled {
+/* .btn:disabled {
   pointer-events: none;
-}
+} */
 
 .btn-placeholder.btn {
   color: var(--snap-text-dark);
@@ -511,6 +509,8 @@ a.icon:hover {
 
 button:disabled {
   cursor: initial !important;
+  opacity: .38; /* why  38%? google material design */
+  pointer-events: none;
 }
 
 .trait.card li span:nth-child(1) {
@@ -819,11 +819,6 @@ iframe#birdsong {
   animation: fa-spin 6s infinite linear;
 }
 
-a.collection-disabled {
-  color: grey;
-  pointer-events: none;
-}
-
 .dropdown.collections {
   display: flex;
 }
@@ -940,18 +935,6 @@ a.collection-disabled {
   vertical-align: text-bottom;
 }
 
-/* .home-container .snapdragon-tag > div .underline-link {
-  text-transform: initial;
-}
-
-.home-container .snapdragon-tag > div .super-text {
-  display: inline-block;
-  margin: .5rem 0 0 .25rem;
-  vertical-align: top;
-  color: var(--secondary);
-  font-style: italic;
-} */
-
 .edit-guide-link, .save-guide-link, .margin-right {
   margin: 0 .5rem 0 0;
 }
@@ -966,6 +949,14 @@ a.collection-disabled {
 
 .no-pointer-events {
   pointer-events: none;
+}
+
+.snapdragon-intro {
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  top: var(--vhStandardBlock, 10vh);
 }
 
 .snapdragon-intro > h3, .snapdragon-intro > h4, .snapdragon-intro > h5 {
@@ -1342,6 +1333,6 @@ input[type="number"].medium {
   display: none !important;
 }
 
-.svg-inline--fa.fa-book-open {
+#GLOSSARY .fa-book-open {
   vertical-align: -.2rem;
 }

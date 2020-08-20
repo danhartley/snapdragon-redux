@@ -1,0 +1,42 @@
+<h1>{{ title }}</h1>
+
+<div id="card">
+  <section id="front">
+    <!-- term lives here   -->
+  </section>
+  
+  <section id="back">
+    <!-- definition lives here   -->
+  </section>
+</div>
+
+<section id ="activeCardButtons">
+  <button id="prev">Previous Card</button>
+  <button id="flip">Flip</button>
+  <button id="next">Next Card</button>
+  <button id="shuffle">Shuffle deck</button>
+  <select name="sets" id="sets" data-repeat-set="{{ sets }}">
+    <option value="{{ set.title }}">{{ set.title }}</option>
+  </select>
+</section>
+
+<br>
+<br>
+<hr>
+
+<h2>Add new term</h2>
+
+<section>
+  <form id="cardForm">
+    <div>
+      <label for="newTerm">New term</label>
+      <input id="newTerm" type="text" onKeyDown="if(event.keyCode==13) document.getElementById('newDef').focus()">
+    </div>
+    <div>
+      <label for="newDef">New definition</label>
+      <input id="newDef" type="text">
+    </div>
+    <button id="submit" type="submit">Add new term to the deck</button>
+    <button id="clearDeck">Clear the deck</button>
+  </form>  
+</section>

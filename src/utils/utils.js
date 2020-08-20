@@ -1,5 +1,3 @@
-import { contains } from 'ramda';
-
 Array.prototype.concatAll = function() {
     const results = [];
   
@@ -272,8 +270,16 @@ const parseToLowerCase = value => {
 
 const hasClass = (elem, className) => {
   if(!elem) return false;
-  const classArray = [ ...elem.classList ];
-  return contains(className, classArray);
+    const classArray = [ ...elem.classList ];
+    const isTrue = classArray.find(c => c === className);
+    return !!isTrue;
+};
+
+const toggleClass = (elem, className) => {
+  if(!elem) return;
+  hasClass(elem, className) 
+    ? elem.classList.remove(className)
+    : elem.classList.add(className);
 };
 
 const removeClass = (elem, className) => {
@@ -284,6 +290,11 @@ const removeClass = (elem, className) => {
           }
       });
   }
+};
+
+const convertTraitKeyToUnitKey = traitKey => {
+  let conversion = traitKey.replace('_', ' ');
+  return toCamelCase(conversion);
 };
 
 export const utils = {
@@ -307,5 +318,7 @@ export const utils = {
   fromCamelCase,
   parseToLowerCase,
   hasClass,
-  removeClass
+  removeClass,
+  toggleClass,
+  convertTraitKeyToUnitKey
 };

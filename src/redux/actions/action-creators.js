@@ -41,6 +41,15 @@ const createQuickFire = makeActionCreator(types.CREATE_QUICKFIRE);
 const updateQuickFire = makeActionCreator(types.UPDATE_QUICKFIRE);
 const createGlossary = makeActionCreator(types.CREATE_GLOSSARY);
 const clickEvent = makeActionCreator(types.CLICK_EVENT);
+const updateDecks = makeActionCreator(types.UPDATE_DECKS);
+const updateDeck = makeActionCreator(types.UPDATE_DECK);
+const nextDeck = makeActionCreator(types.NEXT_DECK);
+const nextCard = makeActionCreator(types.NEXT_CARD);
+const updateDeckState = makeActionCreator(types.UPDATE_DECK_STATE);
+const updateDeckScore = makeActionCreator(types.UPDATE_DECK_SCORE);
+const updateDeckScoreHistory = makeActionCreator(types.UPDATE_DECK_SCORE_HISTORY);
+const updateDeckSettings = makeActionCreator(types.UPDATE_DECK_SETTINGS);
+const clearDeckScoreHistory = makeActionCreator(types.CLEAR_DECK_SCORE_HISTORY);
 
 const boundchangeLessonPlan = data => store.dispatch(changeLessonPlan(data));
 const boundchangeLessonPlans = data => store.dispatch(changeLessonPlans(data));
@@ -82,6 +91,15 @@ const boundCreateQuickFire = data => store.dispatch(createQuickFire(data));
 const boundUpdateQuickFire = data => store.dispatch(updateQuickFire(data));
 const boundCreateGlossary = data => store.dispatch(createGlossary(data));
 const boundClickEvent = data => store.dispatch(clickEvent(data));
+const boundUpdateDecks = data => store.dispatch(updateDecks(data));
+const boundUpdateDeck = data => store.dispatch(updateDeck(data));
+const boundNextDeck = data => store.dispatch(nextDeck(data));
+const boundNextCard = data => store.dispatch(nextCard(data));
+const boundUpdateDeckState = data => store.dispatch(updateDeckState(data));
+const boundUpdateDeckScore = data => store.dispatch(updateDeckScore(data));
+const boundUpdateDeckScoreHistory = data => store.dispatch(updateDeckScoreHistory(data));
+const boundUpdateDeckSettings = data => store.dispatch(updateDeckSettings(data));
+const boundClearDeckScoreHistory = data => store.dispatch(clearDeckScoreHistory(data));
 
 export const actions = {
     boundchangeLessonPlans,
@@ -114,5 +132,14 @@ export const actions = {
     boundCreateQuickFire,
     boundUpdateQuickFire,
     boundCreateGlossary,
-    boundClickEvent
+    boundClickEvent,
+    boundUpdateDecks,
+    boundUpdateDeck,
+    boundNextDeck,
+    boundNextCard,
+    boundUpdateDeckState,
+    boundUpdateDeckScore,
+    boundUpdateDeckScoreHistory,
+    boundUpdateDeckSettings,
+    boundClearDeckScoreHistory
 };

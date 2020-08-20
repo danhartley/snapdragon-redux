@@ -189,3 +189,8 @@ const layouts = [
     expect(utils.parseToLowerCase(arg)).toEqual('');
 
   });
+
+  test('should convert traitKey to unitKey', () => {
+    let traitKey = 'PETAL_WIDTH';
+    expect(utils.convertTraitKeyToUnitKey(traitKey)).toBe('petalWidth');
+  });

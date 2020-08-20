@@ -35,6 +35,15 @@ const CREATE_QUICKFIRE = '[CREATE_QUICKFIRE] Add quick-fire';
 const CREATE_GLOSSARY = '[CREATE_GLOSSARY] Add glossary';
 
 const CLICK_EVENT = '[CLICK_EVENT] User triggered event';
+const UPDATE_DECK = '[UPDATE_DECK] Update deck';
+const UPDATE_DECKS = '[UPDATE_DECKS] Update decks';
+const NEXT_DECK = '[NEXT_DECK] Get next deck';
+const NEXT_CARD = '[NEXT_CARD] Get next card';
+const UPDATE_DECK_STATE = '[UPDATE_DECK_STATE] Update deck state';
+const UPDATE_DECK_SCORE = '[UPDATE_DECK_SCORE] Update deck score';
+const UPDATE_DECK_SCORE_HISTORY = '[UPDATE_DECK_SCORE_HISTORY] Update deck score history';
+const UPDATE_DECK_SETTINGS = '[UPDATE_DECK_SETTINGS] Update deck settings';
+const CLEAR_DECK_SCORE_HISTORY = '[CLEAR_DECK_SCORE_HISTORY] clear deck score history';
 
 export const types = {
     CHANGE_LESSON_PLANS,
@@ -66,5 +75,14 @@ export const types = {
     CREATE_QUICKFIRE,
     UPDATE_QUICKFIRE,
     CREATE_GLOSSARY,
-    CLICK_EVENT
+    CLICK_EVENT,
+    UPDATE_DECKS,
+    UPDATE_DECK,
+    NEXT_DECK,
+    NEXT_CARD,
+    UPDATE_DECK_STATE,
+    UPDATE_DECK_SCORE,
+    UPDATE_DECK_SCORE_HISTORY,
+    UPDATE_DECK_SETTINGS,
+    CLEAR_DECK_SCORE_HISTORY
 };

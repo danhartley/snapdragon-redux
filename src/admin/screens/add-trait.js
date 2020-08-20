@@ -1,10 +1,11 @@
 import { contains } from 'ramda';
 
 import autocomplete from 'autocompleter';
-
+  
 import { itemProperties } from 'ui/helpers/data-checking';
 import { utils } from 'utils/utils';
 import { firestore } from 'api/firebase/firestore';
+import { traitValues } from 'admin/api/trait-values';
 import { renderTemplate } from 'ui/helpers/templating';
 
 import addTraitTemplate from 'admin/screens/add-trait-template.html';
@@ -13,49 +14,55 @@ export const renderAddTrait = (parent, callback) => {
 
     let inputKey, inputValue, inputUnit;
 
-    const traitTriage = (traitValues, traitKey) => {
+    const traitTriage = async (traitValues, traitKey) => {
 
         inputUnit = document.querySelector('#input-unit-value');
         inputValue = document.querySelector('#input-trait-value');
         
-        let units;
+        let _units = await firestore.getUnits();
 
-        traitValues.units.forEach(unit => {
+        let units = _units.map(unit => {
             for (let [key, obj] of Object.entries(unit)) {
                 if(key === utils.toCamelCase(traitKey)) {
-                    units = obj;
+                    return obj;
                 }
             }
         });
             
-        if(units) {
+        if(units.filter(u => u).length > 0) {
             
-            inputUnit.parentElement.classList.remove('hide');
+          let unit = units.find(u => u);
+          unit = unit.map(u => {
+            return {
+              label: u,
+              value: u
+            }
+          });
 
-            units = units.map(unit => { return { label: unit, value: unit }});
+          inputUnit.parentElement.classList.remove('hide');
 
-            initAutocomplete(inputUnit, units);
+          initAutocomplete(inputUnit, unit);
 
-            const saveTrait = async () => {
-                const trait = { key: traitKey, value: inputValue.value, unit: inputUnit.value };
-                callback(trait);
-            };
-        
-            inputUnit.addEventListener('keypress', event => {
-                if(event.keyCode == 13) {
-                    saveTrait();
-                }
-            });
-            
-            inputUnit.addEventListener('keydown', event => {
-                if(event.keyCode == 9) {
-                    const highlightedText = document.querySelector('.selected');
-                    if(highlightedText) {
-                        inputUnit.value = highlightedText.innerText;
-                        saveTrait();
-                    }
-                }
-            });
+          const saveTrait = async () => {
+              const trait = { key: traitKey, value: inputValue.value, unit: inputUnit.value };
+              callback(trait);
+          };
+      
+          inputUnit.addEventListener('keypress', event => {
+              if(event.keyCode == 13) {
+                  saveTrait();
+              }
+          });
+          
+          inputUnit.addEventListener('keydown', event => {
+              if(event.keyCode == 9) {
+                  const highlightedText = document.querySelector('.selected');
+                  if(highlightedText) {
+                      inputUnit.value = highlightedText.innerText;
+                      saveTrait();
+                  }
+              }
+          });
 
         } else {
 
@@ -125,7 +132,7 @@ export const renderAddTrait = (parent, callback) => {
 
     const init = async () => {
 
-        let traitValues;
+        // let traitValues;
 
         const template = document.createElement('template');
               template.innerHTML = addTraitTemplate;
@@ -136,7 +143,7 @@ export const renderAddTrait = (parent, callback) => {
 
         inputKey = document.querySelector('#input-trait-key');
 
-        traitValues = await firestore.getUnits();
+        // traitValues = await firestore.getUnits();
 
         let keys = [];
 

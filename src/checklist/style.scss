@@ -1,14 +1,59 @@
-$maxwidth: 1200px;
+$maxwidth: 1000px;
 $padding: .5rem;
 $margin: .5rem;
+$space: .5rem;
 $hbase: 1.5rem;
+$black: rgb(0, 0, 0);
+$darkgray: rgb(20, 20, 20);
+$gray: rgb(50, 50, 50);
+$midgray: rgb(110, 110, 110);
+$white: rgb(250, 250, 250);
+$border: rgb(210, 210, 210);
+$borderlight: rgb(225, 225, 225);
+$active: rgb(255, 0, 0);
+
+@mixin flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin button() {
+  background-color: $white;
+  display: inline-block;
+  border: 1px solid $midgray;
+  padding: $padding / 2;
+  width: $padding * 12;
+  text-align: center;
+  letter-spacing: .02rem;
+  font-size: .8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.flex {
+  @include flex();
+}
+
+.checklist-container {
+  display: block !important;
+}
 
 h1 {
-  font-size: $hbase;
+  font-size: $hbase + .5;
+  font-weight: normal;
+  margin: 0;
+}
+
+h1 + div {
+  font-size: .7rem;
+  margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: $hbase - .25;
+  font-size: $hbase;
+  letter-spacing: .1em;
+  font-weight: normal;
 }
 
 h3 {
@@ -20,6 +65,7 @@ body {
   margin: auto;
   padding: 2 * $padding;
   max-width: $maxwidth;
+  color: $gray;
 }
 
 img {
@@ -31,15 +77,9 @@ nav ul {
   columns: 6 100px
 }
 
-main ul {
-  columns: 2 200px;
-}
-
 li {
   list-style-type: none;
-  // margin: (2 * $margin) 0;
   span {
-    // padding: $padding (2 * $padding);
     &.goto {
       &::before {
         margin: 0 0 0 .25rem;
@@ -50,7 +90,10 @@ li {
 }
 
 a {
-  margin: 0 .25rem;  
+  margin: 0 .25rem;
+  text-decoration: none;
+  color: $black;
+  border-bottom: 1px solid $black;
   &:empty {
     display: none;
   }
@@ -60,6 +103,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 1px solid $borderlight;
 }
 
 section {
@@ -68,22 +112,87 @@ section {
 }
 
 button {
-  padding: $padding;
-}
-
-.icon {
-  min-width: 1rem;
-  span:before {
-    content:'\2713';
-    display:inline-block;
-    color: white;
-    min-width: 2 * $padding;
-    margin-right: $padding
+  font-family: 'Open Sans', sans-serif;
+  &:focus, &.active {
+    outline: none;
+    background-color: $gray;
   }
 }
 
-.icon.completed span:before {
-  color: black;
+hr {
+  border-style: hidden;
+  height: $space * 2;
+}
+
+dd {
+  white-space: pre-line;
+}
+
+.checklist, .process {
+  dt {
+    display: grid;
+    grid-template-columns: auto (6 * $padding);
+    cursor: pointer;  
+  }
+  dt:nth-child(4n + 1) {
+    border-top: 1px solid $border;
+    border-right: 1px solid $border;
+  }
+  dt:nth-child(4n + 3) {
+    border-top: 1px solid $border;
+    border-left: 1px solid $border;
+  }
+  dd {
+    padding: $padding (3 * $padding);
+  }
+}
+
+.process {
+  dt {
+    display: grid;
+    grid-template-columns: auto (6 * $padding);
+    cursor: pointer;  
+  }
+  dd {
+    margin: $padding 0 2*$padding $padding;
+    line-height: 1.8;
+  }
+}
+
+.task {
+  button {
+    background-color: transparent;
+    border: none;
+    width: fit-content;
+    font-size: 1rem;
+    cursor: pointer;
+    color: $gray;
+    span {
+      color: $gray;
+    }
+    text-align: left
+  }
+  padding: $padding;
+  button:first-child:before, button:nth-child(2):before {
+    display:inline-block;
+    border: 1px solid lightgray;;
+    padding: $padding / 2 $padding;
+    margin-right: $padding;
+  }
+  button:first-child:before {
+    content:'\2713';
+    color: transparent;
+  }
+  button:nth-child(2):before {
+    content:'\25bc';
+    color: $gray;
+    font-size: 1.5 * $padding;
+    border: none;
+  }
+}
+
+.task button.completed:before {
+  color: $darkgray;  ;
 }
 
 .skip-link {
@@ -91,13 +200,152 @@ button {
   top: -40px;
   left: 0;
   background: #000000;
-  color: white;
+  color: $white;
   padding: 8px;
   z-index: 100;
 }
 
+//sr-only
+.hide {
+  position: absolute;
+  width: 1px;
+  height: 0px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+.active {
+  color: $active;
+}
+
 .skip-link:focus {
   top: 0;
+}
+
+.menu-wrapper {
+  position: relative;
+}
+
+.menu {  
+  margin: 0;
+  padding: $padding / 2 $padding / 4;
+  display: flex;
+  justify-content: center;
+  li {
+    margin: 0 $margin / 4;
+  }
+  button {
+    @include button();
+    &.active {
+      outline: none;
+      color: $white;
+      background-color: $gray !important;
+    }
+  }
+}
+
+footer {
+  button {
+    @include button();
+  }
+}
+
+// about
+
+.about-grid {
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template: "main"
+                  "left"
+                  "right";
+  display: grid;
+  column-gap: $space * 4;
+  main {
+    grid-area: main;
+    ul {
+      font-size: .8rem;
+    }
+    li {
+      span {
+        color: $black;    
+      }
+    }
+  }
+  aside {
+    display: flex;
+    margin-top: $margin * 2;
+    flex-direction: column;
+    gap: $space;        
+    &.left {
+      grid-area: left;
+      border-right: $space * 2 solid $border;
+      padding: 0 ($padding * 2) 0 0;
+    }
+    &.right {
+      grid-area: right;
+      border-left: $space * 2 solid $border;
+      padding: 0 0 0 ($padding * 2);
+    }
+  }
+  .smaller {
+    font-size: .8em;
+  }
+  .bigger {
+    font-size: 1.1em;
+  }
+  .skill {
+    margin-top: $margin;
+    span {
+      font-style: italic;
+      font-size: .8em;
+      border-bottom: 1px solid $borderlight;
+    }
+    &:first-child {
+      margin: 0 0 ($margin) 0;
+    }
+  }
+}
+
+p {
+  span {
+    color: $black;
+    background-color: $white;
+  }
+  &:first-child {
+    color: $black;
+  }
+  // &:first-child {
+  //   margin: 0;
+  // }
+  // &:first-child::first-letter {
+  //   font-size: 4em;
+  //   margin: 0 (- $margin / 2);
+  // }
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  width: 100%;
+  height: 150px;
+  margin: 20px;
+  clip-path: circle();
+  background: $borderlight;
+}
+
+#circle-left {
+  float: left;
+}
+
+@media (min-width: 600px) {
+  .about-grid {
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template: "left main right";
+  }
 }
 
 @media (max-width: 768px) { 
@@ -107,5 +355,22 @@ button {
 }
 
 @media (min-width: 769px) {
+  .menu {
+    right: $margin;
+    justify-content: initial;
+    position: absolute;
+  }
+}
 
+@media (min-width: 1024px) {
+  .circle {
+    width: 150px;
+    shape-outside: circle();
+  }
+  #circle-right {
+    float: right;
+    & + ul {
+      text-align: right;
+    }
+  }
 }

@@ -171,9 +171,8 @@ const loadCollectionItemProperties = async (collection, config) => {
 };
 
 const getSpeciesDetailsInParallel = async species => {
-    const items = await firestore.getSpeciesInParallel(species);
-    return items;
-}
+  return await firestore.getSpeciesInParallel(species);
+};
 
 export const collectionHandler = {
     loadCollection,

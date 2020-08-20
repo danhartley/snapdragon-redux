@@ -41,7 +41,7 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
 
         images = getPortraitImages(images);
 
-        let question = config.islandscapeMode ? 'Find then click to ID' : 'Swipe and tap to ID';
+        let question = 'Identify this species';
 
         let parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question, help: '(Click on the matching photo.)', term: '' });
             parent.innerHTML = '';
@@ -83,7 +83,7 @@ export const renderMixedSpecimenImagesAndQuestion = collection => {
                     questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, 
                     points: layout.points,
                     answers,
-                    questionText: config.isPortraitMode ? 'Swipe and tap to ID' : 'Identify this species',
+                    questionText: 'Identify this species',
                     vernacularName: itemProperties.getVernacularName(item, config),
                 };
 

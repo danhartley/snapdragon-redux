@@ -19,21 +19,21 @@ module.exports = {
     module: {
         rules: [
           {              
-              test: /\.js$/,
-              use: {
-                loader: "babel-loader",
-                options: {
-                  presets: [
-                    ["@babel/preset-env",{
-                    "targets": ">.25%",
-                    "modules": false
-                  }]],
-                  plugins: [
-                    "@babel/plugin-proposal-class-properties",
-                    "@babel/plugin-proposal-object-rest-spread"
-                  ]          
-                }                
-              }
+            test: /\.js$/,
+            use: {
+              loader: "babel-loader",
+              options: {
+                presets: [
+                  ["@babel/preset-env",{
+                  "targets": ">.25%",
+                  "modules": false
+                }]],
+                plugins: [
+                  "@babel/plugin-proposal-class-properties",
+                  "@babel/plugin-proposal-object-rest-spread"
+                ]          
+              }                
+            }
           },
           {
             test: /\.html$/,
@@ -89,7 +89,7 @@ module.exports = {
         // https://webpack.js.org/configuration/resolve/#resolvemodules
     },
     devServer: {
-      host: 'localhost',// necessary for service worker to be recognised      
+      host: '0.0.0.0',// 0.0.0.0 necessary for service worker to be recognised, localhost for reload
       disableHostCheck: true,
       writeToDisk: true,
       compress: true
@@ -99,7 +99,6 @@ module.exports = {
       moduleIds: 'hashed',
       runtimeChunk: 'single',
       splitChunks: {
-        // chunks: 'all',        
         cacheGroups: {
           vendor: {
             test: /[\\/]node_modules[\\/]/,

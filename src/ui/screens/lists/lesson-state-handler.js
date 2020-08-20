@@ -9,6 +9,9 @@ import { enums } from 'ui/helpers/enum-helper';
 import { renderSpeciesList } from 'ui/screens/lists/species-list';
 import { collectionHandler  } from 'ui/helpers/collection-handler';
 import { lessonStateHelper } from 'ui/screens/lists/lesson-state-helper';
+import { nextLesson } from 'ui/setup/next-lesson';
+import { nextLayout } from 'ui/setup/next-layout';
+import { nextItem } from 'ui/setup/next-item';
 
 const changeRequest = async args => {
 
@@ -64,7 +67,12 @@ const changeRequest = async args => {
               ? enums.lessonState.RESUME_LESSON
               : enums.lessonState.BEGIN_LESSON;
       saveUserProgressState(userProgressState);
-      subscription.addAllQuizLayoutSubs();
+      // subscription.addAllQuizLayoutSubs();
+
+      subscription.add(nextItem, 'layout', 'quiz');
+      subscription.add(nextLesson, 'counter', 'quiz');
+      subscription.add(nextLayout, 'counter', 'quiz');
+
       setTimeout(() => {
         changeLessonState(_lessonState, userProgressState.collection, userProgressState.lesson); 
       });
