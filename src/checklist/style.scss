@@ -3,6 +3,7 @@ $padding: .5rem;
 $margin: .5rem;
 $space: .5rem;
 $hbase: 1.5rem;
+$black: rgb(0, 0, 0);
 $darkgray: rgb(20, 20, 20);
 $gray: rgb(50, 50, 50);
 $midgray: rgb(110, 110, 110);
@@ -11,17 +12,27 @@ $border: rgb(210, 210, 210);
 $borderlight: rgb(225, 225, 225);
 $active: rgb(255, 0, 0);
 
+@mixin flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @mixin button() {
   background-color: $white;
   display: inline-block;
   border: 1px solid $midgray;
   padding: $padding / 2;
-  width: $padding * 14;
+  width: $padding * 12;
   text-align: center;
   letter-spacing: .02rem;
   font-size: .8rem;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.flex {
+  @include flex();
 }
 
 .checklist-container {
@@ -30,14 +41,18 @@ $active: rgb(255, 0, 0);
 
 h1 {
   font-size: $hbase + .5;
-  font-family: windsor,Georgia,serif;
   font-weight: normal;
+  margin: 0;
+}
+
+h1 + div {
+  font-size: .7rem;
+  margin-bottom: 1rem;
 }
 
 h2 {
   font-size: $hbase;
   letter-spacing: .1em;
-  font-family: windsor,Georgia,serif;
   font-weight: normal;
 }
 
@@ -75,7 +90,10 @@ li {
 }
 
 a {
-  margin: 0 .25rem;  
+  margin: 0 .25rem;
+  text-decoration: none;
+  color: $black;
+  border-bottom: 1px solid $black;
   &:empty {
     display: none;
   }
@@ -99,6 +117,11 @@ button {
     outline: none;
     background-color: $gray;
   }
+}
+
+hr {
+  border-style: hidden;
+  height: $space * 2;
 }
 
 dd {
@@ -235,42 +258,93 @@ footer {
 
 .about-grid {
   grid-template-rows: 1fr 1fr 1fr;
+  grid-template: "main"
+                  "left"
+                  "right";
   display: grid;
   column-gap: $space * 4;
+  main {
+    grid-area: main;
+    ul {
+      font-size: .8rem;
+    }
+    li {
+      span {
+        color: $black;    
+      }
+    }
+  }
   aside {
     display: flex;
     margin-top: $margin * 2;
     flex-direction: column;
     gap: $space;        
     &.left {
+      grid-area: left;
       border-right: $space * 2 solid $border;
       padding: 0 ($padding * 2) 0 0;
     }
     &.right {
+      grid-area: right;
       border-left: $space * 2 solid $border;
       padding: 0 0 0 ($padding * 2);
     }
   }
-  .section {
+  .smaller {
+    font-size: .8em;
+  }
+  .bigger {
+    font-size: 1.1em;
+  }
+  .skill {
     margin-top: $margin;
     span {
       font-style: italic;
       font-size: .8em;
       border-bottom: 1px solid $borderlight;
-    }    
+    }
+    &:first-child {
+      margin: 0 0 ($margin) 0;
+    }
   }
 }
 
 p {
   span {
-    font-weight: bold;
+    color: $black;
     background-color: $white;
   }
+  &:first-child {
+    color: $black;
+  }
+  // &:first-child {
+  //   margin: 0;
+  // }
+  // &:first-child::first-letter {
+  //   font-size: 4em;
+  //   margin: 0 (- $margin / 2);
+  // }
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  width: 100%;
+  height: 150px;
+  margin: 20px;
+  clip-path: circle();
+  background: $borderlight;
+}
+
+#circle-left {
+  float: left;
 }
 
 @media (min-width: 600px) {
   .about-grid {
-    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template: "left main right";
   }
 }
 
@@ -286,7 +360,17 @@ p {
     justify-content: initial;
     position: absolute;
   }
-  h1 {
-    margin-top: $margin * 6;
+}
+
+@media (min-width: 1024px) {
+  .circle {
+    width: 150px;
+    shape-outside: circle();
+  }
+  #circle-right {
+    float: right;
+    & + ul {
+      text-align: right;
+    }
   }
 }
