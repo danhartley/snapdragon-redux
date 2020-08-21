@@ -16,6 +16,7 @@ $active: rgb(255, 0, 0);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 @mixin button() {
@@ -29,6 +30,30 @@ $active: rgb(255, 0, 0);
   font-size: .8rem;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+@mixin show-circles() {
+  .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    margin: 20px;
+    clip-path: circle();
+    background: $borderlight;
+  }
+}
+
+@mixin hide-circles() {
+  .circle {
+    display: none;
+  }
+  .about-grid aside.left {
+    border-right: none;
+  }
+  .about-grid aside.right {
+    border-left: none;
+  }
 }
 
 .flex {
@@ -63,7 +88,7 @@ h3 {
 body {
   font-family: 'Open Sans', sans-serif;
   margin: auto;
-  padding: 2 * $padding;
+  padding: $padding;
   max-width: $maxwidth;
   color: $gray;
 }
@@ -78,6 +103,7 @@ nav ul {
 }
 
 li {
+  margin-left: -($margin * 2);
   list-style-type: none;
   span {
     &.goto {
@@ -100,9 +126,6 @@ a {
 }
 
 header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-bottom: 1px solid $borderlight;
 }
 
@@ -230,7 +253,7 @@ dd {
   position: relative;
 }
 
-.menu {  
+.menu {    
   margin: 0;
   padding: $padding / 2 $padding / 4;
   display: flex;
@@ -246,6 +269,7 @@ dd {
       background-color: $gray !important;
     }
   }
+  display: none;
 }
 
 footer {
@@ -257,10 +281,11 @@ footer {
 // about
 
 .about-grid {
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template: "main"
-                  "left"
-                  "right";
+  grid-template-columns: 1fr 1fr;
+  grid-template:  "main main"
+                  "programming programming"
+                  "design design"
+                  "left right";
   display: grid;
   column-gap: $space * 4;
   main {
@@ -274,6 +299,12 @@ footer {
       }
     }
   }
+  .programming {
+    grid-area: programming;
+  }
+  .design {
+    grid-area: design;
+  }
   aside {
     display: flex;
     margin-top: $margin * 2;
@@ -281,12 +312,10 @@ footer {
     gap: $space;        
     &.left {
       grid-area: left;
-      border-right: $space * 2 solid $border;
       padding: 0 ($padding * 2) 0 0;
     }
     &.right {
       grid-area: right;
-      border-left: $space * 2 solid $border;
       padding: 0 0 0 ($padding * 2);
     }
   }
@@ -303,9 +332,7 @@ footer {
       font-size: .8em;
       border-bottom: 1px solid $borderlight;
     }
-    &:first-child {
-      margin: 0 0 ($margin) 0;
-    }
+    margin: 0.75rem 0 0.25rem 0;
   }
 }
 
@@ -317,40 +344,34 @@ p {
   &:first-child {
     color: $black;
   }
-  // &:first-child {
-  //   margin: 0;
-  // }
-  // &:first-child::first-letter {
-  //   font-size: 4em;
-  //   margin: 0 (- $margin / 2);
-  // }
 }
 
-.circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;  
-  width: 100%;
-  height: 150px;
-  margin: 20px;
-  clip-path: circle();
-  background: $borderlight;
+.work {
+  font-size: 1.4em;
+  color: $black;
 }
 
-#circle-left {
-  float: left;
+.legacy {
+  div {
+    margin: ($margin /2) 0 0 0;
+  }
 }
 
 @media (min-width: 600px) {
   .about-grid {
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template: "left main right";
+    grid-template: "left  main         right"
+                   "left  programming  right"
+                   "left  design       right";
   }
-}
-
-@media (max-width: 768px) { 
-  article {
-
+  @include show-circles();
+  aside {
+    &.left {
+      border-right: $space * 2 solid $border;
+    }
+    &.right {
+      border-left: $space * 2 solid $border;
+    }
   }
 }
 
@@ -363,14 +384,52 @@ p {
 }
 
 @media (min-width: 1024px) {
+  li  {
+    margin-left: initial;
+  }
   .circle {
     width: 150px;
     shape-outside: circle();
+  }
+  #circle-left {
+    float: left;
   }
   #circle-right {
     float: right;
     & + ul {
       text-align: right;
     }
+  }
+  #circle-left:hover, #circle-right:hover {
+      color: $white;
+      background-size: contain;
+      background-image: url('https://media-exp1.licdn.com/dms/image/C4E03AQFAu1DpOa0Ygg/profile-displayphoto-shrink_200_200/0?e=1603324800&v=beta&t=XGmhP_mjl1oGKgU1-edbbOaPQzriUDhnrwBMyS1F_xQ');
+  }
+}
+
+@media print {
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 80%; 
+  }
+  @page {
+    margin: 20mm;
+  }
+  .pagebreak { 
+      break-after: page;
+  }
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template:  "main main"
+                    "programming programming"
+                    "design design"
+                    "left right";
+  }
+  @include hide-circles();
+  .legacy {
+    display: none;
+  }
+  .smaller {
+    font-size: 1rem !important;
   }
 }
