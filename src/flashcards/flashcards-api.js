@@ -424,7 +424,8 @@ const climateChangeCards = [
   },
   {
     term: 'What is the current biophysical capacity requirement of humanity in Earth units?',
-    definition: '1.7'
+    definition: '1.7',
+    source: 'https://www.overshootday.org/'
   },
   {
     term: 'What is the ‘fat-tailed’ distribution?',
