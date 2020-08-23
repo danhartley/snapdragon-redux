@@ -385,6 +385,11 @@ const climateChangeCards = [
     source: 'https://www.c2es.org/content/international-emissions/'
   },
   {
+    term: 'What percentage of global manmade greenhouse gas emissions does concrete account for?',
+    definition: '7%',
+    source: 'https://www.iea.org/news/cement-technology-roadmap-plots-path-to-cutting-co2-emissions-24-by-2050'
+  },
+  {
     term: 'What percentage of global manmade greenhouse gas emissions does flying account for?',
     definition: '2-2.5%'
   },
