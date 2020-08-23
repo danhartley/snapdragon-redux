@@ -357,15 +357,27 @@ p {
   }
 }
 
-.pitch {
+.pitch, .history {
   background-color: $gray;
   color: $white;
   div {
     font-size: 1.1em;
-    font-style: italic;
     span {
-      border-bottom: 1px solid $white;
+      border-bottom: 1px dashed $white;
     };
+  }
+  a {
+    color: $white;
+    border-bottom: 1px solid $white;
+  }
+  .job {
+    font-style: italic;
+  }
+  .job-link {    
+    font-size: .8em;
+  }
+  .indent {
+    margin: 0 0 0 $margin;
   }
 }
 

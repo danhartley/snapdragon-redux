@@ -4,7 +4,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const WebpackLighthousePlugin = require('webpack-lighthouse-plugin'); 
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     devtool: "source-map",
     entry: {
       checklist: './src/checklist/checklist.js'
