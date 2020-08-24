@@ -336,7 +336,7 @@ footer {
   }
 }
 
-p {
+nav p {
   span {
     color: $black;
     background-color: $white;
@@ -357,7 +357,7 @@ p {
   }
 }
 
-.pitch, .history {
+.pitch, .history, .education {
   background-color: $gray;
   color: $white;
   div {
@@ -455,5 +455,13 @@ p {
   }
   .smaller {
     font-size: 1rem !important;
+  }
+  .pitch, .history, .education {
+    background-color: $white;
+    color: $gray;
+    div > span {
+      font-size: 1.2em;
+      color: $black;
+    }
   }
 }
