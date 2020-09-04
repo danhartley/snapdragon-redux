@@ -164,6 +164,11 @@ let sections = [
         link: 'https://web.dev/interactive'
       }
       , {
+        term: 'Landmarks',
+        descriptions: ['8 roles each of which represents a block of content that occurs commonly on web pages.'],
+        link: 'https://www.washington.edu/accessibility/web/landmarks/'
+      }
+      , {
         term: 'RAIL',
         descriptions: ['A user-centric performance model that breaks down the user\'s experience into key actions: Response, Animation , Idle, Load'],
         more: [
