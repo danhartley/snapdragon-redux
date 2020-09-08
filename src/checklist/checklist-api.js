@@ -8,7 +8,8 @@ let sections = [
       {
         term: 'A working wireframe that covers major features and use cases',
         descriptions: [`Create the simplest version of the site using few or no colours,  with intended layouts, standard padding, margins, grids, etc.
-        Include all media breakpoints.
+        Treat Text as a User Interface.
+        Include all media breakpoints.        
         Include all dependencies that will be needed whether or not they are immediately required e.g. firebase authentication.
         The site should be semantically correct. If possible have someone familiar with using screen readers use the site.
         Set up a Lighthouse budget and testing framework preferably on a dedicated machine.
@@ -113,7 +114,8 @@ let sections = [
       {
         term: 'Create README.md file',
         descriptions: [`List files used only during initial development and testing, and to support stand-alone deployment.
-        Include instructions on how to run the feature in isolation.`]
+        Include instructions on how to run the feature in isolation.
+        Mandatory sections for HTML, JavaScript and CSS naming conventions and preprocessors e.g. Sass & BME.`]
       },
       {
         term: 'Create tests',
@@ -188,6 +190,8 @@ let sections = [
       , { term: 'JAMstack', link: 'https://jamstack.wtf/', descriptions: ['Web development architecture based on client-side JavaScript, reusable APIs, and prebuilt Markup.'] }
       , { term: 'SSR Server side rendering', link: '', descriptions: [''] }
       , { term: 'ISSR Isomorphic server side rendering', link: '', descriptions: [''] }
+      , { term: 'Topography', link: 'https://ia.net/topics/the-web-is-all-about-typography-period', descriptions: ['95% of web design is topography'] }
+      , { term: 'Ornament and Crime', link: 'https://en.wikipedia.org/wiki/Ornament_and_Crime', descriptions: ['A criticism of ornament in useful objects.'] }
   ]
   }
 ];

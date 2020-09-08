@@ -1,0 +1,25 @@
+.l-reveal-container {
+  display: block !important;
+}
+
+.l-menu-wrapper {
+  position: relative;
+}
+
+.l-menu {    
+  margin: 0;
+  padding: $padding / 2 $padding / 4;
+  display: flex;
+  justify-content: center;
+  li {
+    margin: 0 $margin / 4;
+  }
+  button {
+    @include state-button();
+  }
+  @media (min-width: 769px) {
+    right: $margin;
+    justify-content: initial;
+    position: absolute;
+  }
+}

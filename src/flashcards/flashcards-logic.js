@@ -12,7 +12,7 @@ export const flashcardsLogic = () => {
 
   const parent = document.querySelector('body');
 
-  let set = sets.find(set => set.title === 'Climate change');
+  let set = sets.find(set => set.title === 'Nature');
   let currentDeck = [ ...set.cards ];
   
   let cardIndex = 0;

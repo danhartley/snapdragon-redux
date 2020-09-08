@@ -33,10 +33,10 @@ menuButtons.forEach(option => {
 const optionDefaults = id => {
   document.querySelector('footer button').style.display = id === 'about' ? 'none' : 'inline-block';
   document.querySelector('header h1').innerHTML = id === 'about' ? 'Daniel Hartley' : 'Checklists';
-  document.querySelector('header div > div').innerHTML = id === 'about' ? 'Web developer' : 'Web development';
+  document.querySelector('header h2').innerHTML = id === 'about' ? 'Web developer' : 'Web development';
   menuButtons.forEach(button => button.classList.remove('active'));
   document.querySelector(`#${id}`).classList.add('active');
 };
         
-document.querySelector('#about').focus();
-document.querySelector('#about').click();
+document.querySelector('#checklists').focus();
+document.querySelector('#checklists').click();

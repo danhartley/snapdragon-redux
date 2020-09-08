@@ -41,7 +41,7 @@ export const checklists = () => {
     });
   });
 
-  document.querySelector('.clear').addEventListener('click', e => {
+  document.querySelector('.js-clear').addEventListener('click', e => {
     localStorage.clear();
     location.reload();
   });
