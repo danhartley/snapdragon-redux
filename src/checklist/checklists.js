@@ -16,7 +16,7 @@ export const checklists = () => {
     projectChecklist: api.projectChecklist,
     featureChecklist: api.featureChecklist,
     termList: api.termList,
-    processList: api.processList
+    // processList: api.processList
   }, template.content, parent);
 
   Array.from(document.querySelectorAll('.task button:first-child')).forEach(task => {
@@ -41,7 +41,7 @@ export const checklists = () => {
     });
   });
 
-  document.querySelector('.clear').addEventListener('click', e => {
+  document.querySelector('.js-clear').addEventListener('click', e => {
     localStorage.clear();
     location.reload();
   });

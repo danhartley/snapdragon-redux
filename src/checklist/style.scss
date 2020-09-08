@@ -1,155 +1,7 @@
-$maxwidth: 1000px;
-$padding: .5rem;
-$margin: .5rem;
-$space: .5rem;
-$hbase: 1.5rem;
-$black: rgb(0, 0, 0);
-$darkgray: rgb(20, 20, 20);
-$gray: rgb(50, 50, 50);
-$midgray: rgb(110, 110, 110);
-$white: rgb(250, 250, 250);
-$border: rgb(210, 210, 210);
-$borderlight: rgb(225, 225, 225);
-$active: rgb(255, 0, 0);
-
-@mixin flex {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-@mixin button() {
-  background-color: $white;
-  display: inline-block;
-  border: 1px solid $midgray;
-  padding: $padding / 2;
-  width: $padding * 12;
-  text-align: center;
-  letter-spacing: .02rem;
-  font-size: .8rem;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-@mixin show-circles() {
-  .circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 150px;
-    margin: 20px;
-    clip-path: circle();
-    background: $borderlight;
-  }
-}
-
-@mixin hide-circles() {
-  .circle {
-    display: none;
-  }
-  .about-grid aside.left {
-    border-right: none;
-  }
-  .about-grid aside.right {
-    border-left: none;
-  }
-}
-
-.flex {
-  @include flex();
-}
-
-.checklist-container {
-  display: block !important;
-}
-
-h1 {
-  font-size: $hbase + .5;
-  font-weight: normal;
-  margin: 0;
-}
-
-h1 + div {
-  font-size: .7rem;
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-size: $hbase;
-  letter-spacing: .1em;
-  font-weight: normal;
-}
-
-h3 {
-  font-size: $hbase - .5;
-}
-
-body {
-  font-family: 'Open Sans', sans-serif;
-  margin: auto;
-  padding: $padding;
-  max-width: $maxwidth;
-  color: $gray;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-nav ul {
-  columns: 6 100px
-}
-
-li {
-  margin-left: -($margin * 2);
-  list-style-type: none;
-  span {
-    &.goto {
-      &::before {
-        margin: 0 0 0 .25rem;
-        content: 'go to: ';
-      }
-    }
-  }
-}
-
-a {
-  margin: 0 .25rem;
-  text-decoration: none;
-  color: $black;
-  border-bottom: 1px solid $black;
-  &:empty {
-    display: none;
-  }
-}
-
-header {
-  border-bottom: 1px solid $borderlight;
-}
-
-section {
-  padding: $padding;
-  margin: $margin 0;
-}
-
-button {
-  font-family: 'Open Sans', sans-serif;
-  &:focus, &.active {
-    outline: none;
-    background-color: $gray;
-  }
-}
-
-hr {
-  border-style: hidden;
-  height: $space * 2;
-}
-
-dd {
-  white-space: pre-line;
-}
+@import 'checklist/css/base.scss';
+@import 'checklist/css/layout.scss';
+@import 'checklist/css/state.scss';
+@import 'checklist/css/print.scss';
 
 .checklist, .process {
   dt {
@@ -159,11 +11,11 @@ dd {
   }
   dt:nth-child(4n + 1) {
     border-top: 1px solid $border;
-    border-right: 1px solid $border;
+    border-left: 1px solid $border;    
   }
   dt:nth-child(4n + 3) {
     border-top: 1px solid $border;
-    border-left: 1px solid $border;
+    border-right: 1px solid $border;
   }
   dd {
     padding: $padding (3 * $padding);
@@ -183,24 +35,16 @@ dd {
 }
 
 .task {
-  button {
-    background-color: transparent;
-    border: none;
-    width: fit-content;
-    font-size: 1rem;
-    cursor: pointer;
-    color: $gray;
-    span {
-      color: $gray;
-    }
-    text-align: left
-  }
   padding: $padding;
+  button {
+    @include accordion-button();
+  }  
   button:first-child:before, button:nth-child(2):before {
     display:inline-block;
     border: 1px solid lightgray;;
     padding: $padding / 2 $padding;
     margin-right: $padding;
+    width: fit-content;
   }
   button:first-child:before {
     content:'\2713';
@@ -209,13 +53,13 @@ dd {
   button:nth-child(2):before {
     content:'\25bc';
     color: $gray;
-    font-size: 1.5 * $padding;
+    font-size: $fontsize;
     border: none;
   }
 }
 
 .task button.completed:before {
-  color: $darkgray;  ;
+  color: $darkgray;
 }
 
 .skip-link {
@@ -228,57 +72,9 @@ dd {
   z-index: 100;
 }
 
-//sr-only
-.hide {
-  position: absolute;
-  width: 1px;
-  height: 0px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap; /* added line */
-  border: 0;
-}
-
-.active {
-  color: $active;
-}
-
 .skip-link:focus {
   top: 0;
 }
-
-.menu-wrapper {
-  position: relative;
-}
-
-.menu {    
-  margin: 0;
-  padding: $padding / 2 $padding / 4;
-  display: flex;
-  justify-content: center;
-  li {
-    margin: 0 $margin / 4;
-  }
-  button {
-    @include button();
-    &.active {
-      outline: none;
-      color: $white;
-      background-color: $gray !important;
-    }
-  }
-  display: none;
-}
-
-footer {
-  button {
-    @include button();
-  }
-}
-
-// about
 
 .about-grid {
   grid-template-columns: 1fr 1fr;
@@ -291,7 +87,7 @@ footer {
   main {
     grid-area: main;
     ul {
-      font-size: .8rem;
+      font-size: $fontsizesmall;
     }
     li {
       span {
@@ -333,16 +129,6 @@ footer {
       border-bottom: 1px solid $borderlight;
     }
     margin: 0.75rem 0 0.25rem 0;
-  }
-}
-
-nav p {
-  span {
-    color: $black;
-    background-color: $white;
-  }
-  &:first-child {
-    color: $black;
   }
 }
 
@@ -399,14 +185,6 @@ nav p {
   }
 }
 
-@media (min-width: 769px) {
-  .menu {
-    right: $margin;
-    justify-content: initial;
-    position: absolute;
-  }
-}
-
 @media (min-width: 1024px) {
   li  {
     margin-left: initial;
@@ -428,40 +206,5 @@ nav p {
       color: $white;
       background-size: contain;
       background-image: url('https://media-exp1.licdn.com/dms/image/C4E03AQFAu1DpOa0Ygg/profile-displayphoto-shrink_200_200/0?e=1603324800&v=beta&t=XGmhP_mjl1oGKgU1-edbbOaPQzriUDhnrwBMyS1F_xQ');
-  }
-}
-
-@media print {
-  a[href^="http"]:after {
-    content: " (" attr(href) ")";
-    font-size: 80%; 
-  }
-  @page {
-    margin: 20mm;
-  }
-  .pagebreak { 
-      break-after: page;
-  }
-  .about-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template:  "main main"
-                    "programming programming"
-                    "design design"
-                    "left right";
-  }
-  @include hide-circles();
-  .legacy {
-    display: none;
-  }
-  .smaller {
-    font-size: 1rem !important;
-  }
-  .pitch, .history, .education {
-    background-color: $white;
-    color: $gray;
-    div > span {
-      font-size: 1.2em;
-      color: $black;
-    }
   }
 }

@@ -1,291 +1,7 @@
-const scienceCards = [
-  {
-    term: 'What is the perihelion?',
-    definition: 'The point in the orbit of a planet, asteroid or comet when it is nearest to the sun.'
-  },
-  {
-    term: 'What is the current tilt of the earth\'s axis?',
-    definition: '23.4°'
-  },
-  {
-    term: 'What is the range of tilt of the earth\'s axis?',
-    definition: '22.1°-24.5°'
-  },
-  {
-    term: 'Earth\'s obliquity oscillates between which two measurements every 41,000 years?',
-    definition: '22.1°-24.5°'
-  },
-  {
-    term: 'What is the angular radius of earth\'s axial precession?',
-    definition: '23.5°'
-  },
-  {
-    term: 'What is obliquity?',
-    definition: 'The angle between an object\'s rotational axis and its orbital axis (also axial tilt).'
-  },
-  {
-    term: 'Define orbital forcing',
-    definition: 'The effect on climate of slow changes in the tilt of the earth\'s axis and shape of the earth\'s orbit around the sun.'
-  },
-  {
-    term: 'What is orbital eccentricity?',
-    definition: 'A dimensionless parameter that determines the amount by which its orbit around another body deviates from a perfect circle.'
-  },
-  {
-    term: 'What is the aphelion?',
-    definition: 'The point in the orbit of a planet, asteroid or comet that is furthest from the sun.'
-  },
-  {
-    term: 'Which gas is found at concentrations between 0 and 3% of a volume of air and has the largest effect on surface temperature?',
-    definition: 'Water vapour'
-  },
-  {
-    term: 'What are the two processes by which water is exchanged between the atmosphere and the earth’s surface?',
-    definition: 'Evaporation and precipitation'
-  },
-  {
-    term: 'How long, on average, does a molecule of water reside in the atmosphere?',
-    definition: 'About two weeks'
-  },
-  {
-    term: 'Warmer air supports more or less water vapour?',
-    definition: 'More'
-  },
-  {
-    term: 'What do we call the ratio between the amount of moisture in the air and its upper limit?',
-    definition: 'Relative humidity'
-  },
-  {
-    term: 'Why is there is often less water vapour in the air than there could be?',
-    definition: 'Rain and snow remove water from the air.'
-  },
-  {
-    term: 'Explain positive feedback in relation to water vapour?',
-    definition: 'Rising water vapour leads to more back-radiation to the surface, which causes higher temperatures.'
-  },
-  {
-    term: 'What is a convergent boundary?',
-    definition: 'A place in the earth\'s mantle where one tectonic plate slides beneath another.'
-  },
-  {
-    term: 'Earth\'s orbit around the sun varies cyclically from more to less circular every how many years?',
-    definition: '100,000'
-  },
-  {
-    term: 'Earth\'s axial tilt, or obliquity, oscillates between 22.1°-24.5 how frequently?',
-    definition: 'Every 41,000 years'
-  },
-  {
-    term: 'Earth\'s rotation axis precesses with periods of how many years?',
-    definition: '26,000 years, or 1° every 72 years (26,000 years / 360°)'
-  },
-  {
-    term: 'Which three factors affect the way sunlight is distributed around the world?',
-    definition: 'The planet’s tilt (obliquity), wobble (axial precession), and orbit (of the sun)'
-  },
-  {
-    term: 'Which factor did Milanković calculate (partly) controls the timing of ice ages?',
-    definition: 'The amount of sunlight received by the Arctic region during summer (as a result of orbit and rotation).'
-  },
-  {
-    term: 'Why are we certain the increase in CO₂ concentrations in the atmosphere was caused by human activities?',
-    definition: 'The isotopes of carbon in ice show that it comes from fossil fuel burning and the clearing of forests.'
-  },
-  {
-    term: 'Which natural feature is considered the main source of uncertainty in climate projections?',
-    definition: 'Clouds (reflecting sunlight, thereby cooling the planet; reradiating infrared radiation, thereby warming it).'
-  },
-  {
-    term: 'Explain what RCP 6.0 equates to.',
-    definition: 'A radiative forcing of 6 watts per square meter by the year 2100.'
-  },
-  {
-    term: 'What is the atomic weight of carbon and carbon dioxide?',
-    definition: 'The atomic weight of carbon is 12 atomic mass units, while the weight of carbon dioxide is 44 (16*2 + 12).'
-  },
-  {
-    term: 'One ton of carbon equals how many tons of carbon dioxide?',
-    definition: 'One ton of carbon equals 44/12 = 3.67 tons of carbon dioxide.'
-  },
-  {
-    term: 'The carbon cycle removes roughly how much of human caused CO₂ emissions from the atmosphere each year?',
-    definition: 'Half.'
-  },
-  {
-    term: 'The carbon cycle adds and removes roughly how much carbon (C) from the earth each year?',
-    definition: '120 GtC.'
-  },
-  {
-    term: 'What are the annual total emissions from volcanoes (in C)?',
-    definition: 'Between 0.04 and 0.07 gigatonnes of carbon per year.'
-  },
-  {
-    term: 'What are the annual total emissions from human causes (in C)?',
-    definition: 'About 12 gigatonnes of carbon per year.'
-  },
-  {
-    term: 'How many gigatonnes of carbon do both the sea and land (forests) absorb annually?',
-    definition: 'About 2 gigatonnes of carbon per year.'
-  },
-  {
-    term: 'Are the oceans and forests carbon sinks or sources?',
-    definition: 'Sinks.'
-  },
-  {
-    term: 'Who wrote, \'The atmosphere admits of the entrance of the solar heat, but checks its exit; and the result is a tendency to accumulate heat at the surface of the planet.\'?',
-    definition: 'John Tyndall (1859)'
-  },
-  {
-    term: 'When was the most recent glacial period?',
-    definition: 'Between about 120,000 and 11,500 years ago.'
-  },
-];
-
-const natureCards = [
-  {
-    term: 'What percentage of a tree\'s biomass is carbon?',
-    definition: '40-50%'
-  },
-  {
-    term: 'To what does the Younger Dryas (around 12,900 to 11,700 years) owe its name?',
-    definition: 'The indicator genus, Dryas, of the alpine-tundra wildflower Dryas octopetala.'
-  },
-  {
-    term: 'What is speciation?',
-    definition: 'The evolutionary process by which populations evolve to become distinct species.'
-  },
-  {
-    term: 'What is cladogenesis?',
-    definition: 'An evolutionary splitting of a parent species into two distinct species, forming a clade.'
-  },
-  {
-    term: 'What is a clade?',
-    definition: 'A group of organisms that are monophyletic — composed of a common ancestor and all its lineal descendants.'
-  },
-  {
-    term: 'Define extinction',
-    definition: 'The termination of a kind of organism or of a group of kinds (taxon), usually a species.'
-  },
-  {
-    term: 'Define biome',
-    definition: 'A community of plants and animals that have common characteristics for the environment they exist in.'
-  },
-  {
-    term: 'What is phenotypic plasticity?',
-    definition: 'Some of the changes in an organism\'s behavior, morphology and physiology in response to a unique environment.'
-  },
-  {
-    term: 'What is phenology?',
-    definition: 'The study of periodic plant and animal life cycle events and how these are influenced by seasonal and interannual variations in climate, as well as habitat factors (such as elevation).'
-  },
-  {
-    term: 'Name three contributions made by soil organic matter to the soil.',
-    definition: 'Water-retention, structure, and fertility.'
-  },
-  {
-    term: 'What is the main component of soil organic matter?',
-    definition: 'Carbon'
-  },
-  {
-    term: 'What is glomalin?',
-    definition: 'A glycoprotein produced abundantly on hyphae and spores of arbuscular mycorrhizal fungi in soil and in roots.'
-  },
-  {
-    term: 'Grasslands hold what percentage of the earth\'s carbon?',
-    definition: '~20%'
-  },
-];
-
-const waterCards = [
-  {
-    term: 'The global ocean contains what percentage of the Earth’s water?',
-    definition: '97%'
-  },
-  {
-    term: 'The global ocean covers what percentage of the Earth’s surface?',
-    definition: '71%'
-  },
-  {
-    term: 'What percentage of Earth’s land area is covered by glaciers or ice sheets?',
-    definition: '10%'
-  },
-  {
-    term: 'Where was the sea level in relation to today 22,000 years ago?',
-    definition: '130 metres lower.'
-  },
-  {
-    term: 'Name two causes of sea level rises.',
-    definition: 'Thermal expansion and runoff from melting ice in Greenland and West Antarctica.'
-  },
-  {
-    term: 'What does GMSL stand for?',
-    definition: 'Global Mean Sea Level'
-  },
-  {
-    term: 'What does SLRC stand for?',
-    definition: 'Sea Level Rise Commitment'
-  },
-  {
-    term: 'What is SLRC?',
-    definition: 'A given surface warming commits to centuries of sea level rise from thermal expansion of the ocean.'
-  },
-  {
-    term: 'The human body cannot transmit heat to the surrounding air fast enough to compensate for its internal production of heat above what temperature?',
-    definition: '35°C e.g. 46°C + 50% humidity'
-  },
-  {
-    term: 'Explain the effect of rising ocean acidity.',
-    definition: 'Organisms that build shells (mollusks, corals, plankton), begin to suffer declining ability to build and maintain their shells.'
-  },
-  {
-    term: 'What is El Niño?',
-    definition: 'A flow of unusually warm surface waters along the Western coast of South America that disrupts normal weather patterns and contributes to extreme weather events like intense storms and droughts. It occurs irregularly every 2-7 years.'
-  },
-  {
-    term: 'What percentage of the Earth’s total warming can be attributed to urbanisation?',
-    definition: '2-4%'
-  },
-  {
-    term: 'In polar ice cores less heavy oxygen in the frozen water means what?',
-    definition: 'That temperatures were cooler at that time.'
-  },
-  {
-    term: 'What is a paleothermometer?',
-    definition: 'A proxy thermometer e.g. mreasuremnts of isotope ratios.'
-  },
-  {
-    term: 'Temperature is cyclic on a 100,000 year scale. Are we in the great ice age phase or the interglacial period of the current cycle?',
-    definition: 'The interglacial period'
-  },
-  {
-    term: 'How long do interglacial periods typically last?',
-    definition: '10,000 years'
-  },
-  {
-    term: 'What is the name of the current interglacial (geological epoch)?',
-    definition: 'The Holocene'
-  },  
-  {
-    term: 'The Holocene and Pleistocene epochs together form which period?',
-    definition: 'The Quaternary'
-  },  
-  {
-    term: 'What was the Medieval Warm Period (MWP)?',
-    definition: 'A time of warm climate in the North Atlantic region lasting from c. 950 to c. 1250.'
-  },  
-  {
-    term: 'What was the Little Ice Age (LIA)?',
-    definition: 'A period extending from the 16th to the 19th centuries, consisting of  largely independent regional climate changes rather than a globally synchronous increased glaciation (IPCC).'
-  },  
-  {
-    term: 'How long does heat take to penetrate the region between 20 and 150 metres?',
-    definition: '~2 years'
-  },
-  {
-    term: 'How long does heat take to penetrate the deepest ocean?',
-    definition: '~1000 years'
-  },
-];
+import { waterCards } from 'flashcards/flashcards-api-water';
+import { natureCards } from 'flashcards/flashcards-api-nature';
+import { scienceCards } from 'flashcards/flashcards-api-science';
+import { sustainabilityCards } from 'flashcards/flashcards-api-sustainability';
 
 const climateChangeCards = [
   {
@@ -758,6 +474,24 @@ const climateChangeCards = [
     term: 'What is an RCP?',
     definition: 'A greenhouse gas concentration trajectory adopted by the IPCC.'
   },
+  {
+    term: 'From 1850-1900 to 2006-2015 mean land surface air temperature has increased by how much?',
+    definition: '1.53°C (range from 1.38°C to 1.68°C)',
+    source: 'https://www.ipcc.ch/srccl/chapter/summary-for-policymakers/',
+    confidence: 'very likely'
+  },
+  {
+    term: 'From 1850-1900 to 2006-2015 global mean surface (land and ocean) temperature - GMST - has increased by how much?',
+    definition: '0.87°C (range from 0.75°C to 0.99°C)',
+    source: 'https://www.ipcc.ch/srccl/chapter/summary-for-policymakers/',
+    confidence: 'very likely'
+  },
+  {
+    term: 'Name 4 causes of vegetation greening over the last 3 decades in parts of Asia, Europe, S America, central N America, and SE Australia.',
+    definition: 'Extended growing season, nitrogen deposition, Carbon Dioxide (CO₂) fertilisation, and land management.',
+    source: 'https://www.ipcc.ch/srccl/chapter/summary-for-policymakers/',
+    confidence: 'high confidence'
+  },
 ];
 
 export const sets = [
@@ -776,5 +510,9 @@ export const sets = [
   {
     title: 'Science',
     cards: scienceCards
+  },
+  {
+    title: 'Sustainability',
+    cards: sustainabilityCards
   },
 ];

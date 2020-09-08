@@ -1,0 +1,177 @@
+$maxwidth: 1000px;
+$padding: .5rem;
+$margin: .5rem;
+$space: .5rem;
+$hbase: 1.5rem;
+$black: rgb(0, 0, 0);
+$darkgray: rgb(20, 20, 20);
+$gray: rgb(50, 50, 50);
+$midgray: rgb(110, 110, 110);
+$white: rgb(250, 250, 250);
+$border: rgb(210, 210, 210);
+$borderlight: rgb(225, 225, 225);
+$active: rgb(255, 0, 0);
+$fontsize: .75rem;
+$fontsizesmall: .75rem;
+$fontsizebig: 2rem;
+
+@mixin flex() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin state-button() {
+  background-color: $white;
+  display: inline-block;
+  border: 1px solid $midgray;
+  padding: $padding / 2 $padding;
+  text-align: center;
+  letter-spacing: .02rem;
+  font-size: fontsizesmall;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: fit-content;
+  &:focus, &.active {
+    outline: none;
+    color: $white;
+    background-color: $gray;
+  }
+}
+
+@mixin accordion-button() {
+  background-color: transparent;
+  border: none;    
+  font-size: $fontsize;
+  cursor: pointer;
+  color: $gray;
+  span {
+    color: $gray;
+  }
+  text-align: left;
+}
+
+@mixin show-circles() {
+  .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    margin: 20px;
+    clip-path: circle();
+    background: $borderlight;
+  }
+}
+
+@mixin hide-circles() {
+  .circle {
+    display: none;
+  }
+  .about-grid aside.left {
+    border-right: none;
+  }
+  .about-grid aside.right {
+    border-left: none;
+  }
+}
+
+h1 {
+  font-size: $fontsizebig;
+  font-weight: normal;
+  margin: 0;
+}
+
+h2 {
+  font-size: $fontsize;
+  letter-spacing: .1em;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: $fontsize;
+}
+
+body {
+  background-color: $white;
+  font-family: 'Open Sans', sans-serif;
+  margin: auto;
+  padding: $padding;
+  max-width: $maxwidth;
+  color: $gray;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+nav {
+    ul {
+    columns: 6 100px
+    }
+    p {
+      span {
+        color: $black;
+        background-color: $white;
+      }
+      &:first-child {
+        color: $black;
+      }
+    }
+}
+
+li {
+  margin-left: -($margin * 2);
+  list-style-type: none;
+  span {
+    &.goto {
+      &::before {
+        margin: 0 0 0 (.5 * $margin) ;
+        content: 'go to: ';
+      }
+    }
+  }
+}
+
+a {
+  margin: 0 (.5 * $margin);
+  text-decoration: none;
+  color: $black;
+  border-bottom: 1px solid $black;
+  &:empty {
+    display: none;
+  }
+}
+
+header {
+  border-bottom: 1px solid $borderlight;
+}
+
+section {
+  padding: $padding;
+  margin: $margin 0;
+}
+
+button {
+  font-family: 'Open Sans', sans-serif;
+}
+
+hr {
+  border-style: hidden;
+  height: $space * 2;
+}
+
+dd {
+  white-space: pre-line;
+}
+
+footer {
+  button {
+    @include state-button();
+  }
+}
+
+.flex {
+  @include flex();
+}

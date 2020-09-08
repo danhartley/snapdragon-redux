@@ -1,26 +1,32 @@
 import { constants } from 'checklist/checklist-constants';
 
 let sections = [
-  {
-    type: constants.PROCESS,
-    header: 'Process checklist',
-    steps: [
-      {
-        term: 'A working wireframe that covers major features and use cases',
-        descriptions: [`Create the simplest version of the site using few or no colours,  with intended layouts, standard padding, margins, grids, etc.
-        Include all media breakpoints.
-        Include all dependencies that will be needed whether or not they are immediately required e.g. firebase authentication.
-        The site should be semantically correct. If possible have someone familiar with using screen readers use the site.
-        Set up a Lighthouse budget and testing framework preferably on a dedicated machine.
-        Create a Lighthouse dashboard accessible to and understood by everyone.
-        Use realistic data that has been agreed by everyone. Avoid lorem ipsum.`]
-      },
-      {
-        term: 'Performance budgets and code sizes for new features.',
-        descriptions: [`Share responsibility for performance.`]
-      }
-    ]    
-  },
+  // {
+  //   type: constants.PROCESS,
+  //   header: 'Iteration checklist',
+  //   steps: [
+  //     {
+  //       term: 'A working wireframe that covers major features and use cases',
+  //       descriptions: [`Create the simplest version of the site using few or no colours,  with intended layouts, standard padding, margins, grids, etc.
+  //       Treat Text as a User Interface.
+  //       Include all media breakpoints.        
+  //       Include all dependencies that will be needed whether or not they are immediately required e.g. firebase authentication.
+  //       The site should be semantically correct. If possible have someone familiar with using screen readers use the site.`]
+  //     },
+  //     {
+  //       term: 'Testing and metrics',
+  //       descriptions: [`Set up a Lighthouse budget and testing framework preferably on a dedicated machine.
+  //       Create a Lighthouse dashboard accessible to and understood by everyone.
+  //       Use realistic data that has been agreed by everyone. Avoid lorem ipsum.
+  //       Share responsibility for performance.`]
+  //     },
+  //     {
+  //       term: 'Design',
+  //       descriptions: [`Create live style guides accessible to everyone.
+  //       Pair programmers and designers. Use brower tools to test and demonstrate.`]
+  //     }
+  //   ]    
+  // },
   {
     type: constants.TOOLS,
     header: 'Tools',
@@ -50,6 +56,26 @@ let sections = [
     type: constants.CHECKS,
     header: 'Project checklist',
     checks: [
+      {
+        term: 'A working wireframe that covers major features and use cases',
+        descriptions: [`Create the simplest version of the site using few or no colours,  with intended layouts, standard padding, margins, grids, etc.
+        Treat Text as a User Interface.
+        Include all media breakpoints.        
+        Include all dependencies that will be needed whether or not they are immediately required e.g. firebase authentication.
+        The site should be semantically correct. If possible have someone familiar with using screen readers use the site.`]
+      },
+      {
+        term: 'Testing and metrics',
+        descriptions: [`Set up a Lighthouse budget and testing framework preferably on a dedicated machine.
+        Create a Lighthouse dashboard accessible to and understood by everyone.
+        Use realistic data that has been agreed by everyone. Avoid lorem ipsum.
+        Share responsibility for performance.`]
+      },
+      {
+        term: 'Design',
+        descriptions: [`Create live style guides accessible to everyone.
+        Pair programmers and designers. Use brower tools to test and demonstrate.`]
+      },
       {
         term: 'Intention',
         descriptions: [``]
@@ -113,11 +139,12 @@ let sections = [
       {
         term: 'Create README.md file',
         descriptions: [`List files used only during initial development and testing, and to support stand-alone deployment.
-        Include instructions on how to run the feature in isolation.`]
+        Include instructions on how to run the feature in isolation.
+        Mandatory sections for HTML, JavaScript and CSS naming conventions and preprocessors e.g. Sass & BME.`]
       },
       {
         term: 'Create tests',
-        descriptions: [`Test only pure functions.
+        descriptions: [`Test pure functions.
         Functions that do not (yet) have tests should be pure.
         Create local data that can be used before live data is available, and for tests.`]
       },
@@ -164,6 +191,11 @@ let sections = [
         link: 'https://web.dev/interactive'
       }
       , {
+        term: 'Landmarks',
+        descriptions: ['8 roles each of which represents a block of content that occurs commonly on web pages.'],
+        link: 'https://www.washington.edu/accessibility/web/landmarks/'
+      }
+      , {
         term: 'RAIL',
         descriptions: ['A user-centric performance model that breaks down the user\'s experience into key actions: Response, Animation , Idle, Load'],
         more: [
@@ -183,6 +215,8 @@ let sections = [
       , { term: 'JAMstack', link: 'https://jamstack.wtf/', descriptions: ['Web development architecture based on client-side JavaScript, reusable APIs, and prebuilt Markup.'] }
       , { term: 'SSR Server side rendering', link: '', descriptions: [''] }
       , { term: 'ISSR Isomorphic server side rendering', link: '', descriptions: [''] }
+      , { term: 'Topography', link: 'https://ia.net/topics/the-web-is-all-about-typography-period', descriptions: ['95% of web design is topography'] }
+      , { term: 'Ornament and Crime', link: 'https://en.wikipedia.org/wiki/Ornament_and_Crime', descriptions: ['A criticism of ornament in useful objects.'] }
   ]
   }
 ];
@@ -191,7 +225,7 @@ let toollist = sections.find(section => section.type === constants.TOOLS);
 let projectChecklist = sections.find(section => section.type === constants.CHECKS && section.header === 'Project checklist');
 let featureChecklist = sections.find(section => section.type === constants.CHECKS && section.header === 'Feature checklist');
 let termList = sections.find(section => section.type === constants.TERMS);
-let processList = sections.find(section => section.type === constants.PROCESS);
+// let processList = sections.find(section => section.type === constants.PROCESS);
 
 toollist.tools.forEach(sk => {
   sk.link = sk.link || '';
@@ -204,5 +238,5 @@ export const api = {
   toollist,
   projectChecklist,
   featureChecklist,
-  processList
+  // processList
 }
