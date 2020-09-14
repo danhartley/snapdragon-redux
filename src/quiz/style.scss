@@ -18,6 +18,8 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
 
 .quiz {
 
+  background-color: var(--snap-border-3);
+
   .quiz-top {
     height: $top;
   }
@@ -40,7 +42,11 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
   }
 
   .modal-footer, .modal-header {
-    background-color: var(--snap-landscape);
+    background-color: var(--snap-green-1);
+  }
+
+  .modal-footer {
+    border-top: 1px solid var(--snap-border-2);
   }
 
   .modal-header-container {
@@ -55,7 +61,7 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
 
   .modal-title {
     font-size: 1rem;
-    color: var(--snap-text-dark-medium-dark);
+    color: var(--snap-text-4);
   }
 
   div.modal-body {
@@ -68,9 +74,9 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
   }
 
   main {
-    background-color: var(--snap-dd-non-taxa-bg-active);
+    background-color: var(--snap-brown-1);
     height: $main;
-    margin: 4px 0 0 0;
+    margin: 5px 0 0 0;
   }
 
   section {
@@ -88,20 +94,20 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
     width: inherit;
   }
 
-  button {
-    &.snap-begin-btn {
-      width: fit-content;
-      width: max-content;
-      background-color: var(--snap-btn-auxillary);
-      color: var(--snap-block-light);
-      letter-spacing: .05rem;
-      border: 1px solid transparent !important;
-      padding: .5rem .75rem;
-      border-radius: .2rem;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-  }
+  // button {
+  //   &.snap-begin-btn {
+  //     width: fit-content;
+  //     width: max-content;
+  //     background-color: var(--snap-btn-auxillary);
+  //     color: var(--snap-block-light);
+  //     letter-spacing: .05rem;
+  //     border: 1px solid transparent !important;
+  //     padding: .5rem .75rem;
+  //     border-radius: .2rem;
+  //     font-size: 1.2rem;
+  //     cursor: pointer;
+  //   }
+  // }
 
   .quiz-decks {
     flex-direction: column;
@@ -130,7 +136,7 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
     font-size: .7rem;
     width: calc( (var(--vwGrid) - 2rem) / 2 );
     box-shadow: 0 2px 8px rgba(0, 0, 0, .8);
-    background-color: var(--snap-dd-non-taxa-bg-active);
+    background-color: var(--snap-brown-1);
     margin: (.5 * $space) (.5 * $space);    
   }
 
@@ -162,7 +168,7 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
   }
 
   .state-container {
-    background-color: var(--snap-dd-non-taxa-bg-active);
+    background-color: var(--snap-brown-1);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
@@ -190,7 +196,7 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
   }
   .score {
     font-size: 4 * $space;
-    color: var(--snap-text-dark);
+    color: var(--snap-text-4);
     margin-right: $space;
     font-size: 1.5rem;
   }
@@ -231,31 +237,31 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
       cursor: pointer;
     }
     
-    input {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
+    // input {
+    //   -webkit-appearance: none;
+    //   -moz-appearance: none;
+    //   appearance: none;
     
-      border-radius: 50%;
-      width: $space;
-      height: 2 * $space;
+    //   border-radius: 50%;
+    //   width: $space;
+    //   height: 2 * $space;
     
-      border: (2 * $space) solid var(--snap-list-header-background);
-      transition: 0.2s all linear;
-      margin-right: $space;
+    //   border: (2 * $space) solid var(--snap-blue-1);
+    //   transition: 0.2s all linear;
+    //   margin-right: $space;
     
-      position: relative;
+    //   position: relative;
 
-      cursor: pointer;
-    }
+    //   cursor: pointer;
+    // }
     
-    input:checked {
-      border: (2 * $space) solid var(--snap-collection-active);
-    }
+    // input:checked {
+    //   border: (2 * $space) solid var(--snap-text-4);
+    // }
 
-    input:focus {
-      outline: none;
-    }
+    // input:focus {
+    //   outline: none;
+    // }
 
     .names {
       font-size: .7rem;
@@ -264,7 +270,7 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
       column-gap: 0;
       margin: 0rem;
       padding: 1rem;
-      background-color: rgba(229, 227, 220,.3);
+      background-color: var(--snap-brown-2);
       grid-template-columns: 1fr 1fr;      
       div {
         display: flex;
@@ -285,7 +291,7 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
         justify-content: center;
       }
       input:checked {
-        border: (2 * $space) solid var(--snap-collection);
+        border: (2 * $space) solid var(--snap-green-3);
       }
     }
   }
@@ -305,7 +311,7 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
 
     .image-block-container {
       width: 100%;
-      background-color: var(--snap-collection);
+      background-color: var(--snap-text-4);
     }
     .strips-container {
       width: 100%;
@@ -327,7 +333,7 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
         font-size: 1rem;
         display: initial;
         margin: 1rem;
-        border: 1px solid var(--snap-dd-non-taxa-bg-active);
+        border: 1px solid var(--snap-border-2);
         div {
           margin-bottom: .5rem;
           justify-content: initial;

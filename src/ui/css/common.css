@@ -221,7 +221,7 @@
   }
 
   .underline-link:focus {
-    outline: 1px solid var(--snap-border-medium)
+    outline: 1px solid var(--snap-border-2)
   }
 
   .full-width {
@@ -233,23 +233,27 @@
   }
 
   .border-top {
-    border-bottom: 1px solid var(--snap-border-light);
+    border-bottom: 1px solid var(--snap-border-3);
   }
 
   .border-right {
-    border-right: 1px solid var(--snap-border-light);
+    border-right: 1px solid var(--snap-border-3);
   }
 
   .border-bottom {
-    border-bottom: 1px solid var(--snap-border-light);
+    border-bottom: 1px solid var(--snap-border-3);
   }
 
   .border-left {
-    border-left: 1px solid var(--snap-border-light);
+    border-left: 1px solid var(--snap-border-3);
   }
 
   .justify-space-between {
     justify-content: space-between;
+  }
+
+  .justify-start {
+    justify-content: flex-start;
   }
 
   .justify-end {
@@ -289,19 +293,19 @@
   }
 
   .modal-background-relief {
-    background-color: var(--snap-species-highlight-background);
+    background-color: var(--snap-yellow-1);
   }
 
   .modal-background-relief-emphasis {
-    border: 1px solid var(--snap-success) !important;
+    border: 1px solid var(--snap-success-3) !important;
   }
 
   .border-light {
-    border: 1px solid var(--snap-success-light) !important;
+    border: 1px solid var(--snap-success-1) !important;
   }
 
   .border-medium {
-    border: 1px solid var(--snap-border-medium);
+    border: 1px solid var(--snap-border-2);
   }
 
   .vertical-block {
@@ -348,17 +352,17 @@
   }
   
   .snap-inactive {
-    color: var(--snap-inactive) !important;
+    color: var(--snap-text-3) !important;
     pointer-events: none !important;
   }
 
   .black-text {
-    color: var(--snap-text-black);
+    color: var(--snap-text-6);
   }
 
   /* If set to display inline, would width automatically be determined by the text they contain? each span vs div */
   .fit-width {
-    width: intrinsic;           /* Safari/WebKit uses a non-standard name */
+    /* width: intrinsic;           Safari/WebKit uses a non-standard name */
     width: -moz-max-content;    /* Firefox/Gecko */
     width: -webkit-max-content; /* Chrome */
   }
@@ -385,16 +389,16 @@
   }
 
   .snap-btn {
-    background-color: var(--snap-list-header-background);
-    color: var(--snap-text-black);
+    background-color: var(--snap-background-1);
+    color: var(--snap-text-6);
     letter-spacing: .05rem;
-    border: 1px solid var(--snap-border-light);
+    border: 1px solid var(--snap-border-3);
     padding: .25rem .75rem;
   }
   
   .snap-btn:hover, .snap-btn:focus {
     opacity: 1;
-    border: 1px solid var(--snap-border-lightest);
+    border: 1px solid var(--snap-border-1);
     outline: none;
   }
   
@@ -404,11 +408,11 @@
   }
   
   .dropdown .snap-btn:hover, .dropdown .snap-btn:focus {
-    border: 1px solid var(--snap-border-light);
+    border: 1px solid var(--snap-border-3);
   }
   
   .snap-icon-btn {
-    color: var(--snap-text-dark);
+    color: var(--snap-text-4);
     background-color: transparent;
     border: 1px solid transparent;
     margin: 0 .5rem;
@@ -421,16 +425,16 @@
   }
 
   .block.snap-icon-btn:focus, .block.snap-icon-btn:hover {
-    background-color: var(--snap-btn-hover);
-    outline: 1px solid var(--snap-border-lightest);
+    background-color: var(--snap-background-2);
+    outline: 1px solid var(--snap-border-1);
   }
   
   .strip:focus-within {
-    background-color: var(--snap-btn-hover);
+    background-color: var(--snap-background-2);
   }
 
   .snap-link-btn, .snap-no-link-btn {
-    color: var(--snap-text-dark);
+    color: var(--snap-text-4);
     background-color: transparent;
     border: none;
     font-size: .7rem;
@@ -440,7 +444,7 @@
   }
 
   .snap-link-btn {
-    color: var(--snap-collection-active);
+    color: var(--snap-green-3);
   }
   
   .snap-no-link-btn {
@@ -448,26 +452,26 @@
   }
   
   .snap-action-btn {
-    background-color: var(--snap-tertiary-background);
-    color: var(--snap-text-light);
+    background-color: var(--snap-green-3);
+    color: var(--snap-text-1);
     letter-spacing: .05rem;
-    border: 1px solid var(--snap-non-taxa) !important;
+    border: 1px solid var(--snap-green-2) !important;
     padding: .5rem .75rem;
   }
   
   .snap-action-btn:focus {
-    outline: 1px solid var(--snap-border-medium);
-    color: var(--snap-text-black);
+    outline: 1px solid var(--snap-border-2);
+    color: var(--snap-text-6);
   }
   
   .snap-action-btn.snap-success {
-    color: var(--snap-text-light) !important;
-    background-color: var(--snap-success) !important;
-    border: 0.05rem solid var(--snap-success);
+    color: var(--snap-text-1) !important;
+    background-color: var(--snap-success-3) !important;
+    border: 0.05rem solid var(--snap-success-3);
   }
   
   .snap-action-btn.snap-alert {
-    color: var(--snap-text-light) !important;
-    background-color: var(--snap-alert) !important;
-    border: 0.05rem solid var(--snap-alert);
+    color: var(--snap-text-1) !important;
+    background-color: var(--snap-alert-3) !important;
+    border: 0.05rem solid var(--snap-alert-3);
   }  

@@ -1,84 +1,54 @@
 :root {
 
-    --snap-lesson-row-blue: rgb(218, 230, 237);
-    --snap-lesson-row-green: rgb(216, 223, 210);
+    --snap-green-1: rgb(216, 223, 210);
+    --snap-green-2: rgb(166, 177, 155);
+    --snap-green-3: rgb(95, 125, 89);
+    --snap-green-4: rgb(16, 66, 28);
 
-    --snap-dd-non-taxa-bg-intial: rgb(197, 193, 175);
-    --snap-dd-non-taxa-bg-hover: rgb(229, 227, 220);
-    --snap-dd-non-taxa-bg-active: rgb(229, 227, 220);
+    --snap-text-1:rgb(245, 245, 245);
+    --snap-text-2:rgb(215, 215, 215);
+    --snap-text-3:rgb(185, 185, 185);
+    --snap-text-4:rgb(65, 65, 65);
+    --snap-text-5: rgb(50, 50, 50);
+    --snap-text-6: rgb(30,30,30);
 
-    --snap-text-black: rgb(30,30,30);
-    --snap-text-dark: rgb(60, 60, 60);
-    --snap-text-dark-medium-dark: rgb(50, 50, 50);
-    --snap-text-medium-dark: rgb(65, 65, 65);
-    --snap-text-medium-dark-hover: rgb(108, 114, 120);
-    --snap-text-medium-light:rgb(73, 80, 87);
-    --snap-text-light:rgb(245, 245, 245);
-    --snap-text-green: rgb(16, 66, 28);
-    
-    --snap-portrait: rgb(179, 197, 174);
-    --snap-landscape: rgb(185, 200, 204);
-    
-    --snap-collection: rgb(87, 97, 99);
-    --snap-collection-active: rgb(95, 125, 89);    
-    --snap-collection-light: rgb(117, 126, 126);
-    --snap-collection-faint: rgb(240, 242, 235);
-    --snap-non-taxa: rgb(165, 159, 131);
+    --snap-background-1: rgb(255, 255, 255);
+    --snap-background-2: rgb(245, 245, 245);
 
-    --snap-active: rgb(246, 157, 53);
-    --snap-alert: rgb(197, 59, 67);
-    --snap-alert-medium: rgb(225, 155, 155);
-    --snap-alert-light: rgb(241, 229, 225);
-    --snap-inactive: rgba(7, 2, 2, 0.4);
-    --snap-success: rgb(84, 137, 84);
-    --snap-success-medium: rgb(169, 196, 163);
-    --snap-success-light: rgb(216, 225, 208);
-    
+    --snap-border-1: rgb(225,225,225);
+    --snap-border-2: rgb(210, 210, 210);
+    --snap-border-3: rgb(175,175,175);
+
     --snap-link-hover: rgb(54, 69, 82);
     --snap-link: rgb(20, 125, 156);
 
-    --snap-progress-bg: rgb(168, 168, 168);
-    --snap-progress-bar: rgb(255, 255, 255);
-  
-    --snap-block-light: rgb(245, 245, 245);
+    --snap-inat: rgb(127, 151, 122);
+    --snap-youtube-green: rgb(52, 105, 23);
 
-    --snap-main-background: rgb(244, 244, 244);
-    --snap-content-background: rgb(255, 255, 243);
-    --snap-content-background-relief: rgb(251, 251, 247);
-    --snap-header-background: rgb(213, 213, 210);
-    --snap-list-header-background: rgb(252, 251, 246);
-    --snap-row-background: rgb(240, 239, 233);
-    
-    --snap-taxon-card-background: rgba(52, 105, 23,.1);
-    --snap-species-highlight-background: rgb(249, 248, 238);
-    --snap-species-header-background: rgb(226, 222, 180);
-    --snap-species-header-dark-background: rgb(146, 139, 56);
-    
-    --snap-btn-auxillary: rgb(96, 117, 90);
-    --snap-btn-hover: rgb(240, 240, 240);
-    
+    --snap-progress-bg: rgb(16, 66, 28);
+    --snap-progress-bar: rgb(16, 66, 28);
+
     --snap-btn-dropdown: rgb(252, 193, 186);
     --snap-btn-dropdown-options: rgb(254, 240, 229);
 
-    --snap-btn-blue: rgb(54, 69, 82);
-    --snap-snap-action-btn: rgb(245, 245, 245);
+    --snap-active: rgb(246, 157, 53);
 
-    --snap-tertiary-background: rgb(95, 125, 89);
+    --snap-alert-1: rgb(241, 229, 225);
+    --snap-alert-2: rgb(225, 155, 155);
+    --snap-alert-3: rgb(197, 59, 67);
 
-    --snap-btn-filter-on: rgb(214, 208, 213);
-    --snap-btn-filter-off: rgb(235, 231, 228);
+    --snap-success-1: rgb(216, 225, 208);
+    --snap-success-2: rgb(169, 196, 163);
+    --snap-success-3: rgb(84, 137, 84);
 
-    --snap-border-light: rgb(175,175,175);
-    --snap-border-medium: rgb(211, 211, 211);
-    --snap-border-lightest: rgb(225,225,225);
+    --snap-brown-1: rgb(229, 227, 220);
+    --snap-brown-2: rgb(197, 193, 175);
 
-    --snap-iconic-icon-header: rgb(193, 186, 112);
+    --snap-yellow-1: rgb(249, 248, 238);
+    --snap-yellow-2: rgb(226, 222, 180);
+    --snap-yellow-3: rgb(193, 186, 112);
+    --snap-yellow-4: rgb(146, 139, 56);
 
-    --snap-inat: rgb(127, 151, 122);
+    --snap-blue-1: rgb(252, 251, 246);
 
-    --snap-youtube-green: rgb(52, 105, 23);
-
-    --snap-button-light: #576163; 
-    --snap-button-main: #3c4345; 
-    --snap-button-dark: #788082; 
   }

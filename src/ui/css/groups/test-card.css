@@ -32,12 +32,12 @@
 }
 
 .test-card {
-    color: var(--snap-text-medium-dark);
+    color: var(--snap-text-4);
 }
 
 .test-card-container {
     position: relative;
-    background-color: var(--snap-content-background);
+    background-color: var(--snap-background-1);
     height: calc( (var(--vh, 1vh) * 100) 
     - var(--vhFixtures, 15vh)
     );  
@@ -46,7 +46,7 @@
   .test-card-question .question-question {
     font-size: .9rem;
     text-transform: uppercase;
-    color: var(--snap-text-medium-light);
+    color: var(--snap-text-4);
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -74,7 +74,7 @@
     vertical-align: super;
     text-transform: initial;
     margin: 0 .5rem;
-    color: var(--snap-text-medium-light);
+    color: var(--snap-text-4);
 }
 
 .test-card-question .question-help {
@@ -89,8 +89,8 @@
 
 .test-card button {
     display: inline-block;
-    color: var(--snap-text-medium-dark);
-    background-color: var(--snap-landscape);
+    color: var(--snap-text-4);
+    /* background-color: var(--snap-landscape); */
     transition-duration: .5s;
     width: 100%;
 }
@@ -135,11 +135,11 @@
 }
 
 .answer-box-success > span:nth-child(2) {
-    color: var(--snap-success);
+    color: var(--snap-success-3);
 }
 
 .answer-box-alert > span:nth-child(2) {
-    color: var(--snap-alert);
+    color: var(--snap-alert-3);
 }
 
 .answer-box-success > span:nth-child(2), 
@@ -155,7 +155,7 @@ div.text-entry {
     padding: 0;
     position: relative;
     margin: .5rem 0;
-    border: 0.05rem solid var(--snap-portrait);
+    border: 0.05rem solid var(--snap-border-3);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -163,7 +163,7 @@ div.text-entry {
 
 .text-entry input {
     width: 100%;    
-    color: var(--snap-text-dark);
+    color: var(--snap-text-4);
   }
   
   .text-entry button {
@@ -179,7 +179,7 @@ div.text-entry {
   .mushroom-icon-header svg {
     width: 2rem;
     height: 2rem;
-    fill: var(--snap-iconic-icon-header);
+    fill: var(--snap-yellow-3);
   }
 
   .mixed-specimen-container {
@@ -195,8 +195,8 @@ div.text-entry {
   }
 
   .btn.btn-auxiliary, .btn.btn-auxiliary:focus {
-    color: var(--snap-text-light) !important;
-    background-color: var(--snap-btn-auxillary) !important;
+    color: var(--snap-text-1) !important;
+    background-color: var(--snap-green-3) !important;
     cursor: pointer !important;
   }
 
@@ -227,9 +227,9 @@ div.text-entry {
 .question-container {
     grid-template-columns: 1fr 3fr 1fr;
     display: grid;
-    background-color: var(--snap-species-header-background);
+    background-color: var(--snap-yellow-2);
     height: var(--vhStandardBlock, 10vh);
-    color: var(--snap-text-medium-light);
+    color: var(--snap-text-4);
 }
 
   .question-container > span:nth-child(2) {
@@ -259,11 +259,11 @@ div.text-entry {
 
 .iconic-icon {
     font-size: 1.5rem;
-    color: var(--snap-iconic-icon-header);
+    color: var(--snap-yellow-3);
 }
 
 .iconic-icon g {
-    fill: var(--snap-iconic-icon-header);
+    fill: var(--snap-yellow-3);
 }
 
 .iconic-icon .mushroom-icon-header svg {

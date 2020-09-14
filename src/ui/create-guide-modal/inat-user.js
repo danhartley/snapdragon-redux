@@ -1,4 +1,3 @@
-import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
 import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 import { renderTemplate } from 'ui/helpers/templating';
 import { enums } from 'ui/helpers/enum-helper';
@@ -72,22 +71,14 @@ export const renderInatUser = (modal, createGuide) => {
         });
     }
 
-    const idSwitch = parent.querySelector('.snap-switch-slider');
-
-    const switchCallback = position => {
-        
-        byType = position === 'left' ? 'users' : 'projects';
-
-        const type = position === 'left' ? 'iNat user ID' : 'iNat project ID';
-        const param = position === 'left' ? 'user_id' : 'project_id';
-
-        config.guide.inatId.type = type;
-        config.guide.inatId.param = param;
-
-        createGuide.setConfig(config);
-    };
-
-    switchHandler(idSwitch, position, switchCallback);
+    const inatSelector = parent.querySelector('.js-inat-types');
+          inatSelector.addEventListener('click', e => {
+            const type = e.target.id;
+            config.guide.inatId.type = type;
+            config.guide.inatId.param = type === 'user_id' ? 'iNat user ID' : 'iNat project ID';
+    
+            createGuide.setConfig(config); 
+          });
 };
 
 const saveInatId = (parent, config, createGuide, autocompleteRef) => {

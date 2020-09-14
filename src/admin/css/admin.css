@@ -149,13 +149,13 @@
   }
   .btn {
     font-size: .9rem;;
-    color: var(--snap-text-light);
-    background-color: var(--snap-collection);
+    color: var(--snap-text-1);
+    /* background-color: var(--snap-text-4); */
     text-transform: initial;
   }
-  .btn:hover, .btn-large:hover, .btn-small:hover {
+  /* .btn:hover, .btn-large:hover, .btn-small:hover {
       background-color: var(--snap-collection-light);
-  }
+  } */
 
   li a > i, li a > span {
       pointer-events: none;
@@ -166,7 +166,7 @@
   }
 
   .collection-details {
-    background-color: var(--snap-block-light);
+    background-color: var(--snap-background-2);
     margin: 0 0 1rem -.5rem;
     padding: .5rem;
   }
@@ -241,12 +241,12 @@
   }
 
   .tabs .tab a {
-    color: var(--snap-text-dark-medium-dark);
-    background-color: var(--snap-block-light);
+    color: var(--snap-text-5);
+    background-color: var(--snap-background-2);
   }
 
   .tabs .tab a:hover, .tabs .tab a.active {
-    color: var(--snap-text-dark-medium-dark);
+    color: var(--snap-text-5);
     background-color: rgb(253, 240, 241);
   }
 
@@ -256,7 +256,7 @@
 
   .disabled svg {
     pointer-events: none;
-    color: var(--snap-text-light);    
+    color: var(--snap-text-1);    
   }
 
   .dropdown-content {

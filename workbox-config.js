@@ -6,8 +6,9 @@ module.exports = {
   globIgnores: ['**/index.html'],
   "swDest": "dist/sw.js",
     // Define runtime caching rules.
-    runtimeCaching: [{
-      // Match any request that ends with .png, .jpg, .jpeg or .svg.
+    runtimeCaching: [
+      {
+      // Home page
       urlPattern: /index.html$/,
   
       // Apply a stale-while-revalidate strategy.
@@ -21,6 +22,18 @@ module.exports = {
           expiration: {
             maxEntries: 1,
           },
+        }
+      },
+      {
+      // css
+      urlPattern: /\.(?:css)$/,
+  
+      // Apply a stale-while-revalidate strategy.
+      handler: 'StaleWhileRevalidate',
+  
+      options: {
+          // Use a custom cache name.
+          cacheName: 'css',
         }
       },
       {

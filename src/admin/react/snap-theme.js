@@ -10,9 +10,12 @@ const getPropertyValue = property => {
 export const theme = createMuiTheme({
   palette: {
     primary: {
-      light: getPropertyValue('--snap-button-light'),
-      main: getPropertyValue('--snap-button-main'),
-      dark: getPropertyValue('--snap-button-dark'),
+      light: '#576163',
+      main: '#3c4345',
+      dark: '#788082',
+      // light: getPropertyValue('--snap-button-light'),
+      // main: getPropertyValue('--snap-button-main'),
+      // dark: getPropertyValue('--snap-button-dark'),
     }
   }
 });

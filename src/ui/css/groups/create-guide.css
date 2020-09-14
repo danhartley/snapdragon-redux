@@ -35,7 +35,7 @@
   }
   
   .modal-body .modal-guide-progress > div > div {
-    border-right: .005rem solid var(--snap-border-lightest);
+    border-right: .005rem solid var(--snap-border-1);
   }
   
   .modal-body .modal-guide-progress > div > div:last-child {
@@ -43,7 +43,7 @@
   }
 
   .modal-body .modal-guide-progress .active {
-    color: var(--snap-text-dark);
+    color: var(--snap-text-4);
     background-color: var(--snap-active);
   }
   
@@ -52,7 +52,7 @@
     grid-template-columns: 4fr auto 4fr;
     margin: 0 .5rem;
     height: var(--vhRunningBlock, 10vh);
-    border: 1px solid var(--snap-border-light);
+    border: 1px solid var(--snap-border-3);
   }
 
   .modal-guide-navigation > button {
@@ -65,7 +65,7 @@
   }
 
   .custom-lesson-menu-options .snap-icon-btn:hover, .modal-guide-navigation .snap-icon-btn:hover {
-    color: var(--snap-collection-active);
+    color: var(--snap-green-3);
   }
 
   .right-justify {
@@ -141,7 +141,7 @@
   
   .modal-body .inat-location-location button {
     width: 100%;  
-    background-color: var(--snap-text-medium-dark);
+    background-color: var(--snap-text-4);
   }
 
   .html5-location-place {
@@ -149,13 +149,13 @@
   }
 
   #set-inat-identity-btn {
-    color: var(--snap-text-light);        
+    color: var(--snap-text-1);        
     background-color: rgb(127, 151, 122);
     width: 100%;
   }
 
   .modal-guide-wrapper .modal-body .inat button.js-set-inat-identity-btn {
-    color: var(--snap-text-light);        
+    color: var(--snap-text-1);        
     background-color: rgb(127, 151, 122);
   }
 
@@ -170,11 +170,11 @@
     display: inline;
   }
   
-  .inat.snap-switch .inat-entry, .inat.snap-switch input[type="text"] {
+  /* .inat.snap-switch .inat-entry, .inat.snap-switch input[type="text"] {
     width: 100%;
     margin: 0;
     padding: 0;
-  }
+  } */
 
   /* SLIDER */
 
@@ -202,7 +202,7 @@
   }
 
   .set-range-input:focus {
-    outline: 1px solid var(--snap-border-medium);
+    outline: 1px solid var(--snap-border-2);
   }
   
   .modal-guide-body .range-slider.disabled .set-range-input {
@@ -211,7 +211,7 @@
   
   /* SNAPDRAGON SWITCH */
 
-  .snap-switch {
+  /* .snap-switch {
     display: flex;
     align-items: center;
   }
@@ -225,7 +225,6 @@
     height: 1.6rem;
     width: 1.6rem;
     border-radius: .2rem;
-    background-color: var(--snap-collection);
     transition-property: all;
     transition-duration: .4s;
     transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
@@ -235,9 +234,9 @@
 
   .inat .snap-switch-slider div {
     background-color: var(--snap-inat);
-  }
+  } */
   
-.embedded-switch {
+/* .embedded-switch {
   display: grid;
   grid-template-columns: auto 3.2rem 1fr;
   height: 1.6rem;
@@ -264,19 +263,19 @@
 
   .guides .inat .snap-switch {
     flex-direction: column;
-  }
+  } */
    
   /* AUTOCOMPLETE */
   
   #inat-place.active, #input-species.active {
-    border: .1rem solid var(--snap-text-medium-dark);
+    border: .1rem solid var(--snap-text-4);
   }
   
   .autocomplete-options-container, .inat-autocomplete-options-container {
     z-index: 9999;
-    color: var(--snap-text-dark-medium-dark);
+    color: var(--snap-text-5);
     background-color: rgb(250, 250, 250);
-    border: .05rem solid var(--snap-border-lightest);
+    border: .05rem solid var(--snap-border-1);
     text-align: left;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -311,8 +310,8 @@
   }
   
   .autocomplete-options-container .selected, .inat-autocomplete-options-container .selected {
-    color: var(--snap-dd-non-taxa-bg-hover);
-    background-color: var(--snap-text-medium-dark);
+    color: var(--snap-brown-1);
+    background-color: var(--snap-text-4);
   }
 
   .inat-autocomplete-options-container .selected {
@@ -320,19 +319,19 @@
   }
 
   .autocomplete-options-container .selected {
-    color: var(--snap-dd-non-taxa-bg-hover);
-    background-color: var(--snap-text-medium-dark);
+    color: var(--snap-brown-1);
+    background-color: var(--snap-text-4);
   }
 
   .autocomplete-options-container > div:hover:not(.group) {
-    color: var(--snap-dd-non-taxa-bg-hover);
-    background-color: var(--snap-text-medium-dark-hover);
+    color: var(--snap-brown-1);
+    background-color: var(--snap-text-4-hover);
     cursor: pointer;    
   }
 
 .autocomplete-options-container > div.selected {
-    color: var(--snap-dd-non-taxa-bg-hover);
-    background-color: var(--snap-text-medium-dark);
+    color: var(--snap-brown-1);
+    background-color: var(--snap-text-4);
     cursor: pointer;
   }
   
@@ -363,24 +362,24 @@
   }
 
   .iconic-taxa-categories > div > div > div:nth-child(1) svg {
-    color: var(--snap-collection);
+    color: var(--snap-text-4);
   }
 
   .iconic-taxa-categories g {
-    fill: var(--snap-collection);
+    fill: var(--snap-text-4);
   }
 
   .iconic-taxa-categories svg {
     font-size: 1rem;
-    color: var(--snap-collection);
+    color: var(--snap-text-4);
   }
 
   .iconic-taxa-selected svg {
-    color: var(--snap-collection-active) !important;
+    color: var(--snap-green-3) !important;
   }
 
   .iconic-taxa-selected svg g {
-    fill: var(--snap-collection-active) !important;
+    fill: var(--snap-green-3) !important;
   }
 
   .prop-value-block {
@@ -407,11 +406,11 @@
   }
 
   .selected-text svg, .selected-text i, .iconic-taxa-selected svg {
-    color: var(--snap-collection-active);
+    color: var(--snap-green-3);
   }
 
   .lesson-taxa .iconic-taxa-categories-selected svg g {
-    fill: var(--snap-text-medium-dark);
+    fill: var(--snap-text-4);
   }
   
   .iconic-taxa-categories-selected svg {
@@ -429,7 +428,7 @@
   } */
 
   .iconic-taxa-categories-selected svg g {
-    fill: var(--snap-collection-active);
+    fill: var(--snap-green-3);
   }
 
   .svg-icon {
@@ -437,8 +436,8 @@
   }
   
   .svg-icon-selected {
-    fill: var(--snap-success);
-    color: var(--snap-success);
+    fill: var(--snap-success-3);
+    color: var(--snap-success-3);
   }  
 
   /* EXAMPLE LESSONS INC. RB LIST */
@@ -470,7 +469,7 @@
     display: flex;
     align-items: center;
     font-size: .8rem;
-    color: var(--snap-text-black);
+    color: var(--snap-text-6);
 }
 
   .lesson-name .underline-link {
@@ -493,7 +492,7 @@
   #confirm-lesson-btn {
     margin: 1.5rem 0;
     width: 9rem;
-    background-color: var(--snap-text-medium-dark);
+    background-color: var(--snap-text-4);
   }
 
   .lesson-radio-button {
@@ -620,7 +619,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid var(--snap-border-light);
+    border: 1px solid var(--snap-border-3);
   }
 
   .custom-lesson-menu-options li span {
@@ -638,7 +637,7 @@
 
   .request-feedback .lesson-list-item {
     padding: .5rem;
-    background-color: var(--snap-lesson-row-green);
+    background-color: var(--snap-green-1);
     pointer-events: all;
     display: flex;
     flex-direction: column;

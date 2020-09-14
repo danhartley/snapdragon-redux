@@ -1,7 +1,7 @@
 .species-table {
-  border-right: 1px solid var(--snap-btn-auxillary);
-  border-left: 1px solid var(--snap-btn-auxillary);
-  border-bottom: 1px solid var(--snap-btn-auxillary);
+  border-right: 1px solid var(--snap-green-3);
+  border-left: 1px solid var(--snap-green-3);
+  border-bottom: 1px solid var(--snap-green-3);
 }
 
 .table-header {
@@ -13,8 +13,8 @@
   z-index: 10;
   align-items: center;
   top: 0;
-  background-color: var(--snap-btn-auxillary);
-  color: var(--snap-text-light);
+  background-color: var(--snap-green-2);
+  color: var(--snap-text-4);
   font-size: 1.1em;
   letter-spacing: .01rem;
 }
@@ -38,7 +38,7 @@
   }
 
   tr.master:nth-child(2n + 1) {
-    background-color: var(--snap-content-background);
+    background-color: var(--snap-background-1);
   }
  
   .table-row img, table input {
@@ -170,7 +170,7 @@
  }
 
 div.species-description {
-  background-color: var(--snap-species-highlight-background);
+  background-color: var(--snap-yellow-1);
   border-top: .5px solid var(--snap-youtube-green);
   border-bottom: .5px solid var(--snap-youtube-green);
   padding: 1rem;
