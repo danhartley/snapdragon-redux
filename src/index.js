@@ -1,3 +1,4 @@
+// import { Workbox } from 'workbox-window';
 import "babel-polyfill";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -30,6 +31,7 @@ import { lessonModalHandler } from 'ui/screens/cards/test-card-modal-handler';
 import { loadMainHTML, handleWindowResize, loadModalHTML } from 'index-helpers/media-helper';
 import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
 import * as Sentry from '@sentry/browser';
+import LogRocket from 'logrocket';
 
 const onLoadHandler = () => {
 
@@ -119,6 +121,34 @@ const onLoadHandler = () => {
   const script = document.createElement('script');
         script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_API_MAPS_KEY}&libraries=places`;
   document.body.appendChild(script);
+
+  LogRocket.init('qysfum/learn-the-planet');
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', async () => {
+      // navigator.serviceWorker.register('./sw.js').then(async ()=>{
+        // console.log('service worker registered');
+        // Imports the module source file with ES2015+ syntax
+        const { Workbox } = await import('workbox-window/Workbox.mjs');
+        const wb = new Workbox('./sw.js');
+        wb.addEventListener('waiting', (event) => {
+          console.log(`A new service worker has installed, but it can't activate` +
+              `until all tabs running the current version have fully unloaded.`);
+        });
+        wb.addEventListener('activated', (event) => {
+          // `event.isUpdate` will be true if another version of the service
+          // worker was controlling the page when this version was registered.
+          if (!event.isUpdate) {
+            console.log('Service worker activated for the first time!');
+        
+            // If your service worker is configured to precache assets, those
+            // assets should all be available now.
+          }          
+        });
+        wb.register();
+      // });
+    });
+  }
 };
 
 onLoadHandler();

@@ -63,7 +63,7 @@ export const natureCards = [
   },
   {
     term: 'How many trees are felled each year?',
-    definition: '15 billion',
+    definition: '10-15 billion',
     source: 'https://www.nature.com/articles/nature14967.epdf?sharing_token=mlHVTc3D3wXM2l6Q-7PPidRgN0jAjWel9jnR3ZoTv0PVqBqhRh-xvvJTzHFUU9TMfiseqc7XBtw3yJeJCBwHMN3lUfC2tTucH2ceX1zXCDpRHaea__U60XLfWVMPgZ1BLtk7ctJJGe596NZxdWNhIBEDxNDGbUEPSjixfb3DKec2Nkt62VPvOylvu7XCsm1_f07EOMf6DaxQ3fXBpKtqxH-w7T7BUFL82lrnmNc6UxH0w_vpX9-esAdBJb5uCs2cXySqg3rHpPonwaVNYAmucvE6OlyZwoLVuzZH9wI6iibYMJZvv2cOJLUUakuK6FBV&tracking_referrer=www.bbc.com'
   },
   {
@@ -91,5 +91,15 @@ export const natureCards = [
   {
     term: 'Compare the capture carbon rates of smaller plants and trees.',
     definition: 'Smaller plants capture and release carbon more quickly than trees.'
+  },
+  {
+    term: 'How many trees are there?',
+    definition: '~ 3 trillion',
+    source: '??'
+  },
+  {
+    term: 'How many trees are there for every person?',
+    definition: '400',
+    source: '??'
   },
 ];

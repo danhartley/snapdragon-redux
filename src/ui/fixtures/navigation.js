@@ -101,15 +101,15 @@ export const renderNavigation = collection => {
                     document.querySelector('.js-nav-icons .language').classList.remove('active-icon');
                   });
                 });                  
-              case enums.navigation.QUIZ:
-                import('quiz/quiz-modal').then(module => {
-                  module.openQuiz();
-                  document.getElementById('quizModal').addEventListener('hide.bs.modal', e => {
-                    document.querySelector('.js-nav-icons .quiz-icon').classList.remove('active-icon');
-                    actions.boundClearDeckScoreHistory();
-                  });
-                });
-                break;
+              // case enums.navigation.QUIZ:
+              //   import('quiz/quiz-modal').then(module => {
+              //     module.openQuiz();
+              //     document.getElementById('quizModal').addEventListener('hide.bs.modal', e => {
+              //       document.querySelector('.js-nav-icons .quiz-icon').classList.remove('active-icon');
+              //       actions.boundClearDeckScoreHistory();
+              //     });
+              //   });
+              //   break;
               default:
                 return;
           }

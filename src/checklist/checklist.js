@@ -38,5 +38,5 @@ const optionDefaults = id => {
   document.querySelector(`#${id}`).classList.add('active');
 };
         
-document.querySelector('#about').focus();
-document.querySelector('#about').click();
+document.querySelector('#checklists').focus();
+document.querySelector('#checklists').click();

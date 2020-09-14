@@ -89,7 +89,7 @@ module.exports = {
         // https://webpack.js.org/configuration/resolve/#resolvemodules
     },
     devServer: {
-      host: '0.0.0.0',// 0.0.0.0 necessary for service worker to be recognised, localhost for reload
+      host: 'localhost',// 0.0.0.0 necessary for ??? (device?), localhost for service worker to be recognised and reload
       disableHostCheck: true,
       writeToDisk: true,
       compress: true

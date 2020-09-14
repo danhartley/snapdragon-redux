@@ -11,15 +11,16 @@
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <script>
-          // Check that service workers are supported
-          if ('serviceWorker' in navigator) {
-            // Use the window load event to keep the page load performant
-            window.addEventListener('load', () => {
-              navigator.serviceWorker.register('./sw.js').then(()=>{
-                console.log('service worker registered');
-              });
-            });
-          }
+          // if ('serviceWorker' in navigator) {
+          //   window.addEventListener('load', () => {
+          //     navigator.serviceWorker.register('./sw.js').then(async ()=>{
+          //       console.log('service worker registered');      
+          //       const { Workbox } = await import('workbox-window');
+          //       const wb = new Workbox('/sw.js');
+          //       wb.register();
+          //     });
+          //   });
+          // }
         </script>
         <link rel="apple-touch-icon" sizes="57x57" href="./static/favicons/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="./static/favicons/apple-icon-60x60.png">
@@ -38,6 +39,17 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="default">
         <meta name="apple-mobile-web-app-title" content="Learn The Planet">
+
+        <meta
+        name="image"
+        property="og:image"
+        content="https://live.staticflickr.com/65535/50320173342_d790401d2a_n.jpg"
+        />
+        <meta 
+          name="description"
+          property="og:description"
+          contents="Learn the Planet"
+        />
 
         <link rel="apple-touch-startup-image" href="./static/images/splash/launch-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
         <link rel="apple-touch-startup-image" href="./static/images/splash/launch-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
@@ -119,10 +131,6 @@
                         <i class="margin-left extra-large-text fas fa-chevron-down youtube-icon"></i><span class="margin-left">Click to see lesson species.</span>
                       </h4>
 
-                      <h4 class="centred-block landscape">
-                        <i class="margin-left extra-large-text fas fa-stopwatch"></i><span class="margin-left">Test yourself against the clock.</span>
-                      </h4>
-              
                       <h4 class="landscape">
                           <button class="btn snap-btn smaller-text fit-width" disabled style="opacity: 1;">Vocab test</button>
                           <span class="margin-left">Brush up on terms and definitions.</span>
