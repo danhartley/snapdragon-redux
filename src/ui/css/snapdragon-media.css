@@ -190,19 +190,8 @@
 
     .image-description {
         padding: 1rem 4rem;
-        /* margin-top: -300px; see above (hack) */
         color: black; /* to compensate for layer above (hack) */
     }
-
-    /* .imageSlider .carousel-control-next, .imageSlider .carousel-control-prev {
-        top: 15%;
-        top: calc(
-            (var(--vh, 1vh) * 75 * .5) -
-            (var(--vh, 1vh) * 7.5) -
-            .5rem
-            - 100px
-        );
-    } */
 
     .modal-image .carousel-inner > div:nth-child(1) {
         height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhRunningBlock));
@@ -388,10 +377,6 @@
       display: grid;
       grid-template-columns: 1fr 3fr 1fr;
     }
-
-    /* .highlighted-for-review-row {
-      border: 3px solid var(--snap-border-1);
-    } */
 
     .lesson-list-carousel-item > div:nth-child(3) {
         justify-content: center;
@@ -594,7 +579,6 @@
     }
 
     .modal-header-container {
-        /* padding-bottom: 4px; */
         border-bottom: 5px solid var(--snap-border-3);
     }
 

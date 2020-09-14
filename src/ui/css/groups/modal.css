@@ -13,10 +13,6 @@
   z-index: 1049; /* wiki is 1050 */
 }
 
-/* .modal-header-container {
-  padding-bottom: 4px;
-} */
-
 .modal-header {
     padding: 0;
     border-radius: 0;
@@ -200,19 +196,6 @@
     margin: calc(var(--vhRunningBlock) + var(--vhStandardBlock)) auto auto auto;    
   }
 
-  /* #badgeListModal .modal-content, #badgeListModal .modal-body {
-    background-color: var(--snap-progress-bg);
-  }
-
-  #badgeListModal .modal-header {
-    color: var(--snap-text-4);
-    background-color: var(--snap-border-2);
-  }
-
-  #badgeListModal .modal-footer.double-centred-block {
-    background-color: var(--snap-border-2);
-  } */
-
   #badgeListModal .modal-body {
     height: calc(var(--vhDoubleStandardBlock, 20vh) * 3);
     padding: .5rem;
@@ -294,7 +277,6 @@
     flex-direction: column;
     margin: 0 .5rem;
     justify-content: space-evenly;
-    /* background-color: var(--snap-landscape); */
   }
   
   .non-taxa .btn.btn-secondary {
@@ -312,7 +294,6 @@
   
   .non-taxon .btn.btn-secondary {
     width: 100%;
-    /* background-color: var(--snap-landscape); */
     border-radius: unset;
   }
   
@@ -351,15 +332,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }
-  
-  /* .tiles {
-    display: grid;
-    height: 50%;
-    grid-auto-flow: column;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  } */
-  
+
   .squares > div {
     display: grid;
     justify-self: center;
@@ -767,7 +740,6 @@ button.score-summary-row {
 }
 
 .score-summary-row.species {
-  /* background-color: var(--snap-header-background); */
   border: none;
   display: flex;
   width: 100%;

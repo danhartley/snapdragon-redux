@@ -63,13 +63,6 @@
     flex: 1;
   }
 
-  /* .test-card-question .question > div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;      
-  } */
-
-/* .block-container .question > span:nth-child(2), */
 .test-card-question .question-help{
     vertical-align: super;
     text-transform: initial;
@@ -89,8 +82,7 @@
 
 .test-card button {
     display: inline-block;
-    color: var(--snap-text-4);
-    /* background-color: var(--snap-landscape); */
+    color: var(--snap-text-4);    
     transition-duration: .5s;
     width: 100%;
 }

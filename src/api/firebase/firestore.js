@@ -576,6 +576,31 @@ const addCollection = async (collection, user) => {
   const getCollections = async => {
     return getCollectionsWhere({});
   };
+  
+  const getCollectionsStubsWhere = async props => {
+  
+    const { key, operator, value, limit } = props;
+  
+    const collectionRef = limit
+      ? db.collection('collections-stubs').where(key, operator, value).limit(limit)
+        : key
+            ? db.collection('collections-stubs').where(key, operator, value)
+            : db.collection('collections-stubs');
+  
+    const querySnapshot = await collectionRef.get();
+    
+    const docs = [];
+  
+    querySnapshot.forEach(doc => {
+      docs.push(doc.data());
+    });
+  
+    return docs;
+  };
+
+  const getCollectionsStubs = async => {
+    return getCollectionsStubsWhere({});
+  };
 
   const addQuestion = async question => {
 
@@ -759,6 +784,7 @@ export const firestore = {
     getSpeciesByNameInParallel,
     getCollections,
     getCollectionsWhere,
+    getCollectionsStubs,
     getQuestionsWhere,
     
     addSpecies,
