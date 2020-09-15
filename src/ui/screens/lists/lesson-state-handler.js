@@ -168,7 +168,7 @@ const recordUserAction = action => {
   subscription.removeAllQuizLayoutSubs();
 
   setTimeout(() => {
-    actions.boundClickEvent(action);  
+    actions.boundClickEvent(action);
   });
 };
 

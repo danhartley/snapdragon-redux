@@ -34,6 +34,9 @@ import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { lessonModalHandler } from 'ui/screens/cards/test-card-modal-handler';
 import { loadMainHTML, handleWindowResize, loadModalHTML } from 'index-helpers/media-helper';
 import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
+import { renderTopNavigation } from 'ui/fixtures/navigation-top';
+import { renderDashboard } from 'index-helpers/dashboard';
+
 import * as Sentry from '@sentry/browser';
 import LogRocket from 'logrocket';
 
@@ -88,13 +91,13 @@ const onLoadHandler = () => {
         subscription.add(renderLoginChanges, 'user', 'flow');
         subscription.add(renderLoggedIn, 'user', 'flow');
         subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
-        subscription.add(renderScore, 'score', 'flow');
-                
+        subscription.add(renderScore, 'score', 'flow');                
         subscription.add(nextItem, 'layout', 'quiz');
         subscription.add(nextLesson, 'counter', 'quiz');
-        subscription.add(nextLayout, 'counter', 'quiz');
-        
+        subscription.add(nextLayout, 'counter', 'quiz');        
         subscription.add(traitValuesHandler, 'config', 'localisation');
+        renderTopNavigation();
+        subscription.add(renderTopNavigation, 'userAction', 'flow');
 
         const updateConfig = async () => {
             const initialisedConfig = await initialiseConfig(config);
@@ -110,13 +113,14 @@ const onLoadHandler = () => {
         actions.boundCreateGlossary(glossary);
         
         lessonModalHandler.onCloseModal();
-
     }
     catch(e) {
         console.log('home page error: ', e)
         // persistor.purge();
         // window.location.reload(true);        
     }
+
+    renderDashboard();
   });
 
   window.snapLog = snapLog;

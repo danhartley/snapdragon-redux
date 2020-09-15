@@ -209,62 +209,6 @@
     pointer-events: none;
   }
   
-  /* SNAPDRAGON SWITCH */
-
-  /* .snap-switch {
-    display: flex;
-    align-items: center;
-  }
-  
-  .snap-switch-slider {
-    cursor: pointer;
-    background-color: rgb(197, 203, 204);
-  }
-  
-  .snap-switch-slider div {
-    height: 1.6rem;
-    width: 1.6rem;
-    border-radius: .2rem;
-    transition-property: all;
-    transition-duration: .4s;
-    transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-    transition-delay: 0s;
-    position: absolute;
-  }
-
-  .inat .snap-switch-slider div {
-    background-color: var(--snap-inat);
-  } */
-  
-/* .embedded-switch {
-  display: grid;
-  grid-template-columns: auto 3.2rem 1fr;
-  height: 1.6rem;
-}
-
-  .snap-switch-slider.left div {
-    transform: translateX(0);
-  }
-  
-  .snap-switch .txt-left {
-    align-self: center;
-    padding: 0 .5rem 0 0;
-    font-size: .9em;
-  }
-
-  .snap-switch .txt-right {
-    align-self: center;
-    padding: 0 0 0 .5rem;
-  }
-
-  .snap-switch-slider.right div {
-    transform: translateX(1.6rem);
-  }
-
-  .guides .inat .snap-switch {
-    flex-direction: column;
-  } */
-   
   /* AUTOCOMPLETE */
   
   #inat-place.active, #input-species.active {

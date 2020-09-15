@@ -249,15 +249,15 @@
   }
 
   .justify-space-between {
-    justify-content: space-between;
+    justify-content: space-between !important;
   }
 
   .justify-start {
-    justify-content: flex-start;
+    justify-content: flex-start !important;
   }
 
   .justify-end {
-    justify-content: flex-end;
+    justify-content: flex-end !important;
   }
 
   .small-text {
@@ -446,6 +446,21 @@
   .snap-link-btn {
     color: var(--snap-green-4);
   }
+
+  .main.snap-link-btn {
+    font-size: 1rem;
+    color: var(--snap-text-4);
+  }
+
+  .main.snap-link-btn.active {
+    border-bottom: 1px solid var(--snap-border-3);
+    margin-top: 1px;
+    pointer-events: none;
+  }
+
+  .main.snap-link-btn.disabled {
+    pointer-events: none;
+  }
   
   .snap-no-link-btn {
     pointer-events: none;
@@ -475,3 +490,7 @@
     background-color: var(--snap-alert-3) !important;
     border: 0.05rem solid var(--snap-alert-3);
   }  
+
+  .horizontal-spacing {
+    margin: 0 .25rem;
+  }

@@ -184,7 +184,6 @@
     }
 
     #imageModal .imageSlider .carousel-item, #imageComparisonModal .imageSlider .carousel-item {        
-        /* height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - 300px ); see below (hack) */
         height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
     }
 
@@ -357,7 +356,15 @@
     }
 
     .snapdragon-intro {
-        padding: 2rem;
+      margin: 0 0 0 .5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      top: var(--vhStandardBlock, 10vh);
+    }
+
+    .main-lesson-grid .header {
+      justify-content: flex-start;
     }
 
     .snapdragon-intro h4 .fa-youtube, .snapdragon-intro h4 .fa-align-left, .snapdragon-intro h4 .fa-chevron-down {
@@ -369,6 +376,10 @@
         width: 80px;
         height: 80px;
         object-fit: none;
+    }
+
+    .lesson-list-header {
+      padding: 0 !important;
     }
 
     .lesson-list-carousel-item {
@@ -588,6 +599,10 @@
 
     .table-header th:nth-child(6), .table-row td:nth-child(6) button {
       position: initial;
+    }
+
+    .header, .footer {
+      padding: 0;
     }
 }
 

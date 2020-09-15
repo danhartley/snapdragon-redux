@@ -202,7 +202,7 @@ a.icon:hover {
 }
 
 .nav-icons .active-icon, .active-icon {
-  color: white;
+  color: var(--snap-active);
 }
 
 .disabled-icon {
@@ -250,8 +250,6 @@ a.icon:hover {
 .side-lesson-list-body, .main-lesson-body {
   display: grid;
   grid-auto-flow: row;
-  /* height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));   */
-  /* background-color: var(--snap-background-1); */
 }
 
 .header, .footer {
@@ -293,7 +291,10 @@ a.icon:hover {
 }
 
 .main-lesson-grid .header, .main-lesson-grid .footer {
-  justify-content: center;
+  justify-content: center;  
+}
+
+.main-lesson-grid .footer {
   border-top: 1px solid var(--snap-border-2);
 }
 
@@ -629,7 +630,7 @@ button:disabled {
 .imageSlider .carousel-inner {
   display: flex;
   flex-direction: column;
-  background-color: var(--snap-green-2);
+  background-color: var(--snap-green-1);
 }
 
 .imageSlider .carousel-inner > div {
@@ -957,15 +958,24 @@ iframe#birdsong {
 }
 
 .snapdragon-intro {
-  margin: 0 2rem;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
   top: var(--vhStandardBlock, 10vh);
+}
+
+.snapdragon-intro th, .snapdragon-intro td {
+  padding: .5rem 1rem;
 }
 
 .snapdragon-intro > h3, .snapdragon-intro > h4, .snapdragon-intro > h5 {
   font-size: 1rem;
+}
+
+.snapdragon-intro section {
+  padding: 1rem;
+  border: 1px solid var(--snap-border-2);
+  width: 15rem;
 }
 
 .snapdragon-intro .youtube-icon {
@@ -974,12 +984,10 @@ iframe#birdsong {
 
 .lesson-list {
   position: relative;
-  /* background-color: var(--snap-background-2); */
 }
 
 .lesson-list-header {
-  padding: 0 !important;
-  /* background-color: rgb(231, 235, 235); */
+  padding: 0 0 0 .5rem !important;
   justify-content: space-between;
 }
 
@@ -1009,10 +1017,6 @@ iframe#birdsong {
   width: calc( var(--vh) * 5);
 }
 
-.lesson-list-header > div:nth-child(1) {
-  padding-left: .5rem !important;
-}
-
 .lesson-list-header > div[data-toggle-state="off"]:nth-child(1) > div:nth-child(1) {
   display: none;
 }
@@ -1030,27 +1034,20 @@ iframe#birdsong {
 
 .lesson-list-carousel-item {
   border-top: 3px solid transparent;
-  /* border-bottom: 3px solid transparent; */
   display: flex;
   margin: .25rem 0;
   border-bottom: 1px solid var(--snap-border-1);
 }
 
 .highlighted-for-review-row {
-  /* background-color: var(--snap-text-4) !important;
-  background-color: var(--snap-youtube-green) !important; */
-  border-top: 3px solid var(--snap-border-1);
-  border-bottom: 3px solid var(--snap-border-1);
+  border-top: 1px solid var(--snap-border-1) !important;
+  border-bottom: 1px solid var(--snap-border-1) !important;
   background-color: var(--snap-background-1) !important;
 }
 
-/* .highlighted-for-review-row .snap-btn {
-  color: var(--snap-text-1);
-} */
-
-/* .highlighted-for-review-row .lesson-name, .highlighted-for-review-row .lesson-list-item, .highlighted-for-review-row svg {
-  color: var(--snap-text-1) !important;
-} */
+.highlighted-for-review-row .snap-btn {
+  color: initial;
+}
 
 .lesson-list-carousel-item > div:nth-child(3) {
   font-size: 1.3rem;
@@ -1071,7 +1068,6 @@ iframe#birdsong {
 
 .lesson-review svg {
   font-size: .9rem;
-  /* color: var(--snap-text-4); */
 }
 
 .lesson-review i.fa-sync, .lesson-list-item i.fa-sync {
@@ -1085,11 +1081,11 @@ iframe#birdsong {
 }
 
 .lesson-list div.lesson-list-carousel-item:nth-of-type(2n) {
-  background-color: var(--snap-background-3);
+  background-color: var(--snap-border-1);
 }
 
 .lesson-list div.lesson-list-carousel-item:nth-of-type(2n+1) {
-  background-color: var(--snap-background-3);  
+  background-color: var(--snap-border-1);
 }
 
 .lesson-list .scrollable {
@@ -1128,7 +1124,6 @@ iframe#birdsong {
   margin: 0;
   padding: 0;
   padding-top: .4rem;
-  border-top: 1px solid var(--snap-border-3);
   position: relative;
   height: 0;
   padding-top: 56.25%;

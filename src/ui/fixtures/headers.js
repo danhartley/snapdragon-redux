@@ -8,7 +8,7 @@ export const renderHeaders = collection => {
         const { layout, lessonPlan, config } = store.getState();
 
         DOM.leftHeaderTxt.innerHTML = 'Learn the planet';
-        DOM.rightHeaderTxt.innerHTML = config.isLandscapeMode ? '' : 'Learn the planet';
+        // DOM.rightHeaderTxt.innerHTML = config.isLandscapeMode ? '' : 'Learn the planet';
 
         const progressBar = document.querySelector('.js-main-lesson-grid progress');
 

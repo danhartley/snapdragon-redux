@@ -6,7 +6,6 @@ import { utils } from 'utils/utils';
 import { enums } from 'ui/helpers/enum-helper';
 import { renderLessonIntro } from 'ui/screens/home/home-lesson-intro';
 import { renderEditLesson } from 'ui/screens/lists/lesson-edit';
-import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 
 export const onLoadLessonViewState = (collection, videoPlayer) => {
@@ -14,10 +13,9 @@ export const onLoadLessonViewState = (collection, videoPlayer) => {
   const taxa = collection.iconicTaxa ? collection.iconicTaxa.map(taxon => taxon.common).join(', ') : '';
 
   collection.taxa = taxa;
-  // collection.hasVideo = collection.video && !isEmpty(collection.video) ? true : false;
   collection.showVideoIconClass = collection.hasVideo ? '' : 'hide-important';
   collection.videoState = videoHandler.setVideoState(videoPlayer || [], collection);
-  collection.reviewState = 'Lesson Quiz';
+  collection.reviewState = 'Lesson quiz';
 
   collection.hasTermsClass = collection.terms && Array.isArray(collection.terms) && collection.terms.length > 0 ? '' : 'hide-important';
   collection.isCollectionEditableClass = '';

@@ -10,8 +10,6 @@ export const DOM = {
     
     rightGrid : document.getElementsByClassName('js-main-lesson-grid')[0],
     rightHeader : document.getElementsByClassName('js-main-lesson-header')[0],
-    rightHeaderTxt : document.getElementsByClassName('js-main-lesson-txt-header')[0],
-    rightHeaderScoreTxt : document.getElementsByClassName('js-main-lesson-txt-score')[0],
     rightBody : document.getElementsByClassName('js-main-lesson-body')[0],
     rightRptrSummary : document.getElementsByClassName('js-summary')[0],
     rightBodyBottom : document.getElementsByClassName('js-main-lesson-body-bottom')[0],

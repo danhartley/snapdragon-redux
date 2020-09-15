@@ -20,6 +20,8 @@
 
     --snap-blue-1: rgb(215, 227, 241);
     --snap-blue-2: rgb(171, 196, 226);
+    --snap-blue-3: rgb(203, 228, 234);
+    --snap-blue-4: rgb(186, 218, 227);
 
     --snap-text-1:rgb(245, 245, 245);
     --snap-text-2:rgb(215, 215, 215);
@@ -36,6 +38,7 @@
     --snap-border-1: rgb(225,225,225);
     --snap-border-2: rgb(210, 210, 210);
     --snap-border-3: rgb(175,175,175);
+    --snap-border-4: rgb(108, 117, 125);
 
     --snap-link-hover: rgb(54, 69, 82);
     --snap-link: rgb(20, 125, 156);
@@ -43,8 +46,8 @@
     --snap-inat: rgb(127, 151, 122);
     --snap-youtube-green: rgb(52, 105, 23);
 
-    --snap-progress-bg: rgb(16, 66, 28);
-    --snap-progress-bar: rgb(16, 66, 28);
+    --snap-progress-bg: rgb(108, 117, 125);
+    --snap-progress-bar: rgb(108, 117, 125);
 
     --snap-btn-dropdown: rgb(252, 193, 186);
     --snap-btn-dropdown-options: rgb(254, 240, 229);

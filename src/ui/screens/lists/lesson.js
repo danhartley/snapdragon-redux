@@ -51,5 +51,5 @@ const renderReview = (layout, lesson, className, config) => {
             parent.innerHTML = review;
 
       const reviewLinkBtn = document.querySelector(`.js-review-link[data-lesson-id="${lesson.id}"]`);
-            reviewLinkBtn.innerText = 'Resume Quiz';
+            reviewLinkBtn.innerText = 'Resume quiz';
 };
