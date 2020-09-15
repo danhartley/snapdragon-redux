@@ -444,7 +444,7 @@
   }
 
   .snap-link-btn {
-    color: var(--snap-green-3);
+    color: var(--snap-green-4);
   }
   
   .snap-no-link-btn {
@@ -452,10 +452,10 @@
   }
   
   .snap-action-btn {
-    background-color: var(--snap-green-3);
+    background-color: var(--snap-green-4);
     color: var(--snap-text-1);
     letter-spacing: .05rem;
-    border: 1px solid var(--snap-green-2) !important;
+    border: 1px solid var(--snap-green-3) !important;
     padding: .5rem .75rem;
   }
   

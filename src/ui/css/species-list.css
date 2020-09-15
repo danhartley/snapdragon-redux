@@ -1,7 +1,7 @@
 .species-table {
-  border-right: 1px solid var(--snap-green-3);
-  border-left: 1px solid var(--snap-green-3);
-  border-bottom: 1px solid var(--snap-green-3);
+  border-right: 1px solid var(--snap-green-4);
+  border-left: 1px solid var(--snap-green-4);
+  border-bottom: 1px solid var(--snap-green-4);
 }
 
 .table-header {
@@ -13,7 +13,7 @@
   z-index: 10;
   align-items: center;
   top: 0;
-  background-color: var(--snap-green-2);
+  background-color: var(--snap-green-3);
   color: var(--snap-text-4);
   font-size: 1.1em;
   letter-spacing: .01rem;

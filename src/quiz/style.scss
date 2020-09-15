@@ -42,7 +42,7 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
   }
 
   .modal-footer, .modal-header {
-    background-color: var(--snap-green-1);
+    background-color: var(--snap-green-2);
   }
 
   .modal-footer {
@@ -236,32 +236,6 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
       line-height: 2 * $space;
       cursor: pointer;
     }
-    
-    // input {
-    //   -webkit-appearance: none;
-    //   -moz-appearance: none;
-    //   appearance: none;
-    
-    //   border-radius: 50%;
-    //   width: $space;
-    //   height: 2 * $space;
-    
-    //   border: (2 * $space) solid var(--snap-blue-1);
-    //   transition: 0.2s all linear;
-    //   margin-right: $space;
-    
-    //   position: relative;
-
-    //   cursor: pointer;
-    // }
-    
-    // input:checked {
-    //   border: (2 * $space) solid var(--snap-text-4);
-    // }
-
-    // input:focus {
-    //   outline: none;
-    // }
 
     .names {
       font-size: .7rem;
@@ -291,7 +265,7 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
         justify-content: center;
       }
       input:checked {
-        border: (2 * $space) solid var(--snap-green-3);
+        border: (2 * $space) solid var(--snap-green-4);
       }
     }
   }

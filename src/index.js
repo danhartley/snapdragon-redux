@@ -76,8 +76,8 @@ const onLoadHandler = () => {
         actions.boundStopStartLesson(counter);
 
         if(collections && collections.length === 0) {
-            // const cloudCollections = await firestore.getCollections();
-            const cloudCollections = await firestore.getCollectionsStubs();
+            const cloudCollections = await firestore.getCollections();
+            // const cloudCollections = await firestore.getCollectionsStubs();
             actions.boundUpdateCollections(cloudCollections);
         }
 

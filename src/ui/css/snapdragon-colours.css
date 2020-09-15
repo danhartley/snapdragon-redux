@@ -1,9 +1,25 @@
 :root {
 
-    --snap-green-1: rgb(216, 223, 210);
-    --snap-green-2: rgb(166, 177, 155);
-    --snap-green-3: rgb(95, 125, 89);
-    --snap-green-4: rgb(16, 66, 28);
+    --snap-green-1: rgba(216, 223, 210,.4);
+    --snap-green-2: rgb(216, 223, 210);
+    --snap-green-3: rgb(166, 177, 155);
+    --snap-green-4: rgb(95, 125, 89);
+    --snap-green-5: rgb(16, 66, 28);
+
+    --snap-pink-1: rgb(226, 220, 226);
+    --snap-pink-2: rgb(223, 209, 223);
+    --snap-pink-3: rgb(163, 145, 163);
+
+    --snap-brown-1: rgb(229, 227, 220);
+    --snap-brown-2: rgb(197, 193, 175);
+
+    --snap-yellow-1: rgb(249, 248, 238);
+    --snap-yellow-2: rgb(226, 222, 180);
+    --snap-yellow-3: rgb(193, 186, 112);
+    --snap-yellow-4: rgb(146, 139, 56);
+
+    --snap-blue-1: rgb(215, 227, 241);
+    --snap-blue-2: rgb(171, 196, 226);
 
     --snap-text-1:rgb(245, 245, 245);
     --snap-text-2:rgb(215, 215, 215);
@@ -14,6 +30,8 @@
 
     --snap-background-1: rgb(255, 255, 255);
     --snap-background-2: rgb(245, 245, 245);
+    --snap-background-3: rgb(215, 215, 215);
+    --snap-background-4: rgb(185, 185, 185);
 
     --snap-border-1: rgb(225,225,225);
     --snap-border-2: rgb(210, 210, 210);
@@ -40,15 +58,5 @@
     --snap-success-1: rgb(216, 225, 208);
     --snap-success-2: rgb(169, 196, 163);
     --snap-success-3: rgb(84, 137, 84);
-
-    --snap-brown-1: rgb(229, 227, 220);
-    --snap-brown-2: rgb(197, 193, 175);
-
-    --snap-yellow-1: rgb(249, 248, 238);
-    --snap-yellow-2: rgb(226, 222, 180);
-    --snap-yellow-3: rgb(193, 186, 112);
-    --snap-yellow-4: rgb(146, 139, 56);
-
-    --snap-blue-1: rgb(252, 251, 246);
 
   }

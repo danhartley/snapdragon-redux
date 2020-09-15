@@ -21,14 +21,14 @@
     justify-content: space-between;
     height: var(--vhRunningBlock,7.5vh);
     border: none;
-    background-color: var(--snap-green-1);
+    background-color: var(--snap-green-2);
 }
 
 .modal-footer {
   height: var(--vhRunningBlock,7.5vh);
   padding: 0;
   border: none;
-  background-color: var(--snap-green-1);
+  background-color: var(--snap-green-2);
 }
 
 .modal-title {
@@ -630,7 +630,7 @@
 .rights-link {
   grid-template-columns: 2rem auto 2rem;
   height: var(--vhRunningBlock);
-  background-color: var(--snap-green-2);
+  background-color: var(--snap-green-3);
   display: grid;
 }
 
@@ -913,12 +913,12 @@ button.score-summary-row {
 }
 
 .quick-fire .quick-fire-options .btn-secondary {
-  border: 1px solid var(--snap-green-3);
+  border: 1px solid var(--snap-green-4);
 }
 
 .quick-fire .quick-fire-options .btn-secondary:not(:disabled):not(.disabled).active {
   color: var(--snap-text-1);
-  background-color: var(--snap-green-4);
+  background-color: var(--snap-green-5);
   border: 1px solid var(--snap-border-3);
 }
 

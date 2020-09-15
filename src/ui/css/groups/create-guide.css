@@ -65,7 +65,7 @@
   }
 
   .custom-lesson-menu-options .snap-icon-btn:hover, .modal-guide-navigation .snap-icon-btn:hover {
-    color: var(--snap-green-3);
+    color: var(--snap-green-4);
   }
 
   .right-justify {
@@ -375,11 +375,11 @@
   }
 
   .iconic-taxa-selected svg {
-    color: var(--snap-green-3) !important;
+    color: var(--snap-green-4) !important;
   }
 
   .iconic-taxa-selected svg g {
-    fill: var(--snap-green-3) !important;
+    fill: var(--snap-green-4) !important;
   }
 
   .prop-value-block {
@@ -406,7 +406,7 @@
   }
 
   .selected-text svg, .selected-text i, .iconic-taxa-selected svg {
-    color: var(--snap-green-3);
+    color: var(--snap-green-4);
   }
 
   .lesson-taxa .iconic-taxa-categories-selected svg g {
@@ -428,7 +428,7 @@
   } */
 
   .iconic-taxa-categories-selected svg g {
-    fill: var(--snap-green-3);
+    fill: var(--snap-green-4);
   }
 
   .svg-icon {
@@ -637,7 +637,7 @@
 
   .request-feedback .lesson-list-item {
     padding: .5rem;
-    background-color: var(--snap-green-1);
+    background-color: var(--snap-green-2);
     pointer-events: all;
     display: flex;
     flex-direction: column;

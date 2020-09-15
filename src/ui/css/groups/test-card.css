@@ -188,7 +188,7 @@ div.text-entry {
 
   .btn.btn-auxiliary, .btn.btn-auxiliary:focus {
     color: var(--snap-text-1) !important;
-    background-color: var(--snap-green-3) !important;
+    background-color: var(--snap-green-4) !important;
     cursor: pointer !important;
   }
 
