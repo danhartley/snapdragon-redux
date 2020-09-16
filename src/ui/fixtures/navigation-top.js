@@ -1,4 +1,3 @@
-import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { enums } from 'ui/helpers/enum-helper';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -6,7 +5,7 @@ import { renderDashboard } from 'index-helpers/dashboard/dashboard';
 
 import navigationTemplate from 'ui/fixtures/navigation-top.html';
 
-export const renderTopNavigation = (userAction = enums.userEvent.GO_TO_DASHBOARD) => {
+export const renderTopNavigation = userAction => {
 
   const template = document.createElement('template');
         template.innerHTML = navigationTemplate;
@@ -16,26 +15,15 @@ export const renderTopNavigation = (userAction = enums.userEvent.GO_TO_DASHBOARD
 
   renderTemplate({}, template.content, parent);
 
-  const { config } = store.getState();
-
-  let active = document.getElementById(userAction.name);
-
-  if(active) {
-    active.classList.add('active');
-  } else {
-    active = config.isLandscapeMode
-          ? document.getElementById(enums.userEvent.GO_TO_DASHBOARD.name)
-          : document.getElementById(enums.userEvent.GO_TO_LESSONS.name);
-
-    active.classList.add('active');
-  }
+  let active = document.getElementById(userAction.name) || document.getElementById(enums.userEvent.GO_TO_DASHBOARD.name);
+      active.classList.add('active');
 
   const options = document.querySelectorAll('.js-main-menu-icons button');
         options.forEach(option => {
           option.addEventListener('click', e => {
-            const id = e.target.id;
-            actions.boundClickEvent(id);
-            switch(id) {
+            const button = e.target;
+            actions.boundClickEvent(enums.userEvent[button.id]);
+            switch(button.id) {
               case enums.userEvent.GO_TO_DASHBOARD.name:
                 renderDashboard();
                 break;

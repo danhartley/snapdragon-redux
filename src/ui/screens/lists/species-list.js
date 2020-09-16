@@ -1,7 +1,6 @@
 import { contains } from 'ramda';
 
 import { enums } from 'ui/helpers/enum-helper';
-import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderCard } from 'ui/screens/cards/card';
@@ -11,7 +10,6 @@ import { modalImageHandler } from 'ui/helpers/image-handler';
 import { buildTable } from 'ui/screens/lists/species-table';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 import { videoSetup } from 'ui/screens/home/home-lesson-intro-video';
-import { lessonStateHandler } from 'ui/screens/lists/lesson-state-handler';
 import { onSpeciesChangeHandler, openNoteHandler } from 'ui/screens/lists/species-list-definition-insert';
 
 export const renderSpeciesList = (lesson, args) => {
@@ -94,7 +92,9 @@ export const renderSpeciesList = (lesson, args) => {
                             : videoSetup(collection, store.getState().videoPlayer || [], DOM.rightBody, species.time[0]);
                     }
 
-                   videoHandler.updateVideoPlayer(store.getState().videoPlayer, collection, species);
+                    videoHandler.updateVideoPlayer(store.getState().videoPlayer, collection, species);
+
+                    actions.boundClickEvent(enums.userEvent.PLAY_LESSON_VIDEO);
                   });
               });
 

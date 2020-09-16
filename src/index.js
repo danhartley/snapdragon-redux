@@ -36,7 +36,6 @@ import { loadMainHTML, handleWindowResize, loadModalHTML } from 'index-helpers/m
 import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
 import { renderTopNavigation } from 'ui/fixtures/navigation-top';
 import { renderDashboard } from 'index-helpers/dashboard/dashboard';
-import { renderVocabtestScore } from 'index-helpers/dashboard/vocab-test';
 
 import * as Sentry from '@sentry/browser';
 import LogRocket from 'logrocket';
@@ -98,7 +97,6 @@ const onLoadHandler = () => {
         subscription.add(nextLesson, 'counter', 'quiz');
         subscription.add(nextLayout, 'counter', 'quiz');        
         subscription.add(traitValuesHandler, 'config', 'localisation');
-        renderTopNavigation();
         subscription.add(renderTopNavigation, 'userAction', 'flow');
 
         const updateConfig = async () => {
