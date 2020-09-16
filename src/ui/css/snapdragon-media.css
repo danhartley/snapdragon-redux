@@ -358,7 +358,7 @@
     .snapdragon-intro {
       margin: 0 0 0 .5rem;
       display: flex;
-      flex-direction: column;
+      /* flex-direction: column; */
       justify-content: space-evenly;
       top: var(--vhStandardBlock, 10vh);
     }
@@ -417,8 +417,8 @@
         grid-template-areas: "right left";
     }
 
-    .home-container {
-      display: grid !important;
+    .home-container .snapdragon-header {
+      margin-left: 0;
     }
 
     .side-lesson-list {

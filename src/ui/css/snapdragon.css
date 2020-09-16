@@ -186,8 +186,7 @@ a.icon:hover {
 }
 
 .grid-header {
-  background-color: rgb(153, 172, 149);
-  /* background-color: var(--snap-portrait); */
+  /* background-color: rgb(153, 172, 149); */
   display: flex;
   align-items: center;
   color: var(--snap-text-4);
@@ -216,6 +215,7 @@ a.icon:hover {
 }
 
 .home-container {
+  display: grid !important;
   position: relative;
   grid-template-rows: var(--vhStandardBlock) auto;
 }
@@ -345,22 +345,6 @@ a.icon:hover {
   font-style: normal;
   text-transform: capitalize;
 }
-
-/* .card-link-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-link-container svg {
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--snap-yellow-3);
-}
-
-.card-link-container svg:hover {
-  color: var(--snap-text-4);
-} */
 
 .taxon.card-card .data-box-container {
   grid-template-columns: 1fr 2fr;
@@ -867,6 +851,7 @@ iframe#birdsong {
 }
 
 .home-container .snapdragon-header {
+  margin-left: .5rem;
   top: 0;
   text-transform: uppercase;
   color: var(--snap-text-4);
@@ -915,7 +900,6 @@ iframe#birdsong {
   fill: var(--snap-link);
 }
 
-/* .home-container .snapdragon-tag  */
 .inat-widget span:nth-child(1) {
   font-style: initial;
 }
@@ -959,6 +943,7 @@ iframe#birdsong {
 
 .snapdragon-intro {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   top: var(--vhStandardBlock, 10vh);
@@ -966,6 +951,7 @@ iframe#birdsong {
 
 .snapdragon-intro th, .snapdragon-intro td {
   padding: .5rem 1rem;
+  white-space: nowrap;
 }
 
 .snapdragon-intro > h3, .snapdragon-intro > h4, .snapdragon-intro > h5 {
@@ -975,7 +961,6 @@ iframe#birdsong {
 .snapdragon-intro section {
   padding: 1rem;
   border: 1px solid var(--snap-border-2);
-  width: 15rem;
 }
 
 .snapdragon-intro .youtube-icon {

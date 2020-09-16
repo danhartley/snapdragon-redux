@@ -17,16 +17,16 @@ export const renderHome = (counter, forceIntroDisplay = false) => {
         renderLessons();
     }
     
-    const introduction = document.querySelector('.js-home-container');
+    const dashboard = document.querySelector('.js-dashboard-container');
 
     if(config.isPortraitMode && isFirstTimeVisitor) {
-      introduction.classList.add('display-grid');
-      introduction.classList.remove('display-none');
+      dashboard.classList.add('display-grid');
+      dashboard.classList.remove('display-none');
     }
 
     if(config.isPortraitMode && !isFirstTimeVisitor) {
-      introduction.classList.add('display-none');
-      introduction.classList.remove('display-grid');
+      dashboard.classList.add('display-none');
+      dashboard.classList.remove('display-grid');
       renderLessons();
     }
 };

@@ -2,7 +2,7 @@ import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { enums } from 'ui/helpers/enum-helper';
 import { renderTemplate } from 'ui/helpers/templating';
-import { renderDashboard } from 'index-helpers/dashboard';
+import { renderDashboard } from 'index-helpers/dashboard/dashboard';
 
 import navigationTemplate from 'ui/fixtures/navigation-top.html';
 
@@ -30,7 +30,7 @@ export const renderTopNavigation = (userAction = enums.userEvent.GO_TO_DASHBOARD
     active.classList.add('active');
   }
 
-  const options = document.querySelectorAll('.js-main-menu-icons');
+  const options = document.querySelectorAll('.js-main-menu-icons button');
         options.forEach(option => {
           option.addEventListener('click', e => {
             const id = e.target.id;
@@ -39,6 +39,10 @@ export const renderTopNavigation = (userAction = enums.userEvent.GO_TO_DASHBOARD
               case enums.userEvent.GO_TO_DASHBOARD.name:
                 renderDashboard();
                 break;
+              case enums.userEvent.GO_TO_LESSONS.name :
+                import('ui/screens/lists/lesson-list').then(module => {
+                  module.renderLessons();
+                });
               default:
                 break;
             }

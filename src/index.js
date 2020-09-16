@@ -35,7 +35,8 @@ import { lessonModalHandler } from 'ui/screens/cards/test-card-modal-handler';
 import { loadMainHTML, handleWindowResize, loadModalHTML } from 'index-helpers/media-helper';
 import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
 import { renderTopNavigation } from 'ui/fixtures/navigation-top';
-import { renderDashboard } from 'index-helpers/dashboard';
+import { renderDashboard } from 'index-helpers/dashboard/dashboard';
+import { renderVocabtestScore } from 'index-helpers/dashboard/vocab-test';
 
 import * as Sentry from '@sentry/browser';
 import LogRocket from 'logrocket';
@@ -84,6 +85,7 @@ const onLoadHandler = () => {
             actions.boundUpdateCollections(cloudCollections);
         }
 
+        renderDashboard();        
         subscription.add(renderHeaders, 'collection', 'flow');
         renderNavigation();
         subscription.add(renderNavigation, 'collection', 'flow');
@@ -118,9 +120,7 @@ const onLoadHandler = () => {
         console.log('home page error: ', e)
         // persistor.purge();
         // window.location.reload(true);        
-    }
-
-    renderDashboard();
+    }    
   });
 
   window.snapLog = snapLog;

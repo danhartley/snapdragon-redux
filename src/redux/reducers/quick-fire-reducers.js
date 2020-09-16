@@ -8,7 +8,13 @@ const cleanAndReturnIncomingState = state => {
     return quickFire;
 };
 
-export const quickFire = (state = null, action) => {
+export const quickFire = (state = {
+  termScore: {
+    total: 0,
+    correct: 0
+  }
+}
+, action) => {
     switch(action.type) {
         case types.CREATE_QUICKFIRE:
             return cleanAndReturnIncomingState(action.data);

@@ -85,10 +85,10 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
       icon.classList.add('youtube-green-fg');
       const chevron = document.querySelector(`.js-lesson-list-chevron[data-lesson-id="${icon.dataset.lessonId}"]`);
             chevron.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
-      if(config.isPortraitMode) {
-        const lessonsIcon = document.querySelector('.js-lessons');
-              lessonsIcon.classList.remove('active-icon');
-      }
+      // if(config.isPortraitMode) {
+      //   const lessonsIcon = document.querySelector('.js-lessons');
+      //         lessonsIcon.classList.remove('active-icon');
+      // }
     }
 
     let siblingChevron;
