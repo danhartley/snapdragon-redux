@@ -1,6 +1,7 @@
 import { store } from 'redux/store';
 import { subscription } from 'redux/subscriptions';
-import { renderVocabtestScore } from 'index-helpers/dashboard/vocab-test';
+import { renderVocabTestScore } from 'index-helpers/dashboard/vocab-test';
+import { renderVocabTestHistoryScore } from 'index-helpers/dashboard/vocab-test-history';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderDeckScore } from 'index-helpers/dashboard/observational-test';
 import { renderLessonQuizScores } from 'index-helpers/dashboard/lesson-quiz';
@@ -18,7 +19,8 @@ export const renderDashboard = () => {
 
   renderTemplate({}, template.content, parent);
 
-  subscription.add(renderVocabtestScore, 'quickFire', 'flow');
+  subscription.add(renderVocabTestScore, 'quickFire', 'flow');
+  subscription.add(renderVocabTestHistoryScore, 'quickFireHistory', 'flow');
   subscription.add(renderDeckScore, 'deckScore', 'flow');
   subscription.add(renderLessonQuizScores, 'score', 'flow');
   subscription.add(renderLessonQuizHistoryScores, 'history', 'flow');
@@ -26,7 +28,7 @@ export const renderDashboard = () => {
   const { config, quickFire, deckScore, score, history } = store.getState();
 
   if(config.isPortraitMode) {
-    renderVocabtestScore(quickFire);
+    renderVocabTestScore(quickFire);
     renderDeckScore(deckScore);
     renderLessonQuizScores(score);
     // renderLessonQuizHistoryScores(history);

@@ -2,7 +2,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 
 import vocabTestTemplate from 'index-helpers/dashboard/vocab-test-template.html';
 
-export const renderVocabtestScore = quickFire => {
+export const renderVocabTestScore = quickFire => {
 
   const template = document.createElement('template');
         template.innerHTML = vocabTestTemplate;

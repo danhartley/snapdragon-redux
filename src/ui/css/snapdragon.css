@@ -952,6 +952,11 @@ iframe#birdsong {
 .snapdragon-intro th, .snapdragon-intro td {
   padding: .5rem 1rem;
   white-space: nowrap;
+  font-weight: inherit;
+}
+
+.snapdragon-intro th {
+  padding: 1rem .5rem 0 .5rem !important;
 }
 
 .snapdragon-intro > h3, .snapdragon-intro > h4, .snapdragon-intro > h5 {

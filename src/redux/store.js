@@ -11,7 +11,7 @@ import { collections, collection, bonusLayout } from 'redux/reducers/species-red
 import { counter, score, history, videoPlayer } from 'redux/reducers/progress-reducers';
 import { lessonPlans, lessonPlan, layout } from 'redux/reducers/layout-reducers';
 import { lesson, lessons } from 'redux/reducers/lesson-reducers';
-import { quickFire, glossary } from 'redux/reducers/quick-fire-reducers';
+import { quickFire, glossary, quickFireHistory } from 'redux/reducers/quick-fire-reducers';
 import { decks, deck, deckState, deckScore, deckSettings, deckScoreHistory } from 'redux/reducers/deck-reducers';
 
 import hardSet from 'redux-persist/lib/stateReconciler/hardSet'
@@ -33,6 +33,7 @@ const reducer = combineReducers({
     bonusLayout,
     user,
     quickFire,
+    quickFireHistory,
     glossary,
     userAction,
     decks,

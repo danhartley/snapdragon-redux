@@ -23,7 +23,23 @@ export const quickFire = (state = {
         default:
             return state;
     }
-}
+};
+
+export const quickFireHistory = (state = {
+  total: 0,
+  correct: 0,
+}, action) => {
+  switch(action.type) {
+    // case types.CREATE_QUICKFIRE:
+    case types.UPDATE_QUICKFIRE:
+      return {
+       total: state.total + 1,
+       correct: action.data.termScore.isCorrect ? state.correct + 1 : state.correct 
+      };
+      default:
+        return state;
+  }
+};
 
 export const glossary = (state = null, action) => {
     switch(action.type) {
