@@ -254,7 +254,6 @@
     }
 
     #inat-place::placeholder {
-        color: var(--gray);
         font-size: 1rem;
     }
 
@@ -358,7 +357,6 @@
     .snapdragon-intro {
       margin: 0 0 0 .5rem;
       display: flex;
-      /* flex-direction: column; */
       justify-content: space-evenly;
       top: var(--vhStandardBlock, 10vh);
     }

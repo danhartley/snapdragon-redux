@@ -16,13 +16,14 @@ import 'ui/css/groups/species-card.css';
 import 'ui/css/groups/test-card.css';
 
 import { utils } from 'utils/utils';
+import { enums } from 'ui/helpers/enum-helper';
 import { store, persistor } from 'redux/store';
 import { nextLesson } from 'ui/setup/next-lesson';
 import { nextLayout } from 'ui/setup/next-layout';
 import { nextItem } from 'ui/setup/next-item';
 import { renderHeaders } from 'ui/fixtures/headers';
 import { renderScore } from 'ui/fixtures/score';
-import { renderHome } from 'ui/screens/home/home';
+// import { renderHome } from 'ui/screens/home/home';
 import { renderNavigation, renderLoginChanges } from 'ui/fixtures/navigation';
 import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
@@ -32,17 +33,17 @@ import { firestore } from 'api/firebase/firestore';
 import { renderLoggedIn } from 'ui/fixtures/login';
 import { cookieHandler } from 'ui/helpers/cookie-handler';
 import { lessonModalHandler } from 'ui/screens/cards/test-card-modal-handler';
-import { loadMainHTML, handleWindowResize, loadModalHTML } from 'index-helpers/media-helper';
+import { handleWindowResize, loadModalHTML } from 'index-helpers/media-helper';
 import { snapLog, logError, logAPIError } from 'ui/helpers/logging-handler';
 import { renderTopNavigation } from 'ui/fixtures/navigation-top';
 import { renderDashboard } from 'index-helpers/dashboard/dashboard';
+import { renderLessons } from 'ui/screens/lists/lesson-list';
 
 import * as Sentry from '@sentry/browser';
 import LogRocket from 'logrocket';
 
 const onLoadHandler = () => {
 
-  // loadMainHTML();
   loadModalHTML();
 
   setTimeout( async () => {
@@ -66,7 +67,7 @@ const onLoadHandler = () => {
 
     try {
 
-        const { config, counter: currentCounter, lessonPlan: statePlans, collections } = store.getState();
+        const { config, counter: currentCounter, lessonPlan: statePlans, collections, userAction } = store.getState();
 
         lessonPlan = statePlans;
 
@@ -84,14 +85,20 @@ const onLoadHandler = () => {
             actions.boundUpdateCollections(cloudCollections);
         }
 
-        renderDashboard();        
+        if(config.isLandscapeMode) {
+          renderDashboard();
+          renderLessons();
+        } else {
+          userAction.name === enums.userEvent.GO_TO_DASHBOARD.name ? renderDashboard() : renderLessons();
+        }
+
         subscription.add(renderHeaders, 'collection', 'flow');
         renderNavigation();
         subscription.add(renderNavigation, 'collection', 'flow');
         renderLoginChanges();
         subscription.add(renderLoginChanges, 'user', 'flow');
         subscription.add(renderLoggedIn, 'user', 'flow');
-        subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
+        // subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
         subscription.add(renderScore, 'score', 'flow');                
         subscription.add(nextItem, 'layout', 'quiz');
         subscription.add(nextLesson, 'counter', 'quiz');

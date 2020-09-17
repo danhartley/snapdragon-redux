@@ -37,11 +37,6 @@ export const user = (state = null, action) => {
 
 export const userAction = (state = enums.userEvent.GO_TO_DASHBOARD, action) => {
     switch(action.type) {
-        case 'persist/PERSIST': 
-        // case types.STOP_START_LESSON: 
-        {
-            return enums.userEvent.GO_TO_DASHBOARD;
-        }
         case types.CLICK_EVENT:
             return action.data;
         default:

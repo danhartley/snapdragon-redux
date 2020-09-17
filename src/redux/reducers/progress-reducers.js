@@ -123,7 +123,10 @@ export const score = (state = progressState.score, action) => {
     }       
 };
 
-export const history = (state = null, action) => {
+export const history = (state = {
+  total: 0,
+  correct: 0
+}, action) => {
     switch(action.type) {
         case types.UPDATE_HISTORY: {
           

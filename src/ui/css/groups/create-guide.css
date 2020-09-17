@@ -169,12 +169,6 @@
   #inat-place::placeholder {
     display: inline;
   }
-  
-  /* .inat.snap-switch .inat-entry, .inat.snap-switch input[type="text"] {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  } */
 
   /* SLIDER */
 
@@ -338,7 +332,6 @@
     white-space: nowrap;
     display: inline-block;
     width: inherit;
-    /* font-size: 1.1rem; */
   }
 
   /* Mushroom icon sizes */
@@ -365,11 +358,6 @@
     width: 1rem;
     height: 1rem;
   }
-  
-  /* .home-guide .iconic-taxa-categories-selected svg {
-    width: 2rem;
-    height: 2rem;
-  } */
 
   .iconic-taxa-categories-selected svg g {
     fill: var(--snap-green-4);

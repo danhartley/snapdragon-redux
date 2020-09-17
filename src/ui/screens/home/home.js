@@ -27,6 +27,6 @@ export const renderHome = (counter, forceIntroDisplay = false) => {
     if(config.isPortraitMode && !isFirstTimeVisitor) {
       dashboard.classList.add('display-none');
       dashboard.classList.remove('display-grid');
-      // renderLessons();
+      renderLessons();
     }
 };

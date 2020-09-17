@@ -30,7 +30,6 @@ export const quickFireHistory = (state = {
   correct: 0,
 }, action) => {
   switch(action.type) {
-    // case types.CREATE_QUICKFIRE:
     case types.UPDATE_QUICKFIRE:
       return {
        total: state.total + 1,

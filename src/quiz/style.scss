@@ -178,8 +178,11 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
     }
 
     div:nth-child(3) {
-      font-size: 4 * $space;
+      font-size: 2 * $space;
       color: var(--snap-border-light);
+      @media (min-width: 768px) {
+        font-size: 4 * $space;
+      }
     }
 
     .quiz-back {
@@ -189,9 +192,14 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
 
   .score-card {
     .clock {
-      font-size: 8 * $space;
+      font-size: 6 * $space;
       color: var(--snap-active);
       color: var(--bs-secondary);
+    }
+    @media (min-width: 768px) {
+      .clock {
+        font-size: 8 * $space;
+      }
     }
   }
   .score {
