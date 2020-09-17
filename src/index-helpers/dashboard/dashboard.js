@@ -27,10 +27,10 @@ export const renderDashboard = () => {
 
   const { config, quickFire, deckScore, score, history } = store.getState();
 
-  if(config.isPortraitMode) {
-    renderVocabTestScore(quickFire);
-    renderDeckScore(deckScore);
-    renderLessonQuizScores(score);
-    // renderLessonQuizHistoryScores(history);
-  }
+  // if(config.isPortraitMode) {
+  //   renderVocabTestScore(quickFire);
+  //   renderDeckScore(deckScore);
+  //   renderLessonQuizScores(score);
+  //   renderLessonQuizHistoryScores(history);
+  // }
 };

@@ -38,7 +38,12 @@ test('intial state of the app should be consistent', () => {
     expect(score).toEqual(R.clone(progressState.score));
     expect(history).toEqual({
       total: 0,
-      correct: 0
+      correct: 0,
+      scores: [{
+          total: 0,
+          correct: 0,
+        }
+      ]    
     });
 });
 

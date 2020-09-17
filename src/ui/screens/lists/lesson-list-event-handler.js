@@ -13,6 +13,7 @@ export const onLoadLessonViewState = (collection, videoPlayer) => {
   const taxa = collection.iconicTaxa ? collection.iconicTaxa.map(taxon => taxon.common).join(', ') : '';
 
   collection.taxa = taxa;
+  collection.hasVideo = collection.hasVideo || collection.video && !isEmpty(collection.video) ? true : false;
   collection.showVideoIconClass = collection.hasVideo ? '' : 'hide-important';
   collection.videoState = videoHandler.setVideoState(videoPlayer || [], collection);
   collection.reviewState = 'Lesson quiz';

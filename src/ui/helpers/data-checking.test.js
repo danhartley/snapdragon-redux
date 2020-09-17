@@ -145,3 +145,43 @@ test('should return common, root trait value for child value', () => {
   expect(itemProperties.getRootTraitValue(child, 'start')).toEqual(parent);
   expect(itemProperties.getRootTraitValue(child)).toEqual(parent);
 });
+
+test('return score from latest, started, round', () => {
+  let history = {
+    total: 0,
+    correct: 0,
+    scores: [{
+        total: 0,
+        correct: 0
+      }
+    ]
+  };
+  let score = {
+    total: 0,
+    correct: 0
+  };
+  let defaultScore = {
+    total: 0,
+    correct: 0
+  };
+
+  expect(itemProperties.getLatestScore(history, score)).toEqual(defaultScore);
+
+  history = {
+    total: 0,
+    correct: 0,
+    scores: [{
+      total: 2,
+      correct: 1
+    },{
+        total: 0,
+        correct: 0
+      },      
+    ]
+  };
+
+  expect(itemProperties.getLatestScore(history, score)).toEqual({
+    total: 2,
+    correct: 1
+  });
+});

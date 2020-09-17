@@ -125,12 +125,18 @@ export const score = (state = progressState.score, action) => {
 
 export const history = (state = {
   total: 0,
-  correct: 0
+  correct: 0,
+  scores: [
+    {
+      total: 0,
+      correct: 0
+    }
+  ]
 }, action) => {
     switch(action.type) {
         case types.UPDATE_HISTORY: {
           
-            const history = { scores: [] };
+            const history = { ...state };
 
             history.scores = state === null 
                 ? [action.data] 
@@ -152,10 +158,10 @@ export const history = (state = {
 
             return history;
         }
-        case types.SELECT_COLLECTION:
-            return null;   
+        // case types.SELECT_COLLECTION:
+        //     return state;   
         case types.SAVE_USER_PROGRESS:
-            return action.data.lesson.history;
+            return action.data.lesson.history || state;
         default:
             return state;
     }

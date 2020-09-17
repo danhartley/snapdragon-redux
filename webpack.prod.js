@@ -31,7 +31,7 @@ module.exports = merge(common, {
   // https://webpack.js.org/configuration/devtool/
   // devtool: "source-map",
   plugins: [
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     // new Dotenv({}),
     new PurgecssPlugin({
       paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`,  { nodir: true }),

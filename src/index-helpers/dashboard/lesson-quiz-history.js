@@ -7,7 +7,7 @@ export const renderLessonQuizHistoryScores = history => {
   const template = document.createElement('template');
         template.innerHTML = lessonHistoryTemplate;
 
-  const parent = document.querySelector('.js-lesson-history');
+  const parent = document.querySelector('.js-lesson-quiz-history');
         if(!parent) return;
         parent.innerHTML = '';
 

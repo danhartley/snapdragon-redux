@@ -1,8 +1,14 @@
+import { store } from 'redux/store';
+import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 
 import lessonScoresTemplate from 'index-helpers/dashboard/lesson-quiz-template.html';
 
 export const renderLessonQuizScores = score => {
+
+  const { history } = store.getState();
+
+  score = itemProperties.getLatestScore(history, score);
   
   const template = document.createElement('template');
         template.innerHTML = lessonScoresTemplate;
