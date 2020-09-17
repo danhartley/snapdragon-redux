@@ -431,7 +431,7 @@ a.icon:hover {
 
 .btn-tertiary {
   color: var(--snap-text-1);
-  background-color: var(--snap-green-5) !important;
+  background-color: var(--snap-green-4) !important;
   border: 1px solid var(--snap-border-3);
   cursor: pointer !important;
 }
