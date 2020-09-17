@@ -18,6 +18,9 @@ export const renderTopNavigation = userAction => {
   let active = document.getElementById(userAction.name) || document.getElementById(enums.userEvent.GO_TO_DASHBOARD.name);
       active.classList.add('active');
 
+  const lesson = document.getElementById(enums.userEvent.PLAY_LESSON_VIDEO.name);
+        lesson.disabled = active.id === enums.userEvent.GO_TO_DASHBOARD.name;
+
   const options = document.querySelectorAll('.js-main-menu-icons button');
         options.forEach(option => {
           option.addEventListener('click', e => {

@@ -123,8 +123,8 @@ const onLoadHandler = () => {
     }
     catch(e) {
         console.log('home page error: ', e)
-        persistor.purge();
-        window.location.reload(true);        
+        // persistor.purge();
+        // window.location.reload(true);
     }    
   });
 
