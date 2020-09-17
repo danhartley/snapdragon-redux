@@ -941,11 +941,11 @@ iframe#birdsong {
   pointer-events: none;
 }
 
-.snapdragon-intro {
+.snapdragon-intro {  
+  justify-content: space-evenly;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   top: var(--vhStandardBlock, 10vh);
 }
 
@@ -964,7 +964,10 @@ iframe#birdsong {
 }
 
 .snapdragon-intro section {
-  padding: 1rem;
+  padding: 1rem;  
+}
+
+.snapdragon-intro section:nth-child(1) {
   border: 1px solid var(--snap-border-2);
 }
 
