@@ -67,7 +67,6 @@ const changeRequest = async args => {
               ? enums.lessonState.RESUME_LESSON
               : enums.lessonState.BEGIN_LESSON;
       saveUserProgressState(userProgressState);
-      // subscription.addAllQuizLayoutSubs();
 
       subscription.add(nextItem, 'layout', 'quiz');
       subscription.add(nextLesson, 'counter', 'quiz');

@@ -86,10 +86,6 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
       icon.classList.add('youtube-green-fg');
       const chevron = document.querySelector(`.js-lesson-list-chevron[data-lesson-id="${icon.dataset.lessonId}"]`);
             chevron.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
-      // if(config.isPortraitMode) {
-      //   const lessonsIcon = document.querySelector('.js-lessons');
-      //         lessonsIcon.classList.remove('active-icon');
-      // }
     }
 
     let siblingChevron;
@@ -188,7 +184,6 @@ const loadAndDisplaySpeciesList = async(config, icon, lesson, container, isYoutu
   Array.from(icon.parentElement.children).forEach(child => child.dataset.selected = true);
 
   await import('ui/screens/lists/lesson-state-handler').then(module => {
-    // module.lessonStateHandler.recordUserAction(isYoutubeIcon ? enums.userEvent.PLAY_LESSON_VIDEO : enums.userEvent.TOGGLE_SPECIES_LIST);
     module.lessonStateHandler.changeRequest({
       requestType: enums.lessonState.RENDER_SPECIES_LIST,
       requestArgs: { lesson, container }

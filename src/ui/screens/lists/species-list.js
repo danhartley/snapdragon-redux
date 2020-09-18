@@ -193,11 +193,6 @@ export const renderSpeciesList = (lesson, args) => {
               }
             }
 
-            // if(activateYoutubeIcon) {
-            //     const activeYouTubeIcon = activeAccordion.parentElement.parentElement.querySelector('.js-youtube');
-            //           activeYouTubeIcon.classList.add('youtube-green-fg');
-            // }
-
             let description = species.description;
                 description = !!description ? description : (species.traits.description && species.traits.description.value) ? species.traits.description.value[0] : '';
 
