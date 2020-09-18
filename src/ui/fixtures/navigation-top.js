@@ -8,7 +8,7 @@ import navigationTemplate from 'ui/fixtures/navigation-top.html';
 
 export const renderTopNavigation = userAction => {
 
-  // snapLog('userAction', userAction);
+  snapLog('userAction', userAction);
 
   const template = document.createElement('template');
         template.innerHTML = navigationTemplate;
@@ -24,7 +24,10 @@ export const renderTopNavigation = userAction => {
   let lesson = document.querySelector(`.${enums.userEvent.PLAY_LESSON_VIDEO.name}`);
   let hasVideo = document.querySelector('.video');
   
-  let active = document.getElementById(userAction.name) || hasVideo ? lesson : dashboard;
+  let active = document.querySelector(`.${userAction.name}`);
+      active = !!active ? active
+          : hasVideo 
+            ? lesson : dashboard;
   
   const isDashboardActive = active.id === enums.userEvent.GO_TO_DASHBOARD.name;
   const isLessonsActive = active.id === enums.userEvent.GO_TO_LESSONS.name;
