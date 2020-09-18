@@ -8,7 +8,7 @@ import navigationTemplate from 'ui/fixtures/navigation-top.html';
 
 export const renderTopNavigation = userAction => {
 
-  snapLog('userAction', userAction);
+  // snapLog('userAction', userAction);
 
   const template = document.createElement('template');
         template.innerHTML = navigationTemplate;
@@ -16,25 +16,25 @@ export const renderTopNavigation = userAction => {
   const parent = document.querySelector('.js-main-lesson-header');
         parent.innerHTML = '';
 
+  const { config, collection } = store.getState();
+
   renderTemplate({}, template.content, parent);
 
-  const dashboard = document.querySelector(`.${enums.userEvent.GO_TO_DASHBOARD.name}`);
-  const lesson = document.querySelector(`.${enums.userEvent.PLAY_LESSON_VIDEO.name}`);
-  const lessons = document.querySelector(`.${enums.userEvent.GO_TO_LESSONS.name}`);
-
-  const active = document.getElementById(userAction.name);
+  let dashboard = document.querySelector(`.${enums.userEvent.GO_TO_DASHBOARD.name}`);
+  let lesson = document.querySelector(`.${enums.userEvent.PLAY_LESSON_VIDEO.name}`);
+  let hasVideo = document.querySelector('.video');
+  
+  let active = document.getElementById(userAction.name) || hasVideo ? lesson : dashboard;
   
   const isDashboardActive = active.id === enums.userEvent.GO_TO_DASHBOARD.name;
   const isLessonsActive = active.id === enums.userEvent.GO_TO_LESSONS.name;
-
-  const { config, collection } = store.getState();
 
   setTimeout(() => {
     
     if(config.isLandscapeMode) {
       // force redirect to dashboard on page/app load/refresh
       const highlightedRow = document.querySelector('.highlighted-for-review-row');
-      if(!highlightedRow && !isDashboardActive) { 
+      if(!highlightedRow && !isDashboardActive || !active) { 
           dashboard.click();      
       } else {
         lesson.disabled = isDashboardActive;
