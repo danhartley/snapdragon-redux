@@ -37,8 +37,12 @@ export const renderTopNavigation = userAction => {
       if(!highlightedRow && !isDashboardActive) { 
           dashboard.click();      
       } else {
-        lesson.disabled = isDashboardActive || isLessonsActive;
+        lesson.disabled = isDashboardActive;
       }
+    }
+
+    if(config.isPortraitMode) {
+      lesson.disabled = isDashboardActive || isLessonsActive;
     }
     
     active.classList.add('active');

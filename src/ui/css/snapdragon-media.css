@@ -362,6 +362,10 @@
       top: var(--vhStandardBlock, 10vh);
     }
 
+    .title {
+      margin-left: 0;
+    }
+
     .main-lesson-grid .header {
       justify-content: flex-start;
     }
