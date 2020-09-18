@@ -98,6 +98,9 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
       renderLessonIntro(lesson);
       siblingChevron = icon.parentElement.parentElement.parentElement.children[1].children[0].children[1];
       if(isYoutubeIcon) {
+        await import('ui/screens/lists/lesson-state-handler').then(module => {
+          module.lessonStateHandler.recordUserAction(isYoutubeIcon ? enums.userEvent.PLAY_LESSON_VIDEO : enums.userEvent.TOGGLE_SPECIES_LIST);
+        });
         if(state.hideSpeciesList) {
           siblingChevron.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
         }
@@ -185,7 +188,7 @@ const loadAndDisplaySpeciesList = async(config, icon, lesson, container, isYoutu
   Array.from(icon.parentElement.children).forEach(child => child.dataset.selected = true);
 
   await import('ui/screens/lists/lesson-state-handler').then(module => {
-    module.lessonStateHandler.recordUserAction(isYoutubeIcon ? enums.userEvent.PLAY_LESSON_VIDEO : enums.userEvent.TOGGLE_SPECIES_LIST);
+    // module.lessonStateHandler.recordUserAction(isYoutubeIcon ? enums.userEvent.PLAY_LESSON_VIDEO : enums.userEvent.TOGGLE_SPECIES_LIST);
     module.lessonStateHandler.changeRequest({
       requestType: enums.lessonState.RENDER_SPECIES_LIST,
       requestArgs: { lesson, container }

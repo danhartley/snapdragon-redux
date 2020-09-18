@@ -25,12 +25,11 @@ export const renderDashboard = () => {
   subscription.add(renderLessonQuizScores, 'score', 'flow');
   subscription.add(renderLessonQuizHistoryScores, 'history', 'flow');
 
-  const { config, quickFire, deckScore, score, history } = store.getState();
+  const { config, quickFire, quickFireHistory, deckScore, score, history } = store.getState();
 
-  // if(config.isPortraitMode) {
-  //   renderVocabTestScore(quickFire);
-  //   renderDeckScore(deckScore);
-  //   renderLessonQuizScores(score);
-  //   renderLessonQuizHistoryScores(history);
-  // }
+  renderVocabTestScore(quickFire);
+  renderVocabTestHistoryScore(quickFireHistory);
+  renderDeckScore(deckScore);
+  renderLessonQuizScores(score);
+  renderLessonQuizHistoryScores(history);
 };

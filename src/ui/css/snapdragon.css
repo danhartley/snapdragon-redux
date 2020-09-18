@@ -1094,7 +1094,7 @@ iframe#birdsong {
 }
 
 .youtube-green-fg {
-  color: var(--snap-youtube-green);
+  color: var(--snap-youtube-green) !important;
 }
 
 .running-block {

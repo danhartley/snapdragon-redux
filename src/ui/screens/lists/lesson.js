@@ -26,15 +26,15 @@ export const renderLesson = (lesson) => {
       
       if(config.collection.id === lesson.id) {
 
-            const row = document.querySelector(`.js-lesson-list-carousel-item[data-lesson-id="${lesson.id}"]`)
-                  if(row) row.classList.add('highlighted-for-review-row');
+            // const row = document.querySelector(`.js-lesson-list-carousel-item[data-lesson-id="${lesson.id}"]`)
+            //       if(row) row.classList.add('highlighted-for-review-row');
 
-            if(config.isLandscapeMode) {
-                  setTimeout(() => {
-                        const reviewLink = row.querySelector('.js-review-summary');                  
-                        if(reviewLink) reviewLink.click();
-                  });
-            }
+            // if(config.isLandscapeMode) {
+            //       setTimeout(() => {
+            //             const reviewLink = row.querySelector('.js-review-summary');                  
+            //             if(reviewLink) reviewLink.click();
+            //       });
+            // }
 
             // current lesson whose current state is not yet saved
             if(layout && layout.roundScoreCount) {

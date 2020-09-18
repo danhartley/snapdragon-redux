@@ -145,11 +145,13 @@ export const renderSpeciesList = (lesson, args) => {
 
             const noWrongAnswersForThisSpecies = [];
             history.scores.map(score => score.failsTotals).forEach(totals => {
+              if(totals !== undefined) {
                 for (let [key, anyWrongAnwers] of Object.entries(totals)) {
-                    if(anyWrongAnwers == false) {
+                    if(anyWrongAnwers === false) {
                         noWrongAnswersForThisSpecies.push(parseInt(key));
                     }
                 }
+              }
             });
 
             taxonIcons.forEach(icon => {
