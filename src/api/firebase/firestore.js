@@ -766,6 +766,21 @@ const addCollection = async (collection, user) => {
     return await docs;
   };
 
+  const getDashboard = async () => {
+    
+    const dashboardRef = db.collection('dashboard');
+  
+    const querySnapshot = await dashboardRef.get();
+  
+    const docs = [];
+  
+    querySnapshot.forEach(doc => {
+      docs.push(doc.data());
+    });
+  
+    return await docs;
+  };
+
 export const firestore = {
 
     getSpecies,
@@ -786,6 +801,7 @@ export const firestore = {
     getCollectionsWhere,
     getCollectionsStubs,
     getQuestionsWhere,
+    getDashboard,
     
     addSpecies,
     addTraits,

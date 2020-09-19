@@ -355,11 +355,13 @@
     }
 
     .snapdragon-intro {
-      justify-content: center;
       margin: 0 0 0 .5rem;
       display: flex;
-      justify-content: space-evenly;
       top: var(--vhStandardBlock, 10vh);
+    }
+
+    .snapdragon-intro.intro-text {
+      margin: 2rem;
     }
 
     .title {

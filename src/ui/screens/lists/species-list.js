@@ -144,15 +144,17 @@ export const renderSpeciesList = (lesson, args) => {
             if(!history) return;
 
             const noWrongAnswersForThisSpecies = [];
-            history.scores.map(score => score.failsTotals).forEach(totals => {
-              if(totals !== undefined) {
-                for (let [key, anyWrongAnwers] of Object.entries(totals)) {
-                    if(anyWrongAnwers === false) {
-                        noWrongAnswersForThisSpecies.push(parseInt(key));
-                    }
+            if(history.scores) {
+              history.scores.map(score => score.failsTotals).forEach(totals => {
+                if(totals !== undefined) {
+                  for (let [key, anyWrongAnwers] of Object.entries(totals)) {
+                      if(anyWrongAnwers === false) {
+                          noWrongAnswersForThisSpecies.push(parseInt(key));
+                      }
+                  }
                 }
-              }
-            });
+              });
+            }
 
             taxonIcons.forEach(icon => {
                 if(contains(parseInt(icon.id), noWrongAnswersForThisSpecies)) {

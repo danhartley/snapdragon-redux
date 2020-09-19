@@ -76,13 +76,26 @@ const onLoadHandler = () => {
 
         const counter = currentCounter ? { ...currentCounter } : { index: null, isLessonPaused: true };
 
-        actions.boundUpdateConfig(config);
+        // actions.boundUpdateConfig(config);
         actions.boundStopStartLesson(counter);
 
-        if(collections && collections.length === 0) {
-            const cloudCollections = await firestore.getCollections();
+        const dashboard = await firestore.getDashboard();
+        const latestsCollectionUpdateTime = dashboard[0]['collection-update'].toMillis();
+        const today = new Date();
+        const lastlatestsCollectionUpdateTimeTime = config.lastlatestsCollectionUpdateTimeTime || today.setFullYear(today.getFullYear() - 10);
+
+        config.lastlatestsCollectionUpdateTimeTime = latestsCollectionUpdateTime;
+
+        const isUpdateRequired = latestsCollectionUpdateTime > lastlatestsCollectionUpdateTimeTime;
+
+        actions.boundUpdateConfig(config);
+
+        console.log(isUpdateRequired);
+
+        if(collections && collections.length === 0 || isUpdateRequired) {
+          const cloudCollections = await firestore.getCollections();
             // const cloudCollections = await firestore.getCollectionsStubs();
-            actions.boundUpdateCollections(cloudCollections);
+          actions.boundUpdateCollections(cloudCollections);
         }
 
         if(config.isLandscapeMode) {

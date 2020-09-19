@@ -1,20 +1,17 @@
-<div class="home-scrolling-container  -scrolling-container">
+<div class="home-scrolling-container scrolling-container">
     
     <h1 class="title standard-block double-centred-block border-bottom justify-start">{{ title }}</h1 >
     
-    <main class="snapdragon-intro padding">
-        <h3 class="half-standard-block">
-            <span class="js-species-summary">{{ speciesSummary }}</span>
-        </h3>
-        <h3 class="half-standard-block">
-            <span>Common taxon names are in {{ language }}.</span>
-        </h3>
-        <h3 class="half-standard-block">
-            <span>{{ season }}</span>
-        </h3>
-
-        <h3 class="centred-block standard-block js-intro-text">{{ lessonIntro }}</h3>
-      </main>
+    <main class="snapdragon-intro intro-text double-centred-block">
+      <div class="double-centred-block" style="width: 400px">
+        <img src="{{ still }}" alt="" style="width: 400px">
+      </div>
+      <div class="double-margin-top" style="width: 400px">
+        <div class="js-species-summary">{{ speciesSummary }}</div>
+        <div>Common taxon names are in {{ language }}.</span><span>{{ season }}</div>
+        <div>js-intro-text">{{ lessonIntro }}</div>
+      </div>
+    </main>
 
     <div class="scrollable"></div>                
 </div>

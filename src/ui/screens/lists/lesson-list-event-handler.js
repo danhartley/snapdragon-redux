@@ -106,6 +106,12 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
         if(state.hideSpeciesList) {
           icon.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
         } else if(!state.revealSpeciesList) {
+          // load intro text
+          renderLessonIntro(lesson, true);
+          await import('ui/screens/lists/lesson-state-handler').then(module => {
+            module.lessonStateHandler.recordUserAction(enums.userEvent.TOGGLE_SPECIES_LIST);
+          });
+          // load intro text
           icon.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
         }
       }
