@@ -3,13 +3,14 @@
     <h1 class="title standard-block double-centred-block border-bottom justify-start">{{ title }}</h1 >
     
     <main class="snapdragon-intro intro-text double-centred-block">
-      <div class="double-centred-block" style="width: 400px">
-        <img src="{{ still }}" alt="" style="width: 400px">
+      <div class="double-centred-block" style="width: 400px; height: 300px;">
+        <img src="{{ still }}" alt="Title image for {{ title }}" style="width: 400px;">
       </div>
       <div class="double-margin-top" style="width: 400px">
-        <div class="js-species-summary">{{ speciesSummary }}</div>
-        <div>Common taxon names are in {{ language }}.</span><span>{{ season }}</div>
-        <div>js-intro-text">{{ lessonIntro }}</div>
+        <p class="js-species-summary">{{ speciesSummary }}</p>
+        <p>Common taxon names are in {{ language }}.</p>
+        <p>{{ season }}</p>
+        <p class="js-intro-text">{{ lessonIntro }}</p>
       </div>
     </main>
 

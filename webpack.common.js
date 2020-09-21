@@ -9,6 +9,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
     entry: {
       app: { import: './src/index.js', dependOn: 'shared' },
+      flashcards: './src/flashcards/flashcards.js',
       shared: [ './src/utils/utils.js' ]
     },
     output: {
@@ -71,6 +72,12 @@ module.exports = {
         chunks: ['app', 'shared'],
         inject: true
       }),
+      new HtmlWebpackPlugin({
+        filename: 'flashcards.html',
+        template: './src/flashcards/flashcards.html',
+        chunks: ['flashcards'],
+        inject: true
+      }),  
       new CopyPlugin({
         patterns: [
           // { from: './src/ui/css/groups', to: 'css', transform(content) { return csso.minify(content).css; } },

@@ -7,6 +7,7 @@ import { renderLesson } from 'ui/screens/lists/lesson';
 import { renderCustomLesson } from 'ui/screens/lists/lesson-custom';
 import { onLoadLessonsViewState } from 'ui/screens/lists/lesson-list-event-handler';
 import { renderLessonQuiz } from 'quiz/quiz-lesson';
+import { renderFashcards } from 'flashcards/flashcard-lesson';
 
 import lessonListTemplate from 'ui/screens/lists/lesson-list-template.html';
 
@@ -38,6 +39,7 @@ export const renderLessons = () => {
     renderLessonListHeader(parent);
 
     renderLessonQuiz(list.querySelector('li:first-child'));
+    renderFashcards(list.querySelector('li:first-child'));
 
     const createCustomLessonBtn = parent.querySelector('.js-create-custom-lesson');          
           createCustomLessonBtn.addEventListener('click', e => {

@@ -4,20 +4,45 @@ import { Card } from 'flashcards/flashcard-card';
 import { sets } from 'flashcards/flashcards-api';
 
 import flashcardTemplate from 'flashcards/flashcards-template.html';
+import flashcardSetsTemplate from 'flashcards/flashcards-set-selection-template.html';
 
-export const flashcardsLogic = () => {
+export const flashcardsLogic = (parent = document.querySelector('body')) => {
+
+  const title = document.querySelector('.js-modal-text-title header');
+        title.innerHTML = 'Climate change flash cards';
 
   const template = document.createElement('template');
         template.innerHTML = flashcardTemplate;
 
-  const parent = document.querySelector('body');
-
-  let set = sets.find(set => set.title === 'Nature');
+  let currentDeckTitle = 'Nature';
+  let set = sets.find(set => set.title === currentDeckTitle);
   let currentDeck = [ ...set.cards ];
   
   let cardIndex = 0;
 
-  renderTemplate({ title: set.title, sets }, template.content, parent);
+  parent.innerHTML = '';
+
+  renderTemplate({ title: set.title, sets, cardCount: currentDeck.length }, template.content, parent);
+
+  template.innerHTML = flashcardSetsTemplate;
+  parent = document.querySelector('.js-flashcard-set-selection-container');
+  parent.innerHTML = '';
+
+  renderTemplate({ sets }, template.content, parent);
+
+  const btn = document.querySelector('.filter-sets-option-block button');
+        btn.innerHTML = `Climate set: ${currentDeckTitle}`;
+
+  document.querySelectorAll('.dropdown-item').forEach(set => {
+    set.addEventListener('click', e => {
+      const title = e.target.id;
+      const newDeck = sets.find(set => set.title === title);
+      currentDeck = shuffleDeck(newDeck.cards);
+      document.querySelector('.js-card-count').innerHTML = `Card count for this set: ${currentDeck.length}`;
+      openDeck();
+      btn.innerHTML = `Climate set: ${title}`;
+    });    
+});
 
   const prev = document.getElementById("prev");
   const next = document.getElementById("next");
@@ -34,18 +59,33 @@ export const flashcardsLogic = () => {
 
   let newCard;
 
+  const updateSource = () => {
+    const source = document.querySelector('.js-card-source');
+    if(currentDeck[cardIndex].source) {
+        source.innerHTML = `<span>For more information: <a target="_blank" class="underline-link" href="${currentDeck[cardIndex].source}">click here</a></span`;
+    } else {
+      source.innerHTML = `<span>For more information:</span`;
+    }
+  };
+
   const nextCard = () => {
+    
     cardIndex = (cardIndex + 1) % currentDeck.length;
     front.innerHTML = currentDeck[cardIndex].term;
     back.innerHTML = currentDeck[cardIndex].definition;
+
+    updateSource();
   };
 
   const prevCard = () => {
+    
     if (cardIndex > 0)
       cardIndex = (cardIndex - 1);
     else if (cardIndex == 0) cardIndex = currentDeck.length-1;
     front.innerHTML = currentDeck[cardIndex].term;
     back.innerHTML = currentDeck[cardIndex].definition;
+
+    updateSource();
   };
 
   const cardAdd = (formFront, formBack) => {
@@ -102,9 +142,9 @@ export const flashcardsLogic = () => {
     document.getElementById("newTerm").focus();
   };
 
-  const flash = force => {
+  const flash = (force = false) => {
 
-    if(force) {
+    if(force && !force.target) {
       front.style.visibility = "visible";
       back.style.visibility = "hidden";
       return;
@@ -181,16 +221,6 @@ export const flashcardsLogic = () => {
         emptyDeck();
       }
   });
-
-  const optionSet = document.querySelector('#sets');
-        optionSet.addEventListener('change', e => {
-          const title = e.target.value;
-          const newDeck = sets.find(set => set.title === title);
-          currentDeck = shuffleDeck(newDeck.cards);
-          openDeck();
-          optionSet.blur();
-        });
-  
 };
 
 // https://codepen.io/minauteur/pen/GqzJKk

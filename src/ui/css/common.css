@@ -140,6 +140,11 @@
     margin-right: .25rem !important;
   }
   
+  .double-margin-top {
+    margin-top: 1rem !important;
+  }
+  
+  
   .double-margin-right {
     margin-right: 1rem !important;
   }
@@ -212,7 +217,7 @@
     color: var(--snap-link);
     cursor: pointer;
     display: inline-block;
-    line-height: 1.8;
+    line-height: 1.4;
     border-bottom: 1px solid var(--snap-link);
   }
 

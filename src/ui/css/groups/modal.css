@@ -72,7 +72,7 @@
   }
 
   .modal-body .language-options .dropdown-menu.show{
-    background-color: var(--snap-yellow-1);
+    background-color: var(--snap-background-2);
   }
 
   .modal-text hr {

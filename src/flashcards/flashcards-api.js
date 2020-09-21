@@ -8,7 +8,8 @@ const climateChangeCards = [
     term: 'What 3 lines of evidence were chosen by the WCRP for their 2020 report?',
     definition: `Trends indicated by contemporary warming
     Lessons from comparable ancient climates
-    Understanding of the feedback effects`
+    Understanding of the feedback effects`,
+    source: 'https://www.sciencemag.org/news/2020/07/after-40-years-researchers-finally-see-earths-climate-destiny-more-clearly'
   },
   {
     term: 'How is risk calculated?',
@@ -16,7 +17,8 @@ const climateChangeCards = [
   },
   {
     term: 'Which line of evidence was not used in its own right in the 2020 WCRP report?',
-    definition: 'Climate models'
+    definition: 'Climate models',
+    source: 'https://www.wcrp-climate.org/'
   },
   {
     term: 'When was the IPCC founded?',
@@ -52,7 +54,8 @@ const climateChangeCards = [
   },
   {
     term: 'How much land in Canada, Siberia, Greenland and Alaska is underlain by permafrost?',
-    definition: '~85%'
+    definition: '~85%',
+    source: 'https://en.wikipedia.org/wiki/Permafrost'
   },
   {
     term: 'What does WCRP stand for?',
@@ -72,7 +75,8 @@ const climateChangeCards = [
   },
   {
     term: 'How does the IPCC define climate sensitivity?',
-    definition: 'How far the planet will warm given a doubling of CO₂ in relation to pre-industrial levels'
+    definition: 'How far the planet will warm given a doubling of CO₂ in relation to pre-industrial levels',
+    source: 'https://news.mit.edu/2010/explained-climate-sensitivity'
   },
   {
     term: 'Given current CO₂ emissions when would we reach 560 ppm?',
@@ -128,7 +132,8 @@ const climateChangeCards = [
   },
   {
     term: 'London-New York uses 986kg of CO₂ per passenger. That equates to more than the average CO₂ emission in how many countries?',
-    definition: '56'
+    definition: '56',
+    source: 'https://mossy.earth/methodologies/carbon-footprint-calculator'
   },
   {
     term: 'What percentage of global manmade greenhouse gas emissions does agriculture account for?',
@@ -141,12 +146,14 @@ const climateChangeCards = [
   },
   {
     term: 'Describe moral hazard in relation to climate change.',
-    definition: 'There is an incentive to ignore the risks in the interests of political expediency. '
+    definition: 'There is an incentive to ignore the risks in the interests of political expediency.',
+    source: 'https://en.wikipedia.org/wiki/Climate_engineering'
   },
   {
     term: 'What is the current biophysical capacity requirement of humanity in Earth units?',
     definition: '1.7',
-    source: 'https://www.overshootday.org/'
+    source: 'https://www.overshootday.org/',
+    source: 'https://en.wikipedia.org/wiki/Ecological_footprint'
   },
   {
     term: 'What is the ‘fat-tailed’ distribution?',
@@ -158,15 +165,18 @@ const climateChangeCards = [
   },
   {
     term: 'What is the risk of a collapse of the Atlantic Meridional Overturning Circulation (AMOC) this century?',
-    definition: '~5%'
+    definition: 'Less than 10%.',
+    source: 'https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019JC015083#'
   },
   {
     term: 'How great has been the slowdown in the AMOC since 1950?',
-    definition: '15%'
+    definition: '15%',
+    source: 'https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019JC015083#'
   },
   {
     term: 'What does AMOC stand for?',
-    definition: 'Atlantic Meridional Overturning Circulation'
+    definition: 'Atlantic Meridional Overturning Circulation',
+    source: 'https://en.wikipedia.org/wiki/Atlantic_meridional_overturning_circulation'
   },
   {
     term: 'What is the Atlantic Meridional Overturning Circulation (AMOC)?',
@@ -174,7 +184,8 @@ const climateChangeCards = [
   },
   {
     term: 'In 2016, what headed the World Economic Forum survey of most impactful risks?',
-    definition: 'Failure of climate change mitigation and adaptation'
+    definition: 'Failure of climate change mitigation and adaptation',
+    source: 'http://www3.weforum.org/docs/GRR/WEF_GRR16.pdf'
   },
   {
     term: 'Massive non-linear events in the global environment give rise to what?',
@@ -200,23 +211,29 @@ const climateChangeCards = [
   },
   {
     term: 'Does the IPCC favour fully-coupled global climate models (General Circulation Models GCMs) over semi-empirical models?',
-    definition: 'Yes'
+    definition: 'Yes',
+    source: 'https://ipcc-data.org/guidelines/pages/gcm_guide.html',
+    tchnical: true
   },
   {
     term: 'What does ESS stand for? ',
-    definition: 'Earth System Sensitivity (sensitivity incl. feedbacks)'
+    definition: 'Earth System Sensitivity (sensitivity incl. feedbacks)',
+    technical: true
   },
   {
     term: 'What does ECS stand for?',
-    definition: 'Equilibrium Climate Sensitivity (sensitivity excl. feedbacks)'
+    definition: 'Equilibrium Climate Sensitivity (sensitivity excl. feedbacks)',
+    source: 'https://www.carbonbrief.org/explainer-how-scientists-estimate-climate-sensitivity',
+    technical: true
   },
   {
     term: 'What is the carbon budget?',
     definition: 'An estimate of the total future human-caused greenhouse gas emissions in tons of CO₂ consistent with limiting warming to a specified figure.'
   },
   {
-    term: 'The highest emitting sector in the UK is road transport, which accounts for what percentage?',
-    definition: '24%'
+    term: 'The highest emitting sector in the UK is road transport, which accounts for what percentage in 2018?',
+    definition: '24%. All transport accounted for 33%',
+    source: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/790626/2018-provisional-emissions-statistics-report.pdf'
   },
   {
     term: 'What is the UK annual energy requirement?',
@@ -256,15 +273,18 @@ const climateChangeCards = [
   },
   {
     term: 'How does the IPCC defined \'Net zero CO₂ emissions\'?',
-    definition: 'Net zero CO₂ emissions are achieved when anthropogenic CO₂ emissions are balanced globally by anthropogenic CO₂ removals over a specified period.'
+    definition: 'Net zero CO₂ emissions are achieved when anthropogenic CO₂ emissions are balanced globally by anthropogenic CO₂ removals over a specified period.',
+    source: 'https://www.carbonbrief.org/guest-post-the-problem-with-net-zero-emissions-targets'
   },
   {
     term: 'What is radiative forcing?',
-    definition: 'The difference between insolation (sunlight) absorbed by the earth and energy radiated back to space.'
+    definition: 'The difference between insolation (sunlight) absorbed by the earth and energy radiated back to space.',
+    source: 'https://www.climate.gov/maps-data/primer/climate-forcing'
   },
   {
     term: 'When does positive radiative forcing occur?',
-    definition: 'When the earth receives more incoming energy from sunlight than it radiates to space.'
+    definition: 'When the earth receives more incoming energy from sunlight than it radiates to space.',
+    source: 'https://www.acs.org/content/acs/en/climatescience/atmosphericwarming/radiativeforcing.html'
   },
   {
     term: 'What % of human-caused CO₂ emissions are absorbed by trees and other plants?',
@@ -331,8 +351,9 @@ const climateChangeCards = [
     definition: '~6 million'
   },
   {
-    term: 'SROCC predicts that more intense and frequent extreme sea level events will be how many orders of magnitude higher in 2100 than today?',
-    definition: '2-3'
+    term: 'SROCC (Special Report on the Ocean and Cryosphere in a Changing Climate) predicts that more intense and frequent extreme sea level events will be how many orders of magnitude higher in 2100 than today?',
+    definition: '2-3',
+    source: 'https://www.ipcc.ch/srocc/'
   },
   {
     term: 'How many tons of carbon does the world\'s permafrost contain?',
@@ -340,11 +361,23 @@ const climateChangeCards = [
   },
   {
     term: 'How many tons of carbon does the world\'s soils contain?',
-    definition: '2.5 trillion tons'
+    definition: '2.5 trillion tons',
+    source: 'https://ec.europa.eu/clima/sites/clima/files/docs/soil_and_climate_en.pdf'
   },
   {
     term: 'How many tons of carbon does the atmosphere contain?',
-    definition: '.75 trillion tons'
+    definition: '~730 billion tons',
+    source: 'https://www.ipcc.ch/report/ar3/wg1/the-carbon-cycle-and-atmospheric-carbon-dioxide/'
+  },
+  {
+    term: 'How many tons of carbon does the ocean contain?',
+    definition: '~38,000 billion tons',
+    source: 'https://www.ipcc.ch/report/ar3/wg1/the-carbon-cycle-and-atmospheric-carbon-dioxide/'
+  },
+  {
+    term: 'How many tons of carbon does the land contain?',
+    definition: '~2,000 billion tons (500 plants, 1,500 soil).',
+    source: 'https://www.ipcc.ch/report/ar3/wg1/the-carbon-cycle-and-atmospheric-carbon-dioxide/'
   },
   {
     term: 'How many tons of carbon do plants and animals contain?',
@@ -356,7 +389,8 @@ const climateChangeCards = [
   },
   {
     term: 'What are negative-emissions?',
-    definition: 'Greenhouse gases which have been removed from the atmosphere (by technology).'
+    definition: 'Greenhouse gases which have been removed from the atmosphere (by technology).',
+    source: 'https://www.carbonbrief.org/explainer-10-ways-negative-emissions-could-slow-climate-change'
   },
   {
     term: 'What is Thermohaline Circulation (THC)?',
@@ -364,7 +398,8 @@ const climateChangeCards = [
   },
   {
     term: 'What are other terms for the Thermohaline Circulation (THC)?',
-    definition: 'The Global Ocean Conveyor or Great Ocean Conveyor Belt.'
+    definition: 'The Global Ocean Conveyor or Great Ocean Conveyor Belt.',
+    technical: true
   },
   {
     term: 'What is the upper limit of global warming beyond which the survival of the Great Barrier Reef would be threatened?',
@@ -392,11 +427,13 @@ const climateChangeCards = [
   },
   {
     term: 'According to Chenoweth and Maria Stephan how often are non-violent campaigns successful?',
-    definition: '53%'
+    definition: '53%',
+    source: 'https://news.harvard.edu/gazette/story/2019/02/why-nonviolent-resistance-beats-violent-force-in-effecting-social-political-change/'
   },
   {
     term: 'According to Chenoweth and Maria Stephan how often are violent campaigns successful?',
-    definition: '26%'
+    definition: '26%',
+    source: 'https://news.harvard.edu/gazette/story/2019/02/why-nonviolent-resistance-beats-violent-force-in-effecting-social-political-change/'
   },
   {
     term: 'Who said, \'We know through painful experience that freedom is never given by the oppressor; it must be demanded by the oppressed.\'',
@@ -436,7 +473,8 @@ const climateChangeCards = [
   },
   {
     term: 'What is the estimated annual release of CO₂ from volcanoes?',
-    definition: '0.15 to 0.26 gigatons per year.'
+    definition: '~0.6 billion metric tons of carbon dioxide per year.',
+    source: 'https://www.climate.gov/news-features/climate-qa/which-emits-more-carbon-dioxide-volcanoes-or-human-activities'
   },
   {
     term: 'What percentage of the air is made up of greenhouse gases?',
@@ -452,15 +490,17 @@ const climateChangeCards = [
   },
   {
     term: 'For how long has the climate been stable?',
-    definition: '7-8,000 years.'
+    definition: '10,000 years.',
+    source: 'https://www.climate.gov/news-features/climate-qa/what%E2%80%99s-hottest-earth-has-been-%E2%80%9Clately%E2%80%9D'
   },
   {
     term: 'Temperature on Earth is cyclical (moving in and out of ice ages) over what period?',
     definition: '100,000 years.'
   },
   {
-    term: '3 million years ago, CO₂ concentrations were the same as today. How much higher was the sea level then?',
-    definition: '80 feet'
+    term: '3 million years ago, CO₂ concentrations were the same as today. How much higher were sea levels?',
+    definition: 'Sea levels were 15-20 metres (50-65 feet) higher than today.',
+    source: 'https://phys.org/news/2019-04-dire-future-etched-co2-million.html'
   },
   {
     term: 'How many different organisations are working on climate models?',
@@ -468,11 +508,13 @@ const climateChangeCards = [
   },
   {
     term: 'What does RCP stand for?',
-    definition: 'Representative Concentration Pathway'
+    definition: 'Representative Concentration Pathway',
+    source: 'https://www.ipcc-data.org/guidelines/pages/glossary/glossary_r.html'
   },
   {
-    term: 'What is an RCP?',
-    definition: 'A greenhouse gas concentration trajectory adopted by the IPCC.'
+    term: 'What is an RCP (Representative Concentration Pathway)?',
+    definition: 'A greenhouse gas concentration trajectory adopted by the IPCC.',
+    source: 'https://www.ipcc-data.org/guidelines/pages/glossary/glossary_r.html'
   },
   {
     term: 'From 1850-1900 to 2006-2015 mean land surface air temperature has increased by how much?',

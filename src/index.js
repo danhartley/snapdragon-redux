@@ -10,6 +10,7 @@ import 'ui/css/species-list.css';
 import 'ui/css/snapdragon-media.css';
 import 'ui/css/non-main.css';
 import 'quiz/style.scss';
+import 'flashcards/style.scss';
 import 'ui/css/groups/create-guide.css';
 import 'ui/css/groups/modal.css';
 import 'ui/css/groups/species-card.css';
