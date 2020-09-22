@@ -9,7 +9,7 @@ import flashcardSetsTemplate from 'flashcards/flashcards-set-selection-template.
 export const flashcardsLogic = (parent = document.querySelector('body')) => {
 
   const title = document.querySelector('.js-modal-text-title header');
-        title.innerHTML = 'Climate change flash cards';
+        title.innerHTML = 'Climate change flip cards';
 
   const template = document.createElement('template');
         template.innerHTML = flashcardTemplate;
@@ -46,9 +46,8 @@ export const flashcardsLogic = (parent = document.querySelector('body')) => {
 
   const prev = document.getElementById("prev");
   const next = document.getElementById("next");
-  const front = document.getElementById("front");
-  const back = document.getElementById("back");
-  const flip = document.getElementById("flip");
+  const card = document.querySelector('#card section');
+  const flipper = document.getElementById("flip");
   const shuffle = document.getElementById("shuffle");
   const newDef = document.getElementById("newDef");
   const newTerm = document.getElementById("newTerm");
@@ -66,13 +65,13 @@ export const flashcardsLogic = (parent = document.querySelector('body')) => {
     } else {
       source.innerHTML = `<span>For more information:</span`;
     }
+    forceFlipToFront();
   };
 
   const nextCard = () => {
     
     cardIndex = (cardIndex + 1) % currentDeck.length;
-    front.innerHTML = currentDeck[cardIndex].term;
-    back.innerHTML = currentDeck[cardIndex].definition;
+    flipToFront();    
 
     updateSource();
   };
@@ -82,8 +81,7 @@ export const flashcardsLogic = (parent = document.querySelector('body')) => {
     if (cardIndex > 0)
       cardIndex = (cardIndex - 1);
     else if (cardIndex == 0) cardIndex = currentDeck.length-1;
-    front.innerHTML = currentDeck[cardIndex].term;
-    back.innerHTML = currentDeck[cardIndex].definition;
+    flipToFront();
 
     updateSource();
   };
@@ -115,8 +113,7 @@ export const flashcardsLogic = (parent = document.querySelector('body')) => {
       cardIndex = currentDeck.length - 1;
       clearForm();
       updatePlaceholder();
-      front.innerHTML = currentDeck[cardIndex].term;
-      back.innerHTML = currentDeck[cardIndex].definition;
+      flipToFront();
     } else if (formFront.value == formBack.value) {
       alert('Both sides are the same, Dan!');
     } else if (
@@ -131,31 +128,35 @@ export const flashcardsLogic = (parent = document.querySelector('body')) => {
     document.getElementById("newTerm").focus();
   };
 
-  const emptyDeck = () => {
-    var confirmation = confirm("Are you sure you want to delete this entire deck?");
-    if (confirmation) {
-    currentDeck.splice(0, currentDeck.length);
-    cardIndex = 0;
-    front.innerHTML = "&nbsp;";
-    back.innerHTML = "&nbsp;";
-    }
-    document.getElementById("newTerm").focus();
+  let side = 'back';
+
+  const flipToFront = () => {
+    card.querySelector('.front').innerHTML = currentDeck[cardIndex].term;
+    card.querySelector('.back').innerHTML = '';
+  }
+
+  const flipToBack = () => {
+    card.querySelector('.back').innerHTML = currentDeck[cardIndex].definition;
+    card.querySelector('.front').innerHTML = '';
   };
 
-  const flash = (force = false) => {
+  const flip = (force = false) => {
 
-    if(force && !force.target) {
-      front.style.visibility = "visible";
-      back.style.visibility = "hidden";
-      return;
-    }
+    side = force
+              ? 'front'
+              : side === 'front'
+                ? 'back'
+                : 'front';
 
-    if (front.style.visibility != "hidden") {
-      front.style.visibility = "hidden";
-      back.style.visibility = "visible";
-    } else {
-      front.style.visibility = "visible";
-      back.style.visibility = "hidden";
+    switch(side) {
+      case 'front':
+        flipToFront();
+        card.classList.remove('rotate');
+        break;
+      case 'back':
+        flipToBack();
+        card.classList.add('rotate');
+        break;
     }
   };
 
@@ -176,15 +177,23 @@ export const flashcardsLogic = (parent = document.querySelector('body')) => {
     return [ ...array ];
   };
 
+  const forceFlipToFront = () => {
+    flip(true);
+  };
+
+  const forceFlip = () => {
+    flip();
+  };
+
   prev.addEventListener('click', prevCard);
   next.addEventListener('click', nextCard);
-  flip.addEventListener('click', flash);
+  card.addEventListener('click', forceFlipToFront);
+  flipper.addEventListener('click', forceFlip);
   shuffle.addEventListener('click', e => {
     currentDeck = shuffleDeck(currentDeck);
     openDeck();
   });
   clearDeck.addEventListener('click', clearDeck);
-
 
   newDef.addEventListener('keydown', e => {
     if(e.key === 'Enter') {
@@ -197,30 +206,31 @@ export const flashcardsLogic = (parent = document.querySelector('body')) => {
   });
 
   const openDeck = () => {
-    front.innerHTML = currentDeck[0].term;
-    back.innerHTML = currentDeck[0].definition;
-    back.style.visibility = "hidden";
+    card.querySelector('.front').innerHTML = currentDeck[0].term;
+    updateSource();
+    forceFlipToFront();
   };
 
   openDeck();
 
-  document.addEventListener("keyup", function(event) {
-      event.preventDefault();
-      if (event.keyCode == 37 ) {
+  document.addEventListener("keyup", e => {
+      e.preventDefault();      
+      switch(e.key) {
+        case 'ArrowLeft':
           prevCard();
-          flash(true);
-      }
-      if (event.keyCode == 39 ) {
+          prev.focus();
+          forceFlipToFront();          
+          break;
+        case 'ArrowRight':
           nextCard();
-          flash(true);
-      }
-      if (event.keyCode == 38 || event.keyCode == 40) {
-        flash();
-      }
-      if (event.keyCode == 46) {
-        emptyDeck();
+          next.focus();
+          forceFlipToFront();
+          break;
+        case 'ArrowUp':
+        case 'ArrowDown':
+          flip();
+          flipper.focus();
+          break;
       }
   });
 };
-
-// https://codepen.io/minauteur/pen/GqzJKk

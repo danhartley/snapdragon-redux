@@ -1,12 +1,11 @@
-// import { Workbox } from 'workbox-window';
 import "babel-polyfill";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import 'ui/css/snapdragon-colours.css';
+import 'ui/css/species-list.css';
 import 'ui/css/snapdragon.css';
 import 'ui/css/common.css';
-import 'ui/css/species-list.css';
 import 'ui/css/snapdragon-media.css';
 import 'ui/css/non-main.css';
 import 'quiz/style.scss';
@@ -24,7 +23,6 @@ import { nextLayout } from 'ui/setup/next-layout';
 import { nextItem } from 'ui/setup/next-item';
 import { renderHeaders } from 'ui/fixtures/headers';
 import { renderScore } from 'ui/fixtures/score';
-// import { renderHome } from 'ui/screens/home/home';
 import { renderNavigation, renderLoginChanges } from 'ui/fixtures/navigation';
 import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
@@ -112,7 +110,6 @@ const onLoadHandler = () => {
         renderLoginChanges();
         subscription.add(renderLoginChanges, 'user', 'flow');
         subscription.add(renderLoggedIn, 'user', 'flow');
-        // subscription.add(renderHome, 'counter', 'flow'); // avoid adding as listener on page refresh
         subscription.add(renderScore, 'score', 'flow');                
         subscription.add(nextItem, 'layout', 'quiz');
         subscription.add(nextLesson, 'counter', 'quiz');

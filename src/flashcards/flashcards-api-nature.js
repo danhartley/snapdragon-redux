@@ -2,7 +2,7 @@ export const natureCards = [
   {
     term: 'What percentage of a tree\'s dry biomass is carbon?',
     definition: '40-50%',
-    source: 'https://earthobservatory.nasa.gov/features/ForestCarbon#:~:text=A%20rule%20of%20thumb%20for,percent%20of%20its%20dry%20biomass.'
+    source: 'https://earthobservatory.nasa.gov/features/ForestCarbon'
   },
   {
     term: 'To what does the Younger Dryas (around 12,900 to 11,700 years) owe its name?',

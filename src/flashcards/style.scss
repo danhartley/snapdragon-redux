@@ -13,23 +13,37 @@ $unit: .5rem;
   #card {
     position: relative;
     height: calc(25 * #{$unit});
-  }
-
-  #front, #back {
-    position: absolute;
-    top: $unit;
-    left: $unit;
-    right: $unit;
-    // border-radius: $unit;
-    border: 1px solid lightgray;
-    height: calc(20 * #{$unit});
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(3 * #{$unit});
-    white-space: pre-line;
-    padding: 0 calc(2 * #{$unit});
-    font-size: 1rem;
+    section {
+      position: absolute;
+      top: $unit;
+      left: $unit;
+      right: $unit;
+      border: 1px solid lightgray;
+      height: calc(20 * #{$unit});
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: calc(3 * #{$unit});
+      white-space: pre-line;
+      padding: 0 calc(2 * #{$unit});
+      font-size: 1rem;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transition: transform 1s;   
+      background-color: var(--snap-background-1);
+      color: var(--snap-text-4);
+    }
+    .rotate {
+      transform: rotateX(-180deg);
+    }
+    .back {      
+      backface-visibility: hidden;
+      transform: rotateX(-180deg);
+      font-style: italic;
+    }  
+    .front {
+      backface-visibility: hidden;      
+    }
   }
 
   button, input, select {

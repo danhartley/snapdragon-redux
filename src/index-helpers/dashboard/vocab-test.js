@@ -12,8 +12,8 @@ export const renderVocabTestScore = quickFire => {
         parent.innerHTML = '';
 
   const context = {
-    total: quickFire.termScore.total,
-    correct: quickFire.termScore.correct
+    total: quickFire.termScore ? quickFire.termScore.total : 0,
+    correct: quickFire.termScore ? quickFire.termScore.correct : 0
   }
 
   renderTemplate(context, template.content, parent);
