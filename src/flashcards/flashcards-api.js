@@ -1,98 +1,19 @@
 import { waterCards } from 'flashcards/flashcards-api-water';
-import { natureCards } from 'flashcards/flashcards-api-nature';
+import { ecologyCards } from 'flashcards/flashcards-api-nature';
 import { scienceCards } from 'flashcards/flashcards-api-science';
-import { sustainabilityCards } from 'flashcards/flashcards-api-sustainability';
+import { basicsCards } from 'flashcards/flashcards-api-basics';
+// import { termsCards } from 'flashcards/flashcards-api-terms';
+// import { acronymsCards } from 'flashcards/flashcards-api-acronyms';
 
-const climateChangeCards = [
+const numbersCards = [
   {
-    term: 'What 3 lines of evidence were chosen by the WCRP for their 2020 report?',
-    definition: `Trends indicated by contemporary warming
-    Lessons from comparable ancient climates
-    Understanding of the feedback effects`,
-    source: 'https://www.sciencemag.org/news/2020/07/after-40-years-researchers-finally-see-earths-climate-destiny-more-clearly'
+    term: 'The highest emitting sector in the UK is road transport, which accounts for what percentage in 2018?',
+    definition: '24%. All transport accounted for 33%',
+    source: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/790626/2018-provisional-emissions-statistics-report.pdf'
   },
   {
-    term: 'How is risk calculated?',
-    definition: "The product of the likelihood and consequence of an outcome"
-  },
-  {
-    term: 'Which line of evidence was not used in its own right in the 2020 WCRP report?',
-    definition: 'Climate models',
-    source: 'https://www.wcrp-climate.org/'
-  },
-  {
-    term: 'When was the IPCC founded?',
-    definition: '1988'
-  },
-  {
-    term: 'What new range was described by the WCRP in July 2020 for climate sensitivity?',
-    definition: '2.6°C to 3.9°C likely i.e. 66%'
-  },
-  {
-    term: 'What is permafrost?',
-    definition: 'Any ground, on land or under the ocean, that remains frozen for at least two consecutive years. Permanently frozen ground.'
-  },
-  {
-    term: 'Arctic temperatures are expected to increase at roughly what rate compared to the global rate?',
-    definition: 'Double.'
-  },
-  {
-    term: 'What is the total annual anthropogenic emission of all greenhouse gases?',
-    definition: '~35 billion tons of CO₂, ~45 billion tons CO₂ inc. equivalents e.g. methane.'
-  },
-  {
-    term: 'Who coined the term permafrost?',
-    definition: 'Siemon William Muller in 1943.'
-  },
-  {
-    term: 'How much land in the Northern Hemisphere is underlain by permafrost?',
-    definition: '~25%'
-  },
-  {
-    term: 'How does thawing permafrost release CO₂ or methane?',
-    definition: '(The newly activated) microbes in the soil break down organic matter.'
-  },
-  {
-    term: 'How much land in Canada, Siberia, Greenland and Alaska is underlain by permafrost?',
-    definition: '~85%',
-    source: 'https://en.wikipedia.org/wiki/Permafrost'
-  },
-  {
-    term: 'What does WCRP stand for?',
-    definition: 'World Climate Research Programme'
-  },
-  {
-    term: 'Is methane a more potent greenhouse gas than CO₂?',
-    definition: 'Yes, 28-36 times more potent.'
-  },
-  {
-    term: 'What are clathrates?',
-    definition: 'Methane hydrates, methane \'ice\' that forms at low temperatures and high pressures in continental margin marine sediments or within and beneath permafrost.'
-  },
-  {
-    term: 'How long does it take methane in the atmosphere to oxidise to CO₂?',
-    definition: 'About a decade.'
-  },
-  {
-    term: 'How does the IPCC define climate sensitivity?',
-    definition: 'How far the planet will warm given a doubling of CO₂ in relation to pre-industrial levels',
-    source: 'https://news.mit.edu/2010/explained-climate-sensitivity'
-  },
-  {
-    term: 'Given current CO₂ emissions when would we reach 560 ppm?',
-    definition: '2060'
-  },
-  {
-    term: 'What does IPCC stand for?',
-    definition: 'Intergovernmental Panel on Climate Change'
-  },
-  {
-    term: 'What range for climate sensitivity did the 1979 Charney report predict?',
-    definition: '1.5°C to 4.5°C'
-  },
-  {
-    term: 'How far have average surface temperatures risen since records began in 1800?',
-    definition: '1.1°C'
+    term: 'What is the UK annual energy requirement?',
+    definition: '2.25 TWh, or 2250 Gigawatts'
   },
   {
     term: 'What percentage of global manmade greenhouse gas emissions does the energy sector account for?',
@@ -118,8 +39,13 @@ const climateChangeCards = [
     definition: '5%'
   },
   {
-    term: 'In environments containing permafrost, the top layer of soil thaws during the summer and freezes again during the autumn. What is this layer called?',
-    definition: 'The active layer.'
+    term: 'How much land in the Northern Hemisphere is underlain by permafrost?',
+    definition: '~25%'
+  },
+  {
+    term: 'How much land in Canada, Siberia, Greenland and Alaska is underlain by permafrost?',
+    definition: '~85%',
+    source: 'https://en.wikipedia.org/wiki/Permafrost'
   },
   {
     term: 'What percentage of the world\'s population flies in any one year?',
@@ -131,23 +57,59 @@ const climateChangeCards = [
     source: 'https://www.c2es.org/content/international-emissions/'
   },
   {
+    term: 'What percentage of global manmade greenhouse gas emissions does agriculture account for?',
+    definition: '11%',
+    source: 'https://www.c2es.org/content/international-emissions/'
+  },
+];
+
+const policyCards = [
+  {
+    term: 'What 3 lines of evidence were chosen by the WCRP for their 2020 report?',
+    definition: `Trends indicated by contemporary warming
+    Lessons from comparable ancient climates
+    Understanding of the feedback effects`,
+    source: 'https://www.sciencemag.org/news/2020/07/after-40-years-researchers-finally-see-earths-climate-destiny-more-clearly'
+  },
+  {
+    term: 'How is risk calculated?',
+    definition: "The product of the likelihood and consequence of an outcome.",
+    source: 'https://www.oecd.org/env/cc/19519189.pdf'
+  },
+  {
+    term: 'Which line of evidence was not used in its own right in the 2020 WCRP report?',
+    definition: 'Climate models',
+    source: 'https://www.wcrp-climate.org/'
+  },
+  {
+    term: 'When was the IPCC founded?',
+    definition: '1988',
+    source: 'https://www.ipcc.ch/about/history/'
+  },
+  {
+    term: 'What new range was described by the WCRP (World Climate Research Programme) in July 2020 for climate sensitivity?',
+    definition: '2.6°C to 3.9°C likely i.e. 66%',
+    source: 'https://www.wcrp-climate.org/news/science-highlights/1604-climate-sensitivity-2020'
+  },
+  {
+    term: 'What range for climate sensitivity did the 1979 Charney report predict?',
+    definition: '1.5°C to 4.5°C',
+    source: 'https://www.carbonbrief.org/explainer-how-scientists-estimate-climate-sensitivity'
+  },
+  {
+    term: 'In environments containing permafrost, the top layer of soil thaws during the summer and freezes again during the autumn. What is this layer called?',
+    definition: 'The active layer.',
+    source: 'https://en.wikipedia.org/wiki/Active_layer'
+  },  
+  {
     term: 'London-New York uses 986kg of CO₂ per passenger. That equates to more than the average CO₂ emission in how many countries?',
     definition: '56',
     source: 'https://mossy.earth/methodologies/carbon-footprint-calculator'
   },
   {
-    term: 'What percentage of global manmade greenhouse gas emissions does agriculture account for?',
-    definition: '11%',
-    source: 'https://www.c2es.org/content/international-emissions/'
-  },
-  {
     term: 'What value does \'likely\' equate to as a statistical probability?',
-    definition: '66%'
-  },
-  {
-    term: 'Describe moral hazard in relation to climate change.',
-    definition: 'There is an incentive to ignore the risks in the interests of political expediency.',
-    source: 'https://en.wikipedia.org/wiki/Climate_engineering'
+    definition: '>66%',
+    source: 'https://desevun.org/ipcc-likelihood-terms/'
   },
   {
     term: 'What is the current biophysical capacity requirement of humanity in Earth units?',
@@ -157,11 +119,8 @@ const climateChangeCards = [
   },
   {
     term: 'What is the ‘fat-tailed’ distribution?',
-    definition: 'The area under the far right extreme of the curve which indicates a greater likelihood of warming well in excess of the predicted average.'
-  },
-  {
-    term: 'Is uncertainty our friend when it comes to the prospects for dangerous climate change?',
-    definition: 'No'
+    definition: 'The area under the far right extreme of the curve which indicates a greater likelihood of warming well in excess of the predicted average.',
+    source: 'https://www.huffpost.com/entry/the-fat-tail-of-climate-change-risk_b_8116264'
   },
   {
     term: 'What is the risk of a collapse of the Atlantic Meridional Overturning Circulation (AMOC) this century?',
@@ -174,22 +133,15 @@ const climateChangeCards = [
     source: 'https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019JC015083#'
   },
   {
-    term: 'What does AMOC stand for?',
-    definition: 'Atlantic Meridional Overturning Circulation',
-    source: 'https://en.wikipedia.org/wiki/Atlantic_meridional_overturning_circulation'
-  },
-  {
-    term: 'What is the Atlantic Meridional Overturning Circulation (AMOC)?',
-    definition: 'It is (characterised by) a northward flow of warm, salty water in the upper layers of the Atlantic, and a southward flow of colder water in the deep Atlantic.'
-  },
-  {
     term: 'In 2016, what headed the World Economic Forum survey of most impactful risks?',
     definition: 'Failure of climate change mitigation and adaptation',
     source: 'http://www3.weforum.org/docs/GRR/WEF_GRR16.pdf'
   },
   {
     term: 'Massive non-linear events in the global environment give rise to what?',
-    definition: 'Massive non-linear societal events.'
+    definition: 'Massive non-linear societal events.',
+    author: 'Kevin Anderson',
+    source: 'https://riskandwellbeing.com/tag/kevin-anderson/'
   },
   {
     term: 'If the rate of change of warming is 0.3°C per decade (3°C per century), what % of ecosystems will not be able to adapt?',
@@ -216,44 +168,8 @@ const climateChangeCards = [
     tchnical: true
   },
   {
-    term: 'What does ESS stand for? ',
-    definition: 'Earth System Sensitivity (sensitivity incl. feedbacks)',
-    technical: true
-  },
-  {
-    term: 'What does ECS stand for?',
-    definition: 'Equilibrium Climate Sensitivity (sensitivity excl. feedbacks)',
-    source: 'https://www.carbonbrief.org/explainer-how-scientists-estimate-climate-sensitivity',
-    technical: true
-  },
-  {
     term: 'What is the carbon budget?',
     definition: 'An estimate of the total future human-caused greenhouse gas emissions in tons of CO₂ consistent with limiting warming to a specified figure.'
-  },
-  {
-    term: 'The highest emitting sector in the UK is road transport, which accounts for what percentage in 2018?',
-    definition: '24%. All transport accounted for 33%',
-    source: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/790626/2018-provisional-emissions-statistics-report.pdf'
-  },
-  {
-    term: 'What is the UK annual energy requirement?',
-    definition: '2.25 TWh, or 2250 Gigawatts'
-  },
-  {
-    term: 'What does GMST stand for?',
-    definition: 'Global Mean Surface Temperature'
-  },
-  {
-    term: 'What is standard deviation?',
-    definition: 'A measure of the amount of variation of a set of values (the extent to which a distribution is stretched or squeezed).'
-  },
-  {
-    term: 'What does a low standard deviation indicate?',
-    definition: 'That the values tend to be close to the mean (or expected value) of the set.'
-  },
-  {
-    term: 'What does a high standard deviation indicate?',
-    definition: 'That the values of the set are spread out over a wide range.'
   },
   {
     term: 'How are IPCC confidence levels derived?',
@@ -277,16 +193,6 @@ const climateChangeCards = [
     source: 'https://www.carbonbrief.org/guest-post-the-problem-with-net-zero-emissions-targets'
   },
   {
-    term: 'What is radiative forcing?',
-    definition: 'The difference between insolation (sunlight) absorbed by the earth and energy radiated back to space.',
-    source: 'https://www.climate.gov/maps-data/primer/climate-forcing'
-  },
-  {
-    term: 'When does positive radiative forcing occur?',
-    definition: 'When the earth receives more incoming energy from sunlight than it radiates to space.',
-    source: 'https://www.acs.org/content/acs/en/climatescience/atmosphericwarming/radiativeforcing.html'
-  },
-  {
     term: 'What % of human-caused CO₂ emissions are absorbed by trees and other plants?',
     definition: '~1/3'
   },
@@ -299,14 +205,6 @@ const climateChangeCards = [
     definition: '20-25% deforestation'
   },
   {
-    term: 'What does SROCC stand for?',
-    definition: 'Special Report on the Ocean and Cryosphere in a Changing Climate'
-  },
-  {
-    term: 'NOAA stand for?',
-    definition: 'National Oceanic and Atmospheric Administration'
-  },
-  {
     term: 'What range of global mean sea levels does the SROCC predict (think likely) by the end of this century?',
     definition: '0.95 feet (0.29m) to 3.61 feet (1.1m)'
   },
@@ -317,22 +215,6 @@ const climateChangeCards = [
   {
     term: 'According to NASA\'s MODIS data record by how much did the earth green (increase in leaf area) between 2000 and 2020?',
     definition: '5%'
-  },
-  {
-    term: 'What does NASA\'s MODIS stand for?',
-    definition: 'Moderate Resolution Imaging Spectroradiometer'
-  },
-  {
-    term: 'What does NASA stand for?',
-    definition: 'National Aeronautics and Space Administration'
-  },
-  {
-    term: 'What does GEDI stand for?',
-    definition: 'Global Ecosystem Dynamics Investigation'
-  },
-  {
-    term: 'What does \'lidar\' stand for?',
-    definition: 'light detection and ranging'
   },
   {
     term: 'What coverage does MODI data provide?',
@@ -406,14 +288,6 @@ const climateChangeCards = [
     definition: '1.2°C'
   },
   {
-    term: 'What does UNFCCC stand for?',
-    definition: 'United Nations Framework Convention on Climate Change'
-  },
-  {
-    term: 'What does BECCS stand for?',
-    definition: 'Bio-energy with Carbon Capture and Storage '
-  },
-  {
     term: 'When will we see an ice-free summer Arctic?',
     definition: 'It may happen in the next decade.'
   },
@@ -460,14 +334,6 @@ const climateChangeCards = [
     definition: 'Nuclear, wind and solar.'
   },
   {
-    term: 'How might consilience work in practice?',
-    definition: 'Convergence of evidence, or multiple lines of evidence.'
-  },
-  {
-    term: 'What is consilience?',
-    definition: 'The principle that evidence from independent, unrelated sources can "converge" on strong conclusions.'
-  },
-  {
     term: 'What is the Suess effect?',
     definition: 'A change in the ratio of the atmospheric concentrations of heavy isotopes of carbon (13C and 14C) by the admixture of large amounts of fossil-fuel derived CO₂, which is depleted in 13C and contains no 14C.'
   },
@@ -477,27 +343,6 @@ const climateChangeCards = [
     source: 'https://www.climate.gov/news-features/climate-qa/which-emits-more-carbon-dioxide-volcanoes-or-human-activities'
   },
   {
-    term: 'What percentage of the air is made up of greenhouse gases?',
-    definition: '1%'
-  },
-  {
-    term: 'Without greenhouse gases, what would our planet be like?',
-    definition: 'Completely frozen, and uninhabitable for humans.'
-  },
-  {
-    term: 'How long does CO₂ persist in the atmosphere?',
-    definition: '50% for 100 years, the rest over thousands of years.'
-  },
-  {
-    term: 'For how long has the climate been stable?',
-    definition: '10,000 years.',
-    source: 'https://www.climate.gov/news-features/climate-qa/what%E2%80%99s-hottest-earth-has-been-%E2%80%9Clately%E2%80%9D'
-  },
-  {
-    term: 'Temperature on Earth is cyclical (moving in and out of ice ages) over what period?',
-    definition: '100,000 years.'
-  },
-  {
     term: '3 million years ago, CO₂ concentrations were the same as today. How much higher were sea levels?',
     definition: 'Sea levels were 15-20 metres (50-65 feet) higher than today.',
     source: 'https://phys.org/news/2019-04-dire-future-etched-co2-million.html'
@@ -505,11 +350,6 @@ const climateChangeCards = [
   {
     term: 'How many different organisations are working on climate models?',
     definition: '~40'
-  },
-  {
-    term: 'What does RCP stand for?',
-    definition: 'Representative Concentration Pathway',
-    source: 'https://www.ipcc-data.org/guidelines/pages/glossary/glossary_r.html'
   },
   {
     term: 'What is an RCP (Representative Concentration Pathway)?',
@@ -534,27 +374,49 @@ const climateChangeCards = [
     source: 'https://www.ipcc.ch/srccl/chapter/summary-for-policymakers/',
     confidence: 'high confidence'
   },
+  {
+    term: 'How many people are overweight or obese?',
+    definition: '2 billion',
+    source: 'https://www.ipcc.ch/srccl/',
+    confidence: 'high confidence'
+  },
+  {
+    term: 'How many people are undernourished?',
+    definition: '821 million',
+    source: 'https://www.ipcc.ch/srccl/',
+    confidence: 'high confidence'
+  },
 ];
 
 export const sets = [
   {
-    title: 'Climate change',
-    cards: climateChangeCards
+    title: 'Policy',
+    cards: policyCards,
+    count: policyCards.length
   },
   {
-    title: 'Nature',
-    cards: natureCards
+    title: 'Ecology',
+    cards: ecologyCards,
+    count: ecologyCards.length
   },
   {
-    title: 'Water',
-    cards: waterCards
+    title: 'The Water Cycle',
+    cards: waterCards,
+    count: waterCards.length
   },
   {
     title: 'Science',
-    cards: scienceCards
+    cards: scienceCards,
+    count: scienceCards.length
   },
   {
-    title: 'Sustainability',
-    cards: sustainabilityCards
+    title: 'Basics',
+    cards: basicsCards,
+    count: basicsCards.length
   },
+  // {
+  //   title: 'Acronyms',
+  //   cards: acronymsCards,
+  //   count: acronymsCards.length
+  // },
 ];

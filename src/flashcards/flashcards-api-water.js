@@ -20,16 +20,9 @@ export const waterCards = [
     definition: 'Thermal expansion and runoff from melting ice in Greenland and West Antarctica.'
   },
   {
-    term: 'What does GMSL stand for?',
-    definition: 'Global Mean Sea Level'
-  },
-  {
-    term: 'What does SLRC stand for?',
-    definition: 'Sea Level Rise Commitment'
-  },
-  {
-    term: 'What is SLRC?',
-    definition: 'A given surface warming commits to centuries of sea level rise from thermal expansion of the ocean.'
+    term: 'What is SLRC (Sea Level Rise Commitment)?',
+    definition: 'A given surface warming commits to centuries of sea level rise from thermal expansion of the ocean.',
+    source: 'https://link.springer.com/article/10.1007%2Fs10584-016-1703-4'
   },
   {
     term: 'The human body cannot transmit heat to the surrounding air fast enough to compensate for its internal production of heat above what temperature?',
@@ -70,15 +63,7 @@ export const waterCards = [
   {
     term: 'The Holocene and Pleistocene epochs together form which period?',
     definition: 'The Quaternary'
-  },  
-  {
-    term: 'What was the Medieval Warm Period (MWP)?',
-    definition: 'A time of warm climate in the North Atlantic region lasting from c. 950 to c. 1250.'
-  },  
-  {
-    term: 'What was the Little Ice Age (LIA)?',
-    definition: 'A period extending from the 16th to the 19th centuries, consisting of  largely independent regional climate changes rather than a globally synchronous increased glaciation (IPCC).'
-  },  
+  },
   {
     term: 'How long does heat take to penetrate the region between 20 and 150 metres?',
     definition: '~2 years'
@@ -92,5 +77,10 @@ export const waterCards = [
     definition: 'Agriculture',
     source: 'https://www.ipcc.ch/srccl/',
     confidence: 'medium confidence'
+  },
+  {
+    term: 'Arctic temperatures are expected to increase at roughly what rate compared to the global rate?',
+    definition: 'Double. Over the past 30 years, the Arctic has warmed at roughly twice the rate as the entire globe, a phenomenon known as Arctic amplification.',
+    source: 'https://nsidc.org/cryosphere/arctic-meteorology/climate_change.html'
   },
 ];

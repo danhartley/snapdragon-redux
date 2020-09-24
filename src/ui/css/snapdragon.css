@@ -466,7 +466,28 @@ a.icon:hover {
 }
 
 .dropdown div {
-  white-space: nowrap;
+  white-space: nowrap;  
+}
+
+.dropdown a > div {
+  line-height: 1.5rem;
+  display: inline-block;
+  pointer-events: none;
+}
+
+.dropdown a > div > .smaller-text {
+  vertical-align: top;
+}
+
+.dropdown-item {
+  color: var(--snap-text-4);
+  padding: 0.5rem 0 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.dropdown-item a {
+  pointer-events: none;
+  color: var(--snap-text-5);
 }
 
 .delay-slider {

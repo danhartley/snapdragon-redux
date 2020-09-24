@@ -14,7 +14,7 @@ export const flashcardsLogic = (parent = document.querySelector('body')) => {
   const template = document.createElement('template');
         template.innerHTML = flashcardTemplate;
 
-  let currentDeckTitle = 'Nature';
+  let currentDeckTitle = 'Basics';
   let set = sets.find(set => set.title === currentDeckTitle);
   let currentDeck = [ ...set.cards ];
   
@@ -35,6 +35,7 @@ export const flashcardsLogic = (parent = document.querySelector('body')) => {
 
   document.querySelectorAll('.dropdown-item').forEach(set => {
     set.addEventListener('click', e => {
+      cardIndex = 0;
       const title = e.target.id;
       const newDeck = sets.find(set => set.title === title);
       currentDeck = shuffleDeck(newDeck.cards);
@@ -58,7 +59,7 @@ export const flashcardsLogic = (parent = document.querySelector('body')) => {
 
   let newCard;
 
-  const updateSource = () => {
+  const updateSource = () => {    
     const source = document.querySelector('.js-card-source');
     if(currentDeck[cardIndex].source) {
         source.innerHTML = `<span>For more information: <a target="_blank" class="underline-link" href="${currentDeck[cardIndex].source}">click here</a></span`;

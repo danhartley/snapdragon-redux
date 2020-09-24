@@ -1,8 +1,12 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(common, {
+  entry: {
+    flashcards: './src/flashcards/flashcards.js'
+  },
   mode: 'development',
   // devtool: "eval-source-map", // eval-cheap-module-source-map
   devtool: "source-map",
@@ -10,6 +14,12 @@ module.exports = merge(common, {
   plugins: [
     new webpack.SourceMapDevToolPlugin({
       exclude: 'sw.js'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'flashcards.html',
+      template: './src/flashcards/flashcards.html',
+      chunks: ['flashcards'],
+      inject: true
     })
   ],
   module: {

@@ -6,7 +6,9 @@
                   Climate change decks
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-set="{{ sets }}">
-                  <a id="{{ set.title }}" class="dropdown-item" href="#">{{ set.title }}</a>
+                  <div id="{{ set.title }}" class="dropdown-item flex centred-block">
+                    <a href="#">{{ set.title }} <div><span class="smaller-text margin-left">({{ set.count }})</span></div></a>
+                  </div>
               </div>
           </div>
       </div>        

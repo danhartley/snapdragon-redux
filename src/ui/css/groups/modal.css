@@ -236,12 +236,6 @@
     background-color: var(--snap-brown-1);
   }
   
-  a.dropdown-item {
-    color: var(--snap-text-4);
-    padding: 0.5rem 0 0.5rem 1rem;
-    cursor: pointer;
-  }
-  
   .non-taxa a.dropdown-item:hover {
     background-color: var(--snap-brown-1);
   }

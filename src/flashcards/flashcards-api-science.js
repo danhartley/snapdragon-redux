@@ -139,4 +139,66 @@ export const scienceCards = [
     term: 'When was the most recent glacial period?',
     definition: 'Between about 120,000 and 11,500 years ago.'
   },
+  {
+    term: 'What are clathrates?',
+    definition: 'Methane hydrates, methane \'ice\' that forms at low temperatures and high pressures in continental margin marine sediments or within and beneath permafrost.'
+  },
+  {
+    term: 'How long does it take methane in the atmosphere to oxidise to CO₂?',
+    definition: 'About a decade.'
+  },
+  {
+    term: 'Who coined the term permafrost?',
+    definition: 'Siemon William Muller in 1943.'
+  },
+  {
+    term: 'How does thawing permafrost release CO₂ or methane?',
+    definition: '(The newly activated) microbes in the soil break down organic matter.'
+  },
+  {
+    term: 'What is radiative forcing?',
+    definition: 'The difference between insolation (sunlight) absorbed by the earth and energy radiated back to space.',
+    source: 'https://www.climate.gov/maps-data/primer/climate-forcing'
+  },
+  {
+    term: 'When does positive radiative forcing occur?',
+    definition: 'When the earth receives more incoming energy from sunlight than it radiates to space.',
+    source: 'https://www.acs.org/content/acs/en/climatescience/atmosphericwarming/radiativeforcing.html'
+  },
+  {
+    term: 'What is standard deviation?',
+    definition: 'A measure of the amount of variation of a set of values (the extent to which a distribution is stretched or squeezed).'
+  },
+  {
+    term: 'What does a low standard deviation indicate?',
+    definition: 'That the values tend to be close to the mean (or expected value) of the set.'
+  },
+  {
+    term: 'What does a high standard deviation indicate?',
+    definition: 'That the values of the set are spread out over a wide range.'
+  },
+  {
+    term: 'When are carbon dioxide ppm readings at their lowest in the year?',
+    definition: 'During Northern Hemisphere spring and summer months. Plants absorb a substantial amount of carbon dioxide through photosynthesis, thus removing it from the atmosphere.',
+    authoer: 'NASA',
+    source: 'https://svs.gsfc.nasa.gov/4565'
+  },
+  {
+    term: 'If one tonne of carbon was released into the atmosphere, what would be its equivalent weight n carbon dioxide?',
+    definition: '3.67 metric tonnes. To convert carbon to carbon dioxide, multiply by the ratio of the molecular weight of carbon dioxide to that of carbon (44/12).',
+    author: 'US Environment Protection Agency',
+    source: 'https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references'
+  },
+  {
+    term: 'List 3 characteriistics of gymnosperms.',
+    definition: 'Unenclosed, or naked, seeds; no flowers, seeds are not formed inside a fruit, e.g. conifers.',
+    author: 'Wikipedia',
+    source: 'https://en.wikipedia.org/wiki/Gymnosperm'
+  },
+  {
+    term: 'List 3 characteristics of angiosperms.',
+    definition: 'Flowers; endosperm within their seeds; the production of fruits that contain the seeds',
+    author: 'Wikipedia',
+    source: 'https://en.wikipedia.org/wiki/Flowering_plant'
+  },
 ];
