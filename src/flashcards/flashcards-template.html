@@ -9,30 +9,49 @@
 
   <section class="activeCardButtons">
     
-    <button class="btn snap-btn" id="prev"><span class="small-text">< Previous Card</span></button>
-    <button class="btn snap-btn" id="next"><span class="small-text">Next Card ></span></button>
+    <button class="btn snap-btn" id="prev">
+      <span class="small-text landscape">Previous Card</span>
+      <span class="small-text portrait">Previous</span>
+    </button>
+    <button class="btn snap-btn" id="next">
+      <span class="small-text landscape">Next Card</span>
+      <span class="small-text portrait">Next</span>
+    </button>
     
     <button class="btn snap-btn" id="flip"><span class="small-text">Flip</span></button>
-    <button class="btn snap-btn" id="shuffle"><span class="small-text">Shuffle deck</span></button>
+    <button class="btn snap-btn" id="shuffle">
+      <span class="small-text landscape">Shuffle deck</span>
+      <span class="small-text portrait">Shuffle</span>
+    </button>
 
     <div class="js-flashcard-set-selection-container"></div>
-    <div class="double-centred-block js-card-count">Card count for this set: {{ cardCount }}</div>
+    <div class="double-centred-block js-card-count">
+      <span class="landscape">Card count for this set: {{ cardCount }}</span>
+      <span class="portrait small-text">Card count: {{ cardCount }}</span>
+    </div>
   </section>
 
+  <br class="landscape">
   <br>
-  <br>
-  <hr>
+  <hr class="landscape">
 
-  <div class="half-standard-block double-centred-block js-card-source"><span>For more information:</span></div>
+  <div class="landscape padding-all double-centred-block vertical-centred-block js-card-source"><span>For more information:</span></div>
+  <div class="portrait margin-all double-centred-block vertical-centred-block js-portrait-card-source"><span>For more information:</span></div>
 
-  <hr>
-  <br>
+  <hr class="landscape">
+  <br class="landscape">
 
   <section class="margin-left small-text hide">
     <div>The Center for Climate and Energy Solutions: <a class="underline-link" target="_blank" href="https://www.c2es.org/content/international-emissions/">International emissions</a></div>
     <div>Our World in Data: <a class="underline-link" target="_blank" href="https://ourworldindata.org/co2-and-other-greenhouse-gas-emissions">Greenhouse gas emissions</a></div>
     <div>IEA: <a class="underline-link" target="_blank" href="https://www.iea.org/reports/world-energy-outlook-2017#section-2">World Energy Outlook 2017</a></div>
     <div>Scripps Institution of Oceanography: <a class="underline-link" target="_blank" href="https://sioweb.ucsd.edu/programs/keelingcurve/">Mauna Loa Latest CO₂ Reading (The Keeling Curve)</a></div>
+  </section>
+
+  <section class="landscape margin-all small-text">
+    <div class="double-centred-block">
+      <span class="latin">Tip:</span> Use LEFT and RIGHT arrow keys to move between cards, UP or DOWN to flip them.
+    </div>
   </section>
 
   <!-- <h2>Add new term</h2> -->

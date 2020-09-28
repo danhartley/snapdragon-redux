@@ -6,7 +6,7 @@ import { sets } from 'flashcards/flashcards-api';
 import flashcardTemplate from 'flashcards/flashcards-template.html';
 import flashcardSetsTemplate from 'flashcards/flashcards-set-selection-template.html';
 
-export const flashcardsLogic = (parent = document.querySelector('body')) => {
+export const flashcardsLogic = (config, parent = document.querySelector('body')) => {
 
   const title = document.querySelector('.js-modal-text-title header');
         title.innerHTML = 'Climate change flip cards';
@@ -31,7 +31,7 @@ export const flashcardsLogic = (parent = document.querySelector('body')) => {
   renderTemplate({ sets }, template.content, parent);
 
   const btn = document.querySelector('.filter-sets-option-block button');
-        btn.innerHTML = `Climate set: ${currentDeckTitle}`;
+        btn.innerHTML = config.isLandscapeMode ? `Climate set: ${currentDeckTitle}` : `Set: ${currentDeckTitle}`;
 
   document.querySelectorAll('.dropdown-item').forEach(set => {
     set.addEventListener('click', e => {
@@ -59,12 +59,17 @@ export const flashcardsLogic = (parent = document.querySelector('body')) => {
 
   let newCard;
 
-  const updateSource = () => {    
-    const source = document.querySelector('.js-card-source');
+  const updateSource = config => {    
+    const source = config.isLandscapeMode ? document.querySelector('.js-card-source') : document.querySelector('.js-portrait-card-source');
     if(currentDeck[cardIndex].source) {
-        source.innerHTML = `<span>For more information: <a target="_blank" class="underline-link" href="${currentDeck[cardIndex].source}">click here</a></span`;
+        source.innerHTML = config.isLandscapeMode
+              ? `<div>For more information (opens in new tab): <a target="_blank" class="underline-link" href="${currentDeck[cardIndex].source}">click here</a></div>`
+              : `<div class="margin-bottom"><a target="_blank" class="underline-link" href="${currentDeck[cardIndex].source}">Open source in a new tab</a></div>`;
     } else {
-      source.innerHTML = `<span>For more information:</span`;
+      source.innerHTML = ``;
+    }
+    if(currentDeck[cardIndex].author) {
+      source.innerHTML += `<div class="small-text">Source: ${currentDeck[cardIndex].author}</div>`
     }
     forceFlipToFront();
   };
@@ -74,7 +79,7 @@ export const flashcardsLogic = (parent = document.querySelector('body')) => {
     cardIndex = (cardIndex + 1) % currentDeck.length;
     flipToFront();    
 
-    updateSource();
+    updateSource(config);
   };
 
   const prevCard = () => {
@@ -84,7 +89,7 @@ export const flashcardsLogic = (parent = document.querySelector('body')) => {
     else if (cardIndex == 0) cardIndex = currentDeck.length-1;
     flipToFront();
 
-    updateSource();
+    updateSource(config);
   };
 
   const cardAdd = (formFront, formBack) => {
@@ -208,7 +213,7 @@ export const flashcardsLogic = (parent = document.querySelector('body')) => {
 
   const openDeck = () => {
     card.querySelector('.front').innerHTML = currentDeck[0].term;
-    updateSource();
+    updateSource(config);
     forceFlipToFront();
   };
 

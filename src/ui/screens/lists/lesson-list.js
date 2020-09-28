@@ -30,16 +30,18 @@ export const renderLessons = () => {
 
     renderTemplate({}, template.content, parent);
 
-    let li = document.createElement('li');
+    let li1 = document.createElement('li');
+    let li2 = document.createElement('li');
     let list = parent.querySelector('.js-lesson-container');
-        list.appendChild(li);
+        list.appendChild(li1);
+        list.appendChild(li2);
 
     lessons.forEach(lesson => renderLesson(lesson));
 
     renderLessonListHeader(parent);
 
     renderLessonQuiz(list.querySelector('li:first-child'));
-    renderFashcards(list.querySelector('li:first-child'));
+    renderFashcards(list.querySelector('li:nth-child(2)'));
 
     const createCustomLessonBtn = parent.querySelector('.js-create-custom-lesson');          
           createCustomLessonBtn.addEventListener('click', e => {

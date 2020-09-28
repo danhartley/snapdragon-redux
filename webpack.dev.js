@@ -4,10 +4,10 @@ const common = require('./webpack.common.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(common, {
+  mode: 'development',
   entry: {
     flashcards: './src/flashcards/flashcards.js'
   },
-  mode: 'development',
   // devtool: "eval-source-map", // eval-cheap-module-source-map
   devtool: "source-map",
   devtool: false,

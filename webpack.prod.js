@@ -10,9 +10,13 @@ const BrotliPlugin = require('brotli-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
+  entry: {
+    flashcards: './src/flashcards/flashcards.js'
+  },
   output: {
     filename: '[name].[chunkhash].js',
   },
@@ -49,6 +53,12 @@ module.exports = merge(common, {
         test: /\.(js|css|html|svg)$/,
         threshold: 10240,
         minRatio: 0.8
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'flashcards.html',
+        template: './src/flashcards/flashcards.html',
+        chunks: ['flashcards'],
+        inject: true
       })
   ],
   module: {

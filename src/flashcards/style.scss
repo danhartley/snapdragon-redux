@@ -56,7 +56,9 @@ $unit: .5rem;
 
   button {
     cursor: pointer;
-    min-width: calc(20 * #{$unit});
+    @media (min-width: 768px) {
+      min-width: calc(20 * #{$unit});
+    }
   }
 
   .activeCardButtons {

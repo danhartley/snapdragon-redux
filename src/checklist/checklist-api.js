@@ -124,7 +124,8 @@ let sections = [
         term: 'JavaScript: PRPL',
         descriptions: [
           'Push (preload), Render, Pre-cache, Lazy-load'
-        ] 
+        ], 
+        link: 'https://web.dev/apply-instant-loading-with-prpl/'
       }
     ]
   },
