@@ -1053,7 +1053,7 @@ iframe#birdsong {
   border-top: 3px solid transparent;
   display: flex;
   margin: .25rem 0;
-  border-bottom: 1px solid var(--snap-border-1);
+  border-bottom: 1px solid var(var(--snap-background-3));
 }
 
 .highlighted-for-review-row {
@@ -1413,11 +1413,11 @@ input[type="number"].medium {
 }
 
 .lesson-list div.lesson-list-carousel-item[data-taxon="Birds"] {
-  background-color: var(--snap-blue-1);
+  background-color: var(--snap-blue-2);
 }
 
 .table-header[data-taxon="Birds"] {
-  background-color: var(--snap-blue-2);
+  background-color: var(--snap-blue-3);
 }
 
 .lesson-list div.lesson-list-carousel-item[data-taxon="Fungi & Lichens"] {

@@ -31,7 +31,7 @@ export const flashcardsLogic = (config, parent = document.querySelector('body'))
   renderTemplate({ sets }, template.content, parent);
 
   const btn = document.querySelector('.filter-sets-option-block button');
-        btn.innerHTML = config.isLandscapeMode ? `Climate set: ${currentDeckTitle}` : `Set: ${currentDeckTitle}`;
+        btn.innerHTML = `Cards: ${currentDeckTitle}`;
 
   document.querySelectorAll('.dropdown-item').forEach(set => {
     set.addEventListener('click', e => {
@@ -39,9 +39,9 @@ export const flashcardsLogic = (config, parent = document.querySelector('body'))
       const title = e.target.id;
       const newDeck = sets.find(set => set.title === title);
       currentDeck = shuffleDeck(newDeck.cards);
-      document.querySelector('.js-card-count').innerHTML = `Card count for this set: ${currentDeck.length}`;
+      document.querySelector('.js-card-count').innerHTML = `Card count: ${currentDeck.length}`;
       openDeck();
-      btn.innerHTML = `Climate set: ${title}`;
+      btn.innerHTML = `Set: ${title}`;
     });    
 });
 
@@ -143,6 +143,9 @@ export const flashcardsLogic = (config, parent = document.querySelector('body'))
 
   const flipToBack = () => {
     card.querySelector('.back').innerHTML = currentDeck[cardIndex].definition;
+    if(currentDeck[cardIndex].confidence) {
+      card.querySelector('.back').innerHTML+= `<span class="small-text latin"> (IPCC: ${currentDeck[cardIndex].confidence})<span>`;
+    }
     card.querySelector('.front').innerHTML = '';
   };
 

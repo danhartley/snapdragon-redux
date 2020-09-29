@@ -12,25 +12,25 @@ export const scienceCards = [
   {
     term: 'What is the range of tilt of the earth\'s axis?',
     definition: '22.1°-24.5°',
-    author: 'NASA',
+    author: 'earth observatory (NASA)',
     source: 'https://www.earthobservatory.nasa.gov/features/Milankovitch/milankovitch_2.php'
   },
   {
     term: 'Earth\'s obliquity oscillates between which two measurements every 41,000 years?',
     definition: '22.1°-24.5°',
-    author: 'NASA',
+    author: 'earth observatory (NASA)',
     source: 'https://www.earthobservatory.nasa.gov/features/Milankovitch/milankovitch_2.php'
   },
   {
     term: 'What is the angular radius of earth\'s axial precession?',
     definition: '23.5°',
-    author: 'NASA',
+    author: 'earth observatory (NASA)',
     source: 'https://www.earthobservatory.nasa.gov/features/Milankovitch/milankovitch_2.php'
   },
   {
     term: 'What is obliquity?',
     definition: 'The angle between an object\'s rotational axis and its orbital axis (also axial tilt).',
-    author: 'NASA',
+    author: 'earth observatory (NASA)',
     source: 'https://www.earthobservatory.nasa.gov/features/Milankovitch/milankovitch_2.php'
   },
   {
@@ -67,7 +67,9 @@ export const scienceCards = [
   },
   {
     term: 'Warmer air supports more or less water vapour?',
-    definition: 'More'
+    definition: 'More',
+    author: 'Wikipedia',
+    source: 'https://en.wikipedia.org/wiki/Water_vapor'
   },
   {
     term: 'What do we call the ratio between the amount of moisture in the air and its upper limit?',
@@ -77,15 +79,21 @@ export const scienceCards = [
   },
   {
     term: 'Why is there is often less water vapour in the air than there could be?',
-    definition: 'Rain and snow remove water from the air.'
+    definition: 'Rain and snow remove water from the air.',
+    author: 'Wikipedia',
+    source: 'https://en.wikipedia.org/wiki/Water_vapor'
   },
   {
     term: 'Explain positive feedback in relation to water vapour?',
-    definition: 'Rising water vapour leads to more back-radiation to the surface, which causes higher temperatures.'
+    definition: 'Rising water vapour leads to more back-radiation to the surface, which causes higher temperatures.',
+    author: 'Wikipedia',
+    source: 'https://en.wikipedia.org/wiki/Climate_change_feedback'
   },
   {
     term: 'What is a convergent boundary?',
-    definition: 'A place in the earth\'s mantle where one tectonic plate slides beneath another.'
+    definition: 'A place in the earth\'s mantle where one tectonic plate slides beneath another.',
+    author: 'Ocean Exploration and Research (OER, US)',
+    source: 'https://oceanexplorer.noaa.gov/facts/plate-boundaries.html'
   },
   {
     term: 'Earth\'s orbit around the sun varies cyclically from more to less circular every how many years?',
@@ -95,11 +103,15 @@ export const scienceCards = [
   },
   {
     term: 'Earth\'s axial tilt, or obliquity, oscillates between 22.1°-24.5 how frequently?',
-    definition: 'Every 41,000 years'
+    definition: 'Every 41,000 years',
+    author: 'earth observatory (NASA)',
+    source: 'https://www.earthobservatory.nasa.gov/features/Milankovitch/milankovitch_2.php'
   },
   {
     term: 'Earth\'s rotation axis precesses with periods of how many years?',
-    definition: '26,000 years, or 1° every 72 years (26,000 years / 360°)'
+    definition: '26,000 years, or 1° every 72 years (26,000 years / 360°)',
+    author: 'earth observatory (NASA)',
+    source: 'https://www.earthobservatory.nasa.gov/features/Milankovitch/milankovitch_2.php'
   },
   {
     term: 'Which three factors affect the way sunlight is distributed around the world?',
@@ -132,8 +144,22 @@ export const scienceCards = [
     source: 'https://sos.noaa.gov/datasets/climate-model-temperature-change-rcp-60-2006-2100/'
   },
   {
-    term: 'What is the atomic weight of carbon and carbon dioxide?',
-    definition: 'The atomic weight of carbon is 12 atomic mass units, while the weight of carbon dioxide is 44 (16*2 + 12).'
+    term: 'What is the atomic mass of carbon and carbon dioxide?',
+    definition: 'The atomic mass of carbon is 12 atomic mass units, while the mass of carbon dioxide is 44 (16*2 + 12).',
+    author: 'Energy Education',
+    source: 'https://energyeducation.ca/encyclopedia/C_vs_CO2'
+  },
+  {
+    term: 'What is atomic mass?',
+    definition: 'The microscopic mass of an element in atomic mass units, it is roughly the sum of protons (the atomic number) and neutrons in an atomic nucleus.',
+    author: 'Energy Education',
+    source: 'https://energyeducation.ca/encyclopedia/Atomic_mass'
+  },
+  {
+    term: 'What is the weight of 100kg?',
+    definition: 'Weight is a force. Because gravity is almost uniform on Earth, mass and weight are regarded as equivalent, but a mass of 100kg weighs 980 Newtons.',
+    author: 'Energy Education',
+    source: 'https://energyeducation.ca/encyclopedia/Atomic_mass'
   },
   {
     term: 'One tonne of carbon equals how many tons of carbon dioxide?',
@@ -143,35 +169,44 @@ export const scienceCards = [
   },
   {
     term: 'The carbon cycle removes roughly how much of human caused CO₂ emissions from the atmosphere each year?',
-    definition: 'Half.'
+    definition: '~55% on land and in the ocean. Eventually, the land and oceans will take up most of the extra carbon dioxide, but as much as 20 percent may remain in the atmosphere for many thousands of years.',
+    author: 'earth observatory (NASA)',
+    source: 'https://earthobservatory.nasa.gov/features/CarbonCycle'
   },
   {
     term: 'The carbon cycle adds and removes roughly how much carbon (C) from the earth each year?',
-    definition: '120 GtC.'
+    definition: '120 GtC.',
+    author: 'earth observatory (NASA)',
+    source: 'https://earthobservatory.nasa.gov/features/CarbonCycle'
   },
   {
     term: 'What are the annual total emissions from volcanoes (in C)?',
-    definition: 'Between 0.04 and 0.07 gigatonnes of carbon per year.'
+    definition: 'Between 0.04 and 0.07 gigatonnes of carbon per year.',
+    author: 'Climate.giv (US National Oceanic and Atmospheric Administration)',
+    source: 'https://www.climate.gov/news-features/climate-qa/which-emits-more-carbon-dioxide-volcanoes-or-human-activities'
   },
   {
     term: 'What are the annual total emissions from human causes (in C)?',
-    definition: 'About 12 gigatonnes of carbon per year.'
+    definition: 'About 12 gigatonnes of carbon per year, or 45 CO₂e.',
+    author: 'C2ES (Center for Climate and Energy Solutions)',
+    source: 'https://www.c2es.org/content/international-emissions/'
   },
   {
     term: 'How many gigatonnes of carbon do both the sea and land (forests) absorb annually?',
-    definition: 'About 2 gigatonnes of carbon per year.'
+    definition: 'About 2 gigatonnes of carbon per year, or 7.35 gigatonnes of CO₂.',
+    author: 'C2ES (Center for Climate and Energy Solutions)',
+    source: 'https://www.c2es.org/content/international-emissions/'
   },
   {
     term: 'Are the oceans and forests carbon sinks or sources?',
-    definition: 'Sinks.'
+    definition: 'Sinks. A carbon sink is a natural or artificial reservoir that absorbs and stores the atmosphere\'s carbon.',
+    source: 'https://ocean-climate.org/?page_id=3896&lang=en'
   },
   {
     term: 'Who wrote, \'The atmosphere admits of the entrance of the solar heat, but checks its exit; and the result is a tendency to accumulate heat at the surface of the planet.\'?',
-    definition: 'John Tyndall (1859)'
-  },
-  {
-    term: 'When was the most recent glacial period?',
-    definition: 'Between about 120,000 and 11,500 years ago.'
+    definition: 'John Tyndall (1859)',
+    author: 'Wikipedia',
+    source: 'https://en.wikipedia.org/wiki/John_Tyndall'
   },
   {
     term: 'What are clathrates?',
@@ -193,7 +228,9 @@ export const scienceCards = [
   },
   {
     term: 'How does thawing permafrost release CO₂ or methane?',
-    definition: '(The newly activated) microbes in the soil break down organic matter.'
+    definition: '(The newly activated) microbes in the soil break down organic matter.',
+    author: '(US) National Snow & Ice Data Center',
+    source: 'https://nsidc.org/cryosphere/frozenground/methane.html'
   },
   {
     term: 'What is radiative forcing?',
@@ -204,19 +241,26 @@ export const scienceCards = [
   {
     term: 'When does positive radiative forcing occur?',
     definition: 'When the earth receives more incoming energy from sunlight than it radiates to space.',
+    author: 'American Chemical Society',
     source: 'https://www.acs.org/content/acs/en/climatescience/atmosphericwarming/radiativeforcing.html'
   },
   {
     term: 'What is standard deviation?',
-    definition: 'A measure of the amount of variation of a set of values (the extent to which a distribution is stretched or squeezed).'
+    definition: 'A measure of the amount of variation of a set of values (the extent to which a distribution is stretched or squeezed).',
+    author: 'Maths is Fun',
+    source: 'https://www.mathsisfun.com/data/standard-deviation.html'
   },
   {
     term: 'What does a low standard deviation indicate?',
-    definition: 'That the values tend to be close to the mean (or expected value) of the set.'
+    definition: 'That the values tend to be close to the mean (or expected value) of the set.',
+    author: 'Maths is Fun',
+    source: 'https://www.mathsisfun.com/data/standard-deviation.html'
   },
   {
     term: 'What does a high standard deviation indicate?',
-    definition: 'That the values of the set are spread out over a wide range.'
+    definition: 'That the values of the set are spread out over a wide range.',
+    author: 'Maths is Fun',
+    source: 'https://www.mathsisfun.com/data/standard-deviation.html'
   },
   {
     term: 'When are carbon dioxide ppm readings at their lowest in the year?',
@@ -225,8 +269,8 @@ export const scienceCards = [
     source: 'https://svs.gsfc.nasa.gov/4565'
   },
   {
-    term: 'If one tonne of carbon was released into the atmosphere, what would be its equivalent weight n carbon dioxide?',
-    definition: '3.67 metric tonnes. To convert carbon to carbon dioxide, multiply by the ratio of the molecular weight of carbon dioxide to that of carbon (44/12).',
+    term: 'If one tonne of carbon was released into the atmosphere, what would be its equivalent mass n carbon dioxide?',
+    definition: '3.67 metric tonnes. To convert carbon to carbon dioxide, multiply by the ratio of the molecular mass of carbon dioxide to that of carbon (44/12).',
     author: 'US Environment Protection Agency',
     source: 'https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references'
   },
@@ -241,5 +285,53 @@ export const scienceCards = [
     definition: 'Flowers; endosperm within their seeds; the production of fruits that contain the seeds',
     author: 'Wikipedia',
     source: 'https://en.wikipedia.org/wiki/Flowering_plant'
+  },
+  {
+    term: 'Through a series of chemical reactions and tectonic activity, carbon takes between 100-200 million years to move between rocks, soil, ocean, and atmosphere. What is this cycle called?',
+    definition: 'The slow carbon cycle.',
+    author: 'earth observatory (NASA)',
+    source: 'https://earthobservatory.nasa.gov/features/CarbonCycle'
+  },
+  {
+    term: 'How do plants and phytoplankton decrease the carbon in the atmosphere as part of the fast carbon cycle?',
+    definition: 'By taking carbon dioxide from the atmosphere and converting it into energy or organic matter. The process is called photosynthesis: CO₂ + H₂O + energy = CH₂O + O₂.',
+    author: 'earth observatory (NASA)',
+    source: 'https://earthobservatory.nasa.gov/features/CarbonCycle'
+  },
+  {
+    term: 'How do plants and phytoplankton increase the carbon in the atmosphere as part of the fast carbon cycle?',
+    definition: 'When plants are eaten by heterotrophs, die, are consumed by fire, or use energy to grow, they release carbon back into the atmosphere: CH₂O + O₂ = CO₂ + H₂O + energy.',
+    author: 'earth observatory (NASA)',
+    source: 'https://earthobservatory.nasa.gov/features/CarbonCycle'
+  },
+  {
+    term: 'What is the affect of burning fossil fuels in terms of the carbon cycle?',
+    definition: 'By releasing carbon into the atmosphere, we move the carbon from the slow to the fast carbon cycle (the carbon was stored over millions of years, and would otherwise have been released over similary long periods through volcanic activity.)',
+    author: 'earth observatory (NASA)',
+    source: 'https://earthobservatory.nasa.gov/features/CarbonCycle'
+  },
+  {
+    term: 'How can we calculate which greenhouse gases (ghg) are contributing to warming?',
+    definition: 'Greenhouse gases absorb energy at different wavelengths.',
+    author: 'earth observatory (NASA)',
+    source: 'https://earthobservatory.nasa.gov/features/CarbonCycle'
+  },
+  {
+    term: 'How do concentrations of carbon dioxide in the amosphere affect water vapour?',
+    definition: 'When CO₂ levels rise, so does the temperature, causing more water to evaporate into the atmosphere (and less to condenses).',
+    author: 'earth observatory (NASA)',
+    source: 'https://earthobservatory.nasa.gov/features/CarbonCycle'
+  },
+  {
+    term: 'What are the main atmospheric contributors to global warming?',
+    definition: 'Water vappur accounts for about 50% of warming, CO₂ about 20%, clouds about 25%, and the remaining 5% other gases and aerosols.',
+    author: 'earth observatory (NASA)',
+    source: 'https://earthobservatory.nasa.gov/features/CarbonCycle'
+  },
+  {
+    term: 'How does the slow cycle returns carbon to the atmosphere?',
+    definition: 'From volcanoes (which emit around 100-300 times less carbon into the atmosphere than humans emit by burning fossil fuels.',
+    author: 'earth observatory (NASA)',
+    source: 'https://earthobservatory.nasa.gov/features/CarbonCycle'
   },
 ];

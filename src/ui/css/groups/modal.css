@@ -54,7 +54,7 @@
     display: none;
   }
 
-  .modal-body .language-options button {
+  .language-options button, .flashcard-options button {
     color: var(--snap-text-6);
     width: 100%;
     margin: 0;

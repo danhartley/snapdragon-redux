@@ -1,31 +1,37 @@
 export const waterCards = [
   {
     term: 'The global ocean contains what percentage of the Earth’s water?',
-    definition: '97%',
+    definition: '~97%. Less than one percent of all the water on Earth is fresh. ~2.7% of water is in glaciers.',
     author: '(US) National Ocean Service',
     source: 'https://oceanservice.noaa.gov/facts/oceanwater.html'
   },
   {
     term: 'The global ocean covers what percentage of the Earth’s surface?',
-    definition: '71%',
-    author: '(US) National Ocean Service',
-    source: 'https://oceanservice.noaa.gov/facts/oceanwater.html'
+    definition: '~71%. The planet has one global ocean, though it is often divided into 4 distinct geographic regions: the Pacific, Atlantic, Indian, and Arctic oceans.',
+    author: 'National Geographic.',
+    source: 'https://www.nationalgeographic.org/encyclopedia/ocean/'
   },
   {
     term: 'What percentage of Earth’s land area is covered by glaciers or ice sheets?',
-    definition: '10%',
+    definition: '~10%. This includes glaciers, ice caps, and the ice sheets of Greenland and Antarctica.',
     author: '(US) National Snow & Ice Data Center',
     source: 'https://nsidc.org/cryosphere/glaciers/quickfacts.html'
   },
   {
-    term: 'Where was the sea level in relation to today 22,000 years ago?',
-    definition: '130 metres lower.',
+    term: 'Where was the sea level in relation to today 22,000 years ago (at the peak of Earth\'s most recent glacial period)?',
+    definition: '~120 metres lower (~400 feet).',
     author: 'Ocean (Smithsonian)',
     source: 'https://ocean.si.edu/through-time/ancient-seas/sea-level-rise'
   },
   {
     term: 'Name two causes of sea level rises.',
-    definition: 'Thermal expansion and runoff from melting ice in Greenland and West Antarctica.',
+    definition: 'Thermal expansion (about one-third of current rises) and runoff from melting (land) ice in Greenland and West Antarctica (the other two-thirds).',
+    author: 'Ocean (Smithsonian)',
+    source: 'https://ocean.si.edu/through-time/ancient-seas/sea-level-rise'
+  },
+  {
+    term: 'Global sea levels are expected to rise 2.3m for every degree (°C) of temperature rise. How quickly will this happen?',
+    definition: 'Between 200 and 2,00 years, depending on how quickly ice sheets melt.',
     author: 'Ocean (Smithsonian)',
     source: 'https://ocean.si.edu/through-time/ancient-seas/sea-level-rise'
   },
@@ -61,7 +67,7 @@ export const waterCards = [
   },
   {
     term: 'What is a paleothermometer?',
-    definition: 'A proxy thermometer e.g. mreasuremnts of isotope ratios.',
+    definition: 'A proxy thermometer e.g. measuremnts of isotope ratios.',
     author: 'Wikipedia',
     source: 'https://en.wikipedia.org/wiki/Paleothermometer'
   },
@@ -79,21 +85,21 @@ export const waterCards = [
   },
   {
     term: 'What is the name of the current interglacial (geological epoch)?',
-    definition: 'The Holocene',
+    definition: 'The Holocene. The Holocene Epoch began 12,000 to 11,500 years ago at the close of the Paleolithic Ice Age.',
     author: 'Wikipedia',
     source: 'https://en.wikipedia.org/wiki/Holocene'
   },  
   {
     term: 'The Holocene and Pleistocene epochs together form which period?',
-    definition: 'The Quaternary',
+    definition: 'The Quaternary. The Quaternary is the current, and most recent, of the three periods of the Cenozoic Era.',
     author: 'Wikipedia',
     source: 'https://en.wikipedia.org/wiki/Quaternary'
   },
   {
     term: 'Which sector accounts for ~70% of global fresh-water use?',
-    definition: 'Agriculture',
+    definition: 'Agriculture.',
     author: 'IPCC',
-    source: 'https://www.ipcc.ch/srccl/',
+    source: 'https://www.ipcc.ch/srccl/chapter/summary-for-policymakers/',
     confidence: 'medium confidence'
   },
   {
@@ -101,5 +107,35 @@ export const waterCards = [
     definition: 'Double. Over the past 30 years, the Arctic has warmed at roughly twice the rate as the entire globe, a phenomenon known as Arctic amplification.',
     author: '(US) National Snow & Ice Data Center',
     source: 'https://nsidc.org/cryosphere/arctic-meteorology/climate_change.html'
+  },
+  {
+    term: 'What is a glacier?',
+    definition: 'Glaciers are made up of fallen snow that, over many years, compresses into large, thickened ice masses. Glaciers form when snow remains in one location long enough to transform into ice.',
+    author: '(US) National Snow & Ice Data Center',
+    source: 'https://nsidc.org/cryosphere/glaciers/questions/what.html'
+  },
+  {
+    term: 'When was the most recent glacial period?',
+    definition: 'Between about 120,000 and 11,500 years ago. Prior to the start of The Holocene.',
+    author: 'Wikipedia',
+    source: 'https://en.wikipedia.org/wiki/Holocene'
+  },
+  {
+    term: 'How does the global sea level today compare to that of 1900?',
+    definition: 'Today, sea level is 13-20cm higher on average than it was in 1900. It had changed very little in the previous 2,000 years.',
+    author: 'Ocean (Smithsonian)',
+    source: 'https://ocean.si.edu/through-time/ancient-seas/sea-level-rise'
+  },
+  {
+    term: 'What is the current estimated rate of sea level rise?',
+    definition: '3.4mm per year. Between 1900 and 1990 it was 1.2-1.7mm per year.',
+    author: 'Ocean (Smithsonian)',
+    source: 'https://ocean.si.edu/through-time/ancient-seas/sea-level-rise'
+  },
+  {
+    term: 'How has the pH of the global ocean been affected by higher concentrations of CO₂ in the atmosphere?',
+    definition: 'Since 1750, the pH of the ocean’s surface has dropped by 0.1, a 30% change in acidity.',
+    author: 'earth observatory (NASA)',
+    source: 'https://earthobservatory.nasa.gov/features/CarbonCycle'
   },
 ];

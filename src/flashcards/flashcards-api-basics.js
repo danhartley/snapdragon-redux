@@ -80,7 +80,7 @@ export const basicsCards = [
   },
   {
     term: 'What was the Medieval Warm Period (MWP)?',
-    definition: 'A time of warm climate in the North Atlantic region lasting from c. 950 to c. 1250.',
+    definition: 'A time of warm climate in the North Atlantic region lasting from c.950 to c.1250.',
     author: 'ScienceDirect',
     source: 'https://www.sciencedirect.com/topics/earth-and-planetary-sciences/medieval-warm-period'
   },
@@ -93,19 +93,19 @@ export const basicsCards = [
   {
     term: 'What percentage of methane in the atmosphere comes from human sources?',
     definition: 'More than half; ~50 million tonnes per year, the equivalent of 350 million cars, or the total emissions of France and Germany.',
-    author: 'IOPscience (Institue of Physics',
+    author: 'IOPscience (Institue of Physics)',
     source: 'https://iopscience.iop.org/article/10.1088/1748-9326/ab9ed2'
   },
   {
     term: 'What are the main sources of human-caused methan emissions?',
     definition: 'Ranching, agriculture and landfills account for about two-thirds, the fossil fuel industry (oil, gas and coal), making up the rest.',
-    author: 'IOPscience (Institue of Physics',
+    author: 'IOPscience (Institue of Physics)',
     source: 'https://iopscience.iop.org/article/10.1088/1748-9326/ab9ed2'
   },
   {
     term: 'Human activity since the Industrial Revolution has increased atmospheric carbon dioxde by how much?',
     definition: 'There is 1.7 times more CO₂ in the atmosphere (from ~280ppm to ~410ppm).',
-    author: 'IOPscience (Institue of Physics',
+    author: 'IOPscience (Institue of Physics)',
     source: 'https://iopscience.iop.org/article/10.1088/1748-9326/ab9ed2'
   },
   {

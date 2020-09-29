@@ -338,11 +338,6 @@ const policyCards = [
     definition: 'A change in the ratio of the atmospheric concentrations of heavy isotopes of carbon (13C and 14C) by the admixture of large amounts of fossil-fuel derived CO₂, which is depleted in 13C and contains no 14C.'
   },
   {
-    term: 'What is the estimated annual release of CO₂ from volcanoes?',
-    definition: '~0.6 billion metric tons of carbon dioxide per year.',
-    source: 'https://www.climate.gov/news-features/climate-qa/which-emits-more-carbon-dioxide-volcanoes-or-human-activities'
-  },
-  {
     term: '3 million years ago, CO₂ concentrations were the same as today. How much higher were sea levels?',
     definition: 'Sea levels were 15-20 metres (50-65 feet) higher than today.',
     source: 'https://phys.org/news/2019-04-dire-future-etched-co2-million.html'
@@ -395,12 +390,12 @@ export const sets = [
     count: policyCards.length
   },
   {
-    title: 'Ecology',
+    title: 'Land',
     cards: ecologyCards,
     count: ecologyCards.length
   },
   {
-    title: 'The Water Cycle',
+    title: 'Water',
     cards: waterCards,
     count: waterCards.length
   },
