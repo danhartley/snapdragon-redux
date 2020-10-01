@@ -83,4 +83,10 @@ export const acronymsCards = [
     term: 'What does SLRC stand for?',
     definition: 'Sea Level Rise Commitment'
   },
+  {
+    term: 'What does IPCC SPM stand for?',
+    definition: 'IPCC Summary for Policy Makers',
+    author: 'Wikipedia',
+    source: 'https://en.wikipedia.org/wiki/IPCC_Summary_for_Policymakers'
+  },
 ];

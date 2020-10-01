@@ -8,7 +8,7 @@ import navigationTemplate from 'ui/fixtures/navigation-top.html';
 
 export const renderTopNavigation = userAction => {
 
-  snapLog('userAction', userAction);
+  // snapLog('userAction', userAction);
 
   const template = document.createElement('template');
         template.innerHTML = navigationTemplate;

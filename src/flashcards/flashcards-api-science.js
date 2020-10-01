@@ -162,8 +162,8 @@ export const scienceCards = [
     source: 'https://energyeducation.ca/encyclopedia/Atomic_mass'
   },
   {
-    term: 'One tonne of carbon equals how many tons of carbon dioxide?',
-    definition: 'One tonne of carbon equals 44/12 = 3.67 tons of carbon dioxide.',
+    term: 'One tonne of carbon equals how many tonnes of carbon dioxide?',
+    definition: 'One tonne of carbon equals 44/12 = 3.67 tonnes of carbon dioxide.',
     author: 'US Energy Information Agency',
     source: 'https://www.eia.gov/tools/faqs/faq.php?id=82&t=11'
   },
@@ -334,4 +334,46 @@ export const scienceCards = [
     author: 'earth observatory (NASA)',
     source: 'https://earthobservatory.nasa.gov/features/CarbonCycle'
   },
+  {
+    term: 'What is Thermohaline Circulation (THC)?',
+    definition: 'One part of the ocean circulation which is driven by density differences (dependent on salinity and temperature, hence the name).',
+    author: 'NOAA',
+    source: 'https://oceanservice.noaa.gov/education/tutorial_currents/05conveyor1.html'
+  },
+  {
+    term: 'What are other terms for the Thermohaline Circulation (THC)?',
+    definition: 'The Global Ocean Conveyor or Great Ocean Conveyor Belt.',
+    author: 'NOAA',
+    source: 'https://oceanservice.noaa.gov/education/tutorial_currents/05conveyor1.html',
+    technical: true
+  },
+  {
+    term: 'What is the Suess effect?',
+    definition: 'A change in the ratio of the atmospheric concentrations of heavy isotopes of carbon (13C and 14C) by the admixture of large amounts of fossil-fuel derived CO₂, which is depleted in 13C and contains no 14C.',
+    author: 'Wikipedia',
+    source: 'https://en.wikipedia.org/wiki/Suess_effect'
+  },
+  {
+    term: 'What is the current biophysical capacity requirement of humanity in Earth units?',
+    definition: '1.7',
+    source: 'https://www.overshootday.org/',
+    source: 'https://en.wikipedia.org/wiki/Ecological_footprint'
+  },
+  {
+    term: 'Name some forcing factors.',
+    definition: 'Solar input, albedo, greenhouse gases, grading of earth\'s axis, particles (aerosols), Milankovich cycles.',
+    author: 'Climate.giv (US National Oceanic and Atmospheric Administration)',
+    source: 'https://www.climate.gov/maps-data/primer/climate-forcing'
+  },
+  {
+    term: 'From 1850-1900 to 2006-2015 global mean surface (land and ocean) temperature - GMST - has increased by how much?',
+    definition: '0.87°C (range from 0.75°C to 0.99°C)',
+    author: 'IPCC',
+    source: 'https://www.ipcc.ch/srccl/chapter/summary-for-policymakers/',
+    confidence: 'very likely'
+  },
+  // {
+  //   term: 'How many tonnes of carbon do plants and animals contain?',
+  //   definition: '.56 trillion tonnes'
+  // },
 ];

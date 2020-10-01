@@ -138,4 +138,98 @@ export const waterCards = [
     author: 'earth observatory (NASA)',
     source: 'https://earthobservatory.nasa.gov/features/CarbonCycle'
   },
+  {
+    term: 'SROCC (Special Report on the Ocean and Cryosphere in a Changing Climate) predicts that more intense and frequent extreme sea level events will be how many orders of magnitude higher in 2100 than today?',
+    definition: '2-3',
+    author: 'IPCC: Special Report on the Ocean and Cryosphere in a Changing Climate',
+    source: 'https://www.ipcc.ch/srocc/'
+  },
+  {
+    term: 'How many tonnes of carbon does the ocean contain?',
+    definition: '~38,000 billion tonnes',
+    author: 'IPCC: The Carbon Cycle and Atmospheric Carbon Dioxide',
+    source: 'https://www.ipcc.ch/report/ar3/wg1/the-carbon-cycle-and-atmospheric-carbon-dioxide/'
+  },
+  {
+    term: 'According to the IPCC, an increase in global temperatures by 1.5 °C is projected to lead to a decline in living coral reefs by how much?',
+    definition: 'A decline of 70-90%',
+    author: 'Climate Institute',
+    source: 'http://climate.org/will-the-great-barrier-reef-survive-climate-change'
+  },
+  {
+    term: 'When will we see an ice-free summer Arctic?',
+    definition: 'It may happen in the next decade.',
+    author: 'Carbon Brief',
+    source: 'https://interactive.carbonbrief.org/when-will-the-arctic-see-its-first-ice-free-summer/'
+  },
+  {
+    term: 'In environments containing permafrost, the top layer of soil thaws during the summer and freezes again during the autumn. What is this layer called?',
+    definition: 'The active layer.',
+    author: 'Wikipedia',
+    source: 'https://en.wikipedia.org/wiki/Active_layer'
+  },
+  {
+    term: 'What is the risk of a collapse of the Atlantic Meridional Overturning Circulation (AMOC) this century?',
+    definition: 'Less than 10%.',
+    author: 'Journal of Geophysical Research',
+    source: 'https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019JC015083#'
+  },
+  {
+    term: 'How great has been the slowdown in the AMOC since 1950?',
+    definition: '15%',
+    author: 'Journal of Geophysical Research',
+    source: 'https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019JC015083#'
+  },
+  {
+    term: 'What range of global mean sea levels does the SROCC predict (think likely) by the end of this century?',
+    definition: '0.95 feet (0.29m) to 3.61 feet (1.1m)',
+    author: 'IPCC: Special Report on the Ocean and Cryosphere in a Changing Climate',
+    source: 'https://www.ipcc.ch/srocc/home/'
+  },
+  {
+    term: 'What range of global mean sea levels does the NOAA predict (think likely) by the end of this century?',
+    definition: '1 foot (0.3m) to 4.27 feet (1.3m)',
+    author: 'National Oceanic and Atmospheric Administration (NOAA): Tecnical Report, Sea Level Rises',
+    source: 'https://tidesandcurrents.noaa.gov/publications/techrpt83_Global_and_Regional_SLR_Scenarios_for_the_US_final.pdf'
+  },
+  {
+    term: '3 million years ago, CO₂ concentrations were the same as today. How much higher were sea levels?',
+    definition: 'Sea levels were 15-20 metres (50-65 feet) higher than today.',
+    author: 'Science X, Physics',
+    source: 'https://phys.org/news/2019-04-dire-future-etched-co2-million.html'
+  },
+  {
+    term: 'The loss of ice from Greenland is likely to sea level rises by the end of the century. Of what size?',
+    definition: '2-10cm.',
+    author: 'nature',
+    source: 'https://www.nature.com/articles/s41586-020-2742-6.epdf?sharing_token=qVezcSWIiMlEaR46AuLiFtRgN0jAjWel9jnR3ZoTv0NQx7E2TSFdLGg3oobgIHfTx_JhlA71HNcMXX-9mG30_MrzeqqX2ZWDhhlN8aq03qsEpXzeiGGM4bNtCEtG2FGpLgK1k969K7ua82P-36wMIfwDqYOLtx8zSF0AXLQU9Dxe4R_v_jMQPKZ0iGcFbTn9sxR1ZcMDqEZfbahFn13XM80gGRnpZtvekTEmmJUoRHuv9_jhn3WYf0FynhmVa3zYV2gURrEY4o2Tjk7EPmZEYoqekEuztW_U1uEFYf_zQzi8O-LldqapO3fdsDUh7Tyj&tracking_referrer=www.theguardian.com'
+  },
+  {
+    term: 'The rate of loss of ice from Greenland is melting at a rate last seen when?',
+    definition: 'Before the Holocene (12,000 years ago).',
+    author: 'nature',
+    source: 'https://www.nature.com/articles/s41586-020-2742-6.epdf?sharing_token=qVezcSWIiMlEaR46AuLiFtRgN0jAjWel9jnR3ZoTv0NQx7E2TSFdLGg3oobgIHfTx_JhlA71HNcMXX-9mG30_MrzeqqX2ZWDhhlN8aq03qsEpXzeiGGM4bNtCEtG2FGpLgK1k969K7ua82P-36wMIfwDqYOLtx8zSF0AXLQU9Dxe4R_v_jMQPKZ0iGcFbTn9sxR1ZcMDqEZfbahFn13XM80gGRnpZtvekTEmmJUoRHuv9_jhn3WYf0FynhmVa3zYV2gURrEY4o2Tjk7EPmZEYoqekEuztW_U1uEFYf_zQzi8O-LldqapO3fdsDUh7Tyj&tracking_referrer=www.theguardian.com'
+  },
+  {
+    term: 'When is Greenland\'s ice sheet predicted to vanish?',
+    definition: 'Within the next 1,00 years (if global heating continues).',
+    author: 'nature',
+    source: 'https://www.nature.com/articles/s41586-020-2742-6.epdf?sharing_token=qVezcSWIiMlEaR46AuLiFtRgN0jAjWel9jnR3ZoTv0NQx7E2TSFdLGg3oobgIHfTx_JhlA71HNcMXX-9mG30_MrzeqqX2ZWDhhlN8aq03qsEpXzeiGGM4bNtCEtG2FGpLgK1k969K7ua82P-36wMIfwDqYOLtx8zSF0AXLQU9Dxe4R_v_jMQPKZ0iGcFbTn9sxR1ZcMDqEZfbahFn13XM80gGRnpZtvekTEmmJUoRHuv9_jhn3WYf0FynhmVa3zYV2gURrEY4o2Tjk7EPmZEYoqekEuztW_U1uEFYf_zQzi8O-LldqapO3fdsDUh7Tyj&tracking_referrer=www.theguardian.com'
+  },
+  {
+    term: 'Even if temperature rises are held to no more than 2°C, how high will the melting of the Antarctic ice cap raise sea levels?',
+    definition: '2.5 metres.',
+    author: 'The Guardian',
+    source: 'https://www.theguardian.com/environment/2020/sep/23/melting-antarctic-ice-will-raise-sea-level-by-25-metres-even-if-paris-climate-goals-are-met-study-finds'
+  },
+  {
+    term: 'Although the melting of Arctic sea ice does not affect sea levels (because it is on water), how does this nonetheless contribute to globarl warming?',
+    definition: 'By reducing the earth’s albedo, and exposing the darker water beneath the ice, which absorbs more heat.',
+    author: 'The Guardian',
+    source: 'https://www.theguardian.com/world/2020/sep/30/greenlands-ice-melting-faster-sea-level-rise'
+  },
+  // {
+  //   term: 'For every centimeter rise in global sea level how many people are displaced?',
+  //   definition: '~6 million'
+  // },
 ];

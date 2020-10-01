@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const WebpackLighthousePlugin = require('webpack-lighthouse-plugin'); 
 
-module.exports = {
+module.exports = merge(common, {
     mode: 'development',
     devtool: "source-map",
     entry: {
@@ -95,4 +95,4 @@ module.exports = {
         },
       },
     },
-};
+});

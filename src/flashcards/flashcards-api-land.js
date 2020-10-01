@@ -1,4 +1,4 @@
-export const ecologyCards = [
+export const landCards = [
   {
     term: 'What percentage of a tree\'s dry biomass is carbon?',
     definition: '40-50%',
@@ -77,5 +77,48 @@ export const ecologyCards = [
     definition: '~400',
     author: 'Scientific American',
     source: 'https://www.scientificamerican.com/article/how-many-trees-are-there-in-the-world-video/'
+  },
+  {
+    term: 'How many tonnes of carbon does the world\'s soils contain?',
+    definition: '2.5 trillion tonnes',
+    author: 'European Commission',
+    source: 'https://ec.europa.eu/clima/sites/clima/files/docs/soil_and_climate_en.pdf'
+  },
+  {
+    term: 'How many tonnes of carbon does the atmosphere contain?',
+    definition: '~730 billion tonnes',
+    author: 'IPCC: The Carbon Cycle and Atmospheric Carbon Dioxide',
+    source: 'https://www.ipcc.ch/report/ar3/wg1/the-carbon-cycle-and-atmospheric-carbon-dioxide/'
+  },
+  {
+    term: 'How many tonnes of carbon does the land contain?',
+    definition: '~2,000 billion tonnes (500 plants, 1,500 soil).',
+    author: 'IPCC',
+    source: 'https://www.ipcc.ch/report/ar3/wg1/the-carbon-cycle-and-atmospheric-carbon-dioxide/'
+  },
+  {
+    term: 'Oceans, seas, and other bodies of water provide ~90 percent of the water in the atmosphere. What provides the other 10%?',
+    definition: 'Transpiration, the release of water from plant leaves.',
+    author: 'U.S. Geological Survey: Evapotranspiration and the Water Cycle',
+    source: 'https://www.usgs.gov/special-topic/water-science-school/science/evapotranspiration-and-water-cycle'
+  },
+  {
+    term: 'What % of human-caused CO₂ emissions are absorbed by trees and other plants?',
+    definition: '~1/3',
+    author: 'National Geographic',
+    source: 'https://www.nationalgeographic.com/environment/2019/05/plants-help-absorb-carbon-emissions-for-now/'
+  },
+  {
+    term: 'How many tonnes of carbon does the world\'s permafrost contain?',
+    definition: '~1.5 trillion tonnes',
+    author: 'NOAA: Arctic Program, Report Card 2019',
+    source: 'https://arctic.noaa.gov/Report-Card/Report-Card-2019/ArtMID/7916/ArticleID/844/Permafrost-and-the-Global-Carbon-Cycle'
+  },
+  {
+    term: 'From 1850-1900 to 2006-2015 mean land surface air temperature has increased by how much?',
+    definition: '1.53°C (range from 1.38°C to 1.68°C)',
+    author: 'IPCC',
+    source: 'https://www.ipcc.ch/srccl/chapter/summary-for-policymakers/',
+    confidence: 'very likely'
   },
 ];

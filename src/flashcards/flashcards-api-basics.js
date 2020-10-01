@@ -8,7 +8,7 @@ export const basicsCards = [
   },
   {
     term: 'What is the total annual anthropogenic emission of all greenhouse gases?',
-    definition: '~35 billion tons of CO₂, ~45 billion tons CO₂ inc. equivalents e.g. methane.',
+    definition: '~35 billion tonnes of CO₂, ~45 billion tonnes CO₂ inc. equivalents e.g. methane.',
     author: 'C2ES (Center for Climate and Energy Solutions)',
     source: 'https://www.c2es.org/content/international-emissions'
   },
@@ -38,7 +38,7 @@ export const basicsCards = [
   },
   {
     term: 'Describe moral hazard in relation to climate change.',
-    definition: 'There is an incentive to ignore the risks in the interests of political expediency.',
+    definition: 'There is an incentive to ignore the risks in the interests of political expediency. Or, the risk that geoengineering interventions might deter or delay mitigation.',
     author: 'Wikipedia',
     source: 'https://en.wikipedia.org/wiki/Climate_engineering'
   },
