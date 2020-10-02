@@ -4,7 +4,7 @@ import { eol } from 'admin/api/eol';
 import { firestore } from 'api/firebase/firestore';
 import { renderTemplate } from 'ui/helpers/templating';
 import { speciesPicker } from 'admin/screens/taxa-pickers';
-import { inat } from 'admin/api/inat';
+import { inat } from 'admin/api/inat-api';
 
 import addPhotosTemplate from 'admin/screens/species/add-photos.html';
 import addphotosGalleryTemplate from 'admin/screens/species/add-photos-gallery.html';

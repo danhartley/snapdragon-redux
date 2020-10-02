@@ -7,7 +7,7 @@ module.exports = merge(common, {
   mode: 'development',
   entry: {
     flashcards: './src/flashcards/flashcards.js',
-    checklist: './src/checklist/checklist.js'
+    // checklist: './src/checklist/checklist.js'
   },
   // devtool: "eval-source-map", // eval-cheap-module-source-map
   devtool: "source-map",

@@ -30,7 +30,7 @@ export const config = {
             name: ''
         },
         speciesRange: 10,
-        inatId: { key: '', type: '', param: 'user_id' },
+        inatId: { key: '', type: '', param: 'user_id', urlType: 'users' },
         season: {},
         perPage: 200,
         noOfRecords: 10,

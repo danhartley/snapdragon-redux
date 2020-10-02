@@ -221,6 +221,23 @@ a.icon:hover {
   grid-template-rows: var(--vhStandardBlock) auto;
 }
 
+.home-container form {
+  width: 100%;
+}
+
+.home-container table {
+  border-color: initial;
+}
+
+.home-container h2 {
+  margin-bottom: 2rem !important;
+}
+
+.home-container h2 span {
+  border-bottom: 1px dashed var(--snap-border-3);
+  padding-bottom: .5rem;
+}
+
 .scrollable.card {
   text-align: left;
 }
@@ -241,10 +258,15 @@ a.icon:hover {
   font-size: .8rem;
 }
 
-.side-lesson-list, .main-lesson-grid {
+.side-lesson-list {
   display: grid;
   grid-template-columns: 100%;
   grid-auto-flow: column;
+  grid-template-rows: var(--vhRunningBlock, 7.5vh) 5px auto var(--vhRunningBlock, 7.5vh);
+}
+
+.main-lesson-grid {
+  display: grid;
   grid-template-rows: var(--vhRunningBlock, 7.5vh) 5px auto var(--vhRunningBlock, 7.5vh);
 }
 
@@ -966,6 +988,7 @@ iframe#birdsong {
 }
 
 .snapdragon-intro {
+  grid-template-rows: 1fr 1fr;
   justify-content: space-evenly;
   display: flex;
   flex-direction: column;
@@ -973,30 +996,40 @@ iframe#birdsong {
   top: var(--vhStandardBlock, 10vh);
 }
 
-.snapdragon-intro th, .snapdragon-intro td {
-  padding: .5rem 1rem;
+.snapdragon-dashboard-main {
+  display: grid;
+  top: var(--vhStandardBlock, 10vh);
+  height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhStandardBlock, 10vh));  
+}
+
+tr span {
+  height: 100%;
+  width: 100%;
+  padding: .5rem 0 .5rem 1rem;
+  border-bottom: 1px dotted var(--snap-border-3);
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+tr th:first-child span {
+  border: none;
+}
+
+.home-container th, .home-container td {
   white-space: nowrap;
   font-weight: inherit;
+  color: var(--snap-text-6);
+  text-align: right;
 }
 
-.snapdragon-intro th {
-  padding: 1rem .5rem 0 .5rem !important;
+.home-container td {
+  padding: .5rem 0 .5rem 1rem;
+  text-align: right;
 }
 
-.snapdragon-intro > h3, .snapdragon-intro > h4, .snapdragon-intro > h5 {
-  font-size: 1rem;
-}
-
-.snapdragon-intro section {
-  padding: 1rem;  
-}
-
-.snapdragon-intro section:nth-child(1) {
-  border: 1px solid var(--snap-border-2);
-}
-
-.snapdragon-intro .youtube-icon {
-  font-size: 1rem;
+.home-container section {
+  margin: 0;
+  padding: 1rem;
 }
 
 .lesson-list {
@@ -1140,7 +1173,7 @@ iframe#birdsong {
   top: 0; 
   margin: 0;
   padding: 0;
-  padding-top: .4rem;
+  padding-top: .5rem;
   position: relative;
   height: 0;
   padding-top: 56.25%;
@@ -1248,7 +1281,7 @@ img[data-has-image="false"] {
 }
 
 .autocomplete {
-  height: 5rem !important;
+  /* height: 5rem !important; */
   position: absolute !important;
 }
 
@@ -1364,44 +1397,47 @@ input[type="number"].medium {
   vertical-align: -.2rem;
 }
 
+.snap-rbs {
+  border: 1px solid var(--snap-border-1);
+  padding: .5rem;
+}
+
+.snap-rbs > div {
+  display: flex;
+  align-items: center;
+}
+
 .snap-rbs input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 
   border-radius: 50%;
-  width: .5rem;
-  height: 1rem;
-
-  border: 1rem solid var(--snap-border-1);
   transition: 0.2s all linear;
   margin-right: .5rem;
 
   position: relative;
-
   cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  border: .5rem solid var(--snap-text-2);
 }
 
 .snap-rbs label {
   cursor: pointer;
-}
-
-.snap-rbs input:checked {
-  border: 1rem solid var(--snap-text-4);
+  font-size: 1rem;
+  color: var(--snap-text-4);
 }
 
 .snap-rbs input:focus {
   outline: none;
 }
 
-.snap-rbs.seasons input, .snap-rbs.inats input {
-  height: .5rem;
-  border: .5rem solid var(--snap-text-2);
-  margin-right: .25rem;
-}
-
-.snap-rbs.seasons input:checked, .snap-rbs.inats input:checked {
-  border: .5rem solid var(--snap-text-4);
+.snap-rbs input:checked {
+  border: .5em solid var(--snap-text-4);
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--snap-text-4);
 }
 
 .lesson-list div.lesson-list-carousel-item[data-taxon="Plants"] {

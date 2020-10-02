@@ -1,16 +1,15 @@
-import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
+import { inatAutocomplete } from 'ui/screens/common/inat/inat-autocomplete';
 import { renderTemplate } from 'ui/helpers/templating';
 import { enums } from 'ui/helpers/enum-helper';
 
 import inatTemplate from 'ui/create-guide-modal/inat-user-template.html';
 
-export const renderInatUser = (modal, createGuide) => {
+export const renderInatUser = (container, createGuide) => {
 
     const config = createGuide.getConfig();
 
     const template = document.createElement('template');
-
-    template.innerHTML = inatTemplate;
+          template.innerHTML = inatTemplate;
 
     config.guide.guideMode = enums.guideMode.DYNAMIC.name;
     if(config.guide.inatId.key !== '-----') {
@@ -21,7 +20,7 @@ export const renderInatUser = (modal, createGuide) => {
         createGuide.saveStep('INAT');
     }
 
-    const parent = modal.querySelector('.js-actions');
+    const parent = container.querySelector('.js-actions');
           parent.innerHTML = '';
     
     renderTemplate({ }, template.content, parent);
@@ -30,26 +29,22 @@ export const renderInatUser = (modal, createGuide) => {
 
     let autocompleteRef;
 
-    const position = config.guide.inatId.param === 'user_id' ? 'left' : 'right';
-
-    let byType = 'users';
-
     const inatIdentityInput = parent.querySelector('#inat-identity');
           inatIdentityInput.focus();
 
-    const handlerInatIdentityInput = e => {
-        inatIdentityInput.removeEventListener('keypress', handlerInatIdentityInput);
-        autocompleteRef = inatAutocomplete(inatIdentityInput, byType, 'inat-autocomplete-options-container', '');
+    const inatIdentityInputHandler = e => {
+        inatIdentityInput.removeEventListener('keypress', inatIdentityInputHandler);
+        autocompleteRef = inatAutocomplete(inatIdentityInput, config.guide.urlType, 'inat-autocomplete-options-container', '');
     }
 
-    inatIdentityInput.addEventListener('keypress', handlerInatIdentityInput);
+    inatIdentityInput.addEventListener('keypress', inatIdentityInputHandler);
 
     inatIdentityInput.addEventListener('click', e => {
         e.preventDefault();
     });
 
     inatIdentityInput.addEventListener('keyup', e => {
-        e.preventDefault('e.keyCode: ', e.keyCode);
+        e.preventDefault();
     });
 
     document.getElementById('inatForm').addEventListener('submit', e => {
@@ -62,23 +57,25 @@ export const renderInatUser = (modal, createGuide) => {
     if(config.isPortraitMode) {
         inatIdentityInput.addEventListener('focusout', e => {
             const container = document.querySelector('.inat-autocomplete-options-container');
-                if(container) {
-                    setTimeout(() => {
-                        saveInatId(parent, config, createGuide, autocompleteRef);
-                    });
-                    e.preventDefault();
-                }
+               if(container) {
+                  setTimeout(() => {
+                      saveInatId(parent, config, createGuide, autocompleteRef);
+                  });
+                  e.preventDefault();
+               }
         });
     }
 
-    const inatSelector = parent.querySelector('.js-inat-types');
-          inatSelector.addEventListener('click', e => {
-            const type = e.target.id;
-            config.guide.inatId.type = type;
-            config.guide.inatId.param = type === 'user_id' ? 'iNat user ID' : 'iNat project ID';
-    
-            createGuide.setConfig(config); 
-          });
+    const inatSelectors = parent.querySelectorAll('.js-inat-types input');
+          inatSelectors.forEach(inatSelector => {
+            inatSelector.addEventListener('click', e => {
+              const type = e.target.id;
+              config.guide.inatId.type = type;
+              config.guide.inatId.param = type === 'user_id' ? 'iNat user ID' : 'iNat project ID';
+              config.guide.urlType = type === 'user_id' ? 'users' : 'projects';      
+              createGuide.setConfig(config); 
+            })
+        });
 };
 
 const saveInatId = (parent, config, createGuide, autocompleteRef) => {
@@ -102,4 +99,4 @@ const saveInatId = (parent, config, createGuide, autocompleteRef) => {
             // autocompleteRef.destroy();
         }
     }
-}
+};

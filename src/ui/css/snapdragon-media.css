@@ -22,9 +22,9 @@
 /* iPHONE 6,7,8 */
 
 @media (max-width:375px) and (min-height:667px) {
-    .autocomplete {
+    /* .autocomplete {
         height: 8rem !important;
-    }
+    } */
 }
 
 /* Galaxy S5 */
@@ -92,9 +92,6 @@
     body {
         font-size: 1.2em;
     }
-    .snapdragon-intro > div {
-        font-size: 1.2rem;
-    }
     .youtube-icon {
         font-size: 1.8rem !important;
     }
@@ -128,23 +125,11 @@
   }
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   h3 {
-    font-size: 1rem;
-  }
-
-  .modal h1 {
     font-size: .9rem;
-  }
-
-  h2 {
-    font-size: 1rem;
-  }
-
-  h3 {
-    font-size: .8rem;
   }
 
     .quick-fire-branches span {
@@ -355,9 +340,17 @@
     }
 
     .snapdragon-intro {
-      margin: 0 0 0 .5rem;
       display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 0 0 .5rem;
       top: var(--vhStandardBlock, 10vh);
+    }
+
+    .snapdragon-dashboard-main {
+      grid-template-columns: 1fr 1fr;      
+      grid-column-gap: .25rem;
+      align-items: initial;      
     }
 
     .snapdragon-intro.intro-text {
@@ -370,11 +363,6 @@
 
     .main-lesson-grid .header {
       justify-content: flex-start;
-    }
-
-    .snapdragon-intro h4 .fa-youtube, .snapdragon-intro h4 .fa-align-left, .snapdragon-intro h4 .fa-chevron-down {
-      min-width: 1.75rem;
-      max-width: 1.75rem;
     }
 
     .lesson-icon {
@@ -426,6 +414,21 @@
     .home-container .snapdragon-header {
       margin-left: 0;
     }
+
+    .home-container section {
+      margin: 1rem 0;
+    }
+
+    /* .inat-autocomplete-user-container {
+      top: calc(
+        var(--vhRunningBlock, 7.5vh) + 
+        5px
+        + var(--vhStandardBlock, 10vh)
+        + var(--vhRunningBlock, 7.5vh)
+        + var(--vhStandardBlock, 10vh)
+        + 4rem
+        ) !important;
+    } */
 
     .side-lesson-list {
         display: grid;

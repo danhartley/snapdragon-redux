@@ -1,20 +1,18 @@
 <div>
-
-    <div class="snap-rbs inats double-centred-block js-inat-types flex justify-start margin-top">
-      <div>
-        <input type="radio" id="user_id" name="inats" value="user_id" checked>
-        <label class="margin-right" for="user_id">iNaturalist User</label>
-      </div>
-      <div>
-        <input type="radio" id="project_id" name="inats" value="project_id">
-        <label for="project_id">Project</label>
-      </div>
+  <div class="snap-rbs inats double-centred-block js-inat-types flex justify-start padding">
+    <div>
+      <input type="radio" id="user_id" name="inat-user-input" value="user_id" checked>
+      <label class="margin-right" for="user_id">iNaturalist User</label>
     </div>
-
+    <div>
+      <input type="radio" id="project_id" name="inat-user-input" value="project_id">
+      <label for="project_id">Project</label>
+    </div>
+    </div>
     <div class="location-option inat-entry">
         <div class="input-container standard-block bottom-aligned">
             <form id="inatForm" action="#">
-                <input id="inat-identity" type="text" placeholder="Start typing a user or project Id.">
+                <input id="inat-identity" type="text" placeholder="Start typing a user or project Id…" spellcheck="false">
             </form>
         </div>
     </div>

@@ -1,6 +1,6 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import { getPlace, GooglePlaceDetails } from 'geo/geo';
-import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
+import { inatAutocomplete } from 'ui/screens/common/inat/inat-autocomplete';
 import { enums } from 'ui/helpers/enum-helper';
 
 import locationTemplate from 'ui/create-guide-modal/location-template.html';

@@ -6,6 +6,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { renderDeckScore } from 'index-helpers/dashboard/observational-test';
 import { renderLessonQuizScores } from 'index-helpers/dashboard/lesson-quiz';
 import { renderLessonQuizHistoryScores } from 'index-helpers/dashboard/lesson-quiz-history';
+import { renderInatAutocomplete } from 'ui/screens/common/inat/inat-autocomplete-widget';
 
 import dashboardTemplate from 'index-helpers/dashboard/dashboard-template.html';
 
@@ -32,4 +33,6 @@ export const renderDashboard = () => {
   renderDeckScore(deckScore);
   renderLessonQuizScores(score);
   renderLessonQuizHistoryScores(history);
+
+  renderInatAutocomplete(document.querySelector('.inat-autocomplete-container'));
 };
