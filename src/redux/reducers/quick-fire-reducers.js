@@ -8,7 +8,13 @@ const cleanAndReturnIncomingState = state => {
     return quickFire;
 };
 
-export const quickFire = (state = null, action) => {
+export const quickFire = (state = {
+  termScore: {
+    total: 0,
+    correct: 0
+  }
+}
+, action) => {
     switch(action.type) {
         case types.CREATE_QUICKFIRE:
             return cleanAndReturnIncomingState(action.data);
@@ -17,7 +23,22 @@ export const quickFire = (state = null, action) => {
         default:
             return state;
     }
-}
+};
+
+export const quickFireHistory = (state = {
+  total: 0,
+  correct: 0,
+}, action) => {
+  switch(action.type) {
+    case types.UPDATE_QUICKFIRE:
+      return {
+       total: state.total + 1,
+       correct: action.data.termScore.isCorrect ? state.correct + 1 : state.correct 
+      };
+      default:
+        return state;
+  }
+};
 
 export const glossary = (state = null, action) => {
     switch(action.type) {

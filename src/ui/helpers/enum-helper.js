@@ -85,7 +85,10 @@ userEvent.initEnum([
     'EDIT_LESSON',
     'TOGGLE_SPECIES_LIST',
     'PLAY_LESSON_VIDEO',
-    'RETURN_LESSONS'
+    'RETURN_LESSONS',
+    'GO_TO_INTRODUCTION',
+    'GO_TO_DASHBOARD',
+    'GO_TO_LESSONS'
 ]);
 
 class deckState extends Enum {};

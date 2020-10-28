@@ -73,7 +73,7 @@ module.exports = {
       }),
       new CopyPlugin({
         patterns: [
-          { from: './src/ui/css/groups', to: 'css', transform(content) { return csso.minify(content).css; } },
+          // { from: './src/ui/css/groups', to: 'css', transform(content) { return csso.minify(content).css; } },
           { from: './src/static/assets', to: 'static' },          
           { from: './src/static/root', to: ''}
         ],
@@ -89,7 +89,7 @@ module.exports = {
         // https://webpack.js.org/configuration/resolve/#resolvemodules
     },
     devServer: {
-      host: '0.0.0.0',// 0.0.0.0 necessary for service worker to be recognised, localhost for reload
+      host: 'localhost',// 0.0.0.0 necessary for real device, localhost for service worker to be recognised and reload
       disableHostCheck: true,
       writeToDisk: true,
       compress: true

@@ -22,9 +22,9 @@
 /* iPHONE 6,7,8 */
 
 @media (max-width:375px) and (min-height:667px) {
-    .autocomplete {
+    /* .autocomplete {
         height: 8rem !important;
-    }
+    } */
 }
 
 /* Galaxy S5 */
@@ -35,37 +35,12 @@
     }
 }
 
-/* @media (min-width:414px) {
-    .youtube-icon, .accordion-icon {
-        font-size: 1.4rem;
-    }
-    .species-table .youtube-icon, .accordion-icon {
-        font-size: 1.2rem;
-    }
-} */
-
-/* iPHONE 6,7,8 PLUS, iPHONE X, GALAXY S9/S9+ */
-
-/* @media  (max-width:414px) and (min-height:736px),
-        (max-width:375px) and (min-height:812px),
-        (max-width:360px) and (min-height:740px) {
-            body {
-                font-size: 1em;
-            }
-} */
 
 @media (max-height:568px) {
     .test-card .help-txt {
         display: none;
     }
 }
-
-/* @media (min-height: 667px) {
-    .quick-fire .quick-fire-branches .btn-secondary, .quick-fire .quick-fire-branches .btn-secondary:not(:disabled):not(.disabled).active {
-        font-size: .9rem;
-        padding: .5rem;
-    }
-} */
 
 @media (min-width: 576px) {
 }
@@ -117,9 +92,6 @@
     body {
         font-size: 1.2em;
     }
-    .snapdragon-intro > div {
-        font-size: 1.2rem;
-    }
     .youtube-icon {
         font-size: 1.8rem !important;
     }
@@ -153,23 +125,11 @@
   }
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   h3 {
-    font-size: 1rem;
-  }
-
-  .modal h1 {
-    font-size: 1.2rem;
-  }
-
-  h2 {
-    font-size: 1rem;
-  }
-
-  h3 {
-    font-size: .8rem;
+    font-size: .9rem;
   }
 
     .quick-fire-branches span {
@@ -209,25 +169,13 @@
     }
 
     #imageModal .imageSlider .carousel-item, #imageComparisonModal .imageSlider .carousel-item {        
-        /* height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - 300px ); see below (hack) */
         height: calc( (var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
     }
 
     .image-description {
         padding: 1rem 4rem;
-        /* margin-top: -300px; see above (hack) */
         color: black; /* to compensate for layer above (hack) */
     }
-
-    /* .imageSlider .carousel-control-next, .imageSlider .carousel-control-prev {
-        top: 15%;
-        top: calc(
-            (var(--vh, 1vh) * 75 * .5) -
-            (var(--vh, 1vh) * 7.5) -
-            .5rem
-            - 100px
-        );
-    } */
 
     .modal-image .carousel-inner > div:nth-child(1) {
         height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhRunningBlock));
@@ -277,7 +225,7 @@
 
     .inat.snap-switch input[type="text"] {
         margin: 0 .5rem 0 0;
-        color: var(--snap-text-medium-dark);
+        color: var(--snap-text-4);
         padding: 0 .1rem;
     }
 
@@ -291,7 +239,6 @@
     }
 
     #inat-place::placeholder {
-        color: var(--gray);
         font-size: 1rem;
     }
 
@@ -309,7 +256,7 @@
 
     .range-slider > span:nth-child(2) {
         width: fit-content;
-        border: .05rem solid var(--snap-border-lightest);
+        border: .05rem solid var(--snap-border-1);
         padding: .5rem;
     }
 
@@ -331,7 +278,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         padding: 1rem;
-        border-bottom: 1px solid var(--snap-border-lightest);
+        border-bottom: 1px solid var(--snap-border-1);
     }
 
     .iconic-icon {
@@ -341,7 +288,7 @@
     .question-container .mushroom-icon-header svg {
         width: 1.8rem;
         height: 1.8rem;
-        fill: var(--snap-iconic-icon-header);
+        fill: var(--snap-yellow-3);
     }
 
     .species-header {
@@ -363,7 +310,7 @@
     .text-entry input {
         width: 75%;
         padding: 0.5rem;
-        border: 0.05rem solid var(--snap-border-light);
+        border: 0.05rem solid var(--snap-border-3);
     }
 
     .video {
@@ -393,12 +340,29 @@
     }
 
     .snapdragon-intro {
-        padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 0 0 .5rem;
+      top: var(--vhStandardBlock, 10vh);
     }
 
-    .snapdragon-intro h4 .fa-youtube, .snapdragon-intro h4 .fa-align-left, .snapdragon-intro h4 .fa-chevron-down {
-      min-width: 1.75rem;
-      max-width: 1.75rem;
+    .snapdragon-dashboard-main {
+      grid-template-columns: 1fr 1fr;      
+      grid-column-gap: .25rem;
+      align-items: initial;      
+    }
+
+    .snapdragon-intro.intro-text {
+      margin: 2rem;
+    }
+
+    .title {
+      margin-left: 0;
+    }
+
+    .main-lesson-grid .header {
+      justify-content: flex-start;
     }
 
     .lesson-icon {
@@ -407,15 +371,15 @@
         object-fit: none;
     }
 
+    .lesson-list-header {
+      padding: 0 !important;
+    }
+
     .lesson-list-carousel-item {
       border: 3px solid transparent;
       align-items: center;
       display: grid;
       grid-template-columns: 1fr 3fr 1fr;
-    }
-
-    .highlighted-for-review-row {
-      border: 3px solid var(--snap-border-lightest);
     }
 
     .lesson-list-carousel-item > div:nth-child(3) {
@@ -429,6 +393,7 @@
 
     body {
         max-width: 1200px;
+        font-size: .9em;
     }
 
     .side-lesson-list {
@@ -446,9 +411,24 @@
         grid-template-areas: "right left";
     }
 
-    .home-container {
-      display: grid !important;
+    .home-container .snapdragon-header {
+      margin-left: 0;
     }
+
+    .home-container section {
+      margin: 1rem 0;
+    }
+
+    /* .inat-autocomplete-user-container {
+      top: calc(
+        var(--vhRunningBlock, 7.5vh) + 
+        5px
+        + var(--vhStandardBlock, 10vh)
+        + var(--vhRunningBlock, 7.5vh)
+        + var(--vhStandardBlock, 10vh)
+        + 4rem
+        ) !important;
+    } */
 
     .side-lesson-list {
         display: grid;
@@ -473,10 +453,6 @@
         min-width: initial;
         margin: .75rem .5rem .75rem 0;
         padding: .75rem;
-    }
-
-    body {
-        font-size: .9em;
     }
 
     .home-scrolling-container .scrollable {
@@ -568,11 +544,11 @@
 
     .strip:hover, .strip:focus {
         box-shadow: 0 2px 8px transparent;
-        border: 1px solid var(--snap-border-light);
+        border: 1px solid var(--snap-border-3);
     }
 
     .strip:hover button, .strip:focus button, .strip:focus-within button {
-      color: var(--snap-text-medium-dark);
+      color: var(--snap-text-4);
     }
 
     .strip {
@@ -619,8 +595,7 @@
     }
 
     .modal-header-container {
-        padding-bottom: 4px;
-        border-bottom: 1px solid var(--snap-border-light);
+        border-bottom: 5px solid var(--snap-border-3);
     }
 
     .test-card-container .question-header > div {
@@ -629,6 +604,10 @@
 
     .table-header th:nth-child(6), .table-row td:nth-child(6) button {
       position: initial;
+    }
+
+    .header, .footer {
+      padding: 0;
     }
 }
 

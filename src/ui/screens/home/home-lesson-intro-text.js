@@ -36,7 +36,8 @@ export const textSetup = (collection, config) => {
         observableMonths,
         season,
         speciesSummary,
-        lessonIntro
+        lessonIntro,
+        still: collection.still
     };
 
     DOM.rightBody.innerHTML = '';

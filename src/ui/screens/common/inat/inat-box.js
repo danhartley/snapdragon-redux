@@ -4,7 +4,7 @@ import { getInatTaxonStats, getInatPlaceId } from 'api/inat/inat';
 import { renderWiki } from 'wikipedia/wiki';
 import { renderWikiModal } from 'wikipedia/wiki-modal';
 
-import inatBoxTemplate from 'ui/screens/common/inat-box-template.html';
+import inatBoxTemplate from 'ui/screens/common/inat/inat-box-template.html';
 
 export async function renderInatDataBox(parent, item, config, mode) {
 

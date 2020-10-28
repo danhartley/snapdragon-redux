@@ -7,12 +7,12 @@ export const observeStore = (store, select, onChange, domain, layout) => {
 
       hasStateSignificantlyChanged = nextState !== currentState;
 
-      if(currentState && Object.is(currentState.index,0)) {            
-        let areEqual = true;
-            areEqual = areEqual && Object.is(nextState.index, currentState.index);
-            areEqual = areEqual && Object.is(nextState.isLessonPaused, currentState.isLessonPaused);
-        hasStateSignificantlyChanged = !areEqual;
-      }
+      // if(currentState && Object.is(currentState.index,0)) {            
+      //   let areEqual = true;
+      //       areEqual = areEqual && Object.is(nextState.index, currentState.index);
+      //       areEqual = areEqual && Object.is(nextState.isLessonPaused, currentState.isLessonPaused);
+      //   hasStateSignificantlyChanged = !areEqual;
+      // }
 
       if(currentState && nextState) {
         switch(layout) {

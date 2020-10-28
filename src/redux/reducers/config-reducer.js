@@ -1,3 +1,4 @@
+import { enums } from 'ui/helpers/enum-helper';
 import { types } from 'redux/actions/action-types';
 import { config as initialConfig } from 'snapdragon-config/lesson-config';
 
@@ -34,7 +35,7 @@ export const user = (state = null, action) => {
     }
 };
 
-export const userAction = (state = null, action) => {
+export const userAction = (state = enums.userEvent.GO_TO_DASHBOARD, action) => {
     switch(action.type) {
         case types.CLICK_EVENT:
             return action.data;

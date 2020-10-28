@@ -6,7 +6,6 @@ import { utils } from 'utils/utils';
 import { enums } from 'ui/helpers/enum-helper';
 import { renderLessonIntro } from 'ui/screens/home/home-lesson-intro';
 import { renderEditLesson } from 'ui/screens/lists/lesson-edit';
-import { lessonListScrollHandler } from 'ui/screens/lists/lesson-list-scroll-handler';
 import { videoHandler } from 'ui/screens/lists/video-handler';
 
 export const onLoadLessonViewState = (collection, videoPlayer) => {
@@ -14,10 +13,10 @@ export const onLoadLessonViewState = (collection, videoPlayer) => {
   const taxa = collection.iconicTaxa ? collection.iconicTaxa.map(taxon => taxon.common).join(', ') : '';
 
   collection.taxa = taxa;
-  collection.hasVideo = collection.video && !isEmpty(collection.video) ? true : false;
+  collection.hasVideo = collection.hasVideo || collection.video && !isEmpty(collection.video) ? true : false;
   collection.showVideoIconClass = collection.hasVideo ? '' : 'hide-important';
   collection.videoState = videoHandler.setVideoState(videoPlayer || [], collection);
-  collection.reviewState = 'Lesson Quiz';
+  collection.reviewState = 'Lesson quiz';
 
   collection.hasTermsClass = collection.terms && Array.isArray(collection.terms) && collection.terms.length > 0 ? '' : 'hide-important';
   collection.isCollectionEditableClass = '';
@@ -87,10 +86,6 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
       icon.classList.add('youtube-green-fg');
       const chevron = document.querySelector(`.js-lesson-list-chevron[data-lesson-id="${icon.dataset.lessonId}"]`);
             chevron.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
-      if(config.isPortraitMode) {
-        const lessonsIcon = document.querySelector('.js-lessons');
-              lessonsIcon.classList.remove('active-icon');
-      }
     }
 
     let siblingChevron;
@@ -99,6 +94,9 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
       renderLessonIntro(lesson);
       siblingChevron = icon.parentElement.parentElement.parentElement.children[1].children[0].children[1];
       if(isYoutubeIcon) {
+        await import('ui/screens/lists/lesson-state-handler').then(module => {
+          module.lessonStateHandler.recordUserAction(isYoutubeIcon ? enums.userEvent.PLAY_LESSON_VIDEO : enums.userEvent.TOGGLE_SPECIES_LIST);
+        });
         if(state.hideSpeciesList) {
           siblingChevron.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
         }
@@ -109,6 +107,14 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
           icon.innerHTML = `<i class="fas fa-chevron-down" data-lesson-id="${lesson.id}"></i>`;
         } else if(!state.revealSpeciesList) {
           icon.innerHTML = `<i class="fas fa-chevron-up" data-lesson-id="${lesson.id}"></i>`;
+        }
+        // load intro text
+        if(config.isLandscapeMode) {
+          renderLessonIntro(lesson, true);
+          await import('ui/screens/lists/lesson-state-handler').then(module => {
+            module.lessonStateHandler.recordUserAction(enums.userEvent.TOGGLE_SPECIES_LIST);
+          });
+          // load intro text
         }
       }
     }
@@ -186,7 +192,6 @@ const loadAndDisplaySpeciesList = async(config, icon, lesson, container, isYoutu
   Array.from(icon.parentElement.children).forEach(child => child.dataset.selected = true);
 
   await import('ui/screens/lists/lesson-state-handler').then(module => {
-    module.lessonStateHandler.recordUserAction(isYoutubeIcon ? enums.userEvent.PLAY_LESSON_VIDEO : enums.userEvent.TOGGLE_SPECIES_LIST);
     module.lessonStateHandler.changeRequest({
       requestType: enums.lessonState.RENDER_SPECIES_LIST,
       requestArgs: { lesson, container }

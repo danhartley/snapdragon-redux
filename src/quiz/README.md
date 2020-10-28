@@ -30,8 +30,6 @@ Conventions: CSS classes used as selectors have js- suffix
 
 ## IDE dependencies
 
-
-
 ## Files interacting with main project
 
 quiz-modal.js

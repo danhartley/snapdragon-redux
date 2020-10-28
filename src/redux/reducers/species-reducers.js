@@ -15,7 +15,8 @@ export const collections = (state = [], action) => {
             });
             return cols;
         case types.UPDATE_COLLECTIONS: {            
-            return state ? [ ...state, ...action.data ] : action.data;
+            return action.data;
+            // return state ? [ ...state, ...action.data ] : action.data;
         }
         case types.UPDATE_COLLECTION: {
 

@@ -1,0 +1,16 @@
+<div class="filter-sets-option-block">    
+  <div class="filter-options">
+      <div class="flashcard-options">
+          <div class="dropdown">
+              <button class="btn smaller-text snap-btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Climate change decks
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-set="{{ sets }}">
+                  <div id="{{ set.title }}" class="dropdown-item flex centred-block">
+                    <a href="#">{{ set.title }} <div><span class="smaller-text margin-left">({{ set.count }})</span></div></a>
+                  </div>
+              </div>
+          </div>
+      </div>        
+  </div>
+</div>

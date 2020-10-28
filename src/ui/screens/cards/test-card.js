@@ -102,44 +102,44 @@ export const renderTestCardTemplate = (collection, context) => {
         return { card, icon };
     }
 
-    testCardIcon.addEventListener('click', async event => {
+    // testCardIcon.addEventListener('click', async event => {
         
-        const speciesContainer = modal.querySelector('.js-species-container');
-        const taxonContainer = modal.querySelector('.js-taxon-container');
+    //     const speciesContainer = modal.querySelector('.js-species-container');
+    //     const taxonContainer = modal.querySelector('.js-taxon-container');
 
-        const renderSpeciesCard = async () => {
+    //     const renderSpeciesCard = async () => {
 
-            renderCard(collection, 'SWAP_OUT', item, speciesContainer, false);
+    //         renderCard(collection, 'SWAP_OUT', item, speciesContainer, false);
                     
-            setTimeout(() => {            
+    //         setTimeout(() => {            
 
-                hideCurrentCard(testCardContainer, testCard);
+    //             hideCurrentCard(testCardContainer, testCard);
 
-                const { card: speciesCard, icon: speciesIcon } = showNextCard(speciesContainer, '.js-species-card');
+    //             const { card: speciesCard, icon: speciesIcon } = showNextCard(speciesContainer, '.js-species-card');
 
-                speciesIcon.addEventListener('click', async event => {
+    //             speciesIcon.addEventListener('click', async event => {
 
-                    item.lichen 
-                        ? renderNonTaxonCard('SWAP_OUT', item.keyTrait, taxonContainer, item.images.find(i => i.starred) ? item.images.find(i => i.starred).url : item.images[0].url)
-                        : renderTaxonCard(collection, 'SWAP_OUT', item, taxonContainer, false);
+    //                 item.lichen 
+    //                     ? renderNonTaxonCard('SWAP_OUT', item.keyTrait, taxonContainer, item.images.find(i => i.starred) ? item.images.find(i => i.starred).url : item.images[0].url)
+    //                     : renderTaxonCard(collection, 'SWAP_OUT', item, taxonContainer, false);
                     
-                    hideCurrentCard(speciesContainer, speciesCard);
+    //                 hideCurrentCard(speciesContainer, speciesCard);
 
-                    const { card: taxonCard, icon: taxonIcon } = item.lichen
-                        ? showNextCard(taxonContainer, '.js-non-taxon-card')
-                        : showNextCard(taxonContainer, '.js-taxon-card');
+    //                 const { card: taxonCard, icon: taxonIcon } = item.lichen
+    //                     ? showNextCard(taxonContainer, '.js-non-taxon-card')
+    //                     : showNextCard(taxonContainer, '.js-taxon-card');
 
-                    taxonIcon.addEventListener('click', event => {
-                        hideCurrentCard(taxonContainer, taxonCard);
-                        showNextCard(testCardContainer, '.js-test-card');
-                    });
-                });
+    //                 taxonIcon.addEventListener('click', event => {
+    //                     hideCurrentCard(taxonContainer, taxonCard);
+    //                     showNextCard(testCardContainer, '.js-test-card');
+    //                 });
+    //             });
 
-            }, 500);
-        };
+    //         }, 500);
+    //     };
 
-        await renderSpeciesCard();
-    });
+    //     await renderSpeciesCard();
+    // });
 
     renderIcon(item.taxonomy, modal);
 

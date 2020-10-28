@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest-webpack",
     "start:dev": "webpack-dev-server --config ./webpack.dev.js --open-page 'dist/index.html'  & jest --watchAll",
+    "start:notestdev": "webpack-dev-server --config ./webpack.dev.js --open-page 'dist/index.html'",
     "start:device": "webpack-dev-server --config ./webpack.device.js --open-page 'dist/index.html'",
     "start:prod": "webpack-dev-server --config ./webpack.prod.js --open-page 'dist/index.html'",
     "start:admin": "webpack-dev-server --config ./webpack.admin.js --open-page 'dist/collection-builder.html'",
@@ -118,6 +119,7 @@
     "jest": "^26.3.0",
     "jest-webpack": "^0.5.1",
     "jquery": "^3.3.1",
+    "logrocket": "^1.0.12",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
     "nodemon-webpack-plugin": "^4.3.2",
@@ -145,6 +147,7 @@
     "webpack-merge": "^4.2.2",
     "workbox-cli": "^5.1.3",
     "workbox-webpack-plugin": "^5.1.3",
+    "workbox-window": "^5.1.4",
     "yup": "^0.29.1"
   },
   "dependencies": {

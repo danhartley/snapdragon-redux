@@ -36,7 +36,15 @@ test('intial state of the app should be consistent', () => {
     const { counter, score, history } = store.getState();
     expect(counter).toEqual(null);
     expect(score).toEqual(R.clone(progressState.score));
-    expect(history).toEqual(null);
+    expect(history).toEqual({
+      total: 0,
+      correct: 0,
+      scores: [{
+          total: 0,
+          correct: 0,
+        }
+      ]    
+    });
 });
 
 // test('when user selects a collection state should be populated', () => {

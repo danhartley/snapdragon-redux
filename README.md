@@ -3,25 +3,21 @@ Species recognition and recall
 
 https://www.learn-the-planet.com/
 
-## Chrome support
+## Browser support
 
-Requires recent version of Chrome
+Dependent on recent versions
 
-## Firefox support
+## Service workers
 
-Requires changing a config setting:  dom.moduleScripts.enabled setting in about:config
+Require a secure context. This includes localhost but not (out of the box) 0.0.0.0.
+
+See https://stackoverflow.com/questions/52299246/cant-find-serviceworker-in-navigator-anymore
 
 ### instructions
-
-https://webpack.js.org/guides/getting-started/
-
-### help
 
 [build the app]: npm run dev or npm run watch
 
 [build and run the app]: npm run start:dev
 
 [run the tests]: npm run watch
-
-NB: require babel-plugin-transform-object-rest-spread for the spread operator
 

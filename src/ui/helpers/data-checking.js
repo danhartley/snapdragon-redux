@@ -207,6 +207,20 @@ const getImageRightsUrl = url => {
     return template;
 }
 
+const getLatestScore = (history, score) => {
+  
+  if(!history.scores || history.scores.length === 0) return score;
+
+  let _score = score.total > 0 ? score : history.scores[history.scores.length - 1];
+      if(_score.total === 0) {
+        if(history.scores[history.scores.length - 2]) {
+          _score = history.scores[history.scores.length - 2];
+        }
+      }
+
+  return _score;
+}
+
 export const itemProperties = {
     getVernacularName,
     getGenusName,
@@ -223,5 +237,6 @@ export const itemProperties = {
     getFamilyStats,
     getFileNameFromImageUrl,
     getImageRightsUrl,
-    getRootTraitValue
+    getRootTraitValue,
+    getLatestScore
 };

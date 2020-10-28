@@ -23,7 +23,7 @@ module.exports = merge(common, {
       template: './src/checklist/checklist.html',
       chunks: ['checklist'],
       inject: true
-    }),   
+    }),
   ],
   module: {
     rules: [

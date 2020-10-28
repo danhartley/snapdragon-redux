@@ -27,15 +27,18 @@
 <div class="location-filter-options">            
     <div>
       <div class="black-text">Species by season</div>
-      <div class="season snap-switch margin-top margin-bottom">
-          <div class="embedded-switch">
-              <div class="txt-left"><span>{{ observableMonths }}</span></div>
-              <div class="snap-switch-slider left js-snap-switch-slider">
-                  <div></div>
-              </div>
-              <div class="txt-right"><span>All Year</span></div>
-          </div>
-      </div>  
+
+      <div class="snap-rbs seasons double-centred-block js-season-types flex justify-start margin-top">
+        <div>
+          <input type="radio" id="months" name="season" value="months" checked>
+          <label class="margin-right" for="months">{{ observableMonths }}</label>
+        </div>
+        <div>
+          <input type="radio" id="all_year" name="season" value="all_year">
+          <label for="all_year">All year</label>
+        </div>
+      </div>
+
     </div>
     <div>
       <div class="black-text">Species by observation count</div>

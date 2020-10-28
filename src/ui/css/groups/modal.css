@@ -13,10 +13,6 @@
   z-index: 1049; /* wiki is 1050 */
 }
 
-.modal-header-container {
-  padding-bottom: 4px;
-}
-
 .modal-header {
     padding: 0;
     border-radius: 0;
@@ -24,19 +20,19 @@
     align-items: center;
     justify-content: space-between;
     height: var(--vhRunningBlock,7.5vh);
-    background-color: var(--snap-landscape);
     border: none;
+    background-color: var(--snap-green-2);
 }
 
 .modal-footer {
   height: var(--vhRunningBlock,7.5vh);
   padding: 0;
-  background-color: var(--snap-landscape);
   border: none;
+  background-color: var(--snap-green-2);
 }
 
 .modal-title {
-  color: var(--snap-text-dark);
+  color: var(--snap-text-4);
   text-transform: uppercase;
   margin: 0 1rem; 
   height: initial;
@@ -58,8 +54,8 @@
     display: none;
   }
 
-  .modal-body .language-options button {
-    color: var(--snap-text-black);
+  .language-options button, .flashcard-options button {
+    color: var(--snap-text-6);
     width: 100%;
     margin: 0;
     display: initial;
@@ -71,12 +67,12 @@
   }
 
   .dropdown-item:focus, .dropdown-item:hover {
-    columns: var(--snap-text-medium-dark);
-    background-color: var(--snap-content-background);
+    columns: var(--snap-text-4);
+    background-color: var(--snap-background-1);
   }
 
   .modal-body .language-options .dropdown-menu.show{
-    background-color: var(--snap-species-highlight-background);
+    background-color: var(--snap-background-2);
   }
 
   .modal-text hr {
@@ -131,7 +127,7 @@
 }
 
 .modal-body {
-  background-color: var(--snap-content-background);
+  background-color: var(--snap-background-1);
   height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh));
   padding: 0;
   margin: 0;
@@ -179,11 +175,11 @@
   }
 
   .basic-modal .modal-content {
-    color: var(--snap-text-dark);
+    color: var(--snap-text-4);
   }
 
   .basic-modal .modal-body {
-    color: var(--snap-text-dark);
+    color: var(--snap-text-4);
     padding: 0 .5rem;
   }
   
@@ -200,19 +196,6 @@
     margin: calc(var(--vhRunningBlock) + var(--vhStandardBlock)) auto auto auto;    
   }
 
-  #badgeListModal .modal-content, #badgeListModal .modal-body {
-    background-color: var(--snap-progress-bg);
-  }
-
-  #badgeListModal .modal-header {
-    color: var(--snap-text-dark);
-    background-color: var(--snap-border-medium);
-  }
-
-  #badgeListModal .modal-footer.double-centred-block {
-    background-color: var(--snap-border-medium);
-  }
-
   #badgeListModal .modal-body {
     height: calc(var(--vhDoubleStandardBlock, 20vh) * 3);
     padding: .5rem;
@@ -224,7 +207,7 @@
   }
 
   #badgeListModal .modal-text {  
-    color: var(--snap-text-medium-dark);
+    color: var(--snap-text-4);
   }
 
 .basic-modal .definition.card {
@@ -246,25 +229,19 @@
 
   .non-taxa .dropdown-menu {
     width: 15rem !important;
-    background-color: var(--snap-dd-non-taxa-bg-intial);
+    background-color: var(--snap-brown-2);
   }
   
   .non-taxa a.dropdown-item.active {
-    background-color: var(--snap-dd-non-taxa-bg-active);
-  }
-  
-  a.dropdown-item {
-    color: var(--snap-text-medium-dark);
-    padding: 0.5rem 0 0.5rem 1rem;
-    cursor: pointer;
+    background-color: var(--snap-brown-1);
   }
   
   .non-taxa a.dropdown-item:hover {
-    background-color: var(--snap-dd-non-taxa-bg-hover);
+    background-color: var(--snap-brown-1);
   }
 
   .nav-icons .inactive-icon {
-    color: var(--snap-inactive);
+    color: var(--snap-text-3);
     cursor: not-allowed;
   }
   
@@ -294,7 +271,6 @@
     flex-direction: column;
     margin: 0 .5rem;
     justify-content: space-evenly;
-    background-color: var(--snap-landscape);
   }
   
   .non-taxa .btn.btn-secondary {
@@ -312,7 +288,6 @@
   
   .non-taxon .btn.btn-secondary {
     width: 100%;
-    background-color: var(--snap-landscape);
     border-radius: unset;
   }
   
@@ -351,15 +326,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }
-  
-  /* .tiles {
-    display: grid;
-    height: 50%;
-    grid-auto-flow: column;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  } */
-  
+
   .squares > div {
     display: grid;
     justify-self: center;
@@ -423,12 +390,12 @@
   }
 
   .strips .strip.snap-success {
-    background-color: var(--snap-success-medium);
+    background-color: var(--snap-success-2);
     box-shadow: 0 2px 8px rgba(0,0,0,.8);
   }
   
   .strips .strip.snap-alert {
-    background-color: var(--snap-alert-medium);
+    background-color: var(--snap-alert-2);
     box-shadow: 0 2px 8px rgba(0,0,0,.8);
     border: none;
   }
@@ -453,30 +420,6 @@
     margin-top: 1.25rem;
   }
 
-  /* .taxon-highlight {
-    background-color: var(--snap-taxon-card-background);
-    padding: 0.5rem;
-    margin: -0.5rem -0.5rem 0 -0.5rem;
-    display: flex;
-    justify-content: right;
-  }
-  
-  .taxon-highlight > div:nth-child(1) {
-    flex: 1;
-    align-self: center;
-  }
-  
-  .taxon-highlight > div:nth-child(2) {
-    align-self: center;
-  }
-  
-  .taxon-highlight img {
-    height: 5.5rem;
-    width: 5.5rem;
-    margin: 0 0 0 1rem;
-    object-fit: cover;
-  } */
-
   .species-header img {
     filter: grayscale(80%);
     object-fit: scale-down;
@@ -494,7 +437,7 @@
     display: grid;
     grid-template-columns: 2fr 2fr 3fr;
     grid-gap: .5rem;
-    border-bottom: .03rem solid var(--snap-dd-non-taxa-bg-hover);
+    border-bottom: .03rem solid var(--snap-brown-1);
     font-size: .8rem;
   }
   
@@ -526,17 +469,17 @@
     display: inline-block;
     cursor: pointer;
     width: fit-content;
-    background-color: var(--snap-block-light);
-    color: var(--snap-text-dark);
+    background-color: var(--snap-background-2);
+    color: var(--snap-text-4);
     margin: 0 .5rem 0 0;
     padding: .25rem .5rem;
     letter-spacing: .1rem;
     border-radius: .2rem;
-    border: .05rem solid var(--snap-text-dark);  
+    border: .05rem solid var(--snap-text-4);  
   }
   
   .block.snap-icon-btn {
-    border: .05rem solid var(--snap-text-dark);
+    border: .05rem solid var(--snap-text-4);
     padding: .25rem .5rem;
   }
   
@@ -554,13 +497,13 @@
   }
   
   .pool .block.active {
-    color: var(--snap-text-light);
+    color: var(--snap-text-1);
     background-color: rgb(128, 128, 128);
   }
   
   .pool .block.correct {
-    color: var(--snap-text-light);
-    background-color: var(--snap-success);
+    color: var(--snap-text-1);
+    background-color: var(--snap-success-3);
   }
   
   span.correct {
@@ -568,12 +511,12 @@
   }
   
   .block.snap-success, .block.snap-alert {
-    color: var(--snap-text-light) !important;
-    background-color: var(--snap-success) !important;
+    color: var(--snap-text-1) !important;
+    background-color: var(--snap-success-3) !important;
   }
   
   .block.snap-alert {
-    background-color: var(--snap-alert) !important;
+    background-color: var(--snap-alert-3) !important;
   }
   
   .btn.snap-alert {
@@ -581,7 +524,7 @@
   }
   
   .block.white {
-    color: var(--snap-text-dark);
+    color: var(--snap-text-4);
   }
   
   .blocks button {
@@ -604,30 +547,30 @@
   .species-answer,
   .btn-placeholder {
     text-align: center;
-    border: 1px solid var(--snap-border-light);
+    border: 1px solid var(--snap-border-3);
   }
   
   .species-question.btn,
   .btn-placeholder.btn {
-    color: var(--snap-text-dark);
-    background-color: var(--snap-block-light);
+    color: var(--snap-text-4);
+    background-color: var(--snap-background-2);
   }
   
   .species-answer {
     text-align: center;
-    color: var(--snap-text-dark);
-    background-color: var(--snap-block-light);
-    border-left: 1px solid var(--snap-border-light);
-    border-right: 1px solid var(--snap-border-light);
-    border-bottom: 1px solid var(--snap-border-light);
+    color: var(--snap-text-4);
+    background-color: var(--snap-background-2);
+    border-left: 1px solid var(--snap-border-3);
+    border-right: 1px solid var(--snap-border-3);
+    border-bottom: 1px solid var(--snap-border-3);
   }
   
   .answer-box-success .icon {
-    color: var(--snap-success);
+    color: var(--snap-success-3);
   }
   
   .answer-box-alert .icon {
-    color: var(--snap-alert);
+    color: var(--snap-alert-3);
   }
 
   .species-card-images,
@@ -643,7 +586,7 @@
 
 
 .attribution-layer {
-  color: var(--snap-text-light);
+  color: var(--snap-text-1);
 }
 
 .rights-attribution {
@@ -681,7 +624,7 @@
 .rights-link {
   grid-template-columns: 2rem auto 2rem;
   height: var(--vhRunningBlock);
-  background-color: rgb(166, 177, 155);
+  background-color: var(--snap-green-3);
   display: grid;
 }
 
@@ -706,7 +649,7 @@
 .calendar-container {
   display: flex;
   align-items: center;
-  border-right: 1px solid var(--snap-border-lightest);
+  border-right: 1px solid var(--snap-border-1);
   justify-content: center;
 }
 
@@ -778,7 +721,7 @@
 }
 
 .score-summary-row {
-  border-bottom: .3rem solid var(--snap-content-background);
+  border-bottom: .3rem solid var(--snap-background-1);
   padding: 1rem 0;
 }
 
@@ -791,7 +734,6 @@ button.score-summary-row {
 }
 
 .score-summary-row.species {
-  background-color: var(--snap-header-background);
   border: none;
   display: flex;
   width: 100%;
@@ -802,7 +744,7 @@ button.score-summary-row {
   background-color: initial;
   font-size: initial;
   letter-spacing: initial;
-  background-color: var(--snap-row-background);
+  background-color: var(--snap-background-1);
 }
 
 .score-summary-row > div:nth-child(1), .score-summary-row > div:nth-child(3) {
@@ -854,7 +796,7 @@ button.score-summary-row {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  border-bottom: .03rem solid var(--snap-dd-non-taxa-bg-hover);
+  border-bottom: .03rem solid var(--snap-brown-1);
 }
 
 .score-summary-row.in-columns > div > div:nth-child(2) > div {
@@ -866,16 +808,16 @@ button.score-summary-row {
   min-width: calc(1rem + 98px);
   display: flex;
   justify-content: center;
-  border: 1px solid var(--snap-border-lightest);
+  border: 1px solid var(--snap-border-1);
   margin-right: .5rem;
 }
 
 .score-summary-row.in-columns div[data-is-true="true"] > div:nth-child(2) {
-  color: var(--snap-success);
+  color: var(--snap-success-3);
 }
 
 .score-summary-row.in-columns div[data-is-wrong-answer="true"] {
-  color: var(--snap-alert); 
+  color: var(--snap-alert-3); 
 }
 
 .score-summary-row > div:nth-child(1) svg {
@@ -891,7 +833,7 @@ button.score-summary-row {
 
 .score-summary-row > div:nth-child(1)[data-is-true="false"] svg:nth-child(2) {
   display: initial;
-  color: var(--snap-alert);
+  color: var(--snap-alert-3);
   color: rgba(183, 12, 21,.5);
   font-size: 1.5rem;
 }
@@ -950,7 +892,7 @@ button.score-summary-row {
 }
 
 .quick-fire .btn-group >.btn {
-  background-color: var(--snap-snap-action-btn);
+  background-color: var(--snap-background-2);
   margin: 0 0 .5rem 0;
   border-radius: .25rem !important;
   letter-spacing: .03rem;
@@ -960,18 +902,18 @@ button.score-summary-row {
 }
 
 .quick-fire .btn-group >.btn.active {
-  background-color: var(--snap-text-medium-dark-hover);
-  color: var(--snap-text-light);
+  background-color: var(--snap-text-4-hover);
+  color: var(--snap-text-1);
 }
 
 .quick-fire .quick-fire-options .btn-secondary {
-  border: 1px solid var(--snap-collection-active);
+  border: 1px solid var(--snap-green-4);
 }
 
 .quick-fire .quick-fire-options .btn-secondary:not(:disabled):not(.disabled).active {
-  color: var(--snap-text-light);
-  background-color: var(--snap-tertiary-background);
-  border: 1px solid var(--snap-border-light);
+  color: var(--snap-text-1);
+  background-color: var(--snap-green-5);
+  border: 1px solid var(--snap-border-3);
 }
 
 .quick-fire .btn {  
@@ -983,7 +925,7 @@ button.score-summary-row {
 }
 
 .quick-fire-summary-row.card {
-  background-color: var(--snap-row-background);
+  background-color: var(--snap-background-1);
   text-align: left;
   cursor: pointer;
 }
@@ -997,16 +939,16 @@ button.score-summary-row {
 }
 
 .quick-fire .nav-item a:hover {
-  color: var(--snap-text-medium-dark);
-  background-color: var(--snap-btn-hover);
+  color: var(--snap-text-4);
+  background-color: var(--snap-background-2);
 }
 
 .quick-fire .nav-item:nth-child(1) a:hover {
-  background-color: var(--snap-success-light);
+  background-color: var(--snap-success-1);
 }
 
 .quick-fire .nav-item:nth-child(2) a:hover {
-  background-color: var(--snap-alert-light);
+  background-color: var(--snap-alert-1);
 }
 
 .quick-fire .accordions-container {

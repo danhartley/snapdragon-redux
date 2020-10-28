@@ -1,11 +1,10 @@
-import { user } from "firebase-functions/lib/providers/auth";
-
-const getInatSpeciesObservations = (collection) => {
+const getInatSpeciesObservations = collection => {
     let observations = collection.results;
     return observations;
 };
 
-const getInatObservationsById = async (userId = 19829) => {    
+const getInatObservationsById = async (userId = 19829) => {
+    // also danielhartly e.g. all records: https://api.inaturalist.org/v1/observations?user_id=danielhartley&order=desc&order_by=created_at
     const collectionUrl = `https://api.inaturalist.org/v1/observations?user_id=${userId}&order=desc&order_by=created_at`;
     const response = await fetch(collectionUrl);
     const json = await response.json();
@@ -54,8 +53,16 @@ const getTaxonDataIncPhotos = async (name, userId = 19829) => {
     }
 }; 
 
+const getUserOrProjectDashboard = async (username = 'danielhartley') => {
+  const url = `https://api.inaturalist.org/v1/users/autocomplete?q=${username}`;
+  const response = await fetch(url);
+  const json = await response.json();
+  return json;
+};
+
 export const inat = {
     getInatImages,
     getInatObservations,
-    getTaxonDataIncPhotos
+    getTaxonDataIncPhotos,
+    getUserOrProjectDashboard
 }

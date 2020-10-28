@@ -1,7 +1,6 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import { getPlace, GooglePlaceDetails } from 'geo/geo';
-import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
-import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
+import { inatAutocomplete } from 'ui/screens/common/inat/inat-autocomplete';
 import { enums } from 'ui/helpers/enum-helper';
 
 import locationTemplate from 'ui/create-guide-modal/location-template.html';
@@ -128,30 +127,18 @@ export const renderLocation = (modal, createGuide) => {
             autocompleteRef.destroy();
     });
 
-    const idSwitch = parent.querySelector('.js-snap-switch-slider');
-
-    const switchCallback = position => {
-
-        const config = createGuide.getConfig();
-
-        const currentType = config.guide.season.type;
-
-        if(position === 'right') {
-            config.guide.season.type = 'all_year';
-        } else {
-            config.guide.season.type = 'months';
-        }
-
-        createGuide.setConfig(config);
-        
-        if(config.guide.season.type !== currentType) {
-            createGuide.saveStep('SEASON');
-        }        
-    };
+    const seasonSelector = parent.querySelector('.js-season-types');
+          seasonSelector.addEventListener('click', e => {
+            const type = e.target.id;
+            const config = createGuide.getConfig();
+                  config.guide.season.type = type;
+            createGuide.setConfig(config);
+            if(config.guide.season.type !== type) {
+              createGuide.saveStep('SEASON');
+            }  
+          });
 
     const position = config.guide.season.type === 'months' ? 'left' : 'right';
-
-    switchHandler(idSwitch, position, switchCallback);
 
     const noOfRecords = document.querySelector('.js-location-no-of-records');
           noOfRecords.addEventListener('change', e => {

@@ -160,6 +160,7 @@ export const buildTable = (collection, args) => {
 
     const headerRow = document.createElement('tr');
           headerRow.classList.add('table-header');
+          headerRow.dataset.taxon = collection.taxa;
     const imageHeader = document.createElement('th');
     const speciesHeader = document.createElement('th');
     const familyHeader = document.createElement('th');
