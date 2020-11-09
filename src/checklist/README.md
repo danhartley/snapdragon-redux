@@ -23,3 +23,11 @@ https://github.com/GoogleChrome/lighthousecd
 ## External dependencies
 
 ## IDE dependencies
+
+## CV update
+
+Copy build files to /wiki
+Rename checklist.html to index.html
+Make src paths relative i.e. / becomes ./
+Push
+PR to gh-pages

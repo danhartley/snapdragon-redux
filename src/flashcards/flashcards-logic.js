@@ -77,7 +77,7 @@ export const flashcardsLogic = (config, parent = document.querySelector('body'))
   const nextCard = () => {
     
     cardIndex = (cardIndex + 1) % currentDeck.length;
-    flipToFront();    
+    // flipToFront();    
 
     updateSource(config);
   };
@@ -87,7 +87,7 @@ export const flashcardsLogic = (config, parent = document.querySelector('body'))
     if (cardIndex > 0)
       cardIndex = (cardIndex - 1);
     else if (cardIndex == 0) cardIndex = currentDeck.length-1;
-    flipToFront();
+    // flipToFront();
 
     updateSource(config);
   };
@@ -161,9 +161,11 @@ export const flashcardsLogic = (config, parent = document.querySelector('body'))
       case 'front':
         flipToFront();
         card.classList.remove('rotate');
+        card.focus();
         break;
       case 'back':
         flipToBack();
+        card.focus();
         card.classList.add('rotate');
         break;
     }
@@ -223,23 +225,23 @@ export const flashcardsLogic = (config, parent = document.querySelector('body'))
   openDeck();
 
   document.addEventListener("keyup", e => {
-      e.preventDefault();      
-      switch(e.key) {
-        case 'ArrowLeft':
-          prevCard();
-          prev.focus();
-          forceFlipToFront();          
-          break;
-        case 'ArrowRight':
-          nextCard();
-          next.focus();
-          forceFlipToFront();
-          break;
-        case 'ArrowUp':
-        case 'ArrowDown':
-          flip();
-          flipper.focus();
-          break;
-      }
+    e.preventDefault();
+    switch(e.key) {
+      case 'ArrowLeft':
+        prevCard();
+        prev.focus();
+        forceFlipToFront();          
+        break;
+      case 'ArrowRight':
+        nextCard();
+        next.focus();
+        forceFlipToFront();
+        break;
+      case 'ArrowUp':
+      case 'ArrowDown':
+        flip();
+        flipper.focus();
+        break;
+    }
   });
 };

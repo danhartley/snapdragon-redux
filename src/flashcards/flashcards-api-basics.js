@@ -44,7 +44,7 @@ export const basicsCards = [
   },
   {
     term: 'Temperature on Earth is cyclical (moving in and out of ice ages) over what period?',
-    definition: 'Every 100,000 years. During the last 800,000 years, huge glacial sheets have appeared about every 100,000 years; they grow for 90,000 years, then collpase over 10,000.',
+    definition: 'Every 100,000 years. During the last 800,000 years, huge glacial sheets have appeared about every 100,000 years; they grow for 90,000 years, then collapse over 10,000.',
     author: 'earth observatory (NASA)', 
     source: 'https://earthobservatory.nasa.gov/features/GlobalWarming/page3.php'
   },
