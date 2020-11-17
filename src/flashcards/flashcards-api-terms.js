@@ -33,7 +33,14 @@ export const termsCards = [
   {
     term: 'What is phenology?',
     definition: 'The study of periodic plant and animal life cycle events and how these are influenced by seasonal and interannual variations in climate, as well as habitat factors (such as elevation).',
+    author: 'Wikipedia',
     source: 'https://en.wikipedia.org/wiki/Phenology'
+  },
+  {
+    term: 'What is the Kaya identity?',
+    definition: 'An identity stating that the total emission level of the greenhouse gas CO₂ can be expressed as the product of 4 factors: human population, GDP per capita, energy intensity (per unit of GDP), and carbon intensity (emissions per unit of energy consumed).',
+    author: 'Wikipedia',
+    source: 'https://en.wikipedia.org/wiki/Kaya_identity'
   },
   {
     term: 'Explain evapotranspiration.',
@@ -48,6 +55,12 @@ export const termsCards = [
   {
     term: 'What is permafrost?',
     definition: 'Any ground, on land or under the ocean, that remains frozen for at least two consecutive years. Permanently frozen ground.'
+  },
+  {
+    term: 'What is effective radiative forcing?',
+    definition: 'Radiative forcing measures the difference between incoming energy and the energy radiated back to space. If more energy is absorbed than radiated, the atmosphere becomes warmer.',
+    author: 'Our World in Data',
+    source: 'https://ourworldindata.org/glossary#what-is-radiative-forcing'
   },
   {
     term: 'What is glomalin?',

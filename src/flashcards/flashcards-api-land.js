@@ -114,11 +114,4 @@ export const landCards = [
     author: 'NOAA: Arctic Program, Report Card 2019',
     source: 'https://arctic.noaa.gov/Report-Card/Report-Card-2019/ArtMID/7916/ArticleID/844/Permafrost-and-the-Global-Carbon-Cycle'
   },
-  {
-    term: 'From 1850-1900 to 2006-2015 mean land surface air temperature has increased by how much?',
-    definition: '1.53°C (range from 1.38°C to 1.68°C)',
-    author: 'IPCC',
-    source: 'https://www.ipcc.ch/srccl/chapter/summary-for-policymakers/',
-    confidence: 'very likely'
-  },
 ];

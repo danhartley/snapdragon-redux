@@ -11,7 +11,7 @@ module.exports = merge(common, {
   },
   // devtool: "eval-source-map", // eval-cheap-module-source-map
   devtool: "source-map",
-  devtool: false,
+  // devtool: false,
   plugins: [
     new webpack.SourceMapDevToolPlugin({
       exclude: 'sw.js'

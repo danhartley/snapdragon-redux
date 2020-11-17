@@ -28,6 +28,6 @@ https://github.com/GoogleChrome/lighthousecd
 
 Copy build files to /wiki
 Rename checklist.html to index.html
-Make src paths relative i.e. / becomes ./
+Make src paths relative i.e. / becomes ./ (there are 3)
 Push
 PR to gh-pages
