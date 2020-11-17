@@ -12,8 +12,8 @@ export const renderLessonQuizHistoryScores = history => {
         parent.innerHTML = '';
 
   const context = {
-    total: history.total,
-    correct: history.correct
+    total: history ? history.total : 0,
+    correct: history ? history.correct: 0
   }
 
   renderTemplate(context, template.content, parent);

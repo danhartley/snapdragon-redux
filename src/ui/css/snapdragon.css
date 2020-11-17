@@ -1002,7 +1002,7 @@ iframe#birdsong {
   height: calc((var(--vh, 1vh) * 100) - var(--vhFixtures, 15vh) - var(--vhStandardBlock, 10vh));  
 }
 
-tr span {
+.snapdragon-dashboard tr span {
   height: 100%;
   width: 100%;
   padding: .5rem 0 .5rem 1rem;

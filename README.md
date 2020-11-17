@@ -21,3 +21,6 @@ See https://stackoverflow.com/questions/52299246/cant-find-serviceworker-in-navi
 
 [run the tests]: npm run watch
 
+## Issues
+
+localhost not found: https://medium.com/thepolarlab/node-js-error-getaddrinfo-enotfound-localhost-b7ee35e1bb60

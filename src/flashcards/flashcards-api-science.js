@@ -115,7 +115,7 @@ export const scienceCards = [
   },
   {
     term: 'Which three factors affect the way sunlight is distributed around the world?',
-    definition: 'The planet’s tilt (obliquity), wobble (axial precession), and orbit (of the sun)',
+    definition: 'The planet’s tilt (obliquity), wobble (axial precession), and orbit (of the sun).',
     author: 'nature',
     source: 'https://www.nature.com/scitable/knowledge/library/factors-affecting-global-climate-17079163/'
   },
@@ -269,22 +269,10 @@ export const scienceCards = [
     source: 'https://svs.gsfc.nasa.gov/4565'
   },
   {
-    term: 'If one tonne of carbon was released into the atmosphere, what would be its equivalent mass n carbon dioxide?',
+    term: 'If one tonne of carbon was released into the atmosphere, what would be its equivalent mass in carbon dioxide?',
     definition: '3.67 metric tonnes. To convert carbon to carbon dioxide, multiply by the ratio of the molecular mass of carbon dioxide to that of carbon (44/12).',
     author: 'US Environment Protection Agency',
     source: 'https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references'
-  },
-  {
-    term: 'List 3 characteriistics of gymnosperms.',
-    definition: 'Unenclosed, or naked, seeds; no flowers, seeds are not formed inside a fruit, e.g. conifers.',
-    author: 'Wikipedia',
-    source: 'https://en.wikipedia.org/wiki/Gymnosperm'
-  },
-  {
-    term: 'List 3 characteristics of angiosperms.',
-    definition: 'Flowers; endosperm within their seeds; the production of fruits that contain the seeds',
-    author: 'Wikipedia',
-    source: 'https://en.wikipedia.org/wiki/Flowering_plant'
   },
   {
     term: 'Through a series of chemical reactions and tectonic activity, carbon takes between 100-200 million years to move between rocks, soil, ocean, and atmosphere. What is this cycle called?',
@@ -324,13 +312,13 @@ export const scienceCards = [
   },
   {
     term: 'What are the main atmospheric contributors to global warming?',
-    definition: 'Water vappur accounts for about 50% of warming, CO₂ about 20%, clouds about 25%, and the remaining 5% other gases and aerosols.',
+    definition: 'Water vapour accounts for about 50% of warming, CO₂ about 20%, clouds about 25%, and the remaining 5% other gases and aerosols.',
     author: 'earth observatory (NASA)',
     source: 'https://earthobservatory.nasa.gov/features/CarbonCycle'
   },
   {
-    term: 'How does the slow cycle returns carbon to the atmosphere?',
-    definition: 'From volcanoes (which emit around 100-300 times less carbon into the atmosphere than humans emit by burning fossil fuels.',
+    term: 'How does the slow cycle return carbon to the atmosphere?',
+    definition: 'From volcanoes (which emit around 100-300 times less carbon into the atmosphere than humans emit by burning fossil fuels).',
     author: 'earth observatory (NASA)',
     source: 'https://earthobservatory.nasa.gov/features/CarbonCycle'
   },
@@ -366,7 +354,7 @@ export const scienceCards = [
     source: 'https://www.climate.gov/maps-data/primer/climate-forcing'
   },
   {
-    term: 'From 1850-1900 to 2006-2015 global mean surface (land and ocean) temperature - GMST - has increased by how much?',
+    term: 'Between 1850-1900 and 2006-2015 global mean surface (land and ocean) temperature - GMST - increased by how much?',
     definition: '0.87°C (range from 0.75°C to 0.99°C)',
     author: 'IPCC',
     source: 'https://www.ipcc.ch/srccl/chapter/summary-for-policymakers/',

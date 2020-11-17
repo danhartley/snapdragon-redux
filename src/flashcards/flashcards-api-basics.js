@@ -38,13 +38,13 @@ export const basicsCards = [
   },
   {
     term: 'Describe moral hazard in relation to climate change.',
-    definition: 'There is an incentive to ignore the risks in the interests of political expediency. Or, the risk that geoengineering interventions might deter or delay mitigation.',
+    definition: 'There is an incentive to ignore the risks in the interests of political expediency, e.g. the belief that geoengineering interventions will deter or delay mitigation.',
     author: 'Wikipedia',
     source: 'https://en.wikipedia.org/wiki/Climate_engineering'
   },
   {
     term: 'Temperature on Earth is cyclical (moving in and out of ice ages) over what period?',
-    definition: 'Every 100,000 years. During the last 800,000 years, huge glacial sheets have appeared about every 100,000 years; they grow for 90,000 years, then collpase over 10,000.',
+    definition: 'Every 100,000 years. During the last 800,000 years, huge glacial sheets have appeared about every 100,000 years; they grow for 90,000 years, then collapse over 10,000.',
     author: 'earth observatory (NASA)', 
     source: 'https://earthobservatory.nasa.gov/features/GlobalWarming/page3.php'
   },
@@ -62,13 +62,13 @@ export const basicsCards = [
   },
   {
     term: 'How long does CO₂ persist in the atmosphere?',
-    definition: '50% for 100 years, the rest over thousands of years.',
+    definition: '50% for 100 years, the remainder dissipates over thousands of years.',
     author: 'Global Climate Change (NASA)',
     source: 'https://climate.nasa.gov/news/2915/the-atmosphere-getting-a-handle-on-carbon-dioxide'
   },
   {
     term: 'For how long has the climate been stable?',
-    definition: '10,000 years.',
+    definition: '~10,000 years.',
     author: 'Climate.giv (US National Oceanic and Atmospheric Administration)',
     source: 'https://www.climate.gov/news-features/climate-qa/what%E2%80%99s-hottest-earth-has-been-%E2%80%9Clately%E2%80%9D'
   },
@@ -97,7 +97,7 @@ export const basicsCards = [
     source: 'https://iopscience.iop.org/article/10.1088/1748-9326/ab9ed2'
   },
   {
-    term: 'What are the main sources of human-caused methan emissions?',
+    term: 'What are the main sources of human-caused methane emissions?',
     definition: 'Ranching, agriculture and landfills account for about two-thirds, the fossil fuel industry (oil, gas and coal), making up the rest.',
     author: 'IOPscience (Institue of Physics)',
     source: 'https://iopscience.iop.org/article/10.1088/1748-9326/ab9ed2'

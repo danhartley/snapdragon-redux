@@ -13,13 +13,22 @@ $unit: .5rem;
   #card {
     position: relative;
     height: calc(25 * #{$unit});
+    @media (max-height: 568px) {
+      height: calc(20 * #{$unit});
+    }
+    @media (hover: none) and (min-height: 569px) {
+      height: calc(30 * #{$unit});
+    }
     section {
       position: absolute;
       top: $unit;
       left: $unit;
       right: $unit;
       border: 1px solid lightgray;
-      height: calc(20 * #{$unit});
+      height: calc(24 * #{$unit});
+      @media (hover: none) and (min-height: 569px) {
+        height: calc(25 * #{$unit});
+      }
       display: flex;
       align-items: center;
       justify-content: center;
@@ -27,23 +36,32 @@ $unit: .5rem;
       white-space: pre-line;
       padding: 0 calc(2 * #{$unit});
       font-size: 1rem;
+      @media (hover: none) { 
+        padding: calc(2 * #{$unit});        
+      }
+      @media (max-height: 568px) {
+        font-size: .8rem;
+        height: calc(19 * #{$unit});
+      }      
       cursor: pointer;
       transform-style: preserve-3d;
       transition: transform .5s;   
       background-color: var(--snap-background-1);
       color: var(--snap-text-4);
     }
-    .rotate {
-      transform: rotateX(-180deg);
-      background-color: var(--snap-blue-1);
-    }
-    .back {      
-      backface-visibility: hidden;
-      transform: rotateX(-180deg);
-    }  
-    .front {
-      backface-visibility: hidden;      
-    }
+    // @media (hover: hover){
+    //   .rotate {      
+    //       transform: rotateX(-180deg);
+    //       background-color: var(--snap-blue-1);      
+    //   }
+    //   .back {      
+    //     backface-visibility: hidden;
+    //     transform: rotateX(-180deg);
+    //   }  
+    //   .front {
+    //     backface-visibility: hidden;      
+    //   }
+    // }
   }
 
   button, input, select {
@@ -66,9 +84,14 @@ $unit: .5rem;
   }
 
   .activeCardButtons {
+    margin-top: 2 * $unit;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1.5em;
+    @media (max-height: 568px) {
+      grid-gap: 1em;
+      margin-top: $unit;
+    }
     padding: 0 .5rem;
   }
 
