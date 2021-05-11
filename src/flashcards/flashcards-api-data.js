@@ -69,11 +69,24 @@ export const dataCards = [
   },
   {
     term: 'What percentage of the world\'s population flies in any one year?',
-    definition: '3%'
+    definition: '5-10%',
+    author: 'Deutsche Welle',
+    source: 'https://www.dw.com/en/to-fly-or-not-to-fly-the-environmental-cost-of-air-travel/a-42090155'
   },
   {
     term: '70% of UK flights were taken by what percentage of the population?',
     definition: '15%',
+    source: 'https://www.c2es.org/content/international-emissions/'
+  },
+  {
+    term: 'In developed countries emissions from flying amount to around what percentage of the total?',
+    definition: '~10%',
+    author: 'Aviation Environment Federation (AEF)',
+    source: 'https://www.aef.org.uk/what-we-do/climate/'
+  },
+  {
+    term: 'What percentage of flights are in international airspace, and therefore not attributed to any one country?',
+    definition: '65%',
     source: 'https://www.c2es.org/content/international-emissions/'
   },
   {
@@ -82,3 +95,5 @@ export const dataCards = [
     source: 'https://www.c2es.org/content/international-emissions/'
   },
 ];
+
+//CO₂
