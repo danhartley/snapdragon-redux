@@ -248,4 +248,24 @@ export const policyCards = [
     author: 'C2G (Carnegie Climate Governance Initiative)',
     source: 'https://www.c2g2.net/carbon-removal-the-dangers-of-mitigation-deterrence/'
   },
+  {
+    term: 'To what does the 1992 United Nations Framework Convention on Climate Change bind each nation?',
+    definition: 'To \'avoid dangerous climate change\', and find ways to reduce greenhouse gas emissions globally in an equitable way.',
+    author: 'The Guardian',
+    source: 'https://www.theguardian.com/news/2019/dec/02/climate-crisis-what-is-cop-and-can-it-save-the-world'
+  },
+  {
+    term: 'At what level did the signatories of the Paris Agreement agree to limit global warming?',
+    definition: '2°C with an aspiration of 1.5°C, above pre-industrial levels.',
+    author: 'The Guardian',
+    source: 'https://www.theguardian.com/environment/2015/dec/13/paris-climate-deal-cop-diplomacy-developing-united-nations'
+  },
+  {
+    term: 'Which 2 countries have a plan to reduce their levels of CO₂ consistent with limiting warming to 1.5°C?',
+    definition: 'Morocco and The Gambia',
+    author: 'National Geographic',
+    source: 'https://www.nationalgeographic.com/environment/2019/09/climate-change-report-card-co2-emissions/'
+  },
 ];
+
+//CO₂

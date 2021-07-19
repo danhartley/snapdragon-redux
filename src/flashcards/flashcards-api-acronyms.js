@@ -1,7 +1,9 @@
 export const acronymsCards = [
   {
     term: 'What does UNFCCC stand for?',
-    definition: 'United Nations Framework Convention on Climate Change'
+    definition: 'United Nations Framework Convention on Climate Change',
+    author: 'Wikipedia',
+    source: 'https://en.wikipedia.org/wiki/United_Nations_Framework_Convention_on_Climate_Change'
   },
   {
     term: 'What does BECCS stand for?',
@@ -88,5 +90,17 @@ export const acronymsCards = [
     definition: 'IPCC Summary for Policy Makers',
     author: 'Wikipedia',
     source: 'https://en.wikipedia.org/wiki/IPCC_Summary_for_Policymakers'
+  },
+  {
+    term: 'What does (I)NDC stand for?',
+    definition: '(Intended) Nationally Determined Contribution',
+    author: 'CarbonBrief',
+    source: 'https://www.carbonbrief.org/explainer-what-are-intended-nationally-determined-contributions'
+  },
+  {
+    term: 'What does COP stand for?',
+    definition: 'Conference of the Parties',
+    author: 'CarbonBrief',
+    source: 'https://unfccc.int/process/bodies/supreme-bodies/conference-of-the-parties-cop'
   },
 ];
