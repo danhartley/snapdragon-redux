@@ -114,7 +114,7 @@
     "helmet": "^3.23.3",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
-    "i": "^0.3.6",
+    "i": "^0.3.7",
     "immutable": "^4.0.0-rc.12",
     "jest": "^26.3.0",
     "jest-webpack": "^0.5.1",
