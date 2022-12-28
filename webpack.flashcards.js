@@ -47,7 +47,17 @@ module.exports = {
             use: [
               'style-loader',
               'css-loader',
-              'sass-loader',
+              {
+                loader: "sass-loader",
+                options: {
+                  // Prefer `dart-sass`
+                  // eslint-disable-next-line no-undef
+                  implementation: require("sass"),
+                  sassOptions: {
+                    fiber: false,
+                  },
+                },
+              },
             ],
           },
         ],

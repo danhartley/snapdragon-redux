@@ -17,6 +17,10 @@ See https://stackoverflow.com/questions/52299246/cant-find-serviceworker-in-navi
 
 [build the app]: npm run dev or npm run watch
 
+NB building the app first is required for web service workers to run
+NB credentials required from src/api/firebase
+NB .env required
+
 [build and run the app]: npm run start:dev
 
 [run the tests]: npm run watch
