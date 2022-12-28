@@ -106,7 +106,7 @@
     "fibers": "^5.0.0",
     "file-loader": "^6.0.0",
     "firebase": "^7.15.5",
-    "firebase-admin": "^8.13.0",
+    "firebase-admin": "^11.4.1",
     "firebase-functions": "^3.7.0",
     "font-awesome": "^4.7.0",
     "formik": "^2.1.4",
