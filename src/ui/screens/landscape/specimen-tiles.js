@@ -59,7 +59,7 @@ const renderSpecimenImageTiles = (collection, images, item) => {
 
     template.innerHTML = specimensTemplate;    
 
-    const parent = DOM.leftBody;
+    const parent = DOM.rightBody;
           parent.innerHTML = '';
 
     snapLog('renderSpecimenImageTiles, image medium values:', images.map(i => i.medium));

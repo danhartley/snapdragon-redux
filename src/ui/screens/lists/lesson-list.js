@@ -25,7 +25,7 @@ export const renderLessons = () => {
             return tsb - tsa;
         });
 
-    let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
+    let parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
         parent.innerHTML = '';
 
     renderTemplate({}, template.content, parent);

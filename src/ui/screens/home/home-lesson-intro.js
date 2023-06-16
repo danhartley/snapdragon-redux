@@ -12,7 +12,7 @@ export const renderLessonIntro = (collection, showText = false) => {
     showText
       ? textSetup(collection, config)
       : collection.hasVideo 
-          ? videoSetup(collection, videoPlayer || [], DOM.rightBody) 
+          ? videoSetup(collection, videoPlayer || [], DOM.leftBody) 
           : textSetup(collection, config);
     
 }

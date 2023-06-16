@@ -37,7 +37,7 @@ export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, presele
     const template = document.createElement('template');
           template.innerHTML = specimensTemplate;
 
-    const parent = DOM.leftBody;
+    const parent = DOM.rightBody;
           parent.innerHTML = '';
 
     const renderSpecimenImages = async () => {

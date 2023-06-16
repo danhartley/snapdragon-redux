@@ -67,7 +67,13 @@
                 <div class="modal-header-container">
                     <div class="modal-header">
                         <div class="centred-block justify-space-between js-modal-header-block">
-                          <div class="modal-title small-text js-modal-text-title"><header></header></div>
+                          <div class="modal-title small-text js-modal-text-title">
+                                <header>
+                                    <div class="modal-header">
+                                        <div></div>
+                                    </div>
+                                </header>
+                            </div>
                           <div></div>
                         </div>
                     </div>
@@ -233,18 +239,16 @@
     <div class="modal fade basic-modal" id="quizModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="quizModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <div class="quiz">
+              <div class="quiz js-quiz-container">
                 <header class="modal-header-container">
-                    <div class="modal-header">
-                        
-                          <div class="modal-title js-modal-text-title">
-                            <header>
-                              <div class="modal-header">
-                                <div class="js-quiz-header">Species recognition</div>
-                              </div>
-                            </header>
-                          </div>
-                        
+                    <div class="modal-header">                        
+                        <div class="modal-title js-modal-text-title">
+                        <header>
+                            <div class="modal-header">
+                            <div class="js-quiz-header">Species recognition</div>
+                            </div>
+                        </header>
+                        </div>                        
                     </div>
                 </header>
                 <div class="modal-body">
@@ -256,7 +260,7 @@
                       </main>
                     </div>
                 </div>       
-                <footer class="modal-footer double-centred-block js-modal-footer" data-dismiss="modal" aria-label="Close">
+                <footer class="portrait modal-footer double-centred-block js-modal-footer" data-dismiss="modal" aria-label="Close">
                   <button class="btn small-text snap-btn fit-width">Close</button>
                 </footer>
               </div>      

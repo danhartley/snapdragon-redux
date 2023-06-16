@@ -18,31 +18,24 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
 
 .quiz {
 
-  background-color: var(--snap-border-3);
-
   .quiz-top {
     height: $top;
   }
 
   .quiz-middle {
     height: $middle;
-    background-color: rgb(213, 210, 198);
+    border-top: 1px solid var(--snap-border-2);
+    border-bottom: 1px solid var(--snap-border-2);
   }
   
   .quiz-bottom {
+    color: var(--snap-green-5);
     height: $bottom;
   }
 
   header, footer {
     @include double-centre();
-  }
-
-  .modal-content {
-    background-color: var(--snap-border-light);
-  }
-
-  .modal-footer, .modal-header {
-    background-color: var(--snap-green-2);
+    // background-color: var(--snap-green-2);
   }
 
   .modal-footer {
@@ -54,27 +47,16 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
     border: none;
   }
 
-  .modal-header {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .modal-title {
-    font-size: 1rem;
-    color: var(--snap-text-4);
-  }
-
-  div.modal-body {
-    padding: 0;;
+  .modal-body {
+    padding: 0;
   }
 
   header {
     width: 100%;
-    letter-spacing: .2rem;
+    letter-spacing: .05rem;
   }
 
   main {
-    background-color: var(--snap-brown-1);
     height: $main;
     margin: 5px 0 0 0;
   }
@@ -93,21 +75,6 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
     box-shadow: 0 2px 8px 0 rgb(0, 0, 0);
     width: inherit;
   }
-
-  // button {
-  //   &.snap-begin-btn {
-  //     width: fit-content;
-  //     width: max-content;
-  //     background-color: var(--snap-btn-auxillary);
-  //     color: var(--snap-block-light);
-  //     letter-spacing: .05rem;
-  //     border: 1px solid transparent !important;
-  //     padding: .5rem .75rem;
-  //     border-radius: .2rem;
-  //     font-size: 1.2rem;
-  //     cursor: pointer;
-  //   }
-  // }
 
   .quiz-decks {
     flex-direction: column;
@@ -135,8 +102,7 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
   .strip {
     font-size: .7rem;
     width: calc( (var(--vwGrid) - 2rem) / 2 );
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .8);
-    background-color: var(--snap-brown-1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .4);
     margin: (.5 * $space) (.5 * $space);    
   }
 
@@ -168,7 +134,6 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
   }
 
   .state-container {
-    background-color: var(--snap-brown-1);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
@@ -252,7 +217,6 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
       column-gap: 0;
       margin: 0rem;
       padding: 1rem;
-      background-color: var(--snap-brown-2);
       grid-template-columns: 1fr 1fr;      
       div {
         display: flex;
@@ -273,7 +237,7 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
         justify-content: center;
       }
       input:checked {
-        border: (2 * $space) solid var(--snap-green-4);
+        border: $space solid var(--snap-green-4);
       }
     }
   }
@@ -293,7 +257,6 @@ $strip: calc( (((var(--vh, 1vh)*100 - var(--vhFixtures, 15vh)) * .4) - 3rem) /2 
 
     .image-block-container {
       width: 100%;
-      background-color: var(--snap-text-4);
     }
     .strips-container {
       width: 100%;

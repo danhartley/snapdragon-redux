@@ -12,7 +12,7 @@ export const renderMixedTraitImages = collection => {
     const template = document.createElement('template');
           template.innerHTML = imagesTemplate;
 
-    const parent = DOM.leftBody;
+    const parent = DOM.rightBody;
             parent.innerHTML = '';
     
     renderTemplate({ traits: layout.traits }, template.content, parent);

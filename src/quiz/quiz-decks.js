@@ -9,13 +9,16 @@ import quizDecksTemplate from 'quiz/quiz-decks-template.html';
 
 export const quizDecks = decks => {
 
-  document.querySelector('.quiz .js-quiz-header').innerText = 'Species recognition';
+  // document.querySelector('.quiz .js-quiz-header').innerText = 'Species recognition';
 
   let template = document.createElement('template');
       template.innerHTML = quizDecksTemplate;
 
   let parent = document.querySelector('.js-quiz-top');
-      parent.innerHTML = '';
+
+  if(!parent) return
+
+  parent.innerHTML = '';
   
   renderTemplate({ decks: decks.filter(deck => deck.count > 0) }, template.content, parent);
 

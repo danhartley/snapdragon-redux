@@ -6,12 +6,12 @@ import 'ui/css/snapdragon-colours.css';
 import 'ui/css/species-list.css';
 import 'ui/css/snapdragon.css';
 import 'ui/css/common.css';
-import 'ui/css/snapdragon-media.css';
+import 'ui/css/snapdragon-media.scss';
 import 'ui/css/non-main.css';
 import 'quiz/style.scss';
 import 'flashcards/style.scss';
 import 'ui/css/groups/create-guide.css';
-import 'ui/css/groups/modal.css';
+import 'ui/css/groups/modal.scss';
 import 'ui/css/groups/species-card.css';
 import 'ui/css/groups/test-card.css';
 
@@ -81,11 +81,11 @@ const onLoadHandler = () => {
         const dashboard = await firestore.getDashboard();
         const latestsCollectionUpdateTime = dashboard[0]['collection-update'].toMillis();
         const today = new Date();
-        const lastlatestsCollectionUpdateTimeTime = config.lastlatestsCollectionUpdateTimeTime || today.setFullYear(today.getFullYear() - 10);
+        const lastCollectionUpdateTime = config.lastCollectionUpdateTime || today.setFullYear(today.getFullYear() - 10);
 
-        config.lastlatestsCollectionUpdateTimeTime = latestsCollectionUpdateTime;
+        config.lastCollectionUpdateTime = latestsCollectionUpdateTime;
 
-        const isUpdateRequired = latestsCollectionUpdateTime > lastlatestsCollectionUpdateTimeTime;
+        const isUpdateRequired = latestsCollectionUpdateTime > lastCollectionUpdateTime;
 
         actions.boundUpdateConfig(config);
 

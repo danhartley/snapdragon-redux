@@ -103,7 +103,7 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
                 screens: [{ 
                     name: 'summary', 
                     domain: 'history', 
-                    parent: DOM.rightBody
+                    parent: DOM.leftBody
                 }],
                 lessonName,
                 levelName,
@@ -126,7 +126,7 @@ export const createNextRound = (lessonPlan, nextRoundLayoutTemplates, progressSc
             screens: [{ 
                 name: 'summary', 
                 domain: 'history', 
-                parent: DOM.rightBody
+                parent: DOM.leftBody
             }],
             lessonName,
             levelName,

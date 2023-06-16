@@ -34,6 +34,7 @@ export const handleWindowResize = () => {
       document.documentElement.style.setProperty('--vhRunningBlocks', (verticalHeight * 15) + 'px');
       document.documentElement.style.setProperty('--vhStandardBlock', (verticalHeight * 10) + 'px');
       document.documentElement.style.setProperty('--vhHalfStandardBlock', (verticalHeight * 5) + 'px');
+      document.documentElement.style.setProperty('--vhQuarterStandardBlock', (verticalHeight * 2.5) + 'px');
       document.documentElement.style.setProperty('--vhOneAndHalfStandardBlock', (verticalHeight * 15) + 'px');
       document.documentElement.style.setProperty('--vhDoubleStandardBlock', (verticalHeight * 20) + 'px');
       document.documentElement.style.setProperty('--vhCarousel', (verticalHeight * 30) + 'px');

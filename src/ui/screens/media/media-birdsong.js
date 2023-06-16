@@ -31,7 +31,7 @@ export const renderBirdsong = collection => {
         let mp3 = './songs/432786.mp3';
             mp3 = xcID ? `./songs/${xcID}.mp3` : mp3;
 
-        let parent = DOM.rightBody;
+        let parent = DOM.leftBody;
             parent.innerHTML = '';
 
         let isAudio = true;

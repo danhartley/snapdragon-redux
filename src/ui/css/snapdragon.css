@@ -211,8 +211,13 @@ a.icon:hover {
   pointer-events: none;
 }
 
+.test-card-question {
+  margin: 0 .5rem;
+}
+
 .test-card-question.standard-block {
   border-bottom: .03rem solid var(--snap-border-2);
+  height: var(--vhRunningBlock, 7.5vh);
 }
 
 .home-container {
@@ -258,6 +263,11 @@ a.icon:hover {
   font-size: .8rem;
 }
 
+.fixed-header {
+  position: fixed;
+  height: var(--vhRunningBlock, 7.5vh);
+}
+
 .side-lesson-list {
   display: grid;
   grid-template-columns: 100%;
@@ -273,6 +283,7 @@ a.icon:hover {
 .side-lesson-list-body, .main-lesson-body {
   display: grid;
   grid-auto-flow: row;
+  margin-top: 0.5rem;
 }
 
 .header, .footer {
@@ -335,9 +346,13 @@ a.icon:hover {
   bottom: 0;  
 }
 
-  .pointer-events-none {
-    pointer-events: none !important;
-  }
+#release {
+  height: 0;
+}
+
+.pointer-events-none {
+  pointer-events: none !important;
+}
 
 .align-left {
   text-align: left;
@@ -877,7 +892,7 @@ iframe#birdsong {
 
 .question-header {
   display: flex;
-  background-color: var(--snap-yellow-2);
+  /* background-color: var(--snap-yellow-2); */
   color: var(--snap-dark);
   justify-content: center;
 }
@@ -1090,8 +1105,8 @@ tr th:first-child span {
 }
 
 .highlighted-for-review-row {
-  border-top: 1px solid var(--snap-border-1) !important;
-  border-bottom: 1px solid var(--snap-border-1) !important;
+  border-top: 3px solid var(--snap-border-1) !important;
+  border-bottom: 3px solid var(--snap-border-1) !important;
   background-color: var(--snap-background-1) !important;
 }
 

@@ -8,7 +8,7 @@ export const renderIcon = (taxonomy, rootNode) => {
 
         const iconicIconContainer = rootNode.querySelector('.js-iconic-icon');
 
-        iconicIconContainer.innerHTML = `<span class="mushroom-icon-header">${mushroomIcon}</span>`;
+        // iconicIconContainer.innerHTML = `<span class="mushroom-icon-header">${mushroomIcon}</span>`;
 
     } else {
 

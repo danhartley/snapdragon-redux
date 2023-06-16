@@ -15,7 +15,10 @@ export const quizDeck = async deck => {
         template.innerHTML = quizDeckTemplate;
 
   let parent = document.querySelector('.js-quiz-top');
-      parent.innerHTML = '';
+
+  if(!parent) return
+  
+  parent.innerHTML = '';
 
   const card = deck.cards.find(card => card.isCurrent) || deck.cards[0];
 

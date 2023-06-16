@@ -104,24 +104,21 @@
               </footer>
           </div>
           <div class="side-lesson-list js-side-lesson-list">
-                  <header class="header js-side-lesson-list-header">
-                      <div class="header-text js-side-lesson-list-header-txt">learn the planet</div>
-                      <div class="header-text"></div>                         
-                  </header>       
-                  <div class="no-progress"></div>             
-                  <div class="side-lesson-list-body js-side-lesson-list-body"></div>
-                  <footer class="footer js-side-lesson-list-footer">
-                    <nav aria-label="navigation for glossary and language settings" class="full-width">
-                      <ul class="nav-icons centred-block js-nav-icons"></ul>
-                    </nav>
-                  </footer>
+              <!-- <div class="fixed-header"> -->
+                <header class="header js-side-lesson-list-header">
+                    <div class="header-text js-side-lesson-list-header-txt">learn the planet</div>
+                    <div class="header-text"></div>                         
+                </header>       
+                <div class="no-progress"></div>     
+              <!-- </div>         -->
+              <div class="side-lesson-list-body js-side-lesson-list-body"></div>
+              <footer class="footer js-side-lesson-list-footer">
+                <nav aria-label="navigation for glossary and language settings" class="full-width">
+                  <ul class="nav-icons centred-block js-nav-icons"></ul>
+                </nav>
+              </footer>
           </div>
       </div>
-      <div id="release" style="visibility: hidden;"></div>
-<!-- 
-      <link rel="stylesheet" href="./css/modal.css" media="print" onload="this.media='all'">
-      <link rel="stylesheet" href="./css/test-card.css" media="print" onload="this.media='all'">
-      <link rel="stylesheet" href="./css/species-card.css" media="print" onload="this.media='all'"> -->
 
       <script>
         const isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
@@ -145,8 +142,8 @@
             window.YT = YT;
         }
 
-        const release = document.querySelector('#release');
-              release.innerHTML = new Date();
+        // const release = document.querySelector('#release');
+        //       release.innerHTML = new Date();
         
       </script>      
     </body>    

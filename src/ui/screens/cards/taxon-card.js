@@ -20,7 +20,7 @@ if(modalCarousel) {
     });
 }
 
-export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.rightBody, speciesTaxon, rank, isInCarousel = true) => {
+export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.leftBody, speciesTaxon, rank, isInCarousel = true) => {
   
     try {
 

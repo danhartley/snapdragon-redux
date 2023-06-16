@@ -306,9 +306,9 @@
     text-decoration: line-through;
   }
 
-  .modal-background-relief {
+  /* .modal-background-relief {
     background-color: var(--snap-yellow-1);
-  }
+  } */
 
   .modal-background-relief-emphasis {
     border: 1px solid var(--snap-success-3) !important;
@@ -417,7 +417,7 @@
   }
   
   .snap-btn:focus:not(:focus-visible), .snap-icon-btn:focus:not(:focus-visible) {
-    border: 1px solid var(--snap-active);
+    /* border: 1px solid var(--snap-active); */
     outline: none;
   }
   

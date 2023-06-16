@@ -55,9 +55,9 @@ export const renderSpeciesGrid = () => {
         const template = document.createElement('template');
         template.innerHTML = speciesGridTemplate;
 
-        DOM.leftBody.innerHTML = '';
+        DOM.rightBody.innerHTML = '';
 
-        renderTemplate({ images }, template.content, DOM.leftBody);
+        renderTemplate({ images }, template.content, DOM.rightBody);
 
         const cardModal = document.querySelector('#cardModal .js-modal-body');
         document.querySelectorAll('.species-grid img').forEach(image => {

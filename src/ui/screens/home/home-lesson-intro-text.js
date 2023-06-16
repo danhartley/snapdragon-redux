@@ -40,9 +40,9 @@ export const textSetup = (collection, config) => {
         still: collection.still
     };
 
-    DOM.rightBody.innerHTML = '';
+    DOM.leftBody.innerHTML = '';
 
-    renderTemplate(summary, template.content, DOM.rightBody);
+    renderTemplate(summary, template.content, DOM.leftBody);
 
     setTimeout(() => {
         ({ speciesCount, speciesSummary } = handleSpeciesUpdate(speciesCount, collection, speciesSummary, iconicTaxa));

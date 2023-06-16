@@ -1,14 +1,27 @@
 import { renderTemplate } from 'checklist/templating';
 
+import { DOM } from 'ui/dom';
 import { Card } from 'flashcards/flashcard-card';
 import { sets } from 'flashcards/flashcards-api';
 
 import flashcardTemplate from 'flashcards/flashcards-template.html';
 import flashcardSetsTemplate from 'flashcards/flashcards-set-selection-template.html';
 
-export const flashcardsLogic = (config, parent = document.querySelector('body')) => {
+export const flashcardsLogic = config => {
 
-  const title = document.querySelector('.js-modal-text-title header');
+  let parent = config.isLandscapeMode
+    ? DOM.leftBody
+    : document.querySelector('.js-modal-text')
+
+  parent.innerHTML = '';
+
+    if(config.isLandscapeMode) {
+      const flashcards = document.querySelector('.js-modal-text');
+  
+      DOM.leftBody.append(flashcards.cloneNode(true));
+    }
+
+  const title = document.querySelector('.js-modal-text-title header > div > div');
         title.innerHTML = 'Climate change flip cards';
 
   const template = document.createElement('template');
@@ -19,8 +32,6 @@ export const flashcardsLogic = (config, parent = document.querySelector('body'))
   let currentDeck = [ ...set.cards ];
   
   let cardIndex = 0;
-
-  parent.innerHTML = '';
 
   renderTemplate({ title: set.title, sets, cardCount: currentDeck.length }, template.content, parent);
 

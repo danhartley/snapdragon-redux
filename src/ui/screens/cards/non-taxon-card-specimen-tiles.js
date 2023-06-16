@@ -15,7 +15,7 @@ export const renderNonTaxonCardSpecimenTiles = collection => {
 
         template.innerHTML = specimensTemplate;
 
-        const parent = DOM.leftBody;
+        const parent = DOM.rightBody;
         parent.innerHTML = '';
 
         renderTemplate({images}, template.content, parent);

@@ -18,14 +18,18 @@ import templateSummaryQuickFire from 'ui/quick-fire-modal/quick-fire-summary-tem
 
 const headers = (step, quickFire) => {
 
+    const { config } = store.getState();
+
     const getQuickFire = () => quickFire;
 
-    const modal = document.querySelector('#glossaryModal');
+    const container = config.isLandscapeMode 
+        ?  document.querySelector('.js-main-lesson-body')
+        :  document.querySelector('#glossaryModal');
 
     const links = { 
-        glossary: modal.querySelector('.js-modal-text-title'),
-        filters: modal.querySelector('.js-quick-fire-filters'),
-        questions: modal.querySelector('.js-quick-fire-questions')
+        glossary: container.querySelector('.js-modal-text-title'),
+        filters: container.querySelector('.js-quick-fire-filters'),
+        questions: container.querySelector('.js-quick-fire-questions')
     };
 
     quickFireUI.updateHeaders(step, links, getQuickFire, quickFireActions);
@@ -332,13 +336,14 @@ const definitions = async terms => {
 
     const quickFire = store.getState().quickFire || quickFireAPI.getQuickFire(terms, enums.quickFireType.DEFINITION, { collection: {} });
 
-    headers(enums.quickFireStep.GLOSSARY, quickFire);
-
-    parent.innerHTML = '';
-
+    
+    // parent.innerHTML = '';
+    
     const glossary = getTermsGlossary(terms, quickFire.terms);
-
+    
     renderTemplate({ glossary }, template.content, parent);
+    
+    headers(enums.quickFireStep.GLOSSARY, quickFire);
 };
 
 const init = async () => {
@@ -380,11 +385,18 @@ const summary = quickFire => {
             fail.wiki = fail.wiki || '';
             fail.showWikiClass = fail.wiki.length > 0 ? '' : 'hide-important';
           });
-
+    
     renderTemplate({ score: quickFire.termScore, passes, fails }, template.content, parent);
 
-    const answers = modal.querySelectorAll('.js-quick-review-answers');
-    const tabs = modal.querySelectorAll('.js-quick-review-tabs a');
+    const { config } = store.getState();
+
+    const answers = config.isLandscapeMode 
+         ? parent.querySelectorAll('.js-quick-review-answers')
+         : modal.querySelectorAll('.js-quick-review-answers');
+
+    const tabs = config.isLandscapeMode
+        ? parent.querySelectorAll('.js-quick-review-tabs a')
+        : modal.querySelectorAll('.js-quick-review-tabs a');
     
     tabs.forEach(tab => {
         tab.addEventListener('click', e => {

@@ -96,7 +96,7 @@ const checkRequired = (state, layout) => {
 const addSubs = (layout, config, funcByName) => {
 
     if(!layout) return;
-    
+
     layout.screens.forEach( (screen, index) => {
 
         const func = funcByName(screen.name);

@@ -11,7 +11,10 @@ export const quizSummary = decks => {
         template.innerHTML = quizSummaryTemplate;
 
   const parent = document.querySelector('.js-quiz-bottom');
-        parent.innerHTML = '';
+
+  if(!parent) return
+  
+  parent.innerHTML = '';
 
   renderTemplate({deckScoreHistory, deckScore}, template.content, parent);
 };

@@ -1,6 +1,20 @@
-<div class="snapdragon-container">
-    <dl data-repeat-item="{{ glossary }}" class="definition card scrollable">
-      <dt>{{ item.term }}</dt><dd>{{ item.definition }}</dd>
-    </dl>
+<div class="landscape quick-fire-header-container">
+  <div class="centred-block standard-block uppercase justify-space-between">
+    <div class="small-text js-modal-text-title"><h1>Glossary</h1></div>
+    <div class="flex right-justify">
+      <button class="btn snap-btn double-margin-right small-text js-quick-fire-filters">Glossary</button>
+    </div>
+  </div>
+  <div class="snapdragon-container">
+      <dl data-repeat-item="{{ glossary }}" class="definition card scrollable">
+        <dt>{{ item.term }}</dt><dd>{{ item.definition }}</dd>
+      </dl>
+  </div>
+</div>
+
+<div class="portrait snapdragon-container">
+  <dl data-repeat-item="{{ glossary }}" class="definition card scrollable">
+    <dt>{{ item.term }}</dt><dd>{{ item.definition }}</dd>
+  </dl>
 </div>
     

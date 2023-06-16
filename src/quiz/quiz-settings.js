@@ -12,7 +12,10 @@ export const quizSettings = decks => {
         template.innerHTML = quizSettingsTemplate;
 
   const parent = document.querySelector('.js-quiz-middle');
-        parent.innerHTML = '';
+
+  if(!parent) return
+  
+  parent.innerHTML = '';
 
   renderTemplate({}, template.content, parent);
 

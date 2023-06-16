@@ -1,5 +1,16 @@
 <div class="snapdragon-container test-card-container js-test-card-container">
     <div class="js-test-card">
+        <header class="modal-header-container">
+            <div class="modal-header">
+                <div class="centred-block justify-space-between js-modal-header-block margin-right">
+                  <div class="modal-title small-text js-modal-text-title"><header></header></div>
+                  <div>
+                    <span class="hide-empty question-question js-question-question">{{ question }}</span>
+                    <!-- <button class="btn small-text fit-width snap-btn margin-right js-review-progress">Progress</button> -->
+                  </div>
+                </div>
+            </div>
+        </header>
         <div id="test-card-header" class="question-container">
             <div class="iconic-icon double-centred-block js-iconic-icon">
                 <i class=""></i>
@@ -13,7 +24,7 @@
                         </div>
                         <div>
                             <h2 class="binomial">{{ binomial }}</h2>
-                            <span class="names-badge traits-count-badge js-traits-count-badge"></span>
+                            <span class="names-badge hide-empty traits-count-badge js-traits-count-badge"></span>
                             <h2 class="term-header hide-empty js-term-header">{{ term }}</h2>
                         </div>
                     </div>                
@@ -24,18 +35,23 @@
                 <i class="far fa-arrow-alt-circle-right js-card-link"></i>
             </div> -->
         </div>
-        <div class="test-card-question standard-block centred-block js-test-card-question border-bottom">            
+        <!-- <div class="test-card-question standard-block centred-block js-test-card-question border-top border-bottom">            
             <div class="flex question {{ className }}">
                 <h3 class="hide-empty question-question js-question-question">{{ question }}</h3>
                 <h3 class="hide-empty question-help js-question-help">{{ help }}</h3>
                 <h3 class="hide-empty question-statement js-statement-para">{{ statement }}</h3>
                 <h3 class="hide-empty margin-top question-provider-question js-question-para">{{ providerQuestion }}</h3>
             </div>
-        </div>
+        </div> -->
         <div class="test-card-content js-test-card-content scrollable">
             <!-- Specific test content goes here -->
         </div>
         <div class="text-question js-txt-question"></div>
+        <div class="test-card-score-summary js-test-card-score-summary">
+            <div class="double-centred-block">
+                <span>Round {{ lesson.currentRound }} of {{ lesson.rounds }}</span>
+            </div>
+        </div>
         <div class="action-update-container">
             <div class="action-update">
                 <button disabled class="btn snap-action-btn js-continue-lesson-btn">Continue lesson</button>

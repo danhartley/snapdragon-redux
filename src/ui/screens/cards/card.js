@@ -17,7 +17,7 @@ import { firestore } from 'api/firebase/firestore';
 
 import cardTemplate from 'ui/screens/cards/card-template.html';
 
-export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.rightBody, isInCarousel = true) => {
+export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.leftBody, isInCarousel = true) => {
 
     if(!selectedItem) return;
 
@@ -60,10 +60,12 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
     
         switch(mode) {
             case 'STAND_ALONE':
-                rootNode = config.isLandscapeMode ? modal.querySelector('.js-modal-text') : document.querySelector('.main-lesson-body');
+                rootNode = document.querySelector('.main-lesson-body');
+                // rootNode = config.isLandscapeMode ? modal.querySelector('.js-modal-text') : document.querySelector('.main-lesson-body');
                 break;
             case 'SWAP_OUT':
-                rootNode = config.isLandscapeMode ? parent : document.querySelector('.js-species-container');
+                rootNode = document.querySelector('.js-species-container');
+                // rootNode = config.isLandscapeMode ? parent : document.querySelector('.js-species-container');
                 break;
             case 'MODAL':
                 rootNode = document.querySelector('#cardModal');
@@ -123,7 +125,7 @@ const renderPortrait = (item, config, mode, rootNode) => {
     if(mode =='MODAL') {
         player.style.display = 'none';
         return;
-    };
+    }
 
     getBirdSong(item, player, config.isPortraitMode);
 

@@ -241,22 +241,26 @@ const renderLandscape = (item, config, question) => {
     });
 
     const keyboardBtn = document.querySelector('.js-toggle-keyboard');          
-          keyboardBtn.addEventListener('click', e =>{
-            e.preventDefault();
-            const disabled = input.hasAttribute('disabled');
-            if(disabled) {
-                keyboardBtn.innerHTML = 'Enable letters';
-                input.removeAttribute('disabled');
-                input.focus();
-            } else {
-                keyboardBtn.innerHTML = 'Enable keyboard'
-                input.setAttribute('disabled', 'disabled');
-            }
-          });
+    keyboardBtn.addEventListener('click', e =>{
+    e.preventDefault();
+    const disabled = input.hasAttribute('disabled');
+    if(disabled) {
+        keyboardBtn.innerHTML = 'Enable letters';
+        input.removeAttribute('disabled');
+        input.focus();
+    } else {
+        keyboardBtn.innerHTML = 'Enable keyboard'
+        input.setAttribute('disabled', 'disabled');
+    }
+    });
 
+    if(config.isLandscapeMode) {
+        keyboardBtn.click();
+    } else {        
     setTimeout(() => {
-      keyboardBtn.focus();
-    }, 500);
+            keyboardBtn.focus();
+        }, 500);
+    }
 
     const blockArray = [ ...blocks ];    
     const entries = [];

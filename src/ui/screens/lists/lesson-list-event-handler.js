@@ -7,6 +7,7 @@ import { enums } from 'ui/helpers/enum-helper';
 import { renderLessonIntro } from 'ui/screens/home/home-lesson-intro';
 import { renderEditLesson } from 'ui/screens/lists/lesson-edit';
 import { videoHandler } from 'ui/screens/lists/video-handler';
+import controlHasAssociatedLabel from 'eslint-plugin-jsx-a11y/lib/rules/control-has-associated-label';
 
 export const onLoadLessonViewState = (collection, videoPlayer) => {
 
@@ -131,7 +132,7 @@ const onLessonIconClickHandler = (icon, lessons, config, startLesson) => {
     }
 
     if(state.requiresSpeciesList) {
-      await loadAndDisplaySpeciesList(config, icon, lesson, (config.isPortraitMode && isYoutubeIcon) ? DOM.rightBody.querySelector('.js-home-scrolling-container .scrollable') : container, isYoutubeIcon);
+      await loadAndDisplaySpeciesList(config, icon, lesson, (config.isPortraitMode && isYoutubeIcon) ? DOM.leftBody.querySelector('.js-home-scrolling-container .scrollable') : container, isYoutubeIcon);
     }
 
     row.classList.add('lesson-list-selected-lesson');

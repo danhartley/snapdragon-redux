@@ -16,6 +16,7 @@ const getDecks = async () => {
 const getQuizDeck = async (name, numberOfCardsPerSpecies = 1, language = 'en') => {
 
   const { config } = store.getState();
+  
   const NUMBER_OF_ALTERNATIVE_ANSWERS = config.isLandscapeMode ? 5 : 3;
 
   const decks = await api.getDecks(name);

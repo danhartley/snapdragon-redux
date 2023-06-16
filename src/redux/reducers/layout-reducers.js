@@ -26,7 +26,7 @@ export const layout = (state = null, action) => {
     switch(action.type) {
         case types.NEXT_LAYOUT:
             if(state) {
-                if(action.data.screens.length > 1) { // sometimes BUG here
+                if(action.data.screens && action.data.screens.length > 1) { // sometimes BUG here
                     return action.data;
                 } else {
                     return action.data;

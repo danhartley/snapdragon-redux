@@ -21,7 +21,7 @@ export const lesson = (state = initialState, action) => {
 
         case types.NEXT_ITEM: {
 
-            let layoutCounter, isNextRound, isLevelComplete, isLessonComplete = false;;
+            let layoutCounter, isNextRound, isLevelComplete, isLessonComplete = false;
 
             layoutCounter = state.layoutCounter ? state.layoutCounter + 1 : 1; 
             
@@ -55,7 +55,7 @@ export const lesson = (state = initialState, action) => {
 
         case types.NEXT_LESSON: {
 
-            let isNextRound = !!state.layoutCount ? state.layoutCounter === state.layoutCount : false;
+            let isNextRound = state.layoutCount ? state.layoutCounter === state.layoutCount : false;
             let layoutCounter = 0;
             let layoutCount = action.data.lesson.layoutCount;
             

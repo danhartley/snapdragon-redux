@@ -78,7 +78,7 @@ export const renderNavigation = collection => {
               case enums.navigation.GLOSSARY:   
                   toggleIconOnOff(clickedIcon);
                   const { glossary } = store.getState();
-                  const definitions = !!collection.glossary
+                  const definitions = collection.glossary
                       ? glossary.filter(definition => contains(definition.taxon, collection.glossary))
                       : glossary;
                   import('ui/quick-fire-modal/quick-fire').then(module => {
@@ -100,15 +100,7 @@ export const renderNavigation = collection => {
                     document.querySelector('.js-nav-icons .language').classList.remove('active-icon');
                   });
                 });                  
-              // case enums.navigation.QUIZ:
-              //   import('quiz/quiz-modal').then(module => {
-              //     module.openQuiz();
-              //     document.getElementById('quizModal').addEventListener('hide.bs.modal', e => {
-              //       document.querySelector('.js-nav-icons .quiz-icon').classList.remove('active-icon');
-              //       actions.boundClearDeckScoreHistory();
-              //     });
-              //   });
-              //   break;
+                break;
               default:
                 return;
           }

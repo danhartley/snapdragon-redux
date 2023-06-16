@@ -17,7 +17,7 @@ export const renderScoreSummary = (lessonId, summaryContainer) => {
             const { lessons, score: stateScore, userAction } = store.getState();
 
             const { collection, history, config, score: savedScore } = lessons.length > 0
-                        ? !!lessons.find(l => l.collection.id === parseInt(lessonId))
+                        ? lessons.find(l => l.collection.id === parseInt(lessonId))
                               ? lessons.find(l => l.collection.id === parseInt(lessonId))
                               : store.getState()
                         : store.getState();
@@ -29,10 +29,13 @@ export const renderScoreSummary = (lessonId, summaryContainer) => {
             const template = document.createElement('template');
                   template.innerHTML = summaryTemplate;
       
-            const parent = config.isLandscapeMode
-                        ? summaryContainer || document.querySelector('#lessonModal .js-modal-text')
-                        : DOM.rightBody ;
+            const parent = DOM.leftBody;
+            // const parent = config.isLandscapeMode
+            //             ? summaryContainer || document.querySelector('#lessonModal .js-modal-text')
+            //             : DOM.leftBody ;
                   parent.innerHTML = '';
+
+                  console.log('parent', parent)
             
             renderTemplate({ collection, lesson }, template.content, parent);
 
@@ -42,9 +45,9 @@ export const renderScoreSummary = (lessonId, summaryContainer) => {
               actionLinks[0].focus();
             }, 250);
 
-            if(summaryContainer) {
-                  actionLinks.forEach(link => link.classList.add('snap-inactive'));
-            }
+            // if(summaryContainer) {
+            //       actionLinks.forEach(link => link.classList.add('snap-inactive'));
+            // }
 
             if(lesson.layoutName === 'summary') {
                   const progressLink = document.querySelector('.js-review-progress');

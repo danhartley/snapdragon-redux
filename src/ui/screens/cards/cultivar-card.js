@@ -28,7 +28,7 @@ export const renderCultivarCard = collection => {
 
     template.innerHTML = cultivarTemplate;
 
-    const parent = DOM.rightBody;
+    const parent = DOM.leftBody;
     parent.innerHTML = '';
 
     const context = {

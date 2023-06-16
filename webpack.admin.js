@@ -28,7 +28,7 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.js$/,        
         exclude: [ /node_modules/ ],
         use: {
           loader: "babel-loader",
@@ -45,11 +45,27 @@ module.exports = merge(common, {
         }
       },
       {
+        test: /\.m?js/,
+        resolve: {
+          fullySpecified: false
+        }
+      },
+      {
         test: /\.(sa|sc|c)ss$/,
         use: [
           'style-loader',
           'css-loader',
-          'sass-loader',
+          {
+            loader: "sass-loader",
+            options: {
+              // Prefer `dart-sass`
+              // eslint-disable-next-line no-undef
+              implementation: require("sass"),
+              sassOptions: {
+                fiber: false,
+              },
+            },
+          },
         ],
       },
     ]

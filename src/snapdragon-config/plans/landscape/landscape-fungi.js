@@ -29,7 +29,7 @@ export const landscapeLichens = { ...clone(landscapeFungi), id: 4 };
 landscapeLichens.levels[0] = { 
     id: 1,
     name:'Level 1',
-    description: 'Species recognition',
+    description: 'Species recognition!!',
     layouts: [                          
         L.mixedSpecimenImages
     ],

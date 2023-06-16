@@ -1,5 +1,6 @@
 import { contains } from 'ramda';
 
+import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { enums } from 'ui/helpers/enum-helper';
 
@@ -115,13 +116,18 @@ const scoreTextEntry = (quickFire, quickFireInput, quickFireMessage, timer, cont
 
 const readyTemplate = headerTemplate => {
 
+    const { config } = store.getState();
+
     const template = document.createElement('template');
           template.innerHTML = headerTemplate;
 
     const modal = document.querySelector('#glossaryModal');
 
-    const parent = modal.querySelector('.js-modal-text');
-          parent.innerHTML = '';   
+    const parent = config.isLandscapeMode
+        ? DOM.leftBody
+        : modal.querySelector('.js-modal-text');
+    
+    parent.innerHTML = '';   
 
     return { template, modal, parent };
 };
@@ -129,7 +135,9 @@ const readyTemplate = headerTemplate => {
 const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
 
     const { glossary, filters, questions } = links;
-
+console.log(links)
+console.log(filters)
+console.log(questions)
     const hide = 'hide-important';
 
     const quickFire = getQuickFire();
@@ -145,6 +153,7 @@ const updateHeaders = (screen, links, getQuickFire, quickFireActions) => {
     };
 
     const loadFilters = e => {
+        console.log(quickFire.linkFromLesson)
         quickFireActions.quickFireFilters(quickFire.linkFromLesson);
     };
 

@@ -3,8 +3,8 @@ import "babel-polyfill";
 import 'ui/css/snapdragon-colours.css';
 import 'ui/css/snapdragon.css';
 import 'ui/css/common.css';
-import 'ui/css/groups/modal.css';
-import 'ui/css/snapdragon-media.css';
+import 'ui/css/groups/modal.scss';
+import 'ui/css/snapdragon-media.scss';
 import 'quiz/style.scss';
 
 import { store } from 'redux/store';

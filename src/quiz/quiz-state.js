@@ -29,7 +29,10 @@ export const quizState = deckState => {
   }
 
   const parent = document.querySelector('.js-quiz-bottom');
-        parent.innerHTML = '';
+
+  if(!parent) return
+  
+  parent.innerHTML = '';
 
   renderTemplate({ time: logic.convertSecondsToClockTime(seconds), remaining: deck.cards.length }, template.content, parent);
 

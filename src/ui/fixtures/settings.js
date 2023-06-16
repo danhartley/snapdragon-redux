@@ -63,7 +63,7 @@ export const settingsHandler = () => {
             delayTxt.innerHTML = delay === '1'
                 ? `Delay updated to ${delay} second.`
                 : `Delay updated to ${delay} seconds.`;
-        }, 500);        
+        }, 500);
     });
 
     languagePicker(config, document.querySelector('.js-language-selection-container'), (config) => {
