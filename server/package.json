@@ -13,7 +13,7 @@
   "author": "Daniel Hartley",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.18.2"
   },
   "devDependencies": {    
     "helmet": "^3.23.3"
